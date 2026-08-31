@@ -15,6 +15,19 @@ provenance: repository-contract
 This append-only current log continues an earlier non-public 2026 archive, rotated at a dated entry
 boundary after the combined log crossed the configured 5,000-line threshold.
 
+## [2026-08-31T22:44:59Z] security research | Schneider Electric
+
+- Reassessed [[securities/security_dc8486c1d61df62a22fd|Schneider Electric]] after the 31 August
+  volume anomaly. The EUR 294.60 close was 1.55% above 3 August, while the session fell 2.37% and
+  volume reached a 2.55 z-score; neutral RSI and a bearish MACD histogram make the transition noise,
+  not an operating catalyst.
+- Fresh issuer retrievals reproduced the H1 2026 and FY2025 result hashes, and the issuer results
+  index showed no later 2026 operating release. EUR 190/EUR 240/EUR 330 scenarios remain unchanged;
+  the higher mark leaves Schneider Sell / Avoid, Watch tier and allocation-ineligible.
+- The complete idea catalog produced one plausible unaccepted candidate,
+  [[ideas/idea_ai_infrastructure_power|AI infrastructure and power bottlenecks]]. One dependent
+  relationship review was queued; no strategy, signal, order or paper trade was created.
+
 ## [2026-08-31T22:31:16Z] security research | Tesla
 
 - Reassessed [[securities/security_dc7a111e297be528d96b|Tesla]] after the 31 August volume-anomaly

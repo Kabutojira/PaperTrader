@@ -1,0 +1,90 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_dc8486c1d61df62a22fd",
+    "papertrader research source record --request data/runs/daily-20260831T213829Z/01M0T6VA687FHWK8HZ2SBAR5SB/source_schneider_h1_2026_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260831T213829Z/01M0T6VA687FHWK8HZ2SBAR5SB/source_schneider_fy2025_refresh_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260831T213829Z/01M0T6VA687FHWK8HZ2SBAR5SB/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260831T213829Z/01M0T6VA687FHWK8HZ2SBAR5SB/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260831T213829Z/01M0T6VA687FHWK8HZ2SBAR5SB/assessment_upsert_request_v2.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260831T213829Z/01M0T6VA687FHWK8HZ2SBAR5SB/assessment_upsert_request_v3.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260831T213829Z/01M0T6VA687FHWK8HZ2SBAR5SB/assessment_upsert_request_v4.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260831T213829Z/01M0T6VA687FHWK8HZ2SBAR5SB/assessment_upsert_request_v5.json",
+    "papertrader queue enqueue --request data/runs/daily-20260831T213829Z/01M0T6VA687FHWK8HZ2SBAR5SB/enqueue_ai_power_relationship_request.json",
+    "papertrader wiki lint --strict",
+    "papertrader research security-context --security-id security_dc8486c1d61df62a22fd",
+    "papertrader schema validate --strict",
+    "papertrader queue validate"
+  ],
+  "daily_report_items": [
+    "Schneider Electric repeat review completed after the 31 August volume anomaly: the EUR294.60 close was 1.55% above 3 August, the session fell 2.37%, and volume reached a 2.55 z-score, but fresh issuer evidence showed no new operating catalyst. Unchanged EUR190/EUR240/EUR330 scenarios imply EUR250 weighted value and -15.14% expected return; deterministic rating remains Sell / Avoid, Watch tier and allocation-ineligible. One dependent AI-infrastructure-power relationship review was queued."
+  ],
+  "evidence": [
+    {
+      "claim": "Schneider Electric's H1 2026 issuer release reports record first-half revenue, adjusted EBITA and free cash flow, triple-digit second-quarter Data Center and Networks demand, higher net debt and upgraded full-year organic growth guidance; a fresh retrieval reproduced the registered document hash.",
+      "observed_at": "2026-08-31T22:44:59Z",
+      "source": "source_schneider_h1_2026_results",
+      "source_hash": "b1107b9dc93b4233bcf5335f7613fb41be0999bd3e573543cbae9a0519245a72",
+      "url": "https://www.se.com/ww/en/assets/pdf/release-hy-results-2026"
+    },
+    {
+      "claim": "Schneider Electric's FY2025 issuer release establishes the integrated data-centre exposure across electrical panels, UPS, racks, prefabricated solutions, cooling and digital offers; a fresh retrieval reproduced the registered document hash.",
+      "observed_at": "2026-08-31T22:44:59Z",
+      "source": "source_schneider_fy2025_results",
+      "source_hash": "5b17e6e8e5b8c47f697f5d352ed9639b98b261d9ecf886d3e8ce147493ebb00a",
+      "url": "https://www.se.com/ww/en/assets/564/document/528237/release-fy-results-2025.pdf"
+    },
+    {
+      "claim": "Canonical 31 August market state records a EUR294.6000061035156 adjusted close, -2.369509% one-session return, 1.551189% 20-session return, 2.554937 volume z-score, neutral 51.237622 RSI and a bearish MACD histogram; the weak anomaly was classified as noise.",
+      "observed_at": "2026-08-31T21:38:36Z",
+      "source": "data/market/indicators.csv",
+      "source_hash": "ad69931719329c6e44fd2303180706c5da0a73c087b00ad95d2d40037638e44b"
+    },
+    {
+      "claim": "Deterministic schema-version-two assessment assessment_7be713ccc996f281a300 derives EUR250 probability-weighted fair value, -15.13917351646089026196232008% expected return, -11.35438013734566769647174006% confidence-adjusted return, Sell / Avoid, Watch tier and ineligibility across expected-return, base-return, payoff, margin-of-safety and relationship gates.",
+      "source": "data/tables/security_assessments.csv"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M1D0AFC04YGEQKEND1Y52F03.json",
+    "data/runs/daily-20260831T213829Z/01M0T6VA687FHWK8HZ2SBAR5SB/assessment_upsert_request.json",
+    "data/runs/daily-20260831T213829Z/01M0T6VA687FHWK8HZ2SBAR5SB/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260831T213829Z/01M0T6VA687FHWK8HZ2SBAR5SB/assessment_upsert_request_v3.json",
+    "data/runs/daily-20260831T213829Z/01M0T6VA687FHWK8HZ2SBAR5SB/assessment_upsert_request_v4.json",
+    "data/runs/daily-20260831T213829Z/01M0T6VA687FHWK8HZ2SBAR5SB/assessment_upsert_request_v5.json",
+    "data/runs/daily-20260831T213829Z/01M0T6VA687FHWK8HZ2SBAR5SB/enqueue_ai_power_relationship_request.json",
+    "data/runs/daily-20260831T213829Z/01M0T6VA687FHWK8HZ2SBAR5SB/security_upsert_request.json",
+    "data/runs/daily-20260831T213829Z/01M0T6VA687FHWK8HZ2SBAR5SB/source_schneider_fy2025_refresh_request.json",
+    "data/runs/daily-20260831T213829Z/01M0T6VA687FHWK8HZ2SBAR5SB/source_schneider_h1_2026_refresh_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_dc8486c1d61df62a22fd.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0T6VA687FHWK8HZ2SBAR5SB",
+  "operations_created": [
+    "01M1D0AFC04YGEQKEND1Y52F03"
+  ],
+  "status": "succeeded",
+  "summary": "Completed one full repeat assessment of Schneider Electric after the 2026-08-31 volume anomaly. Fresh issuer retrievals reproduced the H1 2026 and FY2025 hashes and disclosed no later operating catalyst; the weak anomaly is noise. Unchanged EUR190/EUR240/EUR330 scenarios against the EUR294.6000061035156 mark produce EUR250 weighted value, -15.13917351646089026196232008% expected return and -11.35438013734566769647174006% confidence-adjusted return. Deterministic assessment assessment_7be713ccc996f281a300 remains Sell / Avoid, Watch tier and allocation-ineligible. The complete idea catalog produced one plausible unaccepted AI-infrastructure-power edge, so exactly one dependent relationship review was queued. No strategy, signal, order, allocation or accounting state changed.",
+  "validation": {
+    "checks": [
+      "The mandatory security-context command succeeded before assessment-state access; assessment_7be713ccc996f281a300 is the sole immutable assessment version created by this operation, links predecessor assessment_e4fe0bf457700a06eefc, schema version two, this operation and result path, and its b7da5a07a5855b01071a5103bbed3eb72d384bb17b9db10c6ffede118ba8fb82 page hash matches the current security page.",
+      "Immutable identity resolves to exactly one security row for security_dc8486c1d61df62a22fd, issuer_7c050f79848c800cf817, XPAR, SU.PA, EUR and equity; no duplicate identity row exists.",
+      "Both retained issuer sources are registered available with HTTP 200 metadata, current 2026-08-31 checks and hashes matching fresh retrievals; the issuer financial-results index showed H1 as the latest 2026 operating result.",
+      "The assessment uses the fresh identity-matched EUR294.6000061035156 mark as of 2026-08-31T21:38:36Z and canonical EUR/EUR rate 1 as of the assessment timestamp.",
+      "Bear, base and bull probabilities total 100 and fair values are ordered; deterministic output derives complete research, Sell / Avoid, Watch tier and ineligibility with every failed economic and relationship gate retained.",
+      "All 28 maintained idea pages and canonical relationship state were searched. AI infrastructure and power bottlenecks is the only plausible candidate and is clearly pending rather than accepted; wide-bandgap semiconductors and solar/storage/grid flexibility were rejected for lacking a distinct material security-level mechanism.",
+      "Exactly one dependent relationship-research follow-up, 01M1D0AFC04YGEQKEND1Y52F03, exists for the sole plausible unaccepted edge. No payload idea or accepted canonical relationship exists, so no dependent idea refresh is required; the conviction strategy gate fails, so no strategy follow-up is allowed.",
+      "No strategy, signal, order, allocation, execution, cash, portfolio or performance state changed.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "papertrader schema validate --strict returned OK [schema].",
+      "papertrader queue validate returned OK [queue]."
+    ],
+    "passed": true
+  }
+}

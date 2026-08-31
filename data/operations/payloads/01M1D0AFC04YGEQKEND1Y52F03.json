@@ -1,0 +1,26 @@
+{
+  "entity_id": "relationship_schneider_ai_infrastructure_power",
+  "entity_type": "relationship",
+  "inputs": {
+    "evidence_refs": [
+      "source_schneider_fy2025_results",
+      "source_schneider_h1_2026_results"
+    ],
+    "idea_id": "idea_ai_infrastructure_power",
+    "proposed_direction": "positive",
+    "proposed_invalidation": "Reject or weaken the edge if data-centre orders normalize, projects are delayed or cancelled, systems mix erodes margins, customer concentration rises materially, or growth does not convert into durable per-share cash flow.",
+    "proposed_mechanism": "AI data-centre power density and capacity constraints can increase demand for Schneider electrical distribution, switchgear, prefabricated power, UPS, cooling, automation, software and services, with value dependent on backlog conversion, systems mix and cash conversion.",
+    "relationship_id": "relationship_schneider_ai_infrastructure_power",
+    "security_id": "security_dc8486c1d61df62a22fd"
+  },
+  "objective": "Review whether Schneider Electric has a current material positive causal relationship to AI infrastructure and power bottlenecks through data-centre electrical, UPS, cooling, automation, software and service economics; accept or reject the edge.",
+  "operation_id": "01M1D0AFC04YGEQKEND1Y52F03",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_ai_infrastructure_power.md",
+    "data/wiki/securities/security_dc8486c1d61df62a22fd.md",
+    "source_schneider_fy2025_results",
+    "source_schneider_h1_2026_results"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "source_id": "source_schneider_h1_2026_results",
+  "url": "https://www.se.com/ww/en/assets/pdf/release-hy-results-2026",
+  "canonical_url": "https://www.se.com/ww/en/assets/pdf/release-hy-results-2026",
+  "source_type": "issuer_release",
+  "title": "Schneider Electric Half Year 2026 Results",
+  "publisher": "Schneider Electric SE",
+  "license": "",
+  "status": "available",
+  "content_hash": "b1107b9dc93b4233bcf5335f7613fb41be0999bd3e573543cbae9a0519245a72",
+  "related_entity_ids": "idea_ai_infrastructure_power|security_dc8486c1d61df62a22fd",
+  "checked_at": "2026-08-31T22:44:59Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "",
+  "summary": "Schneider Electric reported record H1 2026 revenue, adjusted EBITA and free cash flow, triple-digit second-quarter Data Center and Networks demand, higher net debt, working-capital absorption and upgraded full-year organic growth guidance.",
+  "run_id": "daily-20260831T213829Z"
+}

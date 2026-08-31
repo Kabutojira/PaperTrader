@@ -1,0 +1,18 @@
+{
+  "source_id": "source_schneider_fy2025_results",
+  "url": "https://www.se.com/ww/en/assets/564/document/528237/release-fy-results-2025.pdf",
+  "canonical_url": "https://www.se.com/ww/en/assets/564/document/528237/release-fy-results-2025.pdf",
+  "source_type": "issuer_release",
+  "title": "Schneider Electric Full Year 2025 Results",
+  "publisher": "Schneider Electric SE",
+  "license": "",
+  "status": "available",
+  "content_hash": "5b17e6e8e5b8c47f697f5d352ed9639b98b261d9ecf886d3e8ce147493ebb00a",
+  "related_entity_ids": "idea_ai_infrastructure_power|security_dc8486c1d61df62a22fd",
+  "checked_at": "2026-08-31T22:44:59Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "",
+  "summary": "Schneider Electric reported FY2025 revenue, adjusted EBITA, free cash flow and adjusted EPS alongside accelerating data-centre demand across electrical panels, UPS, racks, prefabricated solutions, cooling and digital offers.",
+  "run_id": "daily-20260831T213829Z"
+}

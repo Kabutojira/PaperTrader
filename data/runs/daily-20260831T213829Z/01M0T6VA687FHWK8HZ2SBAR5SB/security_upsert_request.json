@@ -1,0 +1,23 @@
+{
+  "security_id": "security_dc8486c1d61df62a22fd",
+  "issuer_id": "issuer_7c050f79848c800cf817",
+  "company_name": "Schneider Electric SE",
+  "instrument_name": "Schneider Electric SE ordinary shares",
+  "instrument_type": "equity",
+  "ticker": "SU",
+  "exchange_code": "PAR",
+  "venue_mic": "XPAR",
+  "provider_symbol": "SU.PA",
+  "broker_symbol": "",
+  "currency": "EUR",
+  "country": "FR",
+  "sector": "Industrials",
+  "industry": "Electrical Equipment & Parts",
+  "status": "watching",
+  "watchlist_reason": "Monitor data-centre demand and backlog conversion, margins, working capital, cash conversion, leverage, acquisitions, customer concentration and valuation.",
+  "research_summary": "EUR250 weighted value versus EUR294.60 supports Sell / Avoid; weak returns, downside payoff, margin of safety and no accepted idea relationship preclude exposure.",
+  "research_page": "data/wiki/securities/security_dc8486c1d61df62a22fd.md",
+  "last_research_at": "2026-08-31T22:44:59Z",
+  "next_review_at": "2026-09-30T22:44:59Z",
+  "source": "source_schneider_fy2025_results|source_schneider_h1_2026_results"
+}
