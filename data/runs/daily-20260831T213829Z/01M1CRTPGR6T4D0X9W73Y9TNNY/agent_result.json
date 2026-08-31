@@ -1,0 +1,67 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_f34181f3df32080a91d1",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Domino's quick check blocked: the payload's immutable source-price hash conflicts with the current 31 August canonical indicator identity. No assessment or research conclusion changed, and no full-review follow-up or paper-trading state was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The mandatory first audited receipt succeeded and bound security_f34181f3df32080a91d1 to Domino's Pizza, Inc. common stock / DPZ / XNAS / USD / equity. It confirmed successful baseline operation 01M14VH1N8WRQBZMJ6BYRG2WWG completed at 2026-08-28T19:36:38Z and current immutable assessment assessment_ab556a154f903904bd7e.",
+      "observed_at": "2026-08-31T23:35:38Z",
+      "source": "PaperTrader audited security context"
+    },
+    {
+      "claim": "The immutable quick-check payload is bound to market date 2026-08-31, period 2026-08-03 through 2026-08-31, volume_anomaly, and source_price_hash c22f634df41c704234cddc6ab852664a0511a0c1b97c13d2954feeec77f87111.",
+      "observed_at": "2026-08-31T20:40:31Z",
+      "source": "data/operations/payloads/01M1CRTPGR6T4D0X9W73Y9TNNY.json",
+      "source_hash": "c22f634df41c704234cddc6ab852664a0511a0c1b97c13d2954feeec77f87111"
+    },
+    {
+      "claim": "The current canonical indicator row for security_f34181f3df32080a91d1 is dated 2026-08-31, was retrieved at 2026-08-31T21:38:36Z, retains volume_anomaly, and carries conflicting source_price_hash f49fabc7857280baf850d3d381b3aa7ee017dd0ef0e9dd6a07c8415328e43e02.",
+      "observed_at": "2026-08-31T21:38:36Z",
+      "source": "data/market/indicators.csv",
+      "source_hash": "f49fabc7857280baf850d3d381b3aa7ee017dd0ef0e9dd6a07c8415328e43e02"
+    },
+    {
+      "claim": "Current canonical DPZ market data is dated 2026-08-31 with adjusted close USD342.05999755859375 and volume 2509600, retrieved at 2026-08-31T21:38:36Z.",
+      "observed_at": "2026-08-31T21:38:36Z",
+      "source": "data/market/latest.csv"
+    },
+    {
+      "claim": "A bounded current SEC submissions-index retrieval succeeded and showed no Domino's filing dated 2026-08-20 or later; this does not cure the conflicting immutable market-data identity.",
+      "observed_at": "2026-08-31T23:37:00Z",
+      "source": "https://data.sec.gov/submissions/CIK0001286681.json",
+      "url": "https://data.sec.gov/submissions/CIK0001286681.json"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01M1CRTPGR6T4D0X9W73Y9TNNY",
+  "operations_created": [],
+  "reason_code": "source_price_hash_mismatch",
+  "status": "blocked",
+  "summary": "Blocked the bounded Domino's Pizza quick check because its immutable payload source_price_hash c22f634df41c704234cddc6ab852664a0511a0c1b97c13d2954feeec77f87111 conflicts with the current canonical indicator price identity f49fabc7857280baf850d3d381b3aa7ee017dd0ef0e9dd6a07c8415328e43e02. The successful recent baseline and security identity were confirmed, but the stale/conflicting market binding prevents a comparable assessment decision. No assessment, wiki, follow-up, trading, allocation, or accounting state was changed.",
+  "validation": {
+    "checks": [
+      "Confirmed exactly one running quick_check_research row for security_f34181f3df32080a91d1, claimed by daily-20260831T213829Z with a live lease and exactly the native llm-wiki plus papertrader-quick-check-research routed skills.",
+      "Confirmed hermes_preflight.json identifies the native wiki, controller, and routed quick-check skill by path and SHA-256 with sequential execution enabled.",
+      "Consumed the mandatory successful audited security context before reading assessment state and verified the identity-matched successful baseline completed less than ten days earlier.",
+      "Compared the payload source_price_hash with current canonical indicator state and failed closed on the immutable identity mismatch.",
+      "Did not publish an assessment or enqueue full research because the market-data binding conflict must be resolved before evaluating changed decision-support gates.",
+      "Strict schema validation returned OK [schema].",
+      "Queue validation returned OK [queue].",
+      "Strict repository integrity returned OK [integrity].",
+      "Strict wiki lint returned OK [wiki].",
+      "Strict portfolio reconciliation returned OK [portfolio].",
+      "command_audit.json contains exactly the six listed successful canonical project-CLI receipts in order, each with no changed paths.",
+      "No security, assessment, source, wiki, issue, follow-up, allocation, strategy, signal, order, execution, cash, portfolio, fill, performance, or accounting state changed; no second operation was claimed or processed."
+    ],
+    "passed": true
+  }
+}
