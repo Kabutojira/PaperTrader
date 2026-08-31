@@ -1,0 +1,55 @@
+{
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader queue validate",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [],
+  "evidence": [
+    {
+      "claim": "Validated frozen context version 3 binds the operation to data/wiki/podcasts/daily-podcast_20260831T204023Z.md, declares an empty research_developments array, and lists one failed security-research item only under unresolved_research_gaps.",
+      "source": "data/runs/daily-20260831T204023Z/podcast_context.json"
+    },
+    {
+      "claim": "The sole window research attempt failed validation because completed security research requires exactly one immutable assessment version, so it cannot supply an accepted podcast development.",
+      "source": "data/runs/daily-20260831T204023Z/01KYPB29WRNJGPJTTY2DB72JWG/validation_report.json"
+    },
+    {
+      "claim": "The most recent successful podcast supplies continuity through the frozen exclusive window start; without a newer accepted development, repeating its subjects would violate the novelty requirement.",
+      "source": "data/wiki/podcasts/daily-podcast_20260831T083100Z.md"
+    },
+    {
+      "claim": "The payload run ID, context path, report path, and transcript page path agree with the frozen context and daily manifest.",
+      "source": "data/operations/payloads/01M1CTT6R0HPES6PFAGQSK31DG.json"
+    },
+    {
+      "claim": "The daily manifest binds podcast operation 01M1CTT6R0HPES6PFAGQSK31DG to data/wiki/podcasts/daily-podcast_20260831T204023Z.md.",
+      "source": "data/runs/daily-20260831T204023Z/daily_run.json"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01M1CTT6R0HPES6PFAGQSK31DG",
+  "operations_created": [],
+  "reason_code": "no_audience_relevant_research",
+  "status": "skipped",
+  "summary": "Skipped the episode because frozen context version 3 contains zero accepted research developments in the exclusive 2026-08-31T09:10:38Z through inclusive 2026-08-31T21:07:46Z window. The only window item is a failed PLS Group security-research result whose missing valid immutable assessment makes it an unresolved research gap, not accepted evidence suitable for a listener chapter. The previous successful episode already covered the latest accepted research through the window start. The candidate slate and chapter slate are therefore empty; no transcript, daily-report link, rating chapter, or audio draft was created, and render-draft was not invoked.",
+  "validation": {
+    "checks": [
+      "Parent-provided podcast context validation was treated as authoritative; frozen hashes were not recomputed.",
+      "Payload, frozen context, and daily manifest all identify data/wiki/podcasts/daily-podcast_20260831T204023Z.md as the only allowed page_path.",
+      "Frozen context version is 3 with window_start_exclusive 2026-08-31T09:10:38Z and research_cutoff_at 2026-08-31T21:07:46Z.",
+      "Candidate selection found zero accepted research developments; the sole unresolved failed result was excluded from the empty chapter slate.",
+      "Novelty review against the prior successful podcast found no new accepted conclusion to support a standalone chapter.",
+      "No transcript or report link was written, no persistent audio reference exists, and podcast validate-script and render-draft were correctly not invoked for a skipped episode.",
+      "Strict schema validation passed.",
+      "Strict repository integrity validation passed.",
+      "Strict wiki lint passed.",
+      "Queue validation passed.",
+      "Strict portfolio reconciliation passed."
+    ],
+    "passed": true
+  }
+}

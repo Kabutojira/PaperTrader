@@ -1,0 +1,64 @@
+{
+  "background_wiki_pages": [],
+  "changed_wiki_pages": [],
+  "daily_cycle_id": "daily-20260831T204023Z",
+  "decision_snapshot_path": "data/runs/daily-20260831T204023Z/decision_snapshot.json",
+  "decision_snapshot_sha256": "66eb47e74a93292dec492781909338e5347883fedf42cf0c1ad96d4279cd2022",
+  "generated_at": "2026-08-31T21:15:12Z",
+  "intervening_daily_cycles": [
+    "daily-20260831T204023Z"
+  ],
+  "page_path": "data/wiki/podcasts/daily-podcast_20260831T204023Z.md",
+  "podcast_context_version": 3,
+  "portfolio_implication_paths": [
+    "data/runs/daily-20260831T204023Z/decision_snapshot.json",
+    "data/wiki/daily-reports/daily-report_20260831.md"
+  ],
+  "previous_successful_podcast": {
+    "context_path": "data/runs/daily-20260831T083100Z/podcast_context.json",
+    "context_sha256": "4a2b86049b0162d923212acd2c52e1efa149cd7c16ebebb3752dcb1b0ea25c0f",
+    "daily_cycle_id": "daily-20260831T083100Z",
+    "page_path": "data/wiki/podcasts/daily-podcast_20260831T083100Z.md",
+    "page_sha256": "9ca9781a4871c7e79f1cd124c6c722083a1de1f61411f6558aee661dbf59afbc",
+    "research_cutoff_at": "2026-08-31T09:10:38Z"
+  },
+  "report_path": "data/wiki/daily-reports/daily-report_20260831.md",
+  "report_sha256": "faaed7db9353412d01dca2d85fdd75571986c8b384db26c93e19b91979d1a4cf",
+  "research_cutoff_at": "2026-08-31T21:07:46Z",
+  "research_developments": [],
+  "run_id": "daily-20260831T204023Z",
+  "target_minutes": 20,
+  "target_words": 3000,
+  "unresolved_research_gaps": [
+    {
+      "completed_at": "2026-08-31T21:07:26Z",
+      "daily_cycle_id": "daily-20260831T204023Z",
+      "daily_report_items": [],
+      "entity_id": "security_8a5c43888d224de85c69",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "completed security research requires exactly one immutable assessment version",
+          "source": "data/runs/daily-20260831T204023Z/01KYPB29WRNJGPJTTY2DB72JWG/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "completed security research requires exactly one immutable assessment version"
+      ],
+      "files_changed": [],
+      "operation_id": "01KYPB29WRNJGPJTTY2DB72JWG",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260831T204023Z/01KYPB29WRNJGPJTTY2DB72JWG/validation_report.json",
+      "status": "failed",
+      "summary": "The accepted research did not produce a valid result."
+    }
+  ],
+  "wiki_orientation_paths": [
+    "data/wiki/SCHEMA.md",
+    "data/wiki/index.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/log.md"
+  ],
+  "window_mode": "since_previous_successful_podcast",
+  "window_start_exclusive": "2026-08-31T09:10:38Z"
+}
