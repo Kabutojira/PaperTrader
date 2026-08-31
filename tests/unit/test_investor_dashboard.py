@@ -147,6 +147,8 @@ def test_dashboard_progressive_enhancement_is_local_and_long_equity_only(
     assert "WebSocket" not in script
     assert "@media (max-width: 800px)" in styles
     assert ".model-portfolio-grid" in styles
+    assert 'body[data-slug="index"] .page-footer' in styles
+    assert "grid-template-columns: repeat(2, minmax(0, 1fr))" in styles
     assert ":focus-visible" in styles
 
 
@@ -167,6 +169,13 @@ def test_quartz_uses_external_dashboard_source_and_validated_publication_copy(
     assert "condition: (page) => !isDashboardPage(page)" in layout
     assert '{ label: "Securities", slug: "security-catalog" }' in navigation
     assert '{ label: "Securities", slug: "securities" }' not in navigation
+    assert '{ label: "Ideas", slug: "ideas", collectionPrefix: "ideas/" }' in navigation
+    assert '{ label: "Podcasts", slug: "podcasts", collectionPrefix: "podcasts/" }' in navigation
+    assert 'title: "Recently explored ideas"' in layout
+    assert 'title: "Latest podcast transcripts"' in layout
+    assert layout.count("limit: 3") == 2
+    assert 'linkToMore: "ideas" as SimpleSlug' in layout
+    assert 'linkToMore: "podcasts" as SimpleSlug' in layout
     assert '"papertrader/**/*.ts"' in tsconfig
     assert '"papertrader/**/*.tsx"' in tsconfig
     assert "prettier quartz.config.ts quartz.layout.ts papertrader" in package

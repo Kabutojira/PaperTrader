@@ -14,23 +14,23 @@ const links = [
   { label: "Model portfolio", slug: "model-portfolio" },
   { label: "Securities", slug: "security-catalog" },
   { label: "Signals", slug: "signals" },
+  { label: "Ideas", slug: "ideas", collectionPrefix: "ideas/" },
+  { label: "Podcasts", slug: "podcasts", collectionPrefix: "podcasts/" },
   { label: "Research", slug: "research-catalog" },
   { label: "Performance", slug: "performance" },
   { label: "System status", slug: "system-status" },
 ] as const;
 
 function linkIsActive(current: string, target: string): boolean {
+  if (target === "ideas" || target === "podcasts") {
+    return current === target || current.startsWith(`${target}/`);
+  }
   if (target === "research-catalog") {
     return (
       current === target ||
-      [
-        "ideas/",
-        "securities/",
-        "relationships/",
-        "strategies/",
-        "raw/",
-        "inbox/",
-      ].some((prefix) => current.startsWith(prefix))
+      ["securities/", "relationships/", "strategies/", "raw/", "inbox/"].some(
+        (prefix) => current.startsWith(prefix),
+      )
     );
   }
   return current === target;
@@ -38,8 +38,14 @@ function linkIsActive(current: string, target: string): boolean {
 
 const DecisionNavigation: QuartzComponent = ({
   fileData,
+  allFiles,
 }: QuartzComponentProps) => {
   const current = (fileData.slug ?? "index") as FullSlug;
+  const visibleLinks = links.filter(
+    (link) =>
+      !("collectionPrefix" in link) ||
+      allFiles.some((page) => page.slug?.startsWith(link.collectionPrefix)),
+  );
   return (
     <div class="papertrader-header">
       <a
@@ -50,7 +56,7 @@ const DecisionNavigation: QuartzComponent = ({
         <small>decision dashboard</small>
       </a>
       <nav class="papertrader-nav" aria-label="Primary navigation">
-        {links.map(({ label, slug }) => {
+        {visibleLinks.map(({ label, slug }) => {
           const active = linkIsActive(current, slug);
           return (
             <a

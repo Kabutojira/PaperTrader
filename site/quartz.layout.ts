@@ -1,6 +1,7 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg";
 import * as Component from "./quartz/components";
 import { QuartzComponentProps } from "./quartz/components/types";
+import type { SimpleSlug } from "./quartz/util/path";
 import DecisionNavigation from "./papertrader/components/DecisionNavigation";
 
 const dashboardPages = new Set([
@@ -14,6 +15,36 @@ const dashboardPages = new Set([
 const isDashboardPage = (page: QuartzComponentProps): boolean =>
   dashboardPages.has(page.fileData.slug ?? "");
 
+const isCollectionPage = (
+  page: QuartzComponentProps,
+  prefix: string,
+  pageType: string,
+): boolean =>
+  page.allFiles.some(
+    (file) =>
+      file.slug?.startsWith(prefix) && file.frontmatter?.type === pageType,
+  );
+
+const recentIdeas = Component.RecentNotes({
+  title: "Recently explored ideas",
+  limit: 3,
+  linkToMore: "ideas" as SimpleSlug,
+  showTags: false,
+  filter: (page) =>
+    page.slug?.startsWith("ideas/") === true &&
+    page.frontmatter?.type === "idea",
+});
+
+const recentPodcasts = Component.RecentNotes({
+  title: "Latest podcast transcripts",
+  limit: 3,
+  linkToMore: "podcasts" as SimpleSlug,
+  showTags: false,
+  filter: (page) =>
+    page.slug?.startsWith("podcasts/") === true &&
+    page.frontmatter?.type === "podcast",
+});
+
 const repository = process.env.GITHUB_REPOSITORY;
 const repositoryUrl = repository
   ? `https://github.com/${repository}`
@@ -22,7 +53,20 @@ const repositoryUrl = repository
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [DecisionNavigation()],
-  afterBody: [],
+  afterBody: [
+    Component.ConditionalRender({
+      component: recentIdeas,
+      condition: (page) =>
+        page.fileData.slug === "index" &&
+        isCollectionPage(page, "ideas/", "idea"),
+    }),
+    Component.ConditionalRender({
+      component: recentPodcasts,
+      condition: (page) =>
+        page.fileData.slug === "index" &&
+        isCollectionPage(page, "podcasts/", "podcast"),
+    }),
+  ],
   footer: Component.Footer({
     links: {
       "Source repository": repositoryUrl,

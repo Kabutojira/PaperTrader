@@ -1202,6 +1202,8 @@ def test_clean_checkout_research_to_publication_cycle_is_replay_safe(
             "No trade" in homepage_html or "Maintain the current model portfolio" in homepage_html
         )
         assert 'class="papertrader-nav"' in homepage_html
+        assert "Recently explored ideas" in homepage_html
+        assert "Synthetic operating-cycle momentum" in homepage_html
         for publication_name in (
             "decision_snapshot.json",
             "model_portfolio.csv",
