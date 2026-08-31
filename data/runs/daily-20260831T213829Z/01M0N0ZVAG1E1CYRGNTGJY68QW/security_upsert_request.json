@@ -1,0 +1,23 @@
+{
+  "security_id": "security_9b0db3bc77914b23a307",
+  "issuer_id": "issuer_1038b47ad058326af5aa",
+  "company_name": "Carlisle Companies Incorporated",
+  "instrument_name": "Carlisle Companies Incorporated common stock",
+  "instrument_type": "equity",
+  "ticker": "CSL",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "CSL",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Industrials",
+  "industry": "Building Products & Equipment",
+  "status": "watching",
+  "watchlist_reason": "Monitor commercial re-roofing demand, price-cost recovery, segment margins, cash conversion, leverage, construction demand, and capital allocation.",
+  "research_summary": "USD363.42 weighted value versus USD346.58 supports Hold / Watch; weak payoff, margin of safety, timing, and no accepted idea relationship preclude exposure.",
+  "research_page": "data/wiki/securities/security_9b0db3bc77914b23a307.md",
+  "last_research_at": "2026-08-31T22:11:17Z",
+  "next_review_at": "2026-09-30T22:11:17Z",
+  "source": "source_csl_fy2025_release|source_csl_q2_2026_10q|source_csl_q2_2026_release"
+}

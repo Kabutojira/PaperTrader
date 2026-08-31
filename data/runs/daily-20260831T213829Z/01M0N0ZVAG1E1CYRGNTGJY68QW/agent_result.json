@@ -1,0 +1,87 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_9b0db3bc77914b23a307",
+    "papertrader research source record --request data/runs/daily-20260831T213829Z/01M0N0ZVAG1E1CYRGNTGJY68QW/source_csl_q2_2026_10q_record_request.json",
+    "papertrader research source record --request data/runs/daily-20260831T213829Z/01M0N0ZVAG1E1CYRGNTGJY68QW/source_csl_q2_2026_release_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260831T213829Z/01M0N0ZVAG1E1CYRGNTGJY68QW/source_csl_fy2025_release_refresh_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260831T213829Z/01M0N0ZVAG1E1CYRGNTGJY68QW/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260831T213829Z/01M0N0ZVAG1E1CYRGNTGJY68QW/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260831T213829Z/01M0N0ZVAG1E1CYRGNTGJY68QW/assessment_upsert_request_v2.json",
+    "papertrader research source record --request data/runs/daily-20260831T213829Z/01M0N0ZVAG1E1CYRGNTGJY68QW/source_csl_sec_submissions_record_request.json",
+    "papertrader wiki lint --strict",
+    "papertrader schema validate --strict",
+    "papertrader queue validate"
+  ],
+  "daily_report_items": [
+    "CSL repeat review completed after the 28 August strengthened volume anomaly: the latest session fell 2.03% and the 29 July-to-28 August move was -9.82%, but current SEC filings disclose no new operating catalyst. USD282.66/USD363.42/USD444.18 scenarios imply USD363.42 weighted value and 4.86% expected return versus USD346.58; deterministic rating remains Hold / Watch and allocation is ineligible."
+  ],
+  "evidence": [
+    {
+      "claim": "Carlisle's filed second-quarter Form 10-Q reports first-half revenue of USD2.6224 billion, continuing-operations diluted EPS of USD9.43, operating cash flow of USD197.1 million, USD665.3 million cash, USD2.8849 billion long-term debt and USD500 million of share repurchases.",
+      "observed_at": "2026-08-31T22:11:17Z",
+      "source": "source_csl_q2_2026_10q",
+      "source_hash": "abc77c6d4ac0f8d3bfbceffdf9ee938d5d1d1addcbc0671ef0850a5ebbfeffe8",
+      "url": "https://www.sec.gov/Archives/edgar/data/790051/000079005126000037/csl-20260630.htm"
+    },
+    {
+      "claim": "Carlisle's second-quarter release reports USD1.5 billion revenue, USD6.61 adjusted diluted EPS, segment margin pressure from price-cost and freight, and maintained full-year revenue and adjusted EPS guidance.",
+      "observed_at": "2026-08-31T22:11:17Z",
+      "source": "source_csl_q2_2026_release",
+      "source_hash": "eaddd9f8b58711b4912d80ef1a72d327f5ea85cafe345a8660320f76ed9db417",
+      "url": "https://www.sec.gov/Archives/edgar/data/790051/000079005126000033/q22026-ex991xearningsrelea.htm"
+    },
+    {
+      "claim": "The current SEC submissions index lists the 2026-07-30 Form 10-Q as Carlisle's latest periodic operating filing through the 2026-08-28 alert date; the later Schedule 13G is ownership disclosure, not operating evidence.",
+      "observed_at": "2026-08-31T22:11:17Z",
+      "source": "source_csl_sec_submissions_20260831",
+      "source_hash": "69f134d545e3dd362d5892bb5b8df067f58264aec29c5fab7a0102dae897fb59",
+      "url": "https://data.sec.gov/submissions/CIK0000790051.json"
+    },
+    {
+      "claim": "The canonical alert records a strengthened 2026-08-28 volume anomaly at 2.483443 times the 20-session average, with no simultaneous threshold trigger; the exact deterministic measurement was accepted as data.",
+      "observed_at": "2026-08-31T21:39:12Z",
+      "source": "data/wiki/inbox/market-security_9b0db3bc77914b23a307-volume_anomaly-bdcdeb54f9da.md",
+      "source_hash": "c4e2ddf7fe3533cde5a42ee9c6320e438c9903a34482761a00e321fc0d2831f0"
+    },
+    {
+      "claim": "Deterministic schema-version-two output records USD363.42 weighted fair value, 4.8589110970558245844487117% expected return, 3.644183322791868438336533775% medium-confidence-adjusted return, Hold / Watch and ineligibility for expected-return, base-return, payoff and relationship gates.",
+      "source": "data/tables/security_assessments.csv"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260831T213829Z/01M0N0ZVAG1E1CYRGNTGJY68QW/assessment_upsert_request.json",
+    "data/runs/daily-20260831T213829Z/01M0N0ZVAG1E1CYRGNTGJY68QW/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260831T213829Z/01M0N0ZVAG1E1CYRGNTGJY68QW/security_upsert_request.json",
+    "data/runs/daily-20260831T213829Z/01M0N0ZVAG1E1CYRGNTGJY68QW/source_csl_fy2025_release_refresh_request.json",
+    "data/runs/daily-20260831T213829Z/01M0N0ZVAG1E1CYRGNTGJY68QW/source_csl_q2_2026_10q_record_request.json",
+    "data/runs/daily-20260831T213829Z/01M0N0ZVAG1E1CYRGNTGJY68QW/source_csl_q2_2026_release_refresh_request.json",
+    "data/runs/daily-20260831T213829Z/01M0N0ZVAG1E1CYRGNTGJY68QW/source_csl_sec_submissions_record_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_9b0db3bc77914b23a307.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0N0ZVAG1E1CYRGNTGJY68QW",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Completed the repeat review of Carlisle Companies Incorporated after the strengthened 28 August volume anomaly. Current SEC evidence confirms resilient re-roofing demand and maintained guidance but also price-cost pressure, weak first-half cash conversion and meaningful net debt; no new operating filing explains the move. USD282.66/USD363.42/USD444.18 bear/base/bull scenarios produce USD363.42 probability-weighted value against the USD346.5799865722656 mark. Deterministic output is Hold / Watch and allocation-ineligible. The complete idea catalog and relationship state produced no specific material causal edge, so no relationship, idea or strategy follow-up was warranted and no paper order was created.",
+  "validation": {
+    "checks": [
+      "The mandatory security-context command succeeded before assessment-state access; assessment_8caf8d9cc77fdf80f604 is the sole immutable version from this operation, links predecessor assessment_36045f5e23968059e801, schema version two, this operation and result path, and its c1256ae56d4c2521e60d937b6ffa0de18ddc52ead5bfdf590719a8740b1dd62e page hash matches the current security page.",
+      "Immutable identity resolves to exactly one row for security_9b0db3bc77914b23a307, issuer_1038b47ad058326af5aa, XNYS, CSL, USD and equity; no duplicate identity row exists.",
+      "All retained primary and regulator-index sources are registered available with HTTP 200 metadata, current 2026-08-31 checks and content hashes matching the fetched documents.",
+      "The assessment uses fresh identity-matched USD346.5799865722656 market and USD/EUR 0.8604999780654907 FX observations as of 2026-08-31T21:38:36Z.",
+      "Bear, base and bull probabilities total 100 and fair values are ordered; deterministic output derives complete research, Hold / Watch and ineligibility with every failed economic and relationship gate retained.",
+      "All 28 maintained idea pages and canonical relationship state were searched. AI-infrastructure power and solar/storage were rejected as no-link because current primary evidence discloses no specific material transmission mechanism; there are no accepted, candidate, stale or contradicted edges, so no relationship or idea follow-up is required.",
+      "No strategy, signal, order, allocation, execution, cash, portfolio or performance state changed.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "papertrader schema validate --strict returned OK [schema].",
+      "papertrader queue validate returned OK [queue]."
+    ],
+    "passed": true
+  }
+}

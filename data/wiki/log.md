@@ -2770,3 +2770,15 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Identified [[ideas/idea_critical_minerals_lithium|Critical minerals and the lithium cycle]] as a
   causal candidate and queued one dependent relationship review; no candidate was presented as an
   accepted edge.
+
+## 2026-08-31 — Carlisle Companies security research
+
+- Revalidated [[securities/security_9b0db3bc77914b23a307|Carlisle Companies]] after the strengthened
+  28 August volume anomaly. The share fell 2.03% in the latest session and 9.82% from 29 July, while
+  the current SEC submissions index contained no new operating filing after the second-quarter Form
+  10-Q; the move remains unexplained risk attention rather than a verified fundamental catalyst.
+- The filed accounts confirm first-half revenue of USD 2.6224 billion, continuing-operations diluted
+  EPS of USD 9.43, USD 197.1 million operating cash flow, USD 665.3 million cash, USD 2.8849 billion
+  long-term debt, and USD 500 million of repurchases. A 25%/50%/25% `mature_compounder` valuation of
+  USD282.66/USD363.42/USD444.18 leaves only 4.86% weighted upside at the current mark. The conclusion
+  remains Hold / Watch with no relationship, strategy, signal, allocation, order, or paper trade.

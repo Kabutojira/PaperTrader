@@ -1,0 +1,18 @@
+{
+  "source_id": "source_csl_sec_submissions_20260831",
+  "url": "https://data.sec.gov/submissions/CIK0000790051.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0000790051.json",
+  "source_type": "regulator_index",
+  "title": "Carlisle Companies SEC submissions index checked 2026-08-31",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "public-record-not-stored",
+  "status": "available",
+  "content_hash": "69f134d545e3dd362d5892bb5b8df067f58264aec29c5fab7a0102dae897fb59",
+  "related_entity_ids": "security_9b0db3bc77914b23a307",
+  "checked_at": "2026-08-31T22:11:17Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "",
+  "summary": "The current SEC submissions index lists the 2026-07-30 Form 10-Q as Carlisle's latest periodic operating filing through the 2026-08-28 market-data date; the later Schedule 13G is ownership disclosure rather than operating evidence.",
+  "run_id": "daily-20260831T213829Z"
+}
