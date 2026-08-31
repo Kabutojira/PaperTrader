@@ -1,0 +1,25 @@
+{
+  "entity_id": "security_099561384c0f5e697727",
+  "entity_type": "security",
+  "inputs": {
+    "baseline_completed_at": "2026-08-31T09:07:14Z",
+    "baseline_operation_id": "01M19Z2R5RXPFGG3WGAN5RVBBK",
+    "baseline_result_path": "data/runs/daily-20260831T083100Z/01M19Z2R5RXPFGG3WGAN5RVBBK/agent_result.json",
+    "market_data_as_of": "2026-08-31T20:40:31Z",
+    "market_data_date": "2026-08-31",
+    "period_end": "2026-08-31",
+    "period_start": "2026-08-03",
+    "security_id": "security_099561384c0f5e697727",
+    "source_price_hash": "cf8522376dcd107085d16f819fec05b6e98c48f7f70d5ee909e6f5c15d52dc61",
+    "trigger_types": [
+      "bollinger_below_lower"
+    ]
+  },
+  "objective": "Quick-check security_099561384c0f5e697727 after price-action alerts: bollinger_below_lower; verify the latest research assumptions and escalate to full security research if any material gate changed.",
+  "operation_id": "01M1CRTPGRS7JD042RJ12Y964G",
+  "operation_type": "quick_check_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_099561384c0f5e697727-bollinger_below_lower-f9595b47800c.md"
+  ]
+}

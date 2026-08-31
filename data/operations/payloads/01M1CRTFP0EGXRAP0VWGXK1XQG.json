@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_055qQufQgog",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@Value-Investing",
+    "channel_id": "UCrTTBSUr0zhPU56UQljag5A",
+    "channel_url": "https://www.youtube.com/channel/UCrTTBSUr0zhPU56UQljag5A/videos",
+    "discovered_at": "2026-08-31T20:40:24Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_055qQufQgog",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "055qQufQgog",
+    "video_title": "Internationals & US Investing Strategic Approach!!! (4 Stocks To Buy)",
+    "video_url": "https://www.youtube.com/watch?v=055qQufQgog"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01M1CRTFP0EGXRAP0VWGXK1XQG",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=055qQufQgog"
+  ]
+}

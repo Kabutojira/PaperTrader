@@ -2,10 +2,43 @@
   "entity_id": "security_8a5c43888d224de85c69",
   "entity_type": "security",
   "inputs": {
-    "security_id": "security_8a5c43888d224de85c69"
+    "market_data_as_of": "2026-08-31T20:40:31Z",
+    "market_data_date": "2026-08-31",
+    "period_end": "2026-08-31",
+    "period_start": "2026-08-03",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_8a5c43888d224de85c69:initial-backfill:2026-07-29",
+        "observed_at": "2026-07-29T07:05:19Z",
+        "prompt": "Research PLS.AX — PLS Group Limited as an initial bounded security review.",
+        "source": "user-request:2026-07-29-unresearched-security-backfill",
+        "source_refs": []
+      },
+      {
+        "dedupe_key": "security_research:security_8a5c43888d224de85c69:a24a4f7d0f7777f454f8:2026-08-31",
+        "market_data_date": "2026-08-31",
+        "observed_at": "2026-08-31T20:40:31Z",
+        "prompt": "Research security_8a5c43888d224de85c69 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_8a5c43888d224de85c69-volume_anomaly-5f936629b218.md"
+        ],
+        "trigger_types": [
+          "volume_anomaly"
+        ]
+      }
+    ],
+    "security_id": "security_8a5c43888d224de85c69",
+    "source_price_hash": "82a5319e3a8066cfbaef7e174c577adf6f2f23c8c9c7ac9a241904f407ca9855",
+    "trigger_types": [
+      "volume_anomaly"
+    ]
   },
-  "objective": "Research PLS.AX — PLS Group Limited as an initial bounded security review.",
+  "objective": "Research PLS.AX — PLS Group Limited as an initial bounded security review. | Additional cause: Research security_8a5c43888d224de85c69 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
   "operation_id": "01KYPB29WRNJGPJTTY2DB72JWG",
   "operation_type": "security_research",
-  "payload_version": 1
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_8a5c43888d224de85c69-volume_anomaly-5f936629b218.md"
+  ]
 }

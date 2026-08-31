@@ -4,14 +4,48 @@
   "inputs": {
     "assessment_state": "2026-08-01T11:16:33Z",
     "maintenance_mode": "refresh",
+    "market_data_as_of": "2026-08-31T20:40:31Z",
+    "market_data_date": "2026-08-31",
+    "period_end": "2026-08-31",
+    "period_start": "2026-08-03",
     "research_page": "data/wiki/securities/security_dc8486c1d61df62a22fd.md",
-    "security_id": "security_dc8486c1d61df62a22fd"
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_dc8486c1d61df62a22fd:allocation-maintenance:2026-08-01T11:16:33Z",
+        "observed_at": "2026-08-24T15:39:57Z",
+        "prompt": "Revalidate security_dc8486c1d61df62a22fd with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_schneider_fy2025_results",
+          "source_schneider_h1_2026_results"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_dc8486c1d61df62a22fd:7bdabb045d962b63de22:2026-08-31",
+        "market_data_date": "2026-08-31",
+        "observed_at": "2026-08-31T20:40:31Z",
+        "prompt": "Research security_dc8486c1d61df62a22fd with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_dc8486c1d61df62a22fd-volume_anomaly-5cdef48da31a.md"
+        ],
+        "trigger_types": [
+          "volume_anomaly"
+        ]
+      }
+    ],
+    "security_id": "security_dc8486c1d61df62a22fd",
+    "source_price_hash": "ad69931719329c6e44fd2303180706c5da0a73c087b00ad95d2d40037638e44b",
+    "trigger_types": [
+      "volume_anomaly"
+    ]
   },
-  "objective": "Revalidate security_dc8486c1d61df62a22fd with current primary evidence and write one comparable allocation assessment.",
+  "objective": "Revalidate security_dc8486c1d61df62a22fd with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_dc8486c1d61df62a22fd with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
   "operation_id": "01M0T6VA687FHWK8HZ2SBAR5SB",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_dc8486c1d61df62a22fd-volume_anomaly-5cdef48da31a.md",
     "source_schneider_fy2025_results",
     "source_schneider_h1_2026_results"
   ]

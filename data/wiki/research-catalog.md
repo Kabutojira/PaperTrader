@@ -695,3 +695,30 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_099561384c0f5e697727-bollinger_below_lower-f9595b47800c|CSIQ — Bollinger below lower]]
+- [[inbox/market-security_3a75fc1ccca2ee7c937a-bollinger_above_upper-f8683998ccc4|QCOM — Bollinger above upper]]
+- [[inbox/market-security_4b61970aa8f574446819-volume_anomaly-89ebcd001471|GEV — Volume anomaly]]
+- [[inbox/market-security_7bf8f4c9cc12ae410e40-macd_cross_below_signal-03eef93becb5|ABCL — MACD cross below signal]]
+- [[inbox/market-security_8472507d7d320aa388a7-macd_cross_above_signal-f67ee5aaab55|CRWD — MACD cross above signal]]
+- [[inbox/market-security_8a5c43888d224de85c69-volume_anomaly-5f936629b218|PLS.AX — Volume anomaly]]
+- [[inbox/market-security_8b703a8adf5f864acaa4-volume_anomaly-ad4cc9c64aba|PRX — Volume anomaly]]
+- [[inbox/market-security_95351d928b674bbdf687-sma_50_cross_below_200-67ba5bedee30|DNA — SMA 50 cross below 200]]
+- [[inbox/market-security_98470cfc01bbcde78fc2-macd_cross_below_signal-18656f75b809|SOFI — MACD cross below signal]]
+- [[inbox/market-security_98a1943771da875efed5-macd_cross_below_signal-e0708ce9feda|NOMD — MACD cross below signal]]
+- [[inbox/market-security_9b0db3bc77914b23a307-volume_anomaly-bdcdeb54f9da|CSL — Volume anomaly]]
+- [[inbox/market-security_c5a9e460d3350284d157-macd_cross_above_signal-51bb5c25fbc0|VLO — MACD cross above signal]]
+- [[inbox/market-security_c5a9e460d3350284d157-rsi_overbought-98ff2ee0d783|VLO — RSI overbought]]
+- [[inbox/market-security_c9a37d277445869a8809-bollinger_above_upper-d16232370fb7|RBLX — Bollinger above upper]]
+- [[inbox/market-security_cc4dcb8f002b61dffe00-volume_anomaly-3d9ce6b8fa8c|PARRO.PA — Volume anomaly]]
+- [[inbox/market-security_cd492d97064d8574156e-macd_cross_below_signal-58e06ce15527|MP — MACD cross below signal]]
+- [[inbox/market-security_dc7a111e297be528d96b-bollinger_above_upper-1d8d5f16c033|TSLA — Bollinger above upper]]
+- [[inbox/market-security_dc7a111e297be528d96b-volume_anomaly-c680b3609846|TSLA — Volume anomaly]]
+- [[inbox/market-security_dc8486c1d61df62a22fd-volume_anomaly-5cdef48da31a|SU — Volume anomaly]]
+- [[inbox/market-security_e4822686f60a96824b6e-macd_cross_below_signal-b32adf35f84a|UBER — MACD cross below signal]]
+- [[inbox/market-security_eca976f0076a425ea1bb-bollinger_above_upper-dc8e14bf13a5|PATH — Bollinger above upper]]
+- [[inbox/market-security_eca976f0076a425ea1bb-rsi_overbought-d1ee56470adf|PATH — RSI overbought]]
+- [[inbox/market-security_f2b9760d847b2ba59324-macd_cross_below_signal-53738a0dc84b|ENPH — MACD cross below signal]]
+- [[inbox/market-security_f34181f3df32080a91d1-volume_anomaly-67e05580e8ae|DPZ — Volume anomaly]]
