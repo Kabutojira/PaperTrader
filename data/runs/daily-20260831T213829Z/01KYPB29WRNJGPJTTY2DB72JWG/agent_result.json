@@ -1,0 +1,89 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_8a5c43888d224de85c69",
+    "papertrader research source record --request data/runs/daily-20260831T213829Z/01KYPB29WRNJGPJTTY2DB72JWG/source_annual_report_record_request.json",
+    "papertrader research source record --request data/runs/daily-20260831T213829Z/01KYPB29WRNJGPJTTY2DB72JWG/source_results_presentation_record_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260831T213829Z/01KYPB29WRNJGPJTTY2DB72JWG/security_upsert_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260831T213829Z/01KYPB29WRNJGPJTTY2DB72JWG/security_upsert_request_v2.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260831T213829Z/01KYPB29WRNJGPJTTY2DB72JWG/assessment_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260831T213829Z/01KYPB29WRNJGPJTTY2DB72JWG/enqueue_lithium_relationship_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader research security upsert --request data/runs/daily-20260831T213829Z/01KYPB29WRNJGPJTTY2DB72JWG/security_upsert_request_v3.json",
+    "papertrader research security-context --security-id security_8a5c43888d224de85c69",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "PLS.AX first full review completed: AUD1.67/AUD3.67/AUD6.69 scenarios imply AUD3.925 weighted value versus AUD5.40; deterministic rating is Sell / Avoid and allocation remains ineligible. The 32.35% alert-period rally and volume anomaly do not justify a strategy. One dependent lithium-cycle relationship review was queued."
+  ],
+  "evidence": [
+    {
+      "claim": "PLS reported FY2026 revenue of AUD2.017 billion, underlying EBITDA of AUD1.137 billion, AUD809 million NPAT, 879.5 thousand tonnes of production, AUD2.290 billion cash and a 5-cent final dividend; the audited report also supports the debt, lease and project-risk inputs.",
+      "observed_at": "2026-08-31T21:53:45Z",
+      "source": "source_pls_fy2026_annual_report",
+      "source_hash": "e9bc4761d4b3ba682885ba4be0404b86772a99c6e3a8eaf0d223f3d16b19caf0",
+      "url": "https://www.pls.com/storage/announcements/2026-annual-report-incorporating-appendix-4e-2026-08-24.pdf"
+    },
+    {
+      "claim": "PLS guided FY2027 spodumene production to 1.03-1.10 million tonnes and FOB operating cost to AUD575-625 per tonne while reporting 1.2 million tonnes per annum installed capacity, a 31-year Pilgangoora mine life and P2000 and Colina growth work.",
+      "observed_at": "2026-08-31T21:53:45Z",
+      "source": "source_pls_fy2026_results_presentation",
+      "source_hash": "ff0ebc7481e2292faf13bb6fff4b7bfc82446b996d4fca3772be32962befa9f4",
+      "url": "https://www.pls.com/storage/announcements/fy26-full-year-results-presentation-2026-08-24.pdf"
+    },
+    {
+      "claim": "The canonical 3 August through 31 August 2026 observation records a 32.35% rise to AUD5.400000095367432 and a volume anomaly with strength 0.168819695; deterministic measurements were treated as data and not recalculated.",
+      "observed_at": "2026-08-31T20:40:31Z",
+      "source": "data/wiki/inbox/market-security_8a5c43888d224de85c69-volume_anomaly-5f936629b218.md",
+      "source_hash": "4f072b2ce8b01ca31459940210640439217814216f6dc78e9a393585971771a6"
+    },
+    {
+      "claim": "Deterministic schema-version-two output records AUD3.925 weighted fair value, -27.31481609848135798806922015% expected return, medium-confidence adjusted expected return of -20.48611207386101849105191511%, Sell / Avoid and ineligibility for base-return, payoff, expected-return, margin-of-safety and relationship gates.",
+      "source": "data/tables/security_assessments.csv"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M1CXAPXGPZJN42X158FFQSJ7.json",
+    "data/runs/daily-20260831T213829Z/01KYPB29WRNJGPJTTY2DB72JWG/assessment_upsert_request.json",
+    "data/runs/daily-20260831T213829Z/01KYPB29WRNJGPJTTY2DB72JWG/enqueue_lithium_relationship_request.json",
+    "data/runs/daily-20260831T213829Z/01KYPB29WRNJGPJTTY2DB72JWG/security_upsert_request.json",
+    "data/runs/daily-20260831T213829Z/01KYPB29WRNJGPJTTY2DB72JWG/security_upsert_request_v2.json",
+    "data/runs/daily-20260831T213829Z/01KYPB29WRNJGPJTTY2DB72JWG/security_upsert_request_v3.json",
+    "data/runs/daily-20260831T213829Z/01KYPB29WRNJGPJTTY2DB72JWG/source_annual_report_record_request.json",
+    "data/runs/daily-20260831T213829Z/01KYPB29WRNJGPJTTY2DB72JWG/source_results_presentation_record_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_8a5c43888d224de85c69.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KYPB29WRNJGPJTTY2DB72JWG",
+  "operations_created": [
+    "01M1CXAPXGPZJN42X158FFQSJ7"
+  ],
+  "status": "succeeded",
+  "summary": "Completed the first full research review of PLS Group Limited ordinary shares. Current FY2026 issuer evidence supports a scaled, low-cost and long-life Pilgangoora operation with a strong net-cash balance sheet, but the canonical AUD1.67/AUD3.67/AUD6.69 scenarios produce AUD3.925 probability-weighted value against the AUD5.400000095367432 mark. Deterministic assessment output is Sell / Avoid, allocation-ineligible, with no strategy or paper order. The 32.35% alert-period rise and volume anomaly are explained partly by current results and guidance but do not create an attractive entry. One dependent relationship review was queued for the lithium-cycle candidate; no candidate was represented as accepted.",
+  "validation": {
+    "checks": [
+      "The required security-context command succeeded before assessment work and the post-upsert context confirmed assessment_8682c7f3cb6d9401236c as the sole immutable version for this operation and run.",
+      "Immutable identity matches security_8a5c43888d224de85c69, issuer_915da51180459d692801, XASX, PLS.AX and AUD; the corrected unique security request succeeded without modifying the rejected request.",
+      "Both retained primary sources are registered available with HTTP 200 metadata, current 2026-08-31 checks and content hashes matching the fetched documents.",
+      "The assessment uses fresh identity-matched AUD5.400000095367432 market and AUD/EUR 0.616599977016449 FX observations as of 2026-08-31T21:38:36Z.",
+      "Bear, base and bull probabilities total 100; fair values are ordered; deterministic output derives Sell / Avoid, complete research and ineligible allocation with every failed gate retained.",
+      "The complete idea catalog and canonical relationship table were searched; lithium is labelled only as a candidate and exactly one dependent relationship-research operation was created for the plausible unaccepted edge.",
+      "No strategy, signal, order, allocation, execution, cash, portfolio or performance state changed.",
+      "papertrader schema validate --strict returned OK [schema].",
+      "papertrader queue validate returned OK [queue].",
+      "papertrader wiki lint --strict returned OK [wiki]."
+    ],
+    "passed": true
+  }
+}

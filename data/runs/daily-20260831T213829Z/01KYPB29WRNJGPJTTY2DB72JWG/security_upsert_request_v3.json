@@ -1,0 +1,23 @@
+{
+  "security_id": "security_8a5c43888d224de85c69",
+  "issuer_id": "issuer_915da51180459d692801",
+  "company_name": "PLS Group Limited",
+  "instrument_name": "PLS Group Limited ordinary shares",
+  "instrument_type": "equity",
+  "ticker": "PLS.AX",
+  "exchange_code": "ASX",
+  "venue_mic": "XASX",
+  "provider_symbol": "PLS.AX",
+  "broker_symbol": "",
+  "currency": "AUD",
+  "country": "AU",
+  "sector": "Basic Materials",
+  "industry": "Other Industrial Metals & Mining",
+  "status": "watching",
+  "watchlist_reason": "Monitor Pilgangoora lithium cycle exposure, FY2027 cost and volume delivery, P2000 and Colina economics, Korean hydroxide ramp, and balance-sheet discipline.",
+  "research_summary": "AUD3.93 weighted value versus AUD5.40 supports Sell / Avoid; the lithium-cycle relationship remains pending and no strategy is justified.",
+  "research_page": "data/wiki/securities/security_8a5c43888d224de85c69.md",
+  "last_research_at": "2026-08-31T21:53:45Z",
+  "next_review_at": "2026-09-30T21:53:45Z",
+  "source": "source_pls_fy2026_annual_report|source_pls_fy2026_results_presentation"
+}

@@ -673,6 +673,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Parrot S.A. ordinary shares](securities/security_cc4dcb8f002b61dffe00)
 - [PayPal Holdings, Inc. common stock](securities/security_1e8fbdb0f45f2b413e00)
 - [Planet Labs PBC Class A common stock](securities/security_97f38b2cb2d5ef127f5a)
+- [PLS Group Limited ordinary shares](securities/security_8a5c43888d224de85c69)
 - [Prosus N.V. ordinary shares N](securities/security_8b703a8adf5f864acaa4)
 - [QUALCOMM Incorporated common stock](securities/security_3a75fc1ccca2ee7c937a)
 - [Quanta Services, Inc. common stock](securities/security_488a9d7f7a8573597724)

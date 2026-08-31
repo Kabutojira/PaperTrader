@@ -2759,3 +2759,14 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Created candidate packet [[inbox/market-security_22c2b9d782a62d7a9b86-rsi_overbought-6cde77c2a6b1]] (6cde77c2a6b1).
 
 - Created candidate packet [[inbox/market-security_eca976f0076a425ea1bb-bollinger_above_upper-3f69e768f872]] (3f69e768f872).
+
+## 2026-08-31 — PLS Group security research
+
+- Created [[securities/security_8a5c43888d224de85c69|PLS Group Limited ordinary shares]]
+  from current FY2026 issuer evidence and the deterministic 3 August through 31 August alert.
+- Completed a `cyclical_commodity` valuation at AUD1.67/AUD3.67/AUD6.69 with 25%/50%/25%
+  probabilities. AUD3.93 weighted value is below the AUD5.40 mark, so the decision is Sell /
+  Avoid, with no strategy, signal, allocation or paper order.
+- Identified [[ideas/idea_critical_minerals_lithium|Critical minerals and the lithium cycle]] as a
+  causal candidate and queued one dependent relationship review; no candidate was presented as an
+  accepted edge.

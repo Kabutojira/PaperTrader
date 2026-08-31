@@ -1,0 +1,32 @@
+{
+  "operation_type": "relationship_research",
+  "entity_type": "relationship",
+  "entity_id": "relationship_f9733fd92289eaceddf4",
+  "dedupe_key": "relationship_research:idea_critical_minerals_lithium:security_8a5c43888d224de85c69:security-result:01KYPB29WRNJGPJTTY2DB72JWG",
+  "prompt": "Review whether PLS Group has a material causal relationship to the critical-minerals lithium cycle using current primary evidence; accept or reject the edge.",
+  "inputs": {
+    "relationship_id": "relationship_f9733fd92289eaceddf4",
+    "idea_id": "idea_critical_minerals_lithium",
+    "security_id": "security_8a5c43888d224de85c69",
+    "proposed_direction": "positive",
+    "proposed_mechanism": "Electric-vehicle and stationary-storage battery demand transmits through PLS's spodumene sales volumes and realized lithium prices; the effect reaches shareholders through operating margins, project returns and per-share cash generation.",
+    "proposed_invalidation": "Reject or invalidate the edge if lithium becomes economically immaterial, substitution or recycling structurally reduces demand, or industry supply prevents price and volume from reaching owner cash flow.",
+    "evidence_refs": [
+      "source_pls_fy2026_annual_report",
+      "source_pls_fy2026_results_presentation"
+    ]
+  },
+  "source": "security_research:01KYPB29WRNJGPJTTY2DB72JWG",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": ["01KYPB29WRNJGPJTTY2DB72JWG"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_8a5c43888d224de85c69.md",
+    "data/wiki/ideas/idea_critical_minerals_lithium.md",
+    "source_pls_fy2026_annual_report",
+    "source_pls_fy2026_results_presentation"
+  ],
+  "max_attempts": 3
+}
