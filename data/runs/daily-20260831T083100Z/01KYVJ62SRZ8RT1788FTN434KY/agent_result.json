@@ -1,0 +1,51 @@
+{
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader schema validate",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "SQM volume-anomaly opportunity research was blocked because its immutable market-data observation exceeded the 36-hour stale-price limit; a fresh deterministic observation is required before assessment."
+  ],
+  "evidence": [
+    {
+      "claim": "The immutable packet identifies security_9d4049ed6669a52815d6, an entered volume_anomaly transition for 2026-07-01 through 2026-07-30, with market_data_as_of 2026-07-31T07:45:55Z and source price hash 50d8d4b3cc530dac62a1b9fc0b75b2b24eb271813ba5568f5f626eb60a05c8cc.",
+      "observed_at": "2026-07-31T07:45:55Z",
+      "source": "data/wiki/inbox/market-security_9d4049ed6669a52815d6-volume_anomaly-91ad512dd477.md",
+      "source_hash": "50d8d4b3cc530dac62a1b9fc0b75b2b24eb271813ba5568f5f626eb60a05c8cc"
+    },
+    {
+      "claim": "The identity-matched SQM source bar for 2026-07-30 is present and has retrieved_at 2026-07-31T07:45:55Z; it cannot make the immutable observation fresh at this run's verification time.",
+      "observed_at": "2026-07-31T07:45:55Z",
+      "source": "data/market/prices/security_9d4049ed6669a52815d6.csv"
+    },
+    {
+      "claim": "market_data.stale_price_hours is 36, so the 745.3968258877777-hour age fails closed before primary-source research or an opportunity/risk/noise classification.",
+      "observed_at": "2026-08-31T09:08:56Z",
+      "source": "config.ini"
+    },
+    {
+      "claim": "security_9d4049ed6669a52815d6 is the immutable Sociedad Quimica y Minera de Chile S.A. ADS identity, provider symbol SQM, venue XNYS, and currency USD.",
+      "observed_at": "2026-08-31T09:08:56Z",
+      "source": "data/tables/securities.csv"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01KYVJ62SRZ8RT1788FTN434KY",
+  "operations_created": [],
+  "reason_code": "market_data_stale",
+  "status": "blocked",
+  "summary": "Blocked opportunity research because its immutable 2026-07-31T07:45:55Z market-data observation is 745.3968258877777 hours old at verification, exceeding the configured 36-hour stale-price limit. The SQM identity and 2026-07-30 source bar are present, but a fresh deterministic market-data observation is required before this historical volume-anomaly transition can be assessed. No wiki, follow-up, issue, trading, allocation, or accounting state was changed.",
+  "validation": {
+    "checks": [
+      "Validated the running queue row, live lease, payload identity, and controller preflight skill identities.",
+      "Validated the opportunity payload and immutable packet fields against the repository contracts.",
+      "Verified the SQM identity and the 2026-07-30 source bar, then confirmed the immutable observation age exceeds the configured stale-price limit.",
+      "scripts/papertrader schema validate passed.",
+      "scripts/papertrader wiki lint --strict passed.",
+      "Verified no trading, allocation, accounting, portfolio, or performance table changes."
+    ],
+    "passed": true
+  }
+}
