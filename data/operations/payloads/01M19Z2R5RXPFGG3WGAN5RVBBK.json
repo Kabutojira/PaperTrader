@@ -2,9 +2,11 @@
   "entity_id": "security_099561384c0f5e697727",
   "entity_type": "security",
   "inputs": {
+    "assessment_state": "2026-08-30T18:28:27Z",
     "baseline_operation_id": "01M15CV078368B412WAN3HK2FE",
     "changed_gate": "full_research_requested_and_corrected_market_bar_materially_changed_price_and_indicator_assumptions",
     "full_research_requested": true,
+    "maintenance_mode": "refresh",
     "market_data_as_of": "2026-08-30T18:28:27Z",
     "market_data_date": "2026-08-28",
     "merged_source_price_hashes": [
@@ -14,6 +16,7 @@
     "period_end": "2026-08-28",
     "period_start": "2026-07-31",
     "quick_check_operation_id": "01M19YW57RFRWWS5D72J4VE2DN",
+    "research_page": "data/wiki/securities/security_099561384c0f5e697727.md",
     "research_reasons": [
       {
         "cause": "bollinger_below_lower",
@@ -26,6 +29,19 @@
       {
         "cause": "corrected_august_28_market_bar",
         "source_ref": "data/market/prices/security_099561384c0f5e697727.csv"
+      },
+      {
+        "dedupe_key": "security_research:security_099561384c0f5e697727:allocation-maintenance:2026-08-30T18:28:27Z",
+        "observed_at": "2026-08-31T08:41:43Z",
+        "prompt": "Revalidate security_099561384c0f5e697727 with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_csiq_2025_20f",
+          "source_csiq_2026_green_notes",
+          "source_csiq_cobalt_20260813",
+          "source_csiq_q2_2026_results",
+          "source_csiq_sec_submissions_20260829"
+        ]
       }
     ],
     "security_id": "security_099561384c0f5e697727",
@@ -34,7 +50,7 @@
       "bollinger_below_lower"
     ]
   },
-  "objective": "Fully reassess Canadian Solar after the corrected August 28 market bar retained a strengthened lower-Bollinger-band breach and the payload explicitly requested full research.",
+  "objective": "Fully reassess Canadian Solar after the corrected August 28 market bar retained a strengthened lower-Bollinger-band breach and the payload explicitly requested full research. | Additional cause: Revalidate security_099561384c0f5e697727 with current primary evidence and write one comparable allocation assessment.",
   "operation_id": "01M19Z2R5RXPFGG3WGAN5RVBBK",
   "operation_type": "security_research",
   "payload_version": 1,

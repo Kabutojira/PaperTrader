@@ -9,7 +9,7 @@ provenance: "source_nbis_q1_2026_financials; source_nbis_july_2026_secured_finan
 security_id: security_47a0b06f6c6c478d7c1e
 issuer_id: issuer_489b0bfd13a06e7d7874
 confidence: medium
-next_review: "2026-08-25"
+next_review: "2026-09-17"
 ---
 
 # Nebius Group N.V. Class A ordinary shares

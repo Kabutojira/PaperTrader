@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-08-08"
-updated: "2026-08-30"
+updated: "2026-08-31"
 provenance: repository-contract
 ---
 
@@ -2651,3 +2651,14 @@ boundary after the combined log crossed the configured 5,000-line threshold.
   normalizes to 26.8%, but the pending accepted-relationship gate keeps the assessment ineligible.
 - Payload-requested dependent full security review `01M19Z2R5RXPFGG3WGAN5RVBBK` was queued. No
   strategy, signal, order, allocation or accounting state changed.
+
+## [2026-08-31] lint | Wiki maintenance health check
+
+- Audited all 633 Markdown pages against the native `llm-wiki` lint categories without network
+  access and recorded the bounded findings in
+  `data/runs/daily-20260831T083100Z/wiki-maintenance/wiki_maintenance_report.md`.
+- Aligned stale `next_review` frontmatter on
+  [[securities/security_47a0b06f6c6c478d7c1e|Nebius]] and
+  [[securities/security_ed7d5b616a196969c815|Recursion Pharmaceuticals]] with the later review dates
+  already stated in their maintained dispositions. No sourced claim or investment conclusion was
+  changed.
