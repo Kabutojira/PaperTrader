@@ -1,0 +1,23 @@
+{
+  "security_id": "security_dc7a111e297be528d96b",
+  "issuer_id": "issuer_a1f77a81ab2e06de9e77",
+  "company_name": "Tesla, Inc.",
+  "instrument_name": "Tesla, Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "TSLA",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "TSLA",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Consumer Cyclical",
+  "industry": "Auto Manufacturers",
+  "status": "watching",
+  "watchlist_reason": "Q2 scale and liquidity merit monitoring, but weak operating leverage, exceptional capital intensity, uncertain AI economics and an uncompelling current valuation keep TSLA allocation-ineligible.",
+  "research_summary": "USD 137/USD 272/USD 491 scenarios imply USD 293 weighted value versus USD 367.95 after the new volume anomaly; Sell / Avoid remains ineligible.",
+  "research_page": "data/wiki/securities/security_dc7a111e297be528d96b.md",
+  "last_research_at": "2026-08-31T22:31:16Z",
+  "next_review_at": "2026-09-30T22:31:16Z",
+  "source": "source_tsla_q2_2026_10q|source_tsla_q2_2026_deliveries|source_tsla_sec_submissions_20260819"
+}

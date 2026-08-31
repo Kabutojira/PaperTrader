@@ -1,0 +1,25 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_terafab_ai_industrial_stack",
+  "dedupe_key": "idea_research:idea_terafab_ai_industrial_stack:security-result:01M0N0ZVAGS4MCJ88XGJBZCS5S",
+  "prompt": "Refresh the Terafab AI industrial-stack idea from Tesla's completed repeat assessment, including candidate disposition, thesis, catalysts, risks, confidence and the broader investable-security universe.",
+  "inputs": {
+    "idea_id": "idea_terafab_ai_industrial_stack",
+    "seed_claim": "Tesla's unchanged USD 137/USD 272/USD 491 scenarios imply USD 293 weighted value versus USD 367.95 and retain Sell / Avoid; the accepted Terafab edge remains current, plausible, non-binding and unquantified.",
+    "security_id": "security_dc7a111e297be528d96b",
+    "security_research_operation_id": "01M0N0ZVAGS4MCJ88XGJBZCS5S",
+    "security_research_result_path": "data/runs/daily-20260831T213829Z/01M0N0ZVAGS4MCJ88XGJBZCS5S/agent_result.json"
+  },
+  "source": "security_research:01M0N0ZVAGS4MCJ88XGJBZCS5S",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": ["01M0N0ZVAGS4MCJ88XGJBZCS5S"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_dc7a111e297be528d96b.md",
+    "data/wiki/relationships/relationship_terafab_tsla.md"
+  ],
+  "max_attempts": 3
+}

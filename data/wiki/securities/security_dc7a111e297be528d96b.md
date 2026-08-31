@@ -7,7 +7,7 @@ tags:
   - research
   - risk
 created: "2026-07-29"
-updated: "2026-08-19"
+updated: "2026-08-31"
 provenance: "source_tsla_q2_2026_10q|source_tsla_q2_2026_deliveries|source_tsla_sec_submissions_20260819"
 security_id: security_dc7a111e297be528d96b
 issuer_id: issuer_a1f77a81ab2e06de9e77
@@ -23,10 +23,10 @@ next_review: "2026-09-18"
 
 ## Decision
 
-**Rating: Hold. Portfolio action: Watch.** A scenario-complete sum-of-parts review values Tesla at
+**Rating: Sell. Portfolio action: Avoid.** A scenario-complete sum-of-parts review values Tesla at
 USD 137 / USD 272 / USD 491 per share in the bear/base/bull cases over 12 months, with 25% / 50% /
-25% probabilities and USD 293 probability-weighted value. Against the USD 362.86 mark, expected
-return is about negative 19%; the base case remains below the market price and the bear case shows
+25% probabilities and USD 293 probability-weighted value. Against the USD 367.95 mark, expected
+return is about negative 20%; the base case remains below the market price and the bear case shows
 substantial downside. Strong liquidity and real automotive, energy-storage and AI development
 capacity do not offset weak current operating leverage, exceptional capital intensity and the
 market value already assigned to AI-enabled businesses without disclosed mature economics. Watch
@@ -95,30 +95,74 @@ primary evidence. At the higher mark, the unchanged USD 293 weighted value impli
 19.25% expected return, and the USD 217.60 buy-below price remains unreached. The alert is timing
 and valuation risk rather than a possible entry condition; no full review is warranted.
 
+### 2026-08-31 full review of the new volume anomaly
+
+The payload-bound period runs from 2026-08-03 through 2026-08-31. Adjusted close rose **14.24%**
+from USD 322.08 to USD 367.95. The August 31 session traded 61.16 million shares, producing a 2.64
+volume z-score and entering the configured `volume_anomaly`; the close also finished above the USD
+366.80 upper Bollinger band, while RSI was neutral at 58.69. The exact market-data price hash is
+`1182806b9c45a55f25266ebe0fd56c1c94e560ecb18a2fd3c49cf043aac9295a`. This is another material
+technical rerating, but it is valuation and timing risk rather than evidence of improved operating
+economics or an attractive entry.
+
+The SEC submissions index returned HTTP 200 on August 31 with the same registered byte hash. The
+latest operating filing remains the Q2 Form 10-Q filed July 23; no later periodic or current report
+changes revenue, margin, liquidity, cash-conversion, capital-spending, dilution or segment evidence.
+The Q2 thesis and scenario assumptions therefore remain supported. At the higher mark, unchanged
+USD 137 / USD 272 / USD 491 scenarios imply approximately negative 62.8% / negative 26.1% /
+positive 33.4% bear/base/bull returns, a USD 293 weighted value, approximately negative 20.4%
+expected return and an unreached USD 217.60 buy-below price. The alert warrants refreshed
+comparison but no strategy, signal or paper action.
+
 ## Changes since prior review
 
-- **Facts and evidence:** the SEC submissions index was rechecked on August 21 and remains unchanged;
+- **Facts and evidence:** the SEC submissions index was rechecked on August 31 and remains unchanged;
   the Q2 Form 10-Q is still the latest primary operating evidence. No revenue, margin, liquidity,
-  share-count or capital-spending fact changed, and no contradictory later filing was found.
-- **Assumptions and scenarios:** the unsupported legacy USD 169.26 / USD 264.97 two-case revenue
-  sensitivity is replaced by a current sum of parts. The new bear/base/bull values are USD 137 /
-  USD 272 / USD 491 with 25% / 50% / 25% probabilities. They separately bound annualized
-  automotive-and-services revenue, energy revenue, AI-enabled option value, USD 34.444 billion of
-  net cash and 3.540 billion diluted shares. The resulting USD 293 weighted value is below the
-  market price; no supported buy zone is reached.
+  share-count, capital-spending or contradictory operating fact changed. The new fact is market
+  behavior: a 14.24% payload-period gain, 2.64 volume z-score and upper-band close at USD 367.95.
+- **Assumptions and scenarios:** USD 137 / USD 272 / USD 491 fair values and 25% / 50% / 25%
+  probabilities are unchanged. Annualized automotive-and-services revenue, energy revenue,
+  AI-enabled option value, USD 34.444 billion net cash and 3.540 billion diluted shares remain the
+  scenario inputs. Only the reference mark and derived returns change; the USD 293 weighted value
+  and USD 217.60 buy-below price do not.
 - **Thesis, catalysts and risks:** the thesis is neither upgraded nor invalidated. Vehicle and
   energy scale plus balance-sheet capacity remain constructive; operating leverage, more than USD
   25 billion of expected 2026 capital spending, autonomy economics, dilution, governance and
   execution remain material risks. Margin improvement, profitable autonomy, durable energy margins
   and productive capital conversion remain the catalysts.
-- **Blockers and gaps:** the hard `valuation_unsupported` blocker is resolved by the complete
-  scenario set. Medium confidence, unfavorable timing, a below-target margin of safety and
-  uncompelling valuation remain soft gaps. The accepted medium-confidence Terafab relationship
-  completes the relationship frontier but adds no current component value because its framework is
+- **Blockers and gaps:** no hard blocker is present. Medium confidence, unfavorable timing, a
+  below-target margin of safety and uncompelling valuation remain unchanged soft gaps. The accepted
+  Terafab relationship remains current but adds no component value because its framework is
   non-binding and unquantified.
-- **Rating and action:** Hold / Watch and allocation ineligibility remain unchanged. The higher USD
-  362.86 mark worsens expected return and timing, so the volume anomaly does not justify a full
-  review, strategy or signal.
+- **Rating and action:** the current structured disposition remains Sell / Avoid and allocation
+  ineligible. The higher USD 367.95 mark further weakens expected return; no strategy or signal is
+  justified.
+
+## Idea exposure map
+
+- **Accepted-current — [[ideas/idea_terafab_ai_industrial_stack|Terafab and the vertically
+  coordinated AI hardware stack]]:** positive, medium-sensitivity transmission through specialized
+  vehicle, autonomy and robotics chips; the current evidence remains non-binding and unquantified.
+  See [[relationships/relationship_terafab_tsla]].
+- **Candidate — [[ideas/idea_humanoid_robotics_embodied_ai_components|humanoid robotics and
+  embodied-AI components]]:** positive but unproven direct exposure through Optimus manufacturing,
+  deployment and component demand. Q2 evidence supports substantial development spending, not
+  repeat paid deployment, attributable revenue, uptime or margins. A bounded relationship review
+  must accept or reject this edge.
+- **Candidate — [[ideas/idea_mobility_platform_autonomy|mobility-platform network economics and
+  autonomy]]:** direction is potentially positive for Tesla's autonomous fleet economics but
+  competitive for third-party marketplaces. The edge requires safe commercial scale and disclosed
+  vehicle, insurance, service, supervision and utilization economics; current Q2 evidence does not
+  establish them. A bounded relationship review must resolve the mechanism.
+- **Candidate — [[ideas/idea_solar_storage_grid_flexibility_reset|solar, storage and grid
+  flexibility]]:** positive direct exposure through Tesla Energy storage deployments and potential
+  grid-service economics, offset by capital intensity and missing segment cash-return disclosure.
+  Q2 deployment growth is material, but durable margins and cash conversion need a bounded
+  relationship review.
+- **Rejected-no-link:** the other maintained ideas were searched. Automotive scale, AI optionality
+  and a large balance sheet do not create a specific material transmission mechanism to unrelated
+  themes such as biotechnology, cybersecurity, critical-minerals extraction, defense replenishment,
+  consumer staples or payments; those superficial associations are not retained.
 
 ## Business and financial evidence
 
@@ -182,9 +226,9 @@ unproven AI businesses as current earnings.
   Vehicle margins recover, energy compounds with durable margins, and autonomy or robotics reaches
   safe commercial scale with demonstrable cash economics.
 
-The probability-weighted fair value is **USD 293**. Against the August 21 adjusted close of USD
-362.86, the bear/base/bull returns are approximately **negative 62.2% / negative 25.0% / positive
-35.3%**, and expected return is approximately **negative 19.3%** before the deterministic
+The probability-weighted fair value is **USD 293**. Against the August 31 adjusted close of USD
+367.95, the bear/base/bull returns are approximately **negative 62.8% / negative 26.1% / positive
+33.4%**, and expected return is approximately **negative 20.4%** before the deterministic
 confidence adjustment. The scenario set is complete but not attractive: the base case, expected
 return, downside payoff and margin of safety do not support an entry or a conviction strategy.
 
@@ -195,11 +239,11 @@ return, downside payoff and margin of safety do not support an entry or a convic
 - [Tesla Q2 2026 production, deliveries and deployments](https://ir.tesla.com/press-release/tesla-second-quarter-2026-production-deliveries-and-deployments)
   (`source_tsla_q2_2026_deliveries`, checked 2026-07-29).
 - [Tesla SEC submissions index](https://data.sec.gov/submissions/CIK0001318605.json)
-  (`source_tsla_sec_submissions_20260819`, rechecked 2026-08-21; unchanged byte hash).
+  (`source_tsla_sec_submissions_20260819`, rechecked 2026-08-31; unchanged byte hash).
 - Canonical market and indicator state: `data/market/latest.csv`,
   `data/market/indicators.csv`, and
   `data/market/prices/security_dc7a111e297be528d96b.csv`, retrieved
-  `2026-08-21T22:17:01Z` for the USD 362.86 current mark, indicators and payload-bound price hash.
+  `2026-08-31T21:38:36Z` for the USD 367.95 current mark, indicators and payload-bound price hash.
 
-Next review: **2026-09-18**, or sooner after material delivery, margin, autonomy, regulatory,
+Next review: **2026-09-30**, or sooner after material delivery, margin, autonomy, regulatory,
 capital-spending, financing, Terafab, governance or guidance evidence.

@@ -1,0 +1,18 @@
+{
+  "source_id": "source_tsla_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm",
+  "source_type": "regulator_filing",
+  "title": "Tesla, Inc. Q2 2026 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "public-record-not-stored",
+  "status": "available",
+  "content_hash": "80ad137ec40349c4a806e77e716c8391c6590eba2cbe8a8a1d80cbe1277034a2",
+  "related_entity_ids": "security_dc7a111e297be528d96b",
+  "checked_at": "2026-08-31T22:31:16Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "",
+  "summary": "Tesla's filed Q2 2026 Form 10-Q remains available and is still the latest periodic operating filing listed by the current SEC submissions index.",
+  "run_id": "daily-20260831T213829Z"
+}

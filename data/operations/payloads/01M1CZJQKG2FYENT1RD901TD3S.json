@@ -1,0 +1,24 @@
+{
+  "entity_id": "relationship_tsla_humanoid_robotics",
+  "entity_type": "relationship",
+  "inputs": {
+    "evidence_refs": [
+      "source_tsla_q2_2026_10q"
+    ],
+    "idea_id": "idea_humanoid_robotics_embodied_ai_components",
+    "proposed_direction": "positive",
+    "proposed_invalidation": "Reject the edge if Optimus remains demonstration-stage, fixed automation is more economic, repeat paid deployments and safe uptime do not emerge, or manufacturing and component costs prevent durable shareholder returns.",
+    "proposed_mechanism": "Repeat paid Optimus deployments could create direct robot revenue and demand for motion, sensing, edge-compute, power and material content, but current spending and prototypes do not establish uptime, customer economics, attributable revenue or margins.",
+    "relationship_id": "relationship_tsla_humanoid_robotics",
+    "security_id": "security_dc7a111e297be528d96b"
+  },
+  "objective": "Review whether Tesla has a material causal relationship to humanoid robotics and embodied AI through Optimus deployment and component economics; accept or reject the edge.",
+  "operation_id": "01M1CZJQKG2FYENT1RD901TD3S",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_humanoid_robotics_embodied_ai_components.md",
+    "data/wiki/securities/security_dc7a111e297be528d96b.md",
+    "source_tsla_q2_2026_10q"
+  ]
+}

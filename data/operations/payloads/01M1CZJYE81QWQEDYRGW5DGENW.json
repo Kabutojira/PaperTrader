@@ -1,0 +1,24 @@
+{
+  "entity_id": "relationship_tsla_mobility_autonomy",
+  "entity_type": "relationship",
+  "inputs": {
+    "evidence_refs": [
+      "source_tsla_q2_2026_10q"
+    ],
+    "idea_id": "idea_mobility_platform_autonomy",
+    "proposed_direction": "positive",
+    "proposed_invalidation": "Reject the edge if autonomy does not achieve safe regulatory scale, utilization and unit economics remain undisclosed or uneconomic, or third-party mobility networks retain customer demand without material Tesla shareholder value.",
+    "proposed_mechanism": "Safe commercial autonomy could let Tesla monetize vehicles through fleet utilization and recurring network services while disintermediating third-party marketplaces, provided economics after vehicles, insurance, service, compute and supervision are durable.",
+    "relationship_id": "relationship_tsla_mobility_autonomy",
+    "security_id": "security_dc7a111e297be528d96b"
+  },
+  "objective": "Review Tesla's causal relationship to mobility-platform network economics and autonomy, including direct fleet economics and marketplace disintermediation; accept or reject the edge.",
+  "operation_id": "01M1CZJYE81QWQEDYRGW5DGENW",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_mobility_platform_autonomy.md",
+    "data/wiki/securities/security_dc7a111e297be528d96b.md",
+    "source_tsla_q2_2026_10q"
+  ]
+}

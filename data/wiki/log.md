@@ -15,6 +15,21 @@ provenance: repository-contract
 This append-only current log continues an earlier non-public 2026 archive, rotated at a dated entry
 boundary after the combined log crossed the configured 5,000-line threshold.
 
+## [2026-08-31T22:31:16Z] security research | Tesla
+
+- Reassessed [[securities/security_dc7a111e297be528d96b|Tesla]] after the 31 August volume-anomaly
+  entry. The shares rose 14.24% from 3 August to USD 367.95, with a 2.64 volume z-score and an
+  upper-Bollinger-band close; this is adverse valuation and timing evidence, not an operating
+  catalyst.
+- The SEC submissions index reproduced its registered hash and still lists the 23 July Q2 Form
+  10-Q as the latest operating filing. USD 137 / USD 272 / USD 491 scenarios and medium confidence
+  are unchanged; the higher mark leaves the security Sell / Avoid and allocation-ineligible.
+- Kept [[ideas/idea_terafab_ai_industrial_stack|Terafab]] as an accepted current edge and identified
+  bounded candidate reviews for [[ideas/idea_humanoid_robotics_embodied_ai_components|humanoid
+  robotics]], [[ideas/idea_mobility_platform_autonomy|mobility and autonomy]], and
+  [[ideas/idea_solar_storage_grid_flexibility_reset|storage and grid flexibility]]. No strategy,
+  signal or paper order was created.
+
 ## [2026-08-31T08:45:47Z] security research | Canadian Solar
 
 - Completed the full reassessment of [[securities/security_099561384c0f5e697727|Canadian Solar]].

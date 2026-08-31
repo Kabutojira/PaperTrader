@@ -1,0 +1,99 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_dc7a111e297be528d96b",
+    "papertrader research source record --request data/runs/daily-20260831T213829Z/01M0N0ZVAGS4MCJ88XGJBZCS5S/source_tsla_sec_submissions_refresh_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260831T213829Z/01M0N0ZVAGS4MCJ88XGJBZCS5S/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260831T213829Z/01M0N0ZVAGS4MCJ88XGJBZCS5S/assessment_upsert_request.json",
+    "papertrader research source record --request data/runs/daily-20260831T213829Z/01M0N0ZVAGS4MCJ88XGJBZCS5S/source_tsla_q2_2026_10q_refresh_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260831T213829Z/01M0N0ZVAGS4MCJ88XGJBZCS5S/assessment_upsert_request_v2.json",
+    "papertrader queue enqueue --request data/runs/daily-20260831T213829Z/01M0N0ZVAGS4MCJ88XGJBZCS5S/enqueue_humanoid_relationship_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260831T213829Z/01M0N0ZVAGS4MCJ88XGJBZCS5S/enqueue_mobility_relationship_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260831T213829Z/01M0N0ZVAGS4MCJ88XGJBZCS5S/enqueue_solar_storage_relationship_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260831T213829Z/01M0N0ZVAGS4MCJ88XGJBZCS5S/enqueue_terafab_idea_refresh_request.json",
+    "papertrader research security-context --security-id security_dc7a111e297be528d96b",
+    "papertrader schema validate",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Tesla's 31 August volume anomaly followed a 14.24% payload-period gain to USD 367.95, but unchanged current SEC evidence and unchanged USD 137/USD 272/USD 491 scenarios leave USD 293 weighted fair value, -20.37% expected return and a Sell / Avoid, allocation-ineligible disposition; no strategy, signal or paper order was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The payload-bound 2026-08-03 through 2026-08-31 period rose 14.24% from USD 322.08 to USD 367.95; the 2026-08-31 session entered volume_anomaly at a 2.64 z-score and closed above the USD 366.80 upper Bollinger band with neutral 58.69 RSI.",
+      "observed_at": "2026-08-31T21:38:36Z",
+      "source": "data/market/prices/security_dc7a111e297be528d96b.csv and data/market/indicators.csv",
+      "source_hash": "1182806b9c45a55f25266ebe0fd56c1c94e560ecb18a2fd3c49cf043aac9295a"
+    },
+    {
+      "claim": "The SEC submissions index returned HTTP 200 with its unchanged registered hash and listed no operating filing newer than Tesla's Q2 2026 Form 10-Q through the market-data date.",
+      "observed_at": "2026-08-31T22:31:16Z",
+      "source": "source_tsla_sec_submissions_20260819",
+      "source_hash": "4478acfc395a7ae3e1766c9f436fafe2bd17a133335cae0c69de3110a5dcfac9",
+      "url": "https://data.sec.gov/submissions/CIK0001318605.json"
+    },
+    {
+      "claim": "Tesla's filed Q2 2026 Form 10-Q remained available and continued to support the retained automotive, energy, liquidity, capital-intensity, dilution and AI-economics assumptions used by the sum-of-parts scenarios.",
+      "observed_at": "2026-08-31T22:31:16Z",
+      "source": "source_tsla_q2_2026_10q",
+      "source_hash": "80ad137ec40349c4a806e77e716c8391c6590eba2cbe8a8a1d80cbe1277034a2",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm"
+    },
+    {
+      "claim": "Immutable assessment assessment_df6d99ee7bbbc7052df1 links predecessor assessment_962be736d9385812f4cd, schema version 2, this operation and result path, and research-page hash 496ef463af3a7def56a1e0d68d60d91247a00c10352515effb4b0d08f5084edf. It derives Sell / Avoid, quality score 72, USD 293 weighted fair value, -20.36961807868069184122798185% expected return and explicit failed economic gates.",
+      "source": "data/tables/security_assessment_history.csv"
+    },
+    {
+      "claim": "The sole canonical accepted Tesla edge is the current medium-confidence Terafab relationship. A complete maintained-idea search retained humanoid robotics, mobility/autonomy and solar/storage/grid flexibility as candidates requiring separate relationship review and rejected unrelated thematic associations without inventing canonical edges.",
+      "source": "data/tables/relationships.csv and data/wiki/research-catalog.md"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M1CZJQKG2FYENT1RD901TD3S.json",
+    "data/operations/payloads/01M1CZJYE81QWQEDYRGW5DGENW.json",
+    "data/operations/payloads/01M1CZK77GZ7WTZKV878JPFSHV.json",
+    "data/operations/payloads/01M1CZKD3083X4FHD9J1CJ52QS.json",
+    "data/runs/daily-20260831T213829Z/01M0N0ZVAGS4MCJ88XGJBZCS5S/assessment_upsert_request.json",
+    "data/runs/daily-20260831T213829Z/01M0N0ZVAGS4MCJ88XGJBZCS5S/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260831T213829Z/01M0N0ZVAGS4MCJ88XGJBZCS5S/enqueue_humanoid_relationship_request.json",
+    "data/runs/daily-20260831T213829Z/01M0N0ZVAGS4MCJ88XGJBZCS5S/enqueue_mobility_relationship_request.json",
+    "data/runs/daily-20260831T213829Z/01M0N0ZVAGS4MCJ88XGJBZCS5S/enqueue_solar_storage_relationship_request.json",
+    "data/runs/daily-20260831T213829Z/01M0N0ZVAGS4MCJ88XGJBZCS5S/enqueue_terafab_idea_refresh_request.json",
+    "data/runs/daily-20260831T213829Z/01M0N0ZVAGS4MCJ88XGJBZCS5S/security_upsert_request.json",
+    "data/runs/daily-20260831T213829Z/01M0N0ZVAGS4MCJ88XGJBZCS5S/source_tsla_q2_2026_10q_refresh_request.json",
+    "data/runs/daily-20260831T213829Z/01M0N0ZVAGS4MCJ88XGJBZCS5S/source_tsla_sec_submissions_refresh_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_dc7a111e297be528d96b.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0N0ZVAGS4MCJ88XGJBZCS5S",
+  "operations_created": [
+    "01M1CZJQKG2FYENT1RD901TD3S",
+    "01M1CZJYE81QWQEDYRGW5DGENW",
+    "01M1CZK77GZ7WTZKV878JPFSHV",
+    "01M1CZKD3083X4FHD9J1CJ52QS"
+  ],
+  "status": "succeeded",
+  "summary": "Completed one full repeat assessment of Tesla after the 2026-08-31 volume anomaly. The USD 367.95 close was 14.24% above the 2026-08-03 period start, with a 2.64 volume z-score and an upper-Bollinger-band close. Current SEC evidence did not change the Q2 operating thesis or the USD 137/USD 272/USD 491 scenarios. Deterministic assessment assessment_df6d99ee7bbbc7052df1 derives USD 293 weighted fair value, -20.37% expected return, -15.28% confidence-adjusted expected return and a Sell / Avoid, allocation-ineligible disposition. The accepted Terafab edge remains current; three bounded candidate relationship reviews and the required dependent Terafab idea refresh were queued. No strategy, signal, order, allocation or accounting state changed.",
+  "validation": {
+    "checks": [
+      "Mandatory pre-assessment security-context receipt succeeded before assessment state was read and the repeat context was consumed.",
+      "The initial immutable assessment request failed without changed paths because one evidence source was stale; the corrected v2 request used freshly rechecked SEC filing and submissions sources and succeeded.",
+      "Current assessment assessment_df6d99ee7bbbc7052df1 is schema version 2, links predecessor assessment_962be736d9385812f4cd and this operation/result path, and matches research-page hash 496ef463af3a7def56a1e0d68d60d91247a00c10352515effb4b0d08f5084edf.",
+      "Current price and USD/EUR FX observations share the fresh 2026-08-31T21:38:36Z identity; scenarios are ordered and probabilities total 100.",
+      "The complete idea catalog and the canonical accepted relationship row were searched; candidates are labeled separately and each has exactly one dependent relationship-research follow-up.",
+      "Exactly one dependent idea-research follow-up was created for the sole payload/current accepted idea, Terafab.",
+      "papertrader schema validate passed.",
+      "papertrader queue validate passed.",
+      "papertrader wiki lint --strict passed.",
+      "Observed changes contain no allocation targets/history, orders, fills, executions, cash, portfolio or performance paths."
+    ],
+    "passed": true
+  }
+}

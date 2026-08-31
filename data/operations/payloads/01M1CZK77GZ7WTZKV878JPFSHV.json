@@ -1,0 +1,26 @@
+{
+  "entity_id": "relationship_tsla_solar_storage_grid",
+  "entity_type": "relationship",
+  "inputs": {
+    "evidence_refs": [
+      "source_tsla_q2_2026_10q",
+      "source_tsla_q2_2026_deliveries"
+    ],
+    "idea_id": "idea_solar_storage_grid_flexibility_reset",
+    "proposed_direction": "positive",
+    "proposed_invalidation": "Reject the edge if deployment growth does not produce durable margins and cash conversion, capital intensity absorbs the economics, or policy, competition, warranty and project risks prevent value from reaching common shareholders.",
+    "proposed_mechanism": "Rising storage deployment and grid-flexibility demand can increase Tesla Energy revenue and potential service economics, provided deployments convert into durable segment margins and cash returns after manufacturing and working-capital investment.",
+    "relationship_id": "relationship_tsla_solar_storage_grid",
+    "security_id": "security_dc7a111e297be528d96b"
+  },
+  "objective": "Review whether Tesla has a material causal relationship to solar, storage and grid flexibility through energy deployments, margins and cash conversion; accept or reject the edge.",
+  "operation_id": "01M1CZK77GZ7WTZKV878JPFSHV",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_solar_storage_grid_flexibility_reset.md",
+    "data/wiki/securities/security_dc7a111e297be528d96b.md",
+    "source_tsla_q2_2026_10q",
+    "source_tsla_q2_2026_deliveries"
+  ]
+}

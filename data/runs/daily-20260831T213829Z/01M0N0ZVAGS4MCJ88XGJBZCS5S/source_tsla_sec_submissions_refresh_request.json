@@ -1,0 +1,18 @@
+{
+  "source_id": "source_tsla_sec_submissions_20260819",
+  "url": "https://data.sec.gov/submissions/CIK0001318605.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0001318605.json",
+  "source_type": "regulator_index",
+  "title": "Tesla SEC submissions index checked 2026-08-19",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "public-record-not-stored",
+  "status": "available",
+  "content_hash": "4478acfc395a7ae3e1766c9f436fafe2bd17a133335cae0c69de3110a5dcfac9",
+  "related_entity_ids": "security_dc7a111e297be528d96b",
+  "checked_at": "2026-08-31T22:31:16Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "",
+  "summary": "The SEC submissions index hash remains unchanged and lists no operating filing newer than Tesla's Q2 2026 Form 10-Q through the 2026-08-31 market-data date.",
+  "run_id": "daily-20260831T213829Z"
+}
