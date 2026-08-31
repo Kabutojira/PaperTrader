@@ -1,0 +1,18 @@
+{
+  "source_id": "source_gev_q2_2026_earnings",
+  "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681026000147/gevpressrelease2q26.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681026000147/gevpressrelease2q26.htm",
+  "source_type": "issuer-release",
+  "title": "GE Vernova Q2 2026 earnings release",
+  "publisher": "GE Vernova Inc.",
+  "license": "",
+  "status": "available",
+  "content_hash": "b5e167be8b90ad129ca9b64c5485b0ee746c57c55f7bcdb0613b4f7f4b527d4b",
+  "related_entity_ids": "idea_ai_infrastructure_power|security_4b61970aa8f574446819",
+  "checked_at": "2026-08-31T22:56:03Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "",
+  "summary": "The SEC-hosted Q2 results release is byte-identical to the retained copy and does not change the operating, guidance, backlog or cash-conversion baseline.",
+  "run_id": "daily-20260831T213829Z"
+}

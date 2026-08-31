@@ -15,6 +15,19 @@ provenance: repository-contract
 This append-only current log continues an earlier non-public 2026 archive, rotated at a dated entry
 boundary after the combined log crossed the configured 5,000-line threshold.
 
+## [2026-08-31T22:56:03Z] security research | GE Vernova
+
+- Reassessed [[securities/security_4b61970aa8f574446819|GE Vernova]] after the 31 August volume
+  anomaly. The shares fell 10.75% from 3 August and 1.47% on the final session with a 3.01 volume
+  z-score; weak RSI and bearish MACD make the move adverse risk evidence, not a verified operating
+  deterioration or entry catalyst.
+- The Q2 filing and results hashes remain unchanged. A new August 27 Form 8-K discloses planned CFO
+  succession but no updated operating result, guidance, backlog or cash flow.
+- Unchanged USD 571.58/USD 1,016.02/USD 1,386.39 scenarios now imply 11.0% expected return at the
+  USD 898.53 mark. The deterministic rating remains Hold; weak payoff ratios and a stale accepted
+  relationship keep action at Watch and allocation ineligible. No strategy, signal or paper order
+  was created.
+
 ## [2026-08-31T22:44:59Z] security research | Schneider Electric
 
 - Reassessed [[securities/security_dc8486c1d61df62a22fd|Schneider Electric]] after the 31 August

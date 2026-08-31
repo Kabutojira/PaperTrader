@@ -1,0 +1,23 @@
+{
+  "security_id": "security_4b61970aa8f574446819",
+  "issuer_id": "issuer_7bca479f6eb8c69f3ffb",
+  "company_name": "GE Vernova Inc.",
+  "instrument_name": "GE Vernova Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "GEV",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "GEV",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Industrials",
+  "industry": "Specialty Industrial Machinery",
+  "status": "watching",
+  "watchlist_reason": "Accepted exposure to AI infrastructure power bottlenecks; maintained for valuation, backlog conversion, CFO transition and relationship review.",
+  "research_summary": "Unchanged Q2 scenarios imply 11.0% expected return at USD 898.53, but weak downside payoff, adverse timing and a stale accepted relationship keep GEV at Hold / Watch.",
+  "research_page": "data/wiki/securities/security_4b61970aa8f574446819.md",
+  "last_research_at": "2026-08-31T22:56:03Z",
+  "next_review_at": "2026-09-30T22:56:03Z",
+  "source": "security_research:01M14TAVZGX126SABHZ9D8RQQ8"
+}

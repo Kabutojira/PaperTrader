@@ -1,0 +1,18 @@
+{
+  "source_id": "source_gev_sec_submissions_20260819",
+  "url": "https://data.sec.gov/submissions/CIK0001996810.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0001996810.json",
+  "source_type": "regulator_index",
+  "title": "GE Vernova SEC submissions index checked 2026-08-31",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "69d23bd2f4977a560227761ef5947e4ee3fbfeff853191c19cb02a6f39e723e9",
+  "related_entity_ids": "idea_ai_infrastructure_power|security_4b61970aa8f574446819",
+  "checked_at": "2026-08-31T22:56:03Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "The latest periodic report remains the 2026-07-22 Form 10-Q; a 2026-08-27 Form 8-K reports the planned chief financial officer succession.",
+  "summary": "The SEC submissions index changed because GE Vernova filed an August 27 current report about its planned chief financial officer transition; no newer operating results supersede Q2.",
+  "run_id": "daily-20260831T213829Z"
+}

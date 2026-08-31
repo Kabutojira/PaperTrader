@@ -1,0 +1,27 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_ai_infrastructure_power",
+  "dedupe_key": "idea_research:idea_ai_infrastructure_power:security-result:01M14TAVZGX126SABHZ9D8RQQ8",
+  "prompt": "Refresh the AI-infrastructure-and-power-bottlenecks idea from GE Vernova's completed August volume-anomaly and valuation review, including candidate disposition, thesis, catalysts, risks, confidence and the broader investable-security universe.",
+  "inputs": {
+    "idea_id": "idea_ai_infrastructure_power",
+    "seed_claim": "GE Vernova's unchanged Q2 Power and Electrification evidence still supports the bottleneck mechanism, while the 31 August volume anomaly and 10.75% period decline improve expected return but leave downside-payoff and stale-relationship gates unresolved.",
+    "security_id": "security_4b61970aa8f574446819",
+    "security_research_operation_id": "01M14TAVZGX126SABHZ9D8RQQ8",
+    "security_research_result_path": "data/runs/daily-20260831T213829Z/01M14TAVZGX126SABHZ9D8RQQ8/agent_result.json"
+  },
+  "source": "security_research:01M14TAVZGX126SABHZ9D8RQQ8",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": ["01M14TAVZGX126SABHZ9D8RQQ8"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_4b61970aa8f574446819.md",
+    "source_gev_q2_2026_10q",
+    "source_gev_q2_2026_earnings",
+    "source_gev_cfo_transition_20260827"
+  ],
+  "max_attempts": 3
+}

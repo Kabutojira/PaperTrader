@@ -1,0 +1,18 @@
+{
+  "source_id": "source_gev_cfo_transition_20260827",
+  "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681026000153/gev-20260825.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681026000153/gev-20260825.htm",
+  "source_type": "filing",
+  "title": "GE Vernova Form 8-K on chief financial officer transition",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "dcabd9ff6db6a2bbc221441ecabc2ec0c61e8ab99d57221e47e0eb4459e54d82",
+  "related_entity_ids": "security_4b61970aa8f574446819",
+  "checked_at": "2026-08-31T22:56:03Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Kenneth Parks plans to retire on April 2, 2027, and Claire McDonough is expected to become chief financial officer effective January 1, 2027 after joining as strategic advisor on November 1, 2026.",
+  "summary": "The August 27 Form 8-K discloses a planned chief financial officer succession and related compensation; it does not update Q2 operations, guidance, backlog or cash flow.",
+  "run_id": "daily-20260831T213829Z"
+}
