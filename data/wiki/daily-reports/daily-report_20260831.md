@@ -151,6 +151,7 @@ No pending orders.
 
 - [[model-portfolio|PaperTrader model portfolio]]
 - [[performance|PaperTrader performance and risk]]
+- [[podcasts/daily-podcast_20260831T083100Z|Daily research podcast — 2026-08-31T083100Z]]
 - [[research-catalog|PaperTrader research catalog]]
 - [[securities/security_099561384c0f5e697727|Canadian Solar Inc. common shares]]
 - [[security-catalog|PaperTrader tracked securities]]

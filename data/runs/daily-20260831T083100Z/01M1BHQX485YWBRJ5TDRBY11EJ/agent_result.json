@@ -1,0 +1,61 @@
+{
+  "commands_run": [
+    "papertrader podcast validate-script --daily-cycle-id daily-20260831T083100Z --script-path data/wiki/podcasts/daily-podcast_20260831T083100Z.md",
+    "papertrader podcast render-draft --daily-cycle-id daily-20260831T083100Z --script-path data/wiki/podcasts/daily-podcast_20260831T083100Z.md",
+    "papertrader schema validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader queue validate",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Published a 3,005-word research podcast covering Canadian Solar, Tencent and Prosus, defensive consumer cash-return economics, and Uber's autonomy tension; the single audited ephemeral draft render succeeded."
+  ],
+  "evidence": [
+    {
+      "claim": "Frozen podcast context version 3 defines the exclusive prior-podcast cutoff, inclusive 2026-08-31T09:10:38Z research cutoff, exact transcript path, 20-minute target and 3,000-word target.",
+      "source": "data/runs/daily-20260831T083100Z/podcast_context.json"
+    },
+    {
+      "claim": "The newest accepted Canadian Solar review retained Buy / Initiate at Watch tier, USD 10.16, USD 18.28 and USD 26.41 scenarios, and allocation ineligibility pending an accepted relationship.",
+      "source": "data/runs/daily-20260831T083100Z/01M19Z2R5RXPFGG3WGAN5RVBBK/agent_result.json"
+    },
+    {
+      "claim": "Prosus retained Buy / Initiate economics from its discounted look-through NAV while governance, debt, private marks and shareholder transmission constrained action.",
+      "source": "data/wiki/securities/security_8b703a8adf5f864acaa4.md"
+    },
+    {
+      "claim": "Tencent retained Buy / Initiate economics while AI capital intensity, cash conversion, regulation and ADR transmission constrained action.",
+      "source": "data/wiki/securities/security_de0d83229b369a426b99.md"
+    },
+    {
+      "claim": "The audited script preflight passed at 3,005 words and the one permitted render-draft invocation succeeded; all permitted strict project checks exited zero.",
+      "source": "data/runs/daily-20260831T083100Z/01M1BHQX485YWBRJ5TDRBY11EJ/command_audit.json"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260831T083100Z/01M1BHQX485YWBRJ5TDRBY11EJ/candidate_slate.md",
+    "data/runs/daily-20260831T083100Z/01M1BHQX485YWBRJ5TDRBY11EJ/editorial_outline.md",
+    "data/wiki/daily-reports/daily-report_20260831.md",
+    "data/wiki/podcasts/daily-podcast_20260831T083100Z.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M1BHQX485YWBRJ5TDRBY11EJ",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Created a 3,005-word standalone podcast with four chapters: Canadian Solar's attractive NAV against debt and cash-conversion risk; Tencent versus Prosus operating and holding-company transmission; defensive-consumer economics across Ahold Delhaize, Nomad Foods and Domino's; and Uber's network advantage under autonomy. Routine alert rechecks, maintenance, overlapping digital-finance work and lower-novelty AI coverage were excluded. The script states current accepted ratings and concrete Buy and Sell conditions for every discussed security. Deterministic preflight passed, and the single audited draft render succeeded with a 1,356-second ephemeral audio file outside the repository. The canonical daily report now contains exactly one transcript link; no audio reference, operation, issue, trading, allocation or accounting state was created.",
+  "validation": {
+    "checks": [
+      "Controller preflight identified native llm-wiki, papertrader-controller and papertrader-daily-podcast with sequential execution and the requested run and operation identities.",
+      "Frozen payload, context and daily-run manifest agree on data/wiki/podcasts/daily-podcast_20260831T083100Z.md.",
+      "Candidate slate maps every selected development into exactly one chapter and records novelty or audience-value exclusions.",
+      "The spoken transcript has the exact required opening, teaser, chapter sequence, security-rating endings, overall synthesis and exact required closing copy.",
+      "Deterministic script validation passed with 3,005 words in six render chunks and no prohibited spoken formatting or numeric glyphs.",
+      "Exactly one audited render-draft invocation succeeded and produced 1,356 seconds of ephemeral audio outside Git; no audio path or link was persisted in repository content.",
+      "The daily report contains the exact deterministic transcript link and no audio link.",
+      "Strict schema, integrity, wiki, queue and portfolio checks all returned OK.",
+      "No allocation targets/history, strategy, signal, order, execution, cash ledger, portfolio, fill or performance state changed."
+    ],
+    "passed": true
+  }
+}

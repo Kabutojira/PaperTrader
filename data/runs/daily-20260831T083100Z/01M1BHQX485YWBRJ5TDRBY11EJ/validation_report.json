@@ -1,0 +1,26 @@
+{
+  "auxiliary_models": {
+    "web_extract": "openai-codex:gpt-5.6-luna"
+  },
+  "changed_paths": [
+    "data/runs/daily-20260831T083100Z/01M1BHQX485YWBRJ5TDRBY11EJ/candidate_slate.md",
+    "data/runs/daily-20260831T083100Z/01M1BHQX485YWBRJ5TDRBY11EJ/editorial_outline.md",
+    "data/wiki/daily-reports/daily-report_20260831.md",
+    "data/wiki/podcasts/daily-podcast_20260831T083100Z.md"
+  ],
+  "effective_model": "gpt-5.6-sol",
+  "errors": [],
+  "escalation_source": "",
+  "maximum_turns": 160,
+  "mutation_policy": "full_research",
+  "operation_id": "01M1BHQX485YWBRJ5TDRBY11EJ",
+  "passed": true,
+  "profile": "deep",
+  "profile_policy_version": "profile-router-v1",
+  "reasoning_effort": "medium",
+  "route_reason": "strict_long_form_podcast_contract",
+  "run_id": "daily-20260831T083100Z",
+  "timeout_seconds": 1800,
+  "validation_version": 1,
+  "weighted_cost": "5"
+}
