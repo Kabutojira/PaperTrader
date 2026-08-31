@@ -7,13 +7,13 @@ tags:
 created: "2026-08-31"
 updated: "2026-08-31"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_5355e07e70f81c073bbd"
-as_of: "2026-08-31T09:10:38Z"
+snapshot_id: "decision_0a91d13794f70b4ff0fb"
+as_of: "2026-08-31T21:07:46Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-31T09:10:38Z`
+**As of:** `2026-08-31T21:07:46Z`
 **Investment data:** Blocked — current exposure cannot be projected safely
 **Operations:** Blocked
 **Publication validation:** Snapshot and exports validated
@@ -21,16 +21,16 @@ as_of: "2026-08-31T09:10:38Z"
 
 ## Coverage
 
-- Assessments: 52/78
-- Fresh-evidence assessments: 51/78
-- Relationship reviews: 20/78
-- Accepted relationships: 19
+- Assessments: 46/78
+- Fresh-evidence assessments: 45/78
+- Relationship reviews: 19/78
+- Accepted relationships: 18
 - Ready or active strategies: 0
 - Active signals: 0
 - Pending orders: 0
-- Market success/failure: 79/1
+- Market success/failure: 80/0
 - Candidate FX gaps: 0
-- Research backlog: 488
+- Research backlog: 516
 - Last successful daily run: 2026-08-28
 
 ## Current issues by investment impact
@@ -58,6 +58,7 @@ as_of: "2026-08-31T09:10:38Z"
 
 - Error **DNA — Ginkgo Bioworks Holdings, Inc.: Local harness operation validation failed: [[securities/security_95351d928b674bbdf687|Quick check research for DNA on 2026-08-07]]** — completed security research requires exactly one immutable assessment version; files_changed contains an unchanged old value: data/wiki/log.md; files_changed contains an unchanged old value: data/wiki/research-catalog.md; files_changed is stale or incomplete: reported=\['data/runs/[[daily-reports/daily-report_20260807|Daily report for 2026-08-07]]/[[securities/security_95351d928b674bbdf687|Quick check research for DNA on 2026-08-07]]/assessment_upsert_request.json', 'data/runs/[[daily-reports/daily-report_20260807|Daily report for 2026-08-07]]/[[securities/security_95351d928b674bbdf687|Quick check research for DNA on 2026-08-07]]/assessment_upsert_retry01_request.json', 'data/runs/local-daily
 - Error **RIO — Rio Tinto plc: Rio Tinto assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_1c055eb9b2bb1f5a8ff2|Quick check research for RIO on 2026-08-03]] and current security_research [[securities/security_1c055eb9b2bb1f5a8ff2|Security research for RIO on 2026-08-05]] claimed by run gha-30798126914-1 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope code
+- Error **Hermes operation validation failed: [[security-catalog#security-security_8a5c43888d224de85c69|Security research for PLS.AX on 2026-07-29]]** — completed security research requires exactly one immutable assessment version
 - Error **Hermes operation validation failed: [[securities/security_18a3ab0ee6086ee85d0f|Quick check research for ETN on 2026-08-11]]** — agent result schema: 'cd57fc97df50efa0657881b253fc96d4467881b253fc96d4467881b253fc96d446' does not match '^\[a-f0-9\]{64}$'; commands_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment; post-run integrity: agent result data/runs/[[daily-reports/daily-report_20260811|Daily report for 2026-08-11]]/[[securities/security_18a3ab0ee6086ee85d0f|Quick check research for ETN on 2026-08-11]]/agent_result.json: 'cd57fc97df50efa0657881b253fc96d4467881b253fc96d4467881b253fc96d446' does not match '^\[a-f0-9\]{64}$'
 - Error **ABBNY — ABB Ltd: ABB assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_c120e9f26ebb6159adf9|ABBNY]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_c120e9f26ebb6159adf9|Quick check research for ABBNY on 2026-08-09]] and current security_research [[securities/security_c120e9f26ebb6159adf9|Security research for ABBNY on 2026-08-10]] claimed by run [[daily-reports/daily-report_20260809|Daily report for 2026-08-09]] and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope
 - Error **RBLX — Roblox Corporation: Assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_c9a37d277445869a8809|RBLX]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_c9a37d277445869a8809|Quick check research for RBLX on 2026-08-03]] and current security_research [[securities/security_c9a37d277445869a8809|Security research for RBLX on 2026-08-03]] claimed by run gha-30793143744-1 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope code
@@ -196,11 +197,10 @@ as_of: "2026-08-31T09:10:38Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 488 active operations.
+Showing 20 of 516 active operations.
 
 <details><summary>Active research work</summary>
 
-- Ready — [[security-catalog#security-security_8a5c43888d224de85c69|Security research for PLS.AX on 2026-07-29]]
 - Ready — [[security-catalog#security-security_fe4648901e7675f157fd|Security research for ANIC.L on 2026-07-29]]
 - Ready — [[securities/security_8b703a8adf5f864acaa4|Strategy research for strategy for PRX on 2026-08-31]]
 - Ready — [[inbox/market-security_89969b7dac39b7db5661-rsi_oversold-a3f287ad1802|Wiki ingest for YEC.F — RSI oversold on 2026-07-30]]
@@ -220,6 +220,7 @@ Showing 20 of 488 active operations.
 - Ready — [[inbox/market-security_18a3ab0ee6086ee85d0f-bollinger_below_lower-59836b510b81|Wiki ingest for ETN — Bollinger below lower on 2026-07-30]]
 - Ready — [[inbox/market-security_89969b7dac39b7db5661-rsi_oversold-51314ebfffea|Wiki ingest for YEC.F — RSI oversold on 2026-07-31]]
 - Ready — [[inbox/market-security_d12e746b3c9d392183cc-bollinger_below_lower-4573b7d51796|Wiki ingest for META — Bollinger below lower on 2026-07-31]]
+- Ready — [[inbox/market-security_567d0d575bbd30aaa91d-volume_anomaly-58db175775da|Wiki ingest for SSU.VI — Volume anomaly on 2026-07-31]]
 
 </details>
 
