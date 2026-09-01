@@ -1254,4 +1254,5 @@ No pending orders.
 - [[model-portfolio|Model portfolio]]
 - [[signals|Signals]]
 - [[system-status|System status]]
+- [[podcasts/daily-podcast_20260901T181335Z|Daily research podcast — 2026-09-01T181335Z]]
 - GitHub report: https://github.com/Kabutojira/PaperTrader/blob/main/data/wiki/daily-reports/daily-report_20260901.md

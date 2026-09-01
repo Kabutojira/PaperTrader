@@ -1,0 +1,63 @@
+{
+  "daily_cycle_id": "daily-20260901T181335Z",
+  "context_version": 3,
+  "selected_developments": [
+    {
+      "operation_id": "01KYPB29WRNJGPJTTY2DB72JWG",
+      "chapter": "lithium-cycle rerating",
+      "reason": "PLS combines current annual results, a large price rerating, commodity-cycle tension, and a concrete valuation conclusion."
+    },
+    {
+      "operation_id": "01M0N0ZVAGS4MCJ88XGJBZCS5S",
+      "chapter": "electrification demand versus valuation",
+      "reason": "Tesla's market rerating against unchanged operating evidence and sum-of-parts value creates a clear investor tension."
+    },
+    {
+      "operation_id": "01M0T6VA687FHWK8HZ2SBAR5SB",
+      "chapter": "electrification demand versus valuation",
+      "reason": "Schneider provides strong direct evidence that data-centre power demand is converting, while valuation remains adverse."
+    },
+    {
+      "operation_id": "01M14TAVZGX126SABHZ9D8RQQ8",
+      "chapter": "electrification demand versus valuation",
+      "reason": "GE Vernova supplies a useful contrast: a falling price improved upside, but downside payoff still blocks action."
+    },
+    {
+      "operation_id": "01M17BKYBGQEP184VB3PX88DXG",
+      "chapter": "cybersecurity growth and shareholder economics",
+      "reason": "CrowdStrike's stronger fiscal-quarter evidence advances the operating thesis while every valuation scenario remains below market."
+    },
+    {
+      "operation_id": "01M1D1Y9JGWJR239XAQPDP30DW",
+      "chapter": "cybersecurity growth and shareholder economics",
+      "reason": "The refreshed accepted relationship explains how continuity demand reaches CrowdStrike and why the transmission remains conditional."
+    },
+    {
+      "operation_id": "01M1CRTPGR1RA2RS8DV9QG9KRV",
+      "chapter": "peak refining margins",
+      "reason": "Valero demonstrates how excellent current earnings can coexist with poor normalized forward returns after a momentum rally."
+    }
+  ],
+  "excluded_developments": [
+    {
+      "operation_id": "01M0N0ZVAG1E1CYRGNTGJY68QW",
+      "reason": "Carlisle was a routine unchanged recheck with no new operating catalyst, no causal edge, and no changed conclusion."
+    },
+    {
+      "operation_id": "01KYY98DWG0BHTGJG1AJDCN6QD",
+      "reason": "The Coinbase opportunity review only confirmed that a later full review had already absorbed the old alert."
+    },
+    {
+      "operation_id": "01KYY98DWG6RN4NEMK91VCVQXT",
+      "reason": "The DLocal crossover was stale noise already covered by a later accepted review."
+    },
+    {
+      "operation_id": "01KYY98DWGAW9HXR2P75J48C08",
+      "reason": "The Alphabet crossover was a weak stale technical signal with no new conclusion or follow-up."
+    },
+    {
+      "operation_id": "01KYY98DWGCVPZEPZZC76A5K9D",
+      "reason": "The Nidec opportunity review repeated an established accounting-risk conclusion and added no accepted research change."
+    }
+  ]
+}

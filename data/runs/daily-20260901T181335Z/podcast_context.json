@@ -1,0 +1,881 @@
+{
+  "background_wiki_pages": [
+    {
+      "path": "data/wiki/ideas/idea_ai_infrastructure_power.md",
+      "sha256": "5fa3fc37d47b29ae8126ce6b7323ced601848e47f6342fc5a8e4386507a669be"
+    },
+    {
+      "path": "data/wiki/ideas/idea_critical_minerals_lithium.md",
+      "sha256": "90640ec837e8d3554a01aa61f0ac2e7413fdc947e36ec70042ec34f9b7bc357f"
+    },
+    {
+      "path": "data/wiki/ideas/idea_cybersecurity_geopolitical_continuity.md",
+      "sha256": "5957130c8f6c48766f5c85dba313b83c3b10b010f2610f712b261a54c93cacab"
+    },
+    {
+      "path": "data/wiki/ideas/idea_energy_refining.md",
+      "sha256": "ba9e4fc602533f44f16f8f0505ff7414da517500a1834e58c2b1483a9b0c589d"
+    },
+    {
+      "path": "data/wiki/ideas/idea_solar_storage_grid_flexibility_reset.md",
+      "sha256": "e2dbc2576669f8f9bcf16442877ba34066ef37e102b3dbce8cd693f3a792f1cc"
+    },
+    {
+      "path": "data/wiki/securities/security_37ddcbdaad296ad831f2.md",
+      "sha256": "fc3a9dfc1b55e068e267fa26623b52b68acc2d36fc6b53145673e5eec50e4e58"
+    },
+    {
+      "path": "data/wiki/securities/security_3853e54c619d597dcaa1.md",
+      "sha256": "26ca066c7634d44a89dbdc01d96dbb19fb0bf8d9519a641f8cecf5046ecc6f45"
+    }
+  ],
+  "changed_wiki_pages": [
+    {
+      "path": "data/wiki/relationships/relationship_228f56aa5d91f3688b67.md",
+      "sha256": "b1223bb76b0f5f3337ce8b9de6ba72f08104595eaf43e64b9773ad79a0f871fc"
+    },
+    {
+      "path": "data/wiki/securities/security_4b61970aa8f574446819.md",
+      "sha256": "98de38c68e5cc2d0521bbf49e9bdf045a7a50fc9cc378b4fa0f084168eddc1d9"
+    },
+    {
+      "path": "data/wiki/securities/security_8472507d7d320aa388a7.md",
+      "sha256": "360ebefabba8801f9cc1f57e50c47990e854316382e9c2ec0c89a38582ea98e5"
+    },
+    {
+      "path": "data/wiki/securities/security_8a5c43888d224de85c69.md",
+      "sha256": "8344bba51d8dfa8412dd835ea9ff935ec8bf623b538fc3f4ea3f6e8c8408b56a"
+    },
+    {
+      "path": "data/wiki/securities/security_9b0db3bc77914b23a307.md",
+      "sha256": "c1256ae56d4c2521e60d937b6ffa0de18ddc52ead5bfdf590719a8740b1dd62e"
+    },
+    {
+      "path": "data/wiki/securities/security_c5a9e460d3350284d157.md",
+      "sha256": "cb88477da7d116fdcb3c811117f48769ac8def846af67f585a03bc3773032143"
+    },
+    {
+      "path": "data/wiki/securities/security_dc7a111e297be528d96b.md",
+      "sha256": "496ef463af3a7def56a1e0d68d60d91247a00c10352515effb4b0d08f5084edf"
+    },
+    {
+      "path": "data/wiki/securities/security_dc8486c1d61df62a22fd.md",
+      "sha256": "b7da5a07a5855b01071a5103bbed3eb72d384bb17b9db10c6ffede118ba8fb82"
+    }
+  ],
+  "daily_cycle_id": "daily-20260901T181335Z",
+  "decision_snapshot_path": "data/runs/daily-20260901T181335Z/decision_snapshot.json",
+  "decision_snapshot_sha256": "3af7fe81709d28f2e1770d59a61799c895a468b63b03a0263bc8da1d38d0b202",
+  "generated_at": "2026-09-01T18:30:19Z",
+  "intervening_daily_cycles": [
+    "daily-20260831T204023Z",
+    "daily-20260831T213829Z",
+    "daily-20260901T084440Z",
+    "daily-20260901T120230Z",
+    "daily-20260901T181335Z"
+  ],
+  "page_path": "data/wiki/podcasts/daily-podcast_20260901T181335Z.md",
+  "podcast_context_version": 3,
+  "portfolio_implication_paths": [
+    "data/runs/daily-20260901T181335Z/decision_snapshot.json",
+    "data/wiki/daily-reports/daily-report_20260901.md"
+  ],
+  "previous_successful_podcast": {
+    "context_path": "data/runs/daily-20260831T083100Z/podcast_context.json",
+    "context_sha256": "4a2b86049b0162d923212acd2c52e1efa149cd7c16ebebb3752dcb1b0ea25c0f",
+    "daily_cycle_id": "daily-20260831T083100Z",
+    "page_path": "data/wiki/podcasts/daily-podcast_20260831T083100Z.md",
+    "page_sha256": "9ca9781a4871c7e79f1cd124c6c722083a1de1f61411f6558aee661dbf59afbc",
+    "research_cutoff_at": "2026-08-31T09:10:38Z"
+  },
+  "report_path": "data/wiki/daily-reports/daily-report_20260901.md",
+  "report_sha256": "79ba28b7f2eb54716bda30d6e481bd213f3c0839dca6b241f2da94dbd2ef6063",
+  "research_cutoff_at": "2026-09-01T18:22:02Z",
+  "research_developments": [
+    {
+      "completed_at": "2026-08-31T22:05:34Z",
+      "daily_cycle_id": "daily-20260831T213829Z",
+      "daily_report_items": [
+        "PLS.AX first full review completed: AUD1.67/AUD3.67/AUD6.69 scenarios imply AUD3.925 weighted value versus AUD5.40; deterministic rating is Sell / Avoid and allocation remains ineligible. The 32.35% alert-period rally and volume anomaly do not justify a strategy. One dependent lithium-cycle relationship review was queued."
+      ],
+      "entity_id": "security_8a5c43888d224de85c69",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "PLS reported FY2026 revenue of AUD2.017 billion, underlying EBITDA of AUD1.137 billion, AUD809 million NPAT, 879.5 thousand tonnes of production, AUD2.290 billion cash and a 5-cent final dividend; the audited report also supports the debt, lease and project-risk inputs.",
+          "observed_at": "2026-08-31T21:53:45Z",
+          "source": "source_pls_fy2026_annual_report",
+          "source_hash": "e9bc4761d4b3ba682885ba4be0404b86772a99c6e3a8eaf0d223f3d16b19caf0",
+          "url": "https://www.pls.com/storage/announcements/2026-annual-report-incorporating-appendix-4e-2026-08-24.pdf"
+        },
+        {
+          "claim": "PLS guided FY2027 spodumene production to 1.03-1.10 million tonnes and FOB operating cost to AUD575-625 per tonne while reporting 1.2 million tonnes per annum installed capacity, a 31-year Pilgangoora mine life and P2000 and Colina growth work.",
+          "observed_at": "2026-08-31T21:53:45Z",
+          "source": "source_pls_fy2026_results_presentation",
+          "source_hash": "ff0ebc7481e2292faf13bb6fff4b7bfc82446b996d4fca3772be32962befa9f4",
+          "url": "https://www.pls.com/storage/announcements/fy26-full-year-results-presentation-2026-08-24.pdf"
+        },
+        {
+          "claim": "The canonical 3 August through 31 August 2026 observation records a 32.35% rise to AUD5.400000095367432 and a volume anomaly with strength 0.168819695; deterministic measurements were treated as data and not recalculated.",
+          "observed_at": "2026-08-31T20:40:31Z",
+          "source": "data/wiki/inbox/market-security_8a5c43888d224de85c69-volume_anomaly-5f936629b218.md",
+          "source_hash": "4f072b2ce8b01ca31459940210640439217814216f6dc78e9a393585971771a6"
+        },
+        {
+          "claim": "Deterministic schema-version-two output records AUD3.925 weighted fair value, -27.31481609848135798806922015% expected return, medium-confidence adjusted expected return of -20.48611207386101849105191511%, Sell / Avoid and ineligibility for base-return, payoff, expected-return, margin-of-safety and relationship gates.",
+          "source": "data/tables/security_assessments.csv"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1CXAPXGPZJN42X158FFQSJ7.json",
+        "data/runs/daily-20260831T213829Z/01KYPB29WRNJGPJTTY2DB72JWG/assessment_upsert_request.json",
+        "data/runs/daily-20260831T213829Z/01KYPB29WRNJGPJTTY2DB72JWG/enqueue_lithium_relationship_request.json",
+        "data/runs/daily-20260831T213829Z/01KYPB29WRNJGPJTTY2DB72JWG/security_upsert_request.json",
+        "data/runs/daily-20260831T213829Z/01KYPB29WRNJGPJTTY2DB72JWG/security_upsert_request_v2.json",
+        "data/runs/daily-20260831T213829Z/01KYPB29WRNJGPJTTY2DB72JWG/security_upsert_request_v3.json",
+        "data/runs/daily-20260831T213829Z/01KYPB29WRNJGPJTTY2DB72JWG/source_annual_report_record_request.json",
+        "data/runs/daily-20260831T213829Z/01KYPB29WRNJGPJTTY2DB72JWG/source_results_presentation_record_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/research-catalog.md",
+        "data/wiki/securities/security_8a5c43888d224de85c69.md"
+      ],
+      "operation_id": "01KYPB29WRNJGPJTTY2DB72JWG",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260831T213829Z/01KYPB29WRNJGPJTTY2DB72JWG/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed the first full research review of PLS Group Limited ordinary shares. Current FY2026 issuer evidence supports a scaled, low-cost and long-life Pilgangoora operation with a strong net-cash balance sheet, but the canonical AUD1.67/AUD3.67/AUD6.69 scenarios produce AUD3.925 probability-weighted value against the AUD5.400000095367432 mark. Deterministic assessment output is Sell / Avoid, allocation-ineligible, with no strategy or paper order. The 32.35% alert-period rise and volume anomaly are explained partly by current results and guidance but do not create an attractive entry. One dependent relationship review was queued for the lithium-cycle candidate; no candidate was represented as accepted."
+    },
+    {
+      "completed_at": "2026-08-31T22:27:27Z",
+      "daily_cycle_id": "daily-20260831T213829Z",
+      "daily_report_items": [
+        "CSL repeat review completed after the 28 August strengthened volume anomaly: the latest session fell 2.03% and the 29 July-to-28 August move was -9.82%, but current SEC filings disclose no new operating catalyst. USD282.66/USD363.42/USD444.18 scenarios imply USD363.42 weighted value and 4.86% expected return versus USD346.58; deterministic rating remains Hold / Watch and allocation is ineligible."
+      ],
+      "entity_id": "security_9b0db3bc77914b23a307",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "Carlisle's filed second-quarter Form 10-Q reports first-half revenue of USD2.6224 billion, continuing-operations diluted EPS of USD9.43, operating cash flow of USD197.1 million, USD665.3 million cash, USD2.8849 billion long-term debt and USD500 million of share repurchases.",
+          "observed_at": "2026-08-31T22:11:17Z",
+          "source": "source_csl_q2_2026_10q",
+          "source_hash": "abc77c6d4ac0f8d3bfbceffdf9ee938d5d1d1addcbc0671ef0850a5ebbfeffe8",
+          "url": "https://www.sec.gov/Archives/edgar/data/790051/000079005126000037/csl-20260630.htm"
+        },
+        {
+          "claim": "Carlisle's second-quarter release reports USD1.5 billion revenue, USD6.61 adjusted diluted EPS, segment margin pressure from price-cost and freight, and maintained full-year revenue and adjusted EPS guidance.",
+          "observed_at": "2026-08-31T22:11:17Z",
+          "source": "source_csl_q2_2026_release",
+          "source_hash": "eaddd9f8b58711b4912d80ef1a72d327f5ea85cafe345a8660320f76ed9db417",
+          "url": "https://www.sec.gov/Archives/edgar/data/790051/000079005126000033/q22026-ex991xearningsrelea.htm"
+        },
+        {
+          "claim": "The current SEC submissions index lists the 2026-07-30 Form 10-Q as Carlisle's latest periodic operating filing through the 2026-08-28 alert date; the later Schedule 13G is ownership disclosure, not operating evidence.",
+          "observed_at": "2026-08-31T22:11:17Z",
+          "source": "source_csl_sec_submissions_20260831",
+          "source_hash": "69f134d545e3dd362d5892bb5b8df067f58264aec29c5fab7a0102dae897fb59",
+          "url": "https://data.sec.gov/submissions/CIK0000790051.json"
+        },
+        {
+          "claim": "The canonical alert records a strengthened 2026-08-28 volume anomaly at 2.483443 times the 20-session average, with no simultaneous threshold trigger; the exact deterministic measurement was accepted as data.",
+          "observed_at": "2026-08-31T21:39:12Z",
+          "source": "data/wiki/inbox/market-security_9b0db3bc77914b23a307-volume_anomaly-bdcdeb54f9da.md",
+          "source_hash": "c4e2ddf7fe3533cde5a42ee9c6320e438c9903a34482761a00e321fc0d2831f0"
+        },
+        {
+          "claim": "Deterministic schema-version-two output records USD363.42 weighted fair value, 4.8589110970558245844487117% expected return, 3.644183322791868438336533775% medium-confidence-adjusted return, Hold / Watch and ineligibility for expected-return, base-return, payoff and relationship gates.",
+          "source": "data/tables/security_assessments.csv"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/runs/daily-20260831T213829Z/01M0N0ZVAG1E1CYRGNTGJY68QW/assessment_upsert_request.json",
+        "data/runs/daily-20260831T213829Z/01M0N0ZVAG1E1CYRGNTGJY68QW/assessment_upsert_request_v2.json",
+        "data/runs/daily-20260831T213829Z/01M0N0ZVAG1E1CYRGNTGJY68QW/security_upsert_request.json",
+        "data/runs/daily-20260831T213829Z/01M0N0ZVAG1E1CYRGNTGJY68QW/source_csl_fy2025_release_refresh_request.json",
+        "data/runs/daily-20260831T213829Z/01M0N0ZVAG1E1CYRGNTGJY68QW/source_csl_q2_2026_10q_record_request.json",
+        "data/runs/daily-20260831T213829Z/01M0N0ZVAG1E1CYRGNTGJY68QW/source_csl_q2_2026_release_refresh_request.json",
+        "data/runs/daily-20260831T213829Z/01M0N0ZVAG1E1CYRGNTGJY68QW/source_csl_sec_submissions_record_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_9b0db3bc77914b23a307.md"
+      ],
+      "operation_id": "01M0N0ZVAG1E1CYRGNTGJY68QW",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260831T213829Z/01M0N0ZVAG1E1CYRGNTGJY68QW/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed the repeat review of Carlisle Companies Incorporated after the strengthened 28 August volume anomaly. Current SEC evidence confirms resilient re-roofing demand and maintained guidance but also price-cost pressure, weak first-half cash conversion and meaningful net debt; no new operating filing explains the move. USD282.66/USD363.42/USD444.18 bear/base/bull scenarios produce USD363.42 probability-weighted value against the USD346.5799865722656 mark. Deterministic output is Hold / Watch and allocation-ineligible. The complete idea catalog and relationship state produced no specific material causal edge, so no relationship, idea or strategy follow-up was warranted and no paper order was created."
+    },
+    {
+      "completed_at": "2026-08-31T22:42:04Z",
+      "daily_cycle_id": "daily-20260831T213829Z",
+      "daily_report_items": [
+        "Tesla's 31 August volume anomaly followed a 14.24% payload-period gain to USD 367.95, but unchanged current SEC evidence and unchanged USD 137/USD 272/USD 491 scenarios leave USD 293 weighted fair value, -20.37% expected return and a Sell / Avoid, allocation-ineligible disposition; no strategy, signal or paper order was created."
+      ],
+      "entity_id": "security_dc7a111e297be528d96b",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The payload-bound 2026-08-03 through 2026-08-31 period rose 14.24% from USD 322.08 to USD 367.95; the 2026-08-31 session entered volume_anomaly at a 2.64 z-score and closed above the USD 366.80 upper Bollinger band with neutral 58.69 RSI.",
+          "observed_at": "2026-08-31T21:38:36Z",
+          "source": "data/market/prices/security_dc7a111e297be528d96b.csv and data/market/indicators.csv",
+          "source_hash": "1182806b9c45a55f25266ebe0fd56c1c94e560ecb18a2fd3c49cf043aac9295a"
+        },
+        {
+          "claim": "The SEC submissions index returned HTTP 200 with its unchanged registered hash and listed no operating filing newer than Tesla's Q2 2026 Form 10-Q through the market-data date.",
+          "observed_at": "2026-08-31T22:31:16Z",
+          "source": "source_tsla_sec_submissions_20260819",
+          "source_hash": "4478acfc395a7ae3e1766c9f436fafe2bd17a133335cae0c69de3110a5dcfac9",
+          "url": "https://data.sec.gov/submissions/CIK0001318605.json"
+        },
+        {
+          "claim": "Tesla's filed Q2 2026 Form 10-Q remained available and continued to support the retained automotive, energy, liquidity, capital-intensity, dilution and AI-economics assumptions used by the sum-of-parts scenarios.",
+          "observed_at": "2026-08-31T22:31:16Z",
+          "source": "source_tsla_q2_2026_10q",
+          "source_hash": "80ad137ec40349c4a806e77e716c8391c6590eba2cbe8a8a1d80cbe1277034a2",
+          "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm"
+        },
+        {
+          "claim": "Immutable assessment assessment_df6d99ee7bbbc7052df1 links predecessor assessment_962be736d9385812f4cd, schema version 2, this operation and result path, and research-page hash 496ef463af3a7def56a1e0d68d60d91247a00c10352515effb4b0d08f5084edf. It derives Sell / Avoid, quality score 72, USD 293 weighted fair value, -20.36961807868069184122798185% expected return and explicit failed economic gates.",
+          "source": "data/tables/security_assessment_history.csv"
+        },
+        {
+          "claim": "The sole canonical accepted Tesla edge is the current medium-confidence Terafab relationship. A complete maintained-idea search retained humanoid robotics, mobility/autonomy and solar/storage/grid flexibility as candidates requiring separate relationship review and rejected unrelated thematic associations without inventing canonical edges.",
+          "source": "data/tables/relationships.csv and data/wiki/research-catalog.md"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1CZJQKG2FYENT1RD901TD3S.json",
+        "data/operations/payloads/01M1CZJYE81QWQEDYRGW5DGENW.json",
+        "data/operations/payloads/01M1CZK77GZ7WTZKV878JPFSHV.json",
+        "data/operations/payloads/01M1CZKD3083X4FHD9J1CJ52QS.json",
+        "data/runs/daily-20260831T213829Z/01M0N0ZVAGS4MCJ88XGJBZCS5S/assessment_upsert_request.json",
+        "data/runs/daily-20260831T213829Z/01M0N0ZVAGS4MCJ88XGJBZCS5S/assessment_upsert_request_v2.json",
+        "data/runs/daily-20260831T213829Z/01M0N0ZVAGS4MCJ88XGJBZCS5S/enqueue_humanoid_relationship_request.json",
+        "data/runs/daily-20260831T213829Z/01M0N0ZVAGS4MCJ88XGJBZCS5S/enqueue_mobility_relationship_request.json",
+        "data/runs/daily-20260831T213829Z/01M0N0ZVAGS4MCJ88XGJBZCS5S/enqueue_solar_storage_relationship_request.json",
+        "data/runs/daily-20260831T213829Z/01M0N0ZVAGS4MCJ88XGJBZCS5S/enqueue_terafab_idea_refresh_request.json",
+        "data/runs/daily-20260831T213829Z/01M0N0ZVAGS4MCJ88XGJBZCS5S/security_upsert_request.json",
+        "data/runs/daily-20260831T213829Z/01M0N0ZVAGS4MCJ88XGJBZCS5S/source_tsla_q2_2026_10q_refresh_request.json",
+        "data/runs/daily-20260831T213829Z/01M0N0ZVAGS4MCJ88XGJBZCS5S/source_tsla_sec_submissions_refresh_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_dc7a111e297be528d96b.md"
+      ],
+      "operation_id": "01M0N0ZVAGS4MCJ88XGJBZCS5S",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260831T213829Z/01M0N0ZVAGS4MCJ88XGJBZCS5S/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed one full repeat assessment of Tesla after the 2026-08-31 volume anomaly. The USD 367.95 close was 14.24% above the 2026-08-03 period start, with a 2.64 volume z-score and an upper-Bollinger-band close. Current SEC evidence did not change the Q2 operating thesis or the USD 137/USD 272/USD 491 scenarios. Deterministic assessment assessment_df6d99ee7bbbc7052df1 derives USD 293 weighted fair value, -20.37% expected return, -15.28% confidence-adjusted expected return and a Sell / Avoid, allocation-ineligible disposition. The accepted Terafab edge remains current; three bounded candidate relationship reviews and the required dependent Terafab idea refresh were queued. No strategy, signal, order, allocation or accounting state changed."
+    },
+    {
+      "completed_at": "2026-08-31T22:54:08Z",
+      "daily_cycle_id": "daily-20260831T213829Z",
+      "daily_report_items": [
+        "Schneider Electric repeat review completed after the 31 August volume anomaly: the EUR294.60 close was 1.55% above 3 August, the session fell 2.37%, and volume reached a 2.55 z-score, but fresh issuer evidence showed no new operating catalyst. Unchanged EUR190/EUR240/EUR330 scenarios imply EUR250 weighted value and -15.14% expected return; deterministic rating remains Sell / Avoid, Watch tier and allocation-ineligible. One dependent AI-infrastructure-power relationship review was queued."
+      ],
+      "entity_id": "security_dc8486c1d61df62a22fd",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "Schneider Electric's H1 2026 issuer release reports record first-half revenue, adjusted EBITA and free cash flow, triple-digit second-quarter Data Center and Networks demand, higher net debt and upgraded full-year organic growth guidance; a fresh retrieval reproduced the registered document hash.",
+          "observed_at": "2026-08-31T22:44:59Z",
+          "source": "source_schneider_h1_2026_results",
+          "source_hash": "b1107b9dc93b4233bcf5335f7613fb41be0999bd3e573543cbae9a0519245a72",
+          "url": "https://www.se.com/ww/en/assets/pdf/release-hy-results-2026"
+        },
+        {
+          "claim": "Schneider Electric's FY2025 issuer release establishes the integrated data-centre exposure across electrical panels, UPS, racks, prefabricated solutions, cooling and digital offers; a fresh retrieval reproduced the registered document hash.",
+          "observed_at": "2026-08-31T22:44:59Z",
+          "source": "source_schneider_fy2025_results",
+          "source_hash": "5b17e6e8e5b8c47f697f5d352ed9639b98b261d9ecf886d3e8ce147493ebb00a",
+          "url": "https://www.se.com/ww/en/assets/564/document/528237/release-fy-results-2025.pdf"
+        },
+        {
+          "claim": "Canonical 31 August market state records a EUR294.6000061035156 adjusted close, -2.369509% one-session return, 1.551189% 20-session return, 2.554937 volume z-score, neutral 51.237622 RSI and a bearish MACD histogram; the weak anomaly was classified as noise.",
+          "observed_at": "2026-08-31T21:38:36Z",
+          "source": "data/market/indicators.csv",
+          "source_hash": "ad69931719329c6e44fd2303180706c5da0a73c087b00ad95d2d40037638e44b"
+        },
+        {
+          "claim": "Deterministic schema-version-two assessment assessment_7be713ccc996f281a300 derives EUR250 probability-weighted fair value, -15.13917351646089026196232008% expected return, -11.35438013734566769647174006% confidence-adjusted return, Sell / Avoid, Watch tier and ineligibility across expected-return, base-return, payoff, margin-of-safety and relationship gates.",
+          "source": "data/tables/security_assessments.csv"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1D0AFC04YGEQKEND1Y52F03.json",
+        "data/runs/daily-20260831T213829Z/01M0T6VA687FHWK8HZ2SBAR5SB/assessment_upsert_request.json",
+        "data/runs/daily-20260831T213829Z/01M0T6VA687FHWK8HZ2SBAR5SB/assessment_upsert_request_v2.json",
+        "data/runs/daily-20260831T213829Z/01M0T6VA687FHWK8HZ2SBAR5SB/assessment_upsert_request_v3.json",
+        "data/runs/daily-20260831T213829Z/01M0T6VA687FHWK8HZ2SBAR5SB/assessment_upsert_request_v4.json",
+        "data/runs/daily-20260831T213829Z/01M0T6VA687FHWK8HZ2SBAR5SB/assessment_upsert_request_v5.json",
+        "data/runs/daily-20260831T213829Z/01M0T6VA687FHWK8HZ2SBAR5SB/enqueue_ai_power_relationship_request.json",
+        "data/runs/daily-20260831T213829Z/01M0T6VA687FHWK8HZ2SBAR5SB/security_upsert_request.json",
+        "data/runs/daily-20260831T213829Z/01M0T6VA687FHWK8HZ2SBAR5SB/source_schneider_fy2025_refresh_request.json",
+        "data/runs/daily-20260831T213829Z/01M0T6VA687FHWK8HZ2SBAR5SB/source_schneider_h1_2026_refresh_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_dc8486c1d61df62a22fd.md"
+      ],
+      "operation_id": "01M0T6VA687FHWK8HZ2SBAR5SB",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260831T213829Z/01M0T6VA687FHWK8HZ2SBAR5SB/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed one full repeat assessment of Schneider Electric after the 2026-08-31 volume anomaly. Fresh issuer retrievals reproduced the H1 2026 and FY2025 hashes and disclosed no later operating catalyst; the weak anomaly is noise. Unchanged EUR190/EUR240/EUR330 scenarios against the EUR294.6000061035156 mark produce EUR250 weighted value, -15.13917351646089026196232008% expected return and -11.35438013734566769647174006% confidence-adjusted return. Deterministic assessment assessment_7be713ccc996f281a300 remains Sell / Avoid, Watch tier and allocation-ineligible. The complete idea catalog produced one plausible unaccepted AI-infrastructure-power edge, so exactly one dependent relationship review was queued. No strategy, signal, order, allocation or accounting state changed."
+    },
+    {
+      "completed_at": "2026-08-31T23:07:03Z",
+      "daily_cycle_id": "daily-20260831T213829Z",
+      "daily_report_items": [
+        "GE Vernova repeat review completed after the 31 August volume anomaly: GEV fell 10.75% over the supplied period and 1.47% on the final session with a 3.01 volume z-score. Q2 primary evidence was unchanged and the later Form 8-K only disclosed planned CFO succession. Unchanged scenarios imply 11.01% expected return at USD 898.53, but both downside-payoff gates fail; deterministic disposition remains Hold / Watch, Watch tier and allocation-ineligible. One dependent AI-infrastructure-power idea refresh was queued, with no strategy or paper order."
+      ],
+      "entity_id": "security_4b61970aa8f574446819",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The byte-identical Q2 2026 Form 10-Q remains the latest periodic filing and retains the valuation inputs of USD 13.120 billion cash and restricted cash, USD 2.794 billion long-term borrowings and 270 million diluted weighted-average shares.",
+          "observed_at": "2026-08-31T22:56:03Z",
+          "source": "source_gev_q2_2026_10q",
+          "source_hash": "6ce971b5ee1a4cba2c219535c6f9188d433a29812d1dce5c67d3fcd087eada63",
+          "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681026000148/gev-20260630.htm"
+        },
+        {
+          "claim": "The SEC-hosted Q2 earnings release reproduced the retained hash and supplied no changed operating, guidance, backlog or cash-conversion evidence.",
+          "observed_at": "2026-08-31T22:56:03Z",
+          "source": "source_gev_q2_2026_earnings",
+          "source_hash": "b5e167be8b90ad129ca9b64c5485b0ee746c57c55f7bcdb0613b4f7f4b527d4b",
+          "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681026000147/gevpressrelease2q26.htm"
+        },
+        {
+          "claim": "The August 27 Form 8-K says Kenneth Parks plans to retire on April 2, 2027 and Claire McDonough is expected to become CFO effective January 1, 2027; it contains no updated operating result, guidance, backlog or cash flow.",
+          "observed_at": "2026-08-31T22:56:03Z",
+          "source": "source_gev_cfo_transition_20260827",
+          "source_hash": "dcabd9ff6db6a2bbc221441ecabc2ec0c61e8ab99d57221e47e0eb4459e54d82",
+          "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681026000153/gev-20260825.htm"
+        },
+        {
+          "claim": "Canonical 31 August state records USD 898.530029296875 adjusted close, -1.469407% one-session return, -10.750326% 20-session return, 3.006924 volume z-score, 35.459527 RSI and MACD below signal; the alert was classified as adverse market-risk evidence without verified operating deterioration.",
+          "observed_at": "2026-08-31T21:38:36Z",
+          "source": "data/market/indicators.csv",
+          "source_hash": "ad69931719329c6e44fd2303180706c5da0a73c087b00ad95d2d40037638e44b"
+        },
+        {
+          "claim": "Deterministic schema-version-two assessment assessment_2b688aa3f035d5c0610a derives USD 997.5025 probability-weighted fair value, 11.0149318860910792067882139% expected return, 8.261198914568309405091160425% confidence-adjusted return, Hold / Watch, Watch tier and ineligibility because bear/base and expected/bear payoff gates fail.",
+          "source": "data/tables/security_assessments.csv"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1D0ZZV84HVMXVVTTN6TT223.json",
+        "data/runs/daily-20260831T213829Z/01M14TAVZGX126SABHZ9D8RQQ8/assessment_upsert_request.json",
+        "data/runs/daily-20260831T213829Z/01M14TAVZGX126SABHZ9D8RQQ8/assessment_upsert_request_v2.json",
+        "data/runs/daily-20260831T213829Z/01M14TAVZGX126SABHZ9D8RQQ8/assessment_upsert_request_v3.json",
+        "data/runs/daily-20260831T213829Z/01M14TAVZGX126SABHZ9D8RQQ8/enqueue_ai_power_idea_refresh_request.json",
+        "data/runs/daily-20260831T213829Z/01M14TAVZGX126SABHZ9D8RQQ8/security_upsert_request.json",
+        "data/runs/daily-20260831T213829Z/01M14TAVZGX126SABHZ9D8RQQ8/security_upsert_request_v2.json",
+        "data/runs/daily-20260831T213829Z/01M14TAVZGX126SABHZ9D8RQQ8/source_gev_cfo_transition_20260827_record_request.json",
+        "data/runs/daily-20260831T213829Z/01M14TAVZGX126SABHZ9D8RQQ8/source_gev_q2_2026_10q_refresh_request.json",
+        "data/runs/daily-20260831T213829Z/01M14TAVZGX126SABHZ9D8RQQ8/source_gev_q2_2026_earnings_refresh_request.json",
+        "data/runs/daily-20260831T213829Z/01M14TAVZGX126SABHZ9D8RQQ8/source_gev_sec_submissions_20260831_refresh_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_4b61970aa8f574446819.md"
+      ],
+      "operation_id": "01M14TAVZGX126SABHZ9D8RQQ8",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260831T213829Z/01M14TAVZGX126SABHZ9D8RQQ8/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed one repeat assessment of GE Vernova after the 2026-08-31 volume anomaly. GEV fell 10.75% over the supplied period and 1.47% on the final session with a 3.01 volume z-score, while fresh primary-source checks found unchanged Q2 evidence and only a planned CFO succession in the later Form 8-K. Unchanged USD 571.58/USD 1,016.02/USD 1,386.39 scenarios against the USD 898.530029296875 mark produce USD 997.5025 weighted value, 11.0149318860910792067882139% expected return and 8.261198914568309405091160425% confidence-adjusted return. Deterministic assessment assessment_2b688aa3f035d5c0610a remains Hold / Watch, Watch tier and allocation-ineligible because both downside-payoff gates fail. Exactly one dependent AI-infrastructure-power idea refresh was queued; existing canonical relationship reviews were not duplicated. No strategy, signal, order, allocation or accounting state changed."
+    },
+    {
+      "completed_at": "2026-08-31T23:24:13Z",
+      "daily_cycle_id": "daily-20260831T213829Z",
+      "daily_report_items": [
+        "CrowdStrike repeat research completed after a 14.05% rise and bullish MACD transition: fiscal-Q2 net-new ARR and guidance strengthened the operating thesis, but USD72.02/USD109.85/USD151.49 scenarios remain below the USD231 mark. The deterministic result remains Strong Sell / Avoid, Watch tier and allocation-ineligible. One dependent relationship refresh and one dependent cybersecurity-continuity idea refresh were queued; no strategy or paper order was created."
+      ],
+      "entity_id": "security_8472507d7d320aa388a7",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The fiscal-Q2 Form 10-Q reports USD 1.470897 billion quarterly revenue, USD 5.841421 billion ending ARR, USD 332.8 million quarterly net-new ARR, USD 1.121205 billion six-month operating cash flow, USD 5.013851 billion cash, USD 746.220 million long-term debt and 1.044469 billion diluted weighted-average shares.",
+          "observed_at": "2026-08-31T23:11:08Z",
+          "source": "source_crwd_q2_2027_10q",
+          "source_hash": "496e90560b4daaf992d261dd6eba3824e808e48fb12812205046a191e41318c1",
+          "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000031/crwd-20260731.htm"
+        },
+        {
+          "claim": "The SEC-hosted results exhibit reports 25% ARR growth, 51% quarterly net-new ARR growth, USD 377.4 million quarterly free cash flow, broader eight-plus-module adoption and raised fiscal-2027 revenue guidance of USD 5.9911-6.0111 billion.",
+          "observed_at": "2026-08-31T23:11:08Z",
+          "source": "source_crwd_q2_2027_results_exhibit",
+          "source_hash": "55bfc3ec3d51b325dcc39a3b1d23a2ef7a56d9b9d216c456a3d39b50083fdfcb",
+          "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm"
+        },
+        {
+          "claim": "The SEC submissions index lists the August 26 results Form 8-K and August 27 fiscal-Q2 Form 10-Q as the latest operating filings through August 31; the only later listed filing is an ownership Form 4.",
+          "observed_at": "2026-08-31T23:11:08Z",
+          "source": "source_crwd_sec_submissions_20260831",
+          "source_hash": "3610901d90576f6eaa8dd7186f5036929c7b810c5de9e78e70c52fc5fc28b461",
+          "url": "https://data.sec.gov/submissions/CIK0001535527.json"
+        },
+        {
+          "claim": "Canonical market state supplies the USD 231 August 31 mark and the exact August 3 through August 31 alert period; deterministic indicator state records a 14.05% period return and bullish MACD transition with 0.3732 strength.",
+          "observed_at": "2026-08-31T21:38:36Z",
+          "source": "data/market/prices/security_8472507d7d320aa388a7.csv",
+          "source_hash": "50111a4d340baa1e6dc29429a54e3b544241063f22cf15751678af6d74789e13"
+        },
+        {
+          "claim": "Deterministic schema-version-two assessment assessment_5e7d8fe3583fb1fb090a derives USD 110.8025 weighted fair value, -52.03354978354978354978354978% expected return, -39.02516233766233766233766234% confidence-adjusted return, Strong Sell / Avoid, Watch tier and ineligibility because every economic gate fails.",
+          "source": "data/tables/security_assessments.csv"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1D1Y9JGWJR239XAQPDP30DW.json",
+        "data/operations/payloads/01M1D1YZ20QNHRKW86E9PW5Q4C.json",
+        "data/runs/daily-20260831T213829Z/01M17BKYBGQEP184VB3PX88DXG/assessment_upsert_request.json",
+        "data/runs/daily-20260831T213829Z/01M17BKYBGQEP184VB3PX88DXG/assessment_upsert_request_v2.json",
+        "data/runs/daily-20260831T213829Z/01M17BKYBGQEP184VB3PX88DXG/enqueue_cybersecurity_idea_refresh_request.json",
+        "data/runs/daily-20260831T213829Z/01M17BKYBGQEP184VB3PX88DXG/enqueue_cybersecurity_relationship_refresh_request.json",
+        "data/runs/daily-20260831T213829Z/01M17BKYBGQEP184VB3PX88DXG/enqueue_cybersecurity_relationship_refresh_request_v2.json",
+        "data/runs/daily-20260831T213829Z/01M17BKYBGQEP184VB3PX88DXG/security_upsert_request.json",
+        "data/runs/daily-20260831T213829Z/01M17BKYBGQEP184VB3PX88DXG/source_crwd_q2_2027_10q_record_request.json",
+        "data/runs/daily-20260831T213829Z/01M17BKYBGQEP184VB3PX88DXG/source_crwd_q2_2027_results_exhibit_record_request.json",
+        "data/runs/daily-20260831T213829Z/01M17BKYBGQEP184VB3PX88DXG/source_crwd_sec_submissions_20260831_record_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_8472507d7d320aa388a7.md"
+      ],
+      "operation_id": "01M17BKYBGQEP184VB3PX88DXG",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260831T213829Z/01M17BKYBGQEP184VB3PX88DXG/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed exactly one repeat assessment of CrowdStrike after the 2026-08-31 bullish MACD transition and 14.05% alert-period rise to USD 231. Current SEC primary evidence shows fiscal-Q2 revenue of USD 1.471 billion, ending ARR of USD 5.841 billion, 51% net-new ARR growth and raised fiscal-2027 guidance, alongside a lower quarterly free-cash-flow margin, USD 399.0 million of stock compensation and payroll taxes, acquisition spending and persistent incident risk. Refreshed USD 72.02/USD 109.85/USD 151.49 scenarios produce USD 110.8025 weighted fair value and a deterministic Strong Sell / Avoid, Watch-tier, allocation-ineligible assessment. Exactly one dependent relationship refresh and one dependent idea refresh were queued. No strategy, signal, order, allocation or accounting state changed."
+    },
+    {
+      "completed_at": "2026-08-31T23:35:05Z",
+      "daily_cycle_id": "daily-20260831T213829Z",
+      "daily_report_items": [
+        "Valero repeat research completed after a 16.71% rise and bullish MACD transition to USD 358.92: unchanged Q2 primary evidence continues to support strong margin capture and cash conversion, but overbought timing and unchanged USD 216/USD 286/USD 378 scenarios produce 20.07% expected downside. The deterministic result is Sell / Avoid, Watch tier and allocation-ineligible. One dependent energy-refining relationship review and one dependent idea refresh were queued; no strategy, signal or paper order was created."
+      ],
+      "entity_id": "security_c5a9e460d3350284d157",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "Valero's Q2 2026 Form 10-Q reports USD 4.0 billion of refining operating income, USD 2.7 billion of six-month net operating cash flow after a USD 3.7 billion working-capital use, USD 7.87 billion of cash, USD 9.1 billion of debt and USD 2.2 billion of finance leases.",
+          "observed_at": "2026-08-31T23:26:30Z",
+          "source": "source_vlo_q2_2026_10q",
+          "source_hash": "67e4f60508a5a9c810e164fe8d9bcc9b996d44d8e659cf68beb6d978d5db73a9",
+          "url": "https://www.sec.gov/Archives/edgar/data/1035002/000162828026050937/vlo-20260630.htm"
+        },
+        {
+          "claim": "The SEC-filed Q2 results release reports USD 12.54 adjusted EPS, 3.0 million barrels per day of refining throughput, strong regional refining margins and USD 2.6 billion of quarterly stockholder cash returns.",
+          "observed_at": "2026-08-31T23:26:30Z",
+          "source": "source_vlo_q2_2026_results",
+          "source_hash": "cdb3595d6b4dbc05039e172fce3d40ab72e98e06f8cb0bd80c5303d461d782b6",
+          "url": "https://www.sec.gov/Archives/edgar/data/1035002/000162828026050822/a6302026exh9901earningsrel.htm"
+        },
+        {
+          "claim": "The SEC submissions index lists no operating filing after the July 30 Q2 Form 10-Q and results Form 8-K through August 31; subsequent listed entries are ownership or resale notices.",
+          "observed_at": "2026-08-31T23:26:30Z",
+          "source": "source_vlo_sec_submissions_20260831",
+          "source_hash": "4900491c29336dc3b7fd5c39263a53f2897b838bd7a4cc98b869ff6fb72b7086",
+          "url": "https://data.sec.gov/submissions/CIK0001035002.json"
+        },
+        {
+          "claim": "Canonical market state supplies the USD 358.9200134277344 August 31 mark and exact August 3 through August 31 alert period; deterministic indicator state records a 16.70674944919781% period return, bullish MACD transition and overbought RSI of 70.62232894338074.",
+          "observed_at": "2026-08-31T21:38:36Z",
+          "source": "data/market/prices/security_c5a9e460d3350284d157.csv",
+          "source_hash": "8af39b77e51dc2917fce4dd361b470b699d90ce506cdf337ad8f84092dee0ee6"
+        },
+        {
+          "claim": "Deterministic schema-version-two assessment assessment_adaed7b28d89ad0b1e4d derives USD 286.90 weighted fair value, -20.06575580445726212662863037% expected return, -15.04931685334294659497147278% confidence-adjusted return, Sell / Avoid, Watch tier and ineligibility because valuation, payoff, margin-of-safety and relationship gates fail.",
+          "source": "data/tables/security_assessments.csv"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1D2NMMRCMXJ32CB2BYNSJWE.json",
+        "data/operations/payloads/01M1D2NPK85YZW0MP645KGB7GP.json",
+        "data/runs/daily-20260831T213829Z/01M1CRTPGR1RA2RS8DV9QG9KRV/assessment_upsert_request.json",
+        "data/runs/daily-20260831T213829Z/01M1CRTPGR1RA2RS8DV9QG9KRV/assessment_upsert_retry01_request.json",
+        "data/runs/daily-20260831T213829Z/01M1CRTPGR1RA2RS8DV9QG9KRV/enqueue_energy_refining_idea_refresh_request.json",
+        "data/runs/daily-20260831T213829Z/01M1CRTPGR1RA2RS8DV9QG9KRV/enqueue_energy_refining_relationship_request.json",
+        "data/runs/daily-20260831T213829Z/01M1CRTPGR1RA2RS8DV9QG9KRV/security_upsert_request.json",
+        "data/runs/daily-20260831T213829Z/01M1CRTPGR1RA2RS8DV9QG9KRV/source_vlo_q2_2026_10q_record_request.json",
+        "data/runs/daily-20260831T213829Z/01M1CRTPGR1RA2RS8DV9QG9KRV/source_vlo_q2_2026_results_record_request.json",
+        "data/runs/daily-20260831T213829Z/01M1CRTPGR1RA2RS8DV9QG9KRV/source_vlo_sec_submissions_20260831_record_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_c5a9e460d3350284d157.md"
+      ],
+      "operation_id": "01M1CRTPGR1RA2RS8DV9QG9KRV",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260831T213829Z/01M1CRTPGR1RA2RS8DV9QG9KRV/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed exactly one repeat assessment of Valero after the 2026-08-31 bullish MACD transition and 16.71% alert-period rise to USD 358.92. Fresh SEC retrievals reproduced the Q2 filing and results hashes and found no later operating filing, leaving the operating thesis and normalized USD 216/USD 286/USD 378 scenarios unchanged. The deterministic assessment produces USD 286.90 weighted fair value, 20.07% expected downside, Sell / Avoid, Watch tier and allocation ineligibility. Exactly one dependent energy-refining relationship review and one dependent idea refresh were queued. No strategy, signal, order, allocation or accounting state changed."
+    },
+    {
+      "completed_at": "2026-09-01T08:51:52Z",
+      "daily_cycle_id": "daily-20260901T084440Z",
+      "daily_report_items": [
+        "CrowdStrike's accepted positive, high-sensitivity cybersecurity-continuity relationship was refreshed against fiscal-Q2 2027 evidence. Faster net-new ARR, Falcon Flex and multi-module adoption strengthen the operating transmission, but retention disclosure, pricing, trust, acquisitions, equity costs, dilution and valuation keep confidence medium; no strategy or paper trade was created."
+      ],
+      "entity_id": "relationship_228f56aa5d91f3688b67",
+      "entity_type": "relationship",
+      "evidence": [
+        {
+          "claim": "Fiscal-Q2 revenue was USD 1.470897 billion, ending ARR was USD 5.841421 billion, quarterly net-new ARR was USD 332.8 million, six-month operating cash flow was USD 1.121205 billion, and diluted weighted-average shares were 1.044469 billion; the filing also retains incident, acquisition, renewal-definition and equity-cost risks.",
+          "observed_at": "2026-08-31T23:11:08Z",
+          "source": "source_crwd_q2_2027_10q",
+          "source_hash": "496e90560b4daaf992d261dd6eba3824e808e48fb12812205046a191e41318c1",
+          "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000031/crwd-20260731.htm"
+        },
+        {
+          "claim": "CrowdStrike reported USD 5.84 billion ending ARR, USD 332.8 million quarterly net-new ARR, USD 377.4 million company-defined quarterly free cash flow, USD 2.29 billion Falcon Flex ARR, 51%/35%/26% six-/seven-/eight-plus-module adoption, and raised fiscal-2027 revenue guidance.",
+          "observed_at": "2026-08-31T23:11:08Z",
+          "source": "source_crwd_q2_2027_results_exhibit",
+          "source_hash": "55bfc3ec3d51b325dcc39a3b1d23a2ef7a56d9b9d216c456a3d39b50083fdfcb",
+          "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm"
+        },
+        {
+          "claim": "The current scenario-complete security review values CrowdStrike at USD 72.02, USD 109.85 and USD 151.49 in bear, base and bull cases versus the USD 231 mark, leaving the security ineligible and blocking strategy research despite stronger operating evidence.",
+          "source": "data/wiki/securities/security_8472507d7d320aa388a7.md"
+        },
+        {
+          "claim": "The canonical relationship row preserves the exact idea and security endpoints, remains accepted with positive direction, high sensitivity and medium confidence, and now records the fiscal-Q2 mechanism, catalysts, invalidation and October 1 review boundary.",
+          "source": "data/tables/relationships.csv"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/runs/daily-20260901T084440Z/01M1D1Y9JGWJR239XAQPDP30DW/relationship_upsert_request.json",
+        "data/tables/relationships.csv",
+        "data/wiki/log.md",
+        "data/wiki/relationships/relationship_228f56aa5d91f3688b67.md"
+      ],
+      "operation_id": "01M1D1Y9JGWJR239XAQPDP30DW",
+      "operation_type": "relationship_research",
+      "result_path": "data/runs/daily-20260901T084440Z/01M1D1Y9JGWJR239XAQPDP30DW/agent_result.json",
+      "status": "succeeded",
+      "summary": "Refreshed the accepted positive, high-sensitivity CrowdStrike cybersecurity-continuity relationship against fiscal-Q2 2027 primary evidence. Accelerating net-new ARR, Falcon Flex and multi-module adoption strengthen the causal transmission, while retention disclosure, pricing quality, incident trust, acquisitions, stock-based compensation, dilution and valuation keep confidence medium. No follow-up strategy, signal, allocation, order or paper trade was created because every maintained valuation scenario remains below market."
+    },
+    {
+      "completed_at": "2026-09-01T08:56:37Z",
+      "daily_cycle_id": "daily-20260901T084440Z",
+      "daily_report_items": [
+        "COIN lower-Bollinger transition on 2026-07-31 was classified as risk, not opportunity; the later full review retained Strong Sell / Avoid, allocation ineligibility, and no paper action."
+      ],
+      "entity_id": "opportunity_c253f604129d75693ceb",
+      "entity_type": "opportunity",
+      "evidence": [
+        {
+          "claim": "The deterministic packet records an entered lower-Bollinger transition on 2026-07-31 after COIN fell from USD 165.47999572753906 on 2026-07-02 to USD 146.25999450683594, a -0.1161469767762662652627794137 period return, with 20,870,300 shares traded on the final session.",
+          "source": "data/wiki/inbox/market-security_37ddcbdaad296ad831f2-bollinger_below_lower-403f5e12235a.md",
+          "source_hash": "403f5e12235a0a7b93a0468859d87ccbba87cc96c29f5464174feb83f91683da"
+        },
+        {
+          "claim": "The SEC submissions index identifies accession 0001679788-26-000088 as Coinbase's Form 10-Q, filed 2026-07-30 for the quarter ended 2026-06-30. The maintained review records Q2 transaction revenue down 22% year over year, subscription and services revenue down 12%, and a USD 359 million net loss; these conditions support risk context but do not identify a new buy catalyst for the exact price move.",
+          "source": "Coinbase Q2 2026 Form 10-Q",
+          "source_hash": "6f3db6aeb84e14d70e5376fc83e5ac6b57c10798ee8ec6fa1c9a3a249240060a",
+          "url": "https://www.sec.gov/Archives/edgar/data/1679788/000167978826000088/coin-20260630.htm"
+        },
+        {
+          "claim": "The completed 2026-08-21 security review already records the exact July 2 through July 31 decline and later found no newer issuer operating filing to alter the thesis. It retained Strong Sell / Avoid, allocation ineligibility and no strategy or signal, so a second research change or follow-up would duplicate accepted work.",
+          "source": "data/wiki/securities/security_37ddcbdaad296ad831f2.md"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [],
+      "operation_id": "01KYY98DWG0BHTGJG1AJDCN6QD",
+      "operation_type": "opportunity_research",
+      "result_path": "data/runs/daily-20260901T084440Z/01KYY98DWG0BHTGJG1AJDCN6QD/agent_result.json",
+      "status": "succeeded",
+      "summary": "Classified the 2026-07-31 COIN lower-Bollinger transition as risk, not an opportunity: the 11.61% decline occurred alongside the July 23 Form 8-K and July 30 Q2 Form 10-Q, whose reported cycle-sensitive revenue decline, net loss, concentration, debt and dilution risks do not establish a buy zone. The subsequent 2026-08-21 full review already incorporated the exact period and retained Strong Sell / Avoid, allocation ineligibility and no strategy or signal; no bounded follow-up remains justified."
+    },
+    {
+      "completed_at": "2026-09-01T09:01:14Z",
+      "daily_cycle_id": "daily-20260901T084440Z",
+      "daily_report_items": [
+        "DLocal’s July thirty-first SMA 50/200 bullish crossover was classified as noise rather than a new opportunity: the later accepted full review retained Medium / Watch and allocation ineligibility, with no paper action."
+      ],
+      "entity_id": "opportunity_3029dd1153d5498f0c48",
+      "entity_type": "opportunity",
+      "evidence": [
+        {
+          "claim": "The deterministic packet records an entered SMA 50 above SMA 200 transition on 2026-07-31. DLO moved from an adjusted close of USD 14.880000114440918 on 2026-07-02 to USD 15.079999923706055 on 2026-07-31, a 0.013440847293478097919123055 period return; the trigger strength was 0.001786376244703932645412591846 after a prior strength of zero.",
+          "source": "data/wiki/inbox/market-security_715bde20b6e1e1320c1a-sma_50_cross_above_200-b9da98dda495.md",
+          "source_hash": "b9da98dda49508031f8df596eccd9722a2e86f27291026ba0f0281d4a0a69ac8"
+        },
+        {
+          "claim": "The later accepted full security review refreshed dLocal's Q2 2026 SEC financial statements and results and found no newer issuer operating filing. It retained USD 9.00/USD 18.70/USD 29.40 scenarios, a USD 14.96 buy-below price, Medium / Watch disposition, and allocation ineligibility; the technical crossover does not add a distinct fundamental catalyst or change those gates.",
+          "source": "data/runs/daily-20260828T210155Z/01M0ZF0AJG7G54J9TCADG7KFYX/agent_result.json",
+          "source_hash": "3843dc6a64dd183327b47c5ac5e97e6af1e161bcd3a0a89b6bfa1de75dd18768",
+          "url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000031/dlo-20260630.htm"
+        },
+        {
+          "claim": "The latest deterministic allocation row for DLO remains excluded with zero target weight because the bear/base payoff, expected/bear payoff, and relationship gates fail. No position, order, signal, fill, execution, cash, portfolio, or performance state was changed for this operation.",
+          "source": "data/tables/allocation_targets.csv"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [],
+      "operation_id": "01KYY98DWG6RN4NEMK91VCVQXT",
+      "operation_type": "opportunity_research",
+      "result_path": "data/runs/daily-20260901T084440Z/01KYY98DWG6RN4NEMK91VCVQXT/agent_result.json",
+      "status": "succeeded",
+      "summary": "Classified DLocal's 2026-07-31 SMA 50/200 bullish crossover as noise, not a new opportunity or risk. The exact period rose only 1.34%, and the later accepted 2026-08-28 full review already refreshed primary Q2 evidence, retained Medium / Watch and the same allocation exclusions, and queued the sole justified relationship review. The crossover supplies no distinct catalyst, valuation change, invalidation change, or trading action; no bounded follow-up is justified in this operation."
+    },
+    {
+      "completed_at": "2026-09-01T09:09:14Z",
+      "daily_cycle_id": "daily-20260901T084440Z",
+      "daily_report_items": [
+        "GOOGL's July 31 bullish MACD crossover was reviewed as noise: its 0.0723 strength and negative 1.05% exact-period return did not overcome the maintained valuation, AI-capital-intensity, dilution, or antitrust-risk gates. No follow-up, signal, or paper order was created."
+      ],
+      "entity_id": "opportunity_c59d840c54e283433fc6",
+      "entity_type": "opportunity",
+      "evidence": [
+        {
+          "claim": "The immutable market packet identifies security_c86bb4e75658c07142cf as GOOGL, records a macd_cross_above_signal entry on 2026-07-31, a 2026-07-02 through 2026-07-31 period, adjusted close of USD 356.1300048828125, negative period return of 0.0105026221578593222501600181, trigger strength of 0.07227749696538882697577708485, and source price hash b0e7d6aff1b7cf90bed119246e683face8a24200c5b6c597b9f6131387bf6418.",
+          "observed_at": "2026-08-01T09:07:38Z",
+          "source": "Canonical deterministic market packet",
+          "source_hash": "e7c32a666d8b6ecbf61797d7b8ee5dd75ca100407a3c6e89aa569ca58b7252de"
+        },
+        {
+          "claim": "The maintained primary-source review records strong Q2 revenue, Search, YouTube, Cloud, operating-income, and margin growth, but also elevated AI infrastructure spending, equity issuance, and unresolved antitrust remedies. It concludes that the July 31 technical rebound was weak and did not create sufficient valuation or risk-adjusted-entry support.",
+          "observed_at": "2026-08-01T16:32:28Z",
+          "source": "Alphabet Q2 2026 Form 10-Q and SEC-hosted Q2 results",
+          "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm"
+        },
+        {
+          "claim": "Alphabet disclosed the closing of a USD 25 billion U.S.-dollar senior-notes offering. This post-period filing cannot explain the July 31 technical transition, but it is consistent with the maintained review's financing and AI-infrastructure-capital-intensity risk context; it does not alter this trigger's noise classification.",
+          "observed_at": "2026-09-01T09:06:08Z",
+          "source": "Alphabet 2026-08-10 Form 8-K",
+          "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526342390/d171253d8k.htm"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [],
+      "operation_id": "01KYY98DWGAW9HXR2P75J48C08",
+      "operation_type": "opportunity_research",
+      "result_path": "data/runs/daily-20260901T084440Z/01KYY98DWGAW9HXR2P75J48C08/agent_result.json",
+      "status": "succeeded",
+      "summary": "Classified the 2026-07-31 GOOGL macd_cross_above_signal transition as noise rather than an opportunity or standalone risk. The canonical trigger was weak (0.07227749696538882697577708485) and the 2026-07-02 through 2026-07-31 adjusted-close return was negative 1.05026221578593222501600181%. The maintained Alphabet research already records the same exact-period review, links the July Q2 primary evidence, and retains a Watch/no-conviction decision because the USD 356.13 mark offered minimal base-case upside amid AI capital intensity, dilution, and antitrust risk. No wiki or structured-state mutation, follow-up operation, signal, order, or accounting change was justified."
+    },
+    {
+      "completed_at": "2026-09-01T18:19:06Z",
+      "daily_cycle_id": "daily-20260901T181335Z",
+      "daily_report_items": [
+        "Nidec's July 31 bullish MACD crossover was classified as risk, not opportunity: it followed a 6.16% alert-period decline on extremely thin Frankfurt trading, while accepted primary-source research confirms accounting, audit, quality, liquidity and valuation blockers. No follow-up was added because a security refresh is already queued."
+      ],
+      "entity_id": "opportunity_6d6de0b7f2c82cfccb89",
+      "entity_type": "opportunity",
+      "evidence": [
+        {
+          "claim": "The deterministic entered transition identifies security_3853e54c619d597dcaa1, the exact 2026-07-03 through 2026-07-31 period, EUR 13.807999610900879 latest adjusted close, -0.0615740215326623374173458845 period return, 0.03337384995987465728525130122 strength, zero previous strength, and source-price hash 4afb7dab31d30f3eb990a2d987f393d748c38cc35b11ad114e51e6d8de6e8a78.",
+          "observed_at": "2026-08-01T09:07:38Z",
+          "source": "data/wiki/inbox/market-security_3853e54c619d597dcaa1-macd_cross_above_signal-8478cd817392.md",
+          "source_hash": "4afb7dab31d30f3eb990a2d987f393d748c38cc35b11ad114e51e6d8de6e8a78"
+        },
+        {
+          "claim": "The terminally accepted initial security review matched the same exact period and source-price hash. It found a small positive MACD histogram after a 6.157402% decline, neutral RSI and only 72 reported shares of Frankfurt volume, and classified the move as an unconfirmed technical rebound rather than a fundamental opportunity.",
+          "observed_at": "2026-08-01T11:48:31Z",
+          "source": "data/runs/gha-30697153110-1/01KYPB1Y5R4NFAMSPZZX3YAS1E/agent_result.json",
+          "source_hash": "4afb7dab31d30f3eb990a2d987f393d748c38cc35b11ad114e51e6d8de6e8a78"
+        },
+        {
+          "claim": "The subsequent full review records confirmed widespread accounting misconduct, preliminary figures that exclude corrections and unresolved quality and customs impacts, thin Frankfurt liquidity, unsupported valuation, Unrated / Watch disposition and no warranted strategy or signal. The security has no canonical relationship, strategy or portfolio position.",
+          "observed_at": "2026-08-06T19:10:34Z",
+          "source": "data/wiki/securities/security_3853e54c619d597dcaa1.md"
+        },
+        {
+          "claim": "A separate priority-65 security_research refresh for security_3853e54c619d597dcaa1 is already queued as operation 01M0WSFGEGHY02VEBD9VTD3A9E, so this historical indicator review should not enqueue duplicate follow-up work.",
+          "observed_at": "2026-09-01T18:14:48Z",
+          "source": "data/operations/operations_TODO.csv"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [],
+      "operation_id": "01KYY98DWGCVPZEPZZC76A5K9D",
+      "operation_type": "opportunity_research",
+      "result_path": "data/runs/daily-20260901T181335Z/01KYY98DWGCVPZEPZZC76A5K9D/agent_result.json",
+      "status": "succeeded",
+      "summary": "Classified Nidec Corporation's 2026-07-31 bullish MACD crossover as risk rather than an opportunity. The deterministic alert covered 2026-07-03 through 2026-07-31: NIB.F closed at EUR 13.807999610900879 after a 6.15740215326623374173458845% period decline, while the crossover strength was only 0.03337384995987465728525130122 and reported Frankfurt trading was extremely thin. Primary-source research completed later on the alert date and strengthened on 2026-08-06 found confirmed accounting misconduct, incomplete corrected accounts, unresolved quality impacts and unsupported valuation. Those findings supersede any bullish technical interpretation. No wiki change or follow-up was warranted because the maintained security page already records the risk conclusion and a current security-research refresh is already queued; no strategy, signal, order or accounting state was changed."
+    }
+  ],
+  "run_id": "daily-20260901T181335Z",
+  "target_minutes": 20,
+  "target_words": 3000,
+  "unresolved_research_gaps": [
+    {
+      "completed_at": "2026-08-31T21:07:26Z",
+      "daily_cycle_id": "daily-20260831T204023Z",
+      "daily_report_items": [],
+      "entity_id": "security_8a5c43888d224de85c69",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "completed security research requires exactly one immutable assessment version",
+          "source": "data/runs/daily-20260831T204023Z/01KYPB29WRNJGPJTTY2DB72JWG/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "completed security research requires exactly one immutable assessment version"
+      ],
+      "files_changed": [],
+      "operation_id": "01KYPB29WRNJGPJTTY2DB72JWG",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260831T204023Z/01KYPB29WRNJGPJTTY2DB72JWG/validation_report.json",
+      "status": "failed",
+      "summary": "The accepted research did not produce a valid result."
+    },
+    {
+      "completed_at": "2026-08-31T23:40:21Z",
+      "daily_cycle_id": "daily-20260831T213829Z",
+      "daily_report_items": [
+        "Domino's quick check blocked: the payload's immutable source-price hash conflicts with the current 31 August canonical indicator identity. No assessment or research conclusion changed, and no full-review follow-up or paper-trading state was created."
+      ],
+      "entity_id": "security_f34181f3df32080a91d1",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The mandatory first audited receipt succeeded and bound security_f34181f3df32080a91d1 to Domino's Pizza, Inc. common stock / DPZ / XNAS / USD / equity. It confirmed successful baseline operation 01M14VH1N8WRQBZMJ6BYRG2WWG completed at 2026-08-28T19:36:38Z and current immutable assessment assessment_ab556a154f903904bd7e.",
+          "observed_at": "2026-08-31T23:35:38Z",
+          "source": "PaperTrader audited security context"
+        },
+        {
+          "claim": "The immutable quick-check payload is bound to market date 2026-08-31, period 2026-08-03 through 2026-08-31, volume_anomaly, and source_price_hash c22f634df41c704234cddc6ab852664a0511a0c1b97c13d2954feeec77f87111.",
+          "observed_at": "2026-08-31T20:40:31Z",
+          "source": "data/operations/payloads/01M1CRTPGR6T4D0X9W73Y9TNNY.json",
+          "source_hash": "c22f634df41c704234cddc6ab852664a0511a0c1b97c13d2954feeec77f87111"
+        },
+        {
+          "claim": "The current canonical indicator row for security_f34181f3df32080a91d1 is dated 2026-08-31, was retrieved at 2026-08-31T21:38:36Z, retains volume_anomaly, and carries conflicting source_price_hash f49fabc7857280baf850d3d381b3aa7ee017dd0ef0e9dd6a07c8415328e43e02.",
+          "observed_at": "2026-08-31T21:38:36Z",
+          "source": "data/market/indicators.csv",
+          "source_hash": "f49fabc7857280baf850d3d381b3aa7ee017dd0ef0e9dd6a07c8415328e43e02"
+        },
+        {
+          "claim": "Current canonical DPZ market data is dated 2026-08-31 with adjusted close USD342.05999755859375 and volume 2509600, retrieved at 2026-08-31T21:38:36Z.",
+          "observed_at": "2026-08-31T21:38:36Z",
+          "source": "data/market/latest.csv"
+        },
+        {
+          "claim": "A bounded current SEC submissions-index retrieval succeeded and showed no Domino's filing dated 2026-08-20 or later; this does not cure the conflicting immutable market-data identity.",
+          "observed_at": "2026-08-31T23:37:00Z",
+          "source": "https://data.sec.gov/submissions/CIK0001286681.json",
+          "url": "https://data.sec.gov/submissions/CIK0001286681.json"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [],
+      "operation_id": "01M1CRTPGR6T4D0X9W73Y9TNNY",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260831T213829Z/01M1CRTPGR6T4D0X9W73Y9TNNY/agent_result.json",
+      "status": "blocked",
+      "summary": "Blocked the bounded Domino's Pizza quick check because its immutable payload source_price_hash c22f634df41c704234cddc6ab852664a0511a0c1b97c13d2954feeec77f87111 conflicts with the current canonical indicator price identity f49fabc7857280baf850d3d381b3aa7ee017dd0ef0e9dd6a07c8415328e43e02. The successful recent baseline and security identity were confirmed, but the stale/conflicting market binding prevents a comparable assessment decision. No assessment, wiki, follow-up, trading, allocation, or accounting state was changed."
+    },
+    {
+      "completed_at": "2026-09-01T12:06:47Z",
+      "daily_cycle_id": "daily-20260901T120230Z",
+      "daily_report_items": [
+        "Opportunity research for ALB's 2026-07-31 volume anomaly was blocked because the queue claim run identifier did not match the supplied run ID; no research or trading state was changed."
+      ],
+      "entity_id": "opportunity_f1804fd1962ce7ba2491",
+      "entity_type": "opportunity",
+      "evidence": [
+        {
+          "claim": "The target operation is running but its claimed_by_run_id is daily-20260901T120230, which differs from the required run ID daily-20260901T120230Z.",
+          "source": "data/operations/operations_TODO.csv:63"
+        },
+        {
+          "claim": "The payload identifies the target as ALB volume_anomaly for 2026-07-02 through 2026-07-31, observed at 2026-08-01T09:07:38Z.",
+          "source": "data/operations/payloads/01KYY98DWGCKZ1ENB3G6KZ9HHS.json"
+        },
+        {
+          "claim": "The canonical current ALB mark is dated 2026-08-31 and retrieved at 2026-09-01T12:02:36Z, so the pending trigger observation is no longer current.",
+          "source": "data/market/latest.csv:31"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [],
+      "operation_id": "01KYY98DWGCKZ1ENB3G6KZ9HHS",
+      "operation_type": "opportunity_research",
+      "result_path": "data/runs/daily-20260901T120230Z/01KYY98DWGCKZ1ENB3G6KZ9HHS/agent_result.json",
+      "status": "blocked",
+      "summary": "Blocked before research because the active queue row is claimed by daily-20260901T120230, not the required run daily-20260901T120230Z. The parent controller must resolve the claim mismatch before this operation can safely proceed."
+    },
+    {
+      "completed_at": "2026-09-01T18:21:39Z",
+      "daily_cycle_id": "daily-20260901T181335Z",
+      "daily_report_items": [],
+      "entity_id": "opportunity_151282085f5bc839804b",
+      "entity_type": "opportunity",
+      "evidence": [
+        {
+          "claim": "The row for operation 01KYY98DWGEXXTBMK11EKRZYBN is running and claimed by daily-20260901T181335Z, but its lease_expires_at field is empty.",
+          "source": "data/operations/operations_TODO.csv"
+        },
+        {
+          "claim": "The preflight identifies the supplied run and operation, native llm-wiki, papertrader-controller, papertrader-opportunity-research, and echart skills, but it does not replace the required live queue lease.",
+          "source": "data/runs/daily-20260901T181335Z/01KYY98DWGEXXTBMK11EKRZYBN/hermes_preflight.json"
+        },
+        {
+          "claim": "The payload identifies the bounded RBLX RSI-oversold observation ending 2026-07-31; it was treated as untrusted data and was not executed because the controller precondition failed.",
+          "source": "data/operations/payloads/01KYY98DWGEXXTBMK11EKRZYBN.json"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [],
+      "operation_id": "01KYY98DWGEXXTBMK11EKRZYBN",
+      "operation_type": "opportunity_research",
+      "result_path": "data/runs/daily-20260901T181335Z/01KYY98DWGEXXTBMK11EKRZYBN/agent_result.json",
+      "status": "blocked",
+      "summary": "Blocked before research because the supplied running queue row has no lease_expires_at value. The controller contract requires this operation to be claimed by the supplied run with a live lease before the routed skill may execute."
+    }
+  ],
+  "wiki_orientation_paths": [
+    "data/wiki/SCHEMA.md",
+    "data/wiki/index.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/log.md"
+  ],
+  "window_mode": "since_previous_successful_podcast",
+  "window_start_exclusive": "2026-08-31T09:10:38Z"
+}

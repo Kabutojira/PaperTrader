@@ -1,0 +1,80 @@
+{
+  "commands_run": [
+    "papertrader podcast validate-script --daily-cycle-id daily-20260901T181335Z --script-path data/wiki/podcasts/daily-podcast_20260901T181335Z.md",
+    "papertrader podcast render-draft --daily-cycle-id daily-20260901T181335Z --script-path data/wiki/podcasts/daily-podcast_20260901T181335Z.md",
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader queue validate",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Published the standalone daily research podcast covering lithium, electrification infrastructure, cybersecurity and refining, with six current security ratings and explicit rating-change conditions; the single audited draft render succeeded."
+  ],
+  "evidence": [
+    {
+      "claim": "Frozen podcast context version three binds this operation to daily cycle daily-20260901T181335Z, the exact timestamped transcript and report paths, the prior successful podcast, and twelve accepted research developments through the inclusive cutoff.",
+      "source": "data/runs/daily-20260901T181335Z/podcast_context.json"
+    },
+    {
+      "claim": "PLS annual evidence supports a scaled low-cost lithium operation, but the accepted scenario set implies weighted value below the reviewed market price and a Sell / Avoid disposition.",
+      "source": "data/runs/daily-20260831T213829Z/01KYPB29WRNJGPJTTY2DB72JWG/agent_result.json"
+    },
+    {
+      "claim": "Tesla's August rerating did not change current operating evidence or its accepted sum-of-parts scenarios, leaving a Sell / Avoid disposition.",
+      "source": "data/runs/daily-20260831T213829Z/01M0N0ZVAGS4MCJ88XGJBZCS5S/agent_result.json"
+    },
+    {
+      "claim": "Schneider Electric's current issuer evidence confirms exceptional data-centre demand, while its accepted weighted value remains below market and its rating remains Sell / Avoid.",
+      "source": "data/runs/daily-20260831T213829Z/01M0T6VA687FHWK8HZ2SBAR5SB/agent_result.json"
+    },
+    {
+      "claim": "GE Vernova's lower price improved expected return but did not clear downside-payoff gates, retaining Hold / Watch.",
+      "source": "data/runs/daily-20260831T213829Z/01M14TAVZGX126SABHZ9D8RQQ8/agent_result.json"
+    },
+    {
+      "claim": "CrowdStrike's fiscal-quarter recurring-revenue growth and guidance strengthened, while every accepted valuation scenario remained below market and the rating remained Strong Sell / Avoid.",
+      "source": "data/runs/daily-20260831T213829Z/01M17BKYBGQEP184VB3PX88DXG/agent_result.json"
+    },
+    {
+      "claim": "The accepted CrowdStrike cybersecurity-continuity relationship remains positive and high-sensitivity with medium confidence because operating transmission is strong but pricing, trust, acquisition, dilution and valuation risks persist.",
+      "source": "data/runs/daily-20260901T084440Z/01M1D1Y9JGWJR239XAQPDP30DW/agent_result.json"
+    },
+    {
+      "claim": "Valero captured exceptional current refining margins and cash flow, but normalized scenarios remain below the reviewed market price and the accepted rating is Sell / Avoid.",
+      "source": "data/runs/daily-20260831T213829Z/01M1CRTPGR1RA2RS8DV9QG9KRV/agent_result.json"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260901T181335Z/01M1F3S0KRRJ3ZEZBATPGXYGXE/candidate_slate.json",
+    "data/runs/daily-20260901T181335Z/01M1F3S0KRRJ3ZEZBATPGXYGXE/editorial_outline.md",
+    "data/wiki/daily-reports/daily-report_20260901.md",
+    "data/wiki/podcasts/daily-podcast_20260901T181335Z.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M1F3S0KRRJ3ZEZBATPGXYGXE",
+  "operations_created": [],
+  "reason_code": "podcast_script_rendered",
+  "status": "succeeded",
+  "summary": "Created a 3,036-word standalone episode with four chapters: PLS and the lithium-cycle rerating; Tesla, Schneider Electric and GE Vernova across electrification and AI-power infrastructure; CrowdStrike's operating growth and refreshed cybersecurity-continuity transmission; and Valero's peak refining margins. The episode covers the current Sell ratings for PLS, Tesla, Schneider Electric and Valero, Hold for GE Vernova, and Strong Sell for CrowdStrike, with explicit Buy and Sell conditions for each. Carlisle was excluded as a routine unchanged recheck with no new catalyst, while the Coinbase, DLocal, Alphabet and Nidec opportunity reviews were excluded as stale or already-absorbed technical conclusions. The exact frozen transcript passed deterministic preflight at 3,036 words in six chunks, and the single audited draft render succeeded with a duration of 1,362 seconds. No audio path or media reference was persisted.",
+  "validation": {
+    "checks": [
+      "The controller-provided frozen context validation is authoritative and binds context version three, the daily cycle, prior successful podcast, research cutoff and exact transcript and report paths without a visible identity conflict.",
+      "The candidate slate accounts for all twelve successful research developments exactly once as seven selected developments and five evidence-based exclusions.",
+      "The editorial outline preserves the required introduction, teaser, chapters, overall summary and greetings order.",
+      "The transcript starts with the exact required welcome sentence, immediately follows with the required teaser opening, and ends with both exact required greeting sentences.",
+      "The spoken transcript contains 3,036 words in at least eight narrative paragraphs, uses no numeric glyphs, headings, lists, tables, raw URLs, link markup, machine identities or spoken legal and paper-trading disclosures.",
+      "Every security chapter states the current accepted rating, reason, concrete Buy conditions and Sell or deterioration conditions for each discussed security.",
+      "The daily report contains exactly one deterministic link to the exact frozen timestamped transcript and contains no audio link.",
+      "The deterministic script preflight passed before rendering and reported 3,036 words across six chunks.",
+      "Exactly one audited render-draft invocation occurred and succeeded; media remained only in the controller-provided temporary directory outside Git and no media path was persisted in repository artifacts.",
+      "papertrader schema validate --strict returned OK [schema].",
+      "papertrader integrity --strict returned OK [integrity].",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "papertrader queue validate returned OK [queue].",
+      "papertrader portfolio reconcile --strict returned OK [portfolio].",
+      "No allocation target, allocation history, strategy, signal, order, fill, execution, cash, portfolio or performance state changed."
+    ],
+    "passed": true
+  }
+}
