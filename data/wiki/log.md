@@ -2880,6 +2880,10 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 
 - Created candidate packet [[inbox/market-security_22c2b9d782a62d7a9b86-rsi_overbought-9f60a00e3a52]] (9f60a00e3a52).
 
+- Published investor decision snapshot `decision_d4b09b3fd8017c590276`.
+
+- Generated canonical [[daily-reports/daily-report_20260901]] for run `daily-20260901T181335Z`.
+
 ## [2026-09-01T08:47:14Z] relationship research | CrowdStrike and cybersecurity continuity
 
 - Refreshed the accepted [[relationships/relationship_228f56aa5d91f3688b67|CrowdStrike
