@@ -1,0 +1,62 @@
+{
+  "commands_run": [
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Nidec's July 31 bullish MACD crossover was classified as risk, not opportunity: it followed a 6.16% alert-period decline on extremely thin Frankfurt trading, while accepted primary-source research confirms accounting, audit, quality, liquidity and valuation blockers. No follow-up was added because a security refresh is already queued."
+  ],
+  "evidence": [
+    {
+      "claim": "The deterministic entered transition identifies security_3853e54c619d597dcaa1, the exact 2026-07-03 through 2026-07-31 period, EUR 13.807999610900879 latest adjusted close, -0.0615740215326623374173458845 period return, 0.03337384995987465728525130122 strength, zero previous strength, and source-price hash 4afb7dab31d30f3eb990a2d987f393d748c38cc35b11ad114e51e6d8de6e8a78.",
+      "observed_at": "2026-08-01T09:07:38Z",
+      "source": "data/wiki/inbox/market-security_3853e54c619d597dcaa1-macd_cross_above_signal-8478cd817392.md",
+      "source_hash": "4afb7dab31d30f3eb990a2d987f393d748c38cc35b11ad114e51e6d8de6e8a78"
+    },
+    {
+      "claim": "The terminally accepted initial security review matched the same exact period and source-price hash. It found a small positive MACD histogram after a 6.157402% decline, neutral RSI and only 72 reported shares of Frankfurt volume, and classified the move as an unconfirmed technical rebound rather than a fundamental opportunity.",
+      "observed_at": "2026-08-01T11:48:31Z",
+      "source": "data/runs/gha-30697153110-1/01KYPB1Y5R4NFAMSPZZX3YAS1E/agent_result.json",
+      "source_hash": "4afb7dab31d30f3eb990a2d987f393d748c38cc35b11ad114e51e6d8de6e8a78"
+    },
+    {
+      "claim": "The subsequent full review records confirmed widespread accounting misconduct, preliminary figures that exclude corrections and unresolved quality and customs impacts, thin Frankfurt liquidity, unsupported valuation, Unrated / Watch disposition and no warranted strategy or signal. The security has no canonical relationship, strategy or portfolio position.",
+      "observed_at": "2026-08-06T19:10:34Z",
+      "source": "data/wiki/securities/security_3853e54c619d597dcaa1.md"
+    },
+    {
+      "claim": "A separate priority-65 security_research refresh for security_3853e54c619d597dcaa1 is already queued as operation 01M0WSFGEGHY02VEBD9VTD3A9E, so this historical indicator review should not enqueue duplicate follow-up work.",
+      "observed_at": "2026-09-01T18:14:48Z",
+      "source": "data/operations/operations_TODO.csv"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01KYY98DWGCVPZEPZZC76A5K9D",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Classified Nidec Corporation's 2026-07-31 bullish MACD crossover as risk rather than an opportunity. The deterministic alert covered 2026-07-03 through 2026-07-31: NIB.F closed at EUR 13.807999610900879 after a 6.15740215326623374173458845% period decline, while the crossover strength was only 0.03337384995987465728525130122 and reported Frankfurt trading was extremely thin. Primary-source research completed later on the alert date and strengthened on 2026-08-06 found confirmed accounting misconduct, incomplete corrected accounts, unresolved quality impacts and unsupported valuation. Those findings supersede any bullish technical interpretation. No wiki change or follow-up was warranted because the maintained security page already records the risk conclusion and a current security-research refresh is already queued; no strategy, signal, order or accounting state was changed.",
+  "validation": {
+    "checks": [
+      "Confirmed exactly one running queue row for operation 01KYY98DWGCVPZEPZZC76A5K9D, claimed by daily-20260901T181335Z with the required llm-wiki, papertrader-opportunity-research and echart skills identified in preflight.",
+      "Confirmed the immutable security identity is Nidec Corporation Frankfurt ordinary shares, provider symbol NIB.F, venue XFRA and currency EUR.",
+      "Verified that all 21 exact-period bars from 2026-07-03 through 2026-07-31 remain in the canonical price cache and that the packet's period, endpoint, transition measurements and source-price hash match the terminally accepted alert-date security review.",
+      "Compared the trigger with the maintained thesis, current assessment, relationship, strategy and position state; classified it as risk because later accepted primary evidence strengthens the accounting, quality, liquidity and valuation blockers rather than validating the bullish crossover.",
+      "Confirmed no follow-up is justified from this operation because operation 01M0WSFGEGHY02VEBD9VTD3A9E already queues the bounded current security refresh.",
+      "Completed the bounded chartability pass; no primary page changed, so visualization_review records the required no_page_change omission and no chart IDs.",
+      "Repository-local papertrader wiki lint --strict passed.",
+      "Confirmed this operation changed no wiki page, structured table, allocation target or history, relationship, strategy, signal, order, fill, execution, cash, portfolio or performance state, and the result path is inside a non-symlink operation directory."
+    ],
+    "passed": true
+  },
+  "visualization_review": {
+    "charts": [],
+    "completed": true,
+    "omissions": [
+      {
+        "dataset": "NIB.F exact-period price and MACD transition evidence for 2026-07-03 through 2026-07-31",
+        "reason": "The maintained security page and terminally accepted security research already capture and supersede this historical trigger, so this operation made no primary research page change and emitted no duplicate chart.",
+        "reason_code": "no_page_change"
+      }
+    ]
+  }
+}
