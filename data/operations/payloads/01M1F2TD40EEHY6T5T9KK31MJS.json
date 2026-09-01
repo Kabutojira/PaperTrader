@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_MCOEsAJHBCY",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@CouchInvestor",
+    "channel_id": "UCrGLm-Drgv0vbbemwwHeXJw",
+    "channel_url": "https://www.youtube.com/channel/UCrGLm-Drgv0vbbemwwHeXJw/videos",
+    "discovered_at": "2026-09-01T18:13:36Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_MCOEsAJHBCY",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "MCOEsAJHBCY",
+    "video_title": "Most Hated Name Is Starting to Move",
+    "video_url": "https://www.youtube.com/watch?v=MCOEsAJHBCY"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01M1F2TD40EEHY6T5T9KK31MJS",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=MCOEsAJHBCY"
+  ]
+}
