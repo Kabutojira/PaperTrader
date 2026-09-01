@@ -1,13 +1,156 @@
 from __future__ import annotations
 
+import json
 import shutil
 from pathlib import Path
 
-from papertrader.wiki import lint_wiki
+from papertrader.wiki import lint_wiki, parse_research_charts
+
+
+def _series_chart() -> dict[str, object]:
+    return {
+        "schema_version": 1,
+        "chart_id": "revenue-and-income",
+        "kind": "series",
+        "title": "Revenue and GAAP net income",
+        "description": "Comparable annual issuer results.",
+        "as_of": "2026-06-30",
+        "sources": [{"label": "Issuer annual report", "url": "https://example.com/filing"}],
+        "x_axis": {"type": "category", "label": "Fiscal year", "values": ["2023", "2024", "2025"]},
+        "y_axes": [{"label": "USD", "unit": "USD", "format": "currency", "currency": "USD"}],
+        "series": [
+            {"name": "Revenue", "render": "bar", "y_axis": 0, "values": ["100", "110", "125"]},
+            {"name": "GAAP net income", "render": "line", "y_axis": 0, "values": ["8", "9", "12"]},
+        ],
+    }
 
 
 def test_initial_wiki_is_clean(repository_root: Path) -> None:
     assert lint_wiki(repository_root / "data" / "wiki") == []
+
+
+def test_research_chart_parser_accepts_declarative_decimal_series(
+    repository_root: Path, tmp_path: Path
+) -> None:
+    page = tmp_path / "research.md"
+    page.write_text(
+        "## Visual evidence\n\n```echart\n" + json.dumps(_series_chart()) + "\n```\n",
+        encoding="utf-8",
+    )
+
+    charts, errors = parse_research_charts(
+        page, repository_root / "schemas" / "research_chart.schema.json"
+    )
+
+    assert errors == []
+    assert [chart["chart_id"] for chart in charts] == ["revenue-and-income"]
+
+
+def test_research_chart_parser_rejects_json_numbers_and_duplicate_ids(
+    repository_root: Path, tmp_path: Path
+) -> None:
+    chart = _series_chart()
+    chart["series"] = [{"name": "Revenue", "render": "bar", "y_axis": 0, "values": [100, 110, 125]}]
+    block = "```echart\n" + json.dumps(chart) + "\n```\n"
+    page = tmp_path / "research.md"
+    page.write_text(block + block, encoding="utf-8")
+
+    _, errors = parse_research_charts(
+        page, repository_root / "schemas" / "research_chart.schema.json"
+    )
+
+    assert any("decimal strings" in error or "not valid" in error for error in errors)
+    assert any("chart_id must be unique" in error for error in errors)
+
+
+def test_research_chart_schema_accepts_each_supported_family(
+    repository_root: Path, tmp_path: Path
+) -> None:
+    common = {
+        "schema_version": 1,
+        "title": "Fixture chart",
+        "description": "A bounded chart-family fixture.",
+        "as_of": "2026-07-24",
+        "sources": [{"label": "Fixture source"}],
+    }
+    axis = {"label": "Value", "unit": "units", "format": "decimal"}
+    charts = [
+        {
+            **common,
+            "chart_id": "scatter-fixture",
+            "kind": "scatter",
+            "x_axis": axis,
+            "y_axis": axis,
+            "points": [
+                {"label": "A", "x": "1", "y": "2"},
+                {"label": "B", "x": "2", "y": "3"},
+                {"label": "C", "x": "3", "y": "5"},
+            ],
+        },
+        {
+            **common,
+            "chart_id": "composition-fixture",
+            "kind": "composition",
+            "display": "donut",
+            "axis": {"label": "Share", "unit": "%", "format": "percent"},
+            "items": [
+                {"label": "A", "value": "50"},
+                {"label": "B", "value": "30"},
+                {"label": "C", "value": "20"},
+            ],
+        },
+        {
+            **common,
+            "chart_id": "candlestick-fixture",
+            "kind": "candlestick",
+            "currency": "USD",
+            "rows": [
+                {"at": "2026-07-21", "open": "10", "close": "11", "low": "9", "high": "12"},
+                {"at": "2026-07-22", "open": "11", "close": "10", "low": "9", "high": "12"},
+                {"at": "2026-07-23", "open": "10", "close": "12", "low": "10", "high": "13"},
+            ],
+        },
+        {
+            **common,
+            "chart_id": "heatmap-fixture",
+            "kind": "heatmap",
+            "x_labels": ["A", "B"],
+            "y_labels": ["Low", "High"],
+            "axis": axis,
+            "cells": [
+                {"x": 0, "y": 0, "value": "1"},
+                {"x": 1, "y": 0, "value": "2"},
+                {"x": 0, "y": 1, "value": "3"},
+                {"x": 1, "y": 1, "value": "4"},
+            ],
+        },
+        {
+            **common,
+            "chart_id": "network-fixture",
+            "kind": "network",
+            "display": "sankey",
+            "nodes": [{"id": "idea-a", "label": "Idea"}, {"id": "security-a", "label": "Security"}],
+            "links": [{"source": "idea-a", "target": "security-a", "value": "1"}],
+        },
+    ]
+    page = tmp_path / "families.md"
+    page.write_text(
+        "\n".join("```echart\n" + json.dumps(chart) + "\n```" for chart in charts),
+        encoding="utf-8",
+    )
+
+    parsed, errors = parse_research_charts(
+        page, repository_root / "schemas" / "research_chart.schema.json"
+    )
+
+    assert errors == []
+    assert {chart["kind"] for chart in parsed} == {
+        "scatter",
+        "composition",
+        "candlestick",
+        "heatmap",
+        "network",
+    }
 
 
 def test_wiki_log_uses_rotation_threshold_instead_of_page_size(

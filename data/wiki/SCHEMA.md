@@ -130,6 +130,28 @@ research, while news must already map to a maintained idea or security. A lead a
 an assessment, strategy, signal, allocation, order, or accounting state. Comprehensive notes
 belong only in the operation's non-Quartz `seekingalpha_analysis.md` artifact.
 
+## Research visualizations
+
+Successful `opportunity_research`, `quick_check_research`, `idea_research`, `security_research`,
+`relationship_research`, and `strategy_research` operations perform the bounded chartability pass
+defined by their operation skill and the repository `echart` skill. Every changed primary research
+page maintains `## Visual evidence`. Embed a chart only as strict JSON inside an exact `echart`
+fence validating against `schemas/research_chart.schema.json`; executable JavaScript, inline chart
+HTML, remote data calls, and CDN references are forbidden in research Markdown.
+
+A dataset is chartable when it is decision-relevant and has at least three comparable observations,
+or at least two periods for each of at least two comparable series. Preserve sources, as-of dates,
+definitions, units, currency and canonical FX basis, and immutable entity IDs. Use decimal strings
+or `null` for numeric values. Sparse, unavailable, immaterial, or incomparable data stays prose or
+a normal table and receives a specific omission in the operation result rather than an invented
+visual.
+
+Charts are one-way derived presentation. They never feed assessments, allocation, signals, orders,
+fills, cash, positions, or performance. Quartz renders each valid chart with the pinned local Apache
+ECharts asset and a visible data/source fallback. GitHub and no-JavaScript readers retain the JSON
+plus the surrounding prose. Existing pages gain charts on their next normal research refresh; no
+bulk backfill is required.
+
 ## Links and size
 
 Use meaningful wiki links and keep every ordinary maintained page under `max_page_bytes`. The

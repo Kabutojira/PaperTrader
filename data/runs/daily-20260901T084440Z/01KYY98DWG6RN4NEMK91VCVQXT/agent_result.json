@@ -1,0 +1,54 @@
+{
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "DLocal’s July thirty-first SMA 50/200 bullish crossover was classified as noise rather than a new opportunity: the later accepted full review retained Medium / Watch and allocation ineligibility, with no paper action."
+  ],
+  "evidence": [
+    {
+      "claim": "The deterministic packet records an entered SMA 50 above SMA 200 transition on 2026-07-31. DLO moved from an adjusted close of USD 14.880000114440918 on 2026-07-02 to USD 15.079999923706055 on 2026-07-31, a 0.013440847293478097919123055 period return; the trigger strength was 0.001786376244703932645412591846 after a prior strength of zero.",
+      "source": "data/wiki/inbox/market-security_715bde20b6e1e1320c1a-sma_50_cross_above_200-b9da98dda495.md",
+      "source_hash": "b9da98dda49508031f8df596eccd9722a2e86f27291026ba0f0281d4a0a69ac8"
+    },
+    {
+      "claim": "The later accepted full security review refreshed dLocal's Q2 2026 SEC financial statements and results and found no newer issuer operating filing. It retained USD 9.00/USD 18.70/USD 29.40 scenarios, a USD 14.96 buy-below price, Medium / Watch disposition, and allocation ineligibility; the technical crossover does not add a distinct fundamental catalyst or change those gates.",
+      "source": "data/runs/daily-20260828T210155Z/01M0ZF0AJG7G54J9TCADG7KFYX/agent_result.json",
+      "source_hash": "3843dc6a64dd183327b47c5ac5e97e6af1e161bcd3a0a89b6bfa1de75dd18768",
+      "url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000031/dlo-20260630.htm"
+    },
+    {
+      "claim": "The latest deterministic allocation row for DLO remains excluded with zero target weight because the bear/base payoff, expected/bear payoff, and relationship gates fail. No position, order, signal, fill, execution, cash, portfolio, or performance state was changed for this operation.",
+      "source": "data/tables/allocation_targets.csv"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01KYY98DWG6RN4NEMK91VCVQXT",
+  "operations_created": [],
+  "reason_code": "noise_no_follow_up",
+  "status": "succeeded",
+  "summary": "Classified DLocal's 2026-07-31 SMA 50/200 bullish crossover as noise, not a new opportunity or risk. The exact period rose only 1.34%, and the later accepted 2026-08-28 full review already refreshed primary Q2 evidence, retained Medium / Watch and the same allocation exclusions, and queued the sole justified relationship review. The crossover supplies no distinct catalyst, valuation change, invalidation change, or trading action; no bounded follow-up is justified in this operation.",
+  "validation": {
+    "checks": [
+      "Validated the supplied payload identity, immutable DLO security identity, exact 2026-07-02 through 2026-07-31 endpoints, entered transition, and retained packet content/source-price-hash context against the market cache.",
+      "Confirmed the market cache contains the exact endpoint bars: 2026-07-02 and 2026-07-31, with the packet's 2026-08-01T09:07:38Z market-data timestamp.",
+      "Reviewed the accepted 2026-08-28 dLocal full-review result and the latest deterministic allocation state; neither provides a new catalyst or a cleared allocation gate for this backlogged technical alert.",
+      "Confirmed no related trading or accounting path has an operation-local diff: orders, order legs, signals, executions, cash ledger, portfolio, and performance views are unchanged.",
+      "scripts/papertrader wiki lint --strict passed under the routed analyst profile."
+    ],
+    "passed": true
+  },
+  "visualization_review": {
+    "charts": [],
+    "completed": true,
+    "omissions": [
+      {
+        "dataset": "DLO 2026-07-02 through 2026-07-31 price and SMA transition data",
+        "reason": "The later accepted full review already incorporates the relevant market and primary-source context. This backlogged noise decision makes no primary research-page change, so no chart is emitted.",
+        "reason_code": "no_page_change"
+      }
+    ]
+  }
+}

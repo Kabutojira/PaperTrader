@@ -7,13 +7,13 @@ tags:
 created: "2026-09-01"
 updated: "2026-09-01"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_bc07eb5ba2fb775959a8"
-as_of: "2026-09-01T06:55:00Z"
+snapshot_id: "decision_0a9f35321118f3dc4243"
+as_of: "2026-09-01T09:24:14Z"
 ---
 
 # Signals
 
-**As of `2026-09-01T06:55:00Z`**
+**As of `2026-09-01T09:24:14Z`**
 
 ## Actionable trade signals
 
@@ -52,6 +52,15 @@ No pending orders.
 - Research status: `succeeded`
 - Conclusion: Completed one full repeat assessment of Tesla after the 2026-08-31 volume anomaly. The USD 367.95 close was 14.24% above the 2026-08-03 period start, with a 2.64 volume z-score and an upper-Bollinger-band close. Current SEC evidence did not change the Q2 operating thesis or the USD 137/USD 272/USD 491 scenarios. Deterministic assessment assessment\_df6d99ee7bbbc7052df1 derives USD 293 weighted fair value, -20.37% expected return, -15.28% confidence-adjusted expected return and a Sell / Avoid, allocation-ineligible disposition. The accepted Terafab edge remains current; three bounded candidate relationship reviews and the required dependent Terafab idea refresh were queued. No strategy, signal, order, allocation or accounting state changed.
 
+### [SU — Schneider Electric SE](securities/security_dc8486c1d61df62a22fd)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-08-31`
+- Research status: `succeeded`
+- Conclusion: Completed one full repeat assessment of Schneider Electric after the 2026-08-31 volume anomaly. Fresh issuer retrievals reproduced the H1 2026 and FY2025 hashes and disclosed no later operating catalyst; the weak anomaly is noise. Unchanged EUR190/EUR240/EUR330 scenarios against the EUR294.6000061035156 mark produce EUR250 weighted value, -15.13917351646089026196232008% expected return and -11.35438013734566769647174006% confidence-adjusted return. Deterministic assessment assessment\_7be713ccc996f281a300 remains Sell / Avoid, Watch tier and allocation-ineligible. The complete idea catalog produced one plausible unaccepted AI-infrastructure-power edge, so exactly one dependent relationship review was queued. No strategy, signal, order, allocation or accounting state changed.
+
 ### [RBLX — Roblox Corporation](securities/security_c9a37d277445869a8809)
 
 **Research alert — not a trade signal**
@@ -79,6 +88,15 @@ No pending orders.
 - Research status: `succeeded`
 - Conclusion: Completed PayPal's repeat security assessment after the 2026-08-28 lower-Bollinger and volume-anomaly alerts. Current SEC evidence contains no issuer operating filing after July 28 and both Q2 documents are unchanged, so the 12.71% one-session decline on 2.06-times average volume is an unexplained risk event and possible dislocation, not verified fundamental deterioration or a confirmed opportunity. At USD 53.66, unchanged USD 43.04/USD 64.56/USD 80.70 scenarios produce Buy / Initiate economics at Watch conviction, but expected-to-bear payoff and the pending digital-finance relationship keep allocation ineligible. Immutable assessment assessment\_2c8e04cee17905a2dec7 links its predecessor. No strategy, signal, order, allocation, execution, cash, portfolio, fill, or performance state changed.
 
+### [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-08-31`
+- Research status: `skipped`
+- Conclusion: The immutable alert price identity was superseded by the current canonical same-date market-data revision before a comparable quick-check assessment could be produced.
+
 ### [PATH — UiPath, Inc.](securities/security_eca976f0076a425ea1bb)
 
 **Research alert — not a trade signal**
@@ -97,6 +115,15 @@ No pending orders.
 - Research status: `succeeded`
 - Conclusion: Completed exactly one UiPath Class A common-stock review from the fiscal Q1 2027 Form 10-Q, SEC-filed results release, and canonical 5 August 2026 market and 6 August FX state. Registered both primary sources, created the maintained security page, updated the structured security row, and wrote the first scenario-complete assessment. USD 8.50/USD 15.50/USD 26.50 bear/base/bull values produce a USD 16.50 weighted value versus USD 13.82. Deterministic state derives Buy / Initiate as the valuation label but watch-tier conviction and allocation ineligibility because bear/base payoff, expected/bear payoff, and relationship gates fail. The 4 August Bollinger and overbought-RSI transitions followed a 21.03% rally without a newer issuer filing explaining it and are adverse entry timing, not fundamental confirmation. No strategy, signal, order, follow-up operation, allocation, or accounting state changed because no idea or accepted relationship is linked and the full strategy gate failed.
 
+### [PARRO.PA — Parrot S.A.](securities/security_cc4dcb8f002b61dffe00)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-08-31`
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
+
 ### [GEV — GE Vernova Inc.](securities/security_4b61970aa8f574446819)
 
 **Research alert — not a trade signal**
@@ -105,15 +132,6 @@ No pending orders.
 - Market date: `2026-08-31`
 - Research status: `succeeded`
 - Conclusion: Completed one repeat assessment of GE Vernova after the 2026-08-31 volume anomaly. GEV fell 10.75% over the supplied period and 1.47% on the final session with a 3.01 volume z-score, while fresh primary-source checks found unchanged Q2 evidence and only a planned CFO succession in the later Form 8-K. Unchanged USD 571.58/USD 1,016.02/USD 1,386.39 scenarios against the USD 898.530029296875 mark produce USD 997.5025 weighted value, 11.0149318860910792067882139% expected return and 8.261198914568309405091160425% confidence-adjusted return. Deterministic assessment assessment\_2b688aa3f035d5c0610a remains Hold / Watch, Watch tier and allocation-ineligible because both downside-payoff gates fail. Exactly one dependent AI-infrastructure-power idea refresh was queued; existing canonical relationship reviews were not duplicated. No strategy, signal, order, allocation or accounting state changed.
-
-### [DPZ — Domino's Pizza, Inc.](securities/security_f34181f3df32080a91d1)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-08-31`
-- Research status: `blocked`
-- Conclusion: High-priority security research is blocked. agent\_result:blocked:Blocked the bounded Domino's Pizza quick check because its immutable payload recorded source recorded source state conflicts with the current canonical indicator price identity recorded source state. The successful recent baseline and security identity were confirmed, but the stale/conflicting market binding prevents a comparable assessment decision. No assessment, wiki, follow-up, trading, allocation, or accounting state was changed.
 
 ### [CSL — Carlisle Companies Incorporated](securities/security_9b0db3bc77914b23a307)
 
@@ -130,8 +148,8 @@ No pending orders.
 
 - Alert: `bollinger\_below\_lower`
 - Market date: `2026-08-31`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
 
 ### [CSIQ — Canadian Solar Inc.](securities/security_099561384c0f5e697727)
 
@@ -151,32 +169,14 @@ No pending orders.
 - Research status: `skipped`
 - Conclusion: Queue triage disposition
 
-### [SU — Schneider Electric SE](securities/security_dc8486c1d61df62a22fd)
+### [DPZ — Domino's Pizza, Inc.](securities/security_f34181f3df32080a91d1)
 
 **Research alert — not a trade signal**
 
 - Alert: `volume\_anomaly`
 - Market date: `2026-08-31`
-- Research status: `succeeded`
-- Conclusion: Completed one full repeat assessment of Schneider Electric after the 2026-08-31 volume anomaly. Fresh issuer retrievals reproduced the H1 2026 and FY2025 hashes and disclosed no later operating catalyst; the weak anomaly is noise. Unchanged EUR190/EUR240/EUR330 scenarios against the EUR294.6000061035156 mark produce EUR250 weighted value, -15.13917351646089026196232008% expected return and -11.35438013734566769647174006% confidence-adjusted return. Deterministic assessment assessment\_7be713ccc996f281a300 remains Sell / Avoid, Watch tier and allocation-ineligible. The complete idea catalog produced one plausible unaccepted AI-infrastructure-power edge, so exactly one dependent relationship review was queued. No strategy, signal, order, allocation or accounting state changed.
-
-### [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-08-31`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [PARRO.PA — Parrot S.A.](securities/security_cc4dcb8f002b61dffe00)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-08-31`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `blocked`
+- Conclusion: High-priority security research is blocked. agent\_result:blocked:Blocked the bounded Domino's Pizza quick check because its immutable payload recorded source recorded source state conflicts with the current canonical indicator price identity recorded source state. The successful recent baseline and security identity were confirmed, but the stale/conflicting market binding prevents a comparable assessment decision. No assessment, wiki, follow-up, trading, allocation, or accounting state was changed.
 
 ### [VLO — Valero Energy Corporation](securities/security_c5a9e460d3350284d157)
 
@@ -204,15 +204,6 @@ No pending orders.
 - Market date: `2026-08-31`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
-
-### [PLS.AX — PLS Group Limited](securities/security_8a5c43888d224de85c69)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-08-31`
-- Research status: `succeeded`
-- Conclusion: Completed the first full research review of PLS Group Limited ordinary shares. Current FY2026 issuer evidence supports a scaled, low-cost and long-life Pilgangoora operation with a strong net-cash balance sheet, but the canonical AUD1.67/AUD3.67/AUD6.69 scenarios produce AUD3.925 probability-weighted value against the AUD5.400000095367432 mark. Deterministic assessment output is Sell / Avoid, allocation-ineligible, with no strategy or paper order. The 32.35% alert-period rise and volume anomaly are explained partly by current results and guidance but do not create an attractive entry. One dependent relationship review was queued for the lithium-cycle candidate; no candidate was represented as accepted.
 
 ### [NOMD — Nomad Foods Limited](securities/security_98a1943771da875efed5)
 

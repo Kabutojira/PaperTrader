@@ -17,12 +17,12 @@ from papertrader.config import ConfigurationError, load_settings
 from papertrader.integrity import is_runtime_path_allowed, validate_integrity
 from papertrader.podcast import PodcastError, validate_podcast_script
 from papertrader.portfolio import reconcile_portfolio
-from papertrader.queue import Operation
+from papertrader.queue import RESEARCH_CHART_OPERATIONS, Operation
 from papertrader.repository_state import RepositoryDelta, RepositorySnapshot
 from papertrader.seekingalpha import canonical_article_url, seekingalpha_source_id
 from papertrader.tables import read_table
 from papertrader.utils import parse_timestamp, utc_now
-from papertrader.wiki import lint_wiki
+from papertrader.wiki import lint_wiki, parse_research_charts
 
 WIKI_RESEARCH_DOMAINS = frozenset(
     {
@@ -114,6 +114,90 @@ def _is_wiki_path(path: PurePosixPath, domains: frozenset[str]) -> bool:
         and path.parts[2] in domains
         and path.suffix == ".md"
     )
+
+
+def _research_visualization_errors(
+    repository_root: Path,
+    *,
+    operation: Operation,
+    status: object,
+    result: Mapping[str, object],
+    changed_paths: Sequence[str],
+) -> list[str]:
+    """Require one deterministic chartability review for successful research."""
+
+    if operation.operation_type not in RESEARCH_CHART_OPERATIONS or status != "succeeded":
+        return []
+    errors: list[str] = []
+    review = result.get("visualization_review")
+    if not isinstance(review, Mapping) or review.get("completed") is not True:
+        return ["successful analytical research requires a completed visualization_review"]
+    raw_charts = review.get("charts")
+    raw_omissions = review.get("omissions")
+    if not isinstance(raw_charts, list) or not isinstance(raw_omissions, list):
+        return ["visualization_review charts and omissions must be arrays"]
+
+    primary_pages = sorted(
+        path
+        for path in changed_paths
+        if (
+            len(PurePosixPath(path).parts) >= 4
+            and PurePosixPath(path).parts[:2] == ("data", "wiki")
+            and PurePosixPath(path).parts[2] in WIKI_RESEARCH_DOMAINS
+            and PurePosixPath(path).suffix == ".md"
+        )
+    )
+    actual: set[tuple[str, str]] = set()
+    schema_path = repository_root / "schemas" / "research_chart.schema.json"
+    for page_path in primary_pages:
+        absolute = repository_root.joinpath(*PurePosixPath(page_path).parts)
+        try:
+            text = absolute.read_text(encoding="utf-8")
+        except (OSError, UnicodeError) as exc:
+            errors.append(f"cannot inspect research visualizations in {page_path}: {exc}")
+            continue
+        if not re.search(r"^## Visual evidence\s*$", text, flags=re.MULTILINE):
+            errors.append(f"changed research page lacks ## Visual evidence: {page_path}")
+        charts, chart_errors = parse_research_charts(absolute, schema_path)
+        errors.extend(f"{page_path}: {error}" for error in chart_errors)
+        for chart in charts:
+            chart_id = chart.get("chart_id")
+            if isinstance(chart_id, str):
+                actual.add((page_path, chart_id))
+
+    reported: list[tuple[str, str]] = []
+    for item in raw_charts:
+        if isinstance(item, Mapping):
+            reported_page_path = item.get("page_path")
+            reported_chart_id = item.get("chart_id")
+            if isinstance(reported_page_path, str) and isinstance(reported_chart_id, str):
+                reported.append((reported_page_path, reported_chart_id))
+    if len(reported) != len(set(reported)):
+        errors.append("visualization_review charts must not contain duplicates")
+    if set(reported) != actual:
+        errors.append(
+            "visualization_review charts do not match chart ids in changed research pages: "
+            f"expected {sorted(actual)!r}, got {sorted(set(reported))!r}"
+        )
+
+    omission_codes = {
+        str(item.get("reason_code"))
+        for item in raw_omissions
+        if isinstance(item, Mapping) and isinstance(item.get("reason_code"), str)
+    }
+    if not primary_pages:
+        if actual or raw_charts:
+            errors.append("visualization_review cannot report charts without a changed page")
+        if "no_page_change" not in omission_codes:
+            errors.append(
+                "research with no changed primary page requires a no_page_change omission"
+            )
+    else:
+        if "no_page_change" in omission_codes:
+            errors.append("no_page_change omission is invalid when a primary page changed")
+        if not actual and not raw_omissions:
+            errors.append("a chart-free visualization_review requires a specific omission")
+    return errors
 
 
 def _is_followup_path(path: PurePosixPath) -> bool:
@@ -1356,6 +1440,15 @@ def validate_agent_result(
         and "data/tables/security_assessments.csv" in changed_paths
     ):
         errors.append("skipped security research must preserve its existing current assessment")
+    errors.extend(
+        _research_visualization_errors(
+            repository_root,
+            operation=operation,
+            status=status,
+            result=result,
+            changed_paths=changed_paths,
+        )
+    )
     errors.extend(
         _security_assessment_result_errors(
             repository_root,

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from dataclasses import replace
 from pathlib import Path
 
@@ -191,3 +192,25 @@ def test_quartz_uses_external_dashboard_source_and_validated_publication_copy(
     assert "differs from decision_snapshot.json" in build
     assert "publication artifact hash changed during copy" in build
     assert "copyFileSync" in build
+
+
+def test_quartz_research_charts_use_pinned_local_echarts_with_fallback(
+    repository_root: Path,
+) -> None:
+    site = repository_root / "site"
+    package = json.loads((site / "package.json").read_text(encoding="utf-8"))
+    renderer = (site / "papertrader" / "scripts" / "research-charts.inline.ts").read_text(
+        encoding="utf-8"
+    )
+    prepare = (site / "prepare-quartz.mjs").read_text(encoding="utf-8")
+    layout = (site / "quartz.layout.ts").read_text(encoding="utf-8")
+
+    assert package["dependencies"]["echarts"] == "6.0.0"
+    assert "static/vendor/echarts/echarts.min.js" in renderer
+    assert "cdn." not in renderer
+    assert "fetch(" not in renderer
+    assert "View chart data table" in renderer
+    assert "View validated chart JSON" in renderer
+    assert 'renderer: "svg"' in renderer
+    assert '["LICENSE", "LICENSE"]' in prepare
+    assert "ResearchCharts()" in layout

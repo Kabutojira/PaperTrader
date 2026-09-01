@@ -1,0 +1,23 @@
+{
+  "auxiliary_models": {
+    "web_extract": "openai-codex:gpt-5.6-luna"
+  },
+  "checkpoint_index": 4,
+  "cycle_disposition": "skipped",
+  "daily_cycle_id": "daily-20260901T084440Z",
+  "effective_model": "gpt-5.6-terra",
+  "escalation_source": "",
+  "maximum_turns": 80,
+  "mutation_policy": "routine_research",
+  "operation_history_version": 1,
+  "operation_id": "01KYY98DWG9VSQMXX2Z8HHAQJB",
+  "operation_type": "opportunity_research",
+  "profile": "analyst",
+  "profile_policy_version": "profile-router-v1",
+  "queue_status": "skipped",
+  "queue_updated_at": "2026-09-01T09:04:31Z",
+  "reasoning_effort": "medium",
+  "route_reason": "routine_research_or_long_form_synthesis",
+  "timeout_seconds": 1200,
+  "weighted_cost": "2.5"
+}

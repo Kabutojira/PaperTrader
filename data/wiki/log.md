@@ -2869,3 +2869,18 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 ## 2026-09-01
 
 - Published investor decision snapshot `decision_bc07eb5ba2fb775959a8`.
+
+- Published investor decision snapshot `decision_0a9f35321118f3dc4243`.
+
+- Generated canonical [[daily-reports/daily-report_20260901]] for run `daily-20260901T084440Z`.
+
+## [2026-09-01T08:47:14Z] relationship research | CrowdStrike and cybersecurity continuity
+
+- Refreshed the accepted [[relationships/relationship_228f56aa5d91f3688b67|CrowdStrike
+  cybersecurity-continuity relationship]] against the fiscal-Q2 Form 10-Q and SEC-hosted results
+  exhibit. Faster net-new ARR, Falcon Flex and module adoption strengthen the positive high-sensitivity
+  transmission, while retention disclosure, pricing, incident trust, acquisition spending, stock
+  compensation, dilution and valuation keep confidence medium.
+- Added a sourced Q1-to-Q2 revenue and company-defined free-cash-flow chart. No strategy, signal,
+  allocation, order or paper trade was created because every maintained valuation scenario remains
+  below the current mark.

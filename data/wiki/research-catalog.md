@@ -7,8 +7,8 @@ tags:
 created: "2026-09-01"
 updated: "2026-09-01"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_bc07eb5ba2fb775959a8"
-as_of: "2026-09-01T06:55:00Z"
+snapshot_id: "decision_0a9f35321118f3dc4243"
+as_of: "2026-09-01T09:24:14Z"
 ---
 
 # Research catalog
@@ -504,6 +504,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader daily report — 2026-08-29](daily-reports/daily-report_20260829)
 - [PaperTrader daily report — 2026-08-30](daily-reports/daily-report_20260830)
 - [PaperTrader daily report — 2026-08-31](daily-reports/daily-report_20260831)
+- [PaperTrader daily report — 2026-09-01](daily-reports/daily-report_20260901)
 
 ## Idea
 

@@ -3,6 +3,7 @@ import * as Component from "./quartz/components";
 import { QuartzComponentProps } from "./quartz/components/types";
 import type { SimpleSlug } from "./quartz/util/path";
 import DecisionNavigation from "./papertrader/components/DecisionNavigation";
+import ResearchCharts from "./papertrader/components/ResearchCharts";
 
 const dashboardPages = new Set([
   "index",
@@ -54,6 +55,7 @@ export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [DecisionNavigation()],
   afterBody: [
+    ResearchCharts(),
     Component.ConditionalRender({
       component: recentIdeas,
       condition: (page) =>

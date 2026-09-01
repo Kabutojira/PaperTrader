@@ -7,7 +7,9 @@ description: Recheck one recently researched security against new alerts, update
 
 ## Activation
 
-Activate for exactly one `quick_check_research` operation created after a deterministic price alert when the same immutable security completed full research within the preceding ten days.
+Activate for exactly one `quick_check_research` operation created after a deterministic price alert
+when the same immutable security completed full research within the preceding ten days. Require the
+preloaded native `llm-wiki` and `echart` support skills.
 
 ## Allowed scope
 
@@ -36,7 +38,16 @@ Require `security_id`, `baseline_operation_id`, `baseline_result_path`, `baselin
    confirm both identities before writing the result manifest.
 6. If `full_research_requested=true`, or a valuation/buy zone is newly reached, an invalidation/catalyst fires, primary evidence materially changes, or the baseline can no longer support a decision, enqueue exactly one dependent `security_research` operation. Carry all alert causes, this quick-check identity, and the specific changed gate. Do not create a strategy or signal directly.
 7. If no full review is warranted, record that bounded conclusion with evidence. A no-escalation result is successful work.
-8. Run the required validation commands and write `agent_result.json` last.
+8. Apply the chartability pass only to the alert period and decision-relevant baseline-versus-current
+   data; then run the required validation commands and write `agent_result.json` last.
+
+## Visual evidence
+
+Follow `skills/echart/references/papertrader-embedding.md`. If the security page changes, maintain
+`## Visual evidence` and update only charts affected by the alert, changed assumptions, price versus
+the buy zone, or scenario comparison. Do not rebuild the full security chart pack. An unchanged
+result with no page delta records `no_page_change`; sparse or unchanged data receives a specific
+omission instead of an invented chart.
 
 ## Source hierarchy
 
@@ -54,10 +65,15 @@ actual files changed, CLI receipts, the accepted assessment version, and the one
 full-research operation ID when escalation occurred. Any repository delta requires an accepted
 same-run assessment version. The manifest describes completed work, not proposed edits. An
 assessment request that was written but not invoked is proposed work and requires a failed result.
+Every succeeded result includes the completed `visualization_review` manifest.
 
 ## Verification
 
-Run security/assessment schema validation, source freshness checks, `scripts/papertrader queue validate`, strict integrity, strict wiki lint, and portfolio reconciliation. Confirm the baseline operation identity and the current `source_price_hash`. When escalating, confirm exactly one dependent full-review payload contains this quick-check operation ID and all merged trigger causes.
+Run security/assessment schema validation, source freshness checks, `scripts/papertrader queue validate`,
+strict integrity, strict wiki lint, and portfolio reconciliation. Confirm chart fences validate and
+the visualization manifest matches the changed security page. Confirm the baseline operation
+identity and the current `source_price_hash`. When escalating, confirm exactly one dependent
+full-review payload contains this quick-check operation ID and all merged trigger causes.
 
 ## Failure policy
 

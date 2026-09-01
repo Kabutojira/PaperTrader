@@ -1,0 +1,24 @@
+{
+  "completed_at": "",
+  "daily_run_version": 1,
+  "fill_outcomes": [],
+  "model_budget_limit": "5",
+  "model_budget_used": "0",
+  "operation_count": 0,
+  "podcast_audio_path": "",
+  "podcast_operation_id": "",
+  "podcast_page_path": "",
+  "podcast_status": "pending",
+  "preparation_errors": [],
+  "queue_dispositions": [
+    "01KZCFVCT82RJFGB5HESAFJB6B:blocked:dependency_unavailable:01KZ9ZJVER177B5ASW4ZMQHEG3",
+    "01KZGT11ZGR8JEKWC3RXGSS544:blocked:dependency_unavailable:01KZGT11ZGBPRBKV129FD00TH1"
+  ],
+  "report_path": "",
+  "run_id": "daily-20260901T083722Z",
+  "snapshot_id": "",
+  "source_sha": "02b8c5971706b465f4f0d9ef914f67db3fd2c028",
+  "started_at": "2026-09-01T08:37:31Z",
+  "status": "prepared",
+  "trigger": "local-hermes"
+}

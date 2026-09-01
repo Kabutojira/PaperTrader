@@ -152,6 +152,17 @@ def test_seeded_agent_operation_audits_structured_change_and_terminalizes(
             "issues_recorded": [],
             "daily_report_items": [],
             "commands_run": [],
+            "visualization_review": {
+                "completed": True,
+                "charts": [],
+                "omissions": [
+                    {
+                        "dataset": "bounded integration trigger",
+                        "reason_code": "no_page_change",
+                        "reason": "The fixture changes no primary research page.",
+                    }
+                ],
+            },
             "validation": {"passed": True, "checks": ["evidence-linked no-follow-up"]},
         }
         (artifact / "agent_result.json").write_text(

@@ -165,6 +165,19 @@ def routing_context(repository_root: Path, operation: Operation) -> RoutingConte
         ),
         None,
     )
+    proposed_relationship_change = bool(
+        operation.operation_type == "relationship_research"
+        and relationship is not None
+        and any(
+            isinstance(metadata.get(proposed_field), str)
+            and metadata[proposed_field] != relationship[current_field]
+            for proposed_field, current_field in (
+                ("proposed_direction", "direction"),
+                ("proposed_mechanism", "mechanism"),
+                ("proposed_invalidation", "invalidation"),
+            )
+        )
+    )
     idea_page = repository_root / "data" / "wiki" / "ideas" / f"{operation.entity_id}.md"
     return RoutingContext(
         current_holding=any(
@@ -197,7 +210,11 @@ def routing_context(repository_root: Path, operation: Operation) -> RoutingConte
         ),
         decision_change=(
             operation.operation_type == "relationship_research"
-            and (relationship is None or relationship["status"] != "accepted")
+            and (
+                relationship is None
+                or relationship["status"] != "accepted"
+                or proposed_relationship_change
+            )
         ),
         initial_research=operation.operation_type == "idea_research" and not idea_page.is_file(),
         broad_research=operation.operation_type == "idea_research" and not idea_page.is_file(),

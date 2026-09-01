@@ -129,6 +129,17 @@ def _result(operation_id: str) -> dict[str, object]:
         "issues_recorded": [],
         "daily_report_items": [],
         "commands_run": [],
+        "visualization_review": {
+            "completed": True,
+            "charts": [],
+            "omissions": [
+                {
+                    "dataset": "bounded trigger evidence",
+                    "reason_code": "no_page_change",
+                    "reason": "The evidence did not change a primary research page.",
+                }
+            ],
+        },
         "validation": {"passed": True, "checks": ["no follow-up retained with evidence"]},
     }
 
@@ -187,7 +198,8 @@ def test_one_seeded_operation_runs_with_yolo_and_no_operational_credentials(
     assert command[command.index("--model") + 1] == "gpt-5.6-terra"
     assert "--reasoning" not in command
     assert "--reasoning-effort" not in command
-    assert command.count("--skills") == 3
+    assert command.count("--skills") == 4
+    assert "echart" in command
     assert command[command.index("--toolsets") + 1] == "web,file,terminal"
     assert command[command.index("--max-turns") + 1] == "80"
     assert captured["timeout"] == 1200
@@ -238,6 +250,7 @@ def test_daily_podcast_is_text_only_on_the_deep_profile(
         native_skill=SimpleNamespace(name="llm-wiki"),
         controller_skill=SimpleNamespace(name="papertrader-controller"),
         operation_skill=SimpleNamespace(name="papertrader-daily-podcast"),
+        auxiliary_skills=(),
         profile="deep",
         reasoning_effort="medium",
         maximum_turns=160,

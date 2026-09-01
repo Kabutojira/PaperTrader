@@ -1,0 +1,76 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_8b703a8adf5f864acaa4",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Prosus quick check blocked: the payload's immutable source-price hash conflicts with the current canonical 31 August indicator identity after a same-date price revision. No assessment or research conclusion changed, and no full-review follow-up or paper-trading state was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The mandatory first audited receipt succeeded and bound security_8b703a8adf5f864acaa4 to Prosus N.V. ordinary N shares / PRX / XAMS / EUR / equity. It confirmed successful baseline operation 01M14TXNHGPS58SRD5ZMHP5X7W completed at 2026-08-28T19:20:43Z and current immutable assessment assessment_7f28dfd9240d6099400b.",
+      "observed_at": "2026-09-01T08:26:28Z",
+      "source": "PaperTrader audited security context"
+    },
+    {
+      "claim": "The immutable quick-check payload is bound to market date 2026-08-31, period 2026-08-03 through 2026-08-31, volume_anomaly, and source_price_hash db34c8cbb9a5d708c2cec1a3cd54ef5f4388d161e80a721facd663303c3f53fa.",
+      "observed_at": "2026-08-31T20:40:31Z",
+      "source": "data/operations/payloads/01M1CRTPGRH4AKNX4GTB8JWQ7H.json",
+      "source_hash": "db34c8cbb9a5d708c2cec1a3cd54ef5f4388d161e80a721facd663303c3f53fa"
+    },
+    {
+      "claim": "The current canonical indicator row for security_8b703a8adf5f864acaa4 is dated 2026-08-31, retains volume_anomaly, and carries conflicting source_price_hash 9af6f894ff4aec1e59c8e0bed08e6d1cc1ae20fb7d9c3c710e924697fe78914e.",
+      "observed_at": "2026-09-01T08:23:05Z",
+      "source": "data/market/indicators.csv",
+      "source_hash": "9af6f894ff4aec1e59c8e0bed08e6d1cc1ae20fb7d9c3c710e924697fe78914e"
+    },
+    {
+      "claim": "Current canonical PRX market data is dated 2026-08-31 with adjusted close EUR38.244998931884766 and volume 9800407, superseding the payload packet's same-date provisional adjusted close EUR38.33000183105469.",
+      "source": "data/market/latest.csv"
+    },
+    {
+      "claim": "The digital-attention ecosystem relationship is now accepted, unlike the baseline assessment's relationship_pending gate, but that potential decision-support change cannot be applied through a comparable assessment while the immutable alert price identity conflicts with current canonical state.",
+      "observed_at": "2026-08-28T20:02:12Z",
+      "source": "data/tables/relationships.csv"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01M1CRTPGRH4AKNX4GTB8JWQ7H",
+  "operations_created": [],
+  "reason_code": "source_price_hash_mismatch",
+  "status": "blocked",
+  "summary": "Blocked the bounded Prosus quick check because its immutable payload source_price_hash db34c8cbb9a5d708c2cec1a3cd54ef5f4388d161e80a721facd663303c3f53fa conflicts with the current canonical 2026-08-31 indicator price identity 9af6f894ff4aec1e59c8e0bed08e6d1cc1ae20fb7d9c3c710e924697fe78914e. The successful recent baseline and immutable security identity were confirmed, but the revised same-date market binding prevents a comparable assessment decision. The subsequently accepted causal relationship was observed but was not applied to assessment state because the conflicting current price identity must be resolved first. No assessment, wiki, follow-up, strategy, signal, order, allocation, or accounting state was changed.",
+  "validation": {
+    "checks": [
+      "Confirmed exactly one running quick_check_research row for security_8b703a8adf5f864acaa4, claimed by daily-20260901T082303Z with a live lease and the required llm-wiki, papertrader-quick-check-research and echart skills.",
+      "Confirmed hermes_preflight.json identifies the native wiki, controller, routed quick-check and echart support skills by path and SHA-256 with sequential execution enabled.",
+      "Consumed the mandatory successful audited security-context receipt before assessment-state inspection and verified the identity-matched successful baseline completed less than ten days before enqueue.",
+      "Compared the immutable payload source_price_hash with current canonical indicator state and failed closed on the same-date price-identity mismatch.",
+      "Did not publish an assessment or enqueue full research because the market-data binding conflict must be resolved before evaluating the accepted relationship or any changed decision-support gate.",
+      "Strict schema validation returned OK [schema].",
+      "Queue validation returned OK [queue].",
+      "Strict repository integrity returned OK [integrity].",
+      "Strict wiki lint returned OK [wiki].",
+      "Strict portfolio reconciliation returned OK [portfolio].",
+      "command_audit.json contains exactly the six listed successful canonical project-CLI receipts in order, each with no changed paths.",
+      "No security, assessment, source, wiki, issue, follow-up, allocation, relationship, strategy, signal, order, execution, cash, portfolio, fill, performance, or accounting state changed; no second operation was claimed or processed."
+    ],
+    "passed": true
+  },
+  "visualization_review": {
+    "charts": [],
+    "completed": true,
+    "omissions": [
+      {
+        "dataset": "Prosus alert-period and baseline-versus-current evidence",
+        "reason": "The conflicting same-date source-price identity blocked a comparable assessment and therefore no primary research page was changed or chart emitted.",
+        "reason_code": "no_page_change"
+      }
+    ]
+  }
+}

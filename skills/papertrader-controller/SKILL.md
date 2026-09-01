@@ -28,14 +28,16 @@ deterministic-controller-owned and immutable to every routed agent skill.
 
 Require `run_id`, `operation_id`, the original queue row, and a payload validating against
 `schemas/operation_payload.schema.json`. The queue row must name exactly one supported operation
-skill plus native `llm-wiki`; the parent controller separately preloads this controller skill.
+skill plus native `llm-wiki`. Analytical research rows also require `echart`; legacy unclaimed rows
+are upgraded atomically when claimed. The parent controller separately preloads this controller
+skill.
 
 ## Procedure
 
 1. Confirm the parent supplied exactly one row already marked `running`, claimed by this `run_id`,
    with a live lease and validated payload. Do not perform a queue lifecycle transition.
-2. Confirm the preflight artifact identifies the native `llm-wiki`, controller, and selected
-   operation skill by version and content hash.
+2. Confirm the preflight artifact identifies the native `llm-wiki`, controller, selected operation
+   skill, and every required support skill by version and content hash.
 3. Orient with `SCHEMA.md`, the results-first `index.md`, the complete `research-catalog.md`, and
    the recent wiki log, then execute the selected operation skill once without sub-agents or
    concurrent commands.

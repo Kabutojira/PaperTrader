@@ -8,7 +8,8 @@ description: Create or update one PaperTrader investment idea, discover and link
 ## Activation
 
 Activate for one validated idea objective and immutable `idea_id`. Require native `llm-wiki` and
-finish any permitted change before returning; never batch unrelated themes.
+the preloaded `echart` support skill, and finish any permitted change before returning; never batch
+unrelated themes.
 
 ## Allowed scope
 
@@ -82,9 +83,21 @@ and refresh the idea's security conclusion.
     removals, changed conclusions and confidence, contradictions, and conclusions that remain
     unchanged.
 12. Define catalysts, invalidation, contrary evidence, confidence, and a concrete next review date.
-13. Update or create exactly one idea page, then update the research catalog and append the log.
+13. Apply the chartability pass to decision-relevant market, value-chain, exposure, adoption, and
+    peer evidence gathered within this operation.
+14. Update or create exactly one idea page, then update the research catalog and append the log.
     Enqueue no work other than individually bounded security or relationship research justified by
     the evidence and classifications above.
+
+## Visual evidence
+
+Follow `skills/echart/references/papertrader-embedding.md`. Maintain `## Visual evidence` on the
+changed idea page. Chart sourced time series, market/value-chain composition, candidate comparison,
+or a bounded causal network when it materially clarifies the idea. Use immutable entity IDs for
+candidate nodes or observations where the schema supports them. Do not convert an unexplained
+ticker list into a chart, estimate market share without a comparable source/definition, or expand
+candidate discovery just to populate a visual. Record specific omissions for unavailable or
+incomparable market-size, share, or exposure data.
 
 ## Source hierarchy
 
@@ -102,6 +115,7 @@ Write completed changes and then a schema-valid `agent_result.json` with evidenc
 created operation IDs, commands, and checks. Do not emit deferred proposals.
 Write the manifest last; include only observed changed paths and canonical command receipts. The
 parent fills omissions from its authoritative snapshot and audit.
+Every succeeded result includes the completed `visualization_review` manifest.
 
 ## Verification
 
@@ -111,8 +125,8 @@ is linked from the idea page with status, direction, mechanism, and evidence. Co
 associations have reasons, no candidate is represented as accepted, every new or materially stale
 security has exactly one bounded security-research follow-up, and every plausible unaccepted,
 stale, or contradicted edge has exactly one bounded relationship-research follow-up. Also confirm
-review date, provenance, catalog/log updates, strict wiki lint, schema-conformant manifest, and exact
-changed paths.
+review date, provenance, catalog/log updates, strict wiki lint, valid chart fences, an exact
+visualization-manifest/chart-ID match, schema-conformant manifest, and exact changed paths.
 
 ## Failure policy
 

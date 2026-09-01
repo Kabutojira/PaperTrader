@@ -1,0 +1,49 @@
+{
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader queue validate"
+  ],
+  "daily_report_items": [
+    "Skipped the stale standalone FLNC July 31 bullish-MACD opportunity review: a later succeeded quick check and dependent full review already incorporated the alert and fiscal-Q3 evidence, retaining Sell / Avoid with no paper-trading action."
+  ],
+  "evidence": [
+    {
+      "claim": "The immutable packet records an entered bullish MACD crossover for security_a9eb9838940ef5ceaa0c over 2026-07-02 through 2026-07-31, with source-price hash a352617a3ffb8716fd7cce9cc525c79a801fb8e720716579101f31b1285cf703.",
+      "source": "data/wiki/inbox/market-security_a9eb9838940ef5ceaa0c-macd_cross_above_signal-fee548bc7a65.md",
+      "source_hash": "fee548bc7a65b2b99d8b8ec036a7c43d83840c3bc39698f91c30623a8923deb8"
+    },
+    {
+      "claim": "Succeeded quick-check operation 01KYY98DWGC9ZR46GYDYQ3V4ZP explicitly covered the merged FLNC bullish-MACD alert and created dependent full security research 01KZC5YVX8EY4YHH1S06VVHT5T; that full review is also recorded as succeeded.",
+      "observed_at": "2026-08-06T18:50:31Z",
+      "source": "data/operations/operations_history.csv"
+    },
+    {
+      "claim": "The accepted full review used Fluence's fiscal-Q3 SEC filing and earnings release, retained a complete but allocation-ineligible Sell / Avoid conclusion, and recorded that no strategy, signal, order, allocation, or accounting state changed.",
+      "observed_at": "2026-08-06T18:50:31Z",
+      "source": "data/runs/local-20260806T175531Z-flnc-r2/01KZC5YVX8EY4YHH1S06VVHT5T/agent_result.json"
+    },
+    {
+      "claim": "The current Fluence assessment remains ineligible with medium confidence and negative expected and base returns, consistent with the accepted full-review disposition.",
+      "source": "data/tables/security_assessments.csv"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01KYY98DWG9VSQMXX2Z8HHAQJB",
+  "operations_created": [],
+  "reason_code": "superseded_by_later_accepted_research",
+  "status": "skipped",
+  "summary": "Skipped the stale July 31 FLNC bullish-MACD opportunity review because the same alert was subsequently absorbed by succeeded quick-check operation 01KYY98DWGC9ZR46GYDYQ3V4ZP and its dependent succeeded full security review 01KZC5YVX8EY4YHH1S06VVHT5T. Those accepted results incorporated the intervening fiscal-Q3 primary evidence, retained the current Sell / Avoid and allocation-ineligible assessment, and created no strategy, signal, order, or accounting change. Reopening this older standalone trigger would duplicate accepted research rather than provide a bounded new conclusion.",
+  "validation": {
+    "checks": [
+      "Confirmed the selected row is running, claimed by daily-20260901T084440Z, and its lease expires at 2026-09-01T09:31:46Z.",
+      "Confirmed hermes_preflight.json identifies the native llm-wiki skill, papertrader-controller, papertrader-opportunity-research, and echart support skill for this run.",
+      "Oriented with SCHEMA.md, index.md, research-catalog.md, and the current wiki log before reviewing the FLNC packet, maintained security page, assessment, relationship, and structured operation history.",
+      "Confirmed the later quick check and full security review are terminally succeeded, cover the same bullish-MACD context, and contain the subsequent fiscal-Q3 evidence and current disposition; no duplicate research page change or follow-up is justified.",
+      "papertrader wiki lint --strict returned OK.",
+      "papertrader queue validate returned OK.",
+      "Confirmed no structured state, trading/accounting ledger, portfolio/performance view, allocation target/history, or wiki page was changed by this operation before this final manifest."
+    ],
+    "passed": true
+  }
+}

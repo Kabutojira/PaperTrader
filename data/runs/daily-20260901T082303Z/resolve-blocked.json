@@ -1,0 +1,8 @@
+{
+  "operation_id": "01M1CRTPGRH4AKNX4GTB8JWQ7H",
+  "run_id": "daily-20260901T082303Z",
+  "terminal_status": "skipped",
+  "result_path": "data/runs/daily-20260901T082303Z/01M1CRTPGRH4AKNX4GTB8JWQ7H/agent_result.json",
+  "result_summary": "The immutable alert price identity was superseded by the current canonical same-date market-data revision before a comparable quick-check assessment could be produced.",
+  "terminal_reason": "superseded_market_data_identity"
+}

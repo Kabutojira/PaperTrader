@@ -55,6 +55,50 @@
       "type": "array",
       "items": { "type": "string", "minLength": 1, "maxLength": 4000 }
     },
+    "visualization_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["completed", "charts", "omissions"],
+      "properties": {
+        "completed": { "const": true },
+        "charts": {
+          "type": "array",
+          "maxItems": 24,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["page_path", "chart_id"],
+            "properties": {
+              "page_path": { "$ref": "#/$defs/repository_path" },
+              "chart_id": { "type": "string", "pattern": "^[a-z][a-z0-9-]{0,63}$" }
+            }
+          }
+        },
+        "omissions": {
+          "type": "array",
+          "maxItems": 24,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["dataset", "reason_code", "reason"],
+            "properties": {
+              "dataset": { "type": "string", "minLength": 1, "maxLength": 160 },
+              "reason_code": {
+                "enum": [
+                  "single_value",
+                  "insufficient_comparability",
+                  "insufficient_history",
+                  "source_unavailable",
+                  "not_decision_relevant",
+                  "no_page_change"
+                ]
+              },
+              "reason": { "type": "string", "minLength": 1, "maxLength": 500 }
+            }
+          }
+        }
+      }
+    },
     "validation": {
       "type": "object",
       "additionalProperties": false,

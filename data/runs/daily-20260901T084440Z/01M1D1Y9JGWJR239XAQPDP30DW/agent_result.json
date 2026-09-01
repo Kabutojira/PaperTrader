@@ -1,0 +1,78 @@
+{
+  "commands_run": [
+    "papertrader research relationship upsert --request data/runs/daily-20260901T084440Z/01M1D1Y9JGWJR239XAQPDP30DW/relationship_upsert_request.json",
+    "papertrader wiki lint --strict",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "CrowdStrike's accepted positive, high-sensitivity cybersecurity-continuity relationship was refreshed against fiscal-Q2 2027 evidence. Faster net-new ARR, Falcon Flex and multi-module adoption strengthen the operating transmission, but retention disclosure, pricing, trust, acquisitions, equity costs, dilution and valuation keep confidence medium; no strategy or paper trade was created."
+  ],
+  "evidence": [
+    {
+      "claim": "Fiscal-Q2 revenue was USD 1.470897 billion, ending ARR was USD 5.841421 billion, quarterly net-new ARR was USD 332.8 million, six-month operating cash flow was USD 1.121205 billion, and diluted weighted-average shares were 1.044469 billion; the filing also retains incident, acquisition, renewal-definition and equity-cost risks.",
+      "observed_at": "2026-08-31T23:11:08Z",
+      "source": "source_crwd_q2_2027_10q",
+      "source_hash": "496e90560b4daaf992d261dd6eba3824e808e48fb12812205046a191e41318c1",
+      "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000031/crwd-20260731.htm"
+    },
+    {
+      "claim": "CrowdStrike reported USD 5.84 billion ending ARR, USD 332.8 million quarterly net-new ARR, USD 377.4 million company-defined quarterly free cash flow, USD 2.29 billion Falcon Flex ARR, 51%/35%/26% six-/seven-/eight-plus-module adoption, and raised fiscal-2027 revenue guidance.",
+      "observed_at": "2026-08-31T23:11:08Z",
+      "source": "source_crwd_q2_2027_results_exhibit",
+      "source_hash": "55bfc3ec3d51b325dcc39a3b1d23a2ef7a56d9b9d216c456a3d39b50083fdfcb",
+      "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm"
+    },
+    {
+      "claim": "The current scenario-complete security review values CrowdStrike at USD 72.02, USD 109.85 and USD 151.49 in bear, base and bull cases versus the USD 231 mark, leaving the security ineligible and blocking strategy research despite stronger operating evidence.",
+      "source": "data/wiki/securities/security_8472507d7d320aa388a7.md"
+    },
+    {
+      "claim": "The canonical relationship row preserves the exact idea and security endpoints, remains accepted with positive direction, high sensitivity and medium confidence, and now records the fiscal-Q2 mechanism, catalysts, invalidation and October 1 review boundary.",
+      "source": "data/tables/relationships.csv"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260901T084440Z/01M1D1Y9JGWJR239XAQPDP30DW/relationship_upsert_request.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_228f56aa5d91f3688b67.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M1D1Y9JGWJR239XAQPDP30DW",
+  "operations_created": [],
+  "reason_code": "relationship_refreshed",
+  "status": "succeeded",
+  "summary": "Refreshed the accepted positive, high-sensitivity CrowdStrike cybersecurity-continuity relationship against fiscal-Q2 2027 primary evidence. Accelerating net-new ARR, Falcon Flex and multi-module adoption strengthen the causal transmission, while retention disclosure, pricing quality, incident trust, acquisitions, stock-based compensation, dilution and valuation keep confidence medium. No follow-up strategy, signal, allocation, order or paper trade was created because every maintained valuation scenario remains below market.",
+  "validation": {
+    "checks": [
+      "The running queue row matched run daily-20260901T084440Z, the supplied operation and immutable relationship identity, the deep profile, all required skills, and a live lease.",
+      "The payload relationship, idea and security IDs matched the unique canonical relationship row and both maintained endpoint pages.",
+      "Fiscal-Q2 primary evidence supports a positive causal beneficiary edge at high sensitivity while contrary evidence keeps confidence medium.",
+      "The repository-local relationship upsert dispatched successfully under the deep profile and changed only data/tables/relationships.csv.",
+      "The relationship remains registered once in the complete research catalog, and the knowledge change was appended to data/wiki/log.md.",
+      "The changed relationship page contains one Visual evidence section and three strict echart JSON fences matching the visualization manifest exactly.",
+      "The final repository-local strict wiki lint passed after all page and chart edits.",
+      "Git diff checking found no whitespace errors in the operation's changed paths.",
+      "No allocation target, allocation history, strategy, signal, order, fill, execution, cash, portfolio or performance state was changed."
+    ],
+    "passed": true
+  },
+  "visualization_review": {
+    "charts": [
+      {
+        "chart_id": "crwd-q1-q2-revenue-free-cash-flow",
+        "page_path": "data/wiki/relationships/relationship_228f56aa5d91f3688b67.md"
+      },
+      {
+        "chart_id": "crwd-q1-q2-arr-transmission",
+        "page_path": "data/wiki/relationships/relationship_228f56aa5d91f3688b67.md"
+      },
+      {
+        "chart_id": "crwd-q1-q2-module-adoption",
+        "page_path": "data/wiki/relationships/relationship_228f56aa5d91f3688b67.md"
+      }
+    ],
+    "completed": true,
+    "omissions": []
+  }
+}

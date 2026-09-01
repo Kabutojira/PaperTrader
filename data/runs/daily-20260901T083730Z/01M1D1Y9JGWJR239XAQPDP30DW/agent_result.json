@@ -1,0 +1,35 @@
+{
+  "commands_run": [],
+  "daily_report_items": [
+    "CrowdStrike cybersecurity-continuity relationship refresh failed before dispatch because the active analyst profile requires deep allocation-enablement review; canonical research and paper-trading state were unchanged."
+  ],
+  "evidence": [
+    {
+      "claim": "Preflight identifies the active execution profile as analyst for relationship_research operation 01M1D1Y9JGWJR239XAQPDP30DW.",
+      "source": "data/runs/daily-20260901T083730Z/01M1D1Y9JGWJR239XAQPDP30DW/hermes_preflight.json"
+    },
+    {
+      "claim": "The sole canonical in-scope relationship upsert invocation exited 2 before dispatch with: analyst relationship change requires a deep allocation-enablement review.",
+      "source": "scripts/papertrader research relationship upsert"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260901T083730Z/01M1D1Y9JGWJR239XAQPDP30DW/relationship_upsert_request.json"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M1D1Y9JGWJR239XAQPDP30DW",
+  "operations_created": [],
+  "reason_code": "profile_scope_rejected",
+  "status": "failed",
+  "summary": "The repository-local relationship upsert was rejected before dispatch by the active analyst profile: analyst relationship change requires a deep allocation-enablement review. Per controller policy, no alternate invocation or retry was attempted. No canonical relationship, wiki, allocation, strategy, signal, order, execution, cash, portfolio, or performance state changed.",
+  "validation": {
+    "checks": [
+      "Queue row 01M1D1Y9JGWJR239XAQPDP30DW matched the supplied run, immutable relationship ID, running state, claimant, and live lease at review.",
+      "Payload endpoints matched the canonical relationship row and linked idea and security pages before the attempted structured update.",
+      "The only permitted structured-state command was rejected before dispatch by profile scope; controller policy forbids retrying a pre-dispatch scope rejection or substituting another invocation path.",
+      "No command audit receipt exists because the command was rejected before dispatch; commands_run is therefore empty.",
+      "Git inspection confirmed no diff in data/tables/relationships.csv or data/wiki/relationships/relationship_228f56aa5d91f3688b67.md after the rejected command."
+    ],
+    "passed": false
+  }
+}

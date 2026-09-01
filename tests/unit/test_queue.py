@@ -276,6 +276,151 @@ def test_security_research_causes_merge_before_claim_and_raise_priority(
     assert validate_queue(sandbox_repository) == []
 
 
+@pytest.mark.parametrize("operation_type", ["quick_check_research", "security_research"])
+def test_prepare_archives_superseded_same_date_price_alert(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    operation_type: str,
+) -> None:
+    security_id = "sec_revised_price"
+    original_hash = "a" * 64
+    current_hash = "b" * 64
+    inputs: dict[str, object] = {
+        "security_id": security_id,
+        "trigger_types": ["bollinger_below_lower"],
+        "market_data_as_of": "2026-07-24T09:00:00Z",
+        "market_data_date": "2026-07-24",
+        "period_start": "2026-07-01",
+        "period_end": "2026-07-24",
+        "source_price_hash": original_hash,
+    }
+    if operation_type == "quick_check_research":
+        inputs.update(
+            {
+                "baseline_operation_id": "01K11M5T80JQDRKHZJ5XA8NY1R",
+                "baseline_result_path": (
+                    "data/runs/baseline/01K11M5T80JQDRKHZJ5XA8NY1R/agent_result.json"
+                ),
+                "baseline_completed_at": "2026-07-23T09:00:00Z",
+            }
+        )
+    operation_id, created = enqueue_operation(
+        sandbox_repository,
+        sandbox_settings,
+        operation_type=operation_type,
+        entity_type="security",
+        entity_id=security_id,
+        dedupe_key=f"{operation_type}:{security_id}:price-alert:2026-07-24",
+        prompt="Review the revised same-date deterministic price alert.",
+        inputs=inputs,
+        source="deterministic-price-alert",
+        priority=95,
+        now=NOW,
+    )
+    assert created is True
+    write_table(
+        sandbox_repository,
+        "indicators",
+        [
+            {
+                "security_id": security_id,
+                "as_of_date": "2026-07-24",
+                "calculated_at": "2026-07-24T10:00:00Z",
+                "observation_count": "220",
+                "sma_20": "90",
+                "sma_50": "85",
+                "sma_200": "80",
+                "rsi_14": "30",
+                "bollinger_mid": "90",
+                "bollinger_upper": "99",
+                "bollinger_lower": "81",
+                "macd": "-2",
+                "macd_signal": "-1",
+                "macd_histogram": "-1",
+                "return_1d": "-2",
+                "return_5d": "-4",
+                "return_20d": "-8",
+                "volume_zscore": "1",
+                "volatility_20d": "20",
+                "trigger_state": "bollinger_below_lower",
+                "source_price_hash": current_hash,
+            }
+        ],
+    )
+
+    dispositions = prepare_queue(sandbox_repository, now=NOW + timedelta(minutes=1))
+
+    assert read_table(sandbox_repository, "operations_todo") == []
+    history = read_table(sandbox_repository, "operations_history")
+    archived = next(row for row in history if row["operation_id"] == operation_id)
+    assert archived["terminal_status"] == "skipped"
+    assert archived["terminal_reason"] == f"superseded_market_data_identity:{current_hash}"
+    assert dispositions == (
+        f"{operation_id}:skipped:superseded_market_data_identity:{current_hash}",
+    )
+    assert validate_queue(sandbox_repository) == []
+
+
+def test_prepare_preserves_price_alert_when_only_the_indicator_date_advanced(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    security_id = "sec_later_indicator"
+    operation_id, created = enqueue_operation(
+        sandbox_repository,
+        sandbox_settings,
+        operation_type="security_research",
+        entity_type="security",
+        entity_id=security_id,
+        dedupe_key="security_research:sec_later_indicator:price-alert:2026-07-23",
+        prompt="Research the earlier deterministic price alert.",
+        inputs={
+            "security_id": security_id,
+            "trigger_types": ["bollinger_below_lower"],
+            "market_data_as_of": "2026-07-23T10:00:00Z",
+            "market_data_date": "2026-07-23",
+            "period_start": "2026-07-01",
+            "period_end": "2026-07-23",
+            "source_price_hash": "a" * 64,
+        },
+        source="deterministic-price-alert",
+        priority=95,
+        now=NOW,
+    )
+    assert created is True
+    indicator = {
+        "security_id": security_id,
+        "as_of_date": "2026-07-24",
+        "calculated_at": "2026-07-24T10:00:00Z",
+        "observation_count": "220",
+        "sma_20": "90",
+        "sma_50": "85",
+        "sma_200": "80",
+        "rsi_14": "30",
+        "bollinger_mid": "90",
+        "bollinger_upper": "99",
+        "bollinger_lower": "81",
+        "macd": "-2",
+        "macd_signal": "-1",
+        "macd_histogram": "-1",
+        "return_1d": "-2",
+        "return_5d": "-4",
+        "return_20d": "-8",
+        "volume_zscore": "1",
+        "volatility_20d": "20",
+        "trigger_state": "bollinger_below_lower",
+        "source_price_hash": "b" * 64,
+    }
+    write_table(sandbox_repository, "indicators", [indicator])
+
+    prepare_queue(sandbox_repository, now=NOW + timedelta(minutes=1))
+
+    active = read_table(sandbox_repository, "operations_todo")
+    assert len(active) == 1
+    assert active[0]["operation_id"] == operation_id
+    assert active[0]["status"] == "ready"
+
+
 def test_recent_completed_security_review_selects_quick_check(
     sandbox_repository: Path,
     sandbox_settings: Settings,
@@ -384,6 +529,42 @@ def test_queue_rejects_unrequested_extra_agent_skills(
     assert any(
         "must include exactly skills" in error for error in validate_queue(sandbox_repository)
     )
+
+
+def test_research_queue_adds_echart_and_upgrades_legacy_row_when_claimed(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    operation_id, _ = _enqueue(
+        sandbox_repository,
+        sandbox_settings,
+        entity_id="sec_chart_skill",
+        catalyst="chart-skill",
+    )
+    rows = read_table(sandbox_repository, "operations_todo")
+    assert rows[0]["skill_names"] == ("llm-wiki|papertrader-security-research|echart")
+
+    rows[0]["skill_names"] = "llm-wiki|papertrader-security-research"
+    write_table(sandbox_repository, "operations_todo", rows)
+    assert validate_queue(sandbox_repository) == []
+    prepare_queue(sandbox_repository, now=NOW + timedelta(minutes=1))
+    claimed = claim_next(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="chart-skill-upgrade",
+        budget=RunBudget.from_settings(sandbox_settings),
+        operation_id=operation_id,
+        now=NOW + timedelta(minutes=2),
+    )
+
+    assert claimed is not None
+    assert claimed.skill_names == (
+        "llm-wiki",
+        "papertrader-security-research",
+        "echart",
+    )
+    persisted = read_table(sandbox_repository, "operations_todo")[0]
+    assert persisted["skill_names"].endswith("|echart")
 
 
 def test_claim_orders_by_priority_then_creation_time_and_allows_only_one_live_lease(

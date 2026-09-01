@@ -99,6 +99,7 @@ def test_cli_agent_preflight_serializes_profile_weighted_cost(
         native_skill=skill,
         controller_skill=skill,
         operation_skill=skill,
+        auxiliary_skills=(),
         config_sha256="b" * 64,
         provider="openai-codex",
         model="gpt-5.6-terra",

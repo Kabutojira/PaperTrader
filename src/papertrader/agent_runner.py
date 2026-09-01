@@ -24,6 +24,7 @@ from papertrader.podcast import PodcastError, podcast_page_path, validate_podcas
 from papertrader.profiles import ProfileRoute, RoutingContext, route_profile, select_profile
 from papertrader.queue import (
     OPERATION_SKILLS,
+    RESEARCH_CHART_OPERATIONS,
     Operation,
     RunBudget,
     block_operation,
@@ -225,6 +226,7 @@ class HermesPreflight:
     native_skill: SkillIdentity
     controller_skill: SkillIdentity
     operation_skill: SkillIdentity
+    auxiliary_skills: tuple[SkillIdentity, ...]
     config_sha256: str
     provider: str
     model: str
@@ -348,8 +350,8 @@ def _skill_identity(path: Path, *, display_root: Path) -> SkillIdentity:
 
 def project_skill_identities(
     repository_root: Path, operation_type: str
-) -> tuple[SkillIdentity, SkillIdentity]:
-    """Return the validated controller and one selected operation skill identity."""
+) -> tuple[SkillIdentity, SkillIdentity, tuple[SkillIdentity, ...]]:
+    """Return validated controller, operation, and support-skill identities."""
 
     try:
         operation_skill_name = OPERATION_SKILLS[operation_type]
@@ -361,7 +363,16 @@ def project_skill_identities(
     operation_skill = _skill_identity(operation_path, display_root=repository_root)
     if controller.name != "papertrader-controller" or operation_skill.name != operation_skill_name:
         raise AgentRunError("project skill folder and frontmatter names do not match")
-    return controller, operation_skill
+    auxiliary_skills: tuple[SkillIdentity, ...] = ()
+    if operation_type in RESEARCH_CHART_OPERATIONS:
+        chart_skill = _skill_identity(
+            repository_root / "skills" / "echart" / "SKILL.md",
+            display_root=repository_root,
+        )
+        if chart_skill.name != "echart":
+            raise AgentRunError("project skill folder and frontmatter names do not match")
+        auxiliary_skills = (chart_skill,)
+    return controller, operation_skill, auxiliary_skills
 
 
 def _managed_config(
@@ -612,7 +623,9 @@ def preflight_hermes(
         raise AgentRunError("Hermes profile does not match the persisted route")
     config_hash = _validate_managed_config(repository_root, settings, home, profile)
     native = _native_skill(settings, home)
-    controller, operation_skill = project_skill_identities(repository_root, operation_type)
+    controller, operation_skill, auxiliary_skills = project_skill_identities(
+        repository_root, operation_type
+    )
     if (
         check_command
         and shutil.which(settings.hermes.command[0], path=environment.get("PATH")) is None
@@ -622,6 +635,7 @@ def preflight_hermes(
         native,
         controller,
         operation_skill,
+        auxiliary_skills,
         config_hash,
         profile.provider,
         profile.model,
@@ -812,7 +826,8 @@ def build_controller_prompt(
     )
     return (
         "Run exactly one PaperTrader operation, with no delegation, sub-agent, background task, "
-        "or second operation. The controller and operation skills are preloaded.\n\n"
+        "or second operation. The controller, operation, and required support skills are "
+        "preloaded.\n\n"
         f"Run ID: {run_id}\n"
         f"Operation ID: {operation.operation_id}\n"
         f"Operation type: {operation.operation_type}\n"
@@ -942,6 +957,9 @@ def hermes_command(settings: Settings, preflight: HermesPreflight, prompt: str) 
     """Return the released Hermes one-shot command; reasoning lives in managed config."""
 
     toolsets = settings.hermes.profile(preflight.profile).toolsets
+    auxiliary_arguments = tuple(
+        argument for skill in preflight.auxiliary_skills for argument in ("--skills", skill.name)
+    )
     return (
         *settings.hermes.command,
         *settings.hermes.arguments,
@@ -959,6 +977,7 @@ def hermes_command(settings: Settings, preflight: HermesPreflight, prompt: str) 
         preflight.controller_skill.name,
         "--skills",
         preflight.operation_skill.name,
+        *auxiliary_arguments,
         "--query",
         prompt,
     )
@@ -1150,12 +1169,13 @@ def run_claimed_operation(
     atomic_write_json(
         preflight_path,
         {
-            "preflight_version": 4,
+            "preflight_version": 5,
             "run_id": run_id,
             "operation_id": operation.operation_id,
             "native_skill": _identity_payload(preflight.native_skill),
             "controller_skill": _identity_payload(preflight.controller_skill),
             "operation_skill": _identity_payload(preflight.operation_skill),
+            "auxiliary_skills": [_identity_payload(skill) for skill in preflight.auxiliary_skills],
             "hermes_config_sha256": preflight.config_sha256,
             "provider": preflight.provider,
             "model": preflight.model,

@@ -1,0 +1,64 @@
+.research-chart {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 0.6rem;
+  background: var(--light);
+}
+
+.research-chart h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.05rem;
+}
+
+.research-chart__description,
+.research-chart__as-of,
+.research-chart__sources {
+  color: var(--darkgray);
+  font-size: 0.9rem;
+}
+
+.research-chart__canvas {
+  width: 100%;
+  min-height: 24rem;
+  margin: 0.75rem 0;
+}
+
+.research-chart details {
+  margin-top: 0.75rem;
+}
+
+.research-chart details pre {
+  max-height: 24rem;
+}
+
+.research-chart__table {
+  overflow-x: auto;
+}
+
+.research-chart__table table {
+  width: 100%;
+  font-size: 0.85rem;
+}
+
+.research-chart__error {
+  margin: 1rem 0;
+  padding: 0.75rem;
+  border-left: 0.25rem solid var(--secondary);
+}
+
+@media (max-width: 600px) {
+  .research-chart__canvas {
+    min-height: 20rem;
+  }
+}
+
+@media print {
+  .research-chart__canvas {
+    min-height: 16rem;
+  }
+
+  .research-chart details {
+    display: none;
+  }
+}

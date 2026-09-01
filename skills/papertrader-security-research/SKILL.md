@@ -8,7 +8,8 @@ description: Research and value exactly one PaperTrader security, discover and l
 ## Activation
 
 Activate for one validated `security_id`, never ticker text alone. Require native `llm-wiki`, a
-current security row or explicit creation identity, and a bounded research objective.
+current security row or explicit creation identity, the preloaded `echart` support skill, and a
+bounded research objective.
 
 ## Allowed scope
 
@@ -126,6 +127,23 @@ accepted rows in `relationships.csv`. Treat both sets as seeds, never as the com
     security page. Its objective must update the idea's candidate disposition, thesis, catalysts,
     risks, confidence, and broader investable-security universe from this review. Do not enqueue
     another security review for the same fresh result.
+18. Apply the chartability pass to the bounded, decision-relevant core dataset before final
+    validation. Use at most five annual or eight quarterly periods for relevant revenue, GAAP
+    operating or net income, cash flow/free cash flow, margins, shares/dilution, cash, and debt;
+    the canonical alert or price/indicator horizon; the accepted valuation scenarios; and a
+    like-for-like set of three to eight peers for P/E, market capitalization, or market share when
+    credible comparable evidence exists. This is a relevance bound, not a required quota.
+
+## Visual evidence
+
+Follow `skills/echart/references/papertrader-embedding.md`. Maintain `## Visual evidence` on the
+changed security page and chart every decision-relevant dataset in the bounded core pack that meets
+the chartability threshold. Prefer primary filings for fundamentals; yfinance remains marks only.
+Represent negative-earnings or otherwise meaningless P/E as `null`. Peer observations must share
+the same date, definition, instrument scope, currency, and canonical FX basis, with immutable
+security identity rather than ticker alone. Market share requires a common market definition and
+period. State data definitions and material caveats in chart notes, and record a specific omission
+instead of estimating unavailable or incomparable values.
 
 ## Source hierarchy
 
@@ -144,6 +162,7 @@ structured upsert commands and evidence for valuation or the explicit blocker th
 unsupported.
 The manifest is written last; `files_changed` and `commands_run` contain only observed paths and
 canonical project command receipts. The parent fills omissions from its snapshot and audit.
+Every succeeded result includes the completed `visualization_review` manifest.
 
 ## Verification
 
@@ -155,7 +174,8 @@ and no candidate is represented as accepted. Confirm exactly one relationship-re
 exists for every plausible unaccepted, stale, or contradicted edge, and exactly one matching
 idea-research follow-up exists for every payload or current accepted idea. On a repeat review,
 confirm the prior-context command succeeded, the page contains the required complete change
-summary, and the new immutable history row links its predecessor, source operation/result, schema
+summary, valid chart fences, an exact visualization-manifest/chart-ID match, and the new immutable
+history row links its predecessor, source operation/result, schema
 version, and page hash. List newly created IDs in `operations_created`, make the manifest
 schema-conformant, write it last, and let the parent validate its actual changed paths.
 

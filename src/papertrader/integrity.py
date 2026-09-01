@@ -20,7 +20,7 @@ from papertrader.config import ConfigurationError, Settings, load_settings
 from papertrader.models import CsvContract, DynamicCsvContract
 from papertrader.utils import content_hash
 
-EXPECTED_SKILLS = (
+PAPERTRADER_OPERATION_SKILLS = (
     "papertrader-controller",
     "papertrader-source-discovery",
     "papertrader-wiki-ingest",
@@ -33,6 +33,8 @@ EXPECTED_SKILLS = (
     "papertrader-execute-strategy",
     "papertrader-daily-podcast",
 )
+
+EXPECTED_SKILLS = (*PAPERTRADER_OPERATION_SKILLS, "echart")
 
 REQUIRED_SKILL_SECTIONS = (
     "## Activation",
@@ -51,6 +53,7 @@ REQUIRED_LAYOUT = (
     "schemas/agent_result.schema.json",
     "schemas/decision_snapshot.schema.json",
     "schemas/operation_payload.schema.json",
+    "schemas/research_chart.schema.json",
     "schemas/seekingalpha_discovery.schema.json",
     "schemas/seekingalpha_schedule.schema.json",
     "schemas/wiki_maintenance_result.schema.json",
@@ -313,9 +316,18 @@ def validate_skills(repository_root: Path) -> list[str]:
             continue
         if metadata["name"] != skill_name:
             errors.append(f"skill folder/name mismatch for {skill_name}")
-        for section in REQUIRED_SKILL_SECTIONS:
-            if section not in text:
-                errors.append(f"skill {skill_name} is missing {section}")
+        if skill_name in PAPERTRADER_OPERATION_SKILLS:
+            for section in REQUIRED_SKILL_SECTIONS:
+                if section not in text:
+                    errors.append(f"skill {skill_name} is missing {section}")
+    for relative in (
+        "skills/echart/LICENSE",
+        "skills/echart/references/chart-examples.md",
+        "skills/echart/references/design-principles.md",
+        "skills/echart/references/papertrader-embedding.md",
+    ):
+        if not (repository_root / relative).is_file():
+            errors.append(f"missing ECharts skill resource: {relative}")
     return errors
 
 

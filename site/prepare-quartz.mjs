@@ -1,4 +1,11 @@
-import { cpSync, existsSync, lstatSync, rmSync } from "node:fs";
+import {
+  copyFileSync,
+  cpSync,
+  existsSync,
+  lstatSync,
+  mkdirSync,
+  rmSync,
+} from "node:fs";
 import { createRequire } from "node:module";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -18,3 +25,22 @@ if (!existsSync(source) || !lstatSync(source).isDirectory()) {
 
 rmSync(destination, { recursive: true, force: true });
 cpSync(source, destination, { recursive: true, dereference: false });
+
+const echartsRoot = dirname(require.resolve("echarts/package.json"));
+const vendorDestination = join(destination, "static", "vendor", "echarts");
+mkdirSync(vendorDestination, { recursive: true });
+for (const [sourceName, destinationName] of [
+  ["dist/echarts.min.js", "echarts.min.js"],
+  ["LICENSE", "LICENSE"],
+  ["NOTICE", "NOTICE"],
+]) {
+  const vendorSource = join(echartsRoot, sourceName);
+  if (
+    !existsSync(vendorSource) ||
+    lstatSync(vendorSource).isSymbolicLink() ||
+    !lstatSync(vendorSource).isFile()
+  ) {
+    throw new Error(`pinned ECharts asset is unavailable: ${vendorSource}`);
+  }
+  copyFileSync(vendorSource, join(vendorDestination, destinationName));
+}

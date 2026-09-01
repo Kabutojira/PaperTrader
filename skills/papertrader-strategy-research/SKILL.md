@@ -10,7 +10,8 @@ description: Create or update exactly one evidence-linked PaperTrader strategy a
 Activate for one `strategy_id` and one accepted `relationship_id` in either `conviction` or
 `baseline_allocation` mode. Require native `llm-wiki`, fresh market/FX inputs, allowed instrument
 settings, and no unresolved identity or relationship conflict. Baseline mode additionally requires
-the current immutable allocation plan and matching security assessment.
+the current immutable allocation plan and matching security assessment. Require the preloaded
+`echart` support skill for the visualization review.
 
 ## Allowed scope
 
@@ -64,6 +65,16 @@ assessment timestamp, and disposition from the deterministic payload.
    `hold` creates no signal. A signal is not an order or fill. If a baseline signal is created,
    immediately enqueue exactly one matching `execute_strategy` follow-up whose payload binds the
    strategy ID, signal ID, and normalized signal action.
+8. Apply the chartability pass to the compared structures, scenario payoff, downside, and relevant
+   entry/exit ranges before final validation.
+
+## Visual evidence
+
+Follow `skills/echart/references/papertrader-embedding.md`. If the strategy page changes, maintain
+`## Visual evidence` and chart decision-relevant scenario payoff, structure comparison, or bounded
+price/entry context when inputs are comparable. Preserve probabilities, horizons, units, option
+contract identity, and quote timestamps. Never portray a target allocation as an order or infer an
+option payoff from incomplete legs. Record the blocker as an omission when no chart is supportable.
 
 ## Source hierarchy
 
@@ -82,12 +93,14 @@ alternatives, selected structure or blocker, CLI commands, exact files, evidence
 created.
 Write the manifest last with canonical command receipts. A no-strategy result must retain dated
 evidence, name the blocker, and may validly have no structured strategy change.
+Every succeeded result includes the completed `visualization_review` manifest.
 
 ## Verification
 
 Before the manifest, validate relationship/strategy/allocation identity, instrument allowlist,
 complete leg fields, quote or price/FX freshness, risk inputs, target materiality, signal expiry,
-and strict wiki lint. Confirm no allocation target/history, order, execution, cash, portfolio, or
+strict wiki lint, valid chart fences, and an exact visualization-manifest/chart-ID match. Confirm no
+allocation target/history, order, execution, cash, portfolio, or
 performance row changed. Make the manifest
 schema-conformant, write it last, and let the parent validate the exact delta.
 

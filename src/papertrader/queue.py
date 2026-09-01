@@ -53,6 +53,16 @@ SUPPORTED_OPERATIONS = frozenset(
 OPERATION_SKILLS = {
     operation: f"papertrader-{operation.replace('_', '-')}" for operation in SUPPORTED_OPERATIONS
 }
+RESEARCH_CHART_OPERATIONS = frozenset(
+    {
+        "opportunity_research",
+        "quick_check_research",
+        "idea_research",
+        "security_research",
+        "relationship_research",
+        "strategy_research",
+    }
+)
 OPERATION_ENTITY_TYPES = {
     "wiki_ingest": "source",
     "source_discovery": "source",
@@ -67,6 +77,16 @@ OPERATION_ENTITY_TYPES = {
 }
 SAFE_RUN_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$")
 MERGEABLE_RESEARCH_TYPES = frozenset({"security_research", "quick_check_research"})
+PRICE_ALERT_RESEARCH_TYPES = frozenset({"security_research", "quick_check_research"})
+
+
+def required_skill_names(operation_type: str) -> tuple[str, ...]:
+    """Return the exact ordered skill set for a newly claimed operation."""
+
+    names = ["llm-wiki", OPERATION_SKILLS[operation_type]]
+    if operation_type in RESEARCH_CHART_OPERATIONS:
+        names.append("echart")
+    return tuple(names)
 
 
 class QueueError(RuntimeError):
@@ -145,8 +165,14 @@ class Operation:
         skills = tuple(filter(None, row["skill_names"].split("|")))
         if len(skills) != len(set(skills)):
             raise QueueError(f"operation {operation_id} has duplicate skill names")
-        required_skills = {"llm-wiki", OPERATION_SKILLS[operation_type]}
-        if set(skills) != required_skills:
+        required_skills = set(required_skill_names(operation_type))
+        legacy_skills = {"llm-wiki", OPERATION_SKILLS[operation_type]}
+        legacy_research_row = (
+            operation_type in RESEARCH_CHART_OPERATIONS
+            and set(skills) == legacy_skills
+            and (archived or status != "running")
+        )
+        if set(skills) != required_skills and not legacy_research_row:
             raise QueueError(
                 f"operation {operation_id} must include exactly skills {sorted(required_skills)}"
             )
@@ -636,7 +662,7 @@ def enqueue_operation(
                 return merged.operation_id, False
         operation_id = deterministic_ulid(instant, dedupe_key, entity_type, entity_id)
         payload_relative = f"data/operations/payloads/{operation_id}.json"
-        skills = tuple(sorted({"llm-wiki", OPERATION_SKILLS[operation_type]}))
+        skills = required_skill_names(operation_type)
         operation = Operation(
             operation_id=operation_id,
             created_at=instant,
@@ -998,6 +1024,37 @@ def _triaged_operation(
     )
 
 
+def _superseding_indicator_hash(
+    repository_root: Path,
+    operation: Operation,
+    current_indicator_hashes: Mapping[tuple[str, str], str],
+) -> str | None:
+    """Return the current same-date hash when an unclaimed price-alert input is obsolete."""
+
+    if (
+        operation.operation_type not in PRICE_ALERT_RESEARCH_TYPES
+        or operation.source != "deterministic-price-alert"
+    ):
+        return None
+    inputs = _operation_inputs(repository_root, operation)
+    security_id = inputs.get("security_id")
+    market_data_date = inputs.get("market_data_date")
+    source_price_hash = inputs.get("source_price_hash")
+    if (
+        not isinstance(security_id, str)
+        or not security_id
+        or not isinstance(market_data_date, str)
+        or not market_data_date
+        or not isinstance(source_price_hash, str)
+        or not source_price_hash
+    ):
+        return None
+    current_hash = current_indicator_hashes.get((security_id, market_data_date))
+    if current_hash is None or current_hash == source_price_hash:
+        return None
+    return current_hash
+
+
 def prepare_queue(
     repository_root: Path,
     *,
@@ -1033,6 +1090,10 @@ def prepare_queue(
         current_allocation_plan_id = next(iter(allocation_plan_ids), None)
         signal_statuses = {
             row["signal_id"]: row["status"] for row in read_table(repository_root, "signals")
+        }
+        current_indicator_hashes = {
+            (row["security_id"], row["as_of_date"]): row["source_price_hash"]
+            for row in read_table(repository_root, "indicators")
         }
         terminal_by_id = {row["operation_id"]: row["terminal_status"] for row in history}
         active_by_id = {operation.operation_id: operation for operation in active}
@@ -1083,6 +1144,20 @@ def prepare_queue(
                         operation,
                         "skipped",
                         f"exact_history_duplicate:{prior_exact['operation_id']}",
+                    )
+                )
+                continue
+            superseding_hash = _superseding_indicator_hash(
+                repository_root,
+                operation,
+                current_indicator_hashes,
+            )
+            if superseding_hash is not None:
+                terminal.append(
+                    (
+                        operation,
+                        "skipped",
+                        f"superseded_market_data_identity:{superseding_hash}",
                     )
                 )
                 continue
@@ -1382,6 +1457,7 @@ def claim_next(
             claimed_by_run_id=run_id,
             lease_expires_at=instant + settings.operations.lease_duration,
             last_error="",
+            skill_names=required_skill_names(selected.operation_type),
         )
         _write_active(
             repository_root,

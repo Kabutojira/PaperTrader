@@ -1,0 +1,86 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "relationship",
+        "upsert",
+        "--request",
+        "data/runs/daily-20260901T084440Z/01M1D1Y9JGWJR239XAQPDP30DW/relationship_upsert_request.json"
+      ],
+      "changed_paths": [
+        "data/tables/relationships.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "8d4d35ebd8e01631fad42ee0eddc274ba46c65eee14555a89180537dee5e4c06",
+            55724,
+            384
+          ],
+          "before": [
+            "file",
+            "097cc70dde59bba66559e84bce15cd2b03948a4d60e7677c9161c984aff4f444",
+            55575,
+            384
+          ],
+          "path": "data/tables/relationships.csv"
+        }
+      ],
+      "command": "papertrader research relationship upsert --request data/runs/daily-20260901T084440Z/01M1D1Y9JGWJR239XAQPDP30DW/relationship_upsert_request.json",
+      "completed_at": "2026-09-01T08:48:37Z",
+      "exit_code": 0,
+      "profile": "deep",
+      "request": {
+        "identity": [
+          "file",
+          "86b313aa8b9a2a475959fff76a835a9e48137b5b71cd23ae969315b6b720f070",
+          1766,
+          384
+        ],
+        "path": "data/runs/daily-20260901T084440Z/01M1D1Y9JGWJR239XAQPDP30DW/relationship_upsert_request.json"
+      },
+      "started_at": "2026-09-01T08:48:37Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-09-01T08:48:56Z",
+      "exit_code": 0,
+      "profile": "deep",
+      "request": null,
+      "started_at": "2026-09-01T08:48:55Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-09-01T08:50:15Z",
+      "exit_code": 0,
+      "profile": "deep",
+      "request": null,
+      "started_at": "2026-09-01T08:50:13Z"
+    }
+  ],
+  "operation_id": "01M1D1Y9JGWJR239XAQPDP30DW",
+  "profile": "deep",
+  "profile_policy_version": "profile-router-v1",
+  "route_reason": "decision_changing_conclusion",
+  "run_id": "daily-20260901T084440Z"
+}

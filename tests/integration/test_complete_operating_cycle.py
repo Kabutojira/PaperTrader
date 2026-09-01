@@ -131,7 +131,9 @@ def _wiki_page(
         f"provenance: {provenance}\n"
         "---\n\n"
         f"# {title}\n\n"
-        f"{body.strip()}\n"
+        f"{body.strip()}\n\n"
+        "## Visual evidence\n\n"
+        "No comparable quantitative fixture dataset is available for a chart.\n"
     )
     atomic_write_text(repository / relative, content, allowed_root=repository)
     register_wiki_page(
@@ -781,30 +783,50 @@ class _CycleHermes:
         )
         audit = json.loads((cwd / audit_path).read_text(encoding="utf-8"))
         commands = [entry["command"] for entry in audit["entries"]]
-        atomic_write_json(
-            artifact / "agent_result.json",
-            {
-                "operation_id": operation_id,
-                "status": "succeeded",
-                "summary": summary,
-                "evidence": [
+        result: dict[str, object] = {
+            "operation_id": operation_id,
+            "status": "succeeded",
+            "summary": summary,
+            "evidence": [
+                {
+                    "source": "synthetic operating-cycle fixture",
+                    "claim": summary,
+                    "url": "https://example.test/papertrader/operating-cycle",
+                    "observed_at": format_timestamp(self.reference_time),
+                }
+            ],
+            "files_changed": list(changed),
+            "operations_created": sorted(created),
+            "issues_recorded": [],
+            "daily_report_items": [summary],
+            "commands_run": commands,
+            "validation": {
+                "passed": True,
+                "checks": ["bounded synthetic operating-cycle operation completed"],
+            },
+        }
+        if operation_type in {
+            "opportunity_research",
+            "quick_check_research",
+            "idea_research",
+            "security_research",
+            "relationship_research",
+            "strategy_research",
+        }:
+            result["visualization_review"] = {
+                "completed": True,
+                "charts": [],
+                "omissions": [
                     {
-                        "source": "synthetic operating-cycle fixture",
-                        "claim": summary,
-                        "url": "https://example.test/papertrader/operating-cycle",
-                        "observed_at": format_timestamp(self.reference_time),
+                        "dataset": "synthetic operating-cycle evidence",
+                        "reason_code": "insufficient_comparability",
+                        "reason": "The fixture intentionally supplies no comparable chart dataset.",
                     }
                 ],
-                "files_changed": list(changed),
-                "operations_created": sorted(created),
-                "issues_recorded": [],
-                "daily_report_items": [summary],
-                "commands_run": commands,
-                "validation": {
-                    "passed": True,
-                    "checks": ["bounded synthetic operating-cycle operation completed"],
-                },
-            },
+            }
+        atomic_write_json(
+            artifact / "agent_result.json",
+            result,
             allowed_root=cwd,
         )
         return subprocess.CompletedProcess(command, 0, "completed", "")

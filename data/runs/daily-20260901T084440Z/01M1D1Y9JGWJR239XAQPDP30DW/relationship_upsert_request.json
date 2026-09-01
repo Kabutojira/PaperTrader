@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_228f56aa5d91f3688b67",
+  "idea_id": "idea_cybersecurity_geopolitical_continuity",
+  "security_id": "security_8472507d7d320aa388a7",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "Geopolitical intrusion, cloud and identity complexity, and regulatory accountability raise continuity and compliance demand; CrowdStrike converts that demand through Falcon subscriptions, Falcon Flex and multi-module adoption into ARR, revenue and cash flow. Fiscal Q2 2027 accelerated net-new ARR and increased module adoption, but pricing quality, retention, platform bundling, incident trust, acquisition spending, stock-based compensation, dilution and valuation constrain per-share realization.",
+  "sensitivity": "high",
+  "confidence": "medium",
+  "catalyst": "Strengthen the edge if later primary evidence sustains net-new ARR and retention, broadens paid module adoption without discount-led bundling, improves GAAP operating margin and cash conversion after incident costs, reduces stock compensation per share, and preserves pricing and trust against bundled alternatives.",
+  "invalidation": "Invalidate if net-new ARR or retention deteriorates; module adoption reflects discounting rather than wallet-share gains; customers consolidate into lower-cost bundles; a product or service failure causes lasting trust and renewal damage; incident liabilities persist; cash conversion depends on working-capital timing; or weak GAAP economics, equity awards and acquisitions prevent per-share cash compounding.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_228f56aa5d91f3688b67.md",
+  "last_reviewed_at": "2026-09-01T08:47:14Z",
+  "next_review_at": "2026-10-01T08:47:14Z"
+}

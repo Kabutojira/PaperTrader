@@ -1,0 +1,54 @@
+{
+  "commands_run": [
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "COIN lower-Bollinger transition on 2026-07-31 was classified as risk, not opportunity; the later full review retained Strong Sell / Avoid, allocation ineligibility, and no paper action."
+  ],
+  "evidence": [
+    {
+      "claim": "The deterministic packet records an entered lower-Bollinger transition on 2026-07-31 after COIN fell from USD 165.47999572753906 on 2026-07-02 to USD 146.25999450683594, a -0.1161469767762662652627794137 period return, with 20,870,300 shares traded on the final session.",
+      "source": "data/wiki/inbox/market-security_37ddcbdaad296ad831f2-bollinger_below_lower-403f5e12235a.md",
+      "source_hash": "403f5e12235a0a7b93a0468859d87ccbba87cc96c29f5464174feb83f91683da"
+    },
+    {
+      "claim": "The SEC submissions index identifies accession 0001679788-26-000088 as Coinbase's Form 10-Q, filed 2026-07-30 for the quarter ended 2026-06-30. The maintained review records Q2 transaction revenue down 22% year over year, subscription and services revenue down 12%, and a USD 359 million net loss; these conditions support risk context but do not identify a new buy catalyst for the exact price move.",
+      "source": "Coinbase Q2 2026 Form 10-Q",
+      "source_hash": "6f3db6aeb84e14d70e5376fc83e5ac6b57c10798ee8ec6fa1c9a3a249240060a",
+      "url": "https://www.sec.gov/Archives/edgar/data/1679788/000167978826000088/coin-20260630.htm"
+    },
+    {
+      "claim": "The completed 2026-08-21 security review already records the exact July 2 through July 31 decline and later found no newer issuer operating filing to alter the thesis. It retained Strong Sell / Avoid, allocation ineligibility and no strategy or signal, so a second research change or follow-up would duplicate accepted work.",
+      "source": "data/wiki/securities/security_37ddcbdaad296ad831f2.md"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01KYY98DWG0BHTGJG1AJDCN6QD",
+  "operations_created": [],
+  "reason_code": "risk_no_follow_up",
+  "status": "succeeded",
+  "summary": "Classified the 2026-07-31 COIN lower-Bollinger transition as risk, not an opportunity: the 11.61% decline occurred alongside the July 23 Form 8-K and July 30 Q2 Form 10-Q, whose reported cycle-sensitive revenue decline, net loss, concentration, debt and dilution risks do not establish a buy zone. The subsequent 2026-08-21 full review already incorporated the exact period and retained Strong Sell / Avoid, allocation ineligibility and no strategy or signal; no bounded follow-up remains justified.",
+  "validation": {
+    "checks": [
+      "Validated the payload against schemas/operation_payload.schema.json.",
+      "Confirmed the selected queue row is running, claimed by daily-20260901T084440Z, and has a live lease through 2026-09-01T09:22:20Z.",
+      "Verified immutable COIN identity, exact period endpoints, and packet source-price hash context against the retained market series.",
+      "Checked the SEC Q2 filing and submissions-index endpoints; both returned HTTP 200, and the index confirms the July 23 Form 8-K and July 30 Form 10-Q accessions.",
+      "Confirmed no COIN position, order, or strategy exists in the canonical tables and made no trading or accounting mutation.",
+      "scripts/papertrader wiki lint --strict passed."
+    ],
+    "passed": true
+  },
+  "visualization_review": {
+    "charts": [],
+    "completed": true,
+    "omissions": [
+      {
+        "dataset": "COIN 2026-07-02 through 2026-07-31 price and volume series",
+        "reason": "The maintained Coinbase page already records this exact period and the later accepted review; this backlogged operation makes no primary research-page change, so no chart is emitted.",
+        "reason_code": "no_page_change"
+      }
+    ]
+  }
+}

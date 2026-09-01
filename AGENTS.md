@@ -15,6 +15,8 @@ The repository is the source of truth. Any legacy data import is a separate, one
 - Configure Hermes with `WIKI_PATH=${GITHUB_WORKSPACE}/data/wiki` and add `${GITHUB_WORKSPACE}/skills` to Hermes `skills.external_dirs`. Local agentic harnesses, including Codex, may also read and execute the same project skills.
 - Process every operation sequentially. Parallel agents, parallel operation execution, and agent fan-out are permanently out of scope.
 - Use Quartz to render the Markdown wiki to GitHub Pages.
+- Pin Apache ECharts locally in Quartz and render validated, non-executable `echart` JSON fences
+  embedded in analytical research pages; never load chart code or data from a CDN.
 - Publish one deterministic decision snapshot per completed daily run and derive every investor-facing page and download from that snapshot.
 
 ## Non-negotiable invariants
@@ -35,6 +37,9 @@ The repository is the source of truth. Any legacy data import is a separate, one
 14. **Generated files are reproducible.** A clean checkout plus pinned dependencies must regenerate all views and reports from canonical data.
 15. **Execution is sequential.** The controller claims and completes at most one LLM operation at a time. No workflow matrix, background agent, sub-agent fan-out, or parallel agent execution is allowed.
 16. **Published advice is derived and one-way.** The decision snapshot, model-portfolio export, investor pages, and browser-only scaler are generated views. They may project reconciled holdings and validated pending orders but may never become inputs to allocation, orders, fills, cash, positions, or performance.
+17. **Research charts are derived and portable.** Charts summarize cited evidence or canonical
+    state but never become inputs to research scoring, allocation, signals, orders, accounting, or
+    performance. Markdown retains sourceable chart data and prose when JavaScript is unavailable.
 
 ## Repository layout
 
@@ -83,6 +88,7 @@ The repository is the source of truth. Any legacy data import is a separate, one
 │   ├── agent_result.schema.json
 │   ├── decision_snapshot.schema.json
 │   ├── operation_payload.schema.json
+│   ├── research_chart.schema.json
 │   ├── seekingalpha_discovery.schema.json
 │   ├── seekingalpha_schedule.schema.json
 │   └── csv_contracts.yaml
@@ -97,7 +103,10 @@ The repository is the source of truth. Any legacy data import is a separate, one
 │   ├── papertrader-relationship-research/SKILL.md
 │   ├── papertrader-strategy-research/SKILL.md
 │   ├── papertrader-execute-strategy/SKILL.md
-│   └── papertrader-daily-podcast/SKILL.md
+│   ├── papertrader-daily-podcast/SKILL.md
+│   └── echart/
+│       ├── SKILL.md
+│       └── references/papertrader-embedding.md
 ├── data/
 │   ├── wiki/
 │   │   ├── SCHEMA.md
@@ -397,6 +406,9 @@ Rules:
 - Terminal statuses in history are `succeeded`, `skipped`, `failed`, `cancelled`, and `expired`.
 - `depends_on` contains operation IDs separated by `|`.
 - `skill_names` contains Hermes skill slugs separated by `|`. Every LLM operation must include the native `llm-wiki` skill when it reads or writes wiki content.
+- The six analytical research operations also include `echart`. Existing unclaimed research rows
+  using the legacy two-skill set are upgraded atomically when claimed; history and blocked rows are
+  not bulk rewritten.
 - `dedupe_key` must be deterministic. Recommended form: `<operation_type>:<entity_id>:<catalyst-or-source-hash>:<freshness-bucket>`.
 - `prompt` is a short objective without newlines. Put substantial instructions in `payload_path` or a prompt file.
 - Claiming sets `status=running`, `claimed_by_run_id`, and `lease_expires_at` in one atomic write.
@@ -426,6 +438,27 @@ The cheap model returns `execute`, `merge`, `defer`, or `skip` with a reason. Th
 ## Supported LLM operations
 
 Keep the allowed set small and explicit.
+
+### Shared analytical-research visualization contract
+
+Every successful `opportunity_research`, `quick_check_research`, `idea_research`,
+`security_research`, `relationship_research`, and `strategy_research` operation performs a bounded
+chartability pass after its conclusion is supported. A decision-relevant dataset is chartable when
+it has at least three comparable observations, or at least two periods for each of two comparable
+series. Changed primary research pages contain `## Visual evidence` with zero or more strict
+`echart` JSON fences valid against `schemas/research_chart.schema.json`; a chart-free review records
+a specific omission. The result manifest records exact page/chart IDs and omissions in
+`visualization_review`.
+
+Use only data justified by the operation's bounded scope. Preserve common dates, definitions,
+units, currencies, canonical FX basis, immutable identities, sources, and as-of timestamps. A
+missing or meaningless multiple such as P/E for negative earnings is `null`, never invented.
+Existing pages are enriched only on their next normal refresh; there is no bulk backfill operation.
+
+Quartz renders these blocks with the pinned local Apache ECharts asset and a visible data/source
+fallback. GitHub and no-JavaScript readers retain the JSON and surrounding analysis. Research
+Markdown may not contain executable chart JavaScript, inline chart applications, remote data calls,
+or CDN dependencies.
 
 ### `source_discovery`
 

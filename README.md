@@ -4,6 +4,10 @@ PaperTrader is a public, Git-native research system for paper trading. The repos
 source of truth: research, queued work, market snapshots, simulated accounting records, and the
 published wiki all live under `data/`.
 
+Analytical research embeds sourceable Apache ECharts visualizations as validated, non-executable
+JSON fences. Quartz renders them with a pinned local ECharts bundle and accessible data tables;
+GitHub and JavaScript-disabled readers retain the chart data and surrounding interpretation.
+
 PaperTrader never places a real order. The application has no live-order mode, broker adapter, or
 brokerage credential path; its order and fill lifecycle is always simulated.
 
@@ -20,7 +24,8 @@ export WIKI_PATH="$PWD/data/wiki"
 uv sync --locked --all-groups
 ```
 
-The project skills are stored in `skills/`. Hermes should set `skills.external_dirs` to the
+The project skills are stored in `skills/`, including the adapted MIT-licensed `echart` support
+skill. Hermes should set `skills.external_dirs` to the
 checkout's `skills` directory. A local agentic harness can read the same `SKILL.md` files directly
 and must follow `AGENTS.md`, use the project CLI for structured state, and run operations
 sequentially.
@@ -176,6 +181,7 @@ participate in allocation, strategy, signal, or paper-order decisions.
 
 GitHub Actions uses a dedicated Hermes profile and one controller process per operation. The
 controller preloads native `llm-wiki`, `papertrader-controller`, and the selected operation skill;
+analytical research also preloads `echart`;
 enables only the `web`, `file`, and `terminal` toolsets; and invokes `hermes chat` with `--yolo`.
 Delegation, messaging, memory, hooks, MCP servers, worktrees, and background fan-out are disabled.
 

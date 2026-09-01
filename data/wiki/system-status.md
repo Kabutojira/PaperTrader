@@ -7,13 +7,13 @@ tags:
 created: "2026-09-01"
 updated: "2026-09-01"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_bc07eb5ba2fb775959a8"
-as_of: "2026-09-01T06:55:00Z"
+snapshot_id: "decision_0a9f35321118f3dc4243"
+as_of: "2026-09-01T09:24:14Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-09-01T06:55:00Z`
+**As of:** `2026-09-01T09:24:14Z`
 **Investment data:** Blocked — current exposure cannot be projected safely
 **Operations:** Blocked
 **Publication validation:** Snapshot and exports validated
@@ -21,17 +21,17 @@ as_of: "2026-09-01T06:55:00Z"
 
 ## Coverage
 
-- Assessments: 49/79
-- Fresh-evidence assessments: 48/79
-- Relationship reviews: 19/79
+- Assessments: 50/80
+- Fresh-evidence assessments: 49/80
+- Relationship reviews: 19/80
 - Accepted relationships: 18
 - Ready or active strategies: 0
 - Active signals: 0
 - Pending orders: 0
 - Market success/failure: 81/0
 - Candidate FX gaps: 0
-- Research backlog: 521
-- Last successful daily run: 2026-08-28
+- Research backlog: 513
+- Last successful daily run: 2026-09-01
 
 ## Current issues by investment impact
 
@@ -198,12 +198,12 @@ as_of: "2026-09-01T06:55:00Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 521 active operations.
+Showing 20 of 513 active operations.
 
 <details><summary>Active research work</summary>
 
 - Ready — [[security-catalog#security-security_fe4648901e7675f157fd|Security research for ANIC.L on 2026-07-29]]
-- Ready — [[securities/security_8b703a8adf5f864acaa4|Strategy research for strategy for PRX on 2026-08-31]]
+- Ready — [[securities/security_8b703a8adf5f864acaa4|Strategy research for strategy for PRX on 2026-09-01]]
 - Ready — [[inbox/market-security_89969b7dac39b7db5661-rsi_oversold-a3f287ad1802|Wiki ingest for YEC.F — RSI oversold on 2026-07-30]]
 - Ready — [[inbox/market-security_488a9d7f7a8573597724-volume_anomaly-276969212fe2|Wiki ingest for PWR — Volume anomaly on 2026-07-30]]
 - Ready — [[inbox/market-security_2dbe878dfc899d7ee867-volume_anomaly-97d02f6c8190|Wiki ingest for FCX — Volume anomaly on 2026-07-30]]

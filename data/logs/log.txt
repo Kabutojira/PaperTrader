@@ -392,3 +392,8 @@
 2026-08-31T21:19:37Z [daily_podcast_completed] run=daily-20260831T204023Z operation=01M1CTT6R0HPES6PFAGQSK31DG Daily podcast finished with status skipped.
 2026-08-31T21:38:36Z [daily_run_started] run=daily-20260831T213829Z Started sequential deterministic daily preparation.
 2026-08-31T23:40:41Z [daily_run_completed] run=daily-20260831T213829Z Completed deterministic daily run with status degraded.
+2026-09-01T08:23:05Z [daily_run_started] run=daily-20260901T082303Z Started sequential deterministic daily preparation.
+2026-09-01T08:37:31Z [daily_run_started] run=daily-20260901T083722Z Started sequential deterministic daily preparation.
+2026-09-01T08:37:57Z [daily_run_started] run=daily-20260901T083730Z Started sequential deterministic daily preparation.
+2026-09-01T08:44:41Z [daily_run_started] run=daily-20260901T084440Z Started sequential deterministic daily preparation.
+2026-09-01T09:24:14Z [daily_run_completed] run=daily-20260901T084440Z Completed deterministic daily run with status succeeded.

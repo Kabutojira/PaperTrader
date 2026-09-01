@@ -9,7 +9,8 @@ description: Investigate one material PaperTrader market, indicator, event, or r
 
 Activate for one validated transition-aware trigger after deterministic cooldown and dedupe checks.
 Require a `security_id`, exact period, trigger type, and UTC market-data timestamp. Require native
-`llm-wiki` because the operation reads investment knowledge.
+`llm-wiki` because the operation reads investment knowledge, plus the preloaded `echart` support
+skill for the required visualization review.
 
 ## Allowed scope
 
@@ -35,7 +36,17 @@ Require `operation_id`, `security_id`, `trigger_type`, `market_data_as_of`, `per
 4. Seek current primary-source evidence for the move; distinguish evidence from inference.
 5. Test materiality against existing ideas, theses, strategies, positions, and invalidations.
 6. Classify the result as opportunity, risk, or noise and justify one bounded follow-up or none.
-7. Apply allowed wiki updates, enqueue the single follow-up through the CLI, and record the result.
+7. Apply the chartability pass to the exact trigger period and decision-relevant comparison data,
+   then apply allowed wiki updates, enqueue the single follow-up through the CLI, and record the
+   result.
+
+## Visual evidence
+
+Follow `skills/echart/references/papertrader-embedding.md`. On each successfully changed primary
+research page, maintain `## Visual evidence` and chart the exact-period move, relevant price/volume
+or indicator comparison, and comparable event context when the bounded evidence has enough
+observations. Do not expand the time window or fetch unrelated data to make a chart. Record why a
+material dataset remains uncharted; a noise result can validly have no chart.
 
 ## Source hierarchy
 
@@ -54,11 +65,14 @@ must support the classification and exact period. Record zero or one created ope
 Write the manifest last with observed changed paths and only canonical command receipts. The
 parent fills omissions from its authoritative snapshot and audit. Opportunity,
 risk, and noise—including a no-follow-up outcome—are all retained evidence-linked results.
+Every succeeded result includes the completed `visualization_review` manifest defined by the
+ECharts support skill.
 
 ## Verification
 
 Before the manifest, recheck timestamps, source hashes, citations, entity links, and strict wiki
-lint. Confirm no trading or accounting table changed. Make the manifest conform to the result
+lint. Confirm chart fences validate and the manifest names exactly the chart IDs on changed primary
+pages. Confirm no trading or accounting table changed. Make the manifest conform to the result
 schema, write it last, and let the parent validate the exact delta.
 
 ## Failure policy

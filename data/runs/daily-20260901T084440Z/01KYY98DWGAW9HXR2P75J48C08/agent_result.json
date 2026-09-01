@@ -1,0 +1,56 @@
+{
+  "commands_run": [
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "GOOGL's July 31 bullish MACD crossover was reviewed as noise: its 0.0723 strength and negative 1.05% exact-period return did not overcome the maintained valuation, AI-capital-intensity, dilution, or antitrust-risk gates. No follow-up, signal, or paper order was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The immutable market packet identifies security_c86bb4e75658c07142cf as GOOGL, records a macd_cross_above_signal entry on 2026-07-31, a 2026-07-02 through 2026-07-31 period, adjusted close of USD 356.1300048828125, negative period return of 0.0105026221578593222501600181, trigger strength of 0.07227749696538882697577708485, and source price hash b0e7d6aff1b7cf90bed119246e683face8a24200c5b6c597b9f6131387bf6418.",
+      "observed_at": "2026-08-01T09:07:38Z",
+      "source": "Canonical deterministic market packet",
+      "source_hash": "e7c32a666d8b6ecbf61797d7b8ee5dd75ca100407a3c6e89aa569ca58b7252de"
+    },
+    {
+      "claim": "The maintained primary-source review records strong Q2 revenue, Search, YouTube, Cloud, operating-income, and margin growth, but also elevated AI infrastructure spending, equity issuance, and unresolved antitrust remedies. It concludes that the July 31 technical rebound was weak and did not create sufficient valuation or risk-adjusted-entry support.",
+      "observed_at": "2026-08-01T16:32:28Z",
+      "source": "Alphabet Q2 2026 Form 10-Q and SEC-hosted Q2 results",
+      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm"
+    },
+    {
+      "claim": "Alphabet disclosed the closing of a USD 25 billion U.S.-dollar senior-notes offering. This post-period filing cannot explain the July 31 technical transition, but it is consistent with the maintained review's financing and AI-infrastructure-capital-intensity risk context; it does not alter this trigger's noise classification.",
+      "observed_at": "2026-09-01T09:06:08Z",
+      "source": "Alphabet 2026-08-10 Form 8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526342390/d171253d8k.htm"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01KYY98DWGAW9HXR2P75J48C08",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Classified the 2026-07-31 GOOGL macd_cross_above_signal transition as noise rather than an opportunity or standalone risk. The canonical trigger was weak (0.07227749696538882697577708485) and the 2026-07-02 through 2026-07-31 adjusted-close return was negative 1.05026221578593222501600181%. The maintained Alphabet research already records the same exact-period review, links the July Q2 primary evidence, and retains a Watch/no-conviction decision because the USD 356.13 mark offered minimal base-case upside amid AI capital intensity, dilution, and antitrust risk. No wiki or structured-state mutation, follow-up operation, signal, order, or accounting change was justified.",
+  "validation": {
+    "checks": [
+      "Confirmed the supplied queue row is running, claimed by daily-20260901T084440Z, and had a live lease through 2026-09-01T09:35:04Z at review time.",
+      "Confirmed the payload identity, immutable GOOGL security identity, exact market-data period endpoints, trigger transition, and deterministic market packet source hash.",
+      "Confirmed the security has no accepted canonical relationship, strategy, signal, order, or portfolio position requiring a trading or relationship-materiality response.",
+      "Reviewed the maintained primary-source security research and the later SEC Form 8-K; the latter is post-period and does not explain or overturn the trigger classification.",
+      "papertrader wiki lint --strict passed before this manifest was written.",
+      "Confirmed no allocation targets/history, accounting ledger, portfolio, performance, order, signal, strategy, or structured research table changed in this operation."
+    ],
+    "passed": true
+  },
+  "visualization_review": {
+    "charts": [],
+    "completed": true,
+    "omissions": [
+      {
+        "dataset": "GOOGL 2026-07-02 through 2026-07-31 adjusted-close series",
+        "reason": "The bounded exact-period series is chartable, but the maintained Alphabet research page already contains the exact trigger analysis and the current review identified no evidence-driven primary-page change; no duplicate chart was created.",
+        "reason_code": "no_page_change"
+      }
+    ]
+  }
+}

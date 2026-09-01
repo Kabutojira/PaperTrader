@@ -21,7 +21,9 @@ from papertrader.profiles import (
     analyst_relationship_gate,
     profile_command_allowed,
     route_profile,
+    routing_context,
 )
+from papertrader.queue import Operation
 
 NOW = datetime(2026, 8, 4, 15, tzinfo=UTC)
 OPERATION_ID = "01K1W0M0000000000000000000"
@@ -94,6 +96,80 @@ def test_analyst_relationship_gate_allows_only_unchanged_refresh(
         )
         is False
     )
+
+
+def test_relationship_payload_with_proposed_decision_delta_routes_deep(
+    sandbox_repository: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    from papertrader import profiles
+
+    relationship = {
+        "relationship_id": "relationship_example",
+        "security_id": "security_example",
+        "status": "accepted",
+        "direction": "positive",
+        "mechanism": "Existing mechanism.",
+        "invalidation": "Existing invalidation.",
+    }
+    empty_tables = {
+        "allocation_targets",
+        "orders",
+        "order_legs",
+        "portfolio",
+        "security_assessments",
+        "signals",
+        "strategies",
+    }
+
+    def fake_read_table(_repository: Path, name: str) -> list[dict[str, str]]:
+        if name == "relationships":
+            return [relationship]
+        assert name in empty_tables
+        return []
+
+    monkeypatch.setattr(profiles, "read_table", fake_read_table)
+    monkeypatch.setattr(
+        profiles,
+        "_payload_metadata",
+        lambda *_: {
+            "security_id": "security_example",
+            "proposed_direction": "positive",
+            "proposed_mechanism": "Updated mechanism from new primary evidence.",
+            "proposed_invalidation": "Existing invalidation.",
+        },
+    )
+    operation = Operation(
+        operation_id="01K11M5T80JQDRKHZJ5XA8NY1R",
+        created_at=NOW,
+        updated_at=NOW,
+        status="ready",
+        priority=70,
+        operation_type="relationship_research",
+        entity_type="relationship",
+        entity_id="relationship_example",
+        not_before=None,
+        deadline=None,
+        depends_on=(),
+        dedupe_key="relationship_research:relationship_example:evidence:v1",
+        freshness_days=0,
+        skill_names=("llm-wiki", "papertrader-relationship-research", "echart"),
+        prompt="Refresh the relationship from new primary evidence.",
+        payload_path=("data/operations/payloads/01K11M5T80JQDRKHZJ5XA8NY1R.json"),
+        source="security_research:01K11M5T80JQDRKHZJ5XA8NY1R",
+        attempt_count=0,
+        max_attempts=3,
+        claimed_by_run_id="",
+        lease_expires_at=None,
+        last_error="",
+    )
+
+    context = routing_context(sandbox_repository, operation)
+
+    assert context.decision_change is True
+    route = route_profile(operation.operation_type, context)
+    assert route.profile == "deep"
+    assert route.route_reason == "decision_changing_conclusion"
 
 
 def test_daily_cycle_resume_consumes_original_count_and_weighted_budget(

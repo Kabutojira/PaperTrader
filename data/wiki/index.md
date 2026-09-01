@@ -7,17 +7,17 @@ tags:
 created: "2026-09-01"
 updated: "2026-09-01"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_bc07eb5ba2fb775959a8"
-as_of: "2026-09-01T06:55:00Z"
+snapshot_id: "decision_0a9f35321118f3dc4243"
+as_of: "2026-09-01T09:24:14Z"
 ---
 
 # PaperTrader
 
-**As of `2026-09-01T06:55:00Z` · Investment data: Blocked — current exposure cannot be projected safely · Operations: Blocked**
+**As of `2026-09-01T09:24:14Z` · Investment data: Blocked — current exposure cannot be projected safely · Operations: Blocked**
 
 ## Decision blocked — do not copy actions
 
-<section class="decision-cards" aria-label="Decision summary"><article class="decision-card" data-status="blocked"><span class="decision-card-label">Stance</span><strong>Decision blocked — do not copy actions</strong></article><article class="decision-card" data-status="cash"><span class="decision-card-label">Cash</span><strong>100%</strong></article><article class="decision-card" data-status="exposure"><span class="decision-card-label">Gross exposure</span><strong>0%</strong></article><article class="decision-card" data-status="signals"><span class="decision-card-label">Actionable signals</span><strong>0</strong></article><article class="decision-card" data-status="coverage"><span class="decision-card-label">Assessment coverage</span><strong>49/79</strong></article></section>
+<section class="decision-cards" aria-label="Decision summary"><article class="decision-card" data-status="blocked"><span class="decision-card-label">Stance</span><strong>Decision blocked — do not copy actions</strong></article><article class="decision-card" data-status="cash"><span class="decision-card-label">Cash</span><strong>100%</strong></article><article class="decision-card" data-status="exposure"><span class="decision-card-label">Gross exposure</span><strong>0%</strong></article><article class="decision-card" data-status="signals"><span class="decision-card-label">Actionable signals</span><strong>0</strong></article><article class="decision-card" data-status="coverage"><span class="decision-card-label">Assessment coverage</span><strong>50/80</strong></article></section>
 
 ### Why
 
@@ -37,17 +37,17 @@ Current equity is **10000 EUR** with **100% cash**. The target retains **100% ca
 
 ## Top assessed near misses
 
-- **[NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d):** Buy / Initiate · expected 20.7817678274164750316066337% · No current allocation plan supports this candidate.
-- **[ASML — ASML Holding N.V.](securities/security_ef35e41886220d51c22c):** Unrated / Watch · expected —% · No current allocation plan supports this candidate.
-- **[ANET — Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a):** Hold / Watch · expected -2.36921514407533007298622083% · No current allocation plan supports this candidate.
+- **[NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d):** Buy / Initiate · expected 20.7817678274164750316066337% · The comparable assessment is stale or expired.
+- **[ASML — ASML Holding N.V.](securities/security_ef35e41886220d51c22c):** Unrated / Watch · expected —% · The comparable assessment is stale or expired.
+- **[ANET — Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a):** Hold / Watch · expected -2.36921514407533007298622083% · The comparable assessment is stale or expired.
 
 ## Performance, risk, and coverage
 
 - Cumulative return: **0%**
 - Running drawdown: **0%**
 - Largest position: **0%**
-- Current assessments: **49/79**
-- Relationship reviews: **19/79**
+- Current assessments: **50/80**
+- Relationship reviews: **19/80**
 - Accepted relationships: **18**
 - Market retrieval failures: **0**
 
@@ -59,4 +59,4 @@ Current equity is **10000 EUR** with **100% cash**. The target retains **100% ca
 - [[performance|Performance and risk]]
 - [[research-catalog|Research catalog]]
 - [[system-status|System status and audit]]
-- [[daily-reports/daily-report_20260831|Daily report 2026-08-31]]
+- [[daily-reports/daily-report_20260901|Daily report 2026-09-01]]

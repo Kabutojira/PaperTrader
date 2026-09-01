@@ -61,6 +61,7 @@ class HarnessStart:
     audit_path: str
     controller_skill_path: str
     operation_skill_path: str
+    auxiliary_skill_paths: tuple[str, ...]
 
 
 @dataclass(frozen=True, slots=True)
@@ -298,18 +299,24 @@ def start_local_harness_operation(
         raise AgentRunError(f"local harness artifact directory is not empty: {artifact_directory}")
     artifact_directory.mkdir(parents=True, exist_ok=True)
 
-    controller, selected = project_skill_identities(repository_root, operation.operation_type)
+    controller, selected, auxiliary = project_skill_identities(
+        repository_root, operation.operation_type
+    )
     injection_flags = prompt_injection_flags(repository_root, operation)
     prompt = build_controller_prompt(
         operation,
         run_id=run_id,
         injection_flags=injection_flags,
     )
+    support_skill_requirements = "".join(
+        f"- Read required support skill {skill.relative_path} completely.\n" for skill in auxiliary
+    )
     prompt += (
         "\n\nLocal harness boundary:\n"
         "- The parent controller already started and claimed this operation. Do not run agent "
         "harness start or any other queue lifecycle command.\n"
         f"- Read {controller.relative_path} and {selected.relative_path} completely.\n"
+        f"{support_skill_requirements}"
         "- Read data/wiki/SCHEMA.md, data/wiki/index.md, and the latest data/wiki/log.md entries.\n"
         "- Prefix every agent-side papertrader CLI command with "
         f"PAPERTRADER_AUDIT_RUN_ID={run_id} "
@@ -328,7 +335,7 @@ def start_local_harness_operation(
     atomic_write_json(
         preflight_path,
         {
-            "preflight_version": 1,
+            "preflight_version": 2,
             "harness": "local",
             "run_id": run_id,
             "operation_id": operation.operation_id,
@@ -345,6 +352,15 @@ def start_local_harness_operation(
                 "path": selected.relative_path,
                 "sha256": selected.sha256,
             },
+            "auxiliary_skills": [
+                {
+                    "name": skill.name,
+                    "version": skill.version,
+                    "path": skill.relative_path,
+                    "sha256": skill.sha256,
+                }
+                for skill in auxiliary
+            ],
             "prompt_injection_flags": list(injection_flags),
             "sequential": True,
         },
@@ -371,6 +387,7 @@ def start_local_harness_operation(
         .as_posix(),
         controller_skill_path=controller.relative_path,
         operation_skill_path=selected.relative_path,
+        auxiliary_skill_paths=tuple(skill.relative_path for skill in auxiliary),
     )
 
 

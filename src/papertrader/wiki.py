@@ -2,22 +2,209 @@
 
 from __future__ import annotations
 
+import json
 import re
 from collections.abc import Mapping
 from datetime import date
+from decimal import Decimal, InvalidOperation
 from pathlib import Path, PurePosixPath
 
 import yaml
+from jsonschema import Draft202012Validator, FormatChecker
 
 from papertrader.atomic_io import atomic_write_text
 
 WIKILINK_PATTERN = re.compile(r"\[\[([^\]|#]+)(?:#[^\]|]+)?(?:\|[^\n]*?)?\]\]")
 MARKDOWN_LINK_PATTERN = re.compile(r"\[[^\n]*?\]\(([^)\s]+)\)")
 FENCED_BLOCK_PATTERN = re.compile(r"```.*?```", re.DOTALL)
+ECHART_BLOCK_PATTERN = re.compile(
+    r"^```echart[ \t]*\r?\n(?P<payload>.*?)^```[ \t]*$", re.MULTILINE | re.DOTALL
+)
+ECHART_OPEN_PATTERN = re.compile(r"^```(?P<info>echart[^\r\n]*)$", re.MULTILINE)
+MAX_RESEARCH_CHARTS_PER_PAGE = 12
+MAX_RESEARCH_CHART_BYTES = 24 * 1024
+MAX_RESEARCH_CHART_NUMERIC_CELLS = 500
 
 
 class WikiFormatError(ValueError):
     """Raised when a maintained wiki page cannot be parsed."""
+
+
+def _reject_json_constant(value: str) -> object:
+    raise ValueError(f"non-finite JSON number {value!r} is forbidden")
+
+
+def _research_chart_semantic_errors(chart: Mapping[str, object]) -> list[str]:
+    errors: list[str] = []
+    kind = chart.get("kind")
+    decimal_pattern = re.compile(r"^-?(?:0|[1-9][0-9]*)(?:\.[0-9]+)?$")
+    numeric_cells = 0
+
+    def count_decimals(value: object) -> None:
+        nonlocal numeric_cells
+        if isinstance(value, str) and decimal_pattern.fullmatch(value):
+            numeric_cells += 1
+        elif isinstance(value, Mapping):
+            for child in value.values():
+                count_decimals(child)
+        elif isinstance(value, list):
+            for child in value:
+                count_decimals(child)
+
+    count_decimals(chart)
+    if numeric_cells > MAX_RESEARCH_CHART_NUMERIC_CELLS:
+        errors.append(
+            f"contains {numeric_cells} numeric cells; maximum is {MAX_RESEARCH_CHART_NUMERIC_CELLS}"
+        )
+
+    if kind == "series":
+        x_axis = chart.get("x_axis")
+        x_values = x_axis.get("values", []) if isinstance(x_axis, Mapping) else []
+        y_axes = chart.get("y_axes")
+        series = chart.get("series")
+        if isinstance(series, list):
+            for index, item in enumerate(series):
+                if not isinstance(item, Mapping):
+                    continue
+                values = item.get("values")
+                if isinstance(values, list) and len(values) != len(x_values):
+                    errors.append(f"series[{index}] values must align one-for-one with x_axis")
+                y_axis = item.get("y_axis")
+                if isinstance(y_axes, list) and isinstance(y_axis, int) and y_axis >= len(y_axes):
+                    errors.append(f"series[{index}] references missing y_axis {y_axis}")
+    elif kind == "composition":
+        display = chart.get("display")
+        axis = chart.get("axis")
+        items = chart.get("items")
+        if display == "donut" and isinstance(items, list) and len(items) > 5:
+            errors.append("donut charts may contain at most five slices")
+        if (
+            display == "donut"
+            and isinstance(axis, Mapping)
+            and axis.get("format") == "percent"
+            and isinstance(items, list)
+        ):
+            try:
+                total = sum(
+                    (Decimal(str(item["value"])) for item in items if isinstance(item, Mapping)),
+                    Decimal("0"),
+                )
+            except (InvalidOperation, KeyError):
+                total = Decimal("NaN")
+            if total != Decimal("100"):
+                errors.append("percent donut values must total exactly 100")
+    elif kind == "candlestick":
+        rows = chart.get("rows")
+        if isinstance(rows, list):
+            for index, row in enumerate(rows):
+                if not isinstance(row, Mapping):
+                    continue
+                try:
+                    opening = Decimal(str(row["open"]))
+                    close = Decimal(str(row["close"]))
+                    low = Decimal(str(row["low"]))
+                    high = Decimal(str(row["high"]))
+                except (InvalidOperation, KeyError):
+                    continue
+                if low > min(opening, close) or high < max(opening, close) or low > high:
+                    errors.append(f"rows[{index}] has inconsistent OHLC bounds")
+    elif kind == "heatmap":
+        x_labels = chart.get("x_labels")
+        y_labels = chart.get("y_labels")
+        cells = chart.get("cells")
+        seen_cells: set[tuple[int, int]] = set()
+        if isinstance(cells, list):
+            for index, cell in enumerate(cells):
+                if not isinstance(cell, Mapping):
+                    continue
+                x = cell.get("x")
+                y = cell.get("y")
+                if not isinstance(x, int) or not isinstance(y, int):
+                    continue
+                coordinate = (x, y)
+                if coordinate in seen_cells:
+                    errors.append(f"cells[{index}] duplicates coordinate {coordinate}")
+                seen_cells.add(coordinate)
+                if isinstance(x_labels, list) and x >= len(x_labels):
+                    errors.append(f"cells[{index}] x index is outside x_labels")
+                if isinstance(y_labels, list) and y >= len(y_labels):
+                    errors.append(f"cells[{index}] y index is outside y_labels")
+    elif kind == "network":
+        nodes = chart.get("nodes")
+        links = chart.get("links")
+        node_ids = (
+            {str(node["id"]) for node in nodes if isinstance(node, Mapping) and "id" in node}
+            if isinstance(nodes, list)
+            else set()
+        )
+        if isinstance(nodes, list) and len(node_ids) != len(nodes):
+            errors.append("network node ids must be unique")
+        if isinstance(links, list):
+            for index, link in enumerate(links):
+                if not isinstance(link, Mapping):
+                    continue
+                if link.get("source") not in node_ids or link.get("target") not in node_ids:
+                    errors.append(f"links[{index}] must reference existing node ids")
+    return errors
+
+
+def parse_research_charts(
+    path: Path, schema_path: Path
+) -> tuple[list[dict[str, object]], list[str]]:
+    """Parse and validate non-executable ECharts JSON fences in one Markdown page."""
+
+    try:
+        text = path.read_text(encoding="utf-8")
+    except (OSError, UnicodeError) as exc:
+        return [], [f"cannot read chart blocks: {exc}"]
+    matches = list(ECHART_BLOCK_PATTERN.finditer(text))
+    errors: list[str] = []
+    for opening in ECHART_OPEN_PATTERN.finditer(text):
+        if opening.group("info").strip() != "echart":
+            line = text.count("\n", 0, opening.start()) + 1
+            errors.append(f"line {line}: ECharts fence language must be exactly 'echart'")
+    if len(matches) > MAX_RESEARCH_CHARTS_PER_PAGE:
+        errors.append(
+            f"contains {len(matches)} ECharts blocks; maximum is {MAX_RESEARCH_CHARTS_PER_PAGE}"
+        )
+    if not matches:
+        return [], errors
+    try:
+        schema = json.loads(schema_path.read_text(encoding="utf-8"))
+        validator = Draft202012Validator(schema, format_checker=FormatChecker())
+    except (OSError, UnicodeError, json.JSONDecodeError, TypeError, ValueError) as exc:
+        return [], [*errors, f"cannot load research chart schema: {exc}"]
+
+    charts: list[dict[str, object]] = []
+    seen_ids: set[str] = set()
+    for match in matches:
+        payload = match.group("payload")
+        line = text.count("\n", 0, match.start()) + 1
+        if len(payload.encode("utf-8")) > MAX_RESEARCH_CHART_BYTES:
+            errors.append(f"line {line}: ECharts block exceeds {MAX_RESEARCH_CHART_BYTES} bytes")
+            continue
+        try:
+            value = json.loads(payload, parse_constant=_reject_json_constant)
+        except (json.JSONDecodeError, ValueError) as exc:
+            errors.append(f"line {line}: invalid ECharts JSON: {exc}")
+            continue
+        if not isinstance(value, dict):
+            errors.append(f"line {line}: ECharts JSON must be an object")
+            continue
+        chart_id = value.get("chart_id")
+        label = str(chart_id) if isinstance(chart_id, str) else f"line {line}"
+        schema_errors = sorted(validator.iter_errors(value), key=lambda error: list(error.path))
+        for error in schema_errors:
+            location = ".".join(str(part) for part in error.absolute_path) or "root"
+            errors.append(f"chart {label}: {location}: {error.message}")
+        if isinstance(chart_id, str):
+            if chart_id in seen_ids:
+                errors.append(f"chart {chart_id}: chart_id must be unique within the page")
+            seen_ids.add(chart_id)
+        for error in _research_chart_semantic_errors(value):
+            errors.append(f"chart {label}: {error}")
+        charts.append(value)
+    return charts, errors
 
 
 def _frontmatter(path: Path) -> tuple[Mapping[object, object], str]:
@@ -37,6 +224,15 @@ def _maintained_pages(wiki_root: Path) -> list[Path]:
         for path in sorted(wiki_root.rglob("*.md"))
         if "raw" not in path.relative_to(wiki_root).parts
     ]
+
+
+def _research_chart_schema_path(wiki_root: Path) -> Path:
+    """Resolve the repository-owned chart schema for canonical or copied wiki trees."""
+
+    canonical = wiki_root.parent.parent / "schemas" / "research_chart.schema.json"
+    if canonical.is_file() and not canonical.is_symlink():
+        return canonical
+    return Path(__file__).resolve().parents[2] / "schemas" / "research_chart.schema.json"
 
 
 def _page_key(wiki_root: Path, path: Path) -> str:
@@ -70,6 +266,7 @@ def lint_wiki(wiki_root: Path) -> list[str]:
     if not wiki_root.is_dir():
         return [f"wiki root does not exist: {wiki_root}"]
     pages = _maintained_pages(wiki_root)
+    chart_schema = _research_chart_schema_path(wiki_root)
     schema_path = wiki_root / "SCHEMA.md"
     index_path = wiki_root / "index.md"
     if schema_path not in pages or index_path not in pages:
@@ -132,6 +329,10 @@ def lint_wiki(wiki_root: Path) -> list[str]:
                 )
         elif path.stat().st_size > max_page_bytes_raw:
             errors.append(f"{relative}: page exceeds {max_page_bytes_raw} bytes")
+
+        charts, chart_errors = parse_research_charts(path, chart_schema)
+        del charts
+        errors.extend(f"{relative}: {error}" for error in chart_errors)
 
         body_without_code = FENCED_BLOCK_PATTERN.sub("", body)
         for target in WIKILINK_PATTERN.findall(body_without_code):

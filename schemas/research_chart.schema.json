@@ -1,0 +1,290 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://papertrader.example/schemas/research_chart.schema.json",
+  "title": "PaperTrader declarative research chart",
+  "oneOf": [
+    { "$ref": "#/$defs/series_chart" },
+    { "$ref": "#/$defs/scatter_chart" },
+    { "$ref": "#/$defs/composition_chart" },
+    { "$ref": "#/$defs/candlestick_chart" },
+    { "$ref": "#/$defs/heatmap_chart" },
+    { "$ref": "#/$defs/network_chart" }
+  ],
+  "$defs": {
+    "decimal": {
+      "type": "string",
+      "pattern": "^-?(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$",
+      "maxLength": 64
+    },
+    "decimal_or_null": {
+      "oneOf": [{ "$ref": "#/$defs/decimal" }, { "type": "null" }]
+    },
+    "common": {
+      "type": "object",
+      "required": ["schema_version", "chart_id", "kind", "title", "description", "as_of", "sources"],
+      "properties": {
+        "schema_version": { "const": 1 },
+        "chart_id": { "type": "string", "pattern": "^[a-z][a-z0-9-]{0,63}$" },
+        "kind": { "enum": ["series", "scatter", "composition", "candlestick", "heatmap", "network"] },
+        "title": { "type": "string", "minLength": 1, "maxLength": 160 },
+        "subtitle": { "type": "string", "minLength": 1, "maxLength": 240 },
+        "description": { "type": "string", "minLength": 1, "maxLength": 1000 },
+        "as_of": {
+          "type": "string",
+          "anyOf": [{ "format": "date" }, { "format": "date-time" }]
+        },
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 20,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["label"],
+            "properties": {
+              "label": { "type": "string", "minLength": 1, "maxLength": 300 },
+              "url": { "type": "string", "format": "uri", "pattern": "^https?://", "maxLength": 2000 },
+              "observed_at": { "type": "string", "format": "date-time" }
+            }
+          }
+        },
+        "notes": {
+          "type": "array",
+          "maxItems": 20,
+          "items": { "type": "string", "minLength": 1, "maxLength": 500 }
+        }
+      }
+    },
+    "axis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "unit", "format"],
+      "properties": {
+        "label": { "type": "string", "minLength": 1, "maxLength": 100 },
+        "unit": { "type": "string", "minLength": 1, "maxLength": 32 },
+        "format": { "enum": ["decimal", "percent", "currency", "multiple"] },
+        "currency": { "type": "string", "pattern": "^[A-Z]{3}$" }
+      }
+    },
+    "series_chart": {
+      "allOf": [
+        { "$ref": "#/$defs/common" },
+        {
+          "type": "object",
+          "required": ["x_axis", "y_axes", "series"],
+          "properties": {
+            "kind": { "const": "series" },
+            "x_axis": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["type", "label", "values"],
+              "properties": {
+                "type": { "enum": ["category", "time"] },
+                "label": { "type": "string", "minLength": 1, "maxLength": 100 },
+                "values": {
+                  "type": "array",
+                  "minItems": 2,
+                  "maxItems": 100,
+                  "items": { "type": "string", "minLength": 1, "maxLength": 100 }
+                }
+              }
+            },
+            "y_axes": { "type": "array", "minItems": 1, "maxItems": 2, "items": { "$ref": "#/$defs/axis" } },
+            "series": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 10,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["name", "render", "y_axis", "values"],
+                "properties": {
+                  "name": { "type": "string", "minLength": 1, "maxLength": 100 },
+                  "render": { "enum": ["line", "area", "bar"] },
+                  "y_axis": { "type": "integer", "minimum": 0, "maximum": 1 },
+                  "values": { "type": "array", "minItems": 2, "maxItems": 100, "items": { "$ref": "#/$defs/decimal_or_null" } },
+                  "stack": { "type": "string", "minLength": 1, "maxLength": 64 }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "scatter_chart": {
+      "allOf": [
+        { "$ref": "#/$defs/common" },
+        {
+          "type": "object",
+          "required": ["x_axis", "y_axis", "points"],
+          "properties": {
+            "kind": { "const": "scatter" },
+            "x_axis": { "$ref": "#/$defs/axis" },
+            "y_axis": { "$ref": "#/$defs/axis" },
+            "points": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 100,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["label", "x", "y"],
+                "properties": {
+                  "label": { "type": "string", "minLength": 1, "maxLength": 100 },
+                  "x": { "$ref": "#/$defs/decimal" },
+                  "y": { "$ref": "#/$defs/decimal" },
+                  "size": { "$ref": "#/$defs/decimal" },
+                  "group": { "type": "string", "minLength": 1, "maxLength": 100 },
+                  "entity_id": { "type": "string", "minLength": 1, "maxLength": 128 }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "composition_chart": {
+      "allOf": [
+        { "$ref": "#/$defs/common" },
+        {
+          "type": "object",
+          "required": ["display", "axis", "items"],
+          "properties": {
+            "kind": { "const": "composition" },
+            "display": { "enum": ["bar", "donut", "treemap"] },
+            "axis": { "$ref": "#/$defs/axis" },
+            "items": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 50,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["label", "value"],
+                "properties": {
+                  "label": { "type": "string", "minLength": 1, "maxLength": 100 },
+                  "value": { "$ref": "#/$defs/decimal" },
+                  "entity_id": { "type": "string", "minLength": 1, "maxLength": 128 }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "candlestick_chart": {
+      "allOf": [
+        { "$ref": "#/$defs/common" },
+        {
+          "type": "object",
+          "required": ["currency", "rows"],
+          "properties": {
+            "kind": { "const": "candlestick" },
+            "currency": { "type": "string", "pattern": "^[A-Z]{3}$" },
+            "rows": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 100,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["at", "open", "close", "low", "high"],
+                "properties": {
+                  "at": { "type": "string", "format": "date" },
+                  "open": { "$ref": "#/$defs/decimal" },
+                  "close": { "$ref": "#/$defs/decimal" },
+                  "low": { "$ref": "#/$defs/decimal" },
+                  "high": { "$ref": "#/$defs/decimal" },
+                  "volume": { "$ref": "#/$defs/decimal_or_null" }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "heatmap_chart": {
+      "allOf": [
+        { "$ref": "#/$defs/common" },
+        {
+          "type": "object",
+          "required": ["x_labels", "y_labels", "axis", "cells"],
+          "properties": {
+            "kind": { "const": "heatmap" },
+            "x_labels": { "type": "array", "minItems": 2, "maxItems": 30, "items": { "type": "string", "minLength": 1, "maxLength": 100 } },
+            "y_labels": { "type": "array", "minItems": 2, "maxItems": 30, "items": { "type": "string", "minLength": 1, "maxLength": 100 } },
+            "axis": { "$ref": "#/$defs/axis" },
+            "cells": {
+              "type": "array",
+              "minItems": 4,
+              "maxItems": 500,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["x", "y", "value"],
+                "properties": {
+                  "x": { "type": "integer", "minimum": 0, "maximum": 29 },
+                  "y": { "type": "integer", "minimum": 0, "maximum": 29 },
+                  "value": { "$ref": "#/$defs/decimal_or_null" }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "network_chart": {
+      "allOf": [
+        { "$ref": "#/$defs/common" },
+        {
+          "type": "object",
+          "required": ["display", "nodes", "links"],
+          "properties": {
+            "kind": { "const": "network" },
+            "display": { "enum": ["graph", "sankey"] },
+            "nodes": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 100,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["id", "label"],
+                "properties": {
+                  "id": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$" },
+                  "label": { "type": "string", "minLength": 1, "maxLength": 100 },
+                  "category": { "type": "string", "minLength": 1, "maxLength": 100 },
+                  "value": { "$ref": "#/$defs/decimal" },
+                  "entity_type": { "type": "string", "minLength": 1, "maxLength": 64 },
+                  "entity_id": { "type": "string", "minLength": 1, "maxLength": 128 }
+                }
+              }
+            },
+            "links": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 200,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["source", "target"],
+                "properties": {
+                  "source": { "type": "string", "minLength": 1, "maxLength": 128 },
+                  "target": { "type": "string", "minLength": 1, "maxLength": 128 },
+                  "value": { "$ref": "#/$defs/decimal" },
+                  "label": { "type": "string", "minLength": 1, "maxLength": 100 }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    }
+  }
+}

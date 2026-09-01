@@ -20,6 +20,7 @@ from papertrader.result_validator import (
     _daily_podcast_text_errors,
     _idea_security_followup_errors,
     _path_allowed_for_operation,
+    _research_visualization_errors,
     _security_assessment_result_errors,
     _security_idea_followup_errors,
     _youtube_wiki_ingest_errors,
@@ -557,8 +558,66 @@ def _manifest(operation_id: str, files: list[str]) -> dict[str, object]:
         "issues_recorded": [],
         "daily_report_items": [],
         "commands_run": [],
+        "visualization_review": {
+            "completed": True,
+            "charts": [],
+            "omissions": [
+                {
+                    "dataset": "bounded trigger evidence",
+                    "reason_code": "no_page_change",
+                    "reason": "The fixture changes no primary research page.",
+                }
+            ],
+        },
         "validation": {"passed": True, "checks": ["bounded no-op"]},
     }
+
+
+def test_research_visualization_manifest_matches_changed_page_chart_ids(
+    sandbox_repository: Path, sandbox_settings: Settings
+) -> None:
+    operation_id = _enqueue(sandbox_repository, sandbox_settings)
+    operation = Operation.from_row(read_table(sandbox_repository, "operations_todo")[0])
+    page_path = "data/wiki/queries/chart-fixture.md"
+    chart = {
+        "schema_version": 1,
+        "chart_id": "trigger-comparison",
+        "kind": "composition",
+        "title": "Trigger comparison",
+        "description": "Three comparable trigger observations.",
+        "as_of": "2026-07-24T10:00:00Z",
+        "sources": [{"label": "Normalized market fixture"}],
+        "display": "bar",
+        "axis": {"label": "Return", "unit": "%", "format": "percent"},
+        "items": [
+            {"label": "Day 1", "value": "-1.2"},
+            {"label": "Day 2", "value": "0.4"},
+            {"label": "Day 3", "value": "2.1"},
+        ],
+    }
+    page = sandbox_repository / page_path
+    page.parent.mkdir(parents=True, exist_ok=True)
+    page.write_text(
+        "## Visual evidence\n\n```echart\n" + json.dumps(chart) + "\n```\n",
+        encoding="utf-8",
+    )
+    result = _manifest(operation_id, [page_path])
+    result["visualization_review"] = {
+        "completed": True,
+        "charts": [{"page_path": page_path, "chart_id": "trigger-comparison"}],
+        "omissions": [],
+    }
+
+    assert (
+        _research_visualization_errors(
+            sandbox_repository,
+            operation=operation,
+            status="succeeded",
+            result=result,
+            changed_paths=(page_path,),
+        )
+        == []
+    )
 
 
 def _executor_with_change(
