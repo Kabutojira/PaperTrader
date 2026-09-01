@@ -1,0 +1,40 @@
+{
+  "commands_run": [
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Opportunity research for ALB's 2026-07-31 volume anomaly was blocked because the queue claim run identifier did not match the supplied run ID; no research or trading state was changed."
+  ],
+  "evidence": [
+    {
+      "claim": "The target operation is running but its claimed_by_run_id is daily-20260901T120230, which differs from the required run ID daily-20260901T120230Z.",
+      "source": "data/operations/operations_TODO.csv:63"
+    },
+    {
+      "claim": "The payload identifies the target as ALB volume_anomaly for 2026-07-02 through 2026-07-31, observed at 2026-08-01T09:07:38Z.",
+      "source": "data/operations/payloads/01KYY98DWGCKZ1ENB3G6KZ9HHS.json"
+    },
+    {
+      "claim": "The canonical current ALB mark is dated 2026-08-31 and retrieved at 2026-09-01T12:02:36Z, so the pending trigger observation is no longer current.",
+      "source": "data/market/latest.csv:31"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01KYY98DWGCKZ1ENB3G6KZ9HHS",
+  "operations_created": [],
+  "reason_code": "claim_run_id_mismatch",
+  "status": "blocked",
+  "summary": "Blocked before research because the active queue row is claimed by daily-20260901T120230, not the required run daily-20260901T120230Z. The parent controller must resolve the claim mismatch before this operation can safely proceed.",
+  "validation": {
+    "checks": [
+      "Verified the required payload operation ID, entity identity, trigger type, exact period, and observation timestamp.",
+      "Verified preflight identifies llm-wiki, papertrader-controller, papertrader-opportunity-research, and echart.",
+      "Verified the target queue row is running but its claim run identifier does not match the supplied run ID.",
+      "Verified current canonical ALB market data postdates the payload observation.",
+      "scripts/papertrader wiki lint --strict passed before manifest creation.",
+      "No structured state, research page, trading state, accounting ledger, portfolio, or performance view was changed."
+    ],
+    "passed": false
+  }
+}
