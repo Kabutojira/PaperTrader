@@ -1,0 +1,57 @@
+{
+  "api_key_fallback": false,
+  "auxiliary_models": {
+    "web_extract": "openai-codex:gpt-5.6-luna"
+  },
+  "auxiliary_skills": [
+    {
+      "name": "echart",
+      "path": "skills/echart/SKILL.md",
+      "sha256": "a5b954be27b285e0a59a0356ee5e34886450bbca3f7f8e2b4459306908022579",
+      "version": "repository"
+    }
+  ],
+  "controller_skill": {
+    "name": "papertrader-controller",
+    "path": "skills/papertrader-controller/SKILL.md",
+    "sha256": "b8b1ce8f7a6931677f0a1b6f6766cb704c86d01592aec67dd66b4a670cce4770",
+    "version": "repository"
+  },
+  "escalation_source": "",
+  "external_skill_dirs": [
+    "skills"
+  ],
+  "hermes_config_sha256": "f988ea7dad40f5e2ed967ea22ad5c52c33836d967fdc242a5b738656a95ba84a",
+  "maximum_turns": 80,
+  "model": "gpt-5.6-terra",
+  "mutation_policy": "routine_research",
+  "native_skill": {
+    "name": "llm-wiki",
+    "path": "skills/research/llm-wiki/SKILL.md",
+    "sha256": "a37ae04745b04b8e9bbd8de37cdcbc2b2187ccafb68418e436a46ebb1e491ee5",
+    "version": "2.1.0"
+  },
+  "operation_id": "01KYY98DWGEXXTBMK11EKRZYBN",
+  "operation_skill": {
+    "name": "papertrader-opportunity-research",
+    "path": "skills/papertrader-opportunity-research/SKILL.md",
+    "sha256": "985f09ff9c79d06fc875cc9d3005cfbf97a56441f2a2cb3e8acfda4dad181abf",
+    "version": "repository"
+  },
+  "preflight_version": 5,
+  "profile": "analyst",
+  "profile_policy_version": "profile-router-v1",
+  "prompt_injection_flags": [],
+  "provider": "openai-codex",
+  "reasoning_effort": "medium",
+  "route_reason": "routine_research_or_long_form_synthesis",
+  "run_id": "daily-20260901T181335Z",
+  "sequential": true,
+  "timeout_seconds": 1200,
+  "web_extract_failure_policy": "native_bounded_raw_excerpt",
+  "web_extract_model": "gpt-5.6-luna",
+  "web_extract_provider": "openai-codex",
+  "web_extract_reasoning_effort": "low",
+  "weighted_cost": "2.5",
+  "yolo": true
+}

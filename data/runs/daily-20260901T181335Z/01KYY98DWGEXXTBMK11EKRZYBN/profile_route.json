@@ -1,0 +1,19 @@
+{
+  "auxiliary_models": {
+    "web_extract": "openai-codex:gpt-5.6-luna"
+  },
+  "checkpoint_index": 2,
+  "effective_model": "gpt-5.6-terra",
+  "escalation_source": "",
+  "maximum_turns": 80,
+  "mutation_policy": "routine_research",
+  "operation_id": "01KYY98DWGEXXTBMK11EKRZYBN",
+  "profile": "analyst",
+  "profile_policy_version": "profile-router-v1",
+  "reasoning_effort": "medium",
+  "route_reason": "routine_research_or_long_form_synthesis",
+  "route_version": 1,
+  "run_id": "daily-20260901T181335Z",
+  "timeout_seconds": 1200,
+  "weighted_cost": "2.5"
+}

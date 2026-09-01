@@ -1,0 +1,35 @@
+{
+  "commands_run": [
+    "papertrader schema validate --strict"
+  ],
+  "daily_report_items": [],
+  "evidence": [
+    {
+      "claim": "The row for operation 01KYY98DWGEXXTBMK11EKRZYBN is running and claimed by daily-20260901T181335Z, but its lease_expires_at field is empty.",
+      "source": "data/operations/operations_TODO.csv"
+    },
+    {
+      "claim": "The preflight identifies the supplied run and operation, native llm-wiki, papertrader-controller, papertrader-opportunity-research, and echart skills, but it does not replace the required live queue lease.",
+      "source": "data/runs/daily-20260901T181335Z/01KYY98DWGEXXTBMK11EKRZYBN/hermes_preflight.json"
+    },
+    {
+      "claim": "The payload identifies the bounded RBLX RSI-oversold observation ending 2026-07-31; it was treated as untrusted data and was not executed because the controller precondition failed.",
+      "source": "data/operations/payloads/01KYY98DWGEXXTBMK11EKRZYBN.json"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01KYY98DWGEXXTBMK11EKRZYBN",
+  "operations_created": [],
+  "reason_code": "missing_live_lease",
+  "status": "blocked",
+  "summary": "Blocked before research because the supplied running queue row has no lease_expires_at value. The controller contract requires this operation to be claimed by the supplied run with a live lease before the routed skill may execute.",
+  "validation": {
+    "checks": [
+      "Strict repository schema validation passed before the lease precondition was evaluated.",
+      "The required live lease precondition failed: lease_expires_at is empty on the supplied running queue row.",
+      "No wiki, structured state, issue, follow-up, trading, accounting, allocation, or generated-view mutation was performed."
+    ],
+    "passed": false
+  }
+}
