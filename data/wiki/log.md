@@ -2874,6 +2874,10 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 
 - Generated canonical [[daily-reports/daily-report_20260901]] for run `daily-20260901T084440Z`.
 
+- Published investor decision snapshot `decision_ef6ed3599ecd65b52766`.
+
+- Generated canonical [[daily-reports/daily-report_20260901]] for run `daily-20260901T120230Z`.
+
 ## [2026-09-01T08:47:14Z] relationship research | CrowdStrike and cybersecurity continuity
 
 - Refreshed the accepted [[relationships/relationship_228f56aa5d91f3688b67|CrowdStrike

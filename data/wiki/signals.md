@@ -7,13 +7,13 @@ tags:
 created: "2026-09-01"
 updated: "2026-09-01"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_0a9f35321118f3dc4243"
-as_of: "2026-09-01T09:24:14Z"
+snapshot_id: "decision_ef6ed3599ecd65b52766"
+as_of: "2026-09-01T12:07:07Z"
 ---
 
 # Signals
 
-**As of `2026-09-01T09:24:14Z`**
+**As of `2026-09-01T12:07:07Z`**
 
 ## Actionable trade signals
 
@@ -33,24 +33,6 @@ No pending orders.
 - Market date: `2026-08-31`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
-
-### [TSLA — Tesla, Inc.](securities/security_dc7a111e297be528d96b)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_above\_upper`
-- Market date: `2026-08-31`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
-### [TSLA — Tesla, Inc.](securities/security_dc7a111e297be528d96b)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-08-31`
-- Research status: `succeeded`
-- Conclusion: Completed one full repeat assessment of Tesla after the 2026-08-31 volume anomaly. The USD 367.95 close was 14.24% above the 2026-08-03 period start, with a 2.64 volume z-score and an upper-Bollinger-band close. Current SEC evidence did not change the Q2 operating thesis or the USD 137/USD 272/USD 491 scenarios. Deterministic assessment assessment\_df6d99ee7bbbc7052df1 derives USD 293 weighted fair value, -20.37% expected return, -15.28% confidence-adjusted expected return and a Sell / Avoid, allocation-ineligible disposition. The accepted Terafab edge remains current; three bounded candidate relationship reviews and the required dependent Terafab idea refresh were queued. No strategy, signal, order, allocation or accounting state changed.
 
 ### [SU — Schneider Electric SE](securities/security_dc8486c1d61df62a22fd)
 
@@ -79,15 +61,6 @@ No pending orders.
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
-### [PYPL — PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_below\_lower`
-- Market date: `2026-08-31`
-- Research status: `succeeded`
-- Conclusion: Completed PayPal's repeat security assessment after the 2026-08-28 lower-Bollinger and volume-anomaly alerts. Current SEC evidence contains no issuer operating filing after July 28 and both Q2 documents are unchanged, so the 12.71% one-session decline on 2.06-times average volume is an unexplained risk event and possible dislocation, not verified fundamental deterioration or a confirmed opportunity. At USD 53.66, unchanged USD 43.04/USD 64.56/USD 80.70 scenarios produce Buy / Initiate economics at Watch conviction, but expected-to-bear payoff and the pending digital-finance relationship keep allocation ineligible. Immutable assessment assessment\_2c8e04cee17905a2dec7 links its predecessor. No strategy, signal, order, allocation, execution, cash, portfolio, fill, or performance state changed.
-
 ### [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4)
 
 **Research alert — not a trade signal**
@@ -96,24 +69,6 @@ No pending orders.
 - Market date: `2026-08-31`
 - Research status: `skipped`
 - Conclusion: The immutable alert price identity was superseded by the current canonical same-date market-data revision before a comparable quick-check assessment could be produced.
-
-### [PATH — UiPath, Inc.](securities/security_eca976f0076a425ea1bb)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_above\_upper`
-- Market date: `2026-08-31`
-- Research status: `succeeded`
-- Conclusion: Completed exactly one UiPath Class A common-stock review from the fiscal Q1 2027 Form 10-Q, SEC-filed results release, and canonical 5 August 2026 market and 6 August FX state. Registered both primary sources, created the maintained security page, updated the structured security row, and wrote the first scenario-complete assessment. USD 8.50/USD 15.50/USD 26.50 bear/base/bull values produce a USD 16.50 weighted value versus USD 13.82. Deterministic state derives Buy / Initiate as the valuation label but watch-tier conviction and allocation ineligibility because bear/base payoff, expected/bear payoff, and relationship gates fail. The 4 August Bollinger and overbought-RSI transitions followed a 21.03% rally without a newer issuer filing explaining it and are adverse entry timing, not fundamental confirmation. No strategy, signal, order, follow-up operation, allocation, or accounting state changed because no idea or accepted relationship is linked and the full strategy gate failed.
-
-### [PATH — UiPath, Inc.](securities/security_eca976f0076a425ea1bb)
-
-**Research alert — not a trade signal**
-
-- Alert: `rsi\_overbought`
-- Market date: `2026-08-31`
-- Research status: `succeeded`
-- Conclusion: Completed exactly one UiPath Class A common-stock review from the fiscal Q1 2027 Form 10-Q, SEC-filed results release, and canonical 5 August 2026 market and 6 August FX state. Registered both primary sources, created the maintained security page, updated the structured security row, and wrote the first scenario-complete assessment. USD 8.50/USD 15.50/USD 26.50 bear/base/bull values produce a USD 16.50 weighted value versus USD 13.82. Deterministic state derives Buy / Initiate as the valuation label but watch-tier conviction and allocation ineligibility because bear/base payoff, expected/bear payoff, and relationship gates fail. The 4 August Bollinger and overbought-RSI transitions followed a 21.03% rally without a newer issuer filing explaining it and are adverse entry timing, not fundamental confirmation. No strategy, signal, order, follow-up operation, allocation, or accounting state changed because no idea or accepted relationship is linked and the full strategy gate failed.
 
 ### [PARRO.PA — Parrot S.A.](securities/security_cc4dcb8f002b61dffe00)
 
@@ -133,6 +88,15 @@ No pending orders.
 - Research status: `succeeded`
 - Conclusion: Completed one repeat assessment of GE Vernova after the 2026-08-31 volume anomaly. GEV fell 10.75% over the supplied period and 1.47% on the final session with a 3.01 volume z-score, while fresh primary-source checks found unchanged Q2 evidence and only a planned CFO succession in the later Form 8-K. Unchanged USD 571.58/USD 1,016.02/USD 1,386.39 scenarios against the USD 898.530029296875 mark produce USD 997.5025 weighted value, 11.0149318860910792067882139% expected return and 8.261198914568309405091160425% confidence-adjusted return. Deterministic assessment assessment\_2b688aa3f035d5c0610a remains Hold / Watch, Watch tier and allocation-ineligible because both downside-payoff gates fail. Exactly one dependent AI-infrastructure-power idea refresh was queued; existing canonical relationship reviews were not duplicated. No strategy, signal, order, allocation or accounting state changed.
 
+### [DPZ — Domino's Pizza, Inc.](securities/security_f34181f3df32080a91d1)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-08-31`
+- Research status: `blocked`
+- Conclusion: High-priority security research is blocked. agent\_result:blocked:Blocked the bounded Domino's Pizza quick check because its immutable payload recorded source recorded source state conflicts with the current canonical indicator price identity recorded source state. The successful recent baseline and security identity were confirmed, but the stale/conflicting market binding prevents a comparable assessment decision. No assessment, wiki, follow-up, trading, allocation, or accounting state was changed.
+
 ### [CSL — Carlisle Companies Incorporated](securities/security_9b0db3bc77914b23a307)
 
 **Research alert — not a trade signal**
@@ -141,6 +105,60 @@ No pending orders.
 - Market date: `2026-08-31`
 - Research status: `succeeded`
 - Conclusion: Completed the repeat review of Carlisle Companies Incorporated after the strengthened 28 August volume anomaly. Current SEC evidence confirms resilient re-roofing demand and maintained guidance but also price-cost pressure, weak first-half cash conversion and meaningful net debt; no new operating filing explains the move. USD282.66/USD363.42/USD444.18 bear/base/bull scenarios produce USD363.42 probability-weighted value against the USD346.5799865722656 mark. Deterministic output is Hold / Watch and allocation-ineligible. The complete idea catalog and relationship state produced no specific material causal edge, so no relationship, idea or strategy follow-up was warranted and no paper order was created.
+
+### [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_overbought`
+- Market date: `2026-08-31`
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
+
+### [TSLA — Tesla, Inc.](securities/security_dc7a111e297be528d96b)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-31`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### [TSLA — Tesla, Inc.](securities/security_dc7a111e297be528d96b)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-08-31`
+- Research status: `succeeded`
+- Conclusion: Completed one full repeat assessment of Tesla after the 2026-08-31 volume anomaly. The USD 367.95 close was 14.24% above the 2026-08-03 period start, with a 2.64 volume z-score and an upper-Bollinger-band close. Current SEC evidence did not change the Q2 operating thesis or the USD 137/USD 272/USD 491 scenarios. Deterministic assessment assessment\_df6d99ee7bbbc7052df1 derives USD 293 weighted fair value, -20.37% expected return, -15.28% confidence-adjusted expected return and a Sell / Avoid, allocation-ineligible disposition. The accepted Terafab edge remains current; three bounded candidate relationship reviews and the required dependent Terafab idea refresh were queued. No strategy, signal, order, allocation or accounting state changed.
+
+### [PYPL — PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_below\_lower`
+- Market date: `2026-08-31`
+- Research status: `succeeded`
+- Conclusion: Completed PayPal's repeat security assessment after the 2026-08-28 lower-Bollinger and volume-anomaly alerts. Current SEC evidence contains no issuer operating filing after July 28 and both Q2 documents are unchanged, so the 12.71% one-session decline on 2.06-times average volume is an unexplained risk event and possible dislocation, not verified fundamental deterioration or a confirmed opportunity. At USD 53.66, unchanged USD 43.04/USD 64.56/USD 80.70 scenarios produce Buy / Initiate economics at Watch conviction, but expected-to-bear payoff and the pending digital-finance relationship keep allocation ineligible. Immutable assessment assessment\_2c8e04cee17905a2dec7 links its predecessor. No strategy, signal, order, allocation, execution, cash, portfolio, fill, or performance state changed.
+
+### [PATH — UiPath, Inc.](securities/security_eca976f0076a425ea1bb)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-31`
+- Research status: `succeeded`
+- Conclusion: Completed exactly one UiPath Class A common-stock review from the fiscal Q1 2027 Form 10-Q, SEC-filed results release, and canonical 5 August 2026 market and 6 August FX state. Registered both primary sources, created the maintained security page, updated the structured security row, and wrote the first scenario-complete assessment. USD 8.50/USD 15.50/USD 26.50 bear/base/bull values produce a USD 16.50 weighted value versus USD 13.82. Deterministic state derives Buy / Initiate as the valuation label but watch-tier conviction and allocation ineligibility because bear/base payoff, expected/bear payoff, and relationship gates fail. The 4 August Bollinger and overbought-RSI transitions followed a 21.03% rally without a newer issuer filing explaining it and are adverse entry timing, not fundamental confirmation. No strategy, signal, order, follow-up operation, allocation, or accounting state changed because no idea or accepted relationship is linked and the full strategy gate failed.
+
+### [PATH — UiPath, Inc.](securities/security_eca976f0076a425ea1bb)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_overbought`
+- Market date: `2026-08-31`
+- Research status: `succeeded`
+- Conclusion: Completed exactly one UiPath Class A common-stock review from the fiscal Q1 2027 Form 10-Q, SEC-filed results release, and canonical 5 August 2026 market and 6 August FX state. Registered both primary sources, created the maintained security page, updated the structured security row, and wrote the first scenario-complete assessment. USD 8.50/USD 15.50/USD 26.50 bear/base/bull values produce a USD 16.50 weighted value versus USD 13.82. Deterministic state derives Buy / Initiate as the valuation label but watch-tier conviction and allocation ineligibility because bear/base payoff, expected/bear payoff, and relationship gates fail. The 4 August Bollinger and overbought-RSI transitions followed a 21.03% rally without a newer issuer filing explaining it and are adverse entry timing, not fundamental confirmation. No strategy, signal, order, follow-up operation, allocation, or accounting state changed because no idea or accepted relationship is linked and the full strategy gate failed.
 
 ### [CSIQ — Canadian Solar Inc.](securities/security_099561384c0f5e697727)
 
@@ -159,24 +177,6 @@ No pending orders.
 - Market date: `2026-08-31`
 - Research status: `pending`
 - Conclusion: Deterministic price alert awaits bounded research review.
-
-### [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86)
-
-**Research alert — not a trade signal**
-
-- Alert: `rsi\_overbought`
-- Market date: `2026-08-31`
-- Research status: `skipped`
-- Conclusion: Queue triage disposition
-
-### [DPZ — Domino's Pizza, Inc.](securities/security_f34181f3df32080a91d1)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-08-31`
-- Research status: `blocked`
-- Conclusion: High-priority security research is blocked. agent\_result:blocked:Blocked the bounded Domino's Pizza quick check because its immutable payload recorded source recorded source state conflicts with the current canonical indicator price identity recorded source state. The successful recent baseline and security identity were confirmed, but the stale/conflicting market binding prevents a comparable assessment decision. No assessment, wiki, follow-up, trading, allocation, or accounting state was changed.
 
 ### [VLO — Valero Energy Corporation](securities/security_c5a9e460d3350284d157)
 

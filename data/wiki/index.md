@@ -7,13 +7,13 @@ tags:
 created: "2026-09-01"
 updated: "2026-09-01"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_0a9f35321118f3dc4243"
-as_of: "2026-09-01T09:24:14Z"
+snapshot_id: "decision_ef6ed3599ecd65b52766"
+as_of: "2026-09-01T12:07:07Z"
 ---
 
 # PaperTrader
 
-**As of `2026-09-01T09:24:14Z` · Investment data: Blocked — current exposure cannot be projected safely · Operations: Blocked**
+**As of `2026-09-01T12:07:07Z` · Investment data: Blocked — current exposure cannot be projected safely · Operations: Blocked**
 
 ## Decision blocked — do not copy actions
 
