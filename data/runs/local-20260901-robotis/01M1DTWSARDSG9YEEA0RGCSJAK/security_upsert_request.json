@@ -1,0 +1,23 @@
+{
+  "security_id": "security_0c8b3c4291cd97f56d8c",
+  "issuer_id": "issuer_fa9456121dcb71eab3ff",
+  "company_name": "ROBOTIS Co., Ltd.",
+  "instrument_name": "ROBOTIS Co., Ltd. common shares",
+  "instrument_type": "equity",
+  "ticker": "108490",
+  "exchange_code": "KOSDAQ",
+  "venue_mic": "XKOS",
+  "provider_symbol": "108490.KQ",
+  "broker_symbol": "",
+  "currency": "KRW",
+  "country": "KR",
+  "sector": "Industrials",
+  "industry": "Special Purpose Machinery",
+  "status": "watching",
+  "watchlist_reason": "Direct humanoid-robotics actuator candidate with strong growth and liquidity, but undisclosed humanoid economics and severe valuation risk prevent exposure.",
+  "research_summary": "Strong Sell/Avoid: a real, fast-growing actuator franchise and strong balance sheet do not support a roughly 64x annualized-sales enterprise value.",
+  "research_page": "data/wiki/securities/security_0c8b3c4291cd97f56d8c.md",
+  "last_research_at": "2026-09-01T06:49:44Z",
+  "next_review_at": "2026-09-30T06:49:44Z",
+  "source": "source_robotis_dart_company_profile|source_robotis_2026_h1_income|source_robotis_2026_h1_balance|source_robotis_2026_h1_cashflow|source_robotis_2026_h1_business|source_robotis_uzbekistan_investment"
+}

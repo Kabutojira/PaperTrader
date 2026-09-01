@@ -1,0 +1,8 @@
+{
+  "operation_id": "01M1DTWSARDSG9YEEA0RGCSJAK",
+  "run_id": "local-20260901-robotis",
+  "terminal_status": "succeeded",
+  "result_path": "data/runs/local-20260901-robotis/01M1DTWSARDSG9YEEA0RGCSJAK/agent_result.json",
+  "result_summary": "Added and fully researched ROBOTIS under its immutable KOSDAQ/KRW identity, recorded current primary evidence and a scenario-complete assessment, classified the humanoid-robotics edge as a candidate, and created the required dependent relationship and idea reviews without changing paper-trading state.",
+  "terminal_reason": "robotis_primary_research_and_scenario_valuation_completed"
+}

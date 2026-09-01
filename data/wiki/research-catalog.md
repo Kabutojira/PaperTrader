@@ -4,11 +4,11 @@ type: research-catalog
 status: maintained
 tags:
   - research
-created: "2026-08-31"
-updated: "2026-08-31"
+created: "2026-09-01"
+updated: "2026-09-01"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_988735610b59ea9aef33"
-as_of: "2026-08-31T23:40:41Z"
+snapshot_id: "decision_bc07eb5ba2fb775959a8"
+as_of: "2026-09-01T06:55:00Z"
 ---
 
 # Research catalog
@@ -17,8 +17,8 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Assessment revision audit
 
-- Immutable assessment versions: **190**
-- Securities with retained revisions: **79**
+- Immutable assessment versions: **191**
+- Securities with retained revisions: **80**
 
 ## Candidate
 
@@ -683,6 +683,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Rio Tinto plc sponsored ADR](securities/security_1c055eb9b2bb1f5a8ff2)
 - [Robinhood Markets, Inc. Class A common stock](securities/security_ad3b1f8f59fd599f079a)
 - [Roblox Corporation Class A common stock](securities/security_c9a37d277445869a8809)
+- [ROBOTIS Co., Ltd. common shares](securities/security_0c8b3c4291cd97f56d8c)
 - [Rocket Lab Corporation common stock](securities/security_7ca095d63423c55a90e3)
 - [RTX Corporation common stock](securities/security_59304f90c440def31dc5)
 - [Samsung Electronics common GDR](securities/security_567d0d575bbd30aaa91d)

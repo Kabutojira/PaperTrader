@@ -1,0 +1,18 @@
+{
+  "source_id": "source_robotis_2026_h1_balance",
+  "url": "https://opendart.fss.or.kr/xbrl/viewer/view.do?xbrlExtSeq=20260814001809&roleId=dart_2026-01-31_role-D210000&lang=ko",
+  "canonical_url": "https://opendart.fss.or.kr/xbrl/viewer/view.do?xbrlExtSeq=20260814001809&roleId=dart_2026-01-31_role-D210000&lang=ko",
+  "source_type": "regulator_filing",
+  "title": "ROBOTIS 2026 half-year consolidated balance sheet",
+  "publisher": "Financial Supervisory Service Open DART",
+  "license": "",
+  "status": "available",
+  "content_hash": "25fb6e28eaf637c46cee8ef6bb7afc0c6a932f0bed1933e229493acb6610f79e",
+  "related_entity_ids": "idea_humanoid_robotics_embodied_ai_components|security_0c8b3c4291cd97f56d8c",
+  "checked_at": "2026-09-01T06:43:23Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Cash was KRW 84.884 billion and total liabilities were KRW 10.966 billion.",
+  "summary": "The XBRL balance sheet confirms a very strong liquid-asset position, minimal liabilities, growing manufacturing assets and a 41.8% increase in inventory from year-end.",
+  "run_id": "local-20260901-robotis"
+}

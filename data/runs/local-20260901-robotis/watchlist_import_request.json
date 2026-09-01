@@ -1,0 +1,19 @@
+{
+  "watchlist_reason": "Candidate motion-control and actuator supplier for the humanoid robotics and embodied-AI component supply chain; requires company-specific valuation and causal-relationship review.",
+  "source": "https://englishdart.fss.or.kr/dsbc001/selectPopup.ax?selectKey=00946030",
+  "securities": [
+    {
+      "company_name": "ROBOTIS Co., Ltd.",
+      "instrument_name": "ROBOTIS Co., Ltd. common shares",
+      "instrument_type": "equity",
+      "ticker": "108490",
+      "exchange_code": "KOSDAQ",
+      "venue_mic": "XKOS",
+      "provider_symbol": "108490.KQ",
+      "currency": "KRW",
+      "country": "KR",
+      "sector": "Industrials",
+      "industry": "Special Purpose Machinery"
+    }
+  ]
+}

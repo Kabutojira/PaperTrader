@@ -1,0 +1,108 @@
+{
+  "operation_id": "01M1DTWSARDSG9YEEA0RGCSJAK",
+  "status": "succeeded",
+  "reason_code": "robotis_research_completed",
+  "summary": "Completed the first full primary-source review of ROBOTIS Co., Ltd. common shares, established its immutable KOSDAQ/KRW identity, recorded a scenario-complete assessment, and published the company research page and catalog entry. ROBOTIS has direct actuator and humanoid-product exposure, strong liquidity, and improving underlying operations, but the KRW254,500 market price implies an extreme premium to the evidence available. The deterministic assessment is Strong Sell / Avoid, allocation ineligible, with no strategy, signal, order, or paper trade. Separate bounded relationship and idea reviews were queued so the robotics edge can be accepted or rejected independently.",
+  "evidence": [
+    {
+      "source": "source_robotis_dart_company_profile",
+      "claim": "DART identifies ROBOTIS as a Korean special-purpose-machinery issuer listed on KOSDAQ under code 108490.",
+      "url": "https://englishdart.fss.or.kr/dsbc001/selectPopup.ax?selectKey=00946030",
+      "observed_at": "2026-09-01T06:43:23Z",
+      "source_hash": "de1e7ff7c2e772e3a8adad48bdd5d421750e2ed9f963fc9548285a86d237c6ac"
+    },
+    {
+      "source": "source_robotis_2026_h1_income",
+      "claim": "The statutory first-half 2026 income statement reports KRW27.213 billion revenue, KRW9.862 billion operating loss, and a profitable second quarter with KRW1.981 billion operating profit.",
+      "url": "https://opendart.fss.or.kr/xbrl/viewer/view.do?xbrlExtSeq=20260814001809&roleId=dart_2026-01-31_role-D431410&lang=ko",
+      "observed_at": "2026-09-01T06:43:23Z",
+      "source_hash": "db81e34023ede2ed50bf2711eeed9131b3ea968900c0b58a375897bd85cc2887"
+    },
+    {
+      "source": "source_robotis_2026_h1_balance",
+      "claim": "The statutory balance sheet supports approximately KRW281.3 billion of simple net financial assets against KRW10.966 billion total liabilities at 30 June 2026.",
+      "url": "https://opendart.fss.or.kr/xbrl/viewer/view.do?xbrlExtSeq=20260814001809&roleId=dart_2026-01-31_role-D210000&lang=ko",
+      "observed_at": "2026-09-01T06:43:23Z",
+      "source_hash": "25fb6e28eaf637c46cee8ef6bb7afc0c6a932f0bed1933e229493acb6610f79e"
+    },
+    {
+      "source": "source_robotis_2026_h1_business",
+      "claim": "Actuators supplied 97.99% of first-half revenue, with the X series accounting for about 90% of actuator sales; Q-series and AI Sapiens commercialization remain forward-looking plans rather than disclosed material humanoid revenue.",
+      "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20260814003380&dcmNo=11536939&eleId=9&offset=122883&length=137414&dtd=dart4.xsd",
+      "observed_at": "2026-09-01T06:43:23Z",
+      "source_hash": "e96754a1f103918946ece815d03be4f80d69c6b4dbb9d94f559e0e6abf22c5ad"
+    },
+    {
+      "source": "data/market/latest.csv",
+      "claim": "The canonical market state records 108490.KQ at KRW254,500 and KRW/EUR at 0.0006282000103965402, both retrieved at 2026-09-01T06:49:13Z."
+    },
+    {
+      "source": "assessment_87bdc100f723d484acc1",
+      "claim": "The validated scenario assessment calculates KRW20,625 bear, KRW70,968 base, KRW282,667 bull, and KRW98,204.9 probability-weighted fair value, producing the canonical Strong Sell / Avoid disposition and no allocation eligibility."
+    }
+  ],
+  "files_changed": [
+    "config.ini",
+    "data/market/fx/KRW_EUR.csv",
+    "data/market/latest.csv",
+    "data/market/prices/security_0c8b3c4291cd97f56d8c.csv",
+    "data/operations/operations_TODO.csv",
+    "data/operations/operations_history.csv",
+    "data/operations/payloads/01M1DTWSARDSG9YEEA0RGCSJAK.json",
+    "data/operations/payloads/01M1DVS7FR96FB1KT36XR99DQA.json",
+    "data/operations/payloads/01M1DVSXYGGYDYDQN7JDHAZKFC.json",
+    "data/published/decision_snapshot.json",
+    "data/published/model_portfolio.csv",
+    "data/published/research_benchmark.csv",
+    "data/runs/local-20260901-robotis/decision_snapshot.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/index.md",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_0c8b3c4291cd97f56d8c.md",
+    "data/wiki/security-catalog.md",
+    "tests/unit/test_market_data.py"
+  ],
+  "operations_created": [
+    "01M1DVS7FR96FB1KT36XR99DQA",
+    "01M1DVSXYGGYDYDQN7JDHAZKFC"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Completed ROBOTIS (108490) coverage: first-half revenue grew 50.3% and the balance sheet is liquid, but the KRW254,500 price sits 159% above the KRW98,205 weighted fair value; assessment is Strong Sell / Avoid with no paper trade."
+  ],
+  "commands_run": [
+    "papertrader watchlist import --request data/runs/local-20260901-robotis/watchlist_import_request.json",
+    "papertrader queue enqueue --request data/runs/local-20260901-robotis/enqueue_security_research_request.json",
+    "papertrader queue claim --run-id local-20260901-robotis",
+    "papertrader market update",
+    "papertrader research source record --request <six ROBOTIS primary-source request files>",
+    "papertrader research security upsert --request data/runs/local-20260901-robotis/01M1DTWSARDSG9YEEA0RGCSJAK/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/local-20260901-robotis/01M1DTWSARDSG9YEEA0RGCSJAK/assessment_upsert_request.json",
+    "papertrader queue enqueue --request <ROBOTIS relationship and humanoid-idea follow-up request files>",
+    "papertrader queue complete --request data/runs/local-20260901-robotis/01M1DTWSARDSG9YEEA0RGCSJAK/complete_operation_request.json",
+    "papertrader queue prepare",
+    "papertrader advice refresh --run-id local-20260901-robotis --as-of 2026-09-01T06:55:00Z",
+    "papertrader advice validate --strict",
+    "papertrader wiki lint --strict",
+    "papertrader queue validate",
+    "pytest -q tests/unit/test_config.py tests/unit/test_market_data.py tests/unit/test_research.py tests/unit/test_valuation.py",
+    "PAPERTRADER_BASE_URL=kabutojira.github.io/PaperTrader python scripts/build_site.py",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "All six primary sources were registered with immutable hashes and exact entity references.",
+      "The version-2 scenario assessment and current assessment projection validate against fresh KRW price and FX identity.",
+      "Strict advice, wiki, queue, and repository integrity checks passed.",
+      "The targeted unit suite passed 64 tests.",
+      "Quartz built 662 Markdown inputs and the internal site-link checker passed.",
+      "No strategy, signal, order, execution, cash, position, or real trading state was created."
+    ]
+  }
+}

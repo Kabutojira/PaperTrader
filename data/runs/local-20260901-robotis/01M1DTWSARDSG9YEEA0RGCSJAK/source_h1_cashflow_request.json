@@ -1,0 +1,18 @@
+{
+  "source_id": "source_robotis_2026_h1_cashflow",
+  "url": "https://opendart.fss.or.kr/xbrl/viewer/view.do?xbrlExtSeq=20260814001809&roleId=dart_2026-01-31_role-D520000&lang=ko",
+  "canonical_url": "https://opendart.fss.or.kr/xbrl/viewer/view.do?xbrlExtSeq=20260814001809&roleId=dart_2026-01-31_role-D520000&lang=ko",
+  "source_type": "regulator_filing",
+  "title": "ROBOTIS 2026 half-year consolidated cash-flow statement",
+  "publisher": "Financial Supervisory Service Open DART",
+  "license": "",
+  "status": "available",
+  "content_hash": "b32bedb5263b7ac4520eda34b659ddd2de4909b7b7f011d7bc6af7d30f842306",
+  "related_entity_ids": "idea_humanoid_robotics_embodied_ai_components|security_0c8b3c4291cd97f56d8c",
+  "checked_at": "2026-09-01T06:43:23Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Operating cash flow was KRW 1.093 billion; property and equipment purchases were KRW 11.745 billion.",
+  "summary": "The XBRL cash-flow statement confirms modest positive operating cash flow, a major manufacturing-capex step-up and KRW 41.146 billion of financing inflow from treasury-share disposals.",
+  "run_id": "local-20260901-robotis"
+}

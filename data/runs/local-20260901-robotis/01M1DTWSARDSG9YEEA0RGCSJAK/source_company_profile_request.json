@@ -1,0 +1,18 @@
+{
+  "source_id": "source_robotis_dart_company_profile",
+  "url": "https://englishdart.fss.or.kr/dsbc001/selectPopup.ax?selectKey=00946030",
+  "canonical_url": "https://englishdart.fss.or.kr/dsbc001/selectPopup.ax?selectKey=00946030",
+  "source_type": "regulator_registry",
+  "title": "ROBOTIS company information",
+  "publisher": "Financial Supervisory Service DART",
+  "license": "",
+  "status": "available",
+  "content_hash": "de1e7ff7c2e772e3a8adad48bdd5d421750e2ed9f963fc9548285a86d237c6ac",
+  "related_entity_ids": "idea_humanoid_robotics_embodied_ai_components|security_0c8b3c4291cd97f56d8c",
+  "checked_at": "2026-09-01T06:43:23Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "ROBOTIS, code 108490, is listed on the KOSDAQ Market.",
+  "summary": "The regulator registry confirms ROBOTIS's corporate identity, KOSDAQ listing, 1999 incorporation date, fiscal year-end and special-purpose-machinery classification.",
+  "run_id": "local-20260901-robotis"
+}

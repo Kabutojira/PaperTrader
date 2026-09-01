@@ -307,7 +307,7 @@ def test_fx_update_covers_every_allowed_non_base_currency_sequentially(
         sleeper=lambda _: None,
     )
 
-    expected = [(currency, "EUR") for currency in ("AUD", "GBP", "USD")]
+    expected = [(currency, "EUR") for currency in ("AUD", "GBP", "KRW", "USD")]
     assert errors == ()
     assert provider.calls == expected
     assert all(read_fx_cache(sandbox_repository, currency, "EUR") for currency, _ in expected)

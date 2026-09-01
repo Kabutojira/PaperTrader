@@ -1,0 +1,34 @@
+{
+  "operation_type": "relationship_research",
+  "entity_type": "relationship",
+  "entity_id": "relationship_humanoid_robotis",
+  "dedupe_key": "relationship_research:idea_humanoid_robotics_embodied_ai_components:security_0c8b3c4291cd97f56d8c:security-result:01M1DTWSARDSG9YEEA0RGCSJAK",
+  "prompt": "Review whether ROBOTIS has a material causal relationship to humanoid robotics and embodied AI through actuators, reducers, hands, platforms and repeat profitable customer demand; accept or reject the edge.",
+  "inputs": {
+    "relationship_id": "relationship_humanoid_robotis",
+    "idea_id": "idea_humanoid_robotics_embodied_ai_components",
+    "security_id": "security_0c8b3c4291cd97f56d8c",
+    "proposed_direction": "positive",
+    "proposed_mechanism": "Growth in paid humanoid and advanced-robot deployments can increase ROBOTIS actuator, reducer, hand and platform content, provided design wins become repeat volume with durable owner margins.",
+    "proposed_invalidation": "Reject the edge if humanoid programs remain demonstrations, customers vertically integrate actuators, alternative architectures displace DYNAMIXEL, or growing units fail to generate material attributable revenue and margins.",
+    "evidence_refs": [
+      "source_robotis_2026_h1_business",
+      "source_robotis_2026_h1_income"
+    ]
+  },
+  "source": "security_research:01M1DTWSARDSG9YEEA0RGCSJAK",
+  "priority": 68,
+  "freshness_days": 0,
+  "depends_on": [
+    "01M1DTWSARDSG9YEEA0RGCSJAK"
+  ],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_0c8b3c4291cd97f56d8c.md",
+    "data/wiki/ideas/idea_humanoid_robotics_embodied_ai_components.md",
+    "source_robotis_2026_h1_business",
+    "source_robotis_2026_h1_income"
+  ],
+  "max_attempts": 3
+}

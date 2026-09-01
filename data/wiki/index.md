@@ -4,16 +4,16 @@ type: dashboard
 status: maintained
 tags:
   - dashboard
-created: "2026-08-31"
-updated: "2026-08-31"
+created: "2026-09-01"
+updated: "2026-09-01"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_988735610b59ea9aef33"
-as_of: "2026-08-31T23:40:41Z"
+snapshot_id: "decision_bc07eb5ba2fb775959a8"
+as_of: "2026-09-01T06:55:00Z"
 ---
 
 # PaperTrader
 
-**As of `2026-08-31T23:40:41Z` · Investment data: Blocked — current exposure cannot be projected safely · Operations: Blocked**
+**As of `2026-09-01T06:55:00Z` · Investment data: Blocked — current exposure cannot be projected safely · Operations: Blocked**
 
 ## Decision blocked — do not copy actions
 
@@ -37,9 +37,9 @@ Current equity is **10000 EUR** with **100% cash**. The target retains **100% ca
 
 ## Top assessed near misses
 
-- **[NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d):** Buy / Initiate · expected 20.7817678274164750316066337% · The comparable assessment is stale or expired.
-- **[ASML — ASML Holding N.V.](securities/security_ef35e41886220d51c22c):** Unrated / Watch · expected —% · The comparable assessment is stale or expired.
-- **[ANET — Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a):** Hold / Watch · expected -2.36921514407533007298622083% · The comparable assessment is stale or expired.
+- **[NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d):** Buy / Initiate · expected 20.7817678274164750316066337% · No current allocation plan supports this candidate.
+- **[ASML — ASML Holding N.V.](securities/security_ef35e41886220d51c22c):** Unrated / Watch · expected —% · No current allocation plan supports this candidate.
+- **[ANET — Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a):** Hold / Watch · expected -2.36921514407533007298622083% · No current allocation plan supports this candidate.
 
 ## Performance, risk, and coverage
 

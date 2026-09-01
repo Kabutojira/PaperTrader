@@ -1,0 +1,18 @@
+{
+  "source_id": "source_robotis_2026_h1_business",
+  "url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20260814003380&dcmNo=11536939&eleId=9&offset=122883&length=137414&dtd=dart4.xsd",
+  "canonical_url": "https://dart.fss.or.kr/report/viewer.do?rcpNo=20260814003380&dcmNo=11536939&eleId=9&offset=122883&length=137414&dtd=dart4.xsd",
+  "source_type": "regulator_filing",
+  "title": "ROBOTIS 2026 half-year business report section",
+  "publisher": "Financial Supervisory Service DART",
+  "license": "",
+  "status": "available",
+  "content_hash": "e96754a1f103918946ece815d03be4f80d69c6b4dbb9d94f559e0e6abf22c5ad",
+  "related_entity_ids": "idea_humanoid_robotics_embodied_ai_components|security_0c8b3c4291cd97f56d8c",
+  "checked_at": "2026-09-01T06:43:23Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Actuators represented 97.99% of first-half consolidated revenue.",
+  "summary": "The statutory business section identifies DYNAMIXEL actuators as the economic core, documents geographic sales, research spending and capacity utilization, and labels 2026-2027 humanoid launches and mass production as forward-looking plans.",
+  "run_id": "local-20260901-robotis"
+}

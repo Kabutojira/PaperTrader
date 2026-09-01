@@ -1,0 +1,29 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_humanoid_robotics_embodied_ai_components",
+  "dedupe_key": "idea_research:idea_humanoid_robotics_embodied_ai_components:security-result:01M1DTWSARDSG9YEEA0RGCSJAK",
+  "prompt": "Refresh the humanoid-robotics idea with the completed ROBOTIS review, candidate disposition, valuation constraints, evidence gates and broader investable universe.",
+  "inputs": {
+    "idea_id": "idea_humanoid_robotics_embodied_ai_components",
+    "seed_claim": "ROBOTIS has direct current actuator economics and specific humanoid products, but humanoid-attributable revenue and repeat deployment economics remain undisclosed and the security valuation is severely unattractive.",
+    "security_id": "security_0c8b3c4291cd97f56d8c",
+    "security_research_operation_id": "01M1DTWSARDSG9YEEA0RGCSJAK",
+    "security_research_result_path": "data/runs/local-20260901-robotis/01M1DTWSARDSG9YEEA0RGCSJAK/agent_result.json"
+  },
+  "source": "security_research:01M1DTWSARDSG9YEEA0RGCSJAK",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": [
+    "01M1DTWSARDSG9YEEA0RGCSJAK"
+  ],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_0c8b3c4291cd97f56d8c.md",
+    "data/wiki/ideas/idea_humanoid_robotics_embodied_ai_components.md",
+    "source_robotis_2026_h1_business",
+    "source_robotis_2026_h1_income"
+  ],
+  "max_attempts": 3
+}

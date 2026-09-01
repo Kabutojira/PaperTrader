@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-08-08"
-updated: "2026-08-31"
+updated: "2026-09-01"
 provenance: repository-contract
 ---
 
@@ -2853,3 +2853,19 @@ boundary after the combined log crossed the configured 5,000-line threshold.
   relationship]] as needing review against material Q2 evidence and queued exactly one dependent
   relationship refresh plus one dependent [[ideas/idea_cybersecurity_geopolitical_continuity|idea]]
   refresh.
+
+## [2026-09-01T06:43:23Z] security research | ROBOTIS
+
+- Added [[securities/security_0c8b3c4291cd97f56d8c|ROBOTIS Co., Ltd. common shares]] under its
+  immutable KOSDAQ/KRW identity and completed the first review from current DART and KRX evidence.
+- First-half revenue grew 50.3% and the second quarter earned a 12.9% operating margin, while 98% of
+  revenue remained actuator-derived and humanoid-specific economics were not disclosed. A
+  30%/50%/20% `pre_profit_growth` valuation of KRW20,625/KRW70,968/KRW282,667 produces a KRW98,205
+  weighted value at the KRW254,500 mark.
+- Concluded Strong Sell / Avoid with no strategy, signal, allocation, order or paper trade. The
+  [[ideas/idea_humanoid_robotics_embodied_ai_components|humanoid-robotics idea]] is retained as a
+  candidate pending one bounded relationship review and one dependent idea refresh.
+
+## 2026-09-01
+
+- Published investor decision snapshot `decision_bc07eb5ba2fb775959a8`.

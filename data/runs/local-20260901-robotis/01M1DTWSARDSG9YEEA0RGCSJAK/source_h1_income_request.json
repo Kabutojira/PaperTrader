@@ -1,0 +1,18 @@
+{
+  "source_id": "source_robotis_2026_h1_income",
+  "url": "https://opendart.fss.or.kr/xbrl/viewer/view.do?xbrlExtSeq=20260814001809&roleId=dart_2026-01-31_role-D431410&lang=ko",
+  "canonical_url": "https://opendart.fss.or.kr/xbrl/viewer/view.do?xbrlExtSeq=20260814001809&roleId=dart_2026-01-31_role-D431410&lang=ko",
+  "source_type": "regulator_filing",
+  "title": "ROBOTIS 2026 half-year consolidated income statement",
+  "publisher": "Financial Supervisory Service Open DART",
+  "license": "",
+  "status": "available",
+  "content_hash": "db81e34023ede2ed50bf2711eeed9131b3ea968900c0b58a375897bd85cc2887",
+  "related_entity_ids": "idea_humanoid_robotics_embodied_ai_components|security_0c8b3c4291cd97f56d8c",
+  "checked_at": "2026-09-01T06:43:23Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "First-half revenue was KRW 27.213 billion; second-quarter operating profit was KRW 1.981 billion.",
+  "summary": "The XBRL statement confirms 50.3% first-half revenue growth, a KRW 9.862 billion reported operating loss, and a profitable second quarter with a 12.9% operating margin.",
+  "run_id": "local-20260901-robotis"
+}

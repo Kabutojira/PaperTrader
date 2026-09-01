@@ -1,0 +1,21 @@
+{
+  "entity_id": "security_0c8b3c4291cd97f56d8c",
+  "entity_type": "security",
+  "inputs": {
+    "idea_ids": [
+      "idea_humanoid_robotics_embodied_ai_components"
+    ],
+    "research_focus": "Validate immutable listing identity, actuator and autonomous-robot economics, revenue concentration, profitability, liquidity, capital raises, dilution, manufacturing expansion, governance, catalysts, risks, valuation, and the causal link to embodied AI using current primary sources.",
+    "security_id": "security_0c8b3c4291cd97f56d8c"
+  },
+  "objective": "Research and value ROBOTIS Co., Ltd. as a bounded humanoid-robotics motion-control and actuator candidate.",
+  "operation_id": "01M1DTWSARDSG9YEEA0RGCSJAK",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_humanoid_robotics_embodied_ai_components.md",
+    "https://englishdart.fss.or.kr/dsbc001/selectPopup.ax?selectKey=00946030",
+    "https://englishdart.fss.or.kr/dsbh001/main.do?rcpNo=20260814003380",
+    "https://kind.krx.co.kr/external/2026/05/15/002483/20260515005598/11013.htm"
+  ]
+}
