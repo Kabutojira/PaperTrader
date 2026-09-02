@@ -4,16 +4,16 @@ type: system-status
 status: maintained
 tags:
   - system-status
-created: "2026-09-01"
-updated: "2026-09-01"
+created: "2026-09-02"
+updated: "2026-09-02"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_d4b09b3fd8017c590276"
-as_of: "2026-09-01T18:22:02Z"
+snapshot_id: "decision_5de09b321f0380b34c13"
+as_of: "2026-09-02T15:07:50Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-09-01T18:22:02Z`
+**As of:** `2026-09-02T15:07:50Z`
 **Investment data:** Blocked — current exposure cannot be projected safely
 **Operations:** Blocked
 **Publication validation:** Snapshot and exports validated
@@ -21,8 +21,8 @@ as_of: "2026-09-01T18:22:02Z"
 
 ## Coverage
 
-- Assessments: 50/80
-- Fresh-evidence assessments: 49/80
+- Assessments: 47/80
+- Fresh-evidence assessments: 46/80
 - Relationship reviews: 19/80
 - Accepted relationships: 18
 - Ready or active strategies: 0
@@ -30,7 +30,7 @@ as_of: "2026-09-01T18:22:02Z"
 - Pending orders: 0
 - Market success/failure: 81/0
 - Candidate FX gaps: 0
-- Research backlog: 514
+- Research backlog: 531
 - Last successful daily run: 2026-09-01
 
 ## Current issues by investment impact
@@ -75,6 +75,7 @@ as_of: "2026-09-01T18:22:02Z"
 - Error **Local harness operation validation failed: [[securities/security_4627aea1bf7d8943d3d8|Quick check research for SGML on 2026-08-06]]** — completed security research requires exactly one immutable assessment version
 - Error **Hermes operation validation failed: [[securities/security_1f9cce545ede94cd6349|Quick check research for ISRG on 2026-08-11]]** — repeat security research page requires a Changes since prior review section
 - Error **Hermes operation validation failed: [[securities/security_ad3b1f8f59fd599f079a|Security research for HOOD on 2026-08-22]]** — completed security research requires exactly one immutable assessment version
+- Error **Hermes operation validation failed: [[securities/security_c120e9f26ebb6159adf9|Security research for ABBNY on 2026-08-17]]** — completed security research requires exactly one immutable assessment version
 - Error **Hermes operation validation failed: [[securities/security_c9a37d277445869a8809|Quick check research for RBLX on 2026-08-10]]** — agent result schema: Additional properties are not allowed ('operation_id' was unexpected); agent result schema: Additional properties are not allowed ('source_ref' was unexpected); agent result schema: Additional properties are not allowed ('source_refs' was unexpected); commands_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment; post-run integrity: agent result data/runs/[[daily-reports/daily-report_20260810|Daily report for 2026-08-10]]/01KZ9ZJVERX5NYGBGE6Z
 - Error **COIN — Coinbase Global, Inc.: Coinbase assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_37ddcbdaad296ad831f2|COIN]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_37ddcbdaad296ad831f2|Quick check research for COIN on 2026-08-09]] and current security_research [[securities/security_37ddcbdaad296ad831f2|Security research for COIN on 2026-08-09]] claimed by run [[daily-reports/daily-report_20260809|Daily report for 2026-08-09]] and rejects more than one same-security source operation as ambiguous. The assessment request has no source-operation selector, so this routed operation cannot repair provenance without an out-of-scope code
 - Error **RKLB — Rocket Lab Corporation: Rocket Lab assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_7ca095d63423c55a90e3|RKLB]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_7ca095d63423c55a90e3|Quick check research for RKLB on 2026-08-09]] and current security_research [[securities/security_7ca095d63423c55a90e3|Security research for RKLB on 2026-08-09]] claimed by run [[daily-reports/daily-report_20260809|Daily report for 2026-08-09]] and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope
@@ -198,12 +199,12 @@ as_of: "2026-09-01T18:22:02Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 514 active operations.
+Showing 20 of 531 active operations.
 
 <details><summary>Active research work</summary>
 
 - Ready — [[security-catalog#security-security_fe4648901e7675f157fd|Security research for ANIC.L on 2026-07-29]]
-- Ready — [[securities/security_8b703a8adf5f864acaa4|Strategy research for strategy for PRX on 2026-09-01]]
+- Ready — [[securities/security_8b703a8adf5f864acaa4|Strategy research for strategy for PRX on 2026-09-02]]
 - Ready — [[inbox/market-security_89969b7dac39b7db5661-rsi_oversold-a3f287ad1802|Wiki ingest for YEC.F — RSI oversold on 2026-07-30]]
 - Ready — [[inbox/market-security_488a9d7f7a8573597724-volume_anomaly-276969212fe2|Wiki ingest for PWR — Volume anomaly on 2026-07-30]]
 - Ready — [[inbox/market-security_2dbe878dfc899d7ee867-volume_anomaly-97d02f6c8190|Wiki ingest for FCX — Volume anomaly on 2026-07-30]]

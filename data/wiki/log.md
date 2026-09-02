@@ -2933,6 +2933,10 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 
 - Created candidate packet [[inbox/market-security_ce9b78a4d0773c950765-macd_cross_below_signal-137c6a58564a]] (137c6a58564a).
 
+- Published investor decision snapshot `decision_5de09b321f0380b34c13`.
+
+- Generated canonical [[daily-reports/daily-report_20260902]] for run `daily-20260902T142623Z`.
+
 ## [2026-09-02] update | SoFi security review after lower Bollinger-band breach
 
 - Updated [[securities/security_98470cfc01bbcde78fc2]] with the filed Q2 results, the 2026-08-26 through 2026-09-01 alert review, refreshed price-to-book scenarios, explicit idea-map classifications, and three validated visual-evidence datasets.

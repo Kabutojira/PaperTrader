@@ -1,8 +1,8 @@
 snapshot_id,as_of,policy_version,comparison_only,copy_ready,security_id,ticker,company_name,rating,weight_pct,reference_price,currency,research_page
-decision_d4b09b3fd8017c590276,2026-09-01T18:22:02Z,equal_weight_rated_v1,true,false,security_099561384c0f5e697727,CSIQ,Canadian Solar Inc.,buy,10,13.140000343322754,USD,data/wiki/securities/security_099561384c0f5e697727.md
-decision_d4b09b3fd8017c590276,2026-09-01T18:22:02Z,equal_weight_rated_v1,true,false,security_8b703a8adf5f864acaa4,PRX,Prosus N.V.,buy,10,38.689998626708984,EUR,data/wiki/securities/security_8b703a8adf5f864acaa4.md
-decision_d4b09b3fd8017c590276,2026-09-01T18:22:02Z,equal_weight_rated_v1,true,false,security_715bde20b6e1e1320c1a,DLO,DLocal Limited,buy,10,15.029999732971191,USD,data/wiki/securities/security_715bde20b6e1e1320c1a.md
-decision_d4b09b3fd8017c590276,2026-09-01T18:22:02Z,equal_weight_rated_v1,true,false,security_98a1943771da875efed5,NOMD,Nomad Foods Limited,buy,10,11.989999771118164,USD,data/wiki/securities/security_98a1943771da875efed5.md
-decision_d4b09b3fd8017c590276,2026-09-01T18:22:02Z,equal_weight_rated_v1,true,false,security_f34181f3df32080a91d1,DPZ,"Domino's Pizza, Inc.",buy,10,332.05999755859375,USD,data/wiki/securities/security_f34181f3df32080a91d1.md
-decision_d4b09b3fd8017c590276,2026-09-01T18:22:02Z,equal_weight_rated_v1,true,false,security_1e8fbdb0f45f2b413e00,PYPL,"PayPal Holdings, Inc.",buy,10,53.65999984741211,USD,data/wiki/securities/security_1e8fbdb0f45f2b413e00.md
-decision_d4b09b3fd8017c590276,2026-09-01T18:22:02Z,equal_weight_rated_v1,true,false,,CASH,Cash,unrated,40,1,,
+decision_5de09b321f0380b34c13,2026-09-02T15:07:50Z,equal_weight_rated_v1,true,false,security_099561384c0f5e697727,CSIQ,Canadian Solar Inc.,buy,10,13.140000343322754,USD,data/wiki/securities/security_099561384c0f5e697727.md
+decision_5de09b321f0380b34c13,2026-09-02T15:07:50Z,equal_weight_rated_v1,true,false,security_8b703a8adf5f864acaa4,PRX,Prosus N.V.,buy,10,38.689998626708984,EUR,data/wiki/securities/security_8b703a8adf5f864acaa4.md
+decision_5de09b321f0380b34c13,2026-09-02T15:07:50Z,equal_weight_rated_v1,true,false,security_715bde20b6e1e1320c1a,DLO,DLocal Limited,buy,10,15.029999732971191,USD,data/wiki/securities/security_715bde20b6e1e1320c1a.md
+decision_5de09b321f0380b34c13,2026-09-02T15:07:50Z,equal_weight_rated_v1,true,false,security_98470cfc01bbcde78fc2,SOFI,"SoFi Technologies, Inc.",buy,10,17.049999237060547,USD,data/wiki/securities/security_98470cfc01bbcde78fc2.md
+decision_5de09b321f0380b34c13,2026-09-02T15:07:50Z,equal_weight_rated_v1,true,false,security_98a1943771da875efed5,NOMD,Nomad Foods Limited,buy,10,11.989999771118164,USD,data/wiki/securities/security_98a1943771da875efed5.md
+decision_5de09b321f0380b34c13,2026-09-02T15:07:50Z,equal_weight_rated_v1,true,false,security_f34181f3df32080a91d1,DPZ,"Domino's Pizza, Inc.",buy,10,332.05999755859375,USD,data/wiki/securities/security_f34181f3df32080a91d1.md
+decision_5de09b321f0380b34c13,2026-09-02T15:07:50Z,equal_weight_rated_v1,true,false,,CASH,Cash,unrated,40,1,,

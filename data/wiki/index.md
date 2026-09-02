@@ -4,20 +4,20 @@ type: dashboard
 status: maintained
 tags:
   - dashboard
-created: "2026-09-01"
-updated: "2026-09-01"
+created: "2026-09-02"
+updated: "2026-09-02"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_d4b09b3fd8017c590276"
-as_of: "2026-09-01T18:22:02Z"
+snapshot_id: "decision_5de09b321f0380b34c13"
+as_of: "2026-09-02T15:07:50Z"
 ---
 
 # PaperTrader
 
-**As of `2026-09-01T18:22:02Z` · Investment data: Blocked — current exposure cannot be projected safely · Operations: Blocked**
+**As of `2026-09-02T15:07:50Z` · Investment data: Blocked — current exposure cannot be projected safely · Operations: Blocked**
 
 ## Decision blocked — do not copy actions
 
-<section class="decision-cards" aria-label="Decision summary"><article class="decision-card" data-status="blocked"><span class="decision-card-label">Stance</span><strong>Decision blocked — do not copy actions</strong></article><article class="decision-card" data-status="cash"><span class="decision-card-label">Cash</span><strong>100%</strong></article><article class="decision-card" data-status="exposure"><span class="decision-card-label">Gross exposure</span><strong>0%</strong></article><article class="decision-card" data-status="signals"><span class="decision-card-label">Actionable signals</span><strong>0</strong></article><article class="decision-card" data-status="coverage"><span class="decision-card-label">Assessment coverage</span><strong>50/80</strong></article></section>
+<section class="decision-cards" aria-label="Decision summary"><article class="decision-card" data-status="blocked"><span class="decision-card-label">Stance</span><strong>Decision blocked — do not copy actions</strong></article><article class="decision-card" data-status="cash"><span class="decision-card-label">Cash</span><strong>100%</strong></article><article class="decision-card" data-status="exposure"><span class="decision-card-label">Gross exposure</span><strong>0%</strong></article><article class="decision-card" data-status="signals"><span class="decision-card-label">Actionable signals</span><strong>0</strong></article><article class="decision-card" data-status="coverage"><span class="decision-card-label">Assessment coverage</span><strong>47/80</strong></article></section>
 
 ### Why
 
@@ -46,7 +46,7 @@ Current equity is **10000 EUR** with **100% cash**. The target retains **100% ca
 - Cumulative return: **0%**
 - Running drawdown: **0%**
 - Largest position: **0%**
-- Current assessments: **50/80**
+- Current assessments: **47/80**
 - Relationship reviews: **19/80**
 - Accepted relationships: **18**
 - Market retrieval failures: **0**
@@ -59,4 +59,4 @@ Current equity is **10000 EUR** with **100% cash**. The target retains **100% ca
 - [[performance|Performance and risk]]
 - [[research-catalog|Research catalog]]
 - [[system-status|System status and audit]]
-- [[daily-reports/daily-report_20260901|Daily report 2026-09-01]]
+- [[daily-reports/daily-report_20260902|Daily report 2026-09-02]]
