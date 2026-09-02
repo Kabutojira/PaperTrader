@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-08-08"
-updated: "2026-09-01"
+updated: "2026-09-02"
 provenance: repository-contract
 ---
 
@@ -2894,3 +2894,41 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Added a sourced Q1-to-Q2 revenue and company-defined free-cash-flow chart. No strategy, signal,
   allocation, order or paper trade was created because every maintained valuation scenario remains
   below the current mark.
+
+## 2026-09-02
+
+- Created candidate packet [[inbox/market-security_0a56aa634d077fe5796f-bollinger_below_lower-23f7aba2ed9a]] (23f7aba2ed9a).
+
+- Classified [[inbox/market-security_0a56aa634d077fe5796f-bollinger_below_lower-23f7aba2ed9a]] as `ingest`: Material entry below the lower Bollinger Band after a 19.17% period decline merits durable review.
+
+- Created candidate packet [[inbox/market-security_6cf75bd0ec0aa2a20148-macd_cross_below_signal-ee2fc6414e0d]] (ee2fc6414e0d).
+
+- Created candidate packet [[inbox/market-security_97f38b2cb2d5ef127f5a-rsi_oversold-86d8c68d8097]] (86d8c68d8097).
+
+- Classified [[inbox/market-security_97f38b2cb2d5ef127f5a-rsi_oversold-86d8c68d8097]] as `ingest`: Material oversold RSI transition accompanied by a 15.6% decline over the review period merits durable wiki review.
+
+- Created candidate packet [[inbox/market-security_97f38b2cb2d5ef127f5a-volume_anomaly-24af9b11ab67]] (24af9b11ab67).
+
+- Classified [[inbox/market-security_97f38b2cb2d5ef127f5a-volume_anomaly-24af9b11ab67]] as `ingest`: A new volume anomaly coincides with a material 15.6% decline over the measured period, warranting durable review.
+
+- Created candidate packet [[inbox/market-security_98470cfc01bbcde78fc2-bollinger_below_lower-f1941fa028ab]] (f1941fa028ab).
+
+- Classified [[inbox/market-security_98470cfc01bbcde78fc2-bollinger_below_lower-f1941fa028ab]] as `ingest`: Material downside transition: price entered below the lower Bollinger Band after an 8.8% decline, warranting review.
+
+- Created candidate packet [[inbox/market-security_9b0db3bc77914b23a307-bollinger_below_lower-42f9ed5728bb]] (42f9ed5728bb).
+
+- Classified [[inbox/market-security_9b0db3bc77914b23a307-bollinger_below_lower-42f9ed5728bb]] as `ingest`: Material entry below the lower Bollinger Band after a 13.3% period decline warrants durable review.
+
+- Created candidate packet [[inbox/market-security_bdc2f87dadf134760c3a-macd_cross_below_signal-f236eda131b6]] (f236eda131b6).
+
+- Created candidate packet [[inbox/market-security_c120e9f26ebb6159adf9-bollinger_below_lower-6a3624365553]] (6a3624365553).
+
+- Classified [[inbox/market-security_c120e9f26ebb6159adf9-bollinger_below_lower-6a3624365553]] as `ingest`: Material new downside transition: price fell about 6% and entered below the lower Bollinger Band.
+
+- Created candidate packet [[inbox/market-security_c150f31c30afdb4a85f9-bollinger_below_lower-26fd754d6035]] (26fd754d6035).
+
+- Classified [[inbox/market-security_c150f31c30afdb4a85f9-bollinger_below_lower-26fd754d6035]] as `ingest`: Material 18.35% decline with a new Bollinger-band breach warrants durable review.
+
+- Created candidate packet [[inbox/market-security_c5a9e460d3350284d157-rsi_overbought-e4c57a886554]] (e4c57a886554).
+
+- Created candidate packet [[inbox/market-security_ce9b78a4d0773c950765-macd_cross_below_signal-137c6a58564a]] (137c6a58564a).

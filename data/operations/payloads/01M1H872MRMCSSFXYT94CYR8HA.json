@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_RykBKMRDQY8",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@Value-Investing",
+    "channel_id": "UCrTTBSUr0zhPU56UQljag5A",
+    "channel_url": "https://www.youtube.com/channel/UCrTTBSUr0zhPU56UQljag5A/videos",
+    "discovered_at": "2026-09-02T14:26:23Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_RykBKMRDQY8",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "RykBKMRDQY8",
+    "video_title": "Constellation Software Stock Crash is Not Because of AI!",
+    "video_url": "https://www.youtube.com/watch?v=RykBKMRDQY8"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01M1H872MRMCSSFXYT94CYR8HA",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=RykBKMRDQY8"
+  ]
+}

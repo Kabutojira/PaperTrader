@@ -1,0 +1,18 @@
+{
+  "entity_id": "opportunity_bdab149a9679cacd65e1",
+  "entity_type": "opportunity",
+  "inputs": {
+    "market_data_as_of": "2026-09-02T14:26:30Z",
+    "period_end": "2026-09-01",
+    "period_start": "2026-08-04",
+    "security_id": "security_0a56aa634d077fe5796f",
+    "trigger_type": "bollinger_below_lower"
+  },
+  "objective": "Assess security_0a56aa634d077fe5796f bollinger_below_lower transition as opportunity, risk, or noise.",
+  "operation_id": "01M1H879FGQT8S8K7KK9SM547Q",
+  "operation_type": "opportunity_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_0a56aa634d077fe5796f-bollinger_below_lower-23f7aba2ed9a.md"
+  ]
+}

@@ -5,7 +5,7 @@ status: maintained
 tags:
   - research
 created: "2026-09-01"
-updated: "2026-09-01"
+updated: "2026-09-02"
 provenance: deterministic-decision-projection
 snapshot_id: "decision_d4b09b3fd8017c590276"
 as_of: "2026-09-01T18:22:02Z"
@@ -726,3 +726,17 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_0a56aa634d077fe5796f-bollinger_below_lower-23f7aba2ed9a|AMAT — Bollinger below lower]]
+- [[inbox/market-security_6cf75bd0ec0aa2a20148-macd_cross_below_signal-ee2fc6414e0d|TWST — MACD cross below signal]]
+- [[inbox/market-security_97f38b2cb2d5ef127f5a-rsi_oversold-86d8c68d8097|PL — RSI oversold]]
+- [[inbox/market-security_97f38b2cb2d5ef127f5a-volume_anomaly-24af9b11ab67|PL — Volume anomaly]]
+- [[inbox/market-security_98470cfc01bbcde78fc2-bollinger_below_lower-f1941fa028ab|SOFI — Bollinger below lower]]
+- [[inbox/market-security_9b0db3bc77914b23a307-bollinger_below_lower-42f9ed5728bb|CSL — Bollinger below lower]]
+- [[inbox/market-security_bdc2f87dadf134760c3a-macd_cross_below_signal-f236eda131b6|PLTR — MACD cross below signal]]
+- [[inbox/market-security_c120e9f26ebb6159adf9-bollinger_below_lower-6a3624365553|ABBNY — Bollinger below lower]]
+- [[inbox/market-security_c150f31c30afdb4a85f9-bollinger_below_lower-26fd754d6035|CROX — Bollinger below lower]]
+- [[inbox/market-security_c5a9e460d3350284d157-rsi_overbought-e4c57a886554|VLO — RSI overbought]]
+- [[inbox/market-security_ce9b78a4d0773c950765-macd_cross_below_signal-137c6a58564a|TSM — MACD cross below signal]]
