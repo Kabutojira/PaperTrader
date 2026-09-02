@@ -37,7 +37,7 @@ from papertrader.repository_state import compare_snapshots, snapshot_repository
 from papertrader.tables import read_table, write_table
 from papertrader.telegram import deliver_committed_report
 from papertrader.utils import format_timestamp, parse_timestamp, utc_now
-from papertrader.wiki import lint_wiki, register_wiki_page
+from papertrader.wiki import lint_wiki, register_wiki_page, sync_security_technical_charts
 
 SECURITY_ID = "sec_operating_cycle"
 IDEA_ID = "idea_operating_cycle"
@@ -194,6 +194,7 @@ def _seed_security(repository: Path, instant: datetime) -> None:
             }
         ],
     )
+    assert sync_security_technical_charts(repository) == (repository / page,)
 
 
 def _market_frame(session_dates: Sequence[date]) -> pd.DataFrame:
@@ -433,6 +434,24 @@ class _CycleHermes:
             security,
             ("research", "security", "upsert"),
         )
+        sync = subprocess.run(
+            [
+                sys.executable,
+                "-m",
+                "papertrader",
+                "--repository",
+                str(repository),
+                "wiki",
+                "sync-technical-charts",
+            ],
+            cwd=repository,
+            env=dict(environment),
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+        assert sync.returncode == 0, sync.stderr
+        assert json.loads(sync.stdout) == [page]
         self._run_request(
             repository,
             environment,

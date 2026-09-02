@@ -113,6 +113,35 @@ class IndicatorSnapshot:
 
 
 @dataclass(frozen=True, slots=True)
+class TechnicalSeriesRow:
+    """One reproducible adjusted-price and indicator observation for charting."""
+
+    date: date
+    adjusted_open: Decimal
+    adjusted_high: Decimal
+    adjusted_low: Decimal
+    adjusted_close: Decimal
+    volume: int
+    observation_count: int
+    sma_20: Decimal | None
+    sma_50: Decimal | None
+    sma_200: Decimal | None
+    rsi_14: Decimal | None
+    bollinger_mid: Decimal | None
+    bollinger_upper: Decimal | None
+    bollinger_lower: Decimal | None
+    macd: Decimal | None
+    macd_signal: Decimal | None
+    macd_histogram: Decimal | None
+    return_1d: Decimal | None
+    return_5d: Decimal | None
+    return_20d: Decimal | None
+    volume_zscore: Decimal | None
+    volatility_20d: Decimal | None
+    trigger_state: tuple[str, ...]
+
+
+@dataclass(frozen=True, slots=True)
 class OpportunityTransition:
     """One material inactive/active indicator transition."""
 

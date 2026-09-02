@@ -160,6 +160,8 @@ The repository is the source of truth. Any legacy data import is a separate, one
 │   ├── market/
 │   │   ├── prices/
 │   │   │   └── <security_id>.csv
+│   │   ├── technical/
+│   │   │   └── <security_id>.csv
 │   │   ├── fx/
 │   │   ├── latest.csv
 │   │   ├── indicators.csv
@@ -453,7 +455,11 @@ a specific omission. The result manifest records exact page/chart IDs and omissi
 Use only data justified by the operation's bounded scope. Preserve common dates, definitions,
 units, currencies, canonical FX basis, immutable identities, sources, and as-of timestamps. A
 missing or meaningless multiple such as P/E for negative earnings is `null`, never invented.
-Existing pages are enriched only on their next normal refresh; there is no bulk backfill operation.
+Existing pages are enriched with analytical charts only on their next normal refresh; there is no
+bulk backfill operation for judgment-owned charts. The deterministic `market-technicals` reference
+is the sole exception: every security page carries it, and the repository migration may backfill it
+once without changing the page's research date. It is excluded from `visualization_review` because
+it is generated monitoring context, not an agent-authored analytical chart.
 
 Quartz renders these blocks with the pinned local Apache ECharts asset and a visible data/source
 fallback. GitHub and no-JavaScript readers retain the JSON and surrounding analysis. Research
@@ -732,6 +738,11 @@ Quartz and Telegram consume that same file.
   priority-95 `security_research` operation containing all triggers and their canonical market date.
   This alert-driven review bypasses ordinary research freshness but remains sequential and bounded.
 - Commit the rolling daily-price cache to `data/market/prices/<security_id>.csv`. On every successful retrieval, merge by trading date, remove duplicates, sort ascending, and delete rows older than 365 calendar days relative to the newest valid bar. Do not keep all-time history.
+- After every indicator update, atomically regenerate
+  `data/market/technical/<security_id>.csv` from that exact rolling cache. Each row contains adjusted
+  OHLC, volume, SMA 20/50/200, RSI 14, Bollinger bands, MACD, returns, volume z-score, volatility,
+  and trigger state. Warm-up values remain empty. This chart projection is reproducible and may
+  never become an input to research scoring, signals, allocation, orders, or accounting.
 - Deterministic jobs write each candidate knowledge change as a compact Markdown packet under `data/wiki/inbox/`. A packet may describe a market movement, indicator transition, filing, source update, research change, contradiction, or other candidate fact.
 - A candidate packet does not automatically trigger wiki ingestion. After deterministic validation and no-op filtering, run the configured cheap LLM to classify it as `ingest` or `ignore`, with a concise reason and related entity IDs. Only an `ingest` decision may enqueue `wiki_ingest`, and the enqueue must still pass normal deduplication and cooldown rules.
 - Timestamp-only changes, formatting-only changes, and failed or stale retrievals are excluded before the cheap-model decision. Record the classifier decision and reason on the packet so reruns are idempotent.

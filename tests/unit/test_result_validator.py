@@ -72,6 +72,14 @@ def test_agent_operation_scopes_never_own_generated_allocation_state() -> None:
         "security_research",
         {"argv": ["papertrader", "allocation", "readiness"]},
     )
+    assert _command_allowed(
+        "security_research",
+        {"argv": ["papertrader", "wiki", "sync-technical-charts"]},
+    )
+    assert not _command_allowed(
+        "idea_research",
+        {"argv": ["papertrader", "wiki", "sync-technical-charts"]},
+    )
     assert _path_allowed_for_operation(
         "idea_research",
         "data/tables/securities.csv",

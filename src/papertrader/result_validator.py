@@ -22,7 +22,11 @@ from papertrader.repository_state import RepositoryDelta, RepositorySnapshot
 from papertrader.seekingalpha import canonical_article_url, seekingalpha_source_id
 from papertrader.tables import read_table
 from papertrader.utils import parse_timestamp, utc_now
-from papertrader.wiki import lint_wiki, parse_research_charts
+from papertrader.wiki import (
+    lint_wiki,
+    parse_research_charts,
+    security_technical_chart_errors,
+)
 
 WIKI_RESEARCH_DOMAINS = frozenset(
     {
@@ -149,6 +153,11 @@ def _research_visualization_errors(
     )
     actual: set[tuple[str, str]] = set()
     schema_path = repository_root / "schemas" / "research_chart.schema.json"
+    security_by_page = {
+        row["research_page"]: row
+        for row in read_table(repository_root, "securities")
+        if row["research_page"]
+    }
     for page_path in primary_pages:
         absolute = repository_root.joinpath(*PurePosixPath(page_path).parts)
         try:
@@ -160,9 +169,23 @@ def _research_visualization_errors(
             errors.append(f"changed research page lacks ## Visual evidence: {page_path}")
         charts, chart_errors = parse_research_charts(absolute, schema_path)
         errors.extend(f"{page_path}: {error}" for error in chart_errors)
+        if PurePosixPath(page_path).parts[2] == "securities":
+            security = security_by_page.get(page_path)
+            if security is None:
+                errors.append(f"changed security page lacks a canonical security row: {page_path}")
+            else:
+                errors.extend(
+                    f"{page_path}: {error}"
+                    for error in security_technical_chart_errors(
+                        absolute,
+                        schema_path,
+                        security_id=security["security_id"],
+                        currency=security["currency"],
+                    )
+                )
         for chart in charts:
             chart_id = chart.get("chart_id")
-            if isinstance(chart_id, str):
+            if isinstance(chart_id, str) and chart.get("kind") != "technical":
                 actual.add((page_path, chart_id))
 
     reported: list[tuple[str, str]] = []

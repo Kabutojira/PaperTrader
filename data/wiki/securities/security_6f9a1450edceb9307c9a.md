@@ -112,3 +112,33 @@ customer, architecture, earnings, guidance, commitment, or price change.
   2026-08-09T11:05:22Z, with market data as of 2026-08-08T19:23:43Z.
 
 See the complete [[index]] and append-only [[log]] for repository context.
+
+## Visual evidence
+
+<!-- papertrader:technical-chart:start -->
+This deterministic monitoring chart is derived from the repository-local market cache. Its source CSV remains downloadable and does not feed research scoring or trading state.
+
+```echart
+{
+  "schema_version": 2,
+  "chart_id": "market-technicals",
+  "kind": "technical",
+  "title": "One-year price, volume, and technical indicators",
+  "description": "Adjusted daily OHLC with Bollinger bands and moving averages, followed by volume, RSI, and MACD panels from the deterministic PaperTrader market cache.",
+  "security_id": "security_6f9a1450edceb9307c9a",
+  "currency": "USD",
+  "price_basis": "adjusted",
+  "window_days": 365,
+  "data_path": "data/market/technical/security_6f9a1450edceb9307c9a.csv",
+  "sources": [
+    {
+      "label": "Canonical PaperTrader price cache and deterministic TA-Lib projection"
+    }
+  ],
+  "notes": [
+    "Adjusted OHLC aligns price history with indicators calculated from adjusted close.",
+    "Technical indicators are research alerts, not trade signals."
+  ]
+}
+```
+<!-- papertrader:technical-chart:end -->

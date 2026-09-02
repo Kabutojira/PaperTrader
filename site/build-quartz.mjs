@@ -1,13 +1,18 @@
 import { spawnSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import {
+  cpSync,
   copyFileSync,
   existsSync,
   lstatSync,
+  mkdtempSync,
   mkdirSync,
   readFileSync,
   readdirSync,
+  rmSync,
+  writeFileSync,
 } from "node:fs";
+import { tmpdir } from "node:os";
 import { dirname, isAbsolute, join, parse, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -118,6 +123,50 @@ const publicationFiles = {
     "research_page",
   ],
 };
+
+const technicalColumns = [
+  "date",
+  "adjusted_open",
+  "adjusted_high",
+  "adjusted_low",
+  "adjusted_close",
+  "volume",
+  "observation_count",
+  "sma_20",
+  "sma_50",
+  "sma_200",
+  "rsi_14",
+  "bollinger_mid",
+  "bollinger_upper",
+  "bollinger_lower",
+  "macd",
+  "macd_signal",
+  "macd_histogram",
+  "return_1d",
+  "return_5d",
+  "return_20d",
+  "volume_zscore",
+  "volatility_20d",
+  "trigger_state",
+];
+
+const technicalReferenceKeys = [
+  "schema_version",
+  "chart_id",
+  "kind",
+  "title",
+  "description",
+  "security_id",
+  "currency",
+  "price_basis",
+  "window_days",
+  "data_path",
+  "sources",
+  "notes",
+];
+
+const echartFencePattern = /^```echart[ \t]*\r?\n(?<payload>.*?)^```[ \t]*$/gms;
+const decimalPattern = /^-?(?:0|[1-9][0-9]*)(?:\.[0-9]+)?$/;
 
 const legacyPublicationFiles = Object.fromEntries(
   Object.entries(publicationFiles).map(([name, header]) => [
@@ -432,6 +481,206 @@ function pathIsWithin(parent, candidate) {
   return value !== "" && !value.startsWith("..") && !isAbsolute(value);
 }
 
+function validateTechnicalReference(spec, label) {
+  assertExactKeys(spec, technicalReferenceKeys, label);
+  if (
+    spec.schema_version !== 2 ||
+    spec.chart_id !== "market-technicals" ||
+    spec.kind !== "technical" ||
+    spec.price_basis !== "adjusted" ||
+    spec.window_days !== 365
+  ) {
+    throw new Error(`${label}: unsupported technical chart contract`);
+  }
+  if (
+    typeof spec.security_id !== "string" ||
+    !/^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$/.test(spec.security_id) ||
+    typeof spec.currency !== "string" ||
+    !/^[A-Z]{3}$/.test(spec.currency)
+  ) {
+    throw new Error(`${label}: invalid technical chart identity`);
+  }
+  const expectedPath = `data/market/technical/${spec.security_id}.csv`;
+  if (spec.data_path !== expectedPath) {
+    throw new Error(`${label}: technical data_path does not match security_id`);
+  }
+  if (
+    typeof spec.title !== "string" ||
+    typeof spec.description !== "string" ||
+    !Array.isArray(spec.sources) ||
+    spec.sources.length === 0 ||
+    !Array.isArray(spec.notes)
+  ) {
+    throw new Error(`${label}: incomplete technical chart metadata`);
+  }
+}
+
+function technicalDataset(sourcePath, label) {
+  if (!existsSync(sourcePath)) {
+    return {
+      availability: "unavailable",
+      as_of: null,
+      sha256: null,
+      columns: technicalColumns,
+      rows: [],
+    };
+  }
+  assertRegularFile(sourcePath);
+  const parsed = parseCsv(readFileSync(sourcePath, "utf8"), label);
+  if (
+    parsed.length === 0 ||
+    JSON.stringify(parsed[0]) !== JSON.stringify(technicalColumns)
+  ) {
+    throw new Error(
+      `${label}: CSV header does not match the technical contract`,
+    );
+  }
+  const rows = parsed.slice(1);
+  if (rows.length > 366) {
+    throw new Error(`${label}: technical series exceeds the one-year bound`);
+  }
+  let previousDate = "";
+  rows.forEach((row, rowIndex) => {
+    const rowLabel = `${label}: row ${rowIndex + 2}`;
+    if (row.length !== technicalColumns.length) {
+      throw new Error(`${rowLabel} has ${row.length} fields`);
+    }
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(row[0]) || row[0] <= previousDate) {
+      throw new Error(`${rowLabel} date is invalid or not strictly ascending`);
+    }
+    previousDate = row[0];
+    for (const index of [1, 2, 3, 4]) {
+      if (!decimalPattern.test(row[index])) {
+        throw new Error(`${rowLabel} has an invalid adjusted OHLC value`);
+      }
+    }
+    if (!/^\d+$/.test(row[5]) || !/^[1-9]\d*$/.test(row[6])) {
+      throw new Error(`${rowLabel} has invalid volume or observation_count`);
+    }
+    for (let index = 7; index <= 21; index += 1) {
+      if (row[index] !== "" && !decimalPattern.test(row[index])) {
+        throw new Error(`${rowLabel} has an invalid indicator value`);
+      }
+    }
+    if (row[22] !== "" && !/^[a-z0-9_]+(?:\|[a-z0-9_]+)*$/.test(row[22])) {
+      throw new Error(`${rowLabel} has an invalid trigger_state`);
+    }
+    const opening = Number(row[1]);
+    const high = Number(row[2]);
+    const low = Number(row[3]);
+    const close = Number(row[4]);
+    if (
+      low > Math.min(opening, close) ||
+      high < Math.max(opening, close) ||
+      low > high
+    ) {
+      throw new Error(`${rowLabel} has inconsistent adjusted OHLC bounds`);
+    }
+  });
+  return {
+    availability: rows.length > 0 ? "available" : "unavailable",
+    as_of: rows.length > 0 ? rows.at(-1)[0] : null,
+    sha256: sha256(sourcePath),
+    columns: technicalColumns,
+    rows: rows.map((row) => row.map((value) => (value === "" ? null : value))),
+  };
+}
+
+function markdownFiles(root) {
+  const output = [];
+  for (const name of readdirSync(root)) {
+    const path = join(root, name);
+    const status = lstatSync(path);
+    if (status.isSymbolicLink()) {
+      throw new Error(`wiki hydration rejects symlinks: ${path}`);
+    }
+    if (status.isDirectory()) output.push(...markdownFiles(path));
+    else if (status.isFile() && name.endsWith(".md")) output.push(path);
+  }
+  return output;
+}
+
+function hydratedWikiCopy(wikiRoot, temporaryRoot) {
+  const hydratedRoot = join(temporaryRoot, "wiki");
+  cpSync(wikiRoot, hydratedRoot, { recursive: true, dereference: false });
+  const technicalRoot = resolve(wikiRoot, "..", "market", "technical");
+  for (const pagePath of markdownFiles(hydratedRoot)) {
+    const original = readFileSync(pagePath, "utf8");
+    const hydrated = original.replace(
+      echartFencePattern,
+      (fence, payload, ...groups) => {
+        const named = groups.at(-1);
+        const rawPayload = named?.payload ?? payload;
+        let spec;
+        try {
+          spec = JSON.parse(rawPayload);
+        } catch {
+          return fence;
+        }
+        if (spec?.kind !== "technical") return fence;
+        const label = relative(hydratedRoot, pagePath);
+        validateTechnicalReference(spec, label);
+        const sourcePath = join(technicalRoot, `${spec.security_id}.csv`);
+        const dataset = technicalDataset(sourcePath, spec.data_path);
+        return `\`\`\`echart\n${JSON.stringify({ ...spec, dataset }, null, 2)}\n\`\`\``;
+      },
+    );
+    if (hydrated !== original) writeFileSync(pagePath, hydrated, "utf8");
+  }
+  return hydratedRoot;
+}
+
+function publishTechnicalSeries(wikiRoot, outputRoot) {
+  const sourceRoot = resolve(wikiRoot, "..", "market", "technical");
+  if (!existsSync(sourceRoot)) return;
+  if (
+    !lstatSync(sourceRoot).isDirectory() ||
+    lstatSync(sourceRoot).isSymbolicLink()
+  ) {
+    throw new Error(
+      `technical source must be a regular directory: ${sourceRoot}`,
+    );
+  }
+  const names = readdirSync(sourceRoot).sort();
+  for (const name of names) {
+    if (!/^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}\.csv$/.test(name)) {
+      throw new Error(`unexpected technical-series file: ${name}`);
+    }
+    technicalDataset(join(sourceRoot, name), `data/market/technical/${name}`);
+  }
+  const destinationRoot = resolve(outputRoot, "data", "market", "technical");
+  if (!pathIsWithin(outputRoot, destinationRoot)) {
+    throw new Error(
+      `technical destination escapes Quartz output: ${destinationRoot}`,
+    );
+  }
+  mkdirSync(destinationRoot, { recursive: true });
+  if (lstatSync(destinationRoot).isSymbolicLink()) {
+    throw new Error(
+      `technical destination must not be a symlink: ${destinationRoot}`,
+    );
+  }
+  const existing = readdirSync(destinationRoot).sort();
+  if (existing.some((name) => !names.includes(name))) {
+    throw new Error(
+      "Quartz technical output contains stale or unexpected files",
+    );
+  }
+  for (const name of names) {
+    const source = join(sourceRoot, name);
+    const destination = join(destinationRoot, name);
+    if (existsSync(destination) && lstatSync(destination).isSymbolicLink()) {
+      throw new Error(
+        `technical destination must not be a symlink: ${destination}`,
+      );
+    }
+    copyFileSync(source, destination);
+    if (sha256(source) !== sha256(destination)) {
+      throw new Error(`technical artifact hash changed during copy: ${name}`);
+    }
+  }
+}
+
 function publishValidatedArtifacts(wikiRoot, outputRoot) {
   const sourceRoot = resolve(wikiRoot, "..", "published");
   if (
@@ -488,7 +737,7 @@ function publishValidatedArtifacts(wikiRoot, outputRoot) {
       );
     }
     const unexpected = readdirSync(destinationRoot).filter(
-      (name) => !expectedNames.includes(name),
+      (name) => !expectedNames.includes(name) && name !== "market",
     );
     if (unexpected.length > 0)
       throw new Error("Quartz data output contains unexpected files");
@@ -547,16 +796,29 @@ if (
   throw new Error(`refusing unsafe Quartz output path: ${outputPath}`);
 }
 
-const result = spawnSync(
-  process.execPath,
-  [bootstrap, "build", "-d", wikiPath, "-o", outputPath, "--concurrency=1"],
-  { cwd: siteRoot, env: process.env, stdio: "inherit" },
-);
-if (result.error) {
-  throw result.error;
-}
-if (result.status !== 0) {
-  process.exitCode = result.status ?? 1;
-} else {
-  publishValidatedArtifacts(wikiPath, outputPath);
+const temporaryRoot = mkdtempSync(join(tmpdir(), "papertrader-wiki-"));
+try {
+  const hydratedWikiPath = hydratedWikiCopy(wikiPath, temporaryRoot);
+  const result = spawnSync(
+    process.execPath,
+    [
+      bootstrap,
+      "build",
+      "-d",
+      hydratedWikiPath,
+      "-o",
+      outputPath,
+      "--concurrency=1",
+    ],
+    { cwd: siteRoot, env: process.env, stdio: "inherit" },
+  );
+  if (result.error) throw result.error;
+  if (result.status !== 0) {
+    process.exitCode = result.status ?? 1;
+  } else {
+    publishValidatedArtifacts(wikiPath, outputPath);
+    publishTechnicalSeries(wikiPath, outputPath);
+  }
+} finally {
+  rmSync(temporaryRoot, { recursive: true, force: true });
 }

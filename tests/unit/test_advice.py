@@ -9,6 +9,7 @@ import pytest
 
 from papertrader.advice import (
     AdviceError,
+    _decision_csv_contract_bytes,
     _validate_snapshot_object,
     build_decision_snapshot,
     reason_label,
@@ -30,6 +31,40 @@ from papertrader.utils import deterministic_ulid, format_timestamp, required_dec
 from papertrader.wiki import lint_wiki
 
 NOW = datetime(2026, 7, 24, 12, tzinfo=UTC)
+
+
+def test_technical_series_contract_does_not_change_decision_identity(tmp_path: Path) -> None:
+    contracts = tmp_path / "csv_contracts.yaml"
+    contracts.write_text(
+        """version: 1
+dynamic_contracts:
+  price_cache:
+    glob: data/market/prices/*.csv
+    columns: [date]
+  technical_series:
+    glob: data/market/technical/*.csv
+    columns: [date, adjusted_close]
+contracts:
+  securities:
+    path: data/tables/securities.csv
+    columns: [security_id]
+""",
+        encoding="utf-8",
+    )
+
+    assert (
+        _decision_csv_contract_bytes(contracts).decode("utf-8")
+        == """version: 1
+dynamic_contracts:
+  price_cache:
+    glob: data/market/prices/*.csv
+    columns: [date]
+contracts:
+  securities:
+    path: data/tables/securities.csv
+    columns: [security_id]
+"""
+    )
 
 
 def _legacy_v3(document: dict[str, object]) -> dict[str, object]:

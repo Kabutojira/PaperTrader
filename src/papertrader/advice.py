@@ -651,6 +651,29 @@ def _dynamic_csv_hashes(directory: Path) -> Mapping[str, str]:
     return values
 
 
+def _decision_csv_contract_bytes(path: Path) -> bytes:
+    """Exclude presentation-only technical-series metadata from decision identity."""
+
+    raw = path.read_text(encoding="utf-8")
+    try:
+        document = yaml.safe_load(raw)
+    except yaml.YAMLError as exc:
+        raise AdviceError("CSV contracts are not valid YAML") from exc
+    dynamic = document.get("dynamic_contracts") if isinstance(document, dict) else None
+    if not isinstance(dynamic, dict) or "technical_series" not in dynamic:
+        return raw.encode("utf-8")
+    scrubbed, count = re.subn(
+        r"^  technical_series:\n.*?(?=^contracts:\n)",
+        "",
+        raw,
+        count=1,
+        flags=re.MULTILINE | re.DOTALL,
+    )
+    if count != 1:
+        raise AdviceError("technical-series CSV contract is not in canonical location")
+    return scrubbed.encode("utf-8")
+
+
 def _source_hashes(repository_root: Path, *, as_of: datetime) -> Mapping[str, str]:
     hashes = {
         name: content_hash(_canonical_rows(repository_root, name, as_of=as_of))
@@ -664,7 +687,10 @@ def _source_hashes(repository_root: Path, *, as_of: datetime) -> Mapping[str, st
         path = repository_root / relative
         if path.is_symlink() or not path.is_file():
             raise AdviceError(f"decision input must be a regular file: {relative}")
-        hashes[name] = content_hash(path.read_bytes())
+        content = (
+            _decision_csv_contract_bytes(path) if name == "csv_contracts" else path.read_bytes()
+        )
+        hashes[name] = content_hash(content)
     inbox: list[tuple[str, str]] = []
     for path in sorted((repository_root / "data" / "wiki" / "inbox").glob("*.md")):
         if path.is_symlink() or not path.is_file():

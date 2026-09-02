@@ -149,8 +149,16 @@ visual.
 Charts are one-way derived presentation. They never feed assessments, allocation, signals, orders,
 fills, cash, positions, or performance. Quartz renders each valid chart with the pinned local Apache
 ECharts asset and a visible data/source fallback. GitHub and no-JavaScript readers retain the JSON
-plus the surrounding prose. Existing pages gain charts on their next normal research refresh; no
-bulk backfill is required.
+plus the surrounding prose.
+
+Every maintained security page also carries exactly one marker-bounded schema-version-2
+`market-technicals` reference under `## Visual evidence`. It points to
+`data/market/technical/<security_id>.csv`, whose one-year adjusted OHLC, volume, RSI, Bollinger,
+SMA, and MACD series is regenerated deterministically from the rolling price cache. The reference
+is stable: build-time hydration supplies the local chart data without daily Markdown churn. Agents
+must preserve it and must not report it in `visualization_review`. The initial deterministic
+migration may backfill this reference on existing security pages without changing their research
+dates; all judgment-owned charts still appear only on the next normal research refresh.
 
 ## Links and size
 

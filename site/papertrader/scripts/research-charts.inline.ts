@@ -332,6 +332,205 @@ function networkOption(spec: ChartObject): ChartObject {
   };
 }
 
+function technicalRows(spec: ChartObject): {
+  columns: string[];
+  rows: unknown[][];
+  index: Map<string, number>;
+  asOf: string;
+} {
+  const dataset = record(spec.dataset);
+  if (dataset.availability !== "available") {
+    throw new Error("technical series is not available for this security");
+  }
+  const columns = array(dataset.columns, "dataset.columns").map((value) =>
+    text(value, "technical column"),
+  );
+  const rows = array(dataset.rows, "dataset.rows").map((value) =>
+    array(value, "technical row"),
+  );
+  if (rows.length === 0 || rows.some((row) => row.length !== columns.length)) {
+    throw new Error("technical dataset is empty or misaligned");
+  }
+  const index = new Map(
+    columns.map((column, columnIndex) => [column, columnIndex]),
+  );
+  for (const required of [
+    "date",
+    "adjusted_open",
+    "adjusted_high",
+    "adjusted_low",
+    "adjusted_close",
+    "volume",
+    "sma_20",
+    "sma_50",
+    "sma_200",
+    "rsi_14",
+    "bollinger_mid",
+    "bollinger_upper",
+    "bollinger_lower",
+    "macd",
+    "macd_signal",
+    "macd_histogram",
+  ]) {
+    if (!index.has(required))
+      throw new Error(`technical dataset lacks ${required}`);
+  }
+  return {
+    columns,
+    rows,
+    index,
+    asOf: text(dataset.as_of, "technical as_of"),
+  };
+}
+
+function technicalOption(spec: ChartObject): ChartObject {
+  const { rows, index } = technicalRows(spec);
+  const at = (row: unknown[], column: string): unknown =>
+    row[index.get(column)!];
+  const numeric = (row: unknown[], column: string): number | null =>
+    numberValue(at(row, column));
+  const dates = rows.map((row) => text(at(row, "date"), "technical date"));
+  const closes = rows.map((row) => numeric(row, "adjusted_close"));
+  const openings = rows.map((row) => numeric(row, "adjusted_open"));
+  const line = (name: string, column: string, color: string, width = 1.4) => ({
+    name,
+    type: "line",
+    xAxisIndex: 0,
+    yAxisIndex: 0,
+    showSymbol: false,
+    connectNulls: false,
+    lineStyle: { color, width },
+    data: rows.map((row) => numeric(row, column)),
+  });
+  const xAxis = [0, 1, 2, 3].map((indexValue) => ({
+    type: "category",
+    gridIndex: indexValue,
+    data: dates,
+    boundaryGap: true,
+    axisLabel: { show: indexValue === 3, hideOverlap: true },
+    axisTick: { show: indexValue === 3 },
+    axisLine: { show: indexValue === 3 },
+  }));
+  return {
+    ...baseOption(),
+    color: ["#4477aa", "#ee7733", "#228833", "#aa3377", "#ccbb44"],
+    tooltip: { trigger: "axis", renderMode: "richText", confine: true },
+    axisPointer: { link: [{ xAxisIndex: [0, 1, 2, 3] }] },
+    legend: { type: "scroll", top: 0 },
+    grid: [
+      { left: 18, right: 18, top: "7%", height: "38%", containLabel: true },
+      { left: 18, right: 18, top: "49%", height: "11%", containLabel: true },
+      { left: 18, right: 18, top: "64%", height: "11%", containLabel: true },
+      { left: 18, right: 18, top: "79%", height: "11%", containLabel: true },
+    ],
+    xAxis,
+    yAxis: [
+      {
+        type: "value",
+        gridIndex: 0,
+        scale: true,
+        name: text(spec.currency, "currency"),
+      },
+      { type: "value", gridIndex: 1, scale: true, name: "Volume" },
+      { type: "value", gridIndex: 2, min: 0, max: 100, name: "RSI" },
+      { type: "value", gridIndex: 3, scale: true, name: "MACD" },
+    ],
+    dataZoom: [
+      { type: "inside", xAxisIndex: [0, 1, 2, 3] },
+      { type: "slider", xAxisIndex: [0, 1, 2, 3], bottom: 4 },
+    ],
+    series: [
+      {
+        name: "Adjusted OHLC",
+        type: "candlestick",
+        xAxisIndex: 0,
+        yAxisIndex: 0,
+        itemStyle: {
+          color: "#4477aa",
+          color0: "#ee7733",
+          borderColor: "#4477aa",
+          borderColor0: "#ee7733",
+        },
+        data: rows.map((row) => [
+          numeric(row, "adjusted_open"),
+          numeric(row, "adjusted_close"),
+          numeric(row, "adjusted_low"),
+          numeric(row, "adjusted_high"),
+        ]),
+      },
+      line("SMA 20", "sma_20", "#228833", 1.6),
+      line("SMA 50", "sma_50", "#aa3377", 1.6),
+      line("SMA 200", "sma_200", "#ccbb44", 2),
+      line("Bollinger upper", "bollinger_upper", "#66ccee"),
+      line("Bollinger mid", "bollinger_mid", "#999999"),
+      line("Bollinger lower", "bollinger_lower", "#66ccee"),
+      {
+        name: "Volume",
+        type: "bar",
+        xAxisIndex: 1,
+        yAxisIndex: 1,
+        data: rows.map((row, rowIndex) => ({
+          value: numeric(row, "volume"),
+          itemStyle: {
+            color:
+              closes[rowIndex] !== null &&
+              openings[rowIndex] !== null &&
+              closes[rowIndex]! >= openings[rowIndex]!
+                ? "#4477aa"
+                : "#ee7733",
+            opacity: 0.65,
+          },
+        })),
+      },
+      {
+        name: "RSI 14",
+        type: "line",
+        xAxisIndex: 2,
+        yAxisIndex: 2,
+        showSymbol: false,
+        data: rows.map((row) => numeric(row, "rsi_14")),
+        markLine: {
+          silent: true,
+          symbol: "none",
+          label: { formatter: "{c}" },
+          data: [{ yAxis: 30 }, { yAxis: 70 }],
+        },
+      },
+      {
+        name: "MACD histogram",
+        type: "bar",
+        xAxisIndex: 3,
+        yAxisIndex: 3,
+        data: rows.map((row) => {
+          const value = numeric(row, "macd_histogram");
+          return {
+            value,
+            itemStyle: {
+              color: value !== null && value >= 0 ? "#4477aa" : "#ee7733",
+            },
+          };
+        }),
+      },
+      {
+        name: "MACD",
+        type: "line",
+        xAxisIndex: 3,
+        yAxisIndex: 3,
+        showSymbol: false,
+        data: rows.map((row) => numeric(row, "macd")),
+      },
+      {
+        name: "MACD signal",
+        type: "line",
+        xAxisIndex: 3,
+        yAxisIndex: 3,
+        showSymbol: false,
+        data: rows.map((row) => numeric(row, "macd_signal")),
+      },
+    ],
+  };
+}
+
 function compileOption(spec: ChartObject): ChartObject {
   switch (text(spec.kind, "kind")) {
     case "series":
@@ -346,12 +545,41 @@ function compileOption(spec: ChartObject): ChartObject {
       return heatmapOption(spec);
     case "network":
       return networkOption(spec);
+    case "technical":
+      return technicalOption(spec);
     default:
       throw new Error("unsupported chart kind");
   }
 }
 
 function tableRows(spec: ChartObject): string[][] {
+  if (spec.kind === "technical") {
+    const { rows, index } = technicalRows(spec);
+    const columns = [
+      ["Date", "date"],
+      ["Adjusted open", "adjusted_open"],
+      ["Adjusted high", "adjusted_high"],
+      ["Adjusted low", "adjusted_low"],
+      ["Adjusted close", "adjusted_close"],
+      ["Volume", "volume"],
+      ["SMA 20", "sma_20"],
+      ["SMA 50", "sma_50"],
+      ["SMA 200", "sma_200"],
+      ["RSI 14", "rsi_14"],
+      ["Bollinger mid", "bollinger_mid"],
+      ["Bollinger upper", "bollinger_upper"],
+      ["Bollinger lower", "bollinger_lower"],
+      ["MACD", "macd"],
+      ["MACD signal", "macd_signal"],
+      ["MACD histogram", "macd_histogram"],
+    ] as const;
+    return [
+      columns.map(([label]) => label),
+      ...rows.map((row) =>
+        columns.map(([, column]) => String(row[index.get(column)!] ?? "—")),
+      ),
+    ];
+  }
   if (spec.kind === "series") {
     const xAxis = record(spec.x_axis);
     const labels = array(xAxis.values, "x values").map(String);
@@ -475,7 +703,33 @@ function appendSources(figure: HTMLElement, spec: ChartObject): void {
     }
     list.append(item);
   }
+  if (spec.kind === "technical") {
+    const postscript = [
+      ...document.querySelectorAll<HTMLScriptElement>("script[src]"),
+    ].find((script) =>
+      new URL(script.src, document.baseURI).pathname.endsWith("/postscript.js"),
+    );
+    const dataPath = text(spec.data_path, "technical data_path");
+    if (
+      !postscript ||
+      !/^data\/market\/technical\/[A-Za-z0-9_.-]+\.csv$/.test(dataPath)
+    ) {
+      throw new Error("cannot resolve the local technical CSV");
+    }
+    const item = document.createElement("li");
+    const link = document.createElement("a");
+    link.href = new URL(dataPath, new URL(".", postscript.src)).href;
+    link.textContent = "Download the canonical technical CSV";
+    link.download = `${text(spec.security_id, "security_id")}.csv`;
+    item.append(link);
+    list.append(item);
+  }
   figure.append(list);
+}
+
+function chartAsOf(spec: ChartObject): string {
+  if (spec.kind === "technical") return technicalRows(spec).asOf;
+  return text(spec.as_of, "as_of");
 }
 
 async function renderResearchCharts(): Promise<void> {
@@ -504,11 +758,16 @@ async function renderResearchCharts(): Promise<void> {
       block;
     try {
       const spec = record(JSON.parse(block.textContent ?? ""));
-      if (spec.schema_version !== 1)
+      const supportedVersion =
+        spec.schema_version === 1 ||
+        (spec.schema_version === 2 && spec.kind === "technical");
+      if (!supportedVersion)
         throw new Error("unsupported chart schema version");
       const option = compileOption(spec);
       const figure = document.createElement("figure");
       figure.className = "research-chart";
+      if (spec.kind === "technical")
+        figure.classList.add("research-chart--technical");
       figure.dataset.chartId = text(spec.chart_id, "chart_id");
       const heading = document.createElement("h3");
       heading.textContent = text(spec.title, "title");
@@ -517,7 +776,7 @@ async function renderResearchCharts(): Promise<void> {
       description.textContent = text(spec.description, "description");
       const asOf = document.createElement("p");
       asOf.className = "research-chart__as-of";
-      asOf.textContent = `Data as of ${text(spec.as_of, "as_of")}`;
+      asOf.textContent = `Data as of ${chartAsOf(spec)}`;
       const canvas = document.createElement("div");
       canvas.className = "research-chart__canvas";
       canvas.setAttribute("role", "img");

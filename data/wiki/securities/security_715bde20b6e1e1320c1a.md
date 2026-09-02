@@ -225,6 +225,36 @@ confidence adjustment. The base-upside-to-bear-downside ratio is approximately *
 insufficient payoff and margin-of-safety frontiers, plus the missing accepted relationship,
 independently prevent allocation or strategy work.
 
+## Visual evidence
+
+<!-- papertrader:technical-chart:start -->
+This deterministic monitoring chart is derived from the repository-local market cache. Its source CSV remains downloadable and does not feed research scoring or trading state.
+
+```echart
+{
+  "schema_version": 2,
+  "chart_id": "market-technicals",
+  "kind": "technical",
+  "title": "One-year price, volume, and technical indicators",
+  "description": "Adjusted daily OHLC with Bollinger bands and moving averages, followed by volume, RSI, and MACD panels from the deterministic PaperTrader market cache.",
+  "security_id": "security_715bde20b6e1e1320c1a",
+  "currency": "USD",
+  "price_basis": "adjusted",
+  "window_days": 365,
+  "data_path": "data/market/technical/security_715bde20b6e1e1320c1a.csv",
+  "sources": [
+    {
+      "label": "Canonical PaperTrader price cache and deterministic TA-Lib projection"
+    }
+  ],
+  "notes": [
+    "Adjusted OHLC aligns price history with indicators calculated from adjusted close.",
+    "Technical indicators are research alerts, not trade signals."
+  ]
+}
+```
+<!-- papertrader:technical-chart:end -->
+
 ## Sources
 
 - [dLocal 2025 Form 20-F](https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm)

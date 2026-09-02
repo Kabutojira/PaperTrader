@@ -1053,6 +1053,13 @@ def validate_integrity(
     except (OSError, ValueError) as exc:
         errors.append(f"invalid valuation templates: {exc}")
     errors.extend(validate_json_schemas(repository_root))
+    if settings is not None:
+        from papertrader.indicators import validate_technical_series
+
+        errors.extend(validate_technical_series(repository_root, settings))
+    from papertrader.wiki import validate_security_technical_charts
+
+    errors.extend(validate_security_technical_charts(repository_root))
     errors.extend(validate_skills(repository_root))
     errors.extend(validate_agent_run_artifacts(repository_root))
     errors.extend(validate_daily_run_artifacts(repository_root))

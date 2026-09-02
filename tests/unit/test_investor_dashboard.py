@@ -283,6 +283,12 @@ def test_quartz_research_charts_use_pinned_local_echarts_with_fallback(
     assert "fetch(" not in renderer
     assert "View chart data table" in renderer
     assert "View validated chart JSON" in renderer
+    assert 'case "technical"' in renderer
+    assert "Adjusted OHLC" in renderer
+    assert "MACD histogram" in renderer
+    assert "Download the canonical technical CSV" in renderer
     assert 'renderer: "svg"' in renderer
+    assert "hydratedWikiCopy" in (site / "build-quartz.mjs").read_text(encoding="utf-8")
+    assert "publishTechnicalSeries" in (site / "build-quartz.mjs").read_text(encoding="utf-8")
     assert '["LICENSE", "LICENSE"]' in prepare
     assert "ResearchCharts()" in layout

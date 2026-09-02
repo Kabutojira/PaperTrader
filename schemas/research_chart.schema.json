@@ -7,6 +7,7 @@
     { "$ref": "#/$defs/scatter_chart" },
     { "$ref": "#/$defs/composition_chart" },
     { "$ref": "#/$defs/candlestick_chart" },
+    { "$ref": "#/$defs/technical_chart" },
     { "$ref": "#/$defs/heatmap_chart" },
     { "$ref": "#/$defs/network_chart" }
   ],
@@ -206,6 +207,60 @@
         }
       ],
       "unevaluatedProperties": false
+    },
+    "technical_chart": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "chart_id",
+        "kind",
+        "title",
+        "description",
+        "security_id",
+        "currency",
+        "price_basis",
+        "window_days",
+        "data_path",
+        "sources"
+      ],
+      "properties": {
+        "schema_version": { "const": 2 },
+        "chart_id": { "const": "market-technicals" },
+        "kind": { "const": "technical" },
+        "title": { "type": "string", "minLength": 1, "maxLength": 160 },
+        "description": { "type": "string", "minLength": 1, "maxLength": 1000 },
+        "security_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$"
+        },
+        "currency": { "type": "string", "pattern": "^[A-Z]{3}$" },
+        "price_basis": { "const": "adjusted" },
+        "window_days": { "const": 365 },
+        "data_path": {
+          "type": "string",
+          "pattern": "^data/market/technical/[A-Za-z0-9][A-Za-z0-9_.-]{0,127}\\.csv$",
+          "maxLength": 256
+        },
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["label"],
+            "properties": {
+              "label": { "type": "string", "minLength": 1, "maxLength": 300 }
+            }
+          }
+        },
+        "notes": {
+          "type": "array",
+          "maxItems": 10,
+          "items": { "type": "string", "minLength": 1, "maxLength": 500 }
+        }
+      }
     },
     "heatmap_chart": {
       "allOf": [

@@ -177,6 +177,25 @@ Ticker text alone is never an identity. A new `watchlist` row is immediately inc
 deterministic price monitoring and alerts, while validated research is still required before it can
 participate in allocation, strategy, signal, or paper-order decisions.
 
+## Security technical charts
+
+Each maintained security page includes a one-year interactive view with adjusted candlesticks,
+Bollinger bands, SMA 20/50/200, volume, RSI 14, and MACD. The daily pipeline persists the complete
+deterministic series at `data/market/technical/<security_id>.csv`; warm-up observations are blank
+instead of invented. Canonical Markdown stores only a stable validated reference, so daily market
+updates do not rewrite research pages. Quartz hydrates the chart during the local build and
+publishes the source CSV as a download—there are no CDN or browser data requests.
+
+To regenerate and repair the derived state locally:
+
+```bash
+uv run papertrader indicators update
+uv run papertrader wiki sync-technical-charts
+```
+
+The chart is presentation-only and never feeds assessments, signals, allocation, simulated orders,
+or accounting.
+
 ## Hermes execution
 
 GitHub Actions uses a dedicated Hermes profile and one controller process per operation. The

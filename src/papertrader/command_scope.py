@@ -60,6 +60,8 @@ def command_allowed(
         return True
     if _matches(command, ("issue", "record")):
         return True
+    if _matches(command, ("wiki", "sync-technical-charts")):
+        return operation_type in {"security_research", "quick_check_research"}
     if _matches(command, ("podcast", "validate-script")) or _matches(
         command, ("podcast", "render-draft")
     ):

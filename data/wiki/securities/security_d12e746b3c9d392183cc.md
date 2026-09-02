@@ -157,6 +157,36 @@ weighted fair value is USD 580, or about **+1.56%** before the medium-confidence
 margin-of-safety buy zone remains USD 480. The current mark fails expected-return, base-upside and
 downside-payoff gates. The canonical AI-monetization relationship is pending.
 
+## Visual evidence
+
+<!-- papertrader:technical-chart:start -->
+This deterministic monitoring chart is derived from the repository-local market cache. Its source CSV remains downloadable and does not feed research scoring or trading state.
+
+```echart
+{
+  "schema_version": 2,
+  "chart_id": "market-technicals",
+  "kind": "technical",
+  "title": "One-year price, volume, and technical indicators",
+  "description": "Adjusted daily OHLC with Bollinger bands and moving averages, followed by volume, RSI, and MACD panels from the deterministic PaperTrader market cache.",
+  "security_id": "security_d12e746b3c9d392183cc",
+  "currency": "USD",
+  "price_basis": "adjusted",
+  "window_days": 365,
+  "data_path": "data/market/technical/security_d12e746b3c9d392183cc.csv",
+  "sources": [
+    {
+      "label": "Canonical PaperTrader price cache and deterministic TA-Lib projection"
+    }
+  ],
+  "notes": [
+    "Adjusted OHLC aligns price history with indicators calculated from adjusted close.",
+    "Technical indicators are research alerts, not trade signals."
+  ]
+}
+```
+<!-- papertrader:technical-chart:end -->
+
 ## Sources
 
 - [Meta Q2 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm)

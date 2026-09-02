@@ -13,6 +13,7 @@ import yaml
 from jsonschema import Draft202012Validator, FormatChecker
 
 from papertrader.atomic_io import atomic_write_text
+from papertrader.tables import read_table
 
 WIKILINK_PATTERN = re.compile(r"\[\[([^\]|#]+)(?:#[^\]|]+)?(?:\|[^\n]*?)?\]\]")
 MARKDOWN_LINK_PATTERN = re.compile(r"\[[^\n]*?\]\(([^)\s]+)\)")
@@ -24,6 +25,9 @@ ECHART_OPEN_PATTERN = re.compile(r"^```(?P<info>echart[^\r\n]*)$", re.MULTILINE)
 MAX_RESEARCH_CHARTS_PER_PAGE = 12
 MAX_RESEARCH_CHART_BYTES = 24 * 1024
 MAX_RESEARCH_CHART_NUMERIC_CELLS = 500
+TECHNICAL_CHART_ID = "market-technicals"
+TECHNICAL_CHART_START = "<!-- papertrader:technical-chart:start -->"
+TECHNICAL_CHART_END = "<!-- papertrader:technical-chart:end -->"
 
 
 class WikiFormatError(ValueError):
@@ -108,6 +112,14 @@ def _research_chart_semantic_errors(chart: Mapping[str, object]) -> list[str]:
                     continue
                 if low > min(opening, close) or high < max(opening, close) or low > high:
                     errors.append(f"rows[{index}] has inconsistent OHLC bounds")
+    elif kind == "technical":
+        security_id = chart.get("security_id")
+        data_path = chart.get("data_path")
+        expected = (
+            f"data/market/technical/{security_id}.csv" if isinstance(security_id, str) else ""
+        )
+        if data_path != expected:
+            errors.append("technical data_path must match its immutable security_id")
     elif kind == "heatmap":
         x_labels = chart.get("x_labels")
         y_labels = chart.get("y_labels")
@@ -163,9 +175,10 @@ def parse_research_charts(
         if opening.group("info").strip() != "echart":
             line = text.count("\n", 0, opening.start()) + 1
             errors.append(f"line {line}: ECharts fence language must be exactly 'echart'")
-    if len(matches) > MAX_RESEARCH_CHARTS_PER_PAGE:
+    if len(matches) > MAX_RESEARCH_CHARTS_PER_PAGE + 1:
         errors.append(
-            f"contains {len(matches)} ECharts blocks; maximum is {MAX_RESEARCH_CHARTS_PER_PAGE}"
+            f"contains {len(matches)} ECharts blocks; maximum is "
+            f"{MAX_RESEARCH_CHARTS_PER_PAGE} analytical charts plus one technical chart"
         )
     if not matches:
         return [], errors
@@ -204,7 +217,181 @@ def parse_research_charts(
         for error in _research_chart_semantic_errors(value):
             errors.append(f"chart {label}: {error}")
         charts.append(value)
+    technical_count = sum(chart.get("kind") == "technical" for chart in charts)
+    analytical_count = len(charts) - technical_count
+    if technical_count > 1:
+        errors.append("a page may contain at most one technical chart")
+    if analytical_count > MAX_RESEARCH_CHARTS_PER_PAGE:
+        errors.append(
+            f"contains {analytical_count} analytical charts; maximum is "
+            f"{MAX_RESEARCH_CHARTS_PER_PAGE}"
+        )
     return charts, errors
+
+
+def technical_chart_spec(security_id: str, currency: str) -> dict[str, object]:
+    """Return the stable reference-only technical chart specification."""
+
+    return {
+        "schema_version": 2,
+        "chart_id": TECHNICAL_CHART_ID,
+        "kind": "technical",
+        "title": "One-year price, volume, and technical indicators",
+        "description": (
+            "Adjusted daily OHLC with Bollinger bands and moving averages, followed by "
+            "volume, RSI, and MACD panels from the deterministic PaperTrader market cache."
+        ),
+        "security_id": security_id,
+        "currency": currency,
+        "price_basis": "adjusted",
+        "window_days": 365,
+        "data_path": f"data/market/technical/{security_id}.csv",
+        "sources": [
+            {"label": "Canonical PaperTrader price cache and deterministic TA-Lib projection"}
+        ],
+        "notes": [
+            "Adjusted OHLC aligns price history with indicators calculated from adjusted close.",
+            "Technical indicators are research alerts, not trade signals.",
+        ],
+    }
+
+
+def _technical_chart_block(security_id: str, currency: str) -> str:
+    payload = json.dumps(
+        technical_chart_spec(security_id, currency),
+        ensure_ascii=False,
+        indent=2,
+    )
+    return (
+        f"{TECHNICAL_CHART_START}\n"
+        "This deterministic monitoring chart is derived from the repository-local market cache. "
+        "Its source CSV remains downloadable and does not feed research scoring or trading "
+        "state.\n\n"
+        f"```echart\n{payload}\n```\n"
+        f"{TECHNICAL_CHART_END}"
+    )
+
+
+def security_technical_chart_errors(
+    path: Path,
+    schema_path: Path,
+    *,
+    security_id: str,
+    currency: str,
+) -> list[str]:
+    """Validate the one mandatory deterministic technical chart on a security page."""
+
+    try:
+        page_text = path.read_text(encoding="utf-8")
+    except (OSError, UnicodeError) as exc:
+        return [f"cannot read security technical chart: {exc}"]
+    errors: list[str] = []
+    if page_text.count(TECHNICAL_CHART_START) != 1 or page_text.count(TECHNICAL_CHART_END) != 1:
+        errors.append("security page requires one marker-bounded technical chart")
+    if not re.search(r"^## Visual evidence\s*$", page_text, flags=re.MULTILINE):
+        errors.append("security page requires a Visual evidence section")
+    charts, chart_errors = parse_research_charts(path, schema_path)
+    errors.extend(chart_errors)
+    technical = [chart for chart in charts if chart.get("kind") == "technical"]
+    if len(technical) != 1:
+        errors.append("security page requires exactly one technical chart")
+        return errors
+    expected = technical_chart_spec(security_id, currency)
+    if technical[0] != expected:
+        errors.append("security technical chart does not match its canonical identity")
+    return errors
+
+
+def validate_security_technical_charts(repository_root: Path) -> list[str]:
+    """Validate every security research page's stable technical chart reference."""
+
+    schema_path = repository_root / "schemas" / "research_chart.schema.json"
+    errors: list[str] = []
+    for security in read_table(repository_root, "securities"):
+        relative = security["research_page"]
+        if not relative:
+            continue
+        pure = PurePosixPath(relative)
+        if (
+            pure.is_absolute()
+            or ".." in pure.parts
+            or pure.parts[:3] != ("data", "wiki", "securities")
+            or pure.suffix != ".md"
+        ):
+            errors.append(f"invalid security research page path: {security['security_id']}")
+            continue
+        path = repository_root.joinpath(*pure.parts)
+        if not path.is_file() or path.is_symlink():
+            errors.append(f"missing security research page: {security['security_id']}")
+            continue
+        errors.extend(
+            f"{relative}: {error}"
+            for error in security_technical_chart_errors(
+                path,
+                schema_path,
+                security_id=security["security_id"],
+                currency=security["currency"],
+            )
+        )
+    return errors
+
+
+def sync_security_technical_charts(repository_root: Path) -> tuple[Path, ...]:
+    """Insert or repair stable technical chart references without changing research dates."""
+
+    changed: list[Path] = []
+    schema_path = repository_root / "schemas" / "research_chart.schema.json"
+    marker_pattern = re.compile(
+        rf"{re.escape(TECHNICAL_CHART_START)}.*?{re.escape(TECHNICAL_CHART_END)}",
+        flags=re.DOTALL,
+    )
+    for security in read_table(repository_root, "securities"):
+        relative = security["research_page"]
+        if not relative:
+            continue
+        pure = PurePosixPath(relative)
+        if (
+            pure.is_absolute()
+            or ".." in pure.parts
+            or pure.parts[:3] != ("data", "wiki", "securities")
+            or pure.suffix != ".md"
+        ):
+            raise WikiFormatError(f"invalid security research page path: {relative}")
+        path = repository_root.joinpath(*pure.parts)
+        if not path.is_file() or path.is_symlink():
+            raise WikiFormatError(f"security research page is missing or unsafe: {relative}")
+        page_text = path.read_text(encoding="utf-8")
+        charts, chart_errors = parse_research_charts(path, schema_path)
+        if chart_errors:
+            raise WikiFormatError(f"cannot sync invalid chart page {relative}: {chart_errors[0]}")
+        if any(chart.get("kind") == "technical" for chart in charts) and not (
+            TECHNICAL_CHART_START in page_text and TECHNICAL_CHART_END in page_text
+        ):
+            raise WikiFormatError(f"unmarked technical chart cannot be replaced safely: {relative}")
+        if page_text.count(TECHNICAL_CHART_START) > 1 or page_text.count(TECHNICAL_CHART_END) > 1:
+            raise WikiFormatError(f"duplicate technical chart markers: {relative}")
+
+        block = _technical_chart_block(security["security_id"], security["currency"])
+        if TECHNICAL_CHART_START in page_text or TECHNICAL_CHART_END in page_text:
+            if TECHNICAL_CHART_START not in page_text or TECHNICAL_CHART_END not in page_text:
+                raise WikiFormatError(f"incomplete technical chart markers: {relative}")
+            updated = marker_pattern.sub(block, page_text, count=1)
+        else:
+            heading = re.search(r"^## Visual evidence\s*$", page_text, flags=re.MULTILINE)
+            if heading is not None:
+                insertion = heading.end()
+                updated = page_text[:insertion] + f"\n\n{block}" + page_text[insertion:]
+            else:
+                sources = re.search(r"^## Sources\s*$", page_text, flags=re.MULTILINE)
+                section = f"## Visual evidence\n\n{block}\n\n"
+                if sources is not None:
+                    updated = page_text[: sources.start()] + section + page_text[sources.start() :]
+                else:
+                    updated = page_text.rstrip() + f"\n\n{section.rstrip()}\n"
+        if updated != page_text:
+            atomic_write_text(path, updated, allowed_root=repository_root)
+            changed.append(path)
+    return tuple(changed)
 
 
 def _frontmatter(path: Path) -> tuple[Mapping[object, object], str]:

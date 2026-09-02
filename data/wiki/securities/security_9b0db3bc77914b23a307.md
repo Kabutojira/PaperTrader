@@ -160,6 +160,36 @@ medium-confidence adjusted return is **3.64%**. The 20% margin-of-safety buy-bel
 **290.74**. Base upside, expected return, both bear-payoff ratios, and margin of safety all miss the
 canonical gates; no conviction strategy research is justified.
 
+## Visual evidence
+
+<!-- papertrader:technical-chart:start -->
+This deterministic monitoring chart is derived from the repository-local market cache. Its source CSV remains downloadable and does not feed research scoring or trading state.
+
+```echart
+{
+  "schema_version": 2,
+  "chart_id": "market-technicals",
+  "kind": "technical",
+  "title": "One-year price, volume, and technical indicators",
+  "description": "Adjusted daily OHLC with Bollinger bands and moving averages, followed by volume, RSI, and MACD panels from the deterministic PaperTrader market cache.",
+  "security_id": "security_9b0db3bc77914b23a307",
+  "currency": "USD",
+  "price_basis": "adjusted",
+  "window_days": 365,
+  "data_path": "data/market/technical/security_9b0db3bc77914b23a307.csv",
+  "sources": [
+    {
+      "label": "Canonical PaperTrader price cache and deterministic TA-Lib projection"
+    }
+  ],
+  "notes": [
+    "Adjusted OHLC aligns price history with indicators calculated from adjusted close.",
+    "Technical indicators are research alerts, not trade signals."
+  ]
+}
+```
+<!-- papertrader:technical-chart:end -->
+
 ## Sources
 
 - [Carlisle Form 10-Q for the quarter ended 2026-06-30](https://www.sec.gov/Archives/edgar/data/790051/000079005126000037/csl-20260630.htm)

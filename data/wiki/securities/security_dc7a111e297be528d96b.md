@@ -232,6 +232,36 @@ The probability-weighted fair value is **USD 293**. Against the August 31 adjust
 confidence adjustment. The scenario set is complete but not attractive: the base case, expected
 return, downside payoff and margin of safety do not support an entry or a conviction strategy.
 
+## Visual evidence
+
+<!-- papertrader:technical-chart:start -->
+This deterministic monitoring chart is derived from the repository-local market cache. Its source CSV remains downloadable and does not feed research scoring or trading state.
+
+```echart
+{
+  "schema_version": 2,
+  "chart_id": "market-technicals",
+  "kind": "technical",
+  "title": "One-year price, volume, and technical indicators",
+  "description": "Adjusted daily OHLC with Bollinger bands and moving averages, followed by volume, RSI, and MACD panels from the deterministic PaperTrader market cache.",
+  "security_id": "security_dc7a111e297be528d96b",
+  "currency": "USD",
+  "price_basis": "adjusted",
+  "window_days": 365,
+  "data_path": "data/market/technical/security_dc7a111e297be528d96b.csv",
+  "sources": [
+    {
+      "label": "Canonical PaperTrader price cache and deterministic TA-Lib projection"
+    }
+  ],
+  "notes": [
+    "Adjusted OHLC aligns price history with indicators calculated from adjusted close.",
+    "Technical indicators are research alerts, not trade signals."
+  ]
+}
+```
+<!-- papertrader:technical-chart:end -->
+
 ## Sources
 
 - [Tesla Q2 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm)

@@ -2941,3 +2941,7 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 
 - Updated [[securities/security_98470cfc01bbcde78fc2]] with the filed Q2 results, the 2026-08-26 through 2026-09-01 alert review, refreshed price-to-book scenarios, explicit idea-map classifications, and three validated visual-evidence datasets.
 - Retained the watching / stay-in-cash conclusion: the lower mark improves expected return, but bear-case payoff and accepted-relationship gates remain unsatisfied.
+
+- Backfilled the stable deterministic `market-technicals` reference on all 80 maintained security
+  pages and generated one-year source CSVs for all 81 monitored identities. Research dates and
+  conclusions were preserved; the charts remain presentation-only.

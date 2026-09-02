@@ -10,7 +10,7 @@ from pathlib import Path
 import pytest
 
 from papertrader.config import Settings
-from papertrader.indicators import calculate_snapshot, snapshot_row
+from papertrader.indicators import calculate_series, calculate_snapshot, snapshot_row, technical_row
 from papertrader.models import (
     AlertDirection,
     ClassifierDecision,
@@ -163,6 +163,44 @@ def test_indicator_snapshot_matches_reference_output(
     )
 
     assert snapshot_row(snapshot) == expected
+
+
+def test_technical_series_uses_adjusted_ohlc_and_matches_latest_snapshot(
+    sandbox_settings: Settings,
+) -> None:
+    bars = list(_bars(220))
+    bars[-1] = replace(
+        bars[-1],
+        open=Decimal("90"),
+        high=Decimal("110"),
+        low=Decimal("80"),
+        close=Decimal("100"),
+        adjusted_close=Decimal("50"),
+    )
+
+    series = calculate_series("sec_a", bars, sandbox_settings)
+    snapshot = calculate_snapshot("sec_a", bars, sandbox_settings)
+    final = technical_row(series[-1])
+
+    assert final["adjusted_open"] == "45"
+    assert final["adjusted_high"] == "55"
+    assert final["adjusted_low"] == "40"
+    assert final["adjusted_close"] == "50"
+    assert final["date"] == snapshot.as_of_date.isoformat()
+    assert final["rsi_14"] == snapshot_row(snapshot)["rsi_14"]
+    assert final["macd_histogram"] == snapshot_row(snapshot)["macd_histogram"]
+
+
+def test_technical_series_preserves_indicator_warmup_as_empty_values(
+    sandbox_settings: Settings,
+) -> None:
+    rows = [technical_row(row) for row in calculate_series("sec_a", _bars(220), sandbox_settings)]
+
+    assert rows[0]["sma_20"] == ""
+    assert rows[18]["sma_20"] == ""
+    assert rows[19]["sma_20"] != ""
+    assert rows[198]["sma_200"] == ""
+    assert rows[199]["sma_200"] != ""
 
 
 def test_transition_detection_emits_entry_and_only_material_strengthening(

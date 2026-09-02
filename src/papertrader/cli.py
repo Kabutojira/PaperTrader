@@ -135,7 +135,7 @@ from papertrader.utils import (
     required_decimal,
     utc_now,
 )
-from papertrader.wiki import lint_wiki
+from papertrader.wiki import lint_wiki, sync_security_technical_charts
 from papertrader.wiki_maintenance import maintain_wiki
 from papertrader.youtube import backfill_youtube, scan_youtube
 
@@ -168,6 +168,10 @@ def _parser() -> argparse.ArgumentParser:
     wiki_commands.add_parser("lint").add_argument("--strict", action="store_true")
     wiki_commands.add_parser("refresh-homepage")
     wiki_commands.add_parser("refresh-inbox")
+    wiki_commands.add_parser(
+        "sync-technical-charts",
+        help="insert or repair stable technical chart references on security pages",
+    )
     wiki_maintain = wiki_commands.add_parser(
         "maintain", help="run the bundled native llm-wiki maintenance procedure"
     )
@@ -1110,6 +1114,10 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
         if arguments.wiki_command == "refresh-homepage":
             path = refresh_wiki_homepage(root)
             print(path.relative_to(root).as_posix())
+            return 0
+        if arguments.wiki_command == "sync-technical-charts":
+            changed = sync_security_technical_charts(root)
+            print(json.dumps([path.relative_to(root).as_posix() for path in changed]))
             return 0
         candidate_paths = refresh_candidate_packet_display(root, settings)
         print(json.dumps([path.relative_to(root).as_posix() for path in candidate_paths]))

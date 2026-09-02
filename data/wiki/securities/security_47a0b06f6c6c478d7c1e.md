@@ -131,3 +131,33 @@ strategy, signal, or paper order is justified.
 - **Thesis, catalysts, and risks:** the thesis remains that scarce AI capacity and software can support rapid growth; the evidence upgrade is real, but customer concentration, extraordinary capital intensity, customer-advance dependence, hardware obsolescence, leverage and dilution remain decisive. Catalysts and invalidation conditions are unchanged because Q2 strengthened both the growth case and its financing risks.
 - **Alert and action:** the August 12 volume anomaly remains an earnings-linked repricing rather than a buy signal. The USD 248.43 close exceeds the USD 165 base value and USD 132 buy-below level.
 - **Blockers, gaps, rating, and conclusion:** the valuation-unsupported blocker is resolved, while concentration sensitivity, medium confidence, unfavorable timing and the missing accepted relationship remain. Rating changes from Unrated / Watch to Strong Sell / Avoid, but allocation ineligibility and the conclusion that no strategy or signal is justified are unchanged.
+
+## Visual evidence
+
+<!-- papertrader:technical-chart:start -->
+This deterministic monitoring chart is derived from the repository-local market cache. Its source CSV remains downloadable and does not feed research scoring or trading state.
+
+```echart
+{
+  "schema_version": 2,
+  "chart_id": "market-technicals",
+  "kind": "technical",
+  "title": "One-year price, volume, and technical indicators",
+  "description": "Adjusted daily OHLC with Bollinger bands and moving averages, followed by volume, RSI, and MACD panels from the deterministic PaperTrader market cache.",
+  "security_id": "security_47a0b06f6c6c478d7c1e",
+  "currency": "USD",
+  "price_basis": "adjusted",
+  "window_days": 365,
+  "data_path": "data/market/technical/security_47a0b06f6c6c478d7c1e.csv",
+  "sources": [
+    {
+      "label": "Canonical PaperTrader price cache and deterministic TA-Lib projection"
+    }
+  ],
+  "notes": [
+    "Adjusted OHLC aligns price history with indicators calculated from adjusted close.",
+    "Technical indicators are research alerts, not trade signals."
+  ]
+}
+```
+<!-- papertrader:technical-chart:end -->

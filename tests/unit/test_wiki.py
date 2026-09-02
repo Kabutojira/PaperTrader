@@ -4,7 +4,16 @@ import json
 import shutil
 from pathlib import Path
 
-from papertrader.wiki import lint_wiki, parse_research_charts
+from papertrader.tables import write_table
+from papertrader.wiki import (
+    TECHNICAL_CHART_END,
+    TECHNICAL_CHART_START,
+    lint_wiki,
+    parse_research_charts,
+    security_technical_chart_errors,
+    sync_security_technical_charts,
+    technical_chart_spec,
+)
 
 
 def _series_chart() -> dict[str, object]:
@@ -61,6 +70,119 @@ def test_research_chart_parser_rejects_json_numbers_and_duplicate_ids(
 
     assert any("decimal strings" in error or "not valid" in error for error in errors)
     assert any("chart_id must be unique" in error for error in errors)
+
+
+def test_research_chart_parser_accepts_stable_technical_reference(
+    repository_root: Path, tmp_path: Path
+) -> None:
+    chart = technical_chart_spec("sec-fixture", "USD")
+    page = tmp_path / "security.md"
+    page.write_text(
+        f"{TECHNICAL_CHART_START}\n```echart\n{json.dumps(chart)}\n```\n{TECHNICAL_CHART_END}\n",
+        encoding="utf-8",
+    )
+
+    parsed, errors = parse_research_charts(
+        page, repository_root / "schemas" / "research_chart.schema.json"
+    )
+
+    assert errors == []
+    assert parsed == [chart]
+
+
+def test_research_chart_parser_rejects_technical_path_identity_mismatch(
+    repository_root: Path, tmp_path: Path
+) -> None:
+    chart = technical_chart_spec("sec-fixture", "USD")
+    chart["data_path"] = "data/market/technical/sec-other.csv"
+    page = tmp_path / "security.md"
+    page.write_text(f"```echart\n{json.dumps(chart)}\n```\n", encoding="utf-8")
+
+    _, errors = parse_research_charts(
+        page, repository_root / "schemas" / "research_chart.schema.json"
+    )
+
+    assert any("data_path must match" in error for error in errors)
+
+
+def test_security_technical_chart_sync_is_idempotent(
+    sandbox_repository: Path,
+) -> None:
+    security_id = "sec-fixture"
+    research_page = f"data/wiki/securities/{security_id}.md"
+    write_table(
+        sandbox_repository,
+        "securities",
+        [
+            {
+                "security_id": security_id,
+                "issuer_id": "issuer-fixture",
+                "company_name": "Fixture Corp",
+                "instrument_name": "Fixture common stock",
+                "instrument_type": "equity",
+                "ticker": "FIX",
+                "exchange_code": "XNYS",
+                "venue_mic": "XNYS",
+                "provider_symbol": "FIX",
+                "broker_symbol": "",
+                "currency": "USD",
+                "country": "US",
+                "sector": "Industrials",
+                "industry": "Testing",
+                "status": "watchlist",
+                "watchlist_reason": "fixture",
+                "research_summary": "fixture",
+                "research_page": research_page,
+                "last_research_at": "",
+                "next_review_at": "",
+                "created_at": "2026-09-02T00:00:00Z",
+                "updated_at": "2026-09-02T00:00:00Z",
+                "source": "test",
+            }
+        ],
+    )
+    page = sandbox_repository / research_page
+    page.write_text(
+        """---
+title: Fixture security
+type: security
+status: maintained
+tags: [security]
+created: "2026-09-01"
+updated: "2026-09-01"
+provenance: test
+---
+
+# Fixture security
+
+Research content stays unchanged.
+
+## Sources
+
+- Fixture source.
+""",
+        encoding="utf-8",
+    )
+
+    first = sync_security_technical_charts(sandbox_repository)
+    first_text = page.read_text(encoding="utf-8")
+    second = sync_security_technical_charts(sandbox_repository)
+
+    assert first == (page,)
+    assert second == ()
+    assert page.read_text(encoding="utf-8") == first_text
+    assert 'updated: "2026-09-01"' in first_text
+    assert "Research content stays unchanged." in first_text
+    assert first_text.index("## Visual evidence") < first_text.index("## Sources")
+    assert (
+        security_technical_chart_errors(
+            page,
+            sandbox_repository / "schemas" / "research_chart.schema.json",
+            security_id=security_id,
+            currency="USD",
+        )
+        == []
+    )
 
 
 def test_research_chart_schema_accepts_each_supported_family(

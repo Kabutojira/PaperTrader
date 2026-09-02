@@ -135,3 +135,33 @@ insufficient local liquidity. The August 10 quick check reaffirms this `Unrated 
 at the fresh EUR 3,580 mark. No conviction strategy or paper signal is justified. Review by
 **2026-09-02**, or earlier if fresh cross-venue, KRW/EUR, normalized-cycle, or venue-liquidity
 evidence becomes available.
+
+## Visual evidence
+
+<!-- papertrader:technical-chart:start -->
+This deterministic monitoring chart is derived from the repository-local market cache. Its source CSV remains downloadable and does not feed research scoring or trading state.
+
+```echart
+{
+  "schema_version": 2,
+  "chart_id": "market-technicals",
+  "kind": "technical",
+  "title": "One-year price, volume, and technical indicators",
+  "description": "Adjusted daily OHLC with Bollinger bands and moving averages, followed by volume, RSI, and MACD panels from the deterministic PaperTrader market cache.",
+  "security_id": "security_567d0d575bbd30aaa91d",
+  "currency": "EUR",
+  "price_basis": "adjusted",
+  "window_days": 365,
+  "data_path": "data/market/technical/security_567d0d575bbd30aaa91d.csv",
+  "sources": [
+    {
+      "label": "Canonical PaperTrader price cache and deterministic TA-Lib projection"
+    }
+  ],
+  "notes": [
+    "Adjusted OHLC aligns price history with indicators calculated from adjusted close.",
+    "Technical indicators are research alerts, not trade signals."
+  ]
+}
+```
+<!-- papertrader:technical-chart:end -->

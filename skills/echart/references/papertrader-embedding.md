@@ -57,6 +57,21 @@ For a successful applicable operation, add `visualization_review` to `agent_resu
 operation changes no primary research page, record the `no_page_change` omission. If no chart is
 warranted, leave `charts` empty and give at least one specific omission; never manufacture data.
 
+## Deterministic security technical chart
+
+Every security page has one repository-owned, marker-bounded schema-version-2 chart with
+`chart_id: "market-technicals"`. It is a stable reference to
+`data/market/technical/<security_id>.csv`; do not inline its daily rows, edit its identity, remove
+its markers, or rebuild it from research evidence. Preserve it when editing the page. The site
+build validates and hydrates the reference with adjusted OHLC, volume, Bollinger bands, SMA
+20/50/200, RSI 14, and MACD panels, then publishes the same local CSV as a download. The browser
+does not fetch remote or repository data.
+
+This deterministic baseline is not an agent-authored analytical chart. Exclude
+`market-technicals` from `visualization_review.charts`, and do not count it as satisfying the
+chartability pass. It remains one-way monitoring context and can never feed a conclusion or any
+trading or accounting state.
+
 Quartz renders valid blocks with its pinned local Apache ECharts asset. GitHub, feeds, and
 JavaScript-disabled browsers retain the JSON plus the surrounding prose, so descriptions, sources,
 units, and interpretation must remain understandable without the interactive view.

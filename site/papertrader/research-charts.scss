@@ -24,6 +24,10 @@
   margin: 0.75rem 0;
 }
 
+.research-chart--technical .research-chart__canvas {
+  min-height: 58rem;
+}
+
 .research-chart details {
   margin-top: 0.75rem;
 }
@@ -51,11 +55,19 @@
   .research-chart__canvas {
     min-height: 20rem;
   }
+
+  .research-chart--technical .research-chart__canvas {
+    min-height: 46rem;
+  }
 }
 
 @media print {
   .research-chart__canvas {
     min-height: 16rem;
+  }
+
+  .research-chart--technical .research-chart__canvas {
+    min-height: 42rem;
   }
 
   .research-chart details {
