@@ -1,0 +1,32 @@
+{
+  "operation_type": "relationship_research",
+  "entity_type": "relationship",
+  "entity_id": "relationship_01f2b253dcc4e062d0bb",
+  "dedupe_key": "relationship_research:idea_digital_finance_crypto_rails:security_98470cfc01bbcde78fc2:2026-09-02",
+  "prompt": "Review SoFi's causal relationship to digital finance and crypto rails.",
+  "inputs": {
+    "relationship_id": "relationship_01f2b253dcc4e062d0bb",
+    "idea_id": "idea_digital_finance_crypto_rails",
+    "security_id": "security_98470cfc01bbcde78fc2",
+    "proposed_direction": "positive",
+    "proposed_mechanism": "SoFi's integrated brokerage, crypto, payments, deposits and Galileo infrastructure could convert migration toward digital financial rails into more products per member, fee revenue and infrastructure economics.",
+    "proposed_invalidation": "Reject if digital-product adoption fails to improve consolidated per-member economics, regulatory costs overwhelm fee gains, or Technology Platform contraction prevents infrastructure monetization.",
+    "evidence_refs": [
+      "source_sofi_q2_2026_10q",
+      "source_sofi_q2_2026_results"
+    ]
+  },
+  "source": "security_research:01KZVTZDX0S3CMFAJHMVR58MDM",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": [
+    "01KZVTZDX0S3CMFAJHMVR58MDM"
+  ],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_98470cfc01bbcde78fc2.md",
+    "data/wiki/ideas/idea_digital_finance_crypto_rails.md"
+  ],
+  "max_attempts": 3
+}

@@ -1,0 +1,18 @@
+{
+  "source_id": "source_sofi_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1818874/000181887426000054/sofi-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1818874/000181887426000054/sofi-20260630.htm",
+  "source_type": "filing",
+  "title": "SoFi Technologies, Inc. quarterly report for the period ended June 30, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "public-record",
+  "status": "available",
+  "content_hash": "d7f2190d2e8682349665a9e7d422a35548e5cec63497a104663e549c91ffca90",
+  "related_entity_ids": "security_98470cfc01bbcde78fc2|idea_digital_finance_crypto_rails",
+  "checked_at": "2026-09-02T14:33:05Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "",
+  "summary": "SoFi's Q2 2026 filing reports 43% year-over-year net-revenue growth, 61% net-income growth, 15.8 million members, expanding deposits, lower consolidated capital ratios and a modest increase in the personal-loan fair-value default assumption.",
+  "run_id": "daily-20260902T142623Z"
+}

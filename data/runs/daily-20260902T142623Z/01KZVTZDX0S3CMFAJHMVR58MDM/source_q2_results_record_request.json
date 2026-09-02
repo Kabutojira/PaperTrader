@@ -1,0 +1,18 @@
+{
+  "source_id": "source_sofi_q2_2026_results",
+  "url": "https://www.sec.gov/Archives/edgar/data/1818874/000181887426000050/a2026q2earningsrelease.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1818874/000181887426000050/a2026q2earningsrelease.htm",
+  "source_type": "filing",
+  "title": "SoFi Technologies Reports Second Quarter 2026 Results",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "public-record",
+  "status": "available",
+  "content_hash": "1faf6a64f45f7ce7bfeb279aa5983e1d6281f6d99e859b92ce6d30affc46be1d",
+  "related_entity_ids": "security_98470cfc01bbcde78fc2|idea_digital_finance_crypto_rails",
+  "checked_at": "2026-09-02T14:33:05Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "",
+  "summary": "SoFi's Q2 2026 results release corroborates record quarterly net revenue and profitability while highlighting member, product and deposit growth and continued Technology Platform contraction.",
+  "run_id": "daily-20260902T142623Z"
+}

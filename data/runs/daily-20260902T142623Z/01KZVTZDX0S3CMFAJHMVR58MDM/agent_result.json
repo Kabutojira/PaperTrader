@@ -1,0 +1,108 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_98470cfc01bbcde78fc2",
+    "papertrader research source record --request data/runs/daily-20260902T142623Z/01KZVTZDX0S3CMFAJHMVR58MDM/source_q2_10q_record_request.json",
+    "papertrader research source record --request data/runs/daily-20260902T142623Z/01KZVTZDX0S3CMFAJHMVR58MDM/source_q2_results_record_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260902T142623Z/01KZVTZDX0S3CMFAJHMVR58MDM/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260902T142623Z/01KZVTZDX0S3CMFAJHMVR58MDM/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260902T142623Z/01KZVTZDX0S3CMFAJHMVR58MDM/assessment_upsert_request_v2.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260902T142623Z/01KZVTZDX0S3CMFAJHMVR58MDM/assessment_upsert_request_v3.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260902T142623Z/01KZVTZDX0S3CMFAJHMVR58MDM/assessment_upsert_request_v4.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260902T142623Z/01KZVTZDX0S3CMFAJHMVR58MDM/assessment_upsert_request_v5.json",
+    "papertrader queue enqueue --request data/runs/daily-20260902T142623Z/01KZVTZDX0S3CMFAJHMVR58MDM/relationship_enqueue_request.json",
+    "papertrader research security-context --security-id security_98470cfc01bbcde78fc2",
+    "papertrader wiki lint --strict",
+    "papertrader schema validate",
+    "papertrader queue validate",
+    "papertrader research security-context --security-id security_98470cfc01bbcde78fc2"
+  ],
+  "daily_report_items": [
+    "SOFI's 1 September close breached its lower Bollinger band, but current primary evidence did not show a new fundamental break. The lower USD 17.05 mark lifts expected return to 18.62% and produces a Buy rating, while inadequate downside payoff and a pending causal relationship keep allocation ineligible; one dependent digital-finance-rails relationship review was queued."
+  ],
+  "evidence": [
+    {
+      "claim": "The filed Q2 2026 Form 10-Q confirms USD 1.218676 billion of quarterly net revenue, USD 156.592 million of net income, USD 45.540 billion of deposits, a 15.3% SoFi Bank total risk-based capital ratio, and a 4.8% weighted-average personal-loan default assumption versus 4.5% at year-end.",
+      "observed_at": "2026-09-02T14:33:05Z",
+      "source": "source_sofi_q2_2026_10q",
+      "source_hash": "d7f2190d2e8682349665a9e7d422a35548e5cec63497a104663e549c91ffca90",
+      "url": "https://www.sec.gov/Archives/edgar/data/1818874/000181887426000054/sofi-20260630.htm"
+    },
+    {
+      "claim": "The canonical 2026-09-01 close was USD 17.049999237060547, below the USD 17.42 lower Bollinger band, with RSI 48.4 and no coincident SMA or MACD crossing; the alert is a risk/watch transition rather than evidence of a new fundamental event.",
+      "observed_at": "2026-09-02T14:26:30Z",
+      "source": "data/market/prices/security_98470cfc01bbcde78fc2.csv and data/market/indicators.csv"
+    },
+    {
+      "claim": "The current immutable assessment links predecessor assessment_1c9ade30dbdac5102ac3 and this operation, matches the current security-page hash, and is allocation-ineligible for bear_base_payoff_below_minimum, expected_bear_payoff_below_minimum, and relationship_pending.",
+      "source": "assessment_424f36db4f1c8f0973d8"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M1H9BSEG4PXDSJJGFZ62MNX9.json",
+    "data/runs/daily-20260902T142623Z/01KZVTZDX0S3CMFAJHMVR58MDM/assessment_upsert_request.json",
+    "data/runs/daily-20260902T142623Z/01KZVTZDX0S3CMFAJHMVR58MDM/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260902T142623Z/01KZVTZDX0S3CMFAJHMVR58MDM/assessment_upsert_request_v3.json",
+    "data/runs/daily-20260902T142623Z/01KZVTZDX0S3CMFAJHMVR58MDM/assessment_upsert_request_v4.json",
+    "data/runs/daily-20260902T142623Z/01KZVTZDX0S3CMFAJHMVR58MDM/assessment_upsert_request_v5.json",
+    "data/runs/daily-20260902T142623Z/01KZVTZDX0S3CMFAJHMVR58MDM/relationship_enqueue_request.json",
+    "data/runs/daily-20260902T142623Z/01KZVTZDX0S3CMFAJHMVR58MDM/security_upsert_request.json",
+    "data/runs/daily-20260902T142623Z/01KZVTZDX0S3CMFAJHMVR58MDM/source_q2_10q_record_request.json",
+    "data/runs/daily-20260902T142623Z/01KZVTZDX0S3CMFAJHMVR58MDM/source_q2_results_record_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_98470cfc01bbcde78fc2.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KZVTZDX0S3CMFAJHMVR58MDM",
+  "operations_created": [
+    "01M1H9BSEG4PXDSJJGFZ62MNX9"
+  ],
+  "status": "succeeded",
+  "summary": "Completed one bounded SoFi Technologies security review after the 2026-09-01 lower-Bollinger-band breach. Registered the Q2 Form 10-Q and refreshed the Q2 results source, updated the security page and structured security row, and accepted immutable assessment assessment_424f36db4f1c8f0973d8. At USD 17.049999237060547, unchanged bear/base/bull fair values of USD 11.25/USD 20.90/USD 32.00 at 30%/50%/20% produce USD 20.225 probability-weighted fair value, 18.6217061877524711325856672% expected return, and 13.9662796408143533494392504% confidence-adjusted expected return. The deterministic rating is Buy with an Initiate portfolio action, but allocation remains ineligible because bear/base and expected/bear payoff tests fail and the relationship is pending. Enqueued one dependent relationship review for the plausible digital-finance-and-crypto-rails edge. No strategy, signal, order, allocation, fill, execution, cash, portfolio, performance, or accounting state changed.",
+  "validation": {
+    "checks": [
+      "Mandatory pre- and post-upsert security-context commands succeeded.",
+      "Current assessment assessment_424f36db4f1c8f0973d8 has run_id daily-20260902T142623Z, source operation 01KZVTZDX0S3CMFAJHMVR58MDM, predecessor assessment_1c9ade30dbdac5102ac3, and a research-page hash matching the current page.",
+      "Current source, market-price and FX identities were accepted by the assessment CLI.",
+      "Identity and queue schemas validated; exactly one dependent candidate relationship review was created and no payload or accepted idea required an idea follow-up.",
+      "Strict wiki lint, schema validation, and queue validation passed.",
+      "All three echart fences validated during strict wiki lint and exactly match this visualization review.",
+      "No allocation, order, fill, execution, cash, portfolio, performance, or accounting state changed."
+    ],
+    "passed": true
+  },
+  "visualization_review": {
+    "charts": [
+      {
+        "chart_id": "sofi-quarterly-revenue-and-income",
+        "page_path": "data/wiki/securities/security_98470cfc01bbcde78fc2.md"
+      },
+      {
+        "chart_id": "sofi-bollinger-alert-window",
+        "page_path": "data/wiki/securities/security_98470cfc01bbcde78fc2.md"
+      },
+      {
+        "chart_id": "sofi-valuation-scenarios",
+        "page_path": "data/wiki/securities/security_98470cfc01bbcde78fc2.md"
+      }
+    ],
+    "completed": true,
+    "omissions": [
+      {
+        "dataset": "Like-for-like peer valuation",
+        "reason": "No bounded peer set shared a common instrument scope, as-of date, currency basis, and valuation definition.",
+        "reason_code": "insufficient_comparability"
+      },
+      {
+        "dataset": "Industrial-style free cash flow",
+        "reason": "Bank-style loan-acquisition cash flows are not comparable to industrial free cash flow; capital, credit and book value are the relevant financial-company evidence.",
+        "reason_code": "not_decision_relevant"
+      }
+    ]
+  }
+}
