@@ -8,6 +8,7 @@ import ResearchCharts from "./papertrader/components/ResearchCharts";
 const dashboardPages = new Set([
   "index",
   "model-portfolio",
+  "security-catalog",
   "signals",
   "performance",
   "system-status",

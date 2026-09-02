@@ -1,11 +1,23 @@
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import replace
+from datetime import date
 from pathlib import Path
 
-from papertrader.advice import ActionableSignalView, ModelPortfolioRow
-from papertrader.investor_pages import _portfolio_html, _signal_detail
+from papertrader.advice import ActionableSignalView, ModelPortfolioRow, load_published_snapshot
+from papertrader.investor_pages import (
+    SECURITY_TABLE_COLUMNS,
+    _column_header,
+    _currency_amount,
+    _data_fx_update,
+    _portfolio_html,
+    _rounded_percentage,
+    _securities_page,
+    _signal_detail,
+    _utc_day,
+)
 
 
 def test_market_signal_detail_has_no_empty_limit_suffix() -> None:
@@ -44,6 +56,58 @@ def test_market_signal_detail_has_no_empty_limit_suffix() -> None:
 
     assert "- **Order:** market" in lines
     assert all(line == line.rstrip() for line in lines)
+
+
+def test_securities_table_display_helpers_are_deterministic_and_safe() -> None:
+    assert _rounded_percentage("12.6") == "13%"
+    assert _rounded_percentage("-12.6") == "-13%"
+    assert _rounded_percentage("2.5") == "2%"
+    assert _rounded_percentage("3.5") == "4%"
+    assert _rounded_percentage("") == "—"
+    assert _utc_day("2026-09-01T18:13:42Z") == "2026-09-01"
+    assert _utc_day("") == "—"
+    assert _data_fx_update("2026-09-01T18:13:42Z", "") == "2026-09-01 / —"
+    assert _data_fx_update("", "") == "— / —"
+    assert _currency_amount("69.440", "USD", label="fixture") == "69.44 USD"
+    assert _currency_amount("", "USD", label="fixture") == "—"
+
+    header = _column_header("safe-key", "<Price>", 'Latest "price" & currency.')
+    assert "<Price>" not in header
+    assert "&lt;Price&gt;" in header
+    assert "&quot;price&quot; &amp; currency." in header
+    assert 'aria-describedby="security-column-help-safe-key"' in header
+    assert 'role="tooltip"' in header
+
+
+def test_securities_page_has_readable_columns_and_accessible_header_help(
+    repository_root: Path,
+) -> None:
+    snapshot = load_published_snapshot(repository_root)
+    rendered = _securities_page(
+        repository_root,
+        snapshot,
+        date.fromisoformat(snapshot.report_date),
+    )
+    header = next(line for line in rendered.splitlines() if 'class="column-heading"' in line)
+    tooltip_ids = re.findall(r'aria-describedby="([^"]+)"', header)
+
+    assert len(SECURITY_TABLE_COLUMNS) == 10
+    assert header.count('class="column-heading"') == 10
+    assert header.count('class="column-help"') == 10
+    assert len(tooltip_ids) == len(set(tooltip_ids)) == 10
+    assert all(f'id="{tooltip_id}"' in header for tooltip_id in tooltip_ids)
+    for _key, label, description, _alignment in SECURITY_TABLE_COLUMNS:
+        assert label in header
+        assert description.replace("'", "&#x27;") in header
+
+    assert "Venue" not in header
+    assert "Native mark" not in header
+    assert "Base mark" not in header
+    assert "Expected return" in header
+    assert "Last data/FX update" in header
+    assert "—%" not in rendered
+    assert re.search(r"\| -?\d+(?:\.\d+)? [A-Z]{3} \| \d{4}-\d{2}-\d{2} /", rendered)
+    assert not re.search(r"\| \d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z /", rendered)
 
 
 def test_portfolio_cards_escape_untrusted_labels_and_expose_scaler_references() -> None:
@@ -151,6 +215,10 @@ def test_dashboard_progressive_enhancement_is_local_and_long_equity_only(
     assert 'body[data-slug="index"] .page-footer' in styles
     assert "grid-template-columns: repeat(2, minmax(0, 1fr))" in styles
     assert ":focus-visible" in styles
+    assert ".column-help-tooltip" in styles
+    assert "&:focus .column-help-tooltip" in styles
+    assert 'body[data-slug="security-catalog"]' in styles
+    assert "min-width: 82rem" in styles
 
 
 def test_quartz_uses_external_dashboard_source_and_validated_publication_copy(
@@ -168,6 +236,7 @@ def test_quartz_uses_external_dashboard_source_and_validated_publication_copy(
     assert (site / "papertrader" / "components" / "DecisionNavigation.tsx").is_file()
     assert "./papertrader/components/DecisionNavigation" in layout
     assert "condition: (page) => !isDashboardPage(page)" in layout
+    assert '"security-catalog",' in layout
     assert '{ label: "Securities", slug: "security-catalog" }' in navigation
     assert '{ label: "Securities", slug: "securities" }' not in navigation
     assert '{ label: "Ideas", slug: "ideas", collectionPrefix: "ideas/" }' in navigation

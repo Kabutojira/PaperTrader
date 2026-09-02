@@ -7,7 +7,7 @@ from collections import defaultdict
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass, replace
 from datetime import date
-from decimal import Decimal
+from decimal import ROUND_HALF_EVEN, Decimal
 from html import escape
 from pathlib import Path, PurePosixPath
 
@@ -116,6 +116,72 @@ ACTION_STATUS_LABELS = {
     "no_action": "No action",
 }
 RESEARCH_DECISION_CONCLUSION_MAX_CHARS = 350
+SECURITY_TABLE_COLUMNS = (
+    (
+        "security",
+        "Security",
+        "Ticker and company name. Opens the maintained security research page.",
+        "---",
+    ),
+    (
+        "price",
+        "Price",
+        "Latest committed daily market price in the security's listing currency; "
+        "this is not a live quote.",
+        "---:",
+    ),
+    (
+        "rating-action",
+        "Rating / action",
+        "Canonical research rating and the context-aware model-portfolio action.",
+        "---",
+    ),
+    (
+        "decision",
+        "Decision",
+        "Current deterministic classification for portfolio eligibility.",
+        "---",
+    ),
+    (
+        "main-reason",
+        "Main reason",
+        "Primary reason or blocker behind the current decision.",
+        "---",
+    ),
+    (
+        "scenarios",
+        "Bear / base / bull",
+        "Estimated returns for the three valuation scenarios, rounded to whole percentage points.",
+        "---:",
+    ),
+    (
+        "expected-return",
+        "Expected return",
+        "Probability-weighted scenario return over the assessment horizon, before "
+        "confidence adjustment, rounded to a whole percentage point.",
+        "---:",
+    ),
+    (
+        "buy-below",
+        "Buy below",
+        "Base-case fair value less the configured margin of safety, in the security's "
+        "listing currency.",
+        "---:",
+    ),
+    (
+        "last-update",
+        "Last data/FX update",
+        "UTC dates when market data and, after the slash, the FX rate were last "
+        "retrieved. The dates match when no currency conversion is required.",
+        "---",
+    ),
+    (
+        "next-review",
+        "Next review",
+        "UTC date when the assessment should be reviewed again.",
+        "---",
+    ),
+)
 
 
 def _markdown(value: str) -> str:
@@ -137,6 +203,43 @@ def _html(value: str) -> str:
 
 def _cell(value: str) -> str:
     return _markdown(value) or "—"
+
+
+def _column_header(key: str, label: str, description: str) -> str:
+    if not re.fullmatch(r"[a-z][a-z0-9-]*", key):
+        raise CanonicalValueError(f"invalid security table column key: {key}")
+    tooltip_id = f"security-column-help-{key}"
+    return (
+        f'<span class="column-heading">{_html(label)} '
+        f'<button type="button" class="column-help" aria-label="{_html(f"About {label}")}" '
+        f'aria-describedby="{tooltip_id}"><span aria-hidden="true">?</span>'
+        f'<span id="{tooltip_id}" class="column-help-tooltip" role="tooltip">'
+        f"{_html(description)}</span></button></span>"
+    )
+
+
+def _rounded_percentage(value: str) -> str:
+    if not value:
+        return "—"
+    percentage = required_decimal(value, label="security dashboard return")
+    rounded = percentage.quantize(Decimal("1"), rounding=ROUND_HALF_EVEN)
+    return f"{decimal_text(rounded)}%"
+
+
+def _utc_day(value: str) -> str:
+    instant = parse_timestamp(value, allow_empty=True)
+    return instant.date().isoformat() if instant is not None else "—"
+
+
+def _data_fx_update(data_as_of: str, fx_as_of: str) -> str:
+    return f"{_utc_day(data_as_of)} / {_utc_day(fx_as_of)}"
+
+
+def _currency_amount(value: str, currency: str, *, label: str) -> str:
+    if not value:
+        return "—"
+    amount = required_decimal(value, label=label)
+    return f"{decimal_text(amount)} {_cell(currency)}"
 
 
 def _page_key(research_page: str) -> str:
@@ -1010,7 +1113,7 @@ def _performance_page(snapshot: DecisionSnapshot, day: date) -> str:
 
 
 def _securities_page(repository_root: Path, snapshot: DecisionSnapshot, day: date) -> str:
-    """Render every tracked instrument with direct research and FX-transparent marks."""
+    """Render every tracked instrument with readable valuation and freshness context."""
 
     as_of = parse_timestamp(snapshot.as_of)
     assert as_of is not None
@@ -1033,12 +1136,19 @@ def _securities_page(repository_root: Path, snapshot: DecisionSnapshot, day: dat
         "",
         f"**As of `{snapshot.as_of}`**",
         "",
-        "Ticker links open the maintained security analysis. Native marks are converted "
-        f"to {snapshot.base_currency} with the displayed committed FX observation.",
+        "Ticker links open the maintained security analysis. Prices and buy-below levels "
+        "use each security's listing currency. Return estimates are rounded to whole "
+        "percentage points, and update dates are shown in UTC.",
         "",
-        "| Security | Venue | Native mark | Base mark | Rating / action | Decision | Main reason | "
-        "Bear / base / bull | Expected | Buy below | Data and FX as of | Next review |",
-        "| --- | --- | ---: | ---: | --- | --- | --- | ---: | ---: | ---: | --- | --- |",
+        "| "
+        + " | ".join(
+            _column_header(key, label, description)
+            for key, label, description, _alignment in SECURITY_TABLE_COLUMNS
+        )
+        + " |",
+        "| "
+        + " | ".join(alignment for _key, _label, _description, alignment in SECURITY_TABLE_COLUMNS)
+        + " |",
     ]
     for security in sorted(
         read_table(repository_root, "securities"),
@@ -1048,15 +1158,12 @@ def _securities_page(repository_root: Path, snapshot: DecisionSnapshot, day: dat
         assessment = assessments.get(security["security_id"])
         candidate = candidates.get(security["security_id"])
         mark_text = "—"
-        base_mark_text = "—"
-        data_as_of = "—"
+        data_as_of = "— / —"
         if market is not None and market["status"] == "ok":
             raw_mark = market["adjusted_close"] or market["close"]
             mark = required_decimal(raw_mark, label="security dashboard mark")
-            fx_rate: Decimal | None = None
             fx_as_of = ""
             if security["currency"] == snapshot.base_currency:
-                fx_rate = Decimal("1")
                 fx_as_of = market["retrieved_at"]
             else:
                 rates = [
@@ -1068,30 +1175,29 @@ def _securities_page(repository_root: Path, snapshot: DecisionSnapshot, day: dat
                 ]
                 if rates:
                     fx = max(rates, key=lambda value: (value.date, value.retrieved_at))
-                    fx_rate = fx.rate_to_base
                     fx_as_of = format_timestamp(fx.retrieved_at)
             display_mark = mark.quantize(Decimal("0.0001"))
             mark_text = f"{decimal_text(display_mark)} {security['currency']}"
-            if fx_rate is not None:
-                base_mark = (mark * fx_rate).quantize(Decimal("0.0001"))
-                base_mark_text = f"{decimal_text(base_mark)} {snapshot.base_currency}"
-            data_as_of = market["retrieved_at"]
-            if fx_as_of:
-                data_as_of += f" / FX {fx_as_of}"
+            data_as_of = _data_fx_update(market["retrieved_at"], fx_as_of)
         decision = "Unassessed"
         reason = "—"
         scenario = "— / — / —"
         expected_return = "—"
         buy_below = "—"
         rating_action = "Unrated / Watch"
-        review = security["next_review_at"] or "—"
+        review = security["next_review_at"]
         if assessment is not None:
             bear_return = assessment.get("bear_return_pct") or assessment["downside_pct"]
             base_return = assessment.get("base_return_pct") or assessment["base_upside_pct"]
-            bull_return = assessment.get("bull_return_pct") or "—"
-            scenario = f"{bear_return}% / {base_return}% / {bull_return}%"
-            expected_return = f"{assessment.get('expected_return_pct') or '—'}%"
-            buy_below = assessment.get("buy_below_price") or "—"
+            bull_return = assessment.get("bull_return_pct") or ""
+            scenario = " / ".join(
+                _rounded_percentage(value) for value in (bear_return, base_return, bull_return)
+            )
+            expected_return = _rounded_percentage(assessment.get("expected_return_pct") or "")
+            buy_below_price = assessment.get("buy_below_price") or ""
+            buy_below = _currency_amount(
+                buy_below_price, security["currency"], label="buy-below price"
+            )
             rating = assessment.get("canonical_rating") or "unrated"
             action = assessment.get("portfolio_action") or "watch"
             rating_action = f"{RATING_LABELS[rating]} / {PORTFOLIO_ACTION_LABELS[action]}"
@@ -1104,10 +1210,9 @@ def _securities_page(repository_root: Path, snapshot: DecisionSnapshot, day: dat
         anchor = f'<span id="security-{security["security_id"]}"></span>'
         lines.append(
             f"| {anchor}{_link(label, _security_public_page(security))} | "
-            f"{_cell(security['venue_mic'])} · {_cell(security['status'])} | "
-            f"{mark_text} | {base_mark_text} | {_cell(rating_action)} | {_cell(decision)} | "
+            f"{mark_text} | {_cell(rating_action)} | {_cell(decision)} | "
             f"{_cell(reason)} | {scenario} | {expected_return} | {buy_below} | "
-            f"{_cell(data_as_of)} | {_cell(review)} |"
+            f"{_cell(data_as_of)} | {_cell(_utc_day(review))} |"
         )
     lines.extend(["", "[[index|Back to today's decision]]", ""])
     return "\n".join(lines)

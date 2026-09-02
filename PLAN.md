@@ -935,3 +935,11 @@ Canonicalized the Ideas and Podcasts collection links with trailing slashes so Q
 navigation cannot retain an extensionless folder URL and resolve subsequent relative links outside
 the `/PaperTrader` project path. Extended the generated-site checker to reject non-canonical
 directory links and cover this GitHub Pages failure mode in tests.
+
+## Follow-up — Improve Securities table readability — Complete (2026-09-02)
+
+Simplified the investor-facing Securities table to ten decision-relevant columns, displayed prices
+and buy-below levels in listing currency, rounded scenario and expected returns to whole percentage
+points, and reduced freshness and review timestamps to UTC dates. Added accessible explanatory help
+to every header and a wide, sidebar-free Quartz layout while retaining horizontal scrolling on
+narrow screens. Canonical market, FX, assessment, and valuation values remain unchanged.

@@ -195,9 +195,74 @@
   background: color-mix(in srgb, var(--light) 97%, var(--secondary));
 }
 
+.column-heading {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.column-help {
+  position: relative;
+  display: inline-grid;
+  width: 1.1rem;
+  height: 1.1rem;
+  padding: 0;
+  place-items: center;
+  border: 1px solid var(--gray);
+  border-radius: 50%;
+  color: var(--darkgray);
+  background: var(--light);
+  cursor: help;
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 750;
+  line-height: 1;
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    border-color: var(--secondary);
+    color: var(--secondary);
+    outline: 2px solid var(--secondary);
+    outline-offset: 2px;
+  }
+
+  &:hover .column-help-tooltip,
+  &:focus .column-help-tooltip,
+  &:focus-visible .column-help-tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.column-help-tooltip {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 0.5rem);
+  left: 50%;
+  visibility: hidden;
+  width: max-content;
+  max-width: min(19rem, 70vw);
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--gray);
+  border-radius: 0.45rem;
+  color: var(--dark);
+  background: var(--light);
+  box-shadow: 0 0.35rem 1rem rgb(0 0 0 / 16%);
+  font-size: 0.78rem;
+  font-weight: 500;
+  line-height: 1.35;
+  opacity: 0;
+  pointer-events: none;
+  text-align: left;
+  transform: translateX(-50%);
+  white-space: normal;
+}
+
 body:is(
   [data-slug="index"],
   [data-slug="model-portfolio"],
+  [data-slug="security-catalog"],
   [data-slug="signals"],
   [data-slug="performance"],
   [data-slug="system-status"]
@@ -211,6 +276,30 @@ body:is(
 
   .sidebar.right {
     display: none;
+  }
+}
+
+body[data-slug="security-catalog"] {
+  .page > #quartz-body {
+    grid-template:
+      "grid-header"
+      "grid-center"
+      "grid-footer" / minmax(0, 1fr);
+  }
+
+  .sidebar.left,
+  .sidebar.right {
+    display: none;
+  }
+
+  article .table-container {
+    max-width: 100%;
+
+    > table {
+      min-width: 82rem;
+      margin-right: 0;
+      margin-left: 0;
+    }
   }
 }
 
@@ -242,6 +331,7 @@ body[data-slug="index"] .page-footer {
   body:is(
       [data-slug="index"],
       [data-slug="model-portfolio"],
+      [data-slug="security-catalog"],
       [data-slug="signals"],
       [data-slug="performance"],
       [data-slug="system-status"]
