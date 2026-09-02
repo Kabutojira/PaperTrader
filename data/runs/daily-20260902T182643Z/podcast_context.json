@@ -1,0 +1,182 @@
+{
+  "background_wiki_pages": [
+    {
+      "path": "data/wiki/ideas/idea_ai_native_smb_financial_operating_systems.md",
+      "sha256": "7cdaa146fbe515e90fab4830b2ad878104d2c55465d0e7a00687c58940cabd42"
+    },
+    {
+      "path": "data/wiki/ideas/idea_digital_finance_crypto_rails.md",
+      "sha256": "9564ec63c936fb967b8a92800eb2140e2f1fa90250a3d41f095a1924b6cbb9a3"
+    },
+    {
+      "path": "data/wiki/securities/security_1e8fbdb0f45f2b413e00.md",
+      "sha256": "003c05564e4847f22a4648fb83530c5ede2e0406208b71b7c1d3d956bf7311a8"
+    }
+  ],
+  "changed_wiki_pages": [
+    {
+      "path": "data/wiki/securities/security_98470cfc01bbcde78fc2.md",
+      "sha256": "8e25791607d874769abcf9aa1b98f0ceda6152de96f33af0132e5745416798b3"
+    }
+  ],
+  "daily_cycle_id": "daily-20260902T182643Z",
+  "decision_snapshot_path": "data/runs/daily-20260902T182643Z/decision_snapshot.json",
+  "decision_snapshot_sha256": "4e3278b5f96c3880a3d6eae2cd936a2cfc8b60b092d6fcb5c88b07c32d41efe3",
+  "generated_at": "2026-09-02T18:54:09Z",
+  "intervening_daily_cycles": [
+    "daily-20260902T142623Z",
+    "daily-20260902T155436Z",
+    "daily-20260902T182643Z"
+  ],
+  "page_path": "data/wiki/podcasts/daily-podcast_20260902T182643Z.md",
+  "podcast_context_version": 3,
+  "portfolio_implication_paths": [
+    "data/runs/daily-20260902T182643Z/decision_snapshot.json",
+    "data/wiki/daily-reports/daily-report_20260902.md"
+  ],
+  "previous_successful_podcast": {
+    "context_path": "data/runs/daily-20260901T181335Z/podcast_context.json",
+    "context_sha256": "ee38355e6cbfa07738228c4c83763d9077c6127c54a0682ecf36fa5f67d507dc",
+    "daily_cycle_id": "daily-20260901T181335Z",
+    "page_path": "data/wiki/podcasts/daily-podcast_20260901T181335Z.md",
+    "page_sha256": "5d2fa59a0044aa3c99d9c7b14657a6a09e16abbcf98cfcc86312d9cde9235e59",
+    "research_cutoff_at": "2026-09-01T18:22:02Z"
+  },
+  "report_path": "data/wiki/daily-reports/daily-report_20260902.md",
+  "report_sha256": "489c286c5cb172bc6d7cf9fdcce6878acfa567fae1a67a8e40891de7182d5ed1",
+  "research_cutoff_at": "2026-09-02T18:45:21Z",
+  "research_developments": [
+    {
+      "completed_at": "2026-09-02T14:51:11Z",
+      "daily_cycle_id": "daily-20260902T142623Z",
+      "daily_report_items": [
+        "SOFI's 1 September close breached its lower Bollinger band, but current primary evidence did not show a new fundamental break. The lower USD 17.05 mark lifts expected return to 18.62% and produces a Buy rating, while inadequate downside payoff and a pending causal relationship keep allocation ineligible; one dependent digital-finance-rails relationship review was queued."
+      ],
+      "entity_id": "security_98470cfc01bbcde78fc2",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The filed Q2 2026 Form 10-Q confirms USD 1.218676 billion of quarterly net revenue, USD 156.592 million of net income, USD 45.540 billion of deposits, a 15.3% SoFi Bank total risk-based capital ratio, and a 4.8% weighted-average personal-loan default assumption versus 4.5% at year-end.",
+          "observed_at": "2026-09-02T14:33:05Z",
+          "source": "source_sofi_q2_2026_10q",
+          "source_hash": "d7f2190d2e8682349665a9e7d422a35548e5cec63497a104663e549c91ffca90",
+          "url": "https://www.sec.gov/Archives/edgar/data/1818874/000181887426000054/sofi-20260630.htm"
+        },
+        {
+          "claim": "The canonical 2026-09-01 close was USD 17.049999237060547, below the USD 17.42 lower Bollinger band, with RSI 48.4 and no coincident SMA or MACD crossing; the alert is a risk/watch transition rather than evidence of a new fundamental event.",
+          "observed_at": "2026-09-02T14:26:30Z",
+          "source": "data/market/prices/security_98470cfc01bbcde78fc2.csv and data/market/indicators.csv"
+        },
+        {
+          "claim": "The current immutable assessment links predecessor assessment_1c9ade30dbdac5102ac3 and this operation, matches the current security-page hash, and is allocation-ineligible for bear_base_payoff_below_minimum, expected_bear_payoff_below_minimum, and relationship_pending.",
+          "source": "assessment_424f36db4f1c8f0973d8"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1H9BSEG4PXDSJJGFZ62MNX9.json",
+        "data/runs/daily-20260902T142623Z/01KZVTZDX0S3CMFAJHMVR58MDM/assessment_upsert_request.json",
+        "data/runs/daily-20260902T142623Z/01KZVTZDX0S3CMFAJHMVR58MDM/assessment_upsert_request_v2.json",
+        "data/runs/daily-20260902T142623Z/01KZVTZDX0S3CMFAJHMVR58MDM/assessment_upsert_request_v3.json",
+        "data/runs/daily-20260902T142623Z/01KZVTZDX0S3CMFAJHMVR58MDM/assessment_upsert_request_v4.json",
+        "data/runs/daily-20260902T142623Z/01KZVTZDX0S3CMFAJHMVR58MDM/assessment_upsert_request_v5.json",
+        "data/runs/daily-20260902T142623Z/01KZVTZDX0S3CMFAJHMVR58MDM/relationship_enqueue_request.json",
+        "data/runs/daily-20260902T142623Z/01KZVTZDX0S3CMFAJHMVR58MDM/security_upsert_request.json",
+        "data/runs/daily-20260902T142623Z/01KZVTZDX0S3CMFAJHMVR58MDM/source_q2_10q_record_request.json",
+        "data/runs/daily-20260902T142623Z/01KZVTZDX0S3CMFAJHMVR58MDM/source_q2_results_record_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_98470cfc01bbcde78fc2.md"
+      ],
+      "operation_id": "01KZVTZDX0S3CMFAJHMVR58MDM",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260902T142623Z/01KZVTZDX0S3CMFAJHMVR58MDM/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed one bounded SoFi Technologies security review after the 2026-09-01 lower-Bollinger-band breach. Registered the Q2 Form 10-Q and refreshed the Q2 results source, updated the security page and structured security row, and accepted immutable assessment assessment_424f36db4f1c8f0973d8. At USD 17.049999237060547, unchanged bear/base/bull fair values of USD 11.25/USD 20.90/USD 32.00 at 30%/50%/20% produce USD 20.225 probability-weighted fair value, 18.6217061877524711325856672% expected return, and 13.9662796408143533494392504% confidence-adjusted expected return. The deterministic rating is Buy with an Initiate portfolio action, but allocation remains ineligible because bear/base and expected/bear payoff tests fail and the relationship is pending. Enqueued one dependent relationship review for the plausible digital-finance-and-crypto-rails edge. No strategy, signal, order, allocation, fill, execution, cash, portfolio, performance, or accounting state changed."
+    }
+  ],
+  "run_id": "daily-20260902T182643Z",
+  "target_minutes": 20,
+  "target_words": 3000,
+  "unresolved_research_gaps": [
+    {
+      "completed_at": "2026-09-02T15:07:32Z",
+      "daily_cycle_id": "daily-20260902T142623Z",
+      "daily_report_items": [],
+      "entity_id": "security_c120e9f26ebb6159adf9",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "completed security research requires exactly one immutable assessment version",
+          "source": "data/runs/daily-20260902T142623Z/01M07XKZS0JKBQM0THMPJGWEK5/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "completed security research requires exactly one immutable assessment version"
+      ],
+      "files_changed": [],
+      "operation_id": "01M07XKZS0JKBQM0THMPJGWEK5",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260902T142623Z/01M07XKZS0JKBQM0THMPJGWEK5/validation_report.json",
+      "status": "failed",
+      "summary": "The accepted research did not produce a valid result."
+    },
+    {
+      "completed_at": "2026-09-02T16:11:57Z",
+      "daily_cycle_id": "daily-20260902T155436Z",
+      "daily_report_items": [],
+      "entity_id": "security_c120e9f26ebb6159adf9",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "files_changed claims paths absent from the actual delta: ['data/operations/operations_TODO.csv']",
+          "source": "data/runs/daily-20260902T155436Z/01M07XKZS0JKBQM0THMPJGWEK5/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "files_changed claims paths absent from the actual delta: ['data/operations/operations_TODO.csv']"
+      ],
+      "files_changed": [],
+      "operation_id": "01M07XKZS0JKBQM0THMPJGWEK5",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260902T155436Z/01M07XKZS0JKBQM0THMPJGWEK5/validation_report.json",
+      "status": "failed",
+      "summary": "The accepted research did not produce a valid result."
+    },
+    {
+      "completed_at": "2026-09-02T18:44:52Z",
+      "daily_cycle_id": "daily-20260902T182643Z",
+      "daily_report_items": [],
+      "entity_id": "security_c150f31c30afdb4a85f9",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "visualization_review charts do not match chart ids in changed research pages: expected [('data/wiki/securities/security_c150f31c30afdb4a85f9.md', 'valuation-scenarios')], got [('data/wiki/securities/security_c150f31c30afdb4a85f9.md', 'crox-valuation-scenarios-20260902')]",
+          "source": "data/runs/daily-20260902T182643Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "visualization_review charts do not match chart ids in changed research pages: expected [('data/wiki/securities/security_c150f31c30afdb4a85f9.md', 'valuation-scenarios')], got [('data/wiki/securities/security_c150f31c30afdb4a85f9.md', 'crox-valuation-scenarios-20260902')]"
+      ],
+      "files_changed": [],
+      "operation_id": "01M0WSFGEG1A2CFQ7VMV3TJAN3",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260902T182643Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/validation_report.json",
+      "status": "failed",
+      "summary": "The accepted research did not produce a valid result."
+    }
+  ],
+  "wiki_orientation_paths": [
+    "data/wiki/SCHEMA.md",
+    "data/wiki/index.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/log.md"
+  ],
+  "window_mode": "since_previous_successful_podcast",
+  "window_start_exclusive": "2026-09-01T18:22:02Z"
+}

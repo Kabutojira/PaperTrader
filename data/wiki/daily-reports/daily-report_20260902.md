@@ -148,6 +148,7 @@ No pending orders.
 - [[performance|PaperTrader performance and risk]]
 - [[research-catalog|PaperTrader research catalog]]
 - [[securities/security_98470cfc01bbcde78fc2|SoFi Technologies, Inc. common stock]]
+- [[podcasts/daily-podcast_20260902T182643Z|Daily research podcast — 2026-09-02T182643Z]]
 - [[security-catalog|PaperTrader tracked securities]]
 - [[signals|PaperTrader signals and research alerts]]
 - [[system-status|PaperTrader system status and audit]]

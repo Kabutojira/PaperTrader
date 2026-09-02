@@ -1,0 +1,59 @@
+{
+  "commands_run": [
+    "papertrader podcast validate-script --daily-cycle-id daily-20260902T182643Z --script-path data/wiki/podcasts/daily-podcast_20260902T182643Z.md",
+    "papertrader podcast render-draft --daily-cycle-id daily-20260902T182643Z --script-path data/wiki/podcasts/daily-podcast_20260902T182643Z.md",
+    "papertrader schema validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader queue validate",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Published the 2,769-word daily research podcast on SoFi's growth, credit asymmetry, and current Buy-but-not-actionable conclusion; the single ephemeral draft render succeeded."
+  ],
+  "evidence": [
+    {
+      "claim": "Controller-validated frozen context version three identifies one successful SoFi research development, three failed developments excluded from accepted narration, the prior successful podcast, the exact report path, and the exact timestamped transcript path.",
+      "source": "data/runs/daily-20260902T182643Z/podcast_context.json"
+    },
+    {
+      "claim": "Accepted SoFi research records the latest filing evidence, market alert, scenario valuation, canonical Buy rating, failed payoff gates, and pending relationship gate used in the episode.",
+      "source": "data/runs/daily-20260902T142623Z/01KZVTZDX0S3CMFAJHMVR58MDM/agent_result.json"
+    },
+    {
+      "claim": "The maintained SoFi page supplies the business model, deposit funding, second-quarter operating results, credit assumptions, capital evidence, valuation scenarios, catalysts, risks, and rating-change conditions.",
+      "source": "data/wiki/securities/security_98470cfc01bbcde78fc2.md"
+    },
+    {
+      "claim": "The maintained idea page establishes why thematic proximity to digital-finance rails is not yet an accepted causal edge for SoFi.",
+      "source": "data/wiki/ideas/idea_digital_finance_crypto_rails.md"
+    },
+    {
+      "claim": "The frozen decision snapshot confirms SoFi's current Buy rating, medium confidence, zero target weight, USD 16.72 buy-below reference, failed bear/base and expected/bear payoff gates, and pending relationship status.",
+      "source": "data/runs/daily-20260902T182643Z/decision_snapshot.json"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260902T182643Z/01M1HQHC3869TTDFMTATHY0NPY/editorial_outline.md",
+    "data/wiki/daily-reports/daily-report_20260902.md",
+    "data/wiki/podcasts/daily-podcast_20260902T182643Z.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M1HQHC3869TTDFMTATHY0NPY",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Produced a standalone 2,769-word episode centered on SoFi's lower-Bollinger-band decline, deposit-funded growth, credit tension, book-value valuation, and the distinction between a Buy rating and an investable payoff. The single chapter covers SoFi's accepted Buy rating, why failed downside-payoff and pending-relationship gates still prevent a position, the roughly USD 16.72 buy-below reference, and the credit, funding, capital, per-share book-value, Technology Platform, and dilution conditions that could support or reverse the rating. Excluded three failed security-research attempts because they are unresolved gaps rather than accepted developments; prior podcast coverage contained no substantially duplicate SoFi chapter. The refined script passed deterministic preflight at 2,769 words in five TTS chunks, and the single audited render-draft attempt succeeded with a 1,188-second ephemeral draft. Added exactly one transcript link to the daily report and no audio reference.",
+  "validation": {
+    "checks": [
+      "Frozen payload, context, and daily manifest visibly agree on data/wiki/podcasts/daily-podcast_20260902T182643Z.md.",
+      "Candidate slate maps the one accepted SoFi development to exactly one chapter and excludes unresolved failed research attempts.",
+      "Episode uses the exact required opening, teaser opening, section order, SoFi rating ending, overall synthesis, and exact required greetings.",
+      "Deterministic script validation passed with 2,769 spoken words, at least eight prose paragraphs, five TTS chunks, and no forbidden spoken formatting or numeric glyphs.",
+      "The daily report contains exactly the required timestamped transcript link and no audio link.",
+      "Exactly one audited render-draft invocation succeeded, producing an ephemeral 1,188-second draft outside the repository.",
+      "Strict schema, integrity, wiki, queue, and portfolio checks passed.",
+      "No allocation, signal, order, fill, execution, cash, portfolio, or performance state was changed by the routed operation."
+    ],
+    "passed": true
+  }
+}
