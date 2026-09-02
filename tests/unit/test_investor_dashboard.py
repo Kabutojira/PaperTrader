@@ -172,11 +172,14 @@ def test_quartz_uses_external_dashboard_source_and_validated_publication_copy(
     assert '{ label: "Securities", slug: "securities" }' not in navigation
     assert '{ label: "Ideas", slug: "ideas", collectionPrefix: "ideas/" }' in navigation
     assert '{ label: "Podcasts", slug: "podcasts", collectionPrefix: "podcasts/" }' in navigation
+    assert '"collectionPrefix" in link' in navigation
+    assert "`${slug}/index`" in navigation
+    assert "href={resolveRelative(current, destination)}" in navigation
     assert 'title: "Recently explored ideas"' in layout
     assert 'title: "Latest podcast transcripts"' in layout
     assert layout.count("limit: 3") == 2
-    assert 'linkToMore: "ideas" as SimpleSlug' in layout
-    assert 'linkToMore: "podcasts" as SimpleSlug' in layout
+    assert 'linkToMore: "ideas/" as SimpleSlug' in layout
+    assert 'linkToMore: "podcasts/" as SimpleSlug' in layout
     assert '"papertrader/**/*.ts"' in tsconfig
     assert '"papertrader/**/*.tsx"' in tsconfig
     assert "prettier quartz.config.ts quartz.layout.ts papertrader" in package

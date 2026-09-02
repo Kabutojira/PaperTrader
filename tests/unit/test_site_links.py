@@ -63,3 +63,23 @@ def test_generated_site_links_report_missing_and_outside_base_targets(tmp_path: 
         "daily-reports/report.html: /outside-project -> /outside-project",
         "ERROR: 3 broken internal site link(s)",
     ]
+
+
+def test_generated_site_links_require_canonical_directory_routes(tmp_path: Path) -> None:
+    _write(
+        tmp_path / "index.html",
+        """
+        <a href="./ideas">Non-canonical folder link</a>
+        <a href="./podcasts/">Canonical folder link</a>
+        """,
+    )
+    _write(tmp_path / "ideas" / "index.html")
+    _write(tmp_path / "podcasts" / "index.html")
+
+    result = _check(tmp_path)
+
+    assert result.returncode == 1
+    assert result.stdout.splitlines() == [
+        "index.html: ./ideas -> /PaperTrader/ideas",
+        "ERROR: 1 broken internal site link(s)",
+    ]

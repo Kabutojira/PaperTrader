@@ -29,7 +29,7 @@ const isCollectionPage = (
 const recentIdeas = Component.RecentNotes({
   title: "Recently explored ideas",
   limit: 3,
-  linkToMore: "ideas" as SimpleSlug,
+  linkToMore: "ideas/" as SimpleSlug,
   showTags: false,
   filter: (page) =>
     page.slug?.startsWith("ideas/") === true &&
@@ -39,7 +39,7 @@ const recentIdeas = Component.RecentNotes({
 const recentPodcasts = Component.RecentNotes({
   title: "Latest podcast transcripts",
   limit: 3,
-  linkToMore: "podcasts" as SimpleSlug,
+  linkToMore: "podcasts/" as SimpleSlug,
   showTags: false,
   filter: (page) =>
     page.slug?.startsWith("podcasts/") === true &&

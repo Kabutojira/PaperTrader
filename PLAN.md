@@ -928,3 +928,10 @@ deterministic `podcast seal-render` binds that existing audio to the exact commi
 without a fallback render. Telegram sends committed spoken text and sealed audio independently in
 the same runtime job, persists only redacted retry issue state, and always removes all media. The
 former upload/download Actions-artifact handoff is removed.
+
+## Follow-up — Preserve GitHub Pages subpaths during collection navigation — Complete (2026-09-02)
+
+Canonicalized the Ideas and Podcasts collection links with trailing slashes so Quartz SPA
+navigation cannot retain an extensionless folder URL and resolve subsequent relative links outside
+the `/PaperTrader` project path. Extended the generated-site checker to reject non-canonical
+directory links and cover this GitHub Pages failure mode in tests.

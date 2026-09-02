@@ -89,6 +89,13 @@ def find_broken_site_links(output_root: Path, base_url: str) -> list[BrokenSiteL
             else:
                 broken.add(BrokenSiteLink(source, target, resolved_path))
                 continue
+            if (
+                relative_target
+                and not resolved_path.endswith("/")
+                and (root / relative_target / "index.html").is_file()
+            ):
+                broken.add(BrokenSiteLink(source, target, resolved_path))
+                continue
             if not _target_exists(
                 root,
                 relative_target,

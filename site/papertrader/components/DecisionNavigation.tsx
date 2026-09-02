@@ -56,11 +56,15 @@ const DecisionNavigation: QuartzComponent = ({
         <small>decision dashboard</small>
       </a>
       <nav class="papertrader-nav" aria-label="Primary navigation">
-        {visibleLinks.map(({ label, slug }) => {
+        {visibleLinks.map((link) => {
+          const { label, slug } = link;
           const active = linkIsActive(current, slug);
+          const destination = (
+            "collectionPrefix" in link ? `${slug}/index` : slug
+          ) as FullSlug;
           return (
             <a
-              href={resolveRelative(current, slug as FullSlug)}
+              href={resolveRelative(current, destination)}
               class={active ? "active" : undefined}
               aria-current={active ? "page" : undefined}
             >
