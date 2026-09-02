@@ -7,13 +7,13 @@ tags:
 created: "2026-09-02"
 updated: "2026-09-02"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_5de09b321f0380b34c13"
-as_of: "2026-09-02T15:07:50Z"
+snapshot_id: "decision_6afbcccaedb79380b2cc"
+as_of: "2026-09-02T16:12:24Z"
 ---
 
 # Signals
 
-**As of `2026-09-02T15:07:50Z`**
+**As of `2026-09-02T16:12:24Z`**
 
 ## Actionable trade signals
 
@@ -25,6 +25,15 @@ No pending orders.
 
 ## Research alerts — not trade signals
 
+### [YEC.F — YASKAWA Electric Corporation](securities/security_89969b7dac39b7db5661)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_oversold`
+- Market date: `2026-09-02`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
 ### [VLO — Valero Energy Corporation](securities/security_c5a9e460d3350284d157)
 
 **Research alert — not a trade signal**
@@ -33,6 +42,42 @@ No pending orders.
 - Market date: `2026-09-01`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
+
+### [NIB.F — Nidec Corporation](securities/security_3853e54c619d597dcaa1)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_below\_lower`
+- Market date: `2026-09-02`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [CSL — Carlisle Companies Incorporated](securities/security_9b0db3bc77914b23a307)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_below\_lower`
+- Market date: `2026-09-01`
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
+
+### [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_overbought`
+- Market date: `2026-09-01`
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
+
+### [ABBNY — ABB Ltd](securities/security_c120e9f26ebb6159adf9)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_below\_lower`
+- Market date: `2026-09-01`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
 
 ### [SOFI — SoFi Technologies, Inc.](securities/security_98470cfc01bbcde78fc2)
 
@@ -79,15 +124,6 @@ No pending orders.
 - Research status: `succeeded`
 - Conclusion: Completed exactly one UiPath Class A common-stock review from the fiscal Q1 2027 Form 10-Q, SEC-filed results release, and canonical 5 August 2026 market and 6 August FX state. Registered both primary sources, created the maintained security page, updated the structured security row, and wrote the first scenario-complete assessment. USD 8.50/USD 15.50/USD 26.50 bear/base/bull values produce a USD 16.50 weighted value versus USD 13.82. Deterministic state derives Buy / Initiate as the valuation label but watch-tier conviction and allocation ineligibility because bear/base payoff, expected/bear payoff, and relationship gates fail. The 4 August Bollinger and overbought-RSI transitions followed a 21.03% rally without a newer issuer filing explaining it and are adverse entry timing, not fundamental confirmation. No strategy, signal, order, follow-up operation, allocation, or accounting state changed because no idea or accepted relationship is linked and the full strategy gate failed.
 
-### [CSL — Carlisle Companies Incorporated](securities/security_9b0db3bc77914b23a307)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_below\_lower`
-- Market date: `2026-09-01`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
 ### [CROX — Crocs, Inc.](securities/security_c150f31c30afdb4a85f9)
 
 **Research alert — not a trade signal**
@@ -96,15 +132,6 @@ No pending orders.
 - Market date: `2026-09-01`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
-
-### [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86)
-
-**Research alert — not a trade signal**
-
-- Alert: `rsi\_overbought`
-- Market date: `2026-09-01`
-- Research status: `skipped`
-- Conclusion: Queue triage disposition
 
 ### [AMAT — Applied Materials, Inc.](securities/security_0a56aa634d077fe5796f)
 
@@ -115,12 +142,12 @@ No pending orders.
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### [ABBNY — ABB Ltd](securities/security_c120e9f26ebb6159adf9)
+### [AD — Koninklijke Ahold Delhaize N.V.](securities/security_e19c7fe27fbcc4cd923d)
 
 **Research alert — not a trade signal**
 
-- Alert: `bollinger\_below\_lower`
-- Market date: `2026-09-01`
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-09-02`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 

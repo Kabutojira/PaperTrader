@@ -2949,6 +2949,10 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 
 - Classified [[inbox/market-security_e19c7fe27fbcc4cd923d-macd_cross_above_signal-c44159fd6bd3]] as `ingest`: A new bullish MACD crossover after a material period decline merits durable review.
 
+- Published investor decision snapshot `decision_6afbcccaedb79380b2cc`.
+
+- Generated canonical [[daily-reports/daily-report_20260902]] for run `daily-20260902T155436Z`.
+
 ## [2026-09-02] update | SoFi security review after lower Bollinger-band breach
 
 - Updated [[securities/security_98470cfc01bbcde78fc2]] with the filed Q2 results, the 2026-08-26 through 2026-09-01 alert review, refreshed price-to-book scenarios, explicit idea-map classifications, and three validated visual-evidence datasets.
