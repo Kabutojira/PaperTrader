@@ -1,0 +1,42 @@
+{
+  "auxiliary_models": {
+    "web_extract": "openai-codex:gpt-5.6-luna"
+  },
+  "changed_paths": [
+    "data/runs/daily-20260902T182643Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/assessment_upsert_request.json",
+    "data/runs/daily-20260902T182643Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260902T182643Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/assessment_upsert_request_v3.json",
+    "data/runs/daily-20260902T182643Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/assessment_upsert_request_v4.json",
+    "data/runs/daily-20260902T182643Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/assessment_upsert_request_v5.json",
+    "data/runs/daily-20260902T182643Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/assessment_upsert_request_v6.json",
+    "data/runs/daily-20260902T182643Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/security_upsert_request.json",
+    "data/runs/daily-20260902T182643Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/security_upsert_request_v2.json",
+    "data/runs/daily-20260902T182643Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/source_crox_q2_2026_10q_refresh_request.json",
+    "data/runs/daily-20260902T182643Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/source_crox_q2_2026_results_refresh_request.json",
+    "data/runs/daily-20260902T182643Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/source_crox_sec_submissions_20260902_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_c150f31c30afdb4a85f9.md"
+  ],
+  "effective_model": "gpt-5.6-sol",
+  "errors": [
+    "visualization_review charts do not match chart ids in changed research pages: expected [('data/wiki/securities/security_c150f31c30afdb4a85f9.md', 'valuation-scenarios')], got [('data/wiki/securities/security_c150f31c30afdb4a85f9.md', 'crox-valuation-scenarios-20260902')]"
+  ],
+  "escalation_source": "",
+  "maximum_turns": 160,
+  "mutation_policy": "full_research",
+  "operation_id": "01M0WSFGEG1A2CFQ7VMV3TJAN3",
+  "passed": false,
+  "profile": "deep",
+  "profile_policy_version": "profile-router-v1",
+  "reasoning_effort": "medium",
+  "route_reason": "scenario_complete_security_review",
+  "run_id": "daily-20260902T182643Z",
+  "timeout_seconds": 1800,
+  "validation_version": 1,
+  "weighted_cost": "5"
+}
