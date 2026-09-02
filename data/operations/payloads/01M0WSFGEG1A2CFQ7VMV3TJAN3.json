@@ -4,8 +4,14 @@
   "inputs": {
     "assessment_state": "2026-08-01T16:21:00Z",
     "maintenance_mode": "refresh",
-    "market_data_as_of": "2026-09-02T14:26:30Z",
+    "market_data_as_of": "2026-09-02T18:26:50Z",
     "market_data_date": "2026-09-01",
+    "merged_input_values": {
+      "source_price_hash": [
+        "9ebde61525a0fd3128e6aa59daf1f325ad7516624f138b1aceb8d0b75202c4b7",
+        "2b76d92da54caca6fd1b7022758b0390a96cbda4516f9228df63165f0847486b"
+      ]
+    },
     "period_end": "2026-09-01",
     "period_start": "2026-08-04",
     "research_page": "data/wiki/securities/security_c150f31c30afdb4a85f9.md",
@@ -32,10 +38,23 @@
         "trigger_types": [
           "bollinger_below_lower"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_c150f31c30afdb4a85f9:d88448201f7cfdd65110:2026-09-01",
+        "market_data_date": "2026-09-01",
+        "observed_at": "2026-09-02T18:26:50Z",
+        "prompt": "Research security_c150f31c30afdb4a85f9 with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_c150f31c30afdb4a85f9-bollinger_below_lower-3e9a89d38f5c.md"
+        ],
+        "trigger_types": [
+          "bollinger_below_lower"
+        ]
       }
     ],
     "security_id": "security_c150f31c30afdb4a85f9",
-    "source_price_hash": "9ebde61525a0fd3128e6aa59daf1f325ad7516624f138b1aceb8d0b75202c4b7",
+    "source_price_hash": "2b76d92da54caca6fd1b7022758b0390a96cbda4516f9228df63165f0847486b",
     "trigger_types": [
       "bollinger_below_lower"
     ]
@@ -46,6 +65,7 @@
   "payload_version": 1,
   "source_refs": [
     "data/wiki/inbox/market-security_c150f31c30afdb4a85f9-bollinger_below_lower-26fd754d6035.md",
+    "data/wiki/inbox/market-security_c150f31c30afdb4a85f9-bollinger_below_lower-3e9a89d38f5c.md",
     "source_crox_q2_2026_10q",
     "source_crox_q2_2026_results"
   ]

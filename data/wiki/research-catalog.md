@@ -742,3 +742,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_c150f31c30afdb4a85f9-bollinger_below_lower-3e9a89d38f5c|CROX — Bollinger below lower]]

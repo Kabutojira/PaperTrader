@@ -2953,6 +2953,10 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 
 - Generated canonical [[daily-reports/daily-report_20260902]] for run `daily-20260902T155436Z`.
 
+- Created candidate packet [[inbox/market-security_c150f31c30afdb4a85f9-bollinger_below_lower-3e9a89d38f5c]] (3e9a89d38f5c).
+
+- Classified [[inbox/market-security_c150f31c30afdb4a85f9-bollinger_below_lower-3e9a89d38f5c]] as `ingest`: Material strengthened downside signal with an 18.35% period decline and close below the lower Bollinger Band warrants durable review.
+
 ## [2026-09-02] update | SoFi security review after lower Bollinger-band breach
 
 - Updated [[securities/security_98470cfc01bbcde78fc2]] with the filed Q2 results, the 2026-08-26 through 2026-09-01 alert review, refreshed price-to-book scenarios, explicit idea-map classifications, and three validated visual-evidence datasets.
