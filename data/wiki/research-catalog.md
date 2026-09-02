@@ -7,8 +7,8 @@ tags:
 created: "2026-09-02"
 updated: "2026-09-02"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_6afbcccaedb79380b2cc"
-as_of: "2026-09-02T16:12:24Z"
+snapshot_id: "decision_436b6deaad3ca3eb09c4"
+as_of: "2026-09-02T18:45:21Z"
 ---
 
 # Research catalog
@@ -85,6 +85,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [COIN — Volume anomaly](inbox/market-security_37ddcbdaad296ad831f2-volume_anomaly-142854b8f43f)
 - [COIN — Volume anomaly](inbox/market-security_37ddcbdaad296ad831f2-volume_anomaly-2f38afbd04e1)
 - [CROX — Bollinger below lower](inbox/market-security_c150f31c30afdb4a85f9-bollinger_below_lower-26fd754d6035)
+- [CROX — Bollinger below lower](inbox/market-security_c150f31c30afdb4a85f9-bollinger_below_lower-3e9a89d38f5c)
 - [CROX — Volume anomaly](inbox/market-security_c150f31c30afdb4a85f9-volume_anomaly-3ecd15687b72)
 - [CRSR — Bollinger above upper](inbox/market-security_55c9ce2fdcd32dad6b8c-bollinger_above_upper-c0a99ae77195)
 - [CRSR — Bollinger above upper](inbox/market-security_55c9ce2fdcd32dad6b8c-bollinger_above_upper-ef491b28d115)
@@ -742,7 +743,3 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
-
-## Inbox
-
-- [[inbox/market-security_c150f31c30afdb4a85f9-bollinger_below_lower-3e9a89d38f5c|CROX — Bollinger below lower]]

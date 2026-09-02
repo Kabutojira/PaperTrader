@@ -7,13 +7,13 @@ tags:
 created: "2026-09-02"
 updated: "2026-09-02"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_6afbcccaedb79380b2cc"
-as_of: "2026-09-02T16:12:24Z"
+snapshot_id: "decision_436b6deaad3ca3eb09c4"
+as_of: "2026-09-02T18:45:21Z"
 ---
 
 # Signals
 
-**As of `2026-09-02T16:12:24Z`**
+**As of `2026-09-02T18:45:21Z`**
 
 ## Actionable trade signals
 
@@ -31,6 +31,24 @@ No pending orders.
 
 - Alert: `rsi\_oversold`
 - Market date: `2026-09-02`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [CROX — Crocs, Inc.](securities/security_c150f31c30afdb4a85f9)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_below\_lower`
+- Market date: `2026-09-01`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [AMAT — Applied Materials, Inc.](securities/security_0a56aa634d077fe5796f)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_below\_lower`
+- Market date: `2026-09-01`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
@@ -123,24 +141,6 @@ No pending orders.
 - Market date: `2026-09-01`
 - Research status: `succeeded`
 - Conclusion: Completed exactly one UiPath Class A common-stock review from the fiscal Q1 2027 Form 10-Q, SEC-filed results release, and canonical 5 August 2026 market and 6 August FX state. Registered both primary sources, created the maintained security page, updated the structured security row, and wrote the first scenario-complete assessment. USD 8.50/USD 15.50/USD 26.50 bear/base/bull values produce a USD 16.50 weighted value versus USD 13.82. Deterministic state derives Buy / Initiate as the valuation label but watch-tier conviction and allocation ineligibility because bear/base payoff, expected/bear payoff, and relationship gates fail. The 4 August Bollinger and overbought-RSI transitions followed a 21.03% rally without a newer issuer filing explaining it and are adverse entry timing, not fundamental confirmation. No strategy, signal, order, follow-up operation, allocation, or accounting state changed because no idea or accepted relationship is linked and the full strategy gate failed.
-
-### [CROX — Crocs, Inc.](securities/security_c150f31c30afdb4a85f9)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_below\_lower`
-- Market date: `2026-09-01`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [AMAT — Applied Materials, Inc.](securities/security_0a56aa634d077fe5796f)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_below\_lower`
-- Market date: `2026-09-01`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
 
 ### [AD — Koninklijke Ahold Delhaize N.V.](securities/security_e19c7fe27fbcc4cd923d)
 
