@@ -4,14 +4,49 @@
   "inputs": {
     "assessment_state": "2026-08-10T22:41:29Z",
     "maintenance_mode": "refresh",
+    "market_data_as_of": "2026-09-02T15:54:43Z",
+    "market_data_date": "2026-09-02",
+    "period_end": "2026-09-02",
+    "period_start": "2026-08-05",
     "research_page": "data/wiki/securities/security_89969b7dac39b7db5661.md",
-    "security_id": "security_89969b7dac39b7db5661"
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_89969b7dac39b7db5661:allocation-maintenance:2026-08-10T22:41:29Z",
+        "observed_at": "2026-08-22T15:21:22Z",
+        "prompt": "Revalidate security_89969b7dac39b7db5661 with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_yaskawa_fy2026_q1_briefing",
+          "source_yaskawa_fy2026_q1_qa",
+          "source_yaskawa_fy2026_q1_results"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_89969b7dac39b7db5661:28eafe354e4e4e5928cd:2026-09-02",
+        "market_data_date": "2026-09-02",
+        "observed_at": "2026-09-02T15:54:43Z",
+        "prompt": "Research security_89969b7dac39b7db5661 with high priority after price-action alerts: rsi_oversold; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_89969b7dac39b7db5661-rsi_oversold-809c984a49eb.md"
+        ],
+        "trigger_types": [
+          "rsi_oversold"
+        ]
+      }
+    ],
+    "security_id": "security_89969b7dac39b7db5661",
+    "source_price_hash": "f02e5d4563dde569242f85c2d3c44d63eb1bea50a1c6f8ef80fa7935033385a1",
+    "trigger_types": [
+      "rsi_oversold"
+    ]
   },
-  "objective": "Revalidate security_89969b7dac39b7db5661 with current primary evidence and write one comparable allocation assessment.",
+  "objective": "Revalidate security_89969b7dac39b7db5661 with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_89969b7dac39b7db5661 with high priority after price-action alerts: rsi_oversold; decide what changed and whether to act.",
   "operation_id": "01M0N0ZVAGHN662K112WKAH7GZ",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_89969b7dac39b7db5661-rsi_oversold-809c984a49eb.md",
     "source_yaskawa_fy2026_q1_briefing",
     "source_yaskawa_fy2026_q1_qa",
     "source_yaskawa_fy2026_q1_results"

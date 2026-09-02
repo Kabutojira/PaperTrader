@@ -4,14 +4,51 @@
   "inputs": {
     "assessment_state": "2026-08-06T19:10:34Z",
     "maintenance_mode": "refresh",
+    "market_data_as_of": "2026-09-02T15:54:43Z",
+    "market_data_date": "2026-09-02",
+    "period_end": "2026-09-02",
+    "period_start": "2026-08-05",
     "research_page": "data/wiki/securities/security_3853e54c619d597dcaa1.md",
-    "security_id": "security_3853e54c619d597dcaa1"
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_3853e54c619d597dcaa1:allocation-maintenance:2026-08-06T19:10:34Z",
+        "observed_at": "2026-08-25T15:44:02Z",
+        "prompt": "Revalidate security_3853e54c619d597dcaa1 with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_nidec_2026_accounting_final_report",
+          "source_nidec_2026_quality_investigation",
+          "source_nidec_fy2026_filing_extension",
+          "source_nidec_fy2026_preliminary_figures",
+          "source_nidec_h1_fy2025_financials"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_3853e54c619d597dcaa1:cc6ed03d89f1c3d2bdee:2026-09-02",
+        "market_data_date": "2026-09-02",
+        "observed_at": "2026-09-02T15:54:43Z",
+        "prompt": "Research security_3853e54c619d597dcaa1 with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_3853e54c619d597dcaa1-bollinger_below_lower-ef6906abac8f.md"
+        ],
+        "trigger_types": [
+          "bollinger_below_lower"
+        ]
+      }
+    ],
+    "security_id": "security_3853e54c619d597dcaa1",
+    "source_price_hash": "151dfd9d6475e130b371d9401ddbf1c2d5a3dfc706777096b9eccbdcb235e7c6",
+    "trigger_types": [
+      "bollinger_below_lower"
+    ]
   },
-  "objective": "Revalidate security_3853e54c619d597dcaa1 with current primary evidence and write one comparable allocation assessment.",
+  "objective": "Revalidate security_3853e54c619d597dcaa1 with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_3853e54c619d597dcaa1 with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act.",
   "operation_id": "01M0WSFGEGHY02VEBD9VTD3A9E",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_3853e54c619d597dcaa1-bollinger_below_lower-ef6906abac8f.md",
     "source_nidec_2026_accounting_final_report",
     "source_nidec_2026_quality_investigation",
     "source_nidec_fy2026_filing_extension",

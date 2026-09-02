@@ -1,0 +1,18 @@
+{
+  "entity_id": "relationship_ac62fc7d6a560dc982fd",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_ai_native_smb_financial_operating_systems",
+    "maintenance_mode": "refresh",
+    "relationship_id": "relationship_ac62fc7d6a560dc982fd",
+    "security_id": "security_98470cfc01bbcde78fc2"
+  },
+  "objective": "Review the canonical relationship from idea_ai_native_smb_financial_operating_systems to security_98470cfc01bbcde78fc2 and accept or reject it with current evidence.",
+  "operation_id": "01M1HD8TDRBRA2TRN90WN2DAN6",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_sofi_q2_2026_10q",
+    "source_sofi_q2_2026_results"
+  ]
+}

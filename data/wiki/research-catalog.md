@@ -739,3 +739,9 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_3853e54c619d597dcaa1-bollinger_below_lower-ef6906abac8f|NIB.F — Bollinger below lower]]
+- [[inbox/market-security_89969b7dac39b7db5661-rsi_oversold-809c984a49eb|YEC.F — RSI oversold]]
+- [[inbox/market-security_e19c7fe27fbcc4cd923d-macd_cross_above_signal-c44159fd6bd3|AD — MACD cross above signal]]

@@ -1,0 +1,18 @@
+{
+  "entity_id": "relationship_01f2b253dcc4e062d0bb",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_digital_finance_crypto_rails",
+    "maintenance_mode": "refresh",
+    "relationship_id": "relationship_01f2b253dcc4e062d0bb",
+    "security_id": "security_98470cfc01bbcde78fc2"
+  },
+  "objective": "Review the canonical relationship from idea_digital_finance_crypto_rails to security_98470cfc01bbcde78fc2 and accept or reject it with current evidence.",
+  "operation_id": "01M1HD8TDRG1765H2N8V8G3AV1",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_sofi_q2_2026_10q",
+    "source_sofi_q2_2026_results"
+  ]
+}

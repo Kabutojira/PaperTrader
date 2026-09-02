@@ -2937,6 +2937,18 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 
 - Generated canonical [[daily-reports/daily-report_20260902]] for run `daily-20260902T142623Z`.
 
+- Created candidate packet [[inbox/market-security_3853e54c619d597dcaa1-bollinger_below_lower-ef6906abac8f]] (ef6906abac8f).
+
+- Classified [[inbox/market-security_3853e54c619d597dcaa1-bollinger_below_lower-ef6906abac8f]] as `ingest`: Material new downside transition: price fell 12.3% and entered below the lower Bollinger Band.
+
+- Created candidate packet [[inbox/market-security_89969b7dac39b7db5661-rsi_oversold-809c984a49eb]] (809c984a49eb).
+
+- Classified [[inbox/market-security_89969b7dac39b7db5661-rsi_oversold-809c984a49eb]] as `ingest`: Material entry into an RSI-oversold state alongside a 17.7% decline over the review period merits durable review.
+
+- Created candidate packet [[inbox/market-security_e19c7fe27fbcc4cd923d-macd_cross_above_signal-c44159fd6bd3]] (c44159fd6bd3).
+
+- Classified [[inbox/market-security_e19c7fe27fbcc4cd923d-macd_cross_above_signal-c44159fd6bd3]] as `ingest`: A new bullish MACD crossover after a material period decline merits durable review.
+
 ## [2026-09-02] update | SoFi security review after lower Bollinger-band breach
 
 - Updated [[securities/security_98470cfc01bbcde78fc2]] with the filed Q2 results, the 2026-08-26 through 2026-09-01 alert review, refreshed price-to-book scenarios, explicit idea-map classifications, and three validated visual-evidence datasets.
