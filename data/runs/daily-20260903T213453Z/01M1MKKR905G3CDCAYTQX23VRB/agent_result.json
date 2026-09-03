@@ -1,0 +1,52 @@
+{
+  "commands_run": [
+    "papertrader order create-baseline --request data/runs/daily-20260903T213453Z/01M1MKKR905G3CDCAYTQX23VRB/order_create_baseline_request.json"
+  ],
+  "daily_report_items": [
+    "Created pending paper order order_de1bb12ec4a52b7b8c66 for three UBER shares under next_open; this is an order, not a fill, and accounting remains unchanged."
+  ],
+  "evidence": [
+    {
+      "claim": "The sole current Uber target is allocation_plan_0f41c211cdfa8a9b5dbc with unchanged intent allocation_intent_5988db00b0dab41c4d78, assessment assessment_7fe1690682aa6c66e233, accepted relationship relationship_d403f81ae5b27c9643dd, open disposition, and persisted target quantity 3.",
+      "observed_at": "2026-09-03T21:08:37Z",
+      "source": "data/tables/allocation_targets.csv"
+    },
+    {
+      "claim": "Signal signal_d99961410e4a2b65d24a matched the current allocation intent, requested open, was unexpired and ready before the order command, and is now ordered.",
+      "observed_at": "2026-09-03T21:42:57Z",
+      "source": "data/tables/signals.csv"
+    },
+    {
+      "claim": "The order reference used the identity-matched UBER mark USD 75.95999908447266 and USD/EUR rate 0.8598999977111816 retrieved together at 2026-09-03T21:34:54Z.",
+      "observed_at": "2026-09-03T21:34:54Z",
+      "source": "data/market/latest.csv and data/market/fx/USD_EUR.csv"
+    },
+    {
+      "claim": "The audited deterministic create-baseline command exited zero, created order_de1bb12ec4a52b7b8c66, reported no risk violations, and changed only orders, order legs, and signal state.",
+      "observed_at": "2026-09-03T21:50:24Z",
+      "source": "data/runs/daily-20260903T213453Z/01M1MKKR905G3CDCAYTQX23VRB/command_audit.json"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260903T213453Z/01M1MKKR905G3CDCAYTQX23VRB/order_create_baseline_request.json",
+    "data/tables/order_legs.csv",
+    "data/tables/orders.csv",
+    "data/tables/signals.csv"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M1MKKR905G3CDCAYTQX23VRB",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Created pending paper order order_de1bb12ec4a52b7b8c66 for the current Uber baseline open signal. Deterministic code derived the three-share long-equity leg, accepted the order with no risk violations, and left it pending under next_open; no fill or accounting state was changed.",
+  "validation": {
+    "checks": [
+      "Validated the running queue row, run binding, live lease, payload identity, and required preflight skill hashes.",
+      "Matched strategy, signal, canonical equity leg, current allocation plan and intent, immutable assessment, accepted relationship, open disposition, and target quantity before ordering.",
+      "Confirmed the signal had no prior order and the current portfolio had no Uber position before the deterministic attempt.",
+      "The deterministic baseline command derived quantity 3, returned created=true, and reported an empty risk_violations list.",
+      "Verified order_de1bb12ec4a52b7b8c66 is pending with next_open and its signal is ordered.",
+      "Verified no executions, cash ledger, portfolio, performance, allocation target, or allocation history file changed."
+    ],
+    "passed": true
+  }
+}

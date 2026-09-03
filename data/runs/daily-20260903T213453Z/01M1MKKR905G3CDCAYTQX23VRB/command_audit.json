@@ -1,0 +1,85 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "order",
+        "create-baseline",
+        "--request",
+        "data/runs/daily-20260903T213453Z/01M1MKKR905G3CDCAYTQX23VRB/order_create_baseline_request.json"
+      ],
+      "changed_paths": [
+        "data/tables/order_legs.csv",
+        "data/tables/orders.csv",
+        "data/tables/signals.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "cec74a654e367b797fd68c90ae1314a7d4ee84fb8cd8d3623b517a0d2e510549",
+            566,
+            384
+          ],
+          "before": [
+            "file",
+            "60553a3720f7e792192ff45cdcc22bfd76a94164d8157003826414dc2b53f550",
+            463,
+            420
+          ],
+          "path": "data/tables/order_legs.csv"
+        },
+        {
+          "after": [
+            "file",
+            "855514ba3628e3066c128964556d3c26585629ed34d8260ea3718b8222d45a9c",
+            1106,
+            384
+          ],
+          "before": [
+            "file",
+            "ccdbdb6c5a5bad06a00e14f972552601c09a43dc09a0cc4525722838a60077b8",
+            824,
+            420
+          ],
+          "path": "data/tables/orders.csv"
+        },
+        {
+          "after": [
+            "file",
+            "dfa21b4ef366eba7d0e4e2f6132b2303d3a0f62ace0804bedfbfe56d898a7f95",
+            3158,
+            384
+          ],
+          "before": [
+            "file",
+            "b538b2e4c279be1fa3f4af9b6d8e3d5cbf7a58d7e952e6d9d2dc076f74537758",
+            3156,
+            384
+          ],
+          "path": "data/tables/signals.csv"
+        }
+      ],
+      "command": "papertrader order create-baseline --request data/runs/daily-20260903T213453Z/01M1MKKR905G3CDCAYTQX23VRB/order_create_baseline_request.json",
+      "completed_at": "2026-09-03T21:50:24Z",
+      "exit_code": 0,
+      "profile": "deep",
+      "request": {
+        "identity": [
+          "file",
+          "1f37e1f1605d741a0e715ac5c26ae08fd4e6d52b1e183c2a59208d339f099749",
+          535,
+          384
+        ],
+        "path": "data/runs/daily-20260903T213453Z/01M1MKKR905G3CDCAYTQX23VRB/order_create_baseline_request.json"
+      },
+      "started_at": "2026-09-03T21:50:22Z"
+    }
+  ],
+  "operation_id": "01M1MKKR905G3CDCAYTQX23VRB",
+  "profile": "deep",
+  "profile_policy_version": "profile-router-v1",
+  "route_reason": "full_strategy_or_execution_decision",
+  "run_id": "daily-20260903T213453Z"
+}
