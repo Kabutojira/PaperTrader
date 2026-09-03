@@ -304,11 +304,7 @@ def _move_visual_evidence_after_title(page_text: str) -> str:
     if title is None:
         raise WikiFormatError("security page lacks a level-one title")
     remainder = without_section[title.end() :].lstrip("\n")
-    return (
-        without_section[: title.end()]
-        + f"\n\n{section}\n\n"
-        + remainder
-    ).rstrip() + "\n"
+    return (without_section[: title.end()] + f"\n\n{section}\n\n" + remainder).rstrip() + "\n"
 
 
 def security_technical_chart_errors(

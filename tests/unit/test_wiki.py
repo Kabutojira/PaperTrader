@@ -174,7 +174,9 @@ Research content stays unchanged.
     assert 'updated: "2026-09-01"' in first_text
     assert "Research content stays unchanged." in first_text
     assert first_text.index("# Fixture security") < first_text.index("## Visual evidence")
-    assert first_text.index("## Visual evidence") < first_text.index("Research content stays unchanged.")
+    assert first_text.index("## Visual evidence") < first_text.index(
+        "Research content stays unchanged."
+    )
     assert first_text.index("## Visual evidence") < first_text.index("## Sources")
     assert (
         security_technical_chart_errors(
