@@ -18,6 +18,36 @@ next_review: "2026-09-27"
 
 # Nomad Foods Limited ordinary shares
 
+## Visual evidence
+
+<!-- papertrader:technical-chart:start -->
+This deterministic monitoring chart is derived from the repository-local market cache. Its source CSV remains downloadable and does not feed research scoring or trading state.
+
+```echart
+{
+  "schema_version": 2,
+  "chart_id": "market-technicals",
+  "kind": "technical",
+  "title": "One-year price, volume, and technical indicators",
+  "description": "Adjusted daily OHLC with Bollinger bands and moving averages, followed by volume, RSI, and MACD panels from the deterministic PaperTrader market cache.",
+  "security_id": "security_98a1943771da875efed5",
+  "currency": "USD",
+  "price_basis": "adjusted",
+  "window_days": 365,
+  "data_path": "data/market/technical/security_98a1943771da875efed5.csv",
+  "sources": [
+    {
+      "label": "Canonical PaperTrader price cache and deterministic TA-Lib projection"
+    }
+  ],
+  "notes": [
+    "Adjusted OHLC aligns price history with indicators calculated from adjusted close.",
+    "Technical indicators are research alerts, not trade signals."
+  ]
+}
+```
+<!-- papertrader:technical-chart:end -->
+
 ## Decision
 
 **Buy / Initiate research rating; allocation ineligible; no strategy.** Q2 revenue fell 3.1%,
@@ -57,33 +87,3 @@ Initiate economics and allocation ineligibility are newly established.
 Review by **2026-09-27** or after results, restructuring, leverage or dividend evidence.
 
 [[security-catalog|Tracked securities]] · [[research-catalog|Research catalog]] · [[index|Today's decision]]
-
-## Visual evidence
-
-<!-- papertrader:technical-chart:start -->
-This deterministic monitoring chart is derived from the repository-local market cache. Its source CSV remains downloadable and does not feed research scoring or trading state.
-
-```echart
-{
-  "schema_version": 2,
-  "chart_id": "market-technicals",
-  "kind": "technical",
-  "title": "One-year price, volume, and technical indicators",
-  "description": "Adjusted daily OHLC with Bollinger bands and moving averages, followed by volume, RSI, and MACD panels from the deterministic PaperTrader market cache.",
-  "security_id": "security_98a1943771da875efed5",
-  "currency": "USD",
-  "price_basis": "adjusted",
-  "window_days": 365,
-  "data_path": "data/market/technical/security_98a1943771da875efed5.csv",
-  "sources": [
-    {
-      "label": "Canonical PaperTrader price cache and deterministic TA-Lib projection"
-    }
-  ],
-  "notes": [
-    "Adjusted OHLC aligns price history with indicators calculated from adjusted close.",
-    "Technical indicators are research alerts, not trade signals."
-  ]
-}
-```
-<!-- papertrader:technical-chart:end -->

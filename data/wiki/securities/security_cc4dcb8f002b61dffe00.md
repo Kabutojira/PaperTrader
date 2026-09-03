@@ -14,6 +14,36 @@ next_review: "2026-09-19"
 
 # Parrot S.A. ordinary shares
 
+## Visual evidence
+
+<!-- papertrader:technical-chart:start -->
+This deterministic monitoring chart is derived from the repository-local market cache. Its source CSV remains downloadable and does not feed research scoring or trading state.
+
+```echart
+{
+  "schema_version": 2,
+  "chart_id": "market-technicals",
+  "kind": "technical",
+  "title": "One-year price, volume, and technical indicators",
+  "description": "Adjusted daily OHLC with Bollinger bands and moving averages, followed by volume, RSI, and MACD panels from the deterministic PaperTrader market cache.",
+  "security_id": "security_cc4dcb8f002b61dffe00",
+  "currency": "EUR",
+  "price_basis": "adjusted",
+  "window_days": 365,
+  "data_path": "data/market/technical/security_cc4dcb8f002b61dffe00.csv",
+  "sources": [
+    {
+      "label": "Canonical PaperTrader price cache and deterministic TA-Lib projection"
+    }
+  ],
+  "notes": [
+    "Adjusted OHLC aligns price history with indicators calculated from adjusted close.",
+    "Technical indicators are research alerts, not trade signals."
+  ]
+}
+```
+<!-- papertrader:technical-chart:end -->
+
 ## Identity
 
 - Immutable security: `security_cc4dcb8f002b61dffe00`
@@ -142,36 +172,6 @@ Status: **watching**, confidence **medium**. There is no hard blocker, but margi
 concentration and valuation gaps constrain eligibility. Review by **2026-09-19**, or after a
 financing, material contract conversion, product launch, liquidity event or updated release. No
 strategy or signal is justified. See the complete [[research-catalog]] and append-only [[log]].
-
-## Visual evidence
-
-<!-- papertrader:technical-chart:start -->
-This deterministic monitoring chart is derived from the repository-local market cache. Its source CSV remains downloadable and does not feed research scoring or trading state.
-
-```echart
-{
-  "schema_version": 2,
-  "chart_id": "market-technicals",
-  "kind": "technical",
-  "title": "One-year price, volume, and technical indicators",
-  "description": "Adjusted daily OHLC with Bollinger bands and moving averages, followed by volume, RSI, and MACD panels from the deterministic PaperTrader market cache.",
-  "security_id": "security_cc4dcb8f002b61dffe00",
-  "currency": "EUR",
-  "price_basis": "adjusted",
-  "window_days": 365,
-  "data_path": "data/market/technical/security_cc4dcb8f002b61dffe00.csv",
-  "sources": [
-    {
-      "label": "Canonical PaperTrader price cache and deterministic TA-Lib projection"
-    }
-  ],
-  "notes": [
-    "Adjusted OHLC aligns price history with indicators calculated from adjusted close.",
-    "Technical indicators are research alerts, not trade signals."
-  ]
-}
-```
-<!-- papertrader:technical-chart:end -->
 
 ## Sources
 

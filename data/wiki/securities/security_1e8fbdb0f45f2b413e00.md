@@ -21,6 +21,36 @@ next_review: "2026-09-11"
 
 # PayPal Holdings, Inc. common stock
 
+## Visual evidence
+
+<!-- papertrader:technical-chart:start -->
+This deterministic monitoring chart is derived from the repository-local market cache. Its source CSV remains downloadable and does not feed research scoring or trading state.
+
+```echart
+{
+  "schema_version": 2,
+  "chart_id": "market-technicals",
+  "kind": "technical",
+  "title": "One-year price, volume, and technical indicators",
+  "description": "Adjusted daily OHLC with Bollinger bands and moving averages, followed by volume, RSI, and MACD panels from the deterministic PaperTrader market cache.",
+  "security_id": "security_1e8fbdb0f45f2b413e00",
+  "currency": "USD",
+  "price_basis": "adjusted",
+  "window_days": 365,
+  "data_path": "data/market/technical/security_1e8fbdb0f45f2b413e00.csv",
+  "sources": [
+    {
+      "label": "Canonical PaperTrader price cache and deterministic TA-Lib projection"
+    }
+  ],
+  "notes": [
+    "Adjusted OHLC aligns price history with indicators calculated from adjusted close.",
+    "Technical indicators are research alerts, not trade signals."
+  ]
+}
+```
+<!-- papertrader:technical-chart:end -->
+
 ## Decision
 
 **Buy / Watch; no paper-trade escalation.** PayPal fell 12.71% in the August 28 session on 2.06
@@ -145,36 +175,6 @@ medium-confidence adjustment. The unchanged buy-below value of USD 51.648 remain
 current mark. Expected and base returns now clear their minimums, but bear/base and expected/bear
 payoff, margin of safety, timing, and relationship gates still fail. This supports Buy / Watch
 rather than a new or increased position.
-
-## Visual evidence
-
-<!-- papertrader:technical-chart:start -->
-This deterministic monitoring chart is derived from the repository-local market cache. Its source CSV remains downloadable and does not feed research scoring or trading state.
-
-```echart
-{
-  "schema_version": 2,
-  "chart_id": "market-technicals",
-  "kind": "technical",
-  "title": "One-year price, volume, and technical indicators",
-  "description": "Adjusted daily OHLC with Bollinger bands and moving averages, followed by volume, RSI, and MACD panels from the deterministic PaperTrader market cache.",
-  "security_id": "security_1e8fbdb0f45f2b413e00",
-  "currency": "USD",
-  "price_basis": "adjusted",
-  "window_days": 365,
-  "data_path": "data/market/technical/security_1e8fbdb0f45f2b413e00.csv",
-  "sources": [
-    {
-      "label": "Canonical PaperTrader price cache and deterministic TA-Lib projection"
-    }
-  ],
-  "notes": [
-    "Adjusted OHLC aligns price history with indicators calculated from adjusted close.",
-    "Technical indicators are research alerts, not trade signals."
-  ]
-}
-```
-<!-- papertrader:technical-chart:end -->
 
 ## Sources
 

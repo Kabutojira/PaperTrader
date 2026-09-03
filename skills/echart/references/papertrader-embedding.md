@@ -62,8 +62,10 @@ warranted, leave `charts` empty and give at least one specific omission; never m
 Every security page has one repository-owned, marker-bounded schema-version-2 chart with
 `chart_id: "market-technicals"`. It is a stable reference to
 `data/market/technical/<security_id>.csv`; do not inline its daily rows, edit its identity, remove
-its markers, or rebuild it from research evidence. Preserve it when editing the page. The site
-build validates and hydrates the reference with adjusted OHLC, volume, Bollinger bands, SMA
+its markers, or rebuild it from research evidence. Preserve it when editing the page. Keep the
+complete `## Visual evidence` section immediately after the page's level-one title so price and
+indicator context precedes the research narrative. The site build validates and hydrates the
+reference with adjusted OHLC, volume, Bollinger bands, SMA
 20/50/200, RSI 14, and MACD panels, then publishes the same local CSV as a download. The browser
 does not fetch remote or repository data.
 

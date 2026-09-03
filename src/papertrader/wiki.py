@@ -272,6 +272,45 @@ def _technical_chart_block(security_id: str, currency: str) -> str:
     )
 
 
+def _visual_evidence_section_bounds(page_text: str) -> tuple[int, int] | None:
+    heading = re.search(r"^## Visual evidence\s*$", page_text, flags=re.MULTILINE)
+    if heading is None:
+        return None
+    following_heading = re.search(
+        r"^##(?!#)\s+.+$",
+        page_text[heading.end() :],
+        flags=re.MULTILINE,
+    )
+    end = (
+        heading.end() + following_heading.start()
+        if following_heading is not None
+        else len(page_text)
+    )
+    return heading.start(), end
+
+
+def _move_visual_evidence_after_title(page_text: str) -> str:
+    """Place the complete Visual evidence section immediately after the page H1."""
+
+    bounds = _visual_evidence_section_bounds(page_text)
+    if bounds is None:
+        raise WikiFormatError("security page lacks a Visual evidence section")
+    start, end = bounds
+    section = page_text[start:end].strip("\n")
+    before = page_text[:start].rstrip()
+    after = page_text[end:].lstrip("\n")
+    without_section = before + ("\n\n" + after if after else "\n")
+    title = re.search(r"^#(?!#)\s+.+$", without_section, flags=re.MULTILINE)
+    if title is None:
+        raise WikiFormatError("security page lacks a level-one title")
+    remainder = without_section[title.end() :].lstrip("\n")
+    return (
+        without_section[: title.end()]
+        + f"\n\n{section}\n\n"
+        + remainder
+    ).rstrip() + "\n"
+
+
 def security_technical_chart_errors(
     path: Path,
     schema_path: Path,
@@ -288,8 +327,13 @@ def security_technical_chart_errors(
     errors: list[str] = []
     if page_text.count(TECHNICAL_CHART_START) != 1 or page_text.count(TECHNICAL_CHART_END) != 1:
         errors.append("security page requires one marker-bounded technical chart")
-    if not re.search(r"^## Visual evidence\s*$", page_text, flags=re.MULTILINE):
+    visual_bounds = _visual_evidence_section_bounds(page_text)
+    if visual_bounds is None:
         errors.append("security page requires a Visual evidence section")
+    else:
+        title = re.search(r"^#(?!#)\s+.+$", page_text, flags=re.MULTILINE)
+        if title is None or page_text[title.end() : visual_bounds[0]].strip():
+            errors.append("security page requires Visual evidence immediately after its title")
     charts, chart_errors = parse_research_charts(path, schema_path)
     errors.extend(chart_errors)
     technical = [chart for chart in charts if chart.get("kind") == "technical"]
@@ -388,6 +432,7 @@ def sync_security_technical_charts(repository_root: Path) -> tuple[Path, ...]:
                     updated = page_text[: sources.start()] + section + page_text[sources.start() :]
                 else:
                     updated = page_text.rstrip() + f"\n\n{section.rstrip()}\n"
+        updated = _move_visual_evidence_after_title(updated)
         if updated != page_text:
             atomic_write_text(path, updated, allowed_root=repository_root)
             changed.append(path)

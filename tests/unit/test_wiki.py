@@ -173,7 +173,93 @@ Research content stays unchanged.
     assert page.read_text(encoding="utf-8") == first_text
     assert 'updated: "2026-09-01"' in first_text
     assert "Research content stays unchanged." in first_text
+    assert first_text.index("# Fixture security") < first_text.index("## Visual evidence")
+    assert first_text.index("## Visual evidence") < first_text.index("Research content stays unchanged.")
     assert first_text.index("## Visual evidence") < first_text.index("## Sources")
+    assert (
+        security_technical_chart_errors(
+            page,
+            sandbox_repository / "schemas" / "research_chart.schema.json",
+            security_id=security_id,
+            currency="USD",
+        )
+        == []
+    )
+
+
+def test_security_technical_chart_sync_moves_existing_visual_section_after_title(
+    sandbox_repository: Path,
+) -> None:
+    security_id = "sec-fixture"
+    research_page = f"data/wiki/securities/{security_id}.md"
+    write_table(
+        sandbox_repository,
+        "securities",
+        [
+            {
+                "security_id": security_id,
+                "issuer_id": "issuer-fixture",
+                "company_name": "Fixture Corp",
+                "instrument_name": "Fixture common stock",
+                "instrument_type": "equity",
+                "ticker": "FIX",
+                "exchange_code": "XNYS",
+                "venue_mic": "XNYS",
+                "provider_symbol": "FIX",
+                "broker_symbol": "",
+                "currency": "USD",
+                "country": "US",
+                "sector": "Industrials",
+                "industry": "Testing",
+                "status": "watchlist",
+                "watchlist_reason": "fixture",
+                "research_summary": "fixture",
+                "research_page": research_page,
+                "last_research_at": "",
+                "next_review_at": "",
+                "created_at": "2026-09-02T00:00:00Z",
+                "updated_at": "2026-09-02T00:00:00Z",
+                "source": "test",
+            }
+        ],
+    )
+    chart = json.dumps(technical_chart_spec(security_id, "USD"), indent=2)
+    page = sandbox_repository / research_page
+    page.write_text(
+        """---
+title: Fixture security
+type: security
+status: maintained
+tags: [security]
+created: "2026-09-01"
+updated: "2026-09-01"
+provenance: test
+---
+
+# Fixture security
+
+## Identity
+
+Research content stays unchanged.
+
+## Visual evidence
+
+"""
+        + f"{TECHNICAL_CHART_START}\n```echart\n{chart}\n```\n{TECHNICAL_CHART_END}\n\n"
+        + "Analytical visual evidence stays in this section.\n",
+        encoding="utf-8",
+    )
+
+    changed = sync_security_technical_charts(sandbox_repository)
+    updated = page.read_text(encoding="utf-8")
+
+    assert changed == (page,)
+    assert updated.index("# Fixture security") < updated.index("## Visual evidence")
+    assert updated.index("## Visual evidence") < updated.index("## Identity")
+    assert updated.index(TECHNICAL_CHART_END) < updated.index(
+        "Analytical visual evidence stays in this section."
+    )
+    assert sync_security_technical_charts(sandbox_repository) == ()
     assert (
         security_technical_chart_errors(
             page,
