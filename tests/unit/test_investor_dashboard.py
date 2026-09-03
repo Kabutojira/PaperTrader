@@ -235,6 +235,8 @@ def test_dashboard_candidate_section_uses_only_buy_initiate_assessments(
         security_id="security_included",
         canonical_rating="buy",
         portfolio_action="initiate",
+        tier="full",
+        classification="strategy_pending",
         expected_return_pct="20.7817678274164750316066337",
         reason_labels=("The comparable assessment is stale or expired.",),
     )
