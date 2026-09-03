@@ -757,3 +757,26 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_22c2b9d782a62d7a9b86-rsi_overbought-500884aedae6|ATKR — RSI overbought]]
+- [[inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-acc85abaf670|TX — Bollinger above upper]]
+- [[inbox/market-security_2c779e81c27b78c556bb-rsi_overbought-270a3180dbc3|TX — RSI overbought]]
+- [[inbox/market-security_33d9c44facc75c726c7d-macd_cross_above_signal-b5b67bfce931|NVDA — MACD cross above signal]]
+- [[inbox/market-security_61567714298b9563d1a9-macd_cross_above_signal-2011a7474c46|WTI — MACD cross above signal]]
+- [[inbox/market-security_664f93a7eaca72e76e9b-bollinger_above_upper-d9fe4329d833|SPCX — Bollinger above upper]]
+- [[inbox/market-security_66cdcf90aac0d83e76f3-macd_cross_below_signal-34277025b4d8|ALB — MACD cross below signal]]
+- [[inbox/market-security_97f38b2cb2d5ef127f5a-rsi_oversold-7fb724785892|PL — RSI oversold]]
+- [[inbox/market-security_97f38b2cb2d5ef127f5a-volume_anomaly-9cd9b42ab2c5|PL — Volume anomaly]]
+- [[inbox/market-security_ad3b1f8f59fd599f079a-bollinger_above_upper-2e85c7afb601|HOOD — Bollinger above upper]]
+- [[inbox/market-security_ad3b1f8f59fd599f079a-volume_anomaly-9acc758d20aa|HOOD — Volume anomaly]]
+- [[inbox/market-security_c5a9e460d3350284d157-rsi_overbought-73d9b07b1775|VLO — RSI overbought]]
+- [[inbox/market-security_cb88f9154cfeaa15e878-macd_cross_above_signal-ee0481ac1dcb|VRT — MACD cross above signal]]
+- [[inbox/market-security_dc7a111e297be528d96b-bollinger_above_upper-206349e6ecbc|TSLA — Bollinger above upper]]
+- [[inbox/market-security_dc7a111e297be528d96b-volume_anomaly-172c103f61ac|TSLA — Volume anomaly]]
+- [[inbox/market-security_de0d83229b369a426b99-macd_cross_above_signal-1f1b479eb890|TCEHY — MACD cross above signal]]
+- [[inbox/market-security_dfa34d4b9050964b465e-macd_cross_above_signal-7ecada46ac6f|INTC — MACD cross above signal]]
+- [[inbox/market-security_eca976f0076a425ea1bb-rsi_overbought-fbaac2af6baa|PATH — RSI overbought]]
+- [[inbox/market-security_f2b9760d847b2ba59324-sma_50_cross_below_200-c2be3a39df7f|ENPH — SMA 50 cross below 200]]
+- [[inbox/market-security_fb87fac302a5446a1ced-macd_cross_below_signal-e2ea56b689e8|LAC — MACD cross below signal]]

@@ -4,14 +4,51 @@
   "inputs": {
     "assessment_state": "2026-08-07T09:23:01Z",
     "maintenance_mode": "refresh",
+    "market_data_as_of": "2026-09-03T21:34:54Z",
+    "market_data_date": "2026-09-03",
+    "period_end": "2026-09-03",
+    "period_start": "2026-08-06",
     "research_page": "data/wiki/securities/security_33d9c44facc75c726c7d.md",
-    "security_id": "security_33d9c44facc75c726c7d"
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_33d9c44facc75c726c7d:allocation-maintenance:2026-08-07T09:23:01Z",
+        "observed_at": "2026-08-12T20:35:16Z",
+        "prompt": "Revalidate security_33d9c44facc75c726c7d with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_nvda_q1_fy2027_10q",
+          "source_nvda_q1_fy2027_results",
+          "source_nvda_space_computing_20260316",
+          "source_nvda_vera_spacexai_20260531",
+          "source_spacex_terafab_prospectus_20260605"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_33d9c44facc75c726c7d:40249e4371832ac5f153:2026-09-03",
+        "market_data_date": "2026-09-03",
+        "observed_at": "2026-09-03T21:34:54Z",
+        "prompt": "Research security_33d9c44facc75c726c7d with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_33d9c44facc75c726c7d-macd_cross_above_signal-b5b67bfce931.md"
+        ],
+        "trigger_types": [
+          "macd_cross_above_signal"
+        ]
+      }
+    ],
+    "security_id": "security_33d9c44facc75c726c7d",
+    "source_price_hash": "fab86571866702121c5f86d896e808951f707e294643499651c440731ee4ede5",
+    "trigger_types": [
+      "macd_cross_above_signal"
+    ]
   },
-  "objective": "Revalidate security_33d9c44facc75c726c7d with current primary evidence and write one comparable allocation assessment.",
+  "objective": "Revalidate security_33d9c44facc75c726c7d with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_33d9c44facc75c726c7d with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
   "operation_id": "01KZVTZDX06K7JG24QMMZPN7GT",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_33d9c44facc75c726c7d-macd_cross_above_signal-b5b67bfce931.md",
     "source_nvda_q1_fy2027_10q",
     "source_nvda_q1_fy2027_results",
     "source_nvda_space_computing_20260316",

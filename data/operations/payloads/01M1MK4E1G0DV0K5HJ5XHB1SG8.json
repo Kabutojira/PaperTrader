@@ -1,0 +1,25 @@
+{
+  "entity_id": "security_de0d83229b369a426b99",
+  "entity_type": "security",
+  "inputs": {
+    "baseline_completed_at": "2026-08-28T19:24:56Z",
+    "baseline_operation_id": "01M14TPB5G360FXFGDB6549PAG",
+    "baseline_result_path": "data/runs/local-youtube-watch-20260828T183401Z/01M14TPB5G360FXFGDB6549PAG/agent_result.json",
+    "market_data_as_of": "2026-09-03T21:34:54Z",
+    "market_data_date": "2026-09-03",
+    "period_end": "2026-09-03",
+    "period_start": "2026-08-06",
+    "security_id": "security_de0d83229b369a426b99",
+    "source_price_hash": "4c120bf2f62f26962a7f4c5ff1ee9b8800c1b81d87e4af271417552988c0f15c",
+    "trigger_types": [
+      "macd_cross_above_signal"
+    ]
+  },
+  "objective": "Quick-check security_de0d83229b369a426b99 after price-action alerts: macd_cross_above_signal; verify the latest research assumptions and escalate to full security research if any material gate changed.",
+  "operation_id": "01M1MK4E1G0DV0K5HJ5XHB1SG8",
+  "operation_type": "quick_check_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_de0d83229b369a426b99-macd_cross_above_signal-1f1b479eb890.md"
+  ]
+}

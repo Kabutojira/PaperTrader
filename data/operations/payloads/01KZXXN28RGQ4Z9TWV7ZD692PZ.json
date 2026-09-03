@@ -4,14 +4,48 @@
   "inputs": {
     "assessment_state": "2026-08-06T15:02:43Z",
     "maintenance_mode": "refresh",
+    "market_data_as_of": "2026-09-03T21:34:54Z",
+    "market_data_date": "2026-09-03",
+    "period_end": "2026-09-03",
+    "period_start": "2026-08-06",
     "research_page": "data/wiki/securities/security_dfa34d4b9050964b465e.md",
-    "security_id": "security_dfa34d4b9050964b465e"
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_dfa34d4b9050964b465e:allocation-maintenance:2026-08-06T15:02:43Z",
+        "observed_at": "2026-08-13T16:00:31Z",
+        "prompt": "Revalidate security_dfa34d4b9050964b465e with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_intc_q2_2026_10q_sec",
+          "source_intc_q2_2026_results_sec_ex99_1"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_dfa34d4b9050964b465e:32ff2a4e2099bc068365:2026-09-03",
+        "market_data_date": "2026-09-03",
+        "observed_at": "2026-09-03T21:34:54Z",
+        "prompt": "Research security_dfa34d4b9050964b465e with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_dfa34d4b9050964b465e-macd_cross_above_signal-7ecada46ac6f.md"
+        ],
+        "trigger_types": [
+          "macd_cross_above_signal"
+        ]
+      }
+    ],
+    "security_id": "security_dfa34d4b9050964b465e",
+    "source_price_hash": "a1f3286e52250f291039ef27f31f7a269d05b09bb668570a7c7530778de87815",
+    "trigger_types": [
+      "macd_cross_above_signal"
+    ]
   },
-  "objective": "Revalidate security_dfa34d4b9050964b465e with current primary evidence and write one comparable allocation assessment.",
+  "objective": "Revalidate security_dfa34d4b9050964b465e with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_dfa34d4b9050964b465e with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
   "operation_id": "01KZXXN28RGQ4Z9TWV7ZD692PZ",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_dfa34d4b9050964b465e-macd_cross_above_signal-7ecada46ac6f.md",
     "source_intc_q2_2026_10q_sec",
     "source_intc_q2_2026_results_sec_ex99_1"
   ]

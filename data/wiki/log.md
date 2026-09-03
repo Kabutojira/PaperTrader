@@ -3039,6 +3039,64 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 
 - Generated canonical [[daily-reports/daily-report_20260903]] for run `daily-20260903T195930Z`.
 
+- Created candidate packet [[inbox/market-security_22c2b9d782a62d7a9b86-rsi_overbought-500884aedae6]] (500884aedae6).
+
+- Created candidate packet [[inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-acc85abaf670]] (acc85abaf670).
+
+- Created candidate packet [[inbox/market-security_2c779e81c27b78c556bb-rsi_overbought-270a3180dbc3]] (270a3180dbc3).
+
+- Created candidate packet [[inbox/market-security_33d9c44facc75c726c7d-macd_cross_above_signal-b5b67bfce931]] (b5b67bfce931).
+
+- Classified [[inbox/market-security_33d9c44facc75c726c7d-macd_cross_above_signal-b5b67bfce931]] as `ingest`: A new MACD bullish crossover with a 4.3% period return is a material validated market transition for the security.
+
+- Created candidate packet [[inbox/market-security_61567714298b9563d1a9-macd_cross_above_signal-2011a7474c46]] (2011a7474c46).
+
+- Classified [[inbox/market-security_61567714298b9563d1a9-macd_cross_above_signal-2011a7474c46]] as `ingest`: Material bullish MACD signal transition with a 16.5% period return for the security.
+
+- Created candidate packet [[inbox/market-security_664f93a7eaca72e76e9b-bollinger_above_upper-d9fe4329d833]] (d9fe4329d833).
+
+- Created candidate packet [[inbox/market-security_66cdcf90aac0d83e76f3-macd_cross_below_signal-34277025b4d8]] (34277025b4d8).
+
+- Created candidate packet [[inbox/market-security_97f38b2cb2d5ef127f5a-rsi_oversold-7fb724785892]] (7fb724785892).
+
+- Classified [[inbox/market-security_97f38b2cb2d5ef127f5a-rsi_oversold-7fb724785892]] as `ingest`: New RSI oversold transition follows a material 19.2% decline over the validated period, warranting durable review.
+
+- Created candidate packet [[inbox/market-security_97f38b2cb2d5ef127f5a-volume_anomaly-9cd9b42ab2c5]] (9cd9b42ab2c5).
+
+- Classified [[inbox/market-security_97f38b2cb2d5ef127f5a-volume_anomaly-9cd9b42ab2c5]] as `ingest`: Material 19.2% decline with a newly entered volume anomaly merits durable review.
+
+- Created candidate packet [[inbox/market-security_ad3b1f8f59fd599f079a-bollinger_above_upper-2e85c7afb601]] (2e85c7afb601).
+
+- Created candidate packet [[inbox/market-security_ad3b1f8f59fd599f079a-volume_anomaly-9acc758d20aa]] (9acc758d20aa).
+
+- Classified [[inbox/market-security_ad3b1f8f59fd599f079a-volume_anomaly-9acc758d20aa]] as `ingest`: A newly entered volume anomaly coincides with a material 37.5% period return, warranting durable review.
+
+- Created candidate packet [[inbox/market-security_c5a9e460d3350284d157-rsi_overbought-73d9b07b1775]] (73d9b07b1775).
+
+- Created candidate packet [[inbox/market-security_cb88f9154cfeaa15e878-macd_cross_above_signal-ee0481ac1dcb]] (ee0481ac1dcb).
+
+- Classified [[inbox/market-security_cb88f9154cfeaa15e878-macd_cross_above_signal-ee0481ac1dcb]] as `ingest`: New MACD bullish crossover is a validated market transition with potential decision relevance despite recent negative returns.
+
+- Created candidate packet [[inbox/market-security_dc7a111e297be528d96b-bollinger_above_upper-206349e6ecbc]] (206349e6ecbc).
+
+- Created candidate packet [[inbox/market-security_dc7a111e297be528d96b-volume_anomaly-172c103f61ac]] (172c103f61ac).
+
+- Classified [[inbox/market-security_dc7a111e297be528d96b-volume_anomaly-172c103f61ac]] as `ingest`: Material volume-anomaly transition coinciding with a 17.8% price increase over the observed period warrants durable wiki review.
+
+- Created candidate packet [[inbox/market-security_de0d83229b369a426b99-macd_cross_above_signal-1f1b479eb890]] (1f1b479eb890).
+
+- Classified [[inbox/market-security_de0d83229b369a426b99-macd_cross_above_signal-1f1b479eb890]] as `ingest`: A newly entered MACD bullish crossover is a material indicator transition for the security and merits durable review.
+
+- Created candidate packet [[inbox/market-security_dfa34d4b9050964b465e-macd_cross_above_signal-7ecada46ac6f]] (7ecada46ac6f).
+
+- Classified [[inbox/market-security_dfa34d4b9050964b465e-macd_cross_above_signal-7ecada46ac6f]] as `ingest`: New MACD bullish crossover after an 8.2% decline is a material indicator transition for the security.
+
+- Created candidate packet [[inbox/market-security_eca976f0076a425ea1bb-rsi_overbought-fbaac2af6baa]] (fbaac2af6baa).
+
+- Created candidate packet [[inbox/market-security_f2b9760d847b2ba59324-sma_50_cross_below_200-c2be3a39df7f]] (c2be3a39df7f).
+
+- Created candidate packet [[inbox/market-security_fb87fac302a5446a1ced-macd_cross_below_signal-e2ea56b689e8]] (e2ea56b689e8).
+
 ## [2026-09-03] update | Applied Materials full security review after lower Bollinger-band breach
 
 - Updated [[securities/security_0a56aa634d077fe5796f]] with the filed fiscal-Q3 Form 10-Q,
