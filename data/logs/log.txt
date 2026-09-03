@@ -426,3 +426,4 @@
 2026-09-03T19:32:42Z [daily_run_completed] run=dev-rebased-publication-v5-20260903 Completed deterministic daily run with status succeeded.
 2026-09-03T19:35:29Z [daily_run_started] run=dev-rebased-publication-v5b-20260903 Started sequential deterministic daily preparation.
 2026-09-03T19:35:37Z [daily_run_completed] run=dev-rebased-publication-v5b-20260903 Completed deterministic daily run with status succeeded.
+2026-09-03T19:59:31Z [daily_run_started] run=daily-20260903T195930Z Started sequential deterministic daily preparation.
