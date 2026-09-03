@@ -113,6 +113,13 @@ def test_daily_preparation_enqueues_allocation_maintenance_sequentially(
         classify_opportunities=False,
     )
     assert preparation.errors == ()
+    allocation_artifact = (
+        sandbox_repository / "data" / "runs" / preparation.run_id / "allocation_plan.json"
+    )
+    assert allocation_artifact.is_file()
+    assert (
+        json.loads(allocation_artifact.read_text(encoding="utf-8"))["run_id"] == preparation.run_id
+    )
     rows = read_table(sandbox_repository, "operations_todo")
     assert [row["operation_type"] for row in rows] == [
         "security_research",

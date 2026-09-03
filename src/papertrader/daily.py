@@ -502,8 +502,12 @@ def _record_phase_issue(
         impact = "affects_candidate"
         entity_type = "candidate_packet"
         entity_id = error.split("classifier blocked for ", maxsplit=1)[-1]
-    elif "allocation maintenance" in error:
-        issue_code = "allocation_research_maintenance_failed"
+    elif "allocation maintenance" in error or "allocation planning" in error:
+        issue_code = (
+            "allocation_research_maintenance_failed"
+            if "allocation maintenance" in error
+            else "allocation_planning_failed"
+        )
         impact = "affects_candidate"
         entity_type = "daily_run"
         entity_id = run_id
@@ -630,6 +634,14 @@ def prepare_daily_run(
             )
         except (AllocationError, CanonicalValueError) as exc:
             errors.append(f"allocation maintenance failed closed: {exc}")
+        try:
+            # Market retrieval can change an allocation tier or whole-share target. Rebuild the
+            # deterministic plan before queue preparation so stale allocation work is rebound or
+            # cancelled before any agent can claim it. Finalization repeats this calculation
+            # after accepted operations and pending-order changes for the published snapshot.
+            plan_allocation(repository_root, settings, run_id=run_id, now=instant)
+        except (AllocationError, CanonicalValueError) as exc:
+            errors.append(f"allocation planning failed closed: {exc}")
     for error in errors:
         _record_phase_issue(
             repository_root,

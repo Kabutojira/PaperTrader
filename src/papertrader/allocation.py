@@ -1701,6 +1701,13 @@ def _enqueue_targets(
     for row in sorted(rows, key=lambda value: value["security_id"]):
         if row["disposition"] not in ALLOCATABLE_DISPOSITIONS:
             continue
+        if (
+            row["disposition"] in {"reduce", "close"}
+            and required_decimal(row["current_weight_pct"], label="current allocation weight") <= 0
+        ):
+            # Cancelling an incompatible unfilled order already reaches zero exposure. A close
+            # strategy in this state would be a stale zero-quantity no-op.
+            continue
         candidate = candidates[row["security_id"]]
         existing_strategy = strategies.get(row["strategy_id"])
         relationship_id = candidate.relationship_id or (

@@ -332,6 +332,16 @@ def _public_snapshot(repository_root: Path, snapshot: DecisionSnapshot) -> Decis
     """Humanize machine identities before rendering snapshot narratives to Markdown."""
 
     resolver = PublicEntityResolver(repository_root)
+    signals = tuple(
+        replace(
+            signal,
+            entry_rule=resolver.human_label(signal.entry_rule),
+            exit_rule=resolver.human_label(signal.exit_rule),
+            invalidation=resolver.human_label(signal.invalidation),
+            rationale=resolver.human_label(signal.rationale),
+        )
+        for signal in snapshot.actionable_signals
+    )
     alerts = tuple(
         replace(
             alert,
@@ -347,7 +357,12 @@ def _public_snapshot(repository_root: Path, snapshot: DecisionSnapshot) -> Decis
         )
         for impact in snapshot.system_impacts
     )
-    return replace(snapshot, research_alerts=alerts, system_impacts=impacts)
+    return replace(
+        snapshot,
+        actionable_signals=signals,
+        research_alerts=alerts,
+        system_impacts=impacts,
+    )
 
 
 def _frontmatter(

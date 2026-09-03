@@ -53,7 +53,9 @@ as provenance and use the binding's current plan ID for every current-state chec
    soft gaps, why it did not qualify for conviction, downside/base cases, review date, exit
    conditions, target-size limit, and why the bounded allocation is preferable to cash. Set
    `risk_budget_pct` to the payload's tier-specific `position_cap_pct`; this is a stable ceiling,
-   not the current target. Never choose or enlarge the deterministic target quantity.
+   not the current target. A `watch` tier is valid only for an exit-only `close` payload with a
+   zero target and zero risk budget; it can reduce existing filled exposure but never add or retain
+   exposure. Never choose or enlarge the deterministic target quantity.
 5. Select a structure or document the blocking factor. Define entry, exit, expiry, sizing inputs,
    risk budget, required evidence, and every normalized leg.
 6. Update the strategy page/catalog/log and apply strategy state through the CLI. A baseline strategy

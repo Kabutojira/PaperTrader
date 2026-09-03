@@ -8,17 +8,19 @@ from pathlib import Path
 
 import pytest
 
-from papertrader.allocation import write_calibration_report
+from papertrader.allocation import baseline_strategy_id, plan_allocation, write_calibration_report
 from papertrader.config import Settings
+from papertrader.execution import ensure_initial_capital
 from papertrader.queue import (
     RunBudget,
     claim_next,
     complete_operation,
     enqueue_operation,
     prepare_queue,
+    validate_queue,
 )
 from papertrader.ratings import canonical_rating
-from papertrader.research import ResearchStateError, upsert_assessment
+from papertrader.research import ResearchStateError, upsert_assessment, upsert_strategy
 from papertrader.tables import read_table, write_table
 from papertrader.valuation import (
     ValuationError,
@@ -253,6 +255,184 @@ def test_live_projection_accepts_exact_starter_payoff_boundaries(
     assert projection["confidence_adjusted_expected_return_pct"] == "10"
     assert projection["tier"] == "starter"
     assert projection["position_cap_pct"] == "2"
+
+
+def test_repricing_to_watch_cancels_pending_only_exposure_without_close_research(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    _seed(sandbox_repository)
+    assert upsert_assessment(
+        sandbox_repository,
+        sandbox_settings,
+        _request("mature_compounder", "dcf"),
+        now=NOW,
+    )
+    ensure_initial_capital(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="valuation-allocation-seed",
+        occurred_at=NOW,
+    )
+    active = replace(
+        sandbox_settings,
+        allocation=replace(
+            sandbox_settings.allocation,
+            mode="active",
+            minimum_diversified_candidates=1,
+        ),
+    )
+    initial = plan_allocation(
+        sandbox_repository,
+        active,
+        run_id="valuation-allocation-initial",
+        now=NOW,
+    )
+    target = read_table(sandbox_repository, "allocation_targets")[0]
+    assert target["tier"] == "full"
+    assert Decimal(target["target_quantity"]) > 0
+    strategy_id = baseline_strategy_id("sec_valuation")
+    strategy_page = sandbox_repository / "data" / "wiki" / "strategies" / f"{strategy_id}.md"
+    strategy_page.write_text("# Valuation baseline strategy\n", encoding="utf-8")
+    assert upsert_strategy(
+        sandbox_repository,
+        active,
+        {
+            "strategy": {
+                "strategy_id": strategy_id,
+                "idea_id": "idea_valuation",
+                "security_id": "sec_valuation",
+                "relationship_id": "relationship_valuation",
+                "name": "Valuation baseline strategy",
+                "status": "ready",
+                "direction": "long",
+                "instrument_type": "equity",
+                "thesis": "The validated valuation supports bounded paper exposure.",
+                "entry_rule": "Follow the deterministic allocation target.",
+                "exit_rule": "Close when the live target falls to zero.",
+                "invalidation": "A failed live allocation gate invalidates exposure.",
+                "risk_budget_pct": target["position_cap_pct"],
+                "sleeve": "baseline",
+                "allocation_plan_id": initial.allocation_plan_id,
+                "allocation_intent_id": target["allocation_intent_id"],
+                "not_before": "",
+                "expires_at": "",
+                "research_page": f"data/wiki/strategies/{strategy_id}.md",
+            },
+            "legs": [
+                {
+                    "leg_id": "leg_valuation",
+                    "action": "buy",
+                    "side": "long",
+                    "instrument_type": "equity",
+                    "security_id": "sec_valuation",
+                    "provider_contract_id": "",
+                    "option_type": "",
+                    "expiry": "",
+                    "strike": "",
+                    "quantity": target["target_quantity"],
+                    "contract_multiplier": "1",
+                    "order_type": "market",
+                    "limit_price": "",
+                    "currency": "EUR",
+                }
+            ],
+        },
+        now=NOW,
+    )
+    write_table(
+        sandbox_repository,
+        "signals",
+        [
+            {
+                "signal_id": "signal_valuation_pending",
+                "strategy_id": strategy_id,
+                "allocation_intent_id": target["allocation_intent_id"],
+                "signal_type": "open",
+                "created_at": "2026-07-24T22:00:00Z",
+                "expires_at": "2026-07-25T22:00:00Z",
+                "status": "ordered",
+                "rationale": "Exercise pending-order cancellation after live repricing.",
+                "market_data_as_of": "2026-07-24T22:00:00Z",
+                "order_request_path": "",
+                "telegram_sent_at": "",
+                "run_id": "valuation-allocation-initial",
+            }
+        ],
+    )
+    write_table(
+        sandbox_repository,
+        "orders",
+        [
+            {
+                "order_id": "order_valuation_pending",
+                "signal_id": "signal_valuation_pending",
+                "strategy_id": strategy_id,
+                "allocation_intent_id": target["allocation_intent_id"],
+                "created_at": "2026-07-24T22:00:00Z",
+                "status": "pending",
+                "fill_policy": "next_open",
+                "not_before": "2026-07-24T22:00:00Z",
+                "expires_at": "2026-07-25T22:00:00Z",
+                "order_type": "market",
+                "limit_price": "",
+                "slippage_bps": "5",
+                "fee_model": "fixed_plus_bps",
+                "currency": "EUR",
+                "run_id": "valuation-allocation-initial",
+            }
+        ],
+    )
+    write_table(
+        sandbox_repository,
+        "order_legs",
+        [
+            {
+                "order_id": "order_valuation_pending",
+                "leg_id": "leg_valuation",
+                "action": "buy",
+                "side": "long",
+                "instrument_type": "equity",
+                "security_id": "sec_valuation",
+                "provider_contract_id": "",
+                "option_type": "",
+                "expiry": "",
+                "strike": "",
+                "quantity": target["target_quantity"],
+                "contract_multiplier": "1",
+                "limit_price": "",
+                "currency": "EUR",
+            }
+        ],
+    )
+    repriced_market = _market() | {
+        "open": "129",
+        "high": "131",
+        "low": "128",
+        "close": "130",
+        "adjusted_close": "130",
+        "retrieved_at": "2026-07-24T22:01:00Z",
+    }
+    write_table(sandbox_repository, "market_latest", [repriced_market])
+
+    plan_allocation(
+        sandbox_repository,
+        active,
+        run_id="valuation-allocation-repriced",
+        now=NOW.replace(minute=1),
+    )
+    prepare_queue(sandbox_repository, now=NOW.replace(minute=2))
+
+    repriced_target = read_table(sandbox_repository, "allocation_targets")[0]
+    assert repriced_target["tier"] == "watch"
+    assert repriced_target["target_quantity"] == "0"
+    assert repriced_target["disposition"] == "close"
+    assert read_table(sandbox_repository, "signals")[0]["status"] == "cancelled"
+    assert read_table(sandbox_repository, "orders")[0]["status"] == "cancelled"
+    assert not any(
+        row["entity_id"] == strategy_id for row in read_table(sandbox_repository, "operations_todo")
+    )
+    assert validate_queue(sandbox_repository) == []
 
 
 def test_live_projection_accepts_inclusive_negative_35_bear_boundary(

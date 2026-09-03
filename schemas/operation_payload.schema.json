@@ -402,7 +402,7 @@
                 "allocation_plan_id": { "type": "string", "minLength": 1 },
                 "allocation_intent_id": { "type": "string", "minLength": 1 },
                 "security_id": { "type": "string", "minLength": 1 },
-                "tier": { "enum": ["full", "starter"] },
+                "tier": { "enum": ["full", "starter", "watch"] },
                 "assessment_id": { "type": "string", "minLength": 1 },
                 "target_quantity": { "$ref": "#/$defs/decimal_text" },
                 "valuation_mark": { "$ref": "#/$defs/decimal_text" },
@@ -436,6 +436,28 @@
                       "effective_score",
                       "assessment_as_of",
                       "disposition"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": { "tier": { "const": "watch" } },
+                    "required": ["tier"]
+                  },
+                  "then": {
+                    "properties": {
+                      "disposition": { "const": "close" },
+                      "target_quantity": { "const": "0" },
+                      "target_weight_pct": { "const": "0" },
+                      "position_cap_pct": { "const": "0" },
+                      "maximum_weight_pct": { "const": "0" }
+                    },
+                    "required": [
+                      "disposition",
+                      "target_quantity",
+                      "target_weight_pct",
+                      "position_cap_pct",
+                      "maximum_weight_pct"
                     ]
                   }
                 }

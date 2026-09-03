@@ -200,6 +200,23 @@ def test_operation_payload_normalizes_baseline_increase_to_open_lifecycle_action
 
     assert list(validator.iter_errors(baseline)) == []
     assert list(validator.iter_errors(hold)) == []
+    watch_close = {
+        **baseline,
+        "inputs": {
+            **baseline["inputs"],
+            "allocation_intent_id": "allocation_intent_watch_close",
+            "assessment_id": "assessment_watch_close",
+            "tier": "watch",
+            "target_quantity": "0",
+            "target_weight_pct": "0",
+            "position_cap_pct": "0",
+            "maximum_weight_pct": "0",
+            "disposition": "close",
+        },
+    }
+    assert list(validator.iter_errors(watch_close)) == []
+    watch_close["inputs"]["disposition"] = "open"
+    assert list(validator.iter_errors(watch_close))
     hold["inputs"]["action"] = "open"
     assert list(validator.iter_errors(hold)) == []
     hold["inputs"]["action"] = "increase"

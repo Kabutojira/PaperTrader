@@ -1313,8 +1313,8 @@ def upsert_strategy(
     if values["instrument_type"] not in settings.risk.allowed_instruments:
         raise ResearchStateError("strategy instrument_type is not allowed")
     risk_budget = required_decimal(values["risk_budget_pct"], label="risk_budget_pct")
-    if not Decimal("0") < risk_budget <= Decimal("100"):
-        raise ResearchStateError("strategy risk_budget_pct must be within (0, 100]")
+    if not Decimal("0") <= risk_budget <= Decimal("100"):
+        raise ResearchStateError("strategy risk_budget_pct must be within [0, 100]")
     values["risk_budget_pct"] = decimal_text(risk_budget)
     if values["sleeve"] not in STRATEGY_SLEEVES:
         raise ResearchStateError("strategy sleeve must be conviction or baseline")
@@ -1322,6 +1322,8 @@ def upsert_strategy(
         values["allocation_plan_id"] or values["allocation_intent_id"]
     ):
         raise ResearchStateError("conviction strategy must not reference an allocation intent")
+    if values["sleeve"] == "conviction" and risk_budget <= 0:
+        raise ResearchStateError("conviction strategy risk_budget_pct must be positive")
     if values["sleeve"] == "baseline":
         _identifier(values["allocation_plan_id"], label="allocation_plan_id")
         if values["instrument_type"] != "equity" or values["direction"] != "long":

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+from dataclasses import replace
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
@@ -704,6 +705,56 @@ def test_public_snapshot_humanizes_research_alert_operation_identity(
     conclusion = public_snapshot.research_alerts[0].research_conclusion
     assert operation_id not in conclusion
     assert "Quick check research for D00" in conclusion
+
+
+def test_public_snapshot_humanizes_actionable_signal_rules(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    signal_id, _, _, _ = _seed_signal(sandbox_repository, sandbox_settings, with_order=True)
+    relationship_id = "relationship_0123456789abcdefabcd"
+    relationship_page = f"data/wiki/relationships/{relationship_id}.md"
+    (sandbox_repository / relationship_page).write_text(
+        "---\ntitle: Decision relationship\ntype: relationship\nstatus: maintained\n"
+        "tags:\n  - relationship\n---\n\n# Decision relationship\n",
+        encoding="utf-8",
+    )
+    write_table(
+        sandbox_repository,
+        "relationships",
+        [
+            {
+                **_relationship(),
+                "relationship_id": relationship_id,
+                "research_page": relationship_page,
+            }
+        ],
+    )
+    snapshot = build_decision_snapshot(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="active-signal-fixture",
+        as_of=NOW,
+    )
+    signal = replace(
+        snapshot.actionable_signals[0],
+        entry_rule=(
+            "Use allocation_plan_0123456789abcdefabcd while "
+            f"{signal_id} and {relationship_id} remain current."
+        ),
+    )
+
+    public_snapshot = _public_snapshot(
+        sandbox_repository,
+        replace(snapshot, actionable_signals=(signal,)),
+    )
+
+    entry_rule = public_snapshot.actionable_signals[0].entry_rule
+    assert "allocation_plan_" not in entry_rule
+    assert signal_id not in entry_rule
+    assert relationship_id not in entry_rule
+    assert "current allocation plan" in entry_rule
+    assert "Decision relationship" in entry_rule
 
 
 def test_active_signal_without_order_is_not_copy_ready_and_stale_signal_is_hidden(
