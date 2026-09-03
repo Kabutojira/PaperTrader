@@ -251,6 +251,22 @@ def test_candidate_classification_reports_the_precise_primary_constraint(
     assert _candidate_classification(target, assessment, None) == expected
 
 
+def test_candidate_classification_requires_the_strategy_to_match_the_current_intent() -> None:
+    target = {
+        "reason": "insufficient_diversification",
+        "tier": "full",
+        "target_quantity": "4",
+        "allocation_intent_id": "allocation_intent_current",
+    }
+    assessment = {"research_status": "complete", "canonical_rating": "buy"}
+    strategy = {
+        "status": "ready",
+        "allocation_intent_id": "allocation_intent_prior",
+    }
+
+    assert _candidate_classification(target, assessment, strategy) == "strategy_pending"
+
+
 def _strategy(index: int = 0) -> dict[str, str]:
     suffix = f"{index:02d}"
     return {

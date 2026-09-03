@@ -2053,6 +2053,11 @@ def _candidate_classification(
     strategy: Mapping[str, str] | None,
 ) -> str:
     reasons = set(part for part in target["reason"].split("|") if part)
+    current_strategy_active = (
+        strategy is not None
+        and strategy.get("allocation_intent_id", "") == target.get("allocation_intent_id", "")
+        and strategy["status"] in ACTIVE_STRATEGY_STATUSES
+    )
     if assessment is not None and assessment.get("research_status") == "unsupported":
         return "valuation_unsupported"
     if assessment is not None and assessment.get("research_status") in {"partial", "stale"}:
@@ -2097,7 +2102,7 @@ def _candidate_classification(
         target.get("tier") in {"full", "starter"}
         and required_decimal(target.get("target_quantity", "0"), label="candidate target quantity")
         > 0
-        and (strategy is None or strategy["status"] not in ACTIVE_STRATEGY_STATUSES)
+        and not current_strategy_active
     ):
         return "strategy_pending"
     if any(
