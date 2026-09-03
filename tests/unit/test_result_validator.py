@@ -1187,9 +1187,13 @@ def test_audited_request_cannot_change_after_structured_command(
         request.write_text(
             json.dumps(
                 {
+                    "issue_code": "primary_evidence_missing",
+                    "impact": "affects_candidate",
                     "severity": "warning",
                     "title": "Missing primary evidence",
                     "description": "The trigger lacks a current primary source.",
+                    "entity_type": "operation",
+                    "entity_id": operation_id,
                     "owner": "research",
                     "related_run_id": run_id,
                     "related_operation_id": operation_id,

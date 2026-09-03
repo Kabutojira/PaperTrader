@@ -22,7 +22,7 @@ from papertrader.config import Settings
 from papertrader.corporate_actions import accrue_dividends
 from papertrader.execution import ExecutionError, ensure_initial_capital, process_order_fill
 from papertrader.indicators import update_indicators
-from papertrader.issues import record_issue
+from papertrader.issues import reconcile_issues, record_issue
 from papertrader.logs import append_event, record_completed_run
 from papertrader.market_data import (
     MarketDataProvider,
@@ -474,11 +474,48 @@ def _record_phase_issue(
     now: datetime,
 ) -> str:
     subject = error.split(":", maxsplit=1)[0][:120]
+    security_match = re.search(r"security_[0-9a-f]{20}", error)
+    order_match = re.search(r"order_[0-9a-f]{20}", error)
+    fx_match = re.match(r"FX ([A-Z]{3})/([A-Z]{3})(?::|$)", error)
+    if phase == "fill":
+        issue_code = "order_fill_deferred"
+        impact = "blocks_action"
+        entity_type = "order" if order_match else "daily_run"
+        entity_id = order_match.group(0) if order_match else run_id
+    elif security_match:
+        issue_code = "daily_market_retrieval_failed"
+        impact = "affects_candidate"
+        entity_type = "security"
+        entity_id = security_match.group(0)
+    elif fx_match:
+        issue_code = "daily_fx_retrieval_failed"
+        impact = "affects_candidate"
+        entity_type = "fx_pair"
+        entity_id = f"{fx_match.group(1)}_{fx_match.group(2)}"
+    elif "classifier" in error:
+        issue_code = "daily_classifier_degraded"
+        impact = "affects_candidate"
+        entity_type = "candidate_packet"
+        entity_id = error.split("classifier blocked for ", maxsplit=1)[-1]
+    elif "allocation maintenance" in error:
+        issue_code = "allocation_research_maintenance_failed"
+        impact = "affects_candidate"
+        entity_type = "daily_run"
+        entity_id = run_id
+    else:
+        issue_code = "daily_preparation_degraded"
+        impact = "operational_only"
+        entity_type = "daily_run"
+        entity_id = run_id
     return record_issue(
         repository_root,
+        issue_code=issue_code,
+        impact=impact,
         severity="warning",
         title=f"Daily {phase} degraded: {subject}",
         description=error,
+        entity_type=entity_type,
+        entity_id=entity_id,
         owner="deterministic-controller",
         related_run_id=run_id,
         now=now,
@@ -1087,6 +1124,7 @@ def finalize_daily_run(
     except (AllocationError, CanonicalValueError) as exc:
         raise DailyRunError(f"allocation planning failed closed: {exc}") from exc
     prepare_queue(repository_root, now=instant)
+    reconcile_issues(repository_root, as_of=instant)
     raw_outcomes = batch.get("outcomes", [])
     if not isinstance(raw_outcomes, list):
         raise DailyRunError("agent batch outcomes must be a list")

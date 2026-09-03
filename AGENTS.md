@@ -843,9 +843,16 @@ Do not repeat incorrect example math. Percentage return is `(current_value - cos
 
 ### Issues
 
-- Canonical issue state lives in `data/tables/issues.csv` with stable IDs, status, severity, owner, first/last seen times, related run/operation, and resolution.
+- Canonical issue state lives in `data/tables/issues.csv` with stable IDs, a producer-owned
+  `issue_code`, explicit `impact`, optional entity scope, status, severity, owner, first/last seen
+  times, related run/operation, and resolution. Impact is one of `blocks_portfolio`,
+  `blocks_action`, `affects_candidate`, `publication_only`, or `operational_only`; investor health
+  must never infer impact from issue prose.
 - Generate `data/issues.md` as the human-readable open-issues dashboard.
 - An LLM records issues through the project CLI; deterministic validation assigns stable IDs and updates `data/tables/issues.csv`.
+- Reopen an issue by its code and entity scope, and resolve it only from producer success or
+  stronger canonical-state evidence. Resolution preserves the original `last_seen_at` failure
+  timestamp and records a separate `resolved_at`.
 - Do not create, update, close, or synchronize GitHub Issues. `data/tables/issues.csv` and `data/issues.md` are the complete issue system for this project.
 
 ### Telegram

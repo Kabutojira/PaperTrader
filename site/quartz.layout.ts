@@ -17,6 +17,20 @@ const dashboardPages = new Set([
 const isDashboardPage = (page: QuartzComponentProps): boolean =>
   dashboardPages.has(page.fileData.slug ?? "");
 
+const isHomepage = (page: QuartzComponentProps): boolean =>
+  page.fileData.slug === "index";
+
+const homepageExplorer = Component.Explorer({
+  folderDefaultState: "collapsed",
+  filterFn: (node) =>
+    !["tags", "inbox", "raw", "_meta", "_archive"].includes(node.slugSegment),
+});
+
+const homepageGraph = Component.Graph({
+  localGraph: { depth: 2, removeTags: ["inbox"] },
+  globalGraph: { removeTags: ["inbox"] },
+});
+
 const isCollectionPage = (
   page: QuartzComponentProps,
   prefix: string,
@@ -110,6 +124,10 @@ export const defaultContentPageLayout: PageLayout = {
       component: Component.Explorer(),
       condition: (page) => !isDashboardPage(page),
     }),
+    Component.ConditionalRender({
+      component: homepageExplorer,
+      condition: isHomepage,
+    }),
   ],
   right: [
     Component.ConditionalRender({
@@ -119,6 +137,14 @@ export const defaultContentPageLayout: PageLayout = {
     Component.ConditionalRender({
       component: Component.Backlinks(),
       condition: (page) => !isDashboardPage(page),
+    }),
+    Component.ConditionalRender({
+      component: Component.DesktopOnly(homepageGraph),
+      condition: isHomepage,
+    }),
+    Component.ConditionalRender({
+      component: Component.DesktopOnly(Component.Backlinks()),
+      condition: isHomepage,
     }),
   ],
 };

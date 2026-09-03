@@ -27,6 +27,9 @@ hand-edit CSVs or touch trading/accounting state.
 
 The structured commands allowed here are `scripts/papertrader research source record --request <json>`,
 `scripts/papertrader issue record --request <json>`, and `scripts/papertrader queue enqueue --request <json>`.
+Every issue request supplies a stable `issue_code`, explicit `impact`, and matching
+`entity_type`/`entity_id`; ingestion failures are `operational_only` unless they create a concrete
+candidate research gap.
 Only `youtube_video` and `seekingalpha_search_lead` payloads additionally allow
 `scripts/papertrader watchlist import --request <json>`.
 

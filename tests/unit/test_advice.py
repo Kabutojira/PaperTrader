@@ -850,9 +850,13 @@ def test_global_action_issue_blocks_active_recommendation(
     _seed_signal(sandbox_repository, sandbox_settings, with_order=False)
     record_issue(
         sandbox_repository,
+        issue_code="action_validation_failed",
+        impact="blocks_action",
         severity="error",
         title="Order validation unavailable",
         description="The deterministic order gate is unavailable for current signals.",
+        entity_type="system",
+        entity_id="paper_execution",
         now=NOW,
     )
 
@@ -868,6 +872,38 @@ def test_global_action_issue_blocks_active_recommendation(
     assert any(impact.impact == "blocks_action" for impact in snapshot.system_impacts)
 
 
+def test_candidate_issue_text_cannot_become_a_portfolio_blocker(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    _initialize(sandbox_repository, sandbox_settings, run_id="candidate-issue-fixture")
+    record_issue(
+        sandbox_repository,
+        issue_code="assessment_update_failed",
+        impact="affects_candidate",
+        severity="error",
+        title="Assessment retry required",
+        description=(
+            "No portfolio, strategy, signal, order, execution, cash, or ledger state changed."
+        ),
+        entity_type="security",
+        entity_id="security_fixture",
+        now=NOW,
+    )
+
+    snapshot = build_decision_snapshot(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="candidate-issue-fixture",
+        as_of=NOW,
+    )
+
+    assert snapshot.investment_data_status == "degraded"
+    assert snapshot.operations_status == "current"
+    assert snapshot.stance == "hold_cash"
+    assert all(impact.impact != "blocks_portfolio" for impact in snapshot.system_impacts)
+
+
 def test_system_status_escapes_wikilinks_embedded_in_issue_diagnostics(
     sandbox_repository: Path,
     sandbox_settings: Settings,
@@ -876,11 +912,15 @@ def test_system_status_escapes_wikilinks_embedded_in_issue_diagnostics(
     _initialize(sandbox_repository, sandbox_settings, run_id=run_id)
     record_issue(
         sandbox_repository,
+        issue_code="research_validation_failed",
+        impact="affects_candidate",
         severity="error",
         title="Research validation failed",
         description=(
             "Post-run wiki lint rejected [[concepts/missing-page]] while validating research."
         ),
+        entity_type="system",
+        entity_id="research",
         now=NOW,
     )
 
@@ -1035,9 +1075,13 @@ def test_interrupted_open_cycle_can_replace_snapshot_until_finalization(
     )
     record_issue(
         sandbox_repository,
+        issue_code="daily_finalization_interrupted",
+        impact="operational_only",
         severity="error",
         title="Interrupted finalization fixture",
         description="The open cycle must refresh its incomplete snapshot.",
+        entity_type="daily_run",
+        entity_id=run_id,
         owner="controller",
         related_run_id=run_id,
         now=NOW,
@@ -1062,9 +1106,13 @@ def test_interrupted_open_cycle_can_replace_snapshot_until_finalization(
     manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
     record_issue(
         sandbox_repository,
+        issue_code="daily_finalization_completed_fixture",
+        impact="operational_only",
         severity="error",
         title="Completed finalization fixture",
         description="A finalized cycle must retain its immutable snapshot.",
+        entity_type="daily_run",
+        entity_id=run_id,
         owner="controller",
         related_run_id=run_id,
         now=NOW + timedelta(minutes=1),
@@ -1114,9 +1162,13 @@ def test_post_publication_delivery_issue_does_not_stale_decision_snapshot(
     _initialize(sandbox_repository, sandbox_settings, run_id="delivery-fixture")
     record_issue(
         sandbox_repository,
+        issue_code="telegram_report_delivery_failed",
+        impact="publication_only",
         severity="warning",
         title="Telegram delivery failed: prior",
         description="A prior committed investor brief awaits retry.",
+        entity_type="delivery",
+        entity_id="daily_report",
         owner="delivery",
         related_run_id="prior-fixture",
         now=NOW - timedelta(minutes=1),
@@ -1134,9 +1186,13 @@ def test_post_publication_delivery_issue_does_not_stale_decision_snapshot(
 
     record_issue(
         sandbox_repository,
+        issue_code="telegram_report_delivery_failed",
+        impact="publication_only",
         severity="warning",
         title="Telegram delivery failed: deadbeef",
         description="The committed investor brief could not be delivered.",
+        entity_type="delivery",
+        entity_id="daily_report",
         owner="delivery",
         related_run_id="delivery-fixture",
         now=NOW + timedelta(minutes=1),
@@ -1154,9 +1210,13 @@ def test_post_publication_reopened_delivery_issue_does_not_stale_decision_snapsh
     _initialize(sandbox_repository, sandbox_settings, run_id=run_id)
     issue_id = record_issue(
         sandbox_repository,
+        issue_code="telegram_podcast_audio_delivery_failed",
+        impact="publication_only",
         severity="warning",
         title="Telegram podcast audio delivery unavailable",
         description="A prior podcast audio delivery failed.",
+        entity_type="delivery",
+        entity_id="podcast_audio",
         owner="delivery",
         related_run_id="prior-delivery-fixture",
         now=NOW - timedelta(minutes=2),
@@ -1177,9 +1237,13 @@ def test_post_publication_reopened_delivery_issue_does_not_stale_decision_snapsh
 
     reopened_id = record_issue(
         sandbox_repository,
+        issue_code="telegram_podcast_audio_delivery_failed",
+        impact="publication_only",
         severity="warning",
         title="Telegram podcast audio delivery unavailable",
         description="The current podcast audio draft was unavailable.",
+        entity_type="delivery",
+        entity_id="podcast_audio",
         owner="delivery",
         related_run_id=run_id,
         now=NOW + timedelta(minutes=1),
@@ -1262,9 +1326,13 @@ def test_legacy_post_publication_podcast_bookkeeping_does_not_stale_snapshot(
     )
     record_issue(
         sandbox_repository,
+        issue_code="agent_result_validation_failed",
+        impact="publication_only",
         severity="error",
         title=f"Hermes operation validation failed: {podcast_operation_id}",
         description="Legacy controller classification for a contained podcast failure.",
+        entity_type="operation",
+        entity_id=podcast_operation_id,
         owner="controller",
         related_run_id=run_id,
         related_operation_id=podcast_operation_id,

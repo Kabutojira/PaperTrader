@@ -56,9 +56,13 @@ def test_prepared_agent_operation_defers_publication_freshness_until_finalizatio
     )
     record_issue(
         sandbox_repository,
+        issue_code="prepared_run_input_changed",
+        impact="affects_candidate",
         severity="warning",
         title="Research input changed during the prepared run",
         description="A canonical input advanced after the previous publication snapshot.",
+        entity_type="daily_run",
+        entity_id=run_id,
         owner="deterministic-controller",
         related_run_id=run_id,
         now=now + timedelta(minutes=1),

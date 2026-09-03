@@ -119,6 +119,80 @@ def _complete(repository: Path, operation_id: str, run_id: str, now: datetime) -
     )
 
 
+def _indicator_packet(
+    repository: Path,
+    *,
+    security_id: str,
+    trigger: str,
+    as_of_date: str,
+) -> str:
+    relative = f"data/wiki/inbox/market-{security_id}-{trigger}-{as_of_date}.md"
+    path = repository / relative
+    path.write_text(
+        "\n".join(
+            [
+                "---",
+                f'title: "{security_id} — {trigger}"',
+                "type: candidate",
+                "status: reviewed",
+                "tags:",
+                "  - inbox",
+                "candidate_facts:",
+                "  candidate_type: indicator_transition",
+                f"  security_id: {security_id}",
+                f"  trigger: {trigger}",
+                "  transition: entered",
+                f'  as_of_date: "{as_of_date}"',
+                "---",
+                "",
+                "Deterministic test packet.",
+                "",
+            ]
+        ),
+        encoding="utf-8",
+    )
+    return relative
+
+
+def _enqueue_indicator_opportunity(
+    repository: Path,
+    settings: Settings,
+    *,
+    security_id: str,
+    trigger: str,
+    as_of_date: str,
+    now: datetime,
+) -> str:
+    packet = _indicator_packet(
+        repository,
+        security_id=security_id,
+        trigger=trigger,
+        as_of_date=as_of_date,
+    )
+    operation_id, created = enqueue_operation(
+        repository,
+        settings,
+        operation_type="opportunity_research",
+        entity_type="opportunity",
+        entity_id=f"opportunity_{as_of_date.replace('-', '')}",
+        dedupe_key=f"opportunity_research:{security_id}:{trigger}:{as_of_date}",
+        prompt="Review one deterministic indicator transition.",
+        inputs={
+            "security_id": security_id,
+            "trigger_type": trigger,
+            "market_data_as_of": f"{as_of_date}T20:00:00Z",
+            "period_start": as_of_date,
+            "period_end": as_of_date,
+        },
+        source="deterministic-indicator-transition",
+        freshness_days=7,
+        source_refs=(packet,),
+        now=now,
+    )
+    assert created is True
+    return operation_id
+
+
 def _allocation_target(plan_id: str) -> dict[str, str]:
     return {
         "allocation_plan_id": plan_id,
@@ -419,6 +493,92 @@ def test_prepare_preserves_price_alert_when_only_the_indicator_date_advanced(
     assert len(active) == 1
     assert active[0]["operation_id"] == operation_id
     assert active[0]["status"] == "ready"
+
+
+def test_prepare_skips_cleared_stale_indicator_opportunity(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    security_id = "security_aaaaaaaaaaaaaaaaaaaa"
+    operation_id = _enqueue_indicator_opportunity(
+        sandbox_repository,
+        sandbox_settings,
+        security_id=security_id,
+        trigger="volume_anomaly",
+        as_of_date="2026-07-24",
+        now=NOW,
+    )
+    write_table(
+        sandbox_repository,
+        "indicators",
+        [
+            {
+                "security_id": security_id,
+                "as_of_date": "2026-08-01",
+                "calculated_at": "2026-08-01T20:00:00Z",
+                "observation_count": "220",
+                "sma_20": "90",
+                "sma_50": "85",
+                "sma_200": "80",
+                "rsi_14": "50",
+                "bollinger_mid": "90",
+                "bollinger_upper": "99",
+                "bollinger_lower": "81",
+                "macd": "1",
+                "macd_signal": "1",
+                "macd_histogram": "0",
+                "return_1d": "0",
+                "return_5d": "1",
+                "return_20d": "2",
+                "volume_zscore": "0",
+                "volatility_20d": "20",
+                "trigger_state": "",
+                "source_price_hash": "b" * 64,
+            }
+        ],
+    )
+
+    dispositions = prepare_queue(sandbox_repository, now=NOW + timedelta(days=9))
+
+    assert read_table(sandbox_repository, "operations_todo") == []
+    history = read_table(sandbox_repository, "operations_history")
+    assert history[0]["operation_id"] == operation_id
+    assert history[0]["terminal_reason"] == "indicator_condition_cleared:2026-08-01"
+    assert dispositions == (
+        f"{operation_id}:skipped:indicator_condition_cleared:2026-08-01",
+    )
+
+
+def test_prepare_keeps_newest_same_trigger_and_archives_older_request(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    security_id = "security_bbbbbbbbbbbbbbbbbbbb"
+    older = _enqueue_indicator_opportunity(
+        sandbox_repository,
+        sandbox_settings,
+        security_id=security_id,
+        trigger="rsi_oversold",
+        as_of_date="2026-07-24",
+        now=NOW,
+    )
+    newer = _enqueue_indicator_opportunity(
+        sandbox_repository,
+        sandbox_settings,
+        security_id=security_id,
+        trigger="rsi_oversold",
+        as_of_date="2026-07-25",
+        now=NOW + timedelta(days=1),
+    )
+
+    dispositions = prepare_queue(sandbox_repository, now=NOW + timedelta(days=1, minutes=1))
+
+    active = read_table(sandbox_repository, "operations_todo")
+    assert [row["operation_id"] for row in active] == [newer]
+    archived = read_table(sandbox_repository, "operations_history")
+    assert archived[0]["operation_id"] == older
+    assert archived[0]["terminal_reason"] == f"superseded_indicator_alert:{newer}"
+    assert dispositions == (f"{older}:skipped:superseded_indicator_alert:{newer}",)
 
 
 def test_recent_completed_security_review_selects_quick_check(

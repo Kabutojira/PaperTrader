@@ -1044,6 +1044,9 @@ def validate_integrity(
         errors.append(str(exc))
     errors.extend(validate_layout(repository_root))
     errors.extend(validate_csv_files(repository_root))
+    from papertrader.issues import validate_issue_state
+
+    errors.extend(validate_issue_state(repository_root))
     errors.extend(validate_assessment_history(repository_root))
     from papertrader.valuation import validate_research_rubrics, valuation_templates
 

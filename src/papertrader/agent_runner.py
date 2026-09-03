@@ -19,7 +19,11 @@ import yaml
 
 from papertrader.atomic_io import atomic_write_json, atomic_write_text
 from papertrader.config import HermesExecutionProfile, Settings
-from papertrader.issues import record_issue
+from papertrader.issues import (
+    operation_validation_impact,
+    record_issue,
+    resolve_matching_issues,
+)
 from papertrader.podcast import PodcastError, podcast_page_path, validate_podcast_context
 from papertrader.profiles import ProfileRoute, RoutingContext, route_profile, select_profile
 from papertrader.queue import (
@@ -1421,9 +1425,13 @@ def _run_claimed_and_disposition(
     except AgentRunError as exc:
         issue_id = record_issue(
             repository_root,
+            issue_code="agent_result_validation_failed",
+            impact=operation_validation_impact(operation.operation_type),
             severity="error",
             title=f"Hermes operation validation failed: {operation.operation_id}",
             description=str(exc),
+            entity_type="operation",
+            entity_id=operation.operation_id,
             owner="delivery" if operation.operation_type == "daily_podcast" else "controller",
             related_run_id=run_id,
             related_operation_id=operation.operation_id,
@@ -1487,6 +1495,14 @@ def _run_claimed_and_disposition(
             error=f"agent_result:failed:{summary}",
             result_path=result_path,
             result_summary=summary,
+        )
+    if status in {"succeeded", "skipped"}:
+        resolve_matching_issues(
+            repository_root,
+            issue_code="agent_result_validation_failed",
+            entity_type="operation",
+            entity_id=operation.operation_id,
+            resolution=f"operation_validation_recovered: {operation.operation_id}",
         )
     return status
 

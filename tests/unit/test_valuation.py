@@ -2,12 +2,20 @@ from __future__ import annotations
 
 import json
 from datetime import UTC, datetime
+from decimal import Decimal
 from pathlib import Path
 
 import pytest
 
 from papertrader.allocation import write_calibration_report
 from papertrader.config import Settings
+from papertrader.queue import (
+    RunBudget,
+    claim_next,
+    complete_operation,
+    enqueue_operation,
+    prepare_queue,
+)
 from papertrader.research import ResearchStateError, upsert_assessment
 from papertrader.tables import read_table, write_table
 from papertrader.valuation import validate_research_rubrics, valuation_templates
@@ -217,6 +225,85 @@ def test_named_template_canonicalizes_omitted_rationale_to_empty(
     row = read_table(sandbox_repository, "security_assessments")[0]
     assert row["valuation_template"] == "mature_compounder"
     assert row["valuation_template_rationale"] == ""
+
+
+def test_v2_assessment_requires_exact_provenance_when_run_has_two_reviews(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    _seed(sandbox_repository)
+    budget = RunBudget(maximum_operations=2, maximum_cost=Decimal("1"))
+    first_id, _ = enqueue_operation(
+        sandbox_repository,
+        sandbox_settings,
+        operation_type="security_research",
+        entity_type="security",
+        entity_id="sec_valuation",
+        dedupe_key="security_research:sec_valuation:first-review:2026-07-24",
+        prompt="Complete the first valuation review.",
+        inputs={"security_id": "sec_valuation"},
+        source="fixture",
+        now=NOW,
+    )
+    prepare_queue(sandbox_repository, now=NOW)
+    first = claim_next(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="valuation-run",
+        budget=budget,
+        operation_id=first_id,
+        now=NOW,
+    )
+    assert first is not None
+    complete_operation(
+        sandbox_repository,
+        operation_id=first_id,
+        run_id="valuation-run",
+        terminal_status="succeeded",
+        result_path=f"data/runs/valuation-run/{first_id}/agent_result.json",
+        result_summary="First review completed.",
+        terminal_reason="completed",
+        now=NOW,
+    )
+    second_id, _ = enqueue_operation(
+        sandbox_repository,
+        sandbox_settings,
+        operation_type="security_research",
+        entity_type="security",
+        entity_id="sec_valuation",
+        dedupe_key="security_research:sec_valuation:second-review:2026-07-24",
+        prompt="Complete the second valuation review.",
+        inputs={"security_id": "sec_valuation"},
+        source="fixture",
+        now=NOW,
+    )
+    prepare_queue(sandbox_repository, now=NOW)
+    second = claim_next(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="valuation-run",
+        budget=budget,
+        operation_id=second_id,
+        now=NOW,
+    )
+    assert second is not None
+
+    with pytest.raises(ResearchStateError, match="source operation is ambiguous"):
+        upsert_assessment(
+            sandbox_repository,
+            sandbox_settings,
+            _request("mature_compounder", "dcf"),
+            now=NOW,
+        )
+
+    assert upsert_assessment(
+        sandbox_repository,
+        sandbox_settings,
+        _request("mature_compounder", "dcf") | {"source_operation_id": second_id},
+        now=NOW,
+    )
+    history = read_table(sandbox_repository, "security_assessment_history")
+    assert history[-1]["source_operation_id"] == second_id
 
 
 def test_other_template_still_requires_explicit_rationale_field(

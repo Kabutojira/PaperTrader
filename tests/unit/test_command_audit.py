@@ -18,9 +18,13 @@ def test_agent_scoped_cli_command_writes_exact_change_receipt(
     request.write_text(
         json.dumps(
             {
+                "issue_code": "primary_evidence_missing",
+                "impact": "affects_candidate",
                 "severity": "warning",
                 "title": "Missing primary filing",
                 "description": "The bounded research operation lacks a current filing.",
+                "entity_type": "operation",
+                "entity_id": operation_id,
                 "owner": "research",
                 "related_run_id": run_id,
                 "related_operation_id": operation_id,

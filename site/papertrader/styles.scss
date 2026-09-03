@@ -279,6 +279,25 @@ body:is(
   }
 }
 
+@media (min-width: 1200px) {
+  body[data-slug="index"] {
+    .page > #quartz-body {
+      grid-template:
+        "grid-sidebar-left grid-header grid-sidebar-right"
+        "grid-sidebar-left grid-center grid-sidebar-right"
+        "grid-sidebar-left grid-footer grid-sidebar-right" / minmax(
+          14rem,
+          17rem
+        )
+        minmax(0, 1fr) minmax(14rem, 18rem);
+    }
+
+    .sidebar.right {
+      display: flex;
+    }
+  }
+}
+
 body[data-slug="security-catalog"] {
   .page > #quartz-body {
     grid-template:

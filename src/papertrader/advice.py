@@ -624,7 +624,10 @@ def _canonical_rows(
                         "issue_id": row["issue_id"],
                         "status": "open",
                         "severity": row["severity"],
-                        "title": row["title"],
+                        "issue_code": row["issue_code"],
+                        "impact": row["impact"],
+                        "entity_type": row["entity_type"],
+                        "entity_id": row["entity_id"],
                         "owner": row["owner"],
                         "first_seen_at": row["first_seen_at"],
                         "related_run_id": row["related_run_id"],
@@ -1019,30 +1022,6 @@ def _fresh_evidence(
     return True
 
 
-def _impact_category(issue: Mapping[str, str]) -> str:
-    text = f"{issue['title']} {issue['description']}".lower()
-    if any(token in text for token in ("telegram", "pages", "publication", "deploy")):
-        return "publication_only"
-    if any(token in text for token in ("reconcil", "accounting", "portfolio", "ledger")):
-        return "blocks_portfolio"
-    if any(token in text for token in ("order", "signal", "strategy", "fill", "execution")):
-        return "blocks_action"
-    if any(
-        token in text
-        for token in (
-            "market",
-            "price",
-            "classifier",
-            "assessment",
-            "relationship",
-            "research",
-            "security_",
-        )
-    ):
-        return "affects_candidate"
-    return "operational_only"
-
-
 def _system_impacts(
     repository_root: Path,
     securities: Mapping[str, Mapping[str, str]],
@@ -1058,17 +1037,21 @@ def _system_impacts(
         elif issue["status"] != "open":
             continue
         combined = issue["title"] if delivery_issue else f"{issue['title']} {issue['description']}"
-        security_id = next((key for key in sorted(securities) if key in combined), "")
+        security_id = (
+            issue["entity_id"]
+            if issue["entity_type"] == "security" and issue["entity_id"] in securities
+            else next((key for key in sorted(securities) if key in combined), "")
+        )
         security = securities.get(security_id, {})
         impacts.append(
             SystemImpact(
                 issue_id=issue["issue_id"],
                 severity=issue["severity"],
-                impact=_impact_category(issue),
+                impact=issue["impact"],
                 title=" ".join(issue["title"].split()),
                 summary=(
                     "Committed Telegram delivery is awaiting a bounded retry."
-                    if delivery_issue
+                    if issue["issue_code"].startswith("telegram_")
                     else " ".join(issue["description"].split())[:500]
                 ),
                 security_id=security_id,

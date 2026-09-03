@@ -78,6 +78,8 @@ OPERATION_ENTITY_TYPES = {
 SAFE_RUN_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$")
 MERGEABLE_RESEARCH_TYPES = frozenset({"security_research", "quick_check_research"})
 PRICE_ALERT_RESEARCH_TYPES = frozenset({"security_research", "quick_check_research"})
+STALE_INDICATOR_OPERATION_TYPES = frozenset({"wiki_ingest", "opportunity_research"})
+INDICATOR_ALERT_MAX_AGE_DAYS = 7
 
 
 def required_skill_names(operation_type: str) -> tuple[str, ...]:
@@ -1055,6 +1057,123 @@ def _superseding_indicator_hash(
     return current_hash
 
 
+@dataclass(frozen=True, slots=True)
+class _IndicatorWork:
+    operation_id: str
+    security_id: str
+    trigger: str
+    market_data_date: str
+    created_at: datetime
+
+
+def _indicator_work(repository_root: Path, operation: Operation) -> _IndicatorWork | None:
+    """Return a fully linked deterministic indicator request eligible for stale triage."""
+
+    if operation.operation_type not in STALE_INDICATOR_OPERATION_TYPES:
+        return None
+    inputs = _operation_inputs(repository_root, operation)
+    payload_path = _validate_payload_path(operation.payload_path)
+    payload = json.loads(repository_root.joinpath(*payload_path.parts).read_text(encoding="utf-8"))
+    source_refs = payload.get("source_refs")
+    if not isinstance(source_refs, list) or len(source_refs) != 1:
+        return None
+    if operation.operation_type == "wiki_ingest":
+        if operation.source != "cheap-llm-ingest-decision":
+            return None
+        raw_path = inputs.get("source_path")
+        if raw_path != source_refs[0] or not isinstance(raw_path, str):
+            return None
+        relative = PurePosixPath(raw_path)
+        if (
+            relative.is_absolute()
+            or ".." in relative.parts
+            or relative.parts[:3] != ("data", "wiki", "inbox")
+            or relative.suffix != ".md"
+        ):
+            return None
+        try:
+            text = repository_root.joinpath(*relative.parts).read_text(encoding="utf-8")
+            raw, _ = text[4:].split("\n---\n", maxsplit=1)
+            metadata = yaml.safe_load(raw)
+            facts = metadata.get("candidate_facts") if isinstance(metadata, dict) else None
+        except (OSError, UnicodeError, ValueError, yaml.YAMLError):
+            return None
+        if not isinstance(facts, dict):
+            return None
+        security_id = facts.get("security_id")
+        trigger = facts.get("trigger")
+        market_data_date = facts.get("as_of_date")
+    else:
+        if operation.source != "deterministic-indicator-transition":
+            return None
+        security_id = inputs.get("security_id")
+        trigger = inputs.get("trigger_type")
+        market_data_date = inputs.get("period_end")
+        if (
+            not isinstance(security_id, str)
+            or not isinstance(trigger, str)
+            or _indicator_packet_cause(
+                repository_root, source_refs[0], security_id=security_id
+            )
+            != trigger
+        ):
+            return None
+    if (
+        not isinstance(security_id, str)
+        or not security_id
+        or not isinstance(trigger, str)
+        or not trigger
+        or not isinstance(market_data_date, str)
+        or not market_data_date
+    ):
+        return None
+    if not re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", market_data_date):
+        return None
+    return _IndicatorWork(
+        operation_id=operation.operation_id,
+        security_id=security_id,
+        trigger=trigger,
+        market_data_date=market_data_date,
+        created_at=operation.created_at,
+    )
+
+
+def _stale_indicator_reason(
+    operation: Operation,
+    *,
+    lineage: Mapping[str, _IndicatorWork],
+    current_indicators: Mapping[str, Mapping[str, str]],
+    held_ids: frozenset[str],
+    now: datetime,
+) -> str | None:
+    current = lineage.get(operation.operation_id)
+    if current is None or operation.status not in {"queued", "ready", "waiting"}:
+        return None
+    newer = [
+        candidate
+        for candidate in lineage.values()
+        if candidate.operation_id != current.operation_id
+        and candidate.security_id == current.security_id
+        and candidate.trigger == current.trigger
+        and candidate.created_at > current.created_at
+    ]
+    if newer:
+        replacement = max(newer, key=lambda value: (value.created_at, value.operation_id))
+        return f"superseded_indicator_alert:{replacement.operation_id}"
+    maximum_age = max(operation.freshness_days, INDICATOR_ALERT_MAX_AGE_DAYS)
+    if now <= operation.created_at + timedelta(days=maximum_age):
+        return None
+    if current.security_id in held_ids:
+        return None
+    indicator = current_indicators.get(current.security_id)
+    if indicator is None or indicator["as_of_date"] <= current.market_data_date:
+        return None
+    active_triggers = set(filter(None, indicator["trigger_state"].split("|")))
+    if current.trigger in active_triggers:
+        return None
+    return f"indicator_condition_cleared:{indicator['as_of_date']}"
+
+
 def prepare_queue(
     repository_root: Path,
     *,
@@ -1091,15 +1210,39 @@ def prepare_queue(
         signal_statuses = {
             row["signal_id"]: row["status"] for row in read_table(repository_root, "signals")
         }
+        indicator_rows = read_table(repository_root, "indicators")
         current_indicator_hashes = {
             (row["security_id"], row["as_of_date"]): row["source_price_hash"]
-            for row in read_table(repository_root, "indicators")
+            for row in indicator_rows
         }
+        current_indicators: dict[str, Mapping[str, str]] = {}
+        for row in indicator_rows:
+            previous = current_indicators.get(row["security_id"])
+            if previous is None or row["as_of_date"] > previous["as_of_date"]:
+                current_indicators[row["security_id"]] = row
         terminal_by_id = {row["operation_id"]: row["terminal_status"] for row in history}
         active_by_id = {operation.operation_id: operation for operation in active}
         from papertrader.opportunity import held_security_ids
 
         held_ids = held_security_ids(repository_root)
+        lineage: dict[str, _IndicatorWork] = {}
+        for operation in active:
+            work = _indicator_work(repository_root, operation)
+            if work is not None:
+                lineage[operation.operation_id] = work
+        for row in history:
+            if (
+                row["terminal_status"] not in DEPENDENCY_SUCCESS
+                or row["operation_type"] not in STALE_INDICATOR_OPERATION_TYPES
+            ):
+                continue
+            try:
+                archived_operation = Operation.from_row(row, archived=True)
+                work = _indicator_work(repository_root, archived_operation)
+            except (OSError, ValueError, KeyError, QueueError, json.JSONDecodeError):
+                work = None
+            if work is not None:
+                lineage[archived_operation.operation_id] = work
         seen_dedupe: dict[str, str] = {
             operation.dedupe_key: operation.operation_id
             for operation in active
@@ -1160,6 +1303,16 @@ def prepare_queue(
                         f"superseded_market_data_identity:{superseding_hash}",
                     )
                 )
+                continue
+            stale_indicator_reason = _stale_indicator_reason(
+                operation,
+                lineage=lineage,
+                current_indicators=current_indicators,
+                held_ids=held_ids,
+                now=instant,
+            )
+            if stale_indicator_reason is not None:
+                terminal.append((operation, "skipped", stale_indicator_reason))
                 continue
             operation_plan_id = _operation_allocation_plan_id(repository_root, operation)
             if (

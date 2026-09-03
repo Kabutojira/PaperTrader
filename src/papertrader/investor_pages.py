@@ -57,13 +57,15 @@ STANCE_LABELS = {
 }
 INVESTMENT_STATUS_LABELS = {
     "current": "Current",
-    "degraded": "Degraded — review investment data gaps",
-    "blocked": "Blocked — current exposure cannot be projected safely",
+    "degraded": "Portfolio state safe — research gaps remain",
+    "blocked": (
+        "Unsafe to publish — portfolio, accounting, or active-order state requires attention"
+    ),
 }
 OPERATIONS_STATUS_LABELS = {
     "current": "Current",
     "degraded": "Attention required",
-    "blocked": "Blocked",
+    "blocked": "Action controls blocked",
 }
 CLASSIFICATION_LABELS = {
     "strategy_ready": "Strategy-ready candidate",
@@ -336,7 +338,15 @@ def _public_snapshot(repository_root: Path, snapshot: DecisionSnapshot) -> Decis
         )
         for alert in snapshot.research_alerts
     )
-    return replace(snapshot, research_alerts=alerts)
+    impacts = tuple(
+        replace(
+            impact,
+            title=resolver.human_label(impact.title),
+            summary=resolver.human_label(impact.summary),
+        )
+        for impact in snapshot.system_impacts
+    )
+    return replace(snapshot, research_alerts=alerts, system_impacts=impacts)
 
 
 def _frontmatter(
@@ -383,12 +393,51 @@ def _action_status_label(status: str) -> str:
         raise CanonicalValueError(f"unknown public action status: {status}") from exc
 
 
-def _near_misses(snapshot: DecisionSnapshot, *, limit: int = 5) -> tuple[CandidateView, ...]:
-    return tuple(
+def _buy_initiate_candidates(
+    snapshot: DecisionSnapshot, *, limit: int | None = None
+) -> tuple[CandidateView, ...]:
+    candidates = tuple(
         candidate
         for candidate in snapshot.candidate_pipeline
-        if candidate.classification != "strategy_ready" and candidate.reason_codes
-    )[:limit]
+        if candidate.canonical_rating in {"buy", "strong_buy"}
+        and candidate.portfolio_action == "initiate"
+    )
+    return candidates if limit is None else candidates[:limit]
+
+
+def _homepage_reason_lines(snapshot: DecisionSnapshot) -> list[str]:
+    lines = [
+        f"- {_markdown(reason_label(code))}"
+        for code in snapshot.stance_reason_codes
+        if code != "portfolio_issue_open"
+    ]
+    blockers = [impact for impact in snapshot.system_impacts if impact.impact == "blocks_portfolio"]
+    for blocker in blockers:
+        lines.append(
+            f"- **Portfolio publication blocker:** {_markdown(blocker.title)} — "
+            f"{_markdown(blocker.summary)} [[system-status|Review System Status]]."
+        )
+    if snapshot.stance == "hold_cash" and not snapshot.actionable_signals:
+        lines.insert(0, "- No validated copy-ready signal or pending paper order exists.")
+        candidates = _buy_initiate_candidates(snapshot)
+        if candidates:
+            counts: defaultdict[str, int] = defaultdict(int)
+            for candidate in candidates:
+                label = (
+                    candidate.reason_labels[0]
+                    if candidate.reason_labels
+                    else "Further research required"
+                )
+                counts[label] += 1
+            gates = "; ".join(
+                f"{_markdown(label)} ({count})"
+                for label, count in sorted(counts.items(), key=lambda item: (-item[1], item[0]))[:4]
+            )
+            lines.append(
+                f"- {len(candidates)} Buy / Initiate research candidates remain non-actionable. "
+                f"Leading gates: {gates}."
+            )
+    return lines or ["- No additional decision constraint was recorded."]
 
 
 def _portfolio_markdown_rows(rows: Sequence[ModelPortfolioRow]) -> list[str]:
@@ -472,10 +521,10 @@ def investor_brief_markdown(
             label = _link(decision.label, decision.research_page)
             conclusion = _bounded_text(decision.conclusion, RESEARCH_DECISION_CONCLUSION_MAX_CHARS)
             lines.append(f"- **{label} — {_markdown(decision.status)}:** {_markdown(conclusion)}")
-    near_miss = next(iter(_near_misses(snapshot, limit=1)), None)
-    lines.extend(["", "## Top blocker or near miss", ""])
+    near_miss = next(iter(_buy_initiate_candidates(snapshot, limit=1)), None)
+    lines.extend(["", "## Leading Buy / Initiate research candidate", ""])
     if near_miss is None:
-        lines.append("No assessed near miss is available; research coverage remains incomplete.")
+        lines.append("No security currently has both a Buy rating and an Initiate action.")
     else:
         reason = near_miss.reason_labels[0] if near_miss.reason_labels else "No current trade."
         lines.append(
@@ -520,7 +569,7 @@ def investor_report_sections(
         "",
         "### Deterministic reasons",
         "",
-        *_reason_lines(snapshot.stance_reason_codes),
+        *_homepage_reason_lines(snapshot),
         "",
         "## 2. Model portfolio and target changes",
         "",
@@ -563,8 +612,8 @@ def investor_report_sections(
             )
     else:
         lines.extend(["No actionable trade signals.", "", "No pending orders.", ""])
-    lines.extend(["## 4. Candidates and near misses", ""])
-    near_misses = _near_misses(snapshot)
+    lines.extend(["## 4. Buy / Initiate research candidates", ""])
+    near_misses = _buy_initiate_candidates(snapshot)
     if near_misses:
         lines.extend(
             [
@@ -592,9 +641,7 @@ def investor_report_sections(
                 f"{_cell(main_reason)} |"
             )
     else:
-        lines.append(
-            "No assessed near misses are available; incomplete assessments remain coverage gaps."
-        )
+        lines.append("No security currently has both a Buy rating and an Initiate action.")
     lines.extend(
         [
             "",
@@ -667,7 +714,7 @@ def _homepage(snapshot: DecisionSnapshot, day: date, latest_report: str) -> str:
         "",
         "### Why",
         "",
-        *_reason_lines(snapshot.stance_reason_codes),
+        *_homepage_reason_lines(snapshot),
         "",
         "## Current and target portfolio",
         "",
@@ -700,8 +747,8 @@ def _homepage(snapshot: DecisionSnapshot, day: date, latest_report: str) -> str:
         )
     else:
         lines.append("**No actionable trade signals.**")
-    lines.extend(["", "## Top assessed near misses", ""])
-    near_misses = _near_misses(snapshot, limit=3)
+    lines.extend(["", "## Buy / Initiate research candidates", ""])
+    near_misses = _buy_initiate_candidates(snapshot)
     if near_misses:
         for candidate in near_misses:
             reason = candidate.reason_labels[0] if candidate.reason_labels else "No current action."
@@ -717,7 +764,7 @@ def _homepage(snapshot: DecisionSnapshot, day: date, latest_report: str) -> str:
                 f"expected {candidate.expected_return_pct or '—'}% · {_markdown(reason)}"
             )
     else:
-        lines.append("No assessed near misses; unassessed securities are shown as coverage gaps.")
+        lines.append("No security currently has both a Buy rating and an Initiate action.")
     coverage = snapshot.coverage
     lines.extend(
         [
@@ -857,32 +904,6 @@ def _model_portfolio_page(snapshot: DecisionSnapshot, day: date) -> str:
             f"{row.bull_return_pct or '—'}% | {row.expected_return_pct or '—'}% | "
             f"{row.buy_below_price or '—'} | {_cell(row.review_at)} | "
             f"{_cell(row.thesis_summary)} |"
-        )
-    lines.extend(
-        [
-            "",
-            "## Comparison-only research benchmark",
-            "",
-            "This deterministic equal-weight benchmark is for research comparison only. It is "
-            "comparison-only, is not copy-ready, and has no path to signals or orders.",
-            "",
-            "| Security | Rating | Weight | Reference price |",
-            "| --- | --- | ---: | ---: |",
-        ]
-    )
-    for benchmark_row in snapshot.research_benchmark.rows:
-        label = (
-            benchmark_row.company_name
-            if not benchmark_row.research_page
-            else _link(
-                f"{benchmark_row.ticker} — {benchmark_row.company_name}",
-                benchmark_row.research_page,
-            )
-        )
-        lines.append(
-            f"| {label} | {RATING_LABELS[benchmark_row.rating]} | "
-            f"{benchmark_row.weight_pct}% | {benchmark_row.reference_price} "
-            f"{_cell(benchmark_row.currency)} |"
         )
     lines.extend(["", "[[index|Back to today's decision]]", ""])
     return "\n".join(lines)
@@ -1223,11 +1244,6 @@ def _system_status_page(repository_root: Path, snapshot: DecisionSnapshot, day: 
     candidate_fx_gaps = sum(
         "fx_unavailable" in candidate.reason_codes for candidate in snapshot.candidate_pipeline
     )
-    active_queue = sorted(
-        read_table(repository_root, "operations_todo"),
-        key=lambda row: (int(row["priority"]), row["created_at"], row["operation_id"]),
-    )
-    resolver = PublicEntityResolver(repository_root)
     last_success = parse_timestamp(coverage.last_successful_daily_run, allow_empty=True)
     latest_run = last_success.date().isoformat() if last_success is not None else "none"
     lines = [
@@ -1245,6 +1261,9 @@ def _system_status_page(repository_root: Path, snapshot: DecisionSnapshot, day: 
         f"**Operations:** {OPERATIONS_STATUS_LABELS[snapshot.operations_status]}",
         "**Publication validation:** Snapshot and exports validated",
         "**Portfolio reconciliation:** Reconciled",
+        "",
+        "Publication validation confirms that this generated artifact is internally consistent. "
+        "Investment and operations health below describe the current canonical inputs.",
         "",
         "## Coverage",
         "",
@@ -1265,6 +1284,9 @@ def _system_status_page(repository_root: Path, snapshot: DecisionSnapshot, day: 
         "",
         "## Current issues by investment impact",
         "",
+        f"Current unresolved issues: **{len(snapshot.system_impacts)}**.",
+        "Resolved and superseded issues remain in the canonical audit but are not current health.",
+        "",
     ]
     if snapshot.system_impacts:
         grouped: defaultdict[str, list[SystemImpact]] = defaultdict(list)
@@ -1280,37 +1302,33 @@ def _system_status_page(repository_root: Path, snapshot: DecisionSnapshot, day: 
             values = grouped.get(category, [])
             if not values:
                 continue
-            lines.extend([f"### {_markdown(category.replace('_', ' ').title())}", ""])
+            lines.extend(
+                [
+                    f"### {_markdown(category.replace('_', ' ').title())} ({len(values)})",
+                    "",
+                ]
+            )
             for value in values:
                 label = f"{value.ticker} — {value.company_name}: " if value.ticker else ""
-                public_title = resolver.humanize(_markdown(label + value.title))
+                public_title = _markdown(label + value.title)
                 lines.append(
                     f"- {value.severity.capitalize()} **{public_title}** — "
-                    f"{resolver.humanize(_markdown(value.summary))}"
+                    f"{_markdown(value.summary)}"
                 )
             lines.append("")
     else:
         lines.extend(["No open issues.", ""])
     lines.extend(
         [
-            "## Bounded active operation queue",
+            "## Sequential research backlog",
             "",
-            f"Showing {min(len(active_queue), 20)} of {len(active_queue)} active operations.",
-            "",
-            "<details><summary>Active research work</summary>",
-            "",
+            f"- Active research operations: **{coverage.research_backlog_count}**",
+            "- Backlog size is research capacity information; it does not by itself block a safe "
+            "portfolio projection or a validated action.",
         ]
     )
     lines.extend(
-        f"- {row['status'].capitalize()} — {resolver.markdown('operation', row['operation_id'])}"
-        for row in active_queue[:20]
-    )
-    if not active_queue:
-        lines.append("No active operations.")
-    lines.extend(
         [
-            "",
-            "</details>",
             "",
             "## Audit links",
             "",

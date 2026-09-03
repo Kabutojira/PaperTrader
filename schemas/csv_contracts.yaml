@@ -613,6 +613,10 @@ contracts:
       - issue_id
       - status
       - severity
+      - issue_code
+      - impact
+      - entity_type
+      - entity_id
       - title
       - description
       - owner

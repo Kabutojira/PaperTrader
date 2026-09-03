@@ -19,7 +19,7 @@ from jsonschema import Draft202012Validator, FormatChecker
 
 from papertrader.atomic_io import atomic_write_json
 from papertrader.config import Settings
-from papertrader.issues import record_issue
+from papertrader.issues import record_issue, resolve_matching_issues
 from papertrader.queue import enqueue_operation
 from papertrader.tables import read_table, write_table
 from papertrader.utils import ensure_utc, format_timestamp, utc_now
@@ -506,9 +506,13 @@ def _failure_issue(
 ) -> str:
     return record_issue(
         repository_root,
+        issue_code="youtube_discovery_failed",
+        impact="operational_only",
         severity="warning",
         title=f"YouTube discovery failed for {channel.channel_id}",
         description=f"{channel.handle}: {reason}",
+        entity_type="channel",
+        entity_id=channel.channel_id,
         owner="youtube-discovery",
         related_run_id=run_id,
         now=now,
@@ -765,6 +769,14 @@ def scan_youtube(
                     duplicate_ids.append(video.video_id)
             next_cursor = regular[0].video_id if regular else channel.last_seen_video_id
             cursors[channel.channel_id] = next_cursor
+            resolve_matching_issues(
+                repository_root,
+                issue_code="youtube_discovery_failed",
+                entity_type="channel",
+                entity_id=channel.channel_id,
+                resolution=f"youtube_discovery_recovered: {run_id}",
+                now=instant,
+            )
             outcomes.append(
                 {
                     "channel_id": channel.channel_id,
@@ -972,6 +984,15 @@ def backfill_youtube(
             channel=target,
             run_id=run_id,
             reason=failure_reason,
+            now=instant,
+        )
+    if not failure_count:
+        resolve_matching_issues(
+            repository_root,
+            issue_code="youtube_discovery_failed",
+            entity_type="channel",
+            entity_id=target.channel_id,
+            resolution=f"youtube_discovery_recovered: {run_id}",
             now=instant,
         )
 

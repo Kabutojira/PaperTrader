@@ -18,6 +18,8 @@ Read `AGENTS.md`, the operation payload and baseline result, `data/wiki/SCHEMA.m
 ## Required input
 
 Require `security_id`, `baseline_operation_id`, `baseline_result_path`, `baseline_completed_at`, `trigger_types`, `market_data_as_of`, `market_data_date`, `period_start`, `period_end`, and `source_price_hash`. Treat `research_reasons` and `merged_input_values` as additional alert context. Fail closed if the baseline result is unavailable, unsuccessful, for another security, or older than ten days at enqueue time.
+Every assessment request also supplies this quick check's immutable operation ID as
+`source_operation_id`.
 
 ## Procedure
 
@@ -33,7 +35,7 @@ Require `security_id`, `baseline_operation_id`, `baseline_result_path`, `baselin
    unchanged conclusion may succeed against the fresh existing assessment only when it leaves no
    agent-owned repository delta. Otherwise invoke `scripts/papertrader research assessment upsert
    --request <unique-request-path>` and publish exactly one immutable assessment version whose
-   `run_id` is the current run and whose source operation is this quick check. Merely writing the
+   `run_id` is the current run and whose `source_operation_id` is this quick check. Merely writing the
    request file does not apply it. Run `research security-context` again after the upsert and
    confirm both identities before writing the result manifest.
 6. If `full_research_requested=true`, or a valuation/buy zone is newly reached, an invalidation/catalyst fires, primary evidence materially changes, or the baseline can no longer support a decision, enqueue exactly one dependent `security_research` operation. Carry all alert causes, this quick-check identity, and the specific changed gate. Do not create a strategy or signal directly.

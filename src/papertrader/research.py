@@ -254,8 +254,15 @@ def upsert_assessment(
 
     columns = contract_by_name(repository_root, "security_assessments").columns
     is_v2 = raw.get("assessment_schema_version") == "2"
+    requested_source_operation_id = ""
     if is_v2:
-        assessment_request = raw
+        raw_source_operation_id = raw.get("source_operation_id", "")
+        if not isinstance(raw_source_operation_id, str):
+            raise ResearchStateError("assessment source_operation_id must be a string")
+        requested_source_operation_id = raw_source_operation_id.strip()
+        assessment_request = {
+            key: value for key, value in raw.items() if key != "source_operation_id"
+        }
         if (
             "valuation_template_rationale" not in raw
             and isinstance(raw.get("valuation_template"), str)
@@ -264,7 +271,7 @@ def upsert_assessment(
             # Named repository templates forbid a rationale, so its only canonical value is
             # the empty string. Accept omission at the JSON request boundary while preserving
             # the exact, explicit field in canonical CSV state.
-            assessment_request = {**raw, "valuation_template_rationale": ""}
+            assessment_request = {**assessment_request, "valuation_template_rationale": ""}
         agent_values = _exact_strings(
             assessment_request, ASSESSMENT_V2_AGENT_FIELDS, label="assessment_v2"
         )
@@ -450,7 +457,7 @@ def upsert_assessment(
         if page.is_symlink() or not page.is_file():
             raise ResearchStateError("assessment security research_page is missing or a symlink")
         page_hash = content_hash(page.read_bytes())
-    source_operations = [
+    eligible_source_operations = [
         row
         for table in ("operations_todo", "operations_history")
         for row in read_table(repository_root, table)
@@ -458,8 +465,22 @@ def upsert_assessment(
         and row["entity_id"] == values["security_id"]
         and row["claimed_by_run_id"] == values["run_id"]
     ]
-    if len(source_operations) > 1:
-        raise ResearchStateError("assessment source operation is ambiguous for this run")
+    if requested_source_operation_id:
+        if not SAFE_ID.fullmatch(requested_source_operation_id):
+            raise ResearchStateError("assessment source_operation_id is invalid")
+        source_operations = [
+            row
+            for row in eligible_source_operations
+            if row["operation_id"] == requested_source_operation_id
+        ]
+        if len(source_operations) != 1:
+            raise ResearchStateError(
+                "assessment source_operation_id does not match this security research run"
+            )
+    else:
+        source_operations = eligible_source_operations
+        if len(source_operations) > 1:
+            raise ResearchStateError("assessment source operation is ambiguous for this run")
     source_operation_id = source_operations[0]["operation_id"] if source_operations else ""
     source_result_path = (
         f"data/runs/{values['run_id']}/{source_operation_id}/agent_result.json"
@@ -861,6 +882,71 @@ def migrate_legacy_assessments(
         operations_created=tuple(created_ids),
         report_path=report_path.relative_to(repository_root).as_posix(),
     )
+
+
+def enqueue_assessment_issue_recovery(
+    repository_root: Path,
+    settings: Settings,
+    *,
+    run_id: str,
+    now: datetime | None = None,
+) -> Mapping[str, object]:
+    """Enqueue one bounded review per security with an unresolved assessment failure."""
+
+    from papertrader.queue import enqueue_operation
+
+    _identifier(run_id, label="run_id")
+    instant = ensure_utc(now or utc_now()).replace(microsecond=0)
+    issues_by_security: dict[str, list[str]] = {}
+    for issue in read_table(repository_root, "issues"):
+        if (
+            issue["status"] == "open"
+            and issue["issue_code"] == "assessment_update_failed"
+            and issue["entity_type"] == "security"
+        ):
+            issues_by_security.setdefault(issue["entity_id"], []).append(issue["issue_id"])
+    securities = {row["security_id"]: row for row in read_table(repository_root, "securities")}
+    operation_ids: list[str] = []
+    created_ids: list[str] = []
+    for security_id in sorted(issues_by_security):
+        if security_id not in securities:
+            raise ResearchStateError(
+                f"assessment recovery issue references unknown security: {security_id}"
+            )
+        issue_ids = tuple(sorted(issues_by_security[security_id]))
+        cause_hash = content_hash(issue_ids)[:16]
+        operation_id, created = enqueue_operation(
+            repository_root,
+            settings,
+            operation_type="security_research",
+            entity_type="security",
+            entity_id=security_id,
+            dedupe_key=(
+                f"security_research:{security_id}:assessment-issue-recovery:{cause_hash}"
+            ),
+            prompt=(
+                f"Repair the unresolved assessment for {security_id} with current primary "
+                "evidence and explicit source-operation provenance."
+            ),
+            inputs={
+                "security_id": security_id,
+                "maintenance_mode": "assessment_issue_recovery",
+                "issue_ids": list(issue_ids),
+                "research_page": securities[security_id]["research_page"],
+            },
+            source=f"issue_reconciliation:{run_id}",
+            priority=72,
+            freshness_days=0,
+            now=instant,
+        )
+        operation_ids.append(operation_id)
+        if created:
+            created_ids.append(operation_id)
+    return {
+        "security_count": len(issues_by_security),
+        "operation_ids": tuple(operation_ids),
+        "created_operation_ids": tuple(created_ids),
+    }
 
 
 def import_watchlist(
@@ -1544,6 +1630,7 @@ __all__ = [
     "HARD_BLOCKERS",
     "SOFT_GAPS",
     "ResearchStateError",
+    "enqueue_assessment_issue_recovery",
     "record_source",
     "upsert_assessment",
     "upsert_relationship",

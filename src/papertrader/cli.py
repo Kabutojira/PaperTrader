@@ -51,7 +51,7 @@ from papertrader.integrity import (
     validate_json_schemas,
     validate_runtime_paths,
 )
-from papertrader.issues import record_issue, resolve_issue
+from papertrader.issues import migrate_issues, reconcile_issues, record_issue, resolve_issue
 from papertrader.local_harness import (
     finish_local_harness_operation,
     start_local_harness_operation,
@@ -106,6 +106,7 @@ from papertrader.queue import (
 from papertrader.reports import NarrativeItem, generate_daily_report, refresh_wiki_homepage
 from papertrader.repository_state import snapshot_repository
 from papertrader.research import (
+    enqueue_assessment_issue_recovery,
     import_watchlist,
     migrate_legacy_assessments,
     record_source,
@@ -369,6 +370,9 @@ def _parser() -> argparse.ArgumentParser:
     issue_record.add_argument("--request", type=Path, required=True)
     issue_resolve = issue_commands.add_parser("resolve")
     issue_resolve.add_argument("--request", type=Path, required=True)
+    issue_commands.add_parser("migrate")
+    issue_reconcile = issue_commands.add_parser("reconcile")
+    issue_reconcile.add_argument("--as-of", required=True)
 
     research = commands.add_parser("research", help="update validated structured research state")
     research_commands = research.add_subparsers(dest="research_command", required=True)
@@ -388,6 +392,9 @@ def _parser() -> argparse.ArgumentParser:
     assessment_migrate.add_argument("--run-id", required=True)
     assessment_migrate.add_argument("--enqueue-limit", type=int, default=20)
     assessment_migrate.add_argument("--as-of")
+    assessment_recover = research_commands.add_parser("recover-assessment-issues")
+    assessment_recover.add_argument("--run-id", required=True)
+    assessment_recover.add_argument("--as-of", required=True)
 
     watchlist = commands.add_parser("watchlist", help="manage identity-only monitored securities")
     watchlist_commands = watchlist.add_subparsers(dest="watchlist_command", required=True)
@@ -778,6 +785,19 @@ def _run_queue_command(
 def _run_structured_command(
     arguments: argparse.Namespace, repository_root: Path, settings: Settings
 ) -> int:
+    if arguments.command == "issue" and arguments.issue_command == "migrate":
+        print(json.dumps(migrate_issues(repository_root), sort_keys=True))
+        return 0
+    if arguments.command == "issue" and arguments.issue_command == "reconcile":
+        instant = parse_timestamp(arguments.as_of)
+        assert instant is not None
+        print(
+            json.dumps(
+                reconcile_issues(repository_root, as_of=instant),
+                sort_keys=True,
+            )
+        )
+        return 0
     if arguments.command == "account":
         if arguments.account_command == "initialize":
             entry_id = ensure_initial_capital(
@@ -957,9 +977,13 @@ def _run_structured_command(
             print(
                 record_issue(
                     repository_root,
+                    issue_code=_text(raw, "issue_code"),
+                    impact=_text(raw, "impact"),
                     severity=_text(raw, "severity"),
                     title=_text(raw, "title"),
                     description=_text(raw, "description"),
+                    entity_type=_text(raw, "entity_type", default=""),
+                    entity_id=_text(raw, "entity_id", default=""),
                     owner=_text(raw, "owner", default=""),
                     related_run_id=_text(raw, "related_run_id", default=""),
                     related_operation_id=_text(raw, "related_operation_id", default=""),
@@ -1050,6 +1074,17 @@ def _run_research_command(
             now=parse_timestamp(arguments.as_of, allow_empty=True),
         )
         print(json.dumps(asdict(migrated), sort_keys=True))
+        return 0
+    if arguments.research_command == "recover-assessment-issues":
+        instant = parse_timestamp(arguments.as_of)
+        assert instant is not None
+        recovered = enqueue_assessment_issue_recovery(
+            repository_root,
+            settings,
+            run_id=arguments.run_id,
+            now=instant,
+        )
+        print(json.dumps(recovered, sort_keys=True))
         return 0
     raw = _request_object(repository_root, arguments.request)
     if arguments.research_command == "source":

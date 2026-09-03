@@ -1400,12 +1400,16 @@ def finalize_daily_podcast(
         ):
             raise PodcastError("succeeded daily report lacks its transcript link")
         validate_podcast_context(repository_root, daily_cycle_id=run_id)
-    else:
+    elif status != "skipped":
         record_issue(
             repository_root,
+            issue_code="daily_podcast_terminal",
+            impact="publication_only",
             severity="warning",
             title=f"Daily podcast {status}: {run_id}",
             description=row["result_summary"] or row["terminal_reason"],
+            entity_type="operation",
+            entity_id=operation_id,
             owner="delivery",
             related_run_id=run_id,
             related_operation_id=operation_id,

@@ -8,7 +8,7 @@ created: "2026-07-24"
 updated: "2026-07-24"
 provenance: deterministic-report-generator
 run_id: "run-report"
-snapshot_id: "decision_a3c243c696b5ab276e2b"
+snapshot_id: "decision_befca976f1d15614a9b3"
 ---
 
 # PaperTrader daily report — 2026-07-24
@@ -35,9 +35,9 @@ No target changes.
 
 No actionable trade signals.
 
-## Top blocker or near miss
+## Leading Buy / Initiate research candidate
 
-No assessed near miss is available; research coverage remains incomplete.
+No security currently has both a Buy rating and an Initiate action.
 
 ## Comparison-only research benchmark
 
@@ -47,6 +47,7 @@ This equal-weight research benchmark is analytical only, not copy-ready, and can
 
 ### Deterministic reasons
 
+- No validated copy-ready signal or pending paper order exists.
 - The reconciled model portfolio is entirely cash.
 - No strategy has produced a current actionable trade signal.
 
@@ -68,9 +69,9 @@ No actionable trade signals.
 
 No pending orders.
 
-## 4. Candidates and near misses
+## 4. Buy / Initiate research candidates
 
-No assessed near misses are available; incomplete assessments remain coverage gaps.
+No security currently has both a Buy rating and an Initiate action.
 
 ## 5. Performance and risk
 

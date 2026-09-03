@@ -33,6 +33,8 @@ Use `scripts/papertrader research source record --request <json>` for every reta
 `scripts/papertrader research assessment upsert --request <json>` for its comparable assessment,
 `scripts/papertrader issue record --request <json>` for issues, and
 `scripts/papertrader queue enqueue --request <json>` for a justified follow-up.
+Every issue request supplies a stable `issue_code`, explicit `affects_candidate` impact, and
+matching `entity_type`/`entity_id`; research failure is never a global portfolio blocker by wording.
 Once any request JSON has been passed to the CLI, it is immutable. Write a new uniquely named JSON
 artifact before retrying with corrected or changed content.
 Before any repeat review, run
@@ -49,7 +51,8 @@ type; updates must match the immutable ID. Assessment schema version 2 requires 
 evidence; an anchored score for thesis, business quality, balance sheet, valuation, timing,
 liquidity, and risk; confidence; one repository-owned valuation template and permitted method;
 fresh identity-matched price/FX references; horizon and expiration; explicit blocker/gap sets; and
-the current run ID. For a supported valuation, supply bear/base/bull fair values, probabilities that
+the current run ID plus this request's exact `source_operation_id`. For a supported valuation,
+supply bear/base/bull fair values, probabilities that
 sum exactly to 100, and concise key assumptions. Deterministic code derives all returns, expected
 value/return, confidence adjustment, buy-below price, and margin of safety.
 `valuation_template_rationale` is non-empty only when `valuation_template` is `other`. For every
@@ -109,7 +112,8 @@ accepted rows in `relationships.csv`. Treat both sets as seeds, never as the com
     deterministic chart reference. Use the security CLI upsert for the short structured row
     summary.
 14. Before completing, use the assessment CLI to write exactly one current comparable result.
-    Supply research evidence and scenarios, never an allocation disposition. Deterministic code
+    Supply this operation's immutable ID as `source_operation_id`, research evidence and scenarios,
+    never an allocation disposition. Deterministic code
     independently derives research status, allocation eligibility, conviction tier, quality,
     every economic gate, and the complete eligibility frontier. Never leave completed research
     without an assessment.

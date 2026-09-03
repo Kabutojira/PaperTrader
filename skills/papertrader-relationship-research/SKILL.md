@@ -21,6 +21,8 @@ Do not create a strategy, signal, order, or accounting entry.
 Use `scripts/papertrader research relationship upsert --request <json>` for an accepted or rejected edge,
 `scripts/papertrader issue record --request <json>` for issues, and
 `scripts/papertrader queue enqueue --request <json>` for the optional follow-up.
+Every issue request supplies a stable `issue_code`, explicit `affects_candidate` impact, and
+matching `entity_type`/`entity_id`.
 
 ## Required input
 

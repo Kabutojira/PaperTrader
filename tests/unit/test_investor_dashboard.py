@@ -9,13 +9,16 @@ from pathlib import Path
 from papertrader.advice import ActionableSignalView, ModelPortfolioRow, load_published_snapshot
 from papertrader.investor_pages import (
     SECURITY_TABLE_COLUMNS,
+    _buy_initiate_candidates,
     _column_header,
     _currency_amount,
     _data_fx_update,
+    _model_portfolio_page,
     _portfolio_html,
     _rounded_percentage,
     _securities_page,
     _signal_detail,
+    _system_status_page,
     _utc_day,
 )
 
@@ -221,6 +224,57 @@ def test_dashboard_progressive_enhancement_is_local_and_long_equity_only(
     assert "min-width: 82rem" in styles
 
 
+def test_dashboard_candidate_section_uses_only_buy_initiate_assessments(
+    repository_root: Path,
+) -> None:
+    snapshot = load_published_snapshot(repository_root)
+    fixture = snapshot.candidate_pipeline[0]
+    included = replace(
+        fixture,
+        security_id="security_included",
+        canonical_rating="buy",
+        portfolio_action="initiate",
+    )
+    wrong_rating = replace(
+        fixture,
+        security_id="security_wrong_rating",
+        canonical_rating="hold",
+        portfolio_action="initiate",
+    )
+    wrong_action = replace(
+        fixture,
+        security_id="security_wrong_action",
+        canonical_rating="strong_buy",
+        portfolio_action="watch",
+    )
+    synthetic = replace(
+        snapshot,
+        candidate_pipeline=(wrong_rating, *([included] * 6), wrong_action),
+    )
+
+    candidates = _buy_initiate_candidates(synthetic)
+
+    assert candidates == (included,) * 6
+    assert all(candidate.canonical_rating in {"buy", "strong_buy"} for candidate in candidates)
+    assert all(candidate.portfolio_action == "initiate" for candidate in candidates)
+
+
+def test_model_portfolio_omits_comparison_benchmark_and_status_uses_snapshot_backlog(
+    repository_root: Path,
+) -> None:
+    snapshot = load_published_snapshot(repository_root)
+    day = date.fromisoformat(snapshot.report_date)
+
+    model_portfolio = _model_portfolio_page(snapshot, day)
+    status = _system_status_page(repository_root, snapshot, day)
+
+    assert "Comparison-only research benchmark" not in model_portfolio
+    assert "Research comparison benchmark" not in model_portfolio
+    assert "## Sequential research backlog" in status
+    assert "Active research work" not in status
+    assert str(snapshot.coverage.research_backlog_count) in status
+
+
 def test_quartz_uses_external_dashboard_source_and_validated_publication_copy(
     repository_root: Path,
 ) -> None:
@@ -236,6 +290,12 @@ def test_quartz_uses_external_dashboard_source_and_validated_publication_copy(
     assert (site / "papertrader" / "components" / "DecisionNavigation.tsx").is_file()
     assert "./papertrader/components/DecisionNavigation" in layout
     assert "condition: (page) => !isDashboardPage(page)" in layout
+    assert "condition: isHomepage" in layout
+    assert "Component.Explorer" in layout
+    assert "Component.Graph" in layout
+    assert 'folderDefaultState: "collapsed"' in layout
+    assert '!["tags", "inbox", "raw", "_meta", "_archive"].includes(' in layout
+    assert "node.slugSegment" in layout
     assert '"security-catalog",' in layout
     assert '{ label: "Securities", slug: "security-catalog" }' in navigation
     assert '{ label: "Securities", slug: "securities" }' not in navigation

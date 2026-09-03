@@ -26,6 +26,8 @@ rejecting a causal edge belongs to one bounded `relationship_research` operation
 The only structured mutations allowed are `scripts/papertrader watchlist import --request <json>`,
 `scripts/papertrader issue record --request <json>`, and
 `scripts/papertrader queue enqueue --request <json>`.
+Every issue request supplies a stable `issue_code`, explicit `affects_candidate` impact, and
+matching `entity_type`/`entity_id`.
 Watchlist import is identity-only: it must not invent research, valuation, relationships, or a
 security page.
 

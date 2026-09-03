@@ -19,10 +19,10 @@ from pathlib import Path
 from typing import Protocol
 
 from papertrader.config import Settings
-from papertrader.issues import record_issue, resolve_issue
+from papertrader.issues import record_issue, resolve_matching_issues
 from papertrader.podcast import PodcastError, spoken_transcript
 from papertrader.tables import read_table
-from papertrader.utils import CanonicalValueError, content_hash, stable_id
+from papertrader.utils import CanonicalValueError, content_hash
 
 TELEGRAM_MARKDOWN_V2_SPECIAL = "_*[]()~`>#+-=|{}.!\\"
 COMMIT_SHA = re.compile(r"^[0-9a-f]{40}$")
@@ -42,6 +42,9 @@ INVESTOR_BRIEF_END = "<!-- papertrader-investor-brief:end -->"
 DELIVERY_ISSUE_TITLE = "Telegram delivery unavailable"
 AUDIO_DELIVERY_ISSUE_TITLE = "Telegram podcast audio delivery unavailable"
 SCRIPT_DELIVERY_ISSUE_TITLE = "Telegram podcast script delivery unavailable"
+DELIVERY_ISSUE_CODE = "telegram_report_delivery_failed"
+AUDIO_DELIVERY_ISSUE_CODE = "telegram_podcast_audio_delivery_failed"
+SCRIPT_DELIVERY_ISSUE_CODE = "telegram_podcast_script_delivery_failed"
 PODCAST_PATH = re.compile(r"^data/wiki/podcasts/daily-podcast_[0-9]{8}T[0-9]{6}Z\.md$")
 
 
@@ -235,9 +238,13 @@ def record_podcast_audio_failure(
         raise CanonicalValueError("podcast audio failure requires a reason")
     issue_id = record_issue(
         repository_root,
+        issue_code=AUDIO_DELIVERY_ISSUE_CODE,
+        impact="publication_only",
         severity="warning",
         title=AUDIO_DELIVERY_ISSUE_TITLE,
         description=(f"cycle={daily_cycle_id} commit={script_commit} error={safe_error}"),
+        entity_type="delivery",
+        entity_id="podcast_audio",
         owner="delivery",
         related_run_id=daily_cycle_id,
         now=now,
@@ -264,9 +271,13 @@ def record_podcast_script_failure(
         raise CanonicalValueError("podcast script failure requires a reason")
     issue_id = record_issue(
         repository_root,
+        issue_code=SCRIPT_DELIVERY_ISSUE_CODE,
+        impact="publication_only",
         severity="warning",
         title=SCRIPT_DELIVERY_ISSUE_TITLE,
         description=(f"cycle={daily_cycle_id} commit={script_commit} error={safe_error}"),
+        entity_type="delivery",
+        entity_id="podcast_script",
         owner="delivery",
         related_run_id=daily_cycle_id,
         now=now,
@@ -568,17 +579,27 @@ def _safe_error(error: BaseException | str, *secrets: str) -> str:
 
 
 def _delivery_issue(repository_root: Path) -> Mapping[str, str] | None:
-    issue_id = stable_id("issue", DELIVERY_ISSUE_TITLE.casefold(), "")
     return next(
-        (row for row in read_table(repository_root, "issues") if row["issue_id"] == issue_id),
+        (
+            row
+            for row in read_table(repository_root, "issues")
+            if row["issue_code"] == DELIVERY_ISSUE_CODE
+            and row["entity_type"] == "delivery"
+            and row["entity_id"] == "daily_report"
+        ),
         None,
     )
 
 
 def _podcast_script_delivery_issue(repository_root: Path) -> Mapping[str, str] | None:
-    issue_id = stable_id("issue", SCRIPT_DELIVERY_ISSUE_TITLE.casefold(), "")
     return next(
-        (row for row in read_table(repository_root, "issues") if row["issue_id"] == issue_id),
+        (
+            row
+            for row in read_table(repository_root, "issues")
+            if row["issue_code"] == SCRIPT_DELIVERY_ISSUE_CODE
+            and row["entity_type"] == "delivery"
+            and row["entity_id"] == "podcast_script"
+        ),
         None,
     )
 
@@ -680,12 +701,16 @@ def deliver_committed_report(
     if failure:
         issue_id = record_issue(
             repository_root,
+            issue_code=DELIVERY_ISSUE_CODE,
+            impact="publication_only",
             severity="warning",
             title=DELIVERY_ISSUE_TITLE,
             description=(
                 f"report={report_path} commit={commit_sha} next_chunk={failed_at} "
                 f"total_chunks={len(messages)} error={failure}"
             ),
+            entity_type="delivery",
+            entity_id="daily_report",
             owner="delivery",
             related_run_id=run_id,
             now=now,
@@ -699,26 +724,18 @@ def deliver_committed_report(
             issue_id=issue_id,
             error=failure,
         )
-    issue_id = ""
-    open_delivery_issues = [
-        row
-        for row in read_table(repository_root, "issues")
-        if row["status"] == "open"
-        and row["owner"] == "delivery"
-        and (
-            row["title"] == DELIVERY_ISSUE_TITLE
-            or row["title"].startswith("Telegram delivery failed:")
-        )
-    ]
-    for issue in open_delivery_issues:
-        issue_id = issue["issue_id"] if issue["title"] == DELIVERY_ISSUE_TITLE else issue_id
-        resolve_issue(
-            repository_root,
-            issue["issue_id"],
+    resolved = resolve_matching_issues(
+        repository_root,
+        issue_code=DELIVERY_ISSUE_CODE,
+        entity_type="delivery",
+        entity_id="daily_report",
+        resolution=(
             f"Latest committed report {commit_sha} delivered successfully; "
-            "older reports were not replayed.",
-            now=now,
-        )
+            "older reports were not replayed."
+        ),
+        now=now,
+    )
+    issue_id = resolved[-1] if resolved else ""
     return TelegramDeliveryResult(
         status="sent",
         commit_sha=commit_sha,
@@ -811,12 +828,16 @@ def deliver_podcast_script(
     if failure:
         issue_id = record_issue(
             repository_root,
+            issue_code=SCRIPT_DELIVERY_ISSUE_CODE,
+            impact="publication_only",
             severity="warning",
             title=SCRIPT_DELIVERY_ISSUE_TITLE,
             description=(
                 f"cycle={daily_cycle_id} script={script_path} commit={commit_sha} "
                 f"next_chunk={failed_at} total_chunks={len(messages)} error={failure}"
             ),
+            entity_type="delivery",
+            entity_id="podcast_script",
             owner="delivery",
             related_run_id=daily_cycle_id,
             now=now,
@@ -831,22 +852,15 @@ def deliver_podcast_script(
             issue_id,
             failure,
         )
-    issue_id = stable_id("issue", SCRIPT_DELIVERY_ISSUE_TITLE.casefold(), "")
-    issue = next(
-        (
-            row
-            for row in read_table(repository_root, "issues")
-            if row["issue_id"] == issue_id and row["status"] == "open"
-        ),
-        None,
+    resolved = resolve_matching_issues(
+        repository_root,
+        issue_code=SCRIPT_DELIVERY_ISSUE_CODE,
+        entity_type="delivery",
+        entity_id="podcast_script",
+        resolution=f"Podcast script for {daily_cycle_id} at {commit_sha} delivered successfully.",
+        now=now,
     )
-    if issue is not None:
-        resolve_issue(
-            repository_root,
-            issue_id,
-            f"Podcast script for {daily_cycle_id} at {commit_sha} delivered successfully.",
-            now=now,
-        )
+    issue_id = resolved[-1] if resolved else ""
     return TelegramPodcastScriptDeliveryResult(
         "sent",
         daily_cycle_id,
@@ -963,15 +977,19 @@ def _deliver_podcast_audio(
                     failure = _safe_error(exc, token, chat_id)
                     if attempt < settings.telegram.maximum_attempts:
                         sleeper(float(2 ** (attempt - 1)))
-    issue_id = stable_id("issue", AUDIO_DELIVERY_ISSUE_TITLE.casefold(), "")
+    issue_id = ""
     if failure:
         issue_id = record_issue(
             repository_root,
+            issue_code=AUDIO_DELIVERY_ISSUE_CODE,
+            impact="publication_only",
             severity="warning",
             title=AUDIO_DELIVERY_ISSUE_TITLE,
             description=(
                 f"cycle={cycle_id} commit={script_commit} audio_sha256={audio_sha} error={failure}"
             ),
+            entity_type="delivery",
+            entity_id="podcast_audio",
             owner="delivery",
             related_run_id=cycle_id,
             now=now,
@@ -979,21 +997,15 @@ def _deliver_podcast_audio(
         return TelegramAudioDeliveryResult(
             "failed", cycle_id, script_commit, audio_sha, issue_id, failure
         )
-    issue = next(
-        (
-            row
-            for row in read_table(repository_root, "issues")
-            if row["issue_id"] == issue_id and row["status"] == "open"
-        ),
-        None,
+    resolved = resolve_matching_issues(
+        repository_root,
+        issue_code=AUDIO_DELIVERY_ISSUE_CODE,
+        entity_type="delivery",
+        entity_id="podcast_audio",
+        resolution=f"Podcast audio for {cycle_id} at {script_commit} delivered successfully.",
+        now=now,
     )
-    if issue is not None:
-        resolve_issue(
-            repository_root,
-            issue_id,
-            f"Podcast audio for {cycle_id} at {script_commit} delivered successfully.",
-            now=now,
-        )
+    issue_id = resolved[-1] if resolved else ""
     return TelegramAudioDeliveryResult("sent", cycle_id, script_commit, audio_sha, issue_id, "")
 
 

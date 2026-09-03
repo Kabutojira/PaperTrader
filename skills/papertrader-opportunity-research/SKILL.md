@@ -21,6 +21,9 @@ Do not create an order, signal, execution, or position.
 
 The only structured mutations allowed are `scripts/papertrader issue record --request <json>` and
 `scripts/papertrader queue enqueue --request <json>`.
+Every issue request supplies a stable `issue_code`, explicit `impact`, and matching
+`entity_type`/`entity_id`; opportunity-research gaps are `affects_candidate`, never global
+portfolio blockers.
 
 ## Required input
 

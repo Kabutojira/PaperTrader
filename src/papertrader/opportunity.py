@@ -17,7 +17,7 @@ import yaml
 from papertrader.atomic_io import atomic_write_text
 from papertrader.config import Settings
 from papertrader.dedupe import build_dedupe_key, freshness_bucket, source_fingerprint
-from papertrader.issues import resolve_issue
+from papertrader.issues import resolve_matching_issues
 from papertrader.models import (
     AlertDirection,
     ClassifierDecision,
@@ -765,19 +765,14 @@ def _resolve_classifier_issue(
     now: datetime,
 ) -> None:
     relative = packet.path.relative_to(repository_root).as_posix()
-    title = f"Daily preparation degraded: classifier blocked for {relative}"
-    issue_id = stable_id("issue", title.casefold(), "")
-    issue = next(
-        (row for row in read_table(repository_root, "issues") if row["issue_id"] == issue_id),
-        None,
+    resolve_matching_issues(
+        repository_root,
+        issue_code="daily_classifier_degraded",
+        entity_type="candidate_packet",
+        entity_id=relative,
+        resolution=f"Classifier recovered and recorded the final {decision} decision.",
+        now=now,
     )
-    if issue is not None and issue["status"] == "open":
-        resolve_issue(
-            repository_root,
-            issue_id,
-            f"Classifier recovered and recorded the final {decision} decision.",
-            now=now,
-        )
 
 
 def _enqueue_candidate_ingest(

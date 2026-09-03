@@ -61,9 +61,13 @@ def test_seeded_agent_operation_audits_structured_change_and_terminalizes(
         request.write_text(
             json.dumps(
                 {
+                    "issue_code": "opportunity_primary_source_missing",
+                    "impact": "affects_candidate",
                     "severity": "warning",
                     "title": "Opportunity lacks a current primary source",
                     "description": "The move is retained as noise pending primary evidence.",
+                    "entity_type": "operation",
+                    "entity_id": selected_operation,
                     "owner": "research",
                     "related_run_id": run_id,
                     "related_operation_id": selected_operation,

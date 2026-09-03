@@ -25,6 +25,8 @@ Write only this operation's `seekingalpha_discovery.json`, `seekingalpha_issue.j
 and `agent_result.json`. Structured changes are limited to
 `scripts/papertrader seekingalpha enqueue-leads --request <discovery-json>` and
 `scripts/papertrader issue record --request <json>`. Do not edit wiki or structured CSV state directly.
+Every issue request supplies a stable `issue_code`, explicit `operational_only` impact, and matching
+`entity_type`/`entity_id`.
 
 ## Required input
 

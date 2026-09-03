@@ -20,7 +20,11 @@ from papertrader.agent_runner import (
 )
 from papertrader.atomic_io import atomic_write_json, atomic_write_text
 from papertrader.config import Settings
-from papertrader.issues import record_issue
+from papertrader.issues import (
+    operation_validation_impact,
+    record_issue,
+    resolve_matching_issues,
+)
 from papertrader.queue import (
     Operation,
     RunBudget,
@@ -485,9 +489,13 @@ def finish_local_harness_operation(
     if validation.errors:
         issue_id = record_issue(
             repository_root,
+            issue_code="agent_result_validation_failed",
+            impact=operation_validation_impact(operation.operation_type),
             severity="error",
             title=f"Local harness operation validation failed: {operation_id}",
             description="; ".join(validation.errors),
+            entity_type="operation",
+            entity_id=operation_id,
             owner="controller",
             related_run_id=run_id,
             related_operation_id=operation_id,
@@ -508,6 +516,14 @@ def finish_local_harness_operation(
         run_id=run_id,
         result=validation.result,
     )
+    if status in {"succeeded", "skipped"}:
+        resolve_matching_issues(
+            repository_root,
+            issue_code="agent_result_validation_failed",
+            entity_type="operation",
+            entity_id=operation_id,
+            resolution=f"operation_validation_recovered: {operation_id}",
+        )
     return HarnessFinish(
         run_id=run_id,
         operation_id=operation_id,
