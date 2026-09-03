@@ -739,6 +739,22 @@ def test_untrusted_payload_is_flagged_but_never_interpolated_into_controller_pro
     assert "prefix a command with `uv run`" in prompt
     assert "research security-context" not in prompt
 
+    bound_prompt = build_controller_prompt(
+        operation,
+        run_id="local-1",
+        injection_flags=(),
+        allocation_binding={
+            "current_allocation_plan_id": "allocation_plan_current",
+            "allocation_intent_id": "allocation_intent_same",
+        },
+    )
+    assert "immutable payload's original allocation_plan_id remains audit provenance" in (
+        bound_prompt
+    )
+    assert "current_allocation_plan_id `allocation_plan_current`" in bound_prompt
+    assert "allocation_intent_id `allocation_intent_same`" in bound_prompt
+    assert "must not be skipped merely because" in bound_prompt
+
     security_operation = replace(
         operation,
         operation_type="security_research",

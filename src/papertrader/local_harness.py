@@ -28,6 +28,7 @@ from papertrader.issues import (
 from papertrader.queue import (
     Operation,
     RunBudget,
+    allocation_operation_binding,
     block_operation,
     claim_next,
     complete_operation,
@@ -311,6 +312,7 @@ def start_local_harness_operation(
         operation,
         run_id=run_id,
         injection_flags=injection_flags,
+        allocation_binding=allocation_operation_binding(repository_root, operation),
     )
     support_skill_requirements = "".join(
         f"- Read required support skill {skill.relative_path} completely.\n" for skill in auxiliary

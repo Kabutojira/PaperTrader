@@ -854,19 +854,28 @@ def _recent_success(
     return None
 
 
-def _operation_inputs(repository_root: Path, operation: Operation) -> Mapping[str, object]:
+def _raw_operation_inputs(repository_root: Path, operation: Operation) -> Mapping[str, object]:
     relative = _validate_payload_path(operation.payload_path)
     payload = json.loads(repository_root.joinpath(*relative.parts).read_text(encoding="utf-8"))
     inputs = payload.get("inputs")
     if not isinstance(inputs, dict):
         raise QueueError(f"operation {operation.operation_id} payload inputs must be an object")
+    return inputs
+
+
+def allocation_operation_binding(
+    repository_root: Path, operation: Operation
+) -> Mapping[str, object] | None:
+    """Return one validated current-plan binding without mutating the immutable payload."""
+
     binding_path = (
         repository_root / "data" / "operations" / "bindings" / f"{operation.operation_id}.json"
     )
     if not binding_path.exists():
-        return inputs
+        return None
     if binding_path.is_symlink() or not binding_path.is_file():
         raise QueueError(f"operation {operation.operation_id} allocation binding is unsafe")
+    inputs = _raw_operation_inputs(repository_root, operation)
     binding = json.loads(binding_path.read_text(encoding="utf-8"))
     if (
         not isinstance(binding, dict)
@@ -877,6 +886,14 @@ def _operation_inputs(repository_root: Path, operation: Operation) -> Mapping[st
         or not isinstance(binding.get("current_allocation_plan_id"), str)
     ):
         raise QueueError(f"operation {operation.operation_id} allocation binding is invalid")
+    return binding
+
+
+def _operation_inputs(repository_root: Path, operation: Operation) -> Mapping[str, object]:
+    inputs = _raw_operation_inputs(repository_root, operation)
+    binding = allocation_operation_binding(repository_root, operation)
+    if binding is None:
+        return inputs
     return {**inputs, "allocation_plan_id": binding["current_allocation_plan_id"]}
 
 

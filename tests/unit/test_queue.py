@@ -13,8 +13,10 @@ from papertrader.config import Settings
 from papertrader.dedupe import SemanticDisposition, build_dedupe_key
 from papertrader.opportunity import _alert_research_type
 from papertrader.queue import (
+    Operation,
     QueueError,
     RunBudget,
+    allocation_operation_binding,
     claim_next,
     complete_operation,
     enqueue_operation,
@@ -998,6 +1000,9 @@ def test_prepare_rebinds_compatible_allocation_intent_without_rewriting_payload(
     assert binding["original_allocation_plan_id"] == old_plan
     assert binding["current_allocation_plan_id"] == current_plan
     assert binding["allocation_intent_id"] == intent_id
+    assert (
+        allocation_operation_binding(sandbox_repository, Operation.from_row(active[0])) == binding
+    )
     assert any(f"{operation_id}:rebound:{current_plan}" == value for value in dispositions)
     assert validate_queue(sandbox_repository) == []
 

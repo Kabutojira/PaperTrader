@@ -34,7 +34,9 @@ data timestamp, source references, and `mode`. Options candidates also require q
 inputs and complete contract identity for each contemplated leg. `baseline_allocation` additionally
 requires allocation-plan ID, security ID, current/target/maximum weight, rank, effective score,
 immutable allocation-intent and assessment IDs, tier, persisted whole-share target quantity,
-valuation mark/as-of, assessment timestamp, and disposition from the deterministic payload.
+valuation mark/as-of, assessment timestamp, and disposition from the deterministic payload. When
+the trusted controller names a deterministic current-plan binding, preserve the original payload
+as provenance and use the binding's current plan ID for every current-state check and CLI request.
 
 ## Procedure
 
