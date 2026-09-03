@@ -7,13 +7,13 @@ tags:
 created: "2026-09-03"
 updated: "2026-09-03"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_8b85d3fa43a19f170990"
-as_of: "2026-09-03T21:08:37Z"
+snapshot_id: "decision_873172862c55f2655ee6"
+as_of: "2026-09-03T23:19:29Z"
 ---
 
 # Performance and risk
 
-**As of `2026-09-03T21:08:37Z`**
+**As of `2026-09-03T23:19:29Z`**
 
 Current performance epoch started `2026-07-28T12:00:00Z` at **10000 EUR**. Prior audit epochs retained: **1**.
 
@@ -34,7 +34,7 @@ Current performance epoch started `2026-07-28T12:00:00Z` at **10000 EUR**. Prior
 
 ## Target allocation changes
 
-No target allocation changes.
+- **[UBER — Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e):** Buy from 0% to 1.95974%
 
 ## Committed history
 
