@@ -4,16 +4,16 @@ type: system-status
 status: maintained
 tags:
   - system-status
-created: "2026-09-02"
-updated: "2026-09-02"
+created: "2026-09-03"
+updated: "2026-09-03"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_436b6deaad3ca3eb09c4"
-as_of: "2026-09-02T18:45:21Z"
+snapshot_id: "decision_2c856c037b248d22a5f2"
+as_of: "2026-09-03T07:07:48Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-09-02T18:45:21Z`
+**As of:** `2026-09-03T07:07:48Z`
 **Investment data:** Blocked — current exposure cannot be projected safely
 **Operations:** Blocked
 **Publication validation:** Snapshot and exports validated
@@ -30,7 +30,7 @@ as_of: "2026-09-02T18:45:21Z"
 - Pending orders: 0
 - Market success/failure: 81/0
 - Candidate FX gaps: 0
-- Research backlog: 541
+- Research backlog: 542
 - Last successful daily run: 2026-09-01
 
 ## Current issues by investment impact
@@ -157,7 +157,7 @@ as_of: "2026-09-02T18:45:21Z"
 
 ### Publication Only
 
-- Error **CROX — Crocs, Inc.: Hermes operation validation failed: [[securities/security_c150f31c30afdb4a85f9|Security research for CROX on 2026-08-25]]** — visualization_review charts do not match chart ids in changed research pages: expected \[('data/wiki/securities/[[securities/security_c150f31c30afdb4a85f9|CROX]].md', 'valuation-scenarios')\], got \[('data/wiki/securities/[[securities/security_c150f31c30afdb4a85f9|CROX]].md', 'crox-valuation-scenarios-20260902')\]
+- Error **CROX — Crocs, Inc.: Hermes operation validation failed: [[securities/security_c150f31c30afdb4a85f9|Security research for CROX on 2026-08-25]]** — visualization_review charts do not match chart ids in changed research pages: expected \[('data/wiki/securities/[[securities/security_c150f31c30afdb4a85f9|CROX]].md', 'crox-valuation-scenarios-20260903'), ('data/wiki/securities/[[securities/security_c150f31c30afdb4a85f9|CROX]].md', 'q2-revenue-and-adjusted-operating-income')\], got \[('data/wiki/securities/[[securities/security_c150f31c30afdb4a85f9|CROX]].md', 'crox-scenario-fair-values-20260903'), ('data/wiki/securities/[[securities/security_c150f31c30afdb4a85f9|CROX]].md', 'q2-revenue-and-adjusted-operating-income')\]
 - Warning **Daily podcast skipped: [[daily-reports/daily-report_20260818|Daily report for 2026-08-18]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Warning **Daily podcast skipped: [[daily-reports/daily-report_20260818|Daily report for 2026-08-18]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Warning **Daily podcast skipped: [[daily-reports/daily-report_20260818|Daily report for 2026-08-18]]** — Committed Telegram delivery is awaiting a bounded retry.
@@ -200,12 +200,12 @@ as_of: "2026-09-02T18:45:21Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 541 active operations.
+Showing 20 of 542 active operations.
 
 <details><summary>Active research work</summary>
 
 - Ready — [[security-catalog#security-security_fe4648901e7675f157fd|Security research for ANIC.L on 2026-07-29]]
-- Ready — [[securities/security_8b703a8adf5f864acaa4|Strategy research for strategy for PRX on 2026-09-02]]
+- Ready — [[securities/security_8b703a8adf5f864acaa4|Strategy research for strategy for PRX on 2026-09-03]]
 - Ready — [[inbox/market-security_89969b7dac39b7db5661-rsi_oversold-a3f287ad1802|Wiki ingest for YEC.F — RSI oversold on 2026-07-30]]
 - Ready — [[inbox/market-security_488a9d7f7a8573597724-volume_anomaly-276969212fe2|Wiki ingest for PWR — Volume anomaly on 2026-07-30]]
 - Ready — [[inbox/market-security_2dbe878dfc899d7ee867-volume_anomaly-97d02f6c8190|Wiki ingest for FCX — Volume anomaly on 2026-07-30]]

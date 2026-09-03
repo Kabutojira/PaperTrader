@@ -4,20 +4,20 @@ type: performance
 status: maintained
 tags:
   - performance
-created: "2026-09-02"
-updated: "2026-09-02"
+created: "2026-09-03"
+updated: "2026-09-03"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_436b6deaad3ca3eb09c4"
-as_of: "2026-09-02T18:45:21Z"
+snapshot_id: "decision_2c856c037b248d22a5f2"
+as_of: "2026-09-03T07:07:48Z"
 ---
 
 # Performance and risk
 
-**As of `2026-09-02T18:45:21Z`**
+**As of `2026-09-03T07:07:48Z`**
 
 Current performance epoch started `2026-07-28T12:00:00Z` at **10000 EUR**. Prior audit epochs retained: **1**.
 
-<svg class="performance-chart" viewBox="0 0 100 100" role="img" aria-label="Equity history from 2026-07-28 to 2026-09-02; latest equity 10000."><title>Model equity history</title><desc>Equity history from 2026-07-28 to 2026-09-02; latest equity 10000.</desc><polyline fill="none" stroke="currentColor" stroke-width="2" points="0.00,45.00 3.12,45.00 6.25,45.00 9.38,45.00 12.50,45.00 15.62,45.00 18.75,45.00 21.88,45.00 25.00,45.00 28.12,45.00 31.25,45.00 34.38,45.00 37.50,45.00 40.62,45.00 43.75,45.00 46.88,45.00 50.00,45.00 53.12,45.00 56.25,45.00 59.38,45.00 62.50,45.00 65.62,45.00 68.75,45.00 71.88,45.00 75.00,45.00 78.12,45.00 81.25,45.00 84.38,45.00 87.50,45.00 90.62,45.00 93.75,45.00 96.88,45.00 100.00,45.00" /></svg>
+<svg class="performance-chart" viewBox="0 0 100 100" role="img" aria-label="Equity history from 2026-07-28 to 2026-09-03; latest equity 10000."><title>Model equity history</title><desc>Equity history from 2026-07-28 to 2026-09-03; latest equity 10000.</desc><polyline fill="none" stroke="currentColor" stroke-width="2" points="0.00,45.00 3.03,45.00 6.06,45.00 9.09,45.00 12.12,45.00 15.15,45.00 18.18,45.00 21.21,45.00 24.24,45.00 27.27,45.00 30.30,45.00 33.33,45.00 36.36,45.00 39.39,45.00 42.42,45.00 45.45,45.00 48.48,45.00 51.52,45.00 54.55,45.00 57.58,45.00 60.61,45.00 63.64,45.00 66.67,45.00 69.70,45.00 72.73,45.00 75.76,45.00 78.79,45.00 81.82,45.00 84.85,45.00 87.88,45.00 90.91,45.00 93.94,45.00 96.97,45.00 100.00,45.00" /></svg>
 
 | Daily return | Cumulative return | Drawdown | Realized P/L | Unrealized P/L |
 | ---: | ---: | ---: | ---: | ---: |
@@ -73,6 +73,7 @@ No target allocation changes.
 | 2026-08-31 | 10000 | 10000 | 0 | 0% | 0% | 0% |
 | 2026-09-01 | 10000 | 10000 | 0 | 0% | 0% | 0% |
 | 2026-09-02 | 10000 | 10000 | 0 | 0% | 0% | 0% |
+| 2026-09-03 | 10000 | 10000 | 0 | 0% | 0% | 0% |
 
 No external benchmark is used.
 

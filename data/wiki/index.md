@@ -4,16 +4,16 @@ type: dashboard
 status: maintained
 tags:
   - dashboard
-created: "2026-09-02"
-updated: "2026-09-02"
+created: "2026-09-03"
+updated: "2026-09-03"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_436b6deaad3ca3eb09c4"
-as_of: "2026-09-02T18:45:21Z"
+snapshot_id: "decision_2c856c037b248d22a5f2"
+as_of: "2026-09-03T07:07:48Z"
 ---
 
 # PaperTrader
 
-**As of `2026-09-02T18:45:21Z` · Investment data: Blocked — current exposure cannot be projected safely · Operations: Blocked**
+**As of `2026-09-03T07:07:48Z` · Investment data: Blocked — current exposure cannot be projected safely · Operations: Blocked**
 
 ## Decision blocked — do not copy actions
 
@@ -59,4 +59,4 @@ Current equity is **10000 EUR** with **100% cash**. The target retains **100% ca
 - [[performance|Performance and risk]]
 - [[research-catalog|Research catalog]]
 - [[system-status|System status and audit]]
-- [[daily-reports/daily-report_20260902|Daily report 2026-09-02]]
+- [[daily-reports/daily-report_20260903|Daily report 2026-09-03]]
