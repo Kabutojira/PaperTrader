@@ -3145,3 +3145,14 @@ boundary after the combined log crossed the configured 5,000-line threshold.
   an order or fill; documented scenario downside, conviction gaps, entry, exit and invalidation.
 - Added the `tencent-baseline-scenario-returns` visual-evidence chart from the canonical current-plan
   scenarios and recorded fresh TCEHY and USD/EUR observations from 2026-09-03T21:34:54Z.
+
+## [2026-09-03] create | Prosus bounded baseline allocation
+
+- Created [[strategies/strategy_8caa208dfc702a2584a7]] as a ready long-equity baseline strategy
+  bound to current plan `allocation_plan_0f41c211cdfa8a9b5dbc` and unchanged intent
+  `allocation_intent_13eb8f910db9c58bece6`.
+- Retained the deterministic three-share target and 5% maximum-position ceiling without treating
+  either as an order or fill; documented scenario downside, conviction gaps, entry, exit and
+  invalidation.
+- Added the `prosus-baseline-scenario-returns` visual-evidence chart from the canonical current-plan
+  scenarios and recorded the fresh EUR-denominated PRX observation from 2026-09-03T21:34:54Z.

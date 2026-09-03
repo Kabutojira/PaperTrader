@@ -1,0 +1,41 @@
+{
+  "strategy": {
+    "strategy_id": "strategy_8caa208dfc702a2584a7",
+    "idea_id": "idea_digital_attention_gaming_ecosystems",
+    "security_id": "security_8b703a8adf5f864acaa4",
+    "relationship_id": "relationship_e514a92bf6c38d0754ee",
+    "name": "Prosus bounded baseline allocation",
+    "status": "ready",
+    "direction": "long",
+    "instrument_type": "equity",
+    "thesis": "Prosus offers Tencent-dominated look-through value, growing ecommerce exposure and per-share accretion from repurchases below NAV; the current plan's economics justify bounded long-equity baseline exposure because medium confidence, holding-company concentration, private-asset valuation uncertainty, central debt, governance, capital-allocation transmission and insufficient diversification prevent conviction treatment.",
+    "entry_rule": "Open only while allocation_plan_0f41c211cdfa8a9b5dbc, allocation_intent_13eb8f910db9c58bece6, assessment_7f28dfd9240d6099400b and relationship_e514a92bf6c38d0754ee remain current, a fresh PRX EUR price is available, and deterministic code derives a positive whole-share delta toward the persisted three-share target.",
+    "exit_rule": "Reduce or close only when a current deterministic allocation plan directs reduce or close, the baseline eligibility frontier no longer clears, a hard blocker appears, or material Tencent, ecommerce, private-asset, debt, repurchase, governance, capital-allocation or valuation evidence invalidates the bounded thesis.",
+    "invalidation": "Do not increase exposure if Tencent or private-platform economics deteriorate materially, private marks prove unreliable, central net debt rises, governance or cross-holding complexity blocks value transmission, repurchases lose accretion, the holding discount widens persistently despite operating value creation, the assessment or relationship is superseded, or market inputs become stale.",
+    "risk_budget_pct": "5",
+    "sleeve": "baseline",
+    "allocation_plan_id": "allocation_plan_0f41c211cdfa8a9b5dbc",
+    "allocation_intent_id": "allocation_intent_13eb8f910db9c58bece6",
+    "not_before": "",
+    "expires_at": "2026-09-27T19:18:00Z",
+    "research_page": "data/wiki/strategies/strategy_8caa208dfc702a2584a7.md"
+  },
+  "legs": [
+    {
+      "leg_id": "leg_prosus_equity",
+      "action": "buy",
+      "side": "long",
+      "instrument_type": "equity",
+      "security_id": "security_8b703a8adf5f864acaa4",
+      "provider_contract_id": "",
+      "option_type": "",
+      "expiry": "",
+      "strike": "",
+      "quantity": "3",
+      "contract_multiplier": "1",
+      "order_type": "market",
+      "limit_price": "",
+      "currency": "EUR"
+    }
+  ]
+}
