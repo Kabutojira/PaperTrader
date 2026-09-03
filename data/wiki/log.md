@@ -3035,6 +3035,10 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 
 - Generated canonical [[daily-reports/daily-report_20260903]] for run `dev-rebased-publication-v5b-20260903`.
 
+- Published investor decision snapshot `decision_8b85d3fa43a19f170990`.
+
+- Generated canonical [[daily-reports/daily-report_20260903]] for run `daily-20260903T195930Z`.
+
 ## [2026-09-03] update | Applied Materials full security review after lower Bollinger-band breach
 
 - Updated [[securities/security_0a56aa634d077fe5796f]] with the filed fiscal-Q3 Form 10-Q,
