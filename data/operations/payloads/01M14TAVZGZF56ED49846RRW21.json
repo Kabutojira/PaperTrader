@@ -7,12 +7,16 @@
       "issue_30c07892e9981c27b153"
     ],
     "maintenance_mode": "refresh",
+    "market_data_as_of": "2026-09-03T18:24:03Z",
+    "market_data_date": "2026-09-03",
     "merged_input_values": {
       "maintenance_mode": [
         "refresh",
         "assessment_issue_recovery"
       ]
     },
+    "period_end": "2026-09-03",
+    "period_start": "2026-08-06",
     "research_page": "data/wiki/securities/security_96ba305ee7cd586bc348.md",
     "research_reasons": [
       {
@@ -31,15 +35,33 @@
         "prompt": "Repair the unresolved assessment for security_96ba305ee7cd586bc348 with current primary evidence and explicit source-operation provenance.",
         "source": "issue_reconciliation:maintenance-20260903-dashboard-health-v2",
         "source_refs": []
+      },
+      {
+        "dedupe_key": "security_research:security_96ba305ee7cd586bc348:f7d92b024167c81d132f:2026-09-03",
+        "market_data_date": "2026-09-03",
+        "observed_at": "2026-09-03T18:24:03Z",
+        "prompt": "Research security_96ba305ee7cd586bc348 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_96ba305ee7cd586bc348-macd_cross_above_signal-524af495aaf3.md"
+        ],
+        "trigger_types": [
+          "macd_cross_above_signal"
+        ]
       }
     ],
-    "security_id": "security_96ba305ee7cd586bc348"
+    "security_id": "security_96ba305ee7cd586bc348",
+    "source_price_hash": "3f54a5772fdb9e4b68555a32d204fd8bda977e65f8a7b294bf6d32d697369979",
+    "trigger_types": [
+      "macd_cross_above_signal"
+    ]
   },
-  "objective": "Revalidate security_96ba305ee7cd586bc348 with current primary evidence and write one comparable allocation assessment. | Additional cause: Repair the unresolved assessment for security_96ba305ee7cd586bc348 with current primary evidence and explicit source-operation provenance.",
+  "objective": "Revalidate security_96ba305ee7cd586bc348 with current primary evidence and write one comparable allocation assessment. | Additional cause: Repair the unresolved assessment for security_96ba305ee7cd586bc348 with current primary evidence and explicit source-operation provenance. | Additional cause: Research security_96ba305ee7cd586bc348 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
   "operation_id": "01M14TAVZGZF56ED49846RRW21",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_96ba305ee7cd586bc348-macd_cross_above_signal-524af495aaf3.md",
     "source_fanuc_q1_fy2026_reference",
     "source_fanuc_q1_fy2026_results"
   ]

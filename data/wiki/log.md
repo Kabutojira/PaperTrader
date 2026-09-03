@@ -3015,6 +3015,14 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 
 - Generated canonical [[daily-reports/daily-report_20260903]] for run `daily-20260903T122855Z`.
 
+- Created candidate packet [[inbox/market-security_567d0d575bbd30aaa91d-macd_cross_below_signal-96c9fd7ac047]] (96c9fd7ac047).
+
+- Created candidate packet [[inbox/market-security_96ba305ee7cd586bc348-macd_cross_above_signal-524af495aaf3]] (524af495aaf3).
+
+- Classified [[inbox/market-security_96ba305ee7cd586bc348-macd_cross_above_signal-524af495aaf3]] as `ingest`: New bullish MACD crossover is a durable, decision-relevant market transition after a recent decline.
+
+- Created candidate packet [[inbox/market-security_d08d763780400dfbffce-macd_cross_below_signal-d191e2528fda]] (d191e2528fda).
+
 ## [2026-09-03] update | Applied Materials full security review after lower Bollinger-band breach
 
 - Updated [[securities/security_0a56aa634d077fe5796f]] with the filed fiscal-Q3 Form 10-Q,
