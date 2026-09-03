@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_dyig1nxP--U",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@Value-Investing",
+    "channel_id": "UCrTTBSUr0zhPU56UQljag5A",
+    "channel_url": "https://www.youtube.com/channel/UCrTTBSUr0zhPU56UQljag5A/videos",
+    "discovered_at": "2026-09-03T12:28:56Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_dyig1nxP--U",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "dyig1nxP--U",
+    "video_title": "5 Interesting Value Bets From Investing Quadrant",
+    "video_url": "https://www.youtube.com/watch?v=dyig1nxP--U"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01M1KKWQT0G8MYJP1YHP77158R",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=dyig1nxP--U"
+  ]
+}
