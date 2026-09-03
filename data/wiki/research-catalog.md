@@ -751,6 +751,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 ## Strategy
 
 - [Intuitive Surgical valuation watch](strategies/strategy_bd005fc3733b1475b6f9)
+- [Uber bounded baseline allocation](strategies/strategy_e4ada1a4934691d1f7ee)
 
 ## System Status
 

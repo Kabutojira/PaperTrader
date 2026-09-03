@@ -3125,3 +3125,13 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Published investor decision snapshot `decision_1fefea4e42378c08c909`.
 
 - Generated canonical [[daily-reports/daily-report_20260903]] for run `dev-publication-v5b-20260903`.
+
+## [2026-09-03] create | Uber bounded baseline allocation
+
+- Created [[strategies/strategy_e4ada1a4934691d1f7ee]] as a ready long-equity starter strategy
+  bound to current plan `allocation_plan_0f41c211cdfa8a9b5dbc` and unchanged intent
+  `allocation_intent_5988db00b0dab41c4d78`.
+- Retained the deterministic three-share target and 2% position ceiling without treating either as
+  an order or fill; documented the scenario downside, conviction gaps, entry, exit and invalidation.
+- Added the `uber-baseline-scenario-returns` visual-evidence chart from the canonical current-plan
+  scenarios and recorded fresh UBER and USD/EUR observations from 2026-09-03T21:34:54Z.
