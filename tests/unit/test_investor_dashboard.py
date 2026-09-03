@@ -13,6 +13,7 @@ from papertrader.investor_pages import (
     _column_header,
     _currency_amount,
     _data_fx_update,
+    _homepage,
     _model_portfolio_page,
     _portfolio_html,
     _rounded_percentage,
@@ -234,6 +235,8 @@ def test_dashboard_candidate_section_uses_only_buy_initiate_assessments(
         security_id="security_included",
         canonical_rating="buy",
         portfolio_action="initiate",
+        expected_return_pct="20.7817678274164750316066337",
+        reason_labels=("The comparable assessment is stale or expired.",),
     )
     wrong_rating = replace(
         fixture,
@@ -253,10 +256,17 @@ def test_dashboard_candidate_section_uses_only_buy_initiate_assessments(
     )
 
     candidates = _buy_initiate_candidates(synthetic)
+    homepage = _homepage(
+        synthetic,
+        date.fromisoformat(synthetic.report_date),
+        "daily-reports/daily-report_20260903",
+    )
 
     assert candidates == (included,) * 6
     assert all(candidate.canonical_rating in {"buy", "strong_buy"} for candidate in candidates)
     assert all(candidate.portfolio_action == "initiate" for candidate in candidates)
+    assert "expected return 21% · The comparable assessment is stale or expired." in homepage
+    assert "expected 20.7817678274164750316066337%" not in homepage
 
 
 def test_model_portfolio_omits_comparison_benchmark_and_status_uses_snapshot_backlog(

@@ -761,7 +761,8 @@ def _homepage(snapshot: DecisionSnapshot, day: date, latest_report: str) -> str:
                 + ":** "
                 f"{RATING_LABELS[candidate.canonical_rating]} / "
                 f"{PORTFOLIO_ACTION_LABELS[candidate.portfolio_action]} · "
-                f"expected {candidate.expected_return_pct or '—'}% · {_markdown(reason)}"
+                f"expected return {_rounded_percentage(candidate.expected_return_pct)} · "
+                f"{_markdown(reason)}"
             )
     else:
         lines.append("No security currently has both a Buy rating and an Initiate action.")

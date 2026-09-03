@@ -40,20 +40,20 @@ Current equity is **10000 EUR** with **100% cash**. The target retains **100% ca
 
 ## Buy / Initiate research candidates
 
-- **[NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d):** Buy / Initiate · expected 20.7817678274164750316066337% · The comparable assessment is stale or expired.
-- **[UBER — Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e):** Buy / Initiate · expected 15.334637452545556976275606% · Bear/base payoff is below threshold.
-- **[DLO — DLocal Limited](securities/security_715bde20b6e1e1320c1a):** Buy / Initiate · expected 26.0811732313576530467142745% · Bear/base payoff is below threshold.
-- **[MELI — MercadoLibre, Inc.](securities/security_4935c6e39e38273a1731):** Buy / Initiate · expected 13.9453580214942379904182313% · Bear/base payoff is below threshold.
-- **[TCEHY — Tencent Holdings Limited](securities/security_de0d83229b369a426b99):** Buy / Initiate · expected 14.2555821714901180713162434% · Bear/base payoff is below threshold.
-- **[PATH — UiPath, Inc.](securities/security_eca976f0076a425ea1bb):** Buy / Initiate · expected 19.392187875224615059363419% · The comparable assessment is stale or expired.
-- **[SOFI — SoFi Technologies, Inc.](securities/security_98470cfc01bbcde78fc2):** Buy / Initiate · expected 18.6217061877524711325856672% · Bear/base payoff is below threshold.
-- **[PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4):** Buy / Initiate · expected 26.6477170825580787383494399% · The eligible set is not sufficiently diversified.
-- **[DPZ — Domino's Pizza, Inc.](securities/security_f34181f3df32080a91d1):** Buy / Initiate · expected 15.1900267458460857525019433% · Bear/base payoff is below threshold.
-- **[CROX — Crocs, Inc.](securities/security_c150f31c30afdb4a85f9):** Buy / Initiate · expected 21.1438802063171741724828252% · Expected/bear payoff is below threshold.
-- **[PYPL — PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00):** Buy / Initiate · expected 14.2974285769736015465170415% · Expected/bear payoff is below threshold.
-- **[FISV — Fiserv, Inc.](securities/security_d202772e4e62065cd17a):** Buy / Initiate · expected 17.9155531397902890727037957% · Bear/base payoff is below threshold.
-- **[CSIQ — Canadian Solar Inc.](securities/security_099561384c0f5e697727):** Buy / Initiate · expected 26.7694030804550541462775675% · A current accepted idea-to-security relationship is unavailable.
-- **[NOMD — Nomad Foods Limited](securities/security_98a1943771da875efed5):** Buy / Initiate · expected 18.4320289497031048551458127% · Expected/bear payoff is below threshold.
+- **[NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d):** Buy / Initiate · expected return 21% · The comparable assessment is stale or expired.
+- **[UBER — Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e):** Buy / Initiate · expected return 15% · Bear/base payoff is below threshold.
+- **[DLO — DLocal Limited](securities/security_715bde20b6e1e1320c1a):** Buy / Initiate · expected return 26% · Bear/base payoff is below threshold.
+- **[MELI — MercadoLibre, Inc.](securities/security_4935c6e39e38273a1731):** Buy / Initiate · expected return 14% · Bear/base payoff is below threshold.
+- **[TCEHY — Tencent Holdings Limited](securities/security_de0d83229b369a426b99):** Buy / Initiate · expected return 14% · Bear/base payoff is below threshold.
+- **[PATH — UiPath, Inc.](securities/security_eca976f0076a425ea1bb):** Buy / Initiate · expected return 19% · The comparable assessment is stale or expired.
+- **[SOFI — SoFi Technologies, Inc.](securities/security_98470cfc01bbcde78fc2):** Buy / Initiate · expected return 19% · Bear/base payoff is below threshold.
+- **[PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4):** Buy / Initiate · expected return 27% · The eligible set is not sufficiently diversified.
+- **[DPZ — Domino's Pizza, Inc.](securities/security_f34181f3df32080a91d1):** Buy / Initiate · expected return 15% · Bear/base payoff is below threshold.
+- **[CROX — Crocs, Inc.](securities/security_c150f31c30afdb4a85f9):** Buy / Initiate · expected return 21% · Expected/bear payoff is below threshold.
+- **[PYPL — PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00):** Buy / Initiate · expected return 14% · Expected/bear payoff is below threshold.
+- **[FISV — Fiserv, Inc.](securities/security_d202772e4e62065cd17a):** Buy / Initiate · expected return 18% · Bear/base payoff is below threshold.
+- **[CSIQ — Canadian Solar Inc.](securities/security_099561384c0f5e697727):** Buy / Initiate · expected return 27% · A current accepted idea-to-security relationship is unavailable.
+- **[NOMD — Nomad Foods Limited](securities/security_98a1943771da875efed5):** Buy / Initiate · expected return 18% · Expected/bear payoff is below threshold.
 
 ## Performance, risk, and coverage
 
