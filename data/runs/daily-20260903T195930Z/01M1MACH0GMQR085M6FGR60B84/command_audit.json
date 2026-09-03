@@ -1,0 +1,26 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-09-03T20:08:08Z",
+      "exit_code": 0,
+      "profile": "deep",
+      "request": null,
+      "started_at": "2026-09-03T20:08:07Z"
+    }
+  ],
+  "operation_id": "01M1MACH0GMQR085M6FGR60B84",
+  "profile": "deep",
+  "profile_policy_version": "profile-router-v1",
+  "route_reason": "full_strategy_or_execution_decision",
+  "run_id": "daily-20260903T195930Z"
+}

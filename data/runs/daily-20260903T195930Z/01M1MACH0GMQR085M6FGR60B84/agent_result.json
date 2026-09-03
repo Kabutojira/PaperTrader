@@ -1,0 +1,57 @@
+{
+  "commands_run": [
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Skipped baseline strategy research for Tencent because allocation plan allocation_plan_3b65c4f4683e9b90d8b7 was superseded by current plan allocation_plan_289b1e45af570882b472 before execution; no strategy or signal was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The immutable request binds strategy_ef910e9aff5203a0b901 to allocation_plan_3b65c4f4683e9b90d8b7, allocation_intent_206644feb73549257619, assessment_6e8ef7291ff81b77d900, and relationship_f625ba3c07d49e1865ff for security_de0d83229b369a426b99.",
+      "source": "data/operations/payloads/01M1MACH0GMQR085M6FGR60B84.json"
+    },
+    {
+      "claim": "The sole current allocation plan is allocation_plan_289b1e45af570882b472 as of 2026-09-03T19:35:37Z. Its Tencent row retains allocation_intent_206644feb73549257619, strategy_ef910e9aff5203a0b901, assessment_6e8ef7291ff81b77d900, relationship_f625ba3c07d49e1865ff, starter tier, 2% position cap, 3-share target, rank 3, effective score 76, 1.45% target weight, and open disposition.",
+      "observed_at": "2026-09-03T19:35:37Z",
+      "source": "data/tables/allocation_targets.csv"
+    },
+    {
+      "claim": "The payload-bound allocation_plan_3b65c4f4683e9b90d8b7 is retained only in immutable allocation history for Tencent, with its latest observation recorded at 2026-09-03T19:06:27Z.",
+      "observed_at": "2026-09-03T19:06:27Z",
+      "source": "data/tables/allocation_history.csv"
+    },
+    {
+      "claim": "Tencent's current assessment remains the payload-bound assessment_6e8ef7291ff81b77d900 assessed at 2026-08-28T19:23:20Z.",
+      "observed_at": "2026-08-28T19:23:20Z",
+      "source": "data/tables/security_assessments.csv"
+    },
+    {
+      "claim": "relationship_f625ba3c07d49e1865ff remains accepted with positive direction, high sensitivity, and medium confidence for Tencent.",
+      "observed_at": "2026-08-28T20:03:02Z",
+      "source": "data/tables/relationships.csv"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01M1MACH0GMQR085M6FGR60B84",
+  "operations_created": [],
+  "reason_code": "superseded_allocation_plan",
+  "status": "skipped",
+  "summary": "Skipped the baseline-allocation strategy review because its immutable allocation plan allocation_plan_3b65c4f4683e9b90d8b7 was superseded before execution by current plan allocation_plan_289b1e45af570882b472. The current plan preserves the same Tencent allocation intent, strategy, assessment, relationship, starter tier, rank, score, target quantity, target weight, and open disposition, but baseline strategy work must bind the current plan identity. No strategy, signal, follow-up, issue, wiki page, allocation state, order, or accounting state was changed.",
+  "validation": {
+    "checks": [
+      "Paper-only safety is enabled and real orders are disabled in config.ini.",
+      "The only running queue row is this strategy_research operation, claimed by daily-20260903T195930Z with a live lease through 2026-09-03T20:34:44Z.",
+      "The controller-supplied payload matches the immutable queue entity and operation identity.",
+      "Native llm-wiki, controller, strategy-research, and echart skill hashes match hermes_preflight.json.",
+      "The payload plan is superseded: current allocation_targets.csv contains only allocation_plan_289b1e45af570882b472, not allocation_plan_3b65c4f4683e9b90d8b7.",
+      "The current target preserves the payload-bound allocation intent, strategy, assessment, relationship, starter tier, rank, score, target quantity, target weight, and open disposition.",
+      "The linked relationship is accepted and the current assessment timestamp still matches the payload.",
+      "The superseded-target rule stopped work at the mandatory allocation-plan identity gate before structure, price/FX freshness, materiality, signal, or visualization evaluation.",
+      "Protected allocation, strategy, signal, order, execution, cash, portfolio, performance, and wiki navigation files retained their pre-verification SHA-256 hashes.",
+      "The audited strict wiki lint command changed no paths and returned OK [wiki].",
+      "No strategy, signal, follow-up, issue, wiki, allocation, order, execution, cash, portfolio, or performance state was changed."
+    ],
+    "passed": true
+  }
+}
