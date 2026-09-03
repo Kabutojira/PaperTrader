@@ -1,0 +1,12 @@
+{
+  "issue_code": "security_assessment_page_hash_mismatch",
+  "impact": "affects_candidate",
+  "severity": "error",
+  "title": "ABB assessment provenance does not match corrected final research page",
+  "description": "Operation 01M07XKZS0JKBQM0THMPJGWEK5 accepted immutable assessment assessment_a3946a163695f1a9f51f while the security page still carried the prior prose disposition. Deterministic derivation changed the current disposition from Sell / Avoid to Hold / Watch at the lower mark, so the page and structured security summary were corrected after the immutable assessment was written. The current assessment and final page now agree economically, and exactly one assessment version names this operation, but its stored research_page_hash no longer matches the corrected final page. The operation must fail closed until the controller repairs or compensates this provenance mismatch. No relationship, idea, strategy, signal, order, allocation, execution, cash, portfolio or performance change was made.",
+  "entity_type": "security",
+  "entity_id": "security_c120e9f26ebb6159adf9",
+  "owner": "controller",
+  "related_run_id": "daily-20260903T182402Z",
+  "related_operation_id": "01M07XKZS0JKBQM0THMPJGWEK5"
+}

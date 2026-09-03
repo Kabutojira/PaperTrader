@@ -3031,3 +3031,15 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Reclassified the prior unsupported result to Hold / Avoid: the USD 438.46 mark is close to the
   USD 439 weighted and USD 448 base values, but expected return, base upside, bear-case payoff,
   margin of safety, timing, and accepted-relationship gates remain unsatisfied.
+
+## [2026-09-03] update | ABB full security review after lower Bollinger-band breach
+
+- Revalidated [[securities/security_c120e9f26ebb6159adf9|ABB]] against hash-identical Q2 results
+  and share-listing evidence after the 1 September lower-band breach. The next-session trigger
+  clearance and unchanged primary evidence make the move a valuation recheck, not a changed
+  operating thesis.
+- Retained USD 62.40/USD 86.80/USD 105.00 scenarios at 30%/50%/20%. At the fresh USD 95.15 mark,
+  weighted and base values remain below market. The lower mark improves the deterministic
+  disposition from Sell / Avoid to Hold / Watch, but ABB remains allocation-ineligible. The
+  complete idea catalog yielded no new evidence-backed candidate edge; no strategy, signal, order,
+  allocation or accounting state changed.

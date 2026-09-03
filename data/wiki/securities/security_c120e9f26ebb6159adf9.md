@@ -4,12 +4,12 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-26"
-updated: "2026-08-10"
+updated: "2026-09-03"
 provenance: "source_abb_q2_2026_results; source_abb_share_listing_2026"
 security_id: security_c120e9f26ebb6159adf9
 issuer_id: issuer_e60cfde16e515ef00e35
 confidence: medium
-next_review: "2026-08-24"
+next_review: "2026-10-03"
 ---
 
 # ABB Ltd sponsored ADR
@@ -43,6 +43,90 @@ This deterministic monitoring chart is derived from the repository-local market 
 }
 ```
 <!-- papertrader:technical-chart:end -->
+
+```echart
+{
+  "schema_version": 1,
+  "chart_id": "abb-scenario-values-20260903",
+  "kind": "series",
+  "title": "Scenario fair values versus the current ADR mark",
+  "description": "ABB's lower-Bollinger price reset leaves the ADR above both probability-weighted and base fair value; only the bull case exceeds the current mark.",
+  "as_of": "2026-09-02",
+  "sources": [
+    {
+      "label": "ABB Q2 2026 results",
+      "url": "https://search.abb.com/library/Download.aspx?DocumentID=9AKK108472A9735&LanguageCode=en&DocumentPartId=&Action=Launch",
+      "observed_at": "2026-09-03T18:26:50Z"
+    },
+    {
+      "label": "Canonical PaperTrader market mark",
+      "observed_at": "2026-09-03T18:24:03Z"
+    }
+  ],
+  "notes": [
+    "Bear, base and bull probabilities are 30%, 50% and 20%; their probability-weighted fair value is USD 83.12.",
+    "Scenario values apply 24x, 28x and 30x to USD 2.60, USD 3.10 and USD 3.50 normalized EPS, respectively."
+  ],
+  "x_axis": {"type": "category", "label": "Case", "values": ["Bear", "Weighted value", "Base", "Current mark", "Bull"]},
+  "y_axes": [{"label": "USD per ADR", "unit": "USD/share", "format": "currency", "currency": "USD"}],
+  "series": [{"name": "Value", "render": "bar", "y_axis": 0, "values": ["62.40", "83.12", "86.80", "95.1500015258789", "105.00"]}]
+}
+```
+
+```echart
+{
+  "schema_version": 1,
+  "chart_id": "abb-alert-returns-20260901",
+  "kind": "series",
+  "title": "Returns into the lower-Bollinger breach",
+  "description": "The September 1 lower-band breach was dominated by a one-session decline rather than a sustained multi-horizon selloff.",
+  "as_of": "2026-09-01",
+  "sources": [
+    {
+      "label": "Canonical PaperTrader technical projection",
+      "observed_at": "2026-09-03T18:24:03Z"
+    }
+  ],
+  "notes": [
+    "Returns use adjusted closes over one, five and twenty trading sessions through September 1, 2026.",
+    "The close was below the lower Bollinger band while RSI was 47.00, MACD remained above signal and volume was not anomalous."
+  ],
+  "x_axis": {"type": "category", "label": "Lookback", "values": ["1 session", "5 sessions", "20 sessions"]},
+  "y_axes": [{"label": "Return", "unit": "%", "format": "percent"}],
+  "series": [{"name": "Adjusted-close return", "render": "bar", "y_axis": 0, "values": ["-4.171496", "-2.134924", "-0.188714"]}]
+}
+```
+
+## Changes since prior review
+
+- **Facts and primary evidence:** unchanged. Fresh downloads of ABB's Q2 results and share-listing
+  page match the retained hashes. No newer retained issuer evidence changes orders, margins, cash
+  conversion, leverage, outstanding shares, the Robotics disposal, the Rotork proposal, or ADR
+  identity.
+- **Alert and timing:** the canonical 1 September close of USD 95.16 was 4.17% lower for the session,
+  2.13% lower over five sessions and 0.19% lower over twenty sessions. It closed below the USD 95.83
+  lower Bollinger band; RSI was neutral at 47.00, MACD remained above signal and volume was not
+  anomalous. The 2 September close was USD 95.15 and the lower-band trigger had cleared. This was a
+  short-lived valuation recheck, not evidence of changed business economics.
+- **Valuation assumptions and scenarios:** unchanged at USD 62.40/USD 86.80/USD 105.00 with
+  30%/50%/20% probabilities. The lower mark improves the raw returns, but weighted value remains
+  12.64% below market, base value 8.78% below market and bear value 34.42% below market; only the
+  bull case has 10.35% upside.
+- **Thesis, catalysts, risks, blockers and gaps:** unchanged. Strong group operating quality and
+  cash conversion remain offset by the Robotics exit, Rotork integration and capital-allocation
+  risk, OTC liquidity, medium confidence, weak timing, inadequate expected/base returns and the
+  rejected embodied-AI edge.
+- **Rating and portfolio action:** the lower mark improves the deterministic disposition from
+  **Sell / Avoid** to **Hold / Watch**, while allocation remains ineligible. No strategy, signal,
+  order or paper trade is justified.
+
+## Alert review: opportunity, risk, or noise?
+
+The 1 September lower-Bollinger breach is **a bounded valuation opportunity to recheck, but noise
+for the operating thesis and not an action signal**. The next-session trigger clearance, neutral RSI,
+non-anomalous volume and still-positive MACD signal do not establish a persistent technical break.
+More importantly, the price remains above probability-weighted and base fair value, so the decline
+does not repair the expected-return, base-upside, payoff or margin-of-safety gates.
 
 ## Identity
 
@@ -79,14 +163,14 @@ separately disclose recurring RobotStudio revenue or installed-base service econ
 | Net debt was USD 2.320 billion and net debt/EBITDA was 0.3. | The balance sheet has capacity, although the planned transaction consumes it. |
 | Robotics net proceeds are expected in the second half of 2026. | ABB is a temporary, not durable, direct robotics exposure. |
 | ABB proposes a roughly USD 5.5 billion Rotork acquisition. | Actuator exposure expands, but integration and capital-allocation risk rise. |
-| The current ADR mark is USD 100.86 with 206,700 shares of daily provider volume. | Price and trading data are fresh through 7 August, though OTC liquidity is weaker than a primary exchange listing. |
+| The current ADR mark is USD 95.15 with 169,300 shares of provider volume. | Price and trading data are fresh through 2 September, though OTC liquidity is weaker than a primary exchange listing. |
 
 Primary evidence: [ABB Q2 2026 results](https://search.abb.com/library/Download.aspx?DocumentID=9AKK108472A9735&LanguageCode=en&DocumentPartId=&Action=Launch)
 and [ABB share listing data](https://global.abb/group/en/investors/investor-and-shareholder-resources/share-listing).
 
 ## Valuation, catalysts, and risks
 
-ABBNY closed at USD 100.86 on 2026-08-07. The mature-compounder earnings-multiple assessment uses
+ABBNY closed at USD 95.15 on 2026-09-02. The mature-compounder earnings-multiple assessment uses
 ABB's USD 1.41 first-half basic EPS, approximately 1.815 billion outstanding shares and USD 2.320
 billion net debt, with the disclosed approximately USD 4.8 billion Robotics proceeds and USD 5.5
 billion Rotork purchase price treated explicitly. The 12-month cases are:
@@ -99,9 +183,10 @@ billion Rotork purchase price treated explicitly. The 12-month cases are:
 
 These are scenarios rather than price targets. Multiples remain judgmental, and disposal taxes and
 fees, separation, Rotork integration, capital returns and ADR mechanics can change per-share
-outcomes. The probability-weighted fair value is USD 83.12, below the current mark; the base value
-is also below market, and the bull case offers only limited upside. The complete range therefore
-fails the expected-return, base-return, downside-payoff and 20% margin-of-safety gates.
+outcomes. The probability-weighted fair value is USD 83.12, 12.64% below the current mark; the base
+value is 8.78% below market, the bear case is 34.42% below market, and the bull case offers 10.35%
+upside. The complete range therefore still fails the expected-return, base-return, downside-payoff
+and 20% margin-of-safety gates.
 
 Catalysts are disposal completion at expected net proceeds, disciplined redeployment, sustained
 positive book-to-bill, and margin/cash conversion. Invalidate the physical-AI relationship on the
@@ -110,13 +195,39 @@ centre and industrial orders reverse, margins normalize sharply, or cash convers
 
 ## Disposition
 
-Status: **watching**, **Strong Sell / Avoid**, confidence **medium**, and **allocation-ineligible**.
+Status: **watching**, **Hold / Watch**, confidence **medium**, and **allocation-ineligible**.
 The complete valuation is below market on a probability-weighted and base-case basis, and the sole
 canonical embodied-AI relationship is rejected. The Robotics exit, proposed Rotork integration,
-OTC instrument and unfavorable timing remain material constraints. Review by **2026-08-24**, or
+OTC instrument and unfavorable timing remain material constraints. Review by **2026-10-03**, or
 sooner on disposal or acquisition completion, a material transaction-term change, or evidence that
 orders, margins or cash conversion have weakened. No conviction strategy or paper signal is
 justified.
+
+## Idea exposure map
+
+- **Canonical rejected edge — [[ideas/idea_humanoid_robotics_embodied_ai_components|Humanoid
+  robotics and embodied-AI components]], formerly positive direction:** ABB's disclosed Robotics
+  disposal removes the direct transmission mechanism, while the retained group does not separately
+  disclose durable RobotStudio or installed-base service economics. The existing canonical edge is
+  rejected, not accepted; its already queued dependent relationship review must confirm or revise
+  that status. Invalidate this rejection only if retained ABB disclosures establish material,
+  durable embodied-AI economics after the disposal.
+- **Rejected-no-link — [[ideas/idea_ai_infrastructure_power|AI infrastructure and power
+  bottlenecks]]:** ABB's electrification portfolio is superficially relevant, but the retained Q2
+  evidence does not isolate data-centre orders, backlog, revenue, margins or cash conversion. The
+  idea page already declined to retain ABB for another review on this exact evidence gap; no new
+  causal edge is proposed.
+- **Rejected-no-link — [[ideas/idea_nearshoring_friendshoring_manufacturing|Nearshoring and
+  friendshoring manufacturing capacity]]:** ABB can supply factory automation, but no retained
+  primary evidence attributes material orders or cash flow to relocated regional capacity rather
+  than the broad industrial cycle.
+- **Rejected-no-link — [[ideas/idea_wide_bandgap_power_semiconductors|Wide-bandgap power
+  semiconductors]]:** ABB is a downstream electrical-equipment and automation supplier; retained
+  evidence does not establish material SiC or GaN device economics for the issuer.
+
+No current accepted relationship exists for ABB, and no additional plausible candidate survives
+the materiality and evidence tests. The complete maintained idea catalog was searched; the other
+ideas lack a specific issuer-level transmission mechanism.
 
 ## 2026-08-09 bullish-MACD quick check
 

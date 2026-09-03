@@ -1,0 +1,18 @@
+{
+  "source_id": "source_abb_q2_2026_results",
+  "url": "https://search.abb.com/library/Download.aspx?DocumentID=9AKK108472A9735&LanguageCode=en&DocumentPartId=&Action=Launch",
+  "canonical_url": "https://search.abb.com/library/Download.aspx?DocumentID=9AKK108472A9735&LanguageCode=en&DocumentPartId=&Action=Launch",
+  "source_type": "issuer-release",
+  "title": "ABB Q2 2026 results",
+  "publisher": "ABB Ltd",
+  "license": "",
+  "status": "available",
+  "content_hash": "7129a0f6f3777204d3b4b426f66c6069ce702d26ee364c76f2cf50fb04a54508",
+  "related_entity_ids": "idea_humanoid_robotics_embodied_ai_components|security_c120e9f26ebb6159adf9",
+  "checked_at": "2026-09-03T18:26:50Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Q2 orders were USD 12.042 billion, revenue USD 9.475 billion and operational EBITA margin 20.2%; first-half basic EPS was USD 1.41.",
+  "summary": "The hash-identical issuer Q2 results preserve the orders, revenue, margins, cash conversion, net debt, earnings, Robotics proceeds and proposed Rotork acquisition evidence used in the refreshed scenario review.",
+  "run_id": "daily-20260903T182402Z"
+}

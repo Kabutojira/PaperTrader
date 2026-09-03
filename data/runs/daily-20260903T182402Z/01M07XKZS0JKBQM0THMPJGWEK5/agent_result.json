@@ -1,0 +1,130 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_c120e9f26ebb6159adf9",
+    "papertrader research source record --request data/runs/daily-20260903T182402Z/01M07XKZS0JKBQM0THMPJGWEK5/source_abb_q2_2026_results_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260903T182402Z/01M07XKZS0JKBQM0THMPJGWEK5/source_abb_share_listing_2026_refresh_request.json",
+    "papertrader wiki sync-technical-charts",
+    "papertrader research security upsert --request data/runs/daily-20260903T182402Z/01M07XKZS0JKBQM0THMPJGWEK5/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260903T182402Z/01M07XKZS0JKBQM0THMPJGWEK5/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260903T182402Z/01M07XKZS0JKBQM0THMPJGWEK5/assessment_upsert_request_v2.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260903T182402Z/01M07XKZS0JKBQM0THMPJGWEK5/assessment_upsert_request_v3.json",
+    "papertrader wiki lint --strict",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader research security upsert --request data/runs/daily-20260903T182402Z/01M07XKZS0JKBQM0THMPJGWEK5/security_upsert_request_v2.json",
+    "papertrader research security upsert --request data/runs/daily-20260903T182402Z/01M07XKZS0JKBQM0THMPJGWEK5/security_upsert_request_v3.json",
+    "papertrader issue record --request data/runs/daily-20260903T182402Z/01M07XKZS0JKBQM0THMPJGWEK5/issue_record_request.json",
+    "papertrader wiki lint --strict",
+    "papertrader queue validate",
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader queue validate",
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict"
+  ],
+  "daily_report_items": [
+    "ABB was revalidated after the September 1 lower-Bollinger breach. Hash-identical primary evidence left USD 62.40/USD 86.80/USD 105.00 scenarios unchanged; the fresh USD 95.15 mark improves the deterministic disposition to Hold / Watch but remains above weighted and base value, so allocation stays ineligible. The operation failed closed because the final corrected page hash differs from the one sealed into its immutable assessment; issue_bb796d692e4293326337 records the required controller repair."
+  ],
+  "evidence": [
+    {
+      "claim": "A fresh download reproduced the registered ABB Q2 2026 results hash; the release continues to support strong orders, margins and cash conversion while documenting the Robotics disposal, expected proceeds and Rotork transaction context.",
+      "observed_at": "2026-09-03T18:26:50Z",
+      "source": "source_abb_q2_2026_results",
+      "source_hash": "7129a0f6f3777204d3b4b426f66c6069ce702d26ee364c76f2cf50fb04a54508",
+      "url": "https://search.abb.com/library/Download.aspx?DocumentID=9AKK108472A9735&LanguageCode=en&DocumentPartId=&Action=Launch"
+    },
+    {
+      "claim": "A fresh retrieval reproduced ABB's registered share-listing hash and continues to support the sponsored-ADR identity and outstanding-share evidence.",
+      "observed_at": "2026-09-03T18:26:50Z",
+      "source": "source_abb_share_listing_2026",
+      "source_hash": "d982a37747ddf71731ff81e546e794f03eb1b98835067e72a681a655d4ac9605",
+      "url": "https://global.abb/group/en/investors/investor-and-shareholder-resources/share-listing"
+    },
+    {
+      "claim": "The September 1 close breached the lower Bollinger band after returns of -4.17%, -2.13% and -0.19% over one, five and twenty sessions; the trigger cleared on September 2, RSI was neutral, MACD remained above signal and volume was not anomalous, making the alert a valuation recheck rather than changed operating evidence.",
+      "source": "data/market/technical/security_c120e9f26ebb6159adf9.csv"
+    },
+    {
+      "claim": "Immutable assessment assessment_a3946a163695f1a9f51f links predecessor assessment_b72368d562b62acfb851 and derives Hold / Watch at the USD 95.1500015258789 mark, with bear/base/bull returns of -34.42%/-8.78%/10.35%, expected return of -12.64%, and allocation ineligibility.",
+      "source": "data/tables/security_assessment_history.csv"
+    },
+    {
+      "claim": "The assessment sealed research-page hash c5804be39a202a5962815fd5c4270041174d340ef0e8ab65f28cc27b1faa6017 before the final deterministic Hold / Watch prose correction; the final page hash is 44376ba35d9ffb3922c94d534f5b2ffe2fd938f1ab6d16c2adca09c73678d567.",
+      "source": "data/tables/security_assessment_history.csv and data/wiki/securities/security_c120e9f26ebb6159adf9.md"
+    }
+  ],
+  "files_changed": [
+    "data/issues.md",
+    "data/runs/daily-20260903T182402Z/01M07XKZS0JKBQM0THMPJGWEK5/assessment_upsert_request.json",
+    "data/runs/daily-20260903T182402Z/01M07XKZS0JKBQM0THMPJGWEK5/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260903T182402Z/01M07XKZS0JKBQM0THMPJGWEK5/assessment_upsert_request_v3.json",
+    "data/runs/daily-20260903T182402Z/01M07XKZS0JKBQM0THMPJGWEK5/issue_record_request.json",
+    "data/runs/daily-20260903T182402Z/01M07XKZS0JKBQM0THMPJGWEK5/security_upsert_request.json",
+    "data/runs/daily-20260903T182402Z/01M07XKZS0JKBQM0THMPJGWEK5/security_upsert_request_v2.json",
+    "data/runs/daily-20260903T182402Z/01M07XKZS0JKBQM0THMPJGWEK5/security_upsert_request_v3.json",
+    "data/runs/daily-20260903T182402Z/01M07XKZS0JKBQM0THMPJGWEK5/source_abb_q2_2026_results_refresh_request.json",
+    "data/runs/daily-20260903T182402Z/01M07XKZS0JKBQM0THMPJGWEK5/source_abb_share_listing_2026_refresh_request.json",
+    "data/tables/issues.csv",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_c120e9f26ebb6159adf9.md"
+  ],
+  "issues_recorded": [
+    "issue_bb796d692e4293326337"
+  ],
+  "operation_id": "01M07XKZS0JKBQM0THMPJGWEK5",
+  "operations_created": [],
+  "reason_code": "assessment_page_hash_mismatch",
+  "status": "failed",
+  "summary": "Revalidated ABB after the September 1 lower-Bollinger breach, refreshed hash-identical primary evidence, updated the security page and comparable assessment, and derived Hold / Watch with allocation ineligibility because expected return, base upside, payoff, margin-of-safety and accepted-relationship gates remain unsatisfied. The operation fails closed because the immutable assessment was sealed before its page's prior Sell / Avoid prose was corrected to the deterministic Hold / Watch result, leaving its stored page hash different from the final page. Recorded issue issue_bb796d692e4293326337. No follow-up, strategy, signal, order, allocation or accounting change was made.",
+  "validation": {
+    "checks": [
+      "Security context command succeeded before assessment work and prior assessment state was consumed.",
+      "Fresh hash-identical Q2 results and share-listing evidence passed deterministic registration and freshness checks.",
+      "Identity-matched USD price and USD/EUR FX observations as of 2026-09-03T18:24:03Z passed assessment freshness checks.",
+      "Exactly one immutable schema-version-2 assessment version names this operation and links predecessor assessment_b72368d562b62acfb851.",
+      "Canonical current assessment is complete and valuation-supported: Hold / Watch, Watch conviction, and allocation-ineligible.",
+      "Complete maintained idea catalog and canonical relationship state were searched; no accepted relationship or new evidence-backed candidate edge exists, the already queued dependent review covers the rejected embodied-AI edge, and no new follow-up was created.",
+      "Final strict wiki lint, queue validation, strict schema validation and strict integrity checks passed.",
+      "Validation failed because assessment_a3946a163695f1a9f51f stores page hash c5804be39a202a5962815fd5c4270041174d340ef0e8ab65f28cc27b1faa6017 while the corrected final page hash is 44376ba35d9ffb3922c94d534f5b2ffe2fd938f1ab6d16c2adca09c73678d567.",
+      "No allocation, order, execution, cash, portfolio or performance path changed."
+    ],
+    "passed": false
+  },
+  "visualization_review": {
+    "charts": [
+      {
+        "chart_id": "abb-scenario-values-20260903",
+        "page_path": "data/wiki/securities/security_c120e9f26ebb6159adf9.md"
+      },
+      {
+        "chart_id": "abb-alert-returns-20260901",
+        "page_path": "data/wiki/securities/security_c120e9f26ebb6159adf9.md"
+      }
+    ],
+    "completed": true,
+    "omissions": [
+      {
+        "dataset": "Annual or quarterly fundamental trends",
+        "reason": "The bounded fresh evidence confirms only the same current Q2 and first-half observations used in the prior review; exact like-for-like values for enough earlier periods were not retained, so deriving rounded prior values from reported growth rates would be misleading.",
+        "reason_code": "single_value"
+      },
+      {
+        "dataset": "Like-for-like peer valuation",
+        "reason": "The bounded review did not establish three or more primary-evidence peers sharing one as-of date, earnings definition, instrument scope and currency basis.",
+        "reason_code": "insufficient_comparability"
+      },
+      {
+        "dataset": "Balance-sheet trend",
+        "reason": "The retained primary evidence contains only the current USD 2.320 billion net-debt observation and 0.3 net-debt-to-EBITDA ratio, which is too sparse for a meaningful trend chart.",
+        "reason_code": "single_value"
+      }
+    ]
+  }
+}
