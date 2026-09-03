@@ -99,6 +99,20 @@ def test_humanize_sanitizes_rejected_operation_without_weakening_explicit_resolu
         resolver.markdown("operation", rejected_operation_id)
 
 
+def test_humanize_sanitizes_rejected_signal_without_weakening_explicit_resolution(
+    sandbox_repository: Path,
+) -> None:
+    rejected_signal_id = "signal_89444cee010c1a0e5ad2"
+    resolver = PublicEntityResolver(sandbox_repository)
+
+    rendered = resolver.humanize(f"Signal identity is invalid: {rejected_signal_id}.")
+
+    assert rejected_signal_id not in rendered
+    assert rendered == "Signal identity is invalid: unaccepted signal."
+    with pytest.raises(CanonicalValueError, match="required public signal reference"):
+        resolver.markdown("signal", rejected_signal_id)
+
+
 def test_humanize_resolves_pending_strategy_operation_through_security(
     sandbox_repository: Path,
 ) -> None:

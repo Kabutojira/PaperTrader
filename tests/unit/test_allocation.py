@@ -38,6 +38,7 @@ from papertrader.orders import (
     create_baseline_paper_order,
     create_paper_order,
     create_signal,
+    validate_order_state,
 )
 from papertrader.portfolio import build_risk_state, rebuild_portfolio, reconcile_portfolio
 from papertrader.research import ResearchStateError, upsert_assessment, upsert_strategy
@@ -1265,6 +1266,7 @@ def test_active_handoff_is_idempotent_and_order_quantity_is_code_owned(
         expires_at=NOW + timedelta(days=5),
         now=NOW,
     )
+    assert validate_order_state(sandbox_repository) == []
     reference = ReferencePrice(
         security_id="sec_00",
         provider_contract_id="",

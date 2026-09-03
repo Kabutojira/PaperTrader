@@ -966,9 +966,12 @@ def validate_order_state(repository_root: Path) -> list[str]:
             if market_as_of > created or expiry <= created:
                 raise OrderError(f"signal {signal_id} has an invalid time window")
             _safe_request_path(row["order_request_path"])
+            signal_identity = [row["strategy_id"]]
+            if row["allocation_intent_id"]:
+                signal_identity.append(row["allocation_intent_id"])
             expected_id = stable_id(
                 "signal",
-                row["strategy_id"],
+                *signal_identity,
                 row["signal_type"],
                 row["market_data_as_of"],
                 content_hash(row["rationale"]),

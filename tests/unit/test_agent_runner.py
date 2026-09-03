@@ -755,6 +755,17 @@ def test_untrusted_payload_is_flagged_but_never_interpolated_into_controller_pro
     assert "allocation_intent_id `allocation_intent_same`" in bound_prompt
     assert "must not be skipped merely because" in bound_prompt
 
+    retry_prompt = build_controller_prompt(
+        operation,
+        run_id="local-2",
+        injection_flags=(),
+        prior_validation_report=(
+            "data/runs/local-1/01M08H8C5RMJXFBKN97QDDMFRF/validation_report.json"
+        ),
+    )
+    assert "prior attempt for this same immutable operation failed" in retry_prompt
+    assert "repair every listed error" in retry_prompt
+
     security_operation = replace(
         operation,
         operation_type="security_research",

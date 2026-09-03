@@ -382,6 +382,8 @@ class PublicEntityResolver:
             except CanonicalValueError:
                 if prefix == "source":
                     return "recorded source"
+                if prefix in {"signal", "position", "order", "execution"}:
+                    return f"unaccepted {prefix}"
                 raise
 
         return token.sub(replace, text)

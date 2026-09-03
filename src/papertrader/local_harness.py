@@ -15,6 +15,7 @@ from pathlib import Path
 from papertrader.agent_runner import (
     AgentRunError,
     build_controller_prompt,
+    prior_validation_report_path,
     project_skill_identities,
     prompt_injection_flags,
 )
@@ -313,6 +314,9 @@ def start_local_harness_operation(
         run_id=run_id,
         injection_flags=injection_flags,
         allocation_binding=allocation_operation_binding(repository_root, operation),
+        prior_validation_report=prior_validation_report_path(
+            repository_root, operation, run_id=run_id
+        ),
     )
     support_skill_requirements = "".join(
         f"- Read required support skill {skill.relative_path} completely.\n" for skill in auxiliary
