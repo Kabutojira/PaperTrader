@@ -7,13 +7,13 @@ tags:
 created: "2026-09-03"
 updated: "2026-09-03"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_5e7bac4afb088c8d8e73"
-as_of: "2026-09-03T09:57:19Z"
+snapshot_id: "decision_23676c6c433ab7c7fafa"
+as_of: "2026-09-03T13:03:00Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-09-03T09:57:19Z`
+**As of:** `2026-09-03T13:03:00Z`
 **Investment data:** Portfolio state safe — research gaps remain
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -23,8 +23,8 @@ Publication validation confirms that this generated artifact is internally consi
 
 ## Coverage
 
-- Assessments: 47/80
-- Fresh-evidence assessments: 46/80
+- Assessments: 49/80
+- Fresh-evidence assessments: 48/80
 - Relationship reviews: 19/80
 - Accepted relationships: 18
 - Ready or active strategies: 0
@@ -37,19 +37,19 @@ Publication validation confirms that this generated artifact is internally consi
 
 ## Current issues by investment impact
 
-Current unresolved issues: **35**.
+Current unresolved issues: **29**.
 Resolved and superseded issues remain in the canonical audit but are not current health.
 
 ### Affects Candidate (14)
 
+- Error **CROX — Crocs, Inc.: Crocs review produced two immutable assessment versions** — Operation Security research for CROX on 2026-09-03 accepted assessment\_fe9917a9d658e55cb9a0 before the final security-page conclusion was reconciled to deterministic expected-to-bear and portfolio-action fields. Re-running the canonical assessment upsert after the page correction correctly preserved immutability but appended assessment\_2a0ada6a7008e23ec2ea with the corrected page hash. The result validator requires exactly one immutable assessment version per security-research operation, so this operation mus
 - Error **ETN — Eaton Corporation plc: Hermes operation validation failed: Quick check research for ETN on 2026-08-11** — agent result schema: 'cd57fc97df50efa0657881b253fc96d4467881b253fc96d4467881b253fc96d446' does not match '^\[a-f0-9\]{64}$'; commands\_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment; post-run integrity: agent result data/runs/Daily report for 2026-08-11/Quick check research for ETN on 2026-08-11/agent\_result.json: 'cd57fc97df50efa0657881b253fc96d4467881b253fc96d4467881b253fc96d446' does not match '^\[a-f0-9\]{64}$'
-- Error **AMAT — Applied Materials, Inc.: Applied Materials assessment source operation is ambiguous within one run** — The schema-v2 Applied Materials assessment could not be accepted because the deterministic research applier found both the completed quick\_check\_research operation and this running security\_research operation for the same security and run\_id, then rejected the assessment as having an ambiguous source operation. The first immutable assessment request was rejected without state changes for two non-canonical soft-gap names; retry01 corrected those names but exposed the run-level ambiguity. A bounde
 - Error **FUC.F — Fanuc Corporation: FANUC assessment source operation is ambiguous within one run** — The schema-v2 FANUC full-review assessment could not be accepted because the deterministic research applier found both the completed quick\_check\_research operation and this running security\_research operation for the same security and run\_id, then rejected the immutable assessment request with no assessment-state changes. The mandatory security context succeeded; both issuer PDFs were rechecked with unchanged hashes, source history and the security summary were updated through validated commands
 - Error **KTOS — Kratos Defense &amp; Security Solutions, Inc.: Hermes operation validation failed: Quick check research for KTOS on 2026-08-12** — Hermes timed out after 600s; agent result was written before completed change: data/runs/Daily report for 2026-08-12/Quick check research for KTOS on 2026-08-12/command\_audit.json; commands\_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment
 - Error **Hermes operation validation failed: Quick check research for HOOD on 2026-08-15** — operation artifact directory is not empty: /\_\_w/PaperTrader/PaperTrader/data/runs/Daily report for 2026-08-15/Quick check research for HOOD on 2026-08-15
 - Error **RKLB — Rocket Lab Corporation: Hermes operation validation failed: Quick check research for RKLB on 2026-08-18** — commands\_run claims commands without deterministic CLI audit receipts: \['scripts/papertrader research assessment upsert --request data/runs/Daily report for 2026-08-18/Quick check research for RKLB on 2026-08-18/assessment\_upsert\_request.json', 'scripts/papertrader research security-context --security-id RKLB'\]
 - Error **Hermes operation validation failed: Quick check research for SPOT on 2026-08-16** — commands\_run does not exactly match deterministic CLI audit receipts
-- Error **CROX — Crocs, Inc.: Hermes operation validation failed: Security research for CROX on 2026-08-25** — visualization\_review charts do not match chart ids in changed research pages: expected \[('data/wiki/securities/CROX.md', 'crox-valuation-scenarios-20260903'), ('data/wiki/securities/CROX.md', 'q2-revenue-and-adjusted-operating-income')\], got \[('data/wiki/securities/CROX.md', 'crox-scenario-fair-values-20260903'), ('data/wiki/securities/CROX.md', 'q2-revenue-and-adjusted-operating-income')\]
+- Error **CROX — Crocs, Inc.: Hermes operation validation failed: Security research for CROX on 2026-09-03** — visualization\_review charts do not match chart ids in changed research pages: expected \[('data/wiki/securities/CROX.md', 'crox-valuation-scenarios-20260903'), ('data/wiki/securities/CROX.md', 'q2-revenue-and-adjusted-operating-income')\], got \[('data/wiki/securities/CROX.md', 'crox-scenario-fair-values-20260903'), ('data/wiki/securities/CROX.md', 'q2-revenue-and-adjusted-operating-income')\]
 - Error **Hermes operation validation failed: Security research for SGML on 2026-08-17** — operation artifact directory is not empty: /\_\_w/PaperTrader/PaperTrader/data/runs/Daily report for 2026-08-17/Security research for SGML on 2026-08-17
 - Error **ALB — Albemarle Corporation: Hermes operation validation failed: Quick check research for ALB on 2026-08-09** — Hermes timed out after 600s; agent result was written before completed change: data/runs/Daily report for 2026-08-09/Quick check research for ALB on 2026-08-09/command\_audit.json; commands\_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment
 - Error **Hermes operation validation failed: Security research for ABBNY on 2026-08-17** — files\_changed claims paths absent from the actual delta: \['data/operations/operations\_TODO.csv'\]
@@ -74,15 +74,9 @@ Resolved and superseded issues remain in the canonical audit but are not current
 - Warning **Daily podcast failed: Daily report for 2026-08-06** — retry\_exhausted:agent\_validation\_failed:Hermes operation validation failed: Daily podcast for Daily report for 2026-08-06 on 2026-08-06
 - Warning **Daily podcast failed: Daily report for 2026-08-05** — retry\_exhausted:agent\_validation\_failed:Hermes operation validation failed: Daily podcast for Daily report for 2026-08-05 on 2026-08-05
 
-### Operational Only (7)
+### Operational Only (1)
 
 - Error **Local harness operation validation failed: \[Wiki ingest for www.youtube.com on 2026-08-12\](https://www.youtube.com/watch?v=fO5sC7qS04E)** — files\_changed is stale or incomplete: reported=\['data/runs/local-youtube-20260812T090946Z-03/\[Wiki ingest for www.youtube.com on 2026-08-12\](https://www.youtube.com/watch?v=fO5sC7qS04E)/agent\_result.json'\], actual=\[\]
-- Warning **YouTube discovery failed for UCrTTBSUr0zhPU56UQljag5A** — @Value-Investing: 4JmCb5FmTA4 This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po\_token.html
-- Warning **YouTube discovery failed for UCOOSDCjFzHfnGoV8iNLC65A** — @ConnectingODots: Ejsft2oPCtM This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po\_token.html
-- Warning **YouTube discovery failed for UCS01CiRDAiyhR\_mTHXDW23A** — @DumbMoneyLive: u-AXyF9kY9k This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po\_token.html
-- Warning **YouTube discovery failed for UCIFn7ONIJHyC-lMnb7Fm\_jw** — @thelimitingfactor: SuSYegb8iK0 This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po\_token.html
-- Warning **YouTube discovery failed for UCrGLm-Drgv0vbbemwwHeXJw** — @CouchInvestor: YouTube Data API video duration is malformed
-- Warning **YouTube discovery failed for UCESLZhusAkFfsNsApnjF\_Cg** — @allin: TqNiSTeNtb0 This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po\_token.html
 
 ## Sequential research backlog
 

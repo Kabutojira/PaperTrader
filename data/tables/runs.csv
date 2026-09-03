@@ -177,3 +177,4 @@ daily-20260902T155436Z,2026-09-02T15:54:36Z,2026-09-02T16:12:24Z,degraded,workfl
 daily-20260902T182643Z,2026-09-02T18:26:43Z,2026-09-02T18:45:21Z,degraded,schedule,1,100,5,,Daily run degraded; 1 agent operations; 0 pending-order dispositions.
 daily-20260903T065312Z,2026-09-03T06:53:12Z,2026-09-03T07:07:48Z,degraded,workflow_dispatch,1,100,5,,Daily run degraded; 1 agent operations; 0 pending-order dispositions.
 daily-20260903T095655Z,2026-09-03T09:56:55Z,2026-09-03T09:57:19Z,succeeded,local,0,100,0,,Daily run succeeded; 0 agent operations; 0 pending-order dispositions.
+daily-20260903T122855Z,2026-09-03T12:28:55Z,2026-09-03T13:03:00Z,degraded,workflow_dispatch,2,100,10,,Daily run degraded; 2 agent operations; 0 pending-order dispositions.

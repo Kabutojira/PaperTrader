@@ -6,7 +6,6 @@ Generated from `data/tables/issues.csv`.
 | --- | --- | --- | --- | --- | --- |
 | affects_candidate | error | **issue_0396c67b5be8b8f8d89b** — Crocs review produced two immutable assessment versions | 2026-09-03T12:59:54Z | controller | 01M0WSFGEG1A2CFQ7VMV3TJAN3 |
 | affects_candidate | error | **issue_19022fd84871ab2ed3ab** — Hermes operation validation failed: 01KZ8BGD98T363E1NM8EPYT9TG | 2026-08-11T14:51:31Z | controller | 01KZ8BGD98T363E1NM8EPYT9TG |
-| affects_candidate | error | **issue_237eb6de59f6ab09bb98** — Applied Materials assessment source operation is ambiguous within one run | 2026-08-19T23:45:43Z | controller | 01M0E5XT181SGH3F2RFGWJ4WGQ |
 | affects_candidate | error | **issue_30c07892e9981c27b153** — FANUC assessment source operation is ambiguous within one run | 2026-08-20T15:57:26Z | controller | 01M0FXHG7GT03TE1GNSGAPY904 |
 | affects_candidate | error | **issue_35b7b23bc3b07dd61cce** — Hermes operation validation failed: 01KZ9ZJVERDMQV8A3XQQY4AD7Y | 2026-08-12T15:28:02Z | controller | 01KZ9ZJVERDMQV8A3XQQY4AD7Y |
 | publication_only | error | **issue_406f407472eb3a7999d9** — Hermes operation validation failed: 01M081X8BGDJA34XM08JAKQFS1 | 2026-08-17T14:47:27Z | delivery | 01M081X8BGDJA34XM08JAKQFS1 |

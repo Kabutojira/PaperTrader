@@ -414,3 +414,4 @@
 2026-09-03T09:57:04Z [daily_run_started] run=daily-20260903T095655Z Started sequential deterministic daily preparation.
 2026-09-03T09:57:19Z [daily_run_completed] run=daily-20260903T095655Z Completed deterministic daily run with status succeeded.
 2026-09-03T12:29:04Z [daily_run_started] run=daily-20260903T122855Z Started sequential deterministic daily preparation.
+2026-09-03T13:03:00Z [daily_run_completed] run=daily-20260903T122855Z Completed deterministic daily run with status degraded.

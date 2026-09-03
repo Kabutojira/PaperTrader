@@ -7,24 +7,24 @@ tags:
 created: "2026-09-03"
 updated: "2026-09-03"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_5e7bac4afb088c8d8e73"
-as_of: "2026-09-03T09:57:19Z"
+snapshot_id: "decision_23676c6c433ab7c7fafa"
+as_of: "2026-09-03T13:03:00Z"
 ---
 
 # PaperTrader
 
-**As of `2026-09-03T09:57:19Z` · Investment data: Portfolio state safe — research gaps remain · Operations: Attention required**
+**As of `2026-09-03T13:03:00Z` · Investment data: Portfolio state safe — research gaps remain · Operations: Attention required**
 
 ## No trade — hold 100% cash
 
-<section class="decision-cards" aria-label="Decision summary"><article class="decision-card" data-status="hold_cash"><span class="decision-card-label">Stance</span><strong>No trade — hold 100% cash</strong></article><article class="decision-card" data-status="cash"><span class="decision-card-label">Cash</span><strong>100%</strong></article><article class="decision-card" data-status="exposure"><span class="decision-card-label">Gross exposure</span><strong>0%</strong></article><article class="decision-card" data-status="signals"><span class="decision-card-label">Actionable signals</span><strong>0</strong></article><article class="decision-card" data-status="coverage"><span class="decision-card-label">Assessment coverage</span><strong>47/80</strong></article></section>
+<section class="decision-cards" aria-label="Decision summary"><article class="decision-card" data-status="hold_cash"><span class="decision-card-label">Stance</span><strong>No trade — hold 100% cash</strong></article><article class="decision-card" data-status="cash"><span class="decision-card-label">Cash</span><strong>100%</strong></article><article class="decision-card" data-status="exposure"><span class="decision-card-label">Gross exposure</span><strong>0%</strong></article><article class="decision-card" data-status="signals"><span class="decision-card-label">Actionable signals</span><strong>0</strong></article><article class="decision-card" data-status="coverage"><span class="decision-card-label">Assessment coverage</span><strong>49/80</strong></article></section>
 
 ### Why
 
 - No validated copy-ready signal or pending paper order exists.
 - The reconciled model portfolio is entirely cash.
 - No strategy has produced a current actionable trade signal.
-- 13 Buy / Initiate research candidates remain non-actionable. Leading gates: Bear/base payoff is below threshold. (7); Expected/bear payoff is below threshold. (2); The comparable assessment is stale or expired. (2); A current accepted idea-to-security relationship is unavailable. (1).
+- 14 Buy / Initiate research candidates remain non-actionable. Leading gates: Bear/base payoff is below threshold. (7); Expected/bear payoff is below threshold. (3); The comparable assessment is stale or expired. (2); A current accepted idea-to-security relationship is unavailable. (1).
 
 ## Current and target portfolio
 
@@ -49,6 +49,7 @@ Current equity is **10000 EUR** with **100% cash**. The target retains **100% ca
 - **[SOFI — SoFi Technologies, Inc.](securities/security_98470cfc01bbcde78fc2):** Buy / Initiate · expected 18.6217061877524711325856672% · Bear/base payoff is below threshold.
 - **[PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4):** Buy / Initiate · expected 26.6477170825580787383494399% · The eligible set is not sufficiently diversified.
 - **[DPZ — Domino's Pizza, Inc.](securities/security_f34181f3df32080a91d1):** Buy / Initiate · expected 15.1900267458460857525019433% · Bear/base payoff is below threshold.
+- **[CROX — Crocs, Inc.](securities/security_c150f31c30afdb4a85f9):** Buy / Initiate · expected 21.1438802063171741724828252% · Expected/bear payoff is below threshold.
 - **[PYPL — PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00):** Buy / Initiate · expected 14.2974285769736015465170415% · Expected/bear payoff is below threshold.
 - **[FISV — Fiserv, Inc.](securities/security_d202772e4e62065cd17a):** Buy / Initiate · expected 17.9155531397902890727037957% · Bear/base payoff is below threshold.
 - **[CSIQ — Canadian Solar Inc.](securities/security_099561384c0f5e697727):** Buy / Initiate · expected 26.7694030804550541462775675% · A current accepted idea-to-security relationship is unavailable.
@@ -59,7 +60,7 @@ Current equity is **10000 EUR** with **100% cash**. The target retains **100% ca
 - Cumulative return: **0%**
 - Running drawdown: **0%**
 - Largest position: **0%**
-- Current assessments: **47/80**
+- Current assessments: **49/80**
 - Relationship reviews: **19/80**
 - Accepted relationships: **18**
 - Market retrieval failures: **0**
