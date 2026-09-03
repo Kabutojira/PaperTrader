@@ -1,0 +1,258 @@
+{
+  "background_wiki_pages": [],
+  "changed_wiki_pages": [
+    {
+      "path": "data/wiki/securities/security_0a56aa634d077fe5796f.md",
+      "sha256": "d1a929628b6615e157c9ee3742d5a9a1df54771a44eff483e1348b09a67fe3bf"
+    }
+  ],
+  "daily_cycle_id": "daily-20260903T182402Z",
+  "decision_snapshot_path": "data/runs/daily-20260903T182402Z/decision_snapshot.json",
+  "decision_snapshot_sha256": "3b7dc3c0479307945b01a9454cf64b4c22bf78d7b811a4724bb594bc18b15319",
+  "generated_at": "2026-09-03T18:49:26Z",
+  "intervening_daily_cycles": [
+    "daily-20260903T065312Z",
+    "daily-20260903T095655Z",
+    "daily-20260903T122855Z",
+    "daily-20260903T182402Z"
+  ],
+  "page_path": "data/wiki/podcasts/daily-podcast_20260903T182402Z.md",
+  "podcast_context_version": 3,
+  "portfolio_implication_paths": [
+    "data/runs/daily-20260903T182402Z/decision_snapshot.json",
+    "data/wiki/daily-reports/daily-report_20260903.md"
+  ],
+  "previous_successful_podcast": {
+    "context_path": "data/runs/daily-20260902T182643Z/podcast_context.json",
+    "context_sha256": "c2db18f3f3656edf9ba33ce1748ce80d296267de6434e19ef4096d6d55724d5b",
+    "daily_cycle_id": "daily-20260902T182643Z",
+    "page_path": "data/wiki/podcasts/daily-podcast_20260902T182643Z.md",
+    "page_sha256": "afe7fc012fd5f23bb98ea0ab6c7cf98f891657c01dae1d3d7f89cd61cf9385ba",
+    "research_cutoff_at": "2026-09-02T18:45:21Z"
+  },
+  "report_path": "data/wiki/daily-reports/daily-report_20260903.md",
+  "report_sha256": "925d53adae828588553e0fc4995b0a735e811f4a5b73ae0c407beba78f0ef29d",
+  "research_cutoff_at": "2026-09-03T18:41:32Z",
+  "research_developments": [
+    {
+      "completed_at": "2026-09-03T12:46:21Z",
+      "daily_cycle_id": "daily-20260903T122855Z",
+      "daily_report_items": [
+        "Applied Materials completed a full review after the lower-Bollinger alert. Record fiscal-Q3 execution supports the thesis, but USD 438.46 is near USD 439 weighted and USD 448 base value; canonical status is Hold / Watch and allocation-ineligible. One dependent AI-compute relationship review was queued."
+      ],
+      "entity_id": "security_0a56aa634d077fe5796f",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The fiscal-Q3 Form 10-Q reports USD 9.115 billion revenue, USD 3.075 billion GAAP operating income, USD 3.17 diluted EPS, substantial net liquidity, customer concentration and material China/export-control exposure.",
+          "observed_at": "2026-09-03T12:34:21Z",
+          "source": "source_amat_q3_2026_10q",
+          "source_hash": "01ac4a9a2f6765fd3a498937583b94afb05b8d05733cea78319fea0889fd00c1",
+          "url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026058235/amat-20260726.htm"
+        },
+        {
+          "claim": "The fiscal-Q3 release reports record revenue and margin, USD 3.037 billion operating cash flow and fiscal-Q4 non-GAAP diluted EPS guidance of USD 4.02 plus or minus USD 0.20.",
+          "observed_at": "2026-09-03T12:34:21Z",
+          "source": "source_amat_q3_2026_results",
+          "source_hash": "1b4661e02cf221ad0aa2d855aa8042c89206b2abc70e73513a7452b3484e864a",
+          "url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026056699/exhibit991q32026earningsre.htm"
+        },
+        {
+          "claim": "The canonical USD 438.4599914550781 mark produces bear/base/bull returns of -34.77%, 2.18% and 47.33%; the probability-weighted expected return is 0.12% and deterministic eligibility remains ineligible.",
+          "source": "data/market/latest.csv and accepted assessment assessment_5112d6834a7a34c32dd7"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1KMKR4GAGEHKCHDEA8ANNMQ.json",
+        "data/runs/daily-20260903T122855Z/01M0F2AG580YSXVX9M3HXX2YAS/assessment_upsert_request.json",
+        "data/runs/daily-20260903T122855Z/01M0F2AG580YSXVX9M3HXX2YAS/assessment_upsert_retry01_request.json",
+        "data/runs/daily-20260903T122855Z/01M0F2AG580YSXVX9M3HXX2YAS/assessment_upsert_retry02_request.json",
+        "data/runs/daily-20260903T122855Z/01M0F2AG580YSXVX9M3HXX2YAS/enqueue_ai_compute_relationship_request.json",
+        "data/runs/daily-20260903T122855Z/01M0F2AG580YSXVX9M3HXX2YAS/security_upsert_request.json",
+        "data/runs/daily-20260903T122855Z/01M0F2AG580YSXVX9M3HXX2YAS/source_q3_10q_request.json",
+        "data/runs/daily-20260903T122855Z/01M0F2AG580YSXVX9M3HXX2YAS/source_q3_results_recheck_request.json",
+        "data/runs/daily-20260903T122855Z/01M0F2AG580YSXVX9M3HXX2YAS/source_submissions_refresh_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_0a56aa634d077fe5796f.md"
+      ],
+      "operation_id": "01M0F2AG580YSXVX9M3HXX2YAS",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260903T122855Z/01M0F2AG580YSXVX9M3HXX2YAS/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed one full Applied Materials security review. Fiscal-Q3 filing evidence supports the business thesis, but the USD 438.46 mark is near USD 439 weighted and USD 448 base fair value. The accepted assessment is Hold / Watch and allocation-ineligible because expected return, base upside, downside payoff and the accepted-relationship gate do not clear. Enqueued one bounded AI-compute relationship review; no strategy, signal, order, allocation or accounting state changed."
+    }
+  ],
+  "run_id": "daily-20260903T182402Z",
+  "target_minutes": 20,
+  "target_words": 3000,
+  "unresolved_research_gaps": [
+    {
+      "completed_at": "2026-09-03T07:07:24Z",
+      "daily_cycle_id": "daily-20260903T065312Z",
+      "daily_report_items": [],
+      "entity_id": "security_c150f31c30afdb4a85f9",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "visualization_review charts do not match chart ids in changed research pages: expected [('data/wiki/securities/security_c150f31c30afdb4a85f9.md', 'crox-valuation-scenarios-20260903'), ('data/wiki/securities/security_c150f31c30afdb4a85f9.md', 'q2-revenue-and-adjusted-operating-income')], got [('data/wiki/securities/security_c150f31c30afdb4a85f9.md', 'crox-scenario-fair-values-20260903'), ('data/wiki/securities/security_c150f31c30afdb4a85f9.md', 'q2-revenue-and-adjusted-operating-income')]",
+          "source": "data/runs/daily-20260903T065312Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "visualization_review charts do not match chart ids in changed research pages: expected [('data/wiki/securities/security_c150f31c30afdb4a85f9.md', 'crox-valuation-scenarios-20260903'), ('data/wiki/securities/security_c150f31c30afdb4a85f9.md', 'q2-revenue-and-adjusted-operating-income')], got [('data/wiki/securities/security_c150f31c30afdb4a85f9.md', 'crox-scenario-fair-values-20260903'), ('data/wiki/securities/security_c150f31c30afdb4a85f9.md', 'q2-revenue-and-adjusted-operating-income')]"
+      ],
+      "files_changed": [],
+      "operation_id": "01M0WSFGEG1A2CFQ7VMV3TJAN3",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260903T065312Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/validation_report.json",
+      "status": "failed",
+      "summary": "The accepted research did not produce a valid result."
+    },
+    {
+      "completed_at": "2026-09-03T13:02:44Z",
+      "daily_cycle_id": "daily-20260903T122855Z",
+      "daily_report_items": [
+        "Crocs research refreshed after an 18.35% alert-period decline. The fresh USD 115.79 mark derives Buy / Initiate with Watch conviction, but expected-to-bear payoff and relationship gates keep it allocation-ineligible. The operation failed closed after producing duplicate immutable assessment versions; issue_0396c67b5be8b8f8d89b records the required controller repair."
+      ],
+      "entity_id": "security_c150f31c30afdb4a85f9",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "A fresh SEC retrieval reproduced the registered Q2 2026 Form 10-Q hash; the filing continues to support the revenue, earnings, cash, debt, share-count and risk evidence used in the assessment.",
+          "observed_at": "2026-09-03T12:48:08Z",
+          "source": "source_crox_q2_2026_10q",
+          "source_hash": "75aa7525af1c355bc85340fd818845d9f0a4067b9962449e8919c38d89626a89",
+          "url": "https://www.sec.gov/Archives/edgar/data/1334036/000133403626000052/crox-20260630.htm"
+        },
+        {
+          "claim": "The SEC-filed Q2 release reports USD 1.179468 billion revenue versus USD 1.149373 billion, while adjusted operating income declined to about USD 296 million from USD 309 million.",
+          "observed_at": "2026-09-03T12:48:08Z",
+          "source": "source_crox_q2_2026_results",
+          "source_hash": "f52ca96031e7f6282ac04f67cbf7a95adbd942b64434ec3234523956e593f53f",
+          "url": "https://www.sec.gov/Archives/edgar/data/1334036/000133403626000050/croxq22026-pressrelease.htm"
+        },
+        {
+          "claim": "The current SEC submissions index contains no operating filing newer than the July 30 Q2 filing through the canonical September 2 market date; later entries are ownership or resale-registration filings.",
+          "observed_at": "2026-09-03T12:48:08Z",
+          "source": "source_crox_sec_submissions_20260903",
+          "source_hash": "5a9f12df357f7e03d7c8f4b312cef937267aa2b69b6f41a69f44a04e108c7eee",
+          "url": "https://data.sec.gov/submissions/CIK0001334036.json"
+        },
+        {
+          "claim": "The identity-matched USD 115.79000091552734 mark produces bear/base/bull returns of -24.00%, 25.59% and 77.74%, a 21.14% probability-weighted expected return, Buy / Initiate disposition, Watch conviction, and ineligibility reason codes expected_bear_payoff_below_minimum and relationship_pending.",
+          "source": "data/market/latest.csv and latest immutable assessment assessment_2a0ada6a7008e23ec2ea"
+        },
+        {
+          "claim": "This source operation has two immutable versions, assessment_fe9917a9d658e55cb9a0 and assessment_2a0ada6a7008e23ec2ea; the latter links the former and matches the final research-page hash, but the operation validator requires exactly one version.",
+          "source": "data/tables/security_assessment_history.csv"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/issues.md",
+        "data/runs/daily-20260903T122855Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/assessment_upsert_request.json",
+        "data/runs/daily-20260903T122855Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/assessment_upsert_retry01_request.json",
+        "data/runs/daily-20260903T122855Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/assessment_upsert_retry02_request.json",
+        "data/runs/daily-20260903T122855Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/assessment_upsert_retry03_request.json",
+        "data/runs/daily-20260903T122855Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/assessment_upsert_retry04_request.json",
+        "data/runs/daily-20260903T122855Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/issue_record_request.json",
+        "data/runs/daily-20260903T122855Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/security_upsert_request.json",
+        "data/runs/daily-20260903T122855Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/security_upsert_retry01_request.json",
+        "data/runs/daily-20260903T122855Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/source_crox_q2_2026_10q_refresh_request.json",
+        "data/runs/daily-20260903T122855Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/source_crox_q2_2026_results_refresh_request.json",
+        "data/runs/daily-20260903T122855Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/source_crox_sec_submissions_20260903_request.json",
+        "data/tables/issues.csv",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_c150f31c30afdb4a85f9.md"
+      ],
+      "operation_id": "01M0WSFGEG1A2CFQ7VMV3TJAN3",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260903T122855Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/agent_result.json",
+      "status": "failed",
+      "summary": "Researched Crocs after the September lower-Bollinger breach, refreshed primary SEC evidence, updated the security page and structured state, and derived Buy / Initiate with Watch conviction and allocation ineligibility because expected-to-bear payoff and relationship gates fail. The operation fails closed because a page-hash correction caused the immutable assessment applier to append two versions for this source operation; the result validator requires exactly one. Recorded issue issue_0396c67b5be8b8f8d89b. No follow-up, strategy, signal, order, allocation or accounting change was made."
+    },
+    {
+      "completed_at": "2026-09-03T18:41:13Z",
+      "daily_cycle_id": "daily-20260903T182402Z",
+      "daily_report_items": [
+        "ABB was revalidated after the September 1 lower-Bollinger breach. Hash-identical primary evidence left USD 62.40/USD 86.80/USD 105.00 scenarios unchanged; the fresh USD 95.15 mark improves the deterministic disposition to Hold / Watch but remains above weighted and base value, so allocation stays ineligible. The operation failed closed because the final corrected page hash differs from the one sealed into its immutable assessment; issue_bb796d692e4293326337 records the required controller repair."
+      ],
+      "entity_id": "security_c120e9f26ebb6159adf9",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "A fresh download reproduced the registered ABB Q2 2026 results hash; the release continues to support strong orders, margins and cash conversion while documenting the Robotics disposal, expected proceeds and Rotork transaction context.",
+          "observed_at": "2026-09-03T18:26:50Z",
+          "source": "source_abb_q2_2026_results",
+          "source_hash": "7129a0f6f3777204d3b4b426f66c6069ce702d26ee364c76f2cf50fb04a54508",
+          "url": "https://search.abb.com/library/Download.aspx?DocumentID=9AKK108472A9735&LanguageCode=en&DocumentPartId=&Action=Launch"
+        },
+        {
+          "claim": "A fresh retrieval reproduced ABB's registered share-listing hash and continues to support the sponsored-ADR identity and outstanding-share evidence.",
+          "observed_at": "2026-09-03T18:26:50Z",
+          "source": "source_abb_share_listing_2026",
+          "source_hash": "d982a37747ddf71731ff81e546e794f03eb1b98835067e72a681a655d4ac9605",
+          "url": "https://global.abb/group/en/investors/investor-and-shareholder-resources/share-listing"
+        },
+        {
+          "claim": "The September 1 close breached the lower Bollinger band after returns of -4.17%, -2.13% and -0.19% over one, five and twenty sessions; the trigger cleared on September 2, RSI was neutral, MACD remained above signal and volume was not anomalous, making the alert a valuation recheck rather than changed operating evidence.",
+          "source": "data/market/technical/security_c120e9f26ebb6159adf9.csv"
+        },
+        {
+          "claim": "Immutable assessment assessment_a3946a163695f1a9f51f links predecessor assessment_b72368d562b62acfb851 and derives Hold / Watch at the USD 95.1500015258789 mark, with bear/base/bull returns of -34.42%/-8.78%/10.35%, expected return of -12.64%, and allocation ineligibility.",
+          "source": "data/tables/security_assessment_history.csv"
+        },
+        {
+          "claim": "The assessment sealed research-page hash c5804be39a202a5962815fd5c4270041174d340ef0e8ab65f28cc27b1faa6017 before the final deterministic Hold / Watch prose correction; the final page hash is 44376ba35d9ffb3922c94d534f5b2ffe2fd938f1ab6d16c2adca09c73678d567.",
+          "source": "data/tables/security_assessment_history.csv and data/wiki/securities/security_c120e9f26ebb6159adf9.md"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/issues.md",
+        "data/runs/daily-20260903T182402Z/01M07XKZS0JKBQM0THMPJGWEK5/assessment_upsert_request.json",
+        "data/runs/daily-20260903T182402Z/01M07XKZS0JKBQM0THMPJGWEK5/assessment_upsert_request_v2.json",
+        "data/runs/daily-20260903T182402Z/01M07XKZS0JKBQM0THMPJGWEK5/assessment_upsert_request_v3.json",
+        "data/runs/daily-20260903T182402Z/01M07XKZS0JKBQM0THMPJGWEK5/issue_record_request.json",
+        "data/runs/daily-20260903T182402Z/01M07XKZS0JKBQM0THMPJGWEK5/security_upsert_request.json",
+        "data/runs/daily-20260903T182402Z/01M07XKZS0JKBQM0THMPJGWEK5/security_upsert_request_v2.json",
+        "data/runs/daily-20260903T182402Z/01M07XKZS0JKBQM0THMPJGWEK5/security_upsert_request_v3.json",
+        "data/runs/daily-20260903T182402Z/01M07XKZS0JKBQM0THMPJGWEK5/source_abb_q2_2026_results_refresh_request.json",
+        "data/runs/daily-20260903T182402Z/01M07XKZS0JKBQM0THMPJGWEK5/source_abb_share_listing_2026_refresh_request.json",
+        "data/tables/issues.csv",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_c120e9f26ebb6159adf9.md"
+      ],
+      "operation_id": "01M07XKZS0JKBQM0THMPJGWEK5",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260903T182402Z/01M07XKZS0JKBQM0THMPJGWEK5/agent_result.json",
+      "status": "failed",
+      "summary": "Revalidated ABB after the September 1 lower-Bollinger breach, refreshed hash-identical primary evidence, updated the security page and comparable assessment, and derived Hold / Watch with allocation ineligibility because expected return, base upside, payoff, margin-of-safety and accepted-relationship gates remain unsatisfied. The operation fails closed because the immutable assessment was sealed before its page's prior Sell / Avoid prose was corrected to the deterministic Hold / Watch result, leaving its stored page hash different from the final page. Recorded issue issue_bb796d692e4293326337. No follow-up, strategy, signal, order, allocation or accounting change was made."
+    }
+  ],
+  "wiki_orientation_paths": [
+    "data/wiki/SCHEMA.md",
+    "data/wiki/index.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/log.md"
+  ],
+  "window_mode": "since_previous_successful_podcast",
+  "window_start_exclusive": "2026-09-02T18:45:21Z"
+}

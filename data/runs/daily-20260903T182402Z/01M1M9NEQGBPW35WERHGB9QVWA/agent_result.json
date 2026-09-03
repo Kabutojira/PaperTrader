@@ -1,0 +1,77 @@
+{
+  "commands_run": [
+    "papertrader podcast validate-script --daily-cycle-id daily-20260903T182402Z --script-path data/wiki/podcasts/daily-podcast_20260903T182402Z.md",
+    "papertrader podcast render-draft --daily-cycle-id daily-20260903T182402Z --script-path data/wiki/podcasts/daily-podcast_20260903T182402Z.md",
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader queue validate",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Published a 2,821-word research podcast on Applied Materials' rebuilt scenario valuation, the gap between excellent semiconductor-equipment economics and an almost fully valued share price, and the evidence or price conditions that could change its Hold / Watch rating; the single audited ephemeral draft render succeeded."
+  ],
+  "evidence": [
+    {
+      "claim": "The controller-validated frozen context is version three, covers the exclusive 2026-09-02T18:31:53Z through inclusive 2026-09-03T18:46:24Z window, identifies the prior successful podcast, and binds this operation to data/wiki/podcasts/daily-podcast_20260903T182402Z.md.",
+      "observed_at": "2026-09-03T18:46:24Z",
+      "source": "data/runs/daily-20260903T182402Z/podcast_context.json",
+      "source_hash": "06da64c923083c6d4a8d5dc1f50ce7c7829734c25c5660ec3098fc98363b18c2"
+    },
+    {
+      "claim": "The sole accepted development in the frozen window is a scenario-complete Applied Materials review. It establishes USD 286, USD 448 and USD 646 bear, base and bull values at 30%, 50% and 20% probabilities, a USD 358.40 buy-below reference, Hold / Watch, and allocation ineligibility at the USD 438.4599914550781 mark.",
+      "observed_at": "2026-09-03T12:34:21Z",
+      "source": "data/runs/daily-20260903T122855Z/01M0F2AG580YSXVX9M3HXX2YAS/agent_result.json",
+      "source_hash": "64f0485b8345903f3221ea9be7377d92ccc66627c06c956f2c8e14091ea32ab0"
+    },
+    {
+      "claim": "The maintained Applied Materials page explains the business, current primary evidence, normalized earnings-multiple scenarios, customer and geographic concentration, current Hold / Watch rating, and supported Buy and Sell conditions used in the episode.",
+      "source": "data/wiki/securities/security_0a56aa634d077fe5796f.md"
+    },
+    {
+      "claim": "The August nineteenth episode previously explained that Applied Materials' excellent fiscal third quarter made the old valuation obsolete and that a full review was required. The new episode uses only a brief recap before concentrating on the now-completed valuation and changed conclusion.",
+      "source": "data/wiki/podcasts/daily-podcast_20260819T230515Z.md"
+    },
+    {
+      "claim": "The completed decision snapshot records Applied Materials as Hold / Watch with nearly flat weighted expected return, no target allocation, no actionable signal, and an entirely cash model portfolio.",
+      "observed_at": "2026-09-03T18:41:32Z",
+      "source": "data/runs/daily-20260903T182402Z/decision_snapshot.json",
+      "source_hash": "b509d8f03f6ccf635046032e6bc3063cf1bd341e1a9b075b67afe925c3a7b7fe"
+    },
+    {
+      "claim": "The audited script preflight passed at 2,821 words, the single render-draft invocation succeeded with a 1,220-second ephemeral draft, and all five permitted repository validation gates passed.",
+      "source": "data/runs/daily-20260903T182402Z/01M1M9NEQGBPW35WERHGB9QVWA/command_audit.json"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260903T182402Z/01M1M9NEQGBPW35WERHGB9QVWA/candidate_slate.md",
+    "data/runs/daily-20260903T182402Z/01M1M9NEQGBPW35WERHGB9QVWA/editorial_outline.md",
+    "data/wiki/daily-reports/daily-report_20260903.md",
+    "data/wiki/podcasts/daily-podcast_20260903T182402Z.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M1M9NEQGBPW35WERHGB9QVWA",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Completed one standalone daily podcast from frozen context version three. The 2,821-word episode selects the sole accepted development: Applied Materials' completed scenario valuation, which materially advances the August nineteenth episode that had withdrawn stale valuation assumptions. Failed Crocs and ABB results were excluded because they are unresolved gaps rather than accepted research. The episode explains Applied Materials' semiconductor-equipment and service economics, its rapid rerating, USD 286/USD 448/USD 646 scenarios, USD 358.40 buy-below reference, current Hold / Watch rating, and supported Buy and Sell conditions, including the absence of an accepted standalone sell-price boundary. Deterministic script preflight passed, and the single audited draft-render invocation succeeded with a 1,220-second ephemeral audio draft.",
+  "validation": {
+    "checks": [
+      "Relied on the deterministic controller's authoritative validation of frozen context version three, declared repository paths, and declared SHA-256 values without recomputing them.",
+      "Confirmed the payload, frozen context, and daily manifest all bind the exact transcript path data/wiki/podcasts/daily-podcast_20260903T182402Z.md.",
+      "Mapped the sole accepted Applied Materials development to exactly one chapter and excluded the failed Crocs and ABB developments from the chapter slate.",
+      "Compared Applied Materials with the August nineteenth episode and limited repeated material to the minimum continuity needed to explain how the new scenario-complete valuation advances the earlier conclusion.",
+      "The final episode uses the exact required introduction, teaser opening, chapter order, overall synthesis, and exact two-sentence greeting close.",
+      "The Applied Materials chapter ends with the current Hold / Watch rating, reason, concrete Buy conditions, Sell conditions, and an explicit statement that no accepted standalone sell-price boundary exists.",
+      "Deterministic validate-script passed with 2,821 spoken words in five renderer chunks and no forbidden numeric glyphs, Markdown headings, lists, tables, visible machine IDs, raw URLs, or link markup in the spoken section.",
+      "The daily report contains exactly one deterministic link to the new transcript and no audio reference.",
+      "Exactly one audited render-draft invocation occurred and succeeded; its media output remains runner-temporary and is absent from persistent repository artifacts.",
+      "papertrader schema validate --strict passed.",
+      "papertrader integrity --strict passed.",
+      "papertrader wiki lint --strict passed.",
+      "papertrader queue validate passed.",
+      "papertrader portfolio reconcile --strict passed.",
+      "No allocation target or history, strategy, signal, order, execution, cash, portfolio, fill, performance, accounting, or delivery state was changed."
+    ],
+    "passed": true
+  }
+}

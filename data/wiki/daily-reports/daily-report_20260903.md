@@ -154,6 +154,7 @@ No pending orders.
 
 - [[model-portfolio|PaperTrader model portfolio]]
 - [[performance|PaperTrader performance and risk]]
+- [[podcasts/daily-podcast_20260903T182402Z|Daily research podcast — 2026-09-03T182402Z]]
 - [[research-catalog|PaperTrader research catalog]]
 - [[securities/security_0a56aa634d077fe5796f|Applied Materials, Inc. common stock]]
 - [[securities/security_c120e9f26ebb6159adf9|ABB Ltd sponsored ADR]]
