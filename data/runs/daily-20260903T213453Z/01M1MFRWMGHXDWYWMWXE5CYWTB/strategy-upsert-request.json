@@ -1,0 +1,41 @@
+{
+  "strategy": {
+    "strategy_id": "strategy_ef910e9aff5203a0b901",
+    "idea_id": "idea_digital_attention_gaming_ecosystems",
+    "security_id": "security_de0d83229b369a426b99",
+    "relationship_id": "relationship_f625ba3c07d49e1865ff",
+    "name": "Tencent bounded baseline allocation",
+    "status": "ready",
+    "direction": "long",
+    "instrument_type": "equity",
+    "thesis": "Tencent's gaming, advertising and Weixin ecosystem support cash generation and repurchases; the current plan's starter economics justify only bounded long-equity exposure because medium confidence, China policy and governance exposure, investment-portfolio volatility, artificial-intelligence spending and insufficient diversification prevent conviction treatment.",
+    "entry_rule": "Open only while allocation_plan_0f41c211cdfa8a9b5dbc, allocation_intent_206644feb73549257619, assessment_6e8ef7291ff81b77d900 and relationship_f625ba3c07d49e1865ff remain current, fresh TCEHY and USD/EUR inputs are available, and deterministic code derives a positive whole-share delta toward the persisted three-share target.",
+    "exit_rule": "Reduce or close only when a current deterministic allocation plan directs reduce or close, the starter eligibility frontier no longer clears, a hard blocker appears, or material gaming, advertising, Weixin, policy, governance, investment-portfolio or valuation evidence invalidates the bounded thesis.",
+    "invalidation": "Do not increase exposure if gaming or advertising monetization weakens materially, Weixin engagement ceases to support commercial activity, policy or governance risk impairs shareholder economics, artificial-intelligence investment fails to convert into durable cash generation, portfolio-value volatility dominates operations, the assessment or relationship is superseded, or market and FX inputs become stale.",
+    "risk_budget_pct": "2",
+    "sleeve": "baseline",
+    "allocation_plan_id": "allocation_plan_0f41c211cdfa8a9b5dbc",
+    "allocation_intent_id": "allocation_intent_206644feb73549257619",
+    "not_before": "",
+    "expires_at": "2026-09-27T19:23:20Z",
+    "research_page": "data/wiki/strategies/strategy_ef910e9aff5203a0b901.md"
+  },
+  "legs": [
+    {
+      "leg_id": "leg_tencent_equity",
+      "action": "buy",
+      "side": "long",
+      "instrument_type": "equity",
+      "security_id": "security_de0d83229b369a426b99",
+      "provider_contract_id": "",
+      "option_type": "",
+      "expiry": "",
+      "strike": "",
+      "quantity": "3",
+      "contract_multiplier": "1",
+      "order_type": "market",
+      "limit_price": "",
+      "currency": "USD"
+    }
+  ]
+}

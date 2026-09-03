@@ -1,0 +1,97 @@
+{
+  "commands_run": [
+    "papertrader research strategy upsert --request data/runs/daily-20260903T213453Z/01M1MFRWMGHXDWYWMWXE5CYWTB/strategy-upsert-request.json",
+    "papertrader signal create --request data/runs/daily-20260903T213453Z/01M1MFRWMGHXDWYWMWXE5CYWTB/signal-create-request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260903T213453Z/01M1MFRWMGHXDWYWMWXE5CYWTB/enqueue-execute-strategy-request.json",
+    "papertrader wiki lint --strict",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader queue validate"
+  ],
+  "daily_report_items": [
+    "Created Tencent's bounded 2% starter baseline strategy and ready open signal against the current allocation intent; queued exactly one separate paper-order review for the deterministic three-share target, with no order or fill created by research."
+  ],
+  "evidence": [
+    {
+      "claim": "The current immutable allocation target binds strategy_ef910e9aff5203a0b901 to plan allocation_plan_0f41c211cdfa8a9b5dbc, intent allocation_intent_206644feb73549257619, assessment assessment_6e8ef7291ff81b77d900 and the accepted relationship. It persists a three-share open target at 1.45%, with a 2% starter cap, 76 quality score, 15.89% expected return, 11.91% confidence-adjusted expected return and no hard blocker.",
+      "observed_at": "2026-09-03T21:08:37Z",
+      "source": "data/tables/allocation_targets.csv"
+    },
+    {
+      "claim": "The accepted Tencent research assessment uses medium confidence and a twelve-month USD 40/USD 65/USD 90 bear/base/bull range; its quality and return frontier support a starter allocation while policy, governance, investment-portfolio and diversification gaps prevent conviction treatment.",
+      "observed_at": "2026-08-28T19:23:20Z",
+      "source": "data/tables/security_assessments.csv"
+    },
+    {
+      "claim": "relationship_f625ba3c07d49e1865ff remains accepted for the digital-attention idea and Tencent security, with a positive mechanism, high sensitivity and medium confidence.",
+      "observed_at": "2026-08-28T20:03:02Z",
+      "source": "data/tables/relationships.csv"
+    },
+    {
+      "claim": "Tencent's 2026 second-quarter release reported 15% year-on-year revenue growth, 22% gross-profit growth and 18% non-IFRS operating-profit growth, supporting the maintained gaming, advertising and Weixin ecosystem mechanism while artificial-intelligence investment remains a material risk input.",
+      "observed_at": "2026-08-28T19:23:00Z",
+      "source": "Tencent announces 2026 second-quarter results",
+      "source_hash": "64d8d2038eeef993571b96bb3361b6f1a567d6e84157eb16af20d2fd9a095f0a",
+      "url": "https://www.tencent.com/wp-content/uploads/2026/08/Tencent-Announces-2026-Second-Quarter-Results.pdf"
+    },
+    {
+      "claim": "The latest TCEHY mark was USD 58.65 and the latest USD/EUR rate was 0.8598999977111816; both were retrieved at 2026-09-03T21:34:54Z and were inside the configured 36-hour freshness window when the signal was created.",
+      "observed_at": "2026-09-03T21:34:54Z",
+      "source": "data/market/latest.csv and data/market/fx/USD_EUR.csv"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M1MMEDSGYWMB158DXEZB6S7Y.json",
+    "data/runs/daily-20260903T213453Z/01M1MFRWMGHXDWYWMWXE5CYWTB/enqueue-execute-strategy-request.json",
+    "data/runs/daily-20260903T213453Z/01M1MFRWMGHXDWYWMWXE5CYWTB/signal-create-request.json",
+    "data/runs/daily-20260903T213453Z/01M1MFRWMGHXDWYWMWXE5CYWTB/strategy-upsert-request.json",
+    "data/tables/signals.csv",
+    "data/tables/strategies.csv",
+    "data/tables/strategy_legs.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/strategies/strategy_ef910e9aff5203a0b901.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M1MFRWMGHXDWYWMWXE5CYWTB",
+  "operations_created": [
+    "01M1MMEDSGYWMB158DXEZB6S7Y"
+  ],
+  "status": "succeeded",
+  "summary": "Created ready baseline strategy strategy_ef910e9aff5203a0b901 for Tencent under current allocation plan allocation_plan_0f41c211cdfa8a9b5dbc and unchanged allocation intent allocation_intent_206644feb73549257619. The long-equity starter structure retains the deterministic three-share target and 2% position ceiling while documenting medium confidence, material bear-case risk and the reasons it does not qualify for conviction. Created ready open signal signal_41940fa33b3fe251802e and exactly one dependent execute_strategy operation, 01M1MMEDSGYWMB158DXEZB6S7Y. No order, fill, execution, cash, portfolio, performance or allocation state was changed.",
+  "validation": {
+    "checks": [
+      "The selected queue row was the sole routed running operation, matched run daily-20260903T213453Z and strategy_ef910e9aff5203a0b901, and retained a live lease during execution.",
+      "The controller preflight identified native llm-wiki 2.1.0, papertrader-controller, papertrader-strategy-research and echart with content hashes.",
+      "Current plan allocation_plan_0f41c211cdfa8a9b5dbc preserved intent allocation_intent_206644feb73549257619, target quantity three and assessment assessment_6e8ef7291ff81b77d900.",
+      "The accepted relationship endpoints, baseline strategy identity, long-equity instrument, USD currency, 2% starter cap and fresh market/FX inputs matched canonical state and configured limits.",
+      "The strategy was upserted with its current allocation plan and unchanged allocation intent before signal creation.",
+      "The signal applier created signal_41940fa33b3fe251802e with open action, fresh 2026-09-03T21:34:54Z market timestamp and an expiry after creation.",
+      "Exactly one execute_strategy follow-up was enqueued with the strategy, signal, current plan, unchanged intent, persisted target quantity and normalized open action.",
+      "The visualization manifest exactly names chart tencent-baseline-scenario-returns on the changed strategy page.",
+      "The first strict wiki lint identified a missing provenance field and an unknown tag; both page defects were corrected before the final successful verification.",
+      "papertrader wiki lint --strict returned OK [wiki] on the final run, including strict chart-fence validation.",
+      "papertrader integrity --strict returned OK [integrity], including signal identity and protected-state integrity.",
+      "papertrader queue validate returned OK [queue].",
+      "Command-audit receipts and the protected-path diff show no changes to allocation targets/history, orders, executions, cash, portfolio, performance or fills."
+    ],
+    "passed": true
+  },
+  "visualization_review": {
+    "charts": [
+      {
+        "chart_id": "tencent-baseline-scenario-returns",
+        "page_path": "data/wiki/strategies/strategy_ef910e9aff5203a0b901.md"
+      }
+    ],
+    "completed": true,
+    "omissions": [
+      {
+        "dataset": "Option and short-structure payoff comparison",
+        "reason": "Baseline-allocation mode permits only long equity, the accepted relationship is positive, and no complete fresh contract quote or liquidity evidence was supplied; charting ineligible structures would misrepresent the deterministic allocation mandate.",
+        "reason_code": "not_decision_relevant"
+      }
+    ]
+  }
+}

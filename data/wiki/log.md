@@ -3135,3 +3135,13 @@ boundary after the combined log crossed the configured 5,000-line threshold.
   an order or fill; documented the scenario downside, conviction gaps, entry, exit and invalidation.
 - Added the `uber-baseline-scenario-returns` visual-evidence chart from the canonical current-plan
   scenarios and recorded fresh UBER and USD/EUR observations from 2026-09-03T21:34:54Z.
+
+## [2026-09-03] create | Tencent bounded baseline allocation
+
+- Created [[strategies/strategy_ef910e9aff5203a0b901]] as a ready long-equity starter strategy
+  bound to current plan `allocation_plan_0f41c211cdfa8a9b5dbc` and unchanged intent
+  `allocation_intent_206644feb73549257619`.
+- Retained the deterministic three-share target and 2% position ceiling without treating either as
+  an order or fill; documented scenario downside, conviction gaps, entry, exit and invalidation.
+- Added the `tencent-baseline-scenario-returns` visual-evidence chart from the canonical current-plan
+  scenarios and recorded fresh TCEHY and USD/EUR observations from 2026-09-03T21:34:54Z.

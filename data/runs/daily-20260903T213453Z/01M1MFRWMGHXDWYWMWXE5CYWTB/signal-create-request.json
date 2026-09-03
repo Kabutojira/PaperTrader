@@ -1,0 +1,9 @@
+{
+  "strategy_id": "strategy_ef910e9aff5203a0b901",
+  "signal_type": "open",
+  "rationale": "Open only the deterministic current-plan whole-share delta toward Tencent's persisted three-share starter target. The accepted relationship, 76 quality score, 15.89% base return, 11.91% confidence-adjusted expected return and 13.71% margin of safety support bounded baseline exposure; medium confidence, a 28.69% bear loss, China policy and governance exposure, investment-portfolio volatility, artificial-intelligence spending and insufficient diversification bar conviction sizing.",
+  "market_data_as_of": "2026-09-03T21:34:54Z",
+  "run_id": "daily-20260903T213453Z",
+  "order_request_path": "",
+  "expires_at": "2026-09-04T21:59:00Z"
+}
