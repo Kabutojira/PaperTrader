@@ -3,11 +3,39 @@
   "entity_type": "security",
   "inputs": {
     "assessment_state": "2026-08-20T15:44:00Z",
+    "issue_ids": [
+      "issue_30c07892e9981c27b153"
+    ],
     "maintenance_mode": "refresh",
+    "merged_input_values": {
+      "maintenance_mode": [
+        "refresh",
+        "assessment_issue_recovery"
+      ]
+    },
     "research_page": "data/wiki/securities/security_96ba305ee7cd586bc348.md",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_96ba305ee7cd586bc348:allocation-maintenance:2026-08-20T15:44:00Z",
+        "observed_at": "2026-08-28T18:32:54Z",
+        "prompt": "Revalidate security_96ba305ee7cd586bc348 with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_fanuc_q1_fy2026_reference",
+          "source_fanuc_q1_fy2026_results"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_96ba305ee7cd586bc348:assessment-issue-recovery:2619fb2a4298ff93",
+        "observed_at": "2026-09-03T09:56:10Z",
+        "prompt": "Repair the unresolved assessment for security_96ba305ee7cd586bc348 with current primary evidence and explicit source-operation provenance.",
+        "source": "issue_reconciliation:maintenance-20260903-dashboard-health-v2",
+        "source_refs": []
+      }
+    ],
     "security_id": "security_96ba305ee7cd586bc348"
   },
-  "objective": "Revalidate security_96ba305ee7cd586bc348 with current primary evidence and write one comparable allocation assessment.",
+  "objective": "Revalidate security_96ba305ee7cd586bc348 with current primary evidence and write one comparable allocation assessment. | Additional cause: Repair the unresolved assessment for security_96ba305ee7cd586bc348 with current primary evidence and explicit source-operation provenance.",
   "operation_id": "01M14TAVZGZF56ED49846RRW21",
   "operation_type": "security_research",
   "payload_version": 1,

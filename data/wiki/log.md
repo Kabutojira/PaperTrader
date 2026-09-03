@@ -2993,3 +2993,7 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Published investor decision snapshot `decision_2c856c037b248d22a5f2`.
 
 - Generated canonical [[daily-reports/daily-report_20260903]] for run `daily-20260903T065312Z`.
+
+- Published investor decision snapshot `decision_5e7bac4afb088c8d8e73`.
+
+- Generated canonical [[daily-reports/daily-report_20260903]] for run `daily-20260903T095655Z`.

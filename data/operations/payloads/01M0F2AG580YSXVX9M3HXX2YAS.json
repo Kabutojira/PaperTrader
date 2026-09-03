@@ -3,9 +3,18 @@
   "entity_type": "security",
   "inputs": {
     "assessment_state": "2026-08-19T23:29:56Z",
+    "issue_ids": [
+      "issue_237eb6de59f6ab09bb98"
+    ],
     "maintenance_mode": "refresh",
     "market_data_as_of": "2026-09-02T14:26:30Z",
     "market_data_date": "2026-09-01",
+    "merged_input_values": {
+      "maintenance_mode": [
+        "refresh",
+        "assessment_issue_recovery"
+      ]
+    },
     "period_end": "2026-09-01",
     "period_start": "2026-08-04",
     "research_page": "data/wiki/securities/security_0a56aa634d077fe5796f.md",
@@ -34,6 +43,13 @@
         "trigger_types": [
           "bollinger_below_lower"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_0a56aa634d077fe5796f:assessment-issue-recovery:e89e28a30ebb5dd2",
+        "observed_at": "2026-09-03T09:56:10Z",
+        "prompt": "Repair the unresolved assessment for security_0a56aa634d077fe5796f with current primary evidence and explicit source-operation provenance.",
+        "source": "issue_reconciliation:maintenance-20260903-dashboard-health-v2",
+        "source_refs": []
       }
     ],
     "security_id": "security_0a56aa634d077fe5796f",
@@ -42,7 +58,7 @@
       "bollinger_below_lower"
     ]
   },
-  "objective": "Revalidate security_0a56aa634d077fe5796f with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_0a56aa634d077fe5796f with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act.",
+  "objective": "Revalidate security_0a56aa634d077fe5796f with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_0a56aa634d077fe5796f with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act. | Additional cause: Repair the unresolved assessment for security_0a56aa634d077fe5796f with current primary evidence and explicit source-operation provenance.",
   "operation_id": "01M0F2AG580YSXVX9M3HXX2YAS",
   "operation_type": "security_research",
   "payload_version": 1,

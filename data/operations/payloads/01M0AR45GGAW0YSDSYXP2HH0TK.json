@@ -3,11 +3,40 @@
   "entity_type": "security",
   "inputs": {
     "assessment_state": "2026-08-09T21:30:46Z",
+    "issue_ids": [
+      "issue_52441ba1c5c89cac50a6"
+    ],
     "maintenance_mode": "refresh",
+    "merged_input_values": {
+      "maintenance_mode": [
+        "refresh",
+        "assessment_issue_recovery"
+      ]
+    },
     "research_page": "data/wiki/securities/security_7ca095d63423c55a90e3.md",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_7ca095d63423c55a90e3:allocation-maintenance:2026-08-09T21:30:46Z",
+        "observed_at": "2026-08-18T15:34:02Z",
+        "prompt": "Revalidate security_7ca095d63423c55a90e3 with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_iridium_q2_2026_10q",
+          "source_rklb_iridium_merger_8k",
+          "source_rklb_q1_2026_10q"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_7ca095d63423c55a90e3:assessment-issue-recovery:c221a9564263c822",
+        "observed_at": "2026-09-03T09:56:10Z",
+        "prompt": "Repair the unresolved assessment for security_7ca095d63423c55a90e3 with current primary evidence and explicit source-operation provenance.",
+        "source": "issue_reconciliation:maintenance-20260903-dashboard-health-v2",
+        "source_refs": []
+      }
+    ],
     "security_id": "security_7ca095d63423c55a90e3"
   },
-  "objective": "Revalidate security_7ca095d63423c55a90e3 with current primary evidence and write one comparable allocation assessment.",
+  "objective": "Revalidate security_7ca095d63423c55a90e3 with current primary evidence and write one comparable allocation assessment. | Additional cause: Repair the unresolved assessment for security_7ca095d63423c55a90e3 with current primary evidence and explicit source-operation provenance.",
   "operation_id": "01M0AR45GGAW0YSDSYXP2HH0TK",
   "operation_type": "security_research",
   "payload_version": 1,
