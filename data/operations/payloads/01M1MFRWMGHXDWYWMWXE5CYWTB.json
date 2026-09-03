@@ -1,0 +1,32 @@
+{
+  "entity_id": "strategy_ef910e9aff5203a0b901",
+  "entity_type": "strategy",
+  "inputs": {
+    "allocation_intent_id": "allocation_intent_206644feb73549257619",
+    "allocation_plan_id": "allocation_plan_289b1e45af570882b472",
+    "assessment_as_of": "2026-08-28T19:23:20Z",
+    "assessment_id": "assessment_6e8ef7291ff81b77d900",
+    "current_weight_pct": "0",
+    "disposition": "open",
+    "effective_score": "76",
+    "maximum_weight_pct": "2",
+    "mode": "baseline_allocation",
+    "position_cap_pct": "2",
+    "relationship_id": "relationship_f625ba3c07d49e1865ff",
+    "security_id": "security_de0d83229b369a426b99",
+    "selection_rank": 3,
+    "strategy_id": "strategy_ef910e9aff5203a0b901",
+    "target_quantity": "3",
+    "target_weight_pct": "1.45",
+    "tier": "starter",
+    "valuation_mark": "56.09000015258789",
+    "valuation_mark_as_of": "2026-09-03T18:24:03Z"
+  },
+  "objective": "Recover strategy_research for current allocation plan allocation_plan_289b1e45af570882b472 after audited compatible binding skip 01M1MACH0GMQR085M6FGR60B84.",
+  "operation_id": "01M1MFRWMGHXDWYWMWXE5CYWTB",
+  "operation_type": "strategy_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_tencent_q2_2026_results"
+  ]
+}

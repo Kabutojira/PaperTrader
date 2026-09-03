@@ -1,0 +1,37 @@
+{
+  "auxiliary_models": {
+    "web_extract": "openai-codex:gpt-5.6-luna"
+  },
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M1MG89SRM31NN7JQ9BJDE1KC.json",
+    "data/runs/daily-20260903T195930Z/01M1MFRWMG79T70K71MR2C49RB/enqueue-execute-strategy-request.json",
+    "data/runs/daily-20260903T195930Z/01M1MFRWMG79T70K71MR2C49RB/signal-create-request.json",
+    "data/runs/daily-20260903T195930Z/01M1MFRWMG79T70K71MR2C49RB/strategy-upsert-request-corrected.json",
+    "data/runs/daily-20260903T195930Z/01M1MFRWMG79T70K71MR2C49RB/strategy-upsert-request.json",
+    "data/tables/signals.csv",
+    "data/tables/strategies.csv",
+    "data/tables/strategy_legs.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/strategies/strategy_e4ada1a4934691d1f7ee.md"
+  ],
+  "effective_model": "gpt-5.6-sol",
+  "errors": [
+    "post-run integrity: signal identity is invalid: signal_89444cee010c1a0e5ad2",
+    "visualization_review charts do not match chart ids in changed research pages: expected [('data/wiki/strategies/strategy_e4ada1a4934691d1f7ee.md', 'uber-baseline-scenario-returns')], got [('data/wiki/strategies/strategy_e4ada1a4934691d1f7ee.md', 'uber-scenario-returns')]"
+  ],
+  "escalation_source": "",
+  "maximum_turns": 160,
+  "mutation_policy": "full_research",
+  "operation_id": "01M1MFRWMG79T70K71MR2C49RB",
+  "passed": false,
+  "profile": "deep",
+  "profile_policy_version": "profile-router-v1",
+  "reasoning_effort": "medium",
+  "route_reason": "full_strategy_or_execution_decision",
+  "run_id": "daily-20260903T195930Z",
+  "timeout_seconds": 1800,
+  "validation_version": 1,
+  "weighted_cost": "5"
+}
