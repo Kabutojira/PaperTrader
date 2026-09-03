@@ -1,8 +1,8 @@
 snapshot_id,as_of,policy_version,comparison_only,copy_ready,security_id,ticker,company_name,rating,weight_pct,reference_price,currency,research_page
-decision_23676c6c433ab7c7fafa,2026-09-03T13:03:00Z,equal_weight_rated_v1,true,false,security_099561384c0f5e697727,CSIQ,Canadian Solar Inc.,buy,10,13.140000343322754,USD,data/wiki/securities/security_099561384c0f5e697727.md
-decision_23676c6c433ab7c7fafa,2026-09-03T13:03:00Z,equal_weight_rated_v1,true,false,security_8b703a8adf5f864acaa4,PRX,Prosus N.V.,buy,10,38.689998626708984,EUR,data/wiki/securities/security_8b703a8adf5f864acaa4.md
-decision_23676c6c433ab7c7fafa,2026-09-03T13:03:00Z,equal_weight_rated_v1,true,false,security_715bde20b6e1e1320c1a,DLO,DLocal Limited,buy,10,15.029999732971191,USD,data/wiki/securities/security_715bde20b6e1e1320c1a.md
-decision_23676c6c433ab7c7fafa,2026-09-03T13:03:00Z,equal_weight_rated_v1,true,false,security_c150f31c30afdb4a85f9,CROX,"Crocs, Inc.",buy,10,115.79000091552734,USD,data/wiki/securities/security_c150f31c30afdb4a85f9.md
-decision_23676c6c433ab7c7fafa,2026-09-03T13:03:00Z,equal_weight_rated_v1,true,false,security_98470cfc01bbcde78fc2,SOFI,"SoFi Technologies, Inc.",buy,10,17.049999237060547,USD,data/wiki/securities/security_98470cfc01bbcde78fc2.md
-decision_23676c6c433ab7c7fafa,2026-09-03T13:03:00Z,equal_weight_rated_v1,true,false,security_98a1943771da875efed5,NOMD,Nomad Foods Limited,buy,10,11.989999771118164,USD,data/wiki/securities/security_98a1943771da875efed5.md
-decision_23676c6c433ab7c7fafa,2026-09-03T13:03:00Z,equal_weight_rated_v1,true,false,,CASH,Cash,unrated,40,1,,
+decision_72d6d305fa51c023b41f,2026-09-03T18:41:32Z,equal_weight_rated_v1,true,false,security_099561384c0f5e697727,CSIQ,Canadian Solar Inc.,buy,10,13.140000343322754,USD,data/wiki/securities/security_099561384c0f5e697727.md
+decision_72d6d305fa51c023b41f,2026-09-03T18:41:32Z,equal_weight_rated_v1,true,false,security_8b703a8adf5f864acaa4,PRX,Prosus N.V.,buy,10,38.689998626708984,EUR,data/wiki/securities/security_8b703a8adf5f864acaa4.md
+decision_72d6d305fa51c023b41f,2026-09-03T18:41:32Z,equal_weight_rated_v1,true,false,security_715bde20b6e1e1320c1a,DLO,DLocal Limited,buy,10,15.029999732971191,USD,data/wiki/securities/security_715bde20b6e1e1320c1a.md
+decision_72d6d305fa51c023b41f,2026-09-03T18:41:32Z,equal_weight_rated_v1,true,false,security_c150f31c30afdb4a85f9,CROX,"Crocs, Inc.",buy,10,115.79000091552734,USD,data/wiki/securities/security_c150f31c30afdb4a85f9.md
+decision_72d6d305fa51c023b41f,2026-09-03T18:41:32Z,equal_weight_rated_v1,true,false,security_98470cfc01bbcde78fc2,SOFI,"SoFi Technologies, Inc.",buy,10,17.049999237060547,USD,data/wiki/securities/security_98470cfc01bbcde78fc2.md
+decision_72d6d305fa51c023b41f,2026-09-03T18:41:32Z,equal_weight_rated_v1,true,false,security_98a1943771da875efed5,NOMD,Nomad Foods Limited,buy,10,11.989999771118164,USD,data/wiki/securities/security_98a1943771da875efed5.md
+decision_72d6d305fa51c023b41f,2026-09-03T18:41:32Z,equal_weight_rated_v1,true,false,,CASH,Cash,unrated,40,1,,

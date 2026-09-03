@@ -7,13 +7,13 @@ tags:
 created: "2026-09-03"
 updated: "2026-09-03"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_23676c6c433ab7c7fafa"
-as_of: "2026-09-03T13:03:00Z"
+snapshot_id: "decision_72d6d305fa51c023b41f"
+as_of: "2026-09-03T18:41:32Z"
 ---
 
 # Signals
 
-**As of `2026-09-03T13:03:00Z`**
+**As of `2026-09-03T18:41:32Z`**
 
 ## Actionable trade signals
 
@@ -24,15 +24,6 @@ No actionable trade signals.
 No pending orders.
 
 ## Research alerts — not trade signals
-
-### [YEC.F — YASKAWA Electric Corporation](securities/security_89969b7dac39b7db5661)
-
-**Research alert — not a trade signal**
-
-- Alert: `rsi\_oversold`
-- Market date: `2026-09-02`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
 
 ### [VLO — Valero Energy Corporation](securities/security_c5a9e460d3350284d157)
 
@@ -79,15 +70,6 @@ No pending orders.
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
-### [NIB.F — Nidec Corporation](securities/security_3853e54c619d597dcaa1)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_below\_lower`
-- Market date: `2026-09-02`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
 ### [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86)
 
 **Research alert — not a trade signal**
@@ -103,6 +85,33 @@ No pending orders.
 
 - Alert: `bollinger\_below\_lower`
 - Market date: `2026-09-02`
+- Research status: `failed`
+- Conclusion: Revalidated ABB after the September 1 lower-Bollinger breach, refreshed hash-identical primary evidence, updated the security page and comparable assessment, and derived Hold / Watch with allocation ineligibility because expected return, base upside, payoff, margin-of-safety and accepted-relationship gates remain unsatisfied. The operation fails closed because the immutable assessment was sealed before its page's prior Sell / Avoid prose was corrected to the deterministic Hold / Watch result, leaving its stored page hash different from the final page. Recorded issue ABB assessment provenance does not match corrected final research page. No follow-up, strategy, signal, order, allocation or accounting change was made.
+
+### [SSUN.VI — Samsung Electronics Co., Ltd.](securities/security_d08d763780400dfbffce)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_below\_signal`
+- Market date: `2026-09-03`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### [SSU.VI — Samsung Electronics Co., Ltd.](securities/security_567d0d575bbd30aaa91d)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_below\_signal`
+- Market date: `2026-09-03`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### [FUC.F — Fanuc Corporation](securities/security_96ba305ee7cd586bc348)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-09-03`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
@@ -132,15 +141,6 @@ No pending orders.
 - Market date: `2026-09-02`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
-
-### [AD — Koninklijke Ahold Delhaize N.V.](securities/security_e19c7fe27fbcc4cd923d)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-09-02`
-- Research status: `skipped`
-- Conclusion: Queue triage disposition
 
 
 ## Recently expired or completed signals

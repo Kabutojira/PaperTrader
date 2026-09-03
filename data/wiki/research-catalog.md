@@ -7,8 +7,8 @@ tags:
 created: "2026-09-03"
 updated: "2026-09-03"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_23676c6c433ab7c7fafa"
-as_of: "2026-09-03T13:03:00Z"
+snapshot_id: "decision_72d6d305fa51c023b41f"
+as_of: "2026-09-03T18:41:32Z"
 ---
 
 # Research catalog
@@ -17,7 +17,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Assessment revision audit
 
-- Immutable assessment versions: **195**
+- Immutable assessment versions: **196**
 - Securities with retained revisions: **80**
 
 ## Candidate
@@ -160,6 +160,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [FLNC — Volume anomaly](inbox/market-security_a9eb9838940ef5ceaa0c-volume_anomaly-a2e1b1a4c9f0)
 - [FUC.F — Bollinger below lower](inbox/market-security_96ba305ee7cd586bc348-bollinger_below_lower-7a90cf00ae43)
 - [FUC.F — MACD cross above signal](inbox/market-security_96ba305ee7cd586bc348-macd_cross_above_signal-3076adb7c502)
+- [FUC.F — MACD cross above signal](inbox/market-security_96ba305ee7cd586bc348-macd_cross_above_signal-524af495aaf3)
 - [FUC.F — MACD cross below signal](inbox/market-security_96ba305ee7cd586bc348-macd_cross_below_signal-e8a3ef9b6ba8)
 - [FUC.F — Volume anomaly](inbox/market-security_96ba305ee7cd586bc348-volume_anomaly-1bb1ee000d56)
 - [FUC.F — Volume anomaly](inbox/market-security_96ba305ee7cd586bc348-volume_anomaly-d6607fa30b24)
@@ -407,10 +408,12 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [SSU.VI — Bollinger above upper](inbox/market-security_567d0d575bbd30aaa91d-bollinger_above_upper-8c1924be2a50)
 - [SSU.VI — Bollinger below lower](inbox/market-security_567d0d575bbd30aaa91d-bollinger_below_lower-917454ed7e3a)
 - [SSU.VI — MACD cross above signal](inbox/market-security_567d0d575bbd30aaa91d-macd_cross_above_signal-347a0faa1d0e)
+- [SSU.VI — MACD cross below signal](inbox/market-security_567d0d575bbd30aaa91d-macd_cross_below_signal-96c9fd7ac047)
 - [SSU.VI — Volume anomaly](inbox/market-security_567d0d575bbd30aaa91d-volume_anomaly-58db175775da)
 - [SSUN.VI — Bollinger above upper](inbox/market-security_d08d763780400dfbffce-bollinger_above_upper-0a5c0bb49ecc)
 - [SSUN.VI — Bollinger above upper](inbox/market-security_d08d763780400dfbffce-bollinger_above_upper-4d2ca04277e3)
 - [SSUN.VI — MACD cross above signal](inbox/market-security_d08d763780400dfbffce-macd_cross_above_signal-5f77e49fc4fd)
+- [SSUN.VI — MACD cross below signal](inbox/market-security_d08d763780400dfbffce-macd_cross_below_signal-d191e2528fda)
 - [SU — Bollinger above upper](inbox/market-security_dc8486c1d61df62a22fd-bollinger_above_upper-15c4988e4d0d)
 - [SU — Bollinger above upper](inbox/market-security_dc8486c1d61df62a22fd-bollinger_above_upper-885d2463351c)
 - [SU — MACD cross above signal](inbox/market-security_dc8486c1d61df62a22fd-macd_cross_above_signal-094629fe26cb)
@@ -753,9 +756,3 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
-
-## Inbox
-
-- [[inbox/market-security_567d0d575bbd30aaa91d-macd_cross_below_signal-96c9fd7ac047|SSU.VI — MACD cross below signal]]
-- [[inbox/market-security_96ba305ee7cd586bc348-macd_cross_above_signal-524af495aaf3|FUC.F — MACD cross above signal]]
-- [[inbox/market-security_d08d763780400dfbffce-macd_cross_below_signal-d191e2528fda|SSUN.VI — MACD cross below signal]]

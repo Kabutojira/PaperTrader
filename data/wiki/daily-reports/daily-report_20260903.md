@@ -7,8 +7,8 @@ tags:
 created: "2026-09-03"
 updated: "2026-09-03"
 provenance: deterministic-report-generator
-run_id: "daily-20260903T122855Z"
-snapshot_id: "decision_23676c6c433ab7c7fafa"
+run_id: "daily-20260903T182402Z"
+snapshot_id: "decision_72d6d305fa51c023b41f"
 ---
 
 # PaperTrader daily report — 2026-09-03
@@ -20,7 +20,7 @@ snapshot_id: "decision_23676c6c433ab7c7fafa"
 
 - **Investment data:** Portfolio state safe — research gaps remain
 - **Operations:** Attention required
-- **As of:** `2026-09-03T13:03:00Z`
+- **As of:** `2026-09-03T18:41:32Z`
 - **Cash:** 10000 EUR (100%)
 - **Gross exposure:** 0 EUR
 - **Target cash:** 10000 EUR (100%)
@@ -37,9 +37,6 @@ No actionable trade signals.
 
 ## Price action alerts
 
-- **[YEC.F — YASKAWA Electric Corporation](securities/security_89969b7dac39b7db5661): Rsi Oversold** (`2026-09-02`)
-  - Research: **ready**
-  - Decision: High-priority security research is ready to run.
 - **[VLO — Valero Energy Corporation](securities/security_c5a9e460d3350284d157): Rsi Overbought** (`2026-09-02`)
   - Research: **skipped**
   - Decision: bearish\_alert\_unowned
@@ -55,13 +52,19 @@ No actionable trade signals.
 - **[QCOM — QUALCOMM Incorporated](securities/security_3a75fc1ccca2ee7c937a): Bollinger Above Upper** (`2026-09-02`)
   - Research: **skipped**
   - Decision: bearish\_alert\_unowned
-- **[NIB.F — Nidec Corporation](securities/security_3853e54c619d597dcaa1): Bollinger Below Lower** (`2026-09-02`)
-  - Research: **ready**
-  - Decision: High-priority security research is ready to run.
 - **[ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86): Rsi Overbought** (`2026-09-02`)
   - Research: **skipped**
   - Decision: Queue triage disposition
 - **[ABBNY — ABB Ltd](securities/security_c120e9f26ebb6159adf9): Bollinger Below Lower** (`2026-09-02`)
+  - Research: **failed**
+  - Decision: Revalidated ABB after the September 1 lower-Bollinger breach, refreshed hash-identical primary evidence, updated the security page and comparable assessment, and derived Hold / Watch with allocation ineligibility because expected return, base upside, payoff, margin-of-safety and accepted-relationship gates remain unsatisfied. The operation fails closed because the immutable assessment was sealed before its page's prior Sell / Avoid prose was corrected to the deterministic Hold / Watch result, leaving its stored page hash different from the final page. Recorded issue ABB assessment provenance does not match corrected final research page. No follow-up, strategy, signal, order, allocation or accounting change was made.
+- **[SSUN.VI — Samsung Electronics Co., Ltd.](securities/security_d08d763780400dfbffce): Macd Cross Below Signal** (`2026-09-03`)
+  - Research: **skipped**
+  - Decision: bearish\_alert\_unowned
+- **[SSU.VI — Samsung Electronics Co., Ltd.](securities/security_567d0d575bbd30aaa91d): Macd Cross Below Signal** (`2026-09-03`)
+  - Research: **skipped**
+  - Decision: bearish\_alert\_unowned
+- **[FUC.F — Fanuc Corporation](securities/security_96ba305ee7cd586bc348): Macd Cross Above Signal** (`2026-09-03`)
   - Research: **ready**
   - Decision: High-priority security research is ready to run.
 - **[SCCO — Southern Copper Corporation](securities/security_6ad1af8d10d6276a0221): Macd Cross Below Signal** (`2026-09-02`)
@@ -73,14 +76,10 @@ No actionable trade signals.
 - **[FCX — Freeport-McMoRan Inc.](securities/security_2dbe878dfc899d7ee867): Macd Cross Below Signal** (`2026-09-02`)
   - Research: **skipped**
   - Decision: bearish\_alert\_unowned
-- **[AD — Koninklijke Ahold Delhaize N.V.](securities/security_e19c7fe27fbcc4cd923d): Macd Cross Above Signal** (`2026-09-02`)
-  - Research: **skipped**
-  - Decision: Queue triage disposition
 
 ## Research decisions this run
 
-- **[AMAT](securities/security_0a56aa634d077fe5796f) — succeeded:** Completed one full Applied Materials security review. Fiscal-Q3 filing evidence supports the business thesis, but the USD 438.46 mark is near USD 439 weighted and USD 448 base fair value. The accepted assessment is Hold / Watch and allocation-ineligible because expected return, base upside, downside payoff and the accepted-relationship gate do not…
-- **[CROX](securities/security_c150f31c30afdb4a85f9) — failed:** Researched Crocs after the September lower-Bollinger breach, refreshed primary SEC evidence, updated the security page and structured state, and derived Buy / Initiate with Watch conviction and allocation ineligibility because expected-to-bear payoff and relationship gates fail. The operation fails closed because a page-hash correction caused the…
+- **[ABBNY](securities/security_c120e9f26ebb6159adf9) — failed:** Revalidated ABB after the September 1 lower-Bollinger breach, refreshed hash-identical primary evidence, updated the security page and comparable assessment, and derived Hold / Watch with allocation ineligibility because expected return, base upside, payoff, margin-of-safety and accepted-relationship gates remain unsatisfied. The operation fails c…
 
 ## Leading Buy / Initiate research candidate
 
@@ -151,13 +150,13 @@ No pending orders.
 
 ### Evidence-linked narrative
 
-- Applied Materials completed a full review after the lower-Bollinger alert. Record fiscal-Q3 execution supports the thesis, but USD 438.46 is near USD 439 weighted and USD 448 base value; canonical status is Hold / Watch and allocation-ineligible. One dependent AI-compute relationship review was queued. Evidence is retained in the canonical run artifacts.
-- Crocs research refreshed after an 18.35% alert-period decline. The fresh USD 115.79 mark derives Buy / Initiate with Watch conviction, but expected-to-bear payoff and relationship gates keep it allocation-ineligible. The operation failed closed after producing duplicate immutable assessment versions; [[system-status|Crocs review produced two immutable assessment versions]] records the required… Evidence is retained in the canonical run artifacts.
+- ABB was revalidated after the September 1 lower-Bollinger breach. Hash-identical primary evidence left USD 62.40/USD 86.80/USD 105.00 scenarios unchanged; the fresh USD 95.15 mark improves the deterministic disposition to Hold / Watch but remains above weighted and base value, so allocation stays ineligible. The operation failed closed because the… Evidence is retained in the canonical run artifacts.
 
 - [[model-portfolio|PaperTrader model portfolio]]
 - [[performance|PaperTrader performance and risk]]
 - [[research-catalog|PaperTrader research catalog]]
 - [[securities/security_0a56aa634d077fe5796f|Applied Materials, Inc. common stock]]
+- [[securities/security_c120e9f26ebb6159adf9|ABB Ltd sponsored ADR]]
 - [[securities/security_c150f31c30afdb4a85f9|Crocs, Inc. common stock]]
 - [[security-catalog|PaperTrader tracked securities]]
 - [[signals|PaperTrader signals and research alerts]]
@@ -168,7 +167,7 @@ No pending orders.
 - Investment data status: **degraded**
 - Operations status: **degraded**
 - Assessments: 49/80
-- Fresh-evidence assessments: 48/80
+- Fresh-evidence assessments: 49/80
 - Relationship reviews: 19/80
 - Accepted relationships: 18
 - Ready or active strategies: 0
@@ -189,7 +188,8 @@ No pending orders.
 - **affects candidate** — CROX Crocs, Inc.: Hermes operation validation failed: [[securities/security_c150f31c30afdb4a85f9|Security research for CROX on 2026-09-03]]
 - **affects candidate**: Hermes operation validation failed: [[securities/security_4627aea1bf7d8943d3d8|Security research for SGML on 2026-08-17]]
 - **affects candidate** — ALB Albemarle Corporation: Hermes operation validation failed: [[securities/security_66cdcf90aac0d83e76f3|Quick check research for ALB on 2026-08-09]]
-- **affects candidate**: Hermes operation validation failed: [[securities/security_c120e9f26ebb6159adf9|Security research for ABBNY on 2026-08-17]]
+- **affects candidate** — ABBNY ABB Ltd: ABB assessment provenance does not match corrected final research page
+- **affects candidate**: Hermes operation validation failed: [[securities/security_c120e9f26ebb6159adf9|Security research for ABBNY on 2026-09-03]]
 - **affects candidate**: Hermes operation validation failed: [[securities/security_6cf75bd0ec0aa2a20148|Quick check research for TWST on 2026-08-05]]
 - **affects candidate** — ASML ASML Holding N.V.: ASML assessment rejected after security row update
 - **affects candidate** — WTI W&amp;T Offshore, Inc.: Hermes operation validation failed: [[securities/security_61567714298b9563d1a9|Quick check research for WTI on 2026-08-18]]
@@ -215,93 +215,93 @@ No pending orders.
 
 - Report date: 2026-09-03
 - Run status: degraded
-- Generated (UTC): `2026-09-03T13:03:00Z`
+- Generated (UTC): `2026-09-03T18:41:32Z`
 
 ### Complete market freshness
 
 | Security | Price date | Retrieved at | Status | Error |
 | --- | --- | --- | --- | --- |
-| [[securities/security_099561384c0f5e697727|CSIQ]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_0a56aa634d077fe5796f|AMAT]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_0c8b3c4291cd97f56d8c|108490]] | 2026-09-03 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_0cf8075039299094d614|KTOS]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_18a3ab0ee6086ee85d0f|ETN]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_1e8fbdb0f45f2b413e00|PYPL]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_1f9cce545ede94cd6349|ISRG]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_2010347f1a0a5ea60f47|SPOT]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_204be2a44063993de1a8|MSFT]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_22c2b9d782a62d7a9b86|ATKR]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_2433a056eb0c55961fcc|AMZN]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_2c779e81c27b78c556bb|TX]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_2dbe878dfc899d7ee867|FCX]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_33d9c44facc75c726c7d|NVDA]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_37ddcbdaad296ad831f2|COIN]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_3853e54c619d597dcaa1|NIB.F]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_3a75fc1ccca2ee7c937a|QCOM]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_3e597863f00753e8c65c|BE]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_4627aea1bf7d8943d3d8|SGML]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_47a0b06f6c6c478d7c1e|NBIS]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_488a9d7f7a8573597724|PWR]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_4935c6e39e38273a1731|MELI]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_4b61970aa8f574446819|GEV]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_567d0d575bbd30aaa91d|SSU.VI]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_59304f90c440def31dc5|RTX]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_61567714298b9563d1a9|WTI]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_664f93a7eaca72e76e9b|SPCX]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_66cdcf90aac0d83e76f3|ALB]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_6ad1af8d10d6276a0221|SCCO]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_6cf75bd0ec0aa2a20148|TWST]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_6f9a1450edceb9307c9a|ANET]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_715bde20b6e1e1320c1a|DLO]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_7bf8f4c9cc12ae410e40|ABCL]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_7ca095d63423c55a90e3|RKLB]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_83a56943e18793f685b0|TXN]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_8472507d7d320aa388a7|CRWD]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_89969b7dac39b7db5661|YEC.F]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_8a5c43888d224de85c69|PLS.AX]] | 2026-09-03 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_8b703a8adf5f864acaa4|PRX]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_95351d928b674bbdf687|DNA]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_96ba305ee7cd586bc348|FUC.F]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_97f38b2cb2d5ef127f5a|PL]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_98470cfc01bbcde78fc2|SOFI]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_98a1943771da875efed5|NOMD]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_9b0db3bc77914b23a307|CSL]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_9d4049ed6669a52815d6|SQM]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_a5dc16f3f4b245e6c168|LUNR]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_a9eb9838940ef5ceaa0c|FLNC]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_ad3b1f8f59fd599f079a|HOOD]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_ad5917642acbba28c1f2|TDY]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_b1f2c48e1a744f5ecf67|LH]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_b2116dcf976c96974d7b|VALE]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_bdc2f87dadf134760c3a|PLTR]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_c120e9f26ebb6159adf9|ABBNY]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_c150f31c30afdb4a85f9|CROX]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_c5a9e460d3350284d157|VLO]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_c86bb4e75658c07142cf|GOOGL]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_c9a37d277445869a8809|RBLX]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_cb88f9154cfeaa15e878|VRT]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_cd492d97064d8574156e|MP]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_ce9b78a4d0773c950765|TSM]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_d08d763780400dfbffce|SSUN.VI]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_d12e746b3c9d392183cc|META]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_d202772e4e62065cd17a|FISV]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_dc7a111e297be528d96b|TSLA]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_dc8486c1d61df62a22fd|SU]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_de0d83229b369a426b99|TCEHY]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_dfa34d4b9050964b465e|INTC]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_e19c7fe27fbcc4cd923d|AD]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_e4822686f60a96824b6e|UBER]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_eca976f0076a425ea1bb|PATH]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_ed7d5b616a196969c815|RXRX]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_ef35e41886220d51c22c|ASML]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_f2b9760d847b2ba59324|ENPH]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_f34181f3df32080a91d1|DPZ]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_fb87fac302a5446a1ced|LAC]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
-| [[securities/security_fe5539a7d3fd9d553bce|MSTR]] | 2026-09-02 | 2026-09-03T12:29:04Z | ok | — |
+| [[securities/security_099561384c0f5e697727|CSIQ]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_0a56aa634d077fe5796f|AMAT]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_0c8b3c4291cd97f56d8c|108490]] | 2026-09-03 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_0cf8075039299094d614|KTOS]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_18a3ab0ee6086ee85d0f|ETN]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_1e8fbdb0f45f2b413e00|PYPL]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_1f9cce545ede94cd6349|ISRG]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_2010347f1a0a5ea60f47|SPOT]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_204be2a44063993de1a8|MSFT]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_22c2b9d782a62d7a9b86|ATKR]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_2433a056eb0c55961fcc|AMZN]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_2c779e81c27b78c556bb|TX]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_2dbe878dfc899d7ee867|FCX]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_33d9c44facc75c726c7d|NVDA]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_37ddcbdaad296ad831f2|COIN]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_3853e54c619d597dcaa1|NIB.F]] | 2026-09-03 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_3a75fc1ccca2ee7c937a|QCOM]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_3e597863f00753e8c65c|BE]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_4627aea1bf7d8943d3d8|SGML]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_47a0b06f6c6c478d7c1e|NBIS]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_488a9d7f7a8573597724|PWR]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_4935c6e39e38273a1731|MELI]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_4b61970aa8f574446819|GEV]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_567d0d575bbd30aaa91d|SSU.VI]] | 2026-09-03 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_59304f90c440def31dc5|RTX]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_61567714298b9563d1a9|WTI]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_664f93a7eaca72e76e9b|SPCX]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_66cdcf90aac0d83e76f3|ALB]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_6ad1af8d10d6276a0221|SCCO]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_6cf75bd0ec0aa2a20148|TWST]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_6f9a1450edceb9307c9a|ANET]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_715bde20b6e1e1320c1a|DLO]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_7bf8f4c9cc12ae410e40|ABCL]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_7ca095d63423c55a90e3|RKLB]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_83a56943e18793f685b0|TXN]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_8472507d7d320aa388a7|CRWD]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_89969b7dac39b7db5661|YEC.F]] | 2026-09-03 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_8a5c43888d224de85c69|PLS.AX]] | 2026-09-03 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_8b703a8adf5f864acaa4|PRX]] | 2026-09-03 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_95351d928b674bbdf687|DNA]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_96ba305ee7cd586bc348|FUC.F]] | 2026-09-03 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_97f38b2cb2d5ef127f5a|PL]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_98470cfc01bbcde78fc2|SOFI]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_98a1943771da875efed5|NOMD]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_9b0db3bc77914b23a307|CSL]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_9d4049ed6669a52815d6|SQM]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_a5dc16f3f4b245e6c168|LUNR]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_a9eb9838940ef5ceaa0c|FLNC]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_ad3b1f8f59fd599f079a|HOOD]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_ad5917642acbba28c1f2|TDY]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_b1f2c48e1a744f5ecf67|LH]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_b2116dcf976c96974d7b|VALE]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_bdc2f87dadf134760c3a|PLTR]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_c120e9f26ebb6159adf9|ABBNY]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_c150f31c30afdb4a85f9|CROX]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_c5a9e460d3350284d157|VLO]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_c86bb4e75658c07142cf|GOOGL]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_c9a37d277445869a8809|RBLX]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_cb88f9154cfeaa15e878|VRT]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]] | 2026-09-03 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_cd492d97064d8574156e|MP]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_ce9b78a4d0773c950765|TSM]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_d08d763780400dfbffce|SSUN.VI]] | 2026-09-03 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_d12e746b3c9d392183cc|META]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_d202772e4e62065cd17a|FISV]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_dc7a111e297be528d96b|TSLA]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_dc8486c1d61df62a22fd|SU]] | 2026-09-03 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_de0d83229b369a426b99|TCEHY]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_dfa34d4b9050964b465e|INTC]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_e19c7fe27fbcc4cd923d|AD]] | 2026-09-03 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_e4822686f60a96824b6e|UBER]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_eca976f0076a425ea1bb|PATH]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_ed7d5b616a196969c815|RXRX]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_ef35e41886220d51c22c|ASML]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_f2b9760d847b2ba59324|ENPH]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_f34181f3df32080a91d1|DPZ]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_fb87fac302a5446a1ced|LAC]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
+| [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]] | 2026-09-03 | 2026-09-03T18:24:03Z | ok | — |
+| [[securities/security_fe5539a7d3fd9d553bce|MSTR]] | 2026-09-02 | 2026-09-03T18:24:03Z | ok | — |
 
 ### Orders and executions
 
@@ -317,8 +317,8 @@ No pending orders.
 
 - Mode: `active`
 - Deployment budget: 1500 EUR
-- Capital allocated: 221.12999725341798 EUR
-- Capital unallocated: 5778.87000274658202 EUR
+- Capital allocated: 221.280006408691404 EUR
+- Capital unallocated: 5778.719993591308596 EUR
 
 | Rank | Security | Target weight | Disposition | Reasons |
 | ---: | --- | ---: | --- | --- |
@@ -364,7 +364,7 @@ No pending orders.
 | — | [[securities/security_89969b7dac39b7db5661|YEC.F]] | 0% | excluded | The comparable assessment is stale or expired.; Liquidity is insufficient. A supportable valuation is unavailable.; A current accepted idea-to-security relationship is unavailable.; A supportable scenario valuation is unavailable. |
 | — | [[securities/security_8a5c43888d224de85c69|PLS.AX]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_95351d928b674bbdf687|DNA]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_96ba305ee7cd586bc348|FUC.F]] | 0% | excluded | Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_96ba305ee7cd586bc348|FUC.F]] | 0% | excluded | The comparable assessment is stale or expired.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_97f38b2cb2d5ef127f5a|PL]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_98470cfc01bbcde78fc2|SOFI]] | 0% | excluded | Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_98a1943771da875efed5|NOMD]] | 0% | excluded | Expected/bear payoff is below threshold. |
@@ -377,7 +377,7 @@ No pending orders.
 | — | [[securities/security_b1f2c48e1a744f5ecf67|LH]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_b2116dcf976c96974d7b|VALE]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_bdc2f87dadf134760c3a|PLTR]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_c120e9f26ebb6159adf9|ABBNY]] | 0% | excluded | The comparable assessment is stale or expired.; Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_c120e9f26ebb6159adf9|ABBNY]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_c150f31c30afdb4a85f9|CROX]] | 0% | excluded | Expected/bear payoff is below threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_c5a9e460d3350284d157|VLO]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_c86bb4e75658c07142cf|GOOGL]] | 0% | excluded | The comparable assessment is stale or expired.; Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; A current accepted idea-to-security relationship is unavailable. |
@@ -402,29 +402,6 @@ No pending orders.
 | — | [[securities/security_f34181f3df32080a91d1|DPZ]] | 0% | excluded | Bear/base payoff is below threshold.; Expected/bear payoff is below threshold. |
 | — | [[securities/security_fb87fac302a5446a1ced|LAC]] | 0% | excluded | The current assessment marks the security ineligible.; The comparable assessment is stale or expired.; Assessment confidence is below the configured minimum.; A supportable valuation is unavailable.; A current accepted idea-to-security relationship is unavailable.; The effective score does not beat the configured cash hurdle. |
 | — | [[securities/security_fe5539a7d3fd9d553bce|MSTR]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
-
-### Curated YouTube discovery
-
-- Status: `succeeded`
-- Operations queued: `1`
-- Channel failures: `0`
-
-| Channel | Status | Discovered | Queued | Reason |
-| --- | --- | ---: | ---: | --- |
-| @allin | succeeded | 0 | 0 | — |
-| @thelimitingfactor | succeeded | 0 | 0 | — |
-| @ConnectingODots | succeeded | 0 | 0 | — |
-| @DumbMoneyLive | succeeded | 0 | 0 | — |
-| @CouchInvestor | succeeded | 0 | 0 | — |
-| @Value-Investing | succeeded | 1 | 1 | — |
-
-
-### Seeking Alpha search-index leads
-
-- Schedule status: `duplicate`
-- Access mode: `search_index`; Seeking Alpha pages and article bodies were not fetched.
-- Discovery status: `pending`
-
 
 ### Research-operation audit
 
@@ -724,6 +701,47 @@ No pending orders.
 | [[securities/security_0a56aa634d077fe5796f|Security research for AMAT on 2026-09-03]] | [[securities/security_0a56aa634d077fe5796f|AMAT]] | succeeded | agent result:succeeded |
 | [[securities/security_c150f31c30afdb4a85f9|Security research for CROX on 2026-09-03]] | [[securities/security_c150f31c30afdb4a85f9|CROX]] | failed | retry exhausted:agent result:failed:Researched Crocs after the September lower-Bollinger breach, refreshed primary SEC evidence, updated the security page and structured state, and derived Buy / Initiate with Watch conviction and allocation ineligibility because expected-to-bear payoff and relationship gates fail. The operation fails closed because a page-hash correction caused the immutable assessment applier to append two versions for this source operation; the result validator requires exactly one. Recorded issue Crocs review produced two immutable assessment versions. No follow-up, strategy, signal, order, allocation or accounting change was made. |
 | [[securities/security_8b703a8adf5f864acaa4|Strategy research for strategy for PRX on 2026-09-03]] | [[securities/security_8b703a8adf5f864acaa4|strategy for PRX]] | skipped | superseded allocation plan:current allocation plan |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=iyY4mp_Wwf8) | [www.youtube.com](https://www.youtube.com/watch?v=iyY4mp_Wwf8) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=tEz6ZNTnIhE) | [www.youtube.com](https://www.youtube.com/watch?v=tEz6ZNTnIhE) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=_TcEfYlW4PA) | [www.youtube.com](https://www.youtube.com/watch?v=_TcEfYlW4PA) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=1vWDUqK43LQ) | [www.youtube.com](https://www.youtube.com/watch?v=1vWDUqK43LQ) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=Yf4UOWLO4Z8) | [www.youtube.com](https://www.youtube.com/watch?v=Yf4UOWLO4Z8) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=feZWLQ3m6Tg) | [www.youtube.com](https://www.youtube.com/watch?v=feZWLQ3m6Tg) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=kVzYGVJ8zUk) | [www.youtube.com](https://www.youtube.com/watch?v=kVzYGVJ8zUk) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=541z1_TbPhA) | [www.youtube.com](https://www.youtube.com/watch?v=541z1_TbPhA) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=u9HihTkeuWE) | [www.youtube.com](https://www.youtube.com/watch?v=u9HihTkeuWE) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=_ekDqR5sesE) | [www.youtube.com](https://www.youtube.com/watch?v=_ekDqR5sesE) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=hBgzwrzUcSQ) | [www.youtube.com](https://www.youtube.com/watch?v=hBgzwrzUcSQ) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=UemS1ZWHEEo) | [www.youtube.com](https://www.youtube.com/watch?v=UemS1ZWHEEo) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=5BWuvjGLMik) | [www.youtube.com](https://www.youtube.com/watch?v=5BWuvjGLMik) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=JaKyvaKzEnc) | [www.youtube.com](https://www.youtube.com/watch?v=JaKyvaKzEnc) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=V0RVelyBISk) | [www.youtube.com](https://www.youtube.com/watch?v=V0RVelyBISk) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=VlbqId196Z0) | [www.youtube.com](https://www.youtube.com/watch?v=VlbqId196Z0) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=h4DPero1j0w) | [www.youtube.com](https://www.youtube.com/watch?v=h4DPero1j0w) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=6PE9cXDif8s) | [www.youtube.com](https://www.youtube.com/watch?v=6PE9cXDif8s) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=Sij_v-mcZXQ) | [www.youtube.com](https://www.youtube.com/watch?v=Sij_v-mcZXQ) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=EavVNoG8ybw) | [www.youtube.com](https://www.youtube.com/watch?v=EavVNoG8ybw) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=J7YJYxsTL3U) | [www.youtube.com](https://www.youtube.com/watch?v=J7YJYxsTL3U) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=CriOPMkVZAM) | [www.youtube.com](https://www.youtube.com/watch?v=CriOPMkVZAM) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=3JP2Z34s-Ts) | [www.youtube.com](https://www.youtube.com/watch?v=3JP2Z34s-Ts) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=Xj4pTYsVSWQ) | [www.youtube.com](https://www.youtube.com/watch?v=Xj4pTYsVSWQ) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=MoB-so4Xkyw) | [www.youtube.com](https://www.youtube.com/watch?v=MoB-so4Xkyw) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=cR8PUEiA-d0) | [www.youtube.com](https://www.youtube.com/watch?v=cR8PUEiA-d0) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=y84ypzELP_s) | [www.youtube.com](https://www.youtube.com/watch?v=y84ypzELP_s) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=yfE0vGmHq1M) | [www.youtube.com](https://www.youtube.com/watch?v=yfE0vGmHq1M) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=UgR-uVQnPzc) | [www.youtube.com](https://www.youtube.com/watch?v=UgR-uVQnPzc) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=P0eWBecvT-8) | [www.youtube.com](https://www.youtube.com/watch?v=P0eWBecvT-8) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=1u5dMAKl_ks) | [www.youtube.com](https://www.youtube.com/watch?v=1u5dMAKl_ks) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=mql-YVSfdnE) | [www.youtube.com](https://www.youtube.com/watch?v=mql-YVSfdnE) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=eLvMIY72QtY) | [www.youtube.com](https://www.youtube.com/watch?v=eLvMIY72QtY) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=PRfXq-NlJqo) | [www.youtube.com](https://www.youtube.com/watch?v=PRfXq-NlJqo) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=055qQufQgog) | [www.youtube.com](https://www.youtube.com/watch?v=055qQufQgog) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=MCOEsAJHBCY) | [www.youtube.com](https://www.youtube.com/watch?v=MCOEsAJHBCY) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=RykBKMRDQY8) | [www.youtube.com](https://www.youtube.com/watch?v=RykBKMRDQY8) | cancelled | recorded source |
+| [Source discovery for seekingalpha.com on 2026-09-03](https://seekingalpha.com/trending-analysis) | [seekingalpha.com](https://seekingalpha.com/trending-analysis) | cancelled | recorded source |
+| [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=dyig1nxP--U) | [www.youtube.com](https://www.youtube.com/watch?v=dyig1nxP--U) | cancelled | recorded source |
+| [[securities/security_c120e9f26ebb6159adf9|Security research for ABBNY on 2026-09-03]] | [[securities/security_c120e9f26ebb6159adf9|ABBNY]] | failed | retry exhausted:agent result:failed:Revalidated ABB after the September 1 lower-Bollinger breach, refreshed hash-identical primary evidence, updated the security page and comparable assessment, and derived Hold / Watch with allocation ineligibility because expected return, base upside, payoff, margin-of-safety and accepted-relationship gates remain unsatisfied. The operation fails closed because the immutable assessment was sealed before its page's prior Sell / Avoid prose was corrected to the deterministic Hold / Watch result, leaving its stored page hash different from the final page. Recorded issue ABB assessment provenance does not match corrected final research page. No follow-up, strategy, signal, order, allocation or accounting change was made. |
+| [[securities/security_8b703a8adf5f864acaa4|Strategy research for strategy for PRX on 2026-09-03]] | [[securities/security_8b703a8adf5f864acaa4|strategy for PRX]] | skipped | superseded allocation plan:current allocation plan |
 
 ### Complete active queue
 
@@ -785,46 +803,28 @@ No pending orders.
 - Ready — [[ideas/idea_precision_biology_healthcare_automation|Idea research for Precision biology and healthcare automation on 2026-08-12]]
 - Ready — [[ideas/idea_ai_native_drug_discovery|Idea research for AI-native drug-discovery platforms on 2026-08-12]]
 - Ready — [[ideas/idea_precision_biology_healthcare_automation|Idea research for Precision biology and healthcare automation on 2026-08-12]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=iyY4mp_Wwf8)
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=tEz6ZNTnIhE)
 - Ready — [[securities/security_0cf8075039299094d614|Security research for KTOS on 2026-08-12]]
 - Ready — [[securities/security_1c055eb9b2bb1f5a8ff2|Security research for RIO on 2026-08-12]]
 - Ready — [[securities/security_33d9c44facc75c726c7d|Security research for NVDA on 2026-08-12]]
 - Ready — [[securities/security_664f93a7eaca72e76e9b|Security research for SPCX on 2026-08-12]]
 - Ready — [[ideas/idea_energy_refining|Idea research for Crude-product dislocation and refining margins on 2026-08-12]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-13](https://www.youtube.com/watch?v=_TcEfYlW4PA)
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-13](https://www.youtube.com/watch?v=1vWDUqK43LQ)
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-13](https://www.youtube.com/watch?v=Yf4UOWLO4Z8)
 - Ready — [[securities/security_66cdcf90aac0d83e76f3|Security research for ALB on 2026-08-13]]
 - Ready — [[securities/security_ce9b78a4d0773c950765|Security research for TSM on 2026-08-13]]
 - Ready — [[securities/security_d08d763780400dfbffce|Security research for SSUN.VI on 2026-08-13]]
 - Ready — [[securities/security_dfa34d4b9050964b465e|Security research for INTC on 2026-08-13]]
 - Ready — [[securities/security_eca976f0076a425ea1bb|Security research for PATH on 2026-08-13]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-13](https://www.youtube.com/watch?v=feZWLQ3m6Tg)
 - Ready — [[securities/security_2c779e81c27b78c556bb|Security research for TX on 2026-08-13]]
 - Ready — [[securities/security_a9eb9838940ef5ceaa0c|Security research for FLNC on 2026-08-13]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-15](https://www.youtube.com/watch?v=kVzYGVJ8zUk)
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-15](https://www.youtube.com/watch?v=541z1_TbPhA)
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-15](https://www.youtube.com/watch?v=u9HihTkeuWE)
 - Ready — [[securities/security_55c9ce2fdcd32dad6b8c|Security research for CRSR on 2026-08-15]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-15](https://www.youtube.com/watch?v=_ekDqR5sesE)
 - Ready — [[securities/security_6f9a1450edceb9307c9a|Security research for ANET on 2026-08-16]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-16](https://www.youtube.com/watch?v=hBgzwrzUcSQ)
 - Ready — [[securities/security_2010347f1a0a5ea60f47|Security research for SPOT on 2026-08-17]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-17](https://www.youtube.com/watch?v=UemS1ZWHEEo)
-- Ready — [[securities/security_c120e9f26ebb6159adf9|Security research for ABBNY on 2026-08-17]]
 - Ready — [[securities/security_4627aea1bf7d8943d3d8|Security research for SGML on 2026-08-17]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-18](https://www.youtube.com/watch?v=5BWuvjGLMik)
 - Ready — [[securities/security_7bf8f4c9cc12ae410e40|Security research for ABCL on 2026-08-18]]
 - Ready — [[securities/security_61567714298b9563d1a9|Security research for WTI on 2026-08-18]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-18](https://www.youtube.com/watch?v=JaKyvaKzEnc)
 - Ready — [[securities/security_7ca095d63423c55a90e3|Security research for RKLB on 2026-08-18]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-18](https://www.youtube.com/watch?v=V0RVelyBISk)
 - Ready — [[ideas/idea_digital_attention_gaming_ecosystems|Idea research for Digital attention, gaming, and consumer ecosystems on 2026-08-18]]
 - Ready — [[relationships/relationship_def43e5b4e13577e2b99|Relationship research for Critical minerals and structural copper scarcity to Freeport-McMoRan on 2026-08-19]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-19](https://www.youtube.com/watch?v=VlbqId196Z0)
 - Ready — [[ideas/idea_terafab_ai_industrial_stack|Idea research for Terafab and the vertically coordinated AI hardware stack on 2026-08-19]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-19](https://www.youtube.com/watch?v=h4DPero1j0w)
 - Blocked — [[daily-reports/daily-report_20260819|Daily podcast for Daily report for 2026-08-19 on 2026-08-19]]
 - Ready — [[securities/security_ef35e41886220d51c22c|Security research for ASML on 2026-08-19]]
 - Ready — [[ideas/idea_precision_biology_healthcare_automation|Relationship research for relationship between Precision biology and healthcare automation and DNA on 2026-08-19]]
@@ -844,25 +844,20 @@ No pending orders.
 - Ready — [[ideas/idea_digital_finance_crypto_rails|Idea research for Digital finance and crypto rails on 2026-08-20]]
 - Ready — [[ideas/idea_nearshoring_friendshoring_manufacturing|Relationship research for relationship between Nearshoring and friendshoring manufacturing capacity and TXN on 2026-08-20]]
 - Ready — [[ideas/idea_solar_storage_grid_flexibility_reset|Relationship research for relationship between Solar, storage, and grid-flexibility reset and CSIQ on 2026-08-20]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-20](https://www.youtube.com/watch?v=6PE9cXDif8s)
 - Ready — [[relationships/relationship_1655ac715c33506ec7da|Relationship research for Defense and aerospace replenishment cycle to RTX on 2026-08-20]]
-- Waiting — [[relationships/relationship_afac7205cd7e09800edf|Relationship research for Humanoid robotics and embodied AI to ABB on 2026-08-20]]
+- Blocked — [[relationships/relationship_afac7205cd7e09800edf|Relationship research for Humanoid robotics and embodied AI to ABB on 2026-08-20]]
 - Blocked — [[securities/security_96ba305ee7cd586bc348|Security research for FUC.F on 2026-08-20]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-21](https://www.youtube.com/watch?v=Sij_v-mcZXQ)
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-21](https://www.youtube.com/watch?v=EavVNoG8ybw)
 - Ready — [[ideas/idea_japan_sanaenomics_strategic_investment|Relationship research for relationship between Japan strategic-investment value chain and FUC.F on 2026-08-21]]
 - Ready — [[ideas/idea_digital_finance_crypto_rails|Relationship research for relationship between Digital finance and crypto rails and PYPL on 2026-08-21]]
 - Ready — [[ideas/idea_structural_silver_deficit|Relationship research for relationship between Structural silver deficit and SCCO on 2026-08-21]]
 - Ready — [[ideas/idea_critical_minerals_copper|Idea research for Critical minerals and structural copper scarcity on 2026-08-21]]
 - Blocked — [[securities/security_b2116dcf976c96974d7b|Security research for VALE on 2026-08-21]]
 - Waiting — [[ideas/idea_critical_minerals_copper|Relationship research for relationship between Critical minerals and structural copper scarcity and VALE on 2026-08-21]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-21](https://www.youtube.com/watch?v=J7YJYxsTL3U)
 - Ready — [[ideas/idea_defense_aerospace|Idea research for Defense and aerospace replenishment cycle on 2026-08-21]]
 - Ready — [[ideas/idea_critical_minerals_copper|Idea research for Critical minerals and structural copper scarcity on 2026-08-21]]
 - Ready — [[relationships/relationship_f2efab6050df0edcb762|Relationship research for Digital finance and crypto rails to Coinbase on 2026-08-21]]
 - Ready — [[ideas/idea_digital_finance_crypto_rails|Idea research for Digital finance and crypto rails on 2026-08-21]]
 - Ready — [[ideas/idea_precision_biology_healthcare_automation|Relationship research for relationship between Precision biology and healthcare automation and LH on 2026-08-21]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-22](https://www.youtube.com/watch?v=CriOPMkVZAM)
 - Ready — [[securities/security_37ddcbdaad296ad831f2|Security research for COIN on 2026-08-22]]
 - Ready — [[securities/security_567d0d575bbd30aaa91d|Security research for SSU.VI on 2026-08-22]]
 - Ready — [[securities/security_89969b7dac39b7db5661|Security research for YEC.F on 2026-08-22]]
@@ -870,17 +865,13 @@ No pending orders.
 - Ready — [[securities/security_f2b9760d847b2ba59324|Security research for ENPH on 2026-08-22]]
 - Ready — [[ideas/idea_critical_minerals_lithium|Idea research for Critical minerals and the lithium cycle on 2026-08-22]]
 - Ready — [[ideas/idea_digital_finance_crypto_rails|Relationship research for relationship between Digital finance and crypto rails and HOOD on 2026-08-22]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-23](https://www.youtube.com/watch?v=3JP2Z34s-Ts)
 - Ready — [[securities/security_9d4049ed6669a52815d6|Security research for SQM on 2026-08-23]]
 - Ready — [[securities/security_3a75fc1ccca2ee7c937a|Security research for QCOM on 2026-08-24]]
 - Waiting — [[relationships/relationship_9773364a04293a4febaf|Relationship research for Critical minerals and the lithium cycle to SQM on 2026-08-24]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-25](https://www.youtube.com/watch?v=Xj4pTYsVSWQ)
 - Ready — [[securities/security_3853e54c619d597dcaa1|Security research for NIB.F on 2026-08-25]]
 - Ready — [[securities/security_ad3b1f8f59fd599f079a|Security research for HOOD on 2026-08-25]]
 - Ready — [[securities/security_c86bb4e75658c07142cf|Security research for GOOGL on 2026-08-25]]
 - Ready — [[ideas/idea_critical_minerals_copper|Relationship research for relationship between Critical minerals and structural copper scarcity and VALE on 2026-08-25]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-26](https://www.youtube.com/watch?v=MoB-so4Xkyw)
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-26](https://www.youtube.com/watch?v=cR8PUEiA-d0)
 - Ready — [[securities/security_18a3ab0ee6086ee85d0f|Security research for ETN on 2026-08-26]]
 - Ready — [[securities/security_488a9d7f7a8573597724|Security research for PWR on 2026-08-26]]
 - Ready — [[securities/security_c9a37d277445869a8809|Security research for RBLX on 2026-08-26]]
@@ -889,10 +880,6 @@ No pending orders.
 - Ready — [[securities/security_6ad1af8d10d6276a0221|Security research for SCCO on 2026-08-28]]
 - Ready — [[securities/security_96ba305ee7cd586bc348|Security research for FUC.F on 2026-08-28]]
 - Ready — [[securities/security_ad5917642acbba28c1f2|Security research for TDY on 2026-08-28]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-28](https://www.youtube.com/watch?v=y84ypzELP_s)
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-28](https://www.youtube.com/watch?v=yfE0vGmHq1M)
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-28](https://www.youtube.com/watch?v=UgR-uVQnPzc)
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-28](https://www.youtube.com/watch?v=P0eWBecvT-8)
 - Ready — [[securities/security_1e8fbdb0f45f2b413e00|Opportunity research for Market alert for PYPL on 2026-08-28]]
 - Ready — [[inbox/market-security_1e8fbdb0f45f2b413e00-bollinger_below_lower-ebe2ed8f558e|Wiki ingest for PYPL — Bollinger below lower on 2026-08-28]]
 - Ready — [[securities/security_1e8fbdb0f45f2b413e00|Opportunity research for Market alert for PYPL on 2026-08-28]]
@@ -906,14 +893,9 @@ No pending orders.
 - Ready — [[ideas/idea_commercial_space_infrastructure|Relationship research for relationship between Commercial space infrastructure and geospatial data and PL on 2026-08-28]]
 - Ready — [[securities/security_59304f90c440def31dc5|Security research for RTX on 2026-08-28]]
 - Ready — [[securities/security_b1f2c48e1a744f5ecf67|Security research for LH on 2026-08-28]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-29](https://www.youtube.com/watch?v=1u5dMAKl_ks)
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-29](https://www.youtube.com/watch?v=mql-YVSfdnE)
 - Ready — [[securities/security_099561384c0f5e697727|Opportunity research for Market alert for CSIQ on 2026-08-29]]
 - Ready — [[inbox/market-security_099561384c0f5e697727-rsi_oversold-2dc6ad84d3e9|Wiki ingest for CSIQ — RSI oversold on 2026-08-29]]
 - Ready — [[securities/security_3e597863f00753e8c65c|Security research for BE on 2026-08-29]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-30](https://www.youtube.com/watch?v=eLvMIY72QtY)
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-30](https://www.youtube.com/watch?v=PRfXq-NlJqo)
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-31](https://www.youtube.com/watch?v=055qQufQgog)
 - Ready — [[inbox/market-security_099561384c0f5e697727-bollinger_below_lower-f9595b47800c|Wiki ingest for CSIQ — Bollinger below lower on 2026-08-31]]
 - Ready — [[securities/security_4b61970aa8f574446819|Opportunity research for Market alert for GEV on 2026-08-31]]
 - Ready — [[inbox/market-security_4b61970aa8f574446819-volume_anomaly-89ebcd001471|Wiki ingest for GEV — Volume anomaly on 2026-08-31]]
@@ -949,8 +931,6 @@ No pending orders.
 - Ready — [[ideas/idea_energy_refining|Idea research for Crude-product dislocation and refining margins on 2026-08-31]]
 - Ready — [[ideas/idea_humanoid_robotics_embodied_ai_components|Relationship research for relationship between Humanoid robotics and embodied-AI component supply chain and 108490 on 2026-09-01]]
 - Ready — [[ideas/idea_humanoid_robotics_embodied_ai_components|Idea research for Humanoid robotics and embodied-AI component supply chain on 2026-09-01]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-09-01](https://www.youtube.com/watch?v=MCOEsAJHBCY)
-- Ready — [Wiki ingest for www.youtube.com on 2026-09-02](https://www.youtube.com/watch?v=RykBKMRDQY8)
 - Ready — [[securities/security_0a56aa634d077fe5796f|Opportunity research for Market alert for AMAT on 2026-09-02]]
 - Ready — [[inbox/market-security_0a56aa634d077fe5796f-bollinger_below_lower-23f7aba2ed9a|Wiki ingest for AMAT — Bollinger below lower on 2026-09-02]]
 - Ready — [[securities/security_97f38b2cb2d5ef127f5a|Opportunity research for Market alert for PL on 2026-09-02]]
@@ -975,11 +955,13 @@ No pending orders.
 - Ready — [[ideas/idea_digital_finance_crypto_rails|Relationship research for relationship between Digital finance and crypto rails and SOFI on 2026-09-02]]
 - Ready — [[securities/security_c150f31c30afdb4a85f9|Opportunity research for Market alert for CROX on 2026-09-02]]
 - Ready — [[inbox/market-security_c150f31c30afdb4a85f9-bollinger_below_lower-3e9a89d38f5c|Wiki ingest for CROX — Bollinger below lower on 2026-09-02]]
-- Ready — [Source discovery for seekingalpha.com on 2026-09-03](https://seekingalpha.com/trending-analysis)
 - Ready — [[securities/security_59304f90c440def31dc5|Opportunity research for Market alert for RTX on 2026-09-03]]
 - Ready — [[inbox/market-security_59304f90c440def31dc5-bollinger_below_lower-cc8dfbfeed95|Wiki ingest for RTX — Bollinger below lower on 2026-09-03]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-09-03](https://www.youtube.com/watch?v=dyig1nxP--U)
 - Ready — [[ideas/idea_ai_compute_networking_hyperscaler_monetization|Relationship research for relationship between AI compute, networking, and hyperscaler monetization and AMAT on 2026-09-03]]
+- Ready — [[securities/security_96ba305ee7cd586bc348|Opportunity research for Market alert for FUC.F on 2026-09-03]]
+- Ready — [[inbox/market-security_96ba305ee7cd586bc348-macd_cross_above_signal-524af495aaf3|Wiki ingest for FUC.F — MACD cross above signal on 2026-09-03]]
+- Ready — [[securities/security_0a56aa634d077fe5796f|Security research for AMAT on 2026-09-03]]
+- Ready — [[securities/security_bdc2f87dadf134760c3a|Security research for PLTR on 2026-09-03]]
 - Ready — [[securities/security_8b703a8adf5f864acaa4|Strategy research for strategy for PRX on 2026-09-03]]
 
 ### Open issues and delivery failures
@@ -1006,8 +988,9 @@ No pending orders.
 - Error — [[system-status|Hermes operation validation failed: Daily podcast for Daily report for 2026-08-05 on 2026-08-05]]: Hermes exited with status 2; agent result is missing or a symlink: data/runs/Daily report for 2026-08-05/Daily podcast for Daily report for 2026-08-05 on 2026-08-05/agent\_result.json
 - Warning — [[system-status|Daily podcast blocked: Daily report for 2026-08-19]]: agent\_result:blocked:Blocked because the frozen payload requires data/wiki/podcasts/daily-podcast\_20260819T221156Z.md while the deterministic podcast validator binds daily cycle Daily report for 2026-08-19 to data/wiki/podcasts/daily-podcast\_20260819T212147Z.md. The required page therefore failed deterministic preflight before rendering. The candidate slate selected Twist Bioscience and Ginkgo Bioworks for one synthetic-biology-economics chapter and Coinbase for one crypto-rails chapter; Nidec…
 - Warning — [[system-status|Daily podcast failed: Daily report for 2026-08-06]]: retry\_exhausted:agent\_validation\_failed:Hermes operation validation failed: Daily podcast for Daily report for 2026-08-06 on 2026-08-06
+- Error — [[system-status|ABB assessment provenance does not match corrected final research page]]: Operation Security research for ABBNY on 2026-09-03 accepted immutable assessment assessment\_a3946a163695f1a9f51f while the security page still carried the prior prose disposition. Deterministic derivation changed the current disposition from Sell / Avoid to Hold / Watch at the lower mark, so the page and structured security summary were corrected after the immutable assessment was written. The current assessment and final page now agree economically, and exactly one assessment version names th…
 - Error — [[system-status|Hermes operation validation failed: Daily podcast for Daily report for 2026-08-06 on 2026-08-06]]: cannot restore rejected path data/wiki/daily-reports/daily-report\_20260806.md: pre-run path cannot be restored because Git metadata is unavailable; daily podcast spoken transcript must label paper trading
-- Error — [[system-status|Hermes operation validation failed: Security research for ABBNY on 2026-08-17]]: files\_changed claims paths absent from the actual delta: \['data/operations/operations\_TODO.csv'\]
+- Error — [[system-status|Hermes operation validation failed: Security research for ABBNY on 2026-09-03]]: files\_changed claims paths absent from the actual delta: \['data/operations/operations\_TODO.csv'\]
 - Error — [[system-status|Hermes operation validation failed: Daily podcast for Daily report for 2026-08-17 on 2026-08-17]]: non-successful daily podcast must not retain a transcript page
 - Error — [[system-status|Hermes operation validation failed: Quick check research for TWST on 2026-08-05]]: agent result was written before completed change: data/runs/Daily report for 2026-08-12/Quick check research for TWST on 2026-08-05/command\_audit.json; commands\_run does not exactly match deterministic CLI audit receipts
 - Warning — [[system-status|Daily podcast failed: Daily report for 2026-08-05]]: retry\_exhausted:agent\_validation\_failed:Hermes operation validation failed: Daily podcast for Daily report for 2026-08-05 on 2026-08-05
