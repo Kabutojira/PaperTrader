@@ -380,9 +380,10 @@ def migrate_issues(repository_root: Path) -> Mapping[str, int]:
             migrated += 1
         elif row["issue_code"] == "daily_fx_retrieval_failed":
             fx_pair = FX_PAIR.search(f"{row['title']} {row['description']}")
-            if fx_pair and (
-                row["entity_type"], row["entity_id"]
-            ) != ("fx_pair", f"{fx_pair.group(1)}_{fx_pair.group(2)}"):
+            if fx_pair and (row["entity_type"], row["entity_id"]) != (
+                "fx_pair",
+                f"{fx_pair.group(1)}_{fx_pair.group(2)}",
+            ):
                 row["entity_type"] = "fx_pair"
                 row["entity_id"] = f"{fx_pair.group(1)}_{fx_pair.group(2)}"
                 migrated += 1

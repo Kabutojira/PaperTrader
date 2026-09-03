@@ -544,9 +544,7 @@ def test_prepare_skips_cleared_stale_indicator_opportunity(
     history = read_table(sandbox_repository, "operations_history")
     assert history[0]["operation_id"] == operation_id
     assert history[0]["terminal_reason"] == "indicator_condition_cleared:2026-08-01"
-    assert dispositions == (
-        f"{operation_id}:skipped:indicator_condition_cleared:2026-08-01",
-    )
+    assert dispositions == (f"{operation_id}:skipped:indicator_condition_cleared:2026-08-01",)
 
 
 def test_prepare_keeps_newest_same_trigger_and_archives_older_request(

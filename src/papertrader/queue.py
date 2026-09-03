@@ -1112,9 +1112,7 @@ def _indicator_work(repository_root: Path, operation: Operation) -> _IndicatorWo
         if (
             not isinstance(security_id, str)
             or not isinstance(trigger, str)
-            or _indicator_packet_cause(
-                repository_root, source_refs[0], security_id=security_id
-            )
+            or _indicator_packet_cause(repository_root, source_refs[0], security_id=security_id)
             != trigger
         ):
             return None

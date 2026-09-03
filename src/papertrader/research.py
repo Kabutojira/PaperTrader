@@ -921,9 +921,7 @@ def enqueue_assessment_issue_recovery(
             operation_type="security_research",
             entity_type="security",
             entity_id=security_id,
-            dedupe_key=(
-                f"security_research:{security_id}:assessment-issue-recovery:{cause_hash}"
-            ),
+            dedupe_key=(f"security_research:{security_id}:assessment-issue-recovery:{cause_hash}"),
             prompt=(
                 f"Repair the unresolved assessment for {security_id} with current primary "
                 "evidence and explicit source-operation provenance."

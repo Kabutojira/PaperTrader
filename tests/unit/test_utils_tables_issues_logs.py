@@ -141,9 +141,12 @@ def test_issue_reconciliation_requires_later_canonical_recovery(
         entity_id="security_fixture",
         now=failed_at,
     )
-    assert reconcile_issues(
-        sandbox_repository, as_of=failed_at + timedelta(minutes=1)
-    )["resolved_count"] == 0
+    assert (
+        reconcile_issues(sandbox_repository, as_of=failed_at + timedelta(minutes=1))[
+            "resolved_count"
+        ]
+        == 0
+    )
     write_table(
         sandbox_repository,
         "market_latest",
@@ -167,9 +170,7 @@ def test_issue_reconciliation_requires_later_canonical_recovery(
         ],
     )
 
-    result = reconcile_issues(
-        sandbox_repository, as_of=failed_at + timedelta(hours=2)
-    )
+    result = reconcile_issues(sandbox_repository, as_of=failed_at + timedelta(hours=2))
 
     row = read_table(sandbox_repository, "issues")[0]
     assert result["resolved_issue_ids"] == (issue_id,)
@@ -208,9 +209,7 @@ def test_issue_reconciliation_closes_recovered_fx_pair(sandbox_repository: Path)
         ),
     )
 
-    result = reconcile_issues(
-        sandbox_repository, as_of=failed_at + timedelta(hours=2)
-    )
+    result = reconcile_issues(sandbox_repository, as_of=failed_at + timedelta(hours=2))
 
     row = read_table(sandbox_repository, "issues")[0]
     assert result["resolved_issue_ids"] == (issue_id,)
