@@ -1,0 +1,104 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_0a56aa634d077fe5796f",
+    "papertrader research source record --request data/runs/daily-20260903T122855Z/01M0F2AG580YSXVX9M3HXX2YAS/source_q3_results_recheck_request.json",
+    "papertrader research source record --request data/runs/daily-20260903T122855Z/01M0F2AG580YSXVX9M3HXX2YAS/source_q3_10q_request.json",
+    "papertrader research source record --request data/runs/daily-20260903T122855Z/01M0F2AG580YSXVX9M3HXX2YAS/source_submissions_refresh_request.json",
+    "papertrader wiki sync-technical-charts",
+    "papertrader research security upsert --request data/runs/daily-20260903T122855Z/01M0F2AG580YSXVX9M3HXX2YAS/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260903T122855Z/01M0F2AG580YSXVX9M3HXX2YAS/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260903T122855Z/01M0F2AG580YSXVX9M3HXX2YAS/assessment_upsert_retry01_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260903T122855Z/01M0F2AG580YSXVX9M3HXX2YAS/assessment_upsert_retry02_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260903T122855Z/01M0F2AG580YSXVX9M3HXX2YAS/enqueue_ai_compute_relationship_request.json",
+    "papertrader research security-context --security-id security_0a56aa634d077fe5796f",
+    "papertrader wiki lint --strict",
+    "papertrader queue validate",
+    "papertrader schema validate --strict"
+  ],
+  "daily_report_items": [
+    "Applied Materials completed a full review after the lower-Bollinger alert. Record fiscal-Q3 execution supports the thesis, but USD 438.46 is near USD 439 weighted and USD 448 base value; canonical status is Hold / Watch and allocation-ineligible. One dependent AI-compute relationship review was queued."
+  ],
+  "evidence": [
+    {
+      "claim": "The fiscal-Q3 Form 10-Q reports USD 9.115 billion revenue, USD 3.075 billion GAAP operating income, USD 3.17 diluted EPS, substantial net liquidity, customer concentration and material China/export-control exposure.",
+      "observed_at": "2026-09-03T12:34:21Z",
+      "source": "source_amat_q3_2026_10q",
+      "source_hash": "01ac4a9a2f6765fd3a498937583b94afb05b8d05733cea78319fea0889fd00c1",
+      "url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026058235/amat-20260726.htm"
+    },
+    {
+      "claim": "The fiscal-Q3 release reports record revenue and margin, USD 3.037 billion operating cash flow and fiscal-Q4 non-GAAP diluted EPS guidance of USD 4.02 plus or minus USD 0.20.",
+      "observed_at": "2026-09-03T12:34:21Z",
+      "source": "source_amat_q3_2026_results",
+      "source_hash": "1b4661e02cf221ad0aa2d855aa8042c89206b2abc70e73513a7452b3484e864a",
+      "url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026056699/exhibit991q32026earningsre.htm"
+    },
+    {
+      "claim": "The canonical USD 438.4599914550781 mark produces bear/base/bull returns of -34.77%, 2.18% and 47.33%; the probability-weighted expected return is 0.12% and deterministic eligibility remains ineligible.",
+      "source": "data/market/latest.csv and accepted assessment assessment_5112d6834a7a34c32dd7"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M1KMKR4GAGEHKCHDEA8ANNMQ.json",
+    "data/runs/daily-20260903T122855Z/01M0F2AG580YSXVX9M3HXX2YAS/assessment_upsert_request.json",
+    "data/runs/daily-20260903T122855Z/01M0F2AG580YSXVX9M3HXX2YAS/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260903T122855Z/01M0F2AG580YSXVX9M3HXX2YAS/assessment_upsert_retry02_request.json",
+    "data/runs/daily-20260903T122855Z/01M0F2AG580YSXVX9M3HXX2YAS/enqueue_ai_compute_relationship_request.json",
+    "data/runs/daily-20260903T122855Z/01M0F2AG580YSXVX9M3HXX2YAS/security_upsert_request.json",
+    "data/runs/daily-20260903T122855Z/01M0F2AG580YSXVX9M3HXX2YAS/source_q3_10q_request.json",
+    "data/runs/daily-20260903T122855Z/01M0F2AG580YSXVX9M3HXX2YAS/source_q3_results_recheck_request.json",
+    "data/runs/daily-20260903T122855Z/01M0F2AG580YSXVX9M3HXX2YAS/source_submissions_refresh_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_0a56aa634d077fe5796f.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0F2AG580YSXVX9M3HXX2YAS",
+  "operations_created": [
+    "01M1KMKR4GAGEHKCHDEA8ANNMQ"
+  ],
+  "status": "succeeded",
+  "summary": "Completed one full Applied Materials security review. Fiscal-Q3 filing evidence supports the business thesis, but the USD 438.46 mark is near USD 439 weighted and USD 448 base fair value. The accepted assessment is Hold / Watch and allocation-ineligible because expected return, base upside, downside payoff and the accepted-relationship gate do not clear. Enqueued one bounded AI-compute relationship review; no strategy, signal, order, allocation or accounting state changed.",
+  "validation": {
+    "checks": [
+      "Security context confirms assessment_5112d6834a7a34c32dd7 links predecessor assessment_3102e4b777989861e1b5, source operation, result path, schema version 2 and current page hash.",
+      "Canonical assessment is complete, valuation-supported, Hold / Watch, and allocation-ineligible with exact deterministic frontier reasons.",
+      "Current accepted relationships are empty; exactly one dependent review was enqueued for the only retained candidate and no idea follow-up was required.",
+      "Strict wiki lint passed.",
+      "Queue validation passed.",
+      "Strict schema validation passed.",
+      "No allocation, order, execution, cash, portfolio or performance path changed."
+    ],
+    "passed": true
+  },
+  "visualization_review": {
+    "charts": [
+      {
+        "chart_id": "amat-fiscal-2026-quarterly-performance",
+        "page_path": "data/wiki/securities/security_0a56aa634d077fe5796f.md"
+      },
+      {
+        "chart_id": "amat-scenario-values-20260903",
+        "page_path": "data/wiki/securities/security_0a56aa634d077fe5796f.md"
+      }
+    ],
+    "completed": true,
+    "omissions": [
+      {
+        "dataset": "Like-for-like peer valuation",
+        "reason": "The bounded review did not establish a primary-evidence peer set sharing one as-of date, earnings definition and currency basis.",
+        "reason_code": "insufficient_comparability"
+      },
+      {
+        "dataset": "Balance-sheet snapshot",
+        "reason": "Current cash, investments and debt support resilience but do not change the valuation conclusion beyond the tabular evidence and scenario assumptions.",
+        "reason_code": "not_decision_relevant"
+      }
+    ]
+  }
+}

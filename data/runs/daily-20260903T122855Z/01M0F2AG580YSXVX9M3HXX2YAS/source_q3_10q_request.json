@@ -1,0 +1,18 @@
+{
+  "source_id": "source_amat_q3_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026058235/amat-20260726.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026058235/amat-20260726.htm",
+  "source_type": "regulator_filing",
+  "title": "Applied Materials fiscal Q3 2026 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "01ac4a9a2f6765fd3a498937583b94afb05b8d05733cea78319fea0889fd00c1",
+  "related_entity_ids": "idea_ai_compute_networking_hyperscaler_monetization|security_0a56aa634d077fe5796f",
+  "checked_at": "2026-09-03T12:34:21Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Fiscal Q3 revenue was USD 9.115 billion, operating income was USD 3.075 billion, and diluted EPS was USD 3.17.",
+  "summary": "The filed 10-Q confirms accelerating fiscal-2026 quarterly revenue and operating income, USD 7.037 billion cash plus USD 7.464 billion investments, USD 6.444 billion debt, customer concentration, and material China and export-control exposure.",
+  "run_id": "daily-20260903T122855Z"
+}

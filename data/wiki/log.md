@@ -2997,3 +2997,12 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Published investor decision snapshot `decision_5e7bac4afb088c8d8e73`.
 
 - Generated canonical [[daily-reports/daily-report_20260903]] for run `daily-20260903T095655Z`.
+
+## [2026-09-03] update | Applied Materials full security review after lower Bollinger-band breach
+
+- Updated [[securities/security_0a56aa634d077fe5796f]] with the filed fiscal-Q3 Form 10-Q,
+  complete earnings-multiple scenarios, explicit idea-map classifications, and two analytical
+  visual-evidence datasets.
+- Reclassified the prior unsupported result to Hold / Avoid: the USD 438.46 mark is close to the
+  USD 439 weighted and USD 448 base values, but expected return, base upside, bear-case payoff,
+  margin of safety, timing, and accepted-relationship gates remain unsatisfied.

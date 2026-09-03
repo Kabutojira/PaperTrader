@@ -1,0 +1,18 @@
+{
+  "source_id": "source_amat_sec_submissions_20260819",
+  "url": "https://data.sec.gov/submissions/CIK0000006951.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0000006951.json",
+  "source_type": "regulator_index",
+  "title": "Applied Materials SEC submissions index checked 2026-09-03",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "8b8404a725b4fcd5314eaea04b8bbfc73e62423d0ca20255c4a2aa7eec916993",
+  "related_entity_ids": "security_0a56aa634d077fe5796f",
+  "checked_at": "2026-09-03T12:34:21Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "The index lists the August 20 fiscal-Q3 Form 10-Q and August 27 board-appointment Form 8-K after the August 13 results filing.",
+  "summary": "The current SEC index confirms the fiscal-Q3 10-Q as the latest substantive financial filing; the later August 27 Form 8-K only appoints a director and does not alter the operating or valuation thesis.",
+  "run_id": "daily-20260903T122855Z"
+}
