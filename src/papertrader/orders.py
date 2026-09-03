@@ -386,7 +386,11 @@ def _baseline_order_legs(
     from papertrader.allocation import latest_allocation_target
 
     target = latest_allocation_target(repository_root, strategy_id)
-    if target is None or target["allocation_plan_id"] != strategy["allocation_plan_id"]:
+    if (
+        target is None
+        or target["allocation_plan_id"] != strategy["allocation_plan_id"]
+        or target["allocation_intent_id"] != strategy["allocation_intent_id"]
+    ):
         raise OrderError("baseline strategy has no current allocation target")
     reference = _reference_map(references).get(
         (canonical.security_id, canonical.provider_contract_id)
@@ -396,8 +400,14 @@ def _baseline_order_legs(
     unit_value = reference.price * reference.fx_rate_to_base * canonical.contract_multiplier
     if unit_value <= 0:
         raise OrderError("baseline order unit value must be positive")
-    target_value = required_decimal(target["target_value_base"], label="baseline target value")
-    target_quantity = _whole_target_quantity(target_value, unit_value)
+    target_quantity = (
+        required_decimal(target["target_quantity"], label="baseline target quantity")
+        if target["target_quantity"]
+        else required_decimal(target["target_value_base"], label="baseline target value")
+        / unit_value
+    )
+    if target_quantity < 0 or target_quantity != target_quantity.to_integral_value():
+        raise OrderError("baseline target quantity must be a non-negative whole number")
     current_quantity = sum(
         (
             position.quantity
@@ -434,10 +444,14 @@ def _require_baseline_target(
     *,
     now: datetime,
 ) -> None:
-    from papertrader.allocation import assessment_payoff_reasons, latest_allocation_target
+    from papertrader.allocation import latest_allocation_target
 
     target = latest_allocation_target(repository_root, strategy["strategy_id"])
-    if target is None or target["allocation_plan_id"] != strategy["allocation_plan_id"]:
+    if (
+        target is None
+        or target["allocation_plan_id"] != strategy["allocation_plan_id"]
+        or target["allocation_intent_id"] != strategy["allocation_intent_id"]
+    ):
         raise OrderError("baseline strategy has no current allocation target")
     plan_time = parse_timestamp(target["as_of"])
     assert plan_time is not None
@@ -464,15 +478,8 @@ def _require_baseline_target(
     )
     if assessment is None or assessment["assessed_at"] != target["assessment_as_of"]:
         raise OrderError("baseline order assessment is missing or superseded")
-    if disposition in {"open", "increase"} and (
-        assessment["hard_blockers"] or assessment["eligibility"] not in {"baseline", "conviction"}
-    ):
-        raise OrderError("blocked assessment cannot increase baseline exposure")
-    payoff_reasons = assessment_payoff_reasons(assessment, settings)
-    if disposition in {"open", "increase"} and payoff_reasons:
-        raise OrderError(
-            "baseline assessment fails configured payoff gates: " + "|".join(payoff_reasons)
-        )
+    if disposition in {"open", "increase"} and target["tier"] not in {"full", "starter"}:
+        raise OrderError("non-investable live valuation tier cannot increase baseline exposure")
     leg = legs[0]
     reference = _reference_map(references).get((leg.security_id, leg.provider_contract_id))
     if reference is None:
@@ -480,13 +487,18 @@ def _require_baseline_target(
     unit_value = reference.price * reference.fx_rate_to_base * leg.contract_multiplier
     if unit_value <= 0:
         raise OrderError("baseline order unit value must be positive")
-    target_value = required_decimal(target["target_value_base"], label="baseline target value")
+    target_quantity = (
+        required_decimal(target["target_quantity"], label="baseline target quantity")
+        if target["target_quantity"]
+        else required_decimal(target["target_value_base"], label="baseline target value")
+        / unit_value
+    )
+    target_value = target_quantity * unit_value
     risk_budget = required_decimal(strategy["risk_budget_pct"], label="strategy risk budget")
     if disposition in {"open", "increase"} and target_value > (
         risk_state.equity_base * risk_budget / Decimal("100")
     ):
         raise OrderError("baseline target exceeds the strategy risk budget")
-    target_quantity = _whole_target_quantity(target_value, unit_value)
     current_quantity = sum(
         (
             position.quantity
@@ -506,9 +518,12 @@ def _require_baseline_target(
         raise OrderError("baseline allocation target requires no order")
     if leg.action != expected_action or leg.quantity != abs(required_delta):
         raise OrderError("baseline order quantity is not the deterministic target quantity")
-    if required_decimal(target["target_weight_pct"], label="baseline target weight") > (
-        settings.allocation.maximum_baseline_position_pct
-    ):
+    position_cap = (
+        required_decimal(target["position_cap_pct"], label="baseline position cap")
+        if target["position_cap_pct"]
+        else settings.allocation.maximum_baseline_position_pct
+    )
+    if target_value > risk_state.equity_base * position_cap / Decimal("100"):
         raise OrderError("baseline target exceeds the configured position cap")
     plan_rows = read_table(repository_root, "allocation_targets")
     if any(row["allocation_plan_id"] != target["allocation_plan_id"] for row in plan_rows):
@@ -555,9 +570,12 @@ def create_signal(
     normalized_rationale = " ".join(rationale.split())
     if not normalized_rationale:
         raise OrderError("signal rationale is required")
+    signal_identity = [strategy_id]
+    if strategy["allocation_intent_id"]:
+        signal_identity.append(strategy["allocation_intent_id"])
     signal_id = stable_id(
         "signal",
-        strategy_id,
+        *signal_identity,
         signal_type,
         format_timestamp(as_of),
         content_hash(normalized_rationale),
@@ -566,6 +584,7 @@ def create_signal(
     row = {
         "signal_id": signal_id,
         "strategy_id": strategy_id,
+        "allocation_intent_id": strategy["allocation_intent_id"],
         "signal_type": signal_type,
         "created_at": format_timestamp(instant),
         "expires_at": format_timestamp(expiry),
@@ -609,12 +628,13 @@ def create_signal(
     if strategy["status"] not in {"ready", "active"}:
         raise OrderError(f"strategy {strategy_id} is not ready or active")
     if strategy["sleeve"] == "baseline":
-        from papertrader.allocation import assessment_payoff_reasons, latest_allocation_target
+        from papertrader.allocation import latest_allocation_target
 
         target = latest_allocation_target(repository_root, strategy_id)
         if (
             target is None
             or target["allocation_plan_id"] != strategy["allocation_plan_id"]
+            or target["allocation_intent_id"] != strategy["allocation_intent_id"]
             or target["disposition"] not in {"open", "increase", "reduce", "close"}
         ):
             raise OrderError("baseline signal requires a material current allocation target")
@@ -640,16 +660,11 @@ def create_signal(
         )
         if assessment is None or assessment["assessed_at"] != target["assessment_as_of"]:
             raise OrderError("baseline signal assessment is missing or superseded")
-        if target["disposition"] in {"open", "increase"} and (
-            assessment["hard_blockers"]
-            or assessment["eligibility"] not in {"baseline", "conviction"}
-        ):
-            raise OrderError("blocked assessment cannot increase baseline exposure")
-        payoff_reasons = assessment_payoff_reasons(assessment, settings)
-        if target["disposition"] in {"open", "increase"} and payoff_reasons:
-            raise OrderError(
-                "baseline assessment fails configured payoff gates: " + "|".join(payoff_reasons)
-            )
+        if target["disposition"] in {"open", "increase"} and target["tier"] not in {
+            "full",
+            "starter",
+        }:
+            raise OrderError("non-investable live valuation tier cannot create a baseline signal")
     for candidate in rows:
         if candidate["strategy_id"] == strategy_id and candidate["status"] == "ready":
             candidate["status"] = "cancelled"
@@ -786,11 +801,13 @@ def create_paper_order(
     signal = next((row for row in signals if row["signal_id"] == signal_id), None)
     if signal is None or signal["strategy_id"] != strategy_id:
         raise OrderError(f"signal {signal_id} does not belong to strategy {strategy_id}")
+    order_row["allocation_intent_id"] = signal["allocation_intent_id"]
     if existing_order is not None:
         immutable_fields = {
             "order_id",
             "signal_id",
             "strategy_id",
+            "allocation_intent_id",
             "fill_policy",
             "order_type",
             "limit_price",
@@ -1145,7 +1162,7 @@ def cancel_unauthorized_baseline_orders(
     while leaving conviction and reduction orders untouched.
     """
 
-    from papertrader.allocation import assessment_payoff_reasons, latest_allocation_target
+    from papertrader.allocation import latest_allocation_target
 
     instant = ensure_utc(now)
     strategies = {row["strategy_id"]: row for row in read_table(repository_root, "strategies")}
@@ -1173,8 +1190,18 @@ def cancel_unauthorized_baseline_orders(
         target = latest_allocation_target(repository_root, strategy["strategy_id"])
         if strategy["status"] not in {"ready", "active"}:
             reason = "strategy_not_active"
-        elif target is None or target["allocation_plan_id"] != strategy["allocation_plan_id"]:
-            reason = "allocation_plan_superseded"
+        elif target is None or not (
+            (
+                order["allocation_intent_id"]
+                and order["allocation_intent_id"] == strategy["allocation_intent_id"]
+                and order["allocation_intent_id"] == target["allocation_intent_id"]
+            )
+            or (
+                not order["allocation_intent_id"]
+                and strategy["allocation_plan_id"] == target["allocation_plan_id"]
+            )
+        ):
+            reason = "allocation_intent_superseded"
         elif target["disposition"] not in {"open", "increase", "hold"}:
             reason = f"allocation_disposition_{target['disposition']}"
         else:
@@ -1189,14 +1216,8 @@ def cancel_unauthorized_baseline_orders(
                 assessment = assessments.get(strategy["security_id"])
                 if assessment is None or assessment["assessed_at"] != target["assessment_as_of"]:
                     reason = "assessment_superseded"
-                elif assessment["hard_blockers"]:
-                    reason = "assessment_hard_blocked"
-                elif assessment["eligibility"] not in {"baseline", "conviction"}:
-                    reason = "assessment_ineligible"
-                else:
-                    payoff_reasons = assessment_payoff_reasons(assessment, settings)
-                    if payoff_reasons:
-                        reason = "payoff_gate_" + "_and_".join(payoff_reasons)
+                elif target["tier"] not in {"full", "starter"}:
+                    reason = "live_valuation_not_investable"
         if reason:
             cancel_paper_order(repository_root, order["order_id"])
             cancelled.append((order["order_id"], reason))

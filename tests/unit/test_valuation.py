@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+from dataclasses import replace
 from datetime import UTC, datetime
 from decimal import Decimal
 from pathlib import Path
@@ -16,9 +17,15 @@ from papertrader.queue import (
     enqueue_operation,
     prepare_queue,
 )
+from papertrader.ratings import canonical_rating
 from papertrader.research import ResearchStateError, upsert_assessment
 from papertrader.tables import read_table, write_table
-from papertrader.valuation import validate_research_rubrics, valuation_templates
+from papertrader.valuation import (
+    ValuationError,
+    live_valuation_projection,
+    validate_research_rubrics,
+    valuation_templates,
+)
 
 NOW = datetime(2026, 7, 24, 22, tzinfo=UTC)
 TEMPLATES = {
@@ -173,6 +180,499 @@ def _seed(repository: Path) -> None:
             }
         ],
     )
+
+
+def _live_projection(
+    repository: Path,
+    settings: Settings,
+    *,
+    assessment_changes: dict[str, str] | None = None,
+    relationship_accepted: bool = True,
+    evidence_fresh: bool = True,
+) -> dict[str, str]:
+    assert upsert_assessment(
+        repository,
+        settings,
+        _request("mature_compounder", "dcf"),
+        now=NOW,
+    )
+    assessment = read_table(repository, "security_assessments")[0]
+    if assessment_changes:
+        assessment = assessment | assessment_changes
+    return live_valuation_projection(
+        repository,
+        settings,
+        _security(),
+        assessment,
+        now=NOW,
+        relationship_accepted=relationship_accepted,
+        evidence_fresh=evidence_fresh,
+    )
+
+
+def test_live_projection_uses_adjusted_mark_and_exact_full_boundaries(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    _seed(sandbox_repository)
+
+    projection = _live_projection(sandbox_repository, sandbox_settings)
+
+    assert projection["valuation_mark"] == "100"
+    assert projection["bear_return_pct"] == "-20"
+    assert projection["base_return_pct"] == "20"
+    assert projection["bull_return_pct"] == "60"
+    assert projection["expected_return_pct"] == "20"
+    assert projection["confidence_adjusted_expected_return_pct"] == "15"
+    assert projection["margin_of_safety_pct"] == "16.66666666666666666666666667"
+    assert projection["bear_base_payoff_ratio"] == "1"
+    assert projection["expected_bear_payoff_ratio"] == "0.75"
+    assert projection["tier"] == "full"
+    assert projection["position_cap_pct"] == "5"
+
+
+def test_live_projection_accepts_exact_starter_payoff_boundaries(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    _seed(sandbox_repository)
+
+    projection = _live_projection(
+        sandbox_repository,
+        sandbox_settings,
+        assessment_changes={
+            "confidence": "high",
+            "bear_fair_value": "75",
+            "base_fair_value": "112.5",
+            "bull_fair_value": "140",
+        },
+    )
+
+    assert projection["bear_base_payoff_ratio"] == "0.5"
+    assert projection["expected_bear_payoff_ratio"] == "0.4"
+    assert projection["confidence_adjusted_expected_return_pct"] == "10"
+    assert projection["tier"] == "starter"
+    assert projection["position_cap_pct"] == "2"
+
+
+def test_live_projection_accepts_inclusive_negative_35_bear_boundary(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    _seed(sandbox_repository)
+
+    projection = _live_projection(
+        sandbox_repository,
+        sandbox_settings,
+        assessment_changes={
+            "confidence": "high",
+            "bear_fair_value": "65",
+            "base_fair_value": "117.5",
+            "bull_fair_value": "156",
+        },
+    )
+
+    assert projection["bear_return_pct"] == "-35"
+    assert projection["bear_base_payoff_ratio"] == "0.5"
+    assert projection["expected_bear_payoff_ratio"] == "0.4"
+    assert projection["tier"] == "starter"
+
+
+def test_live_projection_quality_must_be_strictly_above_60(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    _seed(sandbox_repository)
+
+    projection = _live_projection(
+        sandbox_repository,
+        sandbox_settings,
+        assessment_changes={
+            "thesis_score": "60",
+            "business_quality_score": "60",
+            "balance_sheet_score": "60",
+            "liquidity_score": "60",
+        },
+    )
+
+    assert projection["quality_score"] == "60"
+    assert projection["tier"] == "watch"
+    assert "quality_score_not_above_minimum" in projection["eligibility_reason_codes"]
+
+
+def test_live_projection_zero_bear_loss_has_unbounded_payoff_ratios(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    _seed(sandbox_repository)
+
+    projection = _live_projection(
+        sandbox_repository,
+        sandbox_settings,
+        assessment_changes={"bear_fair_value": "100", "bull_fair_value": "140"},
+    )
+
+    assert projection["bear_return_pct"] == "0"
+    assert projection["bear_base_payoff_ratio"] == "999999"
+    assert projection["expected_bear_payoff_ratio"] == "999999"
+    assert projection["tier"] == "full"
+
+
+def test_live_projection_reprices_both_directions_without_mutating_assessment(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    _seed(sandbox_repository)
+    assert upsert_assessment(
+        sandbox_repository,
+        sandbox_settings,
+        _request("mature_compounder", "dcf"),
+        now=NOW,
+    )
+    frozen = read_table(sandbox_repository, "security_assessments")[0]
+    market = _market()
+    market["adjusted_close"] = "80"
+    write_table(sandbox_repository, "market_latest", [market])
+    lower = live_valuation_projection(
+        sandbox_repository,
+        sandbox_settings,
+        _security(),
+        frozen,
+        now=NOW,
+        relationship_accepted=True,
+        evidence_fresh=True,
+    )
+    market["adjusted_close"] = "110"
+    write_table(sandbox_repository, "market_latest", [market])
+    higher = live_valuation_projection(
+        sandbox_repository,
+        sandbox_settings,
+        _security(),
+        frozen,
+        now=NOW,
+        relationship_accepted=True,
+        evidence_fresh=True,
+    )
+
+    assert Decimal(lower["base_return_pct"]) > Decimal(frozen["base_return_pct"])
+    assert Decimal(higher["base_return_pct"]) < Decimal(frozen["base_return_pct"])
+    assert higher["tier"] == "watch"
+    assert read_table(sandbox_repository, "security_assessments")[0] == frozen
+
+
+def test_live_projection_falls_back_to_close_when_adjusted_close_is_missing(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    _seed(sandbox_repository)
+    assert upsert_assessment(
+        sandbox_repository,
+        sandbox_settings,
+        _request("mature_compounder", "dcf"),
+        now=NOW,
+    )
+    market = _market() | {"adjusted_close": "", "close": "90"}
+    write_table(sandbox_repository, "market_latest", [market])
+
+    projection = live_valuation_projection(
+        sandbox_repository,
+        sandbox_settings,
+        _security(),
+        read_table(sandbox_repository, "security_assessments")[0],
+        now=NOW,
+        relationship_accepted=True,
+        evidence_fresh=True,
+    )
+
+    assert projection["valuation_mark"] == "90"
+
+
+@pytest.mark.parametrize(
+    ("market_changes", "message"),
+    [
+        ({"retrieved_at": "2026-07-23T08:00:00Z"}, "market_data_stale"),
+        ({"retrieved_at": "2026-07-24T22:00:01Z"}, "market_data_stale"),
+        ({"provider_symbol": "WRONG.DE"}, "market_data_identity_mismatch"),
+        ({"currency": "USD"}, "market_data_identity_mismatch"),
+    ],
+)
+def test_live_projection_fails_closed_for_invalid_marks(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    market_changes: dict[str, str],
+    message: str,
+) -> None:
+    _seed(sandbox_repository)
+    assert upsert_assessment(
+        sandbox_repository,
+        sandbox_settings,
+        _request("mature_compounder", "dcf"),
+        now=NOW,
+    )
+    write_table(sandbox_repository, "market_latest", [_market() | market_changes])
+
+    with pytest.raises(ValuationError, match=message):
+        live_valuation_projection(
+            sandbox_repository,
+            sandbox_settings,
+            _security(),
+            read_table(sandbox_repository, "security_assessments")[0],
+            now=NOW,
+            relationship_accepted=True,
+            evidence_fresh=True,
+        )
+
+
+@pytest.mark.parametrize(
+    ("assessment_changes", "evidence_fresh", "reason"),
+    [
+        (
+            {
+                "assessed_at": "2026-06-01T00:00:00Z",
+                "expires_at": "2026-08-23T22:00:00Z",
+            },
+            True,
+            "assessment_stale",
+        ),
+        ({}, False, "assessment_evidence_stale"),
+    ],
+)
+def test_live_projection_does_not_refresh_stale_research(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    assessment_changes: dict[str, str],
+    evidence_fresh: bool,
+    reason: str,
+) -> None:
+    _seed(sandbox_repository)
+    settings = replace(
+        sandbox_settings,
+        allocation=replace(sandbox_settings.allocation, maximum_assessment_age_days=30),
+    )
+
+    projection = _live_projection(
+        sandbox_repository,
+        settings,
+        assessment_changes=assessment_changes,
+        evidence_fresh=evidence_fresh,
+    )
+
+    assert projection["tier"] == "watch"
+    assert reason in projection["eligibility_reason_codes"]
+
+
+@pytest.mark.parametrize(
+    (
+        "ticker",
+        "mark",
+        "fair_values",
+        "probabilities",
+        "scores",
+        "assessed_at",
+        "expires_at",
+        "relationship_accepted",
+        "expected_tier",
+        "expected_rating",
+        "expected_reason",
+    ),
+    [
+        (
+            "PRX",
+            "36.85499954223633",
+            ("30", "52", "70"),
+            ("30", "50", "20"),
+            ("80", "60", "60", "80"),
+            "2026-08-28T19:18:00Z",
+            "2026-09-27T19:18:00Z",
+            True,
+            "full",
+            "buy",
+            "",
+        ),
+        (
+            "UBER",
+            "76.44999694824219",
+            ("55", "90", "120"),
+            ("25", "50", "25"),
+            ("80", "80", "80", "100"),
+            "2026-08-28T19:27:50Z",
+            "2026-09-27T19:27:50Z",
+            True,
+            "starter",
+            "buy",
+            "",
+        ),
+        (
+            "TCEHY",
+            "56.09000015258789",
+            ("40", "65", "90"),
+            ("25", "50", "25"),
+            ("80", "80", "80", "60"),
+            "2026-08-28T19:23:20Z",
+            "2026-09-27T19:23:20Z",
+            True,
+            "starter",
+            "buy",
+            "",
+        ),
+        (
+            "NVDA",
+            "224.41000366210938",
+            ("180", "252", "374"),
+            ("25", "50", "25"),
+            ("80", "100", "100", "100"),
+            "2026-08-07T09:23:01Z",
+            "2026-08-19T18:27:18Z",
+            True,
+            "watch",
+            "buy",
+            "assessment_stale",
+        ),
+        (
+            "CROX",
+            "115.79000091552734",
+            ("88", "145.425", "205.8"),
+            ("30", "50", "20"),
+            ("60", "60", "60", "100"),
+            "2026-09-03T12:48:08Z",
+            "2026-10-03T12:48:08Z",
+            False,
+            "watch",
+            "buy",
+            "relationship_missing_or_stale",
+        ),
+        (
+            "CSIQ",
+            "13.359999656677246",
+            ("10.16", "18.28", "26.41"),
+            ("35", "50", "15"),
+            ("60", "40", "40", "80"),
+            "2026-08-31T08:45:47Z",
+            "2026-09-30T08:45:47Z",
+            False,
+            "watch",
+            "buy",
+            "quality_score_not_above_minimum",
+        ),
+        (
+            "NOMD",
+            "11.59000015258789",
+            ("9", "15", "20"),
+            ("30", "50", "20"),
+            ("40", "40", "40", "80"),
+            "2026-08-28T19:32:10Z",
+            "2026-09-27T19:32:10Z",
+            False,
+            "watch",
+            "buy",
+            "quality_score_not_above_minimum",
+        ),
+        (
+            "FISV",
+            "51.97999954223633",
+            ("35", "65", "95"),
+            ("30", "50", "20"),
+            ("40", "60", "40", "100"),
+            "2026-08-28T19:25:00Z",
+            "2026-09-27T19:25:00Z",
+            False,
+            "watch",
+            "buy",
+            "quality_score_not_above_minimum",
+        ),
+        (
+            "DPZ",
+            "346.67999267578125",
+            ("270", "380", "500"),
+            ("25", "50", "25"),
+            ("60", "80", "40", "100"),
+            "2026-08-28T19:34:25Z",
+            "2026-09-27T19:34:25Z",
+            True,
+            "watch",
+            "hold",
+            "base_return_below_minimum",
+        ),
+        (
+            "MELI",
+            "2006.5799560546875",
+            ("1400", "2200", "3000"),
+            ("25", "50", "25"),
+            ("80", "80", "60", "100"),
+            "2026-08-28T20:09:00Z",
+            "2026-09-27T20:09:00Z",
+            True,
+            "watch",
+            "hold",
+            "base_return_below_minimum",
+        ),
+    ],
+)
+def test_supplied_september_3_live_valuation_regression(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    ticker: str,
+    mark: str,
+    fair_values: tuple[str, str, str],
+    probabilities: tuple[str, str, str],
+    scores: tuple[str, str, str, str],
+    assessed_at: str,
+    expires_at: str,
+    relationship_accepted: bool,
+    expected_tier: str,
+    expected_rating: str,
+    expected_reason: str,
+) -> None:
+    _seed(sandbox_repository)
+    assert upsert_assessment(
+        sandbox_repository,
+        sandbox_settings,
+        _request("mature_compounder", "dcf"),
+        now=NOW,
+    )
+    assessment = read_table(sandbox_repository, "security_assessments")[0] | {
+        "assessed_at": assessed_at,
+        "expires_at": expires_at,
+        "thesis_score": scores[0],
+        "business_quality_score": scores[1],
+        "balance_sheet_score": scores[2],
+        "liquidity_score": scores[3],
+        "bear_fair_value": fair_values[0],
+        "bear_probability_pct": probabilities[0],
+        "base_fair_value": fair_values[1],
+        "base_probability_pct": probabilities[1],
+        "bull_fair_value": fair_values[2],
+        "bull_probability_pct": probabilities[2],
+    }
+    as_of = datetime(2026, 9, 3, 13, 3, tzinfo=UTC)
+    write_table(
+        sandbox_repository,
+        "market_latest",
+        [
+            _market()
+            | {
+                "adjusted_close": mark,
+                "close": mark,
+                "price_date": "2026-09-02",
+                "retrieved_at": "2026-09-03T12:29:04Z",
+            }
+        ],
+    )
+
+    projection = live_valuation_projection(
+        sandbox_repository,
+        sandbox_settings,
+        _security(),
+        assessment,
+        now=as_of,
+        relationship_accepted=relationship_accepted,
+        evidence_fresh=True,
+    )
+    rating = canonical_rating(assessment | projection, sandbox_settings)
+
+    assert projection["tier"] == expected_tier, ticker
+    assert rating == expected_rating, ticker
+    assert expected_reason in projection["eligibility_reason_codes"], ticker
 
 
 @pytest.mark.parametrize(("template", "method"), sorted(TEMPLATES.items()))

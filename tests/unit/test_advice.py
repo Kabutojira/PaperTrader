@@ -9,9 +9,11 @@ import pytest
 
 from papertrader.advice import (
     AdviceError,
+    _candidate_classification,
     _decision_csv_contract_bytes,
     _validate_snapshot_object,
     build_decision_snapshot,
+    load_published_snapshot,
     reason_label,
     refresh_advice,
     snapshot_document,
@@ -90,6 +92,99 @@ def _legacy_v3(document: dict[str, object]) -> dict[str, object]:
     return legacy
 
 
+_V5_PORTFOLIO_FIELDS = {
+    "tier",
+    "allocation_intent_id",
+    "assessment_id",
+    "valuation_mark",
+    "valuation_mark_currency",
+    "valuation_mark_as_of",
+    "position_cap_pct",
+    "margin_of_safety_pct",
+    "bear_base_payoff_ratio",
+    "expected_bear_payoff_ratio",
+}
+_V5_CANDIDATE_FIELDS = _V5_PORTFOLIO_FIELDS | {"target_quantity"}
+_V3_VALUATION_FIELDS = {
+    "bear_fair_value",
+    "bear_return_pct",
+    "bear_probability_pct",
+    "base_fair_value",
+    "base_return_pct",
+    "base_probability_pct",
+    "bull_fair_value",
+    "bull_return_pct",
+    "bull_probability_pct",
+    "expected_return_pct",
+    "confidence_adjusted_expected_return_pct",
+    "buy_below_price",
+    "canonical_rating",
+    "portfolio_action",
+    "evidence_state",
+    "rating_change_conditions",
+}
+
+
+def _legacy_snapshot(document: dict[str, object], version: int) -> dict[str, object]:
+    legacy = json.loads(json.dumps(document))
+    if version < 4:
+        legacy = _legacy_v3(legacy)
+    else:
+        legacy["version"] = version
+
+    target_key = "target_portfolio" if version >= 4 else "approved_target_portfolio"
+    for key in ("current_portfolio", target_key):
+        for row in legacy[key]["rows"]:
+            for field in _V5_PORTFOLIO_FIELDS:
+                row.pop(field, None)
+            if version < 3:
+                for field in _V3_VALUATION_FIELDS:
+                    row.pop(field, None)
+            if version == 1:
+                for field in (
+                    "mark_base",
+                    "fx_as_of",
+                    "security_research_page",
+                    "strategy_research_page",
+                ):
+                    row.pop(field, None)
+    for signal in legacy["actionable_signals"]:
+        signal.pop("allocation_intent_id", None)
+        if version == 1:
+            signal.pop("security_research_page", None)
+            signal.pop("strategy_research_page", None)
+    for candidate in legacy["candidate_pipeline"]:
+        for field in _V5_CANDIDATE_FIELDS:
+            candidate.pop(field, None)
+        if version < 3:
+            for field in _V3_VALUATION_FIELDS | {
+                "eligibility_frontier",
+                "research_conclusion",
+            }:
+                candidate.pop(field, None)
+
+    legacy["version"] = version
+    if version < 3:
+        legacy.pop("evidence_state", None)
+        legacy.pop("research_benchmark", None)
+    if version == 1:
+        legacy["data_status"] = legacy.pop("investment_data_status")
+        legacy.pop("operations_status")
+        coverage = legacy["coverage"]
+        coverage["current_relationship_count"] = coverage.pop("accepted_relationship_count")
+        coverage["required_relationship_count"] = coverage.pop("required_relationship_review_count")
+        coverage.pop("reviewed_relationship_count")
+        performance = legacy["performance"]
+        for field in (
+            "performance_epoch_id",
+            "epoch_started_at",
+            "epoch_opening_equity_base",
+            "prior_epoch_count",
+        ):
+            performance.pop(field)
+    return legacy
+
+
 def _security(
     index: int = 0,
     *,
@@ -122,6 +217,37 @@ def _security(
         "updated_at": "2026-07-24T10:00:00Z",
         "source": "fixture",
     }
+
+
+@pytest.mark.parametrize(
+    ("reason", "tier", "target_quantity", "expected"),
+    [
+        (
+            "quality_score_not_above_minimum|relationship_missing_or_stale",
+            "watch",
+            "0",
+            "allocation_constrained",
+        ),
+        (
+            "bear_base_payoff_below_starter_minimum|relationship_missing_or_stale",
+            "watch",
+            "0",
+            "valuation_unattractive",
+        ),
+        ("relationship_missing_or_stale", "watch", "0", "relationship_pending"),
+        ("insufficient_diversification", "full", "3", "strategy_pending"),
+    ],
+)
+def test_candidate_classification_reports_the_precise_primary_constraint(
+    reason: str,
+    tier: str,
+    target_quantity: str,
+    expected: str,
+) -> None:
+    target = {"reason": reason, "tier": tier, "target_quantity": target_quantity}
+    assessment = {"research_status": "complete", "canonical_rating": "buy"}
+
+    assert _candidate_classification(target, assessment, None) == expected
 
 
 def _strategy(index: int = 0) -> dict[str, str]:
@@ -417,6 +543,39 @@ def test_all_cash_snapshot_is_explicit_idempotent_and_exported(
     homepage = (sandbox_repository / "data" / "wiki" / "index.md").read_text(encoding="utf-8")
     assert "No trade — hold 100% cash" in homepage
     assert published.snapshot_id in homepage
+
+
+@pytest.mark.parametrize("version", [1, 2, 3, 4])
+def test_load_published_snapshot_preserves_v1_through_v4_compatibility(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    version: int,
+) -> None:
+    _initialize(sandbox_repository, sandbox_settings, run_id=f"legacy-v{version}")
+    current = snapshot_document(
+        build_decision_snapshot(
+            sandbox_repository,
+            sandbox_settings,
+            run_id=f"legacy-v{version}",
+            as_of=NOW,
+        )
+    )
+    legacy = _legacy_snapshot(current, version)
+    _validate_snapshot_object(sandbox_repository, legacy)
+    published_path = sandbox_repository / "data" / "published" / "decision_snapshot.json"
+    published_path.write_text(json.dumps(legacy) + "\n", encoding="utf-8")
+
+    loaded = load_published_snapshot(sandbox_repository, expected_run_id=f"legacy-v{version}")
+
+    assert loaded.version == version
+    assert loaded.target_portfolio.portfolio_kind == "target"
+    assert loaded.target_portfolio.rows[0].tier == ""
+    assert loaded.target_portfolio.rows[0].allocation_intent_id == ""
+    if version == 1:
+        assert loaded.operations_status == "current"
+        assert loaded.performance.performance_epoch_id == ""
+    if version < 3:
+        assert loaded.research_benchmark.policy_version == "legacy_unavailable"
 
 
 def test_publication_is_deterministic_under_input_permutation_and_ignores_generated_inputs(

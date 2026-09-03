@@ -7,13 +7,13 @@ tags:
 created: "2026-09-03"
 updated: "2026-09-03"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_72d6d305fa51c023b41f"
-as_of: "2026-09-03T18:41:32Z"
+snapshot_id: "decision_e723d9f921476de71339"
+as_of: "2026-09-03T19:35:37Z"
 ---
 
 # PaperTrader
 
-**As of `2026-09-03T18:41:32Z` · Investment data: Portfolio state safe — research gaps remain · Operations: Attention required**
+**As of `2026-09-03T19:35:37Z` · Investment data: Portfolio state safe — research gaps remain · Operations: Attention required**
 
 ## No trade — hold 100% cash
 
@@ -24,7 +24,7 @@ as_of: "2026-09-03T18:41:32Z"
 - No validated copy-ready signal or pending paper order exists.
 - The reconciled model portfolio is entirely cash.
 - No strategy has produced a current actionable trade signal.
-- 14 Buy / Initiate research candidates remain non-actionable. Leading gates: Bear/base payoff is below threshold. (7); Expected/bear payoff is below threshold. (3); The comparable assessment is stale or expired. (2); A current accepted idea-to-security relationship is unavailable. (1).
+- 10 Buy / Initiate research candidates remain non-actionable. Leading gates: Research quality must be strictly above the configured threshold. (3); The eligible set is not sufficiently diversified. (3); Bear/base payoff is below the starter threshold. (2); A current accepted idea-to-security relationship is unavailable. (1).
 
 ## Current and target portfolio
 
@@ -40,20 +40,16 @@ Current equity is **10000 EUR** with **100% cash**. The target retains **100% ca
 
 ## Buy / Initiate research candidates
 
-- **[NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d):** Buy / Initiate · expected return 21% · The comparable assessment is stale or expired.
-- **[UBER — Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e):** Buy / Initiate · expected return 15% · Bear/base payoff is below threshold.
-- **[DLO — DLocal Limited](securities/security_715bde20b6e1e1320c1a):** Buy / Initiate · expected return 26% · Bear/base payoff is below threshold.
-- **[MELI — MercadoLibre, Inc.](securities/security_4935c6e39e38273a1731):** Buy / Initiate · expected return 14% · Bear/base payoff is below threshold.
-- **[TCEHY — Tencent Holdings Limited](securities/security_de0d83229b369a426b99):** Buy / Initiate · expected return 14% · Bear/base payoff is below threshold.
-- **[PATH — UiPath, Inc.](securities/security_eca976f0076a425ea1bb):** Buy / Initiate · expected return 19% · The comparable assessment is stale or expired.
-- **[SOFI — SoFi Technologies, Inc.](securities/security_98470cfc01bbcde78fc2):** Buy / Initiate · expected return 19% · Bear/base payoff is below threshold.
-- **[PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4):** Buy / Initiate · expected return 27% · The eligible set is not sufficiently diversified.
-- **[DPZ — Domino's Pizza, Inc.](securities/security_f34181f3df32080a91d1):** Buy / Initiate · expected return 15% · Bear/base payoff is below threshold.
-- **[CROX — Crocs, Inc.](securities/security_c150f31c30afdb4a85f9):** Buy / Initiate · expected return 21% · Expected/bear payoff is below threshold.
-- **[PYPL — PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00):** Buy / Initiate · expected return 14% · Expected/bear payoff is below threshold.
-- **[FISV — Fiserv, Inc.](securities/security_d202772e4e62065cd17a):** Buy / Initiate · expected return 18% · Bear/base payoff is below threshold.
-- **[CSIQ — Canadian Solar Inc.](securities/security_099561384c0f5e697727):** Buy / Initiate · expected return 27% · A current accepted idea-to-security relationship is unavailable.
-- **[NOMD — Nomad Foods Limited](securities/security_98a1943771da875efed5):** Buy / Initiate · expected return 18% · Expected/bear payoff is below threshold.
+- **[PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4):** Buy / Initiate · Full baseline — Strategy research pending · expected return 33% · The eligible set is not sufficiently diversified.
+- **[UBER — Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e):** Buy / Initiate · Starter — Strategy research pending · expected return 16% · The eligible set is not sufficiently diversified.
+- **[TCEHY — Tencent Holdings Limited](securities/security_de0d83229b369a426b99):** Buy / Initiate · Starter — Strategy research pending · expected return 16% · The eligible set is not sufficiently diversified.
+- **[NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d):** Buy / Initiate · Research incomplete · expected return 18% · The assessment's registered evidence is not fresh.
+- **[DLO — DLocal Limited](securities/security_715bde20b6e1e1320c1a):** Buy / Initiate · Valuation unattractive · expected return 22% · Bear/base payoff is below the starter threshold.
+- **[SOFI — SoFi Technologies, Inc.](securities/security_98470cfc01bbcde78fc2):** Buy / Initiate · Valuation unattractive · expected return 13% · Bear/base payoff is below the starter threshold.
+- **[CROX — Crocs, Inc.](securities/security_c150f31c30afdb4a85f9):** Buy / Initiate · Relationship research pending · expected return 21% · A current accepted idea-to-security relationship is unavailable.
+- **[FISV — Fiserv, Inc.](securities/security_d202772e4e62065cd17a):** Buy / Initiate · Allocation constrained · expected return 19% · Research quality must be strictly above the configured threshold.
+- **[CSIQ — Canadian Solar Inc.](securities/security_099561384c0f5e697727):** Buy / Initiate · Allocation constrained · expected return 25% · Research quality must be strictly above the configured threshold.
+- **[NOMD — Nomad Foods Limited](securities/security_98a1943771da875efed5):** Buy / Initiate · Allocation constrained · expected return 23% · Research quality must be strictly above the configured threshold.
 
 ## Performance, risk, and coverage
 

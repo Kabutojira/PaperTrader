@@ -1741,6 +1741,9 @@ def run_sequential_operations(
             estimated_cost=estimate,
             operation_id=operation_id,
             operation_type=operation_type,
+            prefer_allocation=(
+                operation_id is None and operation_type is None and len(outcomes) < 2
+            ),
         )
         if operation is None:
             break

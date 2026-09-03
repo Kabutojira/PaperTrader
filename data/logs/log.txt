@@ -418,3 +418,11 @@
 2026-09-03T18:24:03Z [daily_run_started] run=daily-20260903T182402Z Started sequential deterministic daily preparation.
 2026-09-03T18:41:32Z [daily_run_completed] run=daily-20260903T182402Z Completed deterministic daily run with status degraded.
 2026-09-03T18:58:38Z [daily_podcast_completed] run=daily-20260903T182402Z operation=01M1M9NEQGBPW35WERHGB9QVWA Daily podcast finished with status succeeded.
+2026-09-03T19:02:49Z [daily_run_started] run=dev-publication-v5-20260903 Started sequential deterministic daily preparation.
+2026-09-03T19:03:11Z [daily_run_completed] run=dev-publication-v5-20260903 Completed deterministic daily run with status succeeded.
+2026-09-03T19:06:18Z [daily_run_started] run=dev-publication-v5b-20260903 Started sequential deterministic daily preparation.
+2026-09-03T19:06:27Z [daily_run_completed] run=dev-publication-v5b-20260903 Completed deterministic daily run with status succeeded.
+2026-09-03T19:32:33Z [daily_run_started] run=dev-rebased-publication-v5-20260903 Started sequential deterministic daily preparation.
+2026-09-03T19:32:42Z [daily_run_completed] run=dev-rebased-publication-v5-20260903 Completed deterministic daily run with status succeeded.
+2026-09-03T19:35:29Z [daily_run_started] run=dev-rebased-publication-v5b-20260903 Started sequential deterministic daily preparation.
+2026-09-03T19:35:37Z [daily_run_completed] run=dev-rebased-publication-v5b-20260903 Completed deterministic daily run with status succeeded.

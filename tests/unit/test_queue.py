@@ -194,14 +194,38 @@ def _enqueue_indicator_opportunity(
     return operation_id
 
 
-def _allocation_target(plan_id: str) -> dict[str, str]:
+def _allocation_target(
+    plan_id: str,
+    *,
+    intent_id: str = "",
+    target_quantity: str = "",
+    tier: str = "",
+    disposition: str = "open",
+) -> dict[str, str]:
     return {
         "allocation_plan_id": plan_id,
+        "allocation_intent_id": intent_id,
         "run_id": "allocation-current",
         "as_of": "2026-07-24T10:00:00Z",
         "security_id": "sec_a",
         "strategy_id": "strategy_a",
         "sleeve": "baseline",
+        "tier": tier,
+        "assessment_id": "assessment_a" if intent_id else "",
+        "relationship_id": "relationship_a" if intent_id else "",
+        "valuation_mark": "100" if intent_id else "",
+        "valuation_mark_currency": "USD" if intent_id else "",
+        "valuation_mark_as_of": "2026-07-24T09:55:00Z" if intent_id else "",
+        "position_cap_pct": "2" if tier == "starter" else "5" if tier else "",
+        "target_quantity": target_quantity,
+        "bear_return_pct": "-25" if intent_id else "",
+        "base_return_pct": "15" if intent_id else "",
+        "bull_return_pct": "40" if intent_id else "",
+        "expected_return_pct": "12" if intent_id else "",
+        "confidence_adjusted_expected_return_pct": "10" if intent_id else "",
+        "margin_of_safety_pct": "13" if intent_id else "",
+        "bear_base_payoff_ratio": "0.6" if intent_id else "",
+        "expected_bear_payoff_ratio": "0.4" if intent_id else "",
         "rank": "1",
         "effective_score": "70",
         "candidate_edge": "10",
@@ -210,7 +234,7 @@ def _allocation_target(plan_id: str) -> dict[str, str]:
         "target_weight_pct": "2",
         "target_value_base": "2000",
         "delta_value_base": "2000",
-        "disposition": "open",
+        "disposition": disposition,
         "reason": "above_cash_hurdle",
         "assessment_as_of": "2026-07-24T09:00:00Z",
     }
@@ -223,7 +247,34 @@ def _enqueue_plan_strategy(
     plan_id: str,
     catalyst: str,
     now: datetime,
+    intent_id: str = "",
+    target_quantity: str = "",
 ) -> str:
+    inputs: dict[str, object] = {
+        "allocation_plan_id": plan_id,
+        "assessment_as_of": "2026-07-24T09:00:00Z",
+        "current_weight_pct": "0",
+        "disposition": "open",
+        "effective_score": "70",
+        "maximum_weight_pct": "5",
+        "mode": "baseline_allocation",
+        "relationship_id": "relationship_a",
+        "security_id": "sec_a",
+        "selection_rank": 1,
+        "strategy_id": "strategy_a",
+        "target_weight_pct": "2",
+    }
+    if intent_id:
+        inputs.update(
+            {
+                "allocation_intent_id": intent_id,
+                "assessment_id": "assessment_a",
+                "tier": "starter",
+                "target_quantity": target_quantity,
+                "position_cap_pct": "2",
+                "maximum_weight_pct": "2",
+            }
+        )
     operation_id, created = enqueue_operation(
         repository,
         settings,
@@ -232,20 +283,7 @@ def _enqueue_plan_strategy(
         entity_id="strategy_a",
         dedupe_key=f"strategy_research:strategy_a:{catalyst}:2026-07-24",
         prompt="Research one plan-bound baseline strategy.",
-        inputs={
-            "allocation_plan_id": plan_id,
-            "assessment_as_of": "2026-07-24T09:00:00Z",
-            "current_weight_pct": "0",
-            "disposition": "open",
-            "effective_score": "70",
-            "maximum_weight_pct": "5",
-            "mode": "baseline_allocation",
-            "relationship_id": "relationship_a",
-            "security_id": "sec_a",
-            "selection_rank": 1,
-            "strategy_id": "strategy_a",
-            "target_weight_pct": "2",
-        },
+        inputs=inputs,
         source=f"deterministic-allocation:{plan_id}",
         now=now,
     )
@@ -910,6 +948,217 @@ def test_prepare_skips_superseded_plan_bound_operations_before_claim(
     assert archived["terminal_status"] == "skipped"
     assert archived["terminal_reason"] == f"superseded_allocation_plan:{current_plan}"
     assert any(obsolete in disposition for disposition in dispositions)
+
+
+def test_prepare_rebinds_compatible_allocation_intent_without_rewriting_payload(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    old_plan = "allocation_plan_old"
+    current_plan = "allocation_plan_current"
+    intent_id = "allocation_intent_same"
+    write_table(
+        sandbox_repository,
+        "allocation_targets",
+        [
+            _allocation_target(
+                current_plan,
+                intent_id=intent_id,
+                target_quantity="20",
+                tier="starter",
+            )
+        ],
+    )
+    operation_id = _enqueue_plan_strategy(
+        sandbox_repository,
+        sandbox_settings,
+        plan_id=old_plan,
+        catalyst="compatible-intent",
+        intent_id=intent_id,
+        target_quantity="20",
+        now=NOW,
+    )
+    row_before = read_table(sandbox_repository, "operations_todo")[0]
+    payload_path = sandbox_repository / row_before["payload_path"]
+    payload_before = payload_path.read_text(encoding="utf-8")
+
+    dispositions = prepare_queue(sandbox_repository, now=NOW + timedelta(minutes=1))
+
+    active = read_table(sandbox_repository, "operations_todo")
+    assert len(active) == 1
+    assert active[0]["operation_id"] == operation_id
+    assert active[0]["status"] == "ready"
+    assert active[0]["priority"] == "99"
+    assert payload_path.read_text(encoding="utf-8") == payload_before
+    binding = json.loads(
+        (
+            sandbox_repository / "data" / "operations" / "bindings" / f"{operation_id}.json"
+        ).read_text(encoding="utf-8")
+    )
+    assert binding["original_allocation_plan_id"] == old_plan
+    assert binding["current_allocation_plan_id"] == current_plan
+    assert binding["allocation_intent_id"] == intent_id
+    assert any(f"{operation_id}:rebound:{current_plan}" == value for value in dispositions)
+    assert validate_queue(sandbox_repository) == []
+
+
+def test_prepare_cancels_incompatible_intent_and_pending_paper_state(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    current_plan = "allocation_plan_current"
+    write_table(
+        sandbox_repository,
+        "allocation_targets",
+        [
+            _allocation_target(
+                current_plan,
+                intent_id="allocation_intent_new",
+                target_quantity="19",
+                tier="starter",
+            )
+        ],
+    )
+    signal_id = "signal_old_intent"
+    write_table(
+        sandbox_repository,
+        "signals",
+        [_signal(signal_id, status="ordered") | {"allocation_intent_id": "allocation_intent_old"}],
+    )
+    write_table(
+        sandbox_repository,
+        "orders",
+        [
+            {
+                "order_id": "order_old_intent",
+                "signal_id": signal_id,
+                "strategy_id": "strategy_a",
+                "allocation_intent_id": "allocation_intent_old",
+                "created_at": "2026-07-24T09:05:00Z",
+                "status": "pending",
+                "fill_policy": "next_open",
+                "not_before": "2026-07-24T09:05:00Z",
+                "expires_at": "2026-07-25T09:05:00Z",
+                "order_type": "market",
+                "limit_price": "",
+                "slippage_bps": "5",
+                "fee_model": "simple",
+                "currency": "USD",
+                "run_id": "old-intent-run",
+            }
+        ],
+    )
+    operation_id, created = enqueue_operation(
+        sandbox_repository,
+        sandbox_settings,
+        operation_type="execute_strategy",
+        entity_type="strategy",
+        entity_id="strategy_a",
+        dedupe_key="execute_strategy:strategy_a:old-intent:open",
+        prompt="Execute the superseded allocation intent.",
+        inputs={
+            "strategy_id": "strategy_a",
+            "signal_id": signal_id,
+            "action": "open",
+            "allocation_plan_id": "allocation_plan_old",
+            "allocation_intent_id": "allocation_intent_old",
+            "target_quantity": "20",
+        },
+        source="deterministic-allocation:allocation_plan_old",
+        now=NOW,
+    )
+    assert created is True
+
+    prepare_queue(sandbox_repository, now=NOW + timedelta(minutes=1))
+
+    assert read_table(sandbox_repository, "operations_todo") == []
+    archived = read_table(sandbox_repository, "operations_history")[0]
+    assert archived["operation_id"] == operation_id
+    assert archived["terminal_status"] == "cancelled"
+    assert archived["terminal_reason"] == (f"superseded_allocation_intent:{current_plan}")
+    assert read_table(sandbox_repository, "signals")[0]["status"] == "cancelled"
+    assert read_table(sandbox_repository, "orders")[0]["status"] == "cancelled"
+
+
+def test_allocation_claim_reservation_runs_execute_before_research_and_normal_priority(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    plan_id = "allocation_plan_current"
+    intent_id = "allocation_intent_current"
+    write_table(
+        sandbox_repository,
+        "allocation_targets",
+        [
+            _allocation_target(
+                plan_id,
+                intent_id=intent_id,
+                target_quantity="20",
+                tier="starter",
+            )
+        ],
+    )
+    research_id = _enqueue_plan_strategy(
+        sandbox_repository,
+        sandbox_settings,
+        plan_id=plan_id,
+        catalyst="reserved-research",
+        intent_id=intent_id,
+        target_quantity="20",
+        now=NOW,
+    )
+    signal_id = "signal_current_intent"
+    write_table(
+        sandbox_repository,
+        "signals",
+        [_signal(signal_id, status="ready") | {"allocation_intent_id": intent_id}],
+    )
+    execute_id, created = enqueue_operation(
+        sandbox_repository,
+        sandbox_settings,
+        operation_type="execute_strategy",
+        entity_type="strategy",
+        entity_id="strategy_a",
+        dedupe_key="execute_strategy:strategy_a:current-intent:open",
+        prompt="Execute the current allocation intent.",
+        inputs={
+            "strategy_id": "strategy_a",
+            "signal_id": signal_id,
+            "action": "open",
+            "allocation_plan_id": plan_id,
+            "allocation_intent_id": intent_id,
+            "target_quantity": "20",
+        },
+        source=f"deterministic-allocation:{plan_id}",
+        priority=1,
+        now=NOW + timedelta(seconds=1),
+    )
+    assert created is True
+    normal_id, _ = _enqueue(
+        sandbox_repository,
+        sandbox_settings,
+        entity_id="sec_urgent",
+        catalyst="urgent-normal",
+        priority=100,
+        now=NOW + timedelta(seconds=2),
+    )
+    prepare_queue(sandbox_repository, now=NOW + timedelta(minutes=1))
+    by_id = {row["operation_id"]: row for row in read_table(sandbox_repository, "operations_todo")}
+    assert by_id[research_id]["priority"] == "99"
+    assert by_id[execute_id]["priority"] == "100"
+    assert by_id[normal_id]["priority"] == "100"
+
+    claimed = claim_next(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="allocation-reservation",
+        budget=RunBudget.from_settings(sandbox_settings),
+        prefer_allocation=True,
+        now=NOW + timedelta(minutes=2),
+    )
+
+    assert claimed is not None
+    assert claimed.operation_id == execute_id
 
 
 def test_prepare_skips_execute_request_whose_signal_is_no_longer_ready(

@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from collections.abc import Mapping
-from datetime import timedelta
+from datetime import datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
 
@@ -12,7 +12,13 @@ import yaml
 from papertrader.config import Settings
 from papertrader.market_data import MarketDataError, latest_fx_rate_record
 from papertrader.tables import read_table
-from papertrader.utils import decimal_text, parse_timestamp, required_decimal
+from papertrader.utils import (
+    decimal_text,
+    ensure_utc,
+    format_timestamp,
+    parse_timestamp,
+    required_decimal,
+)
 
 ASSESSMENT_V2_AGENT_FIELDS = (
     "assessment_schema_version",
@@ -164,6 +170,215 @@ def _return_pct(fair_value: Decimal, reference_price: Decimal) -> Decimal:
     return ((fair_value / reference_price) - Decimal("1")) * Decimal("100")
 
 
+def live_valuation_projection(
+    repository_root: Path,
+    settings: Settings,
+    security: Mapping[str, str],
+    assessment: Mapping[str, str],
+    *,
+    now: datetime,
+    relationship_accepted: bool,
+    evidence_fresh: bool,
+) -> dict[str, str]:
+    """Reprice immutable scenario research at one validated native-currency mark.
+
+    The assessment remains an audit record.  This projection is deliberately derived
+    from its fair values and probabilities and never mutates or refreshes that record.
+    """
+
+    instant = ensure_utc(now).replace(microsecond=0)
+    latest = next(
+        (
+            row
+            for row in read_table(repository_root, "market_latest")
+            if row["security_id"] == security["security_id"]
+        ),
+        None,
+    )
+    if latest is None:
+        raise ValuationError("market_data_missing")
+    if latest["status"] != "ok":
+        raise ValuationError("market_data_not_ok")
+    if (
+        latest["provider_symbol"] != security["provider_symbol"]
+        or latest["currency"] != security["currency"]
+        or assessment.get("reference_currency") != security["currency"]
+    ):
+        raise ValuationError("market_data_identity_mismatch")
+    observed = parse_timestamp(latest["retrieved_at"])
+    assert observed is not None
+    if observed > instant or instant - observed > settings.market_data.stale_price_after:
+        raise ValuationError("market_data_stale")
+    raw_mark = latest["adjusted_close"] or latest["close"]
+    mark = required_decimal(raw_mark, label="live valuation mark")
+    if mark <= 0:
+        raise ValuationError("market_data_invalid")
+
+    reasons: list[str] = []
+    is_v2 = assessment.get("assessment_schema_version") == "2"
+    supported = assessment.get("valuation_supported") == "true"
+    complete = assessment.get("research_completeness") == "complete"
+    if not is_v2 or not supported:
+        reasons.append("valuation_unsupported")
+    elif not complete:
+        reasons.append("research_incomplete")
+
+    assessed = parse_timestamp(assessment["assessed_at"])
+    expires = parse_timestamp(assessment["expires_at"])
+    assert assessed is not None and expires is not None
+    if (
+        assessed > instant
+        or instant - assessed > timedelta(days=settings.allocation.maximum_assessment_age_days)
+        or expires <= instant
+    ):
+        reasons.append("assessment_stale")
+    if not evidence_fresh:
+        reasons.append("assessment_evidence_stale")
+    confidence = assessment.get("confidence", "")
+    confidence_factor = CONFIDENCE_FACTORS.get(confidence)
+    if confidence_factor is None:
+        reasons.append("confidence_below_minimum")
+        confidence_factor = Decimal("0")
+    elif CONFIDENCE_RANK[confidence] < CONFIDENCE_RANK[settings.allocation.minimum_confidence]:
+        reasons.append("confidence_below_minimum")
+    quality = sum(
+        (
+            required_decimal(assessment[field], label=field) * weight
+            for field, weight in QUALITY_WEIGHTS.items()
+        ),
+        Decimal("0"),
+    )
+    if quality <= settings.allocation.minimum_quality_score:
+        reasons.append("quality_score_not_above_minimum")
+    if not relationship_accepted:
+        reasons.append("relationship_missing_or_stale")
+    hard_blockers = tuple(
+        sorted(part for part in assessment.get("hard_blockers", "").split("|") if part)
+    )
+    if hard_blockers:
+        reasons.append(f"hard_blocker:{','.join(hard_blockers)}")
+
+    output = {
+        "valuation_mark": decimal_text(mark),
+        "valuation_mark_currency": security["currency"],
+        "valuation_mark_as_of": format_timestamp(observed),
+        "quality_score": decimal_text(quality),
+        "tier": "watch",
+        "position_cap_pct": "0",
+        "allocation_eligibility": "ineligible",
+        "frontier_confidence_levels": str(
+            CONFIDENCE_RANK.get(confidence, -1)
+            - CONFIDENCE_RANK[settings.allocation.minimum_confidence]
+        ),
+        "frontier_relationship_status": "complete" if relationship_accepted else "pending",
+        "frontier_hard_blockers": "|".join(hard_blockers),
+        "eligibility_reason_codes": "|".join(sorted(set(reasons))),
+    }
+    if not is_v2 or not supported or not complete:
+        return output
+
+    fair_values = {
+        case: required_decimal(assessment[f"{case}_fair_value"], label=f"{case}_fair_value")
+        for case in ("bear", "base", "bull")
+    }
+    probabilities = {
+        case: required_decimal(
+            assessment[f"{case}_probability_pct"], label=f"{case}_probability_pct"
+        )
+        for case in ("bear", "base", "bull")
+    }
+    scenario_returns = {case: _return_pct(value, mark) for case, value in fair_values.items()}
+    expected_fair = sum(
+        (fair_values[case] * probabilities[case] for case in ("bear", "base", "bull")),
+        Decimal("0"),
+    ) / Decimal("100")
+    expected = _return_pct(expected_fair, mark)
+    adjusted = expected * confidence_factor
+    margin = (fair_values["base"] - mark) / fair_values["base"] * Decimal("100")
+    downside = max(-scenario_returns["bear"], Decimal("0"))
+    base_ratio = (
+        Decimal("999999")
+        if downside == 0
+        else max(scenario_returns["base"], Decimal("0")) / downside
+    )
+    expected_ratio = Decimal("999999") if downside == 0 else max(adjusted, Decimal("0")) / downside
+    output.update(
+        {
+            **{
+                f"{case}_return_pct": decimal_text(scenario_returns[case])
+                for case in ("bear", "base", "bull")
+            },
+            "downside_pct": decimal_text(scenario_returns["bear"]),
+            "base_upside_pct": decimal_text(scenario_returns["base"]),
+            "probability_weighted_fair_value": decimal_text(expected_fair),
+            "expected_return_pct": decimal_text(expected),
+            "confidence_adjusted_expected_return_pct": decimal_text(adjusted),
+            "margin_of_safety_pct": decimal_text(margin),
+            "bear_base_payoff_ratio": decimal_text(base_ratio),
+            "expected_bear_payoff_ratio": decimal_text(expected_ratio),
+            "frontier_expected_return_pct": decimal_text(
+                adjusted - settings.allocation.minimum_confidence_adjusted_expected_return_pct
+            ),
+            "frontier_base_return_pct": decimal_text(
+                scenario_returns["base"] - settings.allocation.minimum_base_upside_pct
+            ),
+            "frontier_bear_base_payoff_ratio": decimal_text(
+                base_ratio - settings.allocation.minimum_upside_downside_ratio
+            ),
+            "frontier_expected_bear_payoff_ratio": decimal_text(
+                expected_ratio - settings.allocation.minimum_expected_bear_payoff_ratio
+            ),
+            "frontier_margin_of_safety_pct": decimal_text(
+                margin - settings.allocation.minimum_margin_of_safety_pct
+            ),
+        }
+    )
+
+    common_safe = not reasons
+    common_economic = (
+        scenario_returns["base"] >= settings.allocation.minimum_base_upside_pct
+        and adjusted >= settings.allocation.minimum_confidence_adjusted_expected_return_pct
+    )
+    full = (
+        common_safe
+        and common_economic
+        and base_ratio >= settings.allocation.minimum_upside_downside_ratio
+        and expected_ratio >= settings.allocation.minimum_expected_bear_payoff_ratio
+        and margin >= settings.allocation.minimum_margin_of_safety_pct
+    )
+    starter = (
+        common_safe
+        and common_economic
+        and base_ratio >= settings.allocation.starter_minimum_upside_downside_ratio
+        and expected_ratio >= settings.allocation.starter_minimum_expected_bear_payoff_ratio
+        and margin >= settings.allocation.starter_minimum_margin_of_safety_pct
+        and scenario_returns["bear"] >= settings.allocation.starter_minimum_bear_return_pct
+    )
+    if full:
+        output["tier"] = "full"
+        output["position_cap_pct"] = decimal_text(settings.allocation.maximum_baseline_position_pct)
+        output["allocation_eligibility"] = "eligible"
+    elif starter:
+        output["tier"] = "starter"
+        output["position_cap_pct"] = decimal_text(settings.allocation.maximum_starter_position_pct)
+        output["allocation_eligibility"] = "eligible"
+    else:
+        if scenario_returns["base"] < settings.allocation.minimum_base_upside_pct:
+            reasons.append("base_return_below_minimum")
+        if adjusted < settings.allocation.minimum_confidence_adjusted_expected_return_pct:
+            reasons.append("expected_return_below_minimum")
+        if base_ratio < settings.allocation.starter_minimum_upside_downside_ratio:
+            reasons.append("bear_base_payoff_below_starter_minimum")
+        if expected_ratio < settings.allocation.starter_minimum_expected_bear_payoff_ratio:
+            reasons.append("expected_bear_payoff_below_starter_minimum")
+        if margin < settings.allocation.starter_minimum_margin_of_safety_pct:
+            reasons.append("margin_of_safety_below_starter_minimum")
+        if scenario_returns["bear"] < settings.allocation.starter_minimum_bear_return_pct:
+            reasons.append("bear_return_below_starter_minimum")
+    output["eligibility_reason_codes"] = "|".join(sorted(set(reasons)))
+    return output
+
+
 def derive_assessment_dimensions(
     values: Mapping[str, str],
     settings: Settings,
@@ -296,8 +511,9 @@ def _validate_market_references(
         raise ValuationError("assessment market mark does not match immutable instrument identity")
     if values["reference_currency"] != security["currency"]:
         raise ValuationError("assessment reference currency does not match immutable identity")
+    latest_mark = latest["adjusted_close"] or latest["close"]
     if required_decimal(values["reference_price"], label="reference_price") != required_decimal(
-        latest["adjusted_close"], label="latest adjusted close"
+        latest_mark, label="latest valuation mark"
     ):
         raise ValuationError("assessment reference price does not match the current mark")
     if values["market_data_as_of"] != latest["retrieved_at"]:

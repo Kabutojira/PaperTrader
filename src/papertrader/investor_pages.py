@@ -71,6 +71,7 @@ CLASSIFICATION_LABELS = {
     "strategy_ready": "Strategy-ready candidate",
     "valuation_attractive": "Valuation attractive",
     "strategy_pending": "Strategy research pending",
+    "allocation_constrained": "Allocation constrained",
     "relationship_pending": "Relationship research pending",
     "assessment_pending": "Assessment pending",
     "market_data_blocked": "Market data blocked",
@@ -405,6 +406,12 @@ def _buy_initiate_candidates(
     return candidates if limit is None else candidates[:limit]
 
 
+def _candidate_state_label(candidate: CandidateView) -> str:
+    tier = {"full": "Full baseline", "starter": "Starter"}.get(candidate.tier)
+    state = CLASSIFICATION_LABELS[candidate.classification]
+    return f"{tier} — {state}" if tier else state
+
+
 def _homepage_reason_lines(snapshot: DecisionSnapshot) -> list[str]:
     lines = [
         f"- {_markdown(reason_label(code))}"
@@ -531,7 +538,8 @@ def investor_brief_markdown(
             f"- **{_markdown(near_miss.ticker)} — {_markdown(near_miss.company_name)}:** "
             f"{RATING_LABELS[near_miss.canonical_rating]} / "
             f"{PORTFOLIO_ACTION_LABELS[near_miss.portfolio_action]}; "
-            f"expected return {near_miss.expected_return_pct or '—'}%; {_markdown(reason)}"
+            f"expected return {_rounded_percentage(near_miss.expected_return_pct)}; "
+            f"{_markdown(reason)}"
         )
     lines.extend(
         [
@@ -633,10 +641,10 @@ def investor_report_sections(
                 + " | "
                 f"{RATING_LABELS[candidate.canonical_rating]} / "
                 f"{PORTFOLIO_ACTION_LABELS[candidate.portfolio_action]} | "
-                f"{_markdown(CLASSIFICATION_LABELS[candidate.classification])} | "
+                f"{_markdown(_candidate_state_label(candidate))} | "
                 f"{candidate.bear_return_pct or '—'}% / {candidate.base_return_pct or '—'}% / "
                 f"{candidate.bull_return_pct or '—'}% | "
-                f"{candidate.expected_return_pct or '—'}% | "
+                f"{_rounded_percentage(candidate.expected_return_pct)} | "
                 f"{candidate.buy_below_price or '—'} | "
                 f"{_cell(main_reason)} |"
             )
@@ -761,6 +769,7 @@ def _homepage(snapshot: DecisionSnapshot, day: date, latest_report: str) -> str:
                 + ":** "
                 f"{RATING_LABELS[candidate.canonical_rating]} / "
                 f"{PORTFOLIO_ACTION_LABELS[candidate.portfolio_action]} · "
+                f"{_markdown(_candidate_state_label(candidate))} · "
                 f"expected return {_rounded_percentage(candidate.expected_return_pct)} · "
                 f"{_markdown(reason)}"
             )
@@ -1209,23 +1218,47 @@ def _securities_page(repository_root: Path, snapshot: DecisionSnapshot, day: dat
         rating_action = "Unrated / Watch"
         review = security["next_review_at"]
         if assessment is not None:
-            bear_return = assessment.get("bear_return_pct") or assessment["downside_pct"]
-            base_return = assessment.get("base_return_pct") or assessment["base_upside_pct"]
-            bull_return = assessment.get("bull_return_pct") or ""
+            bear_return = (
+                candidate.bear_return_pct
+                if candidate is not None
+                else assessment.get("bear_return_pct") or assessment["downside_pct"]
+            )
+            base_return = (
+                candidate.base_return_pct
+                if candidate is not None
+                else assessment.get("base_return_pct") or assessment["base_upside_pct"]
+            )
+            bull_return = (
+                candidate.bull_return_pct
+                if candidate is not None
+                else assessment.get("bull_return_pct") or ""
+            )
             scenario = " / ".join(
                 _rounded_percentage(value) for value in (bear_return, base_return, bull_return)
             )
-            expected_return = _rounded_percentage(assessment.get("expected_return_pct") or "")
+            expected_return = _rounded_percentage(
+                candidate.expected_return_pct
+                if candidate is not None
+                else assessment.get("expected_return_pct") or ""
+            )
             buy_below_price = assessment.get("buy_below_price") or ""
             buy_below = _currency_amount(
                 buy_below_price, security["currency"], label="buy-below price"
             )
-            rating = assessment.get("canonical_rating") or "unrated"
-            action = assessment.get("portfolio_action") or "watch"
+            rating = (
+                candidate.canonical_rating
+                if candidate is not None
+                else assessment.get("canonical_rating") or "unrated"
+            )
+            action = (
+                candidate.portfolio_action
+                if candidate is not None
+                else assessment.get("portfolio_action") or "watch"
+            )
             rating_action = f"{RATING_LABELS[rating]} / {PORTFOLIO_ACTION_LABELS[action]}"
             review = assessment["expires_at"] or review
         if candidate is not None:
-            decision = CLASSIFICATION_LABELS[candidate.classification]
+            decision = _candidate_state_label(candidate)
             if candidate.reason_labels:
                 reason = candidate.reason_labels[0]
         label = f"{security['ticker']} — {security['company_name']}"
@@ -1242,6 +1275,14 @@ def _securities_page(repository_root: Path, snapshot: DecisionSnapshot, day: dat
 
 def _system_status_page(repository_root: Path, snapshot: DecisionSnapshot, day: date) -> str:
     coverage = snapshot.coverage
+    remediation_operations = sorted(
+        (
+            operation
+            for operation in read_table(repository_root, "operations_todo")
+            if operation["source"].startswith("issue-remediation:")
+        ),
+        key=lambda operation: (-int(operation["priority"]), operation["operation_id"]),
+    )
     candidate_fx_gaps = sum(
         "fx_unavailable" in candidate.reason_codes for candidate in snapshot.candidate_pipeline
     )
@@ -1266,7 +1307,7 @@ def _system_status_page(repository_root: Path, snapshot: DecisionSnapshot, day: 
         "Publication validation confirms that this generated artifact is internally consistent. "
         "Investment and operations health below describe the current canonical inputs.",
         "",
-        "## Coverage",
+        "## Current investment health",
         "",
         f"- Assessments: {coverage.current_assessment_count}/{coverage.allocation_candidate_count}",
         f"- Fresh-evidence assessments: {coverage.fresh_evidence_assessment_count}/"
@@ -1274,21 +1315,45 @@ def _system_status_page(repository_root: Path, snapshot: DecisionSnapshot, day: 
         f"- Relationship reviews: {coverage.reviewed_relationship_count}/"
         f"{coverage.required_relationship_review_count}",
         f"- Accepted relationships: {coverage.accepted_relationship_count}",
-        f"- Ready or active strategies: {coverage.ready_or_active_strategy_count}",
-        f"- Active signals: {coverage.active_signal_count}",
-        f"- Pending orders: {coverage.pending_order_count}",
         f"- Market success/failure: {coverage.market_data_success_count}/"
         f"{coverage.market_data_failure_count}",
         f"- Candidate FX gaps: {candidate_fx_gaps}",
-        f"- Research backlog: {coverage.research_backlog_count}",
         f"- Last successful daily run: {latest_run}",
         "",
-        "## Current issues by investment impact",
+        "## Queue and execution health",
         "",
-        f"Current unresolved issues: **{len(snapshot.system_impacts)}**.",
-        "Resolved and superseded issues remain in the canonical audit but are not current health.",
-        "",
+        f"- Ready or active strategies: {coverage.ready_or_active_strategy_count}",
+        f"- Active signals: {coverage.active_signal_count}",
+        f"- Pending orders: {coverage.pending_order_count}",
+        f"- Queued remediation operations: {len(remediation_operations)}",
+        "- Operations are claimed and executed strictly sequentially.",
     ]
+    lines.extend(
+        f"  - {operation['operation_type'].replace('_', ' ').title()} "
+        f"({operation['status']}, priority {operation['priority']}) — "
+        f"{_markdown(operation['prompt'])}"
+        for operation in remediation_operations
+    )
+    lines.extend(
+        [
+            "",
+            "## Sequential research backlog",
+            "",
+            f"- Research backlog: {coverage.research_backlog_count}",
+            "",
+            "## Publication health",
+            "",
+            "- Snapshot schema and derived CSV equality: validated",
+            "- Portfolio accounting reconciliation: validated",
+            "",
+            "## Current issues by investment impact",
+            "",
+            f"Current unresolved issues: **{len(snapshot.system_impacts)}**.",
+            "Resolved and superseded issues remain in the canonical audit but are not current "
+            "health.",
+            "",
+        ]
+    )
     if snapshot.system_impacts:
         grouped: defaultdict[str, list[SystemImpact]] = defaultdict(list)
         for impact in snapshot.system_impacts:
@@ -1321,11 +1386,11 @@ def _system_status_page(repository_root: Path, snapshot: DecisionSnapshot, day: 
         lines.extend(["No open issues.", ""])
     lines.extend(
         [
-            "## Sequential research backlog",
+            "## Historical audit health",
             "",
-            f"- Active research operations: **{coverage.research_backlog_count}**",
-            "- Backlog size is research capacity information; it does not by itself block a safe "
-            "portfolio projection or a validated action.",
+            "- Resolved and superseded incidents remain visible in canonical issue and operation "
+            "history.",
+            "- No unresolved issue is hidden or aged out.",
         ]
     )
     lines.extend(

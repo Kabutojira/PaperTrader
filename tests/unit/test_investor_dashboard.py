@@ -265,6 +265,7 @@ def test_dashboard_candidate_section_uses_only_buy_initiate_assessments(
     assert candidates == (included,) * 6
     assert all(candidate.canonical_rating in {"buy", "strong_buy"} for candidate in candidates)
     assert all(candidate.portfolio_action == "initiate" for candidate in candidates)
+    assert "Full baseline — Strategy research pending" in homepage
     assert "expected return 21% · The comparable assessment is stale or expired." in homepage
     assert "expected 20.7817678274164750316066337%" not in homepage
 
@@ -281,6 +282,8 @@ def test_model_portfolio_omits_comparison_benchmark_and_status_uses_snapshot_bac
     assert "Comparison-only research benchmark" not in model_portfolio
     assert "Research comparison benchmark" not in model_portfolio
     assert "## Sequential research backlog" in status
+    assert "Queued remediation operations:" in status
+    assert "duplicate-assessment incident" in status
     assert "Active research work" not in status
     assert str(snapshot.coverage.research_backlog_count) in status
 
@@ -333,6 +336,11 @@ def test_quartz_uses_external_dashboard_source_and_validated_publication_copy(
     assert "CSV header does not match" in build
     assert "differs from decision_snapshot.json" in build
     assert "publication artifact hash changed during copy" in build
+    assert "![3, 4, 5].includes(snapshot.version)" in build
+    assert "version4PublicationFiles" in build
+    assert '"allocation_intent_id"' in build
+    assert '"valuation_mark_as_of"' in build
+    assert '"bear_base_payoff_ratio"' in build
     assert "copyFileSync" in build
 
 

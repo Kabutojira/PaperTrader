@@ -19,7 +19,7 @@ from pathlib import Path, PurePosixPath
 from papertrader.atomic_io import atomic_write_json
 from papertrader.config import Settings
 from papertrader.dedupe import SemanticDisposition
-from papertrader.market_data import MarketDataError, latest_fx_rate, read_price_cache
+from papertrader.market_data import MarketDataError, latest_fx_rate
 from papertrader.portfolio import reconcile_portfolio, replay_accounting
 from papertrader.queue import enqueue_operation, prepare_queue
 from papertrader.tables import append_unique, read_table, write_table
@@ -168,8 +168,12 @@ class _Candidate:
     assessment: Mapping[str, str] | None
     relationship_id: str
     themes: tuple[str, ...]
+    assessment_id: str
+    tier: str
+    live_valuation: Mapping[str, str]
     score: AssessmentScore
     price: Decimal | None
+    price_as_of: datetime | None
     fx_rate: Decimal | None
     assessment_at: datetime | None
     eligible: bool
@@ -876,6 +880,29 @@ def _themes_for_security(
     return tuple(sorted({row["idea_id"] for row in relationships.get(security_id, ())}))
 
 
+def _diversification_component_count(candidates: Sequence[_Candidate]) -> int:
+    """Count connected candidates, treating every shared accepted idea as one component."""
+
+    remaining = {candidate.security_id: candidate for candidate in candidates}
+    components = 0
+    while remaining:
+        components += 1
+        seed_id = min(remaining)
+        stack = [remaining.pop(seed_id)]
+        themes: set[str] = set()
+        while stack:
+            current = stack.pop()
+            themes.update(current.themes)
+            connected = [
+                security_id
+                for security_id, candidate in remaining.items()
+                if themes.intersection(candidate.themes)
+            ]
+            for security_id in connected:
+                stack.append(remaining.pop(security_id))
+    return components
+
+
 def _strategy_sleeves(repository_root: Path) -> dict[str, str]:
     sleeves: dict[str, str] = {}
     for row in read_table(repository_root, "strategies"):
@@ -934,20 +961,27 @@ def _fresh_price_and_fx(
     security: Mapping[str, str],
     *,
     now: datetime,
-) -> tuple[Decimal, Decimal]:
-    bars = read_price_cache(repository_root, security["security_id"])
-    if not bars:
+) -> tuple[Decimal, Decimal, datetime]:
+    latest_rows = {row["security_id"]: row for row in read_table(repository_root, "market_latest")}
+    latest = latest_rows.get(security["security_id"])
+    if latest is None:
         raise AllocationError("market_data_missing")
-    latest = bars[-1]
-    if latest.currency != security["currency"]:
+    if (
+        latest["provider_symbol"] != security["provider_symbol"]
+        or latest["currency"] != security["currency"]
+    ):
         raise AllocationError("market_data_identity_mismatch")
-    age = now - ensure_utc(latest.retrieved_at)
+    if latest["status"] != "ok":
+        raise AllocationError("market_data_not_ok")
+    observed = parse_timestamp(latest["retrieved_at"])
+    assert observed is not None
+    age = now - observed
     if age < timedelta(0) or age > settings.market_data.stale_price_after:
         raise AllocationError("market_data_stale")
-    latest_rows = {row["security_id"]: row for row in read_table(repository_root, "market_latest")}
-    latest_state = latest_rows.get(security["security_id"])
-    if latest_state is not None and latest_state["status"] != "ok":
-        raise AllocationError("market_data_not_ok")
+    raw_price = latest["adjusted_close"] or latest["close"]
+    price = required_decimal(raw_price, label="allocation valuation mark")
+    if price <= 0:
+        raise AllocationError("market_data_invalid")
     try:
         fx_rate = latest_fx_rate(
             repository_root,
@@ -958,7 +992,7 @@ def _fresh_price_and_fx(
         )
     except MarketDataError as exc:
         raise AllocationError("fx_unavailable") from exc
-    return latest.close, fx_rate
+    return price, fx_rate, observed
 
 
 def _candidate(
@@ -966,18 +1000,22 @@ def _candidate(
     settings: Settings,
     security: Mapping[str, str],
     assessment: Mapping[str, str] | None,
+    assessment_id: str,
     relationships: Mapping[str, Sequence[Mapping[str, str]]],
+    sources: Mapping[str, Mapping[str, str]],
     *,
     now: datetime,
 ) -> _Candidate:
     reasons: list[str] = []
+    tier = "watch"
+    live_valuation: Mapping[str, str] = {}
     if assessment is None:
         score = AssessmentScore(Decimal("0"), Decimal("0"), Decimal("0"))
         reasons.append("assessment_missing")
         assessed_at = None
     else:
         try:
-            score = score_assessment(assessment, settings.allocation.cash_hurdle_score)
+            score = score_assessment(assessment, settings.allocation.minimum_quality_score)
         except (AllocationError, CanonicalValueError, KeyError) as exc:
             raise AllocationError(
                 f"invalid assessment for {security['security_id']}: {exc}"
@@ -1019,25 +1057,11 @@ def _candidate(
     current_relationships = relationships.get(security["security_id"], ())
     if not current_relationships:
         reasons.append("relationship_missing_or_stale")
-    if assessment is not None and assessment.get("assessment_schema_version") == "2":
-        from papertrader.valuation import derive_assessment_dimensions
-
-        dimensions = derive_assessment_dimensions(
-            assessment,
-            settings,
-            relationship_accepted=bool(current_relationships),
-        )
-        reasons.extend(
-            reason
-            for reason in dimensions["eligibility_reason_codes"].split("|")
-            if reason
-            and reason != "relationship_pending"
-            and not reason.startswith("hard_blocker:")
-        )
     price: Decimal | None = None
+    price_as_of: datetime | None = None
     fx_rate: Decimal | None = None
     try:
-        price, fx_rate = _fresh_price_and_fx(
+        price, fx_rate, price_as_of = _fresh_price_and_fx(
             repository_root,
             settings,
             security,
@@ -1045,6 +1069,36 @@ def _candidate(
         )
     except AllocationError as exc:
         reasons.append(str(exc))
+    if assessment is not None and assessment.get("assessment_schema_version") == "2" and price:
+        from papertrader.valuation import ValuationError, live_valuation_projection
+
+        evidence_fresh = not _assessment_readiness_errors(assessment, sources, settings, now=now)
+        try:
+            live_valuation = live_valuation_projection(
+                repository_root,
+                settings,
+                security,
+                assessment,
+                now=now,
+                relationship_accepted=bool(current_relationships),
+                evidence_fresh=evidence_fresh,
+            )
+        except (ValuationError, CanonicalValueError) as exc:
+            reasons.append(str(exc))
+        else:
+            tier = live_valuation["tier"]
+            reasons.extend(
+                part for part in live_valuation["eligibility_reason_codes"].split("|") if part
+            )
+    if (
+        assessment is not None
+        and assessment.get("assessment_schema_version") != "2"
+        and not reasons
+    ):
+        tier = "full"
+        live_valuation = {
+            "position_cap_pct": decimal_text(settings.allocation.maximum_baseline_position_pct)
+        }
     return _Candidate(
         security_id=security["security_id"],
         security=security,
@@ -1053,11 +1107,15 @@ def _candidate(
             current_relationships[0]["relationship_id"] if current_relationships else ""
         ),
         themes=_themes_for_security(security["security_id"], relationships),
+        assessment_id=assessment_id,
+        tier=tier,
+        live_valuation=live_valuation,
         score=score,
         price=price,
+        price_as_of=price_as_of,
         fx_rate=fx_rate,
         assessment_at=assessed_at,
-        eligible=not reasons,
+        eligible=(tier in {"full", "starter"} if assessment and is_v2 else not reasons),
         reasons=sorted(set(reasons)),
     )
 
@@ -1112,7 +1170,9 @@ def _pending_exposure(
         fx_rate: Decimal | None = None
         if row["instrument_type"] == "equity":
             try:
-                price, fx_rate = _fresh_price_and_fx(repository_root, settings, security, now=now)
+                price, fx_rate, _ = _fresh_price_and_fx(
+                    repository_root, settings, security, now=now
+                )
             except AllocationError:
                 unpriced = True
         else:
@@ -1180,8 +1240,13 @@ def _candidate_capacity(
     security_id = candidate.security_id
     current_baseline = portfolio.current_baseline.get(security_id, Decimal("0"))
     pending_baseline = pending.baseline_by_security.get(security_id, Decimal("0"))
+    position_cap_pct = (
+        settings.allocation.maximum_starter_position_pct
+        if candidate.tier == "starter"
+        else settings.allocation.maximum_baseline_position_pct
+    )
     baseline_position_room = (
-        equity * settings.allocation.maximum_baseline_position_pct / ONE_HUNDRED
+        equity * position_cap_pct / ONE_HUNDRED
         - current_baseline
         - pending_baseline
         - candidate.allocation
@@ -1236,6 +1301,32 @@ def _allocate_capped(
             )
             for candidate in ordered
         }
+        starter_room = max(
+            equity * settings.allocation.maximum_starter_sleeve_pct / ONE_HUNDRED
+            - sum(
+                (candidate.allocation for candidate in ordered if candidate.tier == "starter"),
+                Decimal("0"),
+            ),
+            Decimal("0"),
+        )
+        starter_capacity = sum(
+            (
+                value
+                for security_id, value in capacities.items()
+                if next(
+                    candidate for candidate in ordered if candidate.security_id == security_id
+                ).tier
+                == "starter"
+            ),
+            Decimal("0"),
+        )
+        if starter_capacity > starter_room:
+            factor = Decimal("0") if starter_capacity == 0 else starter_room / starter_capacity
+            for candidate in ordered:
+                if candidate.tier == "starter":
+                    capacities[candidate.security_id] = _money(
+                        capacities[candidate.security_id] * factor
+                    )
         active = [
             candidate for candidate in ordered if capacities[candidate.security_id] >= MONEY_QUANTUM
         ]
@@ -1310,7 +1401,12 @@ def _cap_final_targets(
     """Reduce lowest-ranked baseline targets until every shared cap is satisfied."""
 
     for security_id in sorted(targets):
-        baseline_cap = equity * settings.allocation.maximum_baseline_position_pct / ONE_HUNDRED
+        position_cap = (
+            settings.allocation.maximum_starter_position_pct
+            if candidates[security_id].tier == "starter"
+            else settings.allocation.maximum_baseline_position_pct
+        )
+        baseline_cap = equity * position_cap / ONE_HUNDRED
         fixed_security_exposure = (
             portfolio.current_total.get(security_id, Decimal("0"))
             - portfolio.current_baseline.get(security_id, Decimal("0"))
@@ -1407,6 +1503,14 @@ def _cap_final_targets(
     )
     if sleeve_excess > 0:
         reduce_group(tuple(targets), sleeve_excess)
+    starter_ids = tuple(
+        security_id for security_id, candidate in candidates.items() if candidate.tier == "starter"
+    )
+    starter_excess = sum((targets[value] for value in starter_ids), Decimal("0")) - (
+        equity * settings.allocation.maximum_starter_sleeve_pct / ONE_HUNDRED
+    )
+    if starter_excess > 0:
+        reduce_group(starter_ids, starter_excess)
 
 
 def _row_reason(
@@ -1418,7 +1522,11 @@ def _row_reason(
 ) -> str:
     reasons = list(candidate.reasons)
     if candidate.eligible:
-        reasons.append("above_cash_hurdle")
+        reasons.append(
+            "quality_above_minimum"
+            if candidate.assessment and candidate.assessment.get("assessment_schema_version") == "2"
+            else "above_cash_hurdle"
+        )
         if disposition == "below_minimum_trade":
             reasons.append("minimum_trade_threshold")
         if not diversified:
@@ -1466,6 +1574,13 @@ def _build_rows(
         current = portfolio.current_baseline.get(candidate.security_id, Decimal("0"))
         pending_value = pending.baseline_by_security.get(candidate.security_id, Decimal("0"))
         target = max(targets[candidate.security_id], Decimal("0"))
+        unit = candidate.unit_value_base
+        target_quantity = (
+            (target / unit).to_integral_value(rounding=ROUND_DOWN)
+            if unit is not None and unit > 0
+            else Decimal("0")
+        )
+        target = target_quantity * unit if unit is not None else Decimal("0")
         delta = target - current - pending_value
         delta_weight = abs(_percentage(delta, equity))
         current_and_pending = current + pending_value
@@ -1498,14 +1613,58 @@ def _build_rows(
             disposition = "close"
         else:
             disposition = "reduce"
+        target_quantity = (
+            (target / unit).to_integral_value(rounding=ROUND_DOWN)
+            if unit is not None and unit > 0
+            else Decimal("0")
+        )
+        allocation_intent_id = (
+            stable_id(
+                "allocation_intent",
+                candidate.security_id,
+                "long",
+                "equity",
+                candidate.assessment_id,
+                candidate.relationship_id,
+                candidate.tier,
+                decimal_text(target_quantity),
+            )
+            if candidate.assessment_id and candidate.relationship_id
+            else ""
+        )
         rows.append(
             {
                 "allocation_plan_id": plan_id,
+                "allocation_intent_id": allocation_intent_id,
                 "run_id": run_id,
                 "as_of": format_timestamp(as_of),
                 "security_id": candidate.security_id,
                 "strategy_id": baseline_strategy_id(candidate.security_id),
                 "sleeve": "baseline",
+                "tier": candidate.tier,
+                "assessment_id": candidate.assessment_id,
+                "relationship_id": candidate.relationship_id,
+                "valuation_mark": candidate.live_valuation.get("valuation_mark", ""),
+                "valuation_mark_currency": candidate.live_valuation.get(
+                    "valuation_mark_currency", ""
+                ),
+                "valuation_mark_as_of": candidate.live_valuation.get("valuation_mark_as_of", ""),
+                "position_cap_pct": candidate.live_valuation.get("position_cap_pct", "0"),
+                "target_quantity": decimal_text(target_quantity),
+                "bear_return_pct": candidate.live_valuation.get("bear_return_pct", ""),
+                "base_return_pct": candidate.live_valuation.get("base_return_pct", ""),
+                "bull_return_pct": candidate.live_valuation.get("bull_return_pct", ""),
+                "expected_return_pct": candidate.live_valuation.get("expected_return_pct", ""),
+                "confidence_adjusted_expected_return_pct": candidate.live_valuation.get(
+                    "confidence_adjusted_expected_return_pct", ""
+                ),
+                "margin_of_safety_pct": candidate.live_valuation.get("margin_of_safety_pct", ""),
+                "bear_base_payoff_ratio": candidate.live_valuation.get(
+                    "bear_base_payoff_ratio", ""
+                ),
+                "expected_bear_payoff_ratio": candidate.live_valuation.get(
+                    "expected_bear_payoff_ratio", ""
+                ),
                 "rank": str(candidate.rank) if candidate.rank else "",
                 "effective_score": decimal_text(candidate.score.effective_score),
                 "candidate_edge": decimal_text(candidate.score.candidate_edge),
@@ -1552,17 +1711,26 @@ def _enqueue_targets(
         inputs = {
             "mode": "baseline_allocation",
             "allocation_plan_id": row["allocation_plan_id"],
+            "allocation_intent_id": row["allocation_intent_id"],
             "security_id": row["security_id"],
             "strategy_id": row["strategy_id"],
             "relationship_id": relationship_id,
+            "tier": row["tier"],
+            "assessment_id": row["assessment_id"],
+            "target_quantity": row["target_quantity"],
+            "position_cap_pct": row["position_cap_pct"],
             "current_weight_pct": row["current_weight_pct"],
             "target_weight_pct": row["target_weight_pct"],
-            "maximum_weight_pct": decimal_text(settings.allocation.maximum_baseline_position_pct),
+            "maximum_weight_pct": row["position_cap_pct"],
             "selection_rank": int(row["rank"] or "0"),
             "effective_score": row["effective_score"],
             "assessment_as_of": row["assessment_as_of"],
             "disposition": row["disposition"],
         }
+        if row["valuation_mark"]:
+            inputs["valuation_mark"] = row["valuation_mark"]
+        if row["valuation_mark_as_of"]:
+            inputs["valuation_mark_as_of"] = row["valuation_mark_as_of"]
         operation_id, created = enqueue_operation(
             repository_root,
             settings,
@@ -1571,7 +1739,7 @@ def _enqueue_targets(
             entity_id=row["strategy_id"],
             dedupe_key=(
                 f"strategy_research:{row['strategy_id']}:"
-                f"{row['allocation_plan_id']}:{row['disposition']}"
+                f"{row['allocation_intent_id']}:{row['disposition']}"
             ),
             prompt=(
                 f"Research the bounded baseline allocation target for {row['security_id']} "
@@ -1579,7 +1747,7 @@ def _enqueue_targets(
             ),
             inputs=inputs,
             source=f"deterministic-allocation:{row['allocation_plan_id']}",
-            priority=55,
+            priority=99,
             freshness_days=0,
             source_refs=tuple(
                 part for part in candidate.assessment["evidence_refs"].split("|") if part
@@ -1589,6 +1757,55 @@ def _enqueue_targets(
         if created:
             created_ids.append(operation_id)
     return tuple(sorted(created_ids))
+
+
+def _cancel_superseded_allocation_state(
+    repository_root: Path, rows: Sequence[Mapping[str, str]]
+) -> None:
+    """Cancel unfilled baseline state only when its economic intent is no longer current."""
+
+    targets = {row["strategy_id"]: row for row in rows}
+    strategies = {row["strategy_id"]: row for row in read_table(repository_root, "strategies")}
+    signals = read_table(repository_root, "signals")
+    cancelled: set[str] = set()
+    for signal in signals:
+        if signal["status"] not in {"ready", "ordered"}:
+            continue
+        strategy = strategies.get(signal["strategy_id"])
+        if strategy is None or strategy["sleeve"] != "baseline":
+            continue
+        target = targets.get(signal["strategy_id"])
+        compatible = bool(
+            target is not None
+            and (
+                (
+                    signal["allocation_intent_id"]
+                    and signal["allocation_intent_id"] == target["allocation_intent_id"]
+                )
+                or (
+                    not signal["allocation_intent_id"]
+                    and strategy["allocation_plan_id"] == target["allocation_plan_id"]
+                )
+            )
+        )
+        if compatible:
+            continue
+        signal["status"] = "cancelled"
+        cancelled.add(signal["signal_id"])
+    if not cancelled:
+        return
+    write_table(repository_root, "signals", signals)
+    orders = read_table(repository_root, "orders")
+    changed = False
+    for order in orders:
+        if order["signal_id"] in cancelled and order["status"] in {
+            "pending",
+            "partially_filled",
+        }:
+            order["status"] = "cancelled"
+            changed = True
+    if changed:
+        write_table(repository_root, "orders", orders)
 
 
 def plan_allocation(
@@ -1613,6 +1830,11 @@ def plan_allocation(
     assessments = {
         row["security_id"]: row for row in read_table(repository_root, "security_assessments")
     }
+    assessment_ids = {
+        row["security_id"]: row["assessment_id"]
+        for row in read_table(repository_root, "security_assessment_history")
+    }
+    sources = {row["source_id"]: row for row in read_table(repository_root, "source_registry")}
     relationships, _ = _current_relationships(repository_root, instant)
     strategy_sleeves = _strategy_sleeves(repository_root)
     portfolio = _portfolio_exposure(
@@ -1654,7 +1876,9 @@ def plan_allocation(
             settings,
             securities[security_id],
             assessments.get(security_id),
+            assessment_ids.get(security_id, ""),
             relationships,
+            sources,
             now=instant,
         )
         for security_id in sorted(candidate_ids)
@@ -1682,7 +1906,15 @@ def plan_allocation(
         )
     eligible = sorted(
         (candidate for candidate in candidates if candidate.eligible),
-        key=lambda candidate: (-candidate.score.effective_score, candidate.security_id),
+        key=lambda candidate: (
+            0 if candidate.tier == "full" else 1,
+            -required_decimal(
+                candidate.live_valuation.get("confidence_adjusted_expected_return_pct", "0"),
+                label="live expected return",
+            ),
+            -candidate.score.effective_score,
+            candidate.security_id,
+        ),
     )
     for rank, candidate in enumerate(eligible, start=1):
         candidate.rank = rank
@@ -1708,8 +1940,10 @@ def plan_allocation(
         deployment_budget = Decimal("0")
         for candidate in eligible:
             candidate.reasons.append("pending_exposure_unpriced")
+    diversification_components = _diversification_component_count(eligible)
     diversification_factor = min(
-        Decimal(len(eligible)) / Decimal(settings.allocation.minimum_diversified_candidates),
+        Decimal(diversification_components)
+        / Decimal(settings.allocation.minimum_diversified_candidates),
         Decimal("1"),
     )
     diversified_budget = _money(deployment_budget * diversification_factor)
@@ -1749,7 +1983,9 @@ def plan_allocation(
         run_id=run_id,
         as_of=instant,
         deployment_budget=deployment_budget,
-        diversified=(len(eligible) >= settings.allocation.minimum_diversified_candidates),
+        diversified=(
+            diversification_components >= settings.allocation.minimum_diversified_candidates
+        ),
     )
     input_identity = {
         "allocation_identity_version": 2,
@@ -1770,12 +2006,40 @@ def plan_allocation(
             "maximum_baseline_position_pct": decimal_text(
                 settings.allocation.maximum_baseline_position_pct
             ),
+            "maximum_starter_position_pct": decimal_text(
+                settings.allocation.maximum_starter_position_pct
+            ),
+            "maximum_starter_sleeve_pct": decimal_text(
+                settings.allocation.maximum_starter_sleeve_pct
+            ),
             "maximum_sector_pct": decimal_text(settings.allocation.maximum_sector_pct),
             "maximum_theme_pct": decimal_text(settings.allocation.maximum_theme_pct),
             "cash_hurdle_score": decimal_text(settings.allocation.cash_hurdle_score),
+            "minimum_quality_score": decimal_text(settings.allocation.minimum_quality_score),
             "minimum_base_upside_pct": decimal_text(settings.allocation.minimum_base_upside_pct),
             "minimum_upside_downside_ratio": decimal_text(
                 settings.allocation.minimum_upside_downside_ratio
+            ),
+            "minimum_confidence_adjusted_expected_return_pct": decimal_text(
+                settings.allocation.minimum_confidence_adjusted_expected_return_pct
+            ),
+            "minimum_expected_bear_payoff_ratio": decimal_text(
+                settings.allocation.minimum_expected_bear_payoff_ratio
+            ),
+            "minimum_margin_of_safety_pct": decimal_text(
+                settings.allocation.minimum_margin_of_safety_pct
+            ),
+            "starter_minimum_upside_downside_ratio": decimal_text(
+                settings.allocation.starter_minimum_upside_downside_ratio
+            ),
+            "starter_minimum_expected_bear_payoff_ratio": decimal_text(
+                settings.allocation.starter_minimum_expected_bear_payoff_ratio
+            ),
+            "starter_minimum_margin_of_safety_pct": decimal_text(
+                settings.allocation.starter_minimum_margin_of_safety_pct
+            ),
+            "starter_minimum_bear_return_pct": decimal_text(
+                settings.allocation.starter_minimum_bear_return_pct
             ),
             "minimum_confidence": settings.allocation.minimum_confidence,
             "minimum_diversified_candidates": settings.allocation.minimum_diversified_candidates,
@@ -1802,6 +2066,9 @@ def plan_allocation(
                 ),
                 "effective_score": decimal_text(candidate.score.effective_score),
                 "candidate_edge": decimal_text(candidate.score.candidate_edge),
+                "assessment_id": candidate.assessment_id,
+                "tier": candidate.tier,
+                "live_valuation": dict(candidate.live_valuation),
                 "eligible": candidate.eligible,
                 "reasons": sorted(set(candidate.reasons)),
                 "rank": candidate.rank,
@@ -1813,6 +2080,9 @@ def plan_allocation(
                 "security_id": row["security_id"],
                 "strategy_id": row["strategy_id"],
                 "sleeve": row["sleeve"],
+                "tier": row["tier"],
+                "allocation_intent_id": row["allocation_intent_id"],
+                "target_quantity": row["target_quantity"],
                 "target_weight_pct": row["target_weight_pct"],
                 "target_value_base": row["target_value_base"],
                 "assessment_as_of": row["assessment_as_of"],
@@ -1859,6 +2129,25 @@ def plan_allocation(
         plan_observed_at = observed
         rows = sorted(prior_rows, key=lambda value: value["security_id"])
     write_table(repository_root, "allocation_targets", rows)
+    _cancel_superseded_allocation_state(repository_root, rows)
+    if rows:
+        targets_by_strategy = {row["strategy_id"]: row for row in rows}
+        strategy_rows = read_table(repository_root, "strategies")
+        rebound = False
+        for strategy in strategy_rows:
+            target = targets_by_strategy.get(strategy["strategy_id"])
+            if (
+                target is not None
+                and strategy["sleeve"] == "baseline"
+                and strategy["allocation_intent_id"]
+                and strategy["allocation_intent_id"] == target["allocation_intent_id"]
+                and strategy["allocation_plan_id"] != plan_id
+            ):
+                strategy["allocation_plan_id"] = plan_id
+                strategy["updated_at"] = format_timestamp(instant)
+                rebound = True
+        if rebound:
+            write_table(repository_root, "strategies", strategy_rows)
     if rows:
         append_unique(
             repository_root,
@@ -1889,7 +2178,7 @@ def plan_allocation(
             unallocated_reasons.add("allocation_disabled")
         if not eligible:
             unallocated_reasons.add("insufficient_eligible_candidates")
-        if len(eligible) < settings.allocation.minimum_diversified_candidates:
+        if diversification_components < settings.allocation.minimum_diversified_candidates:
             unallocated_reasons.add("insufficient_diversification")
         if eligible:
             if available_cash < target_exposure_gap:
@@ -2071,14 +2360,17 @@ def validate_allocation_state(repository_root: Path, settings: Settings) -> list
         except (AllocationError, CanonicalValueError, ValueError) as exc:
             errors.append(f"invalid assessment {security_id}: {exc}")
     strategy_by_id: dict[str, Mapping[str, str]] = {}
+    target_by_strategy = {row["strategy_id"]: row for row in targets}
     for row in strategies:
         if row["strategy_id"] in strategy_by_id:
             errors.append(f"duplicate strategy: {row['strategy_id']}")
         strategy_by_id[row["strategy_id"]] = row
         if row["sleeve"] not in {"conviction", "baseline"}:
             errors.append(f"strategy has invalid sleeve: {row['strategy_id']}")
-        if row["sleeve"] == "conviction" and row["allocation_plan_id"]:
-            errors.append(f"conviction strategy references allocation plan: {row['strategy_id']}")
+        if row["sleeve"] == "conviction" and (
+            row["allocation_plan_id"] or row["allocation_intent_id"]
+        ):
+            errors.append(f"conviction strategy references allocation intent: {row['strategy_id']}")
         if row["sleeve"] == "baseline" and (
             not row["allocation_plan_id"]
             or row["strategy_id"] != baseline_strategy_id(row["security_id"])
@@ -2091,8 +2383,24 @@ def validate_allocation_state(repository_root: Path, settings: Settings) -> list
                 risk_budget = required_decimal(
                     row["risk_budget_pct"], label="baseline strategy risk budget"
                 )
-                if risk_budget != settings.allocation.maximum_baseline_position_pct:
-                    raise ValueError("risk budget differs from baseline position cap")
+                target = target_by_strategy.get(row["strategy_id"])
+                compatible_target = bool(
+                    row["allocation_intent_id"]
+                    and target is not None
+                    and row["allocation_intent_id"] == target["allocation_intent_id"]
+                )
+                allowed_caps = {
+                    settings.allocation.maximum_baseline_position_pct,
+                    settings.allocation.maximum_starter_position_pct,
+                }
+                if compatible_target and target is not None:
+                    expected_cap = required_decimal(
+                        target["position_cap_pct"], label="target position cap"
+                    )
+                    if risk_budget != expected_cap:
+                        raise ValueError("risk budget differs from allocation-tier position cap")
+                elif risk_budget not in allowed_caps:
+                    raise ValueError("risk budget differs from allocation-tier position cap")
             except (CanonicalValueError, ValueError) as exc:
                 errors.append(f"invalid baseline strategy {row['strategy_id']}: {exc}")
             legs = [leg for leg in strategy_legs if leg["strategy_id"] == row["strategy_id"]]
@@ -2155,6 +2463,37 @@ def validate_allocation_state(repository_root: Path, settings: Settings) -> list
                 raise ValueError("unsafe plan or run ID")
             if row["rank"] and int(row["rank"]) <= 0:
                 raise ValueError("rank is not positive")
+            legacy_target = not row["tier"] and not row["allocation_intent_id"]
+            if not legacy_target:
+                if row["tier"] not in {"full", "starter", "watch"}:
+                    raise ValueError("invalid allocation tier")
+                target_quantity = required_decimal(row["target_quantity"], label="target quantity")
+                if target_quantity < 0 or target_quantity != target_quantity.to_integral_value():
+                    raise ValueError("target quantity is not a non-negative whole number")
+                position_cap = required_decimal(row["position_cap_pct"], label="position cap")
+                expected_cap = {
+                    "full": settings.allocation.maximum_baseline_position_pct,
+                    "starter": settings.allocation.maximum_starter_position_pct,
+                    "watch": Decimal("0"),
+                }[row["tier"]]
+                if position_cap != expected_cap:
+                    raise ValueError("position cap differs from allocation tier")
+                if not row["assessment_id"] or not row["relationship_id"]:
+                    if row["allocation_intent_id"]:
+                        raise ValueError("allocation intent lacks immutable inputs")
+                else:
+                    expected_intent = stable_id(
+                        "allocation_intent",
+                        row["security_id"],
+                        "long",
+                        "equity",
+                        row["assessment_id"],
+                        row["relationship_id"],
+                        row["tier"],
+                        row["target_quantity"],
+                    )
+                    if expected_intent != row["allocation_intent_id"]:
+                        raise ValueError("allocation intent identity mismatch")
             target_plan_identity.add((row["allocation_plan_id"], row["run_id"], row["as_of"]))
         except (CanonicalValueError, ValueError) as exc:
             errors.append(f"invalid allocation target identity {security_id}: {exc}")
@@ -2178,7 +2517,12 @@ def validate_allocation_state(repository_root: Path, settings: Settings) -> list
             edge = required_decimal(row["candidate_edge"], label="candidate edge")
             if (
                 target_weight < 0
-                or target_weight > settings.allocation.maximum_baseline_position_pct
+                or target_weight
+                > (
+                    required_decimal(row["position_cap_pct"], label="target position cap")
+                    if row["position_cap_pct"]
+                    else settings.allocation.maximum_baseline_position_pct
+                )
                 or target_value < 0
                 or current_weight < 0
                 or edge < 0
@@ -2212,6 +2556,26 @@ def validate_allocation_state(repository_root: Path, settings: Settings) -> list
                 raise ValueError("non-canonical timestamp")
             if row["rank"] and int(row["rank"]) <= 0:
                 raise ValueError("invalid rank")
+            if row["allocation_intent_id"]:
+                if row["tier"] not in {"full", "starter", "watch"}:
+                    raise ValueError("invalid tier")
+                target_quantity = required_decimal(
+                    row["target_quantity"], label="history target quantity"
+                )
+                if target_quantity < 0 or target_quantity != target_quantity.to_integral_value():
+                    raise ValueError("invalid target quantity")
+                expected_intent = stable_id(
+                    "allocation_intent",
+                    row["security_id"],
+                    "long",
+                    "equity",
+                    row["assessment_id"],
+                    row["relationship_id"],
+                    row["tier"],
+                    row["target_quantity"],
+                )
+                if expected_intent != row["allocation_intent_id"]:
+                    raise ValueError("allocation intent mismatch")
             if row["disposition"] not in {
                 "open",
                 "increase",
@@ -2236,7 +2600,12 @@ def validate_allocation_state(repository_root: Path, settings: Settings) -> list
                 required_decimal(row[field], label=f"history {field}")
             if (
                 target_weight < 0
-                or target_weight > settings.allocation.maximum_baseline_position_pct
+                or target_weight
+                > (
+                    required_decimal(row["position_cap_pct"], label="history position cap")
+                    if row["position_cap_pct"]
+                    else settings.allocation.maximum_baseline_position_pct
+                )
                 or target_value < 0
                 or edge < 0
             ):

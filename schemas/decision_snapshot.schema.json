@@ -23,7 +23,7 @@
     "source_state_hashes"
   ],
   "properties": {
-    "version": { "enum": [1, 2, 3, 4] },
+    "version": { "enum": [1, 2, 3, 4, 5] },
     "snapshot_id": { "type": "string", "pattern": "^decision_[0-9a-f]{20}$" },
     "run_id": { "$ref": "#/$defs/runId" },
     "as_of": { "$ref": "#/$defs/timestamp" },
@@ -175,6 +175,22 @@
           }
         }
       }
+    },
+    {
+      "if": {
+        "properties": { "version": { "const": 5 } },
+        "required": ["version"]
+      },
+      "then": {
+        "required": ["investment_data_status", "operations_status", "evidence_state", "research_benchmark", "target_portfolio"],
+        "not": { "required": ["approved_target_portfolio"] },
+        "properties": {
+          "current_portfolio": { "properties": { "rows": { "items": { "required": ["tier", "allocation_intent_id", "assessment_id", "valuation_mark", "valuation_mark_currency", "valuation_mark_as_of", "position_cap_pct", "margin_of_safety_pct", "bear_base_payoff_ratio", "expected_bear_payoff_ratio"] } } } },
+          "target_portfolio": { "properties": { "rows": { "items": { "required": ["tier", "allocation_intent_id", "assessment_id", "valuation_mark", "valuation_mark_currency", "valuation_mark_as_of", "position_cap_pct", "margin_of_safety_pct", "bear_base_payoff_ratio", "expected_bear_payoff_ratio"] } } } },
+          "candidate_pipeline": { "items": { "required": ["tier", "allocation_intent_id", "assessment_id", "valuation_mark", "valuation_mark_currency", "valuation_mark_as_of", "position_cap_pct", "target_quantity", "margin_of_safety_pct", "bear_base_payoff_ratio", "expected_bear_payoff_ratio"] } },
+          "actionable_signals": { "items": { "required": ["allocation_intent_id"] } }
+        }
+      }
     }
   ],
   "$defs": {
@@ -225,6 +241,9 @@
         "company_name": { "type": "string" },
         "instrument_type": { "type": "string" },
         "sleeve": { "type": "string" },
+        "tier": { "enum": ["", "full", "starter", "watch"] },
+        "allocation_intent_id": { "type": "string" },
+        "assessment_id": { "type": "string" },
         "current_weight_pct": { "$ref": "#/$defs/decimal" },
         "approved_target_weight_pct": { "$ref": "#/$defs/decimal" },
         "target_weight_pct": { "$ref": "#/$defs/decimal" },
@@ -241,6 +260,10 @@
         "fx_rate_to_base": { "type": "string" },
         "fx_as_of": { "type": "string" },
         "market_data_as_of": { "type": "string" },
+        "valuation_mark": { "type": "string" },
+        "valuation_mark_currency": { "type": "string" },
+        "valuation_mark_as_of": { "type": "string" },
+        "position_cap_pct": { "type": "string" },
         "action": { "enum": ["buy", "add", "hold", "trim", "exit", "no_trade"] },
         "action_status": {
           "enum": ["filled", "pending_order", "active_signal", "awaiting_order_validation", "research_candidate", "blocked", "no_action"]
@@ -263,6 +286,9 @@
         "bull_probability_pct": { "type": "string" },
         "expected_return_pct": { "type": "string" },
         "confidence_adjusted_expected_return_pct": { "type": "string" },
+        "margin_of_safety_pct": { "type": "string" },
+        "bear_base_payoff_ratio": { "type": "string" },
+        "expected_bear_payoff_ratio": { "type": "string" },
         "buy_below_price": { "type": "string" },
         "canonical_rating": { "enum": ["strong_buy", "buy", "hold", "sell", "strong_sell", "unrated"] },
         "portfolio_action": { "enum": ["initiate", "add", "hold", "trim", "exit", "avoid", "watch", "short_candidate"] },
@@ -339,6 +365,7 @@
       "properties": {
         "signal_id": { "type": "string", "minLength": 1 },
         "strategy_id": { "type": "string", "minLength": 1 },
+        "allocation_intent_id": { "type": "string" },
         "order_id": { "type": "string" },
         "security_id": { "type": "string", "minLength": 1 },
         "ticker": { "type": "string", "minLength": 1 },
@@ -406,7 +433,15 @@
         "ticker": { "type": "string", "minLength": 1 },
         "company_name": { "type": "string", "minLength": 1 },
         "research_page": { "type": "string" },
-        "classification": { "enum": ["approved", "strategy_ready", "valuation_attractive", "valuation_unattractive", "valuation_unsupported", "liquidity_blocked", "solvency_blocked", "relationship_pending", "strategy_pending", "research_incomplete", "market_data_blocked", "assessment_pending", "risk_blocked", "research_blocked"] },
+        "classification": { "enum": ["approved", "strategy_ready", "valuation_attractive", "valuation_unattractive", "valuation_unsupported", "liquidity_blocked", "solvency_blocked", "relationship_pending", "strategy_pending", "allocation_constrained", "research_incomplete", "market_data_blocked", "assessment_pending", "risk_blocked", "research_blocked"] },
+        "tier": { "enum": ["full", "starter", "watch"] },
+        "allocation_intent_id": { "type": "string" },
+        "assessment_id": { "type": "string" },
+        "valuation_mark": { "type": "string" },
+        "valuation_mark_currency": { "type": "string" },
+        "valuation_mark_as_of": { "type": "string" },
+        "position_cap_pct": { "type": "string" },
+        "target_quantity": { "type": "string" },
         "rank": { "type": "string" },
         "effective_score": { "type": "string" },
         "candidate_edge": { "type": "string" },
@@ -428,6 +463,9 @@
         ,"bull_probability_pct": { "type": "string" }
         ,"expected_return_pct": { "type": "string" }
         ,"confidence_adjusted_expected_return_pct": { "type": "string" }
+        ,"margin_of_safety_pct": { "type": "string" }
+        ,"bear_base_payoff_ratio": { "type": "string" }
+        ,"expected_bear_payoff_ratio": { "type": "string" }
         ,"buy_below_price": { "type": "string" }
         ,"canonical_rating": { "enum": ["strong_buy", "buy", "hold", "sell", "strong_sell", "unrated"] }
         ,"portfolio_action": { "enum": ["initiate", "add", "hold", "trim", "exit", "avoid", "watch", "short_candidate"] }

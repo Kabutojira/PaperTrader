@@ -40,9 +40,10 @@ multiplier, quantity, currency, and a fresh bid/ask source.
 
 1. Orient with the payload, strategy, signal, canonical legs, current allocation target, and
    current market/FX rows. Verify immutable IDs and statuses before doing broader research.
-2. For a baseline strategy, compare the payload's `allocation_plan_id`, the strategy's
-   `allocation_plan_id`, and the sole current target's `allocation_plan_id` and
-   `assessment_as_of`. If any differ, or the current disposition no longer maps to the requested
+2. For a baseline strategy, compare the payload, strategy, and sole current target's
+   `allocation_intent_id`, immutable assessment ID, relationship, tier, direction, and persisted
+   target quantity. Accept an audited queue binding to a newer plan when that intent is unchanged;
+   price-only plan changes do not supersede it. If the intent differs, or the current disposition no longer maps to the requested
    signal action (`open`/`increase` -> `open`, `reduce` -> `reduce`, `close` -> `close`), stop
    immediately: do not browse, do not create an order, and write a schema-valid `skipped` manifest
    explaining that the request was superseded. This is the normal safe terminal disposition for an
@@ -52,8 +53,9 @@ multiplier, quantity, currency, and a fresh bid/ask source.
    confidence, expected-return, payoff, margin-of-safety, relationship, or hard-blocker gates.
 4. For a baseline strategy, read the latest target, reject a superseded/stale plan, and use only
    its indicated action. A hard blocker forbids increased exposure but may authorize the plan's
-   risk-reducing exit. Let deterministic code derive the exact whole-share delta from target value,
-   current/pending quantity, fresh price, and FX. Never submit more than that delta. A `hold` or
+   risk-reducing exit. Let deterministic code derive the exact whole-share delta from the persisted
+   target quantity and current/pending quantity, then use fresh price and FX for risk checks. Never
+   submit more than that delta. A `hold` or
    delta inside the rebalance band skips without mutation.
 5. If a pending order must be cancelled, invoke the deterministic cancel command; otherwise retain
    an evidence-linked skip without mutating order state.

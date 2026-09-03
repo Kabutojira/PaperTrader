@@ -148,9 +148,13 @@ def load_csv_contracts(repository_root: Path) -> tuple[CsvContract, ...]:
             legacy_columns = ()
         for legacy in legacy_columns:
             normalized = tuple(dict(rename_pairs).get(column, column) for column in legacy)
-            if normalized != tuple(columns):
+            if (
+                len(normalized) != len(set(normalized))
+                or any(column not in columns for column in normalized)
+                or tuple(column for column in columns if column in normalized) != normalized
+            ):
                 raise ContractError(
-                    f"contract {raw_name} legacy columns do not normalize to current columns"
+                    f"contract {raw_name} legacy columns do not form a current-column subsequence"
                 )
         path = PurePosixPath(raw_path)
         if path.is_absolute() or ".." in path.parts or not path.parts or path.parts[0] != "data":

@@ -1293,13 +1293,16 @@ def upsert_strategy(
     if "sleeve" not in strategy_request and "allocation_plan_id" not in strategy_request:
         strategy_request["sleeve"] = "conviction"
         strategy_request["allocation_plan_id"] = ""
+    if "allocation_intent_id" not in strategy_request:
+        strategy_request["allocation_intent_id"] = ""
     values = _exact_strings(strategy_request, input_columns, label="strategy")
     _required(
         values,
         tuple(
             column
             for column in input_columns
-            if column not in {"allocation_plan_id", "not_before", "expires_at"}
+            if column
+            not in {"allocation_plan_id", "allocation_intent_id", "not_before", "expires_at"}
         ),
         label="strategy",
     )
@@ -1315,8 +1318,10 @@ def upsert_strategy(
     values["risk_budget_pct"] = decimal_text(risk_budget)
     if values["sleeve"] not in STRATEGY_SLEEVES:
         raise ResearchStateError("strategy sleeve must be conviction or baseline")
-    if values["sleeve"] == "conviction" and values["allocation_plan_id"]:
-        raise ResearchStateError("conviction strategy must not reference an allocation plan")
+    if values["sleeve"] == "conviction" and (
+        values["allocation_plan_id"] or values["allocation_intent_id"]
+    ):
+        raise ResearchStateError("conviction strategy must not reference an allocation intent")
     if values["sleeve"] == "baseline":
         _identifier(values["allocation_plan_id"], label="allocation_plan_id")
         if values["instrument_type"] != "equity" or values["direction"] != "long":
@@ -1333,10 +1338,15 @@ def upsert_strategy(
             ),
             None,
         )
+        if not values["allocation_intent_id"] and target is not None:
+            values["allocation_intent_id"] = target["allocation_intent_id"]
+        if values["allocation_intent_id"]:
+            _identifier(values["allocation_intent_id"], label="allocation_intent_id")
         if values["status"] in {"ready", "active"}:
             if (
                 target is None
                 or target["allocation_plan_id"] != values["allocation_plan_id"]
+                or target["allocation_intent_id"] != values["allocation_intent_id"]
                 or target["security_id"] != values["security_id"]
             ):
                 raise ResearchStateError("baseline strategy requires its current allocation target")
@@ -1365,23 +1375,22 @@ def upsert_strategy(
                 raise ResearchStateError(
                     "baseline strategy requires the unchanged material plan assessment"
                 )
-            if target["disposition"] in {"open", "increase"}:
-                from papertrader.allocation import assessment_payoff_reasons
-
-                if assessment["hard_blockers"] or assessment["eligibility"] not in {
-                    "baseline",
-                    "conviction",
-                }:
-                    raise ResearchStateError("blocked assessment cannot increase baseline exposure")
-                payoff_reasons = assessment_payoff_reasons(assessment, settings)
-                if payoff_reasons:
-                    raise ResearchStateError(
-                        "baseline assessment fails configured payoff gates: "
-                        + "|".join(payoff_reasons)
-                    )
-        if risk_budget != settings.allocation.maximum_baseline_position_pct:
+            if target["disposition"] in {"open", "increase"} and target["tier"] not in {
+                "full",
+                "starter",
+            }:
+                raise ResearchStateError(
+                    "non-investable live valuation tier cannot increase baseline exposure"
+                )
+        expected_risk_budget = (
+            required_decimal(target["position_cap_pct"], label="target position cap")
+            if target is not None and target["position_cap_pct"]
+            else settings.allocation.maximum_baseline_position_pct
+        )
+        if risk_budget != expected_risk_budget:
             raise ResearchStateError(
-                "baseline strategy risk budget must equal the configured position cap"
+                "baseline strategy risk budget must equal the configured position cap "
+                "for its allocation tier"
             )
     values["not_before"] = _canonical_timestamp(
         values["not_before"], label="not_before", allow_empty=True

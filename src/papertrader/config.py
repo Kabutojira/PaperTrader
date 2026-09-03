@@ -113,14 +113,21 @@ class AllocationSettings:
     minimum_cash_reserve_pct: Decimal
     maximum_baseline_sleeve_pct: Decimal
     maximum_baseline_position_pct: Decimal
+    maximum_starter_position_pct: Decimal
+    maximum_starter_sleeve_pct: Decimal
     maximum_sector_pct: Decimal
     maximum_theme_pct: Decimal
     cash_hurdle_score: Decimal
+    minimum_quality_score: Decimal
     minimum_base_upside_pct: Decimal
     minimum_upside_downside_ratio: Decimal
     minimum_confidence_adjusted_expected_return_pct: Decimal
     minimum_expected_bear_payoff_ratio: Decimal
     minimum_margin_of_safety_pct: Decimal
+    starter_minimum_upside_downside_ratio: Decimal
+    starter_minimum_expected_bear_payoff_ratio: Decimal
+    starter_minimum_margin_of_safety_pct: Decimal
+    starter_minimum_bear_return_pct: Decimal
     minimum_confidence: str
     conviction_quality_score: Decimal
     conviction_expected_return_pct: Decimal
@@ -571,6 +578,18 @@ def _load_runtime_settings(
             "maximum_baseline_position_pct",
             maximum=Decimal("100"),
         ),
+        maximum_starter_position_pct=_decimal(
+            parser,
+            "allocation",
+            "maximum_starter_position_pct",
+            maximum=Decimal("100"),
+        ),
+        maximum_starter_sleeve_pct=_decimal(
+            parser,
+            "allocation",
+            "maximum_starter_sleeve_pct",
+            maximum=Decimal("100"),
+        ),
         maximum_sector_pct=_decimal(
             parser, "allocation", "maximum_sector_pct", maximum=Decimal("100")
         ),
@@ -579,6 +598,9 @@ def _load_runtime_settings(
         ),
         cash_hurdle_score=_decimal(
             parser, "allocation", "cash_hurdle_score", maximum=Decimal("100")
+        ),
+        minimum_quality_score=_decimal(
+            parser, "allocation", "minimum_quality_score", maximum=Decimal("100")
         ),
         minimum_base_upside_pct=_decimal(
             parser, "allocation", "minimum_base_upside_pct", maximum=Decimal("1000")
@@ -600,6 +622,31 @@ def _load_runtime_settings(
         ),
         minimum_margin_of_safety_pct=_decimal(
             parser, "allocation", "minimum_margin_of_safety_pct", maximum=Decimal("100")
+        ),
+        starter_minimum_upside_downside_ratio=_decimal(
+            parser,
+            "allocation",
+            "starter_minimum_upside_downside_ratio",
+            maximum=Decimal("100"),
+        ),
+        starter_minimum_expected_bear_payoff_ratio=_decimal(
+            parser,
+            "allocation",
+            "starter_minimum_expected_bear_payoff_ratio",
+            maximum=Decimal("100"),
+        ),
+        starter_minimum_margin_of_safety_pct=_decimal(
+            parser,
+            "allocation",
+            "starter_minimum_margin_of_safety_pct",
+            maximum=Decimal("100"),
+        ),
+        starter_minimum_bear_return_pct=_decimal(
+            parser,
+            "allocation",
+            "starter_minimum_bear_return_pct",
+            minimum=Decimal("-1000"),
+            maximum=Decimal("0"),
         ),
         minimum_confidence=_choice(
             parser,
@@ -654,6 +701,14 @@ def _load_runtime_settings(
     if allocation.maximum_baseline_position_pct > risk.maximum_single_position_pct:
         raise ConfigurationError(
             "allocation.maximum_baseline_position_pct must not exceed the single-position limit"
+        )
+    if allocation.maximum_starter_position_pct > allocation.maximum_baseline_position_pct:
+        raise ConfigurationError(
+            "allocation.maximum_starter_position_pct must not exceed the baseline position cap"
+        )
+    if allocation.maximum_starter_sleeve_pct > allocation.maximum_baseline_sleeve_pct:
+        raise ConfigurationError(
+            "allocation.maximum_starter_sleeve_pct must not exceed the baseline sleeve cap"
         )
     if allocation.maximum_deployment_per_run_pct > risk.maximum_daily_turnover_pct:
         raise ConfigurationError(

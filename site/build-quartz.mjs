@@ -27,6 +27,9 @@ const publicationFiles = {
     "company_name",
     "instrument_type",
     "sleeve",
+    "tier",
+    "allocation_intent_id",
+    "assessment_id",
     "current_weight_pct",
     "target_weight_pct",
     "current_value_base",
@@ -40,6 +43,10 @@ const publicationFiles = {
     "fx_rate_to_base",
     "fx_as_of",
     "market_data_as_of",
+    "valuation_mark",
+    "valuation_mark_currency",
+    "valuation_mark_as_of",
+    "position_cap_pct",
     "action",
     "action_status",
     "strategy_id",
@@ -60,6 +67,9 @@ const publicationFiles = {
     "bull_probability_pct",
     "expected_return_pct",
     "confidence_adjusted_expected_return_pct",
+    "margin_of_safety_pct",
+    "bear_base_payoff_ratio",
+    "expected_bear_payoff_ratio",
     "buy_below_price",
     "canonical_rating",
     "portfolio_action",
@@ -81,6 +91,7 @@ const publicationFiles = {
     "as_of",
     "signal_id",
     "strategy_id",
+    "allocation_intent_id",
     "order_id",
     "security_id",
     "ticker",
@@ -123,6 +134,26 @@ const publicationFiles = {
     "research_page",
   ],
 };
+
+const version5OnlyColumns = new Set([
+  "tier",
+  "allocation_intent_id",
+  "assessment_id",
+  "valuation_mark",
+  "valuation_mark_currency",
+  "valuation_mark_as_of",
+  "position_cap_pct",
+  "margin_of_safety_pct",
+  "bear_base_payoff_ratio",
+  "expected_bear_payoff_ratio",
+]);
+
+const version4PublicationFiles = Object.fromEntries(
+  Object.entries(publicationFiles).map(([name, header]) => [
+    name,
+    header?.filter((column) => !version5OnlyColumns.has(column)) ?? null,
+  ]),
+);
 
 const technicalColumns = [
   "date",
@@ -169,7 +200,7 @@ const echartFencePattern = /^```echart[ \t]*\r?\n(?<payload>.*?)^```[ \t]*$/gms;
 const decimalPattern = /^-?(?:0|[1-9][0-9]*)(?:\.[0-9]+)?$/;
 
 const legacyPublicationFiles = Object.fromEntries(
-  Object.entries(publicationFiles).map(([name, header]) => [
+  Object.entries(version4PublicationFiles).map(([name, header]) => [
     name,
     header?.map(
       (column) =>
@@ -256,6 +287,15 @@ function assertExactKeys(value, expected, label) {
   }
 }
 
+function assertHasKeys(value, expected, label) {
+  if (typeof value !== "object" || value === null || Array.isArray(value)) {
+    throw new Error(`${label} must be an object`);
+  }
+  if (!expected.every((field) => Object.hasOwn(value, field))) {
+    throw new Error(`${label} is missing versioned fields`);
+  }
+}
+
 function validateSnapshot(content) {
   let snapshot;
   try {
@@ -263,12 +303,12 @@ function validateSnapshot(content) {
   } catch (error) {
     throw new Error(`decision_snapshot.json is invalid JSON: ${error.message}`);
   }
-  if (![3, 4].includes(snapshot.version))
+  if (![3, 4, 5].includes(snapshot.version))
     throw new Error("unsupported decision snapshot version");
   const targetPortfolioKey =
-    snapshot.version === 4 ? "target_portfolio" : "approved_target_portfolio";
+    snapshot.version >= 4 ? "target_portfolio" : "approved_target_portfolio";
   const benchmarkBoundaryKey =
-    snapshot.version === 4 ? "comparison_only" : "non_approved";
+    snapshot.version >= 4 ? "comparison_only" : "non_approved";
   const required = [
     "version",
     "snapshot_id",
@@ -369,6 +409,52 @@ function validateSnapshot(content) {
       ) {
         throw new Error(`decision snapshot ${field} row identity mismatch`);
       }
+      if (snapshot.version === 5) {
+        assertHasKeys(
+          row,
+          [
+            "tier",
+            "allocation_intent_id",
+            "assessment_id",
+            "valuation_mark",
+            "valuation_mark_currency",
+            "valuation_mark_as_of",
+            "position_cap_pct",
+            "margin_of_safety_pct",
+            "bear_base_payoff_ratio",
+            "expected_bear_payoff_ratio",
+          ],
+          `decision snapshot ${field} row`,
+        );
+      }
+    }
+  }
+  if (snapshot.version === 5) {
+    for (const candidate of snapshot.candidate_pipeline) {
+      assertHasKeys(
+        candidate,
+        [
+          "tier",
+          "allocation_intent_id",
+          "assessment_id",
+          "valuation_mark",
+          "valuation_mark_currency",
+          "valuation_mark_as_of",
+          "position_cap_pct",
+          "target_quantity",
+          "margin_of_safety_pct",
+          "bear_base_payoff_ratio",
+          "expected_bear_payoff_ratio",
+        ],
+        "decision snapshot candidate",
+      );
+    }
+    for (const signal of snapshot.actionable_signals) {
+      assertHasKeys(
+        signal,
+        ["allocation_intent_id"],
+        "decision snapshot signal",
+      );
     }
   }
   assertExactKeys(
@@ -456,7 +542,7 @@ function assertCsvMatchesSnapshot(name, rows, header, snapshot) {
     });
   } else if (name === "research_benchmark.csv") {
     const boundaryKey =
-      snapshot.version === 4 ? "comparison_only" : "non_approved";
+      snapshot.version >= 4 ? "comparison_only" : "non_approved";
     expected = expectedCsvRows(snapshot.research_benchmark.rows, header, {
       snapshot_id: snapshot.snapshot_id,
       as_of: snapshot.as_of,
@@ -703,7 +789,11 @@ function publishValidatedArtifacts(wikiRoot, outputRoot) {
     readFileSync(join(sourceRoot, "decision_snapshot.json"), "utf8"),
   );
   const expectedPublicationFiles =
-    snapshot.version === 4 ? publicationFiles : legacyPublicationFiles;
+    snapshot.version === 5
+      ? publicationFiles
+      : snapshot.version === 4
+        ? version4PublicationFiles
+        : legacyPublicationFiles;
   for (const [name, header] of Object.entries(expectedPublicationFiles)) {
     if (header !== null) {
       const rows = validateCsv(

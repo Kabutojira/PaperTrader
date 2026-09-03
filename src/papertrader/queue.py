@@ -860,7 +860,88 @@ def _operation_inputs(repository_root: Path, operation: Operation) -> Mapping[st
     inputs = payload.get("inputs")
     if not isinstance(inputs, dict):
         raise QueueError(f"operation {operation.operation_id} payload inputs must be an object")
-    return inputs
+    binding_path = (
+        repository_root / "data" / "operations" / "bindings" / f"{operation.operation_id}.json"
+    )
+    if not binding_path.exists():
+        return inputs
+    if binding_path.is_symlink() or not binding_path.is_file():
+        raise QueueError(f"operation {operation.operation_id} allocation binding is unsafe")
+    binding = json.loads(binding_path.read_text(encoding="utf-8"))
+    if (
+        not isinstance(binding, dict)
+        or binding.get("version") != 1
+        or binding.get("operation_id") != operation.operation_id
+        or binding.get("original_allocation_plan_id") != inputs.get("allocation_plan_id")
+        or binding.get("allocation_intent_id") != inputs.get("allocation_intent_id")
+        or not isinstance(binding.get("current_allocation_plan_id"), str)
+    ):
+        raise QueueError(f"operation {operation.operation_id} allocation binding is invalid")
+    return {**inputs, "allocation_plan_id": binding["current_allocation_plan_id"]}
+
+
+def _bind_allocation_operation(
+    repository_root: Path,
+    operation: Operation,
+    *,
+    original_plan_id: str,
+    current_plan_id: str,
+    allocation_intent_id: str,
+    now: datetime,
+) -> None:
+    path = repository_root / "data" / "operations" / "bindings" / f"{operation.operation_id}.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    document = {
+        "version": 1,
+        "operation_id": operation.operation_id,
+        "original_allocation_plan_id": original_plan_id,
+        "current_allocation_plan_id": current_plan_id,
+        "allocation_intent_id": allocation_intent_id,
+        "bound_at": format_timestamp(now),
+    }
+    if path.exists():
+        previous = json.loads(path.read_text(encoding="utf-8"))
+        if isinstance(previous, dict):
+            document["original_allocation_plan_id"] = previous.get(
+                "original_allocation_plan_id", original_plan_id
+            )
+    atomic_write_json(path, document, allowed_root=repository_root)
+
+
+def _cancel_incompatible_allocation_state(
+    repository_root: Path,
+    operation: Operation,
+    inputs: Mapping[str, object],
+) -> None:
+    """Cancel only unfilled signal/order state owned by a superseded intent."""
+
+    signal_id = inputs.get("signal_id")
+    strategy_id = inputs.get("strategy_id")
+    if not isinstance(strategy_id, str):
+        return
+    signals = read_table(repository_root, "signals")
+    cancelled_signal_ids: set[str] = set()
+    for row in signals:
+        if (
+            row["strategy_id"] == strategy_id
+            and row["status"] in {"ready", "ordered"}
+            and (not isinstance(signal_id, str) or row["signal_id"] == signal_id)
+        ):
+            row["status"] = "cancelled"
+            cancelled_signal_ids.add(row["signal_id"])
+    if cancelled_signal_ids:
+        write_table(repository_root, "signals", signals)
+        orders = read_table(repository_root, "orders")
+        changed = False
+        for row in orders:
+            if row["signal_id"] in cancelled_signal_ids and row["status"] in {
+                "pending",
+                "partially_filled",
+            }:
+                row["status"] = "cancelled"
+                changed = True
+        if changed:
+            write_table(repository_root, "orders", orders)
 
 
 def _operation_allocation_plan_id(repository_root: Path, operation: Operation) -> str | None:
@@ -1212,6 +1293,9 @@ def prepare_queue(
         if len(allocation_plan_ids) > 1:
             raise QueueError("current allocation targets contain multiple plan identities")
         current_allocation_plan_id = next(iter(allocation_plan_ids), None)
+        current_allocation_targets = {
+            row["strategy_id"]: row for row in read_table(repository_root, "allocation_targets")
+        }
         signal_statuses = {
             row["signal_id"]: row["status"] for row in read_table(repository_root, "signals")
         }
@@ -1259,6 +1343,17 @@ def prepare_queue(
             if operation.status == "running":
                 updated.append(operation)
                 continue
+            operation_inputs = _operation_inputs(repository_root, operation)
+            if operation.operation_type in {
+                "strategy_research",
+                "execute_strategy",
+            } and operation_inputs.get("allocation_plan_id"):
+                promoted_priority = 100 if operation.operation_type == "execute_strategy" else 99
+                if operation.priority < promoted_priority:
+                    operation = replace(operation, priority=promoted_priority, updated_at=instant)
+                    dispositions.append(
+                        f"{operation.operation_id}:promoted:allocation_priority_{promoted_priority}"
+                    )
             if operation.status == "blocked" and not operation.last_error.startswith(
                 ("dependency_cycle", "dependency_unavailable:")
             ):
@@ -1325,14 +1420,48 @@ def prepare_queue(
                 and current_allocation_plan_id is not None
                 and operation_plan_id != current_allocation_plan_id
             ):
-                terminal.append(
-                    (
-                        operation,
-                        "skipped",
-                        f"superseded_allocation_plan:{current_allocation_plan_id}",
-                    )
+                strategy_id = operation_inputs.get("strategy_id")
+                intent_id = operation_inputs.get("allocation_intent_id")
+                target = (
+                    current_allocation_targets.get(strategy_id)
+                    if isinstance(strategy_id, str)
+                    else None
                 )
-                continue
+                if (
+                    isinstance(intent_id, str)
+                    and intent_id
+                    and target is not None
+                    and target["allocation_intent_id"] == intent_id
+                ):
+                    _bind_allocation_operation(
+                        repository_root,
+                        operation,
+                        original_plan_id=operation_plan_id,
+                        current_plan_id=current_allocation_plan_id,
+                        allocation_intent_id=intent_id,
+                        now=instant,
+                    )
+                    dispositions.append(
+                        f"{operation.operation_id}:rebound:{current_allocation_plan_id}"
+                    )
+                else:
+                    _cancel_incompatible_allocation_state(
+                        repository_root, operation, operation_inputs
+                    )
+                    terminal_status = "cancelled" if intent_id else "skipped"
+                    terminal_reason = (
+                        f"superseded_allocation_intent:{current_allocation_plan_id}"
+                        if intent_id
+                        else f"superseded_allocation_plan:{current_allocation_plan_id}"
+                    )
+                    terminal.append(
+                        (
+                            operation,
+                            terminal_status,
+                            terminal_reason,
+                        )
+                    )
+                    continue
             if operation.operation_type == "execute_strategy":
                 signal_id = _operation_inputs(repository_root, operation).get("signal_id")
                 if not isinstance(signal_id, str) or not signal_id:
@@ -1613,6 +1742,7 @@ def claim_next(
     estimated_cost: Decimal = Decimal("0"),
     operation_id: str | None = None,
     operation_type: str | None = None,
+    prefer_allocation: bool = False,
     now: datetime | None = None,
 ) -> Operation | None:
     """Claim at most one ready operation and establish a single live lease."""
@@ -1642,13 +1772,19 @@ def claim_next(
             and (operation_id is None or operation.operation_id == operation_id)
             and (operation_type is None or operation.operation_type == operation_type)
         ]
-        candidates.sort(
-            key=lambda operation: (
+
+        def claim_key(operation: Operation) -> tuple[object, ...]:
+            allocation_rank = 2
+            if prefer_allocation and _operation_allocation_plan_id(repository_root, operation):
+                allocation_rank = 0 if operation.operation_type == "execute_strategy" else 1
+            return (
+                allocation_rank,
                 -operation.priority,
                 operation.created_at,
                 operation.operation_id,
             )
-        )
+
+        candidates.sort(key=claim_key)
         if not candidates:
             return None
         selected = candidates[0]

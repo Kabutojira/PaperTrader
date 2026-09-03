@@ -178,7 +178,7 @@ def test_empty_daily_cycle_generates_one_reconciled_canonical_report(
     )
     assert snapshot["snapshot_id"] == finalization.snapshot_id
     assert snapshot["run_id"] == preparation.run_id
-    assert snapshot["version"] == 4
+    assert snapshot["version"] == 5
     assert "target_portfolio" in snapshot
     assert "approved_target_portfolio" not in snapshot
     cash_row = snapshot["target_portfolio"]["rows"][0]
@@ -202,9 +202,15 @@ def test_empty_daily_cycle_generates_one_reconciled_canonical_report(
         read_table(sandbox_repository, "published_research_benchmark")[0]["comparison_only"]
         == "true"
     )
-    assert (sandbox_repository / "data" / "published" / "model_portfolio.csv").read_text(
-        encoding="utf-8"
-    ).splitlines()[0].split(",")[9] == "target_weight_pct"
+    model_portfolio_header = (
+        (sandbox_repository / "data" / "published" / "model_portfolio.csv")
+        .read_text(encoding="utf-8")
+        .splitlines()[0]
+        .split(",")
+    )
+    assert "target_weight_pct" in model_portfolio_header
+    assert "approved_target_weight_pct" not in model_portfolio_header
+    assert "allocation_intent_id" in model_portfolio_header
     assert read_table(sandbox_repository, "signals") == []
     assert read_table(sandbox_repository, "orders") == []
     assert read_table(sandbox_repository, "executions") == []

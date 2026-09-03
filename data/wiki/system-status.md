@@ -7,13 +7,13 @@ tags:
 created: "2026-09-03"
 updated: "2026-09-03"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_72d6d305fa51c023b41f"
-as_of: "2026-09-03T18:41:32Z"
+snapshot_id: "decision_e723d9f921476de71339"
+as_of: "2026-09-03T19:35:37Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-09-03T18:41:32Z`
+**As of:** `2026-09-03T19:35:37Z`
 **Investment data:** Portfolio state safe — research gaps remain
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -21,23 +21,37 @@ as_of: "2026-09-03T18:41:32Z"
 
 Publication validation confirms that this generated artifact is internally consistent. Investment and operations health below describe the current canonical inputs.
 
-## Coverage
+## Current investment health
 
 - Assessments: 49/80
-- Fresh-evidence assessments: 49/80
+- Fresh-evidence assessments: 46/80
 - Relationship reviews: 19/80
 - Accepted relationships: 18
+- Market success/failure: 81/0
+- Candidate FX gaps: 0
+- Last successful daily run: 2026-09-03
+
+## Queue and execution health
+
 - Ready or active strategies: 0
 - Active signals: 0
 - Pending orders: 0
-- Market success/failure: 81/0
-- Candidate FX gaps: 0
-- Research backlog: 218
-- Last successful daily run: 2026-09-03
+- Queued remediation operations: 1
+- Operations are claimed and executed strictly sequentially.
+  - Security Research (ready, priority 98) — Perform one clean scenario-complete security review to supersede the duplicate-assessment incident.
+
+## Sequential research backlog
+
+- Research backlog: 219
+
+## Publication health
+
+- Snapshot schema and derived CSV equality: validated
+- Portfolio accounting reconciliation: validated
 
 ## Current issues by investment impact
 
-Current unresolved issues: **30**.
+Current unresolved issues: **20**.
 Resolved and superseded issues remain in the canonical audit but are not current health.
 
 ### Affects Candidate (15)
@@ -58,31 +72,18 @@ Resolved and superseded issues remain in the canonical audit but are not current
 - Error **ASML — ASML Holding N.V.: ASML assessment rejected after security row update** — The retry operation refreshed the ASML page and security row to the 2026-08-19 USD 1,751.73 mark, but the schema-v2 assessment request was rejected before assessment state changed because valuation\_template\_rationale is a required field and was omitted. The routed-operation no-retry rule forbids correcting and invoking a second assessment request after this rejection. The canonical assessment therefore remains the prior unsupported version, the prepared relationship and idea follow-up requests w
 - Error **WTI — W&amp;T Offshore, Inc.: Hermes operation validation failed: Quick check research for WTI on 2026-08-18** — completed security research requires this run's comparable assessment
 
-### Publication Only (14)
+### Publication Only (5)
 
 - Error **Hermes operation validation failed: Daily podcast for Daily report for 2026-08-17 on 2026-08-17** — Hermes timed out after 1200s; agent result was written before completed change: data/runs/Daily report for 2026-08-17/Daily podcast for Daily report for 2026-08-17 on 2026-08-17/command\_audit.json; commands\_run does not exactly match deterministic CLI audit receipts
 - Error **Hermes operation validation failed: Daily podcast for Daily report for 2026-08-06 on 2026-08-06** — commands\_run does not exactly match deterministic CLI audit receipts
 - Error **Hermes operation validation failed: Daily podcast for Daily report for 2026-08-05 on 2026-08-05** — Hermes exited with status 2; agent result is missing or a symlink: data/runs/Daily report for 2026-08-05/Daily podcast for Daily report for 2026-08-05 on 2026-08-05/agent\_result.json
 - Error **Hermes operation validation failed: Daily podcast for Daily report for 2026-08-06 on 2026-08-06** — cannot restore rejected path data/wiki/daily-reports/daily-report\_20260806.md: pre-run path cannot be restored because Git metadata is unavailable; daily podcast spoken transcript must label paper trading
 - Error **Hermes operation validation failed: Daily podcast for Daily report for 2026-08-17 on 2026-08-17** — non-successful daily podcast must not retain a transcript page
-- Warning **Daily podcast failed: Daily report for 2026-08-25** — Reviewed both successful developments in the frozen context. The Parrot lower-band check was excluded as routine unchanged maintenance, and the Vale volume review was excluded because its non-substantive filing amendment, unchanged Hold / Watch conclusion, copper optionality, valuation, and volume-without-new-fundamentals lesson substantially repeat recent episodes. No audience-relevant chapter survived, so no transcript, report link, outline, or render was created. The operation could not finis
-- Warning **Daily podcast failed: Daily report for 2026-08-26** — Drafted and preflighted one 2,895-word standalone episode with chapters on Bloom Energy and dLocal. Bloom was selected as novel research; dLocal was retained only for the new buy-zone and payoff-gate change. Vale and Parrot were excluded because their window updates were unchanged, low-value, and substantially covered in earlier episodes. The exact frozen transcript path passed deterministic preflight, and the single audited draft render succeeded at 1,246 seconds. The required strict integrity
-- Warning **Daily podcast failed: Daily report for 2026-08-17** — retry\_exhausted:agent\_validation\_failed:Hermes operation validation failed: Daily podcast for Daily report for 2026-08-17 on 2026-08-17
-- Warning **Daily podcast failed: Daily report for 2026-08-06** — retry\_exhausted:agent\_validation\_failed:Hermes operation validation failed: Daily podcast for Daily report for 2026-08-06 on 2026-08-06
-- Warning **Daily podcast blocked: Daily report for 2026-08-19** — agent\_result:blocked:Blocked the daily podcast before drafting because frozen context version three declares SHA-256 recorded source state for the previous successful podcast context, while the referenced repository file hashes to recorded source state. This frozen provenance conflict must be resolved deterministically before novelty review or synthesis. No transcript or daily-report link was created, script pr
-- Warning **Daily podcast failed: Daily report for 2026-08-17** — retry\_exhausted:agent\_validation\_failed:Hermes operation validation failed: Daily podcast for Daily report for 2026-08-17 on 2026-08-17
-- Warning **Daily podcast blocked: Daily report for 2026-08-19** — agent\_result:blocked:Blocked because the frozen payload requires data/wiki/podcasts/daily-podcast\_20260819T221156Z.md while the deterministic podcast validator binds daily cycle Daily report for 2026-08-19 to data/wiki/podcasts/daily-podcast\_20260819T212147Z.md. The required page therefore failed deterministic preflight before rendering. The candidate slate selected Twist Bioscience and Ginkgo Bioworks for one synthetic-biology-economics chapter and Coinbase for one crypto-rails chapter; Nidec was ex
-- Warning **Daily podcast failed: Daily report for 2026-08-06** — retry\_exhausted:agent\_validation\_failed:Hermes operation validation failed: Daily podcast for Daily report for 2026-08-06 on 2026-08-06
-- Warning **Daily podcast failed: Daily report for 2026-08-05** — retry\_exhausted:agent\_validation\_failed:Hermes operation validation failed: Daily podcast for Daily report for 2026-08-05 on 2026-08-05
 
-### Operational Only (1)
+## Historical audit health
 
-- Error **Local harness operation validation failed: \[Wiki ingest for www.youtube.com on 2026-08-12\](https://www.youtube.com/watch?v=fO5sC7qS04E)** — files\_changed is stale or incomplete: reported=\['data/runs/local-youtube-20260812T090946Z-03/\[Wiki ingest for www.youtube.com on 2026-08-12\](https://www.youtube.com/watch?v=fO5sC7qS04E)/agent\_result.json'\], actual=\[\]
-
-## Sequential research backlog
-
-- Active research operations: **218**
-- Backlog size is research capacity information; it does not by itself block a safe portfolio projection or a validated action.
+- Resolved and superseded incidents remain visible in canonical issue and operation history.
+- No unresolved issue is hidden or aged out.
 
 ## Audit links
 

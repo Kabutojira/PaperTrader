@@ -3027,6 +3027,14 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 
 - Generated canonical [[daily-reports/daily-report_20260903]] for run `daily-20260903T182402Z`.
 
+- Published investor decision snapshot `decision_34a25b6dc4e3aaa0c583`.
+
+- Generated canonical [[daily-reports/daily-report_20260903]] for run `dev-rebased-publication-v5-20260903`.
+
+- Published investor decision snapshot `decision_e723d9f921476de71339`.
+
+- Generated canonical [[daily-reports/daily-report_20260903]] for run `dev-rebased-publication-v5b-20260903`.
+
 ## [2026-09-03] update | Applied Materials full security review after lower Bollinger-band breach
 
 - Updated [[securities/security_0a56aa634d077fe5796f]] with the filed fiscal-Q3 Form 10-Q,
@@ -3047,3 +3055,11 @@ boundary after the combined log crossed the configured 5,000-line threshold.
   disposition from Sell / Avoid to Hold / Watch, but ABB remains allocation-ineligible. The
   complete idea catalog yielded no new evidence-backed candidate edge; no strategy, signal, order,
   allocation or accounting state changed.
+
+- Published investor decision snapshot `decision_dba976b6eaf8e53c9c3f`.
+
+- Generated canonical [[daily-reports/daily-report_20260903]] for run `dev-publication-v5-20260903`.
+
+- Published investor decision snapshot `decision_1fefea4e42378c08c909`.
+
+- Generated canonical [[daily-reports/daily-report_20260903]] for run `dev-publication-v5b-20260903`.

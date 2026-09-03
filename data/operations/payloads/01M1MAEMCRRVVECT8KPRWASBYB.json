@@ -1,0 +1,17 @@
+{
+  "entity_id": "security_c150f31c30afdb4a85f9",
+  "entity_type": "security",
+  "inputs": {
+    "research_reasons": [
+      {
+        "issue_id": "issue_0396c67b5be8b8f8d89b",
+        "reason": "duplicate_assessment_remediation"
+      }
+    ],
+    "security_id": "security_c150f31c30afdb4a85f9"
+  },
+  "objective": "Perform one clean scenario-complete security review to supersede the duplicate-assessment incident.",
+  "operation_id": "01M1MAEMCRRVVECT8KPRWASBYB",
+  "operation_type": "security_research",
+  "payload_version": 1
+}

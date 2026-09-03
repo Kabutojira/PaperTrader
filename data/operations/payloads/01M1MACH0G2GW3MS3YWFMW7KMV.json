@@ -1,0 +1,32 @@
+{
+  "entity_id": "strategy_8caa208dfc702a2584a7",
+  "entity_type": "strategy",
+  "inputs": {
+    "allocation_intent_id": "allocation_intent_13eb8f910db9c58bece6",
+    "allocation_plan_id": "allocation_plan_3b65c4f4683e9b90d8b7",
+    "assessment_as_of": "2026-08-28T19:18:00Z",
+    "assessment_id": "assessment_7f28dfd9240d6099400b",
+    "current_weight_pct": "0",
+    "disposition": "open",
+    "effective_score": "70",
+    "maximum_weight_pct": "5",
+    "mode": "baseline_allocation",
+    "position_cap_pct": "5",
+    "relationship_id": "relationship_e514a92bf6c38d0754ee",
+    "security_id": "security_8b703a8adf5f864acaa4",
+    "selection_rank": 1,
+    "strategy_id": "strategy_8caa208dfc702a2584a7",
+    "target_quantity": "3",
+    "target_weight_pct": "1.11",
+    "tier": "full",
+    "valuation_mark": "36.85499954223633",
+    "valuation_mark_as_of": "2026-09-03T12:29:04Z"
+  },
+  "objective": "Research the bounded baseline allocation target for security_8b703a8adf5f864acaa4 from plan allocation_plan_3b65c4f4683e9b90d8b7.",
+  "operation_id": "01M1MACH0G2GW3MS3YWFMW7KMV",
+  "operation_type": "strategy_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_prosus_nav_20260827"
+  ]
+}

@@ -87,11 +87,24 @@ def read_table(repository_root: Path, name: str) -> list[dict[str, str]]:
 
 
 def _normalized_rows(
-    rows: Iterable[Mapping[str, object]], columns: Sequence[str], *, label: str
+    rows: Iterable[Mapping[str, object]],
+    columns: Sequence[str],
+    *,
+    label: str,
+    legacy_columns: Sequence[Sequence[str]] = (),
+    legacy_renames: Mapping[str, str] | None = None,
 ) -> list[dict[str, object]]:
     normalized: list[dict[str, object]] = []
     for index, row in enumerate(rows, start=1):
         source = dict(row)
+        aliases = legacy_renames or {}
+        matching_legacy = next(
+            (candidate for candidate in legacy_columns if set(source) == set(candidate)), None
+        )
+        if matching_legacy is not None:
+            source = {aliases.get(column, column): value for column, value in source.items()}
+            for column in columns:
+                source.setdefault(column, "")
         legacy_assessment = (
             label == "security_assessments"
             and "run_id" in columns
@@ -126,7 +139,13 @@ def write_table(
     contract = contract_by_name(repository_root, name)
     if contract.append_only:
         raise CanonicalValueError(f"cannot replace append-only table {name}")
-    normalized = _normalized_rows(rows, contract.columns, label=name)
+    normalized = _normalized_rows(
+        rows,
+        contract.columns,
+        label=name,
+        legacy_columns=contract.legacy_columns,
+        legacy_renames=dict(contract.legacy_renames),
+    )
     atomic_write_csv(
         contract_path(repository_root, contract),
         contract.columns,
@@ -150,7 +169,13 @@ def append_unique(
     if not key_columns or any(column not in contract.columns for column in key_columns):
         raise CanonicalValueError(f"invalid append key columns for {name}: {tuple(key_columns)!r}")
     existing = read_table(repository_root, name)
-    additions = _normalized_rows(rows, contract.columns, label=name)
+    additions = _normalized_rows(
+        rows,
+        contract.columns,
+        label=name,
+        legacy_columns=contract.legacy_columns,
+        legacy_renames=dict(contract.legacy_renames),
+    )
     by_key: dict[tuple[str, ...], Mapping[str, object]] = {}
     for existing_row in existing:
         key = tuple(existing_row[column] for column in key_columns)
@@ -194,7 +219,13 @@ def replace_keyed_row(
     contract = contract_by_name(repository_root, name)
     if contract.append_only:
         raise CanonicalValueError(f"cannot replace rows in append-only table {name}")
-    normalized = _normalized_rows([row], contract.columns, label=name)[0]
+    normalized = _normalized_rows(
+        [row],
+        contract.columns,
+        label=name,
+        legacy_columns=contract.legacy_columns,
+        legacy_renames=dict(contract.legacy_renames),
+    )[0]
     key = tuple(str(normalized[column]) for column in key_columns)
     existing = read_table(repository_root, name)
     output: list[Mapping[str, object]] = [

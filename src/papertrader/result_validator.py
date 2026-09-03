@@ -717,6 +717,8 @@ def _baseline_signal_followup_errors(
     )
     if strategy is None or strategy["sleeve"] != "baseline":
         return []
+    strategy_inputs = _payload_inputs(repository_root, operation.to_row()) or {}
+    intent_aware = strategy_inputs.get("mode") == "baseline_allocation"
     signals = [
         row
         for row in read_table(repository_root, "signals")
@@ -724,6 +726,14 @@ def _baseline_signal_followup_errors(
     ]
     errors: list[str] = []
     for signal in signals:
+        target = next(
+            (
+                row
+                for row in read_table(repository_root, "allocation_targets")
+                if row["strategy_id"] == operation.entity_id
+            ),
+            None,
+        )
         matches = [
             row
             for operation_id, row in operation_rows_after.items()
@@ -739,12 +749,22 @@ def _baseline_signal_followup_errors(
             except (OSError, json.JSONDecodeError):
                 continue
             inputs = payload.get("inputs") if isinstance(payload, dict) else None
-            if (
-                isinstance(inputs, dict)
-                and inputs.get("strategy_id") == operation.entity_id
+            if not isinstance(inputs, dict):
+                continue
+            legacy_match = (
+                inputs.get("strategy_id") == operation.entity_id
                 and inputs.get("signal_id") == signal["signal_id"]
                 and inputs.get("action") == signal["signal_type"]
-            ):
+            )
+            intent_match = bool(
+                legacy_match
+                and target is not None
+                and inputs.get("allocation_plan_id") == target["allocation_plan_id"]
+                and inputs.get("allocation_intent_id") == target["allocation_intent_id"]
+                and inputs.get("target_quantity") == target["target_quantity"]
+                and row["priority"] == "100"
+            )
+            if legacy_match and (not intent_aware or intent_match):
                 exact.append(row)
         if len(exact) != 1:
             errors.append(

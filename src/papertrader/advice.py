@@ -47,7 +47,7 @@ from papertrader.utils import (
     stable_id,
 )
 
-SNAPSHOT_VERSION = 4
+SNAPSHOT_VERSION = 5
 RUN_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$")
 HASH = re.compile(r"^[0-9a-f]{64}$")
 MONEY_QUANTUM = Decimal("0.01")
@@ -92,6 +92,9 @@ MODEL_PORTFOLIO_COLUMNS = (
     "company_name",
     "instrument_type",
     "sleeve",
+    "tier",
+    "allocation_intent_id",
+    "assessment_id",
     "current_weight_pct",
     "target_weight_pct",
     "current_value_base",
@@ -105,6 +108,10 @@ MODEL_PORTFOLIO_COLUMNS = (
     "fx_rate_to_base",
     "fx_as_of",
     "market_data_as_of",
+    "valuation_mark",
+    "valuation_mark_currency",
+    "valuation_mark_as_of",
+    "position_cap_pct",
     "action",
     "action_status",
     "strategy_id",
@@ -125,6 +132,9 @@ MODEL_PORTFOLIO_COLUMNS = (
     "bull_probability_pct",
     "expected_return_pct",
     "confidence_adjusted_expected_return_pct",
+    "margin_of_safety_pct",
+    "bear_base_payoff_ratio",
+    "expected_bear_payoff_ratio",
     "buy_below_price",
     "canonical_rating",
     "portfolio_action",
@@ -147,6 +157,7 @@ ACTIONABLE_SIGNAL_COLUMNS = (
     "as_of",
     "signal_id",
     "strategy_id",
+    "allocation_intent_id",
     "order_id",
     "security_id",
     "ticker",
@@ -192,6 +203,11 @@ RESEARCH_BENCHMARK_COLUMNS = (
 
 REASON_LABELS = {
     "above_cash_hurdle": "The evidence-backed score clears the configured cash hurdle.",
+    "quality_above_minimum": "Research quality is strictly above the configured threshold.",
+    "quality_score_not_above_minimum": (
+        "Research quality must be strictly above the configured threshold."
+    ),
+    "assessment_evidence_stale": "The assessment's registered evidence is not fresh.",
     "assessment_ineligible": "The current assessment marks the security ineligible.",
     "assessment_missing": "No current comparable assessment is available.",
     "assessment_stale": "The comparable assessment is stale or expired.",
@@ -250,8 +266,15 @@ REASON_LABELS = {
     "expected_return_below_minimum": "Confidence-adjusted expected return is below threshold.",
     "base_return_below_minimum": "Base-case return is below threshold.",
     "bear_base_payoff_below_minimum": "Bear/base payoff is below threshold.",
+    "bear_base_payoff_below_starter_minimum": "Bear/base payoff is below the starter threshold.",
     "expected_bear_payoff_below_minimum": "Expected/bear payoff is below threshold.",
+    "expected_bear_payoff_below_starter_minimum": (
+        "Expected/bear payoff is below the starter threshold."
+    ),
     "margin_of_safety_below_minimum": "Margin of safety is below threshold.",
+    "margin_of_safety_below_starter_minimum": ("Margin of safety is below the starter threshold."),
+    "bear_return_below_starter_minimum": "Bear-case loss exceeds the starter limit.",
+    "market_data_invalid": "The latest market mark is not positive.",
     "research_incomplete": "Scenario-complete research remains incomplete.",
     "valuation_unsupported": "A supportable scenario valuation is unavailable.",
     "validated_open_actions": "Validated opening actions are pending.",
@@ -339,6 +362,16 @@ class ModelPortfolioRow:
     strategy_research_page: str
     research_page: str
     reason_codes: tuple[str, ...]
+    tier: str = ""
+    allocation_intent_id: str = ""
+    assessment_id: str = ""
+    valuation_mark: str = ""
+    valuation_mark_currency: str = ""
+    valuation_mark_as_of: str = ""
+    position_cap_pct: str = ""
+    margin_of_safety_pct: str = ""
+    bear_base_payoff_ratio: str = ""
+    expected_bear_payoff_ratio: str = ""
 
 
 @dataclass(frozen=True, slots=True)
@@ -386,6 +419,7 @@ class ActionableSignalView:
     research_page: str
     reason_codes: tuple[str, ...]
     legs: tuple[Mapping[str, str], ...]
+    allocation_intent_id: str = ""
 
 
 @dataclass(frozen=True, slots=True)
@@ -395,6 +429,14 @@ class CandidateView:
     company_name: str
     research_page: str
     classification: str
+    tier: str
+    allocation_intent_id: str
+    assessment_id: str
+    valuation_mark: str
+    valuation_mark_currency: str
+    valuation_mark_as_of: str
+    position_cap_pct: str
+    target_quantity: str
     rank: str
     effective_score: str
     candidate_edge: str
@@ -416,6 +458,9 @@ class CandidateView:
     bull_probability_pct: str
     expected_return_pct: str
     confidence_adjusted_expected_return_pct: str
+    margin_of_safety_pct: str
+    bear_base_payoff_ratio: str
+    expected_bear_payoff_ratio: str
     buy_below_price: str
     canonical_rating: str
     portfolio_action: str
@@ -1002,9 +1047,12 @@ def _fresh_evidence(
     assessment: Mapping[str, str],
     sources: Mapping[str, Mapping[str, str]],
     settings: Settings,
+    *,
+    as_of: datetime | None = None,
 ) -> bool:
     assessed = parse_timestamp(assessment["assessed_at"])
     assert assessed is not None
+    instant = as_of or assessed
     evidence = tuple(part for part in assessment["evidence_refs"].split("|") if part)
     if not evidence:
         return False
@@ -1017,9 +1065,75 @@ def _fresh_evidence(
             or source["status"] not in CURRENT_SOURCE_STATUSES
             or checked > assessed
             or assessed - checked > timedelta(days=settings.allocation.maximum_assessment_age_days)
+            or checked > instant
+            or instant - checked > timedelta(days=settings.allocation.maximum_assessment_age_days)
         ):
             return False
     return True
+
+
+def _live_assessment_views(
+    repository_root: Path,
+    settings: Settings,
+    securities: Mapping[str, Mapping[str, str]],
+    assessments: Mapping[str, Mapping[str, str]],
+    relationships: Sequence[Mapping[str, str]],
+    *,
+    as_of: datetime,
+) -> dict[str, dict[str, str]]:
+    """Overlay current-mark valuation derivatives without mutating assessment history."""
+
+    from papertrader.ratings import canonical_rating
+    from papertrader.valuation import ValuationError, live_valuation_projection
+
+    sources = {row["source_id"]: row for row in read_table(repository_root, "source_registry")}
+    history_ids = {
+        row["security_id"]: row["assessment_id"]
+        for row in read_table(repository_root, "security_assessment_history")
+    }
+    accepted = {
+        row["security_id"] for row in relationships if _current_relationship(row, as_of=as_of)
+    }
+    output: dict[str, dict[str, str]] = {}
+    for security_id, assessment in assessments.items():
+        view = dict(assessment)
+        view.update(
+            {
+                "assessment_id": history_ids.get(security_id, ""),
+                "tier": "watch",
+                "allocation_intent_id": "",
+                "valuation_mark": "",
+                "valuation_mark_currency": "",
+                "valuation_mark_as_of": "",
+                "position_cap_pct": "0",
+                "bear_base_payoff_ratio": "",
+                "expected_bear_payoff_ratio": "",
+            }
+        )
+        security = securities.get(security_id)
+        if security is None:
+            view["canonical_rating"] = "unrated"
+            view["portfolio_action"] = "watch"
+            output[security_id] = view
+            continue
+        try:
+            projection = live_valuation_projection(
+                repository_root,
+                settings,
+                security,
+                assessment,
+                now=as_of,
+                relationship_accepted=security_id in accepted,
+                evidence_fresh=_fresh_evidence(assessment, sources, settings, as_of=as_of),
+            )
+        except (ValuationError, CanonicalValueError, KeyError):
+            view["canonical_rating"] = "unrated"
+            view["portfolio_action"] = "watch"
+        else:
+            view.update(projection)
+            view["canonical_rating"] = canonical_rating(view, settings)
+        output[security_id] = view
+    return output
 
 
 def _system_impacts(
@@ -1470,6 +1584,9 @@ def _portfolio_rows(
                 company_name=security["company_name"],
                 instrument_type=holding.instrument_type,
                 sleeve=holding.sleeve,
+                tier=assessment.get("tier", "watch") if holding.sleeve == "baseline" else "",
+                allocation_intent_id=strategy.get("allocation_intent_id", ""),
+                assessment_id=assessment.get("assessment_id", ""),
                 current_weight_pct=decimal_text(current_weight),
                 target_weight_pct=decimal_text(target_weight),
                 current_value_base=decimal_text(_money(holding.current_value)),
@@ -1483,6 +1600,10 @@ def _portfolio_rows(
                 fx_rate_to_base=decimal_text(holding.fx_rate),
                 fx_as_of=format_timestamp(holding.fx_as_of),
                 market_data_as_of=format_timestamp(holding.market_data_as_of),
+                valuation_mark=assessment.get("valuation_mark", ""),
+                valuation_mark_currency=assessment.get("valuation_mark_currency", ""),
+                valuation_mark_as_of=assessment.get("valuation_mark_as_of", ""),
+                position_cap_pct=assessment.get("position_cap_pct", "0"),
                 action=action,
                 action_status=action_status,
                 strategy_id="|".join(sorted(holding.strategy_ids)),
@@ -1505,6 +1626,9 @@ def _portfolio_rows(
                 confidence_adjusted_expected_return_pct=assessment.get(
                     "confidence_adjusted_expected_return_pct", ""
                 ),
+                margin_of_safety_pct=assessment.get("margin_of_safety_pct", ""),
+                bear_base_payoff_ratio=assessment.get("bear_base_payoff_ratio", ""),
+                expected_bear_payoff_ratio=assessment.get("expected_bear_payoff_ratio", ""),
                 buy_below_price=assessment.get("buy_below_price", ""),
                 canonical_rating=assessment.get("canonical_rating", "") or "unrated",
                 portfolio_action=assessment.get("portfolio_action", "") or "watch",
@@ -1536,6 +1660,9 @@ def _portfolio_rows(
             company_name="Cash",
             instrument_type="cash",
             sleeve="cash",
+            tier="",
+            allocation_intent_id="",
+            assessment_id="",
             current_weight_pct=decimal_text(current_cash_weight),
             target_weight_pct=decimal_text(target_cash_weight),
             current_value_base=decimal_text(_money(current_cash)),
@@ -1549,6 +1676,10 @@ def _portfolio_rows(
             fx_rate_to_base="1",
             fx_as_of=timestamp,
             market_data_as_of=timestamp,
+            valuation_mark="",
+            valuation_mark_currency="",
+            valuation_mark_as_of="",
+            position_cap_pct="",
             action="no_trade"
             if current_cash == target_cash
             else ("trim" if target_cash < current_cash else "add"),
@@ -1571,6 +1702,9 @@ def _portfolio_rows(
             bull_probability_pct="",
             expected_return_pct="",
             confidence_adjusted_expected_return_pct="",
+            margin_of_safety_pct="",
+            bear_base_payoff_ratio="",
+            expected_bear_payoff_ratio="",
             buy_below_price="",
             canonical_rating="unrated",
             portfolio_action="hold",
@@ -1723,6 +1857,29 @@ def _actionable_signals(
             assessments.get(strategy["security_id"]), settings, as_of=as_of
         ):
             continue
+        if strategy["sleeve"] == "baseline":
+            target = next(
+                (
+                    row
+                    for row in read_table(repository_root, "allocation_targets")
+                    if row["strategy_id"] == strategy["strategy_id"]
+                ),
+                None,
+            )
+            if target is None or not (
+                (
+                    signal["allocation_intent_id"]
+                    and signal["allocation_intent_id"]
+                    == strategy["allocation_intent_id"]
+                    == target["allocation_intent_id"]
+                )
+                or (
+                    not signal["allocation_intent_id"]
+                    and not target["allocation_intent_id"]
+                    and strategy["allocation_plan_id"] == target["allocation_plan_id"]
+                )
+            ):
+                continue
         if (
             strategy["relationship_id"]
             and (strategy["relationship_id"], strategy["security_id"]) not in current_relationships
@@ -1753,6 +1910,11 @@ def _actionable_signals(
         if len(matching_orders) > 1:
             raise AdviceError(f"signal has multiple non-terminal orders: {signal['signal_id']}")
         selected_order: Mapping[str, str] | None = matching_orders[0] if matching_orders else None
+        if (
+            selected_order is not None
+            and selected_order["allocation_intent_id"] != signal["allocation_intent_id"]
+        ):
+            continue
         canonical_legs = tuple(
             sorted(
                 (
@@ -1834,6 +1996,7 @@ def _actionable_signals(
             ActionableSignalView(
                 signal_id=signal["signal_id"],
                 strategy_id=strategy["strategy_id"],
+                allocation_intent_id=signal["allocation_intent_id"],
                 order_id=selected_order["order_id"] if selected_order else "",
                 security_id=security["security_id"],
                 ticker=security["ticker"],
@@ -1918,18 +2081,29 @@ def _candidate_classification(
             "expected_return_below_minimum",
             "base_return_below_minimum",
             "bear_base_payoff_below_minimum",
+            "bear_base_payoff_below_full_minimum",
+            "bear_base_payoff_below_starter_minimum",
             "expected_bear_payoff_below_minimum",
+            "expected_bear_payoff_below_full_minimum",
+            "expected_bear_payoff_below_starter_minimum",
             "margin_of_safety_below_minimum",
+            "margin_of_safety_below_full_minimum",
+            "margin_of_safety_below_starter_minimum",
+            "bear_return_below_starter_minimum",
         }
     ):
         return "valuation_unattractive"
-    if "relationship_rejected" in reasons:
-        return "relationship_pending"
-    if "relationship_missing_or_stale" in reasons:
-        return "relationship_pending"
+    if (
+        target.get("tier") in {"full", "starter"}
+        and required_decimal(target.get("target_quantity", "0"), label="candidate target quantity")
+        > 0
+        and (strategy is None or strategy["status"] not in ACTIVE_STRATEGY_STATUSES)
+    ):
+        return "strategy_pending"
     if any(
         reason
         in {
+            "quality_score_not_above_minimum",
             "concentration_cap",
             "insufficient_diversification",
             "insufficient_eligible_candidates",
@@ -1945,10 +2119,14 @@ def _candidate_classification(
             return "liquidity_blocked"
         if "solvency_risk" in blockers:
             return "solvency_blocked"
-        return "research_incomplete"
+        if "hard_blocker:" in blockers:
+            return "risk_blocked"
+        return "allocation_constrained"
+    if "relationship_rejected" in reasons:
+        return "relationship_pending"
+    if "relationship_missing_or_stale" in reasons:
+        return "relationship_pending"
     if strategy is None or strategy["status"] not in ACTIVE_STRATEGY_STATUSES:
-        if assessment is not None and assessment.get("allocation_eligibility") == "eligible":
-            return "strategy_pending"
         if assessment is not None and assessment.get("canonical_rating") in {"buy", "strong_buy"}:
             return "valuation_attractive"
         return "valuation_unattractive"
@@ -1976,6 +2154,10 @@ def _candidate_pipeline(
         for target in targets
     )
     latest = {row["security_id"]: row for row in read_table(repository_root, "market_latest")}
+    portfolio_quantities = {
+        row["security_id"]: required_decimal(row["quantity"], label="candidate current quantity")
+        for row in read_table(repository_root, "portfolio")
+    }
     current_relationship_ids = {
         row["security_id"] for row in relationships if _current_relationship(row, as_of=as_of)
     }
@@ -2055,6 +2237,31 @@ def _candidate_pipeline(
         labels = tuple(reason_label(reason) for reason in ordered_reasons)
         strategy = strategies.get(target["strategy_id"])
         projected_target_weight = target["target_weight_pct"] if current_plan else "0"
+        from papertrader.ratings import portfolio_action, research_conclusion
+
+        live_rating = (
+            assessment.get("canonical_rating", "unrated") if assessment else "unrated"
+        ) or "unrated"
+        live_action = (
+            portfolio_action(
+                live_rating,
+                assessment or {},
+                current_quantity=portfolio_quantities.get(target["security_id"], Decimal("0")),
+                current_weight_pct=required_decimal(
+                    target["current_weight_pct"], label="candidate current weight"
+                ),
+                target_weight_pct=required_decimal(
+                    projected_target_weight, label="candidate target weight"
+                ),
+                strategies=[
+                    row
+                    for row in strategies.values()
+                    if row["security_id"] == target["security_id"]
+                ],
+            )
+            if assessment
+            else "watch"
+        )
         frontier = (
             {
                 "expected_return_pct": assessment["frontier_expected_return_pct"],
@@ -2078,6 +2285,14 @@ def _candidate_pipeline(
                 classification=_candidate_classification(
                     {**target, "reason": "|".join(ordered_reasons)}, assessment, strategy
                 ),
+                tier=target["tier"] or "watch",
+                allocation_intent_id=target["allocation_intent_id"],
+                assessment_id=target["assessment_id"],
+                valuation_mark=target["valuation_mark"],
+                valuation_mark_currency=target["valuation_mark_currency"],
+                valuation_mark_as_of=target["valuation_mark_as_of"],
+                position_cap_pct=target["position_cap_pct"],
+                target_quantity=target["target_quantity"],
                 rank=target["rank"],
                 effective_score=target["effective_score"],
                 candidate_edge=target["candidate_edge"],
@@ -2107,17 +2322,14 @@ def _candidate_pipeline(
                     assessment.get("expected_return_pct", "") if assessment else ""
                 ),
                 confidence_adjusted_expected_return_pct=(
-                    assessment.get("confidence_adjusted_expected_return_pct", "")
-                    if assessment
-                    else ""
+                    target["confidence_adjusted_expected_return_pct"]
                 ),
+                margin_of_safety_pct=target["margin_of_safety_pct"],
+                bear_base_payoff_ratio=target["bear_base_payoff_ratio"],
+                expected_bear_payoff_ratio=target["expected_bear_payoff_ratio"],
                 buy_below_price=assessment.get("buy_below_price", "") if assessment else "",
-                canonical_rating=(
-                    assessment.get("canonical_rating", "") or "unrated" if assessment else "unrated"
-                ),
-                portfolio_action=(
-                    assessment.get("portfolio_action", "") or "watch" if assessment else "watch"
-                ),
+                canonical_rating=live_rating,
+                portfolio_action=live_action,
                 evidence_state=(
                     assessment.get("research_status", "") or "unsupported"
                     if assessment
@@ -2128,7 +2340,16 @@ def _candidate_pipeline(
                     assessment.get("rating_change_conditions", "") if assessment else ""
                 ),
                 research_conclusion=(
-                    assessment.get("research_conclusion", "") if assessment else ""
+                    research_conclusion(
+                        assessment,
+                        live_rating,
+                        live_action,
+                        assessment.get("rating_change_conditions", ""),
+                    )
+                    if assessment and assessment.get("assessment_schema_version") == "2"
+                    else assessment.get("research_conclusion", "")
+                    if assessment
+                    else ""
                 ),
             )
         )
@@ -2139,7 +2360,16 @@ def _candidate_pipeline(
         score = required_decimal(value.effective_score or "0", label="effective score")
         confidence = CONFIDENCE_RANK.get(value.confidence, -1)
         upside = required_decimal(value.base_upside_pct or "0", label="candidate upside")
-        return (not assessed, -edge, -score, -confidence, -upside, value.security_id)
+        tier_rank = {"full": 0, "starter": 1}.get(value.tier, 2)
+        return (
+            tier_rank,
+            not assessed,
+            -edge,
+            -score,
+            -confidence,
+            -upside,
+            value.security_id,
+        )
 
     return tuple(sorted(values, key=key))
 
@@ -2452,7 +2682,7 @@ def _coverage(
         allocation_candidate_count=len(candidate_ids),
         current_assessment_count=len(current_assessments),
         fresh_evidence_assessment_count=sum(
-            _fresh_evidence(row, sources, settings) for row in current_assessments
+            _fresh_evidence(row, sources, settings, as_of=as_of) for row in current_assessments
         ),
         reviewed_relationship_count=len(reviewed_relationship_security_ids),
         accepted_relationship_count=len(accepted_relationship_security_ids),
@@ -2752,6 +2982,14 @@ def build_decision_snapshot(
         row["security_id"]: row for row in read_table(repository_root, "security_assessments")
     }
     relationships = read_table(repository_root, "relationships")
+    assessments = _live_assessment_views(
+        repository_root,
+        settings,
+        securities,
+        assessments,
+        relationships,
+        as_of=instant,
+    )
     signals = {row["signal_id"]: row for row in read_table(repository_root, "signals")}
     performance = _current_performance(repository_root, settings, as_of=instant)
     replay = replay_accounting(repository_root)
@@ -3127,6 +3365,21 @@ def load_published_snapshot(
                     "rating_change_conditions": "",
                 }
             )
+        if version < 5:
+            normalized.update(
+                {
+                    "tier": "",
+                    "allocation_intent_id": "",
+                    "assessment_id": "",
+                    "valuation_mark": "",
+                    "valuation_mark_currency": "",
+                    "valuation_mark_as_of": "",
+                    "position_cap_pct": "",
+                    "margin_of_safety_pct": "",
+                    "bear_base_payoff_ratio": "",
+                    "expected_bear_payoff_ratio": "",
+                }
+            )
         return ModelPortfolioRow(
             **{**normalized, "reason_codes": tuple(normalized["reason_codes"])}
         )
@@ -3150,6 +3403,8 @@ def load_published_snapshot(
                     "strategy_research_page": "",
                 }
             )
+        if version < 5:
+            normalized["allocation_intent_id"] = ""
         return ActionableSignalView(
             **{
                 **normalized,
@@ -3188,6 +3443,19 @@ def load_published_snapshot(
         "eligibility_frontier": {},
         "rating_change_conditions": "",
         "research_conclusion": "",
+    }
+    candidate_v5_defaults: dict[str, object] = {
+        "tier": "watch",
+        "allocation_intent_id": "",
+        "assessment_id": "",
+        "valuation_mark": "",
+        "valuation_mark_currency": "",
+        "valuation_mark_as_of": "",
+        "position_cap_pct": "0",
+        "target_quantity": "0",
+        "margin_of_safety_pct": "",
+        "bear_base_payoff_ratio": "",
+        "expected_bear_payoff_ratio": "",
     }
     raw_benchmark = raw_value.get("research_benchmark")
     benchmark = (
@@ -3238,6 +3506,7 @@ def load_published_snapshot(
                         ),
                     },
                     **({} if version >= 3 else candidate_defaults),
+                    **({} if version >= 5 else candidate_v5_defaults),
                     "reason_codes": tuple(raw["reason_codes"]),
                     "reason_labels": tuple(raw["reason_labels"]),
                 }

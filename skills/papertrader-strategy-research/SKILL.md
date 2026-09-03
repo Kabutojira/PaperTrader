@@ -33,7 +33,8 @@ Require `operation_id`, `strategy_id`, `relationship_id`, objective, evaluation 
 data timestamp, source references, and `mode`. Options candidates also require quote/liquidity
 inputs and complete contract identity for each contemplated leg. `baseline_allocation` additionally
 requires allocation-plan ID, security ID, current/target/maximum weight, rank, effective score,
-assessment timestamp, and disposition from the deterministic payload.
+immutable allocation-intent and assessment IDs, tier, persisted whole-share target quantity,
+valuation mark/as-of, assessment timestamp, and disposition from the deterministic payload.
 
 ## Procedure
 
@@ -49,12 +50,13 @@ assessment timestamp, and disposition from the deterministic payload.
 4. In `baseline_allocation` mode, use only long equity. Document its lower-conviction status, all
    soft gaps, why it did not qualify for conviction, downside/base cases, review date, exit
    conditions, target-size limit, and why the bounded allocation is preferable to cash. Set
-   `risk_budget_pct` to the payload's configured `maximum_weight_pct`; this is a stable ceiling,
+   `risk_budget_pct` to the payload's tier-specific `position_cap_pct`; this is a stable ceiling,
    not the current target. Never choose or enlarge the deterministic target quantity.
 5. Select a structure or document the blocking factor. Define entry, exit, expiry, sizing inputs,
    risk budget, required evidence, and every normalized leg.
 6. Update the strategy page/catalog/log and apply strategy state through the CLI. A baseline strategy
-   must use the stable per-security strategy ID, `sleeve=baseline`, and current allocation-plan ID.
+   must use the stable per-security strategy ID, `sleeve=baseline`, current allocation-plan ID,
+   and unchanged allocation-intent ID.
 7. Create a time-bounded signal through the CLI only when all required fields and fresh evidence
    are present. In baseline mode, the plan must still be current, its delta must exceed the minimum
    trade threshold, and the assessment must be unchanged. Normalize the allocation disposition to
@@ -64,7 +66,8 @@ assessment timestamp, and disposition from the deterministic payload.
    blocker forbids increased exposure but may require the plan's risk-reducing `reduce`/`close`; a
    `hold` creates no signal. A signal is not an order or fill. If a baseline signal is created,
    immediately enqueue exactly one matching `execute_strategy` follow-up whose payload binds the
-   strategy ID, signal ID, and normalized signal action.
+   strategy ID, signal ID, allocation-plan ID, allocation-intent ID, persisted target quantity,
+   and normalized signal action. Give this allocation-generated execution request priority 100.
 8. Apply the chartability pass to the compared structures, scenario payoff, downside, and relevant
    entry/exit ranges before final validation.
 

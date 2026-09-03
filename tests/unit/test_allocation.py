@@ -42,7 +42,7 @@ from papertrader.orders import (
 from papertrader.portfolio import build_risk_state, rebuild_portfolio, reconcile_portfolio
 from papertrader.research import ResearchStateError, upsert_assessment, upsert_strategy
 from papertrader.tables import contract_by_name, read_table, write_table
-from papertrader.utils import required_decimal
+from papertrader.utils import decimal_text, format_timestamp, required_decimal
 
 NOW = datetime(2026, 7, 24, 22, tzinfo=UTC)
 
@@ -178,6 +178,32 @@ def _bar(
     )
 
 
+def _write_price(repository: Path, security_id: str, bar: PriceBar) -> None:
+    write_price_cache(repository, security_id, (bar,))
+    rows = [
+        row for row in read_table(repository, "market_latest") if row["security_id"] != security_id
+    ]
+    rows.append(
+        {
+            "security_id": security_id,
+            "provider_symbol": bar.provider_symbol,
+            "price_date": bar.date.isoformat(),
+            "retrieved_at": format_timestamp(bar.retrieved_at),
+            "open": decimal_text(bar.open),
+            "high": decimal_text(bar.high),
+            "low": decimal_text(bar.low),
+            "close": decimal_text(bar.close),
+            "adjusted_close": decimal_text(bar.adjusted_close),
+            "volume": str(bar.volume),
+            "currency": bar.currency,
+            "source": bar.source,
+            "status": "ok",
+            "error": "",
+        }
+    )
+    write_table(repository, "market_latest", sorted(rows, key=lambda row: row["security_id"]))
+
+
 def _seed_candidates(
     repository: Path,
     settings: Settings,
@@ -221,7 +247,7 @@ def _seed_candidates(
             ),
             now=NOW,
         )
-        write_price_cache(repository, f"sec_{index:02d}", (_bar(index),))
+        _write_price(repository, f"sec_{index:02d}", _bar(index))
 
 
 def _settings(settings: Settings, **changes: object) -> Settings:
@@ -701,7 +727,7 @@ def test_allocation_plan_identity_binds_corrected_market_inputs(
         now=NOW,
     )
 
-    write_price_cache(sandbox_repository, "sec_00", (_bar(0, close="101"),))
+    _write_price(sandbox_repository, "sec_00", _bar(0, close="101"))
     corrected = plan_allocation(
         sandbox_repository,
         sandbox_settings,
@@ -907,7 +933,12 @@ def test_shared_concentration_caps_force_partial_deployment(
         (required_decimal(row["target_value_base"]) for row in targets), Decimal("0")
     )
 
-    assert Decimal("0") < target_total <= Decimal("12000")
+    if common_theme:
+        # Securities connected by one accepted idea are one diversification
+        # component, so a single-theme universe cannot unlock deployment.
+        assert target_total == 0
+    else:
+        assert Decimal("0") < target_total <= Decimal("12000")
     assert required_decimal(result.capital_allocated_base) == target_total
     assert required_decimal(result.capital_unallocated_base) >= Decimal("3000")
 
@@ -1330,6 +1361,34 @@ def test_active_handoff_is_idempotent_and_order_quantity_is_code_owned(
     assert pending_target["delta_value_base"] == "0"
     assert pending_target["disposition"] == "hold"
 
+    _write_price(
+        sandbox_repository,
+        "sec_00",
+        _bar(0, close="99", retrieved_at=NOW + timedelta(minutes=2)),
+    )
+    repriced = plan_allocation(
+        sandbox_repository,
+        active,
+        run_id="allocation-pending-repriced",
+        now=NOW + timedelta(minutes=2),
+    )
+    repriced_target = next(
+        row
+        for row in read_table(sandbox_repository, "allocation_targets")
+        if row["security_id"] == "sec_00"
+    )
+    assert repriced.allocation_plan_id != result.allocation_plan_id
+    assert repriced_target["allocation_intent_id"] == target["allocation_intent_id"]
+    assert repriced_target["target_quantity"] == target["target_quantity"]
+    assert repriced_target["disposition"] == "hold"
+    assert read_table(sandbox_repository, "orders")[0]["status"] == "pending"
+    strategy = next(
+        row
+        for row in read_table(sandbox_repository, "strategies")
+        if row["strategy_id"] == strategy_id
+    )
+    assert strategy["allocation_plan_id"] == repriced.allocation_plan_id
+
     fill_time = datetime(2026, 7, 27, 8, tzinfo=UTC)
     fill_reference = replace(reference, as_of=fill_time)
     status, execution_ids = process_order_fill(
@@ -1377,15 +1436,13 @@ def test_active_handoff_is_idempotent_and_order_quantity_is_code_owned(
     )
     assert reconcile_portfolio(sandbox_repository) == []
     for index in range(6):
-        write_price_cache(
+        _write_price(
             sandbox_repository,
             f"sec_{index:02d}",
-            (
-                _bar(
-                    index,
-                    bar_date=date(2026, 7, 27),
-                    retrieved_at=fill_time,
-                ),
+            _bar(
+                index,
+                bar_date=date(2026, 7, 27),
+                retrieved_at=fill_time,
             ),
         )
     second = plan_allocation(
@@ -1401,7 +1458,7 @@ def test_active_handoff_is_idempotent_and_order_quantity_is_code_owned(
     assert second.current_conviction_exposure_base == "0"
     assert current_target["disposition"] == "increase"
     assert required_decimal(current_target["target_value_base"]) <= Decimal("5000")
-    assert len(read_table(sandbox_repository, "allocation_history")) == 18
+    assert len(read_table(sandbox_repository, "allocation_history")) == 24
 
     increase_quantity = required_decimal(current_target["target_value_base"]) / Decimal(
         "100"
@@ -1596,15 +1653,13 @@ def test_existing_conviction_exposure_is_not_managed_by_baseline_allocator(
         as_of=fill_time,
     )
     for index in range(6):
-        write_price_cache(
+        _write_price(
             sandbox_repository,
             f"sec_{index:02d}",
-            (
-                _bar(
-                    index,
-                    bar_date=date(2026, 7, 25),
-                    retrieved_at=fill_time,
-                ),
+            _bar(
+                index,
+                bar_date=date(2026, 7, 25),
+                retrieved_at=fill_time,
             ),
         )
     executions_before = read_table(sandbox_repository, "executions")

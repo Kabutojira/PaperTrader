@@ -419,6 +419,7 @@ def reconcile_issues(
         row["security_id"]: row for row in read_table(repository_root, "market_latest")
     }
     resolved: list[str] = []
+    remediation_operation_ids: list[str] = []
     open_by_identity: dict[tuple[str, str, str], list[dict[str, str]]] = {}
     for row in rows:
         if row["status"] == "open":
@@ -444,6 +445,20 @@ def reconcile_issues(
         code = row["issue_code"]
         if code == "daily_podcast_terminal" and "skipped" in row["title"].lower():
             reason = "valid_terminal_skip: podcast operation recorded its bounded no-content result"
+        elif code == "daily_podcast_terminal":
+            successes = [
+                operation
+                for operation in history
+                if operation["operation_type"] == "daily_podcast"
+                and operation["terminal_status"] == "succeeded"
+                and _after(operation["completed_at"], last_seen)
+            ]
+            if successes:
+                latest = max(
+                    successes,
+                    key=lambda value: (value["completed_at"], value["operation_id"]),
+                )
+                reason = f"superseded_by_successful_podcast_cycle: {latest['operation_id']}"
         elif code == "daily_market_retrieval_failed" and row["entity_type"] == "security":
             market = latest_market.get(row["entity_id"])
             if market and market["status"] == "ok" and _after(market["retrieved_at"], last_seen):
@@ -470,6 +485,28 @@ def reconcile_issues(
                         "current_state_recovered: FX retrieval succeeded at "
                         f"{format_timestamp(newest.retrieved_at)}"
                     )
+        elif code == "youtube_discovery_failed":
+            from papertrader.queue import RETIRED_SOURCE_WATCH_PREFIXES
+
+            active_watchers = [
+                operation
+                for operation in read_table(repository_root, "operations_todo")
+                if operation["source"].startswith(RETIRED_SOURCE_WATCH_PREFIXES)
+            ]
+            retirements = [
+                operation
+                for operation in history
+                if operation["terminal_status"] == "cancelled"
+                and operation["terminal_reason"] == "source_watch_retired_manual_ideas"
+                and operation["source"].startswith(RETIRED_SOURCE_WATCH_PREFIXES)
+                and _after(operation["completed_at"], last_seen)
+            ]
+            if not active_watchers and retirements:
+                latest = max(
+                    retirements,
+                    key=lambda value: (value["completed_at"], value["operation_id"]),
+                )
+                reason = f"source_watch_retired: {latest['operation_id']}"
         elif code in {"assessment_update_failed", "security_data_issue"}:
             versions = [
                 version
@@ -483,24 +520,120 @@ def reconcile_issues(
                     key=lambda value: (value["recorded_at"], value["assessment_id"]),
                 )
                 reason = f"superseded_by_assessment: {latest['assessment_id']}"
+        elif code == "security_assessment_duplicate_operation_versions":
+            versions = [
+                version
+                for version in assessment_history
+                if version["security_id"] == row["entity_id"]
+                and _after(version["recorded_at"], last_seen)
+            ]
+            successes = [
+                operation
+                for operation in history
+                if operation["operation_type"] == "security_research"
+                and operation["entity_id"] == row["entity_id"]
+                and operation["source"] == "issue-remediation:duplicate-assessment"
+                and operation["terminal_status"] == "succeeded"
+                and _after(operation["completed_at"], last_seen)
+            ]
+            if versions and successes:
+                latest = max(
+                    versions,
+                    key=lambda value: (value["recorded_at"], value["assessment_id"]),
+                )
+                reason = f"clean_review_succeeded: {latest['assessment_id']}"
+            else:
+                active_review = next(
+                    (
+                        operation
+                        for operation in read_table(repository_root, "operations_todo")
+                        if operation["operation_type"] == "security_research"
+                        and operation["entity_id"] == row["entity_id"]
+                        and operation["source"] == "issue-remediation:duplicate-assessment"
+                    ),
+                    None,
+                )
+                if active_review is not None:
+                    remediation_operation_ids.append(active_review["operation_id"])
+                else:
+                    from papertrader.config import load_settings
+                    from papertrader.queue import enqueue_operation
+
+                    settings = load_settings(repository_root, {})
+                    operation_id, _ = enqueue_operation(
+                        repository_root,
+                        settings,
+                        operation_type="security_research",
+                        entity_type="security",
+                        entity_id=row["entity_id"],
+                        dedupe_key=(
+                            "security_research:duplicate_assessment_remediation:"
+                            f"{row['entity_id']}:{row['issue_id']}"
+                        ),
+                        prompt=(
+                            "Perform one clean scenario-complete security review to supersede "
+                            "the duplicate-assessment incident."
+                        ),
+                        inputs={
+                            "security_id": row["entity_id"],
+                            "research_reasons": [
+                                {
+                                    "reason": "duplicate_assessment_remediation",
+                                    "issue_id": row["issue_id"],
+                                }
+                            ],
+                        },
+                        source="issue-remediation:duplicate-assessment",
+                        priority=98,
+                        freshness_days=0,
+                        now=instant,
+                    )
+                    remediation_operation_ids.append(operation_id)
         elif code == "agent_result_validation_failed":
             failed_operation = operations.get(row["entity_id"], {})
             operation_type = failed_operation.get("operation_type", "")
             entity_id = failed_operation.get("entity_id", "")
-            successes = [
-                operation
-                for operation in history
-                if operation["terminal_status"] == "succeeded"
-                and operation["operation_type"] == operation_type
-                and operation["entity_id"] == entity_id
-                and _after(operation["completed_at"], last_seen)
-            ]
-            if operation_type and entity_id and successes:
-                latest = max(
-                    successes,
-                    key=lambda value: (value["completed_at"], value["operation_id"]),
-                )
-                reason = f"superseded_by_success: {latest['operation_id']}"
+            from papertrader.queue import RETIRED_SOURCE_WATCH_PREFIXES
+
+            failed_source = failed_operation.get("source", "")
+            retired_youtube_incident = failed_source.startswith(
+                (*RETIRED_SOURCE_WATCH_PREFIXES, "youtube_backfill:")
+            )
+            if retired_youtube_incident:
+                active_watchers = [
+                    operation
+                    for operation in read_table(repository_root, "operations_todo")
+                    if operation["source"].startswith(RETIRED_SOURCE_WATCH_PREFIXES)
+                ]
+                retirements = [
+                    operation
+                    for operation in history
+                    if operation["terminal_status"] == "cancelled"
+                    and operation["terminal_reason"] == "source_watch_retired_manual_ideas"
+                    and operation["source"].startswith(RETIRED_SOURCE_WATCH_PREFIXES)
+                    and _after(operation["completed_at"], last_seen)
+                ]
+                if not active_watchers and retirements:
+                    latest = max(
+                        retirements,
+                        key=lambda value: (value["completed_at"], value["operation_id"]),
+                    )
+                    reason = f"source_watch_retired: {latest['operation_id']}"
+            if not reason:
+                successes = [
+                    operation
+                    for operation in history
+                    if operation["terminal_status"] == "succeeded"
+                    and operation["operation_type"] == operation_type
+                    and operation["entity_id"] == entity_id
+                    and _after(operation["completed_at"], last_seen)
+                ]
+                if operation_type and entity_id and successes:
+                    latest = max(
+                        successes,
+                        key=lambda value: (value["completed_at"], value["operation_id"]),
+                    )
+                    reason = f"superseded_by_success: {latest['operation_id']}"
         if not reason:
             continue
         row["status"] = "resolved"
@@ -510,7 +643,11 @@ def reconcile_issues(
     if resolved:
         write_table(repository_root, "issues", rows)
         regenerate_issue_dashboard(repository_root)
-    return {"resolved_count": len(resolved), "resolved_issue_ids": tuple(sorted(resolved))}
+    return {
+        "resolved_count": len(resolved),
+        "resolved_issue_ids": tuple(sorted(resolved)),
+        "remediation_operation_ids": tuple(sorted(set(remediation_operation_ids))),
+    }
 
 
 def validate_issue_state(repository_root: Path) -> list[str]:

@@ -7,8 +7,8 @@ tags:
 created: "2026-09-03"
 updated: "2026-09-03"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_72d6d305fa51c023b41f"
-as_of: "2026-09-03T18:41:32Z"
+snapshot_id: "decision_e723d9f921476de71339"
+as_of: "2026-09-03T19:35:37Z"
 ---
 
 # Research catalog
@@ -602,6 +602,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader daily research podcast — 2026-08-31T083100Z](podcasts/daily-podcast_20260831T083100Z)
 - [PaperTrader daily research podcast — 2026-09-01T181335Z](podcasts/daily-podcast_20260901T181335Z)
 - [PaperTrader daily research podcast — 2026-09-02T182643Z](podcasts/daily-podcast_20260902T182643Z)
+- [PaperTrader daily research podcast — 2026-09-03T182402Z](podcasts/daily-podcast_20260903T182402Z)
 
 ## Relationship
 

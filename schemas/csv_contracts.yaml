@@ -115,11 +115,14 @@ contracts:
       - risk_budget_pct
       - sleeve
       - allocation_plan_id
+      - allocation_intent_id
       - not_before
       - expires_at
       - research_page
       - created_at
       - updated_at
+    legacy_columns:
+      - [strategy_id, idea_id, security_id, relationship_id, name, status, direction, instrument_type, thesis, entry_rule, exit_rule, invalidation, risk_budget_pct, sleeve, allocation_plan_id, not_before, expires_at, research_page, created_at, updated_at]
   security_assessments:
     path: data/tables/security_assessments.csv
     columns:
@@ -267,11 +270,28 @@ contracts:
     generated: true
     columns: &allocation_columns
       - allocation_plan_id
+      - allocation_intent_id
       - run_id
       - as_of
       - security_id
       - strategy_id
       - sleeve
+      - tier
+      - assessment_id
+      - relationship_id
+      - valuation_mark
+      - valuation_mark_currency
+      - valuation_mark_as_of
+      - position_cap_pct
+      - target_quantity
+      - bear_return_pct
+      - base_return_pct
+      - bull_return_pct
+      - expected_return_pct
+      - confidence_adjusted_expected_return_pct
+      - margin_of_safety_pct
+      - bear_base_payoff_ratio
+      - expected_bear_payoff_ratio
       - rank
       - effective_score
       - candidate_edge
@@ -283,10 +303,14 @@ contracts:
       - disposition
       - reason
       - assessment_as_of
+    legacy_columns:
+      - [allocation_plan_id, run_id, as_of, security_id, strategy_id, sleeve, rank, effective_score, candidate_edge, current_weight_pct, pending_weight_pct, target_weight_pct, target_value_base, delta_value_base, disposition, reason, assessment_as_of]
   allocation_history:
     path: data/tables/allocation_history.csv
     append_only: true
     columns: *allocation_columns
+    legacy_columns:
+      - [allocation_plan_id, run_id, as_of, security_id, strategy_id, sleeve, rank, effective_score, candidate_edge, current_weight_pct, pending_weight_pct, target_weight_pct, target_value_base, delta_value_base, disposition, reason, assessment_as_of]
   strategy_legs:
     path: data/tables/strategy_legs.csv
     columns:
@@ -310,6 +334,7 @@ contracts:
     columns:
       - signal_id
       - strategy_id
+      - allocation_intent_id
       - signal_type
       - created_at
       - expires_at
@@ -319,12 +344,15 @@ contracts:
       - order_request_path
       - telegram_sent_at
       - run_id
+    legacy_columns:
+      - [signal_id, strategy_id, signal_type, created_at, expires_at, status, rationale, market_data_as_of, order_request_path, telegram_sent_at, run_id]
   orders:
     path: data/tables/orders.csv
     columns:
       - order_id
       - signal_id
       - strategy_id
+      - allocation_intent_id
       - created_at
       - status
       - fill_policy
@@ -336,6 +364,8 @@ contracts:
       - fee_model
       - currency
       - run_id
+    legacy_columns:
+      - [order_id, signal_id, strategy_id, created_at, status, fill_policy, not_before, expires_at, order_type, limit_price, slippage_bps, fee_model, currency, run_id]
   order_legs:
     path: data/tables/order_legs.csv
     columns:
@@ -461,6 +491,9 @@ contracts:
       - company_name
       - instrument_type
       - sleeve
+      - tier
+      - allocation_intent_id
+      - assessment_id
       - current_weight_pct
       - target_weight_pct
       - current_value_base
@@ -474,6 +507,10 @@ contracts:
       - fx_rate_to_base
       - fx_as_of
       - market_data_as_of
+      - valuation_mark
+      - valuation_mark_currency
+      - valuation_mark_as_of
+      - position_cap_pct
       - action
       - action_status
       - strategy_id
@@ -494,6 +531,9 @@ contracts:
       - bull_probability_pct
       - expected_return_pct
       - confidence_adjusted_expected_return_pct
+      - margin_of_safety_pct
+      - bear_base_payoff_ratio
+      - expected_bear_payoff_ratio
       - buy_below_price
       - canonical_rating
       - portfolio_action
@@ -509,6 +549,8 @@ contracts:
       - strategy_research_page
       - research_page
       - reason_codes
+    legacy_columns:
+      - [snapshot_id, as_of, holding_type, security_id, ticker, company_name, instrument_type, sleeve, current_weight_pct, target_weight_pct, current_value_base, target_value_base, delta_value_base, current_quantity, target_quantity, mark, mark_currency, mark_base, fx_rate_to_base, fx_as_of, market_data_as_of, action, action_status, strategy_id, signal_id, order_id, confidence, effective_score, downside_pct, base_upside_pct, bear_fair_value, bear_return_pct, bear_probability_pct, base_fair_value, base_return_pct, base_probability_pct, bull_fair_value, bull_return_pct, bull_probability_pct, expected_return_pct, confidence_adjusted_expected_return_pct, buy_below_price, canonical_rating, portfolio_action, evidence_state, rating_change_conditions, valuation_horizon_months, thesis_summary, entry_rule, exit_rule, invalidation, review_at, security_research_page, strategy_research_page, research_page, reason_codes]
     legacy_renames:
       approved_target_weight_pct: target_weight_pct
       approved_target_value_base: target_value_base
@@ -521,6 +563,7 @@ contracts:
       - as_of
       - signal_id
       - strategy_id
+      - allocation_intent_id
       - order_id
       - security_id
       - ticker
@@ -546,6 +589,8 @@ contracts:
       - strategy_research_page
       - research_page
       - reason_codes
+    legacy_columns:
+      - [snapshot_id, as_of, signal_id, strategy_id, order_id, security_id, ticker, company_name, action, action_status, copy_ready, quantity, order_type, limit_price, currency, created_at, expires_at, market_data_as_of, current_weight_pct, target_weight_pct, strategy_name, entry_rule, exit_rule, invalidation, rationale, security_research_page, strategy_research_page, research_page, reason_codes]
     legacy_renames:
       approved_target_weight_pct: target_weight_pct
   published_research_benchmark:

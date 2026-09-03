@@ -1,0 +1,24 @@
+{
+  "completed_at": "2026-09-03T19:06:27Z",
+  "daily_run_version": 1,
+  "fill_outcomes": [],
+  "model_budget_limit": "5",
+  "model_budget_used": "0",
+  "operation_count": 0,
+  "podcast_audio_path": "",
+  "podcast_operation_id": "",
+  "podcast_page_path": "",
+  "podcast_status": "pending",
+  "preparation_errors": [],
+  "queue_dispositions": [
+    "01KZCFVCT82RJFGB5HESAFJB6B:blocked:dependency_unavailable:01KZ9ZJVER177B5ASW4ZMQHEG3",
+    "01KZGT11ZGR8JEKWC3RXGSS544:blocked:dependency_unavailable:01KZGT11ZGBPRBKV129FD00TH1"
+  ],
+  "report_path": "data/wiki/daily-reports/daily-report_20260903.md",
+  "run_id": "dev-publication-v5b-20260903",
+  "snapshot_id": "decision_1fefea4e42378c08c909",
+  "source_sha": "d16a463a0e3d62e8c3d583c4cb92c6333db49c42",
+  "started_at": "2026-09-03T19:06:18Z",
+  "status": "succeeded",
+  "trigger": "development"
+}
