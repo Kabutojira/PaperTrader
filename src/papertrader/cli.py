@@ -138,7 +138,7 @@ from papertrader.utils import (
 )
 from papertrader.wiki import lint_wiki, sync_security_technical_charts
 from papertrader.wiki_maintenance import maintain_wiki
-from papertrader.youtube import backfill_youtube, scan_youtube
+from papertrader.youtube import backfill_youtube, deactivate_youtube_channels, scan_youtube
 
 
 def _parser() -> argparse.ArgumentParser:
@@ -189,6 +189,7 @@ def _parser() -> argparse.ArgumentParser:
     youtube_scan = youtube_commands.add_parser("scan")
     youtube_scan.add_argument("--run-id", required=True)
     youtube_scan.add_argument("--dry-run", action="store_true")
+    youtube_commands.add_parser("deactivate-all")
     youtube_backfill = youtube_commands.add_parser("backfill")
     youtube_backfill.add_argument("--run-id", required=True)
     youtube_backfill.add_argument("--channel-id", required=True)
@@ -1173,8 +1174,12 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
         )
         return 0
     if arguments.command == "youtube":
-        if arguments.youtube_command == "backfill":
-            result = backfill_youtube(
+        if arguments.youtube_command == "deactivate-all":
+            youtube_result: Mapping[str, object] = {
+                "deactivated_channel_ids": deactivate_youtube_channels(root, settings),
+            }
+        elif arguments.youtube_command == "backfill":
+            youtube_result = backfill_youtube(
                 root,
                 settings,
                 run_id=arguments.run_id,
@@ -1182,13 +1187,13 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
                 count=arguments.count,
             )
         else:
-            result = scan_youtube(
+            youtube_result = scan_youtube(
                 root,
                 settings,
                 run_id=arguments.run_id,
                 dry_run=arguments.dry_run,
             )
-        print(json.dumps(result, sort_keys=True))
+        print(json.dumps(youtube_result, sort_keys=True))
         return 0
     if arguments.command == "seekingalpha":
         if arguments.seekingalpha_command == "schedule":

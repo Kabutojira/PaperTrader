@@ -106,7 +106,6 @@ def test_daily_manual_inputs_schedule_and_serialized_reusable_graph(
     assert jobs["runtime"]["secrets"] == {
         "OPENAI_OAUTH_SECRET": "${{ secrets.OPENAI_OAUTH_SECRET }}",
         "OPENROUTER_API_KEY": "${{ secrets.OPENROUTER_API_KEY }}",
-        "YOUTUBE_DATA_API": "${{ secrets.YOUTUBE_DATA_API }}",
         "TELEGRAM_BOT_TOKEN": "${{ secrets.TELEGRAM_BOT_TOKEN }}",
         "TELEGRAM_CHAT_ID": "${{ secrets.TELEGRAM_CHAT_ID }}",
     }
@@ -193,7 +192,6 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     assert set(workflow["on"]["workflow_call"]["secrets"]) == {
         "OPENAI_OAUTH_SECRET",
         "OPENROUTER_API_KEY",
-        "YOUTUBE_DATA_API",
         "TELEGRAM_BOT_TOKEN",
         "TELEGRAM_CHAT_ID",
     }
@@ -307,25 +305,16 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     assert runtime_steps.index(
         "Run weekly native llm-wiki maintenance before queued operations"
     ) < runtime_steps.index("Routed research checkpoint 01")
-    discovery = next(
-        step for step in runtime["steps"] if step["name"] == "Discover curated YouTube sources"
-    )
-    assert discovery["uses"] == "./.github/actions/scan-youtube"
-    assert discovery["if"] == "${{ steps.cycle.outputs.needs_finalization == 'true' }}"
-    assert discovery["with"]["dry_run"] == "${{ inputs.dry_run }}"
-    assert discovery["env"] == {"YOUTUBE_DATA_API": "${{ secrets.YOUTUBE_DATA_API }}"}
-    for step in runtime["steps"]:
-        if step is not discovery:
-            assert "YOUTUBE_DATA_API" not in step.get("env", {})
-    seekingalpha = next(
-        step for step in runtime["steps"] if step["name"] == "Schedule Seeking Alpha discovery"
-    )
-    assert seekingalpha["uses"] == "./.github/actions/schedule-seekingalpha"
-    assert seekingalpha["if"] == "${{ steps.cycle.outputs.needs_finalization == 'true' }}"
-    assert seekingalpha["with"]["dry_run"] == "${{ inputs.dry_run }}"
-    assert runtime_steps.index("Schedule Seeking Alpha discovery") < runtime_steps.index(
-        "Prepare deterministic daily state and reserve preparation checkpoint"
-    )
+    assert "Discover curated YouTube sources" not in runtime_steps
+    assert "Schedule Seeking Alpha discovery" not in runtime_steps
+    assert all("YOUTUBE_DATA_API" not in step.get("env", {}) for step in runtime["steps"])
+    workflow_call = workflow["on"]["workflow_call"]
+    workflow_dispatch = workflow["on"]["workflow_dispatch"]
+    assert "scan_youtube" not in workflow_call["inputs"]
+    assert "scan_seekingalpha" not in workflow_call["inputs"]
+    assert "scan_youtube" not in workflow_dispatch["inputs"]
+    assert "scan_seekingalpha" not in workflow_dispatch["inputs"]
+    assert "YOUTUBE_DATA_API" not in workflow_call["secrets"]
     prefinalization_steps = [
         step
         for step in runtime["steps"]
@@ -351,7 +340,8 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     assert "steps.cycle.outputs.needs_finalization == 'false'" in finalized_completion["if"]
     assert "daily complete" in finalized_completion["run"]
     daily = _workflow(repository_root / ".github" / "workflows" / "daily.yml")
-    assert daily["jobs"]["runtime"]["with"]["scan_seekingalpha"] == "true"
+    assert "scan_youtube" not in daily["jobs"]["runtime"]["with"]
+    assert "scan_seekingalpha" not in daily["jobs"]["runtime"]["with"]
 
     composite_path = repository_root / ".github" / "actions" / "checkpoint-operation" / "action.yml"
     composite_text = composite_path.read_text(encoding="utf-8")
@@ -606,11 +596,11 @@ def test_daily_forwards_scoped_runtime_secrets_and_auth_only_pushes_do_not_retri
     assert runtime["secrets"] == {
         "OPENAI_OAUTH_SECRET": "${{ secrets.OPENAI_OAUTH_SECRET }}",
         "OPENROUTER_API_KEY": "${{ secrets.OPENROUTER_API_KEY }}",
-        "YOUTUBE_DATA_API": "${{ secrets.YOUTUBE_DATA_API }}",
         "TELEGRAM_BOT_TOKEN": "${{ secrets.TELEGRAM_BOT_TOKEN }}",
         "TELEGRAM_CHAT_ID": "${{ secrets.TELEGRAM_CHAT_ID }}",
     }
-    assert runtime["with"]["scan_youtube"] == "true"
+    assert "scan_youtube" not in runtime["with"]
+    assert "scan_seekingalpha" not in runtime["with"]
     assert daily["concurrency"] == {
         "group": "papertrader-write",
         "cancel-in-progress": "false",

@@ -75,15 +75,12 @@ jobs:
       wiki_maintenance: >-
         ${{ (github.event_name == 'workflow_dispatch' && inputs.wiki_maintenance) ||
         (github.event_name == 'schedule' && vars.WIKI_MAINTENANCE_ENABLED == 'true') }}
-      scan_youtube: true
-      scan_seekingalpha: true
       target_branch: ${{ github.event.repository.default_branch }}
       trigger: ${{ github.event_name }}
       serialized_by_caller: true
     secrets:
       OPENAI_OAUTH_SECRET: ${{ secrets.OPENAI_OAUTH_SECRET }}
       OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-      YOUTUBE_DATA_API: ${{ secrets.YOUTUBE_DATA_API }}
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
 

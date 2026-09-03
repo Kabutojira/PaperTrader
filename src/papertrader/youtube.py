@@ -175,6 +175,24 @@ def load_youtube_channels(repository_root: Path, settings: Settings) -> tuple[Yo
     return tuple(sorted(channels, key=lambda channel: channel.channel_id))
 
 
+def deactivate_youtube_channels(
+    repository_root: Path,
+    settings: Settings,
+) -> tuple[str, ...]:
+    """Mark every curated channel inactive through the validated table writer."""
+
+    load_youtube_channels(repository_root, settings)
+    rows = read_table(repository_root, "youtube_channels")
+    changed = tuple(row["channel_id"] for row in rows if row["status"] != "inactive")
+    if changed:
+        write_table(
+            repository_root,
+            "youtube_channels",
+            [{**row, "status": "inactive"} for row in rows],
+        )
+    return changed
+
+
 def _video_kind(video: object) -> str:
     """Classify a pytubefix object without treating Shorts or live replays as videos."""
 
@@ -1062,6 +1080,7 @@ __all__ = [
     "backfill_youtube",
     "canonical_channel_url",
     "canonical_video_url",
+    "deactivate_youtube_channels",
     "load_youtube_channels",
     "scan_youtube",
     "youtube_dedupe_key",

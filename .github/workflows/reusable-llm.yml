@@ -37,14 +37,6 @@ on:
         required: false
         default: false
         type: boolean
-      scan_youtube:
-        required: false
-        default: false
-        type: boolean
-      scan_seekingalpha:
-        required: false
-        default: false
-        type: boolean
       target_branch:
         required: false
         default: ""
@@ -61,8 +53,6 @@ on:
       OPENAI_OAUTH_SECRET:
         required: false
       OPENROUTER_API_KEY:
-        required: false
-      YOUTUBE_DATA_API:
         required: false
       TELEGRAM_BOT_TOKEN:
         required: false
@@ -120,14 +110,6 @@ on:
         default: false
         type: boolean
       wiki_maintenance:
-        required: false
-        default: false
-        type: boolean
-      scan_youtube:
-        required: false
-        default: false
-        type: boolean
-      scan_seekingalpha:
         required: false
         default: false
         type: boolean
@@ -301,22 +283,6 @@ jobs:
           arguments=(wiki maintain --run-id "$CYCLE_ID" --hermes-home "$HERMES_HOME")
           if [ "$DRY_RUN" = "true" ]; then arguments+=(--dry-run); fi
           uv run papertrader "${arguments[@]}"
-      - name: Discover curated YouTube sources
-        if: ${{ steps.cycle.outputs.needs_finalization == 'true' }}
-        uses: ./.github/actions/scan-youtube
-        env:
-          YOUTUBE_DATA_API: ${{ secrets.YOUTUBE_DATA_API }}
-        with:
-          run_id: ${{ steps.cycle.outputs.cycle_id }}
-          enabled: ${{ inputs.scan_youtube }}
-          dry_run: ${{ inputs.dry_run }}
-      - name: Schedule Seeking Alpha discovery
-        if: ${{ steps.cycle.outputs.needs_finalization == 'true' }}
-        uses: ./.github/actions/schedule-seekingalpha
-        with:
-          run_id: ${{ steps.cycle.outputs.cycle_id }}
-          enabled: ${{ inputs.scan_seekingalpha }}
-          dry_run: ${{ inputs.dry_run }}
       - name: Prepare deterministic daily state and reserve preparation checkpoint
         id: preparation
         if: ${{ steps.cycle.outputs.needs_finalization == 'true' }}

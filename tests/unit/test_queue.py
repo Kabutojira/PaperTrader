@@ -21,6 +21,7 @@ from papertrader.queue import (
     prepare_queue,
     release_expired_leases,
     resolve_blocked_operation,
+    retire_source_watch_operations,
     validate_queue,
 )
 from papertrader.tables import read_table, write_table
@@ -1186,3 +1187,43 @@ def test_run_budget_reserves_count_and_estimated_cost() -> None:
     budget.charge(Decimal("2.5"), reserved_cost=Decimal("3"))
     assert budget.cost_used == Decimal("2.5")
     assert budget.cost_reserved == 0
+
+
+def test_retire_source_watch_operations_cancels_only_unclaimed_watcher_work(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    operation_ids = [
+        _enqueue(
+            sandbox_repository,
+            sandbox_settings,
+            entity_id=f"security_source_{index}",
+            catalyst=f"source-{index}",
+        )[0]
+        for index in range(4)
+    ]
+    rows = read_table(sandbox_repository, "operations_todo")
+    sources = (
+        "youtube_scan:daily-fixture",
+        "youtube_ingest:operation-fixture",
+        "seekingalpha_schedule:daily-fixture",
+        "manual_idea:test",
+    )
+    for row, source in zip(rows, sources, strict=True):
+        row["source"] = source
+    write_table(sandbox_repository, "operations_todo", rows)
+
+    dispositions = retire_source_watch_operations(
+        sandbox_repository,
+        now=NOW + timedelta(minutes=1),
+    )
+
+    assert {value.split(":", maxsplit=1)[0] for value in dispositions} == set(operation_ids[:3])
+    remaining = read_table(sandbox_repository, "operations_todo")
+    assert [row["operation_id"] for row in remaining] == [operation_ids[3]]
+    retired = read_table(sandbox_repository, "operations_history")
+    assert {row["operation_id"] for row in retired} == set(operation_ids[:3])
+    assert {row["terminal_status"] for row in retired} == {"cancelled"}
+    assert {row["terminal_reason"] for row in retired} == {"source_watch_retired_manual_ideas"}
+    assert retire_source_watch_operations(sandbox_repository, now=NOW) == ()
+    assert validate_queue(sandbox_repository) == []

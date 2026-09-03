@@ -23,6 +23,7 @@ from papertrader.youtube import (
     backfill_youtube,
     canonical_channel_url,
     canonical_video_url,
+    deactivate_youtube_channels,
     load_youtube_channels,
     scan_youtube,
     youtube_dedupe_key,
@@ -131,6 +132,20 @@ def test_canonical_youtube_identities_and_channel_table_validation(
     write_table(sandbox_repository, "youtube_channels", rows)
     with pytest.raises(YouTubeScanError, match="regular-video scope"):
         load_youtube_channels(sandbox_repository, sandbox_settings)
+
+
+def test_deactivate_youtube_channels_is_validated_and_idempotent(
+    sandbox_repository: Path, sandbox_settings: Settings
+) -> None:
+    _seed_channels(sandbox_repository)
+
+    changed = deactivate_youtube_channels(sandbox_repository, sandbox_settings)
+
+    assert set(changed) == set(CURATED_CHANNELS.values())
+    assert {row["status"] for row in read_table(sandbox_repository, "youtube_channels")} == {
+        "inactive"
+    }
+    assert deactivate_youtube_channels(sandbox_repository, sandbox_settings) == ()
 
 
 def test_bootstrap_queues_exactly_five_regular_videos_per_channel_and_is_idempotent(

@@ -80,6 +80,13 @@ MERGEABLE_RESEARCH_TYPES = frozenset({"security_research", "quick_check_research
 PRICE_ALERT_RESEARCH_TYPES = frozenset({"security_research", "quick_check_research"})
 STALE_INDICATOR_OPERATION_TYPES = frozenset({"wiki_ingest", "opportunity_research"})
 INDICATOR_ALERT_MAX_AGE_DAYS = 7
+RETIRED_SOURCE_WATCH_PREFIXES = (
+    "youtube_scan:",
+    "youtube_ingest:",
+    "seekingalpha_schedule:",
+    "seekingalpha_discovery:",
+    "seekingalpha_ingest:",
+)
 
 
 def required_skill_names(operation_type: str) -> tuple[str, ...]:
@@ -1493,6 +1500,51 @@ def prepare_queue(
             )
         _write_active(repository_root, updated)
     return tuple(dispositions)
+
+
+def retire_source_watch_operations(
+    repository_root: Path,
+    *,
+    now: datetime | None = None,
+) -> tuple[str, ...]:
+    """Cancel unclaimed work created by the retired external-source watchers."""
+
+    instant = ensure_utc(now or utc_now()).replace(microsecond=0)
+    with _queue_lock(repository_root):
+        active = _recover_archived(repository_root, _read_active(repository_root))
+        retired = [
+            operation
+            for operation in active
+            if operation.status in {"queued", "ready", "waiting"}
+            and operation.source.startswith(RETIRED_SOURCE_WATCH_PREFIXES)
+        ]
+        if not retired:
+            return ()
+        append_unique(
+            repository_root,
+            "operations_history",
+            [
+                _history_row(
+                    operation,
+                    terminal_status="cancelled",
+                    completed_at=instant,
+                    result_path="",
+                    result_summary="External source watching retired by repository policy.",
+                    terminal_reason="source_watch_retired_manual_ideas",
+                )
+                for operation in retired
+            ],
+            key_columns=("operation_id",),
+        )
+        retired_ids = {operation.operation_id for operation in retired}
+        _write_active(
+            repository_root,
+            [operation for operation in active if operation.operation_id not in retired_ids],
+        )
+    return tuple(
+        f"{operation.operation_id}:cancelled:source_watch_retired_manual_ideas"
+        for operation in retired
+    )
 
 
 def release_expired_leases(

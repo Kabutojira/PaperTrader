@@ -49,7 +49,11 @@ from papertrader.portfolio import (
     reconcile_portfolio,
     replay_accounting,
 )
-from papertrader.queue import prepare_queue, release_expired_leases
+from papertrader.queue import (
+    prepare_queue,
+    release_expired_leases,
+    retire_source_watch_operations,
+)
 from papertrader.reports import NarrativeItem, generate_daily_report
 from papertrader.risk import RiskRejected
 from papertrader.tables import read_table
@@ -569,6 +573,7 @@ def prepare_daily_run(
     )
     ensure_initial_capital(repository_root, settings, run_id=run_id, occurred_at=instant)
     release_dispositions = release_expired_leases(repository_root, now=instant)
+    source_watch_dispositions = retire_source_watch_operations(repository_root, now=instant)
     errors: list[str] = []
     if retrieve_market:
         errors.extend(
@@ -637,6 +642,7 @@ def prepare_daily_run(
     errors.extend(youtube_scan_failures(repository_root, run_id))
     queue_dispositions = (
         *release_dispositions,
+        *source_watch_dispositions,
         *maintenance_dispositions,
         *prepare_queue(repository_root, now=instant),
     )

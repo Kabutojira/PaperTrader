@@ -275,7 +275,11 @@ The Step 2 core owns every numeric and structured state transition:
 - `papertrader indicators update --classify-opportunities` calculates the pinned TA-Lib
   indicators, writes candidate inbox packets, asks the configured cheap classifier for an
   `ingest` or `ignore` decision, and enqueues deduplicated follow-up work.
-- `papertrader youtube scan --run-id <id> [--dry-run]` validates the six curated channel
+- Automated external-source watching is retired. Ideas enter the research queue through explicit
+  manual requests. `papertrader youtube deactivate-all` atomically marks every retained channel
+  identity inactive.
+- `papertrader youtube scan --run-id <id> [--dry-run]` remains an unscheduled maintenance command
+  that validates the six curated channel
   handle/immutable-ID pairs, scans only eligible regular uploads through the selected Data API or
   anonymous Videos-tab provider, and directly enqueues one bounded transcript review per unseen
   video. `--dry-run` validates configuration and writes its run manifest without network access.
@@ -319,8 +323,12 @@ The Step 2 core owns every numeric and structured state transition:
 
 ## Curated YouTube research
 
-`data/tables/youtube_channels.csv` is the human-maintained subscription list. The daily reusable
-runtime calls `.github/actions/scan-youtube` before restoring OAuth. When the optional
+Automated YouTube monitoring is retired. `data/tables/youtube_channels.csv` retains the six
+immutable channel identities for audit compatibility, but every channel is inactive. The daily
+runtime does not call `.github/actions/scan-youtube` and does not receive `YOUTUBE_DATA_API`.
+`papertrader youtube deactivate-all` idempotently enforces the inactive state. The scanner remains
+available only as an unscheduled maintenance capability if a future reviewed change explicitly
+reactivates a channel. When the optional
 `YOUTUBE_DATA_API` secret is nonempty, discovery reads each immutable channel's uploads playlist
 and video metadata through the YouTube Data API; otherwise it walks the anonymous `pytubefix`
 Videos tab. Both paths scan newest-first to the cursor with a 50-entry bound and write
@@ -356,9 +364,12 @@ behavioral reference only; PaperTrader copies neither its GPL code nor its LangC
 
 ## Seeking Alpha search-index leads
 
-The daily runtime calls `.github/actions/schedule-seekingalpha` before restoring OAuth. The action
-does not scrape or fetch Seeking Alpha: it queues one priority-69 `source_discovery` operation for
-the current UTC day. That bounded operation uses only search-provider result metadata associated
+Automated Seeking Alpha monitoring is retired. The daily runtime does not call
+`.github/actions/schedule-seekingalpha`; the command and validation boundary remain only as an
+unscheduled maintenance capability. Daily preparation cancels any unclaimed legacy source-watch
+operations before queue selection. If explicitly invoked after a future reviewed reactivation,
+the action does not scrape or fetch Seeking Alpha: it queues one priority-69 `source_discovery`
+operation for the current UTC day. That bounded operation uses only search-provider result metadata associated
 with the public Trending Analysis and Trending News URLs, tries at most three searches, examines
 at most 12 analysis and 12 news candidates from the prior three days, and dynamically retains zero
 through five material leads. Direct access to Seeking Alpha domains and use of subscriber
@@ -535,9 +546,9 @@ The scheduled controller in `.github/workflows/daily.yml` runs at 17:00 `Europe/
 uses one serialized path for both cron and manual runs. Scheduled runs execute at most five queued
 research iterations; this version-controlled limit avoids unaudited repository-variable drift.
 Manual runs may select a different `max_operations` value at or below the repository hard ceiling.
-The controller performs curated YouTube discovery with an optional purpose-bound Data API key and
-schedules the search-index-only Seeking Alpha discovery before OAuth restoration, then prepares
-market and queue state,
+The controller does not monitor YouTube or Seeking Alpha. It retires unclaimed legacy work from
+those watchers, then prepares market and queue state. New ideas are added through explicit manual
+requests rather than external channel discovery. The controller then
 executes at most the configured number of
 Hermes operations one at a time, processes eligible paper fills, rebuilds and reconciles
 accounting, generates the allocation plan and deterministic decision snapshot, refreshes the
@@ -545,8 +556,7 @@ investor pages, writes the canonical daily report, and runs the complete validat
 runs expose
 `operation_id`, `operation_type`, `max_operations`, `dry_run`, `publish_pages`, and
 `send_telegram`; `dry_run` defaults to true and performs no inference, commit, push, deployment,
-or delivery. Its YouTube phase uses the same offline dry-run mode and the Seeking Alpha action only
-validates and writes its dry-run schedule artifact, so neither source phase makes a network request.
+or delivery.
 
 Hermes and the commit boundary are separate jobs. The read-only runtime decrypts the repository's
 age-encrypted OpenAI Codex OAuth state into its isolated Hermes home, then exports a hash-bound

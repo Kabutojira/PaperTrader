@@ -18,6 +18,8 @@ The repository is the source of truth. Any legacy data import is a separate, one
 - Pin Apache ECharts locally in Quartz and render validated, non-executable `echart` JSON fences
   embedded in analytical research pages; never load chart code or data from a CDN.
 - Publish one deterministic decision snapshot per completed daily run and derive every investor-facing page and download from that snapshot.
+- Do not automatically monitor YouTube or Seeking Alpha. Retain their validated tooling only as
+  dormant maintenance capability; new ideas enter through explicit manual requests.
 
 ## Non-negotiable invariants
 
@@ -468,7 +470,8 @@ or CDN dependencies.
 
 ### `source_discovery`
 
-- Version 1 is the bounded daily Seeking Alpha search-index discovery operation.
+- Version 1 is the bounded, explicitly invoked Seeking Alpha search-index discovery operation. It
+  is not scheduled by the daily workflow.
 - Read only search-provider result metadata associated with the canonical Trending Analysis and
   Trending News URLs. Never open, fetch, scrape, cache, log in to, or call an API on a Seeking
   Alpha domain; never use subscriber credentials.
@@ -746,7 +749,7 @@ Quartz and Telegram consume that same file.
 - Deterministic jobs write each candidate knowledge change as a compact Markdown packet under `data/wiki/inbox/`. A packet may describe a market movement, indicator transition, filing, source update, research change, contradiction, or other candidate fact.
 - A candidate packet does not automatically trigger wiki ingestion. After deterministic validation and no-op filtering, run the configured cheap LLM to classify it as `ingest` or `ignore`, with a concise reason and related entity IDs. Only an `ingest` decision may enqueue `wiki_ingest`, and the enqueue must still pass normal deduplication and cooldown rules.
 - Timestamp-only changes, formatting-only changes, and failed or stale retrievals are excluded before the cheap-model decision. Record the classifier decision and reason on the packet so reruns are idempotent.
-- Curated YouTube discovery is a separate direct-source path, not a deterministic knowledge-change
+- Curated YouTube discovery is a dormant direct-source maintenance path, not a deterministic knowledge-change
   packet. `papertrader youtube scan --run-id <id> [--dry-run]` creates one priority-60 bootstrap or
   priority-65 incremental `wiki_ingest` operation per unseen regular video using dedupe key
   `wiki_ingest:youtube:<channel_id>:<video_id>:v1`. It writes
@@ -754,7 +757,7 @@ Quartz and Telegram consume that same file.
   not stop other channels or market monitoring, while invalid channel/configuration state fails
   closed before scanning. The manifest records whether discovery used the optional YouTube Data
   API or anonymous `pytubefix`; the Data API secret never enters Hermes.
-- Seeking Alpha Trending Analysis/news discovery is another separate curated-source path, but it
+- Seeking Alpha Trending Analysis/news discovery is another dormant maintenance path, but it
   is deliberately search-index-only. `papertrader seekingalpha schedule --run-id <id> [--dry-run]`
   queues at most one expiring priority-69 discovery per UTC day. Selected analysis/news leads use
   priorities 67/66 and dedupe key
@@ -874,15 +877,13 @@ Use one serialized daily orchestration workflow and reusable sub-workflows. Ever
 
 1. Acquire `concurrency: papertrader-write` with `cancel-in-progress: false`.
 2. Checkout the default branch with full history and no persisted credentials.
-3. Run the local reusable YouTube discovery and Seeking Alpha scheduling actions before OAuth
-   restoration; expose the optional YouTube Data API secret only to its discovery action, and keep
-   dry runs network-free.
+3. Do not run YouTube or Seeking Alpha discovery. Retire unclaimed legacy work created by those
+   watchers before queue selection; new ideas are supplied manually.
 4. Run deterministic market retrieval, indicators, corporate actions, queue preparation, and report scaffold.
 5. Call the reusable LLM workflow for due operations strictly one at a time, always running Hermes with `--yolo`, and remain within configured count/cost/time budgets.
 6. Validate the agent's completed changes and result manifest, run fills, rebuild portfolio/performance, lint the wiki, and run integrity checks.
 7. Generate and strictly validate the immutable decision snapshot, CSV exports, investor pages,
-   final daily report, and Quartz content, including YouTube and Seeking Alpha search failures as
-   operations degradation.
+   final daily report, and Quartz content.
 8. Run the full test and validation gate, including `papertrader advice validate --strict`.
 9. Rebase against the current default branch, verify every changed path against the automated runtime commit whitelist, commit only when changes exist, and push with a bot identity.
 10. Deploy Pages and send Telegram using secrets introduced only in their specific post-validation steps.
