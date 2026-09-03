@@ -5,7 +5,7 @@ status: maintained
 tags:
   - research
 created: "2026-09-02"
-updated: "2026-09-02"
+updated: "2026-09-03"
 provenance: deterministic-decision-projection
 snapshot_id: "decision_436b6deaad3ca3eb09c4"
 as_of: "2026-09-02T18:45:21Z"
@@ -743,3 +743,14 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_1c055eb9b2bb1f5a8ff2-macd_cross_below_signal-ef89d271dcd7|RIO — MACD cross below signal]]
+- [[inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-41f5433712ee|TX — Bollinger above upper]]
+- [[inbox/market-security_2c779e81c27b78c556bb-rsi_overbought-459239b989af|TX — RSI overbought]]
+- [[inbox/market-security_2dbe878dfc899d7ee867-macd_cross_below_signal-63cfde934e23|FCX — MACD cross below signal]]
+- [[inbox/market-security_3a75fc1ccca2ee7c937a-bollinger_above_upper-005a1b6a7fcd|QCOM — Bollinger above upper]]
+- [[inbox/market-security_59304f90c440def31dc5-bollinger_below_lower-cc8dfbfeed95|RTX — Bollinger below lower]]
+- [[inbox/market-security_6ad1af8d10d6276a0221-macd_cross_below_signal-855eaf8b1f33|SCCO — MACD cross below signal]]
+- [[inbox/market-security_c5a9e460d3350284d157-rsi_overbought-9ca8f131d1d1|VLO — RSI overbought]]

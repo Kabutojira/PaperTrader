@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-08-08"
-updated: "2026-09-02"
+updated: "2026-09-03"
 provenance: repository-contract
 ---
 
@@ -2969,3 +2969,23 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Backfilled the stable deterministic `market-technicals` reference on all 80 maintained security
   pages and generated one-year source CSVs for all 81 monitored identities. Research dates and
   conclusions were preserved; the charts remain presentation-only.
+
+## 2026-09-03
+
+- Created candidate packet [[inbox/market-security_1c055eb9b2bb1f5a8ff2-macd_cross_below_signal-ef89d271dcd7]] (ef89d271dcd7).
+
+- Created candidate packet [[inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-41f5433712ee]] (41f5433712ee).
+
+- Created candidate packet [[inbox/market-security_2c779e81c27b78c556bb-rsi_overbought-459239b989af]] (459239b989af).
+
+- Created candidate packet [[inbox/market-security_2dbe878dfc899d7ee867-macd_cross_below_signal-63cfde934e23]] (63cfde934e23).
+
+- Created candidate packet [[inbox/market-security_3a75fc1ccca2ee7c937a-bollinger_above_upper-005a1b6a7fcd]] (005a1b6a7fcd).
+
+- Created candidate packet [[inbox/market-security_59304f90c440def31dc5-bollinger_below_lower-cc8dfbfeed95]] (cc8dfbfeed95).
+
+- Classified [[inbox/market-security_59304f90c440def31dc5-bollinger_below_lower-cc8dfbfeed95]] as `ingest`: Material price decline with a new Bollinger-band breach warrants durable review.
+
+- Created candidate packet [[inbox/market-security_6ad1af8d10d6276a0221-macd_cross_below_signal-855eaf8b1f33]] (855eaf8b1f33).
+
+- Created candidate packet [[inbox/market-security_c5a9e460d3350284d157-rsi_overbought-9ca8f131d1d1]] (9ca8f131d1d1).
