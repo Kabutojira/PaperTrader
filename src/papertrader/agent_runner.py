@@ -37,6 +37,7 @@ from papertrader.queue import (
     complete_operation,
     fail_attempt,
     prepare_queue,
+    recover_superseded_allocation_plan_skips,
 )
 from papertrader.repository_state import compare_snapshots, snapshot_repository
 from papertrader.result_validator import (
@@ -1607,6 +1608,7 @@ def run_cycle_operation(
     if not isinstance(attempted, list) or not all(isinstance(value, str) for value in attempted):
         raise AgentRunError("daily cycle attempted-operation accounting is invalid")
     attempted_ids = set(attempted)
+    recover_superseded_allocation_plan_skips(repository_root, settings)
     prepare_queue(repository_root)
     candidates = [
         Operation.from_row(row)

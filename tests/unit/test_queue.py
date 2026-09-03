@@ -21,6 +21,7 @@ from papertrader.queue import (
     complete_operation,
     enqueue_operation,
     prepare_queue,
+    recover_superseded_allocation_plan_skips,
     release_expired_leases,
     resolve_blocked_operation,
     retire_source_watch_operations,
@@ -1004,6 +1005,179 @@ def test_prepare_rebinds_compatible_allocation_intent_without_rewriting_payload(
         allocation_operation_binding(sandbox_repository, Operation.from_row(active[0])) == binding
     )
     assert any(f"{operation_id}:rebound:{current_plan}" == value for value in dispositions)
+    assert validate_queue(sandbox_repository) == []
+
+
+def test_recover_superseded_allocation_plan_skip_once_with_current_payload(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    old_plan = "allocation_plan_old"
+    current_plan = "allocation_plan_current"
+    intent_id = "allocation_intent_same"
+    write_table(
+        sandbox_repository,
+        "allocation_targets",
+        [
+            _allocation_target(
+                current_plan,
+                intent_id=intent_id,
+                target_quantity="20",
+                tier="starter",
+            )
+        ],
+    )
+    original_id = _enqueue_plan_strategy(
+        sandbox_repository,
+        sandbox_settings,
+        plan_id=old_plan,
+        catalyst="false-plan-skip",
+        intent_id=intent_id,
+        target_quantity="20",
+        now=NOW,
+    )
+    prepare_queue(sandbox_repository, now=NOW + timedelta(minutes=1))
+    claimed = claim_next(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="run-false-skip",
+        budget=RunBudget.from_settings(sandbox_settings),
+        operation_id=original_id,
+        now=NOW + timedelta(minutes=2),
+    )
+    assert claimed is not None
+    complete_operation(
+        sandbox_repository,
+        operation_id=original_id,
+        run_id="run-false-skip",
+        terminal_status="skipped",
+        result_path=f"data/runs/run-false-skip/{original_id}/agent_result.json",
+        result_summary="The compatible binding was not visible to the agent.",
+        terminal_reason="superseded_allocation_plan",
+        now=NOW + timedelta(minutes=3),
+    )
+
+    recovered = recover_superseded_allocation_plan_skips(
+        sandbox_repository,
+        sandbox_settings,
+        now=NOW + timedelta(minutes=4),
+    )
+
+    assert len(recovered) == 1
+    replacement = read_table(sandbox_repository, "operations_todo")[0]
+    assert replacement["operation_id"] == recovered[0]
+    assert replacement["priority"] == "99"
+    assert replacement["source"] == (f"deterministic-allocation-binding-recovery:{original_id}")
+    payload = json.loads(
+        (sandbox_repository / replacement["payload_path"]).read_text(encoding="utf-8")
+    )
+    assert payload["inputs"]["allocation_plan_id"] == current_plan
+    assert payload["inputs"]["allocation_intent_id"] == intent_id
+    assert payload["inputs"]["target_quantity"] == "20"
+    assert payload["inputs"]["valuation_mark"] == "100"
+    assert (
+        recover_superseded_allocation_plan_skips(
+            sandbox_repository,
+            sandbox_settings,
+            now=NOW + timedelta(minutes=5),
+        )
+        == ()
+    )
+    archived = next(
+        row
+        for row in read_table(sandbox_repository, "operations_history")
+        if row["operation_id"] == original_id
+    )
+    assert archived["terminal_reason"] == "superseded_allocation_plan"
+    assert validate_queue(sandbox_repository) == []
+
+
+def test_recover_superseded_execute_skip_preserves_signal_and_current_quantity(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    old_plan = "allocation_plan_old"
+    current_plan = "allocation_plan_current"
+    intent_id = "allocation_intent_same"
+    write_table(
+        sandbox_repository,
+        "allocation_targets",
+        [
+            _allocation_target(
+                current_plan,
+                intent_id=intent_id,
+                target_quantity="20",
+                tier="starter",
+            )
+        ],
+    )
+    write_table(
+        sandbox_repository,
+        "signals",
+        [{**_signal("signal_a", status="ready"), "allocation_intent_id": intent_id}],
+    )
+    original_id, created = enqueue_operation(
+        sandbox_repository,
+        sandbox_settings,
+        operation_type="execute_strategy",
+        entity_type="strategy",
+        entity_id="strategy_a",
+        dedupe_key=f"execute_strategy:strategy_a:{intent_id}:signal_a",
+        prompt="Create one simulated order from the current baseline signal.",
+        inputs={
+            "strategy_id": "strategy_a",
+            "signal_id": "signal_a",
+            "action": "open",
+            "allocation_plan_id": old_plan,
+            "allocation_intent_id": intent_id,
+            "target_quantity": "20",
+        },
+        source=f"deterministic-allocation:{old_plan}",
+        priority=100,
+        now=NOW,
+    )
+    assert created is True
+    prepare_queue(sandbox_repository, now=NOW + timedelta(minutes=1))
+    claimed = claim_next(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="run-false-execute-skip",
+        budget=RunBudget.from_settings(sandbox_settings),
+        operation_id=original_id,
+        now=NOW + timedelta(minutes=2),
+    )
+    assert claimed is not None
+    complete_operation(
+        sandbox_repository,
+        operation_id=original_id,
+        run_id="run-false-execute-skip",
+        terminal_status="skipped",
+        result_path=(f"data/runs/run-false-execute-skip/{original_id}/agent_result.json"),
+        result_summary="The compatible execution binding was not visible to the agent.",
+        terminal_reason="superseded_allocation_plan",
+        now=NOW + timedelta(minutes=3),
+    )
+
+    recovered = recover_superseded_allocation_plan_skips(
+        sandbox_repository,
+        sandbox_settings,
+        now=NOW + timedelta(minutes=4),
+    )
+
+    assert len(recovered) == 1
+    replacement = read_table(sandbox_repository, "operations_todo")[0]
+    assert replacement["priority"] == "100"
+    payload = json.loads(
+        (sandbox_repository / replacement["payload_path"]).read_text(encoding="utf-8")
+    )
+    assert payload["inputs"] == {
+        "action": "open",
+        "allocation_intent_id": intent_id,
+        "allocation_plan_id": current_plan,
+        "signal_id": "signal_a",
+        "strategy_id": "strategy_a",
+        "target_quantity": "20",
+    }
     assert validate_queue(sandbox_repository) == []
 
 

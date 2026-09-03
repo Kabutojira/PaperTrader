@@ -897,6 +897,149 @@ def _operation_inputs(repository_root: Path, operation: Operation) -> Mapping[st
     return {**inputs, "allocation_plan_id": binding["current_allocation_plan_id"]}
 
 
+def _baseline_strategy_inputs(target: Mapping[str, str]) -> dict[str, object]:
+    """Reconstruct one current intent-aware strategy payload from its canonical target."""
+
+    try:
+        inputs: dict[str, object] = {
+            "mode": "baseline_allocation",
+            "allocation_plan_id": target["allocation_plan_id"],
+            "allocation_intent_id": target["allocation_intent_id"],
+            "security_id": target["security_id"],
+            "strategy_id": target["strategy_id"],
+            "relationship_id": target["relationship_id"],
+            "tier": target["tier"],
+            "assessment_id": target["assessment_id"],
+            "target_quantity": target["target_quantity"],
+            "position_cap_pct": target["position_cap_pct"],
+            "current_weight_pct": target["current_weight_pct"],
+            "target_weight_pct": target["target_weight_pct"],
+            "maximum_weight_pct": target["position_cap_pct"],
+            "selection_rank": int(target["rank"] or "0"),
+            "effective_score": target["effective_score"],
+            "assessment_as_of": target["assessment_as_of"],
+            "disposition": target["disposition"],
+        }
+    except (KeyError, ValueError) as exc:
+        raise QueueError("current allocation target cannot build a recovery payload") from exc
+    if target.get("valuation_mark"):
+        inputs["valuation_mark"] = target["valuation_mark"]
+    if target.get("valuation_mark_as_of"):
+        inputs["valuation_mark_as_of"] = target["valuation_mark_as_of"]
+    return inputs
+
+
+def recover_superseded_allocation_plan_skips(
+    repository_root: Path,
+    settings: Settings,
+    *,
+    now: datetime | None = None,
+) -> tuple[str, ...]:
+    """Enqueue one audited replacement for each compatible false plan-identity skip.
+
+    Older controllers could expose only the immutable original payload after a compatible
+    current-plan binding had been written.  The agent then returned the exact terminal reason
+    ``superseded_allocation_plan`` even though the intent and whole-share target were unchanged.
+    Preserve that history and create at most one deterministic replacement per affected intent.
+    """
+
+    instant = ensure_utc(now or utc_now()).replace(microsecond=0)
+    targets = {
+        row["strategy_id"]: row
+        for row in read_table(repository_root, "allocation_targets")
+        if row["allocation_intent_id"]
+    }
+    active_keys: set[tuple[str, str, str]] = set()
+    for row in read_table(repository_root, "operations_todo"):
+        if row["operation_type"] not in {"strategy_research", "execute_strategy"}:
+            continue
+        operation = Operation.from_row(row)
+        intent = _operation_inputs(repository_root, operation).get("allocation_intent_id")
+        if isinstance(intent, str) and intent:
+            active_keys.add((operation.operation_type, operation.entity_id, intent))
+
+    recoverable: dict[
+        tuple[str, str, str], tuple[Operation, Mapping[str, object], Mapping[str, str]]
+    ] = {}
+    for row in read_table(repository_root, "operations_history"):
+        if (
+            row["operation_type"] not in {"strategy_research", "execute_strategy"}
+            or row["terminal_status"] != "skipped"
+            or row["terminal_reason"] != "superseded_allocation_plan"
+        ):
+            continue
+        operation = Operation.from_row(row, archived=True)
+        binding = allocation_operation_binding(repository_root, operation)
+        if binding is None:
+            continue
+        target = targets.get(operation.entity_id)
+        if target is None:
+            continue
+        current_inputs = _operation_inputs(repository_root, operation)
+        intent = binding["allocation_intent_id"]
+        if (
+            not isinstance(intent, str)
+            or target["allocation_plan_id"] != binding["current_allocation_plan_id"]
+            or target["allocation_intent_id"] != intent
+            or target["target_quantity"] != current_inputs.get("target_quantity")
+        ):
+            continue
+        recoverable[(operation.operation_type, operation.entity_id, intent)] = (
+            operation,
+            current_inputs,
+            target,
+        )
+
+    created_ids: list[str] = []
+    for key in sorted(recoverable):
+        if key in active_keys:
+            continue
+        operation, current_inputs, recovery_target = recoverable[key]
+        if operation.operation_type == "strategy_research":
+            inputs = _baseline_strategy_inputs(recovery_target)
+        else:
+            inputs = {
+                **current_inputs,
+                "allocation_plan_id": recovery_target["allocation_plan_id"],
+                "allocation_intent_id": recovery_target["allocation_intent_id"],
+                "target_quantity": recovery_target["target_quantity"],
+            }
+        payload = json.loads(
+            repository_root.joinpath(
+                *_validate_payload_path(operation.payload_path).parts
+            ).read_text(encoding="utf-8")
+        )
+        raw_source_refs = payload.get("source_refs", [])
+        if not isinstance(raw_source_refs, list) or not all(
+            isinstance(value, str) and value for value in raw_source_refs
+        ):
+            raise QueueError(f"operation {operation.operation_id} source_refs are invalid")
+        operation_id, created = enqueue_operation(
+            repository_root,
+            settings,
+            operation_type=operation.operation_type,
+            entity_type=operation.entity_type,
+            entity_id=operation.entity_id,
+            dedupe_key=(f"{operation.dedupe_key}:binding-recovery:{operation.operation_id}"),
+            prompt=(
+                f"Recover {operation.operation_type} for current allocation plan "
+                f"{recovery_target['allocation_plan_id']} after audited compatible binding skip "
+                f"{operation.operation_id}."
+            ),
+            inputs=inputs,
+            source=f"deterministic-allocation-binding-recovery:{operation.operation_id}",
+            priority=100 if operation.operation_type == "execute_strategy" else 99,
+            freshness_days=0,
+            source_refs=tuple(raw_source_refs),
+            max_attempts=operation.max_attempts,
+            now=instant,
+        )
+        if created:
+            created_ids.append(operation_id)
+            active_keys.add(key)
+    return tuple(created_ids)
+
+
 def _bind_allocation_operation(
     repository_root: Path,
     operation: Operation,

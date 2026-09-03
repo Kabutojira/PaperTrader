@@ -51,6 +51,7 @@ from papertrader.portfolio import (
 )
 from papertrader.queue import (
     prepare_queue,
+    recover_superseded_allocation_plan_skips,
     release_expired_leases,
     retire_source_watch_operations,
 )
@@ -640,10 +641,14 @@ def prepare_daily_run(
     # The scanner already records one stable issue per failed channel. Carry those failures into
     # the run status without creating duplicate daily-phase issues.
     errors.extend(youtube_scan_failures(repository_root, run_id))
+    allocation_recoveries = recover_superseded_allocation_plan_skips(
+        repository_root, settings, now=instant
+    )
     queue_dispositions = (
         *release_dispositions,
         *source_watch_dispositions,
         *maintenance_dispositions,
+        *(f"allocation_binding_recovery:{value}" for value in allocation_recoveries),
         *prepare_queue(repository_root, now=instant),
     )
     if existing_manifest is None:
