@@ -1,0 +1,67 @@
+{
+  "commands_run": [
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Skipped baseline strategy research for Uber because allocation plan allocation_plan_3b65c4f4683e9b90d8b7 was superseded by current plan allocation_plan_289b1e45af570882b472 before execution; no strategy or signal was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The immutable baseline-allocation request binds strategy_e4ada1a4934691d1f7ee and allocation_intent_5988db00b0dab41c4d78 to allocation_plan_3b65c4f4683e9b90d8b7 for security_e4822686f60a96824b6e.",
+      "source": "data/operations/payloads/01M1MACH0GYY92P1RARHGCD3R5.json"
+    },
+    {
+      "claim": "The current allocation projection contains only allocation_plan_289b1e45af570882b472. Its Uber row preserves allocation_intent_5988db00b0dab41c4d78, assessment_7fe1690682aa6c66e233, relationship_d403f81ae5b27c9643dd, rank 2, effective score 84, an open disposition, a 1.97% target weight, and a three-share target.",
+      "observed_at": "2026-09-03T19:35:37Z",
+      "source": "data/tables/allocation_targets.csv"
+    },
+    {
+      "claim": "The payload-bound allocation_plan_3b65c4f4683e9b90d8b7 is retained only in immutable allocation history for Uber, where its latest observation preserves the same allocation intent and three-share target.",
+      "observed_at": "2026-09-03T19:06:27Z",
+      "source": "data/tables/allocation_history.csv"
+    },
+    {
+      "claim": "Uber's current assessment remains assessment_7fe1690682aa6c66e233, matching the payload-bound assessment timestamp and carrying medium confidence with no hard blocker.",
+      "observed_at": "2026-08-28T19:27:50Z",
+      "source": "data/tables/security_assessments.csv"
+    },
+    {
+      "claim": "relationship_d403f81ae5b27c9643dd remains accepted, positive, high sensitivity, and medium confidence for Uber.",
+      "observed_at": "2026-08-28T20:00:02Z",
+      "source": "data/tables/relationships.csv"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01M1MACH0GYY92P1RARHGCD3R5",
+  "operations_created": [],
+  "reason_code": "superseded_allocation_plan",
+  "status": "skipped",
+  "summary": "Skipped the baseline-allocation strategy review because its immutable payload binds allocation plan allocation_plan_3b65c4f4683e9b90d8b7, which was superseded before execution by current plan allocation_plan_289b1e45af570882b472. Although the current projection preserves the same allocation intent, assessment, relationship, rank, open disposition, and three-share target, baseline strategy work must bind the exact current plan identity. No strategy, signal, execution follow-up, issue, wiki page, or structured state was changed.",
+  "validation": {
+    "checks": [
+      "Repository safety configuration sets paper_trading_only=true and allow_real_orders=false.",
+      "Confirmed this is the only running operation, it is claimed by daily-20260903T195930Z, and its lease remains live through 2026-09-03T20:40:15Z.",
+      "Confirmed the immutable payload matches strategy_e4ada1a4934691d1f7ee, relationship_d403f81ae5b27c9643dd, security_e4822686f60a96824b6e, and baseline_allocation mode.",
+      "Confirmed llm-wiki, papertrader-controller, papertrader-strategy-research, and echart content hashes match hermes_preflight.json.",
+      "Confirmed the payload plan is superseded: current allocation_targets.csv contains only allocation_plan_289b1e45af570882b472, not allocation_plan_3b65c4f4683e9b90d8b7.",
+      "Confirmed the linked relationship remains accepted and the current assessment identity and timestamp still match the payload.",
+      "Applied the superseded-target rule at the mandatory allocation-plan identity gate before structure selection, signal creation, or follow-up enqueueing.",
+      "Confirmed no strategy, signal, order, execution, cash, portfolio, performance, allocation, issue, follow-up, or wiki state was changed by this operation.",
+      "scripts/papertrader wiki lint --strict returned OK [wiki] with no changed paths in command_audit.json.",
+      "git diff --check passed before the manifest was written."
+    ],
+    "passed": true
+  },
+  "visualization_review": {
+    "charts": [],
+    "completed": true,
+    "omissions": [
+      {
+        "dataset": "Uber baseline strategy structure and scenario comparison",
+        "reason": "The mandatory allocation-plan identity gate skipped the superseded request before strategy selection or page mutation, so no operation-authored chart was warranted.",
+        "reason_code": "no_page_change"
+      }
+    ]
+  }
+}
