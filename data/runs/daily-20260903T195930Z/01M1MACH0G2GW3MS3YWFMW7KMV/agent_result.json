@@ -1,0 +1,56 @@
+{
+  "commands_run": [
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Skipped baseline strategy research for Prosus because allocation plan allocation_plan_3b65c4f4683e9b90d8b7 was superseded by current plan allocation_plan_289b1e45af570882b472 before execution; no strategy or signal was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The immutable request binds strategy_8caa208dfc702a2584a7 and allocation_intent_13eb8f910db9c58bece6 to allocation_plan_3b65c4f4683e9b90d8b7 for security_8b703a8adf5f864acaa4.",
+      "source": "data/operations/payloads/01M1MACH0G2GW3MS3YWFMW7KMV.json"
+    },
+    {
+      "claim": "The current allocation projection is allocation_plan_289b1e45af570882b472 as of 2026-09-03T19:35:37Z. Its Prosus row retains allocation_intent_13eb8f910db9c58bece6, assessment_7f28dfd9240d6099400b, relationship_e514a92bf6c38d0754ee, rank 1, effective score 70, 1.11% target weight, target quantity 3, and open disposition, but it has a different immutable plan identity and a newer EUR 36.880001068115234 valuation mark as of 2026-09-03T18:24:03Z.",
+      "observed_at": "2026-09-03T19:35:37Z",
+      "source": "data/tables/allocation_targets.csv"
+    },
+    {
+      "claim": "The payload-bound allocation_plan_3b65c4f4683e9b90d8b7 is retained in immutable allocation history at 2026-09-03T19:02:02Z with the EUR 36.85499954223633 valuation mark, rank 1, effective score 70, 1.11% target weight, target quantity 3, and open disposition.",
+      "observed_at": "2026-09-03T19:02:02Z",
+      "source": "data/tables/allocation_history.csv"
+    },
+    {
+      "claim": "The current Prosus assessment remains the payload-bound assessment_7f28dfd9240d6099400b with assessment timestamp 2026-08-28T19:18:00Z.",
+      "observed_at": "2026-08-28T19:18:00Z",
+      "source": "data/tables/security_assessments.csv"
+    },
+    {
+      "claim": "relationship_e514a92bf6c38d0754ee remains accepted for security_8b703a8adf5f864acaa4, with positive direction, high sensitivity, and medium confidence.",
+      "observed_at": "2026-08-28T20:01:33Z",
+      "source": "data/tables/relationships.csv"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01M1MACH0G2GW3MS3YWFMW7KMV",
+  "operations_created": [],
+  "reason_code": "superseded_allocation_plan",
+  "status": "skipped",
+  "summary": "Skipped the baseline-allocation strategy review because its immutable allocation plan allocation_plan_3b65c4f4683e9b90d8b7 was superseded before execution by current plan allocation_plan_289b1e45af570882b472. The current plan preserves the same Prosus allocation intent, assessment, accepted relationship, rank, effective score, target quantity, target weight, and open disposition, but baseline strategy work must bind the current plan identity and its newer valuation mark. No strategy, signal, follow-up, issue, wiki page, or structured state was changed.",
+  "validation": {
+    "checks": [
+      "config.ini sets paper_trading_only=true and allow_real_orders=false.",
+      "The only running queue row is this strategy_research operation, claimed by daily-20260903T195930Z with a live lease through 2026-09-03T20:30:29Z.",
+      "The payload operation ID, operation type, immutable strategy entity, required baseline-allocation fields, and queue row agree with schemas/operation_payload.schema.json.",
+      "Native llm-wiki, controller, strategy-research, and echart skill SHA-256 hashes match hermes_preflight.json.",
+      "The payload plan is superseded: current allocation_targets.csv contains allocation_plan_289b1e45af570882b472 rather than allocation_plan_3b65c4f4683e9b90d8b7.",
+      "The linked relationship remains accepted and the current security assessment identity and timestamp still match the payload.",
+      "The superseded-target rule stopped work at the mandatory allocation-plan identity gate before structure selection, materiality evaluation, signal creation, or follow-up enqueueing.",
+      "The audited strict wiki lint command changed no paths.",
+      "Repository status before manifest creation showed no changed strategy, signal, order, execution, cash, allocation, portfolio, performance, issue, or wiki path.",
+      "papertrader wiki lint --strict returned OK [wiki]."
+    ],
+    "passed": true
+  }
+}
