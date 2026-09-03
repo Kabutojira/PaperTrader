@@ -1,0 +1,18 @@
+{
+  "source_id": "source_crox_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1334036/000133403626000052/crox-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1334036/000133403626000052/crox-20260630.htm",
+  "source_type": "filing",
+  "title": "Crocs, Inc. Form 10-Q for the quarter ended June 30, 2026",
+  "publisher": "Crocs, Inc.",
+  "license": "",
+  "status": "available",
+  "content_hash": "75aa7525af1c355bc85340fd818845d9f0a4067b9962449e8919c38d89626a89",
+  "related_entity_ids": "security_c150f31c30afdb4a85f9",
+  "checked_at": "2026-09-03T12:48:08Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "As of June 30, 2026, we were in compliance with all financial covenants under the Credit Agreement.",
+  "summary": "A fresh SEC retrieval reproduced the registered Q2 2026 Form 10-Q hash. The filing remains the latest periodic operating report and continues to support the revenue, earnings, cash, debt, share-count and risk evidence used in the assessment.",
+  "run_id": "daily-20260903T122855Z"
+}

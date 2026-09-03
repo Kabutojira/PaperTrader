@@ -1,0 +1,12 @@
+{
+  "issue_code": "security_assessment_duplicate_operation_versions",
+  "impact": "affects_candidate",
+  "severity": "error",
+  "title": "Crocs review produced two immutable assessment versions",
+  "description": "Operation 01M0WSFGEG1A2CFQ7VMV3TJAN3 accepted assessment_fe9917a9d658e55cb9a0 before the final security-page conclusion was reconciled to deterministic expected-to-bear and portfolio-action fields. Re-running the canonical assessment upsert after the page correction correctly preserved immutability but appended assessment_2a0ada6a7008e23ec2ea with the corrected page hash. The result validator requires exactly one immutable assessment version per security-research operation, so this operation must fail closed. Current assessment values are unchanged between the two versions and the latest version matches the page, but the controller must repair or compensate the duplicate provenance before this research may be accepted. No relationship, idea, strategy, signal, order, allocation, execution, cash, portfolio or performance change was made.",
+  "entity_type": "security",
+  "entity_id": "security_c150f31c30afdb4a85f9",
+  "owner": "controller",
+  "related_run_id": "daily-20260903T122855Z",
+  "related_operation_id": "01M0WSFGEG1A2CFQ7VMV3TJAN3"
+}

@@ -1,0 +1,129 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_c150f31c30afdb4a85f9",
+    "papertrader research source record --request data/runs/daily-20260903T122855Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/source_crox_q2_2026_10q_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260903T122855Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/source_crox_q2_2026_results_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260903T122855Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/source_crox_sec_submissions_20260903_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260903T122855Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/security_upsert_request.json",
+    "papertrader wiki sync-technical-charts",
+    "papertrader research assessment upsert --request data/runs/daily-20260903T122855Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260903T122855Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/assessment_upsert_retry01_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260903T122855Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/assessment_upsert_retry02_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260903T122855Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/assessment_upsert_retry03_request.json",
+    "papertrader research security-context --security-id security_c150f31c30afdb4a85f9",
+    "papertrader research assessment upsert --request data/runs/daily-20260903T122855Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/assessment_upsert_retry04_request.json",
+    "papertrader schema validate",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader research security upsert --request data/runs/daily-20260903T122855Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/security_upsert_retry01_request.json",
+    "papertrader research security-context --security-id security_c150f31c30afdb4a85f9",
+    "papertrader issue record --request data/runs/daily-20260903T122855Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/issue_record_request.json",
+    "papertrader wiki lint --strict",
+    "papertrader queue validate",
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict"
+  ],
+  "daily_report_items": [
+    "Crocs research refreshed after an 18.35% alert-period decline. The fresh USD 115.79 mark derives Buy / Initiate with Watch conviction, but expected-to-bear payoff and relationship gates keep it allocation-ineligible. The operation failed closed after producing duplicate immutable assessment versions; issue_0396c67b5be8b8f8d89b records the required controller repair."
+  ],
+  "evidence": [
+    {
+      "claim": "A fresh SEC retrieval reproduced the registered Q2 2026 Form 10-Q hash; the filing continues to support the revenue, earnings, cash, debt, share-count and risk evidence used in the assessment.",
+      "observed_at": "2026-09-03T12:48:08Z",
+      "source": "source_crox_q2_2026_10q",
+      "source_hash": "75aa7525af1c355bc85340fd818845d9f0a4067b9962449e8919c38d89626a89",
+      "url": "https://www.sec.gov/Archives/edgar/data/1334036/000133403626000052/crox-20260630.htm"
+    },
+    {
+      "claim": "The SEC-filed Q2 release reports USD 1.179468 billion revenue versus USD 1.149373 billion, while adjusted operating income declined to about USD 296 million from USD 309 million.",
+      "observed_at": "2026-09-03T12:48:08Z",
+      "source": "source_crox_q2_2026_results",
+      "source_hash": "f52ca96031e7f6282ac04f67cbf7a95adbd942b64434ec3234523956e593f53f",
+      "url": "https://www.sec.gov/Archives/edgar/data/1334036/000133403626000050/croxq22026-pressrelease.htm"
+    },
+    {
+      "claim": "The current SEC submissions index contains no operating filing newer than the July 30 Q2 filing through the canonical September 2 market date; later entries are ownership or resale-registration filings.",
+      "observed_at": "2026-09-03T12:48:08Z",
+      "source": "source_crox_sec_submissions_20260903",
+      "source_hash": "5a9f12df357f7e03d7c8f4b312cef937267aa2b69b6f41a69f44a04e108c7eee",
+      "url": "https://data.sec.gov/submissions/CIK0001334036.json"
+    },
+    {
+      "claim": "The identity-matched USD 115.79000091552734 mark produces bear/base/bull returns of -24.00%, 25.59% and 77.74%, a 21.14% probability-weighted expected return, Buy / Initiate disposition, Watch conviction, and ineligibility reason codes expected_bear_payoff_below_minimum and relationship_pending.",
+      "source": "data/market/latest.csv and latest immutable assessment assessment_2a0ada6a7008e23ec2ea"
+    },
+    {
+      "claim": "This source operation has two immutable versions, assessment_fe9917a9d658e55cb9a0 and assessment_2a0ada6a7008e23ec2ea; the latter links the former and matches the final research-page hash, but the operation validator requires exactly one version.",
+      "source": "data/tables/security_assessment_history.csv"
+    }
+  ],
+  "files_changed": [
+    "data/issues.md",
+    "data/runs/daily-20260903T122855Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/assessment_upsert_request.json",
+    "data/runs/daily-20260903T122855Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260903T122855Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/assessment_upsert_retry02_request.json",
+    "data/runs/daily-20260903T122855Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/assessment_upsert_retry03_request.json",
+    "data/runs/daily-20260903T122855Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/assessment_upsert_retry04_request.json",
+    "data/runs/daily-20260903T122855Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/issue_record_request.json",
+    "data/runs/daily-20260903T122855Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/security_upsert_request.json",
+    "data/runs/daily-20260903T122855Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/security_upsert_retry01_request.json",
+    "data/runs/daily-20260903T122855Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/source_crox_q2_2026_10q_refresh_request.json",
+    "data/runs/daily-20260903T122855Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/source_crox_q2_2026_results_refresh_request.json",
+    "data/runs/daily-20260903T122855Z/01M0WSFGEG1A2CFQ7VMV3TJAN3/source_crox_sec_submissions_20260903_request.json",
+    "data/tables/issues.csv",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_c150f31c30afdb4a85f9.md"
+  ],
+  "issues_recorded": [
+    "issue_0396c67b5be8b8f8d89b"
+  ],
+  "operation_id": "01M0WSFGEG1A2CFQ7VMV3TJAN3",
+  "operations_created": [],
+  "reason_code": "duplicate_immutable_assessment_versions",
+  "status": "failed",
+  "summary": "Researched Crocs after the September lower-Bollinger breach, refreshed primary SEC evidence, updated the security page and structured state, and derived Buy / Initiate with Watch conviction and allocation ineligibility because expected-to-bear payoff and relationship gates fail. The operation fails closed because a page-hash correction caused the immutable assessment applier to append two versions for this source operation; the result validator requires exactly one. Recorded issue issue_0396c67b5be8b8f8d89b. No follow-up, strategy, signal, order, allocation or accounting change was made.",
+  "validation": {
+    "checks": [
+      "Security context command succeeded before assessment work and was consumed.",
+      "Fresh registered Q2 filing, results-release and SEC submissions evidence passed deterministic freshness checks.",
+      "Latest immutable assessment assessment_2a0ada6a7008e23ec2ea is schema version 2, links predecessor assessment_fe9917a9d658e55cb9a0, names this source operation and result path, and matches the final security-page hash.",
+      "Operation-specific validation failed because assessment_fe9917a9d658e55cb9a0 and assessment_2a0ada6a7008e23ec2ea both name this source operation; exactly one immutable version is required.",
+      "Canonical current assessment is complete and valuation-supported: Buy / Initiate, Watch conviction, and allocation-ineligible for expected_bear_payoff_below_minimum and relationship_pending.",
+      "Complete maintained idea catalog and canonical relationship state were searched; there are no accepted or plausible candidate edges and no follow-up was created.",
+      "Strict wiki lint, queue validation, strict schema validation and strict integrity checks passed after the final edits.",
+      "No allocation, order, execution, cash, portfolio or performance path changed."
+    ],
+    "passed": false
+  },
+  "visualization_review": {
+    "charts": [
+      {
+        "chart_id": "q2-revenue-and-adjusted-operating-income",
+        "page_path": "data/wiki/securities/security_c150f31c30afdb4a85f9.md"
+      },
+      {
+        "chart_id": "valuation-scenarios",
+        "page_path": "data/wiki/securities/security_c150f31c30afdb4a85f9.md"
+      }
+    ],
+    "completed": true,
+    "omissions": [
+      {
+        "dataset": "Like-for-like peer valuation",
+        "reason": "The bounded review did not establish a primary-evidence peer set sharing one as-of date, earnings definition, instrument scope and currency basis.",
+        "reason_code": "insufficient_comparability"
+      },
+      {
+        "dataset": "Balance-sheet snapshot",
+        "reason": "The bounded fresh evidence contains only the same June 30 balance-sheet observation used in the prior review, which is too sparse for a meaningful trend chart.",
+        "reason_code": "single_value"
+      }
+    ]
+  }
+}

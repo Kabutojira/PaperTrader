@@ -7,8 +7,8 @@ tags:
   - research
   - risk
 created: "2026-08-01"
-updated: "2026-08-01"
-provenance: "source_crox_q2_2026_10q|source_crox_q2_2026_results"
+updated: "2026-09-03"
+provenance: "source_crox_q2_2026_10q|source_crox_q2_2026_results|source_crox_sec_submissions_20260903"
 security_id: security_c150f31c30afdb4a85f9
 issuer_id: issuer_1f6c9036716fafed5a2a
 ticker: CROX
@@ -16,7 +16,7 @@ venue_mic: XNAS
 provider_symbol: CROX
 currency: USD
 confidence: medium
-next_review: "2026-08-31"
+next_review: "2026-10-03"
 ---
 
 # Crocs, Inc. common stock
@@ -51,14 +51,89 @@ This deterministic monitoring chart is derived from the repository-local market 
 ```
 <!-- papertrader:technical-chart:end -->
 
+The lower-band breach is monitoring evidence rather than a trading rule. It is interpreted below
+against unchanged primary operating evidence and a fresh identity-matched mark.
+
+```echart
+{
+  "schema_version": 1,
+  "chart_id": "q2-revenue-and-adjusted-operating-income",
+  "kind": "series",
+  "title": "Second-quarter revenue and adjusted operating income",
+  "description": "Revenue increased modestly while adjusted operating income declined, showing that the record top line did not translate into operating leverage.",
+  "as_of": "2026-06-30",
+  "sources": [{"label": "Crocs Q2 2026 SEC-filed results release", "url": "https://www.sec.gov/Archives/edgar/data/1334036/000133403626000050/croxq22026-pressrelease.htm", "observed_at": "2026-09-03T12:48:08Z"}],
+  "x_axis": {"type": "category", "label": "Quarter ended June 30", "values": ["2025", "2026"]},
+  "y_axes": [{"label": "USD millions", "unit": "USD million", "format": "currency", "currency": "USD"}],
+  "series": [
+    {"name": "Revenue", "render": "bar", "y_axis": 0, "values": ["1149.373", "1179.468"]},
+    {"name": "Adjusted operating income", "render": "bar", "y_axis": 0, "values": ["309", "296"]}
+  ],
+  "notes": [
+    "Revenue is GAAP; adjusted operating income is the issuer's non-GAAP measure and is shown only for like-for-like operating comparison.",
+    "The prior-year GAAP operating result included material HEYDUDE impairment charges, so it is not used in this comparison."
+  ]
+}
+```
+
+```echart
+{
+  "schema_version": 1,
+  "chart_id": "valuation-scenarios",
+  "kind": "series",
+  "title": "Twelve-month fair-value scenarios versus the fresh mark",
+  "description": "The fresh mark is below the base-case buy-below level, but expected-to-bear payoff remains below its threshold and a current accepted idea relationship remains unavailable.",
+  "as_of": "2026-09-03T12:29:04Z",
+  "sources": [
+    {"label": "Crocs Q2 2026 Form 10-Q and SEC-filed results release", "url": "https://www.sec.gov/Archives/edgar/data/1334036/000133403626000052/crox-20260630.htm", "observed_at": "2026-09-03T12:48:08Z"},
+    {"label": "PaperTrader identity-matched market cache", "observed_at": "2026-09-03T12:29:04Z"}
+  ],
+  "x_axis": {"type": "category", "label": "Scenario", "values": ["Bear (30%)", "Base (50%)", "Bull (20%)"]},
+  "y_axes": [{"label": "USD per share", "unit": "USD/share", "format": "currency", "currency": "USD"}],
+  "series": [
+    {"name": "Fair value", "render": "bar", "y_axis": 0, "values": ["88", "145.425", "205.8"]},
+    {"name": "Fresh mark", "render": "line", "y_axis": 0, "values": ["115.79000091552734", "115.79000091552734", "115.79000091552734"]}
+  ],
+  "notes": [
+    "Probabilities total 100%; probability-weighted fair value is USD 140.2725.",
+    "The scenarios are unchanged because fresh SEC retrievals found no newer operating evidence."
+  ]
+}
+```
+
 ## Decision
 
-**Watch; no conviction strategy.** Record Q2 revenue, direct-to-consumer growth, positive cash
-conversion, a raised full-year outlook, and continued repurchases support the core Crocs brand.
-Wholesale contraction, lower gross margin, continued HEYDUDE weakness, leverage, and the sharp
-post-results selloff temper that evidence. A bounded 12-month earnings-multiple valuation has a USD
-145.43 base case but only USD 140.27 probability-weighted value versus the USD 128.01 mark. The
-confidence-adjusted expected return and downside payoff remain below the required gates.
+**Buy / Initiate research disposition; Watch conviction with no strategy.** The USD 115.79
+fresh mark is below the USD 116.34 base-case buy-below level, and unchanged scenarios now imply
+21.14% expected return and 15.86% after the medium-confidence adjustment. Base-to-bear payoff
+clears, but expected-to-bear payoff at 0.88 remains below its required threshold. That valuation
+improvement comes entirely from an 18.35% price decline, not new operating evidence. The payoff
+shortfall and absence of a current accepted causal idea relationship keep the security
+allocation-ineligible, so no strategy, signal, order, or paper trade is justified.
+
+## Changes since prior review
+
+- **Facts and evidence:** fresh retrievals reproduce the registered Q2 Form 10-Q and results-release
+  hashes. The current SEC submissions index contains no operating filing newer than July 30; later
+  entries are ownership or resale-registration filings. The operating evidence is unchanged.
+- **Alert and timing:** from August 4 through September 1 the adjusted close fell 18.35%, from USD
+  141.19 to USD 115.28. The September 1 close entered and then strengthened below the lower
+  Bollinger band. On September 2 the close rose 0.44% to USD 115.79, above its USD 114.04 lower band;
+  RSI remained weak at 34.30 and MACD remained below signal. The configured trigger had exited.
+- **Assumptions and valuation:** normalized EPS, multiples, probabilities and USD 88 / USD 145.425 /
+  USD 205.80 bear/base/bull fair values are unchanged. The fresh mark raises scenario returns to
+  -24.00%, +25.59% and +77.74%; probability-weighted fair value remains USD 140.2725.
+- **Thesis, catalysts and risks:** the core-brand, direct-channel, cash-conversion and repurchase
+  thesis is unchanged. Wholesale contraction, margin pressure, HEYDUDE weakness, leverage,
+  fashion-cycle exposure and capital-allocation risk remain unresolved. No catalyst or invalidation
+  was added or removed.
+- **Blockers and gaps:** expected-return, bear/base payoff and margin-of-safety gaps resolved through
+  price. Expected/bear payoff, medium confidence, cyclical normalization uncertainty, adverse
+  technical momentum and the missing accepted relationship remain. There is no hard identity,
+  evidence, liquidity, price or FX blocker.
+- **Rating and action:** the research rating improves from Hold to Buy and the derived portfolio
+  action from Watch to Initiate. Conviction remains Watch and allocation remains ineligible; the
+  no-strategy conclusion is unchanged because expected/bear payoff and relationship gates fail.
 
 ## Immutable identity
 
@@ -70,25 +145,20 @@ confidence-adjusted expected return and downside payoff remain below the require
 - Currency: `USD`
 
 The SEC filing identifies Crocs, Inc. common stock on Nasdaq under `CROX`, matching the canonical
-issuer, instrument, venue, provider, and currency identity. No duplicate canonical identity exists.
+issuer, instrument, venue, provider, and currency identity. The refreshed submissions index matches
+CIK 0001334036. No duplicate canonical identity exists.
 
 ## Alert review
 
-The payload's canonical observation period is 2026-07-01 through 2026-07-30:
+The canonical August 4 through September 1 observation period ended with an 18.35% decline and a
+new `bollinger_below_lower` entry that strengthened during the September 1 refresh. Price at USD
+115.28 was marginally below the USD 115.33 lower band. The September 2 close was USD 115.79, the
+lower band was USD 114.04, RSI was 34.30, and MACD at -3.51 remained below its -2.17 signal line.
 
-- The adjusted close ended at USD 123.66, down **0.41%** over the period.
-- July 30 volume rose to 3.007 million shares, producing the recorded `volume_anomaly` entry with
-  strength **0.9304**.
-- Crocs released Q2 results before the July 30 session. Despite revenue and guidance beating the
-  prior outlook, the close fell **7.38%** from July 29, making the event relevant to the alert.
-- On July 31 the close recovered **3.52%** to USD 128.01. Volume fell to 1.674 million, the volume
-  z-score was **1.143**, and the canonical trigger state was empty. RSI was neutral at **48.23**;
-  MACD remained below its signal line.
-
-The alert is **risk with mixed evidence**, not a durable opportunity signal. The abnormal-volume
-selloff is consistent with concern about wholesale contraction, lower margin, HEYDUDE weakness, and
-modest full-year growth despite the raised outlook. The next-session rebound and exited volume
-trigger show that the one-day reaction did not independently establish a new trend or an entry.
+The breach is a **valuation opportunity but continuing timing risk**, not an actionable signal.
+Price entered the prior buy zone, but no primary operating development explains or validates the
+decline and the breach exited after one session. The weak momentum warrants monitoring rather than
+assuming mean reversion.
 
 ## Business and financial evidence
 
@@ -154,23 +224,36 @@ repurchases, and fashion-cycle risk:
 - Bull, 20%: USD **205.80**, using USD 14.70 normalized EPS at 14x as brand growth broadens,
   HEYDUDE stabilizes, margins recover, debt falls, and repurchases remain accretive.
 
-Against USD 128.01, the cases imply **-31.3%**, **+13.6%**, and **+60.8%**. Probability-weighted fair
-value is USD 140.27, or **+9.6%** before the medium-confidence adjustment and **+7.2%** after it. The
-base-upside-to-bear-downside ratio is only **0.44**, and the 20% margin-of-safety buy zone is USD
-116.34. The current mark therefore fails confidence-adjusted return, bear/base payoff, expected/bear
-payoff, and margin-of-safety gates.
+Against USD 115.79, the cases imply **-24.00%**, **+25.59%**, and **+77.74%**. Probability-weighted
+fair value is USD 140.2725, or **+21.14%** before the medium-confidence adjustment and **+15.86%**
+after it. The base-upside-to-bear-downside ratio is **1.07**, expected-to-bear payoff is **0.88**, and
+the 20% margin-of-safety buy zone is USD 116.34. The expected/bear ratio remains below its required
+threshold, and the missing accepted relationship independently prevents allocation eligibility.
+
+## Idea exposure map
+
+Canonical relationship state contains no accepted Crocs edge. The complete maintained idea catalog
+was searched. [[ideas/idea_defensive_consumer_cash_return|Defensive consumer cash-return
+resilience]] was evaluated as **rejected-no-link**: Crocs' discretionary, fashion-sensitive footwear
+demand does not provide the idea's recurring grocery, frozen-food, or franchise-demand mechanism,
+and Q2 wholesale contraction and HEYDUDE weakness reinforce that mismatch. The other 27 maintained
+ideas were also rejected-no-link because none has a specific material transmission mechanism to
+Crocs' products, customers, suppliers, costs, catalysts, or invalidation conditions. There is no
+accepted-needs-review or candidate pairing, so no relationship or idea follow-up is warranted.
 
 ## Sources
 
 - [Crocs Q2 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1334036/000133403626000052/crox-20260630.htm)
-  (`source_crox_q2_2026_10q`, checked 2026-08-01).
+  (`source_crox_q2_2026_10q`, hash reproduced 2026-09-03).
 - [Crocs Q2 2026 results](https://www.sec.gov/Archives/edgar/data/1334036/000133403626000050/croxq22026-pressrelease.htm)
-  (`source_crox_q2_2026_results`, checked 2026-08-01).
+  (`source_crox_q2_2026_results`, hash reproduced 2026-09-03).
+- [Crocs SEC submissions index](https://data.sec.gov/submissions/CIK0001334036.json)
+  (`source_crox_sec_submissions_20260903`, checked 2026-09-03).
 - Canonical market and indicator state: `data/market/latest.csv`, `data/market/indicators.csv`, and
-  `data/market/prices/security_c150f31c30afdb4a85f9.csv`, market date 2026-07-31 and retrieved
-  2026-08-01.
+  `data/market/prices/security_c150f31c30afdb4a85f9.csv`, market date 2026-09-02 and retrieved
+  2026-09-03. The identity-matched USD/EUR rate was 0.8611999750137329 at the same retrieval time.
 
-Next review: **2026-08-31**, or sooner after a material guidance, margin, HEYDUDE, wholesale,
+Next review: **2026-10-03**, or sooner after a material guidance, margin, HEYDUDE, wholesale,
 inventory, debt, repurchase, sourcing, tariff, or consumer-demand development.
 
 Related navigation: [[security-catalog|Securities]], [[signals|Signals and research alerts]], and

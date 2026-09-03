@@ -1,0 +1,23 @@
+{
+  "security_id": "security_c150f31c30afdb4a85f9",
+  "issuer_id": "issuer_1f6c9036716fafed5a2a",
+  "company_name": "Crocs, Inc.",
+  "instrument_name": "Crocs, Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "CROX",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "CROX",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Consumer Cyclical",
+  "industry": "Footwear & Accessories",
+  "status": "watching",
+  "watchlist_reason": "The September 1 lower-Bollinger breach followed an 18.35% decline; weak momentum, wholesale contraction, margin pressure, HEYDUDE weakness, leverage and fashion-cycle risk require monitoring.",
+  "research_summary": "The fresh mark enters the buy zone and clears valuation gates, but unchanged operating evidence, weak momentum and no accepted causal idea relationship keep Crocs on Watch and allocation-ineligible.",
+  "research_page": "data/wiki/securities/security_c150f31c30afdb4a85f9.md",
+  "last_research_at": "2026-09-03T12:48:08Z",
+  "next_review_at": "2026-10-03T12:48:08Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1334036/000133403626000052/crox-20260630.htm"
+}

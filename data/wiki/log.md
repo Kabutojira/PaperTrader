@@ -15,6 +15,19 @@ provenance: repository-contract
 This append-only current log continues an earlier non-public 2026 archive, rotated at a dated entry
 boundary after the combined log crossed the configured 5,000-line threshold.
 
+## [2026-09-03T12:48:08Z] security research | Crocs
+
+- Reassessed [[securities/security_c150f31c30afdb4a85f9|Crocs]] after the September 1 lower-
+  Bollinger-band breach and 18.35% decline from August 4. The breach exited on September 2, while
+  weak RSI and bearish MACD preserve adverse timing.
+- Fresh SEC retrievals reproduced the Q2 filing and results hashes; the submissions index contains
+  no newer operating filing. Unchanged USD 88/USD 145.425/USD 205.80 scenarios now imply 21.14%
+  expected return at the USD 115.79 mark and move the research rating to Buy / Initiate.
+- Crocs remains Watch conviction and allocation-ineligible because expected-to-bear payoff remains
+  below threshold and no current accepted idea relationship exists. The complete idea catalog
+  yielded no plausible causal candidate, so no relationship, idea, strategy, signal, order, or
+  paper-trade follow-up was created.
+
 ## [2026-08-31T23:26:30Z] security research | Valero Energy
 
 - Reassessed [[securities/security_c5a9e460d3350284d157|Valero]] after the 31 August bullish MACD
