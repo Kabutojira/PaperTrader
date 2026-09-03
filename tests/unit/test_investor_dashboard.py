@@ -302,7 +302,7 @@ def test_quartz_uses_external_dashboard_source_and_validated_publication_copy(
     assert "condition: (page) => !isDashboardPage(page)" in layout
     assert "condition: isHomepage" in layout
     assert "Component.Explorer" in layout
-    assert "Component.Graph" in layout
+    assert "Component.Graph" not in layout
     assert 'folderDefaultState: "collapsed"' in layout
     assert '!["tags", "inbox", "raw", "_meta", "_archive"].includes(' in layout
     assert "node.slugSegment" in layout

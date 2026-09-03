@@ -26,11 +26,6 @@ const homepageExplorer = Component.Explorer({
     !["tags", "inbox", "raw", "_meta", "_archive"].includes(node.slugSegment),
 });
 
-const homepageGraph = Component.Graph({
-  localGraph: { depth: 2, removeTags: ["inbox"] },
-  globalGraph: { removeTags: ["inbox"] },
-});
-
 const isCollectionPage = (
   page: QuartzComponentProps,
   prefix: string,
@@ -137,10 +132,6 @@ export const defaultContentPageLayout: PageLayout = {
     Component.ConditionalRender({
       component: Component.Backlinks(),
       condition: (page) => !isDashboardPage(page),
-    }),
-    Component.ConditionalRender({
-      component: Component.DesktopOnly(homepageGraph),
-      condition: isHomepage,
     }),
     Component.ConditionalRender({
       component: Component.DesktopOnly(Component.Backlinks()),
