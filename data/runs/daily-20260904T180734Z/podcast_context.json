@@ -1,0 +1,112 @@
+{
+  "background_wiki_pages": [
+    {
+      "path": "data/wiki/ideas/idea_mobility_platform_autonomy.md",
+      "sha256": "df225c93431dae2cbc58b248cba17332cfefa7502b04581d42664bcdcadb9bba"
+    },
+    {
+      "path": "data/wiki/securities/security_e4822686f60a96824b6e.md",
+      "sha256": "9f0f19364f64dfe1625d5b60198e07ed56b1243f71c284f6ba7d053114f8a57b"
+    }
+  ],
+  "changed_wiki_pages": [
+    {
+      "path": "data/wiki/strategies/strategy_e4ada1a4934691d1f7ee.md",
+      "sha256": "38847c7955465193da17abe40bfa542a8daed2679fd798a0bfc4a057dffb8d22"
+    }
+  ],
+  "daily_cycle_id": "daily-20260904T180734Z",
+  "decision_snapshot_path": "data/runs/daily-20260904T180734Z/decision_snapshot.json",
+  "decision_snapshot_sha256": "eb7746fc4174335c04f1de0e033300b27767dd4753e1bdfba17c565e1af68fee",
+  "generated_at": "2026-09-04T18:35:16Z",
+  "intervening_daily_cycles": [
+    "daily-20260904T180734Z"
+  ],
+  "page_path": "data/wiki/podcasts/daily-podcast_20260904T180734Z.md",
+  "podcast_context_version": 3,
+  "portfolio_implication_paths": [
+    "data/runs/daily-20260904T180734Z/decision_snapshot.json",
+    "data/wiki/daily-reports/daily-report_20260904.md"
+  ],
+  "previous_successful_podcast": {
+    "context_path": "data/runs/daily-20260904T060928Z/podcast_context.json",
+    "context_sha256": "96542dd72c3b8d7b0da953f53a4ad1e28e38c10e1996e9d4a77d0ac9981d3190",
+    "daily_cycle_id": "daily-20260904T060928Z",
+    "page_path": "data/wiki/podcasts/daily-podcast_20260904T060928Z.md",
+    "page_sha256": "4ec57dcf2ea90d5233ec0ac9a04dc72269c7cea322a3fbb16b14b69a9d9d8309",
+    "research_cutoff_at": "2026-09-04T06:53:41Z"
+  },
+  "report_path": "data/wiki/daily-reports/daily-report_20260904.md",
+  "report_sha256": "5e79086e485d615c6bca353947c297216c0bd64dd306ae499f9e62acb76c4295",
+  "research_cutoff_at": "2026-09-04T18:24:32Z",
+  "research_developments": [
+    {
+      "completed_at": "2026-09-04T18:17:53Z",
+      "daily_cycle_id": "daily-20260904T180734Z",
+      "daily_report_items": [
+        "Refreshed Uber's bounded 2% starter baseline strategy against the current allocation intent, retained the allocator-owned two-share target, created a ready open signal, and queued exactly one separate paper-order review; strategy research created no order or fill."
+      ],
+      "entity_id": "strategy_e4ada1a4934691d1f7ee",
+      "entity_type": "strategy",
+      "evidence": [
+        {
+          "claim": "The current immutable allocation target binds strategy_e4ada1a4934691d1f7ee to plan allocation_plan_ac27b0db96445ca0a63e, intent allocation_intent_4a4fb498e6cf94a54ed7, assessment assessment_7fe1690682aa6c66e233 and the accepted relationship. It persists a two-share open target at 1.31%, with a 2% starter cap, rank three, 84 effective score, 16.84% probability-weighted return, 12.63% confidence-adjusted return and no hard blocker.",
+          "observed_at": "2026-09-04T18:07:35Z",
+          "source": "data/tables/allocation_targets.csv"
+        },
+        {
+          "claim": "The accepted Uber assessment retains medium confidence and a twelve-month USD 55/USD 90/USD 120 bear/base/bull range; quality remains high, but confidence, diversification and downside gaps support baseline rather than conviction treatment.",
+          "observed_at": "2026-08-28T19:27:50Z",
+          "source": "data/tables/security_assessments.csv"
+        },
+        {
+          "claim": "relationship_d403f81ae5b27c9643dd remains accepted for the mobility-platform idea and Uber security, with a positive mechanism, high sensitivity and medium confidence.",
+          "observed_at": "2026-09-03T20:46:03Z",
+          "source": "data/tables/relationships.csv"
+        },
+        {
+          "claim": "Uber's filed quarterly evidence supports the maintained scale and cash-generation thesis while the strategy retains regulatory, insurance, incentive, dilution and autonomy-disintermediation risks.",
+          "observed_at": "2026-08-28T19:27:50Z",
+          "source": "Uber Q2 2026 Form 10-Q",
+          "source_hash": "5aa56769ca3e3d8735d1122e85269a5b9cd68fcb4bd2fa58fa6b19b65b019ffa",
+          "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000032/uber-20260630.htm"
+        },
+        {
+          "claim": "The current UBER mark was USD 75.95999908447266 and the current USD/EUR rate was 0.8608999848365784; both were retrieved at 2026-09-04T18:07:35Z and were inside the configured 36-hour freshness window when the signal was created.",
+          "observed_at": "2026-09-04T18:07:35Z",
+          "source": "data/market/latest.csv and data/market/fx/USD_EUR.csv"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1PT2VBRPJQES9ZNAVSMNBMS.json",
+        "data/runs/daily-20260904T180734Z/01M1NK3K883BRW5XXCEPAM2RB2/enqueue-execute-strategy-request.json",
+        "data/runs/daily-20260904T180734Z/01M1NK3K883BRW5XXCEPAM2RB2/signal-create-request.json",
+        "data/runs/daily-20260904T180734Z/01M1NK3K883BRW5XXCEPAM2RB2/strategy-upsert-request.json",
+        "data/tables/signals.csv",
+        "data/tables/strategies.csv",
+        "data/tables/strategy_legs.csv",
+        "data/wiki/log.md",
+        "data/wiki/strategies/strategy_e4ada1a4934691d1f7ee.md"
+      ],
+      "operation_id": "01M1NK3K883BRW5XXCEPAM2RB2",
+      "operation_type": "strategy_research",
+      "result_path": "data/runs/daily-20260904T180734Z/01M1NK3K883BRW5XXCEPAM2RB2/agent_result.json",
+      "status": "succeeded",
+      "summary": "Refreshed ready baseline strategy strategy_e4ada1a4934691d1f7ee for Uber under current allocation plan allocation_plan_ac27b0db96445ca0a63e and allocation intent allocation_intent_4a4fb498e6cf94a54ed7. The long-equity starter structure preserves the deterministic two-share target and 2% position ceiling while documenting medium confidence, a material bear case and the reasons it does not qualify for conviction. Created ready open signal signal_71871a6ce787558bfc90 and exactly one dependent execute_strategy operation, 01M1PT2VBRPJQES9ZNAVSMNBMS. No order, fill, execution, cash, portfolio, performance or allocation state was changed."
+    }
+  ],
+  "run_id": "daily-20260904T180734Z",
+  "target_minutes": 20,
+  "target_words": 3000,
+  "unresolved_research_gaps": [],
+  "wiki_orientation_paths": [
+    "data/wiki/SCHEMA.md",
+    "data/wiki/index.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/log.md"
+  ],
+  "window_mode": "since_previous_successful_podcast",
+  "window_start_exclusive": "2026-09-04T06:53:41Z"
+}

@@ -1,0 +1,53 @@
+{
+  "commands_run": [],
+  "daily_report_items": [
+    "The daily podcast was blocked before deterministic script validation because the mandatory command-audit repository snapshot could not read the controller-owned encrypted OAuth state path; no transcript, audio, report link, or delivery artifact remains."
+  ],
+  "evidence": [
+    {
+      "claim": "The frozen podcast context is version three, covers the exclusive prior cutoff through the inclusive current cutoff, identifies exactly one successful strategy-research development, and binds the transcript to the required timestamped page path.",
+      "source": "data/runs/daily-20260904T180734Z/podcast_context.json"
+    },
+    {
+      "claim": "The operation payload, frozen context, and daily manifest visibly agree on data/wiki/podcasts/daily-podcast_20260904T180734Z.md as the only transcript path.",
+      "source": "data/operations/payloads/01M1PV87N00M38FCWEWS8A4SD6.json"
+    },
+    {
+      "claim": "The accepted Uber strategy development created a ready open signal for a bounded two-share common-equity starter while preserving medium confidence, a two-percent ceiling, and material autonomy, insurance, regulation, incentive, dilution, and diversification risks.",
+      "observed_at": "2026-09-04T18:14:30Z",
+      "source": "data/runs/daily-20260904T180734Z/01M1NK3K883BRW5XXCEPAM2RB2/agent_result.json"
+    },
+    {
+      "claim": "The current decision snapshot rates Uber Buy with an Initiate action, a two-share target, a one-point-three-one-percent target weight, medium confidence, and no order or fill.",
+      "observed_at": "2026-09-04T18:24:32Z",
+      "source": "data/runs/daily-20260904T180734Z/decision_snapshot.json"
+    },
+    {
+      "claim": "The canonical validate-script invocation exited before dispatch with permission denied on the controller-owned encrypted OAuth state path; no command_audit.json receipt was created.",
+      "source": "scripts/papertrader"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260904T180734Z/01M1PV87N00M38FCWEWS8A4SD6/candidate_slate.md",
+    "data/runs/daily-20260904T180734Z/01M1PV87N00M38FCWEWS8A4SD6/editorial_outline.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M1PV87N00M38FCWEWS8A4SD6",
+  "operations_created": [],
+  "reason_code": "command_audit_snapshot_unreadable",
+  "status": "blocked",
+  "summary": "Blocked the daily podcast before deterministic script preflight could dispatch. The frozen version-three context, payload, and daily manifest consistently bind the episode to data/wiki/podcasts/daily-podcast_20260904T180734Z.md. The sole successful development was mapped to one novel Uber chapter about the move from strategy-pending research to a ready two-share starter signal, with the current Buy / Initiate rating, medium-confidence sizing, explicit Buy and Sell conditions, and the fact that no order or fill exists. A complete transcript and its report link were drafted, but scripts/papertrader could not establish its mandatory pre-command repository snapshot because the controller-owned encrypted OAuth state path was unreadable. Because validate-script did not pass, render-draft was not invoked. The new transcript was removed and the daily report was restored exactly, leaving only operation-local planning artifacts. No research conclusion, structured investment state, allocation, signal, order, accounting, portfolio, execution, cash, fill, performance, or delivery state changed.",
+  "validation": {
+    "checks": [
+      "Confirmed the running queue row is claimed by daily-20260904T180734Z with a live lease and routes exactly llm-wiki plus papertrader-daily-podcast.",
+      "Confirmed hermes_preflight.json identifies llm-wiki 2.1.0, papertrader-controller, and papertrader-daily-podcast with content hashes, sequential=true, and yolo=true.",
+      "Confirmed payload, frozen context version three, and daily manifest agree on data/wiki/podcasts/daily-podcast_20260904T180734Z.md.",
+      "Reviewed the sole successful development, its changed strategy page, linked security, idea and relationship pages, the prior podcast, daily report, and decision snapshot.",
+      "Mapped the successful development exactly once and excluded routine mechanics and stale repetition from the planned chapter.",
+      "Confirmed validate-script did not dispatch and produced no command-audit receipt; render-draft was therefore not invoked.",
+      "Removed the new transcript and its report link after preflight failed, restoring the daily report and retaining no transcript or media artifact.",
+      "Strict schema, integrity, wiki, queue, and portfolio checks could not be dispatched because the same mandatory pre-command audit snapshot failed first; bypassing or changing credential-path access was not attempted."
+    ],
+    "passed": true
+  }
+}

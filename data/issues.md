@@ -22,3 +22,4 @@ Generated from `data/tables/issues.csv`.
 | affects_candidate | error | **issue_d28f4a965952a2f0b258** — Hermes operation validation failed: 01KZ9ZJVERYZKAVXNTF2NZCECM | 2026-08-12T17:58:15Z | controller | 01KZ9ZJVERYZKAVXNTF2NZCECM |
 | affects_candidate | error | **issue_f50e95ee4d3a5cc05618** — ASML assessment rejected after security row update | 2026-08-19T20:28:51Z | controller | 01M0DB44Q8R22ED9WQC5ZEG526 |
 | affects_candidate | error | **issue_ff655356efa9b9e1d1a8** — Hermes operation validation failed: 01KZPWPFS0QGMTYP3PD0TRQH6K | 2026-08-18T11:39:09Z | controller | 01KZPWPFS0QGMTYP3PD0TRQH6K |
+| publication_only | warning | **issue_d561bd29b8873eef87eb** — Daily podcast blocked: daily-20260904T180734Z | 2026-09-04T18:42:27Z | delivery | 01M1PV87N00M38FCWEWS8A4SD6 |
