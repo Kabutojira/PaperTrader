@@ -1,0 +1,617 @@
+{
+  "background_wiki_pages": [
+    {
+      "path": "data/wiki/ideas/idea_ai_compute_networking_hyperscaler_monetization.md",
+      "sha256": "8a9dfb5180137f187eb83ac96445a6a9f05b0d04c7efd5b46160a9e63476158e"
+    },
+    {
+      "path": "data/wiki/ideas/idea_ai_infrastructure_power.md",
+      "sha256": "5fa3fc37d47b29ae8126ce6b7323ced601848e47f6342fc5a8e4386507a669be"
+    },
+    {
+      "path": "data/wiki/ideas/idea_ai_native_drug_discovery.md",
+      "sha256": "21e709c6d3f5e394d4f9d5de8d848b126f737a82ecfc9af97928bb5c8b05ce94"
+    },
+    {
+      "path": "data/wiki/ideas/idea_commercial_space_infrastructure.md",
+      "sha256": "2868901712d68c7c4f601a12422bd26942a8784710ee9004818fc99cf6ba1bf9"
+    },
+    {
+      "path": "data/wiki/ideas/idea_digital_attention_gaming_ecosystems.md",
+      "sha256": "6e49566a1178ced737a481ac7f0d7cba9348a8066083d7f0916ac4f5c3b90afb"
+    },
+    {
+      "path": "data/wiki/ideas/idea_humanoid_robotics_embodied_ai_components.md",
+      "sha256": "cd7d418b1e14535905abcdd9f502ff79b881d82421863543413d585bde3132ec"
+    },
+    {
+      "path": "data/wiki/ideas/idea_mobility_platform_autonomy.md",
+      "sha256": "df225c93431dae2cbc58b248cba17332cfefa7502b04581d42664bcdcadb9bba"
+    },
+    {
+      "path": "data/wiki/ideas/idea_precision_biology_healthcare_automation.md",
+      "sha256": "08789ac49f4583611977839a6f14eae0aef44071a6cb773980783a73e0d1f007"
+    },
+    {
+      "path": "data/wiki/ideas/idea_terafab_ai_industrial_stack.md",
+      "sha256": "4fbed9bf71f2141f4a84e8ad6c60b9a4d22207cb6a96c95fd22738eb18082d63"
+    },
+    {
+      "path": "data/wiki/ideas/idea_wide_bandgap_power_semiconductors.md",
+      "sha256": "80500757be2bb36cb35a88d661228d8a1b602491ba2f3732846c33846a64253f"
+    },
+    {
+      "path": "data/wiki/securities/security_8b703a8adf5f864acaa4.md",
+      "sha256": "df02c9f9d87c4b7a6a579c43c53c399b7aacd30d1ac9cc0a385e7afd30c1ac98"
+    },
+    {
+      "path": "data/wiki/securities/security_de0d83229b369a426b99.md",
+      "sha256": "81a3fb33395850a012caec47a05cad2c272b56521788a63f46b390aa4e965c32"
+    },
+    {
+      "path": "data/wiki/securities/security_e4822686f60a96824b6e.md",
+      "sha256": "9f0f19364f64dfe1625d5b60198e07ed56b1243f71c284f6ba7d053114f8a57b"
+    }
+  ],
+  "changed_wiki_pages": [
+    {
+      "path": "data/wiki/securities/security_33d9c44facc75c726c7d.md",
+      "sha256": "45c7ba8d3ac9b36bcff4689c8fd3ed89a6dcbe5653cd9db15146673f1cce91dc"
+    },
+    {
+      "path": "data/wiki/securities/security_c150f31c30afdb4a85f9.md",
+      "sha256": "409f6b64d66b144641ab23bad0ce78bdc804ae27457016faa78a8aae032da3a5"
+    },
+    {
+      "path": "data/wiki/strategies/strategy_8caa208dfc702a2584a7.md",
+      "sha256": "93f2c9b70b14cafb15d68e541770f03ab056211b1a8db4fa8659043356100712"
+    },
+    {
+      "path": "data/wiki/strategies/strategy_e4ada1a4934691d1f7ee.md",
+      "sha256": "4722cd7cca2f8518c9106bc616d7260d291186afc664f38f6414f6df7c4b78ff"
+    },
+    {
+      "path": "data/wiki/strategies/strategy_ef910e9aff5203a0b901.md",
+      "sha256": "da8983c1a96731fdd000668dd9d8bd8952488bc119d7a1da2f297641f0cbf7b4"
+    }
+  ],
+  "daily_cycle_id": "daily-20260904T060928Z",
+  "decision_snapshot_path": "data/runs/daily-20260904T060928Z/decision_snapshot.json",
+  "decision_snapshot_sha256": "10a73359a8460d8ee5c5cc615614594886ac92cc1216eb6cabb7edfb2a8fe390",
+  "generated_at": "2026-09-04T07:05:57Z",
+  "intervening_daily_cycles": [
+    "daily-20260903T195930Z",
+    "daily-20260903T213453Z",
+    "daily-20260903T235602Z",
+    "daily-20260904T060928Z",
+    "dev-publication-v5-20260903",
+    "dev-publication-v5b-20260903",
+    "dev-rebased-publication-v5-20260903",
+    "dev-rebased-publication-v5b-20260903"
+  ],
+  "page_path": "data/wiki/podcasts/daily-podcast_20260904T060928Z.md",
+  "podcast_context_version": 3,
+  "portfolio_implication_paths": [
+    "data/runs/daily-20260904T060928Z/decision_snapshot.json",
+    "data/wiki/daily-reports/daily-report_20260904.md"
+  ],
+  "previous_successful_podcast": {
+    "context_path": "data/runs/daily-20260903T182402Z/podcast_context.json",
+    "context_sha256": "d8cc0f280c70f724c80c0a9206b2748717fdb3c1218bccc3003d10419b30ef0c",
+    "daily_cycle_id": "daily-20260903T182402Z",
+    "page_path": "data/wiki/podcasts/daily-podcast_20260903T182402Z.md",
+    "page_sha256": "beb7818d618d0b474136e66fd63160e7d677e262c757d259c0403a8b54fdb2bb",
+    "research_cutoff_at": "2026-09-03T18:41:32Z"
+  },
+  "report_path": "data/wiki/daily-reports/daily-report_20260904.md",
+  "report_sha256": "0863f0ce8055bf519f276a0c23fc7604b9a3d27fbca1969fe5d533413eaa0429",
+  "research_cutoff_at": "2026-09-04T06:53:41Z",
+  "research_developments": [
+    {
+      "completed_at": "2026-09-03T21:46:41Z",
+      "daily_cycle_id": "daily-20260903T213453Z",
+      "daily_report_items": [
+        "Created Uber's bounded 2% starter baseline strategy and ready open signal against the current allocation intent; queued exactly one separate paper-order review for the deterministic three-share target, with no order or fill created by research."
+      ],
+      "entity_id": "strategy_e4ada1a4934691d1f7ee",
+      "entity_type": "strategy",
+      "evidence": [
+        {
+          "claim": "The current immutable allocation target binds strategy_e4ada1a4934691d1f7ee to plan allocation_plan_0f41c211cdfa8a9b5dbc, intent allocation_intent_5988db00b0dab41c4d78, assessment assessment_7fe1690682aa6c66e233 and the accepted relationship. It persists a three-share open target at 1.97%, with a 2% starter cap, 84 quality score, 16.09% expected return, 12.07% confidence-adjusted expected return and no hard blocker.",
+          "observed_at": "2026-09-03T21:08:37Z",
+          "source": "data/tables/allocation_targets.csv"
+        },
+        {
+          "claim": "The accepted Uber research assessment uses medium confidence and a twelve-month USD 55/USD 90/USD 120 bear/base/bull range; its quality is high but downside and confidence gaps support baseline rather than conviction treatment.",
+          "observed_at": "2026-08-28T19:27:50Z",
+          "source": "data/tables/security_assessments.csv"
+        },
+        {
+          "claim": "relationship_d403f81ae5b27c9643dd remains accepted for the mobility-platform idea and Uber security, with a positive mechanism, high sensitivity and medium confidence.",
+          "observed_at": "2026-09-03T20:46:03Z",
+          "source": "data/tables/relationships.csv"
+        },
+        {
+          "claim": "Uber's filed quarterly evidence supports the maintained scale and cash-generation thesis while the strategy retains regulatory, insurance, incentive, dilution and autonomy-disintermediation risks.",
+          "observed_at": "2026-08-28T19:27:50Z",
+          "source": "Uber Q2 2026 Form 10-Q",
+          "source_hash": "5aa56769ca3e3d8735d1122e85269a5b9cd68fcb4bd2fa58fa6b19b65b019ffa",
+          "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000032/uber-20260630.htm"
+        },
+        {
+          "claim": "The latest UBER mark was USD 75.96 and the latest USD/EUR rate was 0.8598999977111816; both were retrieved at 2026-09-03T21:34:54Z and were inside the configured 36-hour freshness window when the signal was created.",
+          "observed_at": "2026-09-03T21:34:54Z",
+          "source": "data/market/latest.csv and data/market/fx/USD_EUR.csv"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1MKKR905G3CDCAYTQX23VRB.json",
+        "data/runs/daily-20260903T213453Z/01M1MFRWMG79T70K71MR2C49RB/enqueue-execute-strategy-request.json",
+        "data/runs/daily-20260903T213453Z/01M1MFRWMG79T70K71MR2C49RB/signal-create-request.json",
+        "data/runs/daily-20260903T213453Z/01M1MFRWMG79T70K71MR2C49RB/strategy-upsert-request.json",
+        "data/tables/signals.csv",
+        "data/tables/strategies.csv",
+        "data/tables/strategy_legs.csv",
+        "data/wiki/log.md",
+        "data/wiki/research-catalog.md",
+        "data/wiki/strategies/strategy_e4ada1a4934691d1f7ee.md"
+      ],
+      "operation_id": "01M1MFRWMG79T70K71MR2C49RB",
+      "operation_type": "strategy_research",
+      "result_path": "data/runs/daily-20260903T213453Z/01M1MFRWMG79T70K71MR2C49RB/agent_result.json",
+      "status": "succeeded",
+      "summary": "Created ready baseline strategy strategy_e4ada1a4934691d1f7ee for Uber under current allocation plan allocation_plan_0f41c211cdfa8a9b5dbc and unchanged allocation intent allocation_intent_5988db00b0dab41c4d78. The long-equity starter structure retains the deterministic three-share target and 2% position ceiling while documenting medium confidence, a material bear case and the reasons it does not qualify for conviction. Created ready open signal signal_d99961410e4a2b65d24a and exactly one dependent execute_strategy operation, 01M1MKKR905G3CDCAYTQX23VRB. No order, fill, execution, cash, portfolio, performance or allocation state was changed."
+    },
+    {
+      "completed_at": "2026-09-03T22:00:34Z",
+      "daily_cycle_id": "daily-20260903T213453Z",
+      "daily_report_items": [
+        "Created Tencent's bounded 2% starter baseline strategy and ready open signal against the current allocation intent; queued exactly one separate paper-order review for the deterministic three-share target, with no order or fill created by research."
+      ],
+      "entity_id": "strategy_ef910e9aff5203a0b901",
+      "entity_type": "strategy",
+      "evidence": [
+        {
+          "claim": "The current immutable allocation target binds strategy_ef910e9aff5203a0b901 to plan allocation_plan_0f41c211cdfa8a9b5dbc, intent allocation_intent_206644feb73549257619, assessment assessment_6e8ef7291ff81b77d900 and the accepted relationship. It persists a three-share open target at 1.45%, with a 2% starter cap, 76 quality score, 15.89% expected return, 11.91% confidence-adjusted expected return and no hard blocker.",
+          "observed_at": "2026-09-03T21:08:37Z",
+          "source": "data/tables/allocation_targets.csv"
+        },
+        {
+          "claim": "The accepted Tencent research assessment uses medium confidence and a twelve-month USD 40/USD 65/USD 90 bear/base/bull range; its quality and return frontier support a starter allocation while policy, governance, investment-portfolio and diversification gaps prevent conviction treatment.",
+          "observed_at": "2026-08-28T19:23:20Z",
+          "source": "data/tables/security_assessments.csv"
+        },
+        {
+          "claim": "relationship_f625ba3c07d49e1865ff remains accepted for the digital-attention idea and Tencent security, with a positive mechanism, high sensitivity and medium confidence.",
+          "observed_at": "2026-08-28T20:03:02Z",
+          "source": "data/tables/relationships.csv"
+        },
+        {
+          "claim": "Tencent's 2026 second-quarter release reported 15% year-on-year revenue growth, 22% gross-profit growth and 18% non-IFRS operating-profit growth, supporting the maintained gaming, advertising and Weixin ecosystem mechanism while artificial-intelligence investment remains a material risk input.",
+          "observed_at": "2026-08-28T19:23:00Z",
+          "source": "Tencent announces 2026 second-quarter results",
+          "source_hash": "64d8d2038eeef993571b96bb3361b6f1a567d6e84157eb16af20d2fd9a095f0a",
+          "url": "https://www.tencent.com/wp-content/uploads/2026/08/Tencent-Announces-2026-Second-Quarter-Results.pdf"
+        },
+        {
+          "claim": "The latest TCEHY mark was USD 58.65 and the latest USD/EUR rate was 0.8598999977111816; both were retrieved at 2026-09-03T21:34:54Z and were inside the configured 36-hour freshness window when the signal was created.",
+          "observed_at": "2026-09-03T21:34:54Z",
+          "source": "data/market/latest.csv and data/market/fx/USD_EUR.csv"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1MMEDSGYWMB158DXEZB6S7Y.json",
+        "data/runs/daily-20260903T213453Z/01M1MFRWMGHXDWYWMWXE5CYWTB/enqueue-execute-strategy-request.json",
+        "data/runs/daily-20260903T213453Z/01M1MFRWMGHXDWYWMWXE5CYWTB/signal-create-request.json",
+        "data/runs/daily-20260903T213453Z/01M1MFRWMGHXDWYWMWXE5CYWTB/strategy-upsert-request.json",
+        "data/tables/signals.csv",
+        "data/tables/strategies.csv",
+        "data/tables/strategy_legs.csv",
+        "data/wiki/log.md",
+        "data/wiki/research-catalog.md",
+        "data/wiki/strategies/strategy_ef910e9aff5203a0b901.md"
+      ],
+      "operation_id": "01M1MFRWMGHXDWYWMWXE5CYWTB",
+      "operation_type": "strategy_research",
+      "result_path": "data/runs/daily-20260903T213453Z/01M1MFRWMGHXDWYWMWXE5CYWTB/agent_result.json",
+      "status": "succeeded",
+      "summary": "Created ready baseline strategy strategy_ef910e9aff5203a0b901 for Tencent under current allocation plan allocation_plan_0f41c211cdfa8a9b5dbc and unchanged allocation intent allocation_intent_206644feb73549257619. The long-equity starter structure retains the deterministic three-share target and 2% position ceiling while documenting medium confidence, material bear-case risk and the reasons it does not qualify for conviction. Created ready open signal signal_41940fa33b3fe251802e and exactly one dependent execute_strategy operation, 01M1MMEDSGYWMB158DXEZB6S7Y. No order, fill, execution, cash, portfolio, performance or allocation state was changed."
+    },
+    {
+      "completed_at": "2026-09-03T22:11:39Z",
+      "daily_cycle_id": "daily-20260903T213453Z",
+      "daily_report_items": [
+        "Created Prosus's bounded 5% maximum baseline strategy and ready open signal against the current allocation intent; queued exactly one separate paper-order review for the deterministic three-share target, with no order or fill created by research."
+      ],
+      "entity_id": "strategy_8caa208dfc702a2584a7",
+      "entity_type": "strategy",
+      "evidence": [
+        {
+          "claim": "The current immutable allocation target binds strategy_8caa208dfc702a2584a7 to plan allocation_plan_0f41c211cdfa8a9b5dbc, intent allocation_intent_13eb8f910db9c58bece6, assessment assessment_7f28dfd9240d6099400b and the accepted relationship. It persists a three-share open target at 1.11%, with a 5% position cap, 70 quality score, 32.86% expected return, 24.65% confidence-adjusted expected return and no hard blocker.",
+          "observed_at": "2026-09-03T21:08:37Z",
+          "source": "data/tables/allocation_targets.csv"
+        },
+        {
+          "claim": "The accepted Prosus assessment uses medium confidence and a twelve-month EUR 30/EUR 52/EUR 70 bear/base/bull range; quality below the conviction threshold, holding-company concentration and shareholder-transmission uncertainty support baseline rather than conviction treatment.",
+          "observed_at": "2026-08-28T19:18:00Z",
+          "source": "data/tables/security_assessments.csv"
+        },
+        {
+          "claim": "relationship_e514a92bf6c38d0754ee remains accepted for the digital-attention idea and Prosus security, with a positive mechanism, high sensitivity and medium confidence.",
+          "observed_at": "2026-08-28T20:01:33Z",
+          "source": "data/tables/relationships.csv"
+        },
+        {
+          "claim": "Prosus's 27 August 2026 disclosure reported USD 150.4 billion of NAV, EUR 61.5 NAV per share, Tencent as USD 117.0 billion of assets, and repurchase-driven per-share accretion, while unendorsed private marks, debt, governance and the persistent discount remain material risk inputs.",
+          "observed_at": "2026-08-28T19:18:00Z",
+          "source": "Prosus net asset value at 27 August 2026",
+          "source_hash": "cc7e5e28e80215c617a50b48075d550b6b567d6a658ac6a2656967d871b36aee",
+          "url": "https://www.prosus.com/investors/investing-in-prosus/net-asset-value?locale=en"
+        },
+        {
+          "claim": "The latest PRX mark was EUR 36.88, retrieved at 2026-09-03T21:34:54Z and inside the configured 36-hour freshness window when the signal was created; no FX conversion was required because EUR is the portfolio base currency.",
+          "observed_at": "2026-09-03T21:34:54Z",
+          "source": "data/market/latest.csv and config.ini"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1MN44485GQP44NPSG8B7SNN.json",
+        "data/runs/daily-20260903T213453Z/01M1MFRWMGJX9DA5Q3M8F31J85/enqueue-execute-strategy-request.json",
+        "data/runs/daily-20260903T213453Z/01M1MFRWMGJX9DA5Q3M8F31J85/signal-create-request.json",
+        "data/runs/daily-20260903T213453Z/01M1MFRWMGJX9DA5Q3M8F31J85/strategy-upsert-request.json",
+        "data/tables/signals.csv",
+        "data/tables/strategies.csv",
+        "data/tables/strategy_legs.csv",
+        "data/wiki/log.md",
+        "data/wiki/research-catalog.md",
+        "data/wiki/strategies/strategy_8caa208dfc702a2584a7.md"
+      ],
+      "operation_id": "01M1MFRWMGJX9DA5Q3M8F31J85",
+      "operation_type": "strategy_research",
+      "result_path": "data/runs/daily-20260903T213453Z/01M1MFRWMGJX9DA5Q3M8F31J85/agent_result.json",
+      "status": "succeeded",
+      "summary": "Created ready baseline strategy strategy_8caa208dfc702a2584a7 for Prosus under current allocation plan allocation_plan_0f41c211cdfa8a9b5dbc and unchanged allocation intent allocation_intent_13eb8f910db9c58bece6. The long-equity structure retains the deterministic three-share target and 5% maximum-position ceiling while documenting medium confidence, holding-company risks and the reasons it does not qualify for conviction. Created ready open signal signal_2731a4e23f06ae91dcaa and exactly one dependent execute_strategy operation, 01M1MN44485GQP44NPSG8B7SNN. No order, fill, execution, cash, portfolio, performance or allocation state was changed."
+    },
+    {
+      "completed_at": "2026-09-04T00:04:17Z",
+      "daily_cycle_id": "daily-20260903T235602Z",
+      "daily_report_items": [
+        "Updated Prosus's bounded 5% maximum baseline strategy and created a ready open signal against the current allocation intent; queued exactly one separate paper-order review for the deterministic eight-share target, with no order or fill created by research."
+      ],
+      "entity_id": "strategy_8caa208dfc702a2584a7",
+      "entity_type": "strategy",
+      "evidence": [
+        {
+          "claim": "The current immutable allocation target binds strategy_8caa208dfc702a2584a7 to plan allocation_plan_e4058ec47b1105523cd9, intent allocation_intent_917ea6eb1152c64f298c, assessment assessment_7f28dfd9240d6099400b and the accepted relationship. It persists an eight-share open target at 2.96%, with a 5% position cap, 70 effective score, 32.43% expected return, 24.32% confidence-adjusted expected return and no hard blocker.",
+          "observed_at": "2026-09-03T23:56:03Z",
+          "source": "data/tables/allocation_targets.csv"
+        },
+        {
+          "claim": "The accepted Prosus assessment uses medium confidence and a twelve-month EUR 30/EUR 52/EUR 70 bear/base/bull range; quality below the conviction threshold, holding-company concentration and shareholder-transmission uncertainty support baseline rather than conviction treatment.",
+          "observed_at": "2026-08-28T19:18:00Z",
+          "source": "data/tables/security_assessments.csv"
+        },
+        {
+          "claim": "relationship_e514a92bf6c38d0754ee remains accepted for the digital-attention idea and Prosus security, with a positive mechanism, high sensitivity and medium confidence.",
+          "observed_at": "2026-08-28T20:01:33Z",
+          "source": "data/tables/relationships.csv"
+        },
+        {
+          "claim": "Prosus's 27 August 2026 disclosure reported USD 150.4 billion of NAV, EUR 61.5 NAV per share, Tencent as USD 117.0 billion of assets, and repurchase-driven per-share accretion, while unendorsed private marks, debt, governance and the persistent discount remain material risk inputs.",
+          "observed_at": "2026-08-28T19:18:00Z",
+          "source": "Prosus net asset value at 27 August 2026",
+          "source_hash": "cc7e5e28e80215c617a50b48075d550b6b567d6a658ac6a2656967d871b36aee",
+          "url": "https://www.prosus.com/investors/investing-in-prosus/net-asset-value?locale=en"
+        },
+        {
+          "claim": "The latest PRX mark was EUR 37, retrieved at 2026-09-03T23:56:03Z and inside the configured 36-hour freshness window when the signal was created; no FX conversion was required because EUR is the portfolio base currency.",
+          "observed_at": "2026-09-03T23:56:03Z",
+          "source": "data/market/latest.csv and config.ini"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1MVJ4X0RWMG40T5330D39YG.json",
+        "data/runs/daily-20260903T235602Z/01M1MV6WHR16FZCP8MTH299KB7/enqueue-execute-strategy-request.json",
+        "data/runs/daily-20260903T235602Z/01M1MV6WHR16FZCP8MTH299KB7/signal-create-request.json",
+        "data/runs/daily-20260903T235602Z/01M1MV6WHR16FZCP8MTH299KB7/strategy-upsert-request.json",
+        "data/tables/signals.csv",
+        "data/tables/strategies.csv",
+        "data/tables/strategy_legs.csv",
+        "data/wiki/log.md",
+        "data/wiki/strategies/strategy_8caa208dfc702a2584a7.md"
+      ],
+      "operation_id": "01M1MV6WHR16FZCP8MTH299KB7",
+      "operation_type": "strategy_research",
+      "result_path": "data/runs/daily-20260903T235602Z/01M1MV6WHR16FZCP8MTH299KB7/agent_result.json",
+      "status": "succeeded",
+      "summary": "Updated ready baseline strategy strategy_8caa208dfc702a2584a7 for Prosus to current allocation plan allocation_plan_e4058ec47b1105523cd9 and unchanged allocation intent allocation_intent_917ea6eb1152c64f298c. The long-equity structure retains the allocator-owned eight-share target and 5% maximum-position ceiling while documenting medium confidence, holding-company risks and the reasons it does not qualify for conviction. Created ready open signal signal_d603cd3f5522309c58f6 and exactly one dependent execute_strategy operation, 01M1MVJ4X0RWMG40T5330D39YG. No order, fill, execution, cash, portfolio, performance or allocation state was changed."
+    },
+    {
+      "completed_at": "2026-09-04T00:23:26Z",
+      "daily_cycle_id": "daily-20260903T235602Z",
+      "daily_report_items": [
+        "Crocs received a clean remediation review after the prior duplicate-assessment incident. Hash-identical Q2 primary evidence leaves USD 88.00/145.425/205.80 scenarios unchanged. At USD 116.01, expected return is 20.91% and confidence-adjusted expected return is 15.69%, but both downside-payoff ratios and the accepted-relationship gate fail. The result remains Buy / Initiate research disposition, Watch conviction, and allocation-ineligible; no strategy or paper order was created."
+      ],
+      "entity_id": "security_c150f31c30afdb4a85f9",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "Crocs' SEC-filed Q2 2026 Form 10-Q reports USD 1.179 billion quarterly revenue, USD 285.7 million operating income, USD 204.9 million net income, 48.1 million period-end shares, USD 170.3 million cash, USD 1.308 billion long-term borrowings, and USD 270.8 million first-half operating cash flow; the fresh retrieval reproduced the registered content hash.",
+          "observed_at": "2026-09-04T00:12:16Z",
+          "source": "source_crox_q2_2026_10q",
+          "source_hash": "75aa7525af1c355bc85340fd818845d9f0a4067b9962449e8919c38d89626a89",
+          "url": "https://www.sec.gov/Archives/edgar/data/1334036/000133403626000052/crox-20260630.htm"
+        },
+        {
+          "claim": "Crocs' SEC-hosted Q2 release reports 2.6% revenue growth, 12.0% direct-to-consumer growth, 7.2% wholesale contraction, a 230-basis-point reported gross-margin decline, Crocs Brand growth of 4.3%, HEYDUDE contraction of 5.7%, USD 232.0 million first-half free cash flow, and raised 2026 adjusted diluted EPS guidance of USD 13.70-14.00; the fresh retrieval reproduced the registered hash.",
+          "observed_at": "2026-09-04T00:12:16Z",
+          "source": "source_crox_q2_2026_results",
+          "source_hash": "f52ca96031e7f6282ac04f67cbf7a95adbd942b64434ec3234523956e593f53f",
+          "url": "https://www.sec.gov/Archives/edgar/data/1334036/000133403626000050/croxq22026-pressrelease.htm"
+        },
+        {
+          "claim": "The current SEC submissions index was retrieved successfully with the same registered hash and showed no operating filing newer than the July 30 Q2 filing and release; later entries are ownership or resale-registration filings.",
+          "observed_at": "2026-09-04T00:12:16Z",
+          "source": "source_crox_sec_submissions_20260903",
+          "source_hash": "5a9f12df357f7e03d7c8f4b312cef937267aa2b69b6f41a69f44a04e108c7eee",
+          "url": "https://data.sec.gov/submissions/CIK0001334036.json"
+        },
+        {
+          "claim": "The completed September 3 Nasdaq session records CROX at USD 116.01000213623047, above its USD 113.45 lower Bollinger band, with RSI 34.89 and MACD below signal. The canonical USD/EUR rate is 0.8631600141525269; both were retrieved at 2026-09-03T23:56:03Z.",
+          "source": "PaperTrader identity-matched market and FX caches"
+        },
+        {
+          "claim": "Assessment assessment_28d88f3b776ebd1bf2d4 is the only immutable version sourced to this operation and links predecessor assessment_2a0ada6a7008e23ec2ea. It derives Buy / Initiate, Watch conviction, complete research, allocation ineligibility, quality score 64, USD 140.2725 probability-weighted fair value, 20.914143% expected return, and 15.685607% confidence-adjusted expected return.",
+          "observed_at": "2026-09-04T00:18:17Z",
+          "source": "PaperTrader current assessment projection"
+        },
+        {
+          "claim": "Crocs has no accepted canonical relationship. A bounded scan of every maintained idea found no additional specific, material causal transmission mechanism; the superficially adjacent defensive consumer cash-return idea remains rejected because Crocs' fashion-sensitive footwear demand is not defensive. No relationship or idea follow-up is justified.",
+          "source": "PaperTrader canonical relationship state and complete maintained idea catalog"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/runs/daily-20260903T235602Z/01M1MAEMCRRVVECT8KPRWASBYB/assessment_upsert_request.json",
+        "data/runs/daily-20260903T235602Z/01M1MAEMCRRVVECT8KPRWASBYB/security_upsert_request.json",
+        "data/runs/daily-20260903T235602Z/01M1MAEMCRRVVECT8KPRWASBYB/source_crox_q2_2026_10q_request.json",
+        "data/runs/daily-20260903T235602Z/01M1MAEMCRRVVECT8KPRWASBYB/source_crox_q2_2026_results_request.json",
+        "data/runs/daily-20260903T235602Z/01M1MAEMCRRVVECT8KPRWASBYB/source_crox_sec_submissions_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_c150f31c30afdb4a85f9.md"
+      ],
+      "operation_id": "01M1MAEMCRRVVECT8KPRWASBYB",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260903T235602Z/01M1MAEMCRRVVECT8KPRWASBYB/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed a clean schema-version-2 Crocs assessment that supersedes the prior duplicate-version incident without altering immutable history. Hash-identical SEC primary evidence and the completed September 3 market session support unchanged USD 88.00/145.425/205.80 scenarios. At USD 116.010002, probability-weighted fair value is USD 140.2725, expected return is 20.91%, and confidence-adjusted expected return is 15.69%. Deterministic state derives Buy / Initiate, Watch conviction, quality score 64, and allocation ineligibility because both downside-payoff gates and the accepted-relationship gate fail. No strategy, signal, order, follow-up operation, allocation, or accounting state changed."
+    },
+    {
+      "completed_at": "2026-09-04T06:33:38Z",
+      "daily_cycle_id": "daily-20260904T060928Z",
+      "daily_report_items": [
+        "NVIDIA's September 3 MACD cross was a confirming signal rather than the thesis driver. Fiscal Q2 revenue reached USD 96.221 billion and Q3 guidance reached USD 108.0 billion, but USD 279 billion commitments and USD 105 billion capped guarantees materially increase execution risk. Deterministic USD 198/USD 310.50/USD 448 scenarios at USD 228.45 produce baseline conviction and allocation eligibility. Three accepted idea edges were preserved, AI infrastructure power was queued for relationship review, and no strategy, signal or paper order was created."
+      ],
+      "entity_id": "security_33d9c44facc75c726c7d",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "NVIDIA's fiscal 2027 Q2 Form 10-Q reports USD 96.221 billion quarterly revenue, USD 184.084 billion first-half revenue, USD 86.958 billion first-half operating cash flow, USD 43.550 billion cash plus marketable securities, USD 279.004 billion of purchase and capacity commitments, USD 105 billion of capped infrastructure guarantees and 22% exposure to one direct customer.",
+          "observed_at": "2026-09-04T06:15:57Z",
+          "source": "source_nvda_q2_fy2027_10q",
+          "source_hash": "e2634e509c241c5f45e3f6c115dc38a85645e5fdbee760b4a04f5e9035f6f7a9",
+          "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm"
+        },
+        {
+          "claim": "NVIDIA's fiscal 2027 Q2 results release reports USD 96.221 billion revenue, 75.1% GAAP gross margin, USD 2.46 GAAP diluted EPS and fiscal Q3 revenue guidance of USD 108.0 billion plus or minus 2%.",
+          "observed_at": "2026-09-04T06:15:57Z",
+          "source": "source_nvda_q2_fy2027_release",
+          "source_hash": "1809cb206590dcfeb959f3a1a64157f4e5ee42788ec51289b74f3ea299931eb7",
+          "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27pr.htm"
+        },
+        {
+          "claim": "NVIDIA's fiscal 2027 Q2 CFO commentary identifies USD 84 billion Data Center compute revenue, a USD 8.8 billion customer-platform acquisition, a USD 2.0 billion equity investment and a 4.25-gigawatt capped land-and-power guarantee structure, while noting one additional major customer guarantee was not yet effective.",
+          "observed_at": "2026-09-04T06:15:57Z",
+          "source": "source_nvda_q2_fy2027_cfo",
+          "source_hash": "6a522635d049044b2ff9ff63cb78220cf29d960e96614c88afe30560c3ee0659",
+          "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27cfocommentary.htm"
+        },
+        {
+          "claim": "NVIDIA's September 3 Form 8-K discloses a definitive agreement to acquire Hugging Face in a mixed cash-and-stock transaction expected to close in the fourth quarter of fiscal 2027, adding integration and consideration risk without disclosed revenue or profitability economics in the filing.",
+          "observed_at": "2026-09-04T06:15:57Z",
+          "source": "source_nvda_huggingface_20260903_8k",
+          "source_hash": "089fc17e99aaaa97e4b4b8a13c5b78dca7c4f0d24aca12c2d275a4e765ca461a",
+          "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000080/nvda-20260902.htm"
+        },
+        {
+          "claim": "The deterministic schema-version-2 assessment linked predecessor assessment_96ae529b2d4d9d8d3c85 and the current page hash, used fresh USD 228.4499969482422 and USD/EUR 0.8596000075340271 state as of 2026-09-04T06:09:30Z, and derived Buy/Initiate, baseline conviction and allocation eligibility with no failed economic gate.",
+          "source": "assessment_82fd625a8d93be4bd8f5"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1NHP278D8N1V0X1RW6R6M4Z.json",
+        "data/operations/payloads/01M1NHP550CKF9A4TA65EPXG2C.json",
+        "data/operations/payloads/01M1NHP73GXF8NYYVG2YZY6HHE.json",
+        "data/operations/payloads/01M1NHPA1839K6TH27CG2RSZJ8.json",
+        "data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/assessment_upsert_request.json",
+        "data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/assessment_upsert_request_v2.json",
+        "data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/assessment_upsert_request_v3.json",
+        "data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/assessment_upsert_request_v4.json",
+        "data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/assessment_upsert_request_v5.json",
+        "data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/enqueue_ai_compute_idea_request.json",
+        "data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/enqueue_ai_power_relationship_request.json",
+        "data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/enqueue_humanoid_idea_request.json",
+        "data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/enqueue_terafab_idea_request.json",
+        "data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/security_upsert_request.json",
+        "data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/security_upsert_request_v2.json",
+        "data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/source_nvda_huggingface_8k_request.json",
+        "data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/source_nvda_q2_fy2027_10q_request.json",
+        "data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/source_nvda_q2_fy2027_cfo_request.json",
+        "data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/source_nvda_q2_fy2027_release_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_33d9c44facc75c726c7d.md"
+      ],
+      "operation_id": "01KZVTZDX06K7JG24QMMZPN7GT",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed NVIDIA's repeat full security review for the 2026-09-03 MACD cross. Fiscal 2027 Q2 revenue reached USD 96.221 billion and fiscal Q3 guidance reached USD 108.0 billion, while USD 279 billion of commitments, USD 105 billion of capped infrastructure guarantees, customer concentration and the Hugging Face acquisition materially increased execution and balance-sheet risk. Deterministic USD 198/USD 310.50/USD 448 scenarios at the fresh USD 228.4499969482422 mark produce USD 304.25 probability-weighted fair value, 33.1801% expected return, 24.8851% confidence-adjusted expected return and a USD 248.40 buy-below price. The assessment is Buy/Initiate, baseline conviction and allocation-eligible. Three accepted idea edges were preserved, AI infrastructure power was retained as a candidate requiring relationship review, four dependent follow-ups were enqueued, and no strategy, signal, order or accounting state changed."
+    }
+  ],
+  "run_id": "daily-20260904T060928Z",
+  "target_minutes": 20,
+  "target_words": 3000,
+  "unresolved_research_gaps": [
+    {
+      "completed_at": "2026-09-03T20:47:36Z",
+      "daily_cycle_id": "daily-20260903T195930Z",
+      "daily_report_items": [],
+      "entity_id": "strategy_e4ada1a4934691d1f7ee",
+      "entity_type": "strategy",
+      "evidence": [
+        {
+          "claim": "post-run integrity: signal identity is invalid: signal_89444cee010c1a0e5ad2",
+          "source": "data/runs/daily-20260903T195930Z/01M1MFRWMG79T70K71MR2C49RB/validation_report.json"
+        },
+        {
+          "claim": "visualization_review charts do not match chart ids in changed research pages: expected [('data/wiki/strategies/strategy_e4ada1a4934691d1f7ee.md', 'uber-baseline-scenario-returns')], got [('data/wiki/strategies/strategy_e4ada1a4934691d1f7ee.md', 'uber-scenario-returns')]",
+          "source": "data/runs/daily-20260903T195930Z/01M1MFRWMG79T70K71MR2C49RB/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "post-run integrity: signal identity is invalid: signal_89444cee010c1a0e5ad2",
+        "visualization_review charts do not match chart ids in changed research pages: expected [('data/wiki/strategies/strategy_e4ada1a4934691d1f7ee.md', 'uber-baseline-scenario-returns')], got [('data/wiki/strategies/strategy_e4ada1a4934691d1f7ee.md', 'uber-scenario-returns')]"
+      ],
+      "files_changed": [],
+      "operation_id": "01M1MFRWMG79T70K71MR2C49RB",
+      "operation_type": "strategy_research",
+      "result_path": "data/runs/daily-20260903T195930Z/01M1MFRWMG79T70K71MR2C49RB/validation_report.json",
+      "status": "failed",
+      "summary": "The accepted research did not produce a valid result."
+    },
+    {
+      "completed_at": "2026-09-04T00:25:59Z",
+      "daily_cycle_id": "daily-20260903T235602Z",
+      "daily_report_items": [],
+      "entity_id": "security_33d9c44facc75c726c7d",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "Hermes exited with status 1",
+          "source": "data/runs/daily-20260903T235602Z/01KZVTZDX06K7JG24QMMZPN7GT/validation_report.json"
+        },
+        {
+          "claim": "agent result is missing or a symlink: data/runs/daily-20260903T235602Z/01KZVTZDX06K7JG24QMMZPN7GT/agent_result.json",
+          "source": "data/runs/daily-20260903T235602Z/01KZVTZDX06K7JG24QMMZPN7GT/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "Hermes exited with status 1",
+        "agent result is missing or a symlink: data/runs/daily-20260903T235602Z/01KZVTZDX06K7JG24QMMZPN7GT/agent_result.json"
+      ],
+      "files_changed": [],
+      "operation_id": "01KZVTZDX06K7JG24QMMZPN7GT",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260903T235602Z/01KZVTZDX06K7JG24QMMZPN7GT/validation_report.json",
+      "status": "failed",
+      "summary": "The accepted research did not produce a valid result."
+    },
+    {
+      "completed_at": "2026-09-04T06:53:10Z",
+      "daily_cycle_id": "daily-20260904T060928Z",
+      "daily_report_items": [
+        "Intel's 3 September bullish MACD crossover was classified as noise with modest timing improvement: the stock fell 8.16% over the alert period and remains below its 20-day and 50-day averages.",
+        "Intel's completed equity raise improves liquidity but adds approximately 4.8% dilution. Updated USD 32/USD 78/USD 130 scenarios yield USD 79.50 probability-weighted value versus USD 91.67; deterministic state is Hold / Watch and allocation-ineligible.",
+        "The research operation failed its immutable-assessment cardinality check after a corrective second version was appended; no rows were deleted or replaced."
+      ],
+      "entity_id": "security_dfa34d4b9050964b465e",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "Intel completed a USD 20 billion base common-stock offering at USD 95 per share and the underwriters exercised the option for 31,578,947 additional shares; the base offering was expected to provide approximately USD 19.7 billion net for general corporate purposes including capital expenditure and working capital.",
+          "observed_at": "2026-09-04T06:38:08Z",
+          "source": "Intel August 2026 equity-offering Form 8-K",
+          "source_hash": "4a8e0423b4ebc8768438078272aa294c661fc5a64f6060966974984159fe94b8",
+          "url": "https://www.sec.gov/Archives/edgar/data/50863/000119312526346806/d117670d8k.htm"
+        },
+        {
+          "claim": "Second-quarter revenue was USD 16.128 billion, gross profit USD 6.509 billion, operating income USD 1.796 billion, and DCAI revenue rose 59%; the release remains the latest operating baseline in the SEC submissions index through the research cutoff.",
+          "observed_at": "2026-09-04T06:38:08Z",
+          "source": "Intel Q2 2026 earnings release",
+          "source_hash": "50e2f8a7c1b22784c3ec95ccf8d278bd085336edc2805effcb80d2b53ef4eed5",
+          "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000105/q226earningsrelease.htm"
+        },
+        {
+          "claim": "The 2026-09-03 adjusted close was USD 91.66999816894531. MACD crossed above its signal at -3.031 versus -3.228, RSI was 45.48, and price remained below its 20-day and 50-day averages after an 8.16% alert-period decline.",
+          "observed_at": "2026-09-04T06:09:30Z",
+          "source": "Canonical Intel market and indicator state",
+          "source_hash": "4ce2149f4a2787198cc50a950b3ec711e1810ca0a43f31c208b815b3973e765f"
+        },
+        {
+          "claim": "Two immutable assessment rows now reference run daily-20260904T060928Z and source operation 01KZXXN28RGQ4Z9TWV7ZD692PZ, while the success validator requires exactly one. The final row links its predecessor and matches the corrected research-page hash.",
+          "source": "data/tables/security_assessment_history.csv"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1NJT0KRCKCSEN3SKED2A98T.json",
+        "data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/assessment_upsert_page_correction_request.json",
+        "data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/assessment_upsert_request.json",
+        "data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/assessment_upsert_retry01_request.json",
+        "data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/assessment_upsert_retry02_request.json",
+        "data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/enqueue_ai_compute_relationship_request.json",
+        "data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/security_upsert_correction_request.json",
+        "data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/security_upsert_rating_correction_request.json",
+        "data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/security_upsert_request.json",
+        "data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/security_upsert_retry01_request.json",
+        "data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/security_upsert_retry02_request.json",
+        "data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/source_intc_august_2026_equity_8k_request.json",
+        "data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/source_intc_q2_2026_10q_recheck_request.json",
+        "data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/source_intc_q2_2026_release_recheck_request.json",
+        "data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/source_intc_sec_submissions_20260904_request.json",
+        "data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/source_intc_sec_submissions_20260904_retry01_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_dfa34d4b9050964b465e.md"
+      ],
+      "operation_id": "01KZXXN28RGQ4Z9TWV7ZD692PZ",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/agent_result.json",
+      "status": "failed",
+      "summary": "Researched Intel against the 2026-09-03 bullish MACD transition, current SEC evidence, the August equity offering, and canonical market/FX state. The maintained page, source records, security projection, current assessment, and one dependent AI-compute relationship review were updated; strict wiki lint passed. Deterministic state derives Hold / Watch, watch-tier conviction, and allocation ineligibility at USD 91.67 because expected/base return, downside-payoff, margin-of-safety, and relationship gates fail. This operation cannot safely report success: an intermediate accepted assessment was written before the page's deterministic rating prose was corrected, and the required correction appended a second immutable assessment version for this operation. The result validator requires exactly one immutable assessment version. Historical assessment rows may not be deleted or replaced, so no safe agent-side repair exists."
+    }
+  ],
+  "wiki_orientation_paths": [
+    "data/wiki/SCHEMA.md",
+    "data/wiki/index.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/log.md"
+  ],
+  "window_mode": "since_previous_successful_podcast",
+  "window_start_exclusive": "2026-09-03T18:41:32Z"
+}

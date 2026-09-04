@@ -1,0 +1,68 @@
+{
+  "commands_run": [
+    "papertrader podcast validate-script --daily-cycle-id daily-20260904T060928Z --script-path data/wiki/podcasts/daily-podcast_20260904T060928Z.md",
+    "papertrader podcast render-draft --daily-cycle-id daily-20260904T060928Z --script-path data/wiki/podcasts/daily-podcast_20260904T060928Z.md",
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader queue validate",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Published the 3,033-word daily research podcast covering Prosus, Tencent, Uber, Crocs and NVIDIA; the required script preflight passed and the single audited ephemeral draft render succeeded."
+  ],
+  "evidence": [
+    {
+      "claim": "Controller-validated frozen context version three bound the research window, prior podcast, daily report and exact transcript path data/wiki/podcasts/daily-podcast_20260904T060928Z.md.",
+      "source": "data/runs/daily-20260904T060928Z/podcast_context.json"
+    },
+    {
+      "claim": "Accepted Uber strategy research supported a bounded starter posture while retaining autonomy, insurance, regulation, incentive and dilution risks.",
+      "source": "data/runs/daily-20260903T213453Z/01M1MFRWMG79T70K71MR2C49RB/agent_result.json"
+    },
+    {
+      "claim": "Accepted Tencent strategy research supported a bounded starter posture while retaining policy, governance, investment-portfolio and artificial-intelligence-spending risks.",
+      "source": "data/runs/daily-20260903T213453Z/01M1MFRWMGHXDWYWMWXE5CYWTB/agent_result.json"
+    },
+    {
+      "claim": "Accepted Prosus strategy research updated the bounded baseline target to eight shares under the then-current plan, with medium confidence and explicit holding-company risks.",
+      "source": "data/runs/daily-20260903T235602Z/01M1MV6WHR16FZCP8MTH299KB7/agent_result.json"
+    },
+    {
+      "claim": "Accepted Crocs research retained Buy / Initiate with Watch conviction and allocation ineligibility because downside-payoff gates and the accepted-relationship gate failed.",
+      "source": "data/runs/daily-20260903T235602Z/01M1MAEMCRRVVECT8KPRWASBYB/agent_result.json"
+    },
+    {
+      "claim": "Accepted NVIDIA research raised the earnings and valuation range while documenting materially larger commitments, capped infrastructure guarantees, customer concentration and acquisition risk.",
+      "source": "data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/agent_result.json"
+    },
+    {
+      "claim": "The completed decision state showed model capital overwhelmingly in cash, one pending validated Prosus order, and NVIDIA, Uber, Tencent and Crocs in distinct research or allocation states.",
+      "source": "data/wiki/daily-reports/daily-report_20260904.md"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260904T060928Z/01M1NKT208RETCTG2ETHSHY11Z/editorial_outline.md",
+    "data/wiki/daily-reports/daily-report_20260904.md",
+    "data/wiki/podcasts/daily-podcast_20260904T060928Z.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M1NKT208RETCTG2ETHSHY11Z",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Published a standalone 3,033-word daily research podcast with three chapters: why only Prosus reached a bounded pending action while Tencent and Uber remained constrained candidates; why Crocs remains a Buy research idea but is not allocation-ready; and why NVIDIA's exceptional growth now carries material commitment, guarantee, customer-credit and acquisition risk. The earlier Prosus creation and later current-plan update were combined once rather than repeated. The failed Intel review, routine maintenance and unchanged alert triage were excluded for acceptance or audience-value reasons. Current ratings and Buy/Sell conditions were covered for Prosus, Tencent, Uber, Crocs and NVIDIA. The deterministic script preflight passed, and the single audited draft-render invocation succeeded with a 1,326-second ephemeral audio draft.",
+  "validation": {
+    "checks": [
+      "The running queue row matched operation 01M1NKT208RETCTG2ETHSHY11Z, run daily-20260904T060928Z and the daily_podcast skill with a live controller claim.",
+      "Payload, frozen context and daily-run manifest all bound the exact page path data/wiki/podcasts/daily-podcast_20260904T060928Z.md.",
+      "The editorial outline contains introduction, teaser, chapters, overall_summary and greetings in the required order and maps every selected successful research development to exactly one chapter.",
+      "The spoken transcript contains 3,033 words, at least eight prose paragraphs, the exact required opening, teaser opening and closing sentences, and no numeric glyphs, headings, lists, tables, machine IDs, raw URLs or link markup.",
+      "Current ratings, reasons, Buy conditions and Sell or invalidation conditions are stated for Prosus, Tencent, Uber, Crocs and NVIDIA.",
+      "The daily report contains exactly one deterministic transcript link and no audio link.",
+      "The script preflight passed before rendering, and exactly one audited render-draft command succeeded; no media path was persisted in repository content.",
+      "Strict schema, integrity, wiki and portfolio checks passed, and queue validation passed.",
+      "No operation was delegated or run in parallel, no second queue operation was claimed, and no allocation, signal, order, execution, cash, portfolio or performance state was changed."
+    ],
+    "passed": true
+  }
+}

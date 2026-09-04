@@ -695,4 +695,5 @@ This equal-weight research benchmark is analytical only, not copy-ready, and can
 - [[model-portfolio|Model portfolio]]
 - [[signals|Signals]]
 - [[system-status|System status]]
+- [[podcasts/daily-podcast_20260904T060928Z|Daily research podcast — 2026-09-04T060928Z]]
 - GitHub report: https://github.com/Kabutojira/PaperTrader/blob/main/data/wiki/daily-reports/daily-report_20260904.md
