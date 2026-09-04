@@ -22,5 +22,6 @@ Generated from `data/tables/issues.csv`.
 | affects_candidate | error | **issue_c87e986423310946f39f** — Hermes operation validation failed: 01M07XKZS0JKBQM0THMPJGWEK5 | 2026-09-02T16:12:05Z | controller | 01M07XKZS0JKBQM0THMPJGWEK5 |
 | publication_only | error | **issue_cd9f6a9e31874e85f842** — Hermes operation validation failed: 01M08D6FXRRXXACTTEQWSRA9JQ | 2026-08-17T17:49:26Z | delivery | 01M08D6FXRRXXACTTEQWSRA9JQ |
 | affects_candidate | error | **issue_d28f4a965952a2f0b258** — Hermes operation validation failed: 01KZ9ZJVERYZKAVXNTF2NZCECM | 2026-08-12T17:58:15Z | controller | 01KZ9ZJVERYZKAVXNTF2NZCECM |
+| affects_candidate | error | **issue_e1e5b08c8db6c9d01ad5** — Hermes operation validation failed: 01KZVTZDX06K7JG24QMMZPN7GT | 2026-09-04T00:26:00Z | controller | 01KZVTZDX06K7JG24QMMZPN7GT |
 | affects_candidate | error | **issue_f50e95ee4d3a5cc05618** — ASML assessment rejected after security row update | 2026-08-19T20:28:51Z | controller | 01M0DB44Q8R22ED9WQC5ZEG526 |
 | affects_candidate | error | **issue_ff655356efa9b9e1d1a8** — Hermes operation validation failed: 01KZPWPFS0QGMTYP3PD0TRQH6K | 2026-08-18T11:39:09Z | controller | 01KZPWPFS0QGMTYP3PD0TRQH6K |
