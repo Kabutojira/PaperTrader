@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-08-08"
-updated: "2026-09-03"
+updated: "2026-09-04"
 provenance: repository-contract
 ---
 
@@ -3180,3 +3180,9 @@ boundary after the combined log crossed the configured 5,000-line threshold.
   allocation-ineligible and no strategy, signal, order, allocation or accounting state changed.
 - Superseded the prior failed operation's duplicate immutable-version incident with a clean review
   sourced only to operation `01M1MAEMCRRVVECT8KPRWASBYB`; prior versions remain immutable history.
+
+## 2026-09-04
+
+- Published investor decision snapshot `decision_23ebc3398ed8251d0a55`.
+
+- Generated canonical [[daily-reports/daily-report_20260904]] for run `daily-20260903T235602Z`.

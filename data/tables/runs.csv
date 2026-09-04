@@ -185,3 +185,4 @@ dev-rebased-publication-v5-20260903,2026-09-03T19:32:33Z,2026-09-03T19:32:42Z,su
 dev-rebased-publication-v5b-20260903,2026-09-03T19:35:29Z,2026-09-03T19:35:37Z,succeeded,development,0,5,0,,Daily run succeeded; 0 agent operations; 0 pending-order dispositions.
 daily-20260903T195930Z,2026-09-03T19:59:30Z,2026-09-03T21:08:37Z,degraded,workflow_dispatch,4,100,20,,Daily run degraded; 4 agent operations; 0 pending-order dispositions.
 daily-20260903T213453Z,2026-09-03T21:34:53Z,2026-09-03T23:19:29Z,succeeded,workflow_dispatch,5,100,25,,Daily run succeeded; 5 agent operations; 2 pending-order dispositions.
+daily-20260903T235602Z,2026-09-03T23:56:02Z,2026-09-04T05:04:33Z,degraded,workflow_dispatch,4,100,20,,Daily run degraded; 4 agent operations; 2 pending-order dispositions.

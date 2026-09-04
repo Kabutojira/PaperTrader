@@ -4,16 +4,16 @@ type: signals
 status: maintained
 tags:
   - signals
-created: "2026-09-03"
-updated: "2026-09-03"
+created: "2026-09-04"
+updated: "2026-09-04"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_873172862c55f2655ee6"
-as_of: "2026-09-03T23:19:29Z"
+snapshot_id: "decision_23ebc3398ed8251d0a55"
+as_of: "2026-09-04T05:04:33Z"
 ---
 
 # Signals
 
-**As of `2026-09-03T23:19:29Z`**
+**As of `2026-09-04T05:04:33Z`**
 
 ## Actionable trade signals
 
@@ -25,7 +25,7 @@ as_of: "2026-09-03T23:19:29Z"
 - **Strategy research:** [Open strategy page](strategies/strategy_e4ada1a4934691d1f7ee)
 - **Window:** `2026-09-03T21:42:57Z` to `2026-09-04T21:41:23Z`
 - **Market data:** `2026-09-03T21:34:54Z`
-- **Current → target:** 0% → 1.95974%
+- **Current → target:** 0% → 1.967372%
 - **Copy-ready quantity:** 3
 - **Order:** market
 - **Entry:** Open only while current allocation plan, allocation\_intent\_5988db00b0dab41c4d78, assessment\_7fe1690682aa6c66e233 and Mobility-platform network economics and autonomy to Uber remain current, fresh UBER and USD/EUR inputs are available, and deterministic code derives a positive whole-share delta toward the persisted three-share target.
@@ -33,9 +33,26 @@ as_of: "2026-09-03T23:19:29Z"
 - **Invalidation:** Do not increase exposure if autonomous fleets bypass Uber, trip or bookings growth stops producing free cash flow, insurance or regulation structurally compresses marketplace economics, incentives or dilution absorb value, the assessment or relationship is superseded, or market and FX inputs become stale.
 - **Rationale:** Open only the deterministic current-plan whole-share delta toward Uber's persisted three-share starter target. The accepted relationship, 84 quality score, 17.72% base return, 12.07% confidence-adjusted expected return and 15.06% margin of safety support bounded baseline exposure; medium confidence, a 28.06% bear loss, autonomy disintermediation, insurance, regulation, incentives, dilution and insufficient diversification bar conviction sizing.
 
+### [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4)
+
+- **Action:** Buy
+- **State:** Pending validated order
+- **Strategy:** Prosus bounded baseline allocation
+- **Strategy research:** [Open strategy page](strategies/strategy_8caa208dfc702a2584a7)
+- **Window:** `2026-09-04T00:01:53Z` to `2026-09-05T00:15:00Z`
+- **Market data:** `2026-09-03T23:56:03Z`
+- **Current → target:** 0% → 2.960607%
+- **Copy-ready quantity:** 8
+- **Order:** market
+- **Entry:** Open only while current allocation plan, allocation\_intent\_917ea6eb1152c64f298c, assessment\_7f28dfd9240d6099400b and Digital attention, gaming, and consumer ecosystems to Prosus remain current, a fresh PRX EUR price is available, and deterministic code derives a positive whole-share delta toward the persisted eight-share target.
+- **Exit:** Reduce or close only when a current deterministic allocation plan directs reduce or close, the baseline eligibility frontier no longer clears, a hard blocker appears, or material Tencent, ecommerce, private-asset, debt, repurchase, governance, capital-allocation or valuation evidence invalidates the bounded thesis.
+- **Invalidation:** Do not increase exposure if Tencent or private-platform economics deteriorate materially, private marks prove unreliable, central net debt rises, governance or cross-holding complexity blocks value transmission, repurchases lose accretion, the holding discount widens persistently despite operating value creation, the assessment or relationship is superseded, or market inputs become stale.
+- **Rationale:** Open only the deterministic current-plan whole-share delta toward Prosus's persisted eight-share baseline target. The accepted relationship, 70 quality score, 40.54% base return, 24.32% confidence-adjusted expected return and 28.85% margin of safety support bounded baseline exposure; medium confidence, Tencent concentration, private-asset valuation uncertainty, central debt, governance, capital-allocation transmission and insufficient diversification bar conviction sizing.
+
 ## Pending validated orders
 
 - **UBER:** Buy · Pending validated order
+- **PRX:** Buy · Pending validated order
 
 ## Research alerts — not trade signals
 
@@ -81,8 +98,8 @@ as_of: "2026-09-03T23:19:29Z"
 
 - Alert: `volume\_anomaly`
 - Market date: `2026-09-03`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
 
 ### [SPCX — Space Exploration Technologies Corp.](securities/security_664f93a7eaca72e76e9b)
 
@@ -99,8 +116,8 @@ as_of: "2026-09-03T23:19:29Z"
 
 - Alert: `rsi\_oversold`
 - Market date: `2026-09-03`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
 
 ### [PL — Planet Labs PBC](securities/security_97f38b2cb2d5ef127f5a)
 
@@ -108,8 +125,8 @@ as_of: "2026-09-03T23:19:29Z"
 
 - Alert: `volume\_anomaly`
 - Market date: `2026-09-03`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
 
 ### [PATH — UiPath, Inc.](securities/security_eca976f0076a425ea1bb)
 

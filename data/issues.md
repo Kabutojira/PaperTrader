@@ -4,7 +4,6 @@ Generated from `data/tables/issues.csv`.
 
 | Impact | Severity | Issue | Last seen | Owner | Related operation |
 | --- | --- | --- | --- | --- | --- |
-| affects_candidate | error | **issue_0396c67b5be8b8f8d89b** — Crocs review produced two immutable assessment versions | 2026-09-03T12:59:54Z | controller | 01M0WSFGEG1A2CFQ7VMV3TJAN3 |
 | affects_candidate | error | **issue_19022fd84871ab2ed3ab** — Hermes operation validation failed: 01KZ8BGD98T363E1NM8EPYT9TG | 2026-08-11T14:51:31Z | controller | 01KZ8BGD98T363E1NM8EPYT9TG |
 | affects_candidate | error | **issue_30c07892e9981c27b153** — FANUC assessment source operation is ambiguous within one run | 2026-08-20T15:57:26Z | controller | 01M0FXHG7GT03TE1GNSGAPY904 |
 | affects_candidate | error | **issue_35b7b23bc3b07dd61cce** — Hermes operation validation failed: 01KZ9ZJVERDMQV8A3XQQY4AD7Y | 2026-08-12T15:28:02Z | controller | 01KZ9ZJVERDMQV8A3XQQY4AD7Y |
@@ -13,7 +12,6 @@ Generated from `data/tables/issues.csv`.
 | affects_candidate | error | **issue_52441ba1c5c89cac50a6** — Hermes operation validation failed: 01KZQX922RR422CPWVFP4APXBZ | 2026-08-18T15:09:55Z | controller | 01KZQX922RR422CPWVFP4APXBZ |
 | publication_only | error | **issue_580a89652f2497d6e61d** — Hermes operation validation failed: 01KZB8NMPGA0VTNRHAD458EN3R | 2026-08-06T10:28:41Z | delivery | 01KZB8NMPGA0VTNRHAD458EN3R |
 | affects_candidate | error | **issue_58242ac9c8a0a8fb3c22** — Hermes operation validation failed: 01KZSMSDTRBC9SG0KKDQR4XB87 | 2026-08-16T15:25:17Z | controller | 01KZSMSDTRBC9SG0KKDQR4XB87 |
-| affects_candidate | error | **issue_5ae7199c6bf761674c99** — Hermes operation validation failed: 01M0WSFGEG1A2CFQ7VMV3TJAN3 | 2026-09-03T07:07:31Z | controller | 01M0WSFGEG1A2CFQ7VMV3TJAN3 |
 | affects_candidate | error | **issue_64ad20c69d31e7ef47e4** — Hermes operation validation failed: 01KZGT11ZGBPRBKV129FD00TH1 | 2026-08-17T16:15:53Z | controller | 01KZGT11ZGBPRBKV129FD00TH1 |
 | affects_candidate | error | **issue_7f39fae50d63b862a20b** — Hermes operation validation failed: 01KZCFHHCGX1RGXKKVHNF86W7N | 2026-08-09T14:23:04Z | controller | 01KZCFHHCGX1RGXKKVHNF86W7N |
 | publication_only | error | **issue_86f9f3bc8907460da2fc** — Hermes operation validation failed: 01KZ8VJY48VNMCFW638QQJZGJH | 2026-08-05T11:40:24Z | controller | 01KZ8VJY48VNMCFW638QQJZGJH |

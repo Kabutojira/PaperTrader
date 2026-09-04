@@ -4,16 +4,16 @@ type: securities-dashboard
 status: maintained
 tags:
   - security
-created: "2026-09-03"
-updated: "2026-09-03"
+created: "2026-09-04"
+updated: "2026-09-04"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_873172862c55f2655ee6"
-as_of: "2026-09-03T23:19:29Z"
+snapshot_id: "decision_23ebc3398ed8251d0a55"
+as_of: "2026-09-04T05:04:33Z"
 ---
 
 # Securities
 
-**As of `2026-09-03T23:19:29Z`**
+**As of `2026-09-04T05:04:33Z`**
 
 Ticker links open the maintained security analysis. Prices and buy-below levels use each security's listing currency. Return estimates are rounded to whole percentage points, and update dates are shown in UTC.
 
@@ -22,7 +22,7 @@ Ticker links open the maintained security analysis. Prices and buy-below levels 
 | <span id="security-security_0c8b3c4291cd97f56d8c"></span>[108490 — ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c) | 248500 KRW | Strong Sell / Avoid | Valuation unattractive | Base-case return is below threshold. | -92% / -71% / 14% | -60% | 56774.4 KRW | 2026-09-03 / 2026-09-03 | 2026-09-30 |
 | <span id="security-security_c120e9f26ebb6159adf9"></span>[ABBNY — ABB Ltd](securities/security_c120e9f26ebb6159adf9) | 95.67 USD | Hold / Watch | Valuation unattractive | Base-case return is below threshold. | -35% / -9% / 10% | -13% | 69.44 USD | 2026-09-03 / 2026-09-03 | 2026-10-03 |
 | <span id="security-security_7bf8f4c9cc12ae410e40"></span>[ABCL — AbCellera Biologics Inc.](securities/security_7bf8f4c9cc12ae410e40) | 11.57 USD | Unrated / Watch | Valuation unsupported | The assessment's registered evidence is not fresh. | — / — / — | — | — | 2026-09-03 / 2026-09-03 | 2026-08-24 |
-| <span id="security-security_e19c7fe27fbcc4cd923d"></span>[AD — Koninklijke Ahold Delhaize N.V.](securities/security_e19c7fe27fbcc4cd923d) | 31.15 EUR | Hold / Watch | Valuation unattractive | Base-case return is below threshold. | -23% / 6% / 35% | 6% | 26.4 EUR | 2026-09-03 / 2026-09-03 | 2026-09-27 |
+| <span id="security-security_e19c7fe27fbcc4cd923d"></span>[AD — Koninklijke Ahold Delhaize N.V.](securities/security_e19c7fe27fbcc4cd923d) | 31.17 EUR | Hold / Watch | Valuation unattractive | Base-case return is below threshold. | -23% / 6% / 35% | 6% | 26.4 EUR | 2026-09-03 / 2026-09-03 | 2026-09-27 |
 | <span id="security-security_66cdcf90aac0d83e76f3"></span>[ALB — Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3) | 132.16 USD | Hold / Watch | Research incomplete | The assessment's registered evidence is not fresh. | -92% / -1% / 75% | -5% | 105 USD | 2026-09-03 / 2026-09-03 | 2026-08-20 |
 | <span id="security-security_0a56aa634d077fe5796f"></span>[AMAT — Applied Materials, Inc.](securities/security_0a56aa634d077fe5796f) | 435.91 USD | Hold / Watch | Valuation unattractive | Base-case return is below threshold. | -34% / 3% / 48% | 1% | 358.4 USD | 2026-09-03 / 2026-09-03 | 2026-10-03 |
 | <span id="security-security_2433a056eb0c55961fcc"></span>[AMZN — Amazon.com, Inc.](securities/security_2433a056eb0c55961fcc) | 258.9 USD | Hold / Watch | Valuation unattractive | Base-case return is below threshold. | -23% / 4% / 39% | 6% | 216 USD | 2026-09-03 / 2026-09-03 | 2026-09-27 |
@@ -55,7 +55,7 @@ Ticker links open the maintained security analysis. Prices and buy-below levels 
 | <span id="security-security_fb87fac302a5446a1ced"></span>[LAC — Lithium Americas Corp.](securities/security_fb87fac302a5446a1ced) | 2.97 USD | Unrated / Watch | Research incomplete | The current assessment marks the security ineligible. | — / — / — | — | — | 2026-09-03 / 2026-09-03 | 2026-08-15 |
 | <span id="security-security_b1f2c48e1a744f5ecf67"></span>[LH — Labcorp Holdings Inc.](securities/security_b1f2c48e1a744f5ecf67) | 331.5 USD | Hold / Watch | Valuation unattractive | Base-case return is below threshold. | -24% / -6% / 12% | -6% | 249.22 USD | 2026-09-03 / 2026-09-03 | 2026-09-04 |
 | <span id="security-security_a5dc16f3f4b245e6c168"></span>[LUNR — Intuitive Machines, Inc.](securities/security_a5dc16f3f4b245e6c168) | 14.7 USD | Unrated / Watch | Valuation unsupported | A supportable valuation is unavailable. | — / — / — | — | — | 2026-09-03 / 2026-09-03 | 2026-09-16 |
-| <span id="security-security_4935c6e39e38273a1731"></span>[MELI — MercadoLibre, Inc.](securities/security_4935c6e39e38273a1731) | 1991.0551 USD | Hold / Watch | Valuation unattractive | Bear/base payoff is below the starter threshold. | -30% / 10% / 51% | 10% | 1760 USD | 2026-09-03 / 2026-09-03 | 2026-09-27 |
+| <span id="security-security_4935c6e39e38273a1731"></span>[MELI — MercadoLibre, Inc.](securities/security_4935c6e39e38273a1731) | 1991.0601 USD | Hold / Watch | Valuation unattractive | Bear/base payoff is below the starter threshold. | -30% / 10% / 51% | 10% | 1760 USD | 2026-09-03 / 2026-09-03 | 2026-09-27 |
 | <span id="security-security_d12e746b3c9d392183cc"></span>[META — Meta Platforms, Inc.](securities/security_d12e746b3c9d392183cc) | 610.68 USD | Hold / Watch | Valuation unattractive | Base-case return is below threshold. | -34% / -2% / 31% | -5% | 480 USD | 2026-09-03 / 2026-09-03 | 2026-09-27 |
 | <span id="security-security_cd492d97064d8574156e"></span>[MP — MP Materials Corp.](securities/security_cd492d97064d8574156e) | 53.78 USD | Sell / Avoid | Valuation unattractive | Base-case return is below threshold. | -67% / -26% / 34% | -21% | 32 USD | 2026-09-03 / 2026-09-03 | 2026-09-18 |
 | <span id="security-security_204be2a44063993de1a8"></span>[MSFT — Microsoft Corporation](securities/security_204be2a44063993de1a8) | 510.12 USD | Hold / Watch | Valuation unattractive | Base-case return is below threshold. | -26% / -2% / 23% | -2% | 400 USD | 2026-09-03 / 2026-09-03 | 2026-09-27 |
@@ -64,12 +64,12 @@ Ticker links open the maintained security analysis. Prices and buy-below levels 
 | <span id="security-security_3853e54c619d597dcaa1"></span>[NIB.F — Nidec Corporation](securities/security_3853e54c619d597dcaa1) | 13.418 EUR | Unrated / Watch | Valuation unsupported | The assessment's registered evidence is not fresh. | — / — / — | — | — | 2026-09-03 / 2026-09-03 | 2026-08-31 |
 | <span id="security-security_98a1943771da875efed5"></span>[NOMD — Nomad Foods Limited](securities/security_98a1943771da875efed5) | 11.5 USD | Buy / Initiate | Allocation constrained | Research quality must be strictly above the configured threshold. | -22% / 30% / 74% | 23% | 12 USD | 2026-09-03 / 2026-09-03 | 2026-09-27 |
 | <span id="security-security_33d9c44facc75c726c7d"></span>[NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | 228.45 USD | Buy / Initiate | Research incomplete | The assessment's registered evidence is not fresh. | -21% / 10% / 64% | 16% | 201.6 USD | 2026-09-03 / 2026-09-03 | 2026-08-19 |
-| <span id="security-security_cc4dcb8f002b61dffe00"></span>[PARRO.PA — Parrot S.A.](securities/security_cc4dcb8f002b61dffe00) | 9.65 EUR | Hold / Watch | Valuation unattractive | Base-case return is below threshold. | -43% / -6% / 50% | -6% | 7.272 EUR | 2026-09-03 / 2026-09-03 | 2026-09-19 |
+| <span id="security-security_cc4dcb8f002b61dffe00"></span>[PARRO.PA — Parrot S.A.](securities/security_cc4dcb8f002b61dffe00) | 9.6 EUR | Hold / Watch | Valuation unattractive | Base-case return is below threshold. | -43% / -5% / 51% | -5% | 7.272 EUR | 2026-09-03 / 2026-09-03 | 2026-09-19 |
 | <span id="security-security_eca976f0076a425ea1bb"></span>[PATH — UiPath, Inc.](securities/security_eca976f0076a425ea1bb) | 18.22 USD | Hold / Watch | Research incomplete | The assessment's registered evidence is not fresh. | -53% / -15% / 45% | -9% | 12.4 USD | 2026-09-03 / 2026-09-03 | 2026-08-20 |
 | <span id="security-security_97f38b2cb2d5ef127f5a"></span>[PL — Planet Labs PBC](securities/security_97f38b2cb2d5ef127f5a) | 18.35 USD | Sell / Avoid | Valuation unattractive | Base-case return is below threshold. | -65% / -22% / 51% | -20% | 11.488 USD | 2026-09-03 / 2026-09-03 | 2026-09-11 |
 | <span id="security-security_8a5c43888d224de85c69"></span>[PLS.AX — PLS Group Limited](securities/security_8a5c43888d224de85c69) | 5.2 AUD | Sell / Avoid | Valuation unattractive | Base-case return is below threshold. | -68% / -29% / 29% | -25% | 2.936 AUD | 2026-09-03 / 2026-09-03 | 2026-09-30 |
 | <span id="security-security_bdc2f87dadf134760c3a"></span>[PLTR — Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a) | 182.53 USD | Strong Sell / Avoid | Valuation unattractive | Base-case return is below threshold. | -71% / -46% / -11% | -43% | 79.392 USD | 2026-09-03 / 2026-09-03 | 2026-09-10 |
-| <span id="security-security_8b703a8adf5f864acaa4"></span>[PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | 36.88 EUR | Buy / Initiate | Full baseline — Allocation constrained | The eligible set is not sufficiently diversified. | -19% / 41% / 90% | 33% | 41.6 EUR | 2026-09-03 / 2026-09-03 | 2026-09-27 |
+| <span id="security-security_8b703a8adf5f864acaa4"></span>[PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | 37 EUR | Buy / Initiate | Full baseline — Allocation constrained | A portfolio, sector, or theme concentration cap applies. | -19% / 41% / 89% | 32% | 41.6 EUR | 2026-09-03 / 2026-09-03 | 2026-09-27 |
 | <span id="security-security_488a9d7f7a8573597724"></span>[PWR — Quanta Services, Inc.](securities/security_488a9d7f7a8573597724) | 620.06 USD | Hold / Watch | Research incomplete | The assessment's registered evidence is not fresh. | -33% / -14% / 8% | -13% | 427.52 USD | 2026-09-03 / 2026-09-03 | 2026-09-02 |
 | <span id="security-security_1e8fbdb0f45f2b413e00"></span>[PYPL — PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00) | 56.82 USD | Hold / Watch | Valuation unattractive | Expected/bear payoff is below the starter threshold. | -24% / 14% / 42% | 8% | 51.648 USD | 2026-09-03 / 2026-09-03 | 2026-09-11 |
 | <span id="security-security_3a75fc1ccca2ee7c937a"></span>[QCOM — QUALCOMM Incorporated](securities/security_3a75fc1ccca2ee7c937a) | 168.57 USD | Hold / Watch | Research incomplete | The assessment's registered evidence is not fresh. | -41% / -5% / 31% | -5% | 128 USD | 2026-09-03 / 2026-09-03 | 2026-08-31 |
@@ -86,7 +86,7 @@ Ticker links open the maintained security analysis. Prices and buy-below levels 
 | <span id="security-security_9d4049ed6669a52815d6"></span>[SQM — Sociedad Quimica y Minera de Chile S.A.](securities/security_9d4049ed6669a52815d6) | 79.78 USD | Hold / Watch | Valuation unattractive | The assessment's registered evidence is not fresh. | -47% / -3% / 50% | -1% | 61.6 USD | 2026-09-03 / 2026-09-03 | 2026-09-05 |
 | <span id="security-security_567d0d575bbd30aaa91d"></span>[SSU.VI — Samsung Electronics Co., Ltd.](securities/security_567d0d575bbd30aaa91d) | 3930 EUR | Unrated / Watch | Valuation unsupported | The assessment's registered evidence is not fresh. | — / — / — | — | — | 2026-09-03 / 2026-09-03 | 2026-09-02 |
 | <span id="security-security_d08d763780400dfbffce"></span>[SSUN.VI — Samsung Electronics Co., Ltd.](securities/security_d08d763780400dfbffce) | 2925 EUR | Unrated / Watch | Valuation unsupported | The assessment's registered evidence is not fresh. | — / — / — | — | — | 2026-09-03 / 2026-09-03 | 2026-08-20 |
-| <span id="security-security_dc8486c1d61df62a22fd"></span>[SU — Schneider Electric SE](securities/security_dc8486c1d61df62a22fd) | 287.35 EUR | Hold / Watch | Valuation unattractive | Base-case return is below threshold. | -34% / -16% / 15% | -13% | 192 EUR | 2026-09-03 / 2026-09-03 | 2026-09-30 |
+| <span id="security-security_dc8486c1d61df62a22fd"></span>[SU — Schneider Electric SE](securities/security_dc8486c1d61df62a22fd) | 286.8 EUR | Hold / Watch | Valuation unattractive | Base-case return is below threshold. | -34% / -16% / 15% | -13% | 192 EUR | 2026-09-03 / 2026-09-03 | 2026-09-30 |
 | <span id="security-security_de0d83229b369a426b99"></span>[TCEHY — Tencent Holdings Limited](securities/security_de0d83229b369a426b99) | 58.65 USD | Hold / Watch | Valuation unattractive | Bear/base payoff is below the starter threshold. | -32% / 11% / 53% | 11% | 52 USD | 2026-09-03 / 2026-09-03 | 2026-09-27 |
 | <span id="security-security_ad5917642acbba28c1f2"></span>[TDY — Teledyne Technologies Incorporated](securities/security_ad5917642acbba28c1f2) | 607.87 USD | Hold / Watch | Valuation unattractive | Confidence-adjusted expected return is below threshold. | -17% / 11% / 43% | 12% | 540 USD | 2026-09-03 / 2026-09-03 | 2026-09-04 |
 | <span id="security-security_dc7a111e297be528d96b"></span>[TSLA — Tesla, Inc.](securities/security_dc7a111e297be528d96b) | 376.365 USD | Sell / Avoid | Valuation unattractive | Base-case return is below threshold. | -64% / -28% / 30% | -22% | 217.6 USD | 2026-09-03 / 2026-09-03 | 2026-09-30 |

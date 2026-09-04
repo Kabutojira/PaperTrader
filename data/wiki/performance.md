@@ -4,20 +4,20 @@ type: performance
 status: maintained
 tags:
   - performance
-created: "2026-09-03"
-updated: "2026-09-03"
+created: "2026-09-04"
+updated: "2026-09-04"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_873172862c55f2655ee6"
-as_of: "2026-09-03T23:19:29Z"
+snapshot_id: "decision_23ebc3398ed8251d0a55"
+as_of: "2026-09-04T05:04:33Z"
 ---
 
 # Performance and risk
 
-**As of `2026-09-03T23:19:29Z`**
+**As of `2026-09-04T05:04:33Z`**
 
 Current performance epoch started `2026-07-28T12:00:00Z` at **10000 EUR**. Prior audit epochs retained: **1**.
 
-<svg class="performance-chart" viewBox="0 0 100 100" role="img" aria-label="Equity history from 2026-07-28 to 2026-09-03; latest equity 10000."><title>Model equity history</title><desc>Equity history from 2026-07-28 to 2026-09-03; latest equity 10000.</desc><polyline fill="none" stroke="currentColor" stroke-width="2" points="0.00,45.00 3.03,45.00 6.06,45.00 9.09,45.00 12.12,45.00 15.15,45.00 18.18,45.00 21.21,45.00 24.24,45.00 27.27,45.00 30.30,45.00 33.33,45.00 36.36,45.00 39.39,45.00 42.42,45.00 45.45,45.00 48.48,45.00 51.52,45.00 54.55,45.00 57.58,45.00 60.61,45.00 63.64,45.00 66.67,45.00 69.70,45.00 72.73,45.00 75.76,45.00 78.79,45.00 81.82,45.00 84.85,45.00 87.88,45.00 90.91,45.00 93.94,45.00 96.97,45.00 100.00,45.00" /></svg>
+<svg class="performance-chart" viewBox="0 0 100 100" role="img" aria-label="Equity history from 2026-07-28 to 2026-09-04; latest equity 10000."><title>Model equity history</title><desc>Equity history from 2026-07-28 to 2026-09-04; latest equity 10000.</desc><polyline fill="none" stroke="currentColor" stroke-width="2" points="0.00,45.00 2.94,45.00 5.88,45.00 8.82,45.00 11.76,45.00 14.71,45.00 17.65,45.00 20.59,45.00 23.53,45.00 26.47,45.00 29.41,45.00 32.35,45.00 35.29,45.00 38.24,45.00 41.18,45.00 44.12,45.00 47.06,45.00 50.00,45.00 52.94,45.00 55.88,45.00 58.82,45.00 61.76,45.00 64.71,45.00 67.65,45.00 70.59,45.00 73.53,45.00 76.47,45.00 79.41,45.00 82.35,45.00 85.29,45.00 88.24,45.00 91.18,45.00 94.12,45.00 97.06,45.00 100.00,45.00" /></svg>
 
 | Daily return | Cumulative return | Drawdown | Realized P/L | Unrealized P/L |
 | ---: | ---: | ---: | ---: | ---: |
@@ -34,7 +34,8 @@ Current performance epoch started `2026-07-28T12:00:00Z` at **10000 EUR**. Prior
 
 ## Target allocation changes
 
-- **[UBER — Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e):** Buy from 0% to 1.95974%
+- **[PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4):** Buy from 0% to 2.960607%
+- **[UBER — Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e):** Buy from 0% to 1.967372%
 
 ## Committed history
 
@@ -74,6 +75,7 @@ Current performance epoch started `2026-07-28T12:00:00Z` at **10000 EUR**. Prior
 | 2026-09-01 | 10000 | 10000 | 0 | 0% | 0% | 0% |
 | 2026-09-02 | 10000 | 10000 | 0 | 0% | 0% | 0% |
 | 2026-09-03 | 10000 | 10000 | 0 | 0% | 0% | 0% |
+| 2026-09-04 | 10000 | 10000 | 0 | 0% | 0% | 0% |
 
 No external benchmark is used.
 
