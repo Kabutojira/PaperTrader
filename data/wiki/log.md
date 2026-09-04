@@ -3170,3 +3170,13 @@ boundary after the combined log crossed the configured 5,000-line threshold.
   either as an order or fill; the allocator-owned current target is 2.96%.
 - Refreshed the scenario-return chart and entry evidence at the EUR 37 PRX mark retrieved on
   2026-09-03T23:56:03Z; the relationship, assessment and baseline risk posture remain unchanged.
+
+## [2026-09-04] update | Crocs duplicate-assessment remediation
+
+- Refreshed [[securities/security_c150f31c30afdb4a85f9]] from hash-identical SEC-hosted Q2 primary
+  evidence and the USD 116.01 mark from the completed 2026-09-03 Nasdaq session.
+- Retained the filing-anchored USD 88/145.425/205.80 bear/base/bull fair values and medium confidence.
+  Both payoff-ratio gates and the accepted-relationship gate fail, so Crocs remains
+  allocation-ineligible and no strategy, signal, order, allocation or accounting state changed.
+- Superseded the prior failed operation's duplicate immutable-version incident with a clean review
+  sourced only to operation `01M1MAEMCRRVVECT8KPRWASBYB`; prior versions remain immutable history.

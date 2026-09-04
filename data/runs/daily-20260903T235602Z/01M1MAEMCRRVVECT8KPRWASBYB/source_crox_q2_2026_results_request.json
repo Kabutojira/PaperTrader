@@ -1,0 +1,18 @@
+{
+  "source_id": "source_crox_q2_2026_results",
+  "url": "https://www.sec.gov/Archives/edgar/data/1334036/000133403626000050/croxq22026-pressrelease.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1334036/000133403626000050/croxq22026-pressrelease.htm",
+  "source_type": "issuer_release",
+  "title": "Crocs, Inc. reports second quarter 2026 financial results",
+  "publisher": "Crocs, Inc.",
+  "license": "",
+  "status": "available",
+  "content_hash": "f52ca96031e7f6282ac04f67cbf7a95adbd942b64434ec3234523956e593f53f",
+  "related_entity_ids": "security_c150f31c30afdb4a85f9",
+  "checked_at": "2026-09-04T00:12:16Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Crocs Brand Surpasses $1 Billion In Quarterly Revenue For The First Time",
+  "summary": "A fresh SEC-hosted retrieval reproduced the registered Q2 2026 results hash. The release still supports record quarterly revenue, direct-channel growth, Crocs Brand growth, HEYDUDE contraction, margin pressure, free cash flow and raised full-year guidance.",
+  "run_id": "daily-20260903T235602Z"
+}

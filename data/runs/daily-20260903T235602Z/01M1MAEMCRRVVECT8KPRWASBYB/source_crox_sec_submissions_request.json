@@ -1,0 +1,18 @@
+{
+  "source_id": "source_crox_sec_submissions_20260903",
+  "url": "https://data.sec.gov/submissions/CIK0001334036.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0001334036.json",
+  "source_type": "regulator_index",
+  "title": "Crocs, Inc. SEC submissions index checked 2026-09-04",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "5a9f12df357f7e03d7c8f4b312cef937267aa2b69b6f41a69f44a04e108c7eee",
+  "related_entity_ids": "security_c150f31c30afdb4a85f9",
+  "checked_at": "2026-09-04T00:12:16Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "The recent submissions list contains no periodic operating filing after the Form 10-Q filed 2026-07-30 through the 2026-09-03 market date.",
+  "summary": "The current SEC submissions index lists no operating results or periodic filing newer than Crocs' July 30 Q2 Form 10-Q and results Form 8-K. Later entries are ownership or resale-registration filings and do not change guidance, operating performance, cash flow, debt or share-count evidence.",
+  "run_id": "daily-20260903T235602Z"
+}

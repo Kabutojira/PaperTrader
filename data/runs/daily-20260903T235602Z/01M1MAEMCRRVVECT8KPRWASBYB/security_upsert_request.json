@@ -1,0 +1,23 @@
+{
+  "security_id": "security_c150f31c30afdb4a85f9",
+  "issuer_id": "issuer_1f6c9036716fafed5a2a",
+  "company_name": "Crocs, Inc.",
+  "instrument_name": "Crocs, Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "CROX",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "CROX",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Consumer Cyclical",
+  "industry": "Footwear & Accessories",
+  "status": "watching",
+  "watchlist_reason": "The September 1 lower-Bollinger breach followed an 18.35% decline; weak momentum, wholesale contraction, margin pressure, HEYDUDE weakness, leverage and fashion-cycle risk require monitoring.",
+  "research_summary": "At USD 116.01, Crocs is below the USD 116.34 buy-below level, but both payoff ratios and the missing accepted relationship keep it on Watch conviction and allocation-ineligible.",
+  "research_page": "data/wiki/securities/security_c150f31c30afdb4a85f9.md",
+  "last_research_at": "2026-09-04T00:12:16Z",
+  "next_review_at": "2026-10-03T00:12:16Z",
+  "source": "source_crox_q2_2026_10q|source_crox_q2_2026_results|source_crox_sec_submissions_20260903"
+}

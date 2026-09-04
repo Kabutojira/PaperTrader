@@ -7,7 +7,7 @@ tags:
   - research
   - risk
 created: "2026-08-01"
-updated: "2026-09-03"
+updated: "2026-09-04"
 provenance: "source_crox_q2_2026_10q|source_crox_q2_2026_results|source_crox_sec_submissions_20260903"
 security_id: security_c150f31c30afdb4a85f9
 issuer_id: issuer_1f6c9036716fafed5a2a
@@ -62,7 +62,7 @@ against unchanged primary operating evidence and a fresh identity-matched mark.
   "title": "Second-quarter revenue and adjusted operating income",
   "description": "Revenue increased modestly while adjusted operating income declined, showing that the record top line did not translate into operating leverage.",
   "as_of": "2026-06-30",
-  "sources": [{"label": "Crocs Q2 2026 SEC-filed results release", "url": "https://www.sec.gov/Archives/edgar/data/1334036/000133403626000050/croxq22026-pressrelease.htm", "observed_at": "2026-09-03T12:48:08Z"}],
+  "sources": [{"label": "Crocs Q2 2026 SEC-filed results release", "url": "https://www.sec.gov/Archives/edgar/data/1334036/000133403626000050/croxq22026-pressrelease.htm", "observed_at": "2026-09-04T00:12:16Z"}],
   "x_axis": {"type": "category", "label": "Quarter ended June 30", "values": ["2025", "2026"]},
   "y_axes": [{"label": "USD millions", "unit": "USD million", "format": "currency", "currency": "USD"}],
   "series": [
@@ -83,16 +83,16 @@ against unchanged primary operating evidence and a fresh identity-matched mark.
   "kind": "series",
   "title": "Twelve-month fair-value scenarios versus the fresh mark",
   "description": "The fresh mark is below the base-case buy-below level, but expected-to-bear payoff remains below its threshold and a current accepted idea relationship remains unavailable.",
-  "as_of": "2026-09-03T12:29:04Z",
+  "as_of": "2026-09-03T23:56:03Z",
   "sources": [
-    {"label": "Crocs Q2 2026 Form 10-Q and SEC-filed results release", "url": "https://www.sec.gov/Archives/edgar/data/1334036/000133403626000052/crox-20260630.htm", "observed_at": "2026-09-03T12:48:08Z"},
-    {"label": "PaperTrader identity-matched market cache", "observed_at": "2026-09-03T12:29:04Z"}
+    {"label": "Crocs Q2 2026 Form 10-Q and SEC-filed results release", "url": "https://www.sec.gov/Archives/edgar/data/1334036/000133403626000052/crox-20260630.htm", "observed_at": "2026-09-04T00:12:16Z"},
+    {"label": "PaperTrader identity-matched market cache", "observed_at": "2026-09-03T23:56:03Z"}
   ],
   "x_axis": {"type": "category", "label": "Scenario", "values": ["Bear (30%)", "Base (50%)", "Bull (20%)"]},
   "y_axes": [{"label": "USD per share", "unit": "USD/share", "format": "currency", "currency": "USD"}],
   "series": [
     {"name": "Fair value", "render": "bar", "y_axis": 0, "values": ["88", "145.425", "205.8"]},
-    {"name": "Fresh mark", "render": "line", "y_axis": 0, "values": ["115.79000091552734", "115.79000091552734", "115.79000091552734"]}
+    {"name": "Fresh mark", "render": "line", "y_axis": 0, "values": ["116.01000213623047", "116.01000213623047", "116.01000213623047"]}
   ],
   "notes": [
     "Probabilities total 100%; probability-weighted fair value is USD 140.2725.",
@@ -103,37 +103,39 @@ against unchanged primary operating evidence and a fresh identity-matched mark.
 
 ## Decision
 
-**Buy / Initiate research disposition; Watch conviction with no strategy.** The USD 115.79
+**Buy / Initiate research disposition; Watch conviction with no strategy.** The USD 116.01
 fresh mark is below the USD 116.34 base-case buy-below level, and unchanged scenarios now imply
-21.14% expected return and 15.86% after the medium-confidence adjustment. Base-to-bear payoff
-clears, but expected-to-bear payoff at 0.88 remains below its required threshold. That valuation
+20.91% expected return and 15.69% after the medium-confidence adjustment. Base-to-bear payoff at
+1.05 and expected-to-bear payoff at 0.87 remain below their required thresholds. That valuation
 improvement comes entirely from an 18.35% price decline, not new operating evidence. The payoff
 shortfall and absence of a current accepted causal idea relationship keep the security
 allocation-ineligible, so no strategy, signal, order, or paper trade is justified.
 
 ## Changes since prior review
 
-- **Facts and evidence:** fresh retrievals reproduce the registered Q2 Form 10-Q and results-release
-  hashes. The current SEC submissions index contains no operating filing newer than July 30; later
-  entries are ownership or resale-registration filings. The operating evidence is unchanged.
+- **Facts and evidence:** fresh retrievals at `2026-09-04T00:12:16Z` reproduce the registered Q2
+  Form 10-Q and results-release hashes. The current SEC submissions index contains no operating
+  filing newer than July 30; later entries are ownership or resale-registration filings. The
+  operating evidence is unchanged.
 - **Alert and timing:** from August 4 through September 1 the adjusted close fell 18.35%, from USD
   141.19 to USD 115.28. The September 1 close entered and then strengthened below the lower
-  Bollinger band. On September 2 the close rose 0.44% to USD 115.79, above its USD 114.04 lower band;
-  RSI remained weak at 34.30 and MACD remained below signal. The configured trigger had exited.
+  Bollinger band. On September 3 the close was USD 116.01, above its USD 113.45 lower band; RSI
+  remained weak at 34.89 and MACD remained below signal. The configured trigger had exited.
 - **Assumptions and valuation:** normalized EPS, multiples, probabilities and USD 88 / USD 145.425 /
-  USD 205.80 bear/base/bull fair values are unchanged. The fresh mark raises scenario returns to
-  -24.00%, +25.59% and +77.74%; probability-weighted fair value remains USD 140.2725.
+  USD 205.80 bear/base/bull fair values are unchanged. The fresh mark implies scenario returns of
+  -24.14%, +25.36% and +77.40%; probability-weighted fair value remains USD 140.2725.
 - **Thesis, catalysts and risks:** the core-brand, direct-channel, cash-conversion and repurchase
   thesis is unchanged. Wholesale contraction, margin pressure, HEYDUDE weakness, leverage,
   fashion-cycle exposure and capital-allocation risk remain unresolved. No catalyst or invalidation
   was added or removed.
-- **Blockers and gaps:** expected-return, bear/base payoff and margin-of-safety gaps resolved through
-  price. Expected/bear payoff, medium confidence, cyclical normalization uncertainty, adverse
-  technical momentum and the missing accepted relationship remain. There is no hard identity,
-  evidence, liquidity, price or FX blocker.
-- **Rating and action:** the research rating improves from Hold to Buy and the derived portfolio
-  action from Watch to Initiate. Conviction remains Watch and allocation remains ineligible; the
-  no-strategy conclusion is unchanged because expected/bear payoff and relationship gates fail.
+- **Blockers and gaps:** expected-return and margin-of-safety gaps remain resolved through price.
+  Both payoff ratios, medium confidence, cyclical normalization uncertainty, adverse technical
+  momentum and the missing accepted relationship remain. There is no hard identity, evidence,
+  liquidity, price or FX blocker.
+- **Rating, action and provenance:** Buy / Initiate and Watch conviction remain unchanged, while
+  allocation remains ineligible. This clean assessment is sourced only to remediation operation
+  `01M1MAEMCRRVVECT8KPRWASBYB`, superseding the prior operation's duplicate-version incident
+  without editing or deleting either immutable historical version.
 
 ## Immutable identity
 
@@ -152,8 +154,8 @@ CIK 0001334036. No duplicate canonical identity exists.
 
 The canonical August 4 through September 1 observation period ended with an 18.35% decline and a
 new `bollinger_below_lower` entry that strengthened during the September 1 refresh. Price at USD
-115.28 was marginally below the USD 115.33 lower band. The September 2 close was USD 115.79, the
-lower band was USD 114.04, RSI was 34.30, and MACD at -3.51 remained below its -2.17 signal line.
+115.28 was marginally below the USD 115.33 lower band. The September 3 close was USD 116.01, the
+lower band was USD 113.45, RSI was 34.89, and MACD at -3.50 remained below its -2.44 signal line.
 
 The breach is a **valuation opportunity but continuing timing risk**, not an actionable signal.
 Price entered the prior buy zone, but no primary operating development explains or validates the
@@ -224,11 +226,11 @@ repurchases, and fashion-cycle risk:
 - Bull, 20%: USD **205.80**, using USD 14.70 normalized EPS at 14x as brand growth broadens,
   HEYDUDE stabilizes, margins recover, debt falls, and repurchases remain accretive.
 
-Against USD 115.79, the cases imply **-24.00%**, **+25.59%**, and **+77.74%**. Probability-weighted
-fair value is USD 140.2725, or **+21.14%** before the medium-confidence adjustment and **+15.86%**
-after it. The base-upside-to-bear-downside ratio is **1.07**, expected-to-bear payoff is **0.88**, and
-the 20% margin-of-safety buy zone is USD 116.34. The expected/bear ratio remains below its required
-threshold, and the missing accepted relationship independently prevents allocation eligibility.
+Against USD 116.01, the cases imply **-24.14%**, **+25.36%**, and **+77.40%**. Probability-weighted
+fair value is USD 140.2725, or **+20.91%** before the medium-confidence adjustment and **+15.69%**
+after it. The base-upside-to-bear-downside ratio is **1.05**, expected-to-bear payoff is **0.87**, and
+the 20% margin-of-safety buy zone is USD 116.34. Both payoff ratios remain below their required
+thresholds, and the missing accepted relationship independently prevents allocation eligibility.
 
 ## Idea exposure map
 
@@ -244,14 +246,14 @@ accepted-needs-review or candidate pairing, so no relationship or idea follow-up
 ## Sources
 
 - [Crocs Q2 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1334036/000133403626000052/crox-20260630.htm)
-  (`source_crox_q2_2026_10q`, hash reproduced 2026-09-03).
+  (`source_crox_q2_2026_10q`, hash reproduced 2026-09-04).
 - [Crocs Q2 2026 results](https://www.sec.gov/Archives/edgar/data/1334036/000133403626000050/croxq22026-pressrelease.htm)
-  (`source_crox_q2_2026_results`, hash reproduced 2026-09-03).
+  (`source_crox_q2_2026_results`, hash reproduced 2026-09-04).
 - [Crocs SEC submissions index](https://data.sec.gov/submissions/CIK0001334036.json)
-  (`source_crox_sec_submissions_20260903`, checked 2026-09-03).
+  (`source_crox_sec_submissions_20260903`, checked 2026-09-04).
 - Canonical market and indicator state: `data/market/latest.csv`, `data/market/indicators.csv`, and
-  `data/market/prices/security_c150f31c30afdb4a85f9.csv`, market date 2026-09-02 and retrieved
-  2026-09-03. The identity-matched USD/EUR rate was 0.8611999750137329 at the same retrieval time.
+  `data/market/prices/security_c150f31c30afdb4a85f9.csv`, market date 2026-09-03 and retrieved at
+  2026-09-03T23:56:03Z. The identity-matched USD/EUR rate was 0.8631600141525269 at the same time.
 
 Next review: **2026-10-03**, or sooner after a material guidance, margin, HEYDUDE, wholesale,
 inventory, debt, repurchase, sourcing, tariff, or consumer-demand development.
