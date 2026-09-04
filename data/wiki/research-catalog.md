@@ -7,8 +7,8 @@ tags:
 created: "2026-09-04"
 updated: "2026-09-04"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_23ebc3398ed8251d0a55"
-as_of: "2026-09-04T05:04:33Z"
+snapshot_id: "decision_20ca88f4e2ca0e6458f4"
+as_of: "2026-09-04T06:53:41Z"
 ---
 
 # Research catalog
@@ -17,7 +17,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Assessment revision audit
 
-- Immutable assessment versions: **197**
+- Immutable assessment versions: **200**
 - Securities with retained revisions: **80**
 
 ## Candidate
@@ -724,7 +724,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Nebius Group N.V. Class A ordinary shares](securities/security_47a0b06f6c6c478d7c1e)
 - [Nidec Corporation Frankfurt ordinary shares](securities/security_3853e54c619d597dcaa1)
 - [Nomad Foods Limited ordinary shares](securities/security_98a1943771da875efed5)
-- [NVIDIA Corporation common stock](securities/security_33d9c44facc75c726c7d)
+- [NVIDIA Corporation (NVDA)](securities/security_33d9c44facc75c726c7d)
 - [Palantir Technologies Inc. Class A common stock](securities/security_bdc2f87dadf134760c3a)
 - [Parrot S.A. ordinary shares](securities/security_cc4dcb8f002b61dffe00)
 - [PayPal Holdings, Inc. common stock](securities/security_1e8fbdb0f45f2b413e00)

@@ -7,13 +7,13 @@ tags:
 created: "2026-09-04"
 updated: "2026-09-04"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_23ebc3398ed8251d0a55"
-as_of: "2026-09-04T05:04:33Z"
+snapshot_id: "decision_20ca88f4e2ca0e6458f4"
+as_of: "2026-09-04T06:53:41Z"
 ---
 
 # Performance and risk
 
-**As of `2026-09-04T05:04:33Z`**
+**As of `2026-09-04T06:53:41Z`**
 
 Current performance epoch started `2026-07-28T12:00:00Z` at **10000 EUR**. Prior audit epochs retained: **1**.
 
@@ -34,8 +34,7 @@ Current performance epoch started `2026-07-28T12:00:00Z` at **10000 EUR**. Prior
 
 ## Target allocation changes
 
-- **[PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4):** Buy from 0% to 2.960607%
-- **[UBER — Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e):** Buy from 0% to 1.967372%
+- **[PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4):** Buy from 0% to 2.960305%
 
 ## Committed history
 

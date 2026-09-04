@@ -7,31 +7,15 @@ tags:
 created: "2026-09-04"
 updated: "2026-09-04"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_23ebc3398ed8251d0a55"
-as_of: "2026-09-04T05:04:33Z"
+snapshot_id: "decision_20ca88f4e2ca0e6458f4"
+as_of: "2026-09-04T06:53:41Z"
 ---
 
 # Signals
 
-**As of `2026-09-04T05:04:33Z`**
+**As of `2026-09-04T06:53:41Z`**
 
 ## Actionable trade signals
-
-### [UBER — Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e)
-
-- **Action:** Buy
-- **State:** Pending validated order
-- **Strategy:** Uber bounded baseline allocation
-- **Strategy research:** [Open strategy page](strategies/strategy_e4ada1a4934691d1f7ee)
-- **Window:** `2026-09-03T21:42:57Z` to `2026-09-04T21:41:23Z`
-- **Market data:** `2026-09-03T21:34:54Z`
-- **Current → target:** 0% → 1.967372%
-- **Copy-ready quantity:** 3
-- **Order:** market
-- **Entry:** Open only while current allocation plan, allocation\_intent\_5988db00b0dab41c4d78, assessment\_7fe1690682aa6c66e233 and Mobility-platform network economics and autonomy to Uber remain current, fresh UBER and USD/EUR inputs are available, and deterministic code derives a positive whole-share delta toward the persisted three-share target.
-- **Exit:** Reduce or close only when a current deterministic allocation plan directs reduce or close, the starter eligibility frontier no longer clears, a hard blocker appears, or material autonomy, insurance, regulatory, operating or valuation evidence invalidates the bounded thesis.
-- **Invalidation:** Do not increase exposure if autonomous fleets bypass Uber, trip or bookings growth stops producing free cash flow, insurance or regulation structurally compresses marketplace economics, incentives or dilution absorb value, the assessment or relationship is superseded, or market and FX inputs become stale.
-- **Rationale:** Open only the deterministic current-plan whole-share delta toward Uber's persisted three-share starter target. The accepted relationship, 84 quality score, 17.72% base return, 12.07% confidence-adjusted expected return and 15.06% margin of safety support bounded baseline exposure; medium confidence, a 28.06% bear loss, autonomy disintermediation, insurance, regulation, incentives, dilution and insufficient diversification bar conviction sizing.
 
 ### [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4)
 
@@ -41,7 +25,7 @@ as_of: "2026-09-04T05:04:33Z"
 - **Strategy research:** [Open strategy page](strategies/strategy_8caa208dfc702a2584a7)
 - **Window:** `2026-09-04T00:01:53Z` to `2026-09-05T00:15:00Z`
 - **Market data:** `2026-09-03T23:56:03Z`
-- **Current → target:** 0% → 2.960607%
+- **Current → target:** 0% → 2.960305%
 - **Copy-ready quantity:** 8
 - **Order:** market
 - **Entry:** Open only while current allocation plan, allocation\_intent\_917ea6eb1152c64f298c, assessment\_7f28dfd9240d6099400b and Digital attention, gaming, and consumer ecosystems to Prosus remain current, a fresh PRX EUR price is available, and deterministic code derives a positive whole-share delta toward the persisted eight-share target.
@@ -51,7 +35,6 @@ as_of: "2026-09-04T05:04:33Z"
 
 ## Pending validated orders
 
-- **UBER:** Buy · Pending validated order
 - **PRX:** Buy · Pending validated order
 
 ## Research alerts — not trade signals
@@ -188,8 +171,8 @@ as_of: "2026-09-04T05:04:33Z"
 
 - Alert: `macd\_cross\_above\_signal`
 - Market date: `2026-09-03`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
 
 ### [SSUN.VI — Samsung Electronics Co., Ltd.](securities/security_d08d763780400dfbffce)
 
@@ -215,8 +198,8 @@ as_of: "2026-09-04T05:04:33Z"
 
 - Alert: `macd\_cross\_above\_signal`
 - Market date: `2026-09-03`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed NVIDIA's repeat full security review for the 2026-09-03 MACD cross. Fiscal 2027 Q2 revenue reached USD 96.221 billion and fiscal Q3 guidance reached USD 108.0 billion, while USD 279 billion of commitments, USD 105 billion of capped infrastructure guarantees, customer concentration and the Hugging Face acquisition materially increased execution and balance-sheet risk. Deterministic USD 198/USD 310.50/USD 448 scenarios at the fresh USD 228.4499969482422 mark produce USD 304.25 probability-weighted fair value, 33.1801% expected return, 24.8851% confidence-adjusted expected return and a USD 248.40 buy-below price. The assessment is Buy/Initiate, baseline conviction and allocation-eligible. Three accepted idea edges were preserved, AI infrastructure power was retained as a candidate requiring relationship review, four dependent follow-ups were enqueued, and no strategy, signal, order or accounting state changed.
 
 ### [LAC — Lithium Americas Corp.](securities/security_fb87fac302a5446a1ced)
 
@@ -268,6 +251,7 @@ as_of: "2026-09-04T05:04:33Z"
 
 - **Cancelled:** [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4) — [Prosus bounded baseline allocation](strategies/strategy_8caa208dfc702a2584a7) · created `2026-09-03T22:09:24Z`
 - **Cancelled:** [TCEHY — Tencent Holdings Limited](securities/security_de0d83229b369a426b99) — [Tencent bounded baseline allocation](strategies/strategy_ef910e9aff5203a0b901) · created `2026-09-03T21:57:35Z`
+- **Cancelled:** [UBER — Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e) — [Uber bounded baseline allocation](strategies/strategy_e4ada1a4934691d1f7ee) · created `2026-09-03T21:42:57Z`
 - **Cancelled:** [ISRG — Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349) — [Intuitive Surgical valuation watch](strategies/strategy_bd005fc3733b1475b6f9) · created `2026-07-28T08:22:44Z`
 - **Cancelled:** [ISRG — Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349) — [Intuitive Surgical valuation watch](strategies/strategy_bd005fc3733b1475b6f9) · created `2026-07-28T07:47:48Z`
 - **Cancelled:** [ISRG — Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349) — [Intuitive Surgical valuation watch](strategies/strategy_bd005fc3733b1475b6f9) · created `2026-07-28T07:14:44Z`
