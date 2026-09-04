@@ -22,6 +22,7 @@ from papertrader.investor_pages import (
     _system_status_page,
     _utc_day,
 )
+from papertrader.tables import read_table
 
 
 def test_market_signal_detail_has_no_empty_limit_suffix() -> None:
@@ -280,12 +281,17 @@ def test_model_portfolio_omits_comparison_benchmark_and_status_uses_snapshot_bac
 
     model_portfolio = _model_portfolio_page(snapshot, day)
     status = _system_status_page(repository_root, snapshot, day)
+    remediation_operations = [
+        operation
+        for operation in read_table(repository_root, "operations_todo")
+        if operation["source"].startswith("issue-remediation:")
+    ]
 
     assert "Comparison-only research benchmark" not in model_portfolio
     assert "Research comparison benchmark" not in model_portfolio
     assert "## Sequential research backlog" in status
-    assert "Queued remediation operations:" in status
-    assert "duplicate-assessment incident" in status
+    assert f"Queued remediation operations: {len(remediation_operations)}" in status
+    assert all(operation["prompt"] in status for operation in remediation_operations)
     assert "Active research work" not in status
     assert str(snapshot.coverage.research_backlog_count) in status
 
