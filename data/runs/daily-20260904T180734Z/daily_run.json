@@ -8,6 +8,15 @@
       "profile": "",
       "recorded_at": "2026-09-04T18:09:11Z",
       "terminal_status": ""
+    },
+    {
+      "index": 1,
+      "kind": "operation",
+      "operation_id": "01M1NK3K883BRW5XXCEPAM2RB2",
+      "operation_type": "strategy_research",
+      "profile": "deep",
+      "recorded_at": "2026-09-04T18:17:53Z",
+      "terminal_status": "succeeded"
     }
   ],
   "completed_at": "",
@@ -21,12 +30,33 @@
   "finalization_commit_identity": "",
   "maximum_operations": 5,
   "model_budget_limit": "100",
-  "model_budget_used": "0",
-  "next_checkpoint_index": 1,
+  "model_budget_used": "5",
+  "next_checkpoint_index": 2,
   "operating_date": "2026-09-04",
-  "operation_count": 0,
-  "operations_accepted": [],
-  "operations_attempted": [],
+  "operation_count": 1,
+  "operations_accepted": [
+    {
+      "auxiliary_models": {
+        "web_extract": "openai-codex:gpt-5.6-luna"
+      },
+      "checkpoint_index": 1,
+      "effective_model": "gpt-5.6-sol",
+      "escalation_source": "",
+      "maximum_turns": 160,
+      "mutation_policy": "full_research",
+      "operation_id": "01M1NK3K883BRW5XXCEPAM2RB2",
+      "profile": "deep",
+      "profile_policy_version": "profile-router-v1",
+      "reasoning_effort": "medium",
+      "route_reason": "full_strategy_or_execution_decision",
+      "terminal_status": "succeeded",
+      "timeout_seconds": 1800,
+      "weighted_cost": "5"
+    }
+  ],
+  "operations_attempted": [
+    "01M1NK3K883BRW5XXCEPAM2RB2"
+  ],
   "originating_github_run_id": "33903218334",
   "podcast_audio_path": "",
   "podcast_commit_identity": "",
@@ -77,7 +107,7 @@
     "01M1NK3K88CS73P3W3CGN56529:rebound:allocation_plan_ac27b0db96445ca0a63e",
     "01M1NK3K883BRW5XXCEPAM2RB2:rebound:allocation_plan_ac27b0db96445ca0a63e"
   ],
-  "remaining_operations": 5,
+  "remaining_operations": 4,
   "report_path": "",
   "research_cutoff_at": "",
   "run_id": "daily-20260904T180734Z",
@@ -87,7 +117,7 @@
   "status": "running",
   "trigger": "schedule",
   "weighted_model_budget": "100",
-  "weighted_model_budget_used": "0",
+  "weighted_model_budget_used": "5",
   "workflow_attempts": [
     {
       "github_run_id": "33903218334",

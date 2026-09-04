@@ -3222,3 +3222,15 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Updated [[securities/security_dfa34d4b9050964b465e|Intel Corporation]] for the 2026-09-03 bullish-MACD transition using unchanged second-quarter operating evidence and the August equity-offering filing.
 - Incorporated the completed USD 20 billion base offering and exercised over-allotment, refreshed diluted earnings-multiple scenarios, moved the deterministic conclusion from Sell / Avoid to Hold / Watch, and classified the crossover as noise with modest timing improvement.
 - Rechecked the complete idea catalog, preserved the rejected Terafab edge, and identified [[ideas/idea_ai_compute_networking_hyperscaler_monetization]] as one candidate edge requiring bounded relationship review.
+
+## [2026-09-04] update | Uber baseline strategy current-plan refresh
+- Rebound [[strategies/strategy_e4ada1a4934691d1f7ee]] to current plan
+  `allocation_plan_ac27b0db96445ca0a63e` and allocation intent
+  `allocation_intent_4a4fb498e6cf94a54ed7` while preserving assessment
+  `assessment_7fe1690682aa6c66e233` and the accepted mobility-platform relationship.
+- Retained the allocator-owned two-share target, 1.31% current target and 2% starter ceiling without
+  treating the target as an order or fill; refreshed USD 75.96 and USD/EUR 0.8608999848365784 inputs
+  were retrieved at 2026-09-04T18:07:35Z.
+- Refreshed the scenario-return chart and retained ready long-equity baseline treatment because the
+  starter frontier clears while medium confidence, the material bear case and insufficient
+  diversification continue to bar conviction sizing.

@@ -1,0 +1,9 @@
+{
+  "strategy_id": "strategy_e4ada1a4934691d1f7ee",
+  "signal_type": "open",
+  "rationale": "Open only the deterministic current-plan whole-share delta toward Uber's persisted two-share starter target. The accepted relationship, 84 quality score, 18.48% base return, 12.63% confidence-adjusted expected return, 15.60% margin of safety and starter payoff ratios support bounded baseline exposure; medium confidence, a 27.59% bear loss, autonomy disintermediation, insurance, regulation, incentives, dilution and insufficient diversification bar conviction sizing.",
+  "market_data_as_of": "2026-09-04T18:07:35Z",
+  "run_id": "daily-20260904T180734Z",
+  "order_request_path": "",
+  "expires_at": "2026-09-05T18:07:35Z"
+}

@@ -1,0 +1,21 @@
+{
+  "entity_id": "strategy_e4ada1a4934691d1f7ee",
+  "entity_type": "strategy",
+  "inputs": {
+    "action": "open",
+    "allocation_intent_id": "allocation_intent_4a4fb498e6cf94a54ed7",
+    "allocation_plan_id": "allocation_plan_ac27b0db96445ca0a63e",
+    "signal_id": "signal_71871a6ce787558bfc90",
+    "strategy_id": "strategy_e4ada1a4934691d1f7ee",
+    "target_quantity": "2"
+  },
+  "objective": "Review the current Uber baseline signal and create at most its deterministic pending paper order.",
+  "operation_id": "01M1PT2VBRPJQES9ZNAVSMNBMS",
+  "operation_type": "execute_strategy",
+  "payload_version": 1,
+  "source_refs": [
+    "data/market/fx/USD_EUR.csv",
+    "data/market/latest.csv",
+    "source_uber_q2_2026_10q"
+  ]
+}

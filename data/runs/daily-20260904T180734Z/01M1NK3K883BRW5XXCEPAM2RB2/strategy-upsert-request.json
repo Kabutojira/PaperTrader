@@ -1,0 +1,41 @@
+{
+  "strategy": {
+    "strategy_id": "strategy_e4ada1a4934691d1f7ee",
+    "idea_id": "idea_mobility_platform_autonomy",
+    "security_id": "security_e4822686f60a96824b6e",
+    "relationship_id": "relationship_d403f81ae5b27c9643dd",
+    "name": "Uber bounded baseline allocation",
+    "status": "ready",
+    "direction": "long",
+    "instrument_type": "equity",
+    "thesis": "Uber's scaled demand, dispatch, payments, delivery, advertising and membership network supports cash generation and may distribute autonomous supply; the current plan's starter economics justify only bounded long-equity exposure because medium confidence, a material bear case, autonomy disintermediation, insurance, regulation, incentives and dilution prevent conviction treatment.",
+    "entry_rule": "Open only while allocation_plan_ac27b0db96445ca0a63e, allocation_intent_4a4fb498e6cf94a54ed7, assessment_7fe1690682aa6c66e233 and relationship_d403f81ae5b27c9643dd remain current, fresh UBER and USD/EUR inputs are available, and deterministic code derives a positive whole-share delta toward the persisted two-share target.",
+    "exit_rule": "Reduce or close only when a current deterministic allocation plan directs reduce or close, the starter eligibility frontier no longer clears, a hard blocker appears, or material autonomy, insurance, regulatory, operating or valuation evidence invalidates the bounded thesis.",
+    "invalidation": "Do not increase exposure if autonomous fleets bypass Uber, trip or bookings growth stops producing free cash flow, insurance or regulation structurally compresses marketplace economics, incentives or dilution absorb value, the assessment or relationship is superseded, or market and FX inputs become stale.",
+    "risk_budget_pct": "2",
+    "sleeve": "baseline",
+    "allocation_plan_id": "allocation_plan_ac27b0db96445ca0a63e",
+    "allocation_intent_id": "allocation_intent_4a4fb498e6cf94a54ed7",
+    "not_before": "",
+    "expires_at": "2026-09-27T19:27:50Z",
+    "research_page": "data/wiki/strategies/strategy_e4ada1a4934691d1f7ee.md"
+  },
+  "legs": [
+    {
+      "leg_id": "leg_uber_equity",
+      "action": "buy",
+      "side": "long",
+      "instrument_type": "equity",
+      "security_id": "security_e4822686f60a96824b6e",
+      "provider_contract_id": "",
+      "option_type": "",
+      "expiry": "",
+      "strike": "",
+      "quantity": "2",
+      "contract_multiplier": "1",
+      "order_type": "market",
+      "limit_price": "",
+      "currency": "USD"
+    }
+  ]
+}
