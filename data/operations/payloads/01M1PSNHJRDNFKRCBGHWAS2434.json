@@ -1,0 +1,20 @@
+{
+  "entity_id": "relationship_ee0261f8d8c880dcdc0d",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_commercial_space_infrastructure",
+    "maintenance_mode": "refresh",
+    "relationship_id": "relationship_ee0261f8d8c880dcdc0d",
+    "security_id": "security_33d9c44facc75c726c7d"
+  },
+  "objective": "Review the canonical relationship from idea_commercial_space_infrastructure to security_33d9c44facc75c726c7d and accept or reject it with current evidence.",
+  "operation_id": "01M1PSNHJRDNFKRCBGHWAS2434",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_nvda_huggingface_20260903_8k",
+    "source_nvda_q2_fy2027_10q",
+    "source_nvda_q2_fy2027_cfo",
+    "source_nvda_q2_fy2027_release"
+  ]
+}

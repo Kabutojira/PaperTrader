@@ -3191,6 +3191,28 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 
 - Generated canonical [[daily-reports/daily-report_20260904]] for run `daily-20260904T060928Z`.
 
+- Created candidate packet [[inbox/market-security_0c8b3c4291cd97f56d8c-bollinger_above_upper-df9c6d8c9a6e]] (df9c6d8c9a6e).
+
+- Created candidate packet [[inbox/market-security_0c8b3c4291cd97f56d8c-macd_cross_above_signal-ba4907310fc1]] (ba4907310fc1).
+
+- Classified [[inbox/market-security_0c8b3c4291cd97f56d8c-macd_cross_above_signal-ba4907310fc1]] as `ingest`: Material MACD bullish crossover with approximately 30.4% period return merits durable wiki review.
+
+- Created candidate packet [[inbox/market-security_0c8b3c4291cd97f56d8c-volume_anomaly-6d5dd0775b88]] (6d5dd0775b88).
+
+- Classified [[inbox/market-security_0c8b3c4291cd97f56d8c-volume_anomaly-6d5dd0775b88]] as `ingest`: Material volume anomaly with a new transition and approximately 30% period return warrants durable review.
+
+- Created candidate packet [[inbox/market-security_567d0d575bbd30aaa91d-macd_cross_above_signal-59884e1ba540]] (59884e1ba540).
+
+- Classified [[inbox/market-security_567d0d575bbd30aaa91d-macd_cross_above_signal-59884e1ba540]] as `ingest`: Material 17.6% period return with a newly entered bullish MACD crossover warrants durable wiki review.
+
+- Created candidate packet [[inbox/market-security_cc4dcb8f002b61dffe00-macd_cross_above_signal-1e732af3ecfc]] (1e732af3ecfc).
+
+- Classified [[inbox/market-security_cc4dcb8f002b61dffe00-macd_cross_above_signal-1e732af3ecfc]] as `ingest`: New bullish MACD signal after a material one-month decline warrants evidence-linked wiki review.
+
+- Created candidate packet [[inbox/market-security_d08d763780400dfbffce-macd_cross_above_signal-f92ad63c5616]] (f92ad63c5616).
+
+- Classified [[inbox/market-security_d08d763780400dfbffce-macd_cross_above_signal-f92ad63c5616]] as `ingest`: Material bullish MACD crossover with a 16.7% period return warrants durable review.
+
 ## [2026-09-04] update | NVIDIA MACD-transition security review
 - Updated [[securities/security_33d9c44facc75c726c7d|NVIDIA Corporation]] for the 2026-09-03 MACD transition using fiscal 2027 Q2 filings and the September Hugging Face acquisition filing.
 - Reframed the assessment around USD 279 billion of commitments and USD 105 billion of capped guarantees, refreshed earnings-multiple scenarios, preserved three accepted idea edges, and identified [[ideas/idea_ai_infrastructure_power]] as a candidate edge requiring relationship review.

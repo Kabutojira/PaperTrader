@@ -1,0 +1,20 @@
+{
+  "entity_id": "relationship_3759a9b67ee91c491ab5",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_wide_bandgap_power_semiconductors",
+    "maintenance_mode": "refresh",
+    "relationship_id": "relationship_3759a9b67ee91c491ab5",
+    "security_id": "security_dfa34d4b9050964b465e"
+  },
+  "objective": "Review the canonical relationship from idea_wide_bandgap_power_semiconductors to security_dfa34d4b9050964b465e and accept or reject it with current evidence.",
+  "operation_id": "01M1PSNHJRKX10MM67B1KPAGTE",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_intc_august_2026_equity_8k",
+    "source_intc_q2_2026_10q",
+    "source_intc_q2_2026_release",
+    "source_intc_sec_submissions_20260904"
+  ]
+}
