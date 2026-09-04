@@ -7,37 +7,55 @@ tags:
 created: "2026-09-04"
 updated: "2026-09-04"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_20ca88f4e2ca0e6458f4"
-as_of: "2026-09-04T06:53:41Z"
+snapshot_id: "decision_eea977a77cd751df755a"
+as_of: "2026-09-04T18:24:32Z"
 ---
 
 # Signals
 
-**As of `2026-09-04T06:53:41Z`**
+**As of `2026-09-04T18:24:32Z`**
 
 ## Actionable trade signals
 
-### [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4)
+### [UBER — Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e)
 
 - **Action:** Buy
-- **State:** Pending validated order
-- **Strategy:** Prosus bounded baseline allocation
-- **Strategy research:** [Open strategy page](strategies/strategy_8caa208dfc702a2584a7)
-- **Window:** `2026-09-04T00:01:53Z` to `2026-09-05T00:15:00Z`
-- **Market data:** `2026-09-03T23:56:03Z`
-- **Current → target:** 0% → 2.960305%
-- **Copy-ready quantity:** 8
-- **Order:** market
-- **Entry:** Open only while current allocation plan, allocation\_intent\_917ea6eb1152c64f298c, assessment\_7f28dfd9240d6099400b and Digital attention, gaming, and consumer ecosystems to Prosus remain current, a fresh PRX EUR price is available, and deterministic code derives a positive whole-share delta toward the persisted eight-share target.
-- **Exit:** Reduce or close only when a current deterministic allocation plan directs reduce or close, the baseline eligibility frontier no longer clears, a hard blocker appears, or material Tencent, ecommerce, private-asset, debt, repurchase, governance, capital-allocation or valuation evidence invalidates the bounded thesis.
-- **Invalidation:** Do not increase exposure if Tencent or private-platform economics deteriorate materially, private marks prove unreliable, central net debt rises, governance or cross-holding complexity blocks value transmission, repurchases lose accretion, the holding discount widens persistently despite operating value creation, the assessment or relationship is superseded, or market inputs become stale.
-- **Rationale:** Open only the deterministic current-plan whole-share delta toward Prosus's persisted eight-share baseline target. The accepted relationship, 70 quality score, 40.54% base return, 24.32% confidence-adjusted expected return and 28.85% margin of safety support bounded baseline exposure; medium confidence, Tencent concentration, private-asset valuation uncertainty, central debt, governance, capital-allocation transmission and insufficient diversification bar conviction sizing.
+- **State:** Awaiting deterministic order validation
+- **Strategy:** Uber bounded baseline allocation
+- **Strategy research:** [Open strategy page](strategies/strategy_e4ada1a4934691d1f7ee)
+- **Window:** `2026-09-04T18:14:30Z` to `2026-09-05T18:07:35Z`
+- **Market data:** `2026-09-04T18:07:35Z`
+- **Current → target:** 0% → 0%
+- **Copy-ready quantity:** Awaiting deterministic order validation
+- **Order:** not yet validated
+- **Entry:** Open only while current allocation plan, allocation\_intent\_4a4fb498e6cf94a54ed7, assessment\_7fe1690682aa6c66e233 and Mobility-platform network economics and autonomy to Uber remain current, fresh UBER and USD/EUR inputs are available, and deterministic code derives a positive whole-share delta toward the persisted two-share target.
+- **Exit:** Reduce or close only when a current deterministic allocation plan directs reduce or close, the starter eligibility frontier no longer clears, a hard blocker appears, or material autonomy, insurance, regulatory, operating or valuation evidence invalidates the bounded thesis.
+- **Invalidation:** Do not increase exposure if autonomous fleets bypass Uber, trip or bookings growth stops producing free cash flow, insurance or regulation structurally compresses marketplace economics, incentives or dilution absorb value, the assessment or relationship is superseded, or market and FX inputs become stale.
+- **Rationale:** Open only the deterministic current-plan whole-share delta toward Uber's persisted two-share starter target. The accepted relationship, 84 quality score, 18.48% base return, 12.63% confidence-adjusted expected return, 15.60% margin of safety and starter payoff ratios support bounded baseline exposure; medium confidence, a 27.59% bear loss, autonomy disintermediation, insurance, regulation, incentives, dilution and insufficient diversification bar conviction sizing.
 
 ## Pending validated orders
 
-- **PRX:** Buy · Pending validated order
+No pending orders.
 
 ## Research alerts — not trade signals
+
+### [108490 — ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-09-04`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### [108490 — ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-09-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
 
 ### [VLO — Valero Energy Corporation](securities/security_c5a9e460d3350284d157)
 
@@ -147,6 +165,42 @@ as_of: "2026-09-04T06:53:41Z"
 - Research status: `skipped`
 - Conclusion: Queue triage disposition
 
+### [SSUN.VI — Samsung Electronics Co., Ltd.](securities/security_d08d763780400dfbffce)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-09-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [SSU.VI — Samsung Electronics Co., Ltd.](securities/security_567d0d575bbd30aaa91d)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-09-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [PARRO.PA — Parrot S.A.](securities/security_cc4dcb8f002b61dffe00)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-09-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [108490 — ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-09-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
 ### [WTI — W&amp;T Offshore, Inc.](securities/security_61567714298b9563d1a9)
 
 **Research alert — not a trade signal**
@@ -174,24 +228,6 @@ as_of: "2026-09-04T06:53:41Z"
 - Research status: `skipped`
 - Conclusion: Queue triage disposition
 
-### [SSUN.VI — Samsung Electronics Co., Ltd.](securities/security_d08d763780400dfbffce)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_below\_signal`
-- Market date: `2026-09-03`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
-### [SSU.VI — Samsung Electronics Co., Ltd.](securities/security_567d0d575bbd30aaa91d)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_below\_signal`
-- Market date: `2026-09-03`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
 ### [NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d)
 
 **Research alert — not a trade signal**
@@ -211,15 +247,6 @@ as_of: "2026-09-04T06:53:41Z"
 - Conclusion: bearish\_alert\_unowned
 
 ### [INTC — Intel Corporation](securities/security_dfa34d4b9050964b465e)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-09-03`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [FUC.F — Fanuc Corporation](securities/security_96ba305ee7cd586bc348)
 
 **Research alert — not a trade signal**
 
@@ -249,6 +276,7 @@ as_of: "2026-09-04T06:53:41Z"
 
 ## Recently expired or completed signals
 
+- **Filled:** [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4) — [Prosus bounded baseline allocation](strategies/strategy_8caa208dfc702a2584a7) · created `2026-09-04T00:01:53Z`
 - **Cancelled:** [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4) — [Prosus bounded baseline allocation](strategies/strategy_8caa208dfc702a2584a7) · created `2026-09-03T22:09:24Z`
 - **Cancelled:** [TCEHY — Tencent Holdings Limited](securities/security_de0d83229b369a426b99) — [Tencent bounded baseline allocation](strategies/strategy_ef910e9aff5203a0b901) · created `2026-09-03T21:57:35Z`
 - **Cancelled:** [UBER — Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e) — [Uber bounded baseline allocation](strategies/strategy_e4ada1a4934691d1f7ee) · created `2026-09-03T21:42:57Z`

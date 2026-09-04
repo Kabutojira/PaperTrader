@@ -1,3 +1,5 @@
 cash_entry_id,occurred_at,entry_type,reference_id,currency,amount,fx_rate_to_base,base_amount,run_id,notes
 cash_1d85dc44518ea7cc1ff6,2026-07-24T21:51:21Z,initial_capital,,EUR,100000,1,100000,gha-30129065584-1,Configured initial paper capital
 cash_8de8f91bc9edde7d089e,2026-07-28T12:00:00Z,capital_withdrawal,performance_epoch_f20320f2ff68cb5015b6,EUR,-90000,1,-90000,local-20260728-plan-implementation,External capital flow starting performance epoch: Resize the model portfolio and begin a new performance epoch
+cash_0a16313c223562de8bd1,2026-09-04T07:00:00Z,buy,execution_463ec56507f69fcf538f,EUR,-295.947887786865236376,1,-295.947887786865236376,daily-20260904T180734Z,Paper buy for order order_ba5e4e96c8cfa532417d leg leg_prosus_equity
+cash_de89bab5498f4a777f3b,2026-09-04T07:00:00Z,fee,execution_463ec56507f69fcf538f,EUR,-1.0295947887786865236376,1,-1.0295947887786865236376,daily-20260904T180734Z,Paper execution fee for execution_463ec56507f69fcf538f

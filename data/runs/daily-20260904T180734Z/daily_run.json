@@ -26,21 +26,33 @@
       "profile": "deep",
       "recorded_at": "2026-09-04T18:24:12Z",
       "terminal_status": "blocked"
+    },
+    {
+      "index": 3,
+      "kind": "finalization",
+      "operation_id": "",
+      "operation_type": "",
+      "profile": "",
+      "recorded_at": "2026-09-04T18:24:56Z",
+      "terminal_status": ""
     }
   ],
-  "completed_at": "",
+  "completed_at": "2026-09-04T18:24:32Z",
   "completion_at": "",
   "daily_cycle_id": "daily-20260904T180734Z",
   "daily_run_version": 2,
-  "fill_outcomes": [],
-  "final_commit_identity": "",
+  "fill_outcomes": [
+    "order_ba5e4e96c8cfa532417d:filled:execution_463ec56507f69fcf538f"
+  ],
+  "final_commit_identity": "daily-20260904T180734Z:checkpoint-003",
   "final_commit_sha": "",
-  "finalization_at": "",
-  "finalization_commit_identity": "",
+  "finalization_at": "2026-09-04T18:24:32Z",
+  "finalization_commit_identity": "daily-20260904T180734Z:checkpoint-003",
+  "finalization_status": "degraded",
   "maximum_operations": 5,
   "model_budget_limit": "100",
   "model_budget_used": "10",
-  "next_checkpoint_index": 3,
+  "next_checkpoint_index": 4,
   "operating_date": "2026-09-04",
   "operation_count": 2,
   "operations_accepted": [
@@ -136,10 +148,10 @@
     "01M1NK3K883BRW5XXCEPAM2RB2:rebound:allocation_plan_ac27b0db96445ca0a63e"
   ],
   "remaining_operations": 3,
-  "report_path": "",
-  "research_cutoff_at": "",
+  "report_path": "data/wiki/daily-reports/daily-report_20260904.md",
+  "research_cutoff_at": "2026-09-04T18:24:32Z",
   "run_id": "daily-20260904T180734Z",
-  "snapshot_id": "",
+  "snapshot_id": "decision_eea977a77cd751df755a",
   "source_sha": "d07d75ce258ac2ffeb52c13330d35b16ad48a5f1",
   "started_at": "2026-09-04T18:07:34Z",
   "status": "degraded",

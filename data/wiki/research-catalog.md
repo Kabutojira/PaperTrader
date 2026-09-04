@@ -7,8 +7,8 @@ tags:
 created: "2026-09-04"
 updated: "2026-09-04"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_20ca88f4e2ca0e6458f4"
-as_of: "2026-09-04T06:53:41Z"
+snapshot_id: "decision_eea977a77cd751df755a"
+as_of: "2026-09-04T18:24:32Z"
 ---
 
 # Research catalog
@@ -22,6 +22,9 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Candidate
 
+- [108490 — Bollinger above upper](inbox/market-security_0c8b3c4291cd97f56d8c-bollinger_above_upper-df9c6d8c9a6e)
+- [108490 — MACD cross above signal](inbox/market-security_0c8b3c4291cd97f56d8c-macd_cross_above_signal-ba4907310fc1)
+- [108490 — Volume anomaly](inbox/market-security_0c8b3c4291cd97f56d8c-volume_anomaly-6d5dd0775b88)
 - [ABBNY — Bollinger below lower](inbox/market-security_c120e9f26ebb6159adf9-bollinger_below_lower-6a3624365553)
 - [ABBNY — MACD cross above signal](inbox/market-security_c120e9f26ebb6159adf9-macd_cross_above_signal-9dc4f63596a7)
 - [ABBNY — MACD cross below signal](inbox/market-security_c120e9f26ebb6159adf9-macd_cross_below_signal-b88c9242f90e)
@@ -279,6 +282,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PARRO.PA — Bollinger below lower](inbox/market-security_cc4dcb8f002b61dffe00-bollinger_below_lower-8276293d6517)
 - [PARRO.PA — Bollinger below lower](inbox/market-security_cc4dcb8f002b61dffe00-bollinger_below_lower-8aa8cc16d6a0)
 - [PARRO.PA — Bollinger below lower](inbox/market-security_cc4dcb8f002b61dffe00-bollinger_below_lower-a7f6f5166f84)
+- [PARRO.PA — MACD cross above signal](inbox/market-security_cc4dcb8f002b61dffe00-macd_cross_above_signal-1e732af3ecfc)
 - [PARRO.PA — MACD cross above signal](inbox/market-security_cc4dcb8f002b61dffe00-macd_cross_above_signal-3bcfd60d76b5)
 - [PARRO.PA — MACD cross below signal](inbox/market-security_cc4dcb8f002b61dffe00-macd_cross_below_signal-98a764a2953d)
 - [PARRO.PA — Volume anomaly](inbox/market-security_cc4dcb8f002b61dffe00-volume_anomaly-3d9ce6b8fa8c)
@@ -420,11 +424,13 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [SSU.VI — Bollinger above upper](inbox/market-security_567d0d575bbd30aaa91d-bollinger_above_upper-8c1924be2a50)
 - [SSU.VI — Bollinger below lower](inbox/market-security_567d0d575bbd30aaa91d-bollinger_below_lower-917454ed7e3a)
 - [SSU.VI — MACD cross above signal](inbox/market-security_567d0d575bbd30aaa91d-macd_cross_above_signal-347a0faa1d0e)
+- [SSU.VI — MACD cross above signal](inbox/market-security_567d0d575bbd30aaa91d-macd_cross_above_signal-59884e1ba540)
 - [SSU.VI — MACD cross below signal](inbox/market-security_567d0d575bbd30aaa91d-macd_cross_below_signal-96c9fd7ac047)
 - [SSU.VI — Volume anomaly](inbox/market-security_567d0d575bbd30aaa91d-volume_anomaly-58db175775da)
 - [SSUN.VI — Bollinger above upper](inbox/market-security_d08d763780400dfbffce-bollinger_above_upper-0a5c0bb49ecc)
 - [SSUN.VI — Bollinger above upper](inbox/market-security_d08d763780400dfbffce-bollinger_above_upper-4d2ca04277e3)
 - [SSUN.VI — MACD cross above signal](inbox/market-security_d08d763780400dfbffce-macd_cross_above_signal-5f77e49fc4fd)
+- [SSUN.VI — MACD cross above signal](inbox/market-security_d08d763780400dfbffce-macd_cross_above_signal-f92ad63c5616)
 - [SSUN.VI — MACD cross below signal](inbox/market-security_d08d763780400dfbffce-macd_cross_below_signal-d191e2528fda)
 - [SU — Bollinger above upper](inbox/market-security_dc8486c1d61df62a22fd-bollinger_above_upper-15c4988e4d0d)
 - [SU — Bollinger above upper](inbox/market-security_dc8486c1d61df62a22fd-bollinger_above_upper-885d2463351c)
@@ -624,6 +630,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader daily research podcast — 2026-09-01T181335Z](podcasts/daily-podcast_20260901T181335Z)
 - [PaperTrader daily research podcast — 2026-09-02T182643Z](podcasts/daily-podcast_20260902T182643Z)
 - [PaperTrader daily research podcast — 2026-09-03T182402Z](podcasts/daily-podcast_20260903T182402Z)
+- [PaperTrader daily research podcast — 2026-09-04T060928Z](podcasts/daily-podcast_20260904T060928Z)
 
 ## Relationship
 
@@ -781,12 +788,3 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
-
-## Inbox
-
-- [[inbox/market-security_0c8b3c4291cd97f56d8c-bollinger_above_upper-df9c6d8c9a6e|108490 — Bollinger above upper]]
-- [[inbox/market-security_0c8b3c4291cd97f56d8c-macd_cross_above_signal-ba4907310fc1|108490 — MACD cross above signal]]
-- [[inbox/market-security_0c8b3c4291cd97f56d8c-volume_anomaly-6d5dd0775b88|108490 — Volume anomaly]]
-- [[inbox/market-security_567d0d575bbd30aaa91d-macd_cross_above_signal-59884e1ba540|SSU.VI — MACD cross above signal]]
-- [[inbox/market-security_cc4dcb8f002b61dffe00-macd_cross_above_signal-1e732af3ecfc|PARRO.PA — MACD cross above signal]]
-- [[inbox/market-security_d08d763780400dfbffce-macd_cross_above_signal-f92ad63c5616|SSUN.VI — MACD cross above signal]]

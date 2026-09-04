@@ -3213,6 +3213,10 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 
 - Classified [[inbox/market-security_d08d763780400dfbffce-macd_cross_above_signal-f92ad63c5616]] as `ingest`: Material bullish MACD crossover with a 16.7% period return warrants durable review.
 
+- Published investor decision snapshot `decision_eea977a77cd751df755a`.
+
+- Generated canonical [[daily-reports/daily-report_20260904]] for run `daily-20260904T180734Z`.
+
 ## [2026-09-04] update | NVIDIA MACD-transition security review
 - Updated [[securities/security_33d9c44facc75c726c7d|NVIDIA Corporation]] for the 2026-09-03 MACD transition using fiscal 2027 Q2 filings and the September Hugging Face acquisition filing.
 - Reframed the assessment around USD 279 billion of commitments and USD 105 billion of capped guarantees, refreshed earnings-multiple scenarios, preserved three accepted idea edges, and identified [[ideas/idea_ai_infrastructure_power]] as a candidate edge requiring relationship review.

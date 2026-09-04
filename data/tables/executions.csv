@@ -1,1 +1,2 @@
 execution_id,order_id,leg_id,executed_at,security_id,provider_contract_id,side,quantity,fill_price,contract_multiplier,fees,currency,fx_rate_to_base,cash_effect,source_bar_time,run_id
+execution_463ec56507f69fcf538f,order_ba5e4e96c8cfa532417d,leg_prosus_equity,2026-09-04T07:00:00Z,security_8b703a8adf5f864acaa4,,buy,8,36.993485973358154547,1,1.0295947887786865236376,EUR,1,-295.947887786865236376,2026-09-04T07:00:00Z,daily-20260904T180734Z
