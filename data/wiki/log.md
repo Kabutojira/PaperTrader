@@ -3160,3 +3160,13 @@ boundary after the combined log crossed the configured 5,000-line threshold.
   invalidation.
 - Added the `prosus-baseline-scenario-returns` visual-evidence chart from the canonical current-plan
   scenarios and recorded the fresh EUR-denominated PRX observation from 2026-09-03T21:34:54Z.
+
+## [2026-09-03] update | Prosus bounded baseline allocation
+
+- Rebound [[strategies/strategy_8caa208dfc702a2584a7]] to current plan
+  `allocation_plan_e4058ec47b1105523cd9` and unchanged intent
+  `allocation_intent_917ea6eb1152c64f298c` after the earlier signal was cancelled.
+- Retained the deterministic eight-share target and 5% maximum-position ceiling without treating
+  either as an order or fill; the allocator-owned current target is 2.96%.
+- Refreshed the scenario-return chart and entry evidence at the EUR 37 PRX mark retrieved on
+  2026-09-03T23:56:03Z; the relationship, assessment and baseline risk posture remain unchanged.
