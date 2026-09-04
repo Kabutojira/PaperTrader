@@ -1,0 +1,54 @@
+{
+  "commands_run": [
+    "papertrader order create-baseline --request data/runs/daily-20260903T235602Z/01M1MVJ4X0RWMG40T5330D39YG/order_create_baseline_request.json",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Created pending paper order order_ba5e4e96c8cfa532417d for eight PRX shares under next_open; this is an order, not a fill, and accounting remains unchanged."
+  ],
+  "evidence": [
+    {
+      "claim": "The sole current Prosus target is allocation_plan_e4058ec47b1105523cd9 with unchanged intent allocation_intent_917ea6eb1152c64f298c, immutable assessment assessment_7f28dfd9240d6099400b, accepted relationship relationship_e514a92bf6c38d0754ee, open disposition, and persisted target quantity 8.",
+      "observed_at": "2026-09-03T23:56:03Z",
+      "source": "data/tables/allocation_targets.csv"
+    },
+    {
+      "claim": "Signal signal_d603cd3f5522309c58f6 matched the current allocation intent, requested open, was unexpired and ready before the order command, and is now ordered.",
+      "observed_at": "2026-09-04T00:01:53Z",
+      "source": "data/tables/signals.csv"
+    },
+    {
+      "claim": "The order reference used the identity-matched PRX mark of EUR 37 retrieved at 2026-09-03T23:56:03Z; no FX conversion was required because the instrument and portfolio base currency are EUR.",
+      "observed_at": "2026-09-03T23:56:03Z",
+      "source": "data/market/latest.csv and config.ini"
+    },
+    {
+      "claim": "The audited deterministic create-baseline command exited zero, created order_ba5e4e96c8cfa532417d, reported no risk violations, and changed only orders, order legs, and signal state; the audited strict portfolio reconciliation also exited zero with no changed paths.",
+      "observed_at": "2026-09-04T00:07:48Z",
+      "source": "data/runs/daily-20260903T235602Z/01M1MVJ4X0RWMG40T5330D39YG/command_audit.json"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260903T235602Z/01M1MVJ4X0RWMG40T5330D39YG/order_create_baseline_request.json",
+    "data/tables/order_legs.csv",
+    "data/tables/orders.csv",
+    "data/tables/signals.csv"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M1MVJ4X0RWMG40T5330D39YG",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Created pending paper order order_ba5e4e96c8cfa532417d for the current Prosus baseline open signal. Deterministic code derived the eight-share long-equity leg, accepted the order with no risk violations, and left it pending under next_open; no fill or accounting state was changed.",
+  "validation": {
+    "checks": [
+      "Validated the running queue row, run binding, live lease, payload identity, and required preflight skill hashes.",
+      "Matched strategy, signal, canonical equity leg, current allocation plan and intent, immutable assessment, accepted relationship, open disposition, and target quantity before ordering.",
+      "Confirmed the signal had no prior order and the current portfolio had no Prosus position before the deterministic attempt.",
+      "The deterministic baseline command derived quantity 8, returned created=true, and reported an empty risk_violations list.",
+      "Verified order_ba5e4e96c8cfa532417d is pending with next_open and its signal is ordered.",
+      "Strict portfolio reconciliation passed after order creation with no changed paths.",
+      "Verified no executions, cash ledger, portfolio, performance, allocation target, or allocation history file changed."
+    ],
+    "passed": true
+  }
+}
