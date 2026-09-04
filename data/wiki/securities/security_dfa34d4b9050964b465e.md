@@ -4,12 +4,12 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-08-06"
-updated: "2026-08-06"
-provenance: "source_intc_q2_2026_10q_sec; source_intc_q2_2026_results_sec_ex99_1; deterministic market and FX caches"
+updated: "2026-09-04"
+provenance: "Intel Q2 2026 Form 10-Q and results release; August 2026 equity-offering Form 8-K; canonical market and FX caches"
 security_id: security_dfa34d4b9050964b465e
 issuer_id: issuer_e5ff2f53cd2ac8db4f85
 confidence: medium
-next_review: "2026-08-20"
+next_review: "2026-10-04"
 ---
 
 # Intel Corporation common stock
@@ -44,6 +44,67 @@ This deterministic monitoring chart is derived from the repository-local market 
 ```
 <!-- papertrader:technical-chart:end -->
 
+```echart
+{
+  "schema_version": 1,
+  "chart_id": "intc-q2-operating-recovery-2026",
+  "kind": "series",
+  "title": "Second-quarter revenue, gross profit, and GAAP operating income",
+  "description": "Intel's second-quarter comparison shows materially higher revenue and gross profit and a swing to positive GAAP operating income, supporting operational recovery while one quarter does not establish durable foundry economics.",
+  "as_of": "2026-06-27",
+  "sources": [
+    {
+      "label": "Intel second-quarter 2026 Form 10-Q",
+      "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000108/intc-20260627.htm",
+      "observed_at": "2026-09-04T06:38:08Z"
+    }
+  ],
+  "notes": [
+    "Values are GAAP USD billions for the three months ended June 28, 2025 and June 27, 2026.",
+    "The reported 2026 net loss is dominated by a non-cash mark-to-market loss; operating income is the cleaner operating comparison."
+  ],
+  "x_axis": {"type": "category", "label": "Second quarter", "values": ["2025", "2026"]},
+  "y_axes": [{"label": "USD billions", "unit": "USD bn", "format": "currency", "currency": "USD"}],
+  "series": [
+    {"name": "Revenue", "render": "bar", "y_axis": 0, "values": ["12.859", "16.128"]},
+    {"name": "Gross profit", "render": "bar", "y_axis": 0, "values": ["3.542", "6.509"]},
+    {"name": "GAAP operating income", "render": "line", "y_axis": 0, "values": ["-3.176", "1.796"]}
+  ]
+}
+```
+
+```echart
+{
+  "schema_version": 1,
+  "chart_id": "intc-scenario-values-20260904",
+  "kind": "series",
+  "title": "Scenario fair values versus the current market mark",
+  "description": "The current mark remains above both base and probability-weighted fair value after incorporating the equity raise, so the bullish MACD crossover does not create a valuation-supported entry.",
+  "as_of": "2026-09-03",
+  "sources": [
+    {
+      "label": "Intel second-quarter 2026 Form 10-Q",
+      "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000108/intc-20260627.htm",
+      "observed_at": "2026-09-04T06:38:08Z"
+    },
+    {
+      "label": "Intel August 2026 equity-offering Form 8-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/50863/000119312526346806/d117670d8k.htm",
+      "observed_at": "2026-09-04T06:38:08Z"
+    },
+    {"label": "Canonical PaperTrader market mark", "observed_at": "2026-09-04T06:09:28Z"}
+  ],
+  "notes": [
+    "Bear, base and bull probabilities are 25%, 50% and 25%; their probability-weighted fair value is USD 79.50.",
+    "Scenario values apply 16x, 20x and 25x to USD 2.00, USD 3.90 and USD 5.20 normalized forward diluted EPS, respectively.",
+    "Normalized EPS explicitly allows for the approximately 4.8% increase from the completed August offering relative to June 27 common shares outstanding."
+  ],
+  "x_axis": {"type": "category", "label": "Case", "values": ["Bear", "Weighted value", "Base", "Current mark", "Bull"]},
+  "y_axes": [{"label": "USD per share", "unit": "USD/share", "format": "currency", "currency": "USD"}],
+  "series": [{"name": "Value", "render": "bar", "y_axis": 0, "values": ["32.00", "79.50", "78.00", "91.66999816894533", "130.00"]}]
+}
+```
+
 ## Identity
 
 - Immutable security: `security_dfa34d4b9050964b465e`
@@ -51,30 +112,38 @@ This deterministic monitoring chart is derived from the repository-local market 
 - Instrument: common stock, Nasdaq Stock Market (`XNAS`), USD
 - Provider identity: `INTC` / `XNAS` / `USD` / equity
 
-The identity matches the maintained [[security-catalog|security catalog]]. No accepted investment-idea
-relationship or strategy currently links to this security.
+The identity matches the maintained [[security-catalog|security catalog]] and current SEC filing;
+the instrument, venue, currency and provider symbol are unchanged, and no duplicate identity was
+found. No accepted investment-idea relationship or strategy currently links to this security.
 
 ## Changes since prior review
 
-- **Facts and evidence changed:** this is the first completed review and first comparable assessment.
-  Intel's second-quarter Form 10-Q and SEC-filed results release establish current product and foundry
-  growth, margins, normalized earnings, liquidity, cash generation, investment requirements and risks.
-- **Assumptions and valuation changed:** the prior state was unassessed. A `mature_compounder`
-  earnings-multiple valuation now makes normalized earnings, turnaround execution and terminal-multiple
-  assumptions explicit rather than capitalizing the quarter's non-cash GAAP loss.
-- **Scenario outputs changed:** no prior outputs existed. New 12-month bear/base/bull fair values are
-  USD 33/USD 80/USD 133 with 25%/50%/25% probabilities. Their weighted value is USD 81.50 versus the
-  USD 101.06 reference mark.
-- **Thesis, catalysts and risks:** AI-led server demand, stronger client demand, better factory yields,
-  improving margins and nascent external-foundry revenue support the turnaround. Net debt, heavy
-  reinvestment, foundry execution, dilution, competition and policy dependence remain material.
-- **Blockers and gaps:** there is no missing-evidence hard blocker, but medium confidence, cyclical
-  normalization uncertainty, a negative margin of safety and no accepted relationship block allocation.
-- **Rating and action:** the initial conclusion is **Hold / Watch**. Strong momentum and execution do
-  not provide an adequate risk-adjusted entry at the current price; no strategy, signal or order is
-  justified.
-- **Unchanged conclusion:** watchlist exposure remains appropriate. Research is now complete, but paper
-  ownership requires a lower price or evidence supporting sustained earnings above the base path.
+- **Facts and evidence changed:** Intel completed a USD 20 billion underwritten offering of
+  210,526,315 shares at USD 95 and the underwriters bought 31,578,947 additional shares. The base
+  deal was expected to provide about USD 19.7 billion net; proceeds are for general purposes,
+  including capital expenditure and working capital. The current SEC index contains no newer
+  periodic operating filing, so the unchanged second-quarter filing remains the operating baseline.
+- **Assumptions and valuation changed:** normalized forward diluted EPS is revised from USD
+  1.50/USD 2.50/USD 3.50 to USD 2.00/USD 3.90/USD 5.20. The improved operating evidence supports
+  more earnings, while approximately 4.8% offering dilution and foundry execution risk constrain
+  per-share outcomes. Multiples move from 22x/32x/38x to 16x/20x/25x to avoid capitalizing one strong
+  quarter at a proven-compounder multiple. Fair values change from USD 33/USD 80/USD 133 to
+  USD 32/USD 78/USD 130 at unchanged 25%/50%/25% probabilities.
+- **Scenario outputs changed:** the lower USD 91.67 mark narrows overvaluation, but USD 79.50 weighted
+  value remains 13.28% below market and the USD 78 base value remains 14.91% below it. Bear downside
+  is 65.09%; bull upside is 41.81%.
+- **Thesis, catalysts, risks, blockers, and gaps:** stronger liquidity reduces financing risk, but
+  dilution and capital-allocation risk rise before external foundry returns are proven. DCAI demand,
+  18A yield and external 14A commitments remain catalysts. Negative expected/base return, downside
+  asymmetry, margin of safety and the missing accepted idea edge remain blockers; post-offering cash
+  deployment is a new evidence gap.
+- **Rating and portfolio action:** deterministic state changes from **Sell / Avoid** to
+  **Hold / Watch** as the lower market price and improved balance-sheet score lift the
+  confidence-adjusted expected return above the sell threshold. Conviction remains **Watch** and
+  allocation remains ineligible because the return, payoff, margin-of-safety and relationship gates
+  still fail. The bullish MACD crossover does not justify a strategy, signal or paper order.
+- **Unchanged conclusion:** product and DCAI recovery remain supported, foundry economics remain
+  unproven, and watchlist monitoring remains appropriate pending a lower price or stronger evidence.
 
 ## Current economics and thesis
 
@@ -95,24 +164,28 @@ non-operating charge, including mark-to-market losses on government-related escr
 not a useful stand-alone measure of recurring earning power.
 
 Management guided third-quarter revenue to USD 15.8-16.8 billion, GAAP gross margin to about 41% and
-non-GAAP EPS to USD 0.38. Financial capacity is adequate but not strong: cash and short-term investments
-were USD 29.7 billion against USD 50.5 billion of debt at 27 June. First-half operating cash flow was
-USD 8.1 billion. Quarterly operating cash flow was USD 7.0 billion, but company-defined adjusted free
-cash flow was negative USD 8.4 billion after capital spending, finance leases and a large net partner-
-contribution outflow. The turnaround therefore still requires disciplined capital allocation.
+non-GAAP EPS to USD 0.38. Cash and short-term investments were USD 29.7 billion against USD 50.5
+billion of debt at 27 June. First-half operating cash flow was USD 8.1 billion. Quarterly operating
+cash flow was USD 7.0 billion, but company-defined adjusted free cash flow was negative USD 8.4
+billion after capital spending, finance leases and a large net partner-contribution outflow.
 
-## Evidence and market alert
+The August offering substantially strengthens liquidity: the base offering generated approximately
+USD 19.7 billion net before the exercised over-allotment. It also issued 242,105,262 shares in total,
+about 4.8% of the 5.043 billion shares outstanding at June 27. Because proceeds may fund capital
+expenditure and working capital, the cash cannot be treated as evidence that 18A/14A or external
+foundry investment will earn its cost of capital.
 
-Primary evidence: [Q2 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/50863/000005086326000157/intc-20260627.htm)
-and [SEC-filed Q2 results release](https://www.sec.gov/Archives/edgar/data/50863/000005086326000155/q226earningsrelease.htm).
+## Alert review: opportunity, risk, or noise?
 
-The [[inbox/market-security_dfa34d4b9050964b465e-macd_cross_above_signal-181ec6e47f3f|4 August
-bullish MACD crossover]] occurred as the adjusted close declined 3.67% from 3 August to USD 101.20.
-That is a short-horizon momentum improvement, not evidence of a new fundamental catalyst. At the
-fresher 5 August USD 101.06 close, MACD was -5.25 above its -6.17 signal, RSI was 49.52 and no threshold
-alert remained active. The price stayed below the 50-day SMA of USD 111.52 but above the 200-day SMA of
-USD 67.95. The alert is therefore **constructive timing inside a still-incomplete trend recovery**, not
-a valuation-based entry signal.
+The [[inbox/market-security_dfa34d4b9050964b465e-macd_cross_above_signal-7ecada46ac6f|3 September
+bullish MACD crossover]] covers 2026-08-06 through 2026-09-03. The adjusted close fell 8.16%, from
+USD 99.81 to USD 91.67, even as MACD crossed just above its signal line at -3.031 versus -3.228.
+RSI was neutral at 45.48 and volume was not anomalous. The close remained below its 20-day and
+50-day averages of USD 94.24 and USD 101.35, while staying above the USD 73.85 200-day average.
+
+This is **noise with a modest timing improvement**, not a fundamental opportunity: one lagging
+crossover does not reverse the alert-period decline or clear the valuation frontier. The latest
+fundamental change is the equity raise, which improves liquidity but also dilutes per-share recovery.
 
 ## Valuation
 
@@ -120,21 +193,38 @@ Template: `mature_compounder`; method: `earnings_multiple`; horizon: 12 months.
 
 The cases normalize earnings around the Q2 USD 0.42 non-GAAP EPS and Q3 USD 0.38 guidance rather than
 capitalizing the escrow-share mark-to-market loss or assuming one quarter's growth persists unchanged.
-They use USD 1.50/USD 2.50/USD 3.50 of normalized forward EPS and 22x/32x/38x multiples. The range
-reflects Intel's valuable franchises and operating leverage, but also foundry execution risk, net debt,
-capital intensity, dilution and strong competition. Liquidity is not added separately because these
-risks are already embedded in earnings and multiples.
+They use USD 2.00/USD 3.90/USD 5.20 of normalized forward diluted EPS and 16x/20x/25x multiples.
+The range reflects valuable franchises and operating leverage, but also approximately 4.8% offering
+dilution, foundry execution risk, capital intensity and strong competition. The new cash lowers
+financing risk but is not added separately because the EPS paths and multiples already reflect the
+funding, reinvestment and execution outcomes.
 
 | Case | Probability | Fair value | Key assumptions |
 | --- | ---: | ---: | --- |
-| Bear | 25% | USD 33 | USD 1.50 EPS at 22x as product growth normalizes, foundry losses and investment stay heavy, and execution or competitive setbacks compress the multiple. |
-| Base | 50% | USD 80 | USD 2.50 EPS at 32x as product demand remains healthy, yield and utilization improve, and external foundry grows gradually without yet earning mature returns. |
-| Bull | 25% | USD 133 | USD 3.50 EPS at 38x as AI compute demand, product share, advanced-node execution and credible external-foundry wins produce substantial operating leverage. |
+| Bear | 25% | USD 32 | USD 2.00 EPS at 16x as product growth normalizes, foundry losses and investment stay heavy, and dilution and competitive setbacks suppress per-share recovery. |
+| Base | 50% | USD 78 | USD 3.90 EPS at 20x as product demand remains healthy, yield and utilization improve, and offering proceeds fund a gradual external-foundry ramp without mature returns. |
+| Bull | 25% | USD 130 | USD 5.20 EPS at 25x as AI compute demand, product share, advanced-node execution and credible external-foundry wins produce substantial operating leverage after dilution. |
 
-The weighted value is USD 81.50, about 19.4% below the USD 101.06 mark. The base case is about 20.8%
-below market, the bear case implies roughly 67.3% downside, and the bull case offers about 31.6% upside.
-Medium confidence further reduces the usable expected return. Improved quality and timing cannot justify
+The weighted value is USD 79.50, 13.28% below the USD 91.67 mark. The base case is 14.91% below
+market, the bear case implies 65.09% downside, and the bull case offers 41.81% upside. Medium
+confidence further reduces the usable expected return. Improved liquidity and timing cannot justify
 an entry when expected return, base return, downside payoff and margin of safety remain unfavorable.
+
+## Assessment anchors
+
+- **Thesis 80/100:** multiple current primary sources support the product and DCAI recovery,
+  management explicitly cites AI-compute demand, and failure conditions are falsifiable.
+- **Business quality 60/100:** product franchises and process assets are differentiated, but
+  foundry losses, execution history and competition prevent a higher anchor.
+- **Balance sheet 80/100:** the offering substantially strengthens liquidity and lowers near-term
+  refinancing risk, though capital expenditure and foundry requirements constrain flexibility.
+- **Valuation 40/100:** the lower mark reduces overvaluation, but expected and base returns remain
+  negative and bear downside remains severe.
+- **Timing 40/100:** MACD crossed above signal, but the close remains below its 20-day and 50-day
+  averages after an 8.16% alert-period decline.
+- **Liquidity 100/100:** Nasdaq trading liquidity is ample for paper execution.
+- **Risk 80/100:** risks are specific and monitored, and liquidity is improved, but foundry and
+  capital-allocation outcomes remain uncertain.
 
 ## Catalysts, risks and invalidation
 
@@ -148,12 +238,43 @@ roadmaps slip, external-foundry demand fails to scale, gross margin recovery sta
 funding requirements exceed operating cash generation, leverage rises, dilution worsens, subsidies or
 policy support weaken, export controls constrain demand, or restructuring impairs execution.
 
+## Idea exposure map
+
+- **Candidate:** [[ideas/idea_ai_compute_networking_hyperscaler_monetization]], positive direction,
+  high potential materiality. AI-infrastructure demand can transmit through Xeon server CPUs,
+  Ethernet, advanced packaging, foundry wafers and purpose-built silicon; Q2 DCAI revenue rose 59%
+  and Intel explicitly cited AI-compute demand when funding additional capital needs. The evidence
+  does not yet prove durable margins or external foundry returns. Invalidation: DCAI growth reverses,
+  custom accelerators displace Xeon attach, or 18A/14A and packaging demand fail to become cash.
+  This is not canonical until bounded relationship research accepts it.
+- **Rejected-no-link:** [[ideas/idea_terafab_ai_industrial_stack]] / existing
+  [[relationships/relationship_terafab_intc]]. The canonical edge remains rejected because the new
+  offering contains no Terafab order, contract, investment, ownership link or quantified economics.
+  Invalidation of rejection still requires a binding attributable agreement.
+- **Rejected-no-link:** [[ideas/idea_wide_bandgap_power_semiconductors]] and the remaining maintained
+  catalog. Intel's general semiconductor, AI, physical-AI and manufacturing exposure does not
+  establish material SiC/GaN economics or a specific causal edge to the other ideas without
+  customer, contract, product-revenue, ownership or policy evidence.
+
+Exactly one relationship review is required for the AI-compute candidate. There is no payload idea
+and no accepted canonical relationship, so this operation creates no idea-refresh follow-up.
+
 ## Disposition
 
-Status: **watching**, confidence **medium**, expected rating **Hold / Watch**. Revenue growth, margin
-recovery and the bullish MACD transition are constructive, but the current price exceeds weighted and
-base fair value while downside asymmetry, capital intensity and the absent accepted relationship block
-allocation. Review after third-quarter evidence or sooner after a material process, customer, funding,
-competitive or policy change, no later than **2026-08-20**.
+Status: **watching**, confidence **medium**, research rating **Hold / Watch**, portfolio action
+**Watch**, conviction **Watch**, and allocation eligibility **no**. Revenue growth, margin recovery,
+liquidity and the bullish MACD transition are constructive, but price exceeds weighted and base fair
+value while downside asymmetry, capital intensity and the absent accepted relationship block
+allocation. Review after third-quarter evidence or sooner after a material process, customer,
+capital-allocation, competitive or policy change, no later than **2026-10-04**.
+
+## Sources
+
+- [Intel Q2 2026 earnings release](https://www.sec.gov/Archives/edgar/data/50863/000005086326000105/q226earningsrelease.htm)
+- [Intel Q2 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/50863/000005086326000108/intc-20260627.htm)
+- [Intel August 2026 equity-offering Form 8-K](https://www.sec.gov/Archives/edgar/data/50863/000119312526346806/d117670d8k.htm)
+- [Intel SEC submissions index](https://data.sec.gov/submissions/CIK0000050863.json)
+- Canonical market and FX files: `data/market/prices/security_dfa34d4b9050964b465e.csv`,
+  `data/market/indicators.csv`, `data/market/latest.csv`, and `data/market/fx/USD_EUR.csv`.
 
 [[research-catalog|Back to the research catalog]]

@@ -1,0 +1,124 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_dfa34d4b9050964b465e",
+    "papertrader research source record --request data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/source_intc_q2_2026_10q_recheck_request.json",
+    "papertrader research source record --request data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/source_intc_q2_2026_release_recheck_request.json",
+    "papertrader research source record --request data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/source_intc_august_2026_equity_8k_request.json",
+    "papertrader research source record --request data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/source_intc_sec_submissions_20260904_request.json",
+    "papertrader research source record --request data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/source_intc_sec_submissions_20260904_retry01_request.json",
+    "papertrader wiki sync-technical-charts",
+    "papertrader research security upsert --request data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/security_upsert_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/security_upsert_retry01_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/security_upsert_retry02_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/security_upsert_correction_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/assessment_upsert_retry01_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/assessment_upsert_retry02_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/enqueue_ai_compute_relationship_request.json",
+    "papertrader research security-context --security-id security_dfa34d4b9050964b465e",
+    "papertrader research security upsert --request data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/security_upsert_rating_correction_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/assessment_upsert_page_correction_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Intel's 3 September bullish MACD crossover was classified as noise with modest timing improvement: the stock fell 8.16% over the alert period and remains below its 20-day and 50-day averages.",
+    "Intel's completed equity raise improves liquidity but adds approximately 4.8% dilution. Updated USD 32/USD 78/USD 130 scenarios yield USD 79.50 probability-weighted value versus USD 91.67; deterministic state is Hold / Watch and allocation-ineligible.",
+    "The research operation failed its immutable-assessment cardinality check after a corrective second version was appended; no rows were deleted or replaced."
+  ],
+  "evidence": [
+    {
+      "claim": "Intel completed a USD 20 billion base common-stock offering at USD 95 per share and the underwriters exercised the option for 31,578,947 additional shares; the base offering was expected to provide approximately USD 19.7 billion net for general corporate purposes including capital expenditure and working capital.",
+      "observed_at": "2026-09-04T06:38:08Z",
+      "source": "Intel August 2026 equity-offering Form 8-K",
+      "source_hash": "4a8e0423b4ebc8768438078272aa294c661fc5a64f6060966974984159fe94b8",
+      "url": "https://www.sec.gov/Archives/edgar/data/50863/000119312526346806/d117670d8k.htm"
+    },
+    {
+      "claim": "Second-quarter revenue was USD 16.128 billion, gross profit USD 6.509 billion, operating income USD 1.796 billion, and DCAI revenue rose 59%; the release remains the latest operating baseline in the SEC submissions index through the research cutoff.",
+      "observed_at": "2026-09-04T06:38:08Z",
+      "source": "Intel Q2 2026 earnings release",
+      "source_hash": "50e2f8a7c1b22784c3ec95ccf8d278bd085336edc2805effcb80d2b53ef4eed5",
+      "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000105/q226earningsrelease.htm"
+    },
+    {
+      "claim": "The 2026-09-03 adjusted close was USD 91.66999816894531. MACD crossed above its signal at -3.031 versus -3.228, RSI was 45.48, and price remained below its 20-day and 50-day averages after an 8.16% alert-period decline.",
+      "observed_at": "2026-09-04T06:09:30Z",
+      "source": "Canonical Intel market and indicator state",
+      "source_hash": "4ce2149f4a2787198cc50a950b3ec711e1810ca0a43f31c208b815b3973e765f"
+    },
+    {
+      "claim": "Two immutable assessment rows now reference run daily-20260904T060928Z and source operation 01KZXXN28RGQ4Z9TWV7ZD692PZ, while the success validator requires exactly one. The final row links its predecessor and matches the corrected research-page hash.",
+      "source": "data/tables/security_assessment_history.csv"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M1NJT0KRCKCSEN3SKED2A98T.json",
+    "data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/assessment_upsert_page_correction_request.json",
+    "data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/assessment_upsert_request.json",
+    "data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/assessment_upsert_retry02_request.json",
+    "data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/enqueue_ai_compute_relationship_request.json",
+    "data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/security_upsert_correction_request.json",
+    "data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/security_upsert_rating_correction_request.json",
+    "data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/security_upsert_request.json",
+    "data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/security_upsert_retry01_request.json",
+    "data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/security_upsert_retry02_request.json",
+    "data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/source_intc_august_2026_equity_8k_request.json",
+    "data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/source_intc_q2_2026_10q_recheck_request.json",
+    "data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/source_intc_q2_2026_release_recheck_request.json",
+    "data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/source_intc_sec_submissions_20260904_request.json",
+    "data/runs/daily-20260904T060928Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/source_intc_sec_submissions_20260904_retry01_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_dfa34d4b9050964b465e.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KZXXN28RGQ4Z9TWV7ZD692PZ",
+  "operations_created": [
+    "01M1NJT0KRCKCSEN3SKED2A98T"
+  ],
+  "reason_code": "assessment_version_cardinality_violation",
+  "status": "failed",
+  "summary": "Researched Intel against the 2026-09-03 bullish MACD transition, current SEC evidence, the August equity offering, and canonical market/FX state. The maintained page, source records, security projection, current assessment, and one dependent AI-compute relationship review were updated; strict wiki lint passed. Deterministic state derives Hold / Watch, watch-tier conviction, and allocation ineligibility at USD 91.67 because expected/base return, downside-payoff, margin-of-safety, and relationship gates fail. This operation cannot safely report success: an intermediate accepted assessment was written before the page's deterministic rating prose was corrected, and the required correction appended a second immutable assessment version for this operation. The result validator requires exactly one immutable assessment version. Historical assessment rows may not be deleted or replaced, so no safe agent-side repair exists.",
+  "validation": {
+    "checks": [
+      "PASS: security-context confirmed the current schema-v2 assessment, fresh registered evidence, exact market/FX identity, predecessor linkage, and corrected page hash.",
+      "PASS: deterministic assessment derives Hold, Watch, watch conviction, quality score 78, and allocation ineligibility with the complete threshold frontier.",
+      "PASS: exactly one dependent relationship_research operation was created for the AI-compute candidate; no payload or accepted idea required an idea_research follow-up.",
+      "PASS: scripts/papertrader wiki lint --strict returned OK [wiki].",
+      "PASS: no allocation target/history, order, execution, cash, portfolio, fill, or performance state was changed.",
+      "FAIL: data/tables/security_assessment_history.csv contains two immutable versions for this run and source operation; success validation requires exactly one and append-only history forbids deleting the intermediate accepted version."
+    ],
+    "passed": false
+  },
+  "visualization_review": {
+    "charts": [
+      {
+        "chart_id": "intc-q2-operating-recovery",
+        "page_path": "data/wiki/securities/security_dfa34d4b9050964b465e.md"
+      },
+      {
+        "chart_id": "intc-valuation-scenarios",
+        "page_path": "data/wiki/securities/security_dfa34d4b9050964b465e.md"
+      }
+    ],
+    "completed": true,
+    "omissions": [
+      {
+        "dataset": "Post-offering cash and debt comparison",
+        "reason": "The filing quantifies base-offering net proceeds but does not provide exact net proceeds for the exercised over-allotment or a post-close balance sheet; estimating a pro-forma cash series would overstate precision.",
+        "reason_code": "insufficient_comparability"
+      },
+      {
+        "dataset": "Peer valuation comparison",
+        "reason": "No bounded primary-source peer set shared a common date, earnings definition, instrument scope, currency basis and immutable identity, so no like-for-like chart was produced.",
+        "reason_code": "source_unavailable"
+      }
+    ]
+  }
+}

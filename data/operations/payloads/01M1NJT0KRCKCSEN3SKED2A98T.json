@@ -1,0 +1,28 @@
+{
+  "entity_id": "relationship_ai_compute_intc",
+  "entity_type": "relationship",
+  "inputs": {
+    "evidence_refs": [
+      "source_intc_august_2026_equity_8k",
+      "source_intc_q2_2026_10q",
+      "source_intc_q2_2026_release"
+    ],
+    "idea_id": "idea_ai_compute_networking_hyperscaler_monetization",
+    "proposed_direction": "positive",
+    "proposed_invalidation": "Reject the edge if DCAI growth reverses, custom accelerators materially displace Xeon attachment, or 18A, 14A and packaging demand fail to produce material durable revenue and cash returns.",
+    "proposed_mechanism": "AI-infrastructure demand can raise Intel economics through Xeon server CPUs, Ethernet, advanced packaging, foundry wafers and purpose-built silicon, while offering-funded 18A and 14A investment expands capacity for that demand.",
+    "relationship_id": "relationship_ai_compute_intc",
+    "security_id": "security_dfa34d4b9050964b465e"
+  },
+  "objective": "Review whether Intel has a material causal relationship to AI compute and networking monetization through Xeon server CPUs, Ethernet, advanced packaging, foundry wafers and purpose-built silicon; accept or reject the edge.",
+  "operation_id": "01M1NJT0KRCKCSEN3SKED2A98T",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_ai_compute_networking_hyperscaler_monetization.md",
+    "data/wiki/securities/security_dfa34d4b9050964b465e.md",
+    "source_intc_august_2026_equity_8k",
+    "source_intc_q2_2026_10q",
+    "source_intc_q2_2026_release"
+  ]
+}

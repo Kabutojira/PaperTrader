@@ -3191,3 +3191,8 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Updated [[securities/security_33d9c44facc75c726c7d|NVIDIA Corporation]] for the 2026-09-03 MACD transition using fiscal 2027 Q2 filings and the September Hugging Face acquisition filing.
 - Reframed the assessment around USD 279 billion of commitments and USD 105 billion of capped guarantees, refreshed earnings-multiple scenarios, preserved three accepted idea edges, and identified [[ideas/idea_ai_infrastructure_power]] as a candidate edge requiring relationship review.
 - Registered four current primary sources, updated canonical security and assessment state, and queued one dependent refresh for each payload or accepted idea.
+
+## [2026-09-04] update | Intel MACD-transition security review
+- Updated [[securities/security_dfa34d4b9050964b465e|Intel Corporation]] for the 2026-09-03 bullish-MACD transition using unchanged second-quarter operating evidence and the August equity-offering filing.
+- Incorporated the completed USD 20 billion base offering and exercised over-allotment, refreshed diluted earnings-multiple scenarios, moved the deterministic conclusion from Sell / Avoid to Hold / Watch, and classified the crossover as noise with modest timing improvement.
+- Rechecked the complete idea catalog, preserved the rejected Terafab edge, and identified [[ideas/idea_ai_compute_networking_hyperscaler_monetization]] as one candidate edge requiring bounded relationship review.

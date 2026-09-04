@@ -1,0 +1,18 @@
+{
+  "source_id": "source_intc_q2_2026_release",
+  "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000105/q226earningsrelease.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000105/q226earningsrelease.htm",
+  "source_type": "issuer_release",
+  "title": "Intel reports second-quarter 2026 financial results",
+  "publisher": "Intel Corporation",
+  "license": "",
+  "status": "available",
+  "content_hash": "50e2f8a7c1b22784c3ec95ccf8d278bd085336edc2805effcb80d2b53ef4eed5",
+  "related_entity_ids": "idea_ai_compute_networking_hyperscaler_monetization|security_dfa34d4b9050964b465e",
+  "checked_at": "2026-09-04T06:38:08Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Intel reported $16.1 billion of second-quarter revenue and guided third-quarter revenue to $15.8-$16.8 billion with GAAP EPS of $0.31 at the midpoint.",
+  "summary": "The unchanged release confirms improved product revenue, DCAI and foundry momentum, but also a $3.2 billion foundry operating loss and substantial execution requirements for 18A, 14A and external customer wins.",
+  "run_id": "daily-20260904T060928Z"
+}
