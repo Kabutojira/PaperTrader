@@ -1,0 +1,19 @@
+{
+  "entity_id": "security_ed7d5b616a196969c815",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-08-12T01:51:17Z",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_ed7d5b616a196969c815.md",
+    "security_id": "security_ed7d5b616a196969c815"
+  },
+  "objective": "Revalidate security_ed7d5b616a196969c815 with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01M1NGJPCGN6Y5HWKWRMJ6CJ50",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_rxrx_clinicaltrials_20260812",
+    "source_rxrx_q2_2026_10q",
+    "source_rxrx_q2_2026_results_exhibit"
+  ]
+}

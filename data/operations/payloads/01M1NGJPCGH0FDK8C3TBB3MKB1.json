@@ -1,0 +1,20 @@
+{
+  "entity_id": "security_1f9cce545ede94cd6349",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-08-12T00:12:37Z",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_1f9cce545ede94cd6349.md",
+    "security_id": "security_1f9cce545ede94cd6349"
+  },
+  "objective": "Revalidate security_1f9cce545ede94cd6349 with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01M1NGJPCGH0FDK8C3TBB3MKB1",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_isrg_bylaws_8k_20260727",
+    "source_isrg_q2_2026_10q",
+    "source_isrg_q2_2026_sec_exhibit",
+    "source_isrg_sec_submissions_20260811"
+  ]
+}
