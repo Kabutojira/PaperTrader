@@ -44,6 +44,15 @@
       "profile": "deep",
       "recorded_at": "2026-09-04T00:26:00Z",
       "terminal_status": "failed"
+    },
+    {
+      "index": 5,
+      "kind": "preparation",
+      "operation_id": "",
+      "operation_type": "",
+      "profile": "",
+      "recorded_at": "2026-09-04T05:04:04Z",
+      "terminal_status": ""
     }
   ],
   "completed_at": "",
@@ -58,7 +67,7 @@
   "maximum_operations": 5,
   "model_budget_limit": "100",
   "model_budget_used": "20",
-  "next_checkpoint_index": 5,
+  "next_checkpoint_index": 6,
   "operating_date": "2026-09-04",
   "operation_count": 4,
   "operations_accepted": [
@@ -200,6 +209,11 @@
     {
       "github_run_id": "33818974689",
       "resumed_at": "2026-09-03T23:56:02Z",
+      "workflow_attempt": "1"
+    },
+    {
+      "github_run_id": "33838430577",
+      "resumed_at": "2026-09-04T05:04:02Z",
       "workflow_attempt": "1"
     }
   ]
