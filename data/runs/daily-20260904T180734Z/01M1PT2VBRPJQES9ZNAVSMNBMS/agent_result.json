@@ -1,0 +1,56 @@
+{
+  "commands_run": [],
+  "daily_report_items": [
+    "Uber baseline order review blocked before deterministic dispatch because the mandatory command-audit repository snapshot could not read the controller-owned encrypted OAuth state path; no paper order or accounting transition occurred."
+  ],
+  "evidence": [
+    {
+      "claim": "The validated operation requests one baseline open review for strategy_e4ada1a4934691d1f7ee and signal_71871a6ce787558bfc90, bound to allocation_plan_ac27b0db96445ca0a63e, allocation_intent_4a4fb498e6cf94a54ed7, and a persisted target quantity of two.",
+      "source": "data/operations/payloads/01M1PT2VBRPJQES9ZNAVSMNBMS.json"
+    },
+    {
+      "claim": "The sole current Uber target matches the payload plan, intent, strategy, assessment_7fe1690682aa6c66e233, accepted relationship_d403f81ae5b27c9643dd, open disposition, and two-share target at 2026-09-04T18:07:35Z.",
+      "observed_at": "2026-09-04T18:07:35Z",
+      "source": "data/tables/allocation_targets.csv"
+    },
+    {
+      "claim": "signal_71871a6ce787558bfc90 is a ready open signal for the matching strategy and allocation intent, with market_data_as_of 2026-09-04T18:07:35Z and expiry 2026-09-05T18:07:35Z.",
+      "observed_at": "2026-09-04T18:07:35Z",
+      "source": "data/tables/signals.csv"
+    },
+    {
+      "claim": "The canonical UBER row is identity-matched, status ok, denominated in USD, and records a USD 75.95999908447266 close retrieved at 2026-09-04T18:07:35Z.",
+      "observed_at": "2026-09-04T18:07:35Z",
+      "source": "data/market/latest.csv"
+    },
+    {
+      "claim": "The canonical USD/EUR rate is 0.8608999848365784 and was retrieved at 2026-09-04T18:07:35Z.",
+      "observed_at": "2026-09-04T18:07:35Z",
+      "source": "data/market/fx/USD_EUR.csv"
+    },
+    {
+      "claim": "The attempted in-scope create-baseline invocation exited with code two before dispatch because the mandatory repository audit snapshot received permission denied on the controller-owned encrypted OAuth state path. No command_audit.json receipt was created.",
+      "source": "scripts/papertrader"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260904T180734Z/01M1PT2VBRPJQES9ZNAVSMNBMS/order_create_baseline_request.json"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M1PT2VBRPJQES9ZNAVSMNBMS",
+  "operations_created": [],
+  "reason_code": "command_audit_snapshot_unreadable",
+  "status": "blocked",
+  "summary": "Blocked the Uber baseline paper-order operation before deterministic dispatch. The running queue row, current allocation plan and intent, ready open signal, ready baseline strategy, accepted relationship, two-share target, fresh UBER mark, and fresh USD/EUR reference all agree. However, scripts/papertrader could not establish its mandatory pre-command repository audit snapshot because the controller-owned encrypted OAuth state path was not readable. No command-audit receipt was created, no paper order was created, and no signal, allocation, accounting, portfolio, execution, cash, fill, or performance state changed. The controller must restore readable audit-snapshot access without exposing credential contents before this operation can be retried.",
+  "validation": {
+    "checks": [
+      "Confirmed the selected queue row is running, claimed by daily-20260904T180734Z, has a live lease, and names exactly llm-wiki plus papertrader-execute-strategy.",
+      "Confirmed hermes_preflight.json identifies llm-wiki 2.1.0, papertrader-controller, and papertrader-execute-strategy with content hashes, sequential=true, and yolo=true.",
+      "Confirmed payload, strategy, canonical equity leg, ready signal, current allocation target, immutable assessment identity, accepted relationship, security identity, UBER price, and USD/EUR reference agree.",
+      "Confirmed the current plan disposition maps to open and the persisted baseline target remains two shares; no agent-supplied leg quantity was submitted.",
+      "Confirmed the attempted project command produced no command-audit receipt and no order, order-leg, signal, allocation, execution, cash, portfolio, fill, or performance delta.",
+      "Strict portfolio reconciliation could not be dispatched because the mandatory pre-command audit snapshot failed first; bypassing or disabling that audit was not attempted."
+    ],
+    "passed": true
+  }
+}
