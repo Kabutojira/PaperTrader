@@ -8,6 +8,15 @@
       "profile": "",
       "recorded_at": "2026-09-04T06:10:10Z",
       "terminal_status": ""
+    },
+    {
+      "index": 1,
+      "kind": "operation",
+      "operation_id": "01KZVTZDX06K7JG24QMMZPN7GT",
+      "operation_type": "security_research",
+      "profile": "deep",
+      "recorded_at": "2026-09-04T06:33:38Z",
+      "terminal_status": "succeeded"
     }
   ],
   "completed_at": "",
@@ -21,12 +30,33 @@
   "finalization_commit_identity": "",
   "maximum_operations": 5,
   "model_budget_limit": "100",
-  "model_budget_used": "0",
-  "next_checkpoint_index": 1,
+  "model_budget_used": "5",
+  "next_checkpoint_index": 2,
   "operating_date": "2026-09-04",
-  "operation_count": 0,
-  "operations_accepted": [],
-  "operations_attempted": [],
+  "operation_count": 1,
+  "operations_accepted": [
+    {
+      "auxiliary_models": {
+        "web_extract": "openai-codex:gpt-5.6-luna"
+      },
+      "checkpoint_index": 1,
+      "effective_model": "gpt-5.6-sol",
+      "escalation_source": "",
+      "maximum_turns": 160,
+      "mutation_policy": "full_research",
+      "operation_id": "01KZVTZDX06K7JG24QMMZPN7GT",
+      "profile": "deep",
+      "profile_policy_version": "profile-router-v1",
+      "reasoning_effort": "medium",
+      "route_reason": "scenario_complete_security_review",
+      "terminal_status": "succeeded",
+      "timeout_seconds": 1800,
+      "weighted_cost": "5"
+    }
+  ],
+  "operations_attempted": [
+    "01KZVTZDX06K7JG24QMMZPN7GT"
+  ],
   "originating_github_run_id": "33842380396",
   "podcast_audio_path": "",
   "podcast_commit_identity": "",
@@ -72,7 +102,7 @@
     "01KZGT11ZGR8JEKWC3RXGSS544:blocked:dependency_unavailable:01KZGT11ZGBPRBKV129FD00TH1",
     "01M0FWY80RRY528G4HT2QM3N1Y:blocked:dependency_unavailable:01M07XKZS0JKBQM0THMPJGWEK5"
   ],
-  "remaining_operations": 5,
+  "remaining_operations": 4,
   "report_path": "",
   "research_cutoff_at": "",
   "run_id": "daily-20260904T060928Z",
@@ -82,7 +112,7 @@
   "status": "running",
   "trigger": "workflow_dispatch",
   "weighted_model_budget": "100",
-  "weighted_model_budget_used": "0",
+  "weighted_model_budget_used": "5",
   "workflow_attempts": [
     {
       "github_run_id": "33842380396",

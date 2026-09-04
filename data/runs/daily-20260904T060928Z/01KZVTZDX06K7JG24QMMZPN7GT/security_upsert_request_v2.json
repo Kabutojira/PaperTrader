@@ -1,0 +1,23 @@
+{
+  "security_id": "security_33d9c44facc75c726c7d",
+  "issuer_id": "issuer_7f0f0b334051a9c9a06b",
+  "company_name": "NVIDIA Corporation",
+  "instrument_name": "NVIDIA Corporation common stock",
+  "instrument_type": "equity",
+  "ticker": "NVDA",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "NVDA",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Technology",
+  "industry": "Semiconductors",
+  "status": "watching",
+  "watchlist_reason": "Fiscal Q2 and Q3 guidance support a higher earnings base and the USD 228.45 mark is below the deterministic USD 248.40 buy-below price, while USD 279 billion commitments and USD 105 billion guarantees require constrained sizing.",
+  "research_summary": "NVIDIA's fiscal Q2 growth supports USD 198/USD 310.50/USD 448 scenarios; NVDA clears the revised value frontier with severe commitment, guarantee and concentration risks.",
+  "research_page": "data/wiki/securities/security_33d9c44facc75c726c7d.md",
+  "last_research_at": "2026-09-04T06:22:45Z",
+  "next_review_at": "2026-09-18T06:22:45Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm"
+}

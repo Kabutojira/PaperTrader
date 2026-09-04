@@ -1,0 +1,21 @@
+{
+  "entity_id": "idea_humanoid_robotics_embodied_ai_components",
+  "entity_type": "idea",
+  "inputs": {
+    "idea_id": "idea_humanoid_robotics_embodied_ai_components",
+    "security_id": "security_33d9c44facc75c726c7d",
+    "security_research_operation_id": "01KZVTZDX06K7JG24QMMZPN7GT",
+    "security_research_result_path": "data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/agent_result.json",
+    "seed_claim": "NVIDIA's simulation, world-model, safety and edge-compute stack remains a credible humanoid enabler, but NVIDIA has not disclosed material humanoid-attributable revenue or repeat deployment economics."
+  },
+  "objective": "Refresh the humanoid robotics and embodied AI idea with NVIDIA fiscal Q2 and Rubin evidence, revised valuation, attribution gaps and the broader investable universe.",
+  "operation_id": "01M1NHP73GXF8NYYVG2YZY6HHE",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_humanoid_robotics_embodied_ai_components.md",
+    "data/wiki/securities/security_33d9c44facc75c726c7d.md",
+    "source_nvda_q2_fy2027_10q",
+    "source_nvda_q2_fy2027_release"
+  ]
+}

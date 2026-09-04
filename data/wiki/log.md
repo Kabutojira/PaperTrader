@@ -3186,3 +3186,8 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Published investor decision snapshot `decision_23ebc3398ed8251d0a55`.
 
 - Generated canonical [[daily-reports/daily-report_20260904]] for run `daily-20260903T235602Z`.
+
+## [2026-09-04] update | NVIDIA MACD-transition security review
+- Updated [[securities/security_33d9c44facc75c726c7d|NVIDIA Corporation]] for the 2026-09-03 MACD transition using fiscal 2027 Q2 filings and the September Hugging Face acquisition filing.
+- Reframed the assessment around USD 279 billion of commitments and USD 105 billion of capped guarantees, refreshed earnings-multiple scenarios, preserved three accepted idea edges, and identified [[ideas/idea_ai_infrastructure_power]] as a candidate edge requiring relationship review.
+- Registered four current primary sources, updated canonical security and assessment state, and queued one dependent refresh for each payload or accepted idea.

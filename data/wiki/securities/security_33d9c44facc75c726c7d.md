@@ -1,20 +1,105 @@
 ---
-title: NVIDIA Corporation common stock
+title: NVIDIA Corporation (NVDA)
 type: security
 status: maintained
-tags: [security, research, risk]
+tags:
+  - security
+  - research
+  - risk
 created: "2026-08-05"
-updated: "2026-08-07"
-provenance: "source_nvda_q1_fy2027_10q; source_nvda_q1_fy2027_results; source_nvda_space_computing_20260316; source_nvda_vera_spacexai_20260531; source_spacex_terafab_prospectus_20260605"
+updated: "2026-09-04"
+provenance: "NVIDIA fiscal 2027 Q2 Form 10-Q, results release and CFO commentary; NVIDIA Hugging Face acquisition Form 8-K; canonical PaperTrader market data"
 security_id: security_33d9c44facc75c726c7d
 issuer_id: issuer_7f0f0b334051a9c9a06b
+ticker: NVDA
+venue_mic: XNAS
+currency: USD
 confidence: medium
-next_review: "2026-08-19"
+next_review: "2026-09-18"
 ---
 
-# NVIDIA Corporation common stock
+# NVIDIA Corporation (NVDA)
 
 ## Visual evidence
+
+Fiscal Q2 extended the revenue and margin trend, while net income growth slowed sequentially because
+Q1 included unusually large equity-security gains. The grouped fundamental view therefore separates
+revenue from net income rather than treating headline GAAP earnings as recurring.
+
+```echart
+{
+  "schema_version": 1,
+  "chart_id": "nvda-q2-fy27-fundamentals",
+  "kind": "series",
+  "title": "NVIDIA quarterly revenue and GAAP net income",
+  "description": "Reported quarterly results show revenue scale and GAAP earnings conversion; net income includes volatile equity-security gains.",
+  "as_of": "2026-08-26",
+  "sources": [
+    {"label": "NVIDIA fiscal Q2 2027 results", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27pr.htm"}
+  ],
+  "x_axis": {"type": "category", "label": "Fiscal quarter", "values": ["Q2 FY2026", "Q1 FY2027", "Q2 FY2027"]},
+  "y_axes": [{"label": "USD billions", "unit": "USD bn", "format": "currency", "currency": "USD"}],
+  "series": [
+    {"name": "Revenue", "render": "bar", "y_axis": 0, "values": ["46.743", "81.615", "96.221"]},
+    {"name": "GAAP net income", "render": "line", "y_axis": 0, "values": ["26.422", "58.321", "59.688"]}
+  ],
+  "notes": ["GAAP net income includes gains and losses from equity securities; normalized valuation does not annualize it mechanically."]
+}
+```
+
+Gross margin expanded despite the rapid scale-up, but Q3 guidance of 74.0% plus or minus 50 basis
+points makes sustained margin, not the recent peak alone, the relevant gate.
+
+```echart
+{
+  "schema_version": 1,
+  "chart_id": "nvda-q2-fy27-gross-margin",
+  "kind": "series",
+  "title": "NVIDIA GAAP gross-margin progression",
+  "description": "Reported GAAP gross margin shows whether rapid Data Center growth retains platform economics.",
+  "as_of": "2026-08-26",
+  "sources": [
+    {"label": "NVIDIA fiscal Q2 2027 results", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27pr.htm"}
+  ],
+  "x_axis": {"type": "category", "label": "Fiscal quarter", "values": ["Q2 FY2026", "Q1 FY2027", "Q2 FY2027"]},
+  "y_axes": [{"label": "GAAP gross margin", "unit": "%", "format": "percent"}],
+  "series": [
+    {"name": "GAAP gross margin", "render": "line", "y_axis": 0, "values": ["72.4", "74.9", "75.0"]}
+  ],
+  "notes": ["Fiscal Q3 GAAP guidance is 74.0% plus or minus 50 basis points, so sustained margin rather than the Q2 peak is the valuation gate."]
+}
+```
+
+The valuation view makes the widened upside and explicit downside visible; fair values are outputs
+of stated forward-EPS and multiple assumptions, not price targets imported from an external source.
+
+```echart
+{
+  "schema_version": 1,
+  "chart_id": "nvda-september-2026-scenarios",
+  "kind": "series",
+  "title": "NVIDIA twelve-month valuation scenarios",
+  "description": "Bear, base and bull values from normalized forward EPS and explicit multiples are compared with the current canonical mark.",
+  "as_of": "2026-09-03",
+  "sources": [
+    {"label": "NVIDIA fiscal Q2 2027 Form 10-Q", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm"},
+    {"label": "PaperTrader canonical NVDA mark", "url": "https://finance.yahoo.com/quote/NVDA/history"}
+  ],
+  "x_axis": {"type": "category", "label": "Scenario", "values": ["Bear (30%)", "Base (50%)", "Bull (20%)"]},
+  "y_axes": [{"label": "USD per share", "unit": "USD/share", "format": "currency", "currency": "USD"}],
+  "series": [
+    {"name": "Scenario fair value", "render": "bar", "y_axis": 0, "values": ["198.00", "310.50", "448.00"]},
+    {"name": "Current price", "render": "line", "y_axis": 0, "values": ["228.4499969482422", "228.4499969482422", "228.4499969482422"]}
+  ],
+  "notes": ["Scenario values equal normalized forward EPS times the stated multiple; probability-weighted fair value is USD 303.65."]
+}
+```
+
+Peer multiples are omitted because no same-date, definition-consistent peer pack was retained in
+this bounded operation. Market share is omitted because no common, independently verified market
+definition supports a comparable series. Revenue, net income, gross margin, the alert horizon and
+the scenario set are charted; cash, debt, guarantees and commitments are point-in-time observations
+and remain in prose.
 
 <!-- papertrader:technical-chart:start -->
 This deterministic monitoring chart is derived from the repository-local market cache. Its source CSV remains downloadable and does not feed research scoring or trading state.
@@ -44,157 +129,172 @@ This deterministic monitoring chart is derived from the repository-local market 
 ```
 <!-- papertrader:technical-chart:end -->
 
-## Identity
+## Decision snapshot
 
-- Immutable security: `security_33d9c44facc75c726c7d`
-- Issuer: `issuer_7f0f0b334051a9c9a06b`
-- Instrument: common stock, Nasdaq Global Select Market (`XNAS`), USD
-- Provider identity: `NVDA` / `XNAS` / `USD` / equity
+NVIDIA remains the dominant accelerated-compute platform and fiscal second-quarter evidence
+materially raises the earnings base, but the risk structure changed with it. At the canonical
+**USD 228.45** close on **2026-09-03**, the revised probability-weighted fair value is **USD
+303.65**. The mark is below the **USD 242.92** buy-below price, with positive base-case upside and
+acceptable bear/base payoff. The research conclusion is therefore **Buy/Initiate**, subject to
+deterministic eligibility calculation rather than an agent allocation decision.
 
-NVIDIA supplies accelerated-computing processors, networking, systems, and software. Its economics
-are now linked by accepted canonical relationships to
-[[ideas/idea_ai_compute_networking_hyperscaler_monetization|AI compute and networking]],
-[[ideas/idea_humanoid_robotics_embodied_ai_components|embodied AI]], and
-[[ideas/idea_terafab_ai_industrial_stack|Terafab]]. They remain a direct comparison for
-cloud-platform capital spending at
-[[securities/security_204be2a44063993de1a8|Microsoft]] and for AI-cluster networking at
-[[securities/security_6f9a1450edceb9307c9a|Arista Networks]]. The wide-bandgap and AI-drug-
-discovery associations were reviewed and rejected because current product relevance does not yet
-create material NVIDIA shareholder economics.
+The case is not low risk. NVIDIA disclosed **USD 279 billion** of supply commitments, **USD 105
+billion** of capped land, power and shell guarantees related to an OpenAI-serving campus, longer
+customer payment terms, higher inventory, and USD 25 billion of new debt. These commitments can
+secure multi-generation demand, but they also transfer customer-financing, concentration and
+infrastructure risk onto NVIDIA's balance sheet.
 
-## Economics and thesis
+## What changed in the alert period
 
-The investable thesis is that NVIDIA's integrated GPU, interconnect, networking, systems, and
-software platform can retain a large share of expanding AI-infrastructure spending while rapid
-product cycles and scale sustain exceptional margins and cash generation. The counterpoint is that
-current expectations already require continued hyperscaler and broader AI-factory investment,
-flawless Blackwell-to-Rubin execution, adequate power and manufacturing capacity, and limited
-competitive or regulatory erosion.
+The canonical **2026-08-06 through 2026-09-03** observation rose from **USD 219.00 to USD 228.45**,
+or **4.32%**. The 26 August results-day close advanced **8.74%**, followed by a partial retracement.
+On 3 September, MACD **3.256** crossed above its **2.787** signal while RSI was **59.21**; the close
+was above the 20-, 50- and 200-session averages and below the upper Bollinger band. Volume did not
+trigger an anomaly. The crossover is a bullish timing confirmation, not independent valuation
+evidence.
 
-For the quarter ended 26 April 2026, revenue rose 85% year over year and 20% sequentially to USD
-81.615 billion. Data Center revenue was USD 75.246 billion, up 92% year over year and 21%
-sequentially; compute reached USD 60.4 billion and networking USD 14.8 billion. GAAP gross margin
-was 74.9%, operating income was USD 53.536 billion, and operating cash flow was USD 50.344 billion.
-These figures strongly support demand, platform breadth, pricing, and operating leverage, although
-USD 15.9 billion of equity-security gains inflated GAAP net income and are excluded from normalized
-earnings.
+Current primary evidence explains the period. Fiscal Q2 revenue of **USD 96.221 billion** exceeded
+the prior USD 91 billion outlook midpoint, grew 18% sequentially and 106% annually, while Data
+Center reached **USD 89.023 billion**. Fiscal Q3 guidance is **USD 108 billion plus or minus 2%**
+and assumes no China Data Center compute revenue. The September Hugging Face agreement adds an
+open-model distribution asset but is not large enough by itself to explain the earnings reset.
 
-## Evidence and decision gates
+**Classification: opportunity with material new risk.** Operating evidence supports a higher
+valuation range and the current mark now clears the revised bounded entry frontier. The same
+evidence requires lower confidence than headline growth alone would suggest because supply,
+guarantee, customer-credit and acquisition exposures expanded sharply.
 
-| Evidence | Interpretation |
-| --- | --- |
-| Q2 fiscal 2027 revenue guidance is USD 91.0 billion plus or minus 2%, with 74.9%-75.0% gross-margin guidance. | Near-term demand and economics remain strong, but the market already discounts substantial continued growth. |
-| Data Center represented about 92% of Q1 revenue; Hyperscale remained about half of Data Center while other AI-cloud, industrial, enterprise, and sovereign customers supplied the balance. | Customer mix is broadening, but AI infrastructure and large-customer capital budgets remain concentrated economic exposures. |
-| No Data Center Hopper shipments to China occurred in Q1, and Q2 guidance assumes no China Data Center compute revenue. | Export controls remove a major addressable market and can create inventory, product-design, and license uncertainty. |
-| Cash plus marketable debt securities was USD 50.335 billion against USD 8.470 billion total debt; Q1 free cash flow before equipment-financing principal was about USD 48.6 billion. | Net financial strength and cash generation provide substantial resilience and fund research, capacity, repurchases, and dividends. |
-| Inventory rose sequentially to USD 25.797 billion, supply-related commitments reached USD 119.0 billion, and cloud-service commitments reached USD 30.0 billion. | Securing supply supports growth but magnifies demand-forecast, transition, counterparty, and obsolescence risk. |
-| Rubin is expected to begin shipping in the second half of fiscal 2027. | A successful cadence is a catalyst; delay, yield, quality, or customer-transition friction is a key invalidation path. |
+## Business and instrument economics
 
-Primary evidence is the [quarterly report filed 20 May 2026](https://www.sec.gov/Archives/edgar/data/1045810/000104581026000052/nvda-20260426.htm)
-as `source_nvda_q1_fy2027_10q` and the [SEC-filed Q1 results release](https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/q1fy27pr.htm)
-as `source_nvda_q1_fy2027_results`, both checked 5 August 2026.
+- **Compute platform:** Accelerators, networking, systems, CUDA and model tooling are sold as an
+  integrated platform. Data Center represented about 92.5% of fiscal Q2 revenue.
+- **Economics:** GAAP gross margin was 75.0%; operating income reached USD 63.734 billion and GAAP
+  net income USD 59.688 billion. Net income included USD 7.8 billion of gains from equity
+  securities, so valuation uses normalized forward EPS rather than annualizing GAAP EPS blindly.
+- **Cadence:** Blackwell remained the vast majority of revenue and Vera Rubin entered full
+  production. Execution across memory, foundry, packaging, systems and customer deployment is the
+  principal near-term operating gate.
+- **Liquidity and working capital:** Cash, equivalents and marketable debt securities were USD
+  56.6 billion. Receivables reached USD 63.1 billion and 60 days sales outstanding versus 45 days
+  sequentially; inventory rose to USD 31.6 billion. Operating cash flow was USD 24.1 billion,
+  down from USD 50.3 billion sequentially.
+- **Capital structure:** NVIDIA issued USD 25.0 billion of senior unsecured notes, while returning
+  nearly USD 26 billion to shareholders. Strong earnings support liquidity, but the simultaneous
+  debt, commitment and guarantee expansion reduces balance-sheet conservatism.
 
-## New relationships and Terafab evidence
+## Thesis, catalysts, risks and invalidation
 
-The accepted [[relationships/relationship_ai_compute_nvda|AI-compute relationship]] is the direct
-core edge: accelerated compute, networking, systems and software already produce material revenue,
-margin and cash flow. The accepted [[relationships/relationship_humanoid_nvda|embodied-AI edge]] is
-smaller and less certain because robot-maker integrations and NVIDIA's safety stack do not quantify
-attributable revenue or repeat paid deployment economics.
+The thesis is that demand for useful AI inference, training and physical-AI workloads continues to
+compound while NVIDIA retains system-level performance, networking and software advantages. Fiscal
+Q2 and Q3 guidance support that mechanism. The strongest contrary evidence is that a growing share
+of future demand now depends on highly concentrated customers, customer financing, long-duration
+power capacity, third-party manufacturing and rapid product transitions.
 
-The accepted [[relationships/relationship_terafab_nvda|Terafab edge]] adds a customer and orbital-
-compute option, not a new near-term earnings assumption. NVIDIA's
-[space-computing release](https://nvidianews.nvidia.com/news/space-computing)
-(`source_nvda_space_computing_20260316`) introduced a Vera Rubin-derived Space-1 module for later
-availability. Its [Vera release](https://nvidianews.nvidia.com/news/nvidia-unveils-vera-the-cpu-for-agents)
-(`source_nvda_vera_spacexai_20260531`) names SpaceXAI among organizations exploring the CPU. The
-[SpaceX prospectus](https://content.spacex.com/cms-assets/FINAL_Documents%20and%20Updates/SpaceX%20-%20EU%20Prospectus%20%28Approved%20by%20Bafin%29%20-%20June%205%2C%202026.pdf)
-(`source_spacex_terafab_prospectus_20260605`) expects significant third-party compute sourcing to
-continue while describing an ambitious internal mask, logic, memory and packaging workflow.
+**Catalysts:** delivery against USD 108 billion Q3 guidance; Rubin ramp without material margin or
+working-capital deterioration; diversification beyond the largest AI labs; durable networking and
+software attachment; China-compatible products that comply with export rules; and Hugging Face
+closing with measurable developer and enterprise monetization.
 
-These sources support near-term platform demand and a long-run substitution risk. They disclose no
-NVIDIA order value, SpaceXAI purchase volume, Terafab investment, exclusivity, capacity guarantee or
-NVIDIA wafer-production agreement. The prior USD 7.50/USD 9.00/USD 11.00 normalized-EPS scenarios
-therefore remain unchanged rather than capitalizing unannounced economics.
+**Risks:** custom accelerators and open software reducing platform rents; export controls; foundry,
+HBM and packaging constraints; receivable collection and customer concentration; commitment or
+guarantee losses; inventory obsolescence; margin compression; Hugging Face regulatory or integration
+failure; and customer AI returns failing to justify the infrastructure cycle.
+
+**Invalidation:** downgrade the thesis if normalized EPS falls below the bear-case path, gross
+margin remains below 70%, receivables or guarantees produce material losses, Rubin adoption misses
+the current cycle, or CUDA and networking attachment weaken enough that platform economics no
+longer justify a premium multiple.
 
 ## Valuation
 
-The `mature_compounder` template uses a 12-month `earnings_multiple`. Normalized forward earnings
-include stock compensation, exclude volatile equity-security gains, and treat the USD 41.865 billion
-net cash position as downside support rather than adding it separately to an equity-value multiple.
-The scenarios vary revenue growth, operating margin, normalized EPS, and the multiple that investors
-may pay after another year of execution. Against the canonical 6 August close of USD
-218.99000549316406:
+Template: **mature compounder** (`mature_compounder`) using the permitted
+`earnings_multiple` method. Horizon: **12 months**.
+The starting point is normalized fiscal Q2 EPS of USD 2.22, Q3 revenue guidance above Q2, and the
+need to exclude volatile equity-security gains. Values are in USD per share and use no FX conversion
+because both the instrument and scenarios are USD-denominated.
 
-| Scenario | Probability | Fair value | Assumptions |
-| --- | ---: | ---: | --- |
-| Bear | 25% | USD 180.00 | USD 7.50 forward EPS at 24x as AI-infrastructure growth decelerates, China remains unavailable, Rubin or supply execution adds cost, and the valuation multiple compresses. |
-| Base | 50% | USD 252.00 | USD 9.00 forward EPS at 28x as Q2 guidance converts, Blackwell remains strong, Rubin ships broadly on schedule, and roughly mid-70% gross margin supports continued cash generation. |
-| Bull | 25% | USD 374.00 | USD 11.00 forward EPS at 34x as sovereign, enterprise, networking, and hyperscale demand compound, Rubin expands performance and platform breadth, and margins remain exceptional. |
+| Scenario | Probability | Forward normalized EPS | Multiple | Fair value | Key assumptions |
+| --- | ---: | ---: | ---: | ---: | --- |
+| Bear | 30% | 9.00 | 22x | 198.00 | Growth normalizes sharply; gross margin approaches 70%; customer-credit and supply commitments reduce the justified premium. |
+| Base | 50% | 11.50 | 27x | 310.50 | Q3 guidance converts, Rubin extends growth, normalized earnings expand, but infrastructure financing and concentration cap the multiple. |
+| Bull | 20% | 14.00 | 32x | 448.00 | Broad inference and physical-AI demand, strong Rubin execution and durable platform rents outweigh financing and export risk. |
 
-Probability-weighted fair value remains USD 264.50, about 20.8% above the mark. The base case offers
-about 15.1% upside, while the bear case implies about 17.8% downside; base upside to bear downside is
-only about 0.85x. The unchanged USD 201.60 buy-below price remains unreached and base-case margin of
-safety has narrowed to about 13.1%. The valuation therefore supports continued monitoring but does
-not clear the canonical downside-payoff and margin-of-safety frontiers. Medium confidence reflects
-the unusually wide outcome range, dependence on sustained customer capital spending, and sensitivity
-to both normalized EPS and the terminal multiple.
+The probability-weighted value is **USD 303.65**. Against USD 228.45, scenario returns are
+approximately **-13.33%**, **35.92%**, and **96.10%**; the weighted return is approximately
+**32.92%** before deterministic confidence adjustment. The 20% margin-of-safety buy-below price is
+**USD 242.92**. These outputs must be reproduced by the assessment CLI; the page does not override
+its canonical eligibility frontier.
 
-## Alert review, catalysts, and risks
+## Idea exposure map
 
-The canonical mark advanced from USD 211.94 on 4 August to USD 219.22 on 5 August and closed at USD
-218.99 on 6 August. The current RSI is 61.38, the close remains below the USD 221.17 upper Bollinger
-band, and MACD is 1.9038 versus a -0.0620 signal. The price extension improves momentum but weakens
-the valuation frontier; the new relationship evidence is fundamental context rather than the cause
-of the full two-session move. It remains neutral-to-positive timing evidence, not a paper-buy signal.
+### Canonical accepted relationships
 
-Catalysts are delivery against Q2 guidance, continued Blackwell 300 and networking growth, Rubin
-shipments in the second half of fiscal 2027, broader enterprise and sovereign adoption, durable
-mid-70% gross margins, and continued conversion of earnings to cash. Risks are export restrictions,
-large-customer and AI-capex concentration, dependence on third-party manufacturing and packaging,
-power and data-center constraints, rapid product transitions, competition and customer-designed
-silicon, USD 119 billion of supply commitments, investment-value volatility, and valuation-multiple
-compression.
+- [[ideas/idea_ai_compute_networking_hyperscaler_monetization]] — **accepted-current, positive,
+  high sensitivity.** Revenue, Data Center growth, networking and the Rubin roadmap directly
+  transmit the AI-infrastructure cycle; Q2 materially strengthens the evidence. See
+  [[relationships/relationship_ai_compute_nvda]].
+- [[ideas/idea_humanoid_robotics_embodied_ai_components]] — **accepted-current, positive, medium
+  sensitivity.** Simulation, world models, Jetson/Thor, safety tooling and edge compute remain a
+  credible enabling channel, but attributable humanoid economics are still undisclosed. See
+  [[relationships/relationship_humanoid_nvda]].
+- [[ideas/idea_terafab_ai_industrial_stack]] — **accepted-current, positive, medium sensitivity.**
+  SpaceXAI's prospective Vera adoption and orbital products support near-term merchant demand;
+  no binding Terafab manufacturing economics are disclosed. See
+  [[relationships/relationship_terafab_nvda]].
 
-Invalidate the thesis if customer returns fail to sustain AI infrastructure budgets, Data Center
-growth or margins deteriorate materially, Rubin is delayed or fails to win broad adoption, supply
-commitments produce material provisions, competing architectures erode platform economics, or
-normalized per-share earnings and cash flow cease compounding despite heavy reinvestment.
+### Candidate requiring relationship review
 
-## Disposition
+- [[ideas/idea_ai_infrastructure_power]] — **candidate, mixed-positive, high materiality.** NVIDIA
+  can accelerate land-and-power deployment and sell successive compute generations, but its USD
+  105 billion capped guarantee and long-duration commitments create direct credit and concentration
+  exposure. The edge is material and newly evidenced, but it is not canonical until a separate
+  relationship review accepts or rejects it. Invalidate the positive channel if projects slip,
+  guarantees crystallize without profitable hardware demand, or customers cannot finance renewal.
 
-Status: **watching**, confidence **medium**. Research and scenario valuation are complete, and three
-accepted canonical relationships resolve the prior relationship blocker. Strong business quality,
-net financial strength and current growth are offset by 17.8% modeled bear-case downside, only about
-0.85x base-upside-to-bear-downside, an unreached USD 201.60 buy-below price, a roughly 13.1% base-case
-margin of safety and medium confidence. The deterministic economic frontiers therefore keep the
-security allocation-ineligible at Watch even after the graph repair. Review by **2026-08-19**, or
-sooner after Q2 results,
-material export-control changes, Rubin timing evidence, a guidance revision, or a major customer
-capital-spending change. No conviction strategy, signal, or paper order is justified.
+### Evaluated but rejected-no-link
+
+- [[ideas/idea_commercial_space_infrastructure]]: Space-1 and SpaceXAI are products/customer leads,
+  but no material space-attributable NVIDIA revenue or backlog is disclosed; the specific orbital
+  mechanism remains captured by the accepted Terafab edge.
+- [[ideas/idea_ai_native_drug_discovery]] and
+  [[ideas/idea_precision_biology_healthcare_automation]]: BioNeMo and the Lilly collaboration show
+  tool adoption, but they do not establish material NVIDIA economics distinct from general compute.
+- [[ideas/idea_wide_bandgap_power_semiconductors]]: NVIDIA's 800 VDC architecture influences
+  downstream component demand, but NVIDIA is neither a direct WBG supplier nor a demonstrated
+  beneficiary of supplier economics.
+
+The complete 28-page idea catalog was searched across products, customers, suppliers, cost drivers,
+constraints and aliases. Other maintained ideas lacked a specific material transmission mechanism;
+no thematic-only edge is proposed.
 
 ## Changes since prior review
 
-- **Facts and evidence changed:** NVIDIA introduced a Space-1 Vera Rubin module, named SpaceXAI as a
-  prospective Vera adopter, and SpaceX disclosed a Terafab ambition alongside continued third-party
-  compute sourcing. These sources establish a product and customer channel, not order volume or
-  financial contribution. Q1 filing facts and Q2 guidance remain the newest decisive financial
-  evidence.
-- **Relationships changed:** AI compute, embodied AI and Terafab are now accepted canonical edges.
-  AI drug discovery and wide-bandgap power were reviewed and rejected as current NVIDIA investment
-  edges because attributable economics are immaterial or unquantified.
-- **Assumptions and scenarios unchanged:** Terafab and orbital evidence does not justify altering
-  normalized EPS, multiples or probabilities. Bear/base/bull fair values remain USD 180/USD 252/USD
-  374 at 25%/50%/25%, with USD 264.50 probability-weighted fair value.
-- **Outputs changed with price:** the reference mark rose from USD 211.94 to USD 218.99. Expected
-  return falls from 24.8% to about 20.8%; base upside falls from 18.9% to about 15.1%; bear downside
-  widens from 15.1% to about 17.8%; base/bear payoff falls from 1.25x to about 0.85x; and base-case
-  margin of safety falls from 15.9% to about 13.1%.
-- **Thesis, catalysts and risks changed:** the core AI-platform thesis is stronger at the graph level,
-  and SpaceXAI, orbital computing and physical AI add bounded option value. Unannounced customer
-  economics, internal customer silicon and Terafab's long-run substitution ambition add explicit
-  uncertainty; export, capex, supply and Rubin risks are unchanged.
-- **Blockers, gaps, rating and action:** the prior `relationship_pending` blocker is resolved and no
-  hard research blocker exists. Medium confidence and concentration remain soft gaps, while economic
-  downside-payoff and margin-of-safety frontiers remain unmet. Watching, no strategy and no paper
-  action remain unchanged, now for valuation rather than relationship completeness.
+- **Facts and evidence:** fiscal Q2 revenue, Data Center revenue, earnings and Q3 guidance replaced
+  the prior Q1 evidence. The Hugging Face agreement, USD 279 billion supply commitments, USD 105
+  billion guarantee cap, longer receivables, higher inventory and new debt are new.
+- **Valuation:** bear/base/bull values changed from USD 180/USD 252/USD 374 at 25%/50%/25% to USD
+  198/USD 310.50/USD 448 at 30%/50%/20%. The earnings base rose; downside probability also rose to
+  reflect balance-sheet and customer-financing exposure.
+- **Thesis and action:** the platform thesis is strengthened, while financial-risk confidence is
+  reduced. The page remains Buy/Initiate, but the current price moves from outside the old buy-below
+  frontier to inside the revised one; deterministic code owns the final research and eligibility
+  classifications.
+- **Catalysts and risks:** Q3 conversion and Rubin replace Q2 reporting as immediate catalysts.
+  Guarantees, commitments, DSO, acquisition execution and customer finance are added risks.
+- **Graph:** all three accepted edges remain current. AI infrastructure power is added only as a
+  candidate requiring separate review. Commercial space, drug-discovery/healthcare automation and
+  wide-bandgap associations are explicitly rejected as non-material or duplicative.
+- **Blockers and gaps:** the former insufficient-margin-of-safety and downside-payoff gaps are
+  expected to resolve under the revised scenarios. Customer concentration, guarantee exposure and
+  normalized earnings durability remain monitored risks rather than concealed gaps. No conclusion
+  is changed by the MACD signal alone.
+
+## Sources
+
+- [NVIDIA fiscal 2027 second-quarter Form 10-Q](https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm)
+- [NVIDIA fiscal 2027 second-quarter results](https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27pr.htm)
+- [NVIDIA fiscal 2027 second-quarter CFO commentary](https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27cfocommentary.htm)
+- [NVIDIA Hugging Face acquisition Form 8-K](https://www.sec.gov/Archives/edgar/data/1045810/000104581026000080/nvda-20260902.htm)
+- [PaperTrader canonical NVDA alert packet](../inbox/market-security_33d9c44facc75c726c7d-macd_cross_above_signal-b5b67bfce931.md)
+
+See the complete [[research-catalog]], results-first [[index]], and append-only [[log]].

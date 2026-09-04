@@ -1,0 +1,18 @@
+{
+  "source_id": "source_nvda_huggingface_20260903_8k",
+  "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000080/nvda-20260902.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000080/nvda-20260902.htm",
+  "source_type": "regulator_filing",
+  "title": "NVIDIA Form 8-K announcing definitive Hugging Face acquisition agreement",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "089fc17e99aaaa97e4b4b8a13c5b78dca7c4f0d24aca12c2d275a4e765ca461a",
+  "related_entity_ids": "idea_ai_compute_networking_hyperscaler_monetization|security_33d9c44facc75c726c7d",
+  "checked_at": "2026-09-04T06:15:57Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "NVIDIA agreed to acquire Hugging Face for approximately $11.9 billion plus an employee retention program of up to approximately $1.0 billion.",
+  "summary": "The definitive agreement may deepen NVIDIA's open-model distribution and developer ecosystem but adds integration, retention, regulatory and data-governance risk before expected closing in the first half of 2027.",
+  "run_id": "daily-20260904T060928Z"
+}

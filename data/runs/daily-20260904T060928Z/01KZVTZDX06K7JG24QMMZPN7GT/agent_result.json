@@ -1,0 +1,146 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_33d9c44facc75c726c7d",
+    "papertrader research source record --request data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/source_nvda_q2_fy2027_10q_request.json",
+    "papertrader research source record --request data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/source_nvda_q2_fy2027_release_request.json",
+    "papertrader research source record --request data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/source_nvda_q2_fy2027_cfo_request.json",
+    "papertrader research source record --request data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/source_nvda_huggingface_8k_request.json",
+    "papertrader wiki sync-technical-charts",
+    "papertrader wiki sync-technical-charts",
+    "papertrader research security upsert --request data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/assessment_upsert_request_v2.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/assessment_upsert_request_v3.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/assessment_upsert_request_v4.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/assessment_upsert_request_v5.json",
+    "papertrader queue enqueue --request data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/enqueue_ai_power_relationship_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/enqueue_ai_compute_idea_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/enqueue_humanoid_idea_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/enqueue_terafab_idea_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/security_upsert_request_v2.json",
+    "papertrader wiki lint --strict",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_33d9c44facc75c726c7d"
+  ],
+  "daily_report_items": [
+    "NVIDIA's September 3 MACD cross was a confirming signal rather than the thesis driver. Fiscal Q2 revenue reached USD 96.221 billion and Q3 guidance reached USD 108.0 billion, but USD 279 billion commitments and USD 105 billion capped guarantees materially increase execution risk. Deterministic USD 198/USD 310.50/USD 448 scenarios at USD 228.45 produce baseline conviction and allocation eligibility. Three accepted idea edges were preserved, AI infrastructure power was queued for relationship review, and no strategy, signal or paper order was created."
+  ],
+  "evidence": [
+    {
+      "claim": "NVIDIA's fiscal 2027 Q2 Form 10-Q reports USD 96.221 billion quarterly revenue, USD 184.084 billion first-half revenue, USD 86.958 billion first-half operating cash flow, USD 43.550 billion cash plus marketable securities, USD 279.004 billion of purchase and capacity commitments, USD 105 billion of capped infrastructure guarantees and 22% exposure to one direct customer.",
+      "observed_at": "2026-09-04T06:15:57Z",
+      "source": "source_nvda_q2_fy2027_10q",
+      "source_hash": "e2634e509c241c5f45e3f6c115dc38a85645e5fdbee760b4a04f5e9035f6f7a9",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm"
+    },
+    {
+      "claim": "NVIDIA's fiscal 2027 Q2 results release reports USD 96.221 billion revenue, 75.1% GAAP gross margin, USD 2.46 GAAP diluted EPS and fiscal Q3 revenue guidance of USD 108.0 billion plus or minus 2%.",
+      "observed_at": "2026-09-04T06:15:57Z",
+      "source": "source_nvda_q2_fy2027_release",
+      "source_hash": "1809cb206590dcfeb959f3a1a64157f4e5ee42788ec51289b74f3ea299931eb7",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27pr.htm"
+    },
+    {
+      "claim": "NVIDIA's fiscal 2027 Q2 CFO commentary identifies USD 84 billion Data Center compute revenue, a USD 8.8 billion customer-platform acquisition, a USD 2.0 billion equity investment and a 4.25-gigawatt capped land-and-power guarantee structure, while noting one additional major customer guarantee was not yet effective.",
+      "observed_at": "2026-09-04T06:15:57Z",
+      "source": "source_nvda_q2_fy2027_cfo",
+      "source_hash": "6a522635d049044b2ff9ff63cb78220cf29d960e96614c88afe30560c3ee0659",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27cfocommentary.htm"
+    },
+    {
+      "claim": "NVIDIA's September 3 Form 8-K discloses a definitive agreement to acquire Hugging Face in a mixed cash-and-stock transaction expected to close in the fourth quarter of fiscal 2027, adding integration and consideration risk without disclosed revenue or profitability economics in the filing.",
+      "observed_at": "2026-09-04T06:15:57Z",
+      "source": "source_nvda_huggingface_20260903_8k",
+      "source_hash": "089fc17e99aaaa97e4b4b8a13c5b78dca7c4f0d24aca12c2d275a4e765ca461a",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000080/nvda-20260902.htm"
+    },
+    {
+      "claim": "The deterministic schema-version-2 assessment linked predecessor assessment_96ae529b2d4d9d8d3c85 and the current page hash, used fresh USD 228.4499969482422 and USD/EUR 0.8596000075340271 state as of 2026-09-04T06:09:30Z, and derived Buy/Initiate, baseline conviction and allocation eligibility with no failed economic gate.",
+      "source": "assessment_82fd625a8d93be4bd8f5"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M1NHP278D8N1V0X1RW6R6M4Z.json",
+    "data/operations/payloads/01M1NHP550CKF9A4TA65EPXG2C.json",
+    "data/operations/payloads/01M1NHP73GXF8NYYVG2YZY6HHE.json",
+    "data/operations/payloads/01M1NHPA1839K6TH27CG2RSZJ8.json",
+    "data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/assessment_upsert_request.json",
+    "data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/assessment_upsert_request_v3.json",
+    "data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/assessment_upsert_request_v4.json",
+    "data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/assessment_upsert_request_v5.json",
+    "data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/enqueue_ai_compute_idea_request.json",
+    "data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/enqueue_ai_power_relationship_request.json",
+    "data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/enqueue_humanoid_idea_request.json",
+    "data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/enqueue_terafab_idea_request.json",
+    "data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/security_upsert_request.json",
+    "data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/security_upsert_request_v2.json",
+    "data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/source_nvda_huggingface_8k_request.json",
+    "data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/source_nvda_q2_fy2027_10q_request.json",
+    "data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/source_nvda_q2_fy2027_cfo_request.json",
+    "data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/source_nvda_q2_fy2027_release_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_33d9c44facc75c726c7d.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KZVTZDX06K7JG24QMMZPN7GT",
+  "operations_created": [
+    "01M1NHP278D8N1V0X1RW6R6M4Z",
+    "01M1NHP550CKF9A4TA65EPXG2C",
+    "01M1NHP73GXF8NYYVG2YZY6HHE",
+    "01M1NHPA1839K6TH27CG2RSZJ8"
+  ],
+  "status": "succeeded",
+  "summary": "Completed NVIDIA's repeat full security review for the 2026-09-03 MACD cross. Fiscal 2027 Q2 revenue reached USD 96.221 billion and fiscal Q3 guidance reached USD 108.0 billion, while USD 279 billion of commitments, USD 105 billion of capped infrastructure guarantees, customer concentration and the Hugging Face acquisition materially increased execution and balance-sheet risk. Deterministic USD 198/USD 310.50/USD 448 scenarios at the fresh USD 228.4499969482422 mark produce USD 304.25 probability-weighted fair value, 33.1801% expected return, 24.8851% confidence-adjusted expected return and a USD 248.40 buy-below price. The assessment is Buy/Initiate, baseline conviction and allocation-eligible. Three accepted idea edges were preserved, AI infrastructure power was retained as a candidate requiring relationship review, four dependent follow-ups were enqueued, and no strategy, signal, order or accounting state changed.",
+  "validation": {
+    "checks": [
+      "The mandatory pre-assessment security-context receipt succeeded and exposed predecessor assessment_96ae529b2d4d9d8d3c85, retained sources, page hashes, accepted and rejected relationships, and the prior result.",
+      "Four current primary sources were hashed and registered before assessment use; final security-context confirmed their availability and freshness.",
+      "The immutable NVDA/XNAS/USD/equity identity was preserved and security-context confirmed fresh identity-matched USD 228.4499969482422 market and 0.8596000075340271 USD/EUR state as of 2026-09-04T06:09:30Z.",
+      "Exactly one accepted schema-version-2 assessment, assessment_82fd625a8d93be4bd8f5, links predecessor assessment_96ae529b2d4d9d8d3c85, this source operation, the expected result path and current page hash 45c7ba8d3ac9b36bcff4689c8fd3ed89a6dcbe5653cd9db15146673f1cce91dc.",
+      "The complete idea catalog and all five canonical relationship rows were reviewed; three accepted edges remain current, two rejected edges retain explicit reasons, and one evidence-backed AI-infrastructure-power candidate was clearly separated from accepted state and queued for relationship review.",
+      "Exactly one dependency-bound idea refresh was created for each payload or accepted idea, and one dependency-bound relationship review was created for the unaccepted AI-infrastructure-power candidate.",
+      "The three analytical chart IDs exactly match the page fences; peer multiples and balance-sheet time series carry specific omissions, and the deterministic market-technicals chart is excluded from visualization_review.",
+      "papertrader wiki lint --strict, schema validate --strict, queue validate, integrity --strict and portfolio reconcile --strict all returned OK; no allocation target/history, strategy, signal, order, execution, cash, portfolio or performance state changed."
+    ],
+    "passed": true
+  },
+  "visualization_review": {
+    "charts": [
+      {
+        "chart_id": "nvda-q2-fy27-fundamentals",
+        "page_path": "data/wiki/securities/security_33d9c44facc75c726c7d.md"
+      },
+      {
+        "chart_id": "nvda-q2-fy27-gross-margin",
+        "page_path": "data/wiki/securities/security_33d9c44facc75c726c7d.md"
+      },
+      {
+        "chart_id": "nvda-september-2026-scenarios",
+        "page_path": "data/wiki/securities/security_33d9c44facc75c726c7d.md"
+      }
+    ],
+    "completed": true,
+    "omissions": [
+      {
+        "dataset": "Like-for-like peer valuation multiples",
+        "reason": "The bounded primary-source review did not provide a three-to-eight-company peer set sharing one date, earnings definition, instrument scope and canonical currency basis, so no mixed-definition P/E comparison was estimated.",
+        "reason_code": "insufficient_comparability"
+      },
+      {
+        "dataset": "Cash, debt and guarantee time series",
+        "reason": "The decisive current filing supplied one directly comparable balance-sheet and guarantee observation; a multi-period series with unchanged definitions was unavailable within the bounded review.",
+        "reason_code": "insufficient_history"
+      }
+    ]
+  }
+}

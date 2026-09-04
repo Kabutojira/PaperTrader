@@ -1,0 +1,32 @@
+{
+  "operation_type": "relationship_research",
+  "entity_type": "relationship",
+  "entity_id": "relationship_ai_power_nvda",
+  "dedupe_key": "relationship_research:idea_ai_infrastructure_power:security_33d9c44facc75c726c7d:security-result:01KZVTZDX06K7JG24QMMZPN7GT",
+  "prompt": "Review whether NVIDIA has a material causal relationship to AI infrastructure power through compute demand, land and power guarantees, campus financing exposure and multi-generation hardware renewal; accept or reject the edge.",
+  "inputs": {
+    "relationship_id": "relationship_ai_power_nvda",
+    "idea_id": "idea_ai_infrastructure_power",
+    "security_id": "security_33d9c44facc75c726c7d",
+    "proposed_direction": "mixed",
+    "proposed_mechanism": "NVIDIA can accelerate powered-campus deployment and sell successive compute generations, while capped land, power and shell guarantees transfer direct customer-credit, concentration and project-execution exposure to NVIDIA.",
+    "proposed_invalidation": "Reject the positive channel if projects slip, guarantees crystallize without profitable hardware demand, customers cannot finance renewals, or power commitments fail to create material incremental NVIDIA economics.",
+    "evidence_refs": [
+      "source_nvda_q2_fy2027_10q",
+      "source_nvda_q2_fy2027_cfo"
+    ]
+  },
+  "source": "security_research:01KZVTZDX06K7JG24QMMZPN7GT",
+  "priority": 68,
+  "freshness_days": 0,
+  "depends_on": ["01KZVTZDX06K7JG24QMMZPN7GT"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_33d9c44facc75c726c7d.md",
+    "data/wiki/ideas/idea_ai_infrastructure_power.md",
+    "source_nvda_q2_fy2027_10q",
+    "source_nvda_q2_fy2027_cfo"
+  ],
+  "max_attempts": 3
+}

@@ -1,0 +1,21 @@
+{
+  "entity_id": "idea_ai_compute_networking_hyperscaler_monetization",
+  "entity_type": "idea",
+  "inputs": {
+    "idea_id": "idea_ai_compute_networking_hyperscaler_monetization",
+    "security_id": "security_33d9c44facc75c726c7d",
+    "security_research_operation_id": "01KZVTZDX06K7JG24QMMZPN7GT",
+    "security_research_result_path": "data/runs/daily-20260904T060928Z/01KZVTZDX06K7JG24QMMZPN7GT/agent_result.json",
+    "seed_claim": "NVIDIA fiscal Q2 materially strengthens accelerated-compute demand and platform economics while USD 279 billion of commitments and USD 105 billion of guarantees raise customer-financing and concentration risk."
+  },
+  "objective": "Refresh the AI compute and networking idea with NVIDIA fiscal Q2 evidence, revised valuation, commitment and guarantee risks, candidate disposition and the broader investable universe.",
+  "operation_id": "01M1NHP550CKF9A4TA65EPXG2C",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_ai_compute_networking_hyperscaler_monetization.md",
+    "data/wiki/securities/security_33d9c44facc75c726c7d.md",
+    "source_nvda_q2_fy2027_10q",
+    "source_nvda_q2_fy2027_release"
+  ]
+}
