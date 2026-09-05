@@ -1,0 +1,31 @@
+{
+  "allocation_plan_id": "allocation_plan_8750d84d9f6b86fd5bd3",
+  "allocation_plan_version": 1,
+  "as_of": "2026-09-05T10:21:09Z",
+  "capital_allocated_base": "592.0239914741514273179747283",
+  "capital_unallocated_base": "4999.022514585930967742242712",
+  "cash_base": "9703.0225174243560771003624",
+  "current_baseline_exposure_base": "298.480010986328128",
+  "current_conviction_exposure_base": "0",
+  "current_gross_exposure_base": "298.480010986328128",
+  "deployment_budget_base": "1500.22",
+  "diversified_budget_base": "750.11",
+  "eligible_candidate_count": 3,
+  "equity_base": "10001.5025284106842051003624",
+  "evidence_state": "invested_or_actionable",
+  "excluded_candidate_count": 77,
+  "maximum_baseline_exposure_base": "3000.45075852320526153010872",
+  "minimum_cash_reserve_base": "2500.3756321026710512750906",
+  "mode": "active",
+  "operations_created": [],
+  "pending_gross_exposure_base": "111.375",
+  "run_id": "daily-20260905T102108Z",
+  "target_count": 80,
+  "target_invested_exposure_base": "6000.90151704641052306021744",
+  "unallocated_reasons": [
+    "baseline_sleeve_cap",
+    "candidate_or_rounding_constraints",
+    "deployment_limit",
+    "insufficient_diversification"
+  ]
+}
