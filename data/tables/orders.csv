@@ -1,4 +1,5 @@
 order_id,signal_id,strategy_id,allocation_intent_id,created_at,status,fill_policy,not_before,expires_at,order_type,limit_price,slippage_bps,fee_model,currency,run_id
+order_13ad2dddfc24c33d7b46,signal_cb39237e1238dfa1e7fa,strategy_8caa208dfc702a2584a7,allocation_intent_3e3d6793d5aacc3843e8,2026-09-05T09:34:03Z,pending,next_open,2026-09-05T09:34:03Z,2026-09-06T09:19:19Z,market,,5,fixed_plus_bps,EUR,daily-20260905T091918Z
 order_371f356c9fa026750350,signal_14939473c94cb7b9b567,strategy_bd005fc3733b1475b6f9,,2026-07-28T07:36:01Z,cancelled,next_open,2026-07-28T07:36:01Z,2026-07-29T07:13:53Z,market,,5,fixed_plus_bps,USD,local-20260728-daily-all-24
 order_3b1467697b731e2bf689,signal_6c82d41c9f217bdab771,strategy_bd005fc3733b1475b6f9,,2026-07-28T07:52:26Z,cancelled,next_open,2026-07-28T07:52:26Z,2026-07-29T07:45:53Z,market,,5,fixed_plus_bps,USD,local-20260728-daily-all-25
 order_6b76dfe1f4b30a853cf2,signal_41940fa33b3fe251802e,strategy_ef910e9aff5203a0b901,allocation_intent_206644feb73549257619,2026-09-03T22:03:21Z,cancelled,next_open,2026-09-03T22:03:21Z,2026-09-04T21:59:00Z,market,,5,fixed_plus_bps,USD,daily-20260903T213453Z

@@ -1,0 +1,66 @@
+{
+  "commands_run": [
+    "papertrader order create-baseline --request data/runs/daily-20260905T091918Z/01M1REBHQG54RC080D53Z90GYE/order_create_baseline_request.json"
+  ],
+  "daily_report_items": [
+    "Prosus baseline increase: created pending next-open paper order order_13ad2dddfc24c33d7b46 for the deterministic three-share delta toward the current eleven-share target; no fill or accounting entry was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The sole current target binds allocation_plan_e9ff34dda455150b7366 and allocation_intent_3e3d6793d5aacc3843e8 to strategy_8caa208dfc702a2584a7, assessment_7f28dfd9240d6099400b, relationship_e514a92bf6c38d0754ee, an eleven-share target, and an increase disposition.",
+      "observed_at": "2026-09-05T09:19:19Z",
+      "source": "data/tables/allocation_targets.csv"
+    },
+    {
+      "claim": "Signal signal_cb39237e1238dfa1e7fa was a live open signal for the same allocation intent and is now ordered after deterministic order acceptance.",
+      "observed_at": "2026-09-05T09:28:03Z",
+      "source": "data/tables/signals.csv"
+    },
+    {
+      "claim": "The accepted identity-matched PRX.AS reference was EUR 37.310001373291016, retrieved within the configured freshness window; portfolio base currency is also EUR, so the submitted deterministic FX reference was one.",
+      "observed_at": "2026-09-05T09:19:19Z",
+      "source": "data/market/latest.csv"
+    },
+    {
+      "claim": "Order order_13ad2dddfc24c33d7b46 is pending with next_open fill policy, market order type, allocation_intent_3e3d6793d5aacc3843e8, and expiry 2026-09-06T09:19:19Z.",
+      "observed_at": "2026-09-05T09:34:03Z",
+      "source": "data/tables/orders.csv"
+    },
+    {
+      "claim": "Deterministic baseline sizing created one buy/long equity leg for security_8b703a8adf5f864acaa4 with quantity three and contract multiplier one; no agent quantity was supplied in the request.",
+      "observed_at": "2026-09-05T09:34:03Z",
+      "source": "data/tables/order_legs.csv"
+    },
+    {
+      "claim": "The audited command exited zero, created order_13ad2dddfc24c33d7b46, reported no risk violations, and changed only orders.csv, order_legs.csv, and signals.csv among canonical structured state.",
+      "observed_at": "2026-09-05T09:34:19Z",
+      "source": "data/runs/daily-20260905T091918Z/01M1REBHQG54RC080D53Z90GYE/command_audit.json"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260905T091918Z/01M1REBHQG54RC080D53Z90GYE/order_create_baseline_request.json",
+    "data/tables/order_legs.csv",
+    "data/tables/orders.csv",
+    "data/tables/signals.csv"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M1REBHQG54RC080D53Z90GYE",
+  "operations_created": [],
+  "reason_code": "pending_paper_order_created",
+  "status": "succeeded",
+  "summary": "Created pending paper order order_13ad2dddfc24c33d7b46 for the current Prosus baseline increase. Deterministic sizing produced one three-share long-equity buy leg toward the persisted eleven-share target after the existing eight-share holding; the order remains pending under next_open with no fill or accounting mutation.",
+  "validation": {
+    "checks": [
+      "Controller preflight identifies native llm-wiki 2.1.0, papertrader-controller, and papertrader-execute-strategy with sequential execution enabled.",
+      "The selected queue row was running, claimed by daily-20260905T091918Z, and had a live lease at evaluation.",
+      "Payload, active strategy, ready signal, canonical leg, current allocation target, immutable assessment, and accepted relationship identities matched before order creation.",
+      "The current allocation disposition was increase, which correctly maps to the open signal lifecycle action.",
+      "The submitted baseline request omitted legs and quantity; deterministic code derived the exact three-share delta from the eleven-share target, eight-share holding, and pending-order state.",
+      "The deterministic order command accepted the fresh identity-matched EUR reference and returned no risk violations.",
+      "Order idempotency state is canonical: one order exists for the signal, its status is pending, and the signal status is ordered.",
+      "The accepted order remains pending under next_open; no fill, execution, cash, portfolio, performance, allocation target, or allocation history mutation occurred.",
+      "Git diff validation reported no whitespace errors and no changes to allocation or accounting paths."
+    ],
+    "passed": true
+  }
+}
