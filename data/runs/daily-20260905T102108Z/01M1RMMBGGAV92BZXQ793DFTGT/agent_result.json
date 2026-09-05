@@ -1,0 +1,64 @@
+{
+  "commands_run": [
+    "papertrader podcast validate-script --daily-cycle-id daily-20260905T102108Z --script-path data/wiki/podcasts/daily-podcast_20260905T102108Z.md",
+    "papertrader podcast render-draft --daily-cycle-id daily-20260905T102108Z --script-path data/wiki/podcasts/daily-podcast_20260905T102108Z.md",
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader queue validate",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Published the 2,849-word daily research podcast covering UiPath's profitable but weak-asymmetry quarter and the distinct strategy and pending-order states for Uber, Prosus and NVIDIA; script preflight passed and the single audited ephemeral draft render succeeded."
+  ],
+  "evidence": [
+    {
+      "claim": "Controller-validated frozen podcast context version three bound the exclusive and inclusive research cutoffs, prior successful podcast, daily report, decision snapshot, and exact transcript path data/wiki/podcasts/daily-podcast_20260905T102108Z.md.",
+      "source": "data/runs/daily-20260905T102108Z/podcast_context.json"
+    },
+    {
+      "claim": "Accepted UiPath research retained Buy / Initiate as the valuation label but Watch / no action operationally because medium confidence, adverse downside asymmetry, the post-results reaction, and the absent accepted relationship block allocation.",
+      "source": "data/runs/daily-20260905T102108Z/01KZXXN28R2WDCZVGE6QXBXV5X/agent_result.json"
+    },
+    {
+      "claim": "Accepted Uber strategy research refreshed a ready two-share starter strategy and signal while retaining autonomy, insurance, regulation, incentive, dilution, confidence, and downside constraints.",
+      "source": "data/runs/daily-20260904T180734Z/01M1NK3K883BRW5XXCEPAM2RB2/agent_result.json"
+    },
+    {
+      "claim": "Accepted Prosus strategy research updated the active baseline strategy to an eleven-share target and created a signal for only the remaining deterministic delta, with medium confidence and explicit holding-company risks.",
+      "source": "data/runs/daily-20260905T091918Z/01M1RDTZERQ80E3QB3R96MHN46/agent_result.json"
+    },
+    {
+      "claim": "Accepted NVIDIA strategy research created a ready full-baseline two-share strategy and signal while retaining medium confidence, concentration, commitment, guarantee, export-control, and product-transition risks.",
+      "source": "data/runs/daily-20260905T102108Z/01M1RDTZERZKXXHQSYPX16YW7D/agent_result.json"
+    },
+    {
+      "claim": "The completed decision state showed existing Prosus exposure, validated pending Prosus and NVIDIA orders, no current actionable Uber order, and model capital remaining overwhelmingly in cash.",
+      "source": "data/runs/daily-20260905T102108Z/decision_snapshot.json"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260905T102108Z/01M1RMMBGGAV92BZXQ793DFTGT/editorial_outline.md",
+    "data/wiki/daily-reports/daily-report_20260905.md",
+    "data/wiki/podcasts/daily-podcast_20260905T102108Z.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M1RMMBGGAV92BZXQ793DFTGT",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Published a standalone 2,849-word daily research podcast with two chapters. The first covers UiPath's recurring growth, second consecutive GAAP operating profit, slower net-new ARR, stock compensation, adverse post-results decline, valuation range, weak downside payoff, and absent accepted relationship. The second combines all three new strategy developments exactly once: Uber reached a ready starter strategy without a current validated order; Prosus advanced to a pending three-share addition toward its eleven-share target; and NVIDIA advanced to a pending two-share opening order. Older Intuitive Surgical, MercadoLibre, Block, and thematic pages were excluded as background rather than new developments, and detailed Prosus and NVIDIA thesis narration from the prior episode was not repeated. Current ratings, reasons, and Buy and Sell conditions were covered for UiPath, Uber, Prosus, and NVIDIA. The deterministic script preflight passed, and the single audited draft-render invocation succeeded with a 1,227-second ephemeral audio draft.",
+  "validation": {
+    "checks": [
+      "The sole routed running operation matched operation 01M1RMMBGGAV92BZXQ793DFTGT, run daily-20260905T102108Z, and the daily_podcast skill under the controller claim.",
+      "Payload, frozen context, and daily-run manifest all bound the exact page path data/wiki/podcasts/daily-podcast_20260905T102108Z.md.",
+      "The editorial outline contains introduction, teaser, chapters, overall_summary, and greetings in the required order and maps every successful research development in the frozen window to exactly one chapter.",
+      "The spoken transcript contains 2,849 words, at least eight prose paragraphs, the exact required opening, teaser opening, and closing sentences, and no numeric glyphs, headings, lists, tables, visible machine IDs, raw URLs, or link markup.",
+      "Current ratings, reasons, Buy conditions, and Sell or invalidation conditions are stated for UiPath, Uber, Prosus, and NVIDIA.",
+      "The daily report contains exactly one deterministic transcript link and no audio link.",
+      "The script preflight passed before rendering, and exactly one audited render-draft command succeeded; no media path or audio link was persisted in repository content.",
+      "Strict schema, integrity, wiki, queue, and portfolio checks all passed.",
+      "No operation was delegated or run in parallel, no second queue operation was claimed, and no allocation, signal, order, execution, cash, portfolio, fill, or performance state was changed."
+    ],
+    "passed": true
+  }
+}

@@ -202,6 +202,7 @@ This equal-weight research benchmark is analytical only, not copy-ready, and can
 
 - [[model-portfolio|PaperTrader model portfolio]]
 - [[performance|PaperTrader performance and risk]]
+- [[podcasts/daily-podcast_20260905T102108Z|Daily research podcast — 2026-09-05T102108Z]]
 - [[research-catalog|PaperTrader research catalog]]
 - [[securities/security_dfa34d4b9050964b465e|Intel Corporation common stock]]
 - [[securities/security_eca976f0076a425ea1bb|UiPath, Inc. Class A common stock]]

@@ -53,17 +53,26 @@
       "profile": "",
       "recorded_at": "2026-09-05T11:06:39Z",
       "terminal_status": ""
+    },
+    {
+      "index": 6,
+      "kind": "podcast_text",
+      "operation_id": "01M1RMMBGGAV92BZXQ793DFTGT",
+      "operation_type": "daily_podcast",
+      "profile": "deep",
+      "recorded_at": "2026-09-05T11:28:36Z",
+      "terminal_status": "succeeded"
     }
   ],
   "completed_at": "2026-09-05T11:06:13Z",
-  "completion_at": "",
+  "completion_at": "2026-09-05T11:28:35Z",
   "daily_cycle_id": "daily-20260905T102108Z",
   "daily_run_version": 2,
   "fill_outcomes": [
     "order_13ad2dddfc24c33d7b46:pending:-",
     "order_742bea9c46f700562f10:pending:-"
   ],
-  "final_commit_identity": "daily-20260905T102108Z:checkpoint-005",
+  "final_commit_identity": "daily-20260905T102108Z:checkpoint-006",
   "final_commit_sha": "",
   "finalization_at": "2026-09-05T11:06:13Z",
   "finalization_commit_identity": "daily-20260905T102108Z:checkpoint-005",
@@ -71,7 +80,7 @@
   "maximum_operations": 5,
   "model_budget_limit": "100",
   "model_budget_used": "20",
-  "next_checkpoint_index": 6,
+  "next_checkpoint_index": 7,
   "operating_date": "2026-09-05",
   "operation_count": 4,
   "operations_accepted": [
@@ -156,11 +165,11 @@
   ],
   "originating_github_run_id": "33959838213",
   "podcast_audio_path": "",
-  "podcast_commit_identity": "",
-  "podcast_operation_id": "",
-  "podcast_page_path": "",
-  "podcast_status": "pending",
-  "podcast_text_at": "",
+  "podcast_commit_identity": "daily-20260905T102108Z:checkpoint-006",
+  "podcast_operation_id": "01M1RMMBGGAV92BZXQ793DFTGT",
+  "podcast_page_path": "data/wiki/podcasts/daily-podcast_20260905T102108Z.md",
+  "podcast_status": "succeeded",
+  "podcast_text_at": "2026-09-05T11:28:35Z",
   "preparation_at": "2026-09-05T10:21:09Z",
   "preparation_errors": [],
   "profile_limits": {
