@@ -3311,3 +3311,9 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Revalidated [[securities/security_dfa34d4b9050964b465e|Intel Corporation]] after the prior attempt corrected stale page prose following its immutable assessment write.
 - A byte-identical SEC submissions index and refreshed but unchanged September 4 market and FX observations leave the USD 32/USD 78/USD 130 scenarios and Sell / Avoid conclusion unchanged.
 - Rechecked the maintained idea catalog and canonical relationship state; the rejected Terafab edge and already-queued AI-compute candidate review require no duplicate follow-up, strategy, signal or paper order.
+
+## [2026-09-05] update | Albemarle security review after volume anomaly
+- Updated [[securities/security_66cdcf90aac0d83e76f3|Albemarle Corporation]] with the exact 7 August-4 September alert period, the 3 September CEO-succession filing, refreshed valuation outputs, a complete idea-exposure review, and three analytical charts.
+- Registered current SEC evidence and wrote one immutable schema-v2 assessment; rating remains Hold / Watch and no strategy was justified.
+- Enqueued dependent refresh `01M1SAEEC8FJYDHZM3P4EZ8NJV` for [[ideas/idea_critical_minerals_lithium]], the one payload/current accepted idea.
+- Reviewed the complete maintained idea catalog; no additional material relationship candidate was supported.

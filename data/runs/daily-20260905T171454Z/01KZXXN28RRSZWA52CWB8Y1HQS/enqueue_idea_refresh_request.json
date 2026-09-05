@@ -1,0 +1,26 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_critical_minerals_lithium",
+  "dedupe_key": "idea_research:idea_critical_minerals_lithium:security-result:01KZXXN28RRSZWA52CWB8Y1HQS",
+  "prompt": "Refresh the critical-minerals lithium idea from Albemarle's completed September alert review, including candidate disposition, thesis, catalysts, risks, confidence, and the broader investable-security universe.",
+  "inputs": {
+    "idea_id": "idea_critical_minerals_lithium",
+    "seed_claim": "Albemarle's Q2 operating evidence remains current, while the September volume anomaly and CEO transition add timing risk; unchanged USD 9.93/USD 131.25/USD 231.62 scenarios produce a USD 126.0125 weighted value slightly below the USD 126.28 mark, leaving the accepted relationship current and the decision Hold / Watch.",
+    "security_id": "security_66cdcf90aac0d83e76f3",
+    "security_research_operation_id": "01KZXXN28RRSZWA52CWB8Y1HQS",
+    "security_research_result_path": "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/agent_result.json"
+  },
+  "source": "security_research:01KZXXN28RRSZWA52CWB8Y1HQS",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": [
+    "01KZXXN28RRSZWA52CWB8Y1HQS"
+  ],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_66cdcf90aac0d83e76f3.md"
+  ],
+  "max_attempts": 3
+}

@@ -1,0 +1,18 @@
+{
+  "source_id": "source_alb_sec_submissions_20260905",
+  "url": "https://data.sec.gov/submissions/CIK0000915913.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0000915913.json",
+  "source_type": "filing",
+  "title": "Albemarle Corporation SEC submissions index checked 2026-09-05",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "9c761e2899277517615d85b23989a45e82ff6d51e655199c6b2de608a5086206",
+  "related_entity_ids": "security_66cdcf90aac0d83e76f3",
+  "checked_at": "2026-09-05T17:31:04Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "The latest operating filing remains the August 5, 2026 Form 10-Q; later August 21 and September 3 Forms 8-K concern accounting-officer and CEO succession.",
+  "summary": "The SEC submissions index bounds the post-Q2 filing review and identifies two later leadership filings but no newer quarterly operating report.",
+  "run_id": "daily-20260905T171454Z"
+}

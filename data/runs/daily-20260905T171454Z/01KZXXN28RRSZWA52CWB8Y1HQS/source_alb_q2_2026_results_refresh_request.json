@@ -1,0 +1,18 @@
+{
+  "source_id": "source_alb_q2_2026_results_sec",
+  "url": "https://www.sec.gov/Archives/edgar/data/915913/000091591326000101/a2q26earningsreleaseex991.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/915913/000091591326000101/a2q26earningsreleaseex991.htm",
+  "source_type": "filing",
+  "title": "Albemarle Q2 2026 results exhibit",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "e040ddc92609c67057128d17703e2a1ec5078a8004bc15bbb9ed20504a758c6e",
+  "related_entity_ids": "idea_critical_minerals_lithium|security_66cdcf90aac0d83e76f3",
+  "checked_at": "2026-09-05T17:31:04Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Q2 net sales were USD 1.743 billion, adjusted EBITDA USD 858 million, operating cash flow USD 710 million, Energy Storage realized price USD 19.53/kg LCE, and volume 65 kt LCE.",
+  "summary": "The byte-identical SEC exhibit remains the current source for realized lithium pricing, volume, earnings, cash conversion, outlook scenarios, capex, liquidity and diluted shares.",
+  "run_id": "daily-20260905T171454Z"
+}

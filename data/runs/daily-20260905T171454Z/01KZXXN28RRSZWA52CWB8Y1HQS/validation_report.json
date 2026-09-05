@@ -1,0 +1,42 @@
+{
+  "auxiliary_models": {
+    "web_extract": "openai-codex:gpt-5.6-luna"
+  },
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M1SAEEC8FJYDHZM3P4EZ8NJV.json",
+    "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/assessment_upsert_request.json",
+    "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/assessment_upsert_request_retry01.json",
+    "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/assessment_upsert_request_retry02.json",
+    "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/assessment_upsert_request_retry03.json",
+    "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/enqueue_idea_refresh_request.json",
+    "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/issue_resolve_request.json",
+    "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/security_upsert_request.json",
+    "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/source_alb_ceo_succession_request.json",
+    "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/source_alb_q2_2026_10q_refresh_request.json",
+    "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/source_alb_q2_2026_results_refresh_request.json",
+    "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/source_alb_sec_submissions_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_66cdcf90aac0d83e76f3.md"
+  ],
+  "effective_model": "gpt-5.6-sol",
+  "errors": [],
+  "escalation_source": "",
+  "maximum_turns": 160,
+  "mutation_policy": "full_research",
+  "operation_id": "01KZXXN28RRSZWA52CWB8Y1HQS",
+  "passed": true,
+  "profile": "deep",
+  "profile_policy_version": "profile-router-v1",
+  "reasoning_effort": "medium",
+  "route_reason": "scenario_complete_security_review",
+  "run_id": "daily-20260905T171454Z",
+  "timeout_seconds": 1800,
+  "validation_version": 1,
+  "weighted_cost": "5"
+}

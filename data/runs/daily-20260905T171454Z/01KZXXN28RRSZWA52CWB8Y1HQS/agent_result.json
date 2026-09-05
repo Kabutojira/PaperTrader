@@ -1,0 +1,133 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_66cdcf90aac0d83e76f3",
+    "papertrader research source record --request data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/source_alb_q2_2026_10q_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/source_alb_q2_2026_results_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/source_alb_sec_submissions_request.json",
+    "papertrader research source record --request data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/source_alb_ceo_succession_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/security_upsert_request.json",
+    "papertrader wiki sync-technical-charts",
+    "papertrader research assessment upsert --request data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/assessment_upsert_request_retry01.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/assessment_upsert_request_retry02.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/assessment_upsert_request_retry03.json",
+    "papertrader queue enqueue --request data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/enqueue_idea_refresh_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader research security-context --security-id security_66cdcf90aac0d83e76f3",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "daily_report_items": [
+    "Albemarle's 4 September close fell 4.45% on a 2.02 volume z-score, completing a 3.68% decline across the exact alert window; the 3 September CEO-succession filing adds execution-monitoring risk but does not establish a changed operating outlook.",
+    "Unchanged USD 9.93/USD 131.25/USD 231.62 scenarios produce USD 126.0125 weighted value and -0.21% expected return at the USD 126.28 mark; deterministic disposition remains Hold / Watch and allocation-ineligible.",
+    "The complete idea catalog was reviewed, the accepted critical-minerals/lithium relationship remains current, no additional material relationship or strategy was justified, and dependent idea refresh 01M1SAEEC8FJYDHZM3P4EZ8NJV was enqueued."
+  ],
+  "evidence": [
+    {
+      "claim": "The SEC submissions index lists the 3 September CEO-succession Form 8-K as the newest decision-relevant filing and no periodic operating filing newer than the Q2 Form 10-Q through 2026-09-05.",
+      "observed_at": "2026-09-05T17:31:04Z",
+      "source": "Albemarle Corporation SEC submissions index checked 2026-09-05",
+      "source_hash": "9c761e2899277517615d85b23989a45e82ff6d51e655199c6b2de608a5086206",
+      "url": "https://data.sec.gov/submissions/CIK0000915913.json"
+    },
+    {
+      "claim": "Q2 net sales increased to USD 1.327 billion from USD 1.220 billion, adjusted EBITDA increased to USD 335 million from USD 197 million, and management retained the scenario-relevant 2026 EBITDA sensitivities around USD 10, USD 20 and USD 30 per kilogram LCE.",
+      "observed_at": "2026-09-05T17:31:04Z",
+      "source": "Albemarle Q2 2026 results exhibit",
+      "source_hash": "e040ddc92609c67057128d17703e2a1ec5078a8004bc15bbb9ed20504a758c6e",
+      "url": "https://www.sec.gov/Archives/edgar/data/915913/000091591326000101/a2q26earningsreleaseex991.htm"
+    },
+    {
+      "claim": "The board appointed Scott Tozier to succeed Kent Masters as chief executive effective 1 January 2027; the planned transition creates execution-monitoring risk but the filing did not change operating guidance or provide evidence requiring changed valuation assumptions.",
+      "observed_at": "2026-09-05T17:31:04Z",
+      "source": "Albemarle September 3, 2026 Form 8-K CEO succession",
+      "source_hash": "b6a55779ac57175cbbae7e73befd7325e5e7b8a1ec1d5158d96da529623d2167",
+      "url": "https://www.sec.gov/Archives/edgar/data/915913/000114036126035623/ef20081522_8k.htm"
+    },
+    {
+      "claim": "Across the canonical 7 August-4 September alert window, adjusted close fell 3.68% to USD 126.27999877929688; the 4 September session fell 4.45% on 3,919,800 shares with volume z-score 2.019279589088709, while RSI 42.092512219300995 was neutral and MACD remained above signal.",
+      "observed_at": "2026-09-05T17:14:55Z",
+      "source": "data/market/latest.csv, data/market/prices/security_66cdcf90aac0d83e76f3.csv and data/market/technical/security_66cdcf90aac0d83e76f3.csv",
+      "source_hash": "20016f391651fa0513b8cf1d3b2c2222619931231a41f9a6f341897d2e4fad35"
+    },
+    {
+      "claim": "Current assessment assessment_9d1e5ee5f9a3f19a6a42 links predecessor assessment_34f8c1b459177a91e165, source operation 01KZXXN28RRSZWA52CWB8Y1HQS, fresh registered market and FX identity, and research-page hash fdd8694881fef76904d9acbd821233609cd3e69ce708349ead969d27b1adc6a8; deterministic rating is Hold, action Watch and allocation eligibility ineligible.",
+      "source": "papertrader research security-context --security-id security_66cdcf90aac0d83e76f3"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M1SAEEC8FJYDHZM3P4EZ8NJV.json",
+    "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/assessment_upsert_request.json",
+    "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/assessment_upsert_request_retry01.json",
+    "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/assessment_upsert_request_retry02.json",
+    "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/assessment_upsert_request_retry03.json",
+    "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/enqueue_idea_refresh_request.json",
+    "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/issue_resolve_request.json",
+    "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/security_upsert_request.json",
+    "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/source_alb_ceo_succession_request.json",
+    "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/source_alb_q2_2026_10q_refresh_request.json",
+    "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/source_alb_q2_2026_results_refresh_request.json",
+    "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/source_alb_sec_submissions_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_66cdcf90aac0d83e76f3.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KZXXN28RRSZWA52CWB8Y1HQS",
+  "operations_created": [
+    "01M1SAEEC8FJYDHZM3P4EZ8NJV"
+  ],
+  "status": "succeeded",
+  "summary": "Completed one bounded Albemarle security review after the 4 September volume anomaly. Current SEC evidence preserves the Q2 operating thesis while the 3 September CEO succession adds execution risk rather than a quantified valuation change. The unchanged USD 9.93/USD 131.25/USD 231.62 bear/base/bull cases at 25%/50%/25% produce USD 126.0125 probability-weighted fair value, -0.21182988745857938335394935% expected return and -0.1588724155939345375154620125% medium-confidence-adjusted return at the USD 126.27999877929688 mark. Deterministic state retains Hold / Watch, quality score 78 and allocation ineligibility because expected return, base return and downside-payoff gates fail. Updated the security page and structured projection, registered four current SEC evidence records, appended exactly one schema-v2 assessment linked to its predecessor and matching page hash, added three analytical charts, and enqueued exactly one dependent lithium-idea refresh. No strategy, signal, order, accounting, portfolio, performance, allocation or relationship state changed. The prior producer-owned timeout issue remains unchanged because its resolution request was rejected before dispatch by operation-scope enforcement; strict validation nevertheless passes for this completed review.",
+  "validation": {
+    "checks": [
+      "PASS: the final security-context output confirms one current schema-v2 assessment from this operation, predecessor assessment_34f8c1b459177a91e165, assessment ID assessment_9d1e5ee5f9a3f19a6a42 and exact current page-hash match fdd8694881fef76904d9acbd821233609cd3e69ce708349ead969d27b1adc6a8.",
+      "PASS: identity remains Albemarle common stock on XNYS with provider symbol ALB and USD currency; fresh mark USD 126.27999877929688 and USD/EUR 0.8604999780654907 both use 2026-09-05T17:14:55Z canonical observations.",
+      "PASS: current registered evidence includes the unchanged Q2 Form 10-Q and results exhibit, the SEC submissions index and the 3 September CEO-succession Form 8-K, all checked at 2026-09-05T17:31:04Z.",
+      "PASS: the complete maintained idea catalog and canonical relationship state were reviewed; relationship_871e21ff73620ab8eb14 remains the sole accepted material edge, no candidate relationship follow-up was warranted, and exactly one dependent idea follow-up was created.",
+      "PASS: visualization_review exactly lists the three agent-authored chart IDs on the changed page and excludes the deterministic market-technicals chart; material non-charted datasets have specific omissions.",
+      "PASS: final papertrader schema validate --strict, queue validate, wiki lint --strict and integrity --strict returned OK.",
+      "PASS: no allocation targets/history, relationship table, strategy, signal, order, execution, cash ledger, portfolio, fill, performance or other operation artifact was changed."
+    ],
+    "passed": true
+  },
+  "visualization_review": {
+    "charts": [
+      {
+        "chart_id": "alb-q2-operating-rebound",
+        "page_path": "data/wiki/securities/security_66cdcf90aac0d83e76f3.md"
+      },
+      {
+        "chart_id": "alb-current-scenario-values",
+        "page_path": "data/wiki/securities/security_66cdcf90aac0d83e76f3.md"
+      },
+      {
+        "chart_id": "alb-august-september-alert-window",
+        "page_path": "data/wiki/securities/security_66cdcf90aac0d83e76f3.md"
+      }
+    ],
+    "completed": true,
+    "omissions": [
+      {
+        "dataset": "Like-for-like peer valuation",
+        "reason": "No bounded primary-source peer set shared a common date, earnings definition, instrument scope, currency basis and immutable security identity, so no defensible peer chart was produced.",
+        "reason_code": "source_unavailable"
+      },
+      {
+        "dataset": "Multi-quarter cash, debt and dilution trend",
+        "reason": "The retained bounded evidence supports current balance-sheet facts but not enough consistently defined quarterly observations to chart a comparable trend without estimating or mixing definitions.",
+        "reason_code": "insufficient_history"
+      }
+    ]
+  }
+}

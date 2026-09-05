@@ -1,0 +1,23 @@
+{
+  "security_id": "security_66cdcf90aac0d83e76f3",
+  "issuer_id": "issuer_76c4dda166e8f840fb77",
+  "company_name": "Albemarle Corporation",
+  "instrument_name": "Albemarle Corporation common stock",
+  "instrument_type": "equity",
+  "ticker": "ALB",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "ALB",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Basic Materials",
+  "industry": "Specialty Chemicals",
+  "status": "watching",
+  "watchlist_reason": "Q2 recovery remains supported, but the September volume anomaly, CEO transition, severe cyclical downside and inadequate expected return keep Albemarle on watch.",
+  "research_summary": "Q2 evidence is unchanged; USD 9.93/131.25/231.62 scenarios yield a USD 126.01 weighted value near the USD 126.28 mark, so Hold / Watch.",
+  "research_page": "data/wiki/securities/security_66cdcf90aac0d83e76f3.md",
+  "last_research_at": "2026-09-05T17:31:04Z",
+  "next_review_at": "2026-10-05T17:31:04Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/915913/000114036126035623/ef20081522_8k.htm"
+}

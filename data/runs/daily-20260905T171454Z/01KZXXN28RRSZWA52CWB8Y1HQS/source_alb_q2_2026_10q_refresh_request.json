@@ -1,0 +1,18 @@
+{
+  "source_id": "source_alb_q2_2026_10q_sec",
+  "url": "https://www.sec.gov/Archives/edgar/data/915913/000091591326000102/alb-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/915913/000091591326000102/alb-20260630.htm",
+  "source_type": "filing",
+  "title": "Albemarle Corporation Q2 2026 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "14cec6cc6e6082d0635624636f1bbed350a37350d64aa48fe823025e8bdecb12",
+  "related_entity_ids": "idea_critical_minerals_lithium|security_66cdcf90aac0d83e76f3",
+  "checked_at": "2026-09-05T17:31:04Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "At June 30, 2026, cash was USD 1.632 billion, total debt was USD 1.877 billion, and diluted weighted-average common shares for the quarter were 136.212 million.",
+  "summary": "The byte-identical SEC filing remains the latest quarterly source for balance-sheet, debt, cash-flow, tax, production, dilution and risk evidence.",
+  "run_id": "daily-20260905T171454Z"
+}
