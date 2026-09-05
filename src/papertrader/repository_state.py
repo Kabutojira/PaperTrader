@@ -5,6 +5,7 @@ from __future__ import annotations
 import hashlib
 import os
 import stat
+from collections.abc import Collection
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -89,10 +90,15 @@ def _state(path: Path) -> FileState:
     return FileState("file", _hash_file(path), metadata.st_size, mode, metadata.st_mtime_ns)
 
 
-def snapshot_repository(repository_root: Path) -> RepositorySnapshot:
-    """Capture all persistent checkout files while excluding generated local caches."""
+def snapshot_repository(
+    repository_root: Path,
+    *,
+    excluded_paths: Collection[str] = (),
+) -> RepositorySnapshot:
+    """Capture persistent checkout files, except explicit caller-owned paths and caches."""
 
     root = repository_root.resolve(strict=True)
+    excluded = frozenset(excluded_paths)
     files: dict[str, FileState] = {}
     for current, directory_names, file_names in os.walk(root, followlinks=False):
         current_path = Path(current)
@@ -100,7 +106,7 @@ def snapshot_repository(repository_root: Path) -> RepositorySnapshot:
         for name in sorted(directory_names):
             path = current_path / name
             relative = path.relative_to(root)
-            if _ignored(relative):
+            if _ignored(relative) or relative.as_posix() in excluded:
                 continue
             if path.is_symlink():
                 files[relative.as_posix()] = _state(path)
@@ -110,7 +116,7 @@ def snapshot_repository(repository_root: Path) -> RepositorySnapshot:
         for name in sorted(file_names):
             path = current_path / name
             relative = path.relative_to(root)
-            if _ignored(relative) or path.suffix == ".pyc":
+            if _ignored(relative) or relative.as_posix() in excluded or path.suffix == ".pyc":
                 continue
             files[relative.as_posix()] = _state(path)
     return RepositorySnapshot(files)

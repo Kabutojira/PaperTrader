@@ -64,7 +64,7 @@ from papertrader.models import (
     PositionMark,
     ReferencePrice,
 )
-from papertrader.oauth_credentials import apply_oauth_ciphertext_artifact
+from papertrader.oauth_credentials import OAUTH_CIPHERTEXT_PATH, apply_oauth_ciphertext_artifact
 from papertrader.opportunity import (
     process_opportunity_transitions,
     refresh_candidate_packet_display,
@@ -139,6 +139,8 @@ from papertrader.utils import (
 from papertrader.wiki import lint_wiki, sync_security_technical_charts
 from papertrader.wiki_maintenance import maintain_wiki
 from papertrader.youtube import backfill_youtube, deactivate_youtube_channels, scan_youtube
+
+COMMAND_AUDIT_SNAPSHOT_EXCLUSIONS = frozenset({OAUTH_CIPHERTEXT_PATH.as_posix()})
 
 
 def _parser() -> argparse.ArgumentParser:
@@ -1746,7 +1748,12 @@ def main(argv: Sequence[str] | None = None) -> int:
                         file=sys.stderr,
                     )
                     return 2
-            before = snapshot_repository(root)
+            # The outer controller snapshot still covers the committed OAuth ciphertext. The
+            # unprivileged Hermes command audit must not try to read its root-owned 0600 bytes.
+            before = snapshot_repository(
+                root,
+                excluded_paths=COMMAND_AUDIT_SNAPSHOT_EXCLUSIONS,
+            )
         settings = load_settings(root, os.environ)
         exit_code = _dispatch(arguments, root, settings)
     except (
@@ -1769,7 +1776,10 @@ def main(argv: Sequence[str] | None = None) -> int:
                 started_at=started_at,
                 completed_at=utc_now(),
                 before=before,
-                after=snapshot_repository(root),
+                after=snapshot_repository(
+                    root,
+                    excluded_paths=COMMAND_AUDIT_SNAPSHOT_EXCLUSIONS,
+                ),
             )
         except (OSError, RuntimeError, ValueError, json.JSONDecodeError) as exc:
             print(f"ERROR [command-audit] {exc}", file=sys.stderr)

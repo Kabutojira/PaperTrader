@@ -943,3 +943,11 @@ and buy-below levels in listing currency, rounded scenario and expected returns 
 points, and reduced freshness and review timestamps to UTC dates. Added accessible explanatory help
 to every header and a wide, sidebar-free Quartz layout while retaining horizontal scrolling on
 narrow screens. Canonical market, FX, assessment, and valuation values remain unchanged.
+
+## Follow-up — Isolate agent command audits from controller OAuth ciphertext — Complete (2026-09-05)
+
+Excluded the exact controller-owned encrypted OAuth state path from the unprivileged per-command
+repository snapshots while retaining it in the outer controller snapshot and checkpoint validation.
+This lets later operations, including the daily podcast, invoke audited project commands after an
+OAuth refresh has installed the public ciphertext with root-only permissions, without weakening the
+controller's detection of credential-state changes.
