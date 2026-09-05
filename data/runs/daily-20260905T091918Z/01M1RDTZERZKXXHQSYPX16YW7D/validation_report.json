@@ -1,0 +1,37 @@
+{
+  "auxiliary_models": {
+    "web_extract": "openai-codex:gpt-5.6-luna"
+  },
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M1RFCX3RYCE2B5B24X9DR135.json",
+    "data/runs/daily-20260905T091918Z/01M1RDTZERZKXXHQSYPX16YW7D/enqueue-execute-strategy-request-v2.json",
+    "data/runs/daily-20260905T091918Z/01M1RDTZERZKXXHQSYPX16YW7D/enqueue-execute-strategy-request.json",
+    "data/runs/daily-20260905T091918Z/01M1RDTZERZKXXHQSYPX16YW7D/signal-create-request.json",
+    "data/runs/daily-20260905T091918Z/01M1RDTZERZKXXHQSYPX16YW7D/strategy-upsert-request-v2.json",
+    "data/runs/daily-20260905T091918Z/01M1RDTZERZKXXHQSYPX16YW7D/strategy-upsert-request.json",
+    "data/tables/signals.csv",
+    "data/tables/strategies.csv",
+    "data/tables/strategy_legs.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/strategies/strategy_7cf884a5530d05afdb99.md"
+  ],
+  "effective_model": "gpt-5.6-sol",
+  "errors": [
+    "visualization_review charts do not match chart ids in changed research pages: expected [('data/wiki/strategies/strategy_7cf884a5530d05afdb99.md', 'nvda-scenario-returns')], got [('data/wiki/strategies/strategy_7cf884a5530d05afdb99.md', 'nvda-baseline-scenario-returns')]"
+  ],
+  "escalation_source": "",
+  "maximum_turns": 160,
+  "mutation_policy": "full_research",
+  "operation_id": "01M1RDTZERZKXXHQSYPX16YW7D",
+  "passed": false,
+  "profile": "deep",
+  "profile_policy_version": "profile-router-v1",
+  "reasoning_effort": "medium",
+  "route_reason": "full_strategy_or_execution_decision",
+  "run_id": "daily-20260905T091918Z",
+  "timeout_seconds": 1800,
+  "validation_version": 1,
+  "weighted_cost": "5"
+}
