@@ -191,3 +191,4 @@ daily-20260904T180734Z,2026-09-04T18:07:34Z,2026-09-04T18:24:32Z,degraded,schedu
 daily-20260905T091918Z,2026-09-05T09:19:18Z,2026-09-05T09:52:20Z,degraded,workflow_dispatch,3,100,15,,Daily run degraded; 3 agent operations; 1 pending-order dispositions.
 daily-20260905T102108Z,2026-09-05T10:21:08Z,2026-09-05T11:06:13Z,degraded,workflow_dispatch,4,100,20,,Daily run degraded; 4 agent operations; 2 pending-order dispositions.
 daily-20260905T171454Z,2026-09-05T17:14:54Z,2026-09-05T18:11:11Z,degraded,schedule,3,100,15,,Daily run degraded; 3 agent operations; 2 pending-order dispositions.
+daily-20260905T200918Z,2026-09-05T20:09:18Z,2026-09-05T20:37:23Z,degraded,workflow_dispatch,1,100,5,,Daily run degraded; 1 agent operations; 2 pending-order dispositions.

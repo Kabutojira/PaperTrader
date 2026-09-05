@@ -7,13 +7,13 @@ tags:
 created: "2026-09-05"
 updated: "2026-09-05"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_396637efaf4f83c74b10"
-as_of: "2026-09-05T18:58:43Z"
+snapshot_id: "decision_103f08004374f00ba869"
+as_of: "2026-09-05T20:37:23Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-09-05T18:58:43Z`
+**As of:** `2026-09-05T20:37:23Z`
 **Investment data:** Portfolio state safe — research gaps remain
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -23,10 +23,10 @@ Publication validation confirms that this generated artifact is internally consi
 
 ## Current investment health
 
-- Assessments: 47/80
-- Fresh-evidence assessments: 45/80
-- Relationship reviews: 19/80
-- Accepted relationships: 18
+- Assessments: 48/81
+- Fresh-evidence assessments: 46/81
+- Relationship reviews: 20/81
+- Accepted relationships: 19
 - Market success/failure: 82/0
 - Candidate FX gaps: 0
 - Last successful daily run: 2026-09-03
@@ -41,7 +41,7 @@ Publication validation confirms that this generated artifact is internally consi
 
 ## Sequential research backlog
 
-- Research backlog: 249
+- Research backlog: 251
 
 ## Publication health
 
@@ -63,7 +63,7 @@ Resolved and superseded issues remain in the canonical audit but are not current
 - Error **Hermes operation validation failed: Quick check research for SPOT on 2026-08-16** — commands\_run does not exactly match deterministic CLI audit receipts
 - Error **Hermes operation validation failed: Security research for SGML on 2026-08-17** — operation artifact directory is not empty: /\_\_w/PaperTrader/PaperTrader/data/runs/Daily report for 2026-08-17/Security research for SGML on 2026-08-17
 - Error **ABBNY — ABB Ltd: ABB assessment provenance does not match corrected final research page** — Operation Security research for ABBNY on 2026-09-03 accepted immutable assessment assessment\_a3946a163695f1a9f51f while the security page still carried the prior prose disposition. Deterministic derivation changed the current disposition from Sell / Avoid to Hold / Watch at the lower mark, so the page and structured security summary were corrected after the immutable assessment was written. The current assessment and final page now agree economically, and exactly one assessment version names this operation, bu
-- Error **Hermes operation validation failed: Security research for TSM on 2026-08-13** — completed security research requires exactly one immutable assessment version
+- Error **Hermes operation validation failed: Security research for TSM on 2026-08-13** — agent result is missing or a symlink: data/runs/Daily report for 2026-09-05/Security research for TSM on 2026-08-13/agent\_result.json
 - Error **Hermes operation validation failed: Security research for ABBNY on 2026-09-03** — files\_changed claims paths absent from the actual delta: \['data/operations/operations\_TODO.csv'\]
 - Error **Hermes operation validation failed: Quick check research for TWST on 2026-08-05** — agent result was written before completed change: data/runs/Daily report for 2026-08-12/Quick check research for TWST on 2026-08-05/command\_audit.json; commands\_run does not exactly match deterministic CLI audit receipts
 - Error **ASML — ASML Holding N.V.: ASML assessment rejected after security row update** — The retry operation refreshed the ASML page and security row to the 2026-08-19 USD 1,751.73 mark, but the schema-v2 assessment request was rejected before assessment state changed because valuation\_template\_rationale is a required field and was omitted. The routed-operation no-retry rule forbids correcting and invoking a second assessment request after this rejection. The canonical assessment therefore remains the prior unsupported version, the prepared relationship and idea follow-up requests w

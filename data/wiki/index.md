@@ -7,17 +7,17 @@ tags:
 created: "2026-09-05"
 updated: "2026-09-05"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_396637efaf4f83c74b10"
-as_of: "2026-09-05T18:58:43Z"
+snapshot_id: "decision_103f08004374f00ba869"
+as_of: "2026-09-05T20:37:23Z"
 ---
 
 # PaperTrader
 
-**As of `2026-09-05T18:58:43Z` · Investment data: Portfolio state safe — research gaps remain · Operations: Attention required**
+**As of `2026-09-05T20:37:23Z` · Investment data: Portfolio state safe — research gaps remain · Operations: Attention required**
 
 ## Rebalance toward model targets
 
-<section class="decision-cards" aria-label="Decision summary"><article class="decision-card" data-status="rebalance"><span class="decision-card-label">Stance</span><strong>Rebalance toward model targets</strong></article><article class="decision-card" data-status="cash"><span class="decision-card-label">Cash</span><strong>97.030007%</strong></article><article class="decision-card" data-status="exposure"><span class="decision-card-label">Gross exposure</span><strong>2.969994%</strong></article><article class="decision-card" data-status="signals"><span class="decision-card-label">Actionable signals</span><strong>2</strong></article><article class="decision-card" data-status="coverage"><span class="decision-card-label">Assessment coverage</span><strong>47/80</strong></article></section>
+<section class="decision-cards" aria-label="Decision summary"><article class="decision-card" data-status="rebalance"><span class="decision-card-label">Stance</span><strong>Rebalance toward model targets</strong></article><article class="decision-card" data-status="cash"><span class="decision-card-label">Cash</span><strong>97.030007%</strong></article><article class="decision-card" data-status="exposure"><span class="decision-card-label">Gross exposure</span><strong>2.969994%</strong></article><article class="decision-card" data-status="signals"><span class="decision-card-label">Actionable signals</span><strong>2</strong></article><article class="decision-card" data-status="coverage"><span class="decision-card-label">Assessment coverage</span><strong>48/81</strong></article></section>
 
 ### Why
 
@@ -55,9 +55,9 @@ Current equity is **10000.02 EUR** with **97.030007% cash**. The target retains 
 - Cumulative return: **0.000225174243560771003624%**
 - Running drawdown: **0%**
 - Largest position: **2.969993%**
-- Current assessments: **47/80**
-- Relationship reviews: **19/80**
-- Accepted relationships: **18**
+- Current assessments: **48/81**
+- Relationship reviews: **20/81**
+- Accepted relationships: **19**
 - Market retrieval failures: **0**
 
 ## Explore

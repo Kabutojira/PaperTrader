@@ -7,13 +7,13 @@ tags:
 created: "2026-09-05"
 updated: "2026-09-05"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_396637efaf4f83c74b10"
-as_of: "2026-09-05T18:58:43Z"
+snapshot_id: "decision_103f08004374f00ba869"
+as_of: "2026-09-05T20:37:23Z"
 ---
 
 # Securities
 
-**As of `2026-09-05T18:58:43Z`**
+**As of `2026-09-05T20:37:23Z`**
 
 Ticker links open the maintained security analysis. Prices and buy-below levels use each security's listing currency. Return estimates are rounded to whole percentage points, and update dates are shown in UTC.
 
@@ -69,7 +69,7 @@ Ticker links open the maintained security analysis. Prices and buy-below levels 
 | <span id="security-security_97f38b2cb2d5ef127f5a"></span>[PL — Planet Labs PBC](securities/security_97f38b2cb2d5ef127f5a) | 18.12 USD | Sell / Avoid | Research incomplete | No current allocation plan supports this candidate. | -65% / -21% / 53% | -19% | 11.488 USD | 2026-09-05 / 2026-09-05 | 2026-09-11 |
 | <span id="security-security_8a5c43888d224de85c69"></span>[PLS.AX — PLS Group Limited](securities/security_8a5c43888d224de85c69) | 5.09 AUD | Sell / Avoid | Research incomplete | No current allocation plan supports this candidate. | -67% / -28% / 31% | -23% | 2.936 AUD | 2026-09-05 / 2026-09-05 | 2026-09-30 |
 | <span id="security-security_bdc2f87dadf134760c3a"></span>[PLTR — Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a) | 174.33 USD | Strong Sell / Avoid | Research incomplete | No current allocation plan supports this candidate. | -70% / -43% / -7% | -41% | 79.392 USD | 2026-09-05 / 2026-09-05 | 2026-09-10 |
-| <span id="security-security_0b67d6c8e3fd3366a257"></span>[POWL — Powell Industries, Inc.](securities/security_0b67d6c8e3fd3366a257) | 181.17 USD | Hold / Watch | Unassessed | — | -42% / -1% / 49% | -3% | 144 USD | 2026-09-05 / 2026-09-05 | 2026-10-05 |
+| <span id="security-security_0b67d6c8e3fd3366a257"></span>[POWL — Powell Industries, Inc.](securities/security_0b67d6c8e3fd3366a257) | 181.17 USD | Hold / Watch | Research incomplete | No current allocation plan supports this candidate. | -42% / -1% / 49% | -3% | 144 USD | 2026-09-05 / 2026-09-05 | 2026-10-05 |
 | <span id="security-security_8b703a8adf5f864acaa4"></span>[PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | 37.125 EUR | Buy / Hold | Full baseline — Research incomplete | No current allocation plan supports this candidate. | -19% / 40% / 89% | 32% | 41.6 EUR | 2026-09-05 / 2026-09-05 | 2026-09-27 |
 | <span id="security-security_488a9d7f7a8573597724"></span>[PWR — Quanta Services, Inc.](securities/security_488a9d7f7a8573597724) | 624.41 USD | Sell / Avoid | Research incomplete | No current allocation plan supports this candidate. | -33% / -14% / 7% | -14% | 427.52 USD | 2026-09-05 / 2026-09-05 | 2026-09-02 |
 | <span id="security-security_1e8fbdb0f45f2b413e00"></span>[PYPL — PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00) | 54.96 USD | Hold / Watch | Research incomplete | No current allocation plan supports this candidate. | -22% / 17% / 47% | 12% | 51.648 USD | 2026-09-05 / 2026-09-05 | 2026-09-11 |
