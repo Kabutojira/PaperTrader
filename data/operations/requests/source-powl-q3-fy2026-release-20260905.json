@@ -1,0 +1,18 @@
+{
+  "source_id": "source_powl_q3_fy2026_release",
+  "url": "https://www.sec.gov/Archives/edgar/data/80420/000008042026000103/ex991-powlq3xfy2026earning.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/80420/000008042026000103/ex991-powlq3xfy2026earning.htm",
+  "source_type": "issuer_release",
+  "title": "Powell Industries announces third quarter fiscal 2026 results",
+  "publisher": "Powell Industries, Inc. via U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "a3b89f248b388de5901918a0b213caf879ce63a8b8da27fb7c6a5c82e78be713",
+  "related_entity_ids": "security_0b67d6c8e3fd3366a257",
+  "checked_at": "2026-09-05T15:13:00Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Fiscal Q3 revenue was USD 311.7 million, gross margin 30.6%, orders USD 934 million, backlog USD 2.4 billion and cash USD 633.6 million.",
+  "summary": "The current SEC-filed release reports a 3.0x book-to-bill ratio and three megaprojects, led by a data-center order above USD 400 million for a behind-the-meter design around on-site generation assets, while nine-month data-center awards exceeded USD 800 million.",
+  "run_id": "local-powl-20260905"
+}

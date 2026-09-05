@@ -1,0 +1,23 @@
+{
+  "security_id": "security_0b67d6c8e3fd3366a257",
+  "issuer_id": "issuer_66e23c832f2f063cbcc2",
+  "company_name": "Powell Industries, Inc.",
+  "instrument_name": "Powell Industries, Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "POWL",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "POWL",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Industrials",
+  "industry": "Electrical Equipment & Parts",
+  "status": "watching",
+  "watchlist_reason": "Direct AI-power, data-center and electrification beneficiary; watch customer and megaproject concentration, backlog conversion, margins, cash conversion and valuation.",
+  "research_summary": "More than USD 800 million of fiscal-2026 data-center awards, USD 2.4 billion backlog, high margins and net cash support the thesis, but USD 181.17 exceeds the USD 180 base value and USD 144 buy-below price.",
+  "research_page": "data/wiki/securities/security_0b67d6c8e3fd3366a257.md",
+  "last_research_at": "2026-09-05T15:22:00Z",
+  "next_review_at": "2026-10-05T15:22:00Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/80420/000008042026000107/powl-20260630.htm"
+}

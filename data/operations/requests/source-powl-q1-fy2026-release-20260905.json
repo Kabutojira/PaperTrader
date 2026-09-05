@@ -1,0 +1,18 @@
+{
+  "source_id": "source_powl_q1_fy2026_release",
+  "url": "https://www.sec.gov/Archives/edgar/data/80420/000008042026000013/ex991-powlq1xfy2026earning.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/80420/000008042026000013/ex991-powlq1xfy2026earning.htm",
+  "source_type": "issuer_release",
+  "title": "Powell Industries announces first quarter fiscal 2026 results",
+  "publisher": "Powell Industries, Inc. via U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "2f809d2abfae020ebb0fb259dcd0cc3cc92beb4f09f6b3c7d1cb7857f4df7eb7",
+  "related_entity_ids": "security_0b67d6c8e3fd3366a257",
+  "checked_at": "2026-09-05T15:13:00Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Fiscal Q1 revenue was USD 251.2 million, gross margin 28.4%, new orders USD 439 million, backlog USD 1.6 billion, and data-center orders well above USD 100 million.",
+  "summary": "The SEC-filed release establishes the first fiscal-2026 data-center megaproject, a roughly 1.7x book-to-bill ratio, quarterly revenue and margin progression, and a USD 501 million cash and short-term-investment balance.",
+  "run_id": "local-powl-20260905"
+}

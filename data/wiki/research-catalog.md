@@ -7,8 +7,8 @@ tags:
 created: "2026-09-05"
 updated: "2026-09-05"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_384ae92d6c7a2e0d2516"
-as_of: "2026-09-05T18:11:11Z"
+snapshot_id: "decision_396637efaf4f83c74b10"
+as_of: "2026-09-05T18:58:43Z"
 ---
 
 # Research catalog
@@ -17,8 +17,8 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Assessment revision audit
 
-- Immutable assessment versions: **204**
-- Securities with retained revisions: **80**
+- Immutable assessment versions: **206**
+- Securities with retained revisions: **81**
 
 ## Candidate
 
@@ -645,6 +645,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader daily research podcast — 2026-09-03T182402Z](podcasts/daily-podcast_20260903T182402Z)
 - [PaperTrader daily research podcast — 2026-09-04T060928Z](podcasts/daily-podcast_20260904T060928Z)
 - [PaperTrader daily research podcast — 2026-09-05T102108Z](podcasts/daily-podcast_20260905T102108Z)
+- [PaperTrader daily research podcast — 2026-09-05T171454Z](podcasts/daily-podcast_20260905T171454Z)
 
 ## Relationship
 
@@ -654,6 +655,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [AI compute, networking, and hyperscaler monetization to NVIDIA](relationships/relationship_ai_compute_nvda)
 - [AI infrastructure and power bottlenecks to Eaton](relationships/relationship_87b95f713a902d531f2f)
 - [AI infrastructure and power bottlenecks to GE Vernova](relationships/relationship_cbdd07edda84994325d6)
+- [AI infrastructure and power bottlenecks to Powell Industries](relationships/relationship_8f324efeca539dfb6189)
 - [AI-native drug discovery to NVIDIA](relationships/relationship_ai_drug_nvda)
 - [AI-native drug discovery to Recursion Pharmaceuticals](relationships/relationship_c829dae21648bb133cc7)
 - [Anduril product-company disruption to Palantir Technologies](relationships/relationship_250194f6a9e3a1817632)
@@ -751,6 +753,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PayPal Holdings, Inc. common stock](securities/security_1e8fbdb0f45f2b413e00)
 - [Planet Labs PBC Class A common stock](securities/security_97f38b2cb2d5ef127f5a)
 - [PLS Group Limited ordinary shares](securities/security_8a5c43888d224de85c69)
+- [Powell Industries, Inc. common stock](securities/security_0b67d6c8e3fd3366a257)
 - [Prosus N.V. ordinary shares N](securities/security_8b703a8adf5f864acaa4)
 - [QUALCOMM Incorporated common stock](securities/security_3a75fc1ccca2ee7c937a)
 - [Quanta Services, Inc. common stock](securities/security_488a9d7f7a8573597724)

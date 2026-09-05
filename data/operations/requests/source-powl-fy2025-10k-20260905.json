@@ -1,0 +1,18 @@
+{
+  "source_id": "source_powl_fy2025_10k",
+  "url": "https://www.sec.gov/Archives/edgar/data/80420/000008042025000152/powl-20250930.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/80420/000008042025000152/powl-20250930.htm",
+  "source_type": "filing",
+  "title": "Powell Industries, Inc. fiscal 2025 Form 10-K",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "c4530bddc677901c03b0e37a7e2b2ccd42cf6353fff4816117bea08f532a9d26",
+  "related_entity_ids": "security_0b67d6c8e3fd3366a257",
+  "checked_at": "2026-09-05T15:13:00Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Powell reports one operating segment, sells custom-engineered electrical distribution and control systems, and had no customer above 10% of consolidated fiscal-2025 revenue.",
+  "summary": "The annual filing defines Powell's products, end markets, customer and project concentration, competitive set, fixed-price contract risks, input and labor constraints, backlog limitations, capacity investments and debt-free balance-sheet context.",
+  "run_id": "local-powl-20260905"
+}
