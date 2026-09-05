@@ -1,0 +1,64 @@
+{
+  "background_wiki_pages": [],
+  "changed_wiki_pages": [],
+  "daily_cycle_id": "daily-20260905T200918Z",
+  "decision_snapshot_path": "data/runs/daily-20260905T200918Z/decision_snapshot.json",
+  "decision_snapshot_sha256": "ba6b2ce2bf3bfc3111ca3db935fb8291ae8c66f289eae8b3db4fab87af86e7ad",
+  "generated_at": "2026-09-05T20:46:32Z",
+  "intervening_daily_cycles": [
+    "daily-20260905T200918Z"
+  ],
+  "page_path": "data/wiki/podcasts/daily-podcast_20260905T200918Z.md",
+  "podcast_context_version": 3,
+  "portfolio_implication_paths": [
+    "data/runs/daily-20260905T200918Z/decision_snapshot.json",
+    "data/wiki/daily-reports/daily-report_20260905.md"
+  ],
+  "previous_successful_podcast": {
+    "context_path": "data/runs/daily-20260905T171454Z/podcast_context.json",
+    "context_sha256": "99410057c359e87e6c36f469c30b54bcd673ae43f7861ad550a6067447a7248f",
+    "daily_cycle_id": "daily-20260905T171454Z",
+    "page_path": "data/wiki/podcasts/daily-podcast_20260905T171454Z.md",
+    "page_sha256": "3f4156097020baf4b9585d3d3ef28bbcb794add1259a075c655ddddfd17b2cbe",
+    "research_cutoff_at": "2026-09-05T18:11:11Z"
+  },
+  "report_path": "data/wiki/daily-reports/daily-report_20260905.md",
+  "report_sha256": "ad5ad73f732facc4092191e840e88f786c053ad8d67ea732feb3d09bca088c56",
+  "research_cutoff_at": "2026-09-05T20:37:23Z",
+  "research_developments": [],
+  "run_id": "daily-20260905T200918Z",
+  "target_minutes": 20,
+  "target_words": 3000,
+  "unresolved_research_gaps": [
+    {
+      "completed_at": "2026-09-05T20:37:08Z",
+      "daily_cycle_id": "daily-20260905T200918Z",
+      "daily_report_items": [],
+      "entity_id": "security_ce9b78a4d0773c950765",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "agent result is missing or a symlink: data/runs/daily-20260905T200918Z/01KZXXN28RT0NVWT6QD0MMKBBK/agent_result.json",
+          "source": "data/runs/daily-20260905T200918Z/01KZXXN28RT0NVWT6QD0MMKBBK/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "agent result is missing or a symlink: data/runs/daily-20260905T200918Z/01KZXXN28RT0NVWT6QD0MMKBBK/agent_result.json"
+      ],
+      "files_changed": [],
+      "operation_id": "01KZXXN28RT0NVWT6QD0MMKBBK",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260905T200918Z/01KZXXN28RT0NVWT6QD0MMKBBK/validation_report.json",
+      "status": "failed",
+      "summary": "The accepted research did not produce a valid result."
+    }
+  ],
+  "wiki_orientation_paths": [
+    "data/wiki/SCHEMA.md",
+    "data/wiki/index.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/log.md"
+  ],
+  "window_mode": "since_previous_successful_podcast",
+  "window_start_exclusive": "2026-09-05T18:11:11Z"
+}

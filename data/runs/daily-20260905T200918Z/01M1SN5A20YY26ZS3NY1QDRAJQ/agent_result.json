@@ -1,0 +1,57 @@
+{
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [],
+  "evidence": [
+    {
+      "claim": "Controller-validated frozen context version three binds the exact page path data/wiki/podcasts/daily-podcast_20260905T200918Z.md, defines the exclusive 2026-09-05T18:11:11Z to inclusive 2026-09-05T20:37:23Z window, and contains empty research_developments, changed_wiki_pages, and background_wiki_pages arrays.",
+      "source": "data/runs/daily-20260905T200918Z/podcast_context.json"
+    },
+    {
+      "claim": "The sole unresolved TSM security-research item failed deterministic validation because its required agent result was missing, so it is an unresolved gap rather than accepted research suitable for the podcast.",
+      "source": "data/runs/daily-20260905T200918Z/01KZXXN28RT0NVWT6QD0MMKBBK/validation_report.json"
+    },
+    {
+      "claim": "The previous successful episode covered the latest accepted Intel and Albemarle research through the current window's exclusive start.",
+      "source": "data/wiki/podcasts/daily-podcast_20260905T171454Z.md"
+    },
+    {
+      "claim": "The daily manifest binds podcast_page_path to data/wiki/podcasts/daily-podcast_20260905T200918Z.md and records the only attempted research operation in this cycle as failed.",
+      "source": "data/runs/daily-20260905T200918Z/daily_run.json"
+    },
+    {
+      "claim": "The completed decision snapshot retains pending Prosus and NVIDIA paper orders, but current portfolio state is not a new accepted research development and does not independently justify an episode.",
+      "source": "data/runs/daily-20260905T200918Z/decision_snapshot.json"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01M1SN5A20YY26ZS3NY1QDRAJQ",
+  "operations_created": [],
+  "reason_code": "no_audience_relevant_accepted_research",
+  "status": "skipped",
+  "summary": "Skipped the daily podcast because frozen context version three contains no audience-relevant accepted research between the previous successful podcast cutoff of 2026-09-05T18:11:11Z and the inclusive cutoff of 2026-09-05T20:37:23Z. The candidate slate is empty: research_developments, changed_wiki_pages, and background_wiki_pages are all empty. The sole unresolved item is failed TSM security research whose agent result was missing, so it was excluded as an unaccepted research gap and could not support a chapter. The previous episode already covered the accepted Intel and Albemarle developments through the exclusive window start. No transcript, daily-report link, planning artifact, persistent audio reference, or draft-render attempt was created.",
+  "validation": {
+    "checks": [
+      "Confirmed exactly one running daily_podcast row claimed by daily-20260905T200918Z with a live lease and the required llm-wiki and papertrader-daily-podcast skills.",
+      "Confirmed hermes_preflight.json identifies the native wiki, controller, and routed daily-podcast skill by path and SHA-256 with sequential execution enabled.",
+      "Confirmed payload, frozen context, and daily manifest all bind the exact transcript path data/wiki/podcasts/daily-podcast_20260905T200918Z.md.",
+      "Reviewed the frozen context, unresolved research validation report, previous successful podcast, current daily report, and current decision state.",
+      "Applied the skill's skip rule because the whole frozen window contains no audience-relevant accepted research; the failed TSM result was excluded from the empty chapter slate.",
+      "Confirmed the requested transcript path did not exist and the canonical daily report contained no link to it.",
+      "Confirmed no transcript, daily-report mutation, planning artifact, persistent audio reference, or draft-render invocation was produced.",
+      "papertrader schema validate --strict passed.",
+      "papertrader queue validate passed.",
+      "papertrader integrity --strict passed.",
+      "papertrader wiki lint --strict passed.",
+      "papertrader portfolio reconcile --strict passed.",
+      "No allocation, strategy, signal, order, execution, cash, portfolio, fill, performance, or accounting state was changed."
+    ],
+    "passed": true
+  }
+}
