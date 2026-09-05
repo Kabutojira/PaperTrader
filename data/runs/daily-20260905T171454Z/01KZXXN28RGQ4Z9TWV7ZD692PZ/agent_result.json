@@ -1,0 +1,94 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_dfa34d4b9050964b465e",
+    "papertrader research source record --request data/runs/daily-20260905T171454Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/source_intc_sec_submissions_recheck_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260905T171454Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/security_upsert_request.json",
+    "papertrader wiki sync-technical-charts",
+    "papertrader research assessment upsert --request data/runs/daily-20260905T171454Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/assessment_upsert_request.json",
+    "papertrader research security-context --security-id security_dfa34d4b9050964b465e",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Intel's refreshed September 4 USD 95.80 mark and byte-identical SEC index leave the USD 32/USD 78/USD 130 scenarios unchanged; deterministic state remains Sell / Avoid with allocation ineligible.",
+    "The repeat review repaired the prior assessment-page hash mismatch with one predecessor-linked schema-v2 assessment; the existing AI-compute relationship review remains the only required follow-up."
+  ],
+  "evidence": [
+    {
+      "claim": "The index was byte-identical to the retained version. It lists the August 28, 2026 Form N-PX as the newest filing and the August 12 offering Form 8-K as the newest material issuer filing, with no later periodic operating filing or earnings release through September 5, 2026.",
+      "observed_at": "2026-09-05T17:18:42Z",
+      "source": "Intel SEC submissions index",
+      "source_hash": "2571798058d2159930fc29f2071045d6f5f03251ba604d4fefda4dc7d8dfc5e9",
+      "url": "https://data.sec.gov/submissions/CIK0000050863.json"
+    },
+    {
+      "claim": "The retained filing reports second-quarter net revenue of USD 16.128 billion, gross profit of USD 6.509 billion, operating income of USD 1.796 billion and six-month operating cash flow of USD 8.102 billion; foundry losses and capital intensity remain material risks.",
+      "observed_at": "2026-09-05T10:54:05Z",
+      "source": "Intel Corporation Form 10-Q for the quarter ended June 27, 2026",
+      "source_hash": "d9935526b6735fe2143df1c66e8c9808db7c7028e6714ed1da62b9bf560d70b9",
+      "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000108/intc-20260627.htm"
+    },
+    {
+      "claim": "The refreshed canonical observations preserve the September 4 adjusted close at USD 95.80000305175781 and USD/EUR at 0.8604999780654907, so scenario returns and the valuation frontier are unchanged from the immediately preceding assessment.",
+      "observed_at": "2026-09-05T17:14:55Z",
+      "source": "data/market/latest.csv and data/market/fx/latest.csv"
+    },
+    {
+      "claim": "The new current assessment is assessment_ec8c7012c31100e609ff, links predecessor assessment_30663d3bea16943c3e24, records schema version 2 and page hash 9a12616b5e410a89684c701bed87ee3e4ab2edd688123131118e8f8ec6354d61, exactly matching the current page hash. It deterministically derives Sell / Avoid, quality score 78, watch-tier conviction and allocation ineligibility.",
+      "source": "papertrader research security-context --security-id security_dfa34d4b9050964b465e"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260905T171454Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/assessment_upsert_request.json",
+    "data/runs/daily-20260905T171454Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/security_upsert_request.json",
+    "data/runs/daily-20260905T171454Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/source_intc_sec_submissions_recheck_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_dfa34d4b9050964b465e.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KZXXN28RGQ4Z9TWV7ZD692PZ",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Completed one bounded repeat Intel security review and repaired the prior run's assessment-to-page hash mismatch by appending exactly one schema-v2 assessment after finalizing the page. A byte-identical SEC submissions index and refreshed canonical market/FX observations add no new fundamental evidence: USD 32/USD 78/USD 130 scenarios still imply USD 79.50 probability-weighted value versus USD 95.80, -17.01% expected return and -12.76% medium-confidence-adjusted return. Deterministic state remains Sell / Avoid, watch-tier conviction and allocation-ineligible because return, downside-payoff, margin-of-safety and relationship gates fail. The new immutable assessment links predecessor assessment_30663d3bea16943c3e24 and exactly matches the finalized page hash. The rejected Terafab edge and existing dependent AI-compute candidate review require no duplicate follow-up; no strategy, signal, paper order, allocation or accounting state changed.",
+  "validation": {
+    "checks": [
+      "PASS: the mandatory pre-assessment security-context command succeeded before any assessment-state read or write.",
+      "PASS: source, security and assessment CLI writes validated immutable identity, registered evidence, fresh exact market/FX identity, scenario ordering, probabilities and deterministic gates.",
+      "PASS: security-context confirmed exactly one assessment for this run and operation, predecessor linkage, schema version 2 and an exact assessment-to-page hash match at 9a12616b5e410a89684c701bed87ee3e4ab2edd688123131118e8f8ec6354d61.",
+      "PASS: the complete maintained idea catalog and canonical relationship state were rechecked; the rejected Terafab edge remains rejected and the existing dependent AI-compute candidate review is the sole matching follow-up. No payload or accepted idea required an idea-research follow-up.",
+      "PASS: visualization chart IDs exactly match both analytical echart fences on the changed page; the deterministic market-technicals chart is correctly excluded.",
+      "PASS: papertrader wiki lint --strict returned OK [wiki].",
+      "PASS: no allocation target/history, strategy, signal, order, execution, cash, portfolio, fill or performance state changed."
+    ],
+    "passed": true
+  },
+  "visualization_review": {
+    "charts": [
+      {
+        "chart_id": "intc-q2-operating-recovery-2026",
+        "page_path": "data/wiki/securities/security_dfa34d4b9050964b465e.md"
+      },
+      {
+        "chart_id": "intc-scenario-values-20260905",
+        "page_path": "data/wiki/securities/security_dfa34d4b9050964b465e.md"
+      }
+    ],
+    "completed": true,
+    "omissions": [
+      {
+        "dataset": "Post-offering cash and debt comparison",
+        "reason": "The filing quantifies base-offering net proceeds but does not provide exact net proceeds for the exercised over-allotment or a post-close balance sheet; estimating a pro-forma series would overstate precision.",
+        "reason_code": "insufficient_comparability"
+      },
+      {
+        "dataset": "Peer valuation comparison",
+        "reason": "No bounded primary-source peer set shared a common date, earnings definition, instrument scope, currency basis and immutable identity, so no like-for-like chart was produced.",
+        "reason_code": "source_unavailable"
+      }
+    ]
+  }
+}

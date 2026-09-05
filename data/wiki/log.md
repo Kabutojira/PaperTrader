@@ -3306,3 +3306,8 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Rechecked [[securities/security_dfa34d4b9050964b465e|Intel Corporation]] against a byte-identical SEC submissions index, unchanged second-quarter operating evidence, the August equity-offering filing, and the September 4 USD 95.80 mark.
 - Retained USD 32/USD 78/USD 130 bear/base/bull fair values; the higher mark worsened expected, base and bear-return frontiers and moved the deterministic conclusion from Hold / Watch to Sell / Avoid without changing the thesis or valuation assumptions.
 - Rechecked the complete idea catalog, preserved the rejected Terafab edge and existing AI-compute candidate review, and created no duplicate follow-up, strategy, signal or paper order.
+
+## [2026-09-05] update | Intel assessment hash repair and same-day revalidation
+- Revalidated [[securities/security_dfa34d4b9050964b465e|Intel Corporation]] after the prior attempt corrected stale page prose following its immutable assessment write.
+- A byte-identical SEC submissions index and refreshed but unchanged September 4 market and FX observations leave the USD 32/USD 78/USD 130 scenarios and Sell / Avoid conclusion unchanged.
+- Rechecked the maintained idea catalog and canonical relationship state; the rejected Terafab edge and already-queued AI-compute candidate review require no duplicate follow-up, strategy, signal or paper order.

@@ -92,7 +92,7 @@ This deterministic monitoring chart is derived from the repository-local market 
       "url": "https://www.sec.gov/Archives/edgar/data/50863/000119312526346806/d117670d8k.htm",
       "observed_at": "2026-09-04T06:38:08Z"
     },
-    {"label": "Canonical PaperTrader market mark", "observed_at": "2026-09-05T10:21:09Z"}
+    {"label": "Canonical PaperTrader market mark", "observed_at": "2026-09-05T17:14:55Z"}
   ],
   "notes": [
     "Bear, base and bull probabilities are 25%, 50% and 25%; their probability-weighted fair value is USD 79.50.",
@@ -118,26 +118,27 @@ found. No accepted investment-idea relationship or strategy currently links to t
 
 ## Changes since prior review
 
-- **Facts and evidence changed:** the September 5 SEC submissions recheck is byte-identical to the
-  prior index and contains no newer periodic operating filing or earnings release. The unchanged
-  second-quarter filing and August offering Form 8-K remain the operating and capital baselines.
-  The September 4 adjusted close rose 4.51% in one session from USD 91.67 to USD 95.80.
-- **Assumptions and valuation inputs unchanged:** normalized forward diluted EPS remains USD
+- **Facts and evidence unchanged:** the 17:18 UTC SEC submissions retrieval is byte-identical to the
+  morning check. It adds no periodic operating filing or earnings release; the second-quarter filing
+  and August offering Form 8-K remain the operating and capital baselines. The canonical market and
+  FX caches were refreshed at 17:14 UTC but retain the same September 4 USD 95.80 close and
+  USD/EUR 0.8604999780654907 rate used by the immediately preceding assessment.
+- **Assumptions and scenario inputs unchanged:** normalized forward diluted EPS remains USD
   2.00/USD 3.90/USD 5.20 at 16x/20x/25x. Fair values remain USD 32/USD 78/USD 130 at
-  25%/50%/25% probabilities because one additional market session supplies no new fundamental
-  evidence about product demand, yield, foundry customers, dilution or post-offering deployment.
-- **Scenario outputs changed:** the unchanged USD 79.50 weighted value is now 17.01% below market and
-  the USD 78 base value is 18.58% below it. Bear downside widens to 66.60%; bull upside narrows to
-  35.70%. The higher mark therefore weakens, rather than improves, the valuation frontier.
+  25%/50%/25% probabilities because the timestamp refresh supplies no new evidence about product
+  demand, yield, foundry customers, dilution or post-offering deployment.
+- **Scenario outputs unchanged:** the USD 79.50 weighted value remains 17.01% below market and the
+  USD 78 base value remains 18.58% below it. Bear downside remains 66.60% and bull upside 35.70%; all
+  expected-return, payoff and margin-of-safety failures therefore remain unchanged.
 - **Thesis, catalysts, risks, blockers, and gaps unchanged:** product and DCAI recovery remain
   supported; 18A yield, external 14A commitments, margin recovery and cash conversion remain the
   catalysts. Foundry economics, capital intensity, dilution, post-offering cash deployment,
-  downside asymmetry, margin of safety and the missing accepted idea edge remain unresolved.
-- **Rating and portfolio action changed:** the higher mark moves the deterministic conclusion from
-  **Hold / Watch** to **Sell / Avoid** because medium-confidence expected return falls below the
-  canonical rating threshold. Conviction remains **Watch** and allocation remains ineligible. The
-  earlier bullish MACD transition and subsequent rebound do not justify a strategy, signal or paper
-  order.
+  downside asymmetry, medium confidence, unfavorable timing, valuation and the missing accepted
+  idea edge remain unresolved. There is no new contradiction.
+- **Rating and portfolio action unchanged:** the deterministic conclusion remains **Sell / Avoid**,
+  conviction remains **Watch**, and allocation remains ineligible. The earlier bullish MACD
+  transition and September 4 rebound remain noise with modest timing improvement, not grounds for a
+  strategy, signal or paper order.
 - **Unchanged conclusion:** foundry economics remain unproven and watchlist monitoring remains
   appropriate pending a materially lower price or stronger primary evidence.
 
