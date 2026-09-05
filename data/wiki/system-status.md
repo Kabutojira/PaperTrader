@@ -7,13 +7,13 @@ tags:
 created: "2026-09-05"
 updated: "2026-09-05"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_98abd444429a0a0915c7"
-as_of: "2026-09-05T09:52:20Z"
+snapshot_id: "decision_a48905cabb7e170fe7e1"
+as_of: "2026-09-05T11:06:13Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-09-05T09:52:20Z`
+**As of:** `2026-09-05T11:06:13Z`
 **Investment data:** Portfolio state safe — research gaps remain
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -23,8 +23,8 @@ Publication validation confirms that this generated artifact is internally consi
 
 ## Current investment health
 
-- Assessments: 46/80
-- Fresh-evidence assessments: 44/80
+- Assessments: 47/80
+- Fresh-evidence assessments: 45/80
 - Relationship reviews: 19/80
 - Accepted relationships: 18
 - Market success/failure: 81/0
@@ -33,15 +33,15 @@ Publication validation confirms that this generated artifact is internally consi
 
 ## Queue and execution health
 
-- Ready or active strategies: 3
-- Active signals: 1
-- Pending orders: 1
+- Ready or active strategies: 4
+- Active signals: 2
+- Pending orders: 2
 - Queued remediation operations: 0
 - Operations are claimed and executed strictly sequentially.
 
 ## Sequential research backlog
 
-- Research backlog: 254
+- Research backlog: 252
 
 ## Publication health
 
@@ -50,12 +50,11 @@ Publication validation confirms that this generated artifact is internally consi
 
 ## Current issues by investment impact
 
-Current unresolved issues: **20**.
+Current unresolved issues: **19**.
 Resolved and superseded issues remain in the canonical audit but are not current health.
 
-### Affects Candidate (14)
+### Affects Candidate (13)
 
-- Error **Hermes operation validation failed: Strategy research for strategy for NVDA on 2026-09-05** — visualization\_review charts do not match chart ids in changed research pages: expected \[('data/wiki/strategies/strategy for NVDA.md', 'nvda-scenario-returns')\], got \[('data/wiki/strategies/strategy for NVDA.md', 'nvda-baseline-scenario-returns')\]
 - Error **ETN — Eaton Corporation plc: Hermes operation validation failed: Quick check research for ETN on 2026-08-11** — agent result schema: 'cd57fc97df50efa0657881b253fc96d4467881b253fc96d4467881b253fc96d446' does not match '^\[a-f0-9\]{64}$'; commands\_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment; post-run integrity: agent result data/runs/Daily report for 2026-08-11/Quick check research for ETN on 2026-08-11/agent\_result.json: 'cd57fc97df50efa0657881b253fc96d4467881b253fc96d4467881b253fc96d446' does not match '^\[a-f0-9\]{64}$'
 - Error **FUC.F — Fanuc Corporation: FANUC assessment source operation is ambiguous within one run** — The schema-v2 FANUC full-review assessment could not be accepted because the deterministic research applier found both the completed quick\_check\_research operation and this running security\_research operation for the same security and run\_id, then rejected the immutable assessment request with no assessment-state changes. The mandatory security context succeeded; both issuer PDFs were rechecked with unchanged hashes, source history and the security summary were updated through validated commands
 - Error **KTOS — Kratos Defense &amp; Security Solutions, Inc.: Hermes operation validation failed: Quick check research for KTOS on 2026-08-12** — Hermes timed out after 600s; agent result was written before completed change: data/runs/Daily report for 2026-08-12/Quick check research for KTOS on 2026-08-12/command\_audit.json; commands\_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment

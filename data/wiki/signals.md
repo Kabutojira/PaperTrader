@@ -7,13 +7,13 @@ tags:
 created: "2026-09-05"
 updated: "2026-09-05"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_98abd444429a0a0915c7"
-as_of: "2026-09-05T09:52:20Z"
+snapshot_id: "decision_a48905cabb7e170fe7e1"
+as_of: "2026-09-05T11:06:13Z"
 ---
 
 # Signals
 
-**As of `2026-09-05T09:52:20Z`**
+**As of `2026-09-05T11:06:13Z`**
 
 ## Actionable trade signals
 
@@ -25,7 +25,7 @@ as_of: "2026-09-05T09:52:20Z"
 - **Strategy research:** [Open strategy page](strategies/strategy_8caa208dfc702a2584a7)
 - **Window:** `2026-09-05T09:28:03Z` to `2026-09-06T09:19:19Z`
 - **Market data:** `2026-09-05T09:19:19Z`
-- **Current → target:** 2.984352% → 4.103899%
+- **Current → target:** 2.969993% → 4.084578%
 - **Copy-ready quantity:** 3
 - **Order:** market
 - **Entry:** Increase only while current allocation plan, allocation\_intent\_3e3d6793d5aacc3843e8, assessment\_7f28dfd9240d6099400b and Digital attention, gaming, and consumer ecosystems to Prosus remain current, a fresh PRX EUR price is available, and deterministic code derives a positive whole-share delta toward the persisted eleven-share target after holdings and pending orders.
@@ -33,9 +33,26 @@ as_of: "2026-09-05T09:52:20Z"
 - **Invalidation:** Do not increase exposure if Tencent or private-platform economics deteriorate materially, private marks prove unreliable, central net debt rises, governance or cross-holding complexity blocks value transmission, repurchases lose accretion, the holding discount widens persistently despite operating value creation, the assessment or relationship is superseded, or market inputs become stale.
 - **Rationale:** Increase only by the deterministic current-plan whole-share delta toward Prosus's persisted eleven-share baseline target after existing holdings and pending orders. The accepted relationship, 70 effective score, 39.37% base return, 23.50% confidence-adjusted expected return and 28.25% margin of safety support bounded baseline exposure; medium confidence, Tencent concentration, private-asset valuation uncertainty, central debt, governance, capital-allocation transmission and insufficient diversification bar conviction sizing.
 
+### [NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d)
+
+- **Action:** Buy
+- **State:** Pending validated order
+- **Strategy:** NVIDIA bounded baseline allocation
+- **Strategy research:** [Open strategy page](strategies/strategy_7cf884a5530d05afdb99)
+- **Window:** `2026-09-05T10:28:36Z` to `2026-09-06T10:21:09Z`
+- **Market data:** `2026-09-05T10:21:09Z`
+- **Current → target:** 0% → 3.9653%
+- **Copy-ready quantity:** 2
+- **Order:** market
+- **Entry:** Open only while current allocation plan, allocation\_intent\_18c42c83c9de5d41cc9b, assessment\_82fd625a8d93be4bd8f5 and relationship\_ai\_compute\_nvda remain current, fresh NVDA USD and USD/EUR inputs are available, and deterministic code derives a positive whole-share delta toward the persisted two-share target.
+- **Exit:** Reduce or close only when a current deterministic allocation plan directs reduce or close, the full-baseline eligibility frontier no longer clears, a hard blocker appears, or material normalized-earnings, margin, Rubin, export-control, customer-credit, guarantee, commitment, concentration or platform-attachment evidence invalidates the bounded thesis.
+- **Invalidation:** Do not increase exposure if normalized earnings fall below the bear path, gross margin remains below 70%, guarantees or receivables produce material losses, Rubin misses its cycle, export controls intensify, CUDA or networking attachment weakens, the assessment or relationship is superseded, or market or FX inputs become stale.
+- **Rationale:** Open only the deterministic current-plan whole-share delta toward NVIDIA's persisted two-share baseline target. The accepted relationship, 92 effective score, 34.79% base return, 24.06% confidence-adjusted expected return, 25.81% margin of safety and full-baseline payoff ratios support bounded exposure; medium confidence, customer concentration, supply commitments, guarantees, export controls, product-transition risk and insufficient diversification bar conviction sizing.
+
 ## Pending validated orders
 
 - **PRX:** Add · Pending validated order
+- **NVDA:** Buy · Pending validated order
 
 ## Research alerts — not trade signals
 
@@ -117,8 +134,8 @@ as_of: "2026-09-05T09:52:20Z"
 
 - Alert: `volume\_anomaly`
 - Market date: `2026-09-04`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed exactly one repeat UiPath Class A common-stock review using the mandatory audited prior context, the SEC-filed fiscal Q2 2027 results, and fresh identity-matched 4 September market and FX state. Revenue grew 13%, ARR grew 12%, retention held at 109%, GAAP operating income reached USD 31.6 million, and full-year guidance increased modestly, while slower net-new ARR, 80% gross margin, stock compensation and leadership transition preserve medium confidence. Updated USD 9/USD 17/USD 27 scenarios produce USD 17.50 weighted value versus USD 15.19. Deterministic state derives Buy / Initiate as the valuation label but watch-tier conviction and allocation ineligibility because bear/base payoff, expected/bear payoff and relationship gates fail. The 4 September volume anomaly contained a 16.63% one-session post-results decline despite only a 0.93% endpoint-period return, making it an adverse risk signal. No relationship or strategy operation was queued after the complete idea catalog se
 
 ### [HOOD — Robinhood Markets, Inc.](securities/security_ad3b1f8f59fd599f079a)
 

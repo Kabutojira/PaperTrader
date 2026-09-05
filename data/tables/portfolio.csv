@@ -1,2 +1,2 @@
 position_id,security_id,provider_contract_id,instrument_type,side,quantity,average_cost,currency,current_price,market_value_base,unrealized_pnl_base,realized_pnl_base,opened_at,last_mark_at,strategy_ids
-position_5c2d846fd3576d371543,security_8b703a8adf5f864acaa4,,equity,long,8,37.1221853219554903624547,EUR,37.310001373291016,298.480010986328128,1.5025284106842051003624,0,2026-09-04T07:00:00Z,2026-09-04T15:30:00Z,strategy_8caa208dfc702a2584a7
+position_5c2d846fd3576d371543,security_8b703a8adf5f864acaa4,,equity,long,8,37.1221853219554903624547,EUR,37.125,297,0.0225174243560771003624,0,2026-09-04T07:00:00Z,2026-09-04T15:30:00Z,strategy_8caa208dfc702a2584a7

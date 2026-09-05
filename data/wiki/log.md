@@ -3283,6 +3283,10 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 
 - Generated canonical [[daily-reports/daily-report_20260905]] for run `daily-20260905T091918Z`.
 
+- Published investor decision snapshot `decision_a48905cabb7e170fe7e1`.
+
+- Generated canonical [[daily-reports/daily-report_20260905]] for run `daily-20260905T102108Z`.
+
 ## [2026-09-05] update | Prosus baseline strategy current-plan increase
 - Rebound [[strategies/strategy_8caa208dfc702a2584a7]] to current plan `allocation_plan_e9ff34dda455150b7366` and intent `allocation_intent_3e3d6793d5aacc3843e8` while preserving assessment `assessment_7f28dfd9240d6099400b` and the accepted digital-attention relationship.
 - Retained the allocator-owned eleven-share target, 4.10% target weight and 5% maximum-position ceiling; the existing eight-share holding and any remaining executable delta stay deterministic rather than agent-selected.
