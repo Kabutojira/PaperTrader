@@ -3278,3 +3278,8 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Created candidate packet [[inbox/market-security_ed7d5b616a196969c815-volume_anomaly-95a27682c8f2]] (95a27682c8f2).
 
 - Classified [[inbox/market-security_ed7d5b616a196969c815-volume_anomaly-95a27682c8f2]] as `ingest`: New volume-anomaly transition coincides with a material 12.7% price increase over the validated period.
+
+## [2026-09-05] update | Prosus baseline strategy current-plan increase
+- Rebound [[strategies/strategy_8caa208dfc702a2584a7]] to current plan `allocation_plan_e9ff34dda455150b7366` and intent `allocation_intent_3e3d6793d5aacc3843e8` while preserving assessment `assessment_7f28dfd9240d6099400b` and the accepted digital-attention relationship.
+- Retained the allocator-owned eleven-share target, 4.10% target weight and 5% maximum-position ceiling; the existing eight-share holding and any remaining executable delta stay deterministic rather than agent-selected.
+- Refreshed the scenario-return chart at the EUR 37.310001 mark and retained active long-equity baseline treatment because the full-baseline frontier clears while medium confidence, holding-company risks and insufficient diversification continue to bar conviction sizing.
