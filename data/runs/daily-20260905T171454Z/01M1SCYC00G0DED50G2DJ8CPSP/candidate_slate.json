@@ -1,0 +1,30 @@
+{
+  "operation_id": "01M1SCYC00G0DED50G2DJ8CPSP",
+  "context_version": 3,
+  "window_start_exclusive": "2026-09-05T11:06:13Z",
+  "research_cutoff_at": "2026-09-05T18:11:11Z",
+  "candidates": [
+    {
+      "development_operation_id": "01KZXXN28RGQ4Z9TWV7ZD692PZ",
+      "security": "Intel Corporation",
+      "selected": true,
+      "chapter": "When a rebound makes a turnaround less attractive",
+      "audience_value": "Contrasts improving operating evidence and a bullish market move with negative expected return, severe downside, dilution, and unproven foundry economics.",
+      "novelty": "Not covered in the previous successful episode."
+    },
+    {
+      "development_operation_id": "01KZXXN28RRSZWA52CWB8Y1HQS",
+      "security": "Albemarle Corporation",
+      "selected": true,
+      "chapter": "Why a lithium rebound can still offer poor odds",
+      "audience_value": "Explains commodity operating leverage, the difference between a valid thematic link and an attractive security, and why wide scenario dispersion defeats a near-fair-value entry.",
+      "novelty": "Not covered in the previous successful episode."
+    }
+  ],
+  "excluded_unresolved_gaps": [
+    {
+      "security": "Taiwan Semiconductor Manufacturing Company",
+      "reason": "The frozen context classifies the attempted research as failed rather than an accepted research development, so it cannot support a chapter or conclusion."
+    }
+  ]
+}

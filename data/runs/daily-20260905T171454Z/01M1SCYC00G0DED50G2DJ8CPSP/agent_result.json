@@ -1,0 +1,61 @@
+{
+  "commands_run": [
+    "papertrader podcast validate-script --daily-cycle-id daily-20260905T171454Z --script-path data/wiki/podcasts/daily-podcast_20260905T171454Z.md",
+    "papertrader podcast render-draft --daily-cycle-id daily-20260905T171454Z --script-path data/wiki/podcasts/daily-podcast_20260905T171454Z.md",
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict",
+    "papertrader integrity --strict --prepared-daily-cycle-id daily-20260905T171454Z",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Published a standalone daily research podcast contrasting Intel's expensive turnaround with Albemarle's poorly compensated lithium-cycle downside; the transcript is linked from the canonical daily report."
+  ],
+  "evidence": [
+    {
+      "claim": "The controller-validated context version 3 fixes the exclusive prior-podcast cutoff, inclusive research cutoff, exact transcript path, report path, prior episode, and the two accepted research developments used in this episode.",
+      "source": "data/runs/daily-20260905T171454Z/podcast_context.json"
+    },
+    {
+      "claim": "The accepted Intel review retains the USD 32, USD 78, and USD 130 scenarios at a USD 95.80 reference mark and a Sell / Avoid conclusion despite improving operating evidence and a strong market rebound.",
+      "source": "data/runs/daily-20260905T171454Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/agent_result.json"
+    },
+    {
+      "claim": "The accepted Albemarle review retains the USD 9.93, USD 131.25, and USD 231.62 scenarios at a USD 126.28 reference mark and a Hold / Watch conclusion after the volume alert and leadership succession filing.",
+      "source": "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/agent_result.json"
+    },
+    {
+      "claim": "Current canonical decision state gives Intel zero target exposure with Sell / Avoid and Albemarle zero target exposure with Hold / Watch, and supplies the current rating-change conditions narrated in the episode.",
+      "source": "data/runs/daily-20260905T171454Z/decision_snapshot.json"
+    },
+    {
+      "claim": "Novelty review confirmed that the immediately prior successful episode covered UiPath, Uber, Prosus, and NVIDIA rather than the selected Intel and Albemarle developments.",
+      "source": "data/wiki/podcasts/daily-podcast_20260905T102108Z.md"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260905T171454Z/01M1SCYC00G0DED50G2DJ8CPSP/candidate_slate.json",
+    "data/runs/daily-20260905T171454Z/01M1SCYC00G0DED50G2DJ8CPSP/editorial_outline.md",
+    "data/wiki/daily-reports/daily-report_20260905.md",
+    "data/wiki/podcasts/daily-podcast_20260905T171454Z.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M1SCYC00G0DED50G2DJ8CPSP",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Created a 2,902-word standalone episode with two novel chapters: Intel's operating progress versus a share price above the central and weighted valuation cases, and Albemarle's direct lithium-cycle leverage versus near-zero expected return and extreme adverse-case loss. The failed TSM research gap was excluded because it was not an accepted development. The episode states Intel's current Sell / Avoid conclusion and Albemarle's Hold / Watch conclusion, including evidence, valuation, Buy, and Sell conditions for each. Script preflight passed and the single audited draft render succeeded at 1,265 seconds.",
+  "validation": {
+    "checks": [
+      "The payload, frozen context, and daily manifest all identify data/wiki/podcasts/daily-podcast_20260905T171454Z.md as the exact transcript path.",
+      "The candidate slate maps both accepted new research developments exactly once and excludes the failed TSM gap from accepted narration.",
+      "The script uses the exact required opening, teaser opening, section order, security rating endings, overall synthesis, and exact two-sentence greeting.",
+      "Deterministic script preflight passed with 2,902 spoken words in 5 render chunks and no forbidden spoken formatting or numeric glyphs.",
+      "The single audited render-draft invocation succeeded and produced 1,265 seconds of ephemeral audio outside the repository; no audio path or link was persisted in the transcript or report.",
+      "Strict schema validation, queue validation, strict wiki lint, and strict portfolio reconciliation passed.",
+      "Agent-side strict integrity reached only the expected post-snapshot authoritative-state freshness mismatch while this podcast row remains controller-owned and running; the podcast is excluded from investment decision inputs, and the deterministic parent owns the terminal transition and post-transition integrity recheck.",
+      "No allocation, strategy, signal, order, fill, execution, cash, portfolio, performance, or queue state was changed by the routed operation."
+    ],
+    "passed": true
+  }
+}

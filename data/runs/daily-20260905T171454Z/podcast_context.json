@@ -1,0 +1,224 @@
+{
+  "background_wiki_pages": [
+    {
+      "path": "data/wiki/ideas/idea_ai_compute_networking_hyperscaler_monetization.md",
+      "sha256": "8a9dfb5180137f187eb83ac96445a6a9f05b0d04c7efd5b46160a9e63476158e"
+    },
+    {
+      "path": "data/wiki/ideas/idea_critical_minerals_copper.md",
+      "sha256": "b22ac332b5c4abcdc678c3ce7cf88c6fe9c506980f1a8c38511a6c9e65561b74"
+    },
+    {
+      "path": "data/wiki/ideas/idea_critical_minerals_lithium.md",
+      "sha256": "90640ec837e8d3554a01aa61f0ac2e7413fdc947e36ec70042ec34f9b7bc357f"
+    },
+    {
+      "path": "data/wiki/ideas/idea_solar_storage_grid_flexibility_reset.md",
+      "sha256": "e2dbc2576669f8f9bcf16442877ba34066ef37e102b3dbce8cd693f3a792f1cc"
+    },
+    {
+      "path": "data/wiki/ideas/idea_terafab_ai_industrial_stack.md",
+      "sha256": "4fbed9bf71f2141f4a84e8ad6c60b9a4d22207cb6a96c95fd22738eb18082d63"
+    },
+    {
+      "path": "data/wiki/ideas/idea_wide_bandgap_power_semiconductors.md",
+      "sha256": "80500757be2bb36cb35a88d661228d8a1b602491ba2f3732846c33846a64253f"
+    }
+  ],
+  "changed_wiki_pages": [
+    {
+      "path": "data/wiki/securities/security_66cdcf90aac0d83e76f3.md",
+      "sha256": "fdd8694881fef76904d9acbd821233609cd3e69ce708349ead969d27b1adc6a8"
+    },
+    {
+      "path": "data/wiki/securities/security_dfa34d4b9050964b465e.md",
+      "sha256": "9a12616b5e410a89684c701bed87ee3e4ab2edd688123131118e8f8ec6354d61"
+    }
+  ],
+  "daily_cycle_id": "daily-20260905T171454Z",
+  "decision_snapshot_path": "data/runs/daily-20260905T171454Z/decision_snapshot.json",
+  "decision_snapshot_sha256": "6fb66b330f6bf4f509776333a146f6cbd26937fe604b916a5df623f5bc30af32",
+  "generated_at": "2026-09-05T18:22:56Z",
+  "intervening_daily_cycles": [
+    "daily-20260905T171454Z"
+  ],
+  "page_path": "data/wiki/podcasts/daily-podcast_20260905T171454Z.md",
+  "podcast_context_version": 3,
+  "portfolio_implication_paths": [
+    "data/runs/daily-20260905T171454Z/decision_snapshot.json",
+    "data/wiki/daily-reports/daily-report_20260905.md"
+  ],
+  "previous_successful_podcast": {
+    "context_path": "data/runs/daily-20260905T102108Z/podcast_context.json",
+    "context_sha256": "f4f488e6a263409470a789b32c4a75db6280b7cd2976adac27647f274d38b949",
+    "daily_cycle_id": "daily-20260905T102108Z",
+    "page_path": "data/wiki/podcasts/daily-podcast_20260905T102108Z.md",
+    "page_sha256": "2d815765dc37f68e8ab7eab4533053529313ba1d44b020f86e9076b340c8149f",
+    "research_cutoff_at": "2026-09-05T11:06:13Z"
+  },
+  "report_path": "data/wiki/daily-reports/daily-report_20260905.md",
+  "report_sha256": "d072136c4bbe07a3ec13048b7c5eade8319ba8a9751719431508b943fb3b0bc2",
+  "research_cutoff_at": "2026-09-05T18:11:11Z",
+  "research_developments": [
+    {
+      "completed_at": "2026-09-05T17:25:36Z",
+      "daily_cycle_id": "daily-20260905T171454Z",
+      "daily_report_items": [
+        "Intel's refreshed September 4 USD 95.80 mark and byte-identical SEC index leave the USD 32/USD 78/USD 130 scenarios unchanged; deterministic state remains Sell / Avoid with allocation ineligible.",
+        "The repeat review repaired the prior assessment-page hash mismatch with one predecessor-linked schema-v2 assessment; the existing AI-compute relationship review remains the only required follow-up."
+      ],
+      "entity_id": "security_dfa34d4b9050964b465e",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The index was byte-identical to the retained version. It lists the August 28, 2026 Form N-PX as the newest filing and the August 12 offering Form 8-K as the newest material issuer filing, with no later periodic operating filing or earnings release through September 5, 2026.",
+          "observed_at": "2026-09-05T17:18:42Z",
+          "source": "Intel SEC submissions index",
+          "source_hash": "2571798058d2159930fc29f2071045d6f5f03251ba604d4fefda4dc7d8dfc5e9",
+          "url": "https://data.sec.gov/submissions/CIK0000050863.json"
+        },
+        {
+          "claim": "The retained filing reports second-quarter net revenue of USD 16.128 billion, gross profit of USD 6.509 billion, operating income of USD 1.796 billion and six-month operating cash flow of USD 8.102 billion; foundry losses and capital intensity remain material risks.",
+          "observed_at": "2026-09-05T10:54:05Z",
+          "source": "Intel Corporation Form 10-Q for the quarter ended June 27, 2026",
+          "source_hash": "d9935526b6735fe2143df1c66e8c9808db7c7028e6714ed1da62b9bf560d70b9",
+          "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000108/intc-20260627.htm"
+        },
+        {
+          "claim": "The refreshed canonical observations preserve the September 4 adjusted close at USD 95.80000305175781 and USD/EUR at 0.8604999780654907, so scenario returns and the valuation frontier are unchanged from the immediately preceding assessment.",
+          "observed_at": "2026-09-05T17:14:55Z",
+          "source": "data/market/latest.csv and data/market/fx/latest.csv"
+        },
+        {
+          "claim": "The new current assessment is assessment_ec8c7012c31100e609ff, links predecessor assessment_30663d3bea16943c3e24, records schema version 2 and page hash 9a12616b5e410a89684c701bed87ee3e4ab2edd688123131118e8f8ec6354d61, exactly matching the current page hash. It deterministically derives Sell / Avoid, quality score 78, watch-tier conviction and allocation ineligibility.",
+          "source": "papertrader research security-context --security-id security_dfa34d4b9050964b465e"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/runs/daily-20260905T171454Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/assessment_upsert_request.json",
+        "data/runs/daily-20260905T171454Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/security_upsert_request.json",
+        "data/runs/daily-20260905T171454Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/source_intc_sec_submissions_recheck_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_dfa34d4b9050964b465e.md"
+      ],
+      "operation_id": "01KZXXN28RGQ4Z9TWV7ZD692PZ",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260905T171454Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed one bounded repeat Intel security review and repaired the prior run's assessment-to-page hash mismatch by appending exactly one schema-v2 assessment after finalizing the page. A byte-identical SEC submissions index and refreshed canonical market/FX observations add no new fundamental evidence: USD 32/USD 78/USD 130 scenarios still imply USD 79.50 probability-weighted value versus USD 95.80, -17.01% expected return and -12.76% medium-confidence-adjusted return. Deterministic state remains Sell / Avoid, watch-tier conviction and allocation-ineligible because return, downside-payoff, margin-of-safety and relationship gates fail. The new immutable assessment links predecessor assessment_30663d3bea16943c3e24 and exactly matches the finalized page hash. The rejected Terafab edge and existing dependent AI-compute candidate review require no duplicate follow-up; no strategy, signal, paper order, allocation or accounting state changed."
+    },
+    {
+      "completed_at": "2026-09-05T17:44:33Z",
+      "daily_cycle_id": "daily-20260905T171454Z",
+      "daily_report_items": [
+        "Albemarle's 4 September close fell 4.45% on a 2.02 volume z-score, completing a 3.68% decline across the exact alert window; the 3 September CEO-succession filing adds execution-monitoring risk but does not establish a changed operating outlook.",
+        "Unchanged USD 9.93/USD 131.25/USD 231.62 scenarios produce USD 126.0125 weighted value and -0.21% expected return at the USD 126.28 mark; deterministic disposition remains Hold / Watch and allocation-ineligible.",
+        "The complete idea catalog was reviewed, the accepted critical-minerals/lithium relationship remains current, no additional material relationship or strategy was justified, and dependent idea refresh 01M1SAEEC8FJYDHZM3P4EZ8NJV was enqueued."
+      ],
+      "entity_id": "security_66cdcf90aac0d83e76f3",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The SEC submissions index lists the 3 September CEO-succession Form 8-K as the newest decision-relevant filing and no periodic operating filing newer than the Q2 Form 10-Q through 2026-09-05.",
+          "observed_at": "2026-09-05T17:31:04Z",
+          "source": "Albemarle Corporation SEC submissions index checked 2026-09-05",
+          "source_hash": "9c761e2899277517615d85b23989a45e82ff6d51e655199c6b2de608a5086206",
+          "url": "https://data.sec.gov/submissions/CIK0000915913.json"
+        },
+        {
+          "claim": "Q2 net sales increased to USD 1.327 billion from USD 1.220 billion, adjusted EBITDA increased to USD 335 million from USD 197 million, and management retained the scenario-relevant 2026 EBITDA sensitivities around USD 10, USD 20 and USD 30 per kilogram LCE.",
+          "observed_at": "2026-09-05T17:31:04Z",
+          "source": "Albemarle Q2 2026 results exhibit",
+          "source_hash": "e040ddc92609c67057128d17703e2a1ec5078a8004bc15bbb9ed20504a758c6e",
+          "url": "https://www.sec.gov/Archives/edgar/data/915913/000091591326000101/a2q26earningsreleaseex991.htm"
+        },
+        {
+          "claim": "The board appointed Scott Tozier to succeed Kent Masters as chief executive effective 1 January 2027; the planned transition creates execution-monitoring risk but the filing did not change operating guidance or provide evidence requiring changed valuation assumptions.",
+          "observed_at": "2026-09-05T17:31:04Z",
+          "source": "Albemarle September 3, 2026 Form 8-K CEO succession",
+          "source_hash": "b6a55779ac57175cbbae7e73befd7325e5e7b8a1ec1d5158d96da529623d2167",
+          "url": "https://www.sec.gov/Archives/edgar/data/915913/000114036126035623/ef20081522_8k.htm"
+        },
+        {
+          "claim": "Across the canonical 7 August-4 September alert window, adjusted close fell 3.68% to USD 126.27999877929688; the 4 September session fell 4.45% on 3,919,800 shares with volume z-score 2.019279589088709, while RSI 42.092512219300995 was neutral and MACD remained above signal.",
+          "observed_at": "2026-09-05T17:14:55Z",
+          "source": "data/market/latest.csv, data/market/prices/security_66cdcf90aac0d83e76f3.csv and data/market/technical/security_66cdcf90aac0d83e76f3.csv",
+          "source_hash": "20016f391651fa0513b8cf1d3b2c2222619931231a41f9a6f341897d2e4fad35"
+        },
+        {
+          "claim": "Current assessment assessment_9d1e5ee5f9a3f19a6a42 links predecessor assessment_34f8c1b459177a91e165, source operation 01KZXXN28RRSZWA52CWB8Y1HQS, fresh registered market and FX identity, and research-page hash fdd8694881fef76904d9acbd821233609cd3e69ce708349ead969d27b1adc6a8; deterministic rating is Hold, action Watch and allocation eligibility ineligible.",
+          "source": "papertrader research security-context --security-id security_66cdcf90aac0d83e76f3"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1SAEEC8FJYDHZM3P4EZ8NJV.json",
+        "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/assessment_upsert_request.json",
+        "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/assessment_upsert_request_retry01.json",
+        "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/assessment_upsert_request_retry02.json",
+        "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/assessment_upsert_request_retry03.json",
+        "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/enqueue_idea_refresh_request.json",
+        "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/issue_resolve_request.json",
+        "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/security_upsert_request.json",
+        "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/source_alb_ceo_succession_request.json",
+        "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/source_alb_q2_2026_10q_refresh_request.json",
+        "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/source_alb_q2_2026_results_refresh_request.json",
+        "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/source_alb_sec_submissions_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_66cdcf90aac0d83e76f3.md"
+      ],
+      "operation_id": "01KZXXN28RRSZWA52CWB8Y1HQS",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260905T171454Z/01KZXXN28RRSZWA52CWB8Y1HQS/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed one bounded Albemarle security review after the 4 September volume anomaly. Current SEC evidence preserves the Q2 operating thesis while the 3 September CEO succession adds execution risk rather than a quantified valuation change. The unchanged USD 9.93/USD 131.25/USD 231.62 bear/base/bull cases at 25%/50%/25% produce USD 126.0125 probability-weighted fair value, -0.21182988745857938335394935% expected return and -0.1588724155939345375154620125% medium-confidence-adjusted return at the USD 126.27999877929688 mark. Deterministic state retains Hold / Watch, quality score 78 and allocation ineligibility because expected return, base return and downside-payoff gates fail. Updated the security page and structured projection, registered four current SEC evidence records, appended exactly one schema-v2 assessment linked to its predecessor and matching page hash, added three analytical charts, and enqueued exactly one dependent lithium-idea refresh. No strategy, signal, order, accounting, portfolio, performance, allocation or relationship state changed. The prior producer-owned timeout issue remains unchanged because its resolution request was rejected before dispatch by operation-scope enforcement; strict validation nevertheless passes for this completed review."
+    }
+  ],
+  "run_id": "daily-20260905T171454Z",
+  "target_minutes": 20,
+  "target_words": 3000,
+  "unresolved_research_gaps": [
+    {
+      "completed_at": "2026-09-05T18:10:40Z",
+      "daily_cycle_id": "daily-20260905T171454Z",
+      "daily_report_items": [],
+      "entity_id": "security_ce9b78a4d0773c950765",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "completed security research requires exactly one immutable assessment version",
+          "source": "data/runs/daily-20260905T171454Z/01KZXXN28RT0NVWT6QD0MMKBBK/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "completed security research requires exactly one immutable assessment version"
+      ],
+      "files_changed": [],
+      "operation_id": "01KZXXN28RT0NVWT6QD0MMKBBK",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260905T171454Z/01KZXXN28RT0NVWT6QD0MMKBBK/validation_report.json",
+      "status": "failed",
+      "summary": "The accepted research did not produce a valid result."
+    }
+  ],
+  "wiki_orientation_paths": [
+    "data/wiki/SCHEMA.md",
+    "data/wiki/index.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/log.md"
+  ],
+  "window_mode": "since_previous_successful_podcast",
+  "window_start_exclusive": "2026-09-05T11:06:13Z"
+}

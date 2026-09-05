@@ -205,6 +205,7 @@ This equal-weight research benchmark is analytical only, not copy-ready, and can
 - [[model-portfolio|PaperTrader model portfolio]]
 - [[performance|PaperTrader performance and risk]]
 - [[podcasts/daily-podcast_20260905T102108Z|PaperTrader daily research podcast — 2026-09-05T102108Z]]
+- [[podcasts/daily-podcast_20260905T171454Z|Daily research podcast — 2026-09-05T171454Z]]
 - [[research-catalog|PaperTrader research catalog]]
 - [[securities/security_66cdcf90aac0d83e76f3|Albemarle Corporation common stock]]
 - [[securities/security_dfa34d4b9050964b465e|Intel Corporation common stock]]
