@@ -1,0 +1,108 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_dfa34d4b9050964b465e",
+    "papertrader research source record --request data/runs/daily-20260905T102108Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/source_intc_q2_2026_10q_recheck_request.json",
+    "papertrader research source record --request data/runs/daily-20260905T102108Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/source_intc_q2_2026_release_recheck_request.json",
+    "papertrader research source record --request data/runs/daily-20260905T102108Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/source_intc_august_2026_equity_8k_recheck_request.json",
+    "papertrader research source record --request data/runs/daily-20260905T102108Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/source_intc_sec_submissions_recheck_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260905T102108Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/security_upsert_request.json",
+    "papertrader wiki sync-technical-charts",
+    "papertrader research assessment upsert --request data/runs/daily-20260905T102108Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260905T102108Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/assessment_upsert_request_retry01.json",
+    "papertrader research security-context --security-id security_dfa34d4b9050964b465e",
+    "papertrader wiki lint --strict",
+    "papertrader research security upsert --request data/runs/daily-20260905T102108Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/security_upsert_request_correction01.json",
+    "papertrader research security-context --security-id security_dfa34d4b9050964b465e",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Intel's September 4 close rebounded 4.51% to USD 95.80 without new fundamental evidence; the move worsened the unchanged scenario valuation rather than creating an opportunity.",
+    "Intel's USD 32/USD 78/USD 130 scenarios yield USD 79.50 weighted value and deterministic Sell / Avoid at USD 95.80; allocation remains ineligible on return, downside-payoff, margin-of-safety and relationship gates.",
+    "The research operation failed its final page-hash check after stale Hold / Watch prose was corrected following the immutable assessment write; no assessment row was deleted, replaced or duplicated."
+  ],
+  "evidence": [
+    {
+      "claim": "Intel's SEC submissions index was byte-identical to the prior check and listed no newer periodic operating filing or earnings release through 2026-09-05; the second-quarter filing and August offering Form 8-K remain the current fundamental baseline.",
+      "observed_at": "2026-09-05T10:54:05Z",
+      "source": "Intel SEC submissions index",
+      "source_hash": "2571798058d2159930fc29f2071045d6f5f03251ba604d4fefda4dc7d8dfc5e9",
+      "url": "https://data.sec.gov/submissions/CIK0000050863.json"
+    },
+    {
+      "claim": "Second-quarter net revenue was USD 16.128 billion, gross profit was USD 6.509 billion, operating income was USD 1.796 billion, and six-month operating cash flow was USD 8.102 billion; foundry losses and capital intensity remain material risks.",
+      "observed_at": "2026-09-05T10:54:05Z",
+      "source": "Intel Corporation Form 10-Q for the quarter ended June 27, 2026",
+      "source_hash": "d9935526b6735fe2143df1c66e8c9808db7c7028e6714ed1da62b9bf560d70b9",
+      "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000108/intc-20260627.htm"
+    },
+    {
+      "claim": "The canonical 2026-09-04 adjusted close was USD 95.80000305175781, up 4.51% from the prior session and above the alert-period close, with no new fundamental evidence; the rebound worsened the unchanged valuation frontier.",
+      "observed_at": "2026-09-05T10:21:09Z",
+      "source": "data/market/latest.csv and data/market/prices/security_dfa34d4b9050964b465e.csv"
+    },
+    {
+      "claim": "The current immutable assessment derives Sell / Avoid, quality score 78, expected return -17.01461642224731157883621229%, confidence-adjusted expected return -12.76096231668548368412715922%, and allocation ineligibility; its recorded page hash is db8edf976a89a2345a05f16b5be568e2e8a0d10ff7984a6b86a7220a483ac0f8 while the corrected page hash is b9ab7e976ae29bad4e4fd6ad087ae567541281034487b4ac621d9d8c367c98ee.",
+      "observed_at": "2026-09-05T11:03:04Z",
+      "source": "papertrader research security-context --security-id security_dfa34d4b9050964b465e"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260905T102108Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/assessment_upsert_request.json",
+    "data/runs/daily-20260905T102108Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/assessment_upsert_request_retry01.json",
+    "data/runs/daily-20260905T102108Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/security_upsert_request.json",
+    "data/runs/daily-20260905T102108Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/security_upsert_request_correction01.json",
+    "data/runs/daily-20260905T102108Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/source_intc_august_2026_equity_8k_recheck_request.json",
+    "data/runs/daily-20260905T102108Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/source_intc_q2_2026_10q_recheck_request.json",
+    "data/runs/daily-20260905T102108Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/source_intc_q2_2026_release_recheck_request.json",
+    "data/runs/daily-20260905T102108Z/01KZXXN28RGQ4Z9TWV7ZD692PZ/source_intc_sec_submissions_recheck_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_dfa34d4b9050964b465e.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KZXXN28RGQ4Z9TWV7ZD692PZ",
+  "operations_created": [],
+  "reason_code": "assessment_page_hash_mismatch",
+  "status": "failed",
+  "summary": "Completed one bounded Intel security review using the canonical 2026-09-04 USD 95.80 mark, refreshed registered primary evidence, and the existing alert period. The unchanged USD 32/USD 78/USD 130 scenarios produce USD 79.50 probability-weighted value, -17.01% expected return and -12.76% medium-confidence-adjusted return; deterministic state derives Sell / Avoid, watch-tier conviction and allocation ineligibility because return, downside-payoff, margin-of-safety and relationship gates fail. The security page, structured security projection, source records and one schema-v2 assessment were updated, no duplicate follow-up was created, and strict wiki lint passed. This operation cannot safely report success because the assessment was accepted while the page still contained the stale Hold / Watch label; correcting the page to the deterministic Sell / Avoid conclusion changed its hash after the immutable assessment was recorded. Appending another assessment would violate the exactly-one-version rule, while deleting or replacing the accepted history row is forbidden.",
+  "validation": {
+    "checks": [
+      "PASS: security-context confirmed one schema-v2 assessment for this run and source operation, predecessor linkage, fresh registered evidence, exact USD market identity and fresh USD/EUR FX identity.",
+      "PASS: deterministic assessment derives Sell / Avoid, watch-tier conviction, quality score 78 and allocation ineligibility with the complete threshold frontier.",
+      "PASS: the complete idea catalog was rechecked; the rejected Terafab edge remains rejected and the existing dependent AI-compute candidate review made a duplicate relationship follow-up unnecessary. No payload or accepted idea required an idea-research follow-up.",
+      "PASS: papertrader wiki lint --strict returned OK [wiki] after the final page correction.",
+      "PASS: no allocation target/history, strategy, signal, order, execution, cash, portfolio, fill or performance state changed.",
+      "FAIL: the immutable assessment records research-page hash db8edf976a89a2345a05f16b5be568e2e8a0d10ff7984a6b86a7220a483ac0f8, but correcting the stale rating prose changed the page hash to b9ab7e976ae29bad4e4fd6ad087ae567541281034487b4ac621d9d8c367c98ee. A second assessment would violate this operation's exactly-one immutable-version requirement, and the existing history row cannot be replaced or deleted."
+    ],
+    "passed": false
+  },
+  "visualization_review": {
+    "charts": [
+      {
+        "chart_id": "intc-q2-operating-20260904",
+        "page_path": "data/wiki/securities/security_dfa34d4b9050964b465e.md"
+      },
+      {
+        "chart_id": "intc-scenario-values-20260905",
+        "page_path": "data/wiki/securities/security_dfa34d4b9050964b465e.md"
+      }
+    ],
+    "completed": true,
+    "omissions": [
+      {
+        "dataset": "Post-offering cash and debt comparison",
+        "reason": "The filing quantifies base-offering net proceeds but does not provide exact net proceeds for the exercised over-allotment or a post-close balance sheet; estimating a pro-forma series would overstate precision.",
+        "reason_code": "insufficient_comparability"
+      },
+      {
+        "dataset": "Peer valuation comparison",
+        "reason": "No bounded primary-source peer set shared a common date, earnings definition, instrument scope, currency basis and immutable identity, so no like-for-like chart was produced.",
+        "reason_code": "source_unavailable"
+      }
+    ]
+  }
+}

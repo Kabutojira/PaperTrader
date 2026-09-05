@@ -1,0 +1,18 @@
+{
+  "source_id": "source_intc_sec_submissions_20260904",
+  "url": "https://data.sec.gov/submissions/CIK0000050863.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0000050863.json",
+  "source_type": "regulator_index",
+  "title": "Intel SEC submissions index checked 2026-09-04",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "2571798058d2159930fc29f2071045d6f5f03251ba604d4fefda4dc7d8dfc5e9",
+  "related_entity_ids": "security_dfa34d4b9050964b465e",
+  "checked_at": "2026-09-05T10:54:05Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Intel's current SEC submissions index lists the August 12, 2026 Form 8-K for the completed equity offering as the newest material issuer filing through September 5, 2026.",
+  "summary": "The freshly retrieved SEC index is byte-identical to the prior check and shows no periodic operating filing or earnings release after the retained second-quarter materials. The August equity-offering Form 8-K remains the principal later fundamental evidence.",
+  "run_id": "daily-20260905T102108Z"
+}

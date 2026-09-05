@@ -1,0 +1,23 @@
+{
+  "security_id": "security_dfa34d4b9050964b465e",
+  "issuer_id": "issuer_e5ff2f53cd2ac8db4f85",
+  "company_name": "Intel Corporation",
+  "instrument_name": "Intel Corporation common stock",
+  "instrument_type": "equity",
+  "ticker": "INTC",
+  "exchange_code": "NASDAQ",
+  "venue_mic": "XNAS",
+  "provider_symbol": "INTC",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Technology",
+  "industry": "Semiconductors",
+  "status": "watching",
+  "watchlist_reason": "Q2 product and DCAI recovery plus stronger post-offering liquidity; foundry economics, dilution and valuation remain risks",
+  "research_summary": "Sell / Avoid at USD 95.80: liquidity improved, but diluted weighted value is USD 79.50 and the post-MACD rebound worsens return and downside gates.",
+  "research_page": "data/wiki/securities/security_dfa34d4b9050964b465e.md",
+  "last_research_at": "2026-09-05T10:54:05Z",
+  "next_review_at": "2026-10-05T10:54:05Z",
+  "source": "source_intc_q2_2026_10q|source_intc_q2_2026_release|source_intc_august_2026_equity_8k|source_intc_sec_submissions_20260904"
+}
