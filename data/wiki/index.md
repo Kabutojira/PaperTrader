@@ -7,13 +7,13 @@ tags:
 created: "2026-09-05"
 updated: "2026-09-05"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_a48905cabb7e170fe7e1"
-as_of: "2026-09-05T11:06:13Z"
+snapshot_id: "decision_384ae92d6c7a2e0d2516"
+as_of: "2026-09-05T18:11:11Z"
 ---
 
 # PaperTrader
 
-**As of `2026-09-05T11:06:13Z` · Investment data: Portfolio state safe — research gaps remain · Operations: Attention required**
+**As of `2026-09-05T18:11:11Z` · Investment data: Portfolio state safe — research gaps remain · Operations: Attention required**
 
 ## Rebalance toward model targets
 

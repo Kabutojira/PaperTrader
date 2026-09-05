@@ -13,7 +13,6 @@ Generated from `data/tables/issues.csv`.
 | publication_only | error | **issue_580a89652f2497d6e61d** — Hermes operation validation failed: 01KZB8NMPGA0VTNRHAD458EN3R | 2026-08-06T10:28:41Z | delivery | 01KZB8NMPGA0VTNRHAD458EN3R |
 | affects_candidate | error | **issue_58242ac9c8a0a8fb3c22** — Hermes operation validation failed: 01KZSMSDTRBC9SG0KKDQR4XB87 | 2026-08-16T15:25:17Z | controller | 01KZSMSDTRBC9SG0KKDQR4XB87 |
 | affects_candidate | error | **issue_64ad20c69d31e7ef47e4** — Hermes operation validation failed: 01KZGT11ZGBPRBKV129FD00TH1 | 2026-08-17T16:15:53Z | controller | 01KZGT11ZGBPRBKV129FD00TH1 |
-| affects_candidate | error | **issue_7f39fae50d63b862a20b** — Hermes operation validation failed: 01KZCFHHCGX1RGXKKVHNF86W7N | 2026-08-09T14:23:04Z | controller | 01KZCFHHCGX1RGXKKVHNF86W7N |
 | publication_only | error | **issue_86f9f3bc8907460da2fc** — Hermes operation validation failed: 01KZ8VJY48VNMCFW638QQJZGJH | 2026-08-05T11:40:24Z | controller | 01KZ8VJY48VNMCFW638QQJZGJH |
 | affects_candidate | error | **issue_bb796d692e4293326337** — ABB assessment provenance does not match corrected final research page | 2026-09-03T18:37:34Z | controller | 01M07XKZS0JKBQM0THMPJGWEK5 |
 | affects_candidate | error | **issue_be3868209be34a120860** — Hermes operation validation failed: 01KZXXN28RT0NVWT6QD0MMKBBK | 2026-09-05T18:10:49Z | controller | 01KZXXN28RT0NVWT6QD0MMKBBK |
@@ -23,4 +22,3 @@ Generated from `data/tables/issues.csv`.
 | affects_candidate | error | **issue_d28f4a965952a2f0b258** — Hermes operation validation failed: 01KZ9ZJVERYZKAVXNTF2NZCECM | 2026-08-12T17:58:15Z | controller | 01KZ9ZJVERYZKAVXNTF2NZCECM |
 | affects_candidate | error | **issue_f50e95ee4d3a5cc05618** — ASML assessment rejected after security row update | 2026-08-19T20:28:51Z | controller | 01M0DB44Q8R22ED9WQC5ZEG526 |
 | affects_candidate | error | **issue_ff655356efa9b9e1d1a8** — Hermes operation validation failed: 01KZPWPFS0QGMTYP3PD0TRQH6K | 2026-08-18T11:39:09Z | controller | 01KZPWPFS0QGMTYP3PD0TRQH6K |
-| publication_only | warning | **issue_d561bd29b8873eef87eb** — Daily podcast blocked: daily-20260904T180734Z | 2026-09-04T18:42:27Z | delivery | 01M1PV87N00M38FCWEWS8A4SD6 |

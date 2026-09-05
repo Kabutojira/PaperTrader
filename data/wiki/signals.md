@@ -7,13 +7,13 @@ tags:
 created: "2026-09-05"
 updated: "2026-09-05"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_a48905cabb7e170fe7e1"
-as_of: "2026-09-05T11:06:13Z"
+snapshot_id: "decision_384ae92d6c7a2e0d2516"
+as_of: "2026-09-05T18:11:11Z"
 ---
 
 # Signals
 
-**As of `2026-09-05T11:06:13Z`**
+**As of `2026-09-05T18:11:11Z`**
 
 ## Actionable trade signals
 
@@ -170,8 +170,8 @@ as_of: "2026-09-05T11:06:13Z"
 
 - Alert: `volume\_anomaly`
 - Market date: `2026-09-04`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed one bounded Albemarle security review after the 4 September volume anomaly. Current SEC evidence preserves the Q2 operating thesis while the 3 September CEO succession adds execution risk rather than a quantified valuation change. The unchanged USD 9.93/USD 131.25/USD 231.62 bear/base/bull cases at 25%/50%/25% produce USD 126.0125 probability-weighted fair value, -0.21182988745857938335394935% expected return and -0.1588724155939345375154620125% medium-confidence-adjusted return at the USD 126.27999877929688 mark. Deterministic state retains Hold / Watch, quality score 78 and allocation ineligibility because expected return, base return and downside-payoff gates fail. Updated the security page and structured projection, registered four current SEC evidence records, appended exactly one schema-v2 assessment linked to its predecessor and matching page hash, added three analytical charts, and enqueued exactly one dependent lithium-idea refresh. No strategy, signal, order, accoun
 
 ### [108490 — ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c)
 

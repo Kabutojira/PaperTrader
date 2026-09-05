@@ -7,13 +7,13 @@ tags:
 created: "2026-09-05"
 updated: "2026-09-05"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_a48905cabb7e170fe7e1"
-as_of: "2026-09-05T11:06:13Z"
+snapshot_id: "decision_384ae92d6c7a2e0d2516"
+as_of: "2026-09-05T18:11:11Z"
 ---
 
 # Securities
 
-**As of `2026-09-05T11:06:13Z`**
+**As of `2026-09-05T18:11:11Z`**
 
 Ticker links open the maintained security analysis. Prices and buy-below levels use each security's listing currency. Return estimates are rounded to whole percentage points, and update dates are shown in UTC.
 
@@ -23,14 +23,14 @@ Ticker links open the maintained security analysis. Prices and buy-below levels 
 | <span id="security-security_c120e9f26ebb6159adf9"></span>[ABBNY — ABB Ltd](securities/security_c120e9f26ebb6159adf9) | 95.96 USD | Sell / Avoid | Valuation unattractive | Base-case return is below threshold. | -35% / -10% / 9% | -13% | 69.44 USD | 2026-09-05 / 2026-09-05 | 2026-10-03 |
 | <span id="security-security_7bf8f4c9cc12ae410e40"></span>[ABCL — AbCellera Biologics Inc.](securities/security_7bf8f4c9cc12ae410e40) | 11.43 USD | Unrated / Watch | Valuation unsupported | The assessment's registered evidence is not fresh. | — / — / — | — | — | 2026-09-05 / 2026-09-05 | 2026-08-24 |
 | <span id="security-security_e19c7fe27fbcc4cd923d"></span>[AD — Koninklijke Ahold Delhaize N.V.](securities/security_e19c7fe27fbcc4cd923d) | 31.66 EUR | Hold / Watch | Valuation unattractive | Base-case return is below threshold. | -24% / 4% / 33% | 4% | 26.4 EUR | 2026-09-05 / 2026-09-05 | 2026-09-27 |
-| <span id="security-security_66cdcf90aac0d83e76f3"></span>[ALB — Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3) | 126.28 USD | Hold / Watch | Research incomplete | The assessment's registered evidence is not fresh. | -92% / 4% / 83% | 0% | 105 USD | 2026-09-05 / 2026-09-05 | 2026-08-20 |
+| <span id="security-security_66cdcf90aac0d83e76f3"></span>[ALB — Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3) | 126.28 USD | Hold / Watch | Valuation unattractive | Base-case return is below threshold. | -92% / 4% / 83% | 0% | 105 USD | 2026-09-05 / 2026-09-05 | 2026-10-05 |
 | <span id="security-security_0a56aa634d077fe5796f"></span>[AMAT — Applied Materials, Inc.](securities/security_0a56aa634d077fe5796f) | 454.71 USD | Hold / Watch | Valuation unattractive | Base-case return is below threshold. | -37% / -1% / 42% | -3% | 358.4 USD | 2026-09-05 / 2026-09-05 | 2026-10-03 |
 | <span id="security-security_2433a056eb0c55961fcc"></span>[AMZN — Amazon.com, Inc.](securities/security_2433a056eb0c55961fcc) | 258.51 USD | Hold / Watch | Valuation unattractive | Base-case return is below threshold. | -23% / 4% / 39% | 6% | 216 USD | 2026-09-05 / 2026-09-05 | 2026-09-27 |
 | <span id="security-security_6f9a1450edceb9307c9a"></span>[ANET — Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a) | 193.78 USD | Hold / Watch | Research incomplete | The assessment's registered evidence is not fresh. | -38% / -6% / 30% | -5% | 145.92 USD | 2026-09-05 / 2026-09-05 | 2026-08-23 |
 | <span id="security-security_fe4648901e7675f157fd"></span>[ANIC.L — Agronomics Limited](security-catalog#security-security_fe4648901e7675f157fd) | 0.052 GBP | Unrated / Watch | Unassessed | — | — / — / — | — | — | 2026-09-05 / 2026-09-05 | — |
 | <span id="security-security_ef35e41886220d51c22c"></span>[ASML — ASML Holding N.V.](securities/security_ef35e41886220d51c22c) | 1714.88 USD | Unrated / Watch | Valuation unsupported | The assessment's registered evidence is not fresh. | — / — / — | — | — | 2026-09-05 / 2026-09-05 | 2026-08-26 |
 | <span id="security-security_22c2b9d782a62d7a9b86"></span>[ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86) | 93.76 USD | Unrated / Watch | Research incomplete | The comparable assessment is stale or expired. | — / — / — | — | — | 2026-09-05 / 2026-09-05 | 2026-08-27 |
-| <span id="security-security_3e597863f00753e8c65c"></span>[BE — Bloom Energy Corporation](securities/security_3e597863f00753e8c65c) | 252.87 USD | Sell / Avoid | Valuation unattractive | Base-case return is below threshold. | -64% / -29% / 19% | -26% | 144 USD | 2026-09-05 / 2026-09-05 | 2026-09-25 |
+| <span id="security-security_3e597863f00753e8c65c"></span>[BE — Bloom Energy Corporation](securities/security_3e597863f00753e8c65c) | 252.87 USD | Sell / Avoid | Valuation unattractive | The assessment's registered evidence is not fresh. | -64% / -29% / 19% | -26% | 144 USD | 2026-09-05 / 2026-09-05 | 2026-09-25 |
 | <span id="security-security_37ddcbdaad296ad831f2"></span>[COIN — Coinbase Global, Inc.](securities/security_37ddcbdaad296ad831f2) | 184.64 USD | Strong Sell / Avoid | Research incomplete | The assessment's registered evidence is not fresh. | -85% / -53% / 3% | -51% | 69.6 USD | 2026-09-05 / 2026-09-05 | 2026-09-04 |
 | <span id="security-security_c150f31c30afdb4a85f9"></span>[CROX — Crocs, Inc.](securities/security_c150f31c30afdb4a85f9) | 117.53 USD | Buy / Initiate | Relationship research pending | A current accepted idea-to-security relationship is unavailable. | -25% / 24% / 75% | 19% | 116.34 USD | 2026-09-05 / 2026-09-05 | 2026-10-03 |
 | <span id="security-security_55c9ce2fdcd32dad6b8c"></span>[CRSR — Corsair Gaming, Inc.](securities/security_55c9ce2fdcd32dad6b8c) | 12.72 USD | Hold / Watch | Research incomplete | The assessment's registered evidence is not fresh. | -48% / -6% / 49% | -5% | 9.6 USD | 2026-09-05 / 2026-09-05 | 2026-08-22 |
@@ -83,7 +83,7 @@ Ticker links open the maintained security analysis. Prices and buy-below levels 
 | <span id="security-security_98470cfc01bbcde78fc2"></span>[SOFI — SoFi Technologies, Inc.](securities/security_98470cfc01bbcde78fc2) | 18.22 USD | Hold / Watch | Valuation unattractive | Bear/base payoff is below the starter threshold. | -38% / 15% / 76% | 11% | 16.72 USD | 2026-09-05 / 2026-09-05 | 2026-10-02 |
 | <span id="security-security_664f93a7eaca72e76e9b"></span>[SPCX — Space Exploration Technologies Corp.](securities/security_664f93a7eaca72e76e9b) | 147.95 USD | Sell / Avoid | Research incomplete | The assessment's registered evidence is not fresh. | -66% / -26% / 32% | -26% | 88 USD | 2026-09-05 / 2026-09-05 | 2026-08-19 |
 | <span id="security-security_2010347f1a0a5ea60f47"></span>[SPOT — Spotify Technology S.A.](securities/security_2010347f1a0a5ea60f47) | 542.43 USD | Hold / Watch | Research incomplete | The assessment's registered evidence is not fresh. | -39% / -2% / 42% | 0% | 425.6 USD | 2026-09-05 / 2026-09-05 | 2026-08-20 |
-| <span id="security-security_9d4049ed6669a52815d6"></span>[SQM — Sociedad Quimica y Minera de Chile S.A.](securities/security_9d4049ed6669a52815d6) | 76.43 USD | Hold / Watch | Valuation unattractive | The assessment's registered evidence is not fresh. | -45% / 1% / 57% | 3% | 61.6 USD | 2026-09-05 / 2026-09-05 | 2026-09-05 |
+| <span id="security-security_9d4049ed6669a52815d6"></span>[SQM — Sociedad Quimica y Minera de Chile S.A.](securities/security_9d4049ed6669a52815d6) | 76.43 USD | Hold / Watch | Research incomplete | The assessment's registered evidence is not fresh. | -45% / 1% / 57% | 3% | 61.6 USD | 2026-09-05 / 2026-09-05 | 2026-09-05 |
 | <span id="security-security_567d0d575bbd30aaa91d"></span>[SSU.VI — Samsung Electronics Co., Ltd.](securities/security_567d0d575bbd30aaa91d) | 4210 EUR | Unrated / Watch | Valuation unsupported | The assessment's registered evidence is not fresh. | — / — / — | — | — | 2026-09-05 / 2026-09-05 | 2026-09-02 |
 | <span id="security-security_d08d763780400dfbffce"></span>[SSUN.VI — Samsung Electronics Co., Ltd.](securities/security_d08d763780400dfbffce) | 3040 EUR | Unrated / Watch | Valuation unsupported | The assessment's registered evidence is not fresh. | — / — / — | — | — | 2026-09-05 / 2026-09-05 | 2026-08-20 |
 | <span id="security-security_dc8486c1d61df62a22fd"></span>[SU — Schneider Electric SE](securities/security_dc8486c1d61df62a22fd) | 288 EUR | Hold / Watch | Valuation unattractive | Base-case return is below threshold. | -34% / -17% / 15% | -13% | 192 EUR | 2026-09-05 / 2026-09-05 | 2026-09-30 |
