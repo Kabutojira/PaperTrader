@@ -1,0 +1,23 @@
+{
+  "security_id": "security_eca976f0076a425ea1bb",
+  "issuer_id": "issuer_179c5fbd81cd6cf197cf",
+  "company_name": "UiPath, Inc.",
+  "instrument_name": "UiPath, Inc. Class A common stock",
+  "instrument_type": "equity",
+  "ticker": "PATH",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "PATH",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Technology",
+  "industry": "Software - Infrastructure",
+  "status": "watching",
+  "watchlist_reason": "Recurring growth, GAAP profitability and net cash merit coverage, but weak downside payoff, adverse post-results timing, medium confidence and no accepted relationship block allocation.",
+  "research_summary": "Q2 sustained 12% ARR growth and GAAP profit; USD 17.50 weighted value exceeds USD 15.19, but weak downside payoff and the absent relationship require Watch / no action.",
+  "research_page": "data/wiki/securities/security_eca976f0076a425ea1bb.md",
+  "last_research_at": "2026-09-05T10:45:22Z",
+  "next_review_at": "2026-10-03T10:45:22Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1734722/000173472226000047/path-2026731xex991.htm"
+}

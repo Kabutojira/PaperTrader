@@ -3292,3 +3292,8 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Created [[strategies/strategy_7cf884a5530d05afdb99]] for the current `allocation_plan_8750d84d9f6b86fd5bd3` and unchanged intent `allocation_intent_18c42c83c9de5d41cc9b`, preserving assessment `assessment_82fd625a8d93be4bd8f5` and [[relationships/relationship_ai_compute_nvda|the accepted AI-compute relationship]].
 - Retained the allocator-owned two-share target, 3.96% target weight and 5% maximum-position ceiling; any executable delta remains deterministic rather than agent-selected.
 - Added the current-plan scenario-return chart and selected long common equity because the full-baseline frontier clears, while medium confidence, concentrated commitments and guarantees, export risk and insufficient diversification bar conviction treatment.
+
+## [2026-09-05] update | UiPath fiscal Q2 2027 security review
+- Updated [[securities/security_eca976f0076a425ea1bb]] from the SEC-filed fiscal Q2 results, the 4 September volume anomaly, and fresh market and FX state.
+- Raised bear/base/bull fair values to USD 9/USD 17/USD 27 and retained Watch / no action because downside payoff, adverse post-results timing, medium confidence and the absent accepted relationship block allocation.
+- Added quarterly GAAP evidence and scenario charts; searched the complete idea catalog and rejected three superficial AI or automation associations without queuing relationship or strategy work.

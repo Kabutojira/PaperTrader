@@ -1,0 +1,101 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_eca976f0076a425ea1bb",
+    "papertrader research source record --request data/runs/daily-20260905T102108Z/01KZXXN28R2WDCZVGE6QXBXV5X/source_uipath_q2_fy2027_results_request.json",
+    "papertrader wiki sync-technical-charts",
+    "papertrader research security upsert --request data/runs/daily-20260905T102108Z/01KZXXN28R2WDCZVGE6QXBXV5X/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260905T102108Z/01KZXXN28R2WDCZVGE6QXBXV5X/assessment_upsert_request.json",
+    "papertrader research assessment-get --assessment-id assessment_9d1ba425007e79bfc1bc",
+    "papertrader schema validate --strict",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "daily_report_items": [
+    "PATH full review completed: fiscal Q2 sustained 12% ARR growth, 109% retention and GAAP profitability, while slower net-new ARR and the 16.63% post-results decline preserve risk. USD 9/USD 17/USD 27 scenarios imply USD 17.50 weighted value against USD 15.19; canonical valuation is Buy / Initiate, but downside payoff and the absent relationship require Watch / no paper action."
+  ],
+  "evidence": [
+    {
+      "claim": "UiPath's SEC-filed fiscal Q2 2027 release reports USD 410.3 million revenue, USD 1.938 billion ARR, USD 37 million net-new ARR, 109% dollar-based net retention, 80% GAAP gross margin, USD 31.6 million GAAP operating income, USD 45.0 million quarterly stock compensation, USD 162.6 million six-month operating cash flow, USD 1.405 billion cash and marketable securities, and raised full-year guidance.",
+      "observed_at": "2026-09-05T10:45:22Z",
+      "source": "source_uipath_q2_fy2027_results_sec_ex99_1",
+      "source_hash": "91615c332c1a46a153803a71c14590f8e626435ae0799a5288c553770e47b72f",
+      "url": "https://www.sec.gov/Archives/edgar/data/1734722/000173472226000047/path-2026731xex991.htm"
+    },
+    {
+      "claim": "The identity-matched reference mark is USD 15.1899995803833 for 4 September 2026 and USD/EUR is 0.8604999780654907, both current at 2026-09-05T10:21:09Z. The canonical alert period returned 0.93023%, but the final session fell 16.63008% on 104.5 million shares with a 2.37 volume z-score; RSI fell to 45.27 and MACD moved below its signal.",
+      "source": "data/market/latest.csv, data/market/technical/security_eca976f0076a425ea1bb.csv, data/market/fx/USD_EUR.csv, and data/wiki/inbox/market-security_eca976f0076a425ea1bb-volume_anomaly-502b5b004541.md"
+    },
+    {
+      "claim": "Deterministic assessment normalization derived bear/base/bull returns of -40.7505%/11.9157%/77.7485%, expected return of 15.2074%, medium-confidence adjusted return of 11.4055%, USD 13.60 buy-below value, Buy rating, Initiate action, quality score 76, watch-tier conviction, and allocation ineligibility across bear/base payoff, expected/bear payoff, and relationship gates.",
+      "source": "data/tables/security_assessments.csv"
+    },
+    {
+      "claim": "Immutable assessment assessment_9d1ba425007e79bfc1bc links predecessor assessment_cdeecdef9a612d6d2c6f, schema version 2, this operation and expected result path, the UiPath research page and captured hash, registered current evidence, and current run provenance.",
+      "source": "data/tables/security_assessment_history.csv"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260905T102108Z/01KZXXN28R2WDCZVGE6QXBXV5X/assessment_upsert_request.json",
+    "data/runs/daily-20260905T102108Z/01KZXXN28R2WDCZVGE6QXBXV5X/security_upsert_request.json",
+    "data/runs/daily-20260905T102108Z/01KZXXN28R2WDCZVGE6QXBXV5X/source_uipath_q2_fy2027_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_eca976f0076a425ea1bb.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KZXXN28R2WDCZVGE6QXBXV5X",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Completed exactly one repeat UiPath Class A common-stock review using the mandatory audited prior context, the SEC-filed fiscal Q2 2027 results, and fresh identity-matched 4 September market and FX state. Revenue grew 13%, ARR grew 12%, retention held at 109%, GAAP operating income reached USD 31.6 million, and full-year guidance increased modestly, while slower net-new ARR, 80% gross margin, stock compensation and leadership transition preserve medium confidence. Updated USD 9/USD 17/USD 27 scenarios produce USD 17.50 weighted value versus USD 15.19. Deterministic state derives Buy / Initiate as the valuation label but watch-tier conviction and allocation ineligibility because bear/base payoff, expected/bear payoff and relationship gates fail. The 4 September volume anomaly contained a 16.63% one-session post-results decline despite only a 0.93% endpoint-period return, making it an adverse risk signal. No relationship or strategy operation was queued after the complete idea catalog search found no material causal pairing.",
+  "validation": {
+    "checks": [
+      "Mandatory audited security-context completed exactly once before assessment-state reads or changes and supplied the prior assessment, prior successful result, page hash, retained sources, and empty linked relationship state.",
+      "Immutable identity remained security_eca976f0076a425ea1bb / issuer_179c5fbd81cd6cf197cf / XNYS / PATH / USD / equity; strict integrity validated identity deduplication.",
+      "The SEC-filed fiscal Q2 2027 release was registered through the project CLI with current URL and content hash before the assessment referenced it.",
+      "Current assessment is schema version 2, scenario-complete, source-backed, price/FX identity-matched, and linked through immutable history to its predecessor, this operation, expected result path, wiki page hash, and run.",
+      "Assessment probabilities total 100%, fair values are ordered, and all seven component inputs use only the 20/40/60/80/100 rubric anchors.",
+      "The complete maintained idea catalog and canonical relationship state were searched; three superficially related ideas were explicitly classified rejected-no-link, so no relationship follow-up was warranted.",
+      "No conviction strategy was queued because the full strategy gate failed.",
+      "Visualization review matches exactly the two agent-authored chart IDs on the changed security page and excludes the deterministic market-technicals chart.",
+      "Strict schema validation returned OK [schema].",
+      "Strict wiki lint returned OK [wiki].",
+      "Strict repository integrity returned OK [integrity].",
+      "No allocation target/history, strategy, signal, order, execution, cash, portfolio, fill, or performance path changed."
+    ],
+    "passed": true
+  },
+  "visualization_review": {
+    "charts": [
+      {
+        "chart_id": "quarterly-revenue-and-operating-income",
+        "page_path": "data/wiki/securities/security_eca976f0076a425ea1bb.md"
+      },
+      {
+        "chart_id": "valuation-scenarios",
+        "page_path": "data/wiki/securities/security_eca976f0076a425ea1bb.md"
+      }
+    ],
+    "completed": true,
+    "omissions": [
+      {
+        "dataset": "ARR and net-new ARR trend",
+        "reason": "The bounded current release provides two current fiscal-quarter observations but not an exact like-for-like multi-series historical dataset beyond rounded year-over-year growth rates.",
+        "reason_code": "insufficient_comparability"
+      },
+      {
+        "dataset": "Quarterly cash flow and stock-compensation trend",
+        "reason": "Two quarterly observations do not separate seasonal working-capital effects from a durable trend, so the material figures remain in sourced prose.",
+        "reason_code": "insufficient_history"
+      },
+      {
+        "dataset": "Peer valuation comparison",
+        "reason": "No bounded primary-source peer set shared a common date, earnings definition, currency basis, and immutable security identity; incomparable multiples were not estimated.",
+        "reason_code": "source_unavailable"
+      }
+    ]
+  }
+}

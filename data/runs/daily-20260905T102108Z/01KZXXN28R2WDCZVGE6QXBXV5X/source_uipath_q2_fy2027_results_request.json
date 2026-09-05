@@ -1,0 +1,18 @@
+{
+  "source_id": "source_uipath_q2_fy2027_results_sec_ex99_1",
+  "url": "https://www.sec.gov/Archives/edgar/data/1734722/000173472226000047/path-2026731xex991.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1734722/000173472226000047/path-2026731xex991.htm",
+  "source_type": "issuer_release",
+  "title": "UiPath second-quarter fiscal 2027 financial results",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "91615c332c1a46a153803a71c14590f8e626435ae0799a5288c553770e47b72f",
+  "related_entity_ids": "security_eca976f0076a425ea1bb",
+  "checked_at": "2026-09-05T10:45:22Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Revenue increased 13% to $410 million, ARR increased 12% to $1.938 billion, and dollar-based net retention was 109%.",
+  "summary": "The SEC-filed fiscal Q2 2027 release provides current revenue, ARR, retention, GAAP margins and profitability, cash flow, cash and securities, share count, stock compensation, leadership changes, product launches, and raised full-year guidance.",
+  "run_id": "daily-20260905T102108Z"
+}
