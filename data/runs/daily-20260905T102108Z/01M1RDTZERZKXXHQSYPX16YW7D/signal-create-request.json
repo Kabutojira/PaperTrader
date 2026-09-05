@@ -1,0 +1,9 @@
+{
+  "strategy_id": "strategy_7cf884a5530d05afdb99",
+  "signal_type": "open",
+  "rationale": "Open only the deterministic current-plan whole-share delta toward NVIDIA's persisted two-share baseline target. The accepted relationship, 92 effective score, 34.79% base return, 24.06% confidence-adjusted expected return, 25.81% margin of safety and full-baseline payoff ratios support bounded exposure; medium confidence, customer concentration, supply commitments, guarantees, export controls, product-transition risk and insufficient diversification bar conviction sizing.",
+  "market_data_as_of": "2026-09-05T10:21:09Z",
+  "run_id": "daily-20260905T102108Z",
+  "order_request_path": "",
+  "expires_at": "2026-09-06T10:21:09Z"
+}

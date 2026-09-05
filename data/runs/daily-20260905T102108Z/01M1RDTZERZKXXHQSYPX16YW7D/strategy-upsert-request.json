@@ -1,0 +1,41 @@
+{
+  "strategy": {
+    "strategy_id": "strategy_7cf884a5530d05afdb99",
+    "idea_id": "idea_ai_compute_networking_hyperscaler_monetization",
+    "security_id": "security_33d9c44facc75c726c7d",
+    "relationship_id": "relationship_ai_compute_nvda",
+    "name": "NVIDIA bounded baseline allocation",
+    "status": "ready",
+    "direction": "long",
+    "instrument_type": "equity",
+    "thesis": "NVIDIA's accelerated-compute, networking and software platform converts current AI infrastructure demand into exceptional revenue and cash-generation potential; the current plan supports bounded long-equity baseline exposure because medium confidence, customer concentration, supply commitments, guarantees, export controls, product-transition risk and insufficient diversification prevent conviction treatment.",
+    "entry_rule": "Open only while allocation_plan_8750d84d9f6b86fd5bd3, allocation_intent_18c42c83c9de5d41cc9b, assessment_82fd625a8d93be4bd8f5 and relationship_ai_compute_nvda remain current, fresh NVDA USD and USD/EUR inputs are available, and deterministic code derives a positive whole-share delta toward the persisted two-share target.",
+    "exit_rule": "Reduce or close only when a current deterministic allocation plan directs reduce or close, the full-baseline eligibility frontier no longer clears, a hard blocker appears, or material normalized-earnings, margin, Rubin, export-control, customer-credit, guarantee, commitment, concentration or platform-attachment evidence invalidates the bounded thesis.",
+    "invalidation": "Do not increase exposure if normalized earnings fall below the bear path, gross margin remains below 70%, guarantees or receivables produce material losses, Rubin misses its cycle, export controls intensify, CUDA or networking attachment weakens, the assessment or relationship is superseded, or market or FX inputs become stale.",
+    "risk_budget_pct": "5",
+    "sleeve": "baseline",
+    "allocation_plan_id": "allocation_plan_8750d84d9f6b86fd5bd3",
+    "allocation_intent_id": "allocation_intent_18c42c83c9de5d41cc9b",
+    "not_before": "",
+    "expires_at": "2026-09-18T06:22:45Z",
+    "research_page": "data/wiki/strategies/strategy_7cf884a5530d05afdb99.md"
+  },
+  "legs": [
+    {
+      "leg_id": "leg_nvda_equity",
+      "action": "buy",
+      "side": "long",
+      "instrument_type": "equity",
+      "security_id": "security_33d9c44facc75c726c7d",
+      "provider_contract_id": "",
+      "option_type": "",
+      "expiry": "",
+      "strike": "",
+      "quantity": "2",
+      "contract_multiplier": "1",
+      "order_type": "market",
+      "limit_price": "",
+      "currency": "USD"
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 strategy_id,leg_id,action,side,instrument_type,security_id,provider_contract_id,option_type,expiry,strike,quantity,contract_multiplier,order_type,limit_price,currency
+strategy_7cf884a5530d05afdb99,leg_nvda_equity,buy,long,equity,security_33d9c44facc75c726c7d,,,,,2,1,market,,USD
 strategy_8caa208dfc702a2584a7,leg_prosus_equity,buy,long,equity,security_8b703a8adf5f864acaa4,,,,,11,1,market,,EUR
 strategy_bd005fc3733b1475b6f9,leg_isrg_equity,buy,long,equity,security_1f9cce545ede94cd6349,,,,,6,1,market,,USD
 strategy_e4ada1a4934691d1f7ee,leg_uber_equity,buy,long,equity,security_e4822686f60a96824b6e,,,,,2,1,market,,USD

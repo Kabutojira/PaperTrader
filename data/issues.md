@@ -4,7 +4,6 @@ Generated from `data/tables/issues.csv`.
 
 | Impact | Severity | Issue | Last seen | Owner | Related operation |
 | --- | --- | --- | --- | --- | --- |
-| affects_candidate | error | **issue_0911de7de77d8623c46b** — Hermes operation validation failed: 01M1RDTZERZKXXHQSYPX16YW7D | 2026-09-05T09:51:57Z | controller | 01M1RDTZERZKXXHQSYPX16YW7D |
 | affects_candidate | error | **issue_19022fd84871ab2ed3ab** — Hermes operation validation failed: 01KZ8BGD98T363E1NM8EPYT9TG | 2026-08-11T14:51:31Z | controller | 01KZ8BGD98T363E1NM8EPYT9TG |
 | affects_candidate | error | **issue_30c07892e9981c27b153** — FANUC assessment source operation is ambiguous within one run | 2026-08-20T15:57:26Z | controller | 01M0FXHG7GT03TE1GNSGAPY904 |
 | affects_candidate | error | **issue_35b7b23bc3b07dd61cce** — Hermes operation validation failed: 01KZ9ZJVERDMQV8A3XQQY4AD7Y | 2026-08-12T15:28:02Z | controller | 01KZ9ZJVERDMQV8A3XQQY4AD7Y |
