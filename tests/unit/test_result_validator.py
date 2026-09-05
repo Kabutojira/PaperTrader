@@ -177,6 +177,28 @@ def test_agent_operation_scopes_never_own_generated_allocation_state() -> None:
         "security_research",
         {"argv": ["papertrader", "podcast", "render-draft"]},
     )
+    translation_page = "data/wiki/podcasts/daily-podcast_20260724T120000Z_it-IT.md"
+    assert _path_allowed_for_operation("podcast_translation", translation_page, created=True)
+    assert not _path_allowed_for_operation("podcast_translation", translation_page, created=False)
+    assert _command_allowed(
+        "podcast_translation",
+        {
+            "argv": [
+                "papertrader",
+                "podcast",
+                "translation",
+                "validate-script",
+                "--run-id",
+                "translation-test",
+            ]
+        },
+        profile="deep",
+    )
+    assert not _command_allowed(
+        "daily_podcast",
+        {"argv": ["papertrader", "podcast", "translation", "render-draft"]},
+        profile="deep",
+    )
     for operation_type in (
         "wiki_ingest",
         "opportunity_research",

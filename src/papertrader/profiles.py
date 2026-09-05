@@ -77,7 +77,7 @@ def route_profile(
     if operation_type in {"strategy_research", "execute_strategy"}:
         selected = "deep"
         reason = "full_strategy_or_execution_decision"
-    elif operation_type == "daily_podcast":
+    elif operation_type in {"daily_podcast", "podcast_translation"}:
         selected = "deep"
         reason = "strict_long_form_podcast_contract"
     elif operation_type == "security_research":
@@ -236,7 +236,7 @@ def select_profile(
         escalation_source=escalation_source,
     )
     profile = settings.hermes.profile(route.profile)
-    if operation.operation_type == "daily_podcast":
+    if operation.operation_type in {"daily_podcast", "podcast_translation"}:
         profile = replace(
             profile,
             timeout_seconds=settings.podcast.operation_timeout_seconds,

@@ -81,11 +81,16 @@ from papertrader.performance import rebase_performance, update_performance
 from papertrader.podcast import (
     build_podcast_context,
     enqueue_daily_podcast,
+    enqueue_podcast_translation,
     finalize_daily_podcast,
+    finalize_podcast_translation,
     render_draft_podcast,
+    render_draft_podcast_translation,
     seal_podcast_render,
+    seal_podcast_translation_render,
     validate_podcast_context,
     validate_podcast_script_file,
+    validate_podcast_translation_script_file,
 )
 from papertrader.portfolio import build_risk_state, rebuild_portfolio, reconcile_portfolio
 from papertrader.profiles import RoutingContext, analyst_relationship_gate, route_profile
@@ -279,6 +284,30 @@ def _parser() -> argparse.ArgumentParser:
     podcast_seal.add_argument("--output-directory", type=Path, required=True)
     podcast_finalize = podcast_commands.add_parser("finalize")
     podcast_finalize.add_argument("--run-id", required=True)
+    podcast_translation = podcast_commands.add_parser("translation")
+    podcast_translation_commands = podcast_translation.add_subparsers(
+        dest="podcast_translation_command", required=True
+    )
+    podcast_translation_enqueue = podcast_translation_commands.add_parser("enqueue")
+    podcast_translation_enqueue.add_argument("--source-commit", required=True)
+    podcast_translation_enqueue.add_argument("--source-script-path", required=True)
+    podcast_translation_enqueue.add_argument("--source-locale", required=True)
+    podcast_translation_enqueue.add_argument("--target-locale", required=True)
+    podcast_translation_enqueue.add_argument("--target-voice", required=True)
+    podcast_translation_validate = podcast_translation_commands.add_parser("validate-script")
+    podcast_translation_validate.add_argument("--run-id", required=True)
+    podcast_translation_validate.add_argument("--operation-id", required=True)
+    podcast_translation_render = podcast_translation_commands.add_parser("render-draft")
+    podcast_translation_render.add_argument("--run-id", required=True)
+    podcast_translation_render.add_argument("--operation-id", required=True)
+    podcast_translation_seal = podcast_translation_commands.add_parser("seal-render")
+    podcast_translation_seal.add_argument("--run-id", required=True)
+    podcast_translation_seal.add_argument("--operation-id", required=True)
+    podcast_translation_seal.add_argument("--script-commit", required=True)
+    podcast_translation_seal.add_argument("--output-directory", type=Path, required=True)
+    podcast_translation_finalize = podcast_translation_commands.add_parser("finalize")
+    podcast_translation_finalize.add_argument("--run-id", required=True)
+    podcast_translation_finalize.add_argument("--operation-id", required=True)
 
     indicator = commands.add_parser("indicators", help="calculate deterministic indicators")
     indicator_commands = indicator.add_subparsers(dest="indicator_command", required=True)
@@ -474,15 +503,18 @@ def _parser() -> argparse.ArgumentParser:
     telegram_audio_failure.add_argument("--daily-cycle-id", required=True)
     telegram_audio_failure.add_argument("--script-commit", required=True)
     telegram_audio_failure.add_argument("--error", required=True)
+    telegram_audio_failure.add_argument("--language", default="en-US")
     telegram_script = telegram_commands.add_parser("deliver-podcast-script")
     telegram_script.add_argument("--commit-sha", required=True)
     telegram_script.add_argument("--script-path", required=True)
     telegram_script.add_argument("--daily-cycle-id", required=True)
     telegram_script.add_argument("--repository-url", required=True)
+    telegram_script.add_argument("--language", default="en-US")
     telegram_script_failure = telegram_commands.add_parser("record-script-failure")
     telegram_script_failure.add_argument("--daily-cycle-id", required=True)
     telegram_script_failure.add_argument("--script-commit", required=True)
     telegram_script_failure.add_argument("--error", required=True)
+    telegram_script_failure.add_argument("--language", default="en-US")
 
     workflow = commands.add_parser("workflow", help="handoff validated runtime patches")
     workflow_commands = workflow.add_subparsers(dest="workflow_command", required=True)
@@ -1294,6 +1326,94 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
         print(json.dumps(asdict(daily_finalization), sort_keys=True))
         return 0
     if arguments.command == "podcast":
+        if arguments.podcast_command == "translation":
+            if arguments.podcast_translation_command == "enqueue":
+                print(
+                    json.dumps(
+                        asdict(
+                            enqueue_podcast_translation(
+                                root,
+                                settings,
+                                source_commit=arguments.source_commit,
+                                source_script_path=arguments.source_script_path,
+                                source_locale=arguments.source_locale,
+                                target_locale=arguments.target_locale,
+                                target_voice=arguments.target_voice,
+                            )
+                        ),
+                        sort_keys=True,
+                    )
+                )
+                return 0
+            if arguments.podcast_translation_command == "validate-script":
+                print(
+                    json.dumps(
+                        asdict(
+                            validate_podcast_translation_script_file(
+                                root,
+                                settings,
+                                run_id=arguments.run_id,
+                                operation_id=arguments.operation_id,
+                            )
+                        ),
+                        sort_keys=True,
+                    )
+                )
+                return 0
+            if arguments.podcast_translation_command == "render-draft":
+                output_directory = os.environ.get("PAPERTRADER_PODCAST_OUTPUT_DIRECTORY", "")
+                if not output_directory:
+                    raise CanonicalValueError(
+                        "PAPERTRADER_PODCAST_OUTPUT_DIRECTORY is required for draft rendering"
+                    )
+                print(
+                    json.dumps(
+                        asdict(
+                            render_draft_podcast_translation(
+                                root,
+                                settings,
+                                run_id=arguments.run_id,
+                                operation_id=arguments.operation_id,
+                                output_directory=Path(output_directory),
+                                audit_run_id=os.environ.get("PAPERTRADER_AUDIT_RUN_ID", ""),
+                                audit_operation_id=os.environ.get(
+                                    "PAPERTRADER_AUDIT_OPERATION_ID", ""
+                                ),
+                                audit_operation_type=os.environ.get(
+                                    "PAPERTRADER_AUDIT_OPERATION_TYPE", ""
+                                ),
+                            )
+                        ),
+                        sort_keys=True,
+                    )
+                )
+                return 0
+            if arguments.podcast_translation_command == "seal-render":
+                print(
+                    json.dumps(
+                        asdict(
+                            seal_podcast_translation_render(
+                                root,
+                                settings,
+                                run_id=arguments.run_id,
+                                operation_id=arguments.operation_id,
+                                script_commit=arguments.script_commit,
+                                output_directory=arguments.output_directory,
+                            )
+                        ),
+                        sort_keys=True,
+                    )
+                )
+                return 0
+            print(
+                finalize_podcast_translation(
+                    root,
+                    settings,
+                    run_id=arguments.run_id,
+                    operation_id=arguments.operation_id,
+                )
+            )
+            return 0
         if arguments.podcast_command == "enqueue":
             print(
                 json.dumps(
@@ -1520,6 +1640,7 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
                 daily_cycle_id=arguments.daily_cycle_id,
                 script_commit=arguments.script_commit,
                 error=arguments.error,
+                language=arguments.language,
             )
             print(json.dumps(asdict(failure_result), sort_keys=True))
             return 0
@@ -1529,6 +1650,7 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
                 daily_cycle_id=arguments.daily_cycle_id,
                 script_commit=arguments.script_commit,
                 error=arguments.error,
+                language=arguments.language,
             )
             print(json.dumps(asdict(audio_failure_result), sort_keys=True))
             return 0
@@ -1554,6 +1676,7 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
                 repository_url=arguments.repository_url,
                 token=os.environ.get("TELEGRAM_BOT_TOKEN", ""),
                 chat_id=os.environ.get("TELEGRAM_CHAT_ID", ""),
+                language=arguments.language,
             )
             print(json.dumps(asdict(script_delivery_result), sort_keys=True))
             return 0

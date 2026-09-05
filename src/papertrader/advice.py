@@ -657,7 +657,11 @@ def _canonical_rows(
     if name in {"operations_todo", "operations_history"}:
         # The podcast is a generated delivery view. Its queue lifecycle must never feed back
         # into an already-published investment decision or invalidate that immutable snapshot.
-        rows = [row for row in rows if row["operation_type"] != "daily_podcast"]
+        rows = [
+            row
+            for row in rows
+            if row["operation_type"] not in {"daily_podcast", "podcast_translation"}
+        ]
     if name == "issues" and as_of is not None:
         projected: list[dict[str, str]] = []
         for row in rows:
@@ -757,7 +761,10 @@ def _source_hashes(repository_root: Path, *, as_of: datetime) -> Mapping[str, st
             payload = json.loads(raw)
         except (UnicodeDecodeError, json.JSONDecodeError) as exc:
             raise AdviceError(f"operation payload is not valid JSON: {path.name}") from exc
-        if isinstance(payload, dict) and payload.get("operation_type") == "daily_podcast":
+        if isinstance(payload, dict) and payload.get("operation_type") in {
+            "daily_podcast",
+            "podcast_translation",
+        }:
             continue
         payloads.append((path.relative_to(payload_root).as_posix(), content_hash(raw)))
     hashes["operation_payloads"] = content_hash(payloads)

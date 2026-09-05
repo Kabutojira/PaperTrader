@@ -28,7 +28,8 @@
         "relationship_research",
         "strategy_research",
         "execute_strategy",
-        "daily_podcast"
+        "daily_podcast",
+        "podcast_translation"
       ]
     },
     "entity_type": {
@@ -68,6 +69,37 @@
                 "page_path": { "type": "string", "pattern": "^data/wiki/podcasts/daily-podcast_[0-9]{8}T[0-9]{6}Z\\.md$" },
                 "target_minutes": { "const": 20 },
                 "target_words": { "type": "integer", "minimum": 2800, "maximum": 3200 }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "operation_type": { "const": "podcast_translation" },
+            "inputs": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "source_daily_cycle_id",
+                "source_script_path",
+                "source_script_commit",
+                "source_script_sha256",
+                "source_locale",
+                "target_locale",
+                "target_voice",
+                "page_path",
+                "target_minutes"
+              ],
+              "properties": {
+                "source_daily_cycle_id": { "type": "string", "pattern": "^daily-[0-9]{8}T[0-9]{6}Z$" },
+                "source_script_path": { "type": "string", "pattern": "^data/wiki/podcasts/daily-podcast_[0-9]{8}T[0-9]{6}Z(?:_[a-z]{2}-[A-Z]{2})?\\.md$" },
+                "source_script_commit": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+                "source_script_sha256": { "$ref": "#/$defs/sha256" },
+                "source_locale": { "type": "string", "pattern": "^[a-z]{2}-[A-Z]{2}$" },
+                "target_locale": { "type": "string", "pattern": "^[a-z]{2}-[A-Z]{2}$" },
+                "target_voice": { "type": "string", "pattern": "^[a-z]{2}-[A-Z]{2}-[A-Za-z0-9]+Neural$" },
+                "page_path": { "type": "string", "pattern": "^data/wiki/podcasts/daily-podcast_[0-9]{8}T[0-9]{6}Z_[a-z]{2}-[A-Z]{2}\\.md$" },
+                "target_minutes": { "const": 20 }
               }
             }
           }

@@ -106,6 +106,7 @@ The repository is the source of truth. Any legacy data import is a separate, one
 │   ├── papertrader-strategy-research/SKILL.md
 │   ├── papertrader-execute-strategy/SKILL.md
 │   ├── papertrader-daily-podcast/SKILL.md
+│   ├── papertrader-podcast-translation/SKILL.md
 │   └── echart/
 │       ├── SKILL.md
 │       └── references/papertrader-embedding.md
@@ -633,6 +634,21 @@ remains entirely deterministic.
 - Podcast queue rows and payloads are delivery-only generated state and are excluded from decision
   snapshot source hashes, so creating the podcast cannot invalidate or feed back into the immutable
   completed-run investment decision.
+
+### `podcast_translation`
+
+- Run only after an exact source podcast transcript has been committed. Version 1 is manually
+  invoked and never part of the scheduled daily operation sequence.
+- Bind the immutable payload to the source cycle, path, commit, SHA-256, source and target BCP-47
+  locales, target Edge Neural voice, and one canonical localized page path.
+- Translate the title, summary, and spoken paragraphs faithfully. Preserve paragraph order, facts,
+  ratings, uncertainty, valuation conditions, catalysts, risks, and invalidations; do not browse,
+  refresh evidence, or add research conclusions.
+- Write one localized timestamped Markdown transcript, invoke the audited localized draft renderer
+  exactly once after preflight, and retain no audio, chunk, or media link in Git.
+- Translation queue rows and payloads are publication-only state excluded from decision snapshot
+  source hashes. Telegram script and audio delivery use locale-scoped retry issues so one language
+  cannot resolve another language's failure.
 
 ## Hermes Agent integration
 

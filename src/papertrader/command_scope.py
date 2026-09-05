@@ -66,6 +66,10 @@ def command_allowed(
         command, ("podcast", "render-draft")
     ):
         return operation_type == "daily_podcast"
+    if _matches(command, ("podcast", "translation", "validate-script")) or _matches(
+        command, ("podcast", "translation", "render-draft")
+    ):
+        return operation_type == "podcast_translation"
     if _matches(command, ("queue", "enqueue")):
         return operation_type != "source_discovery"
     if _matches(command, ("seekingalpha", "enqueue-leads")):
