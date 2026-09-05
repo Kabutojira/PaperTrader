@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_8f324efeca539dfb6189",
+  "idea_id": "idea_ai_infrastructure_power",
+  "security_id": "security_0b67d6c8e3fd3366a257",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "Higher-density data centers and broader electrification require medium-voltage switchgear, packaged electrical rooms, controls and protection between grid or on-site generation and loads; Powell can convert that demand into orders, backlog, revenue, margin and cash, subject to project and customer concentration, cancellations, fixed-price execution, capacity, working capital and valuation.",
+  "sensitivity": "high",
+  "confidence": "medium",
+  "catalyst": "Data-center awards broaden across customers and architectures, Commercial & Other Industrial backlog converts into revenue and cash at durable high-20s gross margins, and utility, LNG and industrial demand keeps total book-to-bill above 1x without capacity or working-capital strain.",
+  "invalidation": "The data-center order above USD 400 million is cancelled, materially delayed or repriced; orders fail to broaden; power architecture or customer insourcing reduces Powell content; backlog fails to convert into cash; or capacity constraints cause sustained margin loss, damages or working-capital stress.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_8f324efeca539dfb6189.md",
+  "last_reviewed_at": "2026-09-05T15:13:00Z",
+  "next_review_at": "2026-10-05T15:13:00Z"
+}

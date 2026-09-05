@@ -7,13 +7,13 @@ tags:
 created: "2026-09-05"
 updated: "2026-09-05"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_384ae92d6c7a2e0d2516"
-as_of: "2026-09-05T18:11:11Z"
+snapshot_id: "decision_396637efaf4f83c74b10"
+as_of: "2026-09-05T18:58:43Z"
 ---
 
 # PaperTrader
 
-**As of `2026-09-05T18:11:11Z` · Investment data: Portfolio state safe — research gaps remain · Operations: Attention required**
+**As of `2026-09-05T18:58:43Z` · Investment data: Portfolio state safe — research gaps remain · Operations: Attention required**
 
 ## Rebalance toward model targets
 
@@ -40,15 +40,15 @@ Current equity is **10000.02 EUR** with **97.030007% cash**. The target retains 
 
 ## Buy / Initiate research candidates
 
-- **[NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d):** Buy / Initiate · Full baseline — Allocation constrained · expected return 32% · A portfolio, sector, or theme concentration cap applies.
-- **[UBER — Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e):** Buy / Initiate · Starter — Strategy research pending · expected return 17% · The eligible set is not sufficiently diversified.
-- **[DLO — DLocal Limited](securities/security_715bde20b6e1e1320c1a):** Buy / Initiate · Valuation unattractive · expected return 22% · Bear/base payoff is below the starter threshold.
-- **[TCEHY — Tencent Holdings Limited](securities/security_de0d83229b369a426b99):** Buy / Initiate · Valuation unattractive · expected return 15% · Expected/bear payoff is below the starter threshold.
-- **[PATH — UiPath, Inc.](securities/security_eca976f0076a425ea1bb):** Buy / Initiate · Valuation unattractive · expected return 15% · Bear/base payoff is below the starter threshold.
-- **[CROX — Crocs, Inc.](securities/security_c150f31c30afdb4a85f9):** Buy / Initiate · Relationship research pending · expected return 19% · A current accepted idea-to-security relationship is unavailable.
-- **[FISV — Fiserv, Inc.](securities/security_d202772e4e62065cd17a):** Buy / Initiate · Valuation unattractive · expected return 17% · Expected/bear payoff is below the starter threshold.
-- **[CSIQ — Canadian Solar Inc.](securities/security_099561384c0f5e697727):** Buy / Initiate · Allocation constrained · expected return 26% · Research quality must be strictly above the configured threshold.
-- **[NOMD — Nomad Foods Limited](securities/security_98a1943771da875efed5):** Buy / Initiate · Allocation constrained · expected return 22% · Research quality must be strictly above the configured threshold.
+- **[NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d):** Buy / Initiate · Full baseline — Research incomplete · expected return 32% · No current allocation plan supports this candidate.
+- **[UBER — Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e):** Buy / Initiate · Starter — Research incomplete · expected return 17% · No current allocation plan supports this candidate.
+- **[DLO — DLocal Limited](securities/security_715bde20b6e1e1320c1a):** Buy / Initiate · Research incomplete · expected return 22% · No current allocation plan supports this candidate.
+- **[TCEHY — Tencent Holdings Limited](securities/security_de0d83229b369a426b99):** Buy / Initiate · Research incomplete · expected return 15% · No current allocation plan supports this candidate.
+- **[PATH — UiPath, Inc.](securities/security_eca976f0076a425ea1bb):** Buy / Initiate · Research incomplete · expected return 15% · No current allocation plan supports this candidate.
+- **[CROX — Crocs, Inc.](securities/security_c150f31c30afdb4a85f9):** Buy / Initiate · Research incomplete · expected return 19% · No current allocation plan supports this candidate.
+- **[FISV — Fiserv, Inc.](securities/security_d202772e4e62065cd17a):** Buy / Initiate · Research incomplete · expected return 17% · No current allocation plan supports this candidate.
+- **[CSIQ — Canadian Solar Inc.](securities/security_099561384c0f5e697727):** Buy / Initiate · Research incomplete · expected return 26% · No current allocation plan supports this candidate.
+- **[NOMD — Nomad Foods Limited](securities/security_98a1943771da875efed5):** Buy / Initiate · Research incomplete · expected return 22% · No current allocation plan supports this candidate.
 
 ## Performance, risk, and coverage
 

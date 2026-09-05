@@ -1,0 +1,18 @@
+{
+  "source_id": "source_powl_q2_fy2026_release",
+  "url": "https://www.sec.gov/Archives/edgar/data/80420/000008042026000063/ex991-powlq2xfy2026earning.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/80420/000008042026000063/ex991-powlq2xfy2026earning.htm",
+  "source_type": "issuer_release",
+  "title": "Powell Industries announces second quarter fiscal 2026 results",
+  "publisher": "Powell Industries, Inc. via U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "1161e407e0d2ee9ce14506f1c970ab099bf85fbcd66035ebe9cce9ec17505857",
+  "related_entity_ids": "security_0b67d6c8e3fd3366a257",
+  "checked_at": "2026-09-05T15:13:00Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Fiscal Q2 revenue was USD 296.6 million, gross margin 29.6%, new orders USD 490 million and backlog USD 1.8 billion; the period included a data-center award above USD 75 million.",
+  "summary": "The SEC-filed release confirms continued order growth, a roughly 1.7x book-to-bill ratio, improving sequential revenue and margin, and the subsequent award of Powell's largest-ever data-center order above USD 400 million.",
+  "run_id": "local-powl-20260905"
+}

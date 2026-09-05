@@ -1,0 +1,19 @@
+{
+  "watchlist_reason": "AI-power infrastructure and electrification candidate; research backlog quality, data-center concentration, project execution, cash conversion and valuation.",
+  "source": "https://www.sec.gov/Archives/edgar/data/80420/000008042026000107/powl-20260630.htm",
+  "securities": [
+    {
+      "company_name": "Powell Industries, Inc.",
+      "instrument_name": "Powell Industries, Inc. common stock",
+      "instrument_type": "equity",
+      "ticker": "POWL",
+      "exchange_code": "NMS",
+      "venue_mic": "XNAS",
+      "provider_symbol": "POWL",
+      "currency": "USD",
+      "country": "US",
+      "sector": "Industrials",
+      "industry": "Electrical Equipment & Parts"
+    }
+  ]
+}

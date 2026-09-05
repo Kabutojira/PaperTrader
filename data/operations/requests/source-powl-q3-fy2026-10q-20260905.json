@@ -1,0 +1,18 @@
+{
+  "source_id": "source_powl_q3_fy2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/80420/000008042026000107/powl-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/80420/000008042026000107/powl-20260630.htm",
+  "source_type": "filing",
+  "title": "Powell Industries, Inc. Form 10-Q for the quarter ended June 30, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "1ebc02845ba009a7501eb73e0342729395c339dec62ee001c54b426602b9958b",
+  "related_entity_ids": "security_0b67d6c8e3fd3366a257",
+  "checked_at": "2026-09-05T15:13:00Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "At June 30, cash was USD 633.6 million with no borrowings; nine-month operating cash flow was USD 195.0 million, capex USD 10.4 million, and contract liabilities USD 466.4 million.",
+  "summary": "The current filing supports the one-segment business analysis, end-market revenue and backlog mix, expected twelve-month backlog conversion, cash flow, working capital, debt-free funding, letters of credit, surety bonds, liquidated damages and backlog realization risks.",
+  "run_id": "local-powl-20260905"
+}

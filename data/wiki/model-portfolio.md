@@ -7,18 +7,18 @@ tags:
 created: "2026-09-05"
 updated: "2026-09-05"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_384ae92d6c7a2e0d2516"
-as_of: "2026-09-05T18:11:11Z"
+snapshot_id: "decision_396637efaf4f83c74b10"
+as_of: "2026-09-05T18:58:43Z"
 ---
 
 # Model portfolio
 
-**As of `2026-09-05T18:11:11Z`**
+**As of `2026-09-05T18:58:43Z`**
 
 Pending targets are projections; only deterministic fills change the current portfolio.
 
 <div class="model-portfolio-grid" id="model-portfolio-grid">
-<article class="portfolio-card" data-scalable="false" data-target-weight="91.950122" data-mark="1" data-fx="1" data-mark-currency="" data-market-data-as-of="2026-09-05T18:11:11Z" data-ticker="CASH" data-company="Cash">
+<article class="portfolio-card" data-scalable="false" data-target-weight="91.950122" data-mark="1" data-fx="1" data-mark-currency="" data-market-data-as-of="2026-09-05T18:58:43Z" data-ticker="CASH" data-company="Cash">
 <h3>Cash</h3>
 <dl class="portfolio-card-values">
 <div><dt>Current</dt><dd>97.030007%</dd></div>
@@ -29,8 +29,8 @@ Pending targets are projections; only deterministic fills change the current por
 <div><dt>Research action</dt><dd>Hold</dd></div>
 <div><dt>Reference mark</dt><dd>1 </dd></div>
 <div><dt>Base mark</dt><dd>1 EUR</dd></div>
-<div><dt>FX to EUR</dt><dd>1 · 2026-09-05T18:11:11Z</dd></div>
-<div><dt>As of</dt><dd>2026-09-05T18:11:11Z</dd></div>
+<div><dt>FX to EUR</dt><dd>1 · 2026-09-05T18:58:43Z</dd></div>
+<div><dt>As of</dt><dd>2026-09-05T18:58:43Z</dd></div>
 </dl>
 
 </article>
@@ -61,7 +61,7 @@ Pending targets are projections; only deterministic fills change the current por
 <div><dt>Research action</dt><dd>Initiate</dd></div>
 <div><dt>Reference mark</dt><dd>37.125 EUR</dd></div>
 <div><dt>Base mark</dt><dd>37.125 EUR</dd></div>
-<div><dt>FX to EUR</dt><dd>1 · 2026-09-05T18:11:11Z</dd></div>
+<div><dt>FX to EUR</dt><dd>1 · 2026-09-05T18:58:43Z</dd></div>
 <div><dt>As of</dt><dd>2026-09-04T15:30:00Z</dd></div>
 </dl>
 <p><a href="strategies/strategy_8caa208dfc702a2584a7">Strategy research</a></p>

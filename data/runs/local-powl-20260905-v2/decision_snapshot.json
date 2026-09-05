@@ -97,7 +97,7 @@
       "ticker": "NVDA"
     }
   ],
-  "as_of": "2026-09-05T18:58:43Z",
+  "as_of": "2026-09-05T15:22:00Z",
   "base_currency": "EUR",
   "candidate_pipeline": [
     {
@@ -162,7 +162,7 @@
       "ticker": "NVDA",
       "tier": "full",
       "valuation_mark": "230.36000061035156",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -227,7 +227,7 @@
       "ticker": "PRX",
       "tier": "full",
       "valuation_mark": "37.125",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "EUR"
     },
     {
@@ -290,7 +290,7 @@
       "ticker": "UBER",
       "tier": "starter",
       "valuation_mark": "75.76000213623047",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -357,7 +357,7 @@
       "ticker": "ASML",
       "tier": "watch",
       "valuation_mark": "1714.8800048828125",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -434,7 +434,7 @@
       "ticker": "ANET",
       "tier": "watch",
       "valuation_mark": "193.77999877929688",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -509,7 +509,7 @@
       "ticker": "TSM",
       "tier": "watch",
       "valuation_mark": "428.9100036621094",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -582,7 +582,7 @@
       "ticker": "PLTR",
       "tier": "watch",
       "valuation_mark": "174.3300018310547",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -657,7 +657,7 @@
       "ticker": "GOOGL",
       "tier": "watch",
       "valuation_mark": "338.4599914550781",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -726,7 +726,7 @@
       "ticker": "ISRG",
       "tier": "watch",
       "valuation_mark": "366.70001220703125",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -799,7 +799,7 @@
       "ticker": "AMAT",
       "tier": "watch",
       "valuation_mark": "454.7099914550781",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -876,7 +876,7 @@
       "ticker": "SPOT",
       "tier": "watch",
       "valuation_mark": "542.4299926757812",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -949,7 +949,7 @@
       "ticker": "PLS.AX",
       "tier": "watch",
       "valuation_mark": "5.090000152587891",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "AUD"
     },
     {
@@ -1018,7 +1018,7 @@
       "ticker": "TDY",
       "tier": "watch",
       "valuation_mark": "610.6500244140625",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -1089,7 +1089,7 @@
       "ticker": "META",
       "tier": "watch",
       "valuation_mark": "616.77001953125",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -1162,7 +1162,7 @@
       "ticker": "GEV",
       "tier": "watch",
       "valuation_mark": "941.9500122070312",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -1235,7 +1235,7 @@
       "ticker": "VRT",
       "tier": "watch",
       "valuation_mark": "280.5299987792969",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -1306,7 +1306,7 @@
       "ticker": "MSFT",
       "tier": "watch",
       "valuation_mark": "499.70001220703125",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -1377,7 +1377,7 @@
       "ticker": "CRWD",
       "tier": "watch",
       "valuation_mark": "213.10000610351562",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -1452,7 +1452,7 @@
       "ticker": "ETN",
       "tier": "watch",
       "valuation_mark": "410.8500061035156",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -1519,7 +1519,7 @@
       "ticker": "DLO",
       "tier": "watch",
       "valuation_mark": "15.520000457763672",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -1584,7 +1584,7 @@
       "ticker": "MELI",
       "tier": "watch",
       "valuation_mark": "1978.3599853515625",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -1653,7 +1653,7 @@
       "ticker": "AMZN",
       "tier": "watch",
       "valuation_mark": "258.510009765625",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -1724,7 +1724,7 @@
       "ticker": "CSL",
       "tier": "watch",
       "valuation_mark": "352.1400146484375",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -1797,7 +1797,7 @@
       "ticker": "TXN",
       "tier": "watch",
       "valuation_mark": "258.44000244140625",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -1872,7 +1872,7 @@
       "ticker": "LH",
       "tier": "watch",
       "valuation_mark": "326.8900146484375",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -1947,7 +1947,7 @@
       "ticker": "RTX",
       "tier": "watch",
       "valuation_mark": "200.7899932861328",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -2018,12 +2018,12 @@
       "ticker": "SU",
       "tier": "watch",
       "valuation_mark": "288",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "EUR"
     },
     {
       "allocation_intent_id": "",
-      "assessment_id": "assessment_9d1e5ee5f9a3f19a6a42",
+      "assessment_id": "assessment_34f8c1b459177a91e165",
       "base_fair_value": "131.25",
       "base_probability_pct": "50",
       "base_return_pct": "3.9356994526024121093922757",
@@ -2061,9 +2061,11 @@
       "portfolio_action": "watch",
       "position_cap_pct": "0",
       "rank": "",
-      "rating_change_conditions": "Upgrade only if fresh primary evidence preserves base upside while confidence-adjusted expected return, bear/base and expected/bear payoff, margin of safety, confidence and relationship gates all pass; downgrade if lithium pricing, contract realization, volume, recurring cash conversion, Talison output, capex, leverage, dilution or CEO-transition execution deteriorates.",
+      "rating_change_conditions": "Upgrade only if post-results trading and fresh primary evidence preserve base upside while confidence-adjusted expected return, bear/base and expected/bear payoff, margin of safety, confidence and relationship gates all pass; downgrade if lithium pricing, contract realization, volume, recurring cash conversion, Talison output, capex, leverage or dilution deteriorates.",
       "reason_codes": [
         "allocation_plan_stale",
+        "assessment_evidence_stale",
+        "assessment_stale",
         "base_return_below_minimum",
         "bear_base_payoff_below_starter_minimum",
         "bear_return_below_starter_minimum",
@@ -2074,6 +2076,8 @@
       ],
       "reason_labels": [
         "No current allocation plan supports this candidate.",
+        "The assessment's registered evidence is not fresh.",
+        "The comparable assessment is stale or expired.",
         "Base-case return is below threshold.",
         "Bear/base payoff is below the starter threshold.",
         "Bear-case loss exceeds the starter limit.",
@@ -2082,16 +2086,16 @@
         "Margin of safety is below the starter threshold.",
         "A current accepted idea-to-security relationship is unavailable."
       ],
-      "research_conclusion": "Rating: Hold. Portfolio action: Watch. Bear/base/bull returns are -92.1365219385573946495522644%/3.9356994526024121093922757%/83.4178034835182528973519155% over 12 months; probability-weighted expected return is -0.21182988745857938335394935% with medium confidence. Upgrade or downgrade conditions: Upgrade only if fresh primary evidence preserves base upside while confidence-adjusted expected return, bear/base and expected/bear payoff, margin of safety, confidence and relationship gates all pass; downgrade if lithium pricing, contract realization, volume, recurring cash conversion, Talison output, capex, leverage, dilution or CEO-transition execution deteriorates.",
+      "research_conclusion": "Rating: Hold. Portfolio action: Watch. Bear/base/bull returns are -92.1365219385573946495522644%/3.9356994526024121093922757%/83.4178034835182528973519155% over 12 months; probability-weighted expected return is -0.21182988745857938335394935% with medium confidence. Upgrade or downgrade conditions: Upgrade only if post-results trading and fresh primary evidence preserve base upside while confidence-adjusted expected return, bear/base and expected/bear payoff, margin of safety, confidence and relationship gates all pass; downgrade if lithium pricing, contract realization, volume, recurring cash conversion, Talison output, capex, leverage or dilution deteriorates.",
       "research_page": "data/wiki/securities/security_66cdcf90aac0d83e76f3.md",
-      "review_at": "2026-10-05T17:31:04Z",
+      "review_at": "2026-08-20T13:04:49Z",
       "security_id": "security_66cdcf90aac0d83e76f3",
       "target_quantity": "0",
       "target_weight_pct": "0",
       "ticker": "ALB",
       "tier": "watch",
       "valuation_mark": "126.27999877929688",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -2168,12 +2172,12 @@
       "ticker": "KTOS",
       "tier": "watch",
       "valuation_mark": "47.81999969482422",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
       "allocation_intent_id": "",
-      "assessment_id": "assessment_ec8c7012c31100e609ff",
+      "assessment_id": "assessment_30663d3bea16943c3e24",
       "base_fair_value": "78",
       "base_probability_pct": "50",
       "base_return_pct": "-18.58037837654453211508458565",
@@ -2236,14 +2240,14 @@
       ],
       "research_conclusion": "Rating: Sell. Portfolio action: Avoid. Bear/base/bull returns are -66.59707830832596189336803514%/-18.58037837654453211508458565%/35.6993693724257798081923573% over 12 months; probability-weighted expected return is -17.01461642224731157883621229% with medium confidence. Upgrade or downgrade conditions: Upgrade only if price offers sufficient margin of safety and scenario returns clear every economic and relationship gate while product growth, process execution, margin recovery, external-foundry demand and post-offering cash conversion remain durable; downgrade if competitiveness, process ramps, foundry demand, margins, leverage, dilution, funding, export controls or policy support deteriorate.",
       "research_page": "data/wiki/securities/security_dfa34d4b9050964b465e.md",
-      "review_at": "2026-10-05T17:18:42Z",
+      "review_at": "2026-10-05T10:54:05Z",
       "security_id": "security_dfa34d4b9050964b465e",
       "target_quantity": "0",
       "target_weight_pct": "0",
       "ticker": "INTC",
       "tier": "watch",
       "valuation_mark": "95.80000305175781",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -2316,7 +2320,7 @@
       "ticker": "PL",
       "tier": "watch",
       "valuation_mark": "18.1200008392334",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -2389,7 +2393,7 @@
       "ticker": "VLO",
       "tier": "watch",
       "valuation_mark": "370.7200012207031",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -2464,7 +2468,7 @@
       "ticker": "HOOD",
       "tier": "watch",
       "valuation_mark": "122.11000061035156",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -2525,7 +2529,7 @@
       "ticker": "TCEHY",
       "tier": "watch",
       "valuation_mark": "56.599998474121094",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -2592,7 +2596,7 @@
       "ticker": "PATH",
       "tier": "watch",
       "valuation_mark": "15.1899995803833",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -2661,7 +2665,7 @@
       "ticker": "ABCL",
       "tier": "watch",
       "valuation_mark": "11.430000305175781",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -2736,7 +2740,7 @@
       "ticker": "PWR",
       "tier": "watch",
       "valuation_mark": "624.4099731445312",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -2805,7 +2809,7 @@
       "ticker": "SOFI",
       "tier": "watch",
       "valuation_mark": "18.219999313354492",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -2852,7 +2856,6 @@
       "reason_codes": [
         "allocation_plan_stale",
         "assessment_evidence_stale",
-        "assessment_stale",
         "base_return_below_minimum",
         "bear_base_payoff_below_starter_minimum",
         "bear_return_below_starter_minimum",
@@ -2864,7 +2867,6 @@
       "reason_labels": [
         "No current allocation plan supports this candidate.",
         "The assessment's registered evidence is not fresh.",
-        "The comparable assessment is stale or expired.",
         "Base-case return is below threshold.",
         "Bear/base payoff is below the starter threshold.",
         "Bear-case loss exceeds the starter limit.",
@@ -2882,7 +2884,7 @@
       "ticker": "SQM",
       "tier": "watch",
       "valuation_mark": "76.43000030517578",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -2959,7 +2961,7 @@
       "ticker": "QCOM",
       "tier": "watch",
       "valuation_mark": "168.74000549316406",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -3034,7 +3036,7 @@
       "ticker": "RIO",
       "tier": "watch",
       "valuation_mark": "103.2699966430664",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -3080,7 +3082,6 @@
       "rating_change_conditions": "Upgrade only if fresh operating evidence and a lower price make confidence-adjusted expected return, base return, bear/base and expected/bear payoff, margin of safety and an accepted relationship clear canonical gates; downgrade further if deployments, customer diversification, margins, cash conversion, capacity, service costs, fuel or emissions economics deteriorate.",
       "reason_codes": [
         "allocation_plan_stale",
-        "assessment_evidence_stale",
         "base_return_below_minimum",
         "bear_base_payoff_below_starter_minimum",
         "bear_return_below_starter_minimum",
@@ -3091,7 +3092,6 @@
       ],
       "reason_labels": [
         "No current allocation plan supports this candidate.",
-        "The assessment's registered evidence is not fresh.",
         "Base-case return is below threshold.",
         "Bear/base payoff is below the starter threshold.",
         "Bear-case loss exceeds the starter limit.",
@@ -3109,7 +3109,7 @@
       "ticker": "BE",
       "tier": "watch",
       "valuation_mark": "252.8699951171875",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -3182,7 +3182,7 @@
       "ticker": "TWST",
       "tier": "watch",
       "valuation_mark": "124.72000122070312",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -3249,7 +3249,7 @@
       "ticker": "SSU.VI",
       "tier": "watch",
       "valuation_mark": "4210",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "EUR"
     },
     {
@@ -3318,7 +3318,7 @@
       "ticker": "SSUN.VI",
       "tier": "watch",
       "valuation_mark": "3040",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "EUR"
     },
     {
@@ -3387,7 +3387,7 @@
       "ticker": "ENPH",
       "tier": "watch",
       "valuation_mark": "36.369998931884766",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -3462,7 +3462,7 @@
       "ticker": "RBLX",
       "tier": "watch",
       "valuation_mark": "43.310001373291016",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -3533,7 +3533,7 @@
       "ticker": "TSLA",
       "tier": "watch",
       "valuation_mark": "354.0799865722656",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -3610,7 +3610,7 @@
       "ticker": "SPCX",
       "tier": "watch",
       "valuation_mark": "147.9499969482422",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -3671,7 +3671,7 @@
       "ticker": "DPZ",
       "tier": "watch",
       "valuation_mark": "341.0799865722656",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -3744,7 +3744,7 @@
       "ticker": "FUC.F",
       "tier": "watch",
       "valuation_mark": "32.83000183105469",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "EUR"
     },
     {
@@ -3813,7 +3813,7 @@
       "ticker": "AD",
       "tier": "watch",
       "valuation_mark": "31.65999984741211",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "EUR"
     },
     {
@@ -3884,7 +3884,7 @@
       "ticker": "ABBNY",
       "tier": "watch",
       "valuation_mark": "95.95999908447266",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -3961,7 +3961,7 @@
       "ticker": "TX",
       "tier": "watch",
       "valuation_mark": "58",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -4038,7 +4038,7 @@
       "ticker": "RKLB",
       "tier": "watch",
       "valuation_mark": "64.26000213623047",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -4111,7 +4111,7 @@
       "ticker": "VALE",
       "tier": "watch",
       "valuation_mark": "15.270000457763672",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -4188,7 +4188,7 @@
       "ticker": "CRSR",
       "tier": "watch",
       "valuation_mark": "12.720000267028809",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -4261,7 +4261,7 @@
       "ticker": "MP",
       "tier": "watch",
       "valuation_mark": "54.529998779296875",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -4338,7 +4338,7 @@
       "ticker": "SCCO",
       "tier": "watch",
       "valuation_mark": "198.75999450683594",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -4411,7 +4411,7 @@
       "ticker": "FCX",
       "tier": "watch",
       "valuation_mark": "72.7300033569336",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -4484,7 +4484,7 @@
       "ticker": "NBIS",
       "tier": "watch",
       "valuation_mark": "226.38999938964844",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -4545,7 +4545,7 @@
       "ticker": "CROX",
       "tier": "watch",
       "valuation_mark": "117.52999877929688",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -4608,7 +4608,7 @@
       "ticker": "PYPL",
       "tier": "watch",
       "valuation_mark": "54.959999084472656",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -4685,7 +4685,7 @@
       "ticker": "COIN",
       "tier": "watch",
       "valuation_mark": "184.63999938964844",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -4758,7 +4758,7 @@
       "ticker": "108490",
       "tier": "watch",
       "valuation_mark": "304500",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "KRW"
     },
     {
@@ -4821,7 +4821,7 @@
       "ticker": "FISV",
       "tier": "watch",
       "valuation_mark": "53",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -4900,7 +4900,7 @@
       "ticker": "FLNC",
       "tier": "watch",
       "valuation_mark": "10.350000381469727",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -4967,7 +4967,7 @@
       "ticker": "LUNR",
       "tier": "watch",
       "valuation_mark": "14.8100004196167",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -5042,7 +5042,7 @@
       "ticker": "MSTR",
       "tier": "watch",
       "valuation_mark": "142.8000030517578",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -5111,7 +5111,7 @@
       "ticker": "RXRX",
       "tier": "watch",
       "valuation_mark": "3.630000114440918",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -5186,7 +5186,7 @@
       "ticker": "PARRO.PA",
       "tier": "watch",
       "valuation_mark": "9.369999885559082",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "EUR"
     },
     {
@@ -5249,7 +5249,7 @@
       "ticker": "CSIQ",
       "tier": "watch",
       "valuation_mark": "13.220000267028809",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -5328,7 +5328,7 @@
       "ticker": "WTI",
       "tier": "watch",
       "valuation_mark": "3.819999933242798",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -5399,7 +5399,7 @@
       "ticker": "YEC.F",
       "tier": "watch",
       "valuation_mark": "25",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "EUR"
     },
     {
@@ -5472,7 +5472,7 @@
       "ticker": "SGML",
       "tier": "watch",
       "valuation_mark": "12.390000343322754",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -5533,7 +5533,7 @@
       "ticker": "NOMD",
       "tier": "watch",
       "valuation_mark": "11.640000343322754",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -5606,7 +5606,7 @@
       "ticker": "DNA",
       "tier": "watch",
       "valuation_mark": "6.949999809265137",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -5679,7 +5679,7 @@
       "ticker": "NIB.F",
       "tier": "watch",
       "valuation_mark": "14.206000328063965",
-      "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+      "valuation_mark_as_of": "2026-09-05T10:21:09Z",
       "valuation_mark_currency": "EUR"
     },
     {
@@ -5811,11 +5811,11 @@
     "last_successful_daily_run": "2026-09-03T23:19:29Z",
     "market_data_failure_count": 0,
     "market_data_success_count": 82,
-    "non_blocking_issue_count": 18,
+    "non_blocking_issue_count": 19,
     "pending_order_count": 2,
     "ready_or_active_strategy_count": 4,
     "required_relationship_review_count": 80,
-    "research_backlog_count": 249,
+    "research_backlog_count": 252,
     "reviewed_relationship_count": 19
   },
   "current_portfolio": {
@@ -5833,7 +5833,7 @@
         "action": "trim",
         "action_status": "pending_order",
         "allocation_intent_id": "",
-        "as_of": "2026-09-05T18:58:43Z",
+        "as_of": "2026-09-05T15:22:00Z",
         "assessment_id": "",
         "base_fair_value": "",
         "base_probability_pct": "",
@@ -5862,7 +5862,7 @@
         "exit_rule": "",
         "expected_bear_payoff_ratio": "",
         "expected_return_pct": "",
-        "fx_as_of": "2026-09-05T18:58:43Z",
+        "fx_as_of": "2026-09-05T15:22:00Z",
         "fx_rate_to_base": "1",
         "holding_type": "cash",
         "instrument_type": "cash",
@@ -5871,7 +5871,7 @@
         "mark": "1",
         "mark_base": "1",
         "mark_currency": "",
-        "market_data_as_of": "2026-09-05T18:58:43Z",
+        "market_data_as_of": "2026-09-05T15:22:00Z",
         "order_id": "",
         "portfolio_action": "hold",
         "position_cap_pct": "",
@@ -5883,7 +5883,7 @@
         "security_research_page": "",
         "signal_id": "",
         "sleeve": "cash",
-        "snapshot_id": "decision_396637efaf4f83c74b10",
+        "snapshot_id": "decision_00d3a2f6440b4ad288a0",
         "strategy_id": "",
         "strategy_research_page": "",
         "target_quantity": "9193.15",
@@ -5901,7 +5901,7 @@
         "action": "buy",
         "action_status": "pending_order",
         "allocation_intent_id": "allocation_intent_18c42c83c9de5d41cc9b",
-        "as_of": "2026-09-05T18:58:43Z",
+        "as_of": "2026-09-05T15:22:00Z",
         "assessment_id": "assessment_82fd625a8d93be4bd8f5",
         "base_fair_value": "310.5",
         "base_probability_pct": "50",
@@ -5930,7 +5930,7 @@
         "exit_rule": "Reduce or close only when a current deterministic allocation plan directs reduce or close, the full-baseline eligibility frontier no longer clears, a hard blocker appears, or material normalized-earnings, margin, Rubin, export-control, customer-credit, guarantee, commitment, concentration or platform-attachment evidence invalidates the bounded thesis.",
         "expected_bear_payoff_ratio": "1.712530855902053478122572696",
         "expected_return_pct": "32.0758808794377498995528626",
-        "fx_as_of": "2026-09-05T17:14:55Z",
+        "fx_as_of": "2026-09-05T10:21:09Z",
         "fx_rate_to_base": "0.8604999780654907",
         "holding_type": "security",
         "instrument_type": "equity",
@@ -5939,7 +5939,7 @@
         "mark": "230.36000061035156",
         "mark_base": "198.2247754723739416442380309",
         "mark_currency": "USD",
-        "market_data_as_of": "2026-09-05T17:14:55Z",
+        "market_data_as_of": "2026-09-05T10:21:09Z",
         "order_id": "order_742bea9c46f700562f10",
         "portfolio_action": "initiate",
         "position_cap_pct": "5",
@@ -5951,7 +5951,7 @@
         "security_research_page": "data/wiki/securities/security_33d9c44facc75c726c7d.md",
         "signal_id": "signal_fd2d97ca3125dd442030",
         "sleeve": "baseline",
-        "snapshot_id": "decision_396637efaf4f83c74b10",
+        "snapshot_id": "decision_00d3a2f6440b4ad288a0",
         "strategy_id": "strategy_7cf884a5530d05afdb99",
         "strategy_research_page": "data/wiki/strategies/strategy_7cf884a5530d05afdb99.md",
         "target_quantity": "2",
@@ -5962,14 +5962,14 @@
         "tier": "full",
         "valuation_horizon_months": "12",
         "valuation_mark": "230.36000061035156",
-        "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+        "valuation_mark_as_of": "2026-09-05T10:21:09Z",
         "valuation_mark_currency": "USD"
       },
       {
         "action": "add",
         "action_status": "pending_order",
         "allocation_intent_id": "allocation_intent_3e3d6793d5aacc3843e8",
-        "as_of": "2026-09-05T18:58:43Z",
+        "as_of": "2026-09-05T15:22:00Z",
         "assessment_id": "assessment_7f28dfd9240d6099400b",
         "base_fair_value": "52",
         "base_probability_pct": "50",
@@ -5998,7 +5998,7 @@
         "exit_rule": "Reduce or close only when a current deterministic allocation plan directs reduce or close, the baseline eligibility frontier no longer clears, a hard blocker appears, or material Tencent, ecommerce, private-asset, debt, repurchase, governance, capital-allocation or valuation evidence invalidates the bounded thesis.",
         "expected_bear_payoff_ratio": "1.250000000000000000000000001",
         "expected_return_pct": "31.986531986531986531986532",
-        "fx_as_of": "2026-09-05T18:58:43Z",
+        "fx_as_of": "2026-09-05T15:22:00Z",
         "fx_rate_to_base": "1",
         "holding_type": "security",
         "instrument_type": "equity",
@@ -6019,7 +6019,7 @@
         "security_research_page": "data/wiki/securities/security_8b703a8adf5f864acaa4.md",
         "signal_id": "signal_cb39237e1238dfa1e7fa",
         "sleeve": "baseline",
-        "snapshot_id": "decision_396637efaf4f83c74b10",
+        "snapshot_id": "decision_00d3a2f6440b4ad288a0",
         "strategy_id": "strategy_8caa208dfc702a2584a7",
         "strategy_research_page": "data/wiki/strategies/strategy_8caa208dfc702a2584a7.md",
         "target_quantity": "11",
@@ -6030,7 +6030,7 @@
         "tier": "full",
         "valuation_horizon_months": "12",
         "valuation_mark": "37.125",
-        "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+        "valuation_mark_as_of": "2026-09-05T10:21:09Z",
         "valuation_mark_currency": "EUR"
       }
     ],
@@ -6544,9 +6544,9 @@
       "company_name": "Albemarle Corporation",
       "market_data_date": "2026-09-04",
       "observed_at": "2026-09-05T09:19:19Z",
-      "research_conclusion": "Completed one bounded Albemarle security review after the 4 September volume anomaly. Current SEC evidence preserves the Q2 operating thesis while the 3 September CEO succession adds execution risk rather than a quantified valuation change. The unchanged USD 9.93/USD 131.25/USD 231.62 bear/base/bull cases at 25%/50%/25% produce USD 126.0125 probability-weighted fair value, -0.21182988745857938335394935% expected return and -0.1588724155939345375154620125% medium-confidence-adjusted return at the USD 126.27999877929688 mark. Deterministic state retains Hold / Watch, quality score 78 and allocation ineligibility because expected return, base return and downside-payoff gates fail. Updated the security page and structured projection, registered four current SEC evidence records, appended exactly one schema-v2 assessment linked to its predecessor and matching page hash, added three analytical charts, and enqueued exactly one dependent lithium-idea refresh. No strategy, signal, order, accoun",
+      "research_conclusion": "High-priority security research is ready to run.",
       "research_page": "data/wiki/securities/security_66cdcf90aac0d83e76f3.md",
-      "research_status": "succeeded",
+      "research_status": "ready",
       "security_id": "security_66cdcf90aac0d83e76f3",
       "ticker": "ALB",
       "visible_label": "Research alert — not a trade signal"
@@ -6772,37 +6772,37 @@
       }
     ]
   },
-  "run_id": "local-powl-rebase3-20260905",
-  "snapshot_id": "decision_396637efaf4f83c74b10",
+  "run_id": "local-powl-20260905-v2",
+  "snapshot_id": "decision_00d3a2f6440b4ad288a0",
   "source_state_hashes": {
-    "allocation_targets": "34533bdc9dfbf192ce3337cdc30a763c5d8b6dc6567ac836b4d0602b5ffc1da9",
+    "allocation_targets": "953d9b552af33686c7a2941b80d2611819465862e6c1f306509ac2f88b18e507",
     "cash_ledger": "762608e3d4dda9458e988b485dbe28651a7e13d93b5329553ab088c240d51734",
     "configuration": "f73d0d0c1af9cf1c3d9588d976377be005c496c43676f450389a2f80dadd3244",
     "csv_contracts": "18a3159e79a0fce966af02551cd27703e1f8ee242fd18d5e531dce4e6aa7e5d9",
     "decision_schema": "eead6383842fa29381be6466a8c4c5437072902c4b47e9613589f3de17138aab",
     "executions": "c921be1356125001b9f9a9ae09592c86b21b46cdc340741567342e1f032976d6",
-    "fx_aud_eur": "eecde58706a27aa439dfc3d29008d7bb6fe47894e8f7b7ca988e46d419f1179c",
-    "fx_gbp_eur": "03c5531b8e36a27b14e384f839aa3a455a90465a731575a2dbb68065ce082be7",
-    "fx_krw_eur": "ebee6ae8233bdbc17fe05f8e90721798b3dd2d6fb68f8f21d2874be8f8e56160",
-    "fx_usd_eur": "d565f4bb6b17037bf40ae7bb625481ae87dfb04524641e1872d88a2683c65004",
+    "fx_aud_eur": "dd0b78b0a21da241c455793d930c3417466aef7273f44ba7a7b52146efb7aca2",
+    "fx_gbp_eur": "00968cb258c73df32f26a201083b056c95be44f21ac6380d17e07eed4fa3959b",
+    "fx_krw_eur": "08f4726515f04dba47342b1a68f312f850b6cf3b64194326895339ab20b4e4cc",
+    "fx_usd_eur": "9d740be46e0c1653be2c33123bf345cefb3caa0dc86b429f85fc913d6693860c",
     "indicators": "f1e3428590edc7a3de682c2a155ac77e29ca8cb6d37040aa0ad54fc539d36690",
-    "issues": "85a896a1887ac988d41cb855102dbfa5f67af7e98c39cec881dd37bdac765244",
-    "market_latest": "e8b0ffa51d0d7c5f6a4e1a80949d48bb8d250616df2989fecdb8818fdb00dd13",
-    "operation_payloads": "319cd67a3af11895d2fa52dc7a3937cb254f5c6bcd7c748d9379a881083976c2",
-    "operations_history": "f11f4c076f34c724fbe6e22d1b6582d51c763139154136e235e661128bb75aac",
-    "operations_todo": "bb0bd166f91a3f7270d1bffe64d4cb700aa2e01186af245853e4e9563e315910",
+    "issues": "debe44b33110ad6a28fbdcb4bca10e04d40007bf6fab8ddff57af56eacd0e4ee",
+    "market_latest": "978f9abc5e05be8c529fbaddea2200babcfbc25fd9ff627fe3facafe5c02d55c",
+    "operation_payloads": "9a5def720e48cb9009bf1f682c7823a0b44b423df2ae5e8b59b9a810368a1356",
+    "operations_history": "d325389bdb31bbeaceb1644fdc26197b6d05453048c55b4203d051d9d30a532f",
+    "operations_todo": "ed690554894fad15a6f7fb05a970e5a6bc4056451627c94a29248289a94bb61f",
     "order_legs": "59da4e333f09df598c6eb439597f28c179408758ee93df08b490dba028b258ff",
     "orders": "0d44ef48be80d5613a69ca80bea1ab02b3a0c998d133903e27b1b696e4fb3133",
     "performance_daily": "dca09cfb4f9c9b6cf902e498feecec9ada9c1627da72d4f11351c5a30ff138c8",
     "performance_epochs": "bc47865ef0a04d0e2b97b9395a4276b3db677cbcfc1471469d24df7f367ac327",
     "portfolio": "b46f538b03c7a9216998eda306f94e3d71820e0abac93de6ea1e6cb81c45fcfb",
     "relationships": "fe5082f74575191d64b262a1e870b2367ade3ff37ed94f609f22632ba68f61d3",
-    "runs": "8ee3ed2a9972e643ff4528055abab890582da4bb290eb79b89de29139689a528",
-    "securities": "4185b5fe6a6a05c456c7a0a80a10e61ae3caaebdb7ab43fbb6efe5c66fb56ef7",
-    "security_assessments": "2e298ed788738dd4d4abe31795fdd754a713851a071af6f86ff158aa82395297",
+    "runs": "952ca28c58cf0f19349ea00636cb87bc62e6d233be45348a019a0714357a11bb",
+    "securities": "f3acc4285e101d95858ceb50d2aa9c1ae2d0ad231f70c378c963ee5b10abedad",
+    "security_assessments": "9dc7871072e6a27e5192bb284e6ad83d516ec1e844d0ed29afac75e189a872db",
     "signals": "1d32d5c054a88ab714e6063878a43ece7e209ad0d594ab3cf89e108a971d4685",
-    "source_registry": "494c17dde7be278ded7f395ee130c1ab045cdb424aecd65d98e4095a77be0eea",
-    "strategies": "d48e717f424031235a1c7c4ffbdef28abfa2dcd0786327326d78e897bb486525",
+    "source_registry": "8c05edfca67ee78aaabb80c01e037d8cac8f8894be82a97468633a4b3d38b602",
+    "strategies": "6adfe98319913bee728cf27f81ee5c74e80a88e732af9018c85131501926c234",
     "strategy_legs": "a6819fc2b86fec6df356075893bed8f2fe9fee3e01081256b3755c1a7f65f161",
     "wiki_inbox": "40679f2b057cbc3c0d4b1ed90bae1b3634815cb22e65fb76b27ef058d497a04e"
   },
@@ -6882,6 +6882,16 @@
       "title": "Hermes operation validation failed: 01KZGT11ZGBPRBKV129FD00TH1"
     },
     {
+      "company_name": "Albemarle Corporation",
+      "impact": "affects_candidate",
+      "issue_id": "issue_7f39fae50d63b862a20b",
+      "security_id": "security_66cdcf90aac0d83e76f3",
+      "severity": "error",
+      "summary": "Hermes timed out after 600s; agent result was written before completed change: data/runs/daily-20260809T141210Z/01KZCFHHCGX1RGXKKVHNF86W7N/command_audit.json; commands_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment",
+      "ticker": "ALB",
+      "title": "Hermes operation validation failed: 01KZCFHHCGX1RGXKKVHNF86W7N"
+    },
+    {
       "company_name": "ABB Ltd",
       "impact": "affects_candidate",
       "issue_id": "issue_bb796d692e4293326337",
@@ -6890,16 +6900,6 @@
       "summary": "Operation 01M07XKZS0JKBQM0THMPJGWEK5 accepted immutable assessment assessment_a3946a163695f1a9f51f while the security page still carried the prior prose disposition. Deterministic derivation changed the current disposition from Sell / Avoid to Hold / Watch at the lower mark, so the page and structured security summary were corrected after the immutable assessment was written. The current assessment and final page now agree economically, and exactly one assessment version names this operation, bu",
       "ticker": "ABBNY",
       "title": "ABB assessment provenance does not match corrected final research page"
-    },
-    {
-      "company_name": "",
-      "impact": "affects_candidate",
-      "issue_id": "issue_be3868209be34a120860",
-      "security_id": "",
-      "severity": "error",
-      "summary": "completed security research requires exactly one immutable assessment version",
-      "ticker": "",
-      "title": "Hermes operation validation failed: 01KZXXN28RT0NVWT6QD0MMKBBK"
     },
     {
       "company_name": "",
@@ -6990,6 +6990,16 @@
       "summary": "non-successful daily podcast must not retain a transcript page",
       "ticker": "",
       "title": "Hermes operation validation failed: 01M08D6FXRRXXACTTEQWSRA9JQ"
+    },
+    {
+      "company_name": "",
+      "impact": "publication_only",
+      "issue_id": "issue_d561bd29b8873eef87eb",
+      "security_id": "",
+      "severity": "warning",
+      "summary": "agent_result:blocked:Blocked the daily podcast before deterministic script preflight could dispatch. The frozen version-three context, payload, and daily manifest consistently bind the episode to data/wiki/podcasts/daily-podcast_20260904T180734Z.md. The sole successful development was mapped to one novel Uber chapter about the move from strategy-pending research to a ready two-share starter signal, with the current Buy / Initiate rating, medium-confidence sizing, explicit Buy and Sell conditions",
+      "ticker": "",
+      "title": "Daily podcast blocked: daily-20260904T180734Z"
     }
   ],
   "target_portfolio": {
@@ -7007,7 +7017,7 @@
         "action": "trim",
         "action_status": "pending_order",
         "allocation_intent_id": "",
-        "as_of": "2026-09-05T18:58:43Z",
+        "as_of": "2026-09-05T15:22:00Z",
         "assessment_id": "",
         "base_fair_value": "",
         "base_probability_pct": "",
@@ -7036,7 +7046,7 @@
         "exit_rule": "",
         "expected_bear_payoff_ratio": "",
         "expected_return_pct": "",
-        "fx_as_of": "2026-09-05T18:58:43Z",
+        "fx_as_of": "2026-09-05T15:22:00Z",
         "fx_rate_to_base": "1",
         "holding_type": "cash",
         "instrument_type": "cash",
@@ -7045,7 +7055,7 @@
         "mark": "1",
         "mark_base": "1",
         "mark_currency": "",
-        "market_data_as_of": "2026-09-05T18:58:43Z",
+        "market_data_as_of": "2026-09-05T15:22:00Z",
         "order_id": "",
         "portfolio_action": "hold",
         "position_cap_pct": "",
@@ -7057,7 +7067,7 @@
         "security_research_page": "",
         "signal_id": "",
         "sleeve": "cash",
-        "snapshot_id": "decision_396637efaf4f83c74b10",
+        "snapshot_id": "decision_00d3a2f6440b4ad288a0",
         "strategy_id": "",
         "strategy_research_page": "",
         "target_quantity": "9193.15",
@@ -7075,7 +7085,7 @@
         "action": "buy",
         "action_status": "pending_order",
         "allocation_intent_id": "allocation_intent_18c42c83c9de5d41cc9b",
-        "as_of": "2026-09-05T18:58:43Z",
+        "as_of": "2026-09-05T15:22:00Z",
         "assessment_id": "assessment_82fd625a8d93be4bd8f5",
         "base_fair_value": "310.5",
         "base_probability_pct": "50",
@@ -7104,7 +7114,7 @@
         "exit_rule": "Reduce or close only when a current deterministic allocation plan directs reduce or close, the full-baseline eligibility frontier no longer clears, a hard blocker appears, or material normalized-earnings, margin, Rubin, export-control, customer-credit, guarantee, commitment, concentration or platform-attachment evidence invalidates the bounded thesis.",
         "expected_bear_payoff_ratio": "1.712530855902053478122572696",
         "expected_return_pct": "32.0758808794377498995528626",
-        "fx_as_of": "2026-09-05T17:14:55Z",
+        "fx_as_of": "2026-09-05T10:21:09Z",
         "fx_rate_to_base": "0.8604999780654907",
         "holding_type": "security",
         "instrument_type": "equity",
@@ -7113,7 +7123,7 @@
         "mark": "230.36000061035156",
         "mark_base": "198.2247754723739416442380309",
         "mark_currency": "USD",
-        "market_data_as_of": "2026-09-05T17:14:55Z",
+        "market_data_as_of": "2026-09-05T10:21:09Z",
         "order_id": "order_742bea9c46f700562f10",
         "portfolio_action": "initiate",
         "position_cap_pct": "5",
@@ -7125,7 +7135,7 @@
         "security_research_page": "data/wiki/securities/security_33d9c44facc75c726c7d.md",
         "signal_id": "signal_fd2d97ca3125dd442030",
         "sleeve": "baseline",
-        "snapshot_id": "decision_396637efaf4f83c74b10",
+        "snapshot_id": "decision_00d3a2f6440b4ad288a0",
         "strategy_id": "strategy_7cf884a5530d05afdb99",
         "strategy_research_page": "data/wiki/strategies/strategy_7cf884a5530d05afdb99.md",
         "target_quantity": "2",
@@ -7136,14 +7146,14 @@
         "tier": "full",
         "valuation_horizon_months": "12",
         "valuation_mark": "230.36000061035156",
-        "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+        "valuation_mark_as_of": "2026-09-05T10:21:09Z",
         "valuation_mark_currency": "USD"
       },
       {
         "action": "add",
         "action_status": "pending_order",
         "allocation_intent_id": "allocation_intent_3e3d6793d5aacc3843e8",
-        "as_of": "2026-09-05T18:58:43Z",
+        "as_of": "2026-09-05T15:22:00Z",
         "assessment_id": "assessment_7f28dfd9240d6099400b",
         "base_fair_value": "52",
         "base_probability_pct": "50",
@@ -7172,7 +7182,7 @@
         "exit_rule": "Reduce or close only when a current deterministic allocation plan directs reduce or close, the baseline eligibility frontier no longer clears, a hard blocker appears, or material Tencent, ecommerce, private-asset, debt, repurchase, governance, capital-allocation or valuation evidence invalidates the bounded thesis.",
         "expected_bear_payoff_ratio": "1.250000000000000000000000001",
         "expected_return_pct": "31.986531986531986531986532",
-        "fx_as_of": "2026-09-05T18:58:43Z",
+        "fx_as_of": "2026-09-05T15:22:00Z",
         "fx_rate_to_base": "1",
         "holding_type": "security",
         "instrument_type": "equity",
@@ -7193,7 +7203,7 @@
         "security_research_page": "data/wiki/securities/security_8b703a8adf5f864acaa4.md",
         "signal_id": "signal_cb39237e1238dfa1e7fa",
         "sleeve": "baseline",
-        "snapshot_id": "decision_396637efaf4f83c74b10",
+        "snapshot_id": "decision_00d3a2f6440b4ad288a0",
         "strategy_id": "strategy_8caa208dfc702a2584a7",
         "strategy_research_page": "data/wiki/strategies/strategy_8caa208dfc702a2584a7.md",
         "target_quantity": "11",
@@ -7204,7 +7214,7 @@
         "tier": "full",
         "valuation_horizon_months": "12",
         "valuation_mark": "37.125",
-        "valuation_mark_as_of": "2026-09-05T17:14:55Z",
+        "valuation_mark_as_of": "2026-09-05T10:21:09Z",
         "valuation_mark_currency": "EUR"
       }
     ],

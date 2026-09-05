@@ -7,13 +7,13 @@ tags:
 created: "2026-09-05"
 updated: "2026-09-05"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_384ae92d6c7a2e0d2516"
-as_of: "2026-09-05T18:11:11Z"
+snapshot_id: "decision_396637efaf4f83c74b10"
+as_of: "2026-09-05T18:58:43Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-09-05T18:11:11Z`
+**As of:** `2026-09-05T18:58:43Z`
 **Investment data:** Portfolio state safe — research gaps remain
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -27,7 +27,7 @@ Publication validation confirms that this generated artifact is internally consi
 - Fresh-evidence assessments: 45/80
 - Relationship reviews: 19/80
 - Accepted relationships: 18
-- Market success/failure: 81/0
+- Market success/failure: 82/0
 - Candidate FX gaps: 0
 - Last successful daily run: 2026-09-03
 
@@ -41,7 +41,7 @@ Publication validation confirms that this generated artifact is internally consi
 
 ## Sequential research backlog
 
-- Research backlog: 251
+- Research backlog: 249
 
 ## Publication health
 
