@@ -4,37 +4,37 @@ type: performance
 status: maintained
 tags:
   - performance
-created: "2026-09-04"
-updated: "2026-09-04"
+created: "2026-09-05"
+updated: "2026-09-05"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_eea977a77cd751df755a"
-as_of: "2026-09-04T18:24:32Z"
+snapshot_id: "decision_98abd444429a0a0915c7"
+as_of: "2026-09-05T09:52:20Z"
 ---
 
 # Performance and risk
 
-**As of `2026-09-04T18:24:32Z`**
+**As of `2026-09-05T09:52:20Z`**
 
 Current performance epoch started `2026-07-28T12:00:00Z` at **10000 EUR**. Prior audit epochs retained: **1**.
 
-<svg class="performance-chart" viewBox="0 0 100 100" role="img" aria-label="Equity history from 2026-07-28 to 2026-09-04; latest equity 10000.0225174243560771003624."><title>Model equity history</title><desc>Equity history from 2026-07-28 to 2026-09-04; latest equity 10000.0225174243560771003624.</desc><polyline fill="none" stroke="currentColor" stroke-width="2" points="0.00,90.00 2.94,90.00 5.88,90.00 8.82,90.00 11.76,90.00 14.71,90.00 17.65,90.00 20.59,90.00 23.53,90.00 26.47,90.00 29.41,90.00 32.35,90.00 35.29,90.00 38.24,90.00 41.18,90.00 44.12,90.00 47.06,90.00 50.00,90.00 52.94,90.00 55.88,90.00 58.82,90.00 61.76,90.00 64.71,90.00 67.65,90.00 70.59,90.00 73.53,90.00 76.47,90.00 79.41,90.00 82.35,90.00 85.29,90.00 88.24,90.00 91.18,90.00 94.12,90.00 97.06,90.00 100.00,10.00" /></svg>
+<svg class="performance-chart" viewBox="0 0 100 100" role="img" aria-label="Equity history from 2026-07-28 to 2026-09-05; latest equity 10001.5025284106842051003624."><title>Model equity history</title><desc>Equity history from 2026-07-28 to 2026-09-05; latest equity 10001.5025284106842051003624.</desc><polyline fill="none" stroke="currentColor" stroke-width="2" points="0.00,90.00 2.86,90.00 5.71,90.00 8.57,90.00 11.43,90.00 14.29,90.00 17.14,90.00 20.00,90.00 22.86,90.00 25.71,90.00 28.57,90.00 31.43,90.00 34.29,90.00 37.14,90.00 40.00,90.00 42.86,90.00 45.71,90.00 48.57,90.00 51.43,90.00 54.29,90.00 57.14,90.00 60.00,90.00 62.86,90.00 65.71,90.00 68.57,90.00 71.43,90.00 74.29,90.00 77.14,90.00 80.00,90.00 82.86,90.00 85.71,90.00 88.57,90.00 91.43,90.00 94.29,90.00 97.14,88.80 100.00,10.00" /></svg>
 
 | Daily return | Cumulative return | Drawdown | Realized P/L | Unrealized P/L |
 | ---: | ---: | ---: | ---: | ---: |
-| 0.000225174243560771003624% | 0.000225174243560771003624% | 0% | 0 EUR | 0.0225174243560771003624 EUR |
+| 0.01480007653732089067253421181% | 0.015025284106842051003624% | 0% | 0 EUR | 1.5025284106842051003624 EUR |
 
 ## Exposure and concentration
 
-- Cash: 97.030007%
-- Invested exposure: 2.969993%
+- Cash: 97.015648%
+- Invested exposure: 2.984352%
 - Conviction exposure: 0 EUR
-- Baseline exposure: 297 EUR
-- Largest position: 2.969993%
-- Largest sector: 2.969993%
+- Baseline exposure: 298.48 EUR
+- Largest position: 2.984352%
+- Largest sector: 2.984352%
 
 ## Target allocation changes
 
-No target allocation changes.
+- **[PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4):** Add from 2.984352% to 4.103899%
 
 ## Committed history
 
@@ -75,6 +75,7 @@ No target allocation changes.
 | 2026-09-02 | 10000 | 10000 | 0 | 0% | 0% | 0% |
 | 2026-09-03 | 10000 | 10000 | 0 | 0% | 0% | 0% |
 | 2026-09-04 | 10000.0225174243560771003624 | 9703.0225174243560771003624 | 297 | 0.000225174243560771003624% | 0.000225174243560771003624% | 0% |
+| 2026-09-05 | 10001.5025284106842051003624 | 9703.0225174243560771003624 | 298.480010986328128 | 0.01480007653732089067253421181% | 0.015025284106842051003624% | 0% |
 
 No external benchmark is used.
 

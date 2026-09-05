@@ -4,16 +4,16 @@ type: system-status
 status: maintained
 tags:
   - system-status
-created: "2026-09-04"
-updated: "2026-09-04"
+created: "2026-09-05"
+updated: "2026-09-05"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_eea977a77cd751df755a"
-as_of: "2026-09-04T18:24:32Z"
+snapshot_id: "decision_98abd444429a0a0915c7"
+as_of: "2026-09-05T09:52:20Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-09-04T18:24:32Z`
+**As of:** `2026-09-05T09:52:20Z`
 **Investment data:** Portfolio state safe — research gaps remain
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -23,8 +23,8 @@ Publication validation confirms that this generated artifact is internally consi
 
 ## Current investment health
 
-- Assessments: 50/80
-- Fresh-evidence assessments: 47/80
+- Assessments: 46/80
+- Fresh-evidence assessments: 44/80
 - Relationship reviews: 19/80
 - Accepted relationships: 18
 - Market success/failure: 81/0
@@ -35,13 +35,13 @@ Publication validation confirms that this generated artifact is internally consi
 
 - Ready or active strategies: 3
 - Active signals: 1
-- Pending orders: 0
+- Pending orders: 1
 - Queued remediation operations: 0
 - Operations are claimed and executed strictly sequentially.
 
 ## Sequential research backlog
 
-- Research backlog: 248
+- Research backlog: 254
 
 ## Publication health
 
@@ -50,11 +50,12 @@ Publication validation confirms that this generated artifact is internally consi
 
 ## Current issues by investment impact
 
-Current unresolved issues: **18**.
+Current unresolved issues: **20**.
 Resolved and superseded issues remain in the canonical audit but are not current health.
 
-### Affects Candidate (13)
+### Affects Candidate (14)
 
+- Error **Hermes operation validation failed: Strategy research for strategy for NVDA on 2026-09-05** — visualization\_review charts do not match chart ids in changed research pages: expected \[('data/wiki/strategies/strategy for NVDA.md', 'nvda-scenario-returns')\], got \[('data/wiki/strategies/strategy for NVDA.md', 'nvda-baseline-scenario-returns')\]
 - Error **ETN — Eaton Corporation plc: Hermes operation validation failed: Quick check research for ETN on 2026-08-11** — agent result schema: 'cd57fc97df50efa0657881b253fc96d4467881b253fc96d4467881b253fc96d446' does not match '^\[a-f0-9\]{64}$'; commands\_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment; post-run integrity: agent result data/runs/Daily report for 2026-08-11/Quick check research for ETN on 2026-08-11/agent\_result.json: 'cd57fc97df50efa0657881b253fc96d4467881b253fc96d4467881b253fc96d446' does not match '^\[a-f0-9\]{64}$'
 - Error **FUC.F — Fanuc Corporation: FANUC assessment source operation is ambiguous within one run** — The schema-v2 FANUC full-review assessment could not be accepted because the deterministic research applier found both the completed quick\_check\_research operation and this running security\_research operation for the same security and run\_id, then rejected the immutable assessment request with no assessment-state changes. The mandatory security context succeeded; both issuer PDFs were rechecked with unchanged hashes, source history and the security summary were updated through validated commands
 - Error **KTOS — Kratos Defense &amp; Security Solutions, Inc.: Hermes operation validation failed: Quick check research for KTOS on 2026-08-12** — Hermes timed out after 600s; agent result was written before completed change: data/runs/Daily report for 2026-08-12/Quick check research for KTOS on 2026-08-12/command\_audit.json; commands\_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment
@@ -69,13 +70,14 @@ Resolved and superseded issues remain in the canonical audit but are not current
 - Error **ASML — ASML Holding N.V.: ASML assessment rejected after security row update** — The retry operation refreshed the ASML page and security row to the 2026-08-19 USD 1,751.73 mark, but the schema-v2 assessment request was rejected before assessment state changed because valuation\_template\_rationale is a required field and was omitted. The routed-operation no-retry rule forbids correcting and invoking a second assessment request after this rejection. The canonical assessment therefore remains the prior unsupported version, the prepared relationship and idea follow-up requests w
 - Error **WTI — W&amp;T Offshore, Inc.: Hermes operation validation failed: Quick check research for WTI on 2026-08-18** — completed security research requires this run's comparable assessment
 
-### Publication Only (5)
+### Publication Only (6)
 
 - Error **Hermes operation validation failed: Daily podcast for Daily report for 2026-08-17 on 2026-08-17** — Hermes timed out after 1200s; agent result was written before completed change: data/runs/Daily report for 2026-08-17/Daily podcast for Daily report for 2026-08-17 on 2026-08-17/command\_audit.json; commands\_run does not exactly match deterministic CLI audit receipts
 - Error **Hermes operation validation failed: Daily podcast for Daily report for 2026-08-06 on 2026-08-06** — commands\_run does not exactly match deterministic CLI audit receipts
 - Error **Hermes operation validation failed: Daily podcast for Daily report for 2026-08-05 on 2026-08-05** — Hermes exited with status 2; agent result is missing or a symlink: data/runs/Daily report for 2026-08-05/Daily podcast for Daily report for 2026-08-05 on 2026-08-05/agent\_result.json
 - Error **Hermes operation validation failed: Daily podcast for Daily report for 2026-08-06 on 2026-08-06** — cannot restore rejected path data/wiki/daily-reports/daily-report\_20260806.md: pre-run path cannot be restored because Git metadata is unavailable; daily podcast spoken transcript must label paper trading
 - Error **Hermes operation validation failed: Daily podcast for Daily report for 2026-08-17 on 2026-08-17** — non-successful daily podcast must not retain a transcript page
+- Warning **Daily podcast blocked: Daily report for 2026-09-04** — agent\_result:blocked:Blocked the daily podcast before deterministic script preflight could dispatch. The frozen version-three context, payload, and daily manifest consistently bind the episode to data/wiki/podcasts/daily-podcast\_20260904T180734Z.md. The sole successful development was mapped to one novel Uber chapter about the move from strategy-pending research to a ready two-share starter signal, with the current Buy / Initiate rating, medium-confidence sizing, explicit Buy and Sell conditions
 
 ## Historical audit health
 
