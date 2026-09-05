@@ -1,0 +1,54 @@
+{
+  "entity_id": "security_97f38b2cb2d5ef127f5a",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-08-28T21:33:30Z",
+    "baseline_completed_at": "2026-08-28T21:40:02Z",
+    "baseline_operation_id": "01M06M2NP8WCAE6T92D639MR4R",
+    "baseline_result_path": "data/runs/daily-20260828T210155Z/01M06M2NP8WCAE6T92D639MR4R/agent_result.json",
+    "full_research_requested": true,
+    "maintenance_mode": "refresh",
+    "market_data_as_of": "2026-09-05T09:19:19Z",
+    "market_data_date": "2026-09-04",
+    "period_end": "2026-09-04",
+    "period_start": "2026-08-07",
+    "research_page": "data/wiki/securities/security_97f38b2cb2d5ef127f5a.md",
+    "research_reasons": [
+      {
+        "dedupe_key": "quick_check_research:security_97f38b2cb2d5ef127f5a:8f68126145e692ab9516:2026-09-04",
+        "observed_at": "2026-09-05T09:19:19Z",
+        "prompt": "Quick-check security_97f38b2cb2d5ef127f5a after price-action alerts: rsi_oversold; verify the latest research assumptions and escalate to full security research if any material gate changed.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_97f38b2cb2d5ef127f5a-rsi_oversold-9e58c6fc7336.md"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_97f38b2cb2d5ef127f5a:allocation-maintenance:2026-08-28T21:33:30Z",
+        "observed_at": "2026-09-05T09:19:19Z",
+        "prompt": "Revalidate security_97f38b2cb2d5ef127f5a with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_pl_q1_fy2027_10q",
+          "source_pl_q1_fy2027_results_sec",
+          "source_pl_sec_submissions_20260828"
+        ]
+      }
+    ],
+    "security_id": "security_97f38b2cb2d5ef127f5a",
+    "source_price_hash": "42277731b6aeda48b648cc3492de068702bb83182e3cf72a5bac00d409ed08e2",
+    "trigger_types": [
+      "rsi_oversold"
+    ]
+  },
+  "objective": "Quick-check security_97f38b2cb2d5ef127f5a after price-action alerts: rsi_oversold; verify the latest research assumptions and escalate to full security research if any material gate changed. | Additional cause: Revalidate security_97f38b2cb2d5ef127f5a with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01M1RDTZER38XSKKZ1AVRCJ30D",
+  "operation_type": "quick_check_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_97f38b2cb2d5ef127f5a-rsi_oversold-9e58c6fc7336.md",
+    "source_pl_q1_fy2027_10q",
+    "source_pl_q1_fy2027_results_sec",
+    "source_pl_sec_submissions_20260828"
+  ]
+}

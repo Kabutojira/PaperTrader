@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-08-08"
-updated: "2026-09-04"
+updated: "2026-09-05"
 provenance: repository-contract
 ---
 
@@ -3238,3 +3238,43 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Refreshed the scenario-return chart and retained ready long-equity baseline treatment because the
   starter frontier clears while medium confidence, the material bear case and insufficient
   diversification continue to bar conviction sizing.
+
+## 2026-09-05
+
+- Created candidate packet [[inbox/market-security_22c2b9d782a62d7a9b86-rsi_overbought-121b4c38c360]] (121b4c38c360).
+
+- Created candidate packet [[inbox/market-security_2c779e81c27b78c556bb-macd_cross_above_signal-b792fe3afa99]] (b792fe3afa99).
+
+- Classified [[inbox/market-security_2c779e81c27b78c556bb-macd_cross_above_signal-b792fe3afa99]] as `ingest`: New MACD bullish crossover with a material 7.6% period return merits durable review.
+
+- Created candidate packet [[inbox/market-security_3e597863f00753e8c65c-bollinger_above_upper-38f1315dfc29]] (38f1315dfc29).
+
+- Created candidate packet [[inbox/market-security_55c9ce2fdcd32dad6b8c-macd_cross_above_signal-7087db8dc9ac]] (7087db8dc9ac).
+
+- Classified [[inbox/market-security_55c9ce2fdcd32dad6b8c-macd_cross_above_signal-7087db8dc9ac]] as `ingest`: New MACD bullish crossover after a 11.36% decline is a material security-specific market transition worth recording.
+
+- Created candidate packet [[inbox/market-security_66cdcf90aac0d83e76f3-volume_anomaly-be69ea94fbb1]] (be69ea94fbb1).
+
+- Classified [[inbox/market-security_66cdcf90aac0d83e76f3-volume_anomaly-be69ea94fbb1]] as `ingest`: A new volume anomaly coincides with a material negative period return and merits durable review.
+
+- Created candidate packet [[inbox/market-security_97f38b2cb2d5ef127f5a-rsi_oversold-9e58c6fc7336]] (9e58c6fc7336).
+
+- Classified [[inbox/market-security_97f38b2cb2d5ef127f5a-rsi_oversold-9e58c6fc7336]] as `ingest`: Material 24.3% decline with a strengthened RSI-oversold transition merits durable review.
+
+- Created candidate packet [[inbox/market-security_9d4049ed6669a52815d6-macd_cross_below_signal-ce2faf95b15a]] (ce2faf95b15a).
+
+- Created candidate packet [[inbox/market-security_c9a37d277445869a8809-bollinger_above_upper-64203c946d21]] (64203c946d21).
+
+- Created candidate packet [[inbox/market-security_ce9b78a4d0773c950765-macd_cross_above_signal-79ce1d3d4f49]] (79ce1d3d4f49).
+
+- Classified [[inbox/market-security_ce9b78a4d0773c950765-macd_cross_above_signal-79ce1d3d4f49]] as `ingest`: New MACD bullish crossover with positive 2.1% period return merits durable monitoring context.
+
+- Created candidate packet [[inbox/market-security_eca976f0076a425ea1bb-macd_cross_below_signal-3d5e022fd8f4]] (3d5e022fd8f4).
+
+- Created candidate packet [[inbox/market-security_eca976f0076a425ea1bb-volume_anomaly-502b5b004541]] (502b5b004541).
+
+- Classified [[inbox/market-security_eca976f0076a425ea1bb-volume_anomaly-502b5b004541]] as `ignore`: Low-magnitude volume anomaly with only 0.93% period return; insufficient evidence of a material knowledge change.
+
+- Created candidate packet [[inbox/market-security_ed7d5b616a196969c815-volume_anomaly-95a27682c8f2]] (95a27682c8f2).
+
+- Classified [[inbox/market-security_ed7d5b616a196969c815-volume_anomaly-95a27682c8f2]] as `ingest`: New volume-anomaly transition coincides with a material 12.7% price increase over the validated period.

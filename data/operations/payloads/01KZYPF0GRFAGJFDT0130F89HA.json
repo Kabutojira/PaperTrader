@@ -4,14 +4,50 @@
   "inputs": {
     "assessment_state": "2026-08-06T18:12:30Z",
     "maintenance_mode": "refresh",
+    "market_data_as_of": "2026-09-05T09:19:19Z",
+    "market_data_date": "2026-09-04",
+    "period_end": "2026-09-04",
+    "period_start": "2026-08-07",
     "research_page": "data/wiki/securities/security_2c779e81c27b78c556bb.md",
-    "security_id": "security_2c779e81c27b78c556bb"
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_2c779e81c27b78c556bb:allocation-maintenance:2026-08-06T18:12:30Z",
+        "observed_at": "2026-08-13T23:14:07Z",
+        "prompt": "Revalidate security_2c779e81c27b78c556bb with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_ternium_july_2026_sustainability_6k",
+          "source_ternium_q1_2026_results",
+          "source_ternium_q2_2026_results_sec",
+          "source_ustr_usmca_joint_statement_20260723"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_2c779e81c27b78c556bb:98e3d9d0b158ddcfc963:2026-09-04",
+        "market_data_date": "2026-09-04",
+        "observed_at": "2026-09-05T09:19:19Z",
+        "prompt": "Research security_2c779e81c27b78c556bb with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_2c779e81c27b78c556bb-macd_cross_above_signal-b792fe3afa99.md"
+        ],
+        "trigger_types": [
+          "macd_cross_above_signal"
+        ]
+      }
+    ],
+    "security_id": "security_2c779e81c27b78c556bb",
+    "source_price_hash": "12e79eb445026992d0a8e5420e891b2c63762de712c1cc6fad5e945f9fbdcc1a",
+    "trigger_types": [
+      "macd_cross_above_signal"
+    ]
   },
-  "objective": "Revalidate security_2c779e81c27b78c556bb with current primary evidence and write one comparable allocation assessment.",
+  "objective": "Revalidate security_2c779e81c27b78c556bb with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_2c779e81c27b78c556bb with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
   "operation_id": "01KZYPF0GRFAGJFDT0130F89HA",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_2c779e81c27b78c556bb-macd_cross_above_signal-b792fe3afa99.md",
     "source_ternium_july_2026_sustainability_6k",
     "source_ternium_q1_2026_results",
     "source_ternium_q2_2026_results_sec",

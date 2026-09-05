@@ -5,7 +5,7 @@ status: maintained
 tags:
   - research
 created: "2026-09-04"
-updated: "2026-09-04"
+updated: "2026-09-05"
 provenance: deterministic-decision-projection
 snapshot_id: "decision_eea977a77cd751df755a"
 as_of: "2026-09-04T18:24:32Z"
@@ -788,3 +788,18 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_22c2b9d782a62d7a9b86-rsi_overbought-121b4c38c360|ATKR — RSI overbought]]
+- [[inbox/market-security_2c779e81c27b78c556bb-macd_cross_above_signal-b792fe3afa99|TX — MACD cross above signal]]
+- [[inbox/market-security_3e597863f00753e8c65c-bollinger_above_upper-38f1315dfc29|BE — Bollinger above upper]]
+- [[inbox/market-security_55c9ce2fdcd32dad6b8c-macd_cross_above_signal-7087db8dc9ac|CRSR — MACD cross above signal]]
+- [[inbox/market-security_66cdcf90aac0d83e76f3-volume_anomaly-be69ea94fbb1|ALB — Volume anomaly]]
+- [[inbox/market-security_97f38b2cb2d5ef127f5a-rsi_oversold-9e58c6fc7336|PL — RSI oversold]]
+- [[inbox/market-security_9d4049ed6669a52815d6-macd_cross_below_signal-ce2faf95b15a|SQM — MACD cross below signal]]
+- [[inbox/market-security_c9a37d277445869a8809-bollinger_above_upper-64203c946d21|RBLX — Bollinger above upper]]
+- [[inbox/market-security_ce9b78a4d0773c950765-macd_cross_above_signal-79ce1d3d4f49|TSM — MACD cross above signal]]
+- [[inbox/market-security_eca976f0076a425ea1bb-macd_cross_below_signal-3d5e022fd8f4|PATH — MACD cross below signal]]
+- [[inbox/market-security_eca976f0076a425ea1bb-volume_anomaly-502b5b004541|PATH — Volume anomaly]]
+- [[inbox/market-security_ed7d5b616a196969c815-volume_anomaly-95a27682c8f2|RXRX — Volume anomaly]]

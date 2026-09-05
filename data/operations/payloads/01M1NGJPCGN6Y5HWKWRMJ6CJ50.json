@@ -4,14 +4,49 @@
   "inputs": {
     "assessment_state": "2026-08-12T01:51:17Z",
     "maintenance_mode": "refresh",
+    "market_data_as_of": "2026-09-05T09:19:19Z",
+    "market_data_date": "2026-09-04",
+    "period_end": "2026-09-04",
+    "period_start": "2026-08-07",
     "research_page": "data/wiki/securities/security_ed7d5b616a196969c815.md",
-    "security_id": "security_ed7d5b616a196969c815"
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_ed7d5b616a196969c815:allocation-maintenance:2026-08-12T01:51:17Z",
+        "observed_at": "2026-09-04T06:09:30Z",
+        "prompt": "Revalidate security_ed7d5b616a196969c815 with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_rxrx_clinicaltrials_20260812",
+          "source_rxrx_q2_2026_10q",
+          "source_rxrx_q2_2026_results_exhibit"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_ed7d5b616a196969c815:1ad705e46b6e5cdf7d9e:2026-09-04",
+        "market_data_date": "2026-09-04",
+        "observed_at": "2026-09-05T09:19:19Z",
+        "prompt": "Research security_ed7d5b616a196969c815 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_ed7d5b616a196969c815-volume_anomaly-95a27682c8f2.md"
+        ],
+        "trigger_types": [
+          "volume_anomaly"
+        ]
+      }
+    ],
+    "security_id": "security_ed7d5b616a196969c815",
+    "source_price_hash": "afc62f4cd2e844921dd54249d320bf1eaaa1553dc508645938f596424dfbdcff",
+    "trigger_types": [
+      "volume_anomaly"
+    ]
   },
-  "objective": "Revalidate security_ed7d5b616a196969c815 with current primary evidence and write one comparable allocation assessment.",
+  "objective": "Revalidate security_ed7d5b616a196969c815 with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_ed7d5b616a196969c815 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
   "operation_id": "01M1NGJPCGN6Y5HWKWRMJ6CJ50",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_ed7d5b616a196969c815-volume_anomaly-95a27682c8f2.md",
     "source_rxrx_clinicaltrials_20260812",
     "source_rxrx_q2_2026_10q",
     "source_rxrx_q2_2026_results_exhibit"

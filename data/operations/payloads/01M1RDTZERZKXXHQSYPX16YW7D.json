@@ -1,0 +1,35 @@
+{
+  "entity_id": "strategy_7cf884a5530d05afdb99",
+  "entity_type": "strategy",
+  "inputs": {
+    "allocation_intent_id": "allocation_intent_18c42c83c9de5d41cc9b",
+    "allocation_plan_id": "allocation_plan_e9ff34dda455150b7366",
+    "assessment_as_of": "2026-09-04T06:22:45Z",
+    "assessment_id": "assessment_82fd625a8d93be4bd8f5",
+    "current_weight_pct": "0",
+    "disposition": "open",
+    "effective_score": "92",
+    "maximum_weight_pct": "5",
+    "mode": "baseline_allocation",
+    "position_cap_pct": "5",
+    "relationship_id": "relationship_ai_compute_nvda",
+    "security_id": "security_33d9c44facc75c726c7d",
+    "selection_rank": 1,
+    "strategy_id": "strategy_7cf884a5530d05afdb99",
+    "target_quantity": "2",
+    "target_weight_pct": "3.96",
+    "tier": "full",
+    "valuation_mark": "230.36000061035156",
+    "valuation_mark_as_of": "2026-09-05T09:19:19Z"
+  },
+  "objective": "Research the bounded baseline allocation target for security_33d9c44facc75c726c7d from plan allocation_plan_e9ff34dda455150b7366.",
+  "operation_id": "01M1RDTZERZKXXHQSYPX16YW7D",
+  "operation_type": "strategy_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_nvda_huggingface_20260903_8k",
+    "source_nvda_q2_fy2027_10q",
+    "source_nvda_q2_fy2027_cfo",
+    "source_nvda_q2_fy2027_release"
+  ]
+}
