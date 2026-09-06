@@ -1,0 +1,662 @@
+{
+  "background_wiki_pages": [
+    {
+      "path": "data/wiki/ideas/idea_digital_attention_gaming_ecosystems.md",
+      "sha256": "6e49566a1178ced737a481ac7f0d7cba9348a8066083d7f0916ac4f5c3b90afb"
+    },
+    {
+      "path": "data/wiki/ideas/idea_humanoid_robotics_embodied_ai_components.md",
+      "sha256": "cd7d418b1e14535905abcdd9f502ff79b881d82421863543413d585bde3132ec"
+    },
+    {
+      "path": "data/wiki/ideas/idea_nearshoring_friendshoring_manufacturing.md",
+      "sha256": "5f0bba0ddb793e2e82e8b064fb0a74eaa9d3bde4232713803e04395767b4b738"
+    },
+    {
+      "path": "data/wiki/ideas/idea_terafab_ai_industrial_stack.md",
+      "sha256": "4fbed9bf71f2141f4a84e8ad6c60b9a4d22207cb6a96c95fd22738eb18082d63"
+    },
+    {
+      "path": "data/wiki/securities/security_c9a37d277445869a8809.md",
+      "sha256": "37f812d0c93e46a73c2929107d79d5b2d64046587778355ed696b6a6d4a1b60c"
+    }
+  ],
+  "changed_wiki_pages": [
+    {
+      "path": "data/wiki/ideas/idea_ai_driven_democratization_physical_creation.md",
+      "sha256": "c4a82c7c3826761b0ef01d21c36e44d061fad19d8920e1e8849e8b4e95ea2380"
+    },
+    {
+      "path": "data/wiki/securities/security_2c779e81c27b78c556bb.md",
+      "sha256": "2b5f66627a8d8c8de2f30c87638de04ed3d2c179e3ac224496654754f0612c7a"
+    },
+    {
+      "path": "data/wiki/securities/security_55c9ce2fdcd32dad6b8c.md",
+      "sha256": "14acbcec9a6753d627ea477ab7ebd12fb4a1c0678e132b93c39a7b963b9fa041"
+    },
+    {
+      "path": "data/wiki/securities/security_c2e6db30cb59254de418.md",
+      "sha256": "5309b40f8950a4f6dbea429b2fbdb6db10ba16ba1b7601842cc585fed54631d8"
+    },
+    {
+      "path": "data/wiki/securities/security_ce9b78a4d0773c950765.md",
+      "sha256": "e4a31a093b18e4af474a1c3cf1d7a771dcade1a4c750a61540b760b40bb4c7fa"
+    },
+    {
+      "path": "data/wiki/securities/security_d08d763780400dfbffce.md",
+      "sha256": "8c17eb2a183e1804d498137a5f1c73e02f493efa1b09085993546ca38f253a32"
+    }
+  ],
+  "daily_cycle_id": "daily-20260906T173801Z",
+  "decision_snapshot_path": "data/runs/daily-20260906T173801Z/decision_snapshot.json",
+  "decision_snapshot_sha256": "b24e5e53d787a05663f118437f17cd515636965374738d49554d4bf42e6a17fa",
+  "generated_at": "2026-09-06T18:12:39Z",
+  "intervening_daily_cycles": [
+    "daily-20260906T114339Z",
+    "daily-20260906T135138Z",
+    "daily-20260906T173801Z",
+    "local-20260906-ai-physical-creation",
+    "local-20260906-ai-physical-creation-final",
+    "local-merge-20260906T110720Z"
+  ],
+  "page_path": "data/wiki/podcasts/daily-podcast_20260906T173801Z.md",
+  "podcast_context_version": 3,
+  "portfolio_implication_paths": [
+    "data/runs/daily-20260906T173801Z/decision_snapshot.json",
+    "data/wiki/daily-reports/daily-report_20260906.md"
+  ],
+  "previous_successful_podcast": {
+    "context_path": "data/runs/daily-20260905T235530Z/podcast_context.json",
+    "context_sha256": "f22bf45007fa683750c936b15c2a04615e084eed014fdf495dfc83012f055c0f",
+    "daily_cycle_id": "daily-20260905T235530Z",
+    "page_path": "data/wiki/podcasts/daily-podcast_20260905T235530Z.md",
+    "page_sha256": "0e168aa564377f85663cceab200515148934f226de34b0909bc07a41516e1150",
+    "research_cutoff_at": "2026-09-06T00:11:13Z"
+  },
+  "report_path": "data/wiki/daily-reports/daily-report_20260906.md",
+  "report_sha256": "a35af9b2bee714756bcfa10367fa239998c6032b3a34e7e2566d5ad84e8796c9",
+  "research_cutoff_at": "2026-09-06T18:01:30Z",
+  "research_developments": [
+    {
+      "completed_at": "2026-09-06T09:48:44Z",
+      "daily_cycle_id": "local-20260906-ai-physical-creation",
+      "daily_report_items": [
+        "Created the AI-Driven Democratization of Physical Creation idea, added nine verified public instruments, kept Bambu Lab private, and queued nine full security reviews plus nine dependent causal-relationship reviews; no preliminary valuation or rating was asserted."
+      ],
+      "entity_id": "idea_ai_driven_democratization_physical_creation",
+      "entity_type": "idea",
+      "evidence": [
+        {
+          "claim": "The project reports feed-forward generation of textured 3D meshes from text in about 400 milliseconds, compared with prior per-prompt optimization taking up to an hour. This supports falling creation friction but does not establish dimensional correctness or manufacturability.",
+          "source": "NVIDIA LATTE3D technical project",
+          "url": "https://research.nvidia.com/labs/toronto-ai/LATTE3D/"
+        },
+        {
+          "claim": "Xometry describes a closed-loop workflow using 3D geometry, production and delivery data for deep-learning pricing, lead-time prediction, supplier matching and fulfillment. This supports the proposed manufacturing-as-a-service transmission mechanism without proving demand conversion from generative design.",
+          "source": "Xometry AI-native marketplace release",
+          "url": "https://investors.xometry.com/news-releases/news-release-details/xometry-deepens-ai-native-marketplace-advantage-new-enterprise"
+        },
+        {
+          "claim": "Bambu describes an integrated workflow combining creator models, expert print profiles, vendor filament parameters, cloud slicing, app delivery and printer execution. The ecosystem is a relevant private benchmark for reducing printer-operation friction and for testing model-file commoditization.",
+          "source": "Bambu Lab MakerWorld one-step printing documentation",
+          "url": "https://blog.bambulab.com/makerworld-one-step-printing/"
+        },
+        {
+          "claim": "HKEX identifies Shenzhen Creality 3D Technology Co., Ltd. H shares under stock code 03388. PaperTrader imported the corresponding XHKG/HKD/equity instrument with provider identity 3388.HK; no prior matching security existed.",
+          "source": "Creality HKEX listed-company disclosures",
+          "url": "https://www1.hkexnews.hk/search/titlesearch.xhtml?category=0&lang=EN&market=SEHK&stockId=1000303977"
+        },
+        {
+          "claim": "Arkema documents PA11, PA12, PEKK, elastomer and resin products for several additive processes and grouped 3D printing among attractive markets growing about 15% in Q1 2026. The sources do not quantify additive revenue or consolidated profit sensitivity, so dilution remains an explicit research gap.",
+          "source": "Arkema additive-manufacturing documentation and Q1 2026 results",
+          "url": "https://www.arkema.com/global/en/markets-solutions/3d-printing/"
+        },
+        {
+          "claim": "Forward AM states that management acquired BASF's additive-manufacturing business in 2024 and that key operations joined Stratasys in 2025. This is material contrary evidence against treating BASF as a current direct additive beneficiary and is the basis for a neutral candidate relationship subject to rejection.",
+          "source": "Forward AM management buyout and company history",
+          "url": "https://forward-am.com/about-us/our-story/"
+        },
+        {
+          "claim": "Nine unique identity-only security rows were created through audited watchlist imports. Nine security_research operations depend on this idea operation, and nine pair-specific relationship_research operations each depend on its corresponding security review. All valuations and investment decisions remain pending those scenario-complete operations.",
+          "source": "PaperTrader deterministic identity and queue projections"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1V1E10RDD4J617S4AW0C9EN.json",
+        "data/operations/payloads/01M1V1E3YGYYPSJV217TRVMW8R.json",
+        "data/operations/payloads/01M1V1E5X0MNXS7Q1DN1N3PF7Y.json",
+        "data/operations/payloads/01M1V1EJK8HQWBCGTY355450ZS.json",
+        "data/operations/payloads/01M1V1ENH079N3H8504P53WP8A.json",
+        "data/operations/payloads/01M1V1EQFG9EX56SR892Q3BHGF.json",
+        "data/operations/payloads/01M1V1F6487BZG6114432903G2.json",
+        "data/operations/payloads/01M1V1F82RFHJKRYBWKB3G7BX5.json",
+        "data/operations/payloads/01M1V1FA18Q6NH3BYM9CGZER95.json",
+        "data/operations/payloads/01M1V1HX1GP5AC5JMCKRJ1XMN1.json",
+        "data/operations/payloads/01M1V1HZ0038RPN2ZWXFR4VMKZ.json",
+        "data/operations/payloads/01M1V1J0YGKK69W4C7N3WV5NR7.json",
+        "data/operations/payloads/01M1V1JDMRXQG97GT3QQ4DBMB9.json",
+        "data/operations/payloads/01M1V1JGJGCKFB5654Q902EYTT.json",
+        "data/operations/payloads/01M1V1JJH09YZ4W287ET1Z88S1.json",
+        "data/operations/payloads/01M1V1JZ78V6WV8YMNWX72ECE8.json",
+        "data/operations/payloads/01M1V1K2504H4SRCQ2NRTQR6E4.json",
+        "data/operations/payloads/01M1V1K43GZBD6WY14TFBFANTV.json",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-3d-systems.json",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-arkema.json",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-basf.json",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-creality.json",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-evonik.json",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-materialise.json",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-proto-labs.json",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-stratasys.json",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-xometry.json",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-3d-systems.json",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-arkema.json",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-basf.json",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-creality.json",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-evonik.json",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-materialise.json",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-proto-labs.json",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-stratasys.json",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-xometry.json",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-3d-systems.json",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-arkema.json",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-basf.json",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-creality.json",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-evonik.json",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-materialise.json",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-proto-labs.json",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-stratasys.json",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-xometry.json",
+        "data/tables/securities.csv",
+        "data/wiki/ideas/idea_ai_driven_democratization_physical_creation.md",
+        "data/wiki/log.md",
+        "data/wiki/research-catalog.md"
+      ],
+      "operation_id": "01M1V159Q8ZAMEEEVXR2SC854J",
+      "operation_type": "idea_research",
+      "result_path": "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/agent_result.json",
+      "status": "succeeded",
+      "summary": "Created one maintained AI-Driven Democratization of Physical Creation idea and tested the complete path from generated geometry through manufacturability, process and material selection, production and delivery. Verified and imported nine distinct public instruments through CLI-only identity writes, retained Bambu Lab as a private benchmark, and classified all nine public idea-security pairings as candidates rather than accepted relationships. Enqueued exactly one comprehensive security review for each candidate, dependent on this idea operation, and exactly one relationship review per pair, dependent on that security review. The thesis currently favors utilization-linked consumables and automated manufacturing networks as potential capture points, while preserving manufacturing, competition, commoditization, financial-risk and exposure-dilution counterevidence. No valuation, rating, strategy, signal, allocation, order, execution, or accounting state was invented or changed."
+    },
+    {
+      "completed_at": "2026-09-06T14:08:34Z",
+      "daily_cycle_id": "daily-20260906T135138Z",
+      "daily_report_items": [
+        "Xometry research completed: marketplace revenue grew 45% and cash conversion improved, but GAAP losses, dilution, valuation downside and an unaccepted AI-physical-creation relationship support Hold / Watch. USD50/USD85/USD130 scenarios yield USD87.50 weighted value versus USD92.53; no strategy, signal or paper order was created."
+      ],
+      "entity_id": "security_c2e6db30cb59254de418",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "Audited revenue increased from USD463.4 million in 2023 to USD686.6 million in 2025, gross profit rose from USD178.3 million to USD268.8 million, and GAAP operating loss narrowed from approximately USD73.6 million to USD45.5 million while GAAP profitability remained absent.",
+          "observed_at": "2026-09-06T13:57:12Z",
+          "source": "Xometry 2025 Form 10-K",
+          "source_hash": "bc139297d8422ada5bf4ed7f558892fb9c2741d1f41695a26892103966fe0bb3",
+          "url": "https://www.sec.gov/Archives/edgar/data/1657573/000119312526066959/xmtr-20251231.htm"
+        },
+        {
+          "claim": "Q2 revenue was USD229.3 million, gross profit USD87.2 million and GAAP operating loss USD5.5 million; first-half operating cash flow was positive USD17.5 million, with USD516.7 million of cash and marketable securities, USD328.7 million of convertible notes and 57.0 million issued common shares before treasury shares.",
+          "observed_at": "2026-09-06T13:57:12Z",
+          "source": "Xometry Q2 2026 Form 10-Q",
+          "source_hash": "058f9c8a640ddad02646df6211407021fc189f621c8026d84be58d8ec0a1a28d",
+          "url": "https://www.sec.gov/Archives/edgar/data/1657573/000119312526332776/xmtr-20260630.htm"
+        },
+        {
+          "claim": "Marketplace revenue grew 45%, active buyers grew 20% to 89,557 and accounts spending at least USD50,000 grew 23% to 2,039; adjusted EBITDA reached USD14.1 million while GAAP net loss remained USD5.3 million.",
+          "observed_at": "2026-09-06T13:57:12Z",
+          "source": "Xometry Q2 2026 filed results",
+          "source_hash": "ca86e738aa8ee091331cac482d1caaeb89034e9a7810c4fe72bd4538b644eb3c",
+          "url": "https://www.sec.gov/Archives/edgar/data/1657573/000119312526331547/xmtr-ex99_1.htm"
+        },
+        {
+          "claim": "The issuer describes models using geometry, quote configuration, customer history, supplier performance and delivery outcomes for lead-time prediction and personalized pricing. This supports a closed-loop architecture but does not disclose model accuracy, AI-originated paid-demand conversion or incremental AI unit economics.",
+          "observed_at": "2026-09-06T11:49:16Z",
+          "source": "Xometry AI-native marketplace release",
+          "source_hash": "734ebab1de9038edb841f16e09a451822a60e87113d96b21b65db80f4f44f4df",
+          "url": "https://investors.xometry.com/news-releases/news-release-details/xometry-deepens-ai-native-marketplace-advantage-new-enterprise"
+        },
+        {
+          "claim": "The identity-matched reference mark was USD92.52999877929688 with fresh USD/EUR conversion at 2026-09-06T13:51:39Z. Deterministic assessment assessment_c95357aad0323a6b9971 calculated USD87.50 probability-weighted fair value, -5.4361% expected return, -4.0771% confidence-adjusted expected return, USD68 buy-below, Hold / Watch and allocation ineligibility with the relationship pending.",
+          "observed_at": "2026-09-06T13:57:12Z",
+          "source": "Canonical PaperTrader market and assessment state"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1VGKTXGZQ7NTEYEAY8JQ5FX.json",
+        "data/runs/daily-20260906T135138Z/01M1V1E3YGYYPSJV217TRVMW8R/assessment_upsert_request.json",
+        "data/runs/daily-20260906T135138Z/01M1V1E3YGYYPSJV217TRVMW8R/enqueue_idea_refresh_request.json",
+        "data/runs/daily-20260906T135138Z/01M1V1E3YGYYPSJV217TRVMW8R/issue_identity_conflict_resolve_request.json",
+        "data/runs/daily-20260906T135138Z/01M1V1E3YGYYPSJV217TRVMW8R/security_upsert_request.json",
+        "data/runs/daily-20260906T135138Z/01M1V1E3YGYYPSJV217TRVMW8R/source_xmtr_2025_10k_refresh_request.json",
+        "data/runs/daily-20260906T135138Z/01M1V1E3YGYYPSJV217TRVMW8R/source_xmtr_q2_2026_10q_refresh_request.json",
+        "data/runs/daily-20260906T135138Z/01M1V1E3YGYYPSJV217TRVMW8R/source_xmtr_q2_2026_results_refresh_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/research-catalog.md",
+        "data/wiki/securities/security_c2e6db30cb59254de418.md"
+      ],
+      "operation_id": "01M1V1E3YGYYPSJV217TRVMW8R",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260906T135138Z/01M1V1E3YGYYPSJV217TRVMW8R/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed Xometry Class A security research against canonical issuer issuer_dbdde9b294689a9af3d5. Current primary evidence shows accelerating marketplace adoption, improving operating leverage and positive first-half cash flow, but persistent GAAP losses, dilution and unproven AI-attributed conversion. A schema-version-two pre-profit-growth assessment produced USD50/USD85/USD130 bear/base/bull values, USD87.50 probability-weighted fair value versus USD92.53, medium confidence, Hold / Watch and allocation ineligibility. The candidate AI-physical-creation relationship remains pending in its existing dependent operation; exactly one idea-research follow-up was enqueued. No strategy, signal, order or accounting state changed."
+    },
+    {
+      "completed_at": "2026-09-06T14:31:06Z",
+      "daily_cycle_id": "daily-20260906T135138Z",
+      "daily_report_items": [
+        "TSM security research completed: July demand and new capacity commitments strengthen the operating thesis, but USD373.75 probability-weighted value versus USD428.91 leaves negative expected and base returns; deterministic disposition remains Hold / Watch and allocation-ineligible.",
+        "The 4 September TSM bullish MACD crossover is improving momentum but not an actionable opportunity because downside payoff and margin-of-safety gates remain adverse.",
+        "Queued dependent relationship reviews for TSM's AI-compute and Japan strategic-investment candidate links and the required Terafab idea refresh; no paper strategy or order was created."
+      ],
+      "entity_id": "security_ce9b78a4d0773c950765",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The SEC-filed annual report establishes the sponsored-ADR identity, five-ordinary-share ADR ratio, business model, audited baseline economics, customer concentration, capital intensity, and geopolitical and overseas-fab risks used in the review.",
+          "observed_at": "2026-09-06T14:13:31Z",
+          "source": "TSMC 2025 Form 20-F",
+          "source_hash": "c3ebd05cd8fb383f53fc21a0ac497ee12cf908b709c380f9bec4f39c4916647b",
+          "url": "https://www.sec.gov/Archives/edgar/data/1046179/000162828026025362/tsm-20251231.htm"
+        },
+        {
+          "claim": "SEC-filed issuer exhibits report Q2 revenue of NT$1.270 trillion, net income of NT$706.56 billion, 67.7% gross margin, 60.3% operating margin, USD4.31 diluted ADR EPS, 77% advanced-technology wafer revenue, and strong Q3 and full-year guidance.",
+          "observed_at": "2026-09-06T14:13:31Z",
+          "source": "TSMC Q2 2026 results and presentation",
+          "source_hash": "6e877956870c87d857d8af23144f35ddcbd3b569d464c962e7cf368c46860be3",
+          "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000451/a2q26e_withguidancexfinal.htm"
+        },
+        {
+          "claim": "The SEC-filed issuer release reports July revenue of NT$467.58 billion, up 5.6% month over month and 44.7% year over year, with January-July revenue up 37.0%.",
+          "observed_at": "2026-09-06T14:13:31Z",
+          "source": "TSMC July 2026 Revenue Report",
+          "source_hash": "40ed24df015806db57c8d711f4a7c2b5ad71de10c4da237a87fe25520ca12959",
+          "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000471/tsm-revenue20260810.htm"
+        },
+        {
+          "claim": "The SEC-filed resolutions approve approximately USD29.44 billion of capacity appropriations across advanced technology, packaging, specialty capacity and fab infrastructure, plus participation in the Sony venture for not more than JPY282 billion.",
+          "observed_at": "2026-09-06T14:13:31Z",
+          "source": "TSMC Board of Directors Meeting Resolutions, August 11, 2026",
+          "source_hash": "c935d2ddc8213391015d9eee562f863e802a5c5fb32f98de3ee24cecfd5d251b",
+          "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000536/tsm-boardx20260811.htm"
+        },
+        {
+          "claim": "The SEC-filed binding agreement targets Kumamoto image-sensor volume production in 2029, with Sony control, phased TSMC cash contributions of approximately JPY282 billion, and additional investment considered on the premise of Japanese government support.",
+          "observed_at": "2026-09-06T14:13:31Z",
+          "source": "Sony Semiconductor Solutions and TSMC definitive joint-venture agreement",
+          "source_hash": "5483d97974c8aedf406fc6a0b2d8e7d2d616b191ef1476f80717d98d46c5b29d",
+          "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000539/sonysemiconductorsolutions.htm"
+        },
+        {
+          "claim": "The immutable TSM/XNYS/USD identity had a USD428.9100036621094 mark and USD/EUR rate 0.8604999780654907 as of 2026-09-06T13:51:39Z. The 4 September MACD transition was verified against the canonical technical projection. The accepted Terafab relationship is current. Deterministic assessment output derives Hold / Watch, quality score 90, expected return -12.86050761025472521441475927%, confidence-adjusted expected return -9.645380707691043910811069452%, buy-below USD300, and allocation ineligibility without a relationship blocker.",
+          "source": "Canonical PaperTrader market, FX, relationship, and assessment state"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1VHND4GN9XKPA4EB318EC55.json",
+        "data/operations/payloads/01M1VHNPX03MGG107X9NH6SPC0.json",
+        "data/operations/payloads/01M1VHNZP81EB002GJVP685MJE.json",
+        "data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/assessment_upsert_request.json",
+        "data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/assessment_upsert_request_v2.json",
+        "data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/assessment_upsert_request_v3.json",
+        "data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/assessment_upsert_request_v4.json",
+        "data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/enqueue_idea_refresh_request.json",
+        "data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/enqueue_relationship_ai_compute_request.json",
+        "data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/enqueue_relationship_japan_request.json",
+        "data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/security_upsert_request.json",
+        "data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/source_tsm_2025_20f_refresh_request.json",
+        "data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/source_tsm_board_20260811_request.json",
+        "data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/source_tsm_july_2026_revenue_request.json",
+        "data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/source_tsm_july_2026_revenue_request_v2.json",
+        "data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/source_tsm_q2_2026_presentation_refresh_request.json",
+        "data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/source_tsm_q2_2026_results_refresh_request.json",
+        "data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/source_tsm_sony_jv_20260811_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_ce9b78a4d0773c950765.md"
+      ],
+      "operation_id": "01KZXXN28RT0NVWT6QD0MMKBBK",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed exactly one current Taiwan Semiconductor Manufacturing Company sponsored-ADR security review using the 2025 Form 20-F, SEC-filed Q2 2026 evidence, July revenue, August board resolutions, and the definitive Sony image-sensor joint venture. The 4 September bullish MACD crossover is improving momentum but not an actionable opportunity at the current USD428.91 mark. Updated the security page and structured row, registered six refreshed/current primary sources, and appended scenario-complete assessment assessment_af482445e24e1513a801 linked to assessment_46d2ae16336286c36b20. Bear/base/bull values of USD250/USD375/USD495 produce USD373.75 probability-weighted value and -12.86% expected return; deterministic state remains Hold / Watch and allocation-ineligible. Enqueued two bounded candidate relationship reviews and the required dependent Terafab idea refresh; no strategy, signal, order, allocation, or accounting state changed."
+    },
+    {
+      "completed_at": "2026-09-06T14:45:28Z",
+      "daily_cycle_id": "daily-20260906T135138Z",
+      "daily_report_items": [
+        "Samsung preferred-GDR research completed: the September 4 bullish MACD crossover followed a 16.70% gain, but zero crossover-day volume and only eleven units across twenty-one sessions make it non-actionable market noise.",
+        "Preferred-GDR valuation remains unsupported despite current EUR and KRW/EUR state because conversion, same-time Korean/London/Vienna parity, normalized-cycle earnings and routine Vienna liquidity remain unresolved; deterministic disposition is Unrated / Watch and allocation-ineligible.",
+        "Queued dependent AI-compute and Terafab candidate relationship reviews; no strategy, signal or paper order was created."
+      ],
+      "entity_id": "security_d08d763780400dfbffce",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The current issuer page retains preferred underlying KRX 005935 / ISIN KR7005931001, preferred GDR LSE SMSEL / ISIN US7960502018, and 815,974,664 preferred shares at March 31, 2026. Page bytes changed since the prior check without changing these material identity fields.",
+          "observed_at": "2026-09-06T14:35:49Z",
+          "source": "Samsung Electronics listing information",
+          "source_hash": "98cb8de188e79ca5931bb0d655fb1042d5698e04741fabe7bd64ff3d9782d520",
+          "url": "https://www.samsung.com/global/ir/stock-information/listing-Info/"
+        },
+        {
+          "claim": "The byte-identical issuer PDF remains the latest detailed operating evidence found: memory-led earnings, preferred-share EPS, cash generation and net financial strength support the issuer thesis while Device eXperience weakness and cycle concentration remain contrary evidence.",
+          "observed_at": "2026-09-06T14:35:49Z",
+          "source": "Samsung Electronics 2026 second-quarter earnings results",
+          "source_hash": "e90b8e4829403339206fa77821aeadd71e39a611f3830a4cbcd349321de9e0cf",
+          "url": "https://images.samsung.com/is/content/samsung/assets/global/ir/docs/2026_2Q_conference_eng.pdf"
+        },
+        {
+          "claim": "Immutable SSUN.VI/XWBO/EUR state had a EUR3040 mark as of 2026-09-06T13:51:39Z. From August 7 through September 4 adjusted close rose 16.70%; September 4 MACD crossed above signal with strength 0.60327972, RSI was 57.80, and close exceeded the 20-, 50- and 200-session averages. The provider reported zero volume that day and only eleven units in five of twenty-one sessions. KRW/EUR was current for September 4 but cannot replace the missing GDR conversion and cross-venue parity bridge.",
+          "source": "Canonical PaperTrader market, FX and technical state"
+        },
+        {
+          "claim": "Assessment assessment_2b2b7e8f458cbfafe3cb links predecessor assessment_27be4a94f4e72cdda9dc, schema version 2, source operation 01KZXXN28RT6NFN3258NZ538J2 and research-page hash 8c17eb2a183e1804d498137a5f1c73e02f493efa1b09085993546ca38f253a32. It derives quality score 72, unsupported research, Unrated / Watch, and allocation ineligibility from liquidity_insufficient, valuation_unsupported and pending relationship state.",
+          "source": "Canonical PaperTrader assessment state"
+        },
+        {
+          "claim": "The complete maintained idea catalog was searched and no accepted relationship exists for this security. AI compute has a specific HBM/server-memory mechanism, while Terafab has a potential transitional memory/foundry/packaging mechanism but may duplicate the accepted common-GDR edge; both remain clearly labelled candidates pending separate dependent relationship reviews.",
+          "source": "Canonical idea catalog and relationship table"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1VJKHZG5F4FQJWETGQ7TKZY.json",
+        "data/operations/payloads/01M1VJKSSG7HT2WGAMRRQT61KS.json",
+        "data/runs/daily-20260906T135138Z/01KZXXN28RT6NFN3258NZ538J2/assessment_upsert_request.json",
+        "data/runs/daily-20260906T135138Z/01KZXXN28RT6NFN3258NZ538J2/assessment_upsert_request_v2.json",
+        "data/runs/daily-20260906T135138Z/01KZXXN28RT6NFN3258NZ538J2/enqueue_relationship_ai_compute_request.json",
+        "data/runs/daily-20260906T135138Z/01KZXXN28RT6NFN3258NZ538J2/enqueue_relationship_terafab_request.json",
+        "data/runs/daily-20260906T135138Z/01KZXXN28RT6NFN3258NZ538J2/security_upsert_request.json",
+        "data/runs/daily-20260906T135138Z/01KZXXN28RT6NFN3258NZ538J2/source_samsung_preferred_gdr_identity_refresh_request.json",
+        "data/runs/daily-20260906T135138Z/01KZXXN28RT6NFN3258NZ538J2/source_samsung_preferred_q2_2026_results_refresh_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_d08d763780400dfbffce.md"
+      ],
+      "operation_id": "01KZXXN28RT6NFN3258NZ538J2",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260906T135138Z/01KZXXN28RT6NFN3258NZ538J2/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed exactly one repeat security review for Samsung Electronics preferred GDR using current issuer listing information, the unchanged Q2 2026 results, and canonical market/FX state. The September 4 bullish MACD crossover followed a 16.70% gain from August 7, but only eleven units traded across twenty-one sessions and the crossover session reported zero volume, so the move is constructive technical momentum and non-actionable market noise. Updated the security page and structured row, refreshed two primary sources, and appended schema-v2 assessment assessment_2b2b7e8f458cbfafe3cb linked to assessment_27be4a94f4e72cdda9dc. Valuation remains unsupported because preferred-GDR conversion, same-time cross-venue parity and normalized through-cycle earnings remain unresolved; liquidity_insufficient and valuation_unsupported keep the deterministic conclusion Unrated / Watch and allocation-ineligible. Enqueued two dependent candidate relationship reviews and created no strategy, signal, order, allocation or accounting change."
+    },
+    {
+      "completed_at": "2026-09-06T14:57:52Z",
+      "daily_cycle_id": "daily-20260906T135138Z",
+      "daily_report_items": [
+        "Ternium ADS research completed: Q2 operating recovery remains intact, but unchanged USD 28/USD 50/USD 78 scenarios imply USD 51.50 weighted value versus USD 58; deterministic disposition remains Hold / Watch and allocation-ineligible.",
+        "The 4 September bullish MACD crossover is constructive momentum but not an actionable opportunity because RSI remains overbought, price exceeds the upper Bollinger band, and valuation and downside gates fail.",
+        "Queued the required dependent nearshoring idea refresh; an overdue canonical relationship review was already ready, and no strategy or paper order was created."
+      ],
+      "entity_id": "security_2c779e81c27b78c556bb",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The SEC-filed consolidated interim statements confirm first-half results and the June 30 balance sheet, including USD 16.739 billion total equity, USD 2.844 billion borrowings and USD 1.431 billion cash and cash equivalents.",
+          "observed_at": "2026-09-06T14:48:45Z",
+          "source": "Ternium consolidated interim financial statements at June 30, 2026",
+          "source_hash": "41d1c8df3c5ec34e72bc69d150fe3d930edcaa8b857168938594975887142b1a",
+          "url": "https://www.sec.gov/Archives/edgar/data/1342874/000134287426000046/a2026junternium6-k.htm"
+        },
+        {
+          "claim": "The issuer's SEC-filed Q2 release reports USD 4.340 billion net sales, USD 717 million adjusted EBITDA, 3.858 million tonnes of steel shipments and USD 344 million equity-holder net income; these operating facts and normalized valuation assumptions are unchanged from the prior review.",
+          "observed_at": "2026-09-06T14:48:45Z",
+          "source": "Ternium Q2 and first-half 2026 results",
+          "url": "https://www.sec.gov/Archives/edgar/data/1342874/000134287426000044/prternium2q2026.htm"
+        },
+        {
+          "claim": "Canonical market state records a USD 58 adjusted close on 2026-09-04 after a 7.6065989927% 2026-08-07 through 2026-09-04 gain; MACD 1.889357 crossed above signal 1.855782 while RSI was 73.756614 and the upper Bollinger band was USD 57.548894.",
+          "observed_at": "2026-09-06T13:51:39Z",
+          "source": "Canonical PaperTrader market cache and alert payload",
+          "source_hash": "472bbce1f25ff9100c5d1ad8810263a6a74008c125077b216d69f3e4a3ac25e2"
+        },
+        {
+          "claim": "Deterministic assessment assessment_e609a14a4ea7b39f470c links predecessor assessment_3a1b8b9698c3bc096930 and derives USD 51.50 probability-weighted fair value, -11.2068965517% expected return, -8.4051724138% confidence-adjusted expected return, USD 40 buy-below price, Hold / Watch and allocation ineligibility.",
+          "source": "Canonical PaperTrader assessment state"
+        },
+        {
+          "claim": "The complete maintained idea catalog was searched. The accepted nearshoring relationship remains the only specific material causal edge; unrelated maintained themes were rejected for lacking a direct material transmission mechanism. Its canonical refresh is already represented by ready operation 01KYY98DWGR67KXCBSSSD496KC.",
+          "source": "Canonical PaperTrader idea catalog, relationship state and operation queue"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1VKDMY8EQREY7T6KNM71VFD.json",
+        "data/runs/daily-20260906T135138Z/01KZYPF0GRFAGJFDT0130F89HA/assessment_upsert_request.json",
+        "data/runs/daily-20260906T135138Z/01KZYPF0GRFAGJFDT0130F89HA/assessment_upsert_request_v2.json",
+        "data/runs/daily-20260906T135138Z/01KZYPF0GRFAGJFDT0130F89HA/assessment_upsert_request_v3.json",
+        "data/runs/daily-20260906T135138Z/01KZYPF0GRFAGJFDT0130F89HA/assessment_upsert_request_v4.json",
+        "data/runs/daily-20260906T135138Z/01KZYPF0GRFAGJFDT0130F89HA/assessment_upsert_request_v5.json",
+        "data/runs/daily-20260906T135138Z/01KZYPF0GRFAGJFDT0130F89HA/enqueue_idea_refresh_request.json",
+        "data/runs/daily-20260906T135138Z/01KZYPF0GRFAGJFDT0130F89HA/security_upsert_request.json",
+        "data/runs/daily-20260906T135138Z/01KZYPF0GRFAGJFDT0130F89HA/source_ternium_h1_2026_financials_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_2c779e81c27b78c556bb.md"
+      ],
+      "operation_id": "01KZYPF0GRFAGJFDT0130F89HA",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260906T135138Z/01KZYPF0GRFAGJFDT0130F89HA/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed exactly one Ternium S.A. ADS security review. SEC-filed interim statements confirm the prior Q2 operating and balance-sheet evidence, while no later operating-results filing changes normalized assumptions. The 4 September bullish MACD crossover follows a 7.61% alert-period gain, but RSI 73.76 and a USD 58 close above the upper Bollinger band indicate adverse entry timing. Unchanged USD 28/USD 50/USD 78 scenarios produce USD 51.50 probability-weighted value, -11.21% expected return and a deterministic Hold / Watch, allocation-ineligible disposition. Updated the security page and structured row, registered current primary evidence, appended assessment assessment_e609a14a4ea7b39f470c linked to its predecessor, and enqueued the required dependent nearshoring idea refresh. The overdue accepted relationship already has one ready relationship-research operation, so no duplicate was created. No strategy, signal, order, allocation, execution, cash, portfolio, or performance state changed."
+    },
+    {
+      "completed_at": "2026-09-06T17:51:34Z",
+      "daily_cycle_id": "daily-20260906T173801Z",
+      "daily_report_items": [
+        "Corsair Gaming research completed: unchanged Q2 evidence and USD 6.60/USD 12.00/USD 18.90 scenarios imply USD 12.03 weighted value versus the USD 12.72 mark; deterministic disposition remains Hold / Watch and allocation-ineligible.",
+        "The 4 September bullish MACD crossover is verified but non-actionable because volume did not confirm it, no newer operating filing changed the thesis, and expected, base, downside-payoff, margin-of-safety and relationship gates fail.",
+        "All 29 maintained ideas were searched; no accepted or plausible candidate relationship exists, and no strategy, signal, paper order or follow-up operation was created."
+      ],
+      "entity_id": "security_55c9ce2fdcd32dad6b8c",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The unchanged Form 10-Q supports the current normalized assessment, including USD 193.9 million cash and restricted cash, approximately USD 118.3 million debt and 25.7% first-half Amazon revenue concentration.",
+          "observed_at": "2026-09-06T17:44:28Z",
+          "source": "Corsair Gaming, Inc. quarterly report for the quarter ended June 30, 2026",
+          "source_hash": "e306380d66a43eec2c3b8a7859e5fdcfaa257af07cedef5e35487f1e30cd5363",
+          "url": "https://www.sec.gov/Archives/edgar/data/1743759/000119312526337981/crsr-20260630.htm"
+        },
+        {
+          "claim": "The unchanged SEC-filed release reports USD 314.3 million revenue, USD 104.3 million gross profit, USD 16.6 million underlying adjusted EBITDA after excluding the tariff refund, segment divergence and raised full-year guidance.",
+          "observed_at": "2026-09-06T17:44:28Z",
+          "source": "Corsair Gaming Reports Second Quarter 2026 Financial Results",
+          "source_hash": "b1bb3ca94486c7d4370c5a6d071f01b01b2902e343a529fffb4796e48f6d201e",
+          "url": "https://www.sec.gov/Archives/edgar/data/1743759/000119312526337943/crsr-ex99_1.htm"
+        },
+        {
+          "claim": "The current SEC index lists the August 6 Form 10-Q and earnings 8-K as the latest operating filings; later filings through August 28 are Forms 4 and one Form 144, so no newer periodic operating evidence supersedes Q2.",
+          "observed_at": "2026-09-06T17:44:28Z",
+          "source": "Corsair Gaming, Inc. SEC submissions index checked 2026-09-06",
+          "source_hash": "7927b90508f3cf7ebc05f98a20f4dfb450b775a71db340b46883133a91f7a218",
+          "url": "https://data.sec.gov/submissions/CIK0001743759.json"
+        },
+        {
+          "claim": "The 4 September adjusted close was USD 12.720000267028809; MACD 0.36512167 crossed above signal 0.35778068, RSI was 59.60163408, the 20-session return was 6.000002%, and volume z-score was -1.0972533 over the exact 7 August through 4 September observation period.",
+          "observed_at": "2026-09-06T17:38:02Z",
+          "source": "Canonical PaperTrader market cache and alert payload",
+          "source_hash": "662739264c26346d077e5398505a133302173e2d54cba03530f564126b678f58"
+        },
+        {
+          "claim": "Assessment assessment_2ca5f196939895f07d63 links predecessor assessment_3e49d9649a25ad388d36 and derives USD 12.03 probability-weighted fair value, -5.424530287293635% expected return, -4.068397715470226% confidence-adjusted expected return, USD 9.60 buy-below price, Hold / Watch and allocation ineligibility.",
+          "source": "Canonical PaperTrader assessment state"
+        },
+        {
+          "claim": "All 29 maintained idea pages and canonical relationships were searched. No accepted relationship exists; the digital-attention thematic comparison and all other maintained themes were rejected for lacking a current, specific and material causal transmission mechanism, so no relationship or idea follow-up is required.",
+          "source": "Canonical PaperTrader idea catalog and relationship state"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/runs/daily-20260906T173801Z/01M0303PQ0QPDFP335PHBAXSTN/assessment_upsert_request.json",
+        "data/runs/daily-20260906T173801Z/01M0303PQ0QPDFP335PHBAXSTN/security_upsert_request.json",
+        "data/runs/daily-20260906T173801Z/01M0303PQ0QPDFP335PHBAXSTN/source_crsr_q2_2026_10q_refresh_request.json",
+        "data/runs/daily-20260906T173801Z/01M0303PQ0QPDFP335PHBAXSTN/source_crsr_q2_2026_results_refresh_request.json",
+        "data/runs/daily-20260906T173801Z/01M0303PQ0QPDFP335PHBAXSTN/source_crsr_sec_submissions_20260906_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_55c9ce2fdcd32dad6b8c.md"
+      ],
+      "operation_id": "01M0303PQ0QPDFP335PHBAXSTN",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260906T173801Z/01M0303PQ0QPDFP335PHBAXSTN/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed exactly one repeat security review for Corsair Gaming, Inc. The Q2 Form 10-Q and SEC-filed results release were re-fetched at unchanged hashes, and the current SEC submissions index shows no newer operating filing. The 4 September bullish MACD crossover is verified but lacks volume or fresh fundamental confirmation, so it is monitoring noise rather than a trade signal. Unchanged USD 6.60/USD 12.00/USD 18.90 scenarios produce USD 12.03 probability-weighted value versus the USD 12.72 mark, -5.42% expected return and a deterministic Hold / Watch, allocation-ineligible disposition. Updated the security page and structured row, added two analytical charts, registered current evidence, and appended assessment assessment_2ca5f196939895f07d63 linked to its predecessor. The complete idea catalog has no accepted or plausible unaccepted causal edge, and the conviction gate fails, so no follow-up, strategy, signal or paper order was created. No allocation, execution, cash, portfolio or performance state changed."
+    }
+  ],
+  "run_id": "daily-20260906T173801Z",
+  "target_minutes": 20,
+  "target_words": 3000,
+  "unresolved_research_gaps": [
+    {
+      "completed_at": "2026-09-06T11:58:00Z",
+      "daily_cycle_id": "daily-20260906T114339Z",
+      "daily_report_items": [
+        "Xometry security review failed closed: the payload issuer identity conflicts with the canonical security row. Four primary sources were retained and issue_5fbb8df7c71c7f98ab2e records the candidate-scoped blocker; no assessment or investment-state change was made."
+      ],
+      "entity_id": "security_c2e6db30cb59254de418",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "security_c2e6db30cb59254de418 is canonically bound to issuer_dbdde9b294689a9af3d5; the validated operation payload supplied issuer_0b3fe347955c2ce31e63, so the security upsert failed with an immutable identity conflict.",
+          "observed_at": "2026-09-06T11:53:53Z",
+          "source": "Canonical PaperTrader securities.csv row"
+        },
+        {
+          "claim": "Audited annual evidence was retrieved and registered for revenue, gross profit, GAAP operating losses, operating cash flow, stock compensation and risk review.",
+          "observed_at": "2026-09-06T11:49:16Z",
+          "source": "Xometry 2025 Form 10-K",
+          "source_hash": "bc139297d8422ada5bf4ed7f558892fb9c2741d1f41695a26892103966fe0bb3",
+          "url": "https://www.sec.gov/Archives/edgar/data/1657573/000119312526066959/xmtr-20251231.htm"
+        },
+        {
+          "claim": "The current quarterly filing was retrieved and registered, including Q2 operating results, liquidity, convertible notes, share count, cash flow and risk evidence.",
+          "observed_at": "2026-09-06T11:49:16Z",
+          "source": "Xometry Q2 2026 Form 10-Q",
+          "source_hash": "058f9c8a640ddad02646df6211407021fc189f621c8026d84be58d8ec0a1a28d",
+          "url": "https://www.sec.gov/Archives/edgar/data/1657573/000119312526332776/xmtr-20260630.htm"
+        },
+        {
+          "claim": "The filed results release was retrieved and registered, including Marketplace growth, active-buyer and large-account metrics and the GAAP/non-GAAP bridge.",
+          "observed_at": "2026-09-06T11:49:16Z",
+          "source": "Xometry Q2 2026 results exhibit",
+          "source_hash": "ca86e738aa8ee091331cac482d1caaeb89034e9a7810c4fe72bd4538b644eb3c",
+          "url": "https://www.sec.gov/Archives/edgar/data/1657573/000119312526331547/xmtr-ex99_1.htm"
+        },
+        {
+          "claim": "The issuer's geometry, quoting, customer-history, supplier-performance and delivery-data mechanism was retrieved and registered; it does not quantify AI-originated paid demand or incremental unit economics.",
+          "observed_at": "2026-09-06T11:49:16Z",
+          "source": "Xometry AI-native marketplace release",
+          "source_hash": "734ebab1de9038edb841f16e09a451822a60e87113d96b21b65db80f4f44f4df",
+          "url": "https://investors.xometry.com/news-releases/news-release-details/xometry-deepens-ai-native-marketplace-advantage-new-enterprise"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/issues.md",
+        "data/runs/daily-20260906T114339Z/01M1V1E3YGYYPSJV217TRVMW8R/issue_identity_conflict_request.json",
+        "data/runs/daily-20260906T114339Z/01M1V1E3YGYYPSJV217TRVMW8R/security_upsert_request.json",
+        "data/runs/daily-20260906T114339Z/01M1V1E3YGYYPSJV217TRVMW8R/security_upsert_request_v2.json",
+        "data/runs/daily-20260906T114339Z/01M1V1E3YGYYPSJV217TRVMW8R/security_upsert_request_v3.json",
+        "data/runs/daily-20260906T114339Z/01M1V1E3YGYYPSJV217TRVMW8R/source_xmtr_2025_10k_request.json",
+        "data/runs/daily-20260906T114339Z/01M1V1E3YGYYPSJV217TRVMW8R/source_xmtr_ai_marketplace_20260303_request.json",
+        "data/runs/daily-20260906T114339Z/01M1V1E3YGYYPSJV217TRVMW8R/source_xmtr_q2_2026_10q_request.json",
+        "data/runs/daily-20260906T114339Z/01M1V1E3YGYYPSJV217TRVMW8R/source_xmtr_q2_2026_results_request.json",
+        "data/tables/issues.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv"
+      ],
+      "operation_id": "01M1V1E3YGYYPSJV217TRVMW8R",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260906T114339Z/01M1V1E3YGYYPSJV217TRVMW8R/agent_result.json",
+      "status": "failed",
+      "summary": "Failed closed because the operation payload binds Xometry security_c2e6db30cb59254de418 to issuer_0b3fe347955c2ce31e63, while canonical securities.csv binds that immutable security to issuer_dbdde9b294689a9af3d5. Four current primary sources were registered, the conflict was recorded as an affects-candidate issue, and the incomplete research page was removed. No security row, assessment, relationship, strategy, signal, order, allocation, ledger, portfolio, or performance state was changed."
+    },
+    {
+      "completed_at": "2026-09-06T15:18:50Z",
+      "daily_cycle_id": "daily-20260906T135138Z",
+      "daily_report_items": [],
+      "entity_id": "security_55c9ce2fdcd32dad6b8c",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "visualization_review charts do not match chart ids in changed research pages: expected [('data/wiki/securities/security_55c9ce2fdcd32dad6b8c.md', 'q2-segment-economics'), ('data/wiki/securities/security_55c9ce2fdcd32dad6b8c.md', 'valuation-scenarios-20260906')], got [('data/wiki/securities/security_55c9ce2fdcd32dad6b8c.md', 'q2-segment-economics'), ('data/wiki/securities/security_55c9ce2fdcd32dad6b8c.md', 'valuation-scenarios-versus-current-mark')]",
+          "source": "data/runs/daily-20260906T135138Z/01M0303PQ0QPDFP335PHBAXSTN/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "visualization_review charts do not match chart ids in changed research pages: expected [('data/wiki/securities/security_55c9ce2fdcd32dad6b8c.md', 'q2-segment-economics'), ('data/wiki/securities/security_55c9ce2fdcd32dad6b8c.md', 'valuation-scenarios-20260906')], got [('data/wiki/securities/security_55c9ce2fdcd32dad6b8c.md', 'q2-segment-economics'), ('data/wiki/securities/security_55c9ce2fdcd32dad6b8c.md', 'valuation-scenarios-versus-current-mark')]"
+      ],
+      "files_changed": [],
+      "operation_id": "01M0303PQ0QPDFP335PHBAXSTN",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260906T135138Z/01M0303PQ0QPDFP335PHBAXSTN/validation_report.json",
+      "status": "failed",
+      "summary": "The accepted research did not produce a valid result."
+    },
+    {
+      "completed_at": "2026-09-06T18:01:09Z",
+      "daily_cycle_id": "daily-20260906T173801Z",
+      "daily_report_items": [],
+      "entity_id": "security_61567714298b9563d1a9",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "Hermes exited with status 1",
+          "source": "data/runs/daily-20260906T173801Z/01M0ADQYN0X476BW9MK1FK33FB/validation_report.json"
+        },
+        {
+          "claim": "agent result is missing or a symlink: data/runs/daily-20260906T173801Z/01M0ADQYN0X476BW9MK1FK33FB/agent_result.json",
+          "source": "data/runs/daily-20260906T173801Z/01M0ADQYN0X476BW9MK1FK33FB/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "Hermes exited with status 1",
+        "agent result is missing or a symlink: data/runs/daily-20260906T173801Z/01M0ADQYN0X476BW9MK1FK33FB/agent_result.json"
+      ],
+      "files_changed": [],
+      "operation_id": "01M0ADQYN0X476BW9MK1FK33FB",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260906T173801Z/01M0ADQYN0X476BW9MK1FK33FB/validation_report.json",
+      "status": "failed",
+      "summary": "The accepted research did not produce a valid result."
+    }
+  ],
+  "wiki_orientation_paths": [
+    "data/wiki/SCHEMA.md",
+    "data/wiki/index.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/log.md"
+  ],
+  "window_mode": "since_previous_successful_podcast",
+  "window_start_exclusive": "2026-09-06T00:11:13Z"
+}

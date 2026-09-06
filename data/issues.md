@@ -21,5 +21,7 @@ Generated from `data/tables/issues.csv`.
 | affects_candidate | error | **issue_c87e986423310946f39f** — Hermes operation validation failed: 01M07XKZS0JKBQM0THMPJGWEK5 | 2026-09-02T16:12:05Z | controller | 01M07XKZS0JKBQM0THMPJGWEK5 |
 | publication_only | error | **issue_cd9f6a9e31874e85f842** — Hermes operation validation failed: 01M08D6FXRRXXACTTEQWSRA9JQ | 2026-08-17T17:49:26Z | delivery | 01M08D6FXRRXXACTTEQWSRA9JQ |
 | affects_candidate | error | **issue_d28f4a965952a2f0b258** — Hermes operation validation failed: 01KZ9ZJVERYZKAVXNTF2NZCECM | 2026-08-12T17:58:15Z | controller | 01KZ9ZJVERYZKAVXNTF2NZCECM |
+| publication_only | error | **issue_ee91c351d77e2ce1227d** — Hermes operation validation failed: 01M1VYR8ERXDZPERJWKM7ENAEJ | 2026-09-06T18:13:03Z | delivery | 01M1VYR8ERXDZPERJWKM7ENAEJ |
 | affects_candidate | error | **issue_f50e95ee4d3a5cc05618** — ASML assessment rejected after security row update | 2026-08-19T20:28:51Z | controller | 01M0DB44Q8R22ED9WQC5ZEG526 |
 | affects_candidate | error | **issue_ff655356efa9b9e1d1a8** — Hermes operation validation failed: 01KZPWPFS0QGMTYP3PD0TRQH6K | 2026-08-18T11:39:09Z | controller | 01KZPWPFS0QGMTYP3PD0TRQH6K |
+| publication_only | warning | **issue_0a0538dac64a47da563b** — Daily podcast failed: daily-20260906T173801Z | 2026-09-06T18:13:04Z | delivery | 01M1VYR8ERXDZPERJWKM7ENAEJ |
