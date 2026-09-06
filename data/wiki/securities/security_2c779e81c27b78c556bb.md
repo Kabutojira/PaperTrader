@@ -4,12 +4,12 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-26"
-updated: "2026-08-06"
-provenance: "source_ternium_q2_2026_results_sec; source_ternium_july_2026_sustainability_6k; source_ternium_q1_2026_results; source_ustr_usmca_joint_statement_20260723; deterministic market cache"
+updated: "2026-09-06"
+provenance: "source_ternium_h1_2026_financials_sec; source_ternium_q2_2026_results_sec; source_ternium_july_2026_sustainability_6k; source_ternium_q1_2026_results; source_ustr_usmca_joint_statement_20260723; deterministic market cache"
 security_id: security_2c779e81c27b78c556bb
 issuer_id: issuer_bc5aa26231f1e18e929d
 confidence: medium
-next_review: "2026-08-20"
+next_review: "2026-09-20"
 ---
 
 # Ternium S.A. ADS
@@ -44,6 +44,84 @@ This deterministic monitoring chart is derived from the repository-local market 
 ```
 <!-- papertrader:technical-chart:end -->
 
+The bullish MACD crossover improves short-term momentum, but the USD 58 close is above both the
+USD 57.55 upper Bollinger band and the unchanged USD 51.50 probability-weighted fair value. That
+combination is adverse entry timing rather than evidence that normalized earnings changed.
+
+```echart
+{
+  "schema_version": 1,
+  "chart_id": "quarterly-operating-recovery",
+  "kind": "series",
+  "title": "Quarterly shipments, sales, and adjusted EBITDA",
+  "description": "Ternium's second-quarter recovery combined higher shipments with stronger sales and adjusted EBITDA.",
+  "as_of": "2026-06-30",
+  "sources": [
+    {
+      "label": "Ternium second-quarter and first-half 2026 results filed with the SEC",
+      "url": "https://www.sec.gov/Archives/edgar/data/1342874/000134287426000044/prternium2q2026.htm",
+      "observed_at": "2026-09-06T14:48:45Z"
+    }
+  ],
+  "x_axis": {
+    "type": "category",
+    "label": "Quarter",
+    "values": ["Q2 2025", "Q1 2026", "Q2 2026"]
+  },
+  "y_axes": [
+    {"label": "USD million", "unit": "USD million", "format": "currency", "currency": "USD"},
+    {"label": "Steel shipments", "unit": "thousand tons", "format": "decimal"}
+  ],
+  "series": [
+    {"name": "Net sales", "render": "bar", "y_axis": 0, "values": ["3947", "3934", "4340"]},
+    {"name": "Adjusted EBITDA", "render": "line", "y_axis": 0, "values": ["403", "479", "717"]},
+    {"name": "Steel shipments", "render": "line", "y_axis": 1, "values": ["3719", "3709", "3858"]}
+  ],
+  "notes": [
+    "Adjusted EBITDA is the issuer's non-GAAP measure; net sales and shipments use the issuer's consistent quarterly definitions.",
+    "The three observations show recovery, not a complete steel cycle, so valuation continues to use normalized rather than annualized peak earnings."
+  ]
+}
+```
+
+```echart
+{
+  "schema_version": 1,
+  "chart_id": "valuation-scenarios-versus-market",
+  "kind": "series",
+  "title": "Valuation scenarios versus the September market price",
+  "description": "The unchanged normalized-earnings scenarios leave both base and probability-weighted value below the September 4 adjusted close.",
+  "as_of": "2026-09-04",
+  "sources": [
+    {
+      "label": "Ternium Q2 and H1 2026 SEC filings",
+      "url": "https://www.sec.gov/Archives/edgar/data/1342874/000134287426000046/a2026junternium6-k.htm",
+      "observed_at": "2026-09-06T14:48:45Z"
+    },
+    {
+      "label": "PaperTrader deterministic adjusted market cache",
+      "observed_at": "2026-09-06T13:51:39Z"
+    }
+  ],
+  "x_axis": {
+    "type": "category",
+    "label": "Reference",
+    "values": ["Bear", "Base", "Weighted value", "Market price", "Bull"]
+  },
+  "y_axes": [
+    {"label": "USD per ADS", "unit": "USD", "format": "currency", "currency": "USD"}
+  ],
+  "series": [
+    {"name": "Value", "render": "bar", "y_axis": 0, "values": ["28", "50", "51.5", "58", "78"]}
+  ],
+  "notes": [
+    "Each ADS represents ten ordinary shares.",
+    "Bear, base, and bull probabilities remain 25%, 50%, and 25%; the market price is not assigned a scenario probability.",
+    "The chart is presentation only and does not feed the assessment or allocation state."
+  ]
+}
+```
+
 ## Identity
 
 - Immutable security: `security_2c779e81c27b78c556bb`
@@ -58,23 +136,30 @@ link; deterministic price alerts are market context, not fundamental evidence.
 
 ## Changes since prior review
 
-- **New evidence:** Ternium reported Q2 2026 revenue of USD 4.34 billion, adjusted EBITDA of USD
-  717 million at a 17% margin, and equity-holder net income of USD 344 million, or USD 1.75 per ADS.
-  Steel shipments rose 4% sequentially and year over year to 3.858 million tonnes.
-- **Thesis:** Stronger Mexican market conditions, import substitution and recovering commercial
-  shipments improve the operating evidence for the accepted nearshoring mechanism. The Pesquería
-  steel shop was described as progressing on schedule, but the issuer still disclosed no
-  project-specific utilization, customer qualification, return, or attributable earnings.
-- **Balance sheet and cash:** Q2 operating cash flow was USD 256 million after a USD 418 million
-  working-capital build, below USD 431 million of capex. Ternium moved from USD 327 million net cash
-  at March end to USD 112 million net debt at June end after capex and the final 2025 dividend.
-- **Valuation:** The prior one-quarter annualization is replaced by a complete cyclical normalized-
-  earnings assessment. USD 28/USD 50/USD 78 bear/base/bull values imply USD 51.50 weighted value
-  against the fresher USD 53.71 mark. Better results do not create a margin of safety after the rally.
-- **Alerts and decision:** From 8 July through 5 August, the adjusted close rose 25.23%; the 5 August
-  session added 6.69% on 1.62 million shares. RSI 78.07, a close above the USD 52.19 upper band, and
-  a 2.42 volume z-score make the merged alerts adverse entry timing rather than an independent
-  signal. The conclusion remains Hold / Watch, with no strategy or paper order.
+- **Evidence:** The SEC-filed consolidated interim statements confirm the first-half income
+  statement, share count, debt, liquidity and contingent-liability detail used in the prior review.
+  The SEC submissions index shows no later operating-results filing through 6 September; the
+  intervening August filings are specialized-disclosure reports rather than new trading evidence.
+- **Facts and thesis:** The last reported operating facts remain Q2 revenue of USD 4.34 billion,
+  adjusted EBITDA of USD 717 million, 3.858 million tonnes of steel shipments and USD 344 million
+  of equity-holder net income. Mexican demand and import substitution still support the accepted
+  nearshoring mechanism, but Pesquería utilization, customer qualification and project returns
+  remain undisclosed. The thesis score and medium confidence are unchanged.
+- **Balance sheet, catalysts, risks, blockers and gaps:** June net debt of USD 112 million and Q2
+  operating cash flow below capex remain manageable but constraining. Commissioning, customer
+  qualification, working-capital release and USMCA policy remain the catalysts; cyclicality,
+  non-Mexican exposures, Usiminas, currencies and trade policy remain risks. There is no new hard
+  blocker. Medium confidence, normalization uncertainty, weak timing and insufficient margin of
+  safety remain soft gaps; none was resolved by the technical crossover.
+- **Valuation assumptions and outputs:** USD 28/USD 50/USD 78 bear/base/bull fair values and
+  25%/50%/25% probabilities are unchanged because no new fundamental evidence supports revising
+  normalized ADS earnings or multiples. Weighted value remains USD 51.50, now compared with the
+  fresher USD 58 mark rather than USD 53.71, worsening the expected, base and bear return frontier.
+- **Alert, rating and action:** From 7 August through 4 September, adjusted close rose 7.61% to USD
+  58. MACD crossed above its signal by 0.0336, while RSI remained overbought at 73.76 and price
+  stayed above the USD 57.55 upper band. This is constructive momentum but adverse entry timing,
+  not a fundamental opportunity. The conclusion remains **Hold / Watch**, with no strategy,
+  signal or paper order.
 
 ## Economics and thesis
 
@@ -103,6 +188,7 @@ margin, yet this is forward-looking guidance rather than realized cash conversio
 | Pesquería's steel shop was progressing on schedule. | Schedule risk eased, while commissioning, customer qualification, utilization and returns remain unproven. |
 
 Primary evidence: [Ternium's SEC-filed Q2 2026 results](https://www.sec.gov/Archives/edgar/data/1342874/000134287426000044/prternium2q2026.htm),
+the [SEC-filed consolidated interim financial statements](https://www.sec.gov/Archives/edgar/data/1342874/000134287426000046/a2026junternium6-k.htm),
 the [8 July 2026 sustainability filing](https://www.sec.gov/Archives/edgar/data/1342874/000155485526001509/MainDocument.htm),
 [Q1 2026 results](https://www.sec.gov/Archives/edgar/data/1342874/000134287426000030/prternium1q2026.htm),
 and the [23 July U.S.-Mexico USMCA-review statement](https://ustr.gov/about/policy-offices/press-office/press-releases/2026/july/joint-statement-ambassador-jamieson-greer-and-mexican-secretary-economy-marcelo-ebrard).
@@ -116,8 +202,9 @@ and an 8 times multiple for weak steel pricing, working-capital pressure and ram
 USD 28. The **base** case uses USD 5.00 and 10 times for improved but cyclical margins, yielding USD
 50. The **bull** case uses USD 6.50 and 12 times for sustained Mexican volume, favorable pricing and
 clean commissioning, yielding USD 78. At 25%/50%/25%, weighted value is USD 51.50 versus the USD
-53.71 mark. The base case has 6.91% downside and the bear case 47.87% downside, so payoff asymmetry
-and margin of safety fail despite the bull case's 45.22% upside.
+58 mark. Base and bear values are now further below market, so payoff asymmetry and margin of
+safety fail despite the bull case remaining above market. The deterministic assessment owns the
+exact return calculations.
 
 Catalysts are further Mexican shipment and margin growth, customer qualification, on-schedule
 steel-shop commissioning, working-capital release and operating cash flow above capex. Invalidate
@@ -129,8 +216,9 @@ elevated, or Usiminas, currencies, litigation and non-Mexican operations absorb 
 
 Status: **watching**, allocation eligibility **ineligible**, conviction tier **watch**, confidence
 **medium**. Canonical conclusion: **Hold / Watch**. Results materially improved, the accepted
-relationship remains current, and the balance sheet is still manageable. Nevertheless, negative
-weighted and base returns, severe bear asymmetry, no margin of safety, incomplete project-level
-economics, and overbought post-results timing block allocation and strategy work. Review by
-**2026-08-20**, or earlier after material commissioning, cash-conversion, trade-policy, or pricing
-evidence. See the complete [[research-catalog]] and append-only [[log]].
+relationship remains economically supported but is overdue for its separate canonical refresh,
+and the balance sheet is still manageable. Nevertheless, negative weighted and base returns,
+severe bear asymmetry, no margin of safety, incomplete project-level economics, and an overbought
+price above the upper band block allocation and strategy work. Review by **2026-09-20**, or earlier
+after material commissioning, cash-conversion, trade-policy, or pricing evidence. See the complete
+[[research-catalog]] and append-only [[log]].

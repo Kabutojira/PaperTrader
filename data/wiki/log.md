@@ -3399,3 +3399,9 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Verified the September 4 bullish MACD crossover after a 16.70% alert-window gain, but classified it as constructive technical momentum and non-actionable market noise because the latest session had zero volume and only eleven units traded across twenty-one sessions.
 - Kept valuation unsupported: fresh EUR and KRW/EUR state does not resolve preferred-GDR conversion, same-time cross-venue parity, normalized-cycle earnings or routine Vienna liquidity. The deterministic assessment remains Watch and allocation-ineligible.
 - Proposed bounded dependent relationship reviews for [[ideas/idea_ai_compute_networking_hyperscaler_monetization]] and [[ideas/idea_terafab_ai_industrial_stack]] without presenting either candidate as accepted; no strategy, signal or paper order was created.
+
+## [2026-09-06] update | Ternium valuation and bullish MACD review
+- Refreshed [[securities/security_2c779e81c27b78c556bb|Ternium ADS]] from its SEC-filed interim statements, unchanged Q2 operating evidence and the exact 7 August-4 September market period.
+- Verified a bullish MACD crossover after a 7.61% period gain, but classified it as constructive momentum and adverse entry timing because RSI remained overbought and the USD 58 close exceeded both the upper Bollinger band and probability-weighted fair value.
+- Retained USD 28/USD 50/USD 78 bear/base/bull fair values with 25%/50%/25% probabilities; unchanged normalized assumptions and a higher mark preserve Hold / Watch and block strategy work.
+- Added quarterly operating and scenario charts, searched the complete idea catalog, retained the accepted but overdue nearshoring relationship, and created no unrelated candidate edge.

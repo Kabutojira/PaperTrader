@@ -1,0 +1,18 @@
+{
+  "source_id": "source_ternium_h1_2026_financials_sec",
+  "url": "https://www.sec.gov/Archives/edgar/data/1342874/000134287426000046/a2026junternium6-k.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1342874/000134287426000046/a2026junternium6-k.htm",
+  "source_type": "filing",
+  "title": "Ternium consolidated interim financial statements at June 30, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "41d1c8df3c5ec34e72bc69d150fe3d930edcaa8b857168938594975887142b1a",
+  "related_entity_ids": "idea_nearshoring_friendshoring_manufacturing|security_2c779e81c27b78c556bb",
+  "checked_at": "2026-09-06T14:48:45Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "At June 30, 2026, total equity was USD 16.739 billion, borrowings were USD 2.844 billion, and cash and cash equivalents were USD 1.431 billion.",
+  "summary": "The SEC-filed interim statements confirm Ternium's first-half income statement, balance sheet, cash flow, share count, debt and contingent-liability detail underlying the Q2 assessment.",
+  "run_id": "daily-20260906T135138Z"
+}

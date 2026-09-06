@@ -1,0 +1,19 @@
+{
+  "entity_id": "idea_nearshoring_friendshoring_manufacturing",
+  "entity_type": "idea",
+  "inputs": {
+    "idea_id": "idea_nearshoring_friendshoring_manufacturing",
+    "security_id": "security_2c779e81c27b78c556bb",
+    "security_research_operation_id": "01KZYPF0GRFAGJFDT0130F89HA",
+    "security_research_result_path": "data/runs/daily-20260906T135138Z/01KZYPF0GRFAGJFDT0130F89HA/agent_result.json",
+    "seed_claim": "Ternium's Q2 operating recovery and accepted Mexican nearshoring mechanism remain intact, but unchanged USD 28/USD 50/USD 78 scenarios and a USD 58 mark after a bullish MACD crossover preserve Hold / Watch, weak entry timing and no margin of safety."
+  },
+  "objective": "Refresh the nearshoring and friendshoring manufacturing idea from Ternium's September alert review, including candidate disposition, thesis, catalysts, risks, gates, confidence and the broader investable-security universe.",
+  "operation_id": "01M1VKDMY8EQREY7T6KNM71VFD",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/relationships/relationship_510158d3d515d91d5c14.md",
+    "data/wiki/securities/security_2c779e81c27b78c556bb.md"
+  ]
+}

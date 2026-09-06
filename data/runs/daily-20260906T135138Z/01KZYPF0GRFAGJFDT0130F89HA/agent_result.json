@@ -1,0 +1,123 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_2c779e81c27b78c556bb",
+    "papertrader research source record --request data/runs/daily-20260906T135138Z/01KZYPF0GRFAGJFDT0130F89HA/source_ternium_h1_2026_financials_request.json",
+    "papertrader wiki sync-technical-charts",
+    "papertrader research security upsert --request data/runs/daily-20260906T135138Z/01KZYPF0GRFAGJFDT0130F89HA/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260906T135138Z/01KZYPF0GRFAGJFDT0130F89HA/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260906T135138Z/01KZYPF0GRFAGJFDT0130F89HA/assessment_upsert_request_v2.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260906T135138Z/01KZYPF0GRFAGJFDT0130F89HA/assessment_upsert_request_v3.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260906T135138Z/01KZYPF0GRFAGJFDT0130F89HA/assessment_upsert_request_v4.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260906T135138Z/01KZYPF0GRFAGJFDT0130F89HA/assessment_upsert_request_v5.json",
+    "papertrader queue enqueue --request data/runs/daily-20260906T135138Z/01KZYPF0GRFAGJFDT0130F89HA/enqueue_idea_refresh_request.json",
+    "papertrader research assessment-get --assessment-id assessment_e609a14a4ea7b39f470c",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Ternium ADS research completed: Q2 operating recovery remains intact, but unchanged USD 28/USD 50/USD 78 scenarios imply USD 51.50 weighted value versus USD 58; deterministic disposition remains Hold / Watch and allocation-ineligible.",
+    "The 4 September bullish MACD crossover is constructive momentum but not an actionable opportunity because RSI remains overbought, price exceeds the upper Bollinger band, and valuation and downside gates fail.",
+    "Queued the required dependent nearshoring idea refresh; an overdue canonical relationship review was already ready, and no strategy or paper order was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The SEC-filed consolidated interim statements confirm first-half results and the June 30 balance sheet, including USD 16.739 billion total equity, USD 2.844 billion borrowings and USD 1.431 billion cash and cash equivalents.",
+      "observed_at": "2026-09-06T14:48:45Z",
+      "source": "Ternium consolidated interim financial statements at June 30, 2026",
+      "source_hash": "41d1c8df3c5ec34e72bc69d150fe3d930edcaa8b857168938594975887142b1a",
+      "url": "https://www.sec.gov/Archives/edgar/data/1342874/000134287426000046/a2026junternium6-k.htm"
+    },
+    {
+      "claim": "The issuer's SEC-filed Q2 release reports USD 4.340 billion net sales, USD 717 million adjusted EBITDA, 3.858 million tonnes of steel shipments and USD 344 million equity-holder net income; these operating facts and normalized valuation assumptions are unchanged from the prior review.",
+      "observed_at": "2026-09-06T14:48:45Z",
+      "source": "Ternium Q2 and first-half 2026 results",
+      "url": "https://www.sec.gov/Archives/edgar/data/1342874/000134287426000044/prternium2q2026.htm"
+    },
+    {
+      "claim": "Canonical market state records a USD 58 adjusted close on 2026-09-04 after a 7.6065989927% 2026-08-07 through 2026-09-04 gain; MACD 1.889357 crossed above signal 1.855782 while RSI was 73.756614 and the upper Bollinger band was USD 57.548894.",
+      "observed_at": "2026-09-06T13:51:39Z",
+      "source": "Canonical PaperTrader market cache and alert payload",
+      "source_hash": "472bbce1f25ff9100c5d1ad8810263a6a74008c125077b216d69f3e4a3ac25e2"
+    },
+    {
+      "claim": "Deterministic assessment assessment_e609a14a4ea7b39f470c links predecessor assessment_3a1b8b9698c3bc096930 and derives USD 51.50 probability-weighted fair value, -11.2068965517% expected return, -8.4051724138% confidence-adjusted expected return, USD 40 buy-below price, Hold / Watch and allocation ineligibility.",
+      "source": "Canonical PaperTrader assessment state"
+    },
+    {
+      "claim": "The complete maintained idea catalog was searched. The accepted nearshoring relationship remains the only specific material causal edge; unrelated maintained themes were rejected for lacking a direct material transmission mechanism. Its canonical refresh is already represented by ready operation 01KYY98DWGR67KXCBSSSD496KC.",
+      "source": "Canonical PaperTrader idea catalog, relationship state and operation queue"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M1VKDMY8EQREY7T6KNM71VFD.json",
+    "data/runs/daily-20260906T135138Z/01KZYPF0GRFAGJFDT0130F89HA/assessment_upsert_request.json",
+    "data/runs/daily-20260906T135138Z/01KZYPF0GRFAGJFDT0130F89HA/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260906T135138Z/01KZYPF0GRFAGJFDT0130F89HA/assessment_upsert_request_v3.json",
+    "data/runs/daily-20260906T135138Z/01KZYPF0GRFAGJFDT0130F89HA/assessment_upsert_request_v4.json",
+    "data/runs/daily-20260906T135138Z/01KZYPF0GRFAGJFDT0130F89HA/assessment_upsert_request_v5.json",
+    "data/runs/daily-20260906T135138Z/01KZYPF0GRFAGJFDT0130F89HA/enqueue_idea_refresh_request.json",
+    "data/runs/daily-20260906T135138Z/01KZYPF0GRFAGJFDT0130F89HA/security_upsert_request.json",
+    "data/runs/daily-20260906T135138Z/01KZYPF0GRFAGJFDT0130F89HA/source_ternium_h1_2026_financials_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_2c779e81c27b78c556bb.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KZYPF0GRFAGJFDT0130F89HA",
+  "operations_created": [
+    "01M1VKDMY8EQREY7T6KNM71VFD"
+  ],
+  "status": "succeeded",
+  "summary": "Completed exactly one Ternium S.A. ADS security review. SEC-filed interim statements confirm the prior Q2 operating and balance-sheet evidence, while no later operating-results filing changes normalized assumptions. The 4 September bullish MACD crossover follows a 7.61% alert-period gain, but RSI 73.76 and a USD 58 close above the upper Bollinger band indicate adverse entry timing. Unchanged USD 28/USD 50/USD 78 scenarios produce USD 51.50 probability-weighted value, -11.21% expected return and a deterministic Hold / Watch, allocation-ineligible disposition. Updated the security page and structured row, registered current primary evidence, appended assessment assessment_e609a14a4ea7b39f470c linked to its predecessor, and enqueued the required dependent nearshoring idea refresh. The overdue accepted relationship already has one ready relationship-research operation, so no duplicate was created. No strategy, signal, order, allocation, execution, cash, portfolio, or performance state changed.",
+  "validation": {
+    "checks": [
+      "Mandatory security-context completed before repeat assessment; assessment-get confirmed assessment_e609a14a4ea7b39f470c links predecessor assessment_3a1b8b9698c3bc096930, source operation/result, schema version 2, and page hash 2b5f66627a8d8c8de2f30c87638de04ed3d2c179e3ac224496654754f0612c7a.",
+      "Immutable Ternium ADS identity, XNYS venue, USD currency, provider symbol and duplicate boundary were reconciled against canonical state and issuer filings.",
+      "The retained assessment source was registered through the source CLI and is fresh as of 2026-09-06T14:48:45Z.",
+      "The security CLI accepted the structured update; the assessment CLI accepted exactly one current scenario-complete result after four no-change rejected requests were corrected with distinct immutable files.",
+      "The exact 2026-08-07 through 2026-09-04 alert period, 2026-09-04 MACD crossover, current price and FX timestamps, and source price hash were consumed without replacing canonical measurements.",
+      "The complete idea catalog and accepted relationship state were searched; the page identifies the accepted nearshoring edge and records bounded rejected-no-link conclusions for the remaining maintained themes.",
+      "Exactly one required dependent idea-research follow-up was created. One ready relationship-research follow-up already exists for the overdue accepted edge, so no duplicate was enqueued. No strategy follow-up was created because the full strategy gate fails.",
+      "Analytical chart fences validate and visualization_review exactly matches the two agent-authored chart IDs; the deterministic market-technicals chart is excluded.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "papertrader integrity --strict returned OK [integrity].",
+      "papertrader schema validate --strict returned OK [schema].",
+      "papertrader queue validate returned OK [queue].",
+      "papertrader portfolio reconcile --strict returned OK [portfolio], and the observed operation delta contains no allocation, strategy, signal, order, execution, cash, portfolio, or performance path."
+    ],
+    "passed": true
+  },
+  "visualization_review": {
+    "charts": [
+      {
+        "chart_id": "quarterly-operating-recovery",
+        "page_path": "data/wiki/securities/security_2c779e81c27b78c556bb.md"
+      },
+      {
+        "chart_id": "valuation-scenarios-versus-market",
+        "page_path": "data/wiki/securities/security_2c779e81c27b78c556bb.md"
+      }
+    ],
+    "completed": true,
+    "omissions": [
+      {
+        "dataset": "Peer valuation comparison",
+        "reason": "No bounded primary-source set provides same-date, same-definition ADS-adjusted earnings and market values for at least three steel peers; incomparable multiples were not estimated.",
+        "reason_code": "insufficient_comparability"
+      },
+      {
+        "dataset": "Cash, debt and free-cash-flow trend",
+        "reason": "Current evidence supports the June balance-sheet point and first-half cash-flow result but not three consistently defined comparable periods for a decision-useful trend chart.",
+        "reason_code": "insufficient_history"
+      }
+    ]
+  }
+}
