@@ -32,6 +32,7 @@ PAPERTRADER_OPERATION_SKILLS = (
     "papertrader-strategy-research",
     "papertrader-execute-strategy",
     "papertrader-daily-podcast",
+    "papertrader-podcast-translation",
 )
 
 EXPECTED_SKILLS = (*PAPERTRADER_OPERATION_SKILLS, "echart")

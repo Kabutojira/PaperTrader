@@ -1,0 +1,29 @@
+{
+  "auxiliary_skills": [
+    {
+      "name": "echart",
+      "path": "skills/echart/SKILL.md",
+      "sha256": "a5b954be27b285e0a59a0356ee5e34886450bbca3f7f8e2b4459306908022579",
+      "version": "repository"
+    }
+  ],
+  "controller_skill": {
+    "name": "papertrader-controller",
+    "path": "skills/papertrader-controller/SKILL.md",
+    "sha256": "b8b1ce8f7a6931677f0a1b6f6766cb704c86d01592aec67dd66b4a670cce4770",
+    "version": "repository"
+  },
+  "harness": "local",
+  "operation_id": "01M1SZWCJGF15NFP3JVP1S6M0X",
+  "operation_skill": {
+    "name": "papertrader-idea-research",
+    "path": "skills/papertrader-idea-research/SKILL.md",
+    "sha256": "6aa59ccb30533589629c35c3a069993378bf405beb2403d179570811d153418c",
+    "version": "repository"
+  },
+  "operation_type": "idea_research",
+  "preflight_version": 2,
+  "prompt_injection_flags": [],
+  "run_id": "daily-20260905T235530Z",
+  "sequential": true
+}

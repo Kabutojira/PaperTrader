@@ -63,6 +63,18 @@ def test_actions_are_pinned_and_every_checkout_drops_credentials(
                     assert step["with"]["persist-credentials"] == "false"
 
 
+def test_ci_checkout_preserves_history_for_snapshot_validation(repository_root: Path) -> None:
+    workflow = _workflow(repository_root / ".github" / "workflows" / "ci.yml")
+    checkout = next(
+        step
+        for step in workflow["jobs"]["validate"]["steps"]
+        if step.get("uses", "").startswith("actions/checkout@")
+    )
+
+    assert checkout["with"]["persist-credentials"] == "false"
+    assert checkout["with"]["fetch-depth"] == "0"
+
+
 def test_daily_manual_inputs_schedule_and_serialized_reusable_graph(
     repository_root: Path,
 ) -> None:

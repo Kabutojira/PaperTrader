@@ -4,16 +4,16 @@ type: dashboard
 status: maintained
 tags:
   - dashboard
-created: "2026-09-05"
-updated: "2026-09-05"
+created: "2026-09-06"
+updated: "2026-09-06"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_103f08004374f00ba869"
-as_of: "2026-09-05T20:37:23Z"
+snapshot_id: "decision_e291698197728a3c7f64"
+as_of: "2026-09-06T00:11:13Z"
 ---
 
 # PaperTrader
 
-**As of `2026-09-05T20:37:23Z` · Investment data: Portfolio state safe — research gaps remain · Operations: Attention required**
+**As of `2026-09-06T00:11:13Z` · Investment data: Portfolio state safe — research gaps remain · Operations: Attention required**
 
 ## Rebalance toward model targets
 
@@ -68,4 +68,4 @@ Current equity is **10000.02 EUR** with **97.030007% cash**. The target retains 
 - [[performance|Performance and risk]]
 - [[research-catalog|Research catalog]]
 - [[system-status|System status and audit]]
-- [[daily-reports/daily-report_20260905|Daily report 2026-09-05]]
+- [[daily-reports/daily-report_20260906|Daily report 2026-09-06]]

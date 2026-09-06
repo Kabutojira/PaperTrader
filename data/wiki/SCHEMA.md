@@ -64,6 +64,11 @@ This wiki follows Hermes Agent's native `llm-wiki` conventions and the repositor
 - `daily-reports/` holds the single canonical daily report for each ISO date.
 - `podcasts/` holds timestamped Markdown transcripts only. Hermes-generated podcast audio remains
   ephemeral runner-temp media and is never part of the wiki, Git history, Pages, or Actions artifacts.
+  A translation uses `daily-podcast_<timestamp>_<BCP-47 locale>.md` and records `language`,
+  `tts_voice`, `translation_of`, `source_commit`, `source_transcript_sha256`, and `source_language`
+  in frontmatter while preserving the source daily-cycle identity. The linter treats the canonical
+  `translation_of` relationship as a bidirectional discovery edge, so translation operations do not
+  mutate their committed source transcript merely to add navigation.
 - `index.md`, `model-portfolio.md`, `security-catalog.md`, `signals.md`, `performance.md`, and `system-status.md`
   are deterministic investor-facing views of the latest decision snapshot.
 - `research-catalog.md` is the complete maintained content catalog linked from the results-first

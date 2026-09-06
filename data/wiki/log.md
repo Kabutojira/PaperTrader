@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-08-08"
-updated: "2026-09-05"
+updated: "2026-09-06"
 provenance: repository-contract
 ---
 
@@ -3327,3 +3327,22 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Registered current SEC evidence and wrote one immutable schema-v2 assessment; rating remains Hold / Watch and no strategy was justified.
 - Enqueued dependent refresh `01M1SAEEC8FJYDHZM3P4EZ8NJV` for [[ideas/idea_critical_minerals_lithium]], the one payload/current accepted idea.
 - Reviewed the complete maintained idea catalog; no additional material relationship candidate was supported.
+
+## [2026-09-06] update | Powell integrated into AI power infrastructure comparison
+- Updated [[ideas/idea_ai_infrastructure_power]] from current canonical security and relationship
+  state, adding [[securities/security_0b67d6c8e3fd3366a257|Powell Industries]] as an
+  accepted-current, direct medium-voltage exposure.
+- Compared POWL with Vertiv, Eaton, Quanta Services and Schneider Electric on anchored quality,
+  growth evidence, maintained probability-weighted fair value and identity-matched 4 September
+  marks. POWL has the best relative balance but remains Hold / Watch with USD 175.50 weighted fair
+  value, -3.13% expected return and a USD 144 buy-below price.
+- Added one comparison chart, preserved explicit peer-freshness limits and queued exactly three
+  bounded relationship reviews for stale Eaton and candidate Vertiv and Quanta edges. Existing GE
+  Vernova, Schneider, Bloom and NVIDIA reviews were not duplicated; no security assessment,
+  strategy, signal, order, allocation or accounting state changed.
+
+## 2026-09-06
+
+- Published investor decision snapshot `decision_e291698197728a3c7f64`.
+
+- Generated canonical [[daily-reports/daily-report_20260906]] for run `daily-20260905T235530Z`.

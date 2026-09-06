@@ -29,8 +29,13 @@ RUN_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$")
 DAILY_CYCLE_ID = re.compile(r"^daily-([0-9]{8}T[0-9]{6}Z)$")
 ULID = re.compile(r"^[0-9A-HJKMNP-TV-Z]{26}$")
 PODCAST_PAGE = re.compile(r"^data/wiki/podcasts/daily-podcast_[0-9]{8}T[0-9]{6}Z\.md$")
+LOCALIZED_PODCAST_PAGE = re.compile(
+    r"^data/wiki/podcasts/daily-podcast_([0-9]{8}T[0-9]{6}Z)_([a-z]{2}-[A-Z]{2})\.md$"
+)
 COMMIT_SHA = re.compile(r"^[0-9a-f]{40}$")
 SHA256 = re.compile(r"^[0-9a-f]{64}$")
+LOCALE = re.compile(r"^[a-z]{2}-[A-Z]{2}$")
+EDGE_VOICE = re.compile(r"^[a-z]{2}-[A-Z]{2}-[A-Za-z0-9]+Neural$")
 TRANSCRIPT_START = "<!-- papertrader-spoken-transcript:start -->"
 TRANSCRIPT_END = "<!-- papertrader-spoken-transcript:end -->"
 MINIMUM_SCRIPT_WORDS = 2400
@@ -98,6 +103,28 @@ class PodcastContextValidation:
     referenced_file_count: int
 
 
+@dataclass(frozen=True, slots=True)
+class PodcastTranslationEnqueueResult:
+    source_daily_cycle_id: str
+    operation_id: str
+    created: bool
+    page_path: str
+    source_script_sha256: str
+
+
+@dataclass(frozen=True, slots=True)
+class PodcastTranslationValidation:
+    run_id: str
+    operation_id: str
+    script_path: str
+    language: str
+    voice: str
+    character_count: int
+    paragraph_count: int
+    chunk_count: int
+    script_sha256: str
+
+
 def _manifest_path(repository_root: Path, run_id: str) -> Path:
     if not RUN_ID.fullmatch(run_id):
         raise PodcastError(f"invalid run_id: {run_id!r}")
@@ -111,6 +138,22 @@ def podcast_page_path(daily_cycle_id: str) -> str:
     if match is None:
         raise PodcastError("podcast page requires a timestamped daily cycle identity")
     return f"data/wiki/podcasts/daily-podcast_{match.group(1)}.md"
+
+
+def localized_podcast_page_path(daily_cycle_id: str, target_locale: str) -> str:
+    """Return the immutable localized transcript path for one source daily cycle."""
+
+    match = DAILY_CYCLE_ID.fullmatch(daily_cycle_id)
+    if match is None or LOCALE.fullmatch(target_locale) is None:
+        raise PodcastError("localized podcast identity is invalid")
+    return f"data/wiki/podcasts/daily-podcast_{match.group(1)}_{target_locale}.md"
+
+
+def _validate_locale_voice(locale: str, voice: str) -> None:
+    if LOCALE.fullmatch(locale) is None:
+        raise PodcastError("podcast locale must use canonical language-region form")
+    if EDGE_VOICE.fullmatch(voice) is None or not voice.startswith(f"{locale}-"):
+        raise PodcastError("podcast voice must be an Edge Neural voice for the target locale")
 
 
 def _load_object(path: Path) -> dict[str, object]:
@@ -782,7 +825,9 @@ def enqueue_daily_podcast(
         prompt=(
             f"Create the {stamp} research-first PaperTrader podcast from all accepted research "
             "since the previous successful episode, using linked maintained wiki knowledge to "
-            "tell one accessible twenty-minute story, then render its ephemeral audio draft once."
+            "tell one accessible twenty-minute story, then render its ephemeral audio draft once. "
+            f"Write only {page_path} and link it only from the frozen report {report_path}; do not "
+            "derive either pathname from a date."
         ),
         inputs={
             "run_id": run_id,
@@ -825,6 +870,135 @@ def build_podcast_context(
         raise PodcastError("podcast context cutoff must equal the frozen research cutoff")
     result = enqueue_daily_podcast(repository_root, settings, run_id=daily_cycle_id, now=now)
     return result.context_path
+
+
+def _git_script_bytes(repository_root: Path, commit_sha: str, script_path: str) -> bytes:
+    if COMMIT_SHA.fullmatch(commit_sha) is None:
+        raise PodcastError("podcast source commit must contain 40 lowercase hex characters")
+    shown = subprocess.run(
+        ["git", "show", f"{commit_sha}:{script_path}"],
+        cwd=repository_root,
+        check=False,
+        capture_output=True,
+    )
+    if shown.returncode != 0:
+        raise PodcastError("cannot read the exact committed podcast transcript")
+    return shown.stdout.encode("utf-8") if isinstance(shown.stdout, str) else bytes(shown.stdout)
+
+
+def _source_script_identity(
+    repository_root: Path,
+    *,
+    source_commit: str,
+    source_script_path: str,
+    source_locale: str,
+) -> tuple[str, bytes, str, tuple[str, ...]]:
+    """Validate one immutable source transcript and return its canonical identity."""
+
+    if LOCALE.fullmatch(source_locale) is None:
+        raise PodcastError("source locale must use canonical language-region form")
+    base = PODCAST_PAGE.fullmatch(source_script_path)
+    localized = LOCALIZED_PODCAST_PAGE.fullmatch(source_script_path)
+    if base is None and localized is None:
+        raise PodcastError("podcast translation source path is not canonical")
+    raw = _git_script_bytes(repository_root, source_commit, source_script_path)
+    try:
+        markdown = raw.decode("utf-8")
+    except UnicodeDecodeError as exc:
+        raise PodcastError("committed podcast translation source is not UTF-8") from exc
+    metadata = _podcast_metadata(markdown)
+    daily_cycle_id = metadata.get("daily_cycle_id")
+    if not isinstance(daily_cycle_id, str) or DAILY_CYCLE_ID.fullmatch(daily_cycle_id) is None:
+        raise PodcastError("podcast translation source lacks a daily cycle identity")
+    expected_stamp = daily_cycle_id.removeprefix("daily-")
+    if base is not None:
+        if source_script_path != podcast_page_path(daily_cycle_id) or source_locale != "en-US":
+            raise PodcastError("base podcast translation source must be canonical en-US")
+        transcript, _ = validate_podcast_script(markdown, daily_cycle_id=daily_cycle_id)
+    else:
+        assert localized is not None
+        if localized.group(1) != expected_stamp or localized.group(2) != source_locale:
+            raise PodcastError("localized podcast source path conflicts with its locale or cycle")
+        if metadata.get("language") != source_locale or metadata.get("paper_trading") is not True:
+            raise PodcastError("localized podcast source metadata is invalid")
+        transcript = _spoken_transcript(markdown)
+        _validate_spoken_format(markdown, transcript)
+    paragraphs = tuple(value.strip() for value in re.split(r"\n\s*\n", transcript) if value.strip())
+    return daily_cycle_id, raw, transcript, paragraphs
+
+
+def enqueue_podcast_translation(
+    repository_root: Path,
+    settings: Settings,
+    *,
+    source_commit: str,
+    source_script_path: str,
+    source_locale: str,
+    target_locale: str,
+    target_voice: str,
+    now: datetime | None = None,
+) -> PodcastTranslationEnqueueResult:
+    """Enqueue one manual, content-addressed podcast translation."""
+
+    _validate_locale_voice(target_locale, target_voice)
+    if source_locale == target_locale:
+        raise PodcastError("podcast source and target locales must differ")
+    daily_cycle_id, source_bytes, _, _ = _source_script_identity(
+        repository_root,
+        source_commit=source_commit,
+        source_script_path=source_script_path,
+        source_locale=source_locale,
+    )
+    source_sha = content_hash(source_bytes)
+    page_path = localized_podcast_page_path(daily_cycle_id, target_locale)
+    dedupe_key = f"podcast_translation:{source_sha}:{target_locale}"
+    if (repository_root / page_path).exists():
+        prior = next(
+            (
+                row
+                for table in ("operations_todo", "operations_history")
+                for row in read_table(repository_root, table)
+                if row["dedupe_key"] == dedupe_key
+            ),
+            None,
+        )
+        if prior is None:
+            raise PodcastError("localized podcast transcript path already exists")
+        return PodcastTranslationEnqueueResult(
+            daily_cycle_id, prior["operation_id"], False, page_path, source_sha
+        )
+    instant = ensure_utc(now or utc_now()).replace(microsecond=0)
+    operation_id, created = enqueue_operation(
+        repository_root,
+        settings,
+        operation_type="podcast_translation",
+        entity_type="run",
+        entity_id=daily_cycle_id,
+        dedupe_key=dedupe_key,
+        prompt=(
+            f"Translate the exact committed {source_locale} podcast into {target_locale}, "
+            "preserve its claims and paragraph order, then render one ephemeral localized draft."
+        ),
+        inputs={
+            "source_daily_cycle_id": daily_cycle_id,
+            "source_script_path": source_script_path,
+            "source_script_commit": source_commit,
+            "source_script_sha256": source_sha,
+            "source_locale": source_locale,
+            "target_locale": target_locale,
+            "target_voice": target_voice,
+            "page_path": page_path,
+            "target_minutes": 20,
+        },
+        source="manual-podcast-translation",
+        source_refs=(source_script_path,),
+        priority=100,
+        max_attempts=1,
+        now=instant,
+    )
+    return PodcastTranslationEnqueueResult(
+        daily_cycle_id, operation_id, created, page_path, source_sha
+    )
 
 
 def _repository_path(repository_root: Path, raw: str, pattern: re.Pattern[str]) -> Path:
@@ -876,20 +1050,9 @@ def _podcast_cycle_id(markdown: str) -> str:
     return cycle_id
 
 
-def validate_podcast_script(markdown: str, *, daily_cycle_id: str) -> tuple[str, int]:
-    """Validate accessible prose and metadata without rewriting generated narration."""
+def _validate_spoken_format(markdown: str, transcript: str) -> tuple[str, ...]:
+    """Apply language-neutral safety and presentation checks to spoken prose."""
 
-    metadata = _podcast_metadata(markdown)
-    if metadata.get("daily_cycle_id") != daily_cycle_id:
-        raise PodcastError("podcast transcript frontmatter has the wrong cycle ID")
-    if metadata.get("paper_trading") is not True:
-        raise PodcastError("podcast transcript must retain paper_trading: true in frontmatter")
-    transcript = _spoken_transcript(markdown)
-    words = re.findall(r"\b[\w'-]+\b", transcript)
-    if not MINIMUM_SCRIPT_WORDS <= len(words) <= MAXIMUM_SCRIPT_WORDS:
-        raise PodcastError(
-            f"spoken transcript must contain {MINIMUM_SCRIPT_WORDS}-{MAXIMUM_SCRIPT_WORDS} words"
-        )
     if any(character.isdigit() for character in transcript):
         raise PodcastError("spoken transcript must spell out quantities without numeric glyphs")
     if re.search(r"(?m)^\s*(?:[-+*]\s+|#{1,6}\s+|>\s+|```|~~~)", transcript):
@@ -916,11 +1079,29 @@ def validate_podcast_script(markdown: str, *, daily_cycle_id: str) -> tuple[str,
     )
     if disclosure.search(visible_without_spoken):
         raise PodcastError("podcast page must keep paper-trading identity in metadata only")
-    paragraphs = [value.strip() for value in re.split(r"\n\s*\n", transcript) if value.strip()]
+    paragraphs = tuple(value.strip() for value in re.split(r"\n\s*\n", transcript) if value.strip())
     if len(paragraphs) < 8:
         raise PodcastError("spoken transcript must contain at least eight narrative paragraphs")
     if visible_machine_ids(markdown):
         raise PodcastError("podcast transcript exposes a machine identity")
+    return paragraphs
+
+
+def validate_podcast_script(markdown: str, *, daily_cycle_id: str) -> tuple[str, int]:
+    """Validate accessible prose and metadata without rewriting generated narration."""
+
+    metadata = _podcast_metadata(markdown)
+    if metadata.get("daily_cycle_id") != daily_cycle_id:
+        raise PodcastError("podcast transcript frontmatter has the wrong cycle ID")
+    if metadata.get("paper_trading") is not True:
+        raise PodcastError("podcast transcript must retain paper_trading: true in frontmatter")
+    transcript = _spoken_transcript(markdown)
+    words = re.findall(r"\b[\w'-]+\b", transcript)
+    if not MINIMUM_SCRIPT_WORDS <= len(words) <= MAXIMUM_SCRIPT_WORDS:
+        raise PodcastError(
+            f"spoken transcript must contain {MINIMUM_SCRIPT_WORDS}-{MAXIMUM_SCRIPT_WORDS} words"
+        )
+    _validate_spoken_format(markdown, transcript)
     return transcript, len(words)
 
 
@@ -966,6 +1147,129 @@ def validate_podcast_script_file(
         daily_cycle_id=daily_cycle_id,
         script_path=script_path,
         word_count=word_count,
+        chunk_count=len(chunks),
+        script_sha256=content_hash(markdown_bytes),
+    )
+
+
+def _translation_inputs(repository_root: Path, operation_id: str) -> Mapping[str, object]:
+    if ULID.fullmatch(operation_id) is None:
+        raise PodcastError("podcast translation operation identity is invalid")
+    payload = _load_object(
+        repository_root / "data" / "operations" / "payloads" / f"{operation_id}.json"
+    )
+    if (
+        payload.get("operation_id") != operation_id
+        or payload.get("operation_type") != "podcast_translation"
+    ):
+        raise PodcastError("podcast translation payload identity is invalid")
+    inputs = payload.get("inputs")
+    if not isinstance(inputs, Mapping):
+        raise PodcastError("podcast translation payload inputs are invalid")
+    return inputs
+
+
+def _validated_translation_script_file(
+    repository_root: Path,
+    settings: Settings,
+    *,
+    run_id: str,
+    operation_id: str,
+) -> tuple[bytes, str, int, tuple[str, ...], Mapping[str, object]]:
+    if RUN_ID.fullmatch(run_id) is None:
+        raise PodcastError("podcast translation run identity is invalid")
+    inputs = _translation_inputs(repository_root, operation_id)
+    required = {
+        name: inputs.get(name)
+        for name in (
+            "source_daily_cycle_id",
+            "source_script_path",
+            "source_script_commit",
+            "source_script_sha256",
+            "source_locale",
+            "target_locale",
+            "target_voice",
+            "page_path",
+        )
+    }
+    if not all(isinstance(value, str) for value in required.values()):
+        raise PodcastError("podcast translation payload is incomplete")
+    values = cast(dict[str, str], required)
+    _validate_locale_voice(values["target_locale"], values["target_voice"])
+    if values["source_locale"] == values["target_locale"]:
+        raise PodcastError("podcast source and target locales must differ")
+    if values["page_path"] != localized_podcast_page_path(
+        values["source_daily_cycle_id"], values["target_locale"]
+    ):
+        raise PodcastError("podcast translation page path is not canonical")
+    source_cycle, source_bytes, _, source_paragraphs = _source_script_identity(
+        repository_root,
+        source_commit=values["source_script_commit"],
+        source_script_path=values["source_script_path"],
+        source_locale=values["source_locale"],
+    )
+    if (
+        source_cycle != values["source_daily_cycle_id"]
+        or content_hash(source_bytes) != values["source_script_sha256"]
+    ):
+        raise PodcastError("podcast translation source identity conflicts with its payload")
+    markdown_bytes = _regular_bytes(
+        repository_root, values["page_path"], label="localized podcast draft transcript"
+    )
+    try:
+        markdown = markdown_bytes.decode("utf-8")
+    except UnicodeDecodeError as exc:
+        raise PodcastError("localized podcast transcript is not UTF-8") from exc
+    metadata = _podcast_metadata(markdown)
+    expected_metadata = {
+        "daily_cycle_id": values["source_daily_cycle_id"],
+        "paper_trading": True,
+        "language": values["target_locale"],
+        "tts_voice": values["target_voice"],
+        "translation_of": values["source_script_path"],
+        "source_commit": values["source_script_commit"],
+        "source_transcript_sha256": values["source_script_sha256"],
+        "source_language": values["source_locale"],
+    }
+    if any(metadata.get(key) != value for key, value in expected_metadata.items()):
+        raise PodcastError("localized podcast frontmatter conflicts with its immutable payload")
+    transcript = _spoken_transcript(markdown)
+    paragraphs = _validate_spoken_format(markdown, transcript)
+    if len(paragraphs) != len(source_paragraphs):
+        raise PodcastError("localized podcast must preserve the source paragraph count and order")
+    character_count = len(transcript)
+    if not 1_000 <= character_count <= 30_000:
+        raise PodcastError("localized podcast transcript is outside language-neutral size bounds")
+    chunks = _transcript_chunks(transcript, settings.podcast.chunk_character_limit)
+    return markdown_bytes, transcript, character_count, chunks, inputs
+
+
+def validate_podcast_translation_script_file(
+    repository_root: Path,
+    settings: Settings,
+    *,
+    run_id: str,
+    operation_id: str,
+) -> PodcastTranslationValidation:
+    """Validate one localized workspace transcript without rendering it."""
+
+    markdown_bytes, transcript, character_count, chunks, inputs = (
+        _validated_translation_script_file(
+            repository_root,
+            settings,
+            run_id=run_id,
+            operation_id=operation_id,
+        )
+    )
+    paragraphs = tuple(value.strip() for value in re.split(r"\n\s*\n", transcript) if value.strip())
+    return PodcastTranslationValidation(
+        run_id=run_id,
+        operation_id=operation_id,
+        script_path=str(inputs["page_path"]),
+        language=str(inputs["target_locale"]),
+        voice=str(inputs["target_voice"]),
+        character_count=character_count,
+        paragraph_count=len(paragraphs),
         chunk_count=len(chunks),
         script_sha256=content_hash(markdown_bytes),
     )
@@ -1172,6 +1476,8 @@ def _render_draft_podcast(
         "script_path": script_path,
         "script_sha256": content_hash(markdown_bytes),
         "spoken_transcript_sha256": content_hash(transcript),
+        "language": "en-US",
+        "tts_voice": settings.podcast.voice,
         "audio_filename": audio.name,
         "audio_size": audio.stat().st_size,
         "audio_sha256": content_hash(audio.read_bytes()),
@@ -1254,6 +1560,213 @@ def render_draft_podcast(
                 (output_root / f"{daily_cycle_id}.draft-manifest.json").unlink(missing_ok=True)
 
 
+def _render_draft_podcast_translation(
+    repository_root: Path,
+    settings: Settings,
+    *,
+    run_id: str,
+    operation_id: str,
+    output_directory: Path,
+    audit_run_id: str,
+    audit_operation_id: str,
+    audit_operation_type: str,
+    runner: Callable[..., Any] = subprocess.run,
+    sleeper: Callable[[float], None] = time.sleep,
+) -> PodcastAssembly:
+    """Render one validated localized transcript inside its audited operation."""
+
+    if (
+        audit_operation_type != "podcast_translation"
+        or audit_run_id != run_id
+        or audit_operation_id != operation_id
+        or ULID.fullmatch(operation_id) is None
+    ):
+        raise PodcastError(
+            "podcast translation rendering requires its audited podcast_translation operation"
+        )
+    output_root = _output_root(repository_root, output_directory, run_id)
+    markdown_bytes, transcript, _, chunks, inputs = _validated_translation_script_file(
+        repository_root,
+        settings,
+        run_id=run_id,
+        operation_id=operation_id,
+    )
+    output_root.mkdir(parents=True, exist_ok=True)
+    if output_root.is_symlink():
+        raise PodcastError("ephemeral podcast translation directory must not be a symlink")
+    if any(output_root.iterdir()):
+        raise PodcastError("ephemeral podcast translation directory must start empty")
+    if settings.podcast.tts_command != ("edge-tts",):
+        raise PodcastError("configured TTS backend identity is invalid")
+    voice = str(inputs["target_voice"])
+    language = str(inputs["target_locale"])
+    _validate_locale_voice(language, voice)
+    tts_python = Path(sys.executable)
+    if not tts_python.is_absolute() or not tts_python.is_file():
+        raise PodcastError("controller Python interpreter is unavailable for TTS")
+    chunk_paths: list[Path] = []
+    for index, text in enumerate(chunks, start=1):
+        path = output_root / f"chunk-{index:02d}.mp3"
+        command = [
+            str(tts_python),
+            "-m",
+            "edge_tts",
+            "--voice",
+            voice,
+            "--text",
+            text,
+            "--write-media",
+            str(path),
+        ]
+        for attempt in range(1, TTS_CHUNK_MAXIMUM_ATTEMPTS + 1):
+            if path.is_symlink() or path.is_file():
+                path.unlink(missing_ok=True)
+            try:
+                rendered = runner(command, check=False, capture_output=True)
+            except OSError:
+                rendered = None
+            if (
+                rendered is not None
+                and rendered.returncode == 0
+                and not path.is_symlink()
+                and path.is_file()
+                and path.stat().st_size > 0
+            ):
+                break
+            if attempt < TTS_CHUNK_MAXIMUM_ATTEMPTS:
+                sleeper(float(2 ** (attempt - 1)))
+        else:
+            raise PodcastError(
+                f"configured TTS backend failed for chunk {index} after "
+                f"{TTS_CHUNK_MAXIMUM_ATTEMPTS} attempts"
+            )
+        chunk_paths.append(path)
+    concat = output_root / "concat.txt"
+    concat.write_text(
+        "".join(f"file '{path.as_posix()}'\n" for path in chunk_paths), encoding="utf-8"
+    )
+    audio = output_root / f"{run_id}.mp3"
+    ffmpeg = shutil.which("ffmpeg") or "ffmpeg"
+    assembled = runner(
+        [
+            ffmpeg,
+            "-v",
+            "error",
+            "-f",
+            "concat",
+            "-safe",
+            "0",
+            "-i",
+            str(concat),
+            "-c",
+            "copy",
+            "-y",
+            str(audio),
+        ],
+        check=False,
+        capture_output=True,
+    )
+    if assembled.returncode != 0 or not audio.is_file() or audio.stat().st_size == 0:
+        raise PodcastError("ffmpeg could not assemble the ephemeral podcast translation")
+    duration = _probe_audio(audio, settings, runner=runner)
+    manifest_path = output_root / f"{run_id}.draft-manifest.json"
+    manifest = {
+        "podcast_draft_manifest_version": 1,
+        "operation_type": "podcast_translation",
+        "render_id": run_id,
+        "operation_id": operation_id,
+        "daily_cycle_id": inputs["source_daily_cycle_id"],
+        "script_path": inputs["page_path"],
+        "script_sha256": content_hash(markdown_bytes),
+        "spoken_transcript_sha256": content_hash(transcript),
+        "source_script_path": inputs["source_script_path"],
+        "source_script_commit": inputs["source_script_commit"],
+        "source_script_sha256": inputs["source_script_sha256"],
+        "language": language,
+        "tts_voice": voice,
+        "audio_filename": audio.name,
+        "audio_size": audio.stat().st_size,
+        "audio_sha256": content_hash(audio.read_bytes()),
+        "duration_seconds": duration,
+        "format": "mp3",
+    }
+    manifest_path.write_text(
+        json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    )
+    for path in (*chunk_paths, concat):
+        path.unlink(missing_ok=True)
+    words = len(re.findall(r"\b[\w'-]+\b", transcript))
+    return PodcastAssembly(
+        daily_cycle_id=str(inputs["source_daily_cycle_id"]),
+        script_commit="",
+        script_path=str(inputs["page_path"]),
+        audio_path=str(audio),
+        manifest_path=str(manifest_path),
+        word_count=words,
+        duration_seconds=duration,
+        sha256=str(manifest["audio_sha256"]),
+    )
+
+
+def render_draft_podcast_translation(
+    repository_root: Path,
+    settings: Settings,
+    *,
+    run_id: str,
+    operation_id: str,
+    output_directory: Path,
+    audit_run_id: str,
+    audit_operation_id: str,
+    audit_operation_type: str,
+    runner: Callable[..., Any] = subprocess.run,
+    sleeper: Callable[[float], None] = time.sleep,
+) -> PodcastAssembly:
+    """Render one localized draft and remove partial media after failure."""
+
+    completed = False
+    initially_empty = not output_directory.exists() or (
+        output_directory.is_dir()
+        and not output_directory.is_symlink()
+        and not any(output_directory.iterdir())
+    )
+    try:
+        result = _render_draft_podcast_translation(
+            repository_root,
+            settings,
+            run_id=run_id,
+            operation_id=operation_id,
+            output_directory=output_directory,
+            audit_run_id=audit_run_id,
+            audit_operation_id=audit_operation_id,
+            audit_operation_type=audit_operation_type,
+            runner=runner,
+            sleeper=sleeper,
+        )
+        completed = True
+        return result
+    finally:
+        output_root = output_directory.resolve()
+        try:
+            output_root.relative_to(repository_root.resolve())
+        except ValueError:
+            outside_checkout = True
+        else:
+            outside_checkout = False
+        if (
+            initially_empty
+            and outside_checkout
+            and output_root.is_dir()
+            and not output_root.is_symlink()
+        ):
+            for path in output_root.glob("chunk-*.mp3"):
+                if path.is_file() and not path.is_symlink():
+                    path.unlink(missing_ok=True)
+            (output_root / "concat.txt").unlink(missing_ok=True)
+            if not completed and RUN_ID.fullmatch(run_id):
+                (output_root / f"{run_id}.mp3").unlink(missing_ok=True)
+                (output_root / f"{run_id}.draft-manifest.json").unlink(missing_ok=True)
+
+
 def seal_podcast_render(
     repository_root: Path,
     settings: Settings,
@@ -1317,6 +1830,8 @@ def seal_podcast_render(
         "script_path": script_path,
         "script_sha256": content_hash(markdown_bytes),
         "spoken_transcript_sha256": content_hash(transcript),
+        "language": "en-US",
+        "tts_voice": settings.podcast.voice,
         "audio_filename": audio.name,
         "audio_size": audio.stat().st_size,
         "audio_sha256": audio_sha,
@@ -1335,6 +1850,155 @@ def seal_podcast_render(
         duration_seconds=duration,
         sha256=audio_sha,
     )
+
+
+def seal_podcast_translation_render(
+    repository_root: Path,
+    settings: Settings,
+    *,
+    run_id: str,
+    operation_id: str,
+    script_commit: str,
+    output_directory: Path,
+    runner: Callable[..., Any] = subprocess.run,
+) -> PodcastAssembly:
+    """Bind localized draft media to the exact committed translated transcript."""
+
+    if RUN_ID.fullmatch(run_id) is None or COMMIT_SHA.fullmatch(script_commit) is None:
+        raise PodcastError("podcast translation render seal identity is invalid")
+    inputs = _translation_inputs(repository_root, operation_id)
+    script_path = str(inputs.get("page_path", ""))
+    output_root = _output_root(repository_root, output_directory, run_id)
+    draft_path = output_root / f"{run_id}.draft-manifest.json"
+    draft = _load_object(draft_path)
+    audio = output_root / f"{run_id}.mp3"
+    if (
+        draft.get("podcast_draft_manifest_version") != 1
+        or draft.get("operation_type") != "podcast_translation"
+        or draft.get("render_id") != run_id
+        or draft.get("operation_id") != operation_id
+        or draft.get("script_path") != script_path
+        or draft.get("audio_filename") != audio.name
+    ):
+        raise PodcastError("podcast translation draft manifest identity is invalid")
+    markdown_bytes = _git_script_bytes(repository_root, script_commit, script_path)
+    try:
+        markdown = markdown_bytes.decode("utf-8")
+    except UnicodeDecodeError as exc:
+        raise PodcastError("committed podcast translation is not UTF-8") from exc
+    metadata = _podcast_metadata(markdown)
+    expected_metadata = {
+        "daily_cycle_id": inputs.get("source_daily_cycle_id"),
+        "paper_trading": True,
+        "language": inputs.get("target_locale"),
+        "tts_voice": inputs.get("target_voice"),
+        "translation_of": inputs.get("source_script_path"),
+        "source_commit": inputs.get("source_script_commit"),
+        "source_transcript_sha256": inputs.get("source_script_sha256"),
+        "source_language": inputs.get("source_locale"),
+    }
+    if any(metadata.get(key) != value for key, value in expected_metadata.items()):
+        raise PodcastError("committed localized podcast conflicts with its immutable payload")
+    transcript = _spoken_transcript(markdown)
+    paragraphs = _validate_spoken_format(markdown, transcript)
+    _, source_bytes, _, source_paragraphs = _source_script_identity(
+        repository_root,
+        source_commit=str(inputs.get("source_script_commit", "")),
+        source_script_path=str(inputs.get("source_script_path", "")),
+        source_locale=str(inputs.get("source_locale", "")),
+    )
+    if content_hash(source_bytes) != inputs.get("source_script_sha256"):
+        raise PodcastError("podcast translation source hash conflicts with its payload")
+    if len(paragraphs) != len(source_paragraphs):
+        raise PodcastError("localized podcast must preserve the source paragraph count and order")
+    if draft.get("script_sha256") != content_hash(markdown_bytes) or draft.get(
+        "spoken_transcript_sha256"
+    ) != content_hash(transcript):
+        raise PodcastError("podcast translation draft is not bound to the committed transcript")
+    if audio.is_symlink() or not audio.is_file() or audio.stat().st_size == 0:
+        raise PodcastError("ephemeral podcast translation audio is missing or invalid")
+    audio_sha = content_hash(audio.read_bytes())
+    if draft.get("audio_size") != audio.stat().st_size or draft.get("audio_sha256") != audio_sha:
+        raise PodcastError("ephemeral podcast translation differs from its draft manifest")
+    duration = _probe_audio(audio, settings, runner=runner)
+    if draft.get("duration_seconds") != duration:
+        raise PodcastError("ephemeral podcast translation duration differs from its manifest")
+    manifest_path = output_root / f"{run_id}.sealed-manifest.json"
+    sealed = {
+        "audio_manifest_version": 2,
+        "operation_type": "podcast_translation",
+        "render_id": run_id,
+        "operation_id": operation_id,
+        "daily_cycle_id": inputs["source_daily_cycle_id"],
+        "script_commit": script_commit,
+        "script_path": script_path,
+        "script_sha256": content_hash(markdown_bytes),
+        "spoken_transcript_sha256": content_hash(transcript),
+        "source_script_path": inputs["source_script_path"],
+        "source_script_commit": inputs["source_script_commit"],
+        "source_script_sha256": inputs["source_script_sha256"],
+        "language": inputs["target_locale"],
+        "tts_voice": inputs["target_voice"],
+        "audio_filename": audio.name,
+        "audio_size": audio.stat().st_size,
+        "audio_sha256": audio_sha,
+        "duration_seconds": duration,
+        "format": "mp3",
+    }
+    manifest_path.write_text(json.dumps(sealed, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    draft_path.unlink()
+    return PodcastAssembly(
+        daily_cycle_id=str(inputs["source_daily_cycle_id"]),
+        script_commit=script_commit,
+        script_path=script_path,
+        audio_path=str(audio),
+        manifest_path=str(manifest_path),
+        word_count=len(re.findall(r"\b[\w'-]+\b", transcript)),
+        duration_seconds=duration,
+        sha256=audio_sha,
+    )
+
+
+def finalize_podcast_translation(
+    repository_root: Path,
+    settings: Settings,
+    *,
+    run_id: str,
+    operation_id: str,
+) -> str:
+    """Validate and return the terminal disposition of one translation operation."""
+
+    if RUN_ID.fullmatch(run_id) is None or ULID.fullmatch(operation_id) is None:
+        raise PodcastError("podcast translation finalization identity is invalid")
+    row = next(
+        (
+            value
+            for value in read_table(repository_root, "operations_history")
+            if value["operation_id"] == operation_id
+            and value["operation_type"] == "podcast_translation"
+            and value["claimed_by_run_id"] == run_id
+        ),
+        None,
+    )
+    if row is None:
+        raise PodcastError("podcast translation operation has no terminal disposition")
+    status = row["terminal_status"]
+    if status == "succeeded":
+        inputs = _translation_inputs(repository_root, operation_id)
+        page = _repository_path(
+            repository_root,
+            str(inputs.get("page_path", "")),
+            LOCALIZED_PODCAST_PAGE,
+        )
+        if not page.is_file():
+            raise PodcastError("succeeded podcast translation lacks its transcript page")
+        validate_podcast_translation_script_file(
+            repository_root,
+            settings,
+            run_id=run_id,
+            operation_id=operation_id,
+        )
+    return status
 
 
 def finalize_daily_podcast(
@@ -1444,15 +2108,23 @@ __all__ = [
     "PodcastEnqueueResult",
     "PodcastError",
     "PodcastScriptValidation",
+    "PodcastTranslationEnqueueResult",
+    "PodcastTranslationValidation",
     "assemble_podcast",
     "build_podcast_context",
     "enqueue_daily_podcast",
+    "enqueue_podcast_translation",
     "finalize_daily_podcast",
+    "finalize_podcast_translation",
+    "localized_podcast_page_path",
     "podcast_page_path",
     "render_draft_podcast",
+    "render_draft_podcast_translation",
     "seal_podcast_render",
+    "seal_podcast_translation_render",
     "spoken_transcript",
     "validate_podcast_context",
     "validate_podcast_script",
     "validate_podcast_script_file",
+    "validate_podcast_translation_script_file",
 ]

@@ -1,0 +1,37 @@
+{
+  "commands_run": [
+    "papertrader podcast translation validate-script --run-id translation-20260906T014648Z --operation-id 01M1T6B3T0FA90VK7PVED8ZYHM",
+    "papertrader podcast translation render-draft --run-id translation-20260906T014648Z --operation-id 01M1T6B3T0FA90VK7PVED8ZYHM",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [],
+  "evidence": [
+    {
+      "claim": "The immutable committed en-US source transcript matched the payload-bound SHA-256 and supplied exactly 28 spoken paragraphs for faithful translation.",
+      "source": "data/wiki/podcasts/daily-podcast_20260905T235530Z.md at commit 753f25da08046f6f5a7b6b7ecb4e6d2b2338766c",
+      "source_hash": "0e168aa564377f85663cceab200515148934f226de34b0909bc07a41516e1150"
+    },
+    {
+      "claim": "The localized transcript passed the audited preflight before exactly one audited render-draft invocation; rendering completed successfully and retained media only in the controller-approved temporary directory.",
+      "source": "data/runs/translation-20260906T014648Z/01M1T6B3T0FA90VK7PVED8ZYHM/command_audit.json"
+    }
+  ],
+  "files_changed": [
+    "data/wiki/podcasts/daily-podcast_20260905T235530Z_it-IT.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M1T6B3T0FA90VK7PVED8ZYHM",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Translated the exact committed en-US podcast into it-IT with voice it-IT-DiegoNeural, preserving all 28 spoken paragraphs and their order. The localized transcript passed deterministic preflight with 24,365 characters and 6 chunks. The single audited render attempt succeeded, producing 3,482 spoken words and 1,583 seconds of ephemeral audio outside the repository.",
+  "validation": {
+    "checks": [
+      "Payload-bound source path, commit, daily cycle, locale, and SHA-256 matched the exact committed source transcript.",
+      "Localized frontmatter matches source cycle daily-20260905T235530Z, target locale it-IT, voice it-IT-DiegoNeural, source commit, source hash, and canonical output path.",
+      "Deterministic translation preflight passed with 28 paragraphs, 24,365 characters, 6 chunks, and localized script SHA-256 0e5e400ffd9c5c35cd24669e35cf170540b4885bf5733c3285ed74d20560b539.",
+      "Exactly one audited render attempt followed the passing preflight and succeeded with ephemeral output outside the repository.",
+      "Strict wiki lint passed."
+    ],
+    "passed": true
+  }
+}

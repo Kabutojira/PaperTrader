@@ -442,6 +442,27 @@ enters Git, Pages, logs, run artifacts, or GitHub Actions artifacts, and all tem
 manifests are removed after delivery or failure. Podcast state remains a one-way delivery view and
 cannot invalidate the immutable investment snapshot.
 
+An already committed podcast can also be translated through the manual-only, content-addressed
+translation operation. The enqueue command derives the localized page and source hash from the
+exact source commit:
+
+```bash
+uv run papertrader podcast translation enqueue \
+  --source-commit "<40-character commit>" \
+  --source-script-path "data/wiki/podcasts/daily-podcast_<timestamp>.md" \
+  --source-locale en-US \
+  --target-locale it-IT \
+  --target-voice it-IT-DiegoNeural
+```
+
+Run the returned operation ID through one isolated local Hermes process, with
+`PAPERTRADER_PODCAST_OUTPUT_DIRECTORY` set to an empty
+`<temporary-root>/papertrader-podcast/<translation-run-id>` directory. The skill writes only
+`daily-podcast_<timestamp>_<locale>.md`, validates it, and invokes one audited draft render. After
+committing the transcript, seal the existing draft with `podcast translation seal-render`; the
+generic Telegram podcast commands accept `--language <locale>` for the committed script and read
+the locale from the sealed audio manifest.
+
 Do not hand-edit structured runtime CSVs. Use the CLI so identity, schema, atomic-write,
 paper-only, risk, and audit contracts are enforced. `executions.csv`, `cash_ledger.csv`,
 `corporate_actions.csv`, allocation history, operation history, and run history are append-only.

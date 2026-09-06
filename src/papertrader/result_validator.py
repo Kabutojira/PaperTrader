@@ -15,7 +15,11 @@ from jsonschema import Draft202012Validator, FormatChecker
 from papertrader.command_scope import command_allowed, normalized_command
 from papertrader.config import ConfigurationError, load_settings
 from papertrader.integrity import is_runtime_path_allowed, validate_integrity
-from papertrader.podcast import PodcastError, validate_podcast_script
+from papertrader.podcast import (
+    PodcastError,
+    validate_podcast_script,
+    validate_podcast_translation_script_file,
+)
 from papertrader.portfolio import reconcile_portfolio
 from papertrader.queue import RESEARCH_CHART_OPERATIONS, Operation
 from papertrader.repository_state import RepositoryDelta, RepositorySnapshot
@@ -316,6 +320,17 @@ def _path_allowed_for_operation(
             and path.parts[:3] == ("data", "wiki", "daily-reports")
             and path.name.startswith("daily-report_")
             and path.suffix == ".md"
+        )
+    if operation_type == "podcast_translation":
+        return (
+            created
+            and len(path.parts) == 4
+            and path.parts[:3] == ("data", "wiki", "podcasts")
+            and re.fullmatch(
+                r"daily-podcast_[0-9]{8}T[0-9]{6}Z_[a-z]{2}-[A-Z]{2}\.md",
+                path.name,
+            )
+            is not None
         )
     return False
 
@@ -868,6 +883,84 @@ def _daily_podcast_text_errors(
             errors.append("daily podcast report link target must be a regular Markdown file")
         elif PurePosixPath(page_path).stem not in report.read_text(encoding="utf-8"):
             errors.append("daily report does not link the timestamped podcast transcript")
+    return errors
+
+
+def _podcast_translation_text_errors(
+    repository_root: Path,
+    *,
+    operation: Operation,
+    run_id: str,
+    status: object,
+    changed_paths: Sequence[str],
+    environment: Mapping[str, str],
+) -> list[str]:
+    """Validate one immutable localized transcript and its audited render attempt."""
+
+    if operation.operation_type != "podcast_translation":
+        return []
+    inputs = _payload_inputs(repository_root, operation.to_row()) or {}
+    page_path = inputs.get("page_path")
+    errors: list[str] = []
+    podcast_changes = [path for path in changed_paths if path.startswith("data/wiki/podcasts/")]
+    if status != "succeeded":
+        if podcast_changes:
+            errors.append("non-successful podcast translation must not retain a transcript page")
+        return errors
+    if operation.entity_id != inputs.get("source_daily_cycle_id"):
+        errors.append("podcast translation entity conflicts with its source cycle")
+    if not isinstance(page_path, str) or page_path not in changed_paths:
+        errors.append("succeeded podcast translation must create its exact localized transcript")
+        return errors
+    if podcast_changes != [page_path]:
+        errors.append("podcast translation must change exactly one localized transcript page")
+    try:
+        settings = load_settings(repository_root, environment)
+        validate_podcast_translation_script_file(
+            repository_root,
+            settings,
+            run_id=run_id,
+            operation_id=operation.operation_id,
+        )
+    except (ConfigurationError, PodcastError) as exc:
+        errors.append(str(exc))
+    page = repository_root.joinpath(*PurePosixPath(page_path).parts)
+    if page.is_file() and re.search(
+        r"(?i)\.(?:mp3|wav|m4a)(?:\b|[?#])", page.read_text(encoding="utf-8")
+    ):
+        errors.append("localized podcast transcript must not contain a persistent audio link")
+    audit_entries, audit_errors = _load_command_audit(
+        repository_root, run_id, operation.operation_id
+    )
+    errors.extend(audit_errors)
+    render_attempts = [
+        (index, entry)
+        for index, entry in enumerate(audit_entries)
+        if _command_parts(entry)[1:4] == ("podcast", "translation", "render-draft")
+    ]
+    if len(render_attempts) != 1:
+        errors.append("successful podcast translation must attempt draft rendering exactly once")
+    expected_preflight = (
+        "papertrader",
+        "podcast",
+        "translation",
+        "validate-script",
+        "--run-id",
+        run_id,
+        "--operation-id",
+        operation.operation_id,
+    )
+    successful_preflights = [
+        index
+        for index, entry in enumerate(audit_entries)
+        if _command_parts(entry) == expected_preflight and entry.get("exit_code") == 0
+    ]
+    if not successful_preflights:
+        errors.append("successful podcast translation requires a passing script preflight")
+    elif render_attempts and not any(
+        index < render_attempts[0][0] for index in successful_preflights
+    ):
+        errors.append("podcast translation renderer ran before its passing preflight")
     return errors
 
 
@@ -1513,6 +1606,16 @@ def validate_agent_result(
             operation=operation,
             status=status,
             changed_paths=changed_paths,
+        )
+    )
+    errors.extend(
+        _podcast_translation_text_errors(
+            repository_root,
+            operation=operation,
+            run_id=run_id,
+            status=status,
+            changed_paths=changed_paths,
+            environment=environment,
         )
     )
     created_operations = _operation_ids(repository_root) - operation_ids_before

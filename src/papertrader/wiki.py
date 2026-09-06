@@ -549,6 +549,28 @@ def lint_wiki(wiki_root: Path) -> list[str]:
             unknown = sorted(set(tags).difference(known_tags))
             if unknown:
                 errors.append(f"{relative}: unknown tags: {', '.join(unknown)}")
+        translation_of = metadata.get("translation_of")
+        if translation_of is not None:
+            prefix = "data/wiki/"
+            if (
+                metadata.get("type") != "podcast"
+                or not key.startswith("podcasts/")
+                or not isinstance(translation_of, str)
+                or not translation_of.startswith(prefix)
+                or not translation_of.endswith(".md")
+            ):
+                errors.append(f"{relative}: translation_of must identify one podcast wiki page")
+            else:
+                source_key = translation_of.removeprefix(prefix).removesuffix(".md")
+                if source_key == key or source_key not in page_keys:
+                    errors.append(
+                        f"{relative}: translation_of source is missing or self-referential"
+                    )
+                else:
+                    # A translation is a discoverable child of its canonical source even though
+                    # its content-only operation must not mutate the committed source transcript.
+                    resolved_links.setdefault(source_key, set()).add(key)
+                    resolved_links.setdefault(key, set()).add(source_key)
         if relative == "log.md":
             line_count = len(path.read_text(encoding="utf-8").splitlines())
             if line_count > log_rotation_lines_raw:

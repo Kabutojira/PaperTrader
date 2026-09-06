@@ -199,7 +199,7 @@ def resolve_matching_issues(
 def operation_validation_impact(operation_type: str) -> str:
     """Return the bounded health effect of one failed agent-result validation."""
 
-    if operation_type == "daily_podcast":
+    if operation_type in {"daily_podcast", "podcast_translation"}:
         return "publication_only"
     if operation_type == "execute_strategy":
         return "blocks_action"
@@ -324,7 +324,7 @@ def _legacy_identity(
     ):
         impact = (
             "publication_only"
-            if operation_type == "daily_podcast"
+            if operation_type in {"daily_podcast", "podcast_translation"}
             else "blocks_action"
             if operation_type == "execute_strategy"
             else "affects_candidate"

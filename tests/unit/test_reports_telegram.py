@@ -29,6 +29,7 @@ from papertrader.telegram import (
     escape_markdown_v2,
     podcast_script_messages,
     record_podcast_audio_failure,
+    record_podcast_script_failure,
     split_message,
     telegram_messages,
 )
@@ -488,6 +489,30 @@ def test_verified_ephemeral_podcast_audio_is_delivered_and_failures_are_stable(
     assert "artifact expired" in issues[0]["description"]
 
 
+def test_failed_podcast_audio_delivery_retains_sealed_handoff_for_retry(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    _, manifest, audio, _ = _commit_podcast_handoff(sandbox_repository)
+    transport = _FakeAudioTelegram([TimeoutError("upload timed out")] * 3)
+
+    delivered = deliver_podcast_audio(
+        sandbox_repository,
+        sandbox_settings,
+        manifest_path=manifest,
+        audio_path=audio,
+        repository_url="https://github.com/example/PaperTrader",
+        token="secret-token",
+        chat_id="-123",
+        transport=transport,
+        sleeper=lambda _: None,
+    )
+
+    assert delivered.status == "failed"
+    assert audio.is_file()
+    assert manifest.is_file()
+
+
 def test_committed_podcast_script_preserves_paragraph_order_and_is_independent(
     sandbox_repository: Path,
     sandbox_settings: Settings,
@@ -513,6 +538,106 @@ def test_committed_podcast_script_preserves_paragraph_order_and_is_independent(
     rich = json.loads(transport.calls[0]["rich_message"])["markdown"]
     assert rich.startswith("Daily portfolio review.")
     assert f"/blob/{commit}/{script_path}" in rich
+
+
+def test_localized_podcast_delivery_uses_separate_identity_and_caption(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    _, _, _, cycle_id = _commit_podcast_handoff(sandbox_repository)
+    localized_path = "data/wiki/podcasts/daily-podcast_20260724T220000Z_it-IT.md"
+    localized = (
+        "---\n"
+        f"daily_cycle_id: {cycle_id}\n"
+        "paper_trading: true\n"
+        "language: it-IT\n"
+        "---\n"
+        "<!-- papertrader-spoken-transcript:start -->\n"
+        "Revisione quotidiana del portafoglio.\n"
+        "<!-- papertrader-spoken-transcript:end -->\n"
+    )
+    (sandbox_repository / localized_path).write_text(localized, encoding="utf-8")
+    subprocess.run(["git", "add", localized_path], cwd=sandbox_repository, check=True)
+    subprocess.run(
+        ["git", "commit", "-m", "localized"],
+        cwd=sandbox_repository,
+        check=True,
+        capture_output=True,
+    )
+    commit = subprocess.run(
+        ["git", "rev-parse", "HEAD"],
+        cwd=sandbox_repository,
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.strip()
+    script_transport = _FakeTelegram([])
+    delivered_script = deliver_podcast_script(
+        sandbox_repository,
+        sandbox_settings,
+        commit_sha=commit,
+        script_path=localized_path,
+        daily_cycle_id=cycle_id,
+        repository_url="https://github.com/example/PaperTrader",
+        token="secret-token",
+        chat_id="-123",
+        language="it-IT",
+        transport=script_transport,
+        sleeper=lambda _: None,
+    )
+    assert delivered_script.language == "it-IT"
+
+    audio = sandbox_repository.parent / "localized.mp3"
+    audio.write_bytes(b"localized-audio")
+    manifest = sandbox_repository.parent / "localized-manifest.json"
+    manifest.write_text(
+        json.dumps(
+            {
+                "audio_manifest_version": 2,
+                "daily_cycle_id": cycle_id,
+                "script_commit": commit,
+                "script_path": localized_path,
+                "script_sha256": content_hash(localized.encode()),
+                "audio_filename": audio.name,
+                "audio_size": audio.stat().st_size,
+                "audio_sha256": content_hash(audio.read_bytes()),
+                "duration_seconds": 1200,
+                "format": "mp3",
+                "language": "it-IT",
+                "tts_voice": "it-IT-DiegoNeural",
+            }
+        ),
+        encoding="utf-8",
+    )
+    audio_transport = _FakeAudioTelegram([])
+    delivered_audio = deliver_podcast_audio(
+        sandbox_repository,
+        sandbox_settings,
+        manifest_path=manifest,
+        audio_path=audio,
+        repository_url="https://github.com/example/PaperTrader",
+        token="secret-token",
+        chat_id="-123",
+        transport=audio_transport,
+        sleeper=lambda _: None,
+    )
+    assert delivered_audio.language == "it-IT"
+    assert "Italiano" in audio_transport.calls[0][0]["caption"]
+
+    english_failure = record_podcast_script_failure(
+        sandbox_repository,
+        daily_cycle_id=cycle_id,
+        script_commit=commit,
+        error="english failed",
+    )
+    italian_failure = record_podcast_script_failure(
+        sandbox_repository,
+        daily_cycle_id=cycle_id,
+        script_commit=commit,
+        error="italian failed",
+        language="it-IT",
+    )
+    assert english_failure.issue_id != italian_failure.issue_id
 
 
 def test_podcast_script_chunking_preserves_paragraph_boundaries() -> None:

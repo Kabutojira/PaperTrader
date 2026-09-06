@@ -48,6 +48,7 @@ SUPPORTED_OPERATIONS = frozenset(
         "strategy_research",
         "execute_strategy",
         "daily_podcast",
+        "podcast_translation",
     }
 )
 OPERATION_SKILLS = {
@@ -74,6 +75,7 @@ OPERATION_ENTITY_TYPES = {
     "strategy_research": "strategy",
     "execute_strategy": "strategy",
     "daily_podcast": "run",
+    "podcast_translation": "run",
 }
 SAFE_RUN_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$")
 MERGEABLE_RESEARCH_TYPES = frozenset({"security_research", "quick_check_research"})

@@ -1,0 +1,134 @@
+{
+  "checkpoints": [
+    {
+      "index": 0,
+      "kind": "operation",
+      "operation_id": "01M1SZWCJGF15NFP3JVP1S6M0X",
+      "operation_type": "idea_research",
+      "profile": "analyst",
+      "recorded_at": "2026-09-06T00:11:08Z",
+      "terminal_status": "succeeded"
+    },
+    {
+      "index": 1,
+      "kind": "finalization",
+      "operation_id": "",
+      "operation_type": "",
+      "profile": "",
+      "recorded_at": "2026-09-06T00:12:21Z",
+      "terminal_status": ""
+    },
+    {
+      "index": 2,
+      "kind": "podcast_text",
+      "operation_id": "01M1T4STN8VX3CQRFGTEQMDF04",
+      "operation_type": "daily_podcast",
+      "profile": "deep",
+      "recorded_at": "2026-09-06T01:31:22Z",
+      "terminal_status": "succeeded"
+    }
+  ],
+  "completed_at": "2026-09-06T00:11:13Z",
+  "completion_at": "2026-09-06T01:31:21Z",
+  "daily_cycle_id": "daily-20260905T235530Z",
+  "daily_run_version": 2,
+  "fill_outcomes": [
+    "order_13ad2dddfc24c33d7b46:pending:-",
+    "order_742bea9c46f700562f10:pending:-"
+  ],
+  "final_commit_identity": "daily-20260905T235530Z:checkpoint-002",
+  "final_commit_sha": "",
+  "finalization_at": "2026-09-06T00:11:13Z",
+  "finalization_commit_identity": "daily-20260905T235530Z:checkpoint-001",
+  "finalization_status": "succeeded",
+  "maximum_operations": 20,
+  "model_budget_limit": "100",
+  "model_budget_used": "2.5",
+  "next_checkpoint_index": 3,
+  "operating_date": "2026-09-06",
+  "operation_count": 1,
+  "operations_accepted": [
+    {
+      "auxiliary_models": {
+        "web_extract": "openai-codex:gpt-5.6-terra"
+      },
+      "checkpoint_index": 0,
+      "effective_model": "gpt-5.6-terra",
+      "escalation_source": "",
+      "maximum_turns": 80,
+      "mutation_policy": "routine_research",
+      "operation_id": "01M1SZWCJGF15NFP3JVP1S6M0X",
+      "profile": "analyst",
+      "profile_policy_version": "profile-router-v1",
+      "reasoning_effort": "medium",
+      "route_reason": "routine_research_or_long_form_synthesis",
+      "terminal_status": "succeeded",
+      "timeout_seconds": 1200,
+      "weighted_cost": "2.5"
+    }
+  ],
+  "operations_attempted": [
+    "01M1SZWCJGF15NFP3JVP1S6M0X"
+  ],
+  "originating_github_run_id": "202609060001",
+  "podcast_audio_path": "",
+  "podcast_commit_identity": "daily-20260905T235530Z:checkpoint-002",
+  "podcast_operation_id": "01M1T4STN8VX3CQRFGTEQMDF04",
+  "podcast_page_path": "data/wiki/podcasts/daily-podcast_20260905T235530Z.md",
+  "podcast_status": "succeeded",
+  "podcast_text_at": "2026-09-06T01:31:21Z",
+  "preparation_at": "2026-09-05T23:55:36Z",
+  "preparation_errors": [],
+  "profile_limits": {
+    "analyst": {
+      "maximum_turns": 80,
+      "model": "gpt-5.6-terra",
+      "mutation_policy": "routine_research",
+      "policy_version": "profile-router-v1",
+      "reasoning_effort": "medium",
+      "timeout_seconds": 1200,
+      "weighted_cost": "2.5"
+    },
+    "deep": {
+      "maximum_turns": 160,
+      "model": "gpt-5.6-sol",
+      "mutation_policy": "full_research",
+      "policy_version": "profile-router-v1",
+      "reasoning_effort": "medium",
+      "timeout_seconds": 1800,
+      "weighted_cost": "5"
+    },
+    "scout": {
+      "maximum_turns": 32,
+      "model": "gpt-5.6-luna",
+      "mutation_policy": "triage_only",
+      "policy_version": "profile-router-v1",
+      "reasoning_effort": "low",
+      "timeout_seconds": 600,
+      "weighted_cost": "1"
+    }
+  },
+  "queue_dispositions": [
+    "01KZCFVCT82RJFGB5HESAFJB6B:blocked:dependency_unavailable:01KZ9ZJVER177B5ASW4ZMQHEG3",
+    "01KZGT11ZGR8JEKWC3RXGSS544:blocked:dependency_unavailable:01KZGT11ZGBPRBKV129FD00TH1",
+    "01M0FWY80RRY528G4HT2QM3N1Y:blocked:dependency_unavailable:01M07XKZS0JKBQM0THMPJGWEK5"
+  ],
+  "remaining_operations": 19,
+  "report_path": "data/wiki/daily-reports/daily-report_20260906.md",
+  "research_cutoff_at": "2026-09-06T00:11:13Z",
+  "run_id": "daily-20260905T235530Z",
+  "snapshot_id": "decision_e291698197728a3c7f64",
+  "source_sha": "365a9fae29ae8b187a1b1b9be30da91655379d26",
+  "started_at": "2026-09-05T23:55:30Z",
+  "status": "succeeded",
+  "trigger": "local",
+  "weighted_model_budget": "100",
+  "weighted_model_budget_used": "2.5",
+  "workflow_attempts": [
+    {
+      "github_run_id": "202609060001",
+      "resumed_at": "2026-09-05T23:55:30Z",
+      "workflow_attempt": "1"
+    }
+  ]
+}

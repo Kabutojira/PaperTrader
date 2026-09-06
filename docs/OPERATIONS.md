@@ -198,6 +198,35 @@ The native `llm-wiki` skill, `papertrader-controller`, and exactly one operation
 Hermes is always invoked with `--yolo`; the path allowlist, command receipts, result schema, and
 post-run validation replace interactive prompts.
 
+### Translate a committed podcast
+
+Use the exact committed transcript as the source and enqueue one target locale:
+
+```bash
+translation=$(uv run papertrader podcast translation enqueue \
+  --source-commit "$(git rev-parse HEAD)" \
+  --source-script-path "data/wiki/podcasts/daily-podcast_<timestamp>.md" \
+  --source-locale en-US \
+  --target-locale it-IT \
+  --target-voice it-IT-DiegoNeural)
+```
+
+Run its operation ID through local Hermes with a new `translation-<UTC timestamp>` run ID and an
+empty runner-temp podcast output directory. After the operation succeeds and its localized
+transcript is committed, seal without synthesizing again:
+
+```bash
+uv run papertrader podcast translation seal-render \
+  --run-id "<translation-run-id>" \
+  --operation-id "<operation-id>" \
+  --script-commit "<localized transcript commit>" \
+  --output-directory "<temporary-root>/papertrader-podcast/<translation-run-id>"
+```
+
+Deliver the localized transcript with `telegram deliver-podcast-script --language it-IT`; audio
+delivery reads language and voice from the sealed manifest. Keep Telegram credentials outside the
+Hermes environment and delete all ephemeral media after delivery.
+
 ## Enqueue bounded work
 
 Put the request under `data/operations/` or the current operation artifact directory. Example:

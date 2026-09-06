@@ -13,15 +13,19 @@ from papertrader.config import Settings
 from papertrader.podcast import (
     PodcastError,
     enqueue_daily_podcast,
+    enqueue_podcast_translation,
     finalize_daily_podcast,
     render_draft_podcast,
+    render_draft_podcast_translation,
     seal_podcast_render,
     validate_podcast_context,
     validate_podcast_script,
     validate_podcast_script_file,
+    validate_podcast_translation_script_file,
 )
 from papertrader.queue import RunBudget, claim_next, complete_operation, fail_attempt, prepare_queue
 from papertrader.tables import append_unique, read_table
+from papertrader.utils import content_hash
 
 NOW = datetime(2026, 7, 30, 18, tzinfo=UTC)
 
@@ -44,6 +48,8 @@ def test_podcast_skill_excludes_unscoped_advice_validation(repository_root: Path
     assert "Never replace its timestamp with the current clock" in skill
     assert "agent-authored path error is not a frozen-input conflict" in skill
     assert "exact deterministic report bullet" in skill
+    assert "sole report that may be changed" in skill
+    assert "never derive, recalculate, search for, or substitute" in skill
 
 
 def _script(cycle_id: str, *, extra_body: str = "") -> str:
@@ -258,7 +264,7 @@ def test_version_two_podcast_path_is_bound_to_cycle_not_enqueue_time(
         sandbox_repository,
         cycle_id,
         started_at="2026-07-29T09:00:00Z",
-        cutoff="2026-07-29T10:30:00Z",
+        cutoff="2026-07-30T10:30:00Z",
     )
 
     result = enqueue_daily_podcast(
@@ -282,6 +288,14 @@ def test_version_two_podcast_path_is_bound_to_cycle_not_enqueue_time(
     assert manifest["podcast_page_path"] == expected
     assert context["generated_at"] == "2026-07-30T18:00:00Z"
     assert expected != enqueue_time_path
+    assert payload["inputs"]["report_path"] == ("data/wiki/daily-reports/daily-report_20260730.md")
+    row = next(
+        row
+        for row in read_table(sandbox_repository, "operations_todo")
+        if row["operation_id"] == result.operation_id
+    )
+    assert payload["inputs"]["report_path"] in row["prompt"]
+    assert "do not derive either pathname from a date" in row["prompt"]
 
 
 def test_context_validation_rejects_page_not_bound_to_cycle(
@@ -835,6 +849,171 @@ def test_podcast_script_preflight_uses_the_renderers_exact_text_gates(
     assert result.word_count == 3000
     assert 2 <= result.chunk_count <= 12
     assert len(result.script_sha256) == 64
+
+
+def _translation_fixture(
+    repository: Path,
+    settings: Settings,
+) -> tuple[str, str, str, str]:
+    cycle_id = "daily-20260730T190000Z"
+    source_path = "data/wiki/podcasts/daily-podcast_20260730T190000Z.md"
+    source = repository / source_path
+    source.parent.mkdir(parents=True, exist_ok=True)
+    source.write_text(_script(cycle_id), encoding="utf-8")
+    subprocess.run(["git", "init", "-b", "main"], cwd=repository, check=True, capture_output=True)
+    subprocess.run(["git", "config", "user.name", "Test"], cwd=repository, check=True)
+    subprocess.run(["git", "config", "user.email", "test@example.com"], cwd=repository, check=True)
+    subprocess.run(["git", "add", "--all"], cwd=repository, check=True)
+    subprocess.run(
+        ["git", "commit", "-m", "source"],
+        cwd=repository,
+        check=True,
+        capture_output=True,
+    )
+    commit = subprocess.run(
+        ["git", "rev-parse", "HEAD"],
+        cwd=repository,
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.strip()
+    enqueued = enqueue_podcast_translation(
+        repository,
+        settings,
+        source_commit=commit,
+        source_script_path=source_path,
+        source_locale="en-US",
+        target_locale="it-IT",
+        target_voice="it-IT-DiegoNeural",
+        now=NOW,
+    )
+    return cycle_id, source_path, commit, enqueued.operation_id
+
+
+def _translated_script(cycle_id: str, source_path: str, commit: str) -> str:
+    paragraphs = [" ".join(["parola"] * 300) for _ in range(8)]
+    source_sha = content_hash(_script(cycle_id).encode())
+    return (
+        "---\n"
+        "title: Podcast quotidiano PaperTrader\n"
+        "type: podcast\n"
+        "paper_trading: true\n"
+        f"daily_cycle_id: {cycle_id}\n"
+        "language: it-IT\n"
+        "tts_voice: it-IT-DiegoNeural\n"
+        f"translation_of: {source_path}\n"
+        f"source_commit: {commit}\n"
+        f"source_transcript_sha256: {source_sha}\n"
+        "source_language: en-US\n"
+        "---\n"
+        "# Podcast quotidiano PaperTrader\n\n"
+        "<!-- papertrader-spoken-transcript:start -->\n"
+        + "\n\n".join(paragraphs)
+        + "\n<!-- papertrader-spoken-transcript:end -->\n"
+    )
+
+
+def test_podcast_translation_is_content_addressed_and_uses_target_voice(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    tmp_path: Path,
+) -> None:
+    cycle_id, source_path, commit, operation_id = _translation_fixture(
+        sandbox_repository, sandbox_settings
+    )
+    page_path = "data/wiki/podcasts/daily-podcast_20260730T190000Z_it-IT.md"
+    (sandbox_repository / page_path).write_text(
+        _translated_script(cycle_id, source_path, commit), encoding="utf-8"
+    )
+    preflight = validate_podcast_translation_script_file(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="translation-20260730T200000Z",
+        operation_id=operation_id,
+    )
+    assert preflight.language == "it-IT"
+    assert preflight.voice == "it-IT-DiegoNeural"
+    commands: list[list[str]] = []
+
+    def fake_runner(command: list[str], **_: object) -> subprocess.CompletedProcess[object]:
+        commands.append(command)
+        if "-show_entries" in command:
+            return subprocess.CompletedProcess(command, 0, "1200\n", "")
+        target = (
+            Path(command[command.index("--write-media") + 1])
+            if "--write-media" in command
+            else Path(command[-1])
+        )
+        target.write_bytes(b"localized-audio")
+        return subprocess.CompletedProcess(command, 0, "", "")
+
+    run_id = "translation-20260730T200000Z"
+    result = render_draft_podcast_translation(
+        sandbox_repository,
+        sandbox_settings,
+        run_id=run_id,
+        operation_id=operation_id,
+        output_directory=tmp_path / "papertrader-podcast" / run_id,
+        audit_run_id=run_id,
+        audit_operation_id=operation_id,
+        audit_operation_type="podcast_translation",
+        runner=fake_runner,
+    )
+    assert Path(result.audio_path).is_file()
+    tts = [command for command in commands if "--write-media" in command]
+    assert tts
+    assert all(command[command.index("--voice") + 1] == "it-IT-DiegoNeural" for command in tts)
+
+
+def test_podcast_translation_rejects_voice_from_another_locale(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    cycle_id = "daily-20260730T190000Z"
+    source_path = "data/wiki/podcasts/daily-podcast_20260730T190000Z.md"
+    source = sandbox_repository / source_path
+    source.parent.mkdir(parents=True, exist_ok=True)
+    source.write_text(_script(cycle_id), encoding="utf-8")
+    subprocess.run(
+        ["git", "init", "-b", "main"],
+        cwd=sandbox_repository,
+        check=True,
+        capture_output=True,
+    )
+    subprocess.run(["git", "add", "--all"], cwd=sandbox_repository, check=True)
+    subprocess.run(
+        [
+            "git",
+            "-c",
+            "user.name=Test",
+            "-c",
+            "user.email=test@example.com",
+            "commit",
+            "-m",
+            "source",
+        ],
+        cwd=sandbox_repository,
+        check=True,
+        capture_output=True,
+    )
+    commit = subprocess.run(
+        ["git", "rev-parse", "HEAD"],
+        cwd=sandbox_repository,
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.strip()
+    with pytest.raises(PodcastError, match="target locale"):
+        enqueue_podcast_translation(
+            sandbox_repository,
+            sandbox_settings,
+            source_commit=commit,
+            source_script_path=source_path,
+            source_locale="en-US",
+            target_locale="it-IT",
+            target_voice="en-US-GuyNeural",
+            now=NOW,
+        )
 
 
 def test_repository_podcast_audio_path_is_rejected(

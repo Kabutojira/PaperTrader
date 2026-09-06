@@ -45,7 +45,10 @@ SCRIPT_DELIVERY_ISSUE_TITLE = "Telegram podcast script delivery unavailable"
 DELIVERY_ISSUE_CODE = "telegram_report_delivery_failed"
 AUDIO_DELIVERY_ISSUE_CODE = "telegram_podcast_audio_delivery_failed"
 SCRIPT_DELIVERY_ISSUE_CODE = "telegram_podcast_script_delivery_failed"
-PODCAST_PATH = re.compile(r"^data/wiki/podcasts/daily-podcast_[0-9]{8}T[0-9]{6}Z\.md$")
+PODCAST_PATH = re.compile(
+    r"^data/wiki/podcasts/daily-podcast_[0-9]{8}T[0-9]{6}Z(?:_[a-z]{2}-[A-Z]{2})?\.md$"
+)
+LOCALE = re.compile(r"^[a-z]{2}-[A-Z]{2}$")
 
 
 class TelegramDeliveryError(RuntimeError):
@@ -207,6 +210,7 @@ class TelegramAudioDeliveryResult:
     audio_sha256: str
     issue_id: str
     error: str
+    language: str = "en-US"
 
 
 @dataclass(frozen=True, slots=True)
@@ -219,6 +223,22 @@ class TelegramPodcastScriptDeliveryResult:
     total_chunks: int
     issue_id: str
     error: str
+    language: str = "en-US"
+
+
+def _podcast_delivery_entity(kind: str, language: str) -> str:
+    if LOCALE.fullmatch(language) is None:
+        raise CanonicalValueError("podcast delivery language is invalid")
+    return kind if language == "en-US" else f"{kind}_{language}"
+
+
+def _canonical_podcast_path(script_path: str, daily_cycle_id: str, language: str) -> bool:
+    if not PODCAST_PATH.fullmatch(script_path) or not RUN_ID.fullmatch(daily_cycle_id):
+        return False
+    stamp = daily_cycle_id.removeprefix("daily-")
+    base = f"data/wiki/podcasts/daily-podcast_{stamp}.md"
+    localized = f"data/wiki/podcasts/daily-podcast_{stamp}_{language}.md"
+    return script_path in {base, localized} if language == "en-US" else script_path == localized
 
 
 def record_podcast_audio_failure(
@@ -227,11 +247,16 @@ def record_podcast_audio_failure(
     daily_cycle_id: str,
     script_commit: str,
     error: str,
+    language: str = "en-US",
     now: datetime | None = None,
 ) -> TelegramAudioDeliveryResult:
     """Persist one stable latest-only issue for a failed ephemeral audio boundary."""
 
-    if not RUN_ID.fullmatch(daily_cycle_id) or not COMMIT_SHA.fullmatch(script_commit):
+    if (
+        not RUN_ID.fullmatch(daily_cycle_id)
+        or not COMMIT_SHA.fullmatch(script_commit)
+        or LOCALE.fullmatch(language) is None
+    ):
         raise CanonicalValueError("podcast audio failure identity is invalid")
     safe_error = " ".join(error.split())[:500]
     if not safe_error:
@@ -244,13 +269,13 @@ def record_podcast_audio_failure(
         title=AUDIO_DELIVERY_ISSUE_TITLE,
         description=(f"cycle={daily_cycle_id} commit={script_commit} error={safe_error}"),
         entity_type="delivery",
-        entity_id="podcast_audio",
+        entity_id=_podcast_delivery_entity("podcast_audio", language),
         owner="delivery",
         related_run_id=daily_cycle_id,
         now=now,
     )
     return TelegramAudioDeliveryResult(
-        "failed", daily_cycle_id, script_commit, "", issue_id, safe_error
+        "failed", daily_cycle_id, script_commit, "", issue_id, safe_error, language
     )
 
 
@@ -260,11 +285,16 @@ def record_podcast_script_failure(
     daily_cycle_id: str,
     script_commit: str,
     error: str,
+    language: str = "en-US",
     now: datetime | None = None,
 ) -> TelegramPodcastScriptDeliveryResult:
     """Persist redacted retry state when committed-script delivery cannot start."""
 
-    if not RUN_ID.fullmatch(daily_cycle_id) or not COMMIT_SHA.fullmatch(script_commit):
+    if (
+        not RUN_ID.fullmatch(daily_cycle_id)
+        or not COMMIT_SHA.fullmatch(script_commit)
+        or LOCALE.fullmatch(language) is None
+    ):
         raise CanonicalValueError("podcast script failure identity is invalid")
     safe_error = " ".join(error.split())[:500]
     if not safe_error:
@@ -277,13 +307,13 @@ def record_podcast_script_failure(
         title=SCRIPT_DELIVERY_ISSUE_TITLE,
         description=(f"cycle={daily_cycle_id} commit={script_commit} error={safe_error}"),
         entity_type="delivery",
-        entity_id="podcast_script",
+        entity_id=_podcast_delivery_entity("podcast_script", language),
         owner="delivery",
         related_run_id=daily_cycle_id,
         now=now,
     )
     return TelegramPodcastScriptDeliveryResult(
-        "failed", daily_cycle_id, script_commit, "", 0, 0, issue_id, safe_error
+        "failed", daily_cycle_id, script_commit, "", 0, 0, issue_id, safe_error, language
     )
 
 
@@ -471,14 +501,14 @@ def _committed_podcast_script(
     commit_sha: str,
     script_path: str,
     daily_cycle_id: str,
+    language: str = "en-US",
 ) -> str:
     if not COMMIT_SHA.fullmatch(commit_sha):
         raise CanonicalValueError("podcast script commit must contain 40 lowercase hex characters")
     if (
         not RUN_ID.fullmatch(daily_cycle_id)
-        or not PODCAST_PATH.fullmatch(script_path)
-        or script_path
-        != f"data/wiki/podcasts/daily-podcast_{daily_cycle_id.removeprefix('daily-')}.md"
+        or LOCALE.fullmatch(language) is None
+        or not _canonical_podcast_path(script_path, daily_cycle_id, language)
     ):
         raise CanonicalValueError("podcast script identity is not canonical")
     result = subprocess.run(
@@ -515,7 +545,7 @@ def podcast_script_messages(
     except PodcastError as exc:
         raise CanonicalValueError(str(exc)) from exc
     if not re.fullmatch(
-        r"https://github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+/blob/[0-9a-f]{40}/data/wiki/podcasts/daily-podcast_[0-9]{8}T[0-9]{6}Z\.md",
+        r"https://github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+/blob/[0-9a-f]{40}/data/wiki/podcasts/daily-podcast_[0-9]{8}T[0-9]{6}Z(?:_[a-z]{2}-[A-Z]{2})?\.md",
         committed_url,
     ):
         raise CanonicalValueError("committed podcast URL is not canonical")
@@ -591,14 +621,17 @@ def _delivery_issue(repository_root: Path) -> Mapping[str, str] | None:
     )
 
 
-def _podcast_script_delivery_issue(repository_root: Path) -> Mapping[str, str] | None:
+def _podcast_script_delivery_issue(
+    repository_root: Path, language: str = "en-US"
+) -> Mapping[str, str] | None:
+    entity_id = _podcast_delivery_entity("podcast_script", language)
     return next(
         (
             row
             for row in read_table(repository_root, "issues")
             if row["issue_code"] == SCRIPT_DELIVERY_ISSUE_CODE
             and row["entity_type"] == "delivery"
-            and row["entity_id"] == "podcast_script"
+            and row["entity_id"] == entity_id
         ),
         None,
     )
@@ -757,6 +790,7 @@ def deliver_podcast_script(
     repository_url: str,
     token: str,
     chat_id: str,
+    language: str = "en-US",
     transport: TelegramTransport | None = None,
     sleeper: Callable[[float], None] = time.sleep,
     now: datetime | None = None,
@@ -770,6 +804,7 @@ def deliver_podcast_script(
         commit_sha=commit_sha,
         script_path=script_path,
         daily_cycle_id=daily_cycle_id,
+        language=language,
     )
     committed_url = f"{repository_url}/blob/{commit_sha}/{script_path}"
     messages = podcast_script_messages(
@@ -777,7 +812,7 @@ def deliver_podcast_script(
         committed_url=committed_url,
         limit=settings.telegram.message_limit,
     )
-    prior_issue = _podcast_script_delivery_issue(repository_root)
+    prior_issue = _podcast_script_delivery_issue(repository_root, language)
     start_at = _resume_chunk(prior_issue, commit_sha, len(messages))
     selected_transport = transport or UrllibTelegramTransport()
     sent = 0
@@ -837,7 +872,7 @@ def deliver_podcast_script(
                 f"next_chunk={failed_at} total_chunks={len(messages)} error={failure}"
             ),
             entity_type="delivery",
-            entity_id="podcast_script",
+            entity_id=_podcast_delivery_entity("podcast_script", language),
             owner="delivery",
             related_run_id=daily_cycle_id,
             now=now,
@@ -851,12 +886,13 @@ def deliver_podcast_script(
             len(messages),
             issue_id,
             failure,
+            language,
         )
     resolved = resolve_matching_issues(
         repository_root,
         issue_code=SCRIPT_DELIVERY_ISSUE_CODE,
         entity_type="delivery",
-        entity_id="podcast_script",
+        entity_id=_podcast_delivery_entity("podcast_script", language),
         resolution=f"Podcast script for {daily_cycle_id} at {commit_sha} delivered successfully.",
         now=now,
     )
@@ -870,6 +906,7 @@ def deliver_podcast_script(
         len(messages),
         issue_id,
         "",
+        language,
     )
 
 
@@ -901,14 +938,16 @@ def _deliver_podcast_audio(
     cycle_id = manifest.get("daily_cycle_id")
     script_commit = manifest.get("script_commit")
     script_path = manifest.get("script_path")
+    language = manifest.get("language", "en-US")
     if (
         not isinstance(cycle_id, str)
         or not RUN_ID.fullmatch(cycle_id)
         or not isinstance(script_commit, str)
         or not COMMIT_SHA.fullmatch(script_commit)
         or not isinstance(script_path, str)
-        or not PODCAST_PATH.fullmatch(script_path)
-        or script_path != f"data/wiki/podcasts/daily-podcast_{cycle_id.removeprefix('daily-')}.md"
+        or not isinstance(language, str)
+        or LOCALE.fullmatch(language) is None
+        or not _canonical_podcast_path(script_path, cycle_id, language)
     ):
         raise CanonicalValueError("audio manifest script/cycle identity is invalid")
     if audio_path.name != manifest.get("audio_filename") or audio_path.suffix != ".mp3":
@@ -942,8 +981,15 @@ def _deliver_podcast_audio(
     report_path = committed_run_report_path(
         repository_root, commit_sha=script_commit, run_id=cycle_id
     )
+    heading = (
+        "PaperTrader podcast quotidiano — Italiano"
+        if language == "it-IT"
+        else "PaperTrader daily podcast"
+        if language == "en-US"
+        else f"PaperTrader daily podcast — {language}"
+    )
     caption = (
-        "PaperTrader daily podcast\n"
+        f"{heading}\n"
         f"Transcript: {repository_url}/blob/{script_commit}/{script_path}\n"
         f"Daily report: {repository_url}/blob/{script_commit}/{report_path}"
     )
@@ -989,24 +1035,26 @@ def _deliver_podcast_audio(
                 f"cycle={cycle_id} commit={script_commit} audio_sha256={audio_sha} error={failure}"
             ),
             entity_type="delivery",
-            entity_id="podcast_audio",
+            entity_id=_podcast_delivery_entity("podcast_audio", language),
             owner="delivery",
             related_run_id=cycle_id,
             now=now,
         )
         return TelegramAudioDeliveryResult(
-            "failed", cycle_id, script_commit, audio_sha, issue_id, failure
+            "failed", cycle_id, script_commit, audio_sha, issue_id, failure, language
         )
     resolved = resolve_matching_issues(
         repository_root,
         issue_code=AUDIO_DELIVERY_ISSUE_CODE,
         entity_type="delivery",
-        entity_id="podcast_audio",
+        entity_id=_podcast_delivery_entity("podcast_audio", language),
         resolution=f"Podcast audio for {cycle_id} at {script_commit} delivered successfully.",
         now=now,
     )
     issue_id = resolved[-1] if resolved else ""
-    return TelegramAudioDeliveryResult("sent", cycle_id, script_commit, audio_sha, issue_id, "")
+    return TelegramAudioDeliveryResult(
+        "sent", cycle_id, script_commit, audio_sha, issue_id, "", language
+    )
 
 
 def deliver_podcast_audio(
@@ -1022,25 +1070,25 @@ def deliver_podcast_audio(
     sleeper: Callable[[float], None] = time.sleep,
     now: datetime | None = None,
 ) -> TelegramAudioDeliveryResult:
-    """Deliver sealed audio and immediately remove the ephemeral media handoff."""
+    """Deliver sealed audio and remove it only after Telegram confirms receipt."""
 
-    try:
-        return _deliver_podcast_audio(
-            repository_root,
-            settings,
-            manifest_path=manifest_path,
-            audio_path=audio_path,
-            repository_url=repository_url,
-            token=token,
-            chat_id=chat_id,
-            transport=transport,
-            sleeper=sleeper,
-            now=now,
-        )
-    finally:
+    result = _deliver_podcast_audio(
+        repository_root,
+        settings,
+        manifest_path=manifest_path,
+        audio_path=audio_path,
+        repository_url=repository_url,
+        token=token,
+        chat_id=chat_id,
+        transport=transport,
+        sleeper=sleeper,
+        now=now,
+    )
+    if result.status == "sent":
         for path in (audio_path, manifest_path):
             if path.is_file() and not path.is_symlink():
                 path.unlink(missing_ok=True)
         if audio_path.parent == manifest_path.parent:
             with suppress(OSError):
                 audio_path.parent.rmdir()
+    return result

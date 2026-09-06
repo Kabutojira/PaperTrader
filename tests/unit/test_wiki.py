@@ -422,6 +422,56 @@ This links to [[missing-page]].
     assert "ideas/idea-example.md: page is missing from index.md" in errors
 
 
+def test_wiki_lint_discovers_translation_from_its_canonical_source(
+    repository_root: Path, tmp_path: Path
+) -> None:
+    wiki = tmp_path / "wiki"
+    shutil.copytree(repository_root / "data" / "wiki", wiki)
+    source_key = "podcasts/daily-podcast_20260724T120000Z"
+    source = wiki / f"{source_key}.md"
+    source.parent.mkdir(parents=True, exist_ok=True)
+    source.write_text(
+        """---
+title: Source podcast
+type: podcast
+status: maintained
+tags: [podcast]
+created: "2026-07-24"
+updated: "2026-07-24"
+provenance: test
+---
+
+Source transcript.
+""",
+        encoding="utf-8",
+    )
+    translation = wiki / "podcasts" / "daily-podcast_20260724T120000Z_it-IT.md"
+    translation.write_text(
+        """---
+title: Podcast tradotto
+type: podcast
+status: maintained
+tags: [podcast]
+created: "2026-07-24"
+updated: "2026-07-24"
+provenance: test
+translation_of: data/wiki/podcasts/daily-podcast_20260724T120000Z.md
+---
+
+Trascrizione tradotta.
+""",
+        encoding="utf-8",
+    )
+    index = wiki / "index.md"
+    index.write_text(
+        index.read_text(encoding="utf-8")
+        + "\n[[podcasts/daily-podcast_20260724T120000Z|Source podcast]]\n",
+        encoding="utf-8",
+    )
+
+    assert lint_wiki(wiki) == []
+
+
 def test_wiki_lint_does_not_require_retired_archive_pages_in_public_index(
     repository_root: Path, tmp_path: Path
 ) -> None:

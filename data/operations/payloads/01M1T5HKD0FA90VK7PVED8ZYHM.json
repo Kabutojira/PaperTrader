@@ -1,0 +1,22 @@
+{
+  "entity_id": "daily-20260905T235530Z",
+  "entity_type": "run",
+  "inputs": {
+    "page_path": "data/wiki/podcasts/daily-podcast_20260905T235530Z_it-IT.md",
+    "source_daily_cycle_id": "daily-20260905T235530Z",
+    "source_locale": "en-US",
+    "source_script_commit": "753f25da08046f6f5a7b6b7ecb4e6d2b2338766c",
+    "source_script_path": "data/wiki/podcasts/daily-podcast_20260905T235530Z.md",
+    "source_script_sha256": "0e168aa564377f85663cceab200515148934f226de34b0909bc07a41516e1150",
+    "target_locale": "it-IT",
+    "target_minutes": 20,
+    "target_voice": "it-IT-DiegoNeural"
+  },
+  "objective": "Translate the exact committed en-US podcast into it-IT, preserve its claims and paragraph order, then render one ephemeral localized draft.",
+  "operation_id": "01M1T5HKD0FA90VK7PVED8ZYHM",
+  "operation_type": "podcast_translation",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/podcasts/daily-podcast_20260905T235530Z.md"
+  ]
+}

@@ -951,3 +951,12 @@ repository snapshots while retaining it in the outer controller snapshot and che
 This lets later operations, including the daily podcast, invoke audited project commands after an
 OAuth refresh has installed the public ciphertext with root-only permissions, without weakening the
 controller's detection of credential-state changes.
+
+## Follow-up — Add content-addressed multilingual podcast publication — Complete (2026-09-06)
+
+Added a manual-only `podcast_translation` operation and repository skill that bind one localized
+transcript to the exact committed source path, commit, hash, language, and target Edge Neural voice.
+The deterministic controller validates paragraph preservation, renders one ephemeral draft, seals
+it against the localized commit, and delivers text and audio through locale-scoped Telegram state.
+Translation remains sequential, publication-only, excluded from investment source hashes, and
+never stores media in Git.

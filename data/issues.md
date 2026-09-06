@@ -14,11 +14,13 @@ Generated from `data/tables/issues.csv`.
 | affects_candidate | error | **issue_58242ac9c8a0a8fb3c22** — Hermes operation validation failed: 01KZSMSDTRBC9SG0KKDQR4XB87 | 2026-08-16T15:25:17Z | controller | 01KZSMSDTRBC9SG0KKDQR4XB87 |
 | affects_candidate | error | **issue_64ad20c69d31e7ef47e4** — Hermes operation validation failed: 01KZGT11ZGBPRBKV129FD00TH1 | 2026-08-17T16:15:53Z | controller | 01KZGT11ZGBPRBKV129FD00TH1 |
 | publication_only | error | **issue_86f9f3bc8907460da2fc** — Hermes operation validation failed: 01KZ8VJY48VNMCFW638QQJZGJH | 2026-08-05T11:40:24Z | controller | 01KZ8VJY48VNMCFW638QQJZGJH |
+| publication_only | error | **issue_8a31bbbac9349897da52** — Hermes operation validation failed: 01M1T5HKD0FA90VK7PVED8ZYHM | 2026-09-06T01:43:24Z | delivery | 01M1T5HKD0FA90VK7PVED8ZYHM |
 | affects_candidate | error | **issue_bb796d692e4293326337** — ABB assessment provenance does not match corrected final research page | 2026-09-03T18:37:34Z | controller | 01M07XKZS0JKBQM0THMPJGWEK5 |
 | affects_candidate | error | **issue_be3868209be34a120860** — Hermes operation validation failed: 01KZXXN28RT0NVWT6QD0MMKBBK | 2026-09-05T20:37:09Z | controller | 01KZXXN28RT0NVWT6QD0MMKBBK |
 | publication_only | error | **issue_c531340c7c3a508426ac** — Hermes operation validation failed: 01KZBHM8JGFW6R10CN34GRREZY | 2026-08-06T12:52:02Z | delivery | 01KZBHM8JGFW6R10CN34GRREZY |
 | affects_candidate | error | **issue_c87e986423310946f39f** — Hermes operation validation failed: 01M07XKZS0JKBQM0THMPJGWEK5 | 2026-09-02T16:12:05Z | controller | 01M07XKZS0JKBQM0THMPJGWEK5 |
 | publication_only | error | **issue_cd9f6a9e31874e85f842** — Hermes operation validation failed: 01M08D6FXRRXXACTTEQWSRA9JQ | 2026-08-17T17:49:26Z | delivery | 01M08D6FXRRXXACTTEQWSRA9JQ |
+| publication_only | error | **issue_d1ccd0ffe893f6b79c8b** — Hermes operation validation failed: 01M1T0ZFM0VX3CQRFGTEQMDF04 | 2026-09-06T01:17:25Z | delivery | 01M1T0ZFM0VX3CQRFGTEQMDF04 |
 | affects_candidate | error | **issue_d28f4a965952a2f0b258** — Hermes operation validation failed: 01KZ9ZJVERYZKAVXNTF2NZCECM | 2026-08-12T17:58:15Z | controller | 01KZ9ZJVERYZKAVXNTF2NZCECM |
 | affects_candidate | error | **issue_f50e95ee4d3a5cc05618** — ASML assessment rejected after security row update | 2026-08-19T20:28:51Z | controller | 01M0DB44Q8R22ED9WQC5ZEG526 |
 | affects_candidate | error | **issue_ff655356efa9b9e1d1a8** — Hermes operation validation failed: 01KZPWPFS0QGMTYP3PD0TRQH6K | 2026-08-18T11:39:09Z | controller | 01KZPWPFS0QGMTYP3PD0TRQH6K |
