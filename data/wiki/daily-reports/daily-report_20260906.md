@@ -200,6 +200,7 @@ This equal-weight research benchmark is analytical only, not copy-ready, and can
 - [[ideas/idea_ai_infrastructure_power|AI infrastructure and power bottlenecks]]
 - [[model-portfolio|PaperTrader model portfolio]]
 - [[performance|PaperTrader performance and risk]]
+- [[podcasts/daily-podcast_20260905T235530Z|Daily research podcast — 2026-09-05T235530Z]]
 - [[research-catalog|PaperTrader research catalog]]
 - [[security-catalog|PaperTrader tracked securities]]
 - [[signals|PaperTrader signals and research alerts]]

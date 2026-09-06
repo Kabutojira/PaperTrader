@@ -17,17 +17,26 @@
       "profile": "",
       "recorded_at": "2026-09-06T00:12:21Z",
       "terminal_status": ""
+    },
+    {
+      "index": 2,
+      "kind": "podcast_text",
+      "operation_id": "01M1T4STN8VX3CQRFGTEQMDF04",
+      "operation_type": "daily_podcast",
+      "profile": "deep",
+      "recorded_at": "2026-09-06T01:31:22Z",
+      "terminal_status": "succeeded"
     }
   ],
   "completed_at": "2026-09-06T00:11:13Z",
-  "completion_at": "",
+  "completion_at": "2026-09-06T01:31:21Z",
   "daily_cycle_id": "daily-20260905T235530Z",
   "daily_run_version": 2,
   "fill_outcomes": [
     "order_13ad2dddfc24c33d7b46:pending:-",
     "order_742bea9c46f700562f10:pending:-"
   ],
-  "final_commit_identity": "daily-20260905T235530Z:checkpoint-001",
+  "final_commit_identity": "daily-20260905T235530Z:checkpoint-002",
   "final_commit_sha": "",
   "finalization_at": "2026-09-06T00:11:13Z",
   "finalization_commit_identity": "daily-20260905T235530Z:checkpoint-001",
@@ -35,7 +44,7 @@
   "maximum_operations": 20,
   "model_budget_limit": "100",
   "model_budget_used": "2.5",
-  "next_checkpoint_index": 2,
+  "next_checkpoint_index": 3,
   "operating_date": "2026-09-06",
   "operation_count": 1,
   "operations_accepted": [
@@ -63,11 +72,11 @@
   ],
   "originating_github_run_id": "202609060001",
   "podcast_audio_path": "",
-  "podcast_commit_identity": "",
-  "podcast_operation_id": "",
-  "podcast_page_path": "",
-  "podcast_status": "pending",
-  "podcast_text_at": "",
+  "podcast_commit_identity": "daily-20260905T235530Z:checkpoint-002",
+  "podcast_operation_id": "01M1T4STN8VX3CQRFGTEQMDF04",
+  "podcast_page_path": "data/wiki/podcasts/daily-podcast_20260905T235530Z.md",
+  "podcast_status": "succeeded",
+  "podcast_text_at": "2026-09-06T01:31:21Z",
   "preparation_at": "2026-09-05T23:55:36Z",
   "preparation_errors": [],
   "profile_limits": {
@@ -111,7 +120,7 @@
   "snapshot_id": "decision_e291698197728a3c7f64",
   "source_sha": "365a9fae29ae8b187a1b1b9be30da91655379d26",
   "started_at": "2026-09-05T23:55:30Z",
-  "status": "running",
+  "status": "succeeded",
   "trigger": "local",
   "weighted_model_budget": "100",
   "weighted_model_budget_used": "2.5",

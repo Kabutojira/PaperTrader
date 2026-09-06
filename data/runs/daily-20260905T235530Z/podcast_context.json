@@ -1,0 +1,163 @@
+{
+  "background_wiki_pages": [
+    {
+      "path": "data/wiki/securities/security_0b67d6c8e3fd3366a257.md",
+      "sha256": "7f811146c0dd3e2a57ed224978055600109e0280161b94af6bb3792fd15bc29a"
+    },
+    {
+      "path": "data/wiki/securities/security_18a3ab0ee6086ee85d0f.md",
+      "sha256": "f28a403bf6ac0bf127380488021f36b6bc9b3ced93258365604f38bc496356f5"
+    },
+    {
+      "path": "data/wiki/securities/security_22c2b9d782a62d7a9b86.md",
+      "sha256": "684f36a853ab6c0061f6933fc50212eecb0f0c81b8594fee82dcd3d8aa52ae22"
+    },
+    {
+      "path": "data/wiki/securities/security_33d9c44facc75c726c7d.md",
+      "sha256": "45c7ba8d3ac9b36bcff4689c8fd3ed89a6dcbe5653cd9db15146673f1cce91dc"
+    },
+    {
+      "path": "data/wiki/securities/security_3e597863f00753e8c65c.md",
+      "sha256": "d965937359bd40c2949cb4818da121f50d29c2ab988cd5cc46a271614c973e2f"
+    },
+    {
+      "path": "data/wiki/securities/security_488a9d7f7a8573597724.md",
+      "sha256": "9c9980e1548e0aea5c042db13bf953a194f0c55de58b541e1adb3fd36f3d99d4"
+    },
+    {
+      "path": "data/wiki/securities/security_4b61970aa8f574446819.md",
+      "sha256": "d3de6fa60e8367d06e2c4377e29bfcc159c563568f708f65ed61ba3cc9e86d71"
+    },
+    {
+      "path": "data/wiki/securities/security_a9eb9838940ef5ceaa0c.md",
+      "sha256": "cba0cee1473d5e1e833000f3e4bc78f850d34290a11a9b14dc7db46f3581f485"
+    },
+    {
+      "path": "data/wiki/securities/security_c120e9f26ebb6159adf9.md",
+      "sha256": "44376ba35d9ffb3922c94d534f5b2ffe2fd938f1ab6d16c2adca09c73678d567"
+    },
+    {
+      "path": "data/wiki/securities/security_cb88f9154cfeaa15e878.md",
+      "sha256": "f0697d7057b81b047dc496d6a69f11df5f025692dd89f934b6418760a53f38aa"
+    },
+    {
+      "path": "data/wiki/securities/security_dc8486c1d61df62a22fd.md",
+      "sha256": "fcefd6d1455b57d61107d88aa8a7d76b06fe044b5a92d18bed6c8a0010777a60"
+    }
+  ],
+  "changed_wiki_pages": [
+    {
+      "path": "data/wiki/ideas/idea_ai_infrastructure_power.md",
+      "sha256": "4e87e809c9f2d3e69d6d42297048a9cbf1e5c9ef5e34c58c1e14b9416e0e9852"
+    }
+  ],
+  "daily_cycle_id": "daily-20260905T235530Z",
+  "decision_snapshot_path": "data/runs/daily-20260905T235530Z/decision_snapshot.json",
+  "decision_snapshot_sha256": "baade98a583da28b5dc10857fbfe56cb045a62d67278b4ab25a8497ef507f7ec",
+  "generated_at": "2026-09-06T00:13:04Z",
+  "intervening_daily_cycles": [
+    "daily-20260905T200918Z",
+    "daily-20260905T235530Z"
+  ],
+  "page_path": "data/wiki/podcasts/daily-podcast_20260905T235530Z.md",
+  "podcast_context_version": 3,
+  "portfolio_implication_paths": [
+    "data/runs/daily-20260905T235530Z/decision_snapshot.json",
+    "data/wiki/daily-reports/daily-report_20260906.md"
+  ],
+  "previous_successful_podcast": {
+    "context_path": "data/runs/daily-20260905T171454Z/podcast_context.json",
+    "context_sha256": "99410057c359e87e6c36f469c30b54bcd673ae43f7861ad550a6067447a7248f",
+    "daily_cycle_id": "daily-20260905T171454Z",
+    "page_path": "data/wiki/podcasts/daily-podcast_20260905T171454Z.md",
+    "page_sha256": "3f4156097020baf4b9585d3d3ef28bbcb794add1259a075c655ddddfd17b2cbe",
+    "research_cutoff_at": "2026-09-05T18:11:11Z"
+  },
+  "report_path": "data/wiki/daily-reports/daily-report_20260906.md",
+  "report_sha256": "fd7977c9464b4869966b542ade9eca3b5acc52c13cc7b2759494a3a86b1f7a1a",
+  "research_cutoff_at": "2026-09-06T00:11:13Z",
+  "research_developments": [
+    {
+      "completed_at": "2026-09-06T00:08:21Z",
+      "daily_cycle_id": "daily-20260905T235530Z",
+      "daily_report_items": [
+        "Powell Industries was integrated into the AI-power infrastructure idea and compared with Vertiv, Eaton, Quanta Services and Schneider Electric using maintained fair values and common 4 September marks. POWL has the best relative balance but remains HOLD / Watch: USD 175.50 weighted fair value, -3.13% expected return and a USD 144 buy-below price versus USD 181.17. Three bounded relationship reviews were queued; no security assessment or trading state changed."
+      ],
+      "entity_id": "idea_ai_infrastructure_power",
+      "entity_type": "idea",
+      "evidence": [
+        {
+          "claim": "Powell reported more than USD 800 million of fiscal-2026 data-center awards, June backlog of USD 2.4 billion, nine-month operating cash flow of USD 195.0 million, USD 633.6 million of cash and no borrowings; the maintained assessment is HOLD / Watch with USD 105/USD 180/USD 270 scenarios, USD 175.50 probability-weighted fair value, -3.13% expected return and a USD 144 buy-below price.",
+          "observed_at": "2026-09-05T15:22:00Z",
+          "source": "data/wiki/securities/security_0b67d6c8e3fd3366a257.md"
+        },
+        {
+          "claim": "Using maintained fair values and identity-matched 4 September marks, price-only expected returns are POWL -3.13%, VRT -3.41%, ETN -12.68%, PWR -13.75% and SU -13.19%; anchored quality scores are 78, 84, 82, 76 and 80 respectively. POWL therefore narrowly leads on current relative balance while VRT leads on purity, growth and quality, and none clears an absolute buy threshold.",
+          "observed_at": "2026-09-05T20:09:19Z",
+          "source": "data/wiki/securities/security_0b67d6c8e3fd3366a257.md|data/tables/security_assessments.csv|data/market/latest.csv"
+        },
+        {
+          "claim": "POWL has a fresh accepted relationship; Eaton and GE Vernova have accepted but stale relationships; Schneider, Bloom and NVIDIA already had bounded reviews queued; Vertiv and Quanta lacked accepted edges. The operation queued only the missing Eaton refresh and Vertiv and Quanta reviews, each after the relevant existing security refresh, without duplicating other active work.",
+          "observed_at": "2026-09-06T00:02:14Z",
+          "source": "data/tables/relationships.csv|data/operations/operations_TODO.csv"
+        },
+        {
+          "claim": "The complete maintained universe was reconciled across generation, grid equipment, electrical distribution, data-center power and cooling, interconnection construction and on-site generation. ABB, Atkore and Fluence retain explicit rejected-no-link reasons, and regulated utilities remain unretained because a generic load-growth association does not establish shareholder transmission.",
+          "source": "data/wiki/ideas/idea_ai_infrastructure_power.md"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1T0BFZ837NCDB39THMN8BZX.json",
+        "data/operations/payloads/01M1T0BJX0R34RJ74SPJA9C96M.json",
+        "data/operations/payloads/01M1T0BMVG9PBDAGPJPP852FN9.json",
+        "data/runs/daily-20260905T235530Z/01M1SZWCJGF15NFP3JVP1S6M0X/enqueue_eaton_relationship_refresh_request.json",
+        "data/runs/daily-20260905T235530Z/01M1SZWCJGF15NFP3JVP1S6M0X/enqueue_quanta_relationship_request.json",
+        "data/runs/daily-20260905T235530Z/01M1SZWCJGF15NFP3JVP1S6M0X/enqueue_vertiv_relationship_request.json",
+        "data/wiki/ideas/idea_ai_infrastructure_power.md",
+        "data/wiki/log.md"
+      ],
+      "operation_id": "01M1SZWCJGF15NFP3JVP1S6M0X",
+      "operation_type": "idea_research",
+      "result_path": "data/runs/daily-20260905T235530Z/01M1SZWCJGF15NFP3JVP1S6M0X/agent_result.json",
+      "status": "succeeded",
+      "summary": "Integrated Powell Industries into the maintained AI infrastructure and power-bottlenecks idea using the completed canonical POWL review and existing peer research. POWL's direct medium-voltage exposure, more than USD 800 million of fiscal-2026 data-center awards, USD 2.4 billion backlog, strong cash conversion and net-cash balance sheet make it the best current relative quality/growth/valuation balance among POWL, VRT, ETN, PWR and SU, but USD 175.50 probability-weighted fair value versus USD 181.17 supports HOLD / Watch and a USD 144 buy-below price rather than BUY. Added an explicit common-date comparison and chart, preserved peer-freshness limits, and queued exactly three missing relationship reviews without changing any security assessment, strategy, signal, order, allocation or accounting state."
+    }
+  ],
+  "run_id": "daily-20260905T235530Z",
+  "target_minutes": 20,
+  "target_words": 3000,
+  "unresolved_research_gaps": [
+    {
+      "completed_at": "2026-09-05T20:37:08Z",
+      "daily_cycle_id": "daily-20260905T200918Z",
+      "daily_report_items": [],
+      "entity_id": "security_ce9b78a4d0773c950765",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "agent result is missing or a symlink: data/runs/daily-20260905T200918Z/01KZXXN28RT0NVWT6QD0MMKBBK/agent_result.json",
+          "source": "data/runs/daily-20260905T200918Z/01KZXXN28RT0NVWT6QD0MMKBBK/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "agent result is missing or a symlink: data/runs/daily-20260905T200918Z/01KZXXN28RT0NVWT6QD0MMKBBK/agent_result.json"
+      ],
+      "files_changed": [],
+      "operation_id": "01KZXXN28RT0NVWT6QD0MMKBBK",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260905T200918Z/01KZXXN28RT0NVWT6QD0MMKBBK/validation_report.json",
+      "status": "failed",
+      "summary": "The accepted research did not produce a valid result."
+    }
+  ],
+  "wiki_orientation_paths": [
+    "data/wiki/SCHEMA.md",
+    "data/wiki/index.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/log.md"
+  ],
+  "window_mode": "since_previous_successful_podcast",
+  "window_start_exclusive": "2026-09-05T18:11:11Z"
+}
