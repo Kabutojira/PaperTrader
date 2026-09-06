@@ -1,0 +1,20 @@
+{
+  "entity_id": "relationship_66d9f998a3f16a608e41",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_nearshoring_friendshoring_manufacturing",
+    "maintenance_mode": "refresh",
+    "relationship_id": "relationship_66d9f998a3f16a608e41",
+    "security_id": "security_c2e6db30cb59254de418"
+  },
+  "objective": "Review the canonical relationship from idea_nearshoring_friendshoring_manufacturing to security_c2e6db30cb59254de418 and accept or reject it with current evidence.",
+  "operation_id": "01M1VWRW4GTQ49SACWP9Y36XHF",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_xmtr_2025_10k",
+    "source_xmtr_ai_marketplace_20260303",
+    "source_xmtr_q2_2026_10q",
+    "source_xmtr_q2_2026_results"
+  ]
+}
