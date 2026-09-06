@@ -489,6 +489,30 @@ def test_verified_ephemeral_podcast_audio_is_delivered_and_failures_are_stable(
     assert "artifact expired" in issues[0]["description"]
 
 
+def test_failed_podcast_audio_delivery_retains_sealed_handoff_for_retry(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    _, manifest, audio, _ = _commit_podcast_handoff(sandbox_repository)
+    transport = _FakeAudioTelegram([TimeoutError("upload timed out")] * 3)
+
+    delivered = deliver_podcast_audio(
+        sandbox_repository,
+        sandbox_settings,
+        manifest_path=manifest,
+        audio_path=audio,
+        repository_url="https://github.com/example/PaperTrader",
+        token="secret-token",
+        chat_id="-123",
+        transport=transport,
+        sleeper=lambda _: None,
+    )
+
+    assert delivered.status == "failed"
+    assert audio.is_file()
+    assert manifest.is_file()
+
+
 def test_committed_podcast_script_preserves_paragraph_order_and_is_independent(
     sandbox_repository: Path,
     sandbox_settings: Settings,

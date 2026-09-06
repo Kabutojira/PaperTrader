@@ -1070,25 +1070,25 @@ def deliver_podcast_audio(
     sleeper: Callable[[float], None] = time.sleep,
     now: datetime | None = None,
 ) -> TelegramAudioDeliveryResult:
-    """Deliver sealed audio and immediately remove the ephemeral media handoff."""
+    """Deliver sealed audio and remove it only after Telegram confirms receipt."""
 
-    try:
-        return _deliver_podcast_audio(
-            repository_root,
-            settings,
-            manifest_path=manifest_path,
-            audio_path=audio_path,
-            repository_url=repository_url,
-            token=token,
-            chat_id=chat_id,
-            transport=transport,
-            sleeper=sleeper,
-            now=now,
-        )
-    finally:
+    result = _deliver_podcast_audio(
+        repository_root,
+        settings,
+        manifest_path=manifest_path,
+        audio_path=audio_path,
+        repository_url=repository_url,
+        token=token,
+        chat_id=chat_id,
+        transport=transport,
+        sleeper=sleeper,
+        now=now,
+    )
+    if result.status == "sent":
         for path in (audio_path, manifest_path):
             if path.is_file() and not path.is_symlink():
                 path.unlink(missing_ok=True)
         if audio_path.parent == manifest_path.parent:
             with suppress(OSError):
                 audio_path.parent.rmdir()
+    return result
