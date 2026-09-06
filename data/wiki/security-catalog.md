@@ -7,13 +7,13 @@ tags:
 created: "2026-09-06"
 updated: "2026-09-06"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_f8360cc89ae5c108b21a"
-as_of: "2026-09-06T15:19:23Z"
+snapshot_id: "decision_bc4af2ded86b94447131"
+as_of: "2026-09-06T18:01:30Z"
 ---
 
 # Securities
 
-**As of `2026-09-06T15:19:23Z`**
+**As of `2026-09-06T18:01:30Z`**
 
 Ticker links open the maintained security analysis. Prices and buy-below levels use each security's listing currency. Return estimates are rounded to whole percentage points, and update dates are shown in UTC.
 
@@ -36,7 +36,7 @@ Ticker links open the maintained security analysis. Prices and buy-below levels 
 | <span id="security-security_3e597863f00753e8c65c"></span>[BE — Bloom Energy Corporation](securities/security_3e597863f00753e8c65c) | 252.87 USD | Sell / Avoid | Valuation unattractive | The assessment's registered evidence is not fresh. | -64% / -29% / 19% | -26% | 144 USD | 2026-09-06 / 2026-09-06 | 2026-09-25 |
 | <span id="security-security_37ddcbdaad296ad831f2"></span>[COIN — Coinbase Global, Inc.](securities/security_37ddcbdaad296ad831f2) | 184.64 USD | Strong Sell / Avoid | Research incomplete | The assessment's registered evidence is not fresh. | -85% / -53% / 3% | -51% | 69.6 USD | 2026-09-06 / 2026-09-06 | 2026-09-04 |
 | <span id="security-security_c150f31c30afdb4a85f9"></span>[CROX — Crocs, Inc.](securities/security_c150f31c30afdb4a85f9) | 117.53 USD | Buy / Initiate | Relationship research pending | A current accepted idea-to-security relationship is unavailable. | -25% / 24% / 75% | 19% | 116.34 USD | 2026-09-06 / 2026-09-06 | 2026-10-03 |
-| <span id="security-security_55c9ce2fdcd32dad6b8c"></span>[CRSR — Corsair Gaming, Inc.](securities/security_55c9ce2fdcd32dad6b8c) | 12.72 USD | Hold / Watch | Research incomplete | The assessment's registered evidence is not fresh. | -48% / -6% / 49% | -5% | 9.6 USD | 2026-09-06 / 2026-09-06 | 2026-08-22 |
+| <span id="security-security_55c9ce2fdcd32dad6b8c"></span>[CRSR — Corsair Gaming, Inc.](securities/security_55c9ce2fdcd32dad6b8c) | 12.72 USD | Hold / Watch | Valuation unattractive | Base-case return is below threshold. | -48% / -6% / 49% | -5% | 9.6 USD | 2026-09-06 / 2026-09-06 | 2026-09-20 |
 | <span id="security-security_8472507d7d320aa388a7"></span>[CRWD — CrowdStrike Holdings, Inc.](securities/security_8472507d7d320aa388a7) | 213.1 USD | Strong Sell / Avoid | Valuation unattractive | Base-case return is below threshold. | -66% / -48% / -29% | -48% | 87.88 USD | 2026-09-06 / 2026-09-06 | 2026-09-30 |
 | <span id="security-security_099561384c0f5e697727"></span>[CSIQ — Canadian Solar Inc.](securities/security_099561384c0f5e697727) | 13.22 USD | Buy / Initiate | Allocation constrained | Research quality must be strictly above the configured threshold. | -23% / 38% / 100% | 26% | 14.624 USD | 2026-09-06 / 2026-09-06 | 2026-09-30 |
 | <span id="security-security_9b0db3bc77914b23a307"></span>[CSL — Carlisle Companies Incorporated](securities/security_9b0db3bc77914b23a307) | 352.14 USD | Hold / Watch | Valuation unattractive | Base-case return is below threshold. | -20% / 3% / 26% | 3% | 290.736 USD | 2026-09-06 / 2026-09-06 | 2026-09-30 |

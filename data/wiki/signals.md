@@ -7,13 +7,13 @@ tags:
 created: "2026-09-06"
 updated: "2026-09-06"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_f8360cc89ae5c108b21a"
-as_of: "2026-09-06T15:19:23Z"
+snapshot_id: "decision_bc4af2ded86b94447131"
+as_of: "2026-09-06T18:01:30Z"
 ---
 
 # Signals
 
-**As of `2026-09-06T15:19:23Z`**
+**As of `2026-09-06T18:01:30Z`**
 
 ## Actionable trade signals
 
@@ -247,8 +247,8 @@ No pending orders.
 
 - Alert: `macd\_cross\_above\_signal`
 - Market date: `2026-09-04`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed exactly one repeat security review for Corsair Gaming, Inc. The Q2 Form 10-Q and SEC-filed results release were re-fetched at unchanged hashes, and the current SEC submissions index shows no newer operating filing. The 4 September bullish MACD crossover is verified but lacks volume or fresh fundamental confirmation, so it is monitoring noise rather than a trade signal. Unchanged USD 6.60/USD 12.00/USD 18.90 scenarios produce USD 12.03 probability-weighted value versus the USD 12.72 mark, -5.42% expected return and a deterministic Hold / Watch, allocation-ineligible disposition. Updated the security page and structured row, added two analytical charts, registered current evidence, and appended assessment assessment\_2ca5f196939895f07d63 linked to its predecessor. The complete idea catalog has no accepted or plausible unaccepted causal edge, and the conviction gate fails, so no follow-up, strategy, signal or paper order was created. No allocation, execution, cash, portfolio or p
 
 ### [108490 — ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c)
 
