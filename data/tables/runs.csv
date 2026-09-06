@@ -193,3 +193,6 @@ daily-20260905T102108Z,2026-09-05T10:21:08Z,2026-09-05T11:06:13Z,degraded,workfl
 daily-20260905T171454Z,2026-09-05T17:14:54Z,2026-09-05T18:11:11Z,degraded,schedule,3,100,15,,Daily run degraded; 3 agent operations; 2 pending-order dispositions.
 daily-20260905T200918Z,2026-09-05T20:09:18Z,2026-09-05T20:37:23Z,degraded,workflow_dispatch,1,100,5,,Daily run degraded; 1 agent operations; 2 pending-order dispositions.
 daily-20260905T235530Z,2026-09-05T23:55:30Z,2026-09-06T00:11:13Z,succeeded,local,1,100,2.5,,Daily run succeeded; 1 agent operations; 2 pending-order dispositions.
+local-20260906-ai-physical-creation,2026-09-06T09:35:47Z,2026-09-06T10:06:29Z,succeeded,local,1,5,0,,Daily run succeeded; 1 agent operations; 2 pending-order dispositions.
+local-20260906-ai-physical-creation-final,2026-09-06T10:21:03Z,2026-09-06T10:21:29Z,succeeded,local,0,5,0,,Daily run succeeded; 0 agent operations; 0 pending-order dispositions.
+local-merge-20260906T110720Z,2026-09-06T11:07:27Z,2026-09-06T11:07:51Z,succeeded,local,0,5,0,,Daily run succeeded; 0 agent operations; 0 pending-order dispositions.

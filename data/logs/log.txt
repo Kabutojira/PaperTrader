@@ -453,3 +453,9 @@
 2026-09-05T23:55:36Z [daily_run_started] run=daily-20260905T235530Z Started sequential deterministic daily preparation.
 2026-09-06T00:11:13Z [daily_run_completed] run=daily-20260905T235530Z Completed deterministic daily run with status succeeded.
 2026-09-06T01:31:21Z [daily_podcast_completed] run=daily-20260905T235530Z operation=01M1T4STN8VX3CQRFGTEQMDF04 Daily podcast finished with status succeeded.
+2026-09-06T09:35:47Z [daily_run_started] run=local-20260906-ai-physical-creation Started sequential deterministic daily preparation.
+2026-09-06T10:06:29Z [daily_run_completed] run=local-20260906-ai-physical-creation Completed deterministic daily run with status succeeded.
+2026-09-06T10:21:03Z [daily_run_started] run=local-20260906-ai-physical-creation-final Started sequential deterministic daily preparation.
+2026-09-06T10:21:29Z [daily_run_completed] run=local-20260906-ai-physical-creation-final Completed deterministic daily run with status succeeded.
+2026-09-06T11:07:27Z [daily_run_started] run=local-merge-20260906T110720Z Started sequential deterministic daily preparation.
+2026-09-06T11:07:51Z [daily_run_completed] run=local-merge-20260906T110720Z Completed deterministic daily run with status succeeded.

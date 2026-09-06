@@ -1,0 +1,24 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_ai_driven_democratization_physical_creation",
+  "dedupe_key": "idea_research:idea_ai_driven_democratization_physical_creation:manual-seed:2026-09",
+  "prompt": "Research how AI-assisted 3D creation may shift value across the physical-production chain.",
+  "inputs": {
+    "idea_id": "idea_ai_driven_democratization_physical_creation",
+    "seed_claim": "Generative AI and AI-assisted CAD may reduce the skill, time, and cost needed to convert text, images, sketches, and functional requirements into manufacturable 3D geometry. Test where incremental value could accrue across consumer and prosumer printer ecosystems, installed bases, consumables, creator and cloud platforms, manufacturing-as-a-service, automated quoting, industrial additive manufacturing, specialized materials, post-processing, and model marketplaces. Verify and research Creality, Xometry, Stratasys, Materialise, Proto Labs, 3D Systems, Arkema, Evonik, and BASF as public candidates; treat Bambu Lab as a private benchmark unless evidence proves a current public listing. Test contrary evidence and exposure dilution rather than assuming all additive-manufacturing participants benefit.",
+    "objective": "Create one durable investment idea, verify the full requested public-security universe, classify causal exposures, and enqueue one comprehensive security review and one relationship review for every retained public candidate."
+  },
+  "source": "manual",
+  "priority": 99,
+  "freshness_days": 30,
+  "depends_on": [],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "https://research.nvidia.com/labs/toronto-ai/LATTE3D/",
+    "https://www1.hkexnews.hk/search/titlesearch.xhtml?category=0&lang=EN&market=SEHK&stockId=1000303977",
+    "https://blog.bambulab.com/makerworld-one-step-printing/"
+  ],
+  "max_attempts": 3
+}

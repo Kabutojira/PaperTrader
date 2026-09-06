@@ -1,0 +1,23 @@
+{
+  "security_id": "security_b19e8f0343b7da1f3c03",
+  "issuer_id": "issuer_dbce14a826d1d2860ea4",
+  "company_name": "Shenzhen Creality 3D Technology Co., Ltd.",
+  "instrument_name": "Shenzhen Creality 3D Technology Co., Ltd. H shares",
+  "instrument_type": "equity",
+  "ticker": "03388",
+  "exchange_code": "HKG",
+  "venue_mic": "XHKG",
+  "provider_symbol": "3388.HK",
+  "broker_symbol": "",
+  "currency": "HKD",
+  "country": "CN",
+  "sector": "Technology",
+  "industry": "Computer Hardware",
+  "status": "watching",
+  "watchlist_reason": "Very high AI-to-physical thematic exposure and fast consumables growth merit monitoring, while competition, falling margins, cash burn and an unavailable canonical price mark block assessment.",
+  "research_summary": "Consumables grew 48.3% while H1 printer revenue was flat, but margin and cash conversion deteriorated; canonical valuation is blocked by a failed market mark.",
+  "research_page": "data/wiki/securities/security_b19e8f0343b7da1f3c03.md",
+  "last_research_at": "2026-09-06T10:02:00Z",
+  "next_review_at": "2026-09-20T10:02:00Z",
+  "source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0831/2026083102371.pdf"
+}

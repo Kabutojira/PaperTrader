@@ -1,0 +1,18 @@
+{
+  "entity_id": "relationship_be98f5ec2f1abc086b60",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_ai_driven_democratization_physical_creation",
+    "proposed_direction": "positive",
+    "proposed_mechanism": "More additive workflows may expand software and manufacturing demand, while medical exposure, generic AI disruption and service intensity may dominate or dilute the link across time horizons.",
+    "relationship_id": "relationship_be98f5ec2f1abc086b60",
+    "security_id": "security_b61c642d038d71be3821"
+  },
+  "objective": "Test the link from AI-assisted additive adoption to Materialise economics.",
+  "operation_id": "01M1V1JDMRXQG97GT3QQ4DBMB9",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.materialise.com/en/news/financial/fourth-quarter-and-full-year-2025-results"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "operation_type": "relationship_research", "entity_type": "relationship", "entity_id": "relationship_d2afff0aba0867fe9810",
+  "dedupe_key": "relationship_research:idea_ai_driven_democratization_physical_creation:security_c2e6db30cb59254de418:2026-09",
+  "prompt": "Test whether Xometry can capture AI-generated design fulfillment demand.",
+  "inputs": {"relationship_id": "relationship_d2afff0aba0867fe9810", "idea_id": "idea_ai_driven_democratization_physical_creation", "security_id": "security_c2e6db30cb59254de418", "proposed_direction": "positive", "proposed_mechanism": "AI-generated CAD may increase quote flow through automated manufacturability checks, pricing, supplier matching, production and delivery across additive and non-additive processes; test conversion, unit economics and home-printing substitution by horizon."},
+  "source": "idea_research:01M1V159Q8ZAMEEEVXR2SC854J", "priority": 87, "freshness_days": 30, "depends_on": ["01M1V1E3YGYYPSJV217TRVMW8R"], "not_before": "now", "deadline": "", "source_refs": ["https://investors.xometry.com/news-releases/news-release-details/xometry-deepens-ai-native-marketplace-advantage-new-enterprise"], "max_attempts": 3
+}

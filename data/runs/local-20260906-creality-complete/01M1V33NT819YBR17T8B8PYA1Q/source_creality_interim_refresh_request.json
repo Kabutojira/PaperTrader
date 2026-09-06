@@ -1,0 +1,18 @@
+{
+  "source_id": "source_creality_2026_interim_report",
+  "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0831/2026083102371.pdf",
+  "canonical_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0831/2026083102371.pdf",
+  "source_type": "filing",
+  "title": "Shenzhen Creality 3D Technology Co., Ltd. 2026 interim report",
+  "publisher": "Shenzhen Creality 3D Technology Co., Ltd.",
+  "license": "",
+  "status": "available",
+  "content_hash": "1e4890c98f6782f4b40356baea38a064f53217d1bdf4f96909e41b49ee91fc63",
+  "related_entity_ids": "idea_ai_driven_democratization_physical_creation|security_b19e8f0343b7da1f3c03",
+  "checked_at": "2026-09-06T10:10:00Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "First-half revenue grew 12.9%, consumables grew 48.3%, printer revenue was flat, and operating cash outflow was RMB257.0 million.",
+  "summary": "The current HKEX-filed interim report supplies first-half 2026 product and geographic revenue, margins, AI and cloud metrics, cash flow, liquidity, borrowings, inventory, R&D and post-IPO equity.",
+  "run_id": "local-20260906-creality-complete"
+}

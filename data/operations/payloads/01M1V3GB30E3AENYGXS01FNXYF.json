@@ -1,0 +1,18 @@
+{
+  "entity_id": "idea_ai_driven_democratization_physical_creation",
+  "entity_type": "idea",
+  "inputs": {
+    "idea_id": "idea_ai_driven_democratization_physical_creation",
+    "security_id": "security_b19e8f0343b7da1f3c03",
+    "security_research_operation_id": "01M1V33NT819YBR17T8B8PYA1Q",
+    "security_research_result_path": "data/runs/local-20260906-creality-complete/01M1V33NT819YBR17T8B8PYA1Q/agent_result.json",
+    "seed_claim": "Creality offers very high direct exposure and H1 2026 consumables revenue grew 48.3% while printer revenue was flat, but falling margins, negative cash conversion and HKD10/HKD18/HKD32 scenarios produce an HKD18.40 weighted value versus HKD26 and a Sell / Avoid conclusion."
+  },
+  "objective": "Refresh the AI-driven democratization of physical creation idea from Creality's completed valuation, including candidate disposition, thesis, catalysts, risks, confidence and the broader investable-security universe.",
+  "operation_id": "01M1V3GB30E3AENYGXS01FNXYF",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/securities/security_b19e8f0343b7da1f3c03.md"
+  ]
+}

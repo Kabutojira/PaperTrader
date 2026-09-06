@@ -1,0 +1,17 @@
+{
+  "entity_id": "security_6ac6a6268ca7c08829ae",
+  "entity_type": "security",
+  "inputs": {
+    "causal_hypothesis": "AI-assisted design may lift polymer and metal printer, materials, services, and healthcare utilization, but restructuring, dilution, liquidity, and cash burn may overwhelm thematic upside.",
+    "focused_questions": "Separate polymer, metal, healthcare, materials and installed-base economics; assess recurring revenue, competition, restructuring, concentration, margins, cash burn, debt, dilution and liquidity before scenarios, rating, and explicit invalidation.",
+    "idea_id": "idea_ai_driven_democratization_physical_creation",
+    "security_id": "security_6ac6a6268ca7c08829ae"
+  },
+  "objective": "Research and value 3D Systems with thematic exposure and financial risk separated.",
+  "operation_id": "01M1V1EQFG9EX56SR892Q3BHGF",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.sec.gov/Archives/edgar/data/910638/000119312526255573/d107578d424b5.htm"
+  ]
+}

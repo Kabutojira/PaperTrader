@@ -1,0 +1,191 @@
+{
+  "commands_run": [
+    "papertrader watchlist import --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-creality.json",
+    "papertrader watchlist import --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-xometry.json",
+    "papertrader watchlist import --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-stratasys.json",
+    "papertrader watchlist import --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-materialise.json",
+    "papertrader watchlist import --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-proto-labs.json",
+    "papertrader watchlist import --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-3d-systems.json",
+    "papertrader watchlist import --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-arkema.json",
+    "papertrader watchlist import --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-evonik.json",
+    "papertrader watchlist import --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-basf.json",
+    "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-creality.json",
+    "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-xometry.json",
+    "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-stratasys.json",
+    "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-materialise.json",
+    "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-proto-labs.json",
+    "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-3d-systems.json",
+    "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-arkema.json",
+    "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-evonik.json",
+    "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-basf.json",
+    "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-creality.json",
+    "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-xometry.json",
+    "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-stratasys.json",
+    "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-materialise.json",
+    "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-proto-labs.json",
+    "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-3d-systems.json",
+    "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-arkema.json",
+    "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-evonik.json",
+    "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-basf.json",
+    "papertrader wiki lint --strict",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Created the AI-Driven Democratization of Physical Creation idea, added nine verified public instruments, kept Bambu Lab private, and queued nine full security reviews plus nine dependent causal-relationship reviews; no preliminary valuation or rating was asserted."
+  ],
+  "evidence": [
+    {
+      "claim": "The project reports feed-forward generation of textured 3D meshes from text in about 400 milliseconds, compared with prior per-prompt optimization taking up to an hour. This supports falling creation friction but does not establish dimensional correctness or manufacturability.",
+      "source": "NVIDIA LATTE3D technical project",
+      "url": "https://research.nvidia.com/labs/toronto-ai/LATTE3D/"
+    },
+    {
+      "claim": "Xometry describes a closed-loop workflow using 3D geometry, production and delivery data for deep-learning pricing, lead-time prediction, supplier matching and fulfillment. This supports the proposed manufacturing-as-a-service transmission mechanism without proving demand conversion from generative design.",
+      "source": "Xometry AI-native marketplace release",
+      "url": "https://investors.xometry.com/news-releases/news-release-details/xometry-deepens-ai-native-marketplace-advantage-new-enterprise"
+    },
+    {
+      "claim": "Bambu describes an integrated workflow combining creator models, expert print profiles, vendor filament parameters, cloud slicing, app delivery and printer execution. The ecosystem is a relevant private benchmark for reducing printer-operation friction and for testing model-file commoditization.",
+      "source": "Bambu Lab MakerWorld one-step printing documentation",
+      "url": "https://blog.bambulab.com/makerworld-one-step-printing/"
+    },
+    {
+      "claim": "HKEX identifies Shenzhen Creality 3D Technology Co., Ltd. H shares under stock code 03388. PaperTrader imported the corresponding XHKG/HKD/equity instrument with provider identity 3388.HK; no prior matching security existed.",
+      "source": "Creality HKEX listed-company disclosures",
+      "url": "https://www1.hkexnews.hk/search/titlesearch.xhtml?category=0&lang=EN&market=SEHK&stockId=1000303977"
+    },
+    {
+      "claim": "Arkema documents PA11, PA12, PEKK, elastomer and resin products for several additive processes and grouped 3D printing among attractive markets growing about 15% in Q1 2026. The sources do not quantify additive revenue or consolidated profit sensitivity, so dilution remains an explicit research gap.",
+      "source": "Arkema additive-manufacturing documentation and Q1 2026 results",
+      "url": "https://www.arkema.com/global/en/markets-solutions/3d-printing/"
+    },
+    {
+      "claim": "Forward AM states that management acquired BASF's additive-manufacturing business in 2024 and that key operations joined Stratasys in 2025. This is material contrary evidence against treating BASF as a current direct additive beneficiary and is the basis for a neutral candidate relationship subject to rejection.",
+      "source": "Forward AM management buyout and company history",
+      "url": "https://forward-am.com/about-us/our-story/"
+    },
+    {
+      "claim": "Nine unique identity-only security rows were created through audited watchlist imports. Nine security_research operations depend on this idea operation, and nine pair-specific relationship_research operations each depend on its corresponding security review. All valuations and investment decisions remain pending those scenario-complete operations.",
+      "source": "PaperTrader deterministic identity and queue projections"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M1V1E10RDD4J617S4AW0C9EN.json",
+    "data/operations/payloads/01M1V1E3YGYYPSJV217TRVMW8R.json",
+    "data/operations/payloads/01M1V1E5X0MNXS7Q1DN1N3PF7Y.json",
+    "data/operations/payloads/01M1V1EJK8HQWBCGTY355450ZS.json",
+    "data/operations/payloads/01M1V1ENH079N3H8504P53WP8A.json",
+    "data/operations/payloads/01M1V1EQFG9EX56SR892Q3BHGF.json",
+    "data/operations/payloads/01M1V1F6487BZG6114432903G2.json",
+    "data/operations/payloads/01M1V1F82RFHJKRYBWKB3G7BX5.json",
+    "data/operations/payloads/01M1V1FA18Q6NH3BYM9CGZER95.json",
+    "data/operations/payloads/01M1V1HX1GP5AC5JMCKRJ1XMN1.json",
+    "data/operations/payloads/01M1V1HZ0038RPN2ZWXFR4VMKZ.json",
+    "data/operations/payloads/01M1V1J0YGKK69W4C7N3WV5NR7.json",
+    "data/operations/payloads/01M1V1JDMRXQG97GT3QQ4DBMB9.json",
+    "data/operations/payloads/01M1V1JGJGCKFB5654Q902EYTT.json",
+    "data/operations/payloads/01M1V1JJH09YZ4W287ET1Z88S1.json",
+    "data/operations/payloads/01M1V1JZ78V6WV8YMNWX72ECE8.json",
+    "data/operations/payloads/01M1V1K2504H4SRCQ2NRTQR6E4.json",
+    "data/operations/payloads/01M1V1K43GZBD6WY14TFBFANTV.json",
+    "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-3d-systems.json",
+    "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-arkema.json",
+    "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-basf.json",
+    "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-creality.json",
+    "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-evonik.json",
+    "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-materialise.json",
+    "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-proto-labs.json",
+    "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-stratasys.json",
+    "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-xometry.json",
+    "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-3d-systems.json",
+    "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-arkema.json",
+    "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-basf.json",
+    "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-creality.json",
+    "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-evonik.json",
+    "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-materialise.json",
+    "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-proto-labs.json",
+    "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-stratasys.json",
+    "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-xometry.json",
+    "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-3d-systems.json",
+    "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-arkema.json",
+    "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-basf.json",
+    "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-creality.json",
+    "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-evonik.json",
+    "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-materialise.json",
+    "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-proto-labs.json",
+    "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-stratasys.json",
+    "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-xometry.json",
+    "data/tables/securities.csv",
+    "data/wiki/ideas/idea_ai_driven_democratization_physical_creation.md",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M1V159Q8ZAMEEEVXR2SC854J",
+  "operations_created": [
+    "01M1V1E10RDD4J617S4AW0C9EN",
+    "01M1V1E3YGYYPSJV217TRVMW8R",
+    "01M1V1E5X0MNXS7Q1DN1N3PF7Y",
+    "01M1V1EJK8HQWBCGTY355450ZS",
+    "01M1V1ENH079N3H8504P53WP8A",
+    "01M1V1EQFG9EX56SR892Q3BHGF",
+    "01M1V1F6487BZG6114432903G2",
+    "01M1V1F82RFHJKRYBWKB3G7BX5",
+    "01M1V1FA18Q6NH3BYM9CGZER95",
+    "01M1V1HX1GP5AC5JMCKRJ1XMN1",
+    "01M1V1HZ0038RPN2ZWXFR4VMKZ",
+    "01M1V1J0YGKK69W4C7N3WV5NR7",
+    "01M1V1JDMRXQG97GT3QQ4DBMB9",
+    "01M1V1JGJGCKFB5654Q902EYTT",
+    "01M1V1JJH09YZ4W287ET1Z88S1",
+    "01M1V1JZ78V6WV8YMNWX72ECE8",
+    "01M1V1K2504H4SRCQ2NRTQR6E4",
+    "01M1V1K43GZBD6WY14TFBFANTV"
+  ],
+  "status": "succeeded",
+  "summary": "Created one maintained AI-Driven Democratization of Physical Creation idea and tested the complete path from generated geometry through manufacturability, process and material selection, production and delivery. Verified and imported nine distinct public instruments through CLI-only identity writes, retained Bambu Lab as a private benchmark, and classified all nine public idea-security pairings as candidates rather than accepted relationships. Enqueued exactly one comprehensive security review for each candidate, dependent on this idea operation, and exactly one relationship review per pair, dependent on that security review. The thesis currently favors utilization-linked consumables and automated manufacturing networks as potential capture points, while preserving manufacturing, competition, commoditization, financial-risk and exposure-dilution counterevidence. No valuation, rating, strategy, signal, allocation, order, execution, or accounting state was invented or changed.",
+  "validation": {
+    "checks": [
+      "Confirmed one immutable idea ID and no duplicate idea or requested security existed after searching the complete wiki and security table.",
+      "Verified issuer, instrument, venue MIC, provider symbol, currency, country and instrument type for all nine public candidates before CLI import; Bambu Lab remained outside the security table.",
+      "Linked every candidate from the idea page with candidate status, direction, mechanism, timing, evidence state and risk; no relationship was represented as accepted.",
+      "Confirmed exactly nine bounded security follow-ups and nine pair-specific relationship follow-ups with the required sequential dependencies.",
+      "Recorded reasons for weak or rejected boundaries, including BASF's divestiture and the absence of a material standalone public model-marketplace candidate.",
+      "The chartability pass produced one sourced causal network and explicit omissions for non-comparable company, installed-base, consumables and materials-exposure datasets.",
+      "Strict wiki lint, strict schema validation, queue validation, strict integrity and strict portfolio reconciliation passed after the completed changes.",
+      "No strategy, signal, allocation, order, execution, cash, position, performance, or other accounting state changed."
+    ],
+    "passed": true
+  },
+  "visualization_review": {
+    "charts": [
+      {
+        "chart_id": "ai-to-physical-value-chain",
+        "page_path": "data/wiki/ideas/idea_ai_driven_democratization_physical_creation.md"
+      }
+    ],
+    "completed": true,
+    "omissions": [
+      {
+        "dataset": "Public-company exposure and ranking heatmap",
+        "reason": "No completed scenario assessments yet provide comparable exposure, recurring-revenue, margin, quality and valuation anchors across all nine securities; a numeric ranking would invent precision.",
+        "reason_code": "insufficient_comparability"
+      },
+      {
+        "dataset": "Installed base and consumables per printer",
+        "reason": "Comparable issuer-reported installed-base, print-hour and consumables-attachment observations were unavailable in this bounded idea review and are explicit questions for the security operations.",
+        "reason_code": "source_unavailable"
+      },
+      {
+        "dataset": "Specialty-material additive revenue share",
+        "reason": "Arkema and Evonik identify relevant products but do not provide a comparable additive-revenue share; BASF divested its former direct business. Exposure dilution is retained as an evidence gap.",
+        "reason_code": "source_unavailable"
+      }
+    ]
+  }
+}

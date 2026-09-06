@@ -1,0 +1,17 @@
+{
+  "watchlist_reason": "Automated-quoting and manufacturing-marketplace candidate for AI-generated CAD fulfillment; full research pending.",
+  "source": "https://www.sec.gov/edgar/browse/?CIK=1657573",
+  "securities": [{
+    "company_name": "Xometry, Inc.",
+    "instrument_name": "Xometry, Inc. Class A common stock",
+    "instrument_type": "equity",
+    "ticker": "XMTR",
+    "exchange_code": "NMS",
+    "venue_mic": "XNAS",
+    "provider_symbol": "XMTR",
+    "currency": "USD",
+    "country": "US",
+    "sector": "Industrials",
+    "industry": "Specialty Business Services"
+  }]
+}

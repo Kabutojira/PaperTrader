@@ -1,0 +1,17 @@
+{
+  "entity_id": "security_c2e6db30cb59254de418",
+  "entity_type": "security",
+  "inputs": {
+    "causal_hypothesis": "AI-generated manufacturable CAD may increase quote requests and orders across additive and non-additive processes, making Xometry a generalized design-to-physical-fulfillment layer.",
+    "focused_questions": "Test marketplace take economics, AI pricing and DFM, active buyers, supplier network effects, gross margin, repeat and enterprise demand, additive versus other processes, operating leverage, concentration, cash flow, dilution, valuation scenarios, rating, and invalidation.",
+    "idea_id": "idea_ai_driven_democratization_physical_creation",
+    "security_id": "security_c2e6db30cb59254de418"
+  },
+  "objective": "Research and value Xometry as an AI-native manufacturing marketplace.",
+  "operation_id": "01M1V1E3YGYYPSJV217TRVMW8R",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "https://investors.xometry.com/news-releases/news-release-details/xometry-deepens-ai-native-marketplace-advantage-new-enterprise"
+  ]
+}

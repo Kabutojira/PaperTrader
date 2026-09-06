@@ -1,0 +1,29 @@
+{
+  "changed_paths": [
+    "data/issues.md",
+    "data/market/latest.csv",
+    "data/runs/local-20260906-ai-physical-creation/01M1V1E10RDD4J617S4AW0C9EN/issue_market_mark_request.json",
+    "data/runs/local-20260906-ai-physical-creation/01M1V1E10RDD4J617S4AW0C9EN/security_upsert_blocked_request.json",
+    "data/runs/local-20260906-ai-physical-creation/01M1V1E10RDD4J617S4AW0C9EN/source_creality_august_2026_monthly_return_request.json",
+    "data/runs/local-20260906-ai-physical-creation/01M1V1E10RDD4J617S4AW0C9EN/source_creality_interim_2026_request.json",
+    "data/runs/local-20260906-ai-physical-creation/01M1V1E10RDD4J617S4AW0C9EN/source_creality_prospectus_request.json",
+    "data/tables/issues.csv",
+    "data/tables/securities.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_b19e8f0343b7da1f3c03.md"
+  ],
+  "completed_at": "2026-09-06T10:03:56Z",
+  "errors": [
+    "path is outside security_research scope: data/market/latest.csv",
+    "structured change lacks a successful CLI receipt: data/market/latest.csv",
+    "structured change occurred after its final CLI receipt: data/market/latest.csv"
+  ],
+  "harness": "local",
+  "operation_id": "01M1V1E10RDD4J617S4AW0C9EN",
+  "passed": false,
+  "run_id": "local-20260906-ai-physical-creation",
+  "validation_version": 1
+}

@@ -1,0 +1,17 @@
+{
+  "watchlist_reason": "Specialty additive-manufacturing materials candidate whose exposure dilution must be quantified; full research pending.",
+  "source": "https://live.euronext.com/en/product/equities/FR0010313833-XPAR",
+  "securities": [{
+    "company_name": "Arkema S.A.",
+    "instrument_name": "Arkema S.A. ordinary shares",
+    "instrument_type": "equity",
+    "ticker": "AKE",
+    "exchange_code": "PAR",
+    "venue_mic": "XPAR",
+    "provider_symbol": "AKE.PA",
+    "currency": "EUR",
+    "country": "FR",
+    "sector": "Basic Materials",
+    "industry": "Specialty Chemicals"
+  }]
+}

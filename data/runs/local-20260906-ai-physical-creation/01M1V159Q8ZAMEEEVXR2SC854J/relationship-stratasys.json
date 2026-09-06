@@ -1,0 +1,7 @@
+{
+  "operation_type": "relationship_research", "entity_type": "relationship", "entity_id": "relationship_adb28cfc9e6ec01e852b",
+  "dedupe_key": "relationship_research:idea_ai_driven_democratization_physical_creation:security_84705b27d28a94f2b318:2026-09",
+  "prompt": "Test the link from AI-assisted manufacturable design to Stratasys economics.",
+  "inputs": {"relationship_id": "relationship_adb28cfc9e6ec01e852b", "idea_id": "idea_ai_driven_democratization_physical_creation", "security_id": "security_84705b27d28a94f2b318", "proposed_direction": "positive", "proposed_mechanism": "Better additive design may raise industrial installed-base utilization and recurring materials and services, but qualification cycles, competition and customer economics may delay or weaken transmission."},
+  "source": "idea_research:01M1V159Q8ZAMEEEVXR2SC854J", "priority": 86, "freshness_days": 30, "depends_on": ["01M1V1E5X0MNXS7Q1DN1N3PF7Y"], "not_before": "now", "deadline": "", "source_refs": ["https://investors.stratasys.com/sec-filings/all-sec-filings/content/0001628280-26-015079/ssys-20251231.htm"], "max_attempts": 3
+}

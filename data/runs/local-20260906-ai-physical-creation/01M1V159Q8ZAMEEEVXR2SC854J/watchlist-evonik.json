@@ -1,0 +1,17 @@
+{
+  "watchlist_reason": "Specialty additive-manufacturing polymers and materials candidate whose consolidated sensitivity must be tested; full research pending.",
+  "source": "https://www.evonik.com/en/investor-relations/Share.html",
+  "securities": [{
+    "company_name": "Evonik Industries AG",
+    "instrument_name": "Evonik Industries AG registered shares",
+    "instrument_type": "equity",
+    "ticker": "EVK",
+    "exchange_code": "GER",
+    "venue_mic": "XETR",
+    "provider_symbol": "EVK.DE",
+    "currency": "EUR",
+    "country": "DE",
+    "sector": "Basic Materials",
+    "industry": "Specialty Chemicals"
+  }]
+}

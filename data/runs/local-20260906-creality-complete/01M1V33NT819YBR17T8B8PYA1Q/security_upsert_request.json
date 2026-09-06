@@ -1,0 +1,23 @@
+{
+  "security_id": "security_b19e8f0343b7da1f3c03",
+  "issuer_id": "issuer_dbce14a826d1d2860ea4",
+  "company_name": "Shenzhen Creality 3D Technology Co., Ltd.",
+  "instrument_name": "Shenzhen Creality 3D Technology Co., Ltd. H shares",
+  "instrument_type": "equity",
+  "ticker": "03388",
+  "exchange_code": "HKG",
+  "venue_mic": "XHKG",
+  "provider_symbol": "3388.HK",
+  "broker_symbol": "",
+  "currency": "HKD",
+  "country": "CN",
+  "sector": "Technology",
+  "industry": "Computer Hardware",
+  "status": "watching",
+  "watchlist_reason": "Very high AI-to-physical thematic exposure and 48.3% H1 consumables growth merit monitoring, while competition, weak cash conversion and valuation block allocation.",
+  "research_summary": "Sell / Avoid at HKD26: HKD18.40 weighted value and HKD18 base case despite 48.3% H1 consumables growth; cash conversion and relationship gates also fail.",
+  "research_page": "data/wiki/securities/security_b19e8f0343b7da1f3c03.md",
+  "last_research_at": "2026-09-06T10:14:38Z",
+  "next_review_at": "2026-09-20T10:14:38Z",
+  "source": "source_creality_2026_august_monthly_return|source_creality_2026_interim_report|source_creality_2026_prospectus"
+}

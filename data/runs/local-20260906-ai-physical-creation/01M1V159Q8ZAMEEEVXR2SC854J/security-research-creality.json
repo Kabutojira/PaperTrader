@@ -1,0 +1,9 @@
+{
+  "operation_type": "security_research", "entity_type": "security", "entity_id": "security_b19e8f0343b7da1f3c03",
+  "dedupe_key": "security_research:security_b19e8f0343b7da1f3c03:ai-physical-creation:2026-09",
+  "prompt": "Research and value Creality H shares as a consumer and prosumer 3D-printing ecosystem.",
+  "inputs": {"security_id": "security_b19e8f0343b7da1f3c03", "idea_id": "idea_ai_driven_democratization_physical_creation", "causal_hypothesis": "AI-reduced design friction may expand printer adoption and utilization, with consumables, scanners, multi-material systems, cloud, community, and creator economics potentially capturing more value than hardware units.", "focused_questions": "Test printer versus consumables growth, installed base, utilization, branded-material attachment and lock-in, Creality Cloud and creator economics, margins, customer concentration, post-IPO balance sheet, Bambu Lab pressure, scenarios, rating, invalidation, and exposure timing."},
+  "source": "idea_research:01M1V159Q8ZAMEEEVXR2SC854J", "priority": 98, "freshness_days": 30,
+  "depends_on": ["01M1V159Q8ZAMEEEVXR2SC854J"], "not_before": "now", "deadline": "",
+  "source_refs": ["https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0529/sehk26030901313.pdf"], "max_attempts": 3
+}

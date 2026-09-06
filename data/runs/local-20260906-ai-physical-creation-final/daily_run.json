@@ -1,0 +1,27 @@
+{
+  "completed_at": "2026-09-06T10:21:29Z",
+  "daily_run_version": 1,
+  "fill_outcomes": [],
+  "model_budget_limit": "5",
+  "model_budget_used": "0",
+  "operation_count": 0,
+  "podcast_audio_path": "",
+  "podcast_operation_id": "",
+  "podcast_page_path": "",
+  "podcast_status": "pending",
+  "preparation_errors": [],
+  "queue_dispositions": [
+    "allocation_maintenance:01M1V3RQMR4WN0NX3T3ZFCB0Z8",
+    "01KZCFVCT82RJFGB5HESAFJB6B:blocked:dependency_unavailable:01KZ9ZJVER177B5ASW4ZMQHEG3",
+    "01KZGT11ZGR8JEKWC3RXGSS544:blocked:dependency_unavailable:01KZGT11ZGBPRBKV129FD00TH1",
+    "01M0FWY80RRY528G4HT2QM3N1Y:blocked:dependency_unavailable:01M07XKZS0JKBQM0THMPJGWEK5",
+    "01M1V2Y248HPPFYSZV7F91ZT7N:cancelled:superseded_allocation_intent:allocation_plan_f69d92ecc6a224e7c287"
+  ],
+  "report_path": "data/wiki/daily-reports/daily-report_20260906.md",
+  "run_id": "local-20260906-ai-physical-creation-final",
+  "snapshot_id": "decision_36b789b47533ffffeac1",
+  "source_sha": "e830cc252134987b82523370e4c54dd869d795c2",
+  "started_at": "2026-09-06T10:21:03Z",
+  "status": "succeeded",
+  "trigger": "local"
+}

@@ -1,0 +1,7 @@
+{
+  "operation_type": "relationship_research", "entity_type": "relationship", "entity_id": "relationship_4e8233e5346c27dadcdb",
+  "dedupe_key": "relationship_research:idea_ai_driven_democratization_physical_creation:security_b19e8f0343b7da1f3c03:2026-09",
+  "prompt": "Test the causal link from AI-accessible 3D creation to Creality economics.",
+  "inputs": {"relationship_id": "relationship_4e8233e5346c27dadcdb", "idea_id": "idea_ai_driven_democratization_physical_creation", "security_id": "security_b19e8f0343b7da1f3c03", "proposed_direction": "positive", "proposed_mechanism": "AI-generated printable geometry may expand adoption and print-hours, raising hardware, multi-material accessory, scanner, cloud, and branded consumables demand; test Bambu pressure and open-material leakage across 0-2, 2-5, and 5+ years."},
+  "source": "idea_research:01M1V159Q8ZAMEEEVXR2SC854J", "priority": 88, "freshness_days": 30, "depends_on": ["01M1V1E10RDD4J617S4AW0C9EN"], "not_before": "now", "deadline": "", "source_refs": ["https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0529/sehk26030901313.pdf"], "max_attempts": 3
+}

@@ -1,0 +1,17 @@
+{
+  "entity_id": "security_f18cd57a5e086583c861",
+  "entity_type": "security",
+  "inputs": {
+    "causal_hypothesis": "A larger flow of AI-generated manufacturable designs may raise demand for automated-quote additive, CNC, injection-molding, and sheet-metal production, but additive may be too small to move consolidated results.",
+    "focused_questions": "Test digital-factory versus network economics, process and geography mix, automated quoting, customer behavior, additive exposure, margins, capacity utilization, concentration, cash flow, balance sheet, scenarios, rating, and invalidation.",
+    "idea_id": "idea_ai_driven_democratization_physical_creation",
+    "security_id": "security_f18cd57a5e086583c861"
+  },
+  "objective": "Research and value Proto Labs as a digitally quoted manufacturing service.",
+  "operation_id": "01M1V1ENH079N3H8504P53WP8A",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.sec.gov/Archives/edgar/data/1443669/000144366926000010/0001443669-26-000010-index.htm"
+  ]
+}

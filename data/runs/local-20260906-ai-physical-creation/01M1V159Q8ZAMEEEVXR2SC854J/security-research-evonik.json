@@ -1,0 +1,9 @@
+{
+  "operation_type": "security_research", "entity_type": "security", "entity_id": "security_ccb25582c0392492fe9e",
+  "dedupe_key": "security_research:security_ccb25582c0392492fe9e:ai-physical-creation:2026-09",
+  "prompt": "Research and value Evonik with PA12 and additive-material exposure dilution quantified.",
+  "inputs": {"security_id": "security_ccb25582c0392492fe9e", "idea_id": "idea_ai_driven_democratization_physical_creation", "causal_hypothesis": "Higher industrial additive volumes may benefit Evonik's PA12 powders and specialty polymer portfolio, but consolidated sensitivity may be low.", "focused_questions": "Quantify additive revenue or a supportable bound, product families, PA12 position, process and customer exposure, segment fit, margins, cyclicality, cash flow, leverage, concentration, scenarios, rating, and invalidation without mistaking market growth for material group impact."},
+  "source": "idea_research:01M1V159Q8ZAMEEEVXR2SC854J", "priority": 91, "freshness_days": 30,
+  "depends_on": ["01M1V159Q8ZAMEEEVXR2SC854J"], "not_before": "now", "deadline": "",
+  "source_refs": ["https://www.evonik.com/content/dam/evonik/documents/Evonik_Roadshow_Presentation1.pdf.coredownload.pdf"], "max_attempts": 3
+}

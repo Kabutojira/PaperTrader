@@ -1,0 +1,17 @@
+{
+  "watchlist_reason": "Direct consumer and prosumer 3D-printer ecosystem candidate; full thematic and investment research pending.",
+  "source": "https://www1.hkexnews.hk/search/titlesearch.xhtml?category=0&lang=EN&market=SEHK&stockId=1000303977",
+  "securities": [{
+    "company_name": "Shenzhen Creality 3D Technology Co., Ltd.",
+    "instrument_name": "Shenzhen Creality 3D Technology Co., Ltd. H shares",
+    "instrument_type": "equity",
+    "ticker": "03388",
+    "exchange_code": "HKG",
+    "venue_mic": "XHKG",
+    "provider_symbol": "3388.HK",
+    "currency": "HKD",
+    "country": "CN",
+    "sector": "Technology",
+    "industry": "Computer Hardware"
+  }]
+}

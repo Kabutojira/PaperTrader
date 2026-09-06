@@ -1,0 +1,7 @@
+{
+  "operation_type": "relationship_research", "entity_type": "relationship", "entity_id": "relationship_6e0a4be4a79a2d7e40b0",
+  "dedupe_key": "relationship_research:idea_ai_driven_democratization_physical_creation:security_ef418f5ccc7dc5be8e65:2026-09",
+  "prompt": "Test and likely reject or weaken the thematic relationship to BASF after its additive-business sale.",
+  "inputs": {"relationship_id": "relationship_6e0a4be4a79a2d7e40b0", "idea_id": "idea_ai_driven_democratization_physical_creation", "security_id": "security_ef418f5ccc7dc5be8e65", "proposed_direction": "neutral", "proposed_mechanism": "BASF sold Forward AM in 2024 and the business later joined Stratasys; verify any residual supply or IP exposure and reject the link if additive sensitivity is negligible relative to BASF."},
+  "source": "idea_research:01M1V159Q8ZAMEEEVXR2SC854J", "priority": 80, "freshness_days": 30, "depends_on": ["01M1V1FA18Q6NH3BYM9CGZER95"], "not_before": "now", "deadline": "", "source_refs": ["https://forward-am.com/wp-content/uploads/2024/07/Forward-AM-MBO-Public-Announcement_20240703.pdf", "https://forward-am.com/about-us/our-story/"], "max_attempts": 3
+}

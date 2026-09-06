@@ -7,13 +7,13 @@ tags:
 created: "2026-09-06"
 updated: "2026-09-06"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_e291698197728a3c7f64"
-as_of: "2026-09-06T00:11:13Z"
+snapshot_id: "decision_3a42d9232b1d61df7c2b"
+as_of: "2026-09-06T11:07:51Z"
 ---
 
 # Performance and risk
 
-**As of `2026-09-06T00:11:13Z`**
+**As of `2026-09-06T11:07:51Z`**
 
 Current performance epoch started `2026-07-28T12:00:00Z` at **10000 EUR**. Prior audit epochs retained: **1**.
 
@@ -34,8 +34,7 @@ Current performance epoch started `2026-07-28T12:00:00Z` at **10000 EUR**. Prior
 
 ## Target allocation changes
 
-- **[NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d):** Buy from 0% to 3.9653%
-- **[PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4):** Add from 2.969993% to 4.084578%
+No target allocation changes.
 
 ## Committed history
 

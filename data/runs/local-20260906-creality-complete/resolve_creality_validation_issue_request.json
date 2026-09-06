@@ -1,0 +1,4 @@
+{
+  "issue_id": "issue_01359ccc00c8bd73b305",
+  "resolution": "Resolved by isolating the prior out-of-scope market refresh from agent-owned changes and completing replacement operation 01M1V33NT819YBR17T8B8PYA1Q through a clean local harness with a fully validated delta."
+}

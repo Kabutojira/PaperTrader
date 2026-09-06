@@ -1,0 +1,17 @@
+{
+  "watchlist_reason": "Industrial polymer additive-manufacturing installed-base and consumables candidate; full research pending.",
+  "source": "https://investors.stratasys.com/sec-filings/all-sec-filings/content/0001628280-26-015079/ssys-20251231.htm",
+  "securities": [{
+    "company_name": "Stratasys Ltd.",
+    "instrument_name": "Stratasys Ltd. ordinary shares",
+    "instrument_type": "equity",
+    "ticker": "SSYS",
+    "exchange_code": "NMS",
+    "venue_mic": "XNAS",
+    "provider_symbol": "SSYS",
+    "currency": "USD",
+    "country": "IL",
+    "sector": "Technology",
+    "industry": "Computer Hardware"
+  }]
+}

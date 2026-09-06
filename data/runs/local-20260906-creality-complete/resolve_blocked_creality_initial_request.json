@@ -1,0 +1,8 @@
+{
+  "operation_id": "01M1V1E10RDD4J617S4AW0C9EN",
+  "run_id": "local-20260906-ai-physical-creation-r2",
+  "terminal_status": "skipped",
+  "result_path": "data/runs/local-20260906-ai-physical-creation-r2/01M1V1E10RDD4J617S4AW0C9EN/agent_result.json",
+  "result_summary": "The earlier market-data-blocked Creality request was superseded by completed operation 01M1V33NT819YBR17T8B8PYA1Q after the identity-matched HKD mark recovered; the new immutable assessment preserves and completes the requested research.",
+  "terminal_reason": "superseded_by_completed_research"
+}

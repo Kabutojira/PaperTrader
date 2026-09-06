@@ -7,8 +7,8 @@ tags:
 created: "2026-09-06"
 updated: "2026-09-06"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_e291698197728a3c7f64"
-as_of: "2026-09-06T00:11:13Z"
+snapshot_id: "decision_3a42d9232b1d61df7c2b"
+as_of: "2026-09-06T11:07:51Z"
 ---
 
 # Research catalog
@@ -17,8 +17,8 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Assessment revision audit
 
-- Immutable assessment versions: **206**
-- Securities with retained revisions: **81**
+- Immutable assessment versions: **207**
+- Securities with retained revisions: **82**
 
 ## Candidate
 
@@ -580,6 +580,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 - [AI compute, networking, and hyperscaler monetization](ideas/idea_ai_compute_networking_hyperscaler_monetization)
 - [AI infrastructure and power bottlenecks](ideas/idea_ai_infrastructure_power)
+- [AI-Driven Democratization of Physical Creation](ideas/idea_ai_driven_democratization_physical_creation)
 - [AI-native drug-discovery platforms](ideas/idea_ai_native_drug_discovery)
 - [AI-native SMB financial operating systems](ideas/idea_ai_native_smb_financial_operating_systems)
 - [Anduril product-company disruption and future-IPO exposure](ideas/idea_anduril_product_company_disruption)
@@ -647,6 +648,8 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader daily research podcast — 2026-09-04T060928Z](podcasts/daily-podcast_20260904T060928Z)
 - [PaperTrader daily research podcast — 2026-09-05T102108Z](podcasts/daily-podcast_20260905T102108Z)
 - [PaperTrader daily research podcast — 2026-09-05T171454Z](podcasts/daily-podcast_20260905T171454Z)
+- [PaperTrader daily research podcast — 2026-09-05T235530Z](podcasts/daily-podcast_20260905T235530Z)
+- [Podcast quotidiano di ricerca PaperTrader — 2026-09-05T235530Z](podcasts/daily-podcast_20260905T235530Z_it-IT)
 
 ## Relationship
 
@@ -768,6 +771,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Samsung Electronics common GDR](securities/security_567d0d575bbd30aaa91d)
 - [Samsung Electronics preferred GDR](securities/security_d08d763780400dfbffce)
 - [Schneider Electric SE ordinary shares](securities/security_dc8486c1d61df62a22fd)
+- [Shenzhen Creality 3D Technology Co., Ltd. H shares](securities/security_b19e8f0343b7da1f3c03)
 - [Sigma Lithium Corporation common shares](securities/security_4627aea1bf7d8943d3d8)
 - [Sociedad Quimica y Minera de Chile S.A. American depositary shares](securities/security_9d4049ed6669a52815d6)
 - [SoFi Technologies, Inc. common stock](securities/security_98470cfc01bbcde78fc2)

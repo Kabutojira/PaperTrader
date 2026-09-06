@@ -1,0 +1,19 @@
+{
+  "entity_id": "relationship_4e8233e5346c27dadcdb",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_ai_driven_democratization_physical_creation",
+    "maintenance_mode": "refresh",
+    "relationship_id": "relationship_4e8233e5346c27dadcdb",
+    "security_id": "security_b19e8f0343b7da1f3c03"
+  },
+  "objective": "Review the canonical relationship from idea_ai_driven_democratization_physical_creation to security_b19e8f0343b7da1f3c03 and accept or reject it with current evidence.",
+  "operation_id": "01M1V3RQMR4WN0NX3T3ZFCB0Z8",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_creality_2026_august_monthly_return",
+    "source_creality_2026_interim_report",
+    "source_creality_2026_prospectus"
+  ]
+}

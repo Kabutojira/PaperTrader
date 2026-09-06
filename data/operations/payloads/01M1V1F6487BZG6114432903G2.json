@@ -1,0 +1,18 @@
+{
+  "entity_id": "security_798e2fb944d740aca308",
+  "entity_type": "security",
+  "inputs": {
+    "causal_hypothesis": "Higher additive volumes may benefit Rilsan PA11, Orgasol PA12, Kepstan PEKK, Pebax elastomers and resins, but the impact must be material relative to Arkema's consolidated specialty-materials portfolio.",
+    "focused_questions": "Quantify additive revenue or best supportable upper bound, products and processes, growth versus group scale, proprietary advantage, margins, cyclicality, balance sheet, cash flow, customer concentration, scenarios, rating, and invalidation without attributing group economics to a small niche.",
+    "idea_id": "idea_ai_driven_democratization_physical_creation",
+    "security_id": "security_798e2fb944d740aca308"
+  },
+  "objective": "Research and value Arkema with additive-material exposure dilution quantified.",
+  "operation_id": "01M1V1F6487BZG6114432903G2",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "https://live.euronext.com/en/products/equities/company-news/2026-05-06-arkema-first-quarter-2026-results",
+    "https://www.arkema.com/global/en/markets-solutions/3d-printing/"
+  ]
+}

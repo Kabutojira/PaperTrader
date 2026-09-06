@@ -960,3 +960,10 @@ The deterministic controller validates paragraph preservation, renders one ephem
 it against the localized commit, and delivers text and audio through locale-scoped Telegram state.
 Translation remains sequential, publication-only, excluded from investment source hashes, and
 never stores media in Git.
+
+## Follow-up — Enable Hong Kong primary listings — Complete (2026-09-06)
+
+Added the `XHKG` exchange calendar and allowed Hong Kong dollars so identity-verified primary
+Hong Kong listings can enter the paper-only watchlist, market/FX monitoring, research, and
+allocation gates without substituting an OTC instrument. Existing position, freshness, FX,
+risk, and paper-execution controls remain unchanged.

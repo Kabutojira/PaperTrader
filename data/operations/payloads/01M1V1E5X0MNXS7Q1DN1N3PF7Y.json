@@ -1,0 +1,17 @@
+{
+  "entity_id": "security_84705b27d28a94f2b318",
+  "entity_type": "security",
+  "inputs": {
+    "causal_hypothesis": "More manufacturable AI-assisted designs may lift utilization of Stratasys systems and its installed-base materials and service revenue, but industrial qualification and competitive barriers may slow transmission.",
+    "focused_questions": "Test installed base, system/material/service mix, recurring proprietary materials, aerospace, automotive, healthcare, utilization leverage, Forward AM integration, concentration, competition, margins, cash flow, balance sheet, scenarios, rating, and invalidation.",
+    "idea_id": "idea_ai_driven_democratization_physical_creation",
+    "security_id": "security_84705b27d28a94f2b318"
+  },
+  "objective": "Research and value Stratasys as an industrial polymer printing and materials platform.",
+  "operation_id": "01M1V1E5X0MNXS7Q1DN1N3PF7Y",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "https://investors.stratasys.com/sec-filings/all-sec-filings/content/0001628280-26-015079/ssys-20251231.htm"
+  ]
+}
