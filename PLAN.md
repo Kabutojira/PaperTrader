@@ -967,3 +967,12 @@ Added the `XHKG` exchange calendar and allowed Hong Kong dollars so identity-ver
 Hong Kong listings can enter the paper-only watchlist, market/FX monitoring, research, and
 allocation gates without substituting an OTC instrument. Existing position, freshness, FX,
 risk, and paper-execution controls remain unchanged.
+
+## Follow-up — Add a manual Grok TTS podcast helper — Complete (2026-09-06)
+
+Added a sequential maintenance helper that renders canonical spoken-transcript sections through
+the xAI Grok TTS REST API, explicitly maps transcript locales to supported language codes, chunks
+requests below the service limit, validates and assembles MP3s outside the checkout, and sends them
+through Telegram. Rendering and delivery are separate credential phases, successful delivery
+removes local audio by default, no media or secret enters Git, and network behavior is covered by
+offline unit tests.

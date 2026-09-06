@@ -463,6 +463,23 @@ committing the transcript, seal the existing draft with `podcast translation sea
 generic Telegram podcast commands accept `--language <locale>` for the committed script and read
 the locale from the sealed audio manifest.
 
+For a manual Grok TTS maintenance render, keep the two credential phases separate and choose an
+output directory outside the checkout:
+
+```bash
+audio_dir="$(mktemp -d /tmp/papertrader-grok-tts.XXXXXX)"
+uv run python scripts/grok_tts_podcasts.py --env-file .env render \
+  --latest 4 --output-dir "$audio_dir"
+uv run python scripts/grok_tts_podcasts.py --env-file .env send \
+  --latest 4 --output-dir "$audio_dir"
+```
+
+The render phase reads only `X_API_KEY`; the delivery phase reads only `TELEGRAM_BOT_TOKEN` and
+`TELEGRAM_CHAT_ID`. The helper passes an explicit language derived from each transcript locale,
+splits text below the Grok API limit, and deletes each MP3 only after Telegram accepts it. This is a
+manual delivery helper, not a replacement for the audited Edge TTS daily-podcast backend. Use
+`--keep-audio` on the send phase only when temporary local retention is explicitly needed.
+
 Do not hand-edit structured runtime CSVs. Use the CLI so identity, schema, atomic-write,
 paper-only, risk, and audit contracts are enforced. `executions.csv`, `cash_ledger.csv`,
 `corporate_actions.csv`, allocation history, operation history, and run history are append-only.
