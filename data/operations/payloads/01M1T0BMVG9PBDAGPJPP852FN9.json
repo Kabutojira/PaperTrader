@@ -1,0 +1,26 @@
+{
+  "entity_id": "relationship_quanta_ai_infrastructure_power",
+  "entity_type": "relationship",
+  "inputs": {
+    "evidence_refs": [
+      "source_pwr_q2_2026_10q",
+      "source_pwr_q2_2026_release"
+    ],
+    "idea_id": "idea_ai_infrastructure_power",
+    "proposed_direction": "positive",
+    "proposed_invalidation": "Reject or weaken the edge if data-center or utility projects are cancelled or deferred, Electric backlog or remaining performance obligations contract without conversion, margins deteriorate, project losses or collections rise, or leverage and acquisitions impair cash returns.",
+    "proposed_mechanism": "Data-center load growth and grid bottlenecks increase demand for utility transmission, substations, distribution, interconnections and critical-path electrical installation; Quanta can convert this work into Electric segment revenue, margin, backlog and cash subject to labor, contract and project execution.",
+    "relationship_id": "relationship_quanta_ai_infrastructure_power",
+    "security_id": "security_488a9d7f7a8573597724"
+  },
+  "objective": "Review whether Quanta Services has a current material positive relationship to AI infrastructure and power bottlenecks after the already-queued security review, focusing on grid, interconnection and data-center electrical work.",
+  "operation_id": "01M1T0BMVG9PBDAGPJPP852FN9",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_ai_infrastructure_power.md",
+    "data/wiki/securities/security_488a9d7f7a8573597724.md",
+    "source_pwr_q2_2026_10q",
+    "source_pwr_q2_2026_release"
+  ]
+}

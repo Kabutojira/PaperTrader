@@ -1,0 +1,34 @@
+{
+  "operation_type": "relationship_research",
+  "entity_type": "relationship",
+  "entity_id": "relationship_vertiv_ai_infrastructure_power",
+  "dedupe_key": "relationship_research:relationship_vertiv_ai_infrastructure_power:powl-peer-integration:2026-09-06",
+  "prompt": "Review whether Vertiv has a current material positive relationship to AI infrastructure and power bottlenecks after the already-queued security review, focusing on data-center power, cooling, backlog conversion, margins and cash.",
+  "inputs": {
+    "relationship_id": "relationship_vertiv_ai_infrastructure_power",
+    "idea_id": "idea_ai_infrastructure_power",
+    "security_id": "security_cb88f9154cfeaa15e878",
+    "proposed_direction": "positive",
+    "proposed_mechanism": "Higher rack density and data-center deployment increase demand for Vertiv power management, thermal management, integrated modular infrastructure, racks, monitoring and services, with shareholder transmission dependent on order conversion, margins, working capital and capacity execution.",
+    "proposed_invalidation": "Reject or weaken the edge if organic growth and backlog conversion weaken together, margins reverse, working capital or cash conversion deteriorates, data-center architecture reduces Vertiv content, or capacity and product execution fail.",
+    "evidence_refs": [
+      "source_vrt_q2_2026_10q",
+      "source_vrt_q2_2026_results"
+    ]
+  },
+  "source": "idea_research:01M1SZWCJGF15NFP3JVP1S6M0X",
+  "priority": 70,
+  "freshness_days": 0,
+  "depends_on": [
+    "01M1CRTPGR48R2FF842X51W8YV"
+  ],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/ideas/idea_ai_infrastructure_power.md",
+    "data/wiki/securities/security_cb88f9154cfeaa15e878.md",
+    "source_vrt_q2_2026_10q",
+    "source_vrt_q2_2026_results"
+  ],
+  "max_attempts": 3
+}

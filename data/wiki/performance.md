@@ -4,20 +4,20 @@ type: performance
 status: maintained
 tags:
   - performance
-created: "2026-09-05"
-updated: "2026-09-05"
+created: "2026-09-06"
+updated: "2026-09-06"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_103f08004374f00ba869"
-as_of: "2026-09-05T20:37:23Z"
+snapshot_id: "decision_e291698197728a3c7f64"
+as_of: "2026-09-06T00:11:13Z"
 ---
 
 # Performance and risk
 
-**As of `2026-09-05T20:37:23Z`**
+**As of `2026-09-06T00:11:13Z`**
 
 Current performance epoch started `2026-07-28T12:00:00Z` at **10000 EUR**. Prior audit epochs retained: **1**.
 
-<svg class="performance-chart" viewBox="0 0 100 100" role="img" aria-label="Equity history from 2026-07-28 to 2026-09-05; latest equity 10000.0225174243560771003624."><title>Model equity history</title><desc>Equity history from 2026-07-28 to 2026-09-05; latest equity 10000.0225174243560771003624.</desc><polyline fill="none" stroke="currentColor" stroke-width="2" points="0.00,90.00 2.86,90.00 5.71,90.00 8.57,90.00 11.43,90.00 14.29,90.00 17.14,90.00 20.00,90.00 22.86,90.00 25.71,90.00 28.57,90.00 31.43,90.00 34.29,90.00 37.14,90.00 40.00,90.00 42.86,90.00 45.71,90.00 48.57,90.00 51.43,90.00 54.29,90.00 57.14,90.00 60.00,90.00 62.86,90.00 65.71,90.00 68.57,90.00 71.43,90.00 74.29,90.00 77.14,90.00 80.00,90.00 82.86,90.00 85.71,90.00 88.57,90.00 91.43,90.00 94.29,90.00 97.14,10.00 100.00,10.00" /></svg>
+<svg class="performance-chart" viewBox="0 0 100 100" role="img" aria-label="Equity history from 2026-07-28 to 2026-09-06; latest equity 10000.0225174243560771003624."><title>Model equity history</title><desc>Equity history from 2026-07-28 to 2026-09-06; latest equity 10000.0225174243560771003624.</desc><polyline fill="none" stroke="currentColor" stroke-width="2" points="0.00,90.00 2.78,90.00 5.56,90.00 8.33,90.00 11.11,90.00 13.89,90.00 16.67,90.00 19.44,90.00 22.22,90.00 25.00,90.00 27.78,90.00 30.56,90.00 33.33,90.00 36.11,90.00 38.89,90.00 41.67,90.00 44.44,90.00 47.22,90.00 50.00,90.00 52.78,90.00 55.56,90.00 58.33,90.00 61.11,90.00 63.89,90.00 66.67,90.00 69.44,90.00 72.22,90.00 75.00,90.00 77.78,90.00 80.56,90.00 83.33,90.00 86.11,90.00 88.89,90.00 91.67,90.00 94.44,10.00 97.22,10.00 100.00,10.00" /></svg>
 
 | Daily return | Cumulative return | Drawdown | Realized P/L | Unrealized P/L |
 | ---: | ---: | ---: | ---: | ---: |
@@ -77,6 +77,7 @@ Current performance epoch started `2026-07-28T12:00:00Z` at **10000 EUR**. Prior
 | 2026-09-03 | 10000 | 10000 | 0 | 0% | 0% | 0% |
 | 2026-09-04 | 10000.0225174243560771003624 | 9703.0225174243560771003624 | 297 | 0.000225174243560771003624% | 0.000225174243560771003624% | 0% |
 | 2026-09-05 | 10000.0225174243560771003624 | 9703.0225174243560771003624 | 297 | 0% | 0.000225174243560771003624% | 0% |
+| 2026-09-06 | 10000.0225174243560771003624 | 9703.0225174243560771003624 | 297 | 0% | 0.000225174243560771003624% | 0% |
 
 No external benchmark is used.
 

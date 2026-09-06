@@ -4,16 +4,16 @@ type: signals
 status: maintained
 tags:
   - signals
-created: "2026-09-05"
-updated: "2026-09-05"
+created: "2026-09-06"
+updated: "2026-09-06"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_103f08004374f00ba869"
-as_of: "2026-09-05T20:37:23Z"
+snapshot_id: "decision_e291698197728a3c7f64"
+as_of: "2026-09-06T00:11:13Z"
 ---
 
 # Signals
 
-**As of `2026-09-05T20:37:23Z`**
+**As of `2026-09-06T00:11:13Z`**
 
 ## Actionable trade signals
 

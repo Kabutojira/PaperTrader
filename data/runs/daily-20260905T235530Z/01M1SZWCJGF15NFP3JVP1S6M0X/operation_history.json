@@ -1,0 +1,23 @@
+{
+  "auxiliary_models": {
+    "web_extract": "openai-codex:gpt-5.6-terra"
+  },
+  "checkpoint_index": 0,
+  "cycle_disposition": "succeeded",
+  "daily_cycle_id": "daily-20260905T235530Z",
+  "effective_model": "gpt-5.6-terra",
+  "escalation_source": "",
+  "maximum_turns": 80,
+  "mutation_policy": "routine_research",
+  "operation_history_version": 1,
+  "operation_id": "01M1SZWCJGF15NFP3JVP1S6M0X",
+  "operation_type": "idea_research",
+  "profile": "analyst",
+  "profile_policy_version": "profile-router-v1",
+  "queue_status": "succeeded",
+  "queue_updated_at": "2026-09-06T00:08:21Z",
+  "reasoning_effort": "medium",
+  "route_reason": "routine_research_or_long_form_synthesis",
+  "timeout_seconds": 1200,
+  "weighted_cost": "2.5"
+}

@@ -4,16 +4,16 @@ type: securities-dashboard
 status: maintained
 tags:
   - security
-created: "2026-09-05"
-updated: "2026-09-05"
+created: "2026-09-06"
+updated: "2026-09-06"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_103f08004374f00ba869"
-as_of: "2026-09-05T20:37:23Z"
+snapshot_id: "decision_e291698197728a3c7f64"
+as_of: "2026-09-06T00:11:13Z"
 ---
 
 # Securities
 
-**As of `2026-09-05T20:37:23Z`**
+**As of `2026-09-06T00:11:13Z`**
 
 Ticker links open the maintained security analysis. Prices and buy-below levels use each security's listing currency. Return estimates are rounded to whole percentage points, and update dates are shown in UTC.
 

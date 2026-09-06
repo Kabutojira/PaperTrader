@@ -1,0 +1,27 @@
+{
+  "entity_id": "relationship_87b95f713a902d531f2f",
+  "entity_type": "relationship",
+  "inputs": {
+    "evidence_refs": [
+      "source_etn_q2_2026_10q",
+      "source_etn_q2_2026_results"
+    ],
+    "idea_id": "idea_ai_infrastructure_power",
+    "proposed_direction": "positive",
+    "proposed_invalidation": "Reject or weaken the edge if electrical orders or backlog contract, data-center projects are cancelled or delayed, customer concentration or over-ordering impairs demand quality, margins compress, cash conversion weakens, or acquisition leverage constrains returns.",
+    "proposed_mechanism": "Higher-density data centers require switchgear, distribution, power quality, thermal management and related electrical infrastructure; Eaton can transmit this demand into electrical orders, backlog, revenue, margins and cash, subject to acquisition leverage, project timing and customer concentration.",
+    "relationship_id": "relationship_87b95f713a902d531f2f",
+    "security_id": "security_18a3ab0ee6086ee85d0f"
+  },
+  "objective": "Refresh the accepted Eaton relationship to AI infrastructure and power bottlenecks after the already-queued security review, using current electrical demand, backlog, margin, cash-flow, leverage and concentration evidence.",
+  "operation_id": "01M1T0BFZ837NCDB39THMN8BZX",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_ai_infrastructure_power.md",
+    "data/wiki/relationships/relationship_87b95f713a902d531f2f.md",
+    "data/wiki/securities/security_18a3ab0ee6086ee85d0f.md",
+    "source_etn_q2_2026_10q",
+    "source_etn_q2_2026_results"
+  ]
+}

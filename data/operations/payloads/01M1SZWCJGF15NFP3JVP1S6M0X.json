@@ -1,0 +1,21 @@
+{
+  "entity_id": "idea_ai_infrastructure_power",
+  "entity_type": "idea",
+  "inputs": {
+    "idea_id": "idea_ai_infrastructure_power",
+    "security_id": "security_0b67d6c8e3fd3366a257",
+    "seed_claim": "Existing canonical research on Powell Industries and four AI power infrastructure peers should be integrated into one quality, growth, and valuation comparison without refreshing security assessments."
+  },
+  "objective": "Integrate Powell Industries into the maintained AI power infrastructure idea and compare POWL with Eaton, Vertiv, Quanta Services, and Schneider Electric using existing canonical research and explicit freshness labels.",
+  "operation_id": "01M1SZWCJGF15NFP3JVP1S6M0X",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_ai_infrastructure_power.md",
+    "data/wiki/securities/security_0b67d6c8e3fd3366a257.md",
+    "data/wiki/securities/security_18a3ab0ee6086ee85d0f.md",
+    "data/wiki/securities/security_488a9d7f7a8573597724.md",
+    "data/wiki/securities/security_cb88f9154cfeaa15e878.md",
+    "data/wiki/securities/security_dc8486c1d61df62a22fd.md"
+  ]
+}
