@@ -872,13 +872,14 @@ def _post_publication_delivery_issue_reopened(
     expected_hashes: Mapping[str, str],
     differing: set[str],
 ) -> bool:
-    """Recognize a delivery-only issue episode reopened after publication.
+    """Recognize a delivery-only issue episode updated after publication.
 
     Delivery issues use stable latest-only rows. Reopening a resolved issue clears its
-    prior ``resolved_at``, so the current row alone can make that issue appear open at
-    an earlier snapshot cutoff. Accept the transition only when removing a bounded
-    subset of delivery rows refreshed after the cutoff reconstructs the stored issue
-    hash exactly. Every non-delivery or otherwise substantive change still fails closed.
+    prior ``resolved_at``; resolving that same retry writes a later timestamp. In either
+    state, the current row alone can make that issue appear open at an earlier snapshot
+    cutoff. Accept the transition only when removing a bounded subset of delivery rows
+    refreshed after the cutoff reconstructs the stored issue hash exactly. Every
+    non-delivery or otherwise substantive change still fails closed.
     """
 
     if differing != {"issues"}:
@@ -887,14 +888,14 @@ def _post_publication_delivery_issue_reopened(
     projected_ids = {row["issue_id"] for row in rows}
     candidates: list[str] = []
     for row in read_table(repository_root, "issues"):
-        if (
-            row["issue_id"] not in projected_ids
-            or row["owner"] != "delivery"
-            or row["status"] != "open"
-        ):
+        if row["issue_id"] not in projected_ids or row["owner"] != "delivery":
             continue
         last_seen = parse_timestamp(row["last_seen_at"])
-        if last_seen is not None and last_seen > as_of:
+        resolved_at = parse_timestamp(row["resolved_at"], allow_empty=True)
+        updated_after_cutoff = (last_seen is not None and last_seen > as_of) or (
+            resolved_at is not None and resolved_at > as_of
+        )
+        if row["status"] in {"open", "resolved"} and updated_after_cutoff:
             candidates.append(row["issue_id"])
     # The delivery boundary currently owns only a few stable issue identities. Keep
     # reconstruction explicitly bounded so malformed input cannot cause exponential work.
@@ -3612,6 +3613,19 @@ def validate_advice(
                 expected_hashes=previous,
                 differing=differing,
             )
+            configuration_and_delivery_only = differing == {"configuration", "issues"} and (
+                _configuration_only_runtime_changed(
+                    repository_root,
+                    run_id=snapshot.run_id,
+                    expected_hash=previous.get("configuration", ""),
+                )
+                and _post_publication_delivery_issue_reopened(
+                    repository_root,
+                    as_of=snapshot_as_of,
+                    expected_hashes=previous,
+                    differing={"issues"},
+                )
+            )
             legacy_contracts_only = _legacy_publication_contracts_changed(
                 repository_root,
                 snapshot=snapshot,
@@ -3621,6 +3635,7 @@ def validate_advice(
                 not configuration_only
                 and not podcast_only
                 and not delivery_only
+                and not configuration_and_delivery_only
                 and not legacy_contracts_only
             ):
                 errors.append(

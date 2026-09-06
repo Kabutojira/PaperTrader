@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import subprocess
 from dataclasses import replace
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal
@@ -1428,7 +1429,7 @@ def test_post_publication_delivery_issue_does_not_stale_decision_snapshot(
     assert len(snapshot.system_impacts) == 1
 
 
-def test_post_publication_reopened_delivery_issue_does_not_stale_decision_snapshot(
+def test_post_publication_resolved_delivery_and_config_change_do_not_stale_snapshot(
     sandbox_repository: Path,
     sandbox_settings: Settings,
 ) -> None:
@@ -1453,12 +1454,48 @@ def test_post_publication_reopened_delivery_issue_does_not_stale_decision_snapsh
         "The prior podcast audio was delivered.",
         now=NOW - timedelta(minutes=1),
     )
+    subprocess.run(
+        ["git", "init", "-b", "main"], cwd=sandbox_repository, check=True, capture_output=True
+    )
+    subprocess.run(["git", "add", "config.ini"], cwd=sandbox_repository, check=True)
+    subprocess.run(
+        [
+            "git",
+            "-c",
+            "user.name=Test",
+            "-c",
+            "user.email=test@example.com",
+            "commit",
+            "-m",
+            "configuration",
+        ],
+        cwd=sandbox_repository,
+        check=True,
+        capture_output=True,
+    )
+    source_sha = subprocess.run(
+        ["git", "rev-parse", "HEAD"],
+        cwd=sandbox_repository,
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.strip()
     refresh_advice(
         sandbox_repository,
         sandbox_settings,
         run_id=run_id,
         as_of=NOW,
         render_pages=False,
+    )
+    run_manifest = sandbox_repository / "data" / "runs" / run_id / "daily_run.json"
+    run_manifest.write_text(json.dumps({"source_sha": source_sha}), encoding="utf-8")
+    config = sandbox_repository / "config.ini"
+    config.write_text(
+        config.read_text(encoding="utf-8").replace(
+            "[telegram]\nmaximum_attempts = 3\ntimeout_seconds = 60\n",
+            "[telegram]\nmaximum_attempts = 3\ntimeout_seconds = 61\n",
+        ),
+        encoding="utf-8",
     )
 
     reopened_id = record_issue(
@@ -1476,6 +1513,15 @@ def test_post_publication_reopened_delivery_issue_does_not_stale_decision_snapsh
     )
 
     assert reopened_id == issue_id
+    assert validate_advice(sandbox_repository, strict=True) == []
+
+    resolve_issue(
+        sandbox_repository,
+        issue_id,
+        "The current podcast audio was delivered on retry.",
+        now=NOW + timedelta(minutes=2),
+    )
+
     assert validate_advice(sandbox_repository, strict=True) == []
 
 
