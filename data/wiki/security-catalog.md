@@ -7,13 +7,13 @@ tags:
 created: "2026-09-06"
 updated: "2026-09-06"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_3a42d9232b1d61df7c2b"
-as_of: "2026-09-06T11:07:51Z"
+snapshot_id: "decision_91675b6fe4b1be73e29a"
+as_of: "2026-09-06T11:58:23Z"
 ---
 
 # Securities
 
-**As of `2026-09-06T11:07:51Z`**
+**As of `2026-09-06T11:58:23Z`**
 
 Ticker links open the maintained security analysis. Prices and buy-below levels use each security's listing currency. Return estimates are rounded to whole percentage points, and update dates are shown in UTC.
 

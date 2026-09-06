@@ -460,3 +460,4 @@
 2026-09-06T11:07:27Z [daily_run_started] run=local-merge-20260906T110720Z Started sequential deterministic daily preparation.
 2026-09-06T11:07:51Z [daily_run_completed] run=local-merge-20260906T110720Z Completed deterministic daily run with status succeeded.
 2026-09-06T11:43:40Z [daily_run_started] run=daily-20260906T114339Z Started sequential deterministic daily preparation.
+2026-09-06T11:58:23Z [daily_run_completed] run=daily-20260906T114339Z Completed deterministic daily run with status degraded.
