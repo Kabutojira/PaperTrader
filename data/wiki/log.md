@@ -3381,3 +3381,9 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Completed the schema-version-two assessment for [[securities/security_b19e8f0343b7da1f3c03|Creality H shares]] after the identity-matched HKD26.00 mark and HKD/EUR record recovered to canonical `ok` state.
 - Accepted HKD10/HKD18/HKD32 bear/base/bull fair values with 30%/50%/20% probabilities: weighted value is HKD18.40, expected return is approximately -29.2%, buy-below is HKD14.40 and the canonical conclusion is Sell / Avoid.
 - Preserved the very-high thematic exposure and 48.3% H1 consumables-growth evidence, but weak cash conversion, competitive pressure, valuation and the still-pending causal relationship preclude a strategy, signal or paper order.
+
+## [2026-09-06] create | Xometry initial security research
+- Completed current primary-source research for [[securities/security_c2e6db30cb59254de418|Xometry Class A shares]], preserving canonical issuer, venue, provider, currency and SEC registrant identity.
+- Found accelerating marketplace adoption and improving cash conversion: Q2 revenue grew 41%, marketplace revenue 45%, active buyers 20% and larger accounts 23%, while GAAP operating and net losses persisted.
+- Accepted USD50/USD85/USD130 bear/base/bull fair values with 25%/50%/25% probabilities. Weighted value is USD87.50 versus the USD92.53 mark, supporting Hold / Watch and no allocation.
+- Kept [[ideas/idea_ai_driven_democratization_physical_creation]] as a candidate edge: the geometry-to-quote-to-fulfillment data loop is evidenced, but AI-attributed order conversion and incremental economics remain undisclosed. The dependent relationship review remains separate; no strategy, signal or paper order was created.

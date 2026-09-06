@@ -1,0 +1,22 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_ai_driven_democratization_physical_creation",
+  "dedupe_key": "idea_research:idea_ai_driven_democratization_physical_creation:security-result:01M1V1E3YGYYPSJV217TRVMW8R",
+  "prompt": "Refresh the AI-driven democratization of physical creation idea from Xometry's completed valuation, including candidate disposition, thesis, catalysts, risks, confidence and the broader investable-security universe.",
+  "inputs": {
+    "idea_id": "idea_ai_driven_democratization_physical_creation",
+    "seed_claim": "Xometry has a closed-loop geometry-to-fulfillment data architecture and accelerating marketplace adoption, but AI-attributed conversion is undisclosed and USD50/USD85/USD130 scenarios produce USD87.50 weighted value versus USD92.53, supporting Hold / Watch rather than allocation.",
+    "security_id": "security_c2e6db30cb59254de418",
+    "security_research_operation_id": "01M1V1E3YGYYPSJV217TRVMW8R",
+    "security_research_result_path": "data/runs/daily-20260906T135138Z/01M1V1E3YGYYPSJV217TRVMW8R/agent_result.json"
+  },
+  "source": "security_research:01M1V1E3YGYYPSJV217TRVMW8R",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": ["01M1V1E3YGYYPSJV217TRVMW8R"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": ["data/wiki/securities/security_c2e6db30cb59254de418.md"],
+  "max_attempts": 3
+}

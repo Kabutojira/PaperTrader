@@ -792,6 +792,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Valero Energy Corporation common stock](securities/security_c5a9e460d3350284d157)
 - [Vertiv Holdings Co Class A common stock](securities/security_cb88f9154cfeaa15e878)
 - [W&amp;T Offshore, Inc. common stock](securities/security_61567714298b9563d1a9)
+- [Xometry, Inc. Class A common stock](securities/security_c2e6db30cb59254de418)
 - [YASKAWA Electric Corporation Frankfurt ordinary shares](securities/security_89969b7dac39b7db5661)
 
 ## Signals

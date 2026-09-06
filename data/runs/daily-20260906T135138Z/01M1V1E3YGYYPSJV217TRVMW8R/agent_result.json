@@ -1,0 +1,123 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_c2e6db30cb59254de418",
+    "papertrader research source record --request data/runs/daily-20260906T135138Z/01M1V1E3YGYYPSJV217TRVMW8R/source_xmtr_2025_10k_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260906T135138Z/01M1V1E3YGYYPSJV217TRVMW8R/source_xmtr_q2_2026_10q_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260906T135138Z/01M1V1E3YGYYPSJV217TRVMW8R/source_xmtr_q2_2026_results_refresh_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260906T135138Z/01M1V1E3YGYYPSJV217TRVMW8R/security_upsert_request.json",
+    "papertrader wiki sync-technical-charts",
+    "papertrader research assessment upsert --request data/runs/daily-20260906T135138Z/01M1V1E3YGYYPSJV217TRVMW8R/assessment_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260906T135138Z/01M1V1E3YGYYPSJV217TRVMW8R/enqueue_idea_refresh_request.json",
+    "papertrader wiki lint --strict",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Xometry research completed: marketplace revenue grew 45% and cash conversion improved, but GAAP losses, dilution, valuation downside and an unaccepted AI-physical-creation relationship support Hold / Watch. USD50/USD85/USD130 scenarios yield USD87.50 weighted value versus USD92.53; no strategy, signal or paper order was created."
+  ],
+  "evidence": [
+    {
+      "claim": "Audited revenue increased from USD463.4 million in 2023 to USD686.6 million in 2025, gross profit rose from USD178.3 million to USD268.8 million, and GAAP operating loss narrowed from approximately USD73.6 million to USD45.5 million while GAAP profitability remained absent.",
+      "observed_at": "2026-09-06T13:57:12Z",
+      "source": "Xometry 2025 Form 10-K",
+      "source_hash": "bc139297d8422ada5bf4ed7f558892fb9c2741d1f41695a26892103966fe0bb3",
+      "url": "https://www.sec.gov/Archives/edgar/data/1657573/000119312526066959/xmtr-20251231.htm"
+    },
+    {
+      "claim": "Q2 revenue was USD229.3 million, gross profit USD87.2 million and GAAP operating loss USD5.5 million; first-half operating cash flow was positive USD17.5 million, with USD516.7 million of cash and marketable securities, USD328.7 million of convertible notes and 57.0 million issued common shares before treasury shares.",
+      "observed_at": "2026-09-06T13:57:12Z",
+      "source": "Xometry Q2 2026 Form 10-Q",
+      "source_hash": "058f9c8a640ddad02646df6211407021fc189f621c8026d84be58d8ec0a1a28d",
+      "url": "https://www.sec.gov/Archives/edgar/data/1657573/000119312526332776/xmtr-20260630.htm"
+    },
+    {
+      "claim": "Marketplace revenue grew 45%, active buyers grew 20% to 89,557 and accounts spending at least USD50,000 grew 23% to 2,039; adjusted EBITDA reached USD14.1 million while GAAP net loss remained USD5.3 million.",
+      "observed_at": "2026-09-06T13:57:12Z",
+      "source": "Xometry Q2 2026 filed results",
+      "source_hash": "ca86e738aa8ee091331cac482d1caaeb89034e9a7810c4fe72bd4538b644eb3c",
+      "url": "https://www.sec.gov/Archives/edgar/data/1657573/000119312526331547/xmtr-ex99_1.htm"
+    },
+    {
+      "claim": "The issuer describes models using geometry, quote configuration, customer history, supplier performance and delivery outcomes for lead-time prediction and personalized pricing. This supports a closed-loop architecture but does not disclose model accuracy, AI-originated paid-demand conversion or incremental AI unit economics.",
+      "observed_at": "2026-09-06T11:49:16Z",
+      "source": "Xometry AI-native marketplace release",
+      "source_hash": "734ebab1de9038edb841f16e09a451822a60e87113d96b21b65db80f4f44f4df",
+      "url": "https://investors.xometry.com/news-releases/news-release-details/xometry-deepens-ai-native-marketplace-advantage-new-enterprise"
+    },
+    {
+      "claim": "The identity-matched reference mark was USD92.52999877929688 with fresh USD/EUR conversion at 2026-09-06T13:51:39Z. Deterministic assessment assessment_c95357aad0323a6b9971 calculated USD87.50 probability-weighted fair value, -5.4361% expected return, -4.0771% confidence-adjusted expected return, USD68 buy-below, Hold / Watch and allocation ineligibility with the relationship pending.",
+      "observed_at": "2026-09-06T13:57:12Z",
+      "source": "Canonical PaperTrader market and assessment state"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M1VGKTXGZQ7NTEYEAY8JQ5FX.json",
+    "data/runs/daily-20260906T135138Z/01M1V1E3YGYYPSJV217TRVMW8R/assessment_upsert_request.json",
+    "data/runs/daily-20260906T135138Z/01M1V1E3YGYYPSJV217TRVMW8R/enqueue_idea_refresh_request.json",
+    "data/runs/daily-20260906T135138Z/01M1V1E3YGYYPSJV217TRVMW8R/issue_identity_conflict_resolve_request.json",
+    "data/runs/daily-20260906T135138Z/01M1V1E3YGYYPSJV217TRVMW8R/security_upsert_request.json",
+    "data/runs/daily-20260906T135138Z/01M1V1E3YGYYPSJV217TRVMW8R/source_xmtr_2025_10k_refresh_request.json",
+    "data/runs/daily-20260906T135138Z/01M1V1E3YGYYPSJV217TRVMW8R/source_xmtr_q2_2026_10q_refresh_request.json",
+    "data/runs/daily-20260906T135138Z/01M1V1E3YGYYPSJV217TRVMW8R/source_xmtr_q2_2026_results_refresh_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_c2e6db30cb59254de418.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M1V1E3YGYYPSJV217TRVMW8R",
+  "operations_created": [
+    "01M1VGKTXGZQ7NTEYEAY8JQ5FX"
+  ],
+  "status": "succeeded",
+  "summary": "Completed Xometry Class A security research against canonical issuer issuer_dbdde9b294689a9af3d5. Current primary evidence shows accelerating marketplace adoption, improving operating leverage and positive first-half cash flow, but persistent GAAP losses, dilution and unproven AI-attributed conversion. A schema-version-two pre-profit-growth assessment produced USD50/USD85/USD130 bear/base/bull values, USD87.50 probability-weighted fair value versus USD92.53, medium confidence, Hold / Watch and allocation ineligibility. The candidate AI-physical-creation relationship remains pending in its existing dependent operation; exactly one idea-research follow-up was enqueued. No strategy, signal, order or accounting state changed.",
+  "validation": {
+    "checks": [
+      "Mandatory security-context completed before assessment-state work and confirmed no prior accepted assessment.",
+      "Canonical issuer issuer_dbdde9b294689a9af3d5, SEC CIK 1657573, XNAS venue, XMTR provider symbol, USD currency and equity instrument were preserved without immutable-identity mutation.",
+      "Three primary sources were re-fetched, SHA-256 checked and recorded through the project CLI; the current registered AI-marketplace source remained within the evidence freshness boundary.",
+      "Security upsert and schema-version-two assessment upsert succeeded; assessment_c95357aad0323a6b9971 is the current immutable version and its research-page hash matches 5309b40f8950a4f6dbea429b2fbdb6db10ba16ba1b7601842cc585fed54631d8.",
+      "The assessment deterministically derived complete research, Hold / Watch, ineligible allocation status and the exact relationship-pending and economic threshold frontier.",
+      "The complete maintained idea catalog and canonical relationship table were searched. The one plausible unaccepted parent edge is linked and already has exactly one dependent relationship-research operation; rejected associations include reasons.",
+      "Exactly one dependent idea-research follow-up, 01M1VGKTXGZQ7NTEYEAY8JQ5FX, was enqueued for the payload idea. No second operation was claimed or executed.",
+      "Analytical chart IDs exactly match the two non-technical echart fences; the deterministic market-technicals chart is excluded from visualization_review as required.",
+      "papertrader wiki lint --strict passed.",
+      "papertrader schema validate --strict passed.",
+      "papertrader queue validate passed.",
+      "papertrader portfolio reconcile --strict passed.",
+      "No allocation targets/history, strategy, signal, order, execution, cash ledger, portfolio or performance path changed."
+    ],
+    "passed": true
+  },
+  "visualization_review": {
+    "charts": [
+      {
+        "chart_id": "xmtr-financial-progression-2023-2025",
+        "page_path": "data/wiki/securities/security_c2e6db30cb59254de418.md"
+      },
+      {
+        "chart_id": "xmtr-valuation-scenarios-2026",
+        "page_path": "data/wiki/securities/security_c2e6db30cb59254de418.md"
+      }
+    ],
+    "completed": true,
+    "omissions": [
+      {
+        "dataset": "Comparable peer multiples",
+        "reason": "The bounded primary evidence did not provide a like-for-like set sharing one date, definition, instrument scope and currency basis.",
+        "reason_code": "insufficient_comparability"
+      },
+      {
+        "dataset": "Marketplace cohort retention and AI-attributed order conversion",
+        "reason": "The issuer does not disclose comparable cohort retention, model-accuracy, AI-originated paid-order conversion or incremental AI unit-economics series.",
+        "reason_code": "source_unavailable"
+      }
+    ]
+  }
+}

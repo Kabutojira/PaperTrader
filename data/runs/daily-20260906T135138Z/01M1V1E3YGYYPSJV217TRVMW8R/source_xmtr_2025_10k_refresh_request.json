@@ -1,0 +1,18 @@
+{
+  "source_id": "source_xmtr_2025_10k",
+  "url": "https://www.sec.gov/Archives/edgar/data/1657573/000119312526066959/xmtr-20251231.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1657573/000119312526066959/xmtr-20251231.htm",
+  "source_type": "filing",
+  "title": "Xometry, Inc. 2025 Form 10-K",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "bc139297d8422ada5bf4ed7f558892fb9c2741d1f41695a26892103966fe0bb3",
+  "related_entity_ids": "security_c2e6db30cb59254de418",
+  "checked_at": "2026-09-06T13:57:12Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Revenue rose from USD 463.4 million in 2023 to USD 686.6 million in 2025 while operating loss narrowed from USD 73.6 million to USD 45.5 million.",
+  "summary": "The audited filing establishes Xometry's three-year revenue, gross-profit, operating-loss, operating-cash-flow and stock-compensation history. Revenue and gross profit expanded and operating cash flow turned positive in 2025, but GAAP operating and net losses persisted and stock compensation increased.",
+  "run_id": "daily-20260906T135138Z"
+}

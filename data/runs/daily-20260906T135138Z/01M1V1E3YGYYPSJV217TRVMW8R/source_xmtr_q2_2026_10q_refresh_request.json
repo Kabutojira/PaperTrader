@@ -1,0 +1,18 @@
+{
+  "source_id": "source_xmtr_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1657573/000119312526332776/xmtr-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1657573/000119312526332776/xmtr-20260630.htm",
+  "source_type": "filing",
+  "title": "Xometry, Inc. Form 10-Q for the quarter ended June 30, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "058f9c8a640ddad02646df6211407021fc189f621c8026d84be58d8ec0a1a28d",
+  "related_entity_ids": "security_c2e6db30cb59254de418",
+  "checked_at": "2026-09-06T13:57:12Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Q2 revenue was USD 229.3 million, gross profit USD 87.2 million and GAAP operating loss USD 5.5 million; six-month operating cash flow was positive USD 17.5 million.",
+  "summary": "The latest quarterly filing reports 41% Q2 revenue growth, a narrower operating loss and positive first-half operating cash flow. It also records USD 516.7 million of cash and marketable securities, USD 328.7 million of convertible notes, 57.0 million issued common shares before treasury shares, and material continuing stock compensation.",
+  "run_id": "daily-20260906T135138Z"
+}

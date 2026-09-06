@@ -1,0 +1,4 @@
+{
+  "issue_id": "issue_5fbb8df7c71c7f98ab2e",
+  "resolution": "Resolved by preserving canonical issuer issuer_dbdde9b294689a9af3d5 and completing the identity-matched Xometry security upsert and schema-v2 assessment in operation 01M1V1E3YGYYPSJV217TRVMW8R; the current validated payload does not supply the conflicting issuer identifier used by the prior failed attempt."
+}
