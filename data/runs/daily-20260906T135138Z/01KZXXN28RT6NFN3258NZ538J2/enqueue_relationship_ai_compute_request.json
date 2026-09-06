@@ -1,0 +1,24 @@
+{
+  "operation_type": "relationship_research",
+  "entity_type": "relationship",
+  "entity_id": "relationship_af9f468288bbe66b04ab",
+  "dedupe_key": "relationship_research:relationship_af9f468288bbe66b04ab:security-result:01KZXXN28RT6NFN3258NZ538J2",
+  "prompt": "Review whether Samsung Electronics preferred GDR has a material causal relationship to AI compute, networking and hyperscaler monetization through HBM and server-memory demand; accept or reject the edge.",
+  "inputs": {
+    "relationship_id": "relationship_af9f468288bbe66b04ab",
+    "idea_id": "idea_ai_compute_networking_hyperscaler_monetization",
+    "security_id": "security_d08d763780400dfbffce",
+    "proposed_direction": "positive",
+    "proposed_mechanism": "AI training and inference infrastructure can transmit into Samsung preferred-share economics through qualified HBM, server DRAM and enterprise SSD demand, pricing, utilization, margins and cash generation.",
+    "proposed_invalidation": "Reject or downgrade the edge if AI-memory demand or pricing weakens materially, Samsung loses sustained customer qualification, non-AI weakness offsets memory gains, or incremental capital fails to earn adequate returns.",
+    "evidence_refs": ["source_samsung_preferred_q2_2026_results"]
+  },
+  "source": "security_research:01KZXXN28RT6NFN3258NZ538J2",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": ["01KZXXN28RT6NFN3258NZ538J2"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": ["data/wiki/securities/security_d08d763780400dfbffce.md", "data/wiki/ideas/idea_ai_compute_networking_hyperscaler_monetization.md", "source_samsung_preferred_q2_2026_results"],
+  "max_attempts": 3
+}

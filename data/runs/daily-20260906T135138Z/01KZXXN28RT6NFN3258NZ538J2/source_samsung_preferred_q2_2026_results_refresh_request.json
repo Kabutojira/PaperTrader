@@ -1,0 +1,18 @@
+{
+  "source_id": "source_samsung_preferred_q2_2026_results",
+  "url": "https://images.samsung.com/is/content/samsung/assets/global/ir/docs/2026_2Q_conference_eng.pdf",
+  "canonical_url": "https://images.samsung.com/is/content/samsung/assets/global/ir/docs/2026_2Q_conference_eng.pdf",
+  "source_type": "issuer_release",
+  "title": "Samsung Electronics 2026 second-quarter earnings results",
+  "publisher": "Samsung Electronics Co., Ltd.",
+  "license": "",
+  "status": "available",
+  "content_hash": "e90b8e4829403339206fa77821aeadd71e39a611f3830a4cbcd349321de9e0cf",
+  "related_entity_ids": "security_d08d763780400dfbffce",
+  "checked_at": "2026-09-06T14:35:49Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Second-quarter revenue was KRW 171.5 trillion, operating profit KRW 89.5 trillion, net profit KRW 71.6 trillion, and preferred-share EPS KRW 10,899.",
+  "summary": "The unchanged Q2 issuer results remain the latest detailed operating baseline: record memory performance and net financial strength coexist with weak Device eXperience profitability, cyclicality and instrument-level valuation gaps.",
+  "run_id": "daily-20260906T135138Z"
+}

@@ -1,0 +1,26 @@
+{
+  "entity_id": "relationship_afc52419db33a151de83",
+  "entity_type": "relationship",
+  "inputs": {
+    "evidence_refs": [
+      "source_samsung_preferred_gdr_identity",
+      "source_samsung_preferred_q2_2026_results"
+    ],
+    "idea_id": "idea_terafab_ai_industrial_stack",
+    "proposed_direction": "positive",
+    "proposed_invalidation": "Reject a separate preferred-GDR edge if it merely duplicates the accepted common-GDR issuer exposure; otherwise downgrade if no material demand emerges or competitive internal yield and qualification displace Samsung supply.",
+    "proposed_mechanism": "Terafab and SpaceXAI may require externally supplied HBM, server memory, foundry and packaging while internal capacity is built and qualified, supporting Samsung economics before potential long-run displacement.",
+    "relationship_id": "relationship_afc52419db33a151de83",
+    "security_id": "security_d08d763780400dfbffce"
+  },
+  "objective": "Review whether Samsung Electronics preferred GDR has a non-redundant material causal relationship to the Terafab AI industrial stack through transitional memory, foundry and packaging demand; accept or reject the edge.",
+  "operation_id": "01M1VJKSSG7HT2WGAMRRQT61KS",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_terafab_ai_industrial_stack.md",
+    "data/wiki/securities/security_d08d763780400dfbffce.md",
+    "source_samsung_preferred_gdr_identity",
+    "source_samsung_preferred_q2_2026_results"
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_d08d763780400dfbffce",
+    "papertrader research source record --request data/runs/daily-20260906T135138Z/01KZXXN28RT6NFN3258NZ538J2/source_samsung_preferred_gdr_identity_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260906T135138Z/01KZXXN28RT6NFN3258NZ538J2/source_samsung_preferred_q2_2026_results_refresh_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260906T135138Z/01KZXXN28RT6NFN3258NZ538J2/security_upsert_request.json",
+    "papertrader wiki sync-technical-charts",
+    "papertrader research assessment upsert --request data/runs/daily-20260906T135138Z/01KZXXN28RT6NFN3258NZ538J2/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260906T135138Z/01KZXXN28RT6NFN3258NZ538J2/assessment_upsert_request_v2.json",
+    "papertrader queue enqueue --request data/runs/daily-20260906T135138Z/01KZXXN28RT6NFN3258NZ538J2/enqueue_relationship_ai_compute_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260906T135138Z/01KZXXN28RT6NFN3258NZ538J2/enqueue_relationship_terafab_request.json",
+    "papertrader research security-context --security-id security_d08d763780400dfbffce",
+    "papertrader wiki lint --strict",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Samsung preferred-GDR research completed: the September 4 bullish MACD crossover followed a 16.70% gain, but zero crossover-day volume and only eleven units across twenty-one sessions make it non-actionable market noise.",
+    "Preferred-GDR valuation remains unsupported despite current EUR and KRW/EUR state because conversion, same-time Korean/London/Vienna parity, normalized-cycle earnings and routine Vienna liquidity remain unresolved; deterministic disposition is Unrated / Watch and allocation-ineligible.",
+    "Queued dependent AI-compute and Terafab candidate relationship reviews; no strategy, signal or paper order was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The current issuer page retains preferred underlying KRX 005935 / ISIN KR7005931001, preferred GDR LSE SMSEL / ISIN US7960502018, and 815,974,664 preferred shares at March 31, 2026. Page bytes changed since the prior check without changing these material identity fields.",
+      "observed_at": "2026-09-06T14:35:49Z",
+      "source": "Samsung Electronics listing information",
+      "source_hash": "98cb8de188e79ca5931bb0d655fb1042d5698e04741fabe7bd64ff3d9782d520",
+      "url": "https://www.samsung.com/global/ir/stock-information/listing-Info/"
+    },
+    {
+      "claim": "The byte-identical issuer PDF remains the latest detailed operating evidence found: memory-led earnings, preferred-share EPS, cash generation and net financial strength support the issuer thesis while Device eXperience weakness and cycle concentration remain contrary evidence.",
+      "observed_at": "2026-09-06T14:35:49Z",
+      "source": "Samsung Electronics 2026 second-quarter earnings results",
+      "source_hash": "e90b8e4829403339206fa77821aeadd71e39a611f3830a4cbcd349321de9e0cf",
+      "url": "https://images.samsung.com/is/content/samsung/assets/global/ir/docs/2026_2Q_conference_eng.pdf"
+    },
+    {
+      "claim": "Immutable SSUN.VI/XWBO/EUR state had a EUR3040 mark as of 2026-09-06T13:51:39Z. From August 7 through September 4 adjusted close rose 16.70%; September 4 MACD crossed above signal with strength 0.60327972, RSI was 57.80, and close exceeded the 20-, 50- and 200-session averages. The provider reported zero volume that day and only eleven units in five of twenty-one sessions. KRW/EUR was current for September 4 but cannot replace the missing GDR conversion and cross-venue parity bridge.",
+      "source": "Canonical PaperTrader market, FX and technical state"
+    },
+    {
+      "claim": "Assessment assessment_2b2b7e8f458cbfafe3cb links predecessor assessment_27be4a94f4e72cdda9dc, schema version 2, source operation 01KZXXN28RT6NFN3258NZ538J2 and research-page hash 8c17eb2a183e1804d498137a5f1c73e02f493efa1b09085993546ca38f253a32. It derives quality score 72, unsupported research, Unrated / Watch, and allocation ineligibility from liquidity_insufficient, valuation_unsupported and pending relationship state.",
+      "source": "Canonical PaperTrader assessment state"
+    },
+    {
+      "claim": "The complete maintained idea catalog was searched and no accepted relationship exists for this security. AI compute has a specific HBM/server-memory mechanism, while Terafab has a potential transitional memory/foundry/packaging mechanism but may duplicate the accepted common-GDR edge; both remain clearly labelled candidates pending separate dependent relationship reviews.",
+      "source": "Canonical idea catalog and relationship table"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M1VJKHZG5F4FQJWETGQ7TKZY.json",
+    "data/operations/payloads/01M1VJKSSG7HT2WGAMRRQT61KS.json",
+    "data/runs/daily-20260906T135138Z/01KZXXN28RT6NFN3258NZ538J2/assessment_upsert_request.json",
+    "data/runs/daily-20260906T135138Z/01KZXXN28RT6NFN3258NZ538J2/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260906T135138Z/01KZXXN28RT6NFN3258NZ538J2/enqueue_relationship_ai_compute_request.json",
+    "data/runs/daily-20260906T135138Z/01KZXXN28RT6NFN3258NZ538J2/enqueue_relationship_terafab_request.json",
+    "data/runs/daily-20260906T135138Z/01KZXXN28RT6NFN3258NZ538J2/security_upsert_request.json",
+    "data/runs/daily-20260906T135138Z/01KZXXN28RT6NFN3258NZ538J2/source_samsung_preferred_gdr_identity_refresh_request.json",
+    "data/runs/daily-20260906T135138Z/01KZXXN28RT6NFN3258NZ538J2/source_samsung_preferred_q2_2026_results_refresh_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_d08d763780400dfbffce.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KZXXN28RT6NFN3258NZ538J2",
+  "operations_created": [
+    "01M1VJKHZG5F4FQJWETGQ7TKZY",
+    "01M1VJKSSG7HT2WGAMRRQT61KS"
+  ],
+  "status": "succeeded",
+  "summary": "Completed exactly one repeat security review for Samsung Electronics preferred GDR using current issuer listing information, the unchanged Q2 2026 results, and canonical market/FX state. The September 4 bullish MACD crossover followed a 16.70% gain from August 7, but only eleven units traded across twenty-one sessions and the crossover session reported zero volume, so the move is constructive technical momentum and non-actionable market noise. Updated the security page and structured row, refreshed two primary sources, and appended schema-v2 assessment assessment_2b2b7e8f458cbfafe3cb linked to assessment_27be4a94f4e72cdda9dc. Valuation remains unsupported because preferred-GDR conversion, same-time cross-venue parity and normalized through-cycle earnings remain unresolved; liquidity_insufficient and valuation_unsupported keep the deterministic conclusion Unrated / Watch and allocation-ineligible. Enqueued two dependent candidate relationship reviews and created no strategy, signal, order, allocation or accounting change.",
+  "validation": {
+    "checks": [
+      "Mandatory pre-assessment security-context completed successfully and the post-write context confirmed assessment_2b2b7e8f458cbfafe3cb links predecessor assessment_27be4a94f4e72cdda9dc, source operation/result, schema version 2 and exact page hash 8c17eb2a183e1804d498137a5f1c73e02f493efa1b09085993546ca38f253a32.",
+      "Immutable Samsung preferred-GDR identity, XWBO venue, EUR currency, SSUN.VI provider symbol, Korean preferred-share identity and distinct common-GDR boundary were reconciled against canonical state and the issuer listing.",
+      "Both retained primary sources were refreshed through the source CLI and are current as of 2026-09-06T14:35:49Z.",
+      "The security CLI accepted the structured update and the assessment CLI accepted exactly one current immutable version after one no-change failed request was corrected with a distinct immutable request file.",
+      "The requested August 7 through September 4 alert period, exact September 4 MACD transition, current EUR price, KRW/EUR state and source price hash were consumed without replacing canonical measurements.",
+      "The complete idea catalog and canonical accepted relationship state were searched; the page labels AI compute and Terafab as candidates, labels all other evaluated themes rejected-no-link, and presents no candidate as accepted.",
+      "Exactly two dependent relationship-research follow-ups exist for the plausible unaccepted edges; no idea-research follow-up was required because the payload names no idea and this security has no accepted relationship. No strategy follow-up was created because the full strategy gate fails.",
+      "The analytical echart fence validates and visualization_review exactly matches its chart ID; the marker-bounded deterministic market-technicals chart is preserved and excluded.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "papertrader schema validate --strict returned OK [schema].",
+      "papertrader queue validate returned OK [queue].",
+      "papertrader portfolio reconcile --strict returned OK [portfolio], and no allocation, strategy, signal, order, execution, cash, portfolio or performance path changed."
+    ],
+    "passed": true
+  },
+  "visualization_review": {
+    "charts": [
+      {
+        "chart_id": "samsung-preferred-gdr-alert-window-20260904",
+        "page_path": "data/wiki/securities/security_d08d763780400dfbffce.md"
+      }
+    ],
+    "completed": true,
+    "omissions": [
+      {
+        "dataset": "Valuation scenarios",
+        "reason": "Preferred-GDR conversion, same-time cross-venue parity and normalized through-cycle earnings are unavailable, so no bear, base or bull values were invented or charted.",
+        "reason_code": "source_unavailable"
+      },
+      {
+        "dataset": "Fundamental trend pack",
+        "reason": "The bounded retained evidence supports the current Q2 operating snapshot but not a consistent multi-period set for revenue, profit, cash flow, cash, debt and preferred-share earnings.",
+        "reason_code": "insufficient_history"
+      },
+      {
+        "dataset": "Peer valuation comparison",
+        "reason": "No bounded primary-source set supplied same-date, same-definition preferred-GDR-adjusted earnings and market values for three or more comparable securities.",
+        "reason_code": "insufficient_comparability"
+      }
+    ]
+  }
+}

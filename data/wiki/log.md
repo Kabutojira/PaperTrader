@@ -3393,3 +3393,9 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Verified the September 4 MACD bullish crossover, but treated it as improving short-term momentum rather than a thesis-changing opportunity because the security remained below the 200-day average and valuation gates failed.
 - Accepted USD250/USD375/USD495 bear/base/bull fair values with 25%/50%/25% probabilities. Weighted value is USD373.75 versus the USD428.91 mark, supporting Hold / Watch and no strategy, signal or paper order.
 - Kept [[ideas/idea_terafab_ai_industrial_stack]] as the accepted current edge and queued its dependent refresh. Proposed separate dependent relationship reviews for [[ideas/idea_ai_compute_networking_hyperscaler_monetization]] and [[ideas/idea_japan_sanaenomics_strategic_investment]] without presenting either candidate as accepted.
+
+## [2026-09-06] update | Samsung preferred GDR alert and unsupported valuation review
+- Refreshed [[securities/security_d08d763780400dfbffce|Samsung preferred GDR]] against current issuer listing evidence and the unchanged Q2 2026 results; immutable preferred-share and GDR identities remain intact.
+- Verified the September 4 bullish MACD crossover after a 16.70% alert-window gain, but classified it as constructive technical momentum and non-actionable market noise because the latest session had zero volume and only eleven units traded across twenty-one sessions.
+- Kept valuation unsupported: fresh EUR and KRW/EUR state does not resolve preferred-GDR conversion, same-time cross-venue parity, normalized-cycle earnings or routine Vienna liquidity. The deterministic assessment remains Watch and allocation-ineligible.
+- Proposed bounded dependent relationship reviews for [[ideas/idea_ai_compute_networking_hyperscaler_monetization]] and [[ideas/idea_terafab_ai_industrial_stack]] without presenting either candidate as accepted; no strategy, signal or paper order was created.
