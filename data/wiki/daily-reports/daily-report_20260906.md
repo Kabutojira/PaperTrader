@@ -7,8 +7,8 @@ tags:
 created: "2026-09-06"
 updated: "2026-09-06"
 provenance: deterministic-report-generator
-run_id: "daily-20260906T114339Z"
-snapshot_id: "decision_91675b6fe4b1be73e29a"
+run_id: "daily-20260906T135138Z"
+snapshot_id: "decision_f8360cc89ae5c108b21a"
 ---
 
 # PaperTrader daily report — 2026-09-06
@@ -20,7 +20,7 @@ snapshot_id: "decision_91675b6fe4b1be73e29a"
 
 - **Investment data:** Unsafe to publish — portfolio, accounting, or active-order state requires attention
 - **Operations:** Attention required
-- **As of:** `2026-09-06T11:58:23Z`
+- **As of:** `2026-09-06T15:19:23Z`
 - **Cash:** 9703.02 EUR (97.030007%)
 - **Gross exposure:** 297 EUR
 - **Target cash:** 9703.02 EUR (97.030007%)
@@ -89,14 +89,14 @@ No actionable trade signals.
   - Research: **ready**
   - Decision: High-priority security research is ready to run.
 - **[TX — Ternium S.A.](securities/security_2c779e81c27b78c556bb): Macd Cross Above Signal** (`2026-09-04`)
-  - Research: **ready**
-  - Decision: High-priority security research is ready to run.
+  - Research: **succeeded**
+  - Decision: Completed exactly one Ternium S.A. ADS security review. SEC-filed interim statements confirm the prior Q2 operating and balance-sheet evidence, while no later operating-results filing changes normalized assumptions. The 4 September bullish MACD crossover follows a 7.61% alert-period gain, but RSI 73.76 and a USD 58 close above the upper Bollinger band indicate adverse entry timing. Unchanged USD 28/USD 50/USD 78 scenarios produce USD 51.50 probability-weighted value, -11.21% expected return and a deterministic Hold / Watch, allocation-ineligible disposition. Updated the security page and structured row, registered current primary evidence, appended assessment assessment\_e609a14a4ea7b39f470c linked to its predecessor, and enqueued the required dependent nearshoring idea refresh. The overdue accepted relationship already has one ready relationship-research operation, so no duplicate was created. No strategy, signal, order, allocation, execution, cash, portfolio, or performance state chan
 - **[TSM — Taiwan Semiconductor Manufacturing Company Limited](securities/security_ce9b78a4d0773c950765): Macd Cross Above Signal** (`2026-09-04`)
-  - Research: **ready**
-  - Decision: High-priority security research is ready to run.
+  - Research: **succeeded**
+  - Decision: Completed exactly one current Taiwan Semiconductor Manufacturing Company sponsored-ADR security review using the 2025 Form 20-F, SEC-filed Q2 2026 evidence, July revenue, August board resolutions, and the definitive Sony image-sensor joint venture. The 4 September bullish MACD crossover is improving momentum but not an actionable opportunity at the current USD428.91 mark. Updated the security page and structured row, registered six refreshed/current primary sources, and appended scenario-complete assessment assessment\_af482445e24e1513a801 linked to assessment\_46d2ae16336286c36b20. Bear/base/bull values of USD250/USD375/USD495 produce USD373.75 probability-weighted value and -12.86% expected return; deterministic state remains Hold / Watch and allocation-ineligible. Enqueued two bounded candidate relationship reviews and the required dependent Terafab idea refresh; no strategy, signal, order, allocation, or accounting state changed.
 - **[SSUN.VI — Samsung Electronics Co., Ltd.](securities/security_d08d763780400dfbffce): Macd Cross Above Signal** (`2026-09-04`)
-  - Research: **ready**
-  - Decision: High-priority security research is ready to run.
+  - Research: **succeeded**
+  - Decision: Completed exactly one repeat security review for Samsung Electronics preferred GDR using current issuer listing information, the unchanged Q2 2026 results, and canonical market/FX state. The September 4 bullish MACD crossover followed a 16.70% gain from August 7, but only eleven units traded across twenty-one sessions and the crossover session reported zero volume, so the move is constructive technical momentum and non-actionable market noise. Updated the security page and structured row, refreshed two primary sources, and appended schema-v2 assessment assessment\_2b2b7e8f458cbfafe3cb linked to assessment\_27be4a94f4e72cdda9dc. Valuation remains unsupported because preferred-GDR conversion, same-time cross-venue parity and normalized through-cycle earnings remain unresolved; liquidity\_insufficient and valuation\_unsupported keep the deterministic conclusion Unrated / Watch and allocation-ineligible. Enqueued two dependent candidate relationship reviews and created no strategy, signal, ord
 - **[SSU.VI — Samsung Electronics Co., Ltd.](securities/security_567d0d575bbd30aaa91d): Macd Cross Above Signal** (`2026-09-04`)
   - Research: **ready**
   - Decision: High-priority security research is ready to run.
@@ -116,9 +116,16 @@ No actionable trade signals.
   - Research: **ready**
   - Decision: High-priority security research is ready to run.
 
+## Research decisions this run
+
+- **[XMTR](securities/security_c2e6db30cb59254de418) — succeeded:** Completed Xometry Class A security research against canonical issuer issuer\_dbdde9b294689a9af3d5. Current primary evidence shows accelerating marketplace adoption, improving operating leverage and positive first-half cash flow, but persistent GAAP losses, dilution and unproven AI-attributed conversion. A schema-version-two pre-profit-growth assess…
+- **[TSM](securities/security_ce9b78a4d0773c950765) — succeeded:** Completed exactly one current Taiwan Semiconductor Manufacturing Company sponsored-ADR security review using the 2025 Form 20-F, SEC-filed Q2 2026 evidence, July revenue, August board resolutions, and the definitive Sony image-sensor joint venture. The 4 September bullish MACD crossover is improving momentum but not an actionable opportunity at th…
+- **[SSUN.VI](securities/security_d08d763780400dfbffce) — succeeded:** Completed exactly one repeat security review for Samsung Electronics preferred GDR using current issuer listing information, the unchanged Q2 2026 results, and canonical market/FX state. The September 4 bullish MACD crossover followed a 16.70% gain from August 7, but only eleven units traded across twenty-one sessions and the crossover session rep…
+- **[TX](securities/security_2c779e81c27b78c556bb) — succeeded:** Completed exactly one Ternium S.A. ADS security review. SEC-filed interim statements confirm the prior Q2 operating and balance-sheet evidence, while no later operating-results filing changes normalized assumptions. The 4 September bullish MACD crossover follows a 7.61% alert-period gain, but RSI 73.76 and a USD 58 close above the upper Bollinger…
+
 ## Leading Buy / Initiate research candidate
 
-- **NVDA — NVIDIA Corporation:** Buy / Initiate; expected return 32%; No current allocation plan supports this candidate.
+- **NVDA — NVIDIA Corporation:** Buy / Initiate; expected return 32%; The eligible set is not sufficiently diversified.
 
 ## Comparison-only research benchmark
 
@@ -153,15 +160,15 @@ No pending orders.
 
 | Candidate | Rating / action | State | Bear / base / bull | Expected | Buy below | Exact gate |
 | --- | --- | --- | ---: | ---: | ---: | --- |
-| [NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | Buy / Initiate | Full baseline — Research incomplete | -14.04757793219827615411185935% / 34.7890255154163396674154933% / 94.4782075069453145603933687% | 32% | 248.4 | No current allocation plan supports this candidate. |
-| [UBER — Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e) | Buy / Initiate | Starter — Research incomplete | -27.40232517272129114552224178% / 18.7961951719106144891454225% / 58.3949268958808193188605634% | 17% | 72 | No current allocation plan supports this candidate. |
-| [DLO — DLocal Limited](securities/security_715bde20b6e1e1320c1a) | Buy / Initiate | Research incomplete | -42.01031098876114561357907558% / 20.489687167796286336230143% / 89.4329841033802576623083531% | 22% | 14.96 | No current allocation plan supports this candidate. |
-| [TCEHY — Tencent Holdings Limited](securities/security_de0d83229b369a426b99) | Buy / Initiate | Research incomplete | -29.3286200028980919525063141% / 14.8409924952906005771772396% / 59.0106049934792931068607933% | 15% | 52 | No current allocation plan supports this candidate. |
-| [PATH — UiPath, Inc.](securities/security_eca976f0076a425ea1bb) | Buy / Initiate | Research incomplete | -40.75049210914529441840607402% / 11.915737127169999431899638% / 77.7485236725641167447817779% | 15% | 13.6 | No current allocation plan supports this candidate. |
-| [CROX — Crocs, Inc.](securities/security_c150f31c30afdb4a85f9) | Buy / Initiate | Research incomplete | -25.12549909470316631040015816% / 23.7343669790090004467051932% / 75.104230526251004242268721% | 19% | 116.34 | No current allocation plan supports this candidate. |
-| [FISV — Fiserv, Inc.](securities/security_d202772e4e62065cd17a) | Buy / Initiate | Research incomplete | -33.96226415094339622641509434% / 22.6415094339622641509433962% / 79.2452830188679245283018868% | 17% | 52 | No current allocation plan supports this candidate. |
-| [CSIQ — Canadian Solar Inc.](securities/security_099561384c0f5e697727) | Buy / Initiate | Research incomplete | -23.14674890484357849603365378% / 38.2753376003404906587111032% / 99.7730670692008948739912602% | 26% | 14.624 | No current allocation plan supports this candidate. |
-| [NOMD — Nomad Foods Limited](securities/security_98a1943771da875efed5) | Buy / Initiate | Research incomplete | -22.68041465168152748477210077% / 28.865975580530787525379832% / 71.8213007740410500338397761% | 22% | 12 | No current allocation plan supports this candidate. |
+| [NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | Buy / Initiate | Full baseline — Allocation constrained | -14.04757793219827615411185935% / 34.7890255154163396674154933% / 94.4782075069453145603933687% | 32% | 248.4 | The eligible set is not sufficiently diversified. |
+| [UBER — Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e) | Buy / Initiate | Starter — Strategy research pending | -27.40232517272129114552224178% / 18.7961951719106144891454225% / 58.3949268958808193188605634% | 17% | 72 | The eligible set is not sufficiently diversified. |
+| [DLO — DLocal Limited](securities/security_715bde20b6e1e1320c1a) | Buy / Initiate | Valuation unattractive | -42.01031098876114561357907558% / 20.489687167796286336230143% / 89.4329841033802576623083531% | 22% | 14.96 | Bear/base payoff is below the starter threshold. |
+| [TCEHY — Tencent Holdings Limited](securities/security_de0d83229b369a426b99) | Buy / Initiate | Valuation unattractive | -29.3286200028980919525063141% / 14.8409924952906005771772396% / 59.0106049934792931068607933% | 15% | 52 | Expected/bear payoff is below the starter threshold. |
+| [PATH — UiPath, Inc.](securities/security_eca976f0076a425ea1bb) | Buy / Initiate | Valuation unattractive | -40.75049210914529441840607402% / 11.915737127169999431899638% / 77.7485236725641167447817779% | 15% | 13.6 | Bear/base payoff is below the starter threshold. |
+| [CROX — Crocs, Inc.](securities/security_c150f31c30afdb4a85f9) | Buy / Initiate | Relationship research pending | -25.12549909470316631040015816% / 23.7343669790090004467051932% / 75.104230526251004242268721% | 19% | 116.34 | A current accepted idea-to-security relationship is unavailable. |
+| [FISV — Fiserv, Inc.](securities/security_d202772e4e62065cd17a) | Buy / Initiate | Valuation unattractive | -33.96226415094339622641509434% / 22.6415094339622641509433962% / 79.2452830188679245283018868% | 17% | 52 | Expected/bear payoff is below the starter threshold. |
+| [CSIQ — Canadian Solar Inc.](securities/security_099561384c0f5e697727) | Buy / Initiate | Allocation constrained | -23.14674890484357849603365378% / 38.2753376003404906587111032% / 99.7730670692008948739912602% | 26% | 14.624 | Research quality must be strictly above the configured threshold. |
+| [NOMD — Nomad Foods Limited](securities/security_98a1943771da875efed5) | Buy / Initiate | Allocation constrained | -22.68041465168152748477210077% / 28.865975580530787525379832% / 71.8213007740410500338397761% | 22% | 12 | Research quality must be strictly above the configured threshold. |
 
 ## 5. Performance and risk
 
@@ -176,6 +183,19 @@ No pending orders.
 
 ## 6. Research changes
 
+### Evidence-linked narrative
+
+- TSM security research completed: July demand and new capacity commitments strengthen the operating thesis, but USD373.75 probability-weighted value versus USD428.91 leaves negative expected and base returns; deterministic disposition remains Hold / Watch and allocation-ineligible. Evidence is retained in the canonical run artifacts.
+- The 4 September TSM bullish MACD crossover is improving momentum but not an actionable opportunity because downside payoff and margin-of-safety gates remain adverse. Evidence is retained in the canonical run artifacts.
+- Queued dependent relationship reviews for TSM's AI-compute and Japan strategic-investment candidate links and the required Terafab idea refresh; no paper strategy or order was created. Evidence is retained in the canonical run artifacts.
+- Samsung preferred-GDR research completed: the September 4 bullish MACD crossover followed a 16.70% gain, but zero crossover-day volume and only eleven units across twenty-one sessions make it non-actionable market noise. Evidence is retained in the canonical run artifacts.
+- Preferred-GDR valuation remains unsupported despite current EUR and KRW/EUR state because conversion, same-time Korean/London/Vienna parity, normalized-cycle earnings and routine Vienna liquidity remain unresolved; deterministic disposition is Unrated / Watch and allocation-ineligible. Evidence is retained in the canonical run artifacts.
+- Queued dependent AI-compute and Terafab candidate relationship reviews; no strategy, signal or paper order was created. Evidence is retained in the canonical run artifacts.
+- Ternium ADS research completed: Q2 operating recovery remains intact, but unchanged USD 28/USD 50/USD 78 scenarios imply USD 51.50 weighted value versus USD 58; deterministic disposition remains Hold / Watch and allocation-ineligible. Evidence is retained in the canonical run artifacts.
+- The 4 September bullish MACD crossover is constructive momentum but not an actionable opportunity because RSI remains overbought, price exceeds the upper Bollinger band, and valuation and downside gates fail. Evidence is retained in the canonical run artifacts.
+- Queued the required dependent nearshoring idea refresh; an overdue canonical relationship review was already ready, and no strategy or paper order was created. Evidence is retained in the canonical run artifacts.
+- Xometry research completed: marketplace revenue grew 45% and cash conversion improved, but GAAP losses, dilution, valuation downside and an unaccepted AI-physical-creation relationship support Hold / Watch. USD50/USD85/USD130 scenarios yield USD87.50 weighted value versus USD92.53; no strategy, signal or paper order was created. Evidence is retained in the canonical run artifacts.
+
 - [[ideas/idea_ai_driven_democratization_physical_creation|AI-Driven Democratization of Physical Creation]]
 - [[ideas/idea_ai_infrastructure_power|AI infrastructure and power bottlenecks]]
 - [[model-portfolio|PaperTrader model portfolio]]
@@ -183,7 +203,11 @@ No pending orders.
 - [[podcasts/daily-podcast_20260905T235530Z|PaperTrader daily research podcast — 2026-09-05T235530Z]]
 - [[podcasts/daily-podcast_20260905T235530Z_it-IT|Podcast quotidiano di ricerca PaperTrader — 2026-09-05T235530Z]]
 - [[research-catalog|PaperTrader research catalog]]
+- [[securities/security_2c779e81c27b78c556bb|Ternium S.A. ADS]]
 - [[securities/security_b19e8f0343b7da1f3c03|Shenzhen Creality 3D Technology Co., Ltd. H shares]]
+- [[securities/security_c2e6db30cb59254de418|Xometry, Inc. Class A common stock]]
+- [[securities/security_ce9b78a4d0773c950765|Taiwan Semiconductor Manufacturing Company Limited sponsored ADR]]
+- [[securities/security_d08d763780400dfbffce|Samsung Electronics preferred GDR]]
 - [[security-catalog|PaperTrader tracked securities]]
 - [[signals|PaperTrader signals and research alerts]]
 - [[system-status|PaperTrader system status and audit]]
@@ -192,9 +216,9 @@ No pending orders.
 
 - Investment data status: **blocked**
 - Operations status: **degraded**
-- Assessments: 49/82
-- Fresh-evidence assessments: 47/82
-- Relationship reviews: 20/82
+- Assessments: 53/83
+- Fresh-evidence assessments: 51/83
+- Relationship reviews: 20/83
 - Accepted relationships: 19
 - Ready or active strategies: 4
 - Active signals: 0
@@ -208,12 +232,12 @@ No pending orders.
 - **affects candidate** — FUC.F Fanuc Corporation: FANUC assessment source operation is ambiguous within one run
 - **affects candidate** — KTOS Kratos Defense &amp; Security Solutions, Inc.: Hermes operation validation failed: [[securities/security_0cf8075039299094d614|Quick check research for KTOS on 2026-08-12]]
 - **affects candidate**: Hermes operation validation failed: [[securities/security_ad3b1f8f59fd599f079a|Quick check research for HOOD on 2026-08-15]]
+- **affects candidate** — CRSR Corsair Gaming, Inc.: Hermes operation validation failed: [[securities/security_55c9ce2fdcd32dad6b8c|Security research for CRSR on 2026-08-15]]
 - **affects candidate** — RKLB Rocket Lab Corporation: Hermes operation validation failed: [[securities/security_7ca095d63423c55a90e3|Quick check research for RKLB on 2026-08-18]]
 - **affects candidate**: Hermes operation validation failed: [[securities/security_2010347f1a0a5ea60f47|Quick check research for SPOT on 2026-08-16]]
 - **affects candidate** — XMTR Xometry, Inc.: Xometry security review blocked by issuer identity conflict
 - **affects candidate**: Hermes operation validation failed: [[securities/security_4627aea1bf7d8943d3d8|Security research for SGML on 2026-08-17]]
 - **affects candidate** — ABBNY ABB Ltd: ABB assessment provenance does not match corrected final research page
-- **affects candidate**: Hermes operation validation failed: [[securities/security_ce9b78a4d0773c950765|Security research for TSM on 2026-08-13]]
 - **affects candidate**: Hermes operation validation failed: [[securities/security_c120e9f26ebb6159adf9|Security research for ABBNY on 2026-09-03]]
 - **affects candidate**: Hermes operation validation failed: [[securities/security_6cf75bd0ec0aa2a20148|Quick check research for TWST on 2026-08-05]]
 - **affects candidate** — ASML ASML Holding N.V.: ASML assessment rejected after security row update
@@ -230,103 +254,103 @@ No pending orders.
 
 - Report date: 2026-09-06
 - Run status: degraded
-- Generated (UTC): `2026-09-06T11:58:23Z`
+- Generated (UTC): `2026-09-06T15:19:23Z`
 
 ### Complete market freshness
 
 | Security | Price date | Retrieved at | Status | Error |
 | --- | --- | --- | --- | --- |
-| [[securities/security_099561384c0f5e697727|CSIQ]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_0a56aa634d077fe5796f|AMAT]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_0b67d6c8e3fd3366a257|POWL]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_0c8b3c4291cd97f56d8c|108490]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_0cf8075039299094d614|KTOS]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_18a3ab0ee6086ee85d0f|ETN]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_1e8fbdb0f45f2b413e00|PYPL]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_1f9cce545ede94cd6349|ISRG]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_2010347f1a0a5ea60f47|SPOT]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_204be2a44063993de1a8|MSFT]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_22c2b9d782a62d7a9b86|ATKR]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_2433a056eb0c55961fcc|AMZN]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_2c779e81c27b78c556bb|TX]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_2dbe878dfc899d7ee867|FCX]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_33d9c44facc75c726c7d|NVDA]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_37ddcbdaad296ad831f2|COIN]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_3853e54c619d597dcaa1|NIB.F]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_3a75fc1ccca2ee7c937a|QCOM]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_3e597863f00753e8c65c|BE]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_4627aea1bf7d8943d3d8|SGML]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_47a0b06f6c6c478d7c1e|NBIS]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_488a9d7f7a8573597724|PWR]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_4935c6e39e38273a1731|MELI]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_4b61970aa8f574446819|GEV]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_567d0d575bbd30aaa91d|SSU.VI]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_59304f90c440def31dc5|RTX]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_61567714298b9563d1a9|WTI]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_664f93a7eaca72e76e9b|SPCX]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_66cdcf90aac0d83e76f3|ALB]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[security-catalog#security-security_6ac6a6268ca7c08829ae|DDD]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_6ad1af8d10d6276a0221|SCCO]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_6cf75bd0ec0aa2a20148|TWST]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_6f9a1450edceb9307c9a|ANET]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_715bde20b6e1e1320c1a|DLO]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[security-catalog#security-security_798e2fb944d740aca308|AKE]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_7bf8f4c9cc12ae410e40|ABCL]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_7ca095d63423c55a90e3|RKLB]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_83a56943e18793f685b0|TXN]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[security-catalog#security-security_84705b27d28a94f2b318|SSYS]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_8472507d7d320aa388a7|CRWD]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_89969b7dac39b7db5661|YEC.F]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_8a5c43888d224de85c69|PLS.AX]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_8b703a8adf5f864acaa4|PRX]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_95351d928b674bbdf687|DNA]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_96ba305ee7cd586bc348|FUC.F]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_97f38b2cb2d5ef127f5a|PL]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_98470cfc01bbcde78fc2|SOFI]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_98a1943771da875efed5|NOMD]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_9b0db3bc77914b23a307|CSL]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_9d4049ed6669a52815d6|SQM]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_a5dc16f3f4b245e6c168|LUNR]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_a9eb9838940ef5ceaa0c|FLNC]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_ad3b1f8f59fd599f079a|HOOD]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_ad5917642acbba28c1f2|TDY]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_b19e8f0343b7da1f3c03|03388]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_b1f2c48e1a744f5ecf67|LH]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_b2116dcf976c96974d7b|VALE]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[security-catalog#security-security_b61c642d038d71be3821|MTLS]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_bdc2f87dadf134760c3a|PLTR]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_c120e9f26ebb6159adf9|ABBNY]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_c150f31c30afdb4a85f9|CROX]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[security-catalog#security-security_c2e6db30cb59254de418|XMTR]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_c5a9e460d3350284d157|VLO]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_c86bb4e75658c07142cf|GOOGL]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_c9a37d277445869a8809|RBLX]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_cb88f9154cfeaa15e878|VRT]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[security-catalog#security-security_ccb25582c0392492fe9e|EVK]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_cd492d97064d8574156e|MP]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_ce9b78a4d0773c950765|TSM]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_d08d763780400dfbffce|SSUN.VI]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_d12e746b3c9d392183cc|META]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_d202772e4e62065cd17a|FISV]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_dc7a111e297be528d96b|TSLA]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_dc8486c1d61df62a22fd|SU]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_de0d83229b369a426b99|TCEHY]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_dfa34d4b9050964b465e|INTC]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_e19c7fe27fbcc4cd923d|AD]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_e4822686f60a96824b6e|UBER]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_eca976f0076a425ea1bb|PATH]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_ed7d5b616a196969c815|RXRX]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_ef35e41886220d51c22c|ASML]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[security-catalog#security-security_ef418f5ccc7dc5be8e65|BAS]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[security-catalog#security-security_f18cd57a5e086583c861|PRLB]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_f2b9760d847b2ba59324|ENPH]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_f34181f3df32080a91d1|DPZ]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_fb87fac302a5446a1ced|LAC]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
-| [[securities/security_fe5539a7d3fd9d553bce|MSTR]] | 2026-09-04 | 2026-09-06T11:43:40Z | ok | — |
+| [[securities/security_099561384c0f5e697727|CSIQ]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_0a56aa634d077fe5796f|AMAT]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_0b67d6c8e3fd3366a257|POWL]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_0c8b3c4291cd97f56d8c|108490]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_0cf8075039299094d614|KTOS]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_18a3ab0ee6086ee85d0f|ETN]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_1e8fbdb0f45f2b413e00|PYPL]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_1f9cce545ede94cd6349|ISRG]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_2010347f1a0a5ea60f47|SPOT]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_204be2a44063993de1a8|MSFT]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_22c2b9d782a62d7a9b86|ATKR]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_2433a056eb0c55961fcc|AMZN]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_2c779e81c27b78c556bb|TX]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_2dbe878dfc899d7ee867|FCX]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_33d9c44facc75c726c7d|NVDA]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_37ddcbdaad296ad831f2|COIN]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_3853e54c619d597dcaa1|NIB.F]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_3a75fc1ccca2ee7c937a|QCOM]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_3e597863f00753e8c65c|BE]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_4627aea1bf7d8943d3d8|SGML]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_47a0b06f6c6c478d7c1e|NBIS]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_488a9d7f7a8573597724|PWR]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_4935c6e39e38273a1731|MELI]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_4b61970aa8f574446819|GEV]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_567d0d575bbd30aaa91d|SSU.VI]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_59304f90c440def31dc5|RTX]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_61567714298b9563d1a9|WTI]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_664f93a7eaca72e76e9b|SPCX]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_66cdcf90aac0d83e76f3|ALB]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[security-catalog#security-security_6ac6a6268ca7c08829ae|DDD]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_6ad1af8d10d6276a0221|SCCO]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_6cf75bd0ec0aa2a20148|TWST]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_6f9a1450edceb9307c9a|ANET]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_715bde20b6e1e1320c1a|DLO]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[security-catalog#security-security_798e2fb944d740aca308|AKE]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_7bf8f4c9cc12ae410e40|ABCL]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_7ca095d63423c55a90e3|RKLB]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_83a56943e18793f685b0|TXN]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[security-catalog#security-security_84705b27d28a94f2b318|SSYS]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_8472507d7d320aa388a7|CRWD]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_89969b7dac39b7db5661|YEC.F]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_8a5c43888d224de85c69|PLS.AX]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_8b703a8adf5f864acaa4|PRX]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_95351d928b674bbdf687|DNA]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_96ba305ee7cd586bc348|FUC.F]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_97f38b2cb2d5ef127f5a|PL]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_98470cfc01bbcde78fc2|SOFI]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_98a1943771da875efed5|NOMD]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_9b0db3bc77914b23a307|CSL]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_9d4049ed6669a52815d6|SQM]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_a5dc16f3f4b245e6c168|LUNR]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_a9eb9838940ef5ceaa0c|FLNC]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_ad3b1f8f59fd599f079a|HOOD]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_ad5917642acbba28c1f2|TDY]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_b19e8f0343b7da1f3c03|03388]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_b1f2c48e1a744f5ecf67|LH]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_b2116dcf976c96974d7b|VALE]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[security-catalog#security-security_b61c642d038d71be3821|MTLS]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_bdc2f87dadf134760c3a|PLTR]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_c120e9f26ebb6159adf9|ABBNY]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_c150f31c30afdb4a85f9|CROX]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_c2e6db30cb59254de418|XMTR]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_c5a9e460d3350284d157|VLO]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_c86bb4e75658c07142cf|GOOGL]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_c9a37d277445869a8809|RBLX]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_cb88f9154cfeaa15e878|VRT]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[security-catalog#security-security_ccb25582c0392492fe9e|EVK]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_cd492d97064d8574156e|MP]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_ce9b78a4d0773c950765|TSM]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_d08d763780400dfbffce|SSUN.VI]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_d12e746b3c9d392183cc|META]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_d202772e4e62065cd17a|FISV]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_dc7a111e297be528d96b|TSLA]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_dc8486c1d61df62a22fd|SU]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_de0d83229b369a426b99|TCEHY]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_dfa34d4b9050964b465e|INTC]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_e19c7fe27fbcc4cd923d|AD]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_e4822686f60a96824b6e|UBER]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_eca976f0076a425ea1bb|PATH]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_ed7d5b616a196969c815|RXRX]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_ef35e41886220d51c22c|ASML]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[security-catalog#security-security_ef418f5ccc7dc5be8e65|BAS]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[security-catalog#security-security_f18cd57a5e086583c861|PRLB]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_f2b9760d847b2ba59324|ENPH]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_f34181f3df32080a91d1|DPZ]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_fb87fac302a5446a1ced|LAC]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
+| [[securities/security_fe5539a7d3fd9d553bce|MSTR]] | 2026-09-04 | 2026-09-06T13:51:39Z | ok | — |
 
 ### Orders and executions
 
@@ -363,7 +387,7 @@ No pending orders.
 | — | [[securities/security_204be2a44063993de1a8|MSFT]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_22c2b9d782a62d7a9b86|ATKR]] | 0% | excluded | The comparable assessment is stale or expired.; A current accepted idea-to-security relationship is unavailable.; The effective score does not beat the configured cash hurdle. |
 | — | [[securities/security_2433a056eb0c55961fcc|AMZN]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold. |
-| — | [[securities/security_2c779e81c27b78c556bb|TX]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_2c779e81c27b78c556bb|TX]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_2dbe878dfc899d7ee867|FCX]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_37ddcbdaad296ad831f2|COIN]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_3853e54c619d597dcaa1|NIB.F]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; Assessment confidence is below the configured minimum.; Accounting evidence is uncertain. Liquidity is insufficient. A supportable valuation is unavailable.; Research quality must be strictly above the configured threshold.; A current accepted idea-to-security relationship is unavailable.; A supportable scenario valuation is unavailable. |
@@ -407,14 +431,15 @@ No pending orders.
 | — | [[securities/security_bdc2f87dadf134760c3a|PLTR]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_c120e9f26ebb6159adf9|ABBNY]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_c150f31c30afdb4a85f9|CROX]] | 0% | excluded | A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_c2e6db30cb59254de418|XMTR]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; Research quality must be strictly above the configured threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_c5a9e460d3350284d157|VLO]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_c86bb4e75658c07142cf|GOOGL]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_c9a37d277445869a8809|RBLX]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_cb88f9154cfeaa15e878|VRT]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; Research quality must be strictly above the configured threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_cd492d97064d8574156e|MP]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_ce9b78a4d0773c950765|TSM]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold. |
-| — | [[securities/security_d08d763780400dfbffce|SSUN.VI]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; Liquidity is insufficient. A supportable valuation is unavailable.; A current accepted idea-to-security relationship is unavailable.; A supportable scenario valuation is unavailable. |
+| — | [[securities/security_ce9b78a4d0773c950765|TSM]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold. |
+| — | [[securities/security_d08d763780400dfbffce|SSUN.VI]] | 0% | excluded | Liquidity is insufficient. A supportable valuation is unavailable.; A current accepted idea-to-security relationship is unavailable.; A supportable scenario valuation is unavailable. |
 | — | [[securities/security_d12e746b3c9d392183cc|META]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold. |
 | — | [[securities/security_d202772e4e62065cd17a|FISV]] | 0% | excluded | Expected/bear payoff is below the starter threshold.; Research quality must be strictly above the configured threshold. |
 | — | [[securities/security_dc7a111e297be528d96b|TSLA]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold. |
@@ -443,6 +468,10 @@ No pending orders.
 | [[securities/security_b19e8f0343b7da1f3c03|Security research for 03388 on 2026-09-06]] | [[securities/security_b19e8f0343b7da1f3c03|03388]] | succeeded | agent result:succeeded |
 | [[securities/security_b19e8f0343b7da1f3c03|Security research for 03388 on 2026-09-06]] | [[securities/security_b19e8f0343b7da1f3c03|03388]] | skipped | superseded by completed research |
 | [[strategies/strategy_8caa208dfc702a2584a7|Strategy research for Prosus bounded baseline allocation on 2026-09-06]] | [[strategies/strategy_8caa208dfc702a2584a7|Prosus bounded baseline allocation]] | cancelled | superseded allocation intent:current allocation plan |
+| [[securities/security_c2e6db30cb59254de418|Security research for XMTR on 2026-09-06]] | [[securities/security_c2e6db30cb59254de418|XMTR]] | succeeded | agent result:succeeded |
+| [[securities/security_ce9b78a4d0773c950765|Security research for TSM on 2026-09-06]] | [[securities/security_ce9b78a4d0773c950765|TSM]] | succeeded | agent result:succeeded |
+| [[securities/security_d08d763780400dfbffce|Security research for SSUN.VI on 2026-09-06]] | [[securities/security_d08d763780400dfbffce|SSUN.VI]] | succeeded | agent result:succeeded |
+| [[securities/security_2c779e81c27b78c556bb|Security research for TX on 2026-09-06]] | [[securities/security_2c779e81c27b78c556bb|TX]] | succeeded | agent result:succeeded |
 
 ### Complete active queue
 
@@ -508,9 +537,6 @@ No pending orders.
 - Ready — [[securities/security_1c055eb9b2bb1f5a8ff2|Security research for RIO on 2026-08-12]]
 - Ready — [[securities/security_664f93a7eaca72e76e9b|Security research for SPCX on 2026-08-12]]
 - Ready — [[ideas/idea_energy_refining|Idea research for Crude-product dislocation and refining margins on 2026-08-12]]
-- Ready — [[securities/security_ce9b78a4d0773c950765|Security research for TSM on 2026-08-13]]
-- Ready — [[securities/security_d08d763780400dfbffce|Security research for SSUN.VI on 2026-08-13]]
-- Ready — [[securities/security_2c779e81c27b78c556bb|Security research for TX on 2026-08-13]]
 - Ready — [[securities/security_a9eb9838940ef5ceaa0c|Security research for FLNC on 2026-08-13]]
 - Ready — [[securities/security_55c9ce2fdcd32dad6b8c|Security research for CRSR on 2026-08-15]]
 - Ready — [[securities/security_6f9a1450edceb9307c9a|Security research for ANET on 2026-08-16]]
@@ -700,7 +726,6 @@ No pending orders.
 - Waiting — [[relationships/relationship_87b95f713a902d531f2f|Relationship research for AI infrastructure and power bottlenecks to Eaton on 2026-09-06]]
 - Waiting — [[ideas/idea_ai_infrastructure_power|Relationship research for relationship between AI infrastructure and power bottlenecks and VRT on 2026-09-06]]
 - Waiting — [[ideas/idea_ai_infrastructure_power|Relationship research for relationship between AI infrastructure and power bottlenecks and PWR on 2026-09-06]]
-- Ready — [[security-catalog#security-security_c2e6db30cb59254de418|Security research for XMTR on 2026-09-06]]
 - Ready — [[security-catalog#security-security_84705b27d28a94f2b318|Security research for SSYS on 2026-09-06]]
 - Ready — [[security-catalog#security-security_b61c642d038d71be3821|Security research for MTLS on 2026-09-06]]
 - Ready — [[security-catalog#security-security_f18cd57a5e086583c861|Security research for PRLB on 2026-09-06]]
@@ -709,7 +734,7 @@ No pending orders.
 - Ready — [[security-catalog#security-security_ccb25582c0392492fe9e|Security research for EVK on 2026-09-06]]
 - Ready — [[security-catalog#security-security_ef418f5ccc7dc5be8e65|Security research for BAS on 2026-09-06]]
 - Ready — [[ideas/idea_ai_driven_democratization_physical_creation|Relationship research for relationship between AI-Driven Democratization of Physical Creation and 03388 on 2026-09-06]]
-- Waiting — [[ideas/idea_ai_driven_democratization_physical_creation|Relationship research for relationship between AI-Driven Democratization of Physical Creation and XMTR on 2026-09-06]]
+- Ready — [[ideas/idea_ai_driven_democratization_physical_creation|Relationship research for relationship between AI-Driven Democratization of Physical Creation and XMTR on 2026-09-06]]
 - Waiting — [[ideas/idea_ai_driven_democratization_physical_creation|Relationship research for relationship between AI-Driven Democratization of Physical Creation and SSYS on 2026-09-06]]
 - Waiting — [[ideas/idea_ai_driven_democratization_physical_creation|Relationship research for relationship between AI-Driven Democratization of Physical Creation and MTLS on 2026-09-06]]
 - Waiting — [[ideas/idea_ai_driven_democratization_physical_creation|Relationship research for relationship between AI-Driven Democratization of Physical Creation and PRLB on 2026-09-06]]
@@ -719,6 +744,13 @@ No pending orders.
 - Waiting — [[ideas/idea_ai_driven_democratization_physical_creation|Relationship research for relationship between AI-Driven Democratization of Physical Creation and BAS on 2026-09-06]]
 - Ready — [[ideas/idea_ai_driven_democratization_physical_creation|Idea research for AI-Driven Democratization of Physical Creation on 2026-09-06]]
 - Ready — [[ideas/idea_ai_driven_democratization_physical_creation|Relationship research for relationship between AI-Driven Democratization of Physical Creation and 03388 on 2026-09-06]]
+- Ready — [[ideas/idea_ai_driven_democratization_physical_creation|Idea research for AI-Driven Democratization of Physical Creation on 2026-09-06]]
+- Ready — [[ideas/idea_ai_compute_networking_hyperscaler_monetization|Relationship research for relationship between AI compute, networking, and hyperscaler monetization and TSM on 2026-09-06]]
+- Ready — [[ideas/idea_japan_sanaenomics_strategic_investment|Relationship research for relationship between Japan strategic-investment value chain and TSM on 2026-09-06]]
+- Ready — [[ideas/idea_terafab_ai_industrial_stack|Idea research for Terafab and the vertically coordinated AI hardware stack on 2026-09-06]]
+- Ready — [[ideas/idea_ai_compute_networking_hyperscaler_monetization|Relationship research for relationship between AI compute, networking, and hyperscaler monetization and SSUN.VI on 2026-09-06]]
+- Ready — [[ideas/idea_terafab_ai_industrial_stack|Relationship research for relationship between Terafab and the vertically coordinated AI hardware stack and SSUN.VI on 2026-09-06]]
+- Ready — [[ideas/idea_nearshoring_friendshoring_manufacturing|Idea research for Nearshoring and friendshoring manufacturing capacity on 2026-09-06]]
 
 ### Open issues and delivery failures
 
@@ -727,6 +759,7 @@ No pending orders.
 - Error — [[system-status|Hermes operation validation failed: Quick check research for KTOS on 2026-08-12]]: Hermes timed out after 600s; agent result was written before completed change: data/runs/Daily report for 2026-08-12/Quick check research for KTOS on 2026-08-12/command\_audit.json; commands\_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment
 - Error — [[system-status|Hermes operation validation failed: Daily podcast for Daily report for 2026-08-17 on 2026-08-17]]: Hermes timed out after 1200s; agent result was written before completed change: data/runs/Daily report for 2026-08-17/Daily podcast for Daily report for 2026-08-17 on 2026-08-17/command\_audit.json; commands\_run does not exactly match deterministic CLI audit receipts
 - Error — [[system-status|Hermes operation validation failed: Quick check research for HOOD on 2026-08-15]]: operation artifact directory is not empty: /\_\_w/PaperTrader/PaperTrader/data/runs/Daily report for 2026-08-15/Quick check research for HOOD on 2026-08-15
+- Error — [[system-status|Hermes operation validation failed: Security research for CRSR on 2026-08-15]]: visualization\_review charts do not match chart ids in changed research pages: expected \[('data/wiki/securities/CRSR.md', 'q2-segment-economics'), ('data/wiki/securities/CRSR.md', 'valuation-scenarios-20260906')\], got \[('data/wiki/securities/CRSR.md', 'q2-segment-economics'), ('data/wiki/securities/CRSR.md', 'valuation-scenarios-versus-current-mark')\]
 - Error — [[system-status|Hermes operation validation failed: Quick check research for RKLB on 2026-08-18]]: commands\_run claims commands without deterministic CLI audit receipts: \['scripts/papertrader research assessment upsert --request data/runs/Daily report for 2026-08-18/Quick check research for RKLB on 2026-08-18/assessment\_upsert\_request.json', 'scripts/papertrader research security-context --security-id RKLB'\]
 - Error — [[system-status|Hermes operation validation failed: Daily podcast for Daily report for 2026-08-06 on 2026-08-06]]: commands\_run does not exactly match deterministic CLI audit receipts
 - Error — [[system-status|Hermes operation validation failed: Quick check research for SPOT on 2026-08-16]]: commands\_run does not exactly match deterministic CLI audit receipts
@@ -734,7 +767,6 @@ No pending orders.
 - Error — [[system-status|Hermes operation validation failed: Security research for SGML on 2026-08-17]]: operation artifact directory is not empty: /\_\_w/PaperTrader/PaperTrader/data/runs/Daily report for 2026-08-17/Security research for SGML on 2026-08-17
 - Error — [[system-status|Hermes operation validation failed: Daily podcast for Daily report for 2026-08-05 on 2026-08-05]]: Hermes exited with status 2; agent result is missing or a symlink: data/runs/Daily report for 2026-08-05/Daily podcast for Daily report for 2026-08-05 on 2026-08-05/agent\_result.json
 - Error — [[system-status|ABB assessment provenance does not match corrected final research page]]: Operation Security research for ABBNY on 2026-09-03 accepted immutable assessment assessment\_a3946a163695f1a9f51f while the security page still carried the prior prose disposition. Deterministic derivation changed the current disposition from Sell / Avoid to Hold / Watch at the lower mark, so the page and structured security summary were corrected after the immutable assessment was written. The current assessment and final page now agree economically, and exactly one assessment version names th…
-- Error — [[system-status|Hermes operation validation failed: Security research for TSM on 2026-08-13]]: agent result is missing or a symlink: data/runs/Daily report for 2026-09-05/Security research for TSM on 2026-08-13/agent\_result.json
 - Error — [[system-status|Hermes operation validation failed: Daily podcast for Daily report for 2026-08-06 on 2026-08-06]]: cannot restore rejected path data/wiki/daily-reports/daily-report\_20260806.md: pre-run path cannot be restored because Git metadata is unavailable; daily podcast spoken transcript must label paper trading
 - Error — [[system-status|Hermes operation validation failed: Security research for ABBNY on 2026-09-03]]: files\_changed claims paths absent from the actual delta: \['data/operations/operations\_TODO.csv'\]
 - Error — [[system-status|Hermes operation validation failed: Daily podcast for Daily report for 2026-08-17 on 2026-08-17]]: non-successful daily podcast must not retain a transcript page

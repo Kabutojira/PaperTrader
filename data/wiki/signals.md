@@ -7,13 +7,13 @@ tags:
 created: "2026-09-06"
 updated: "2026-09-06"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_91675b6fe4b1be73e29a"
-as_of: "2026-09-06T11:58:23Z"
+snapshot_id: "decision_f8360cc89ae5c108b21a"
+as_of: "2026-09-06T15:19:23Z"
 ---
 
 # Signals
 
-**As of `2026-09-06T11:58:23Z`**
+**As of `2026-09-06T15:19:23Z`**
 
 ## Actionable trade signals
 
@@ -184,8 +184,8 @@ No pending orders.
 
 - Alert: `macd\_cross\_above\_signal`
 - Market date: `2026-09-04`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed exactly one Ternium S.A. ADS security review. SEC-filed interim statements confirm the prior Q2 operating and balance-sheet evidence, while no later operating-results filing changes normalized assumptions. The 4 September bullish MACD crossover follows a 7.61% alert-period gain, but RSI 73.76 and a USD 58 close above the upper Bollinger band indicate adverse entry timing. Unchanged USD 28/USD 50/USD 78 scenarios produce USD 51.50 probability-weighted value, -11.21% expected return and a deterministic Hold / Watch, allocation-ineligible disposition. Updated the security page and structured row, registered current primary evidence, appended assessment assessment\_e609a14a4ea7b39f470c linked to its predecessor, and enqueued the required dependent nearshoring idea refresh. The overdue accepted relationship already has one ready relationship-research operation, so no duplicate was created. No strategy, signal, order, allocation, execution, cash, portfolio, or performance state chan
 
 ### [TSM — Taiwan Semiconductor Manufacturing Company Limited](securities/security_ce9b78a4d0773c950765)
 
@@ -193,8 +193,8 @@ No pending orders.
 
 - Alert: `macd\_cross\_above\_signal`
 - Market date: `2026-09-04`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed exactly one current Taiwan Semiconductor Manufacturing Company sponsored-ADR security review using the 2025 Form 20-F, SEC-filed Q2 2026 evidence, July revenue, August board resolutions, and the definitive Sony image-sensor joint venture. The 4 September bullish MACD crossover is improving momentum but not an actionable opportunity at the current USD428.91 mark. Updated the security page and structured row, registered six refreshed/current primary sources, and appended scenario-complete assessment assessment\_af482445e24e1513a801 linked to assessment\_46d2ae16336286c36b20. Bear/base/bull values of USD250/USD375/USD495 produce USD373.75 probability-weighted value and -12.86% expected return; deterministic state remains Hold / Watch and allocation-ineligible. Enqueued two bounded candidate relationship reviews and the required dependent Terafab idea refresh; no strategy, signal, order, allocation, or accounting state changed.
 
 ### [SSUN.VI — Samsung Electronics Co., Ltd.](securities/security_d08d763780400dfbffce)
 
@@ -202,8 +202,8 @@ No pending orders.
 
 - Alert: `macd\_cross\_above\_signal`
 - Market date: `2026-09-04`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed exactly one repeat security review for Samsung Electronics preferred GDR using current issuer listing information, the unchanged Q2 2026 results, and canonical market/FX state. The September 4 bullish MACD crossover followed a 16.70% gain from August 7, but only eleven units traded across twenty-one sessions and the crossover session reported zero volume, so the move is constructive technical momentum and non-actionable market noise. Updated the security page and structured row, refreshed two primary sources, and appended schema-v2 assessment assessment\_2b2b7e8f458cbfafe3cb linked to assessment\_27be4a94f4e72cdda9dc. Valuation remains unsupported because preferred-GDR conversion, same-time cross-venue parity and normalized through-cycle earnings remain unresolved; liquidity\_insufficient and valuation\_unsupported keep the deterministic conclusion Unrated / Watch and allocation-ineligible. Enqueued two dependent candidate relationship reviews and created no strategy, signal, ord
 
 ### [SSU.VI — Samsung Electronics Co., Ltd.](securities/security_567d0d575bbd30aaa91d)
 

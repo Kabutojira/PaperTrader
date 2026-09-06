@@ -3355,6 +3355,10 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 
 - Generated canonical [[daily-reports/daily-report_20260906]] for run `daily-20260906T114339Z`.
 
+- Published investor decision snapshot `decision_f8360cc89ae5c108b21a`.
+
+- Generated canonical [[daily-reports/daily-report_20260906]] for run `daily-20260906T135138Z`.
+
 ## [2026-09-06] create | AI-driven democratization of physical creation
 - Created [[ideas/idea_ai_driven_democratization_physical_creation]] to test where value accrues when generative AI reduces 3D-geometry creation friction but manufacturability, process selection, production and delivery remain binding gates.
 - Verified and imported nine public instruments—Creality, Xometry, Stratasys, Materialise, Proto Labs, 3D Systems, Arkema, Evonik and BASF—through identity-only CLI writes; Bambu Lab remains a private competitive benchmark with no invented security.

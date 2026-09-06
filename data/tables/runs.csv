@@ -197,3 +197,4 @@ local-20260906-ai-physical-creation,2026-09-06T09:35:47Z,2026-09-06T10:06:29Z,su
 local-20260906-ai-physical-creation-final,2026-09-06T10:21:03Z,2026-09-06T10:21:29Z,succeeded,local,0,5,0,,Daily run succeeded; 0 agent operations; 0 pending-order dispositions.
 local-merge-20260906T110720Z,2026-09-06T11:07:27Z,2026-09-06T11:07:51Z,succeeded,local,0,5,0,,Daily run succeeded; 0 agent operations; 0 pending-order dispositions.
 daily-20260906T114339Z,2026-09-06T11:43:39Z,2026-09-06T11:58:23Z,degraded,workflow_dispatch,1,100,5,,Daily run degraded; 1 agent operations; 0 pending-order dispositions.
+daily-20260906T135138Z,2026-09-06T13:51:38Z,2026-09-06T15:19:23Z,degraded,workflow_dispatch,5,100,25,,Daily run degraded; 5 agent operations; 0 pending-order dispositions.
