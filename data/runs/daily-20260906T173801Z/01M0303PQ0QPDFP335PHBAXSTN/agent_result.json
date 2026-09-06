@@ -1,0 +1,121 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_55c9ce2fdcd32dad6b8c",
+    "papertrader research source record --request data/runs/daily-20260906T173801Z/01M0303PQ0QPDFP335PHBAXSTN/source_crsr_q2_2026_10q_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260906T173801Z/01M0303PQ0QPDFP335PHBAXSTN/source_crsr_q2_2026_results_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260906T173801Z/01M0303PQ0QPDFP335PHBAXSTN/source_crsr_sec_submissions_20260906_request.json",
+    "papertrader wiki sync-technical-charts",
+    "papertrader research security upsert --request data/runs/daily-20260906T173801Z/01M0303PQ0QPDFP335PHBAXSTN/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260906T173801Z/01M0303PQ0QPDFP335PHBAXSTN/assessment_upsert_request.json",
+    "papertrader research assessment-get --assessment-id assessment_2ca5f196939895f07d63",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Corsair Gaming research completed: unchanged Q2 evidence and USD 6.60/USD 12.00/USD 18.90 scenarios imply USD 12.03 weighted value versus the USD 12.72 mark; deterministic disposition remains Hold / Watch and allocation-ineligible.",
+    "The 4 September bullish MACD crossover is verified but non-actionable because volume did not confirm it, no newer operating filing changed the thesis, and expected, base, downside-payoff, margin-of-safety and relationship gates fail.",
+    "All 29 maintained ideas were searched; no accepted or plausible candidate relationship exists, and no strategy, signal, paper order or follow-up operation was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The unchanged Form 10-Q supports the current normalized assessment, including USD 193.9 million cash and restricted cash, approximately USD 118.3 million debt and 25.7% first-half Amazon revenue concentration.",
+      "observed_at": "2026-09-06T17:44:28Z",
+      "source": "Corsair Gaming, Inc. quarterly report for the quarter ended June 30, 2026",
+      "source_hash": "e306380d66a43eec2c3b8a7859e5fdcfaa257af07cedef5e35487f1e30cd5363",
+      "url": "https://www.sec.gov/Archives/edgar/data/1743759/000119312526337981/crsr-20260630.htm"
+    },
+    {
+      "claim": "The unchanged SEC-filed release reports USD 314.3 million revenue, USD 104.3 million gross profit, USD 16.6 million underlying adjusted EBITDA after excluding the tariff refund, segment divergence and raised full-year guidance.",
+      "observed_at": "2026-09-06T17:44:28Z",
+      "source": "Corsair Gaming Reports Second Quarter 2026 Financial Results",
+      "source_hash": "b1bb3ca94486c7d4370c5a6d071f01b01b2902e343a529fffb4796e48f6d201e",
+      "url": "https://www.sec.gov/Archives/edgar/data/1743759/000119312526337943/crsr-ex99_1.htm"
+    },
+    {
+      "claim": "The current SEC index lists the August 6 Form 10-Q and earnings 8-K as the latest operating filings; later filings through August 28 are Forms 4 and one Form 144, so no newer periodic operating evidence supersedes Q2.",
+      "observed_at": "2026-09-06T17:44:28Z",
+      "source": "Corsair Gaming, Inc. SEC submissions index checked 2026-09-06",
+      "source_hash": "7927b90508f3cf7ebc05f98a20f4dfb450b775a71db340b46883133a91f7a218",
+      "url": "https://data.sec.gov/submissions/CIK0001743759.json"
+    },
+    {
+      "claim": "The 4 September adjusted close was USD 12.720000267028809; MACD 0.36512167 crossed above signal 0.35778068, RSI was 59.60163408, the 20-session return was 6.000002%, and volume z-score was -1.0972533 over the exact 7 August through 4 September observation period.",
+      "observed_at": "2026-09-06T17:38:02Z",
+      "source": "Canonical PaperTrader market cache and alert payload",
+      "source_hash": "662739264c26346d077e5398505a133302173e2d54cba03530f564126b678f58"
+    },
+    {
+      "claim": "Assessment assessment_2ca5f196939895f07d63 links predecessor assessment_3e49d9649a25ad388d36 and derives USD 12.03 probability-weighted fair value, -5.424530287293635% expected return, -4.068397715470226% confidence-adjusted expected return, USD 9.60 buy-below price, Hold / Watch and allocation ineligibility.",
+      "source": "Canonical PaperTrader assessment state"
+    },
+    {
+      "claim": "All 29 maintained idea pages and canonical relationships were searched. No accepted relationship exists; the digital-attention thematic comparison and all other maintained themes were rejected for lacking a current, specific and material causal transmission mechanism, so no relationship or idea follow-up is required.",
+      "source": "Canonical PaperTrader idea catalog and relationship state"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260906T173801Z/01M0303PQ0QPDFP335PHBAXSTN/assessment_upsert_request.json",
+    "data/runs/daily-20260906T173801Z/01M0303PQ0QPDFP335PHBAXSTN/security_upsert_request.json",
+    "data/runs/daily-20260906T173801Z/01M0303PQ0QPDFP335PHBAXSTN/source_crsr_q2_2026_10q_refresh_request.json",
+    "data/runs/daily-20260906T173801Z/01M0303PQ0QPDFP335PHBAXSTN/source_crsr_q2_2026_results_refresh_request.json",
+    "data/runs/daily-20260906T173801Z/01M0303PQ0QPDFP335PHBAXSTN/source_crsr_sec_submissions_20260906_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_55c9ce2fdcd32dad6b8c.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0303PQ0QPDFP335PHBAXSTN",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Completed exactly one repeat security review for Corsair Gaming, Inc. The Q2 Form 10-Q and SEC-filed results release were re-fetched at unchanged hashes, and the current SEC submissions index shows no newer operating filing. The 4 September bullish MACD crossover is verified but lacks volume or fresh fundamental confirmation, so it is monitoring noise rather than a trade signal. Unchanged USD 6.60/USD 12.00/USD 18.90 scenarios produce USD 12.03 probability-weighted value versus the USD 12.72 mark, -5.42% expected return and a deterministic Hold / Watch, allocation-ineligible disposition. Updated the security page and structured row, added two analytical charts, registered current evidence, and appended assessment assessment_2ca5f196939895f07d63 linked to its predecessor. The complete idea catalog has no accepted or plausible unaccepted causal edge, and the conviction gate fails, so no follow-up, strategy, signal or paper order was created. No allocation, execution, cash, portfolio or performance state changed.",
+  "validation": {
+    "checks": [
+      "Mandatory security-context completed before the repeat assessment; assessment-get confirmed assessment_2ca5f196939895f07d63 links predecessor assessment_3e49d9649a25ad388d36, source operation/result, schema version 2 and page hash 14acbcec9a6753d627ea477ab7ebd12fb4a1c0678e132b93c39a7b963b9fa041.",
+      "Immutable Corsair issuer, common-stock instrument, XNAS venue, USD currency and CRSR provider identity were reconciled against canonical state and the SEC registrant identity; no duplicate identity was found.",
+      "Both valuation sources were re-fetched unchanged and the current SEC submissions index was registered through the source CLI as of 2026-09-06T17:44:28Z.",
+      "The security CLI accepted the structured update and the assessment CLI accepted exactly one current schema-version-two scenario-complete result.",
+      "The exact 2026-08-07 through 2026-09-04 alert period, 2026-09-04 MACD crossover, current price and FX timestamps, and source price hash were consumed without replacing canonical measurements.",
+      "The complete 29-page idea catalog and canonical relationship state were searched; the page classifies the only thematic comparison and all other maintained ideas as rejected-no-link, with no candidate represented as accepted.",
+      "No relationship, idea or strategy follow-up is required because there is no payload idea, accepted edge, plausible unaccepted edge or passing conviction strategy gate.",
+      "Analytical chart fences validate and visualization_review exactly matches q2-segment-economics and valuation-scenarios-20260906; the deterministic market-technicals chart is excluded.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "papertrader integrity --strict returned OK [integrity].",
+      "papertrader schema validate --strict returned OK [schema].",
+      "papertrader queue validate returned OK [queue].",
+      "papertrader portfolio reconcile --strict returned OK [portfolio], and the observed operation delta contains no allocation, strategy, signal, order, execution, cash, portfolio or performance path."
+    ],
+    "passed": true
+  },
+  "visualization_review": {
+    "charts": [
+      {
+        "chart_id": "q2-segment-economics",
+        "page_path": "data/wiki/securities/security_55c9ce2fdcd32dad6b8c.md"
+      },
+      {
+        "chart_id": "valuation-scenarios-20260906",
+        "page_path": "data/wiki/securities/security_55c9ce2fdcd32dad6b8c.md"
+      }
+    ],
+    "completed": true,
+    "omissions": [
+      {
+        "dataset": "Peer valuation comparison",
+        "reason": "The bounded evidence does not provide a same-date, same-definition set of normalized earnings and market values for at least three comparable gaming-hardware issuers; incomparable multiples were not estimated.",
+        "reason_code": "insufficient_comparability"
+      },
+      {
+        "dataset": "Cash, debt and free-cash-flow trend",
+        "reason": "Current evidence supports the June balance sheet and first-half cash-flow result but not a consistent multi-period free-cash-flow series sufficient to separate working-capital and tariff-refund effects in a decision-useful trend chart.",
+        "reason_code": "insufficient_history"
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "security_id": "security_55c9ce2fdcd32dad6b8c",
+  "issuer_id": "issuer_5ce238383a369ed3467b",
+  "company_name": "Corsair Gaming, Inc.",
+  "instrument_name": "Corsair Gaming, Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "CRSR",
+  "exchange_code": "NASDAQ",
+  "venue_mic": "XNAS",
+  "provider_symbol": "CRSR",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "United States",
+  "sector": "Technology",
+  "industry": "Computer Hardware",
+  "status": "watching",
+  "watchlist_reason": "The USD 12.72 mark improves valuation versus the August peak, but negative expected and base returns, cyclical normalization, concentration, downside, and no accepted relationship keep CRSR allocation-ineligible.",
+  "research_summary": "Unchanged Q2 scenarios imply negative expected and base returns at USD 12.72; the bullish MACD cross is non-actionable and CRSR remains Hold / Watch.",
+  "research_page": "data/wiki/securities/security_55c9ce2fdcd32dad6b8c.md",
+  "last_research_at": "2026-09-06T17:44:28Z",
+  "next_review_at": "2026-09-20T17:44:28Z",
+  "source": "source_crsr_q2_2026_10q|source_crsr_q2_2026_results|source_crsr_sec_submissions_20260906"
+}

@@ -4,12 +4,12 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-08-05"
-updated: "2026-08-08"
-provenance: "source_crsr_q1_2026_10q; source_crsr_q1_2026_results; source_crsr_q2_2026_10q; source_crsr_q2_2026_results"
+updated: "2026-09-06"
+provenance: "source_crsr_q1_2026_10q; source_crsr_q1_2026_results; source_crsr_q2_2026_10q; source_crsr_q2_2026_results; source_crsr_sec_submissions_20260906"
 security_id: security_55c9ce2fdcd32dad6b8c
 issuer_id: issuer_5ce238383a369ed3467b
 confidence: medium
-next_review: "2026-08-22"
+next_review: "2026-09-20"
 ---
 
 # Corsair Gaming, Inc. common stock
@@ -44,6 +44,120 @@ This deterministic monitoring chart is derived from the repository-local market 
 ```
 <!-- papertrader:technical-chart:end -->
 
+```echart
+{
+  "schema_version": 1,
+  "chart_id": "q2-segment-economics",
+  "kind": "series",
+  "title": "Second-quarter segment revenue and gross profit",
+  "description": "Peripherals growth and mix improvement offset weaker component revenue, while both segments reported higher gross profit in the second quarter of 2026.",
+  "as_of": "2026-06-30",
+  "sources": [
+    {
+      "label": "Corsair Gaming Q2 2026 SEC-filed results release",
+      "url": "https://www.sec.gov/Archives/edgar/data/1743759/000119312526337943/crsr-ex99_1.htm",
+      "observed_at": "2026-09-06T17:44:28Z"
+    }
+  ],
+  "x_axis": {
+    "type": "category",
+    "label": "Quarter",
+    "values": ["Q2 2025", "Q2 2026"]
+  },
+  "y_axes": [
+    {
+      "label": "USD millions",
+      "unit": "USD million",
+      "format": "currency",
+      "currency": "USD"
+    }
+  ],
+  "series": [
+    {
+      "name": "Peripherals revenue",
+      "render": "bar",
+      "y_axis": 0,
+      "values": ["102.642", "115.884"]
+    },
+    {
+      "name": "Components and systems revenue",
+      "render": "bar",
+      "y_axis": 0,
+      "values": ["217.470", "198.451"]
+    },
+    {
+      "name": "Peripherals gross profit",
+      "render": "line",
+      "y_axis": 0,
+      "values": ["41.089", "52.044"]
+    },
+    {
+      "name": "Components and systems gross profit",
+      "render": "line",
+      "y_axis": 0,
+      "values": ["44.782", "52.244"]
+    }
+  ],
+  "notes": [
+    "Values use the issuer's unchanged segment definitions and are shown in USD millions.",
+    "Second-quarter 2026 consolidated gross profit included a USD 15.6 million tariff refund; the release does not allocate that benefit by segment."
+  ]
+}
+```
+
+```echart
+{
+  "schema_version": 1,
+  "chart_id": "valuation-scenarios-20260906",
+  "kind": "series",
+  "title": "Twelve-month fair-value scenarios versus current mark",
+  "description": "The current mark sits above the base case and probability-weighted fair value despite remaining below the bull case.",
+  "as_of": "2026-09-04",
+  "sources": [
+    {
+      "label": "Corsair Gaming Q2 2026 Form 10-Q",
+      "url": "https://www.sec.gov/Archives/edgar/data/1743759/000119312526337981/crsr-20260630.htm",
+      "observed_at": "2026-09-06T17:44:28Z"
+    },
+    {
+      "label": "PaperTrader canonical adjusted market mark",
+      "observed_at": "2026-09-06T17:38:02Z"
+    }
+  ],
+  "x_axis": {
+    "type": "category",
+    "label": "Scenario",
+    "values": ["Bear (25%)", "Base (55%)", "Bull (20%)"]
+  },
+  "y_axes": [
+    {
+      "label": "USD per share",
+      "unit": "USD/share",
+      "format": "currency",
+      "currency": "USD"
+    }
+  ],
+  "series": [
+    {
+      "name": "Fair value",
+      "render": "bar",
+      "y_axis": 0,
+      "values": ["6.60", "12.00", "18.90"]
+    },
+    {
+      "name": "Current mark",
+      "render": "line",
+      "y_axis": 0,
+      "values": ["12.720000267028809", "12.720000267028809", "12.720000267028809"]
+    }
+  ],
+  "notes": [
+    "Fair values use normalized forward EPS of USD 0.55, USD 0.80 and USD 1.05 at 12x, 15x and 18x.",
+    "The current mark is the adjusted close for 4 September 2026; yfinance is used only for the paper mark."
+  ]
+}
+```
+
 ## Identity
 
 - Immutable security: `security_55c9ce2fdcd32dad6b8c`
@@ -57,6 +171,21 @@ Elgato, Fanatec, SCUF, Drop, and ORIGIN PC. It is a thematic comparison for
 [[ideas/idea_digital_attention_gaming_ecosystems]] and
 [[securities/security_c9a37d277445869a8809|Roblox]], but no accepted canonical idea-security
 relationship currently exists for this instrument.
+
+## Idea exposure map
+
+- **Accepted-current:** none. The canonical relationship table has no accepted edge for Corsair.
+- **Rejected-no-link — [[ideas/idea_digital_attention_gaming_ecosystems]]:** gaming and creator
+  attention can support peripheral demand, but the maintained idea is a creator-platform flywheel
+  whose bookings, safety, creator-payout and platform-margin mechanism does not directly transmit to
+  Corsair's hardware-cycle economics. Current primary evidence does not quantify a material causal
+  exposure, so the thematic comparison is not promoted to a relationship candidate.
+- **Rejected-no-link — other maintained ideas:** the complete 29-page idea catalog was checked for
+  Corsair's products, customers, suppliers, costs, constraints and catalysts. AI workstations and
+  creator tooling are too small or unquantified to establish a material edge to the AI-compute or
+  physical-creation theses, and no other maintained mechanism has a specific evidence-backed
+  transmission path. New segment disclosure or quantified recurring software economics would
+  invalidate this rejection and justify a bounded relationship review.
 
 ## Economics and thesis
 
@@ -87,15 +216,18 @@ and Systems revenue fell 9% as elevated memory pricing delayed DIY builds.
 
 Primary evidence is the [quarterly report filed 6 August 2026](https://www.sec.gov/Archives/edgar/data/1743759/000119312526337981/crsr-20260630.htm)
 as `source_crsr_q2_2026_10q` and the [SEC-filed Q2 results release](https://www.sec.gov/Archives/edgar/data/1743759/000119312526337943/crsr-ex99_1.htm)
-as `source_crsr_q2_2026_results`, both checked 7 August 2026.
+as `source_crsr_q2_2026_results`, both rechecked unchanged on 6 September 2026. The freshly
+retrieved [SEC submissions index](https://data.sec.gov/submissions/CIK0001743759.json), recorded as
+`source_crsr_sec_submissions_20260906`, shows no newer periodic operating filing or issuer results
+release; later filings through 28 August are insider transaction forms and one Form 144.
 
 ## Valuation
 
 The `mature_compounder` template uses a 12-month `earnings_multiple`. It starts from management's
 raised 2026 guide but removes the one-time tariff refund and normalizes stock compensation,
 amortization, product-cycle sensitivity, working capital, net cash, acquisition spending, and the
-possibility that 2027 profitability differs from non-GAAP guidance. Against the 7 August close of
-USD 14.350000381469727:
+possibility that 2027 profitability differs from non-GAAP guidance. No new operating filing changes
+those normalized inputs. Against the 4 September adjusted close of USD 12.720000267028809:
 
 | Scenario | Probability | Fair value | Assumptions |
 | --- | ---: | ---: | --- |
@@ -103,22 +235,23 @@ USD 14.350000381469727:
 | Base | 55% | USD 12.00 | USD 0.80 normalized forward EPS at 15x after removing the tariff refund; peripherals and creator growth, adequate component supply, improved underlying margin, and modest deferred-demand recovery convert raised guidance while acquisition spending and dilution remain controlled. |
 | Bull | 20% | USD 18.90 | USD 1.05 normalized forward EPS at 18x as Fanatec, Trak Racer, Elgato, and Stream Deck scale, deferred DIY demand returns, AI workstations add profitable revenue, underlying margins persist, and cash-funded acquisitions earn attractive returns. |
 
-Probability-weighted fair value is USD 12.03, or 16.2% below the mark. The bear/base/bull returns
-are approximately -54.0%/-16.4%/+31.7%; medium-confidence adjustment reduces the already negative
-expected return to about -12.1%. The base-derived buy-below price is USD 9.60 and current margin of
-safety is negative 19.6%. Expected return, base return, bear/base payoff, expected/bear payoff,
-margin of safety, and the accepted-relationship requirement all fail. Medium confidence reflects
+Probability-weighted fair value is USD 12.03, or 5.4% below the mark. The bear/base/bull returns
+are approximately -48.1%/-5.7%/+48.6%; medium-confidence adjustment reduces expected return to
+about -4.1%. The base-derived buy-below price is USD 9.60 and base-value margin of safety is
+negative 6.0%. Expected return, base return, bear/base payoff, expected/bear payoff, margin of
+safety, and the accepted-relationship requirement all fail. Medium confidence reflects
 demand cyclicality, non-GAAP normalization, acquisition and product timing, customer concentration,
 and the sensitivity of fair value to modest EPS and multiple changes.
 
 ## Alert review, catalysts, and risks
 
-The merged alerts record repeated volume anomalies: a 26.4% rise through 5 August at USD 11.20, a
-pullback to USD 10.61 on 6 August, and then a strongly strengthened anomaly at the USD 14.35 close
-on 7 August. The canonical 10 July–7 August return is 48.55% and trigger strength is 1.108979875.
-The Q2 evidence validates underlying profit progress and raised guidance, but the repricing now
-runs materially ahead of normalized base value. This is a material **risk and adverse entry-timing
-signal**, not noise, an opportunity at the current mark, or a completed buy signal.
+The new deterministic alert records a MACD cross above its signal between 3 and 4 September. On
+4 September the adjusted close was USD 12.72, MACD was 0.3651 versus a 0.3578 signal, RSI was 59.6,
+the 20-session return was 6.0%, and volume had a negative 1.10 z-score. The exact 7 August–4
+September period therefore retraced from USD 14.35 to USD 12.72 while momentum turned marginally
+positive without confirming volume, an overbought reading, or a fresh fundamental filing. This is
+**monitoring noise for the fundamental conclusion and modestly improved timing**, not a standalone
+opportunity, risk escalation, strategy signal, or paper-order trigger.
 
 Catalysts are delivery of raised full-year guidance, sustained peripheral and creator growth, easing
 semiconductor constraints, durable underlying gross-margin expansion, Fanatec, Trak Racer and Elgato
@@ -136,9 +269,9 @@ capital without adequate returns, or dilution overwhelms repurchases and per-sha
 
 Status: **watching**, confidence **medium**. Q2 underlying profit, cash generation, net cash, and
 raised guidance strengthen operating evidence, but the one-time tariff benefit, cyclicality,
-customer concentration, Trak Racer integration, 48.55% repricing, bear downside, and missing
-accepted relationship keep the security allocation-ineligible. The revised scenarios at USD 14.35
-derive **Hold / Watch**. Review by **2026-08-22**, or sooner after material acquisition terms,
+customer concentration, Trak Racer integration, bear downside, and missing accepted relationship
+keep the security allocation-ineligible. The unchanged scenarios at USD 12.72 derive **Hold /
+Watch**. Review by **2026-09-20**, or sooner after material acquisition terms,
 guidance, or price evidence. No conviction strategy, signal, or paper order is justified.
 
 ## Changes since prior review
@@ -195,3 +328,30 @@ guidance, or price evidence. No conviction strategy, signal, or paper order is j
   from a pending normalization review at USD 10.61 to a completed, negative-return scenario set at
   USD 14.35. No strategy or idea follow-up is created because the conviction gate fails and no idea
   is named in the payload or linked by an accepted canonical relationship.
+
+### 2026-09-06 MACD-alert reassessment
+
+- **Facts and evidence:** the mandatory bounded context shows the 8 August assessment as the current
+  predecessor. The Q2 Form 10-Q and SEC-filed results release were re-fetched at their unchanged
+  hashes; the current SEC submissions index contains no newer operating filing. Segment trends,
+  raised guidance, tariff-refund normalization, net cash, concentration and Trak Racer integration
+  therefore remain unchanged.
+- **Alert and market evidence:** the 4 September MACD cross above signal is verified against the
+  canonical technical row. The USD 12.72 mark is 11.4% below the 7 August alert close, the
+  20-session return is positive 6.0%, RSI is neutral and volume does not confirm the cross. The new
+  alert is monitoring noise for the thesis rather than a fundamental catalyst or trade signal.
+- **Assumptions and valuation:** normalized EPS of USD 0.55/USD 0.80/USD 1.05, 12x/15x/18x
+  multiples, USD 6.60/USD 12.00/USD 18.90 fair values and 25%/55%/20% probabilities are unchanged.
+  At USD 12.72, weighted expected return improves from negative 16.2% to negative 5.4%; bear/base/
+  bull returns improve to about -48.1%/-5.7%/+48.6%, confidence-adjusted expected return is -4.1%,
+  and base-value margin of safety improves from -19.6% to -6.0%. The USD 9.60 buy-below is unchanged.
+- **Scores, blockers and gaps:** thesis/business quality/balance sheet/liquidity/risk remain
+  60/60/80/80/60. The lower mark improves valuation from 20 to 40 and timing from 20 to 40, but all
+  economic opening gates and the accepted-relationship gate still fail. No hard research blocker
+  exists; concentration, medium confidence, cyclical normalization, inadequate margin of safety,
+  weak timing and uncompelling valuation remain soft gaps.
+- **Ideas, catalysts, risks and action:** all 29 maintained ideas were searched. The only thematic
+  comparison remains rejected for lack of a quantified platform-to-hardware transmission mechanism;
+  no candidate or accepted edge exists, so no relationship or idea follow-up is justified.
+  Catalysts, risks, invalidation, **Hold / Watch**, allocation ineligibility and no paper trade remain
+  unchanged. The decision changes only from materially overvalued to below the economic hurdle.

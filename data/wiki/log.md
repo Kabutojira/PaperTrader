@@ -3409,3 +3409,9 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Verified a bullish MACD crossover after a 7.61% period gain, but classified it as constructive momentum and adverse entry timing because RSI remained overbought and the USD 58 close exceeded both the upper Bollinger band and probability-weighted fair value.
 - Retained USD 28/USD 50/USD 78 bear/base/bull fair values with 25%/50%/25% probabilities; unchanged normalized assumptions and a higher mark preserve Hold / Watch and block strategy work.
 - Added quarterly operating and scenario charts, searched the complete idea catalog, retained the accepted but overdue nearshoring relationship, and created no unrelated candidate edge.
+
+## [2026-09-06] update | Corsair valuation and bullish MACD review
+- Refreshed [[securities/security_55c9ce2fdcd32dad6b8c|Corsair Gaming common stock]] from unchanged Q2 filings, the current SEC submissions index and the exact 7 August-4 September market period.
+- Verified the bullish MACD crossover but classified it as monitoring noise for the fundamental conclusion because volume did not confirm the move and no newer operating evidence changed the thesis.
+- Retained USD 6.60/USD 12.00/USD 18.90 bear/base/bull fair values with 25%/55%/20% probabilities; the lower USD 12.72 mark improves expected return to negative 5.4% but preserves Hold / Watch and no paper trade.
+- Added segment-economics and scenario charts, searched all 29 maintained ideas, and rejected the only thematic comparison for lack of a quantified causal mechanism; no follow-up operation was justified.
