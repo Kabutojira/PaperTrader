@@ -1,0 +1,88 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_c2e6db30cb59254de418",
+    "papertrader research source record --request data/runs/daily-20260906T114339Z/01M1V1E3YGYYPSJV217TRVMW8R/source_xmtr_2025_10k_request.json",
+    "papertrader research source record --request data/runs/daily-20260906T114339Z/01M1V1E3YGYYPSJV217TRVMW8R/source_xmtr_q2_2026_10q_request.json",
+    "papertrader research source record --request data/runs/daily-20260906T114339Z/01M1V1E3YGYYPSJV217TRVMW8R/source_xmtr_q2_2026_results_request.json",
+    "papertrader research source record --request data/runs/daily-20260906T114339Z/01M1V1E3YGYYPSJV217TRVMW8R/source_xmtr_ai_marketplace_20260303_request.json",
+    "papertrader wiki sync-technical-charts",
+    "papertrader research security upsert --request data/runs/daily-20260906T114339Z/01M1V1E3YGYYPSJV217TRVMW8R/security_upsert_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260906T114339Z/01M1V1E3YGYYPSJV217TRVMW8R/security_upsert_request_v2.json",
+    "papertrader research security upsert --request data/runs/daily-20260906T114339Z/01M1V1E3YGYYPSJV217TRVMW8R/security_upsert_request_v3.json",
+    "papertrader issue record --request data/runs/daily-20260906T114339Z/01M1V1E3YGYYPSJV217TRVMW8R/issue_identity_conflict_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Xometry security review failed closed: the payload issuer identity conflicts with the canonical security row. Four primary sources were retained and issue_5fbb8df7c71c7f98ab2e records the candidate-scoped blocker; no assessment or investment-state change was made."
+  ],
+  "evidence": [
+    {
+      "claim": "security_c2e6db30cb59254de418 is canonically bound to issuer_dbdde9b294689a9af3d5; the validated operation payload supplied issuer_0b3fe347955c2ce31e63, so the security upsert failed with an immutable identity conflict.",
+      "observed_at": "2026-09-06T11:53:53Z",
+      "source": "Canonical PaperTrader securities.csv row"
+    },
+    {
+      "claim": "Audited annual evidence was retrieved and registered for revenue, gross profit, GAAP operating losses, operating cash flow, stock compensation and risk review.",
+      "observed_at": "2026-09-06T11:49:16Z",
+      "source": "Xometry 2025 Form 10-K",
+      "source_hash": "bc139297d8422ada5bf4ed7f558892fb9c2741d1f41695a26892103966fe0bb3",
+      "url": "https://www.sec.gov/Archives/edgar/data/1657573/000119312526066959/xmtr-20251231.htm"
+    },
+    {
+      "claim": "The current quarterly filing was retrieved and registered, including Q2 operating results, liquidity, convertible notes, share count, cash flow and risk evidence.",
+      "observed_at": "2026-09-06T11:49:16Z",
+      "source": "Xometry Q2 2026 Form 10-Q",
+      "source_hash": "058f9c8a640ddad02646df6211407021fc189f621c8026d84be58d8ec0a1a28d",
+      "url": "https://www.sec.gov/Archives/edgar/data/1657573/000119312526332776/xmtr-20260630.htm"
+    },
+    {
+      "claim": "The filed results release was retrieved and registered, including Marketplace growth, active-buyer and large-account metrics and the GAAP/non-GAAP bridge.",
+      "observed_at": "2026-09-06T11:49:16Z",
+      "source": "Xometry Q2 2026 results exhibit",
+      "source_hash": "ca86e738aa8ee091331cac482d1caaeb89034e9a7810c4fe72bd4538b644eb3c",
+      "url": "https://www.sec.gov/Archives/edgar/data/1657573/000119312526331547/xmtr-ex99_1.htm"
+    },
+    {
+      "claim": "The issuer's geometry, quoting, customer-history, supplier-performance and delivery-data mechanism was retrieved and registered; it does not quantify AI-originated paid demand or incremental unit economics.",
+      "observed_at": "2026-09-06T11:49:16Z",
+      "source": "Xometry AI-native marketplace release",
+      "source_hash": "734ebab1de9038edb841f16e09a451822a60e87113d96b21b65db80f4f44f4df",
+      "url": "https://investors.xometry.com/news-releases/news-release-details/xometry-deepens-ai-native-marketplace-advantage-new-enterprise"
+    }
+  ],
+  "files_changed": [
+    "data/issues.md",
+    "data/runs/daily-20260906T114339Z/01M1V1E3YGYYPSJV217TRVMW8R/issue_identity_conflict_request.json",
+    "data/runs/daily-20260906T114339Z/01M1V1E3YGYYPSJV217TRVMW8R/security_upsert_request.json",
+    "data/runs/daily-20260906T114339Z/01M1V1E3YGYYPSJV217TRVMW8R/security_upsert_request_v2.json",
+    "data/runs/daily-20260906T114339Z/01M1V1E3YGYYPSJV217TRVMW8R/security_upsert_request_v3.json",
+    "data/runs/daily-20260906T114339Z/01M1V1E3YGYYPSJV217TRVMW8R/source_xmtr_2025_10k_request.json",
+    "data/runs/daily-20260906T114339Z/01M1V1E3YGYYPSJV217TRVMW8R/source_xmtr_ai_marketplace_20260303_request.json",
+    "data/runs/daily-20260906T114339Z/01M1V1E3YGYYPSJV217TRVMW8R/source_xmtr_q2_2026_10q_request.json",
+    "data/runs/daily-20260906T114339Z/01M1V1E3YGYYPSJV217TRVMW8R/source_xmtr_q2_2026_results_request.json",
+    "data/tables/issues.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv"
+  ],
+  "issues_recorded": [
+    "issue_5fbb8df7c71c7f98ab2e"
+  ],
+  "operation_id": "01M1V1E3YGYYPSJV217TRVMW8R",
+  "operations_created": [],
+  "reason_code": "security_identity_conflict",
+  "status": "failed",
+  "summary": "Failed closed because the operation payload binds Xometry security_c2e6db30cb59254de418 to issuer_0b3fe347955c2ce31e63, while canonical securities.csv binds that immutable security to issuer_dbdde9b294689a9af3d5. Four current primary sources were registered, the conflict was recorded as an affects-candidate issue, and the incomplete research page was removed. No security row, assessment, relationship, strategy, signal, order, allocation, ledger, portfolio, or performance state was changed.",
+  "validation": {
+    "checks": [
+      "Mandatory security-context command succeeded before assessment-state work.",
+      "All four retained public sources were fetched successfully, hashed and registered through the project CLI.",
+      "Validated security upsert failed closed on immutable issuer identity conflict and changed no paths.",
+      "No current assessment or assessment-history row exists for security_c2e6db30cb59254de418.",
+      "Incomplete security page and wiki-log entry were removed before completion.",
+      "papertrader wiki lint --strict passed.",
+      "No allocation targets/history, executions, cash ledger, portfolio or performance path changed during the routed operation.",
+      "Overall validation is false because identity reconciliation is required before a canonical security upsert and mandatory assessment can succeed."
+    ],
+    "passed": false
+  }
+}

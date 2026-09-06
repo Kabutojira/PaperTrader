@@ -1,0 +1,18 @@
+{
+  "source_id": "source_xmtr_ai_marketplace_20260303",
+  "url": "https://investors.xometry.com/news-releases/news-release-details/xometry-deepens-ai-native-marketplace-advantage-new-enterprise",
+  "canonical_url": "https://investors.xometry.com/news-releases/news-release-details/xometry-deepens-ai-native-marketplace-advantage-new-enterprise",
+  "source_type": "issuer_release",
+  "title": "Xometry Deepens AI-Native Marketplace Advantage with New Enterprise Lead Time Intelligence and Personalized Pricing Models",
+  "publisher": "Xometry, Inc.",
+  "license": "",
+  "status": "available",
+  "content_hash": "734ebab1de9038edb841f16e09a451822a60e87113d96b21b65db80f4f44f4df",
+  "related_entity_ids": "security_c2e6db30cb59254de418|idea_ai_driven_democratization_physical_creation",
+  "checked_at": "2026-09-06T11:49:16Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Xometry says its models use geometry, quote configurations, customer history, supplier performance and delivery outcomes to predict lead times and personalize pricing.",
+  "summary": "The issuer describes a closed-loop data architecture spanning CAD geometry, quoting, supplier selection, production performance and delivery outcomes. It supports the proposed automated design-to-fulfillment mechanism, but discloses neither model accuracy levels nor AI-originated demand conversion or incremental unit economics.",
+  "run_id": "daily-20260906T114339Z"
+}

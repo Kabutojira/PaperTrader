@@ -1,0 +1,23 @@
+{
+  "security_id": "security_c2e6db30cb59254de418",
+  "issuer_id": "issuer_0b3fe347955c2ce31e63",
+  "company_name": "Xometry, Inc.",
+  "instrument_name": "Xometry, Inc. Class A common stock",
+  "instrument_type": "equity",
+  "ticker": "XMTR",
+  "exchange_code": "NASDAQ",
+  "venue_mic": "XNAS",
+  "provider_symbol": "XMTR",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Industrials",
+  "industry": "Specialty Industrial Machinery",
+  "status": "watching",
+  "watchlist_reason": "Candidate exposure to AI-assisted design-to-manufacturing workflows; marketplace adoption and operating leverage are improving, but the causal edge and valuation margin require monitoring.",
+  "research_summary": "Hold / Watch: marketplace growth and cash conversion improved, but GAAP losses, dilution, downside asymmetry and a pending causal relationship preclude allocation.",
+  "research_page": "securities/security_c2e6db30cb59254de418.md",
+  "last_research_at": "2026-09-06T11:49:16Z",
+  "next_review_at": "2026-10-04T00:00:00Z",
+  "source": "source_xmtr_2025_10k|source_xmtr_q2_2026_10q|source_xmtr_q2_2026_results|source_xmtr_ai_marketplace_20260303"
+}

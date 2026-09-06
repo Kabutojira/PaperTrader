@@ -12,6 +12,7 @@ Generated from `data/tables/issues.csv`.
 | affects_candidate | error | **issue_52441ba1c5c89cac50a6** — Hermes operation validation failed: 01KZQX922RR422CPWVFP4APXBZ | 2026-08-18T15:09:55Z | controller | 01KZQX922RR422CPWVFP4APXBZ |
 | publication_only | error | **issue_580a89652f2497d6e61d** — Hermes operation validation failed: 01KZB8NMPGA0VTNRHAD458EN3R | 2026-08-06T10:28:41Z | delivery | 01KZB8NMPGA0VTNRHAD458EN3R |
 | affects_candidate | error | **issue_58242ac9c8a0a8fb3c22** — Hermes operation validation failed: 01KZSMSDTRBC9SG0KKDQR4XB87 | 2026-08-16T15:25:17Z | controller | 01KZSMSDTRBC9SG0KKDQR4XB87 |
+| affects_candidate | error | **issue_5fbb8df7c71c7f98ab2e** — Xometry security review blocked by issuer identity conflict | 2026-09-06T11:54:46Z | controller | 01M1V1E3YGYYPSJV217TRVMW8R |
 | affects_candidate | error | **issue_64ad20c69d31e7ef47e4** — Hermes operation validation failed: 01KZGT11ZGBPRBKV129FD00TH1 | 2026-08-17T16:15:53Z | controller | 01KZGT11ZGBPRBKV129FD00TH1 |
 | publication_only | error | **issue_86f9f3bc8907460da2fc** — Hermes operation validation failed: 01KZ8VJY48VNMCFW638QQJZGJH | 2026-08-05T11:40:24Z | controller | 01KZ8VJY48VNMCFW638QQJZGJH |
 | affects_candidate | error | **issue_bb796d692e4293326337** — ABB assessment provenance does not match corrected final research page | 2026-09-03T18:37:34Z | controller | 01M07XKZS0JKBQM0THMPJGWEK5 |

@@ -1,0 +1,12 @@
+{
+  "issue_code": "security_identity_conflict",
+  "impact": "affects_candidate",
+  "severity": "error",
+  "title": "Xometry security review blocked by issuer identity conflict",
+  "description": "The validated operation payload identifies security_c2e6db30cb59254de418 with issuer_id issuer_0b3fe347955c2ce31e63, while canonical data/tables/securities.csv binds the same immutable security_id to issuer_dbdde9b294689a9af3d5. The validated security upsert correctly failed closed with an immutable-identity conflict. Four current primary sources were retained, but no security row, research page, assessment, strategy, signal, order, allocation or accounting state was changed. Resolve the canonical issuer identity and enqueue a new bounded security review.",
+  "entity_type": "security",
+  "entity_id": "security_c2e6db30cb59254de418",
+  "owner": "controller",
+  "related_run_id": "daily-20260906T114339Z",
+  "related_operation_id": "01M1V1E3YGYYPSJV217TRVMW8R"
+}
