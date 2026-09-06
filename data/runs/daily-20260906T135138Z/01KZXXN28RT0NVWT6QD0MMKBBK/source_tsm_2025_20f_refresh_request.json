@@ -1,0 +1,18 @@
+{
+  "source_id": "source_tsm_2025_20f_sec",
+  "url": "https://www.sec.gov/Archives/edgar/data/1046179/000162828026025362/tsm-20251231.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1046179/000162828026025362/tsm-20251231.htm",
+  "source_type": "filing",
+  "title": "Taiwan Semiconductor Manufacturing Company Limited 2025 Form 20-F",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "c3ebd05cd8fb383f53fc21a0ac497ee12cf908b709c380f9bec4f39c4916647b",
+  "related_entity_ids": "security_ce9b78a4d0773c950765",
+  "checked_at": "2026-09-06T14:13:31Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "The filing reports 2025 operations, customer concentration, capital intensity, geographic risk, ADR identity and audited financial statements.",
+  "summary": "The unchanged audited filing remains the primary baseline for TSMC identity, five-ordinary-share ADR ratio, durable foundry economics, customer and Taiwan concentration, capital requirements, share count, cash and debt.",
+  "run_id": "daily-20260906T135138Z"
+}

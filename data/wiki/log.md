@@ -3387,3 +3387,9 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Found accelerating marketplace adoption and improving cash conversion: Q2 revenue grew 41%, marketplace revenue 45%, active buyers 20% and larger accounts 23%, while GAAP operating and net losses persisted.
 - Accepted USD50/USD85/USD130 bear/base/bull fair values with 25%/50%/25% probabilities. Weighted value is USD87.50 versus the USD92.53 mark, supporting Hold / Watch and no allocation.
 - Kept [[ideas/idea_ai_driven_democratization_physical_creation]] as a candidate edge: the geometry-to-quote-to-fulfillment data loop is evidenced, but AI-attributed order conversion and incremental economics remain undisclosed. The dependent relationship review remains separate; no strategy, signal or paper order was created.
+
+## [2026-09-06] update | Taiwan Semiconductor Manufacturing valuation and alert review
+- Refreshed [[securities/security_ce9b78a4d0773c950765|TSMC ADR]] from the 2025 Form 20-F, Q2 materials and three August 2026 SEC-filed releases; July revenue grew 25.8% year over year and the board approved substantial capacity and technology investments.
+- Verified the September 4 MACD bullish crossover, but treated it as improving short-term momentum rather than a thesis-changing opportunity because the security remained below the 200-day average and valuation gates failed.
+- Accepted USD250/USD375/USD495 bear/base/bull fair values with 25%/50%/25% probabilities. Weighted value is USD373.75 versus the USD428.91 mark, supporting Hold / Watch and no strategy, signal or paper order.
+- Kept [[ideas/idea_terafab_ai_industrial_stack]] as the accepted current edge and queued its dependent refresh. Proposed separate dependent relationship reviews for [[ideas/idea_ai_compute_networking_hyperscaler_monetization]] and [[ideas/idea_japan_sanaenomics_strategic_investment]] without presenting either candidate as accepted.

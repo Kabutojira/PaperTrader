@@ -1,0 +1,24 @@
+{
+  "operation_type": "relationship_research",
+  "entity_type": "relationship",
+  "entity_id": "relationship_c7af03dbf471d85dfc42",
+  "dedupe_key": "relationship_research:relationship_c7af03dbf471d85dfc42:security-result:01KZXXN28RT0NVWT6QD0MMKBBK",
+  "prompt": "Review whether TSMC has a material causal relationship to AI compute, networking and hyperscaler monetization through leading-node foundry and advanced-packaging demand; accept or reject the edge.",
+  "inputs": {
+    "relationship_id": "relationship_c7af03dbf471d85dfc42",
+    "idea_id": "idea_ai_compute_networking_hyperscaler_monetization",
+    "security_id": "security_ce9b78a4d0773c950765",
+    "proposed_direction": "positive",
+    "proposed_mechanism": "AI accelerator, custom-silicon and hyperscaler infrastructure demand can transmit into TSMC leading-node utilization, advanced-packaging demand, pricing and cash generation.",
+    "proposed_invalidation": "Reject or downgrade the edge if AI orders weaken materially, customers diversify away without offsetting demand, TSMC loses process or packaging leadership, or capital intensity prevents demand growth from producing adequate returns.",
+    "evidence_refs": ["source_tsm_july_2026_revenue_sec_6k", "source_tsm_q2_2026_presentation_sec_ex99_2", "source_tsm_q2_2026_results_sec_ex99_1"]
+  },
+  "source": "security_research:01KZXXN28RT0NVWT6QD0MMKBBK",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": ["01KZXXN28RT0NVWT6QD0MMKBBK"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": ["data/wiki/securities/security_ce9b78a4d0773c950765.md", "data/wiki/ideas/idea_ai_compute_networking_hyperscaler_monetization.md", "source_tsm_july_2026_revenue_sec_6k", "source_tsm_q2_2026_presentation_sec_ex99_2", "source_tsm_q2_2026_results_sec_ex99_1"],
+  "max_attempts": 3
+}

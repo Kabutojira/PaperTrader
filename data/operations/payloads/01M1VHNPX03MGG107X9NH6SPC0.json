@@ -1,0 +1,26 @@
+{
+  "entity_id": "relationship_4bfc9922146e9fa1a80e",
+  "entity_type": "relationship",
+  "inputs": {
+    "evidence_refs": [
+      "source_tsm_board_20260811_sec_6k",
+      "source_tsm_sony_jv_20260811_sec_6k"
+    ],
+    "idea_id": "idea_japan_sanaenomics_strategic_investment",
+    "proposed_direction": "positive",
+    "proposed_invalidation": "Reject or downgrade the edge if approvals or government support fail, the 2029 ramp slips, Sony-controlled economics are immaterial to TSMC, or returns on the JPY282 billion commitment are inadequate.",
+    "proposed_mechanism": "Japanese strategic-investment support can transmit into TSMC through the binding Sony-controlled Kumamoto image-sensor venture, local advanced-process manufacturing and phased TSMC capital contributions.",
+    "relationship_id": "relationship_4bfc9922146e9fa1a80e",
+    "security_id": "security_ce9b78a4d0773c950765"
+  },
+  "objective": "Review whether TSMC has a material causal relationship to Japan strategic investment through the binding Kumamoto image-sensor joint venture, government support and local manufacturing; accept or reject the edge.",
+  "operation_id": "01M1VHNPX03MGG107X9NH6SPC0",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_japan_sanaenomics_strategic_investment.md",
+    "data/wiki/securities/security_ce9b78a4d0773c950765.md",
+    "source_tsm_board_20260811_sec_6k",
+    "source_tsm_sony_jv_20260811_sec_6k"
+  ]
+}

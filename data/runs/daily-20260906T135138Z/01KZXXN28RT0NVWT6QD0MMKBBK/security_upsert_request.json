@@ -1,0 +1,23 @@
+{
+  "security_id": "security_ce9b78a4d0773c950765",
+  "issuer_id": "issuer_9735cbb026f9cfcfa534",
+  "company_name": "Taiwan Semiconductor Manufacturing Company Limited",
+  "instrument_name": "Taiwan Semiconductor Manufacturing Company Limited sponsored ADR",
+  "instrument_type": "equity",
+  "ticker": "TSM",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "TSM",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "TW",
+  "sector": "Technology",
+  "industry": "Semiconductors",
+  "status": "watching",
+  "watchlist_reason": "Leading pure-play foundry with direct AI, advanced-node and packaging exposure; monitor valuation, geopolitical concentration, overseas execution and capital intensity.",
+  "research_summary": "Hold / Watch: July growth and new capacity commitments strengthen exceptional foundry economics, but negative expected/base returns, downside asymmetry and no margin of safety preclude allocation.",
+  "research_page": "data/wiki/securities/security_ce9b78a4d0773c950765.md",
+  "last_research_at": "2026-09-06T14:13:31Z",
+  "next_review_at": "2026-10-04T14:13:31Z",
+  "source": "source_tsm_2025_20f_sec|source_tsm_q2_2026_results_sec_ex99_1|source_tsm_q2_2026_presentation_sec_ex99_2|source_tsm_july_2026_revenue_sec_6k|source_tsm_board_20260811_sec_6k|source_tsm_sony_jv_20260811_sec_6k"
+}

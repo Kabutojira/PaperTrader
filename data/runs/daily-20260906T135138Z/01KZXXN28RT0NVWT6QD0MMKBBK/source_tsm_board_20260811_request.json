@@ -1,0 +1,18 @@
+{
+  "source_id": "source_tsm_board_20260811_sec_6k",
+  "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000536/tsm-boardx20260811.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000536/tsm-boardx20260811.htm",
+  "source_type": "issuer_release",
+  "title": "TSMC Board of Directors Meeting Resolutions, August 11, 2026 (SEC-filed Form 6-K)",
+  "publisher": "Taiwan Semiconductor Manufacturing Company Limited via U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "c935d2ddc8213391015d9eee562f863e802a5c5fb32f98de3ee24cecfd5d251b",
+  "related_entity_ids": "security_ce9b78a4d0773c950765",
+  "checked_at": "2026-09-06T14:13:31Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "The board approved about USD 29.44 billion for advanced technology, advanced packaging, specialty capacity, fab construction and facility systems, plus a JPY282 billion Sony joint-venture investment.",
+  "summary": "The SEC-filed resolutions confirm Q2 financials, a NT$7 quarterly dividend, a major new capacity appropriation and a material image-sensor joint-venture commitment, reinforcing runway while increasing capital-allocation execution risk.",
+  "run_id": "daily-20260906T135138Z"
+}

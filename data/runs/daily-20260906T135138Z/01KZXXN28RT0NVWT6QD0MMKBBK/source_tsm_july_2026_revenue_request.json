@@ -1,0 +1,18 @@
+{
+  "source_id": "source_tsm_july_2026_revenue_sec_6k",
+  "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000471/tsm-revenue20260810.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000471/tsm-revenue20260810.htm",
+  "source_type": "issuer_release",
+  "title": "TSMC July 2026 Revenue Report (SEC-filed Form 6-K)",
+  "publisher": "Taiwan Semiconductor Manufacturing Company Limited via U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "40ed24df015806db57c8d711f4a7c2b5ad71de10c4da237a87fe25520ca12959",
+  "related_entity_ids": "security_ce9b78a4d0773c950765",
+  "checked_at": "2026-09-06T14:13:31Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "July 2026 consolidated revenue was NT$467.58 billion, up 5.6% month over month and 44.7% year over year; January-July revenue rose 37.0%.",
+  "summary": "The SEC-filed monthly report extends the Q2 demand evidence: July revenue accelerated to NT$467.58 billion and year-to-date revenue reached NT$2,872.06 billion, while providing no margin or customer attribution.",
+  "run_id": "daily-20260906T135138Z"
+}

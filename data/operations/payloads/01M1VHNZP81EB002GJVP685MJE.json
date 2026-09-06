@@ -1,0 +1,18 @@
+{
+  "entity_id": "idea_terafab_ai_industrial_stack",
+  "entity_type": "idea",
+  "inputs": {
+    "idea_id": "idea_terafab_ai_industrial_stack",
+    "security_id": "security_ce9b78a4d0773c950765",
+    "security_research_operation_id": "01KZXXN28RT0NVWT6QD0MMKBBK",
+    "security_research_result_path": "data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/agent_result.json",
+    "seed_claim": "TSMC's July growth and expanded capacity commitments reinforce its transition-foundry role, while USD250/USD375/USD495 scenarios yield USD373.75 weighted value versus USD428.91 and support Hold / Watch; faster internal Terafab qualification remains the displacement risk."
+  },
+  "objective": "Refresh the Terafab and integrated AI industrial stack idea from TSMC's completed review, including candidate disposition, thesis, catalysts, risks, confidence and the broader investable-security universe.",
+  "operation_id": "01M1VHNZP81EB002GJVP685MJE",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/securities/security_ce9b78a4d0773c950765.md"
+  ]
+}

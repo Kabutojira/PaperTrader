@@ -1,0 +1,156 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_ce9b78a4d0773c950765",
+    "papertrader research source record --request data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/source_tsm_2025_20f_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/source_tsm_q2_2026_results_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/source_tsm_q2_2026_presentation_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/source_tsm_july_2026_revenue_request.json",
+    "papertrader research source record --request data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/source_tsm_board_20260811_request.json",
+    "papertrader research source record --request data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/source_tsm_sony_jv_20260811_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/security_upsert_request.json",
+    "papertrader wiki sync-technical-charts",
+    "papertrader research assessment upsert --request data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/assessment_upsert_request_v2.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/assessment_upsert_request_v3.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/assessment_upsert_request_v4.json",
+    "papertrader queue enqueue --request data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/enqueue_relationship_ai_compute_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/enqueue_relationship_japan_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/enqueue_idea_refresh_request.json",
+    "papertrader wiki lint --strict",
+    "papertrader research security-context --security-id security_ce9b78a4d0773c950765",
+    "papertrader research source record --request data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/source_tsm_july_2026_revenue_request_v2.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "TSM security research completed: July demand and new capacity commitments strengthen the operating thesis, but USD373.75 probability-weighted value versus USD428.91 leaves negative expected and base returns; deterministic disposition remains Hold / Watch and allocation-ineligible.",
+    "The 4 September TSM bullish MACD crossover is improving momentum but not an actionable opportunity because downside payoff and margin-of-safety gates remain adverse.",
+    "Queued dependent relationship reviews for TSM's AI-compute and Japan strategic-investment candidate links and the required Terafab idea refresh; no paper strategy or order was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The SEC-filed annual report establishes the sponsored-ADR identity, five-ordinary-share ADR ratio, business model, audited baseline economics, customer concentration, capital intensity, and geopolitical and overseas-fab risks used in the review.",
+      "observed_at": "2026-09-06T14:13:31Z",
+      "source": "TSMC 2025 Form 20-F",
+      "source_hash": "c3ebd05cd8fb383f53fc21a0ac497ee12cf908b709c380f9bec4f39c4916647b",
+      "url": "https://www.sec.gov/Archives/edgar/data/1046179/000162828026025362/tsm-20251231.htm"
+    },
+    {
+      "claim": "SEC-filed issuer exhibits report Q2 revenue of NT$1.270 trillion, net income of NT$706.56 billion, 67.7% gross margin, 60.3% operating margin, USD4.31 diluted ADR EPS, 77% advanced-technology wafer revenue, and strong Q3 and full-year guidance.",
+      "observed_at": "2026-09-06T14:13:31Z",
+      "source": "TSMC Q2 2026 results and presentation",
+      "source_hash": "6e877956870c87d857d8af23144f35ddcbd3b569d464c962e7cf368c46860be3",
+      "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000451/a2q26e_withguidancexfinal.htm"
+    },
+    {
+      "claim": "The SEC-filed issuer release reports July revenue of NT$467.58 billion, up 5.6% month over month and 44.7% year over year, with January-July revenue up 37.0%.",
+      "observed_at": "2026-09-06T14:13:31Z",
+      "source": "TSMC July 2026 Revenue Report",
+      "source_hash": "40ed24df015806db57c8d711f4a7c2b5ad71de10c4da237a87fe25520ca12959",
+      "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000471/tsm-revenue20260810.htm"
+    },
+    {
+      "claim": "The SEC-filed resolutions approve approximately USD29.44 billion of capacity appropriations across advanced technology, packaging, specialty capacity and fab infrastructure, plus participation in the Sony venture for not more than JPY282 billion.",
+      "observed_at": "2026-09-06T14:13:31Z",
+      "source": "TSMC Board of Directors Meeting Resolutions, August 11, 2026",
+      "source_hash": "c935d2ddc8213391015d9eee562f863e802a5c5fb32f98de3ee24cecfd5d251b",
+      "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000536/tsm-boardx20260811.htm"
+    },
+    {
+      "claim": "The SEC-filed binding agreement targets Kumamoto image-sensor volume production in 2029, with Sony control, phased TSMC cash contributions of approximately JPY282 billion, and additional investment considered on the premise of Japanese government support.",
+      "observed_at": "2026-09-06T14:13:31Z",
+      "source": "Sony Semiconductor Solutions and TSMC definitive joint-venture agreement",
+      "source_hash": "5483d97974c8aedf406fc6a0b2d8e7d2d616b191ef1476f80717d98d46c5b29d",
+      "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000539/sonysemiconductorsolutions.htm"
+    },
+    {
+      "claim": "The immutable TSM/XNYS/USD identity had a USD428.9100036621094 mark and USD/EUR rate 0.8604999780654907 as of 2026-09-06T13:51:39Z. The 4 September MACD transition was verified against the canonical technical projection. The accepted Terafab relationship is current. Deterministic assessment output derives Hold / Watch, quality score 90, expected return -12.86050761025472521441475927%, confidence-adjusted expected return -9.645380707691043910811069452%, buy-below USD300, and allocation ineligibility without a relationship blocker.",
+      "source": "Canonical PaperTrader market, FX, relationship, and assessment state"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M1VHND4GN9XKPA4EB318EC55.json",
+    "data/operations/payloads/01M1VHNPX03MGG107X9NH6SPC0.json",
+    "data/operations/payloads/01M1VHNZP81EB002GJVP685MJE.json",
+    "data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/assessment_upsert_request.json",
+    "data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/assessment_upsert_request_v3.json",
+    "data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/assessment_upsert_request_v4.json",
+    "data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/enqueue_idea_refresh_request.json",
+    "data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/enqueue_relationship_ai_compute_request.json",
+    "data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/enqueue_relationship_japan_request.json",
+    "data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/security_upsert_request.json",
+    "data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/source_tsm_2025_20f_refresh_request.json",
+    "data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/source_tsm_board_20260811_request.json",
+    "data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/source_tsm_july_2026_revenue_request.json",
+    "data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/source_tsm_july_2026_revenue_request_v2.json",
+    "data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/source_tsm_q2_2026_presentation_refresh_request.json",
+    "data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/source_tsm_q2_2026_results_refresh_request.json",
+    "data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/source_tsm_sony_jv_20260811_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_ce9b78a4d0773c950765.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KZXXN28RT0NVWT6QD0MMKBBK",
+  "operations_created": [
+    "01M1VHND4GN9XKPA4EB318EC55",
+    "01M1VHNPX03MGG107X9NH6SPC0",
+    "01M1VHNZP81EB002GJVP685MJE"
+  ],
+  "status": "succeeded",
+  "summary": "Completed exactly one current Taiwan Semiconductor Manufacturing Company sponsored-ADR security review using the 2025 Form 20-F, SEC-filed Q2 2026 evidence, July revenue, August board resolutions, and the definitive Sony image-sensor joint venture. The 4 September bullish MACD crossover is improving momentum but not an actionable opportunity at the current USD428.91 mark. Updated the security page and structured row, registered six refreshed/current primary sources, and appended scenario-complete assessment assessment_af482445e24e1513a801 linked to assessment_46d2ae16336286c36b20. Bear/base/bull values of USD250/USD375/USD495 produce USD373.75 probability-weighted value and -12.86% expected return; deterministic state remains Hold / Watch and allocation-ineligible. Enqueued two bounded candidate relationship reviews and the required dependent Terafab idea refresh; no strategy, signal, order, allocation, or accounting state changed.",
+  "validation": {
+    "checks": [
+      "Mandatory bounded security-context completed before repeat assessment and the post-write context confirmed assessment_af482445e24e1513a801 links predecessor assessment_46d2ae16336286c36b20, source operation/result, schema version 2, and exact page hash e4a31a093b18e4af474a1c3cf1d7a771dcade1a4c750a61540b760b40bb4c7fa.",
+      "Immutable TSM sponsored-ADR identity, XNYS venue, USD currency, provider symbol, ADR ratio, and duplicate boundary were reconciled against canonical state and the issuer filing.",
+      "All six retained primary sources were recorded or refreshed through the source CLI and are current as of 2026-09-06T14:13:31Z.",
+      "The security CLI accepted the structured update; the assessment CLI accepted exactly one current scenario-complete comparable result after three no-change rejected request attempts were corrected using distinct immutable files.",
+      "The requested 2026-08-27 through 2026-09-04 alert period, exact 2026-09-04 MACD transition, current price and FX timestamps, and source price hash were consumed without replacing canonical measurements.",
+      "The complete idea catalog and accepted relationship state were searched; the page classifies the Terafab edge as accepted-current, AI-compute and Japan links as candidates, and all other reviewed maintained themes as rejected-no-link with a bounded reason.",
+      "Exactly two dependent relationship-research follow-ups and exactly one required dependent payload/accepted-idea refresh were created; no strategy follow-up was created because the full strategy gate fails.",
+      "Analytical chart fences validate and visualization_review exactly matches the two agent-authored chart IDs; the deterministic market-technicals chart is excluded.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "papertrader schema validate --strict returned OK [schema].",
+      "papertrader queue validate returned OK [queue].",
+      "papertrader portfolio reconcile --strict returned OK [portfolio], and the observed delta contains no allocation, strategy, signal, order, execution, cash, portfolio, or performance path."
+    ],
+    "passed": true
+  },
+  "visualization_review": {
+    "charts": [
+      {
+        "chart_id": "tsm-quarterly-revenue-and-net-income-2026",
+        "page_path": "data/wiki/securities/security_ce9b78a4d0773c950765.md"
+      },
+      {
+        "chart_id": "tsm-adr-valuation-scenarios-20260906",
+        "page_path": "data/wiki/securities/security_ce9b78a4d0773c950765.md"
+      }
+    ],
+    "completed": true,
+    "omissions": [
+      {
+        "dataset": "Peer valuation comparison",
+        "reason": "No bounded primary-source set provided same-date, same-definition ADR-adjusted earnings and market values for three or more foundry peers; incomparable or invented multiples were not charted.",
+        "reason_code": "insufficient_comparability"
+      },
+      {
+        "dataset": "Monthly revenue trend",
+        "reason": "The retained July release provides July 2026, June 2026 and July 2025 comparison points rather than a continuous like-for-like monthly series; the exact disclosed comparisons remain in prose.",
+        "reason_code": "insufficient_comparability"
+      },
+      {
+        "dataset": "Cash, debt and free-cash-flow trend",
+        "reason": "The bounded current evidence supports decision-relevant balance-sheet and cash-flow point observations but not enough consistently defined periods for a useful trend chart.",
+        "reason_code": "insufficient_history"
+      }
+    ]
+  }
+}
