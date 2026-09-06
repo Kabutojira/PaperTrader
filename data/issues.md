@@ -9,6 +9,7 @@ Generated from `data/tables/issues.csv`.
 | affects_candidate | error | **issue_35b7b23bc3b07dd61cce** — Hermes operation validation failed: 01KZ9ZJVERDMQV8A3XQQY4AD7Y | 2026-08-12T15:28:02Z | controller | 01KZ9ZJVERDMQV8A3XQQY4AD7Y |
 | publication_only | error | **issue_406f407472eb3a7999d9** — Hermes operation validation failed: 01M081X8BGDJA34XM08JAKQFS1 | 2026-08-17T14:47:27Z | delivery | 01M081X8BGDJA34XM08JAKQFS1 |
 | affects_candidate | error | **issue_4c13a146c674a9a576a6** — Hermes operation validation failed: 01KZGGJ4M0HZBD7MND83X91XEF | 2026-08-15T07:23:01Z | controller | 01KZGGJ4M0HZBD7MND83X91XEF |
+| affects_candidate | error | **issue_4d9ec7a5d45347515ba5** — Hermes operation validation failed: 01M0303PQ0QPDFP335PHBAXSTN | 2026-09-06T15:19:00Z | controller | 01M0303PQ0QPDFP335PHBAXSTN |
 | affects_candidate | error | **issue_52441ba1c5c89cac50a6** — Hermes operation validation failed: 01KZQX922RR422CPWVFP4APXBZ | 2026-08-18T15:09:55Z | controller | 01KZQX922RR422CPWVFP4APXBZ |
 | publication_only | error | **issue_580a89652f2497d6e61d** — Hermes operation validation failed: 01KZB8NMPGA0VTNRHAD458EN3R | 2026-08-06T10:28:41Z | delivery | 01KZB8NMPGA0VTNRHAD458EN3R |
 | affects_candidate | error | **issue_58242ac9c8a0a8fb3c22** — Hermes operation validation failed: 01KZSMSDTRBC9SG0KKDQR4XB87 | 2026-08-16T15:25:17Z | controller | 01KZSMSDTRBC9SG0KKDQR4XB87 |
