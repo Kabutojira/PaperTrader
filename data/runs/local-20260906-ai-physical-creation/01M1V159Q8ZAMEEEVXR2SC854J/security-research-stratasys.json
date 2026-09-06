@@ -1,0 +1,9 @@
+{
+  "operation_type": "security_research", "entity_type": "security", "entity_id": "security_84705b27d28a94f2b318",
+  "dedupe_key": "security_research:security_84705b27d28a94f2b318:ai-physical-creation:2026-09",
+  "prompt": "Research and value Stratasys as an industrial polymer printing and materials platform.",
+  "inputs": {"security_id": "security_84705b27d28a94f2b318", "idea_id": "idea_ai_driven_democratization_physical_creation", "causal_hypothesis": "More manufacturable AI-assisted designs may lift utilization of Stratasys systems and its installed-base materials and service revenue, but industrial qualification and competitive barriers may slow transmission.", "focused_questions": "Test installed base, system/material/service mix, recurring proprietary materials, aerospace, automotive, healthcare, utilization leverage, Forward AM integration, concentration, competition, margins, cash flow, balance sheet, scenarios, rating, and invalidation."},
+  "source": "idea_research:01M1V159Q8ZAMEEEVXR2SC854J", "priority": 96, "freshness_days": 30,
+  "depends_on": ["01M1V159Q8ZAMEEEVXR2SC854J"], "not_before": "now", "deadline": "",
+  "source_refs": ["https://investors.stratasys.com/sec-filings/all-sec-filings/content/0001628280-26-015079/ssys-20251231.htm"], "max_attempts": 3
+}

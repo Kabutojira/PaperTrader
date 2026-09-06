@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-08-08"
-updated: "2026-09-05"
+updated: "2026-09-06"
 provenance: repository-contract
 ---
 
@@ -3327,3 +3327,30 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Registered current SEC evidence and wrote one immutable schema-v2 assessment; rating remains Hold / Watch and no strategy was justified.
 - Enqueued dependent refresh `01M1SAEEC8FJYDHZM3P4EZ8NJV` for [[ideas/idea_critical_minerals_lithium]], the one payload/current accepted idea.
 - Reviewed the complete maintained idea catalog; no additional material relationship candidate was supported.
+
+## [2026-09-06] create | AI-driven democratization of physical creation
+- Created [[ideas/idea_ai_driven_democratization_physical_creation]] to test where value accrues when generative AI reduces 3D-geometry creation friction but manufacturability, process selection, production and delivery remain binding gates.
+- Verified and imported nine public instruments—Creality, Xometry, Stratasys, Materialise, Proto Labs, 3D Systems, Arkema, Evonik and BASF—through identity-only CLI writes; Bambu Lab remains a private competitive benchmark with no invented security.
+- Classified all nine pairings as candidates, with BASF expected to be negligible after the Forward AM divestiture, and enqueued nine dependent full security reviews plus nine pair-specific relationship reviews. No ranking, valuation or investment rating is asserted before those assessments complete.
+- Added a sourced causal-network chart and recorded the absence of comparable primary datasets for market share, installed bases, consumables attachment and additive-revenue exposure.
+
+## [2026-09-06] research blocked | Creality initial security review
+- Added current operating research for [[securities/security_b19e8f0343b7da1f3c03|Creality H shares]] from its prospectus, interim report and August monthly return, including three analytical charts and the deterministic technical reference.
+- Found direct evidence for the recurring-consumables mechanism: H1 2026 consumables revenue grew 48.3% while printer revenue grew 0.1%; cloud activity also expanded, but absolute cohorts and platform economics remain undisclosed.
+- Recorded deteriorating gross margin, adjusted loss, RMB257.0 million operating cash outflow, higher inventory and strong post-IPO liquidity as separate evidence from thematic exposure.
+- Blocked the canonical scenario assessment because the HKD26.00 cache row has provider status `error`; no fair value, rating, strategy, signal or paper order was created.
+
+## 2026-09-06
+
+- Published investor decision snapshot `decision_b0130a2b400e87878a4d`.
+
+- Generated canonical [[daily-reports/daily-report_20260906]] for run `local-20260906-ai-physical-creation`.
+
+- Published investor decision snapshot `decision_36b789b47533ffffeac1`.
+
+- Generated canonical [[daily-reports/daily-report_20260906]] for run `local-20260906-ai-physical-creation-final`.
+
+## [2026-09-06] update | Creality valuation completed after market recovery
+- Completed the schema-version-two assessment for [[securities/security_b19e8f0343b7da1f3c03|Creality H shares]] after the identity-matched HKD26.00 mark and HKD/EUR record recovered to canonical `ok` state.
+- Accepted HKD10/HKD18/HKD32 bear/base/bull fair values with 30%/50%/20% probabilities: weighted value is HKD18.40, expected return is approximately -29.2%, buy-below is HKD14.40 and the canonical conclusion is Sell / Avoid.
+- Preserved the very-high thematic exposure and 48.3% H1 consumables-growth evidence, but weak cash conversion, competitive pressure, valuation and the still-pending causal relationship preclude a strategy, signal or paper order.

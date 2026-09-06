@@ -1,0 +1,17 @@
+{
+  "watchlist_reason": "Digitally quoted multi-process manufacturing-service candidate; full thematic and investment research pending.",
+  "source": "https://www.sec.gov/Archives/edgar/data/1443669/000144366926000010/0001443669-26-000010-index.htm",
+  "securities": [{
+    "company_name": "Proto Labs, Inc.",
+    "instrument_name": "Proto Labs, Inc. common stock",
+    "instrument_type": "equity",
+    "ticker": "PRLB",
+    "exchange_code": "NYQ",
+    "venue_mic": "XNYS",
+    "provider_symbol": "PRLB",
+    "currency": "USD",
+    "country": "US",
+    "sector": "Industrials",
+    "industry": "Metal Fabrication"
+  }]
+}

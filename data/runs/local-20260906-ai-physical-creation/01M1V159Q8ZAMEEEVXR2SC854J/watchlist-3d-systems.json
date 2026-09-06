@@ -1,0 +1,17 @@
+{
+  "watchlist_reason": "Polymer, metal, healthcare, installed-base, and materials additive-manufacturing candidate with financial-risk review required.",
+  "source": "https://www.sec.gov/Archives/edgar/data/910638/000119312526255573/d107578d424b5.htm",
+  "securities": [{
+    "company_name": "3D Systems Corporation",
+    "instrument_name": "3D Systems Corporation common stock",
+    "instrument_type": "equity",
+    "ticker": "DDD",
+    "exchange_code": "NYQ",
+    "venue_mic": "XNYS",
+    "provider_symbol": "DDD",
+    "currency": "USD",
+    "country": "US",
+    "sector": "Technology",
+    "industry": "Computer Hardware"
+  }]
+}

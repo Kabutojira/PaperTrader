@@ -1,0 +1,17 @@
+{
+  "entity_id": "security_b19e8f0343b7da1f3c03",
+  "entity_type": "security",
+  "inputs": {
+    "causal_hypothesis": "AI-reduced design friction may expand printer adoption and utilization, with consumables, scanners, multi-material systems, cloud, community, and creator economics potentially capturing more value than hardware units.",
+    "focused_questions": "Test printer versus consumables growth, installed base, utilization, branded-material attachment and lock-in, Creality Cloud and creator economics, margins, customer concentration, post-IPO balance sheet, Bambu Lab pressure, scenarios, rating, invalidation, and exposure timing.",
+    "idea_id": "idea_ai_driven_democratization_physical_creation",
+    "security_id": "security_b19e8f0343b7da1f3c03"
+  },
+  "objective": "Research and value Creality H shares as a consumer and prosumer 3D-printing ecosystem.",
+  "operation_id": "01M1V1E10RDD4J617S4AW0C9EN",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0529/sehk26030901313.pdf"
+  ]
+}

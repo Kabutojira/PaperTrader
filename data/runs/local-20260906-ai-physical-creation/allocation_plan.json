@@ -1,0 +1,31 @@
+{
+  "allocation_plan_id": "allocation_plan_1e514cf1f5d7de46377a",
+  "allocation_plan_version": 1,
+  "as_of": "2026-09-06T10:06:29Z",
+  "capital_allocated_base": "0",
+  "capital_unallocated_base": "5703.01351045461364626021744",
+  "cash_base": "9703.0225174243560771003624",
+  "current_baseline_exposure_base": "297",
+  "current_conviction_exposure_base": "0",
+  "current_gross_exposure_base": "297",
+  "deployment_budget_base": "0",
+  "diversified_budget_base": "0",
+  "eligible_candidate_count": 0,
+  "equity_base": "10000.0225174243560771003624",
+  "evidence_state": "provisional_cash_valuation_unsupported",
+  "excluded_candidate_count": 82,
+  "maximum_baseline_exposure_base": "3000.00675522730682313010872",
+  "minimum_cash_reserve_base": "2500.0056293560890192750906",
+  "mode": "active",
+  "operations_created": [
+    "01M1V2Y248HPPFYSZV7F91ZT7N"
+  ],
+  "pending_gross_exposure_base": "0",
+  "run_id": "local-20260906-ai-physical-creation",
+  "target_count": 82,
+  "target_invested_exposure_base": "6000.01351045461364626021744",
+  "unallocated_reasons": [
+    "insufficient_diversification",
+    "insufficient_eligible_candidates"
+  ]
+}

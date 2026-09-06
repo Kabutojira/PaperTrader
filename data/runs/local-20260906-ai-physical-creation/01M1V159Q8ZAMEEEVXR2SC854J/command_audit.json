@@ -1,0 +1,1463 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "watchlist",
+        "import",
+        "--request",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-creality.json"
+      ],
+      "changed_paths": [
+        "data/tables/securities.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "7c2691e665c8737f73123498ce582331ebd513c3b9c14f5213e95d9ade980da9",
+            62340,
+            384
+          ],
+          "before": [
+            "file",
+            "9af00c2c95c14377661eaf210f304189156de93cf27a0da937967500e6ce3909",
+            61853,
+            436
+          ],
+          "path": "data/tables/securities.csv"
+        }
+      ],
+      "command": "papertrader watchlist import --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-creality.json",
+      "completed_at": "2026-09-06T09:37:25Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "cbf2acdcde3ec2ac1604c615b51b08326c24b12878c970f163bfaf590fe2e190",
+          669,
+          436
+        ],
+        "path": "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-creality.json"
+      },
+      "started_at": "2026-09-06T09:37:24Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "watchlist",
+        "import",
+        "--request",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-xometry.json"
+      ],
+      "changed_paths": [
+        "data/tables/securities.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "8eb0c5398043f59ebcc4f7f78070d1dbb70b5fcf92958cb9b5a2cbb333d61c02",
+            62743,
+            384
+          ],
+          "before": [
+            "file",
+            "7c2691e665c8737f73123498ce582331ebd513c3b9c14f5213e95d9ade980da9",
+            62340,
+            384
+          ],
+          "path": "data/tables/securities.csv"
+        }
+      ],
+      "command": "papertrader watchlist import --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-xometry.json",
+      "completed_at": "2026-09-06T09:37:27Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "b782ddbdc0bf31ad88962b076306b7f3756283c9daf34055b68229b81bcc16ab",
+          585,
+          436
+        ],
+        "path": "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-xometry.json"
+      },
+      "started_at": "2026-09-06T09:37:26Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "watchlist",
+        "import",
+        "--request",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-stratasys.json"
+      ],
+      "changed_paths": [
+        "data/tables/securities.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "2384c5e14a4cf350644700659866a3baec900df9f3d0cea5735f60036e23dc89",
+            63181,
+            384
+          ],
+          "before": [
+            "file",
+            "8eb0c5398043f59ebcc4f7f78070d1dbb70b5fcf92958cb9b5a2cbb333d61c02",
+            62743,
+            384
+          ],
+          "path": "data/tables/securities.csv"
+        }
+      ],
+      "command": "papertrader watchlist import --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-stratasys.json",
+      "completed_at": "2026-09-06T09:37:29Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "3172df8091ff5cbbb17b34b4e92ecb402d69c5bb5d3455e3975a174154ebc532",
+          624,
+          436
+        ],
+        "path": "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-stratasys.json"
+      },
+      "started_at": "2026-09-06T09:37:29Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "watchlist",
+        "import",
+        "--request",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-materialise.json"
+      ],
+      "changed_paths": [
+        "data/tables/securities.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "e157678f0bda4e76588702d2b403c465d13ac10ecb21306c9f939c3184108db1",
+            63687,
+            384
+          ],
+          "before": [
+            "file",
+            "2384c5e14a4cf350644700659866a3baec900df9f3d0cea5735f60036e23dc89",
+            63181,
+            384
+          ],
+          "path": "data/tables/securities.csv"
+        }
+      ],
+      "command": "papertrader watchlist import --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-materialise.json",
+      "completed_at": "2026-09-06T09:37:42Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "77493f1872dd6514089bb70460faaedee3da7f1f7de9006935d0dba4e4b988b8",
+          688,
+          436
+        ],
+        "path": "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-materialise.json"
+      },
+      "started_at": "2026-09-06T09:37:41Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "watchlist",
+        "import",
+        "--request",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-proto-labs.json"
+      ],
+      "changed_paths": [
+        "data/tables/securities.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "4b158490c7765db29acd71380350c6d1a408d6720c7f1ea05278488fdcb51735",
+            64126,
+            384
+          ],
+          "before": [
+            "file",
+            "e157678f0bda4e76588702d2b403c465d13ac10ecb21306c9f939c3184108db1",
+            63687,
+            384
+          ],
+          "path": "data/tables/securities.csv"
+        }
+      ],
+      "command": "papertrader watchlist import --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-proto-labs.json",
+      "completed_at": "2026-09-06T09:37:44Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "d8429eeff2373db5d8fa67e86789c2dc7b3066ed94eb6158bbb6b59dd13c63c1",
+          621,
+          436
+        ],
+        "path": "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-proto-labs.json"
+      },
+      "started_at": "2026-09-06T09:37:44Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "watchlist",
+        "import",
+        "--request",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-3d-systems.json"
+      ],
+      "changed_paths": [
+        "data/tables/securities.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "a04dcc75aab9d3192a429d29e08f8ec3d076b0ae87fc819abb0980d7220e331d",
+            64575,
+            384
+          ],
+          "before": [
+            "file",
+            "4b158490c7765db29acd71380350c6d1a408d6720c7f1ea05278488fdcb51735",
+            64126,
+            384
+          ],
+          "path": "data/tables/securities.csv"
+        }
+      ],
+      "command": "papertrader watchlist import --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-3d-systems.json",
+      "completed_at": "2026-09-06T09:37:47Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "14389d83961aac76104d5c8b3eb8c2bb9caf4d46e0370b1ec187d1ddb8973520",
+          633,
+          436
+        ],
+        "path": "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-3d-systems.json"
+      },
+      "started_at": "2026-09-06T09:37:46Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "watchlist",
+        "import",
+        "--request",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-arkema.json"
+      ],
+      "changed_paths": [
+        "data/tables/securities.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "968738b60b1b0121b40a7864dd36485c957d0c77d73cf1e48d952742abcc0581",
+            64985,
+            384
+          ],
+          "before": [
+            "file",
+            "a04dcc75aab9d3192a429d29e08f8ec3d076b0ae87fc819abb0980d7220e331d",
+            64575,
+            384
+          ],
+          "path": "data/tables/securities.csv"
+        }
+      ],
+      "command": "papertrader watchlist import --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-arkema.json",
+      "completed_at": "2026-09-06T09:37:59Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "e4b06c37e815e361870126f0a8bc503b300795dd06c67e04232972ddfd033bbf",
+          596,
+          436
+        ],
+        "path": "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-arkema.json"
+      },
+      "started_at": "2026-09-06T09:37:59Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "watchlist",
+        "import",
+        "--request",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-evonik.json"
+      ],
+      "changed_paths": [
+        "data/tables/securities.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "1efedccd8cbaaa2facbb43c03a8f9cd522f82329fba1ba8bd66124c4a85746c2",
+            65423,
+            384
+          ],
+          "before": [
+            "file",
+            "968738b60b1b0121b40a7864dd36485c957d0c77d73cf1e48d952742abcc0581",
+            64985,
+            384
+          ],
+          "path": "data/tables/securities.csv"
+        }
+      ],
+      "command": "papertrader watchlist import --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-evonik.json",
+      "completed_at": "2026-09-06T09:38:02Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "df9b705edce56f07393492971b8a200c07dcb7c11151e4c1b6914cf4359175d4",
+          624,
+          436
+        ],
+        "path": "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-evonik.json"
+      },
+      "started_at": "2026-09-06T09:38:01Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "watchlist",
+        "import",
+        "--request",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-basf.json"
+      ],
+      "changed_paths": [
+        "data/tables/securities.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "bbb41084191e07285b09f2381997981f2bdea21b0614b53488c0af101da90292",
+            65834,
+            384
+          ],
+          "before": [
+            "file",
+            "1efedccd8cbaaa2facbb43c03a8f9cd522f82329fba1ba8bd66124c4a85746c2",
+            65423,
+            384
+          ],
+          "path": "data/tables/securities.csv"
+        }
+      ],
+      "command": "papertrader watchlist import --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-basf.json",
+      "completed_at": "2026-09-06T09:38:04Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "b3b5189035d69b1459632a3957caee719cfc1a881106b7a7661309e9422b3615",
+          597,
+          436
+        ],
+        "path": "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/watchlist-basf.json"
+      },
+      "started_at": "2026-09-06T09:38:03Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-creality.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1V1E10RDD4J617S4AW0C9EN.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "095d9bba9f361b60b24678b804aa09bfa080f92bf94e6cbbe78887919e9361ea",
+            151713,
+            384
+          ],
+          "before": [
+            "file",
+            "1d4a502d1ddc1f7c3d1a0776720fac969655044bac96e22f17494e73bfeb35fa",
+            151209,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "66a88c9d50d05a09ab591999b80f000aaf9b406118738ae0d85b6afde02ac7bc",
+            1098,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01M1V1E10RDD4J617S4AW0C9EN.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-creality.json",
+      "completed_at": "2026-09-06T09:40:16Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "b10ab535047e3298791c2644656e561008cd264fed99a7b7e1a37e6fcb953ecd",
+          1285,
+          436
+        ],
+        "path": "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-creality.json"
+      },
+      "started_at": "2026-09-06T09:40:15Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-xometry.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1V1E3YGYYPSJV217TRVMW8R.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "7bc70a6156acbbee43a4afa9168c906769774881dbe22567cb496cd0c6d5160d",
+            152200,
+            384
+          ],
+          "before": [
+            "file",
+            "095d9bba9f361b60b24678b804aa09bfa080f92bf94e6cbbe78887919e9361ea",
+            151713,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "6013be7a098a006e96f4d3b85bf3e943da0fd248e37637ed288216fa5cef8a1d",
+            1088,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01M1V1E3YGYYPSJV217TRVMW8R.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-xometry.json",
+      "completed_at": "2026-09-06T09:40:18Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "ad581867b4b7d05d2aca40f42a4fd33cb60aed953ffac734de00c0a94a39a70e",
+          1275,
+          436
+        ],
+        "path": "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-xometry.json"
+      },
+      "started_at": "2026-09-06T09:40:17Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-stratasys.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1V1E5X0MNXS7Q1DN1N3PF7Y.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "31a71681ff40ea204715e81d21acd947b8b5f5e81e759c74018c755ff0e8a2bb",
+            152704,
+            384
+          ],
+          "before": [
+            "file",
+            "7bc70a6156acbbee43a4afa9168c906769774881dbe22567cb496cd0c6d5160d",
+            152200,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "ed98688bdfcdabdb0401e8ba7ec01827df749fe69b33361963762796aaad78db",
+            1105,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01M1V1E5X0MNXS7Q1DN1N3PF7Y.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-stratasys.json",
+      "completed_at": "2026-09-06T09:40:20Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "2abd324e81bd9c6cb637e9a75ce3396dae62ae22154d4b4d24e78b16a318547e",
+          1292,
+          436
+        ],
+        "path": "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-stratasys.json"
+      },
+      "started_at": "2026-09-06T09:40:20Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-materialise.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1V1EJK8HQWBCGTY355450ZS.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "2b09a58ae41732f7ce0f34565d8bbaae111004bdccd4cca98bea1a25817d468a",
+            153213,
+            384
+          ],
+          "before": [
+            "file",
+            "31a71681ff40ea204715e81d21acd947b8b5f5e81e759c74018c755ff0e8a2bb",
+            152704,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "b24490a531a19aa0f21f43618bd3f3e09d02900bd4b11221ce219d602a65f975",
+            1086,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01M1V1EJK8HQWBCGTY355450ZS.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-materialise.json",
+      "completed_at": "2026-09-06T09:40:33Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "5ff33d7b5a0aac4ee5e1df13e209fd4bc00029eb6751648139684539a9a08023",
+          1273,
+          436
+        ],
+        "path": "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-materialise.json"
+      },
+      "started_at": "2026-09-06T09:40:32Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-proto-labs.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1V1ENH079N3H8504P53WP8A.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "c3b4c6bc82e866498fb52e4d0faa473eab9853cf8bca385154a2fb4d891c3de6",
+            153705,
+            384
+          ],
+          "before": [
+            "file",
+            "2b09a58ae41732f7ce0f34565d8bbaae111004bdccd4cca98bea1a25817d468a",
+            153213,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "00a811a1f1658c8f3c7bff14386c13fbfb59c2eeb93e2202360712f7f0b971ad",
+            1059,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01M1V1ENH079N3H8504P53WP8A.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-proto-labs.json",
+      "completed_at": "2026-09-06T09:40:36Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "71db66a45941db720d603119c6197448a864e04a8f34d5b40c842fa8ee237512",
+          1246,
+          436
+        ],
+        "path": "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-proto-labs.json"
+      },
+      "started_at": "2026-09-06T09:40:35Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-3d-systems.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1V1EQFG9EX56SR892Q3BHGF.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "701733b3cf99c65917b0fc64146b922befdf1893326def2c2827e6ce94264c0b",
+            154205,
+            384
+          ],
+          "before": [
+            "file",
+            "c3b4c6bc82e866498fb52e4d0faa473eab9853cf8bca385154a2fb4d891c3de6",
+            153705,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "7dbbed556fe14d9e97f6032a584d87bcc8a16dfb9253a77f82731d451f9a008d",
+            1038,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01M1V1EQFG9EX56SR892Q3BHGF.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-3d-systems.json",
+      "completed_at": "2026-09-06T09:40:38Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "441caa52a01090b804cfc2a5ab5b15e7b1035ef3852877e9677d20912da2c5cc",
+          1225,
+          436
+        ],
+        "path": "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-3d-systems.json"
+      },
+      "started_at": "2026-09-06T09:40:37Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-arkema.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1V1F6487BZG6114432903G2.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "03f4143f3f3b58113df741741e286e1f146b67374dd3cf19300e2951a0d61a43",
+            154701,
+            384
+          ],
+          "before": [
+            "file",
+            "701733b3cf99c65917b0fc64146b922befdf1893326def2c2827e6ce94264c0b",
+            154205,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "22c5ee9a88e2ee19e9cf84ca15041cf6ea46c16295a293c08cf25066027d81d4",
+            1187,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01M1V1F6487BZG6114432903G2.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-arkema.json",
+      "completed_at": "2026-09-06T09:40:53Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "508085e4d76e19afee5a5e7d37511f1d2ed110d123fc169ef07b6c8f76cde19b",
+          1370,
+          436
+        ],
+        "path": "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-arkema.json"
+      },
+      "started_at": "2026-09-06T09:40:52Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-evonik.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1V1F82RFHJKRYBWKB3G7BX5.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "06dee01dbe33960f6f8fbcc24bbac894ce389c9c0efe0e3b2570b046e014d638",
+            155206,
+            384
+          ],
+          "before": [
+            "file",
+            "03f4143f3f3b58113df741741e286e1f146b67374dd3cf19300e2951a0d61a43",
+            154701,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "843c2b1202050d2aba375a0376f1438ed8b8e339ba5189cb53f386c126c78c9c",
+            1048,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01M1V1F82RFHJKRYBWKB3G7BX5.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-evonik.json",
+      "completed_at": "2026-09-06T09:40:55Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "802fabfbd53c22c60897b4442f722a4d40699f9ad89cee44b0fca8297f599b20",
+          1235,
+          436
+        ],
+        "path": "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-evonik.json"
+      },
+      "started_at": "2026-09-06T09:40:55Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-basf.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1V1FA18Q6NH3BYM9CGZER95.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "eb527df12544bcf23e2977c732005b352e9781d496936b5ad719079cbd56bb7c",
+            155717,
+            384
+          ],
+          "before": [
+            "file",
+            "06dee01dbe33960f6f8fbcc24bbac894ce389c9c0efe0e3b2570b046e014d638",
+            155206,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "ff913ebd183e5c3ea79d73adcab60efb0252071ca2ade489a4f41c7c3e44bb8e",
+            1169,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01M1V1FA18Q6NH3BYM9CGZER95.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-basf.json",
+      "completed_at": "2026-09-06T09:40:58Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "2920002d24c71fe9a05ccc24b969b2bc541ae3f0b1eb7c0a774a43d826340b31",
+          1352,
+          436
+        ],
+        "path": "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/security-research-basf.json"
+      },
+      "started_at": "2026-09-06T09:40:57Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-creality.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1V1HX1GP5AC5JMCKRJ1XMN1.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "8d69a1d8494fedb72c635db4f8fa388499856b8fcb276f7cff7a30b5c18292d2",
+            156257,
+            384
+          ],
+          "before": [
+            "file",
+            "eb527df12544bcf23e2977c732005b352e9781d496936b5ad719079cbd56bb7c",
+            155717,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "ce39c044724d8b33aad290e70d785211f3cb7199a61f4b49e8fcaa68c7e6c8cd",
+            910,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01M1V1HX1GP5AC5JMCKRJ1XMN1.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-creality.json",
+      "completed_at": "2026-09-06T09:42:22Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "75a175a7b97fd320659e1030af87d8b9f37420fbae037a31ae9bcec7e76df1a7",
+          1121,
+          436
+        ],
+        "path": "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-creality.json"
+      },
+      "started_at": "2026-09-06T09:42:21Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-xometry.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1V1HZ0038RPN2ZWXFR4VMKZ.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "5b29f5390d2171a30b112ead292a67f1c5610f153c7b2151ad8e146bfdaface9",
+            156795,
+            384
+          ],
+          "before": [
+            "file",
+            "8d69a1d8494fedb72c635db4f8fa388499856b8fcb276f7cff7a30b5c18292d2",
+            156257,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "63674c5dc4b2c6883ed5bed9f9624a7e141a024ca554b71074a51e62acd0c081",
+            974,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01M1V1HZ0038RPN2ZWXFR4VMKZ.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-xometry.json",
+      "completed_at": "2026-09-06T09:42:24Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "f3e466f5e44001934428e1e3a852db100fbead31d7195759d79d9c44644b1091",
+          1185,
+          436
+        ],
+        "path": "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-xometry.json"
+      },
+      "started_at": "2026-09-06T09:42:23Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-stratasys.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1V1J0YGKK69W4C7N3WV5NR7.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "d84cf7e45e196bb2cac10d48b013f232a2d2614241bf24fdeefe4656c27b553e",
+            157337,
+            384
+          ],
+          "before": [
+            "file",
+            "5b29f5390d2171a30b112ead292a67f1c5610f153c7b2151ad8e146bfdaface9",
+            156795,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "bbb1b6505e3c8ff50302f1f77a9efd185be97d009e578dcf42aeb5af76ce321d",
+            905,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01M1V1J0YGKK69W4C7N3WV5NR7.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-stratasys.json",
+      "completed_at": "2026-09-06T09:42:27Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "e3c8b41ce2c20257f9c8e1ce823f6350c02cd329722f2f7065a8676f785c0ddd",
+          1116,
+          436
+        ],
+        "path": "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-stratasys.json"
+      },
+      "started_at": "2026-09-06T09:42:26Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-materialise.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1V1JDMRXQG97GT3QQ4DBMB9.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "f51d65d57b1819711c5be26d783a99987807074d9a4045f3d27c68dabe0255db",
+            157877,
+            384
+          ],
+          "before": [
+            "file",
+            "d84cf7e45e196bb2cac10d48b013f232a2d2614241bf24fdeefe4656c27b553e",
+            157337,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "5e0e092e39cdaf0e9a077d6acac7cc1b494332317a9b83015c0ebafab2599396",
+            872,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01M1V1JDMRXQG97GT3QQ4DBMB9.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-materialise.json",
+      "completed_at": "2026-09-06T09:42:39Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "d3785f6ca8fba06cf17c25430b8b6e30ad1c004553c30c0b4137fb5c13e61644",
+          1083,
+          436
+        ],
+        "path": "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-materialise.json"
+      },
+      "started_at": "2026-09-06T09:42:39Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-proto-labs.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1V1JGJGCKFB5654Q902EYTT.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "9c8fd659d52957a6204913de00e1caf9bd2b347b12cf97420100b4ceeb1ca998",
+            158418,
+            384
+          ],
+          "before": [
+            "file",
+            "f51d65d57b1819711c5be26d783a99987807074d9a4045f3d27c68dabe0255db",
+            157877,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "43f5355a84007a2b204d6c68597c9e9cf2fbe6052c0c37bd41c0103568cd195a",
+            922,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01M1V1JGJGCKFB5654Q902EYTT.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-proto-labs.json",
+      "completed_at": "2026-09-06T09:42:42Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "720559fbd693c41c3afb392837020603d54d28028c2a37865fa8ad9d0c865e67",
+          1133,
+          436
+        ],
+        "path": "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-proto-labs.json"
+      },
+      "started_at": "2026-09-06T09:42:41Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-3d-systems.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1V1JJH09YZ4W287ET1Z88S1.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "30ca94819d4531b74e08009c9ee7672af49cf80956372888906a24a113caecbd",
+            158961,
+            384
+          ],
+          "before": [
+            "file",
+            "9c8fd659d52957a6204913de00e1caf9bd2b347b12cf97420100b4ceeb1ca998",
+            158418,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "963663281c2acc5bf8113e4016b907a85de9c81757220dbd3a50618594cb7607",
+            904,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01M1V1JJH09YZ4W287ET1Z88S1.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-3d-systems.json",
+      "completed_at": "2026-09-06T09:42:44Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "2c8fdac0edefa123c705b15e8032348ae4045bc70289186a89518a26befb3090",
+          1115,
+          436
+        ],
+        "path": "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-3d-systems.json"
+      },
+      "started_at": "2026-09-06T09:42:43Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-arkema.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1V1JZ78V6WV8YMNWX72ECE8.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "3624d178b6c7c04f3594100960c3ae1e3925cc73f2601c2fc5495886d2ebc118",
+            159485,
+            384
+          ],
+          "before": [
+            "file",
+            "30ca94819d4531b74e08009c9ee7672af49cf80956372888906a24a113caecbd",
+            158961,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "cf9530f7e062e13cfced82a2fb58595df6a08b064da2c14ad964586091439eec",
+            950,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01M1V1JZ78V6WV8YMNWX72ECE8.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-arkema.json",
+      "completed_at": "2026-09-06T09:42:57Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "137ea0b70d6a3386d5921befb52f94c7405b5530776d5600b68d90407876da38",
+          1157,
+          436
+        ],
+        "path": "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-arkema.json"
+      },
+      "started_at": "2026-09-06T09:42:57Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-evonik.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1V1K2504H4SRCQ2NRTQR6E4.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "d89e4ed52bee253b0d0d2e440a0cf65cac76ecff054f1d764460878a29f8eb7b",
+            160009,
+            384
+          ],
+          "before": [
+            "file",
+            "3624d178b6c7c04f3594100960c3ae1e3925cc73f2601c2fc5495886d2ebc118",
+            159485,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "d37afd746fc3829e3bed1f74d99014bfdf726e851a67d13ca59f6ea7b092512a",
+            876,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01M1V1K2504H4SRCQ2NRTQR6E4.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-evonik.json",
+      "completed_at": "2026-09-06T09:43:00Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "42b5d1bcc63e113aafdd9bddb7f58f22ac4cbbaa6127a449efa4852ca36b3585",
+          1087,
+          436
+        ],
+        "path": "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-evonik.json"
+      },
+      "started_at": "2026-09-06T09:42:59Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-basf.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M1V1K43GZBD6WY14TFBFANTV.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "d98ff1c41fc01dcd5fc3acfb80cbc7b95f996c2b64a49acc23dd97b4b867c915",
+            160575,
+            384
+          ],
+          "before": [
+            "file",
+            "d89e4ed52bee253b0d0d2e440a0cf65cac76ecff054f1d764460878a29f8eb7b",
+            160009,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "a31aba5d65ce6d8be5fb8105146d156c4bacc038dbc93fca978510dbb672a357",
+            953,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01M1V1K43GZBD6WY14TFBFANTV.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-basf.json",
+      "completed_at": "2026-09-06T09:43:02Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "11b189487d97aed3efb7a3107f3e0232589fed2cd930e77c735b9d5eecf766fe",
+          1160,
+          436
+        ],
+        "path": "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/relationship-basf.json"
+      },
+      "started_at": "2026-09-06T09:43:01Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-09-06T09:46:01Z",
+      "exit_code": 1,
+      "profile": "",
+      "request": null,
+      "started_at": "2026-09-06T09:45:59Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "schema",
+        "validate",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader schema validate --strict",
+      "completed_at": "2026-09-06T09:46:03Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": null,
+      "started_at": "2026-09-06T09:46:02Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "validate"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader queue validate",
+      "completed_at": "2026-09-06T09:46:05Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": null,
+      "started_at": "2026-09-06T09:46:05Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-09-06T09:46:26Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": null,
+      "started_at": "2026-09-06T09:46:24Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "integrity",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader integrity --strict",
+      "completed_at": "2026-09-06T09:47:32Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": null,
+      "started_at": "2026-09-06T09:47:27Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "portfolio",
+        "reconcile",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader portfolio reconcile --strict",
+      "completed_at": "2026-09-06T09:47:35Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": null,
+      "started_at": "2026-09-06T09:47:34Z"
+    }
+  ],
+  "operation_id": "01M1V159Q8ZAMEEEVXR2SC854J",
+  "profile": "",
+  "profile_policy_version": "",
+  "route_reason": "",
+  "run_id": "local-20260906-ai-physical-creation"
+}

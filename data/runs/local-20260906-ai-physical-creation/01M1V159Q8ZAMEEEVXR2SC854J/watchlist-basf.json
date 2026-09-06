@@ -1,0 +1,17 @@
+{
+  "watchlist_reason": "Broad chemical supplier with additive-manufacturing materials exposure whose financial dilution must be tested; full research pending.",
+  "source": "https://www.basf.com/global/en/investors/share-and-adrs",
+  "securities": [{
+    "company_name": "BASF SE",
+    "instrument_name": "BASF SE registered shares",
+    "instrument_type": "equity",
+    "ticker": "BAS",
+    "exchange_code": "GER",
+    "venue_mic": "XETR",
+    "provider_symbol": "BAS.DE",
+    "currency": "EUR",
+    "country": "DE",
+    "sector": "Basic Materials",
+    "industry": "Specialty Chemicals"
+  }]
+}

@@ -1,0 +1,17 @@
+{
+  "watchlist_reason": "Additive-manufacturing software, services, and medical-workflow candidate represented by the established Nasdaq ADS; full research pending.",
+  "source": "https://investors.materialise.com/static-files/4c1e43fd-d67a-42b6-8ad8-4f931194ee5a",
+  "securities": [{
+    "company_name": "Materialise NV",
+    "instrument_name": "Materialise NV American Depositary Shares, each representing one ordinary share",
+    "instrument_type": "equity",
+    "ticker": "MTLS",
+    "exchange_code": "NMS",
+    "venue_mic": "XNAS",
+    "provider_symbol": "MTLS",
+    "currency": "USD",
+    "country": "BE",
+    "sector": "Technology",
+    "industry": "Software - Application"
+  }]
+}

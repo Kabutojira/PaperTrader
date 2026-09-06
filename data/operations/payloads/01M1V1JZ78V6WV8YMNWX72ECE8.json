@@ -1,0 +1,19 @@
+{
+  "entity_id": "relationship_06fb961ac41390073d41",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_ai_driven_democratization_physical_creation",
+    "proposed_direction": "positive",
+    "proposed_mechanism": "Higher industrial additive volumes may lift PA11, PA12, PEKK, elastomer and resin demand, but exposure dilution relative to group sales and profits may make economic sensitivity only low or medium.",
+    "relationship_id": "relationship_06fb961ac41390073d41",
+    "security_id": "security_798e2fb944d740aca308"
+  },
+  "objective": "Test whether additive-volume growth is material to Arkema.",
+  "operation_id": "01M1V1JZ78V6WV8YMNWX72ECE8",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "https://live.euronext.com/en/products/equities/company-news/2026-05-06-arkema-first-quarter-2026-results",
+    "https://www.arkema.com/global/en/markets-solutions/3d-printing/"
+  ]
+}

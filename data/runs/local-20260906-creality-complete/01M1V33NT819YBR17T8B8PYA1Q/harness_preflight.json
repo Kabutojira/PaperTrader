@@ -1,0 +1,29 @@
+{
+  "auxiliary_skills": [
+    {
+      "name": "echart",
+      "path": "skills/echart/SKILL.md",
+      "sha256": "a5b954be27b285e0a59a0356ee5e34886450bbca3f7f8e2b4459306908022579",
+      "version": "repository"
+    }
+  ],
+  "controller_skill": {
+    "name": "papertrader-controller",
+    "path": "skills/papertrader-controller/SKILL.md",
+    "sha256": "b8b1ce8f7a6931677f0a1b6f6766cb704c86d01592aec67dd66b4a670cce4770",
+    "version": "repository"
+  },
+  "harness": "local",
+  "operation_id": "01M1V33NT819YBR17T8B8PYA1Q",
+  "operation_skill": {
+    "name": "papertrader-security-research",
+    "path": "skills/papertrader-security-research/SKILL.md",
+    "sha256": "72a1e2e0be9489f03504ea58eb7806fd4791012ccc8d66c9c4bb5b09c9b84ee7",
+    "version": "repository"
+  },
+  "operation_type": "security_research",
+  "preflight_version": 2,
+  "prompt_injection_flags": [],
+  "run_id": "local-20260906-creality-complete",
+  "sequential": true
+}

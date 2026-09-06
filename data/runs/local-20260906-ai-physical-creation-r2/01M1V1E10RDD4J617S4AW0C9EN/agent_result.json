@@ -1,0 +1,69 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_b19e8f0343b7da1f3c03",
+    "papertrader wiki lint --strict",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Creality remains blocked from a canonical valuation because its current HKD market row has provider status error; the registered operating research and candidate-specific issue remain available without any paper action."
+  ],
+  "evidence": [
+    {
+      "claim": "The registered prospectus supports the published 2023-2025 product-mix, margin, profit, cash-flow, concentration and competitive evidence.",
+      "observed_at": "2026-09-06T09:58:00Z",
+      "source": "source_creality_2026_prospectus",
+      "source_hash": "e9c03a103d92851176522aea43b2b5effbd2a249152577639b9ce42cb718d417",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0520/2026052000023.pdf"
+    },
+    {
+      "claim": "The registered interim report supports the published H1 2026 consumables growth, cloud activity, margin decline, adjusted loss, cash outflow, inventory and liquidity evidence.",
+      "observed_at": "2026-09-06T09:58:00Z",
+      "source": "source_creality_2026_interim_report",
+      "source_hash": "1e4890c98f6782f4b40356baea38a064f53217d1bdf4f96909e41b49ee91fc63",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0831/2026083102371.pdf"
+    },
+    {
+      "claim": "The current security_b19e8f0343b7da1f3c03 row retains a 4 September 2026 HKD26.00 close but has status error, which fails the mandatory assessment market-reference gate.",
+      "observed_at": "2026-09-06T09:49:10Z",
+      "source": "data/market/latest.csv"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01M1V1E10RDD4J617S4AW0C9EN",
+  "operations_created": [],
+  "reason_code": "market_data_mark_failed",
+  "status": "blocked",
+  "summary": "The clean retry confirmed the already-published Creality operating research and immutable H-share identity, but the current canonical market row still has status error and no schema-version-two assessment exists. The prior validation contamination is isolated in the earlier run; this retry made no research-state changes. Issue issue_8d02244761c17b61e377 remains the candidate-specific market-data blocker. No fair value, rating, relationship acceptance, idea refresh, strategy, signal, order, allocation, execution, cash, portfolio, or performance state was created or changed.",
+  "validation": {
+    "checks": [
+      "PASS: security-context confirmed immutable Creality identity, registered research page, no prior assessment and no accepted relationship.",
+      "PASS: strict wiki lint returned OK.",
+      "PASS: strict schema validation returned OK.",
+      "PASS: queue validation returned OK.",
+      "PASS: strict portfolio reconciliation returned OK.",
+      "FAIL: strict integrity reports that the published decision snapshot predates current authoritative research state; daily finalization must regenerate publication views.",
+      "FAIL: the mandatory schema-version-two assessment remains unavailable because the current market mark has status error."
+    ],
+    "passed": false
+  },
+  "visualization_review": {
+    "charts": [],
+    "completed": true,
+    "omissions": [
+      {
+        "dataset": "Creality research-page visual evidence",
+        "reason": "This clean retry made no page change; the existing page already contains three validated analytical charts and the deterministic technical chart.",
+        "reason_code": "no_page_change"
+      },
+      {
+        "dataset": "Accepted bear/base/bull valuation scenarios",
+        "reason": "The current identity-matched market row has status error, so no canonical assessment scenario exists.",
+        "reason_code": "source_unavailable"
+      }
+    ]
+  }
+}

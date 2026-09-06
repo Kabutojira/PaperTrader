@@ -1,0 +1,27 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_b19e8f0343b7da1f3c03",
+  "dedupe_key": "security_research:security_b19e8f0343b7da1f3c03:market-recovered:20260906T100727Z",
+  "prompt": "Complete Creality valuation after the deterministic HKD market mark recovered.",
+  "inputs": {
+    "security_id": "security_b19e8f0343b7da1f3c03",
+    "idea_id": "idea_ai_driven_democratization_physical_creation",
+    "causal_hypothesis": "AI-reduced design friction may expand printer adoption and utilization, with consumables and ecosystem economics potentially capturing more value than printer units.",
+    "focused_questions": "Use the registered prospectus, 2026 interim report, official share count and recovered HKD mark to complete the scenario valuation, rating, invalidation and follow-up graph without duplicating the existing relationship operation.",
+    "supersedes_blocked_operation_id": "01M1V1E10RDD4J617S4AW0C9EN"
+  },
+  "source": "market_data_recovery:2026-09-06T10:07:27Z",
+  "priority": 99,
+  "freshness_days": 0,
+  "depends_on": [
+    "01M1V159Q8ZAMEEEVXR2SC854J"
+  ],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0831/2026083102371.pdf",
+    "data/market/latest.csv"
+  ],
+  "max_attempts": 3
+}

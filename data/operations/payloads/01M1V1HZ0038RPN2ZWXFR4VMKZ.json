@@ -1,0 +1,18 @@
+{
+  "entity_id": "relationship_d2afff0aba0867fe9810",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_ai_driven_democratization_physical_creation",
+    "proposed_direction": "positive",
+    "proposed_mechanism": "AI-generated CAD may increase quote flow through automated manufacturability checks, pricing, supplier matching, production and delivery across additive and non-additive processes; test conversion, unit economics and home-printing substitution by horizon.",
+    "relationship_id": "relationship_d2afff0aba0867fe9810",
+    "security_id": "security_c2e6db30cb59254de418"
+  },
+  "objective": "Test whether Xometry can capture AI-generated design fulfillment demand.",
+  "operation_id": "01M1V1HZ0038RPN2ZWXFR4VMKZ",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "https://investors.xometry.com/news-releases/news-release-details/xometry-deepens-ai-native-marketplace-advantage-new-enterprise"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "operation_type": "security_research", "entity_type": "security", "entity_id": "security_b61c642d038d71be3821",
+  "dedupe_key": "security_research:security_b61c642d038d71be3821:ai-physical-creation:2026-09",
+  "prompt": "Research and value Materialise across additive software, services, and medical workflows.",
+  "inputs": {"security_id": "security_b61c642d038d71be3821", "idea_id": "idea_ai_driven_democratization_physical_creation", "causal_hypothesis": "AI-assisted additive adoption may expand demand for workflow software and production services, although medical economics may dominate and generic AI tools may disrupt parts of the software stack.", "focused_questions": "Separate software, manufacturing, and medical segments; test recurring software quality, integration and switching costs, service utilization, medical dominance, margins, control weaknesses, liquidity, balance sheet, ADS/listing structure, scenarios, rating, and invalidation."},
+  "source": "idea_research:01M1V159Q8ZAMEEEVXR2SC854J", "priority": 95, "freshness_days": 30,
+  "depends_on": ["01M1V159Q8ZAMEEEVXR2SC854J"], "not_before": "now", "deadline": "",
+  "source_refs": ["https://www.materialise.com/en/news/financial/fourth-quarter-and-full-year-2025-results"], "max_attempts": 3
+}

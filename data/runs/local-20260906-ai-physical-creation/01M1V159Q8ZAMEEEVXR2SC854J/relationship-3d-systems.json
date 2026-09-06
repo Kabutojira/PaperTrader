@@ -1,0 +1,7 @@
+{
+  "operation_type": "relationship_research", "entity_type": "relationship", "entity_id": "relationship_f4f628d364d1d81e48b5",
+  "dedupe_key": "relationship_research:idea_ai_driven_democratization_physical_creation:security_6ac6a6268ca7c08829ae:2026-09",
+  "prompt": "Test the thematic link to 3D Systems separately from financial survivability.",
+  "inputs": {"relationship_id": "relationship_f4f628d364d1d81e48b5", "idea_id": "idea_ai_driven_democratization_physical_creation", "security_id": "security_6ac6a6268ca7c08829ae", "proposed_direction": "positive", "proposed_mechanism": "AI-created manufacturable parts may raise polymer, metal, materials, service and healthcare system utilization, but liquidity, dilution, restructuring and competitive risks can sever thematic exposure from shareholder value."},
+  "source": "idea_research:01M1V159Q8ZAMEEEVXR2SC854J", "priority": 83, "freshness_days": 30, "depends_on": ["01M1V1EQFG9EX56SR892Q3BHGF"], "not_before": "now", "deadline": "", "source_refs": ["https://www.sec.gov/Archives/edgar/data/910638/000119312526255573/d107578d424b5.htm"], "max_attempts": 3
+}

@@ -4,11 +4,11 @@ type: research-catalog
 status: maintained
 tags:
   - research
-created: "2026-09-05"
-updated: "2026-09-05"
+created: "2026-09-06"
+updated: "2026-09-06"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_103f08004374f00ba869"
-as_of: "2026-09-05T20:37:23Z"
+snapshot_id: "decision_36b789b47533ffffeac1"
+as_of: "2026-09-06T10:21:29Z"
 ---
 
 # Research catalog
@@ -17,8 +17,8 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Assessment revision audit
 
-- Immutable assessment versions: **206**
-- Securities with retained revisions: **81**
+- Immutable assessment versions: **207**
+- Securities with retained revisions: **82**
 
 ## Candidate
 
@@ -574,11 +574,13 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader daily report — 2026-09-03](daily-reports/daily-report_20260903)
 - [PaperTrader daily report — 2026-09-04](daily-reports/daily-report_20260904)
 - [PaperTrader daily report — 2026-09-05](daily-reports/daily-report_20260905)
+- [PaperTrader daily report — 2026-09-06](daily-reports/daily-report_20260906)
 
 ## Idea
 
 - [AI compute, networking, and hyperscaler monetization](ideas/idea_ai_compute_networking_hyperscaler_monetization)
 - [AI infrastructure and power bottlenecks](ideas/idea_ai_infrastructure_power)
+- [AI-Driven Democratization of Physical Creation](ideas/idea_ai_driven_democratization_physical_creation)
 - [AI-native drug-discovery platforms](ideas/idea_ai_native_drug_discovery)
 - [AI-native SMB financial operating systems](ideas/idea_ai_native_smb_financial_operating_systems)
 - [Anduril product-company disruption and future-IPO exposure](ideas/idea_anduril_product_company_disruption)
@@ -767,6 +769,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Samsung Electronics common GDR](securities/security_567d0d575bbd30aaa91d)
 - [Samsung Electronics preferred GDR](securities/security_d08d763780400dfbffce)
 - [Schneider Electric SE ordinary shares](securities/security_dc8486c1d61df62a22fd)
+- [Shenzhen Creality 3D Technology Co., Ltd. H shares](securities/security_b19e8f0343b7da1f3c03)
 - [Sigma Lithium Corporation common shares](securities/security_4627aea1bf7d8943d3d8)
 - [Sociedad Quimica y Minera de Chile S.A. American depositary shares](securities/security_9d4049ed6669a52815d6)
 - [SoFi Technologies, Inc. common stock](securities/security_98470cfc01bbcde78fc2)

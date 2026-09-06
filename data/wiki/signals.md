@@ -4,57 +4,44 @@ type: signals
 status: maintained
 tags:
   - signals
-created: "2026-09-05"
-updated: "2026-09-05"
+created: "2026-09-06"
+updated: "2026-09-06"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_103f08004374f00ba869"
-as_of: "2026-09-05T20:37:23Z"
+snapshot_id: "decision_36b789b47533ffffeac1"
+as_of: "2026-09-06T10:21:29Z"
 ---
 
 # Signals
 
-**As of `2026-09-05T20:37:23Z`**
+**As of `2026-09-06T10:21:29Z`**
 
 ## Actionable trade signals
 
-### [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4)
-
-- **Action:** Add
-- **State:** Pending validated order
-- **Strategy:** Prosus bounded baseline allocation
-- **Strategy research:** [Open strategy page](strategies/strategy_8caa208dfc702a2584a7)
-- **Window:** `2026-09-05T09:28:03Z` to `2026-09-06T09:19:19Z`
-- **Market data:** `2026-09-05T09:19:19Z`
-- **Current → target:** 2.969993% → 4.084578%
-- **Copy-ready quantity:** 3
-- **Order:** market
-- **Entry:** Increase only while current allocation plan, allocation\_intent\_3e3d6793d5aacc3843e8, assessment\_7f28dfd9240d6099400b and Digital attention, gaming, and consumer ecosystems to Prosus remain current, a fresh PRX EUR price is available, and deterministic code derives a positive whole-share delta toward the persisted eleven-share target after holdings and pending orders.
-- **Exit:** Reduce or close only when a current deterministic allocation plan directs reduce or close, the baseline eligibility frontier no longer clears, a hard blocker appears, or material Tencent, ecommerce, private-asset, debt, repurchase, governance, capital-allocation or valuation evidence invalidates the bounded thesis.
-- **Invalidation:** Do not increase exposure if Tencent or private-platform economics deteriorate materially, private marks prove unreliable, central net debt rises, governance or cross-holding complexity blocks value transmission, repurchases lose accretion, the holding discount widens persistently despite operating value creation, the assessment or relationship is superseded, or market inputs become stale.
-- **Rationale:** Increase only by the deterministic current-plan whole-share delta toward Prosus's persisted eleven-share baseline target after existing holdings and pending orders. The accepted relationship, 70 effective score, 39.37% base return, 23.50% confidence-adjusted expected return and 28.25% margin of safety support bounded baseline exposure; medium confidence, Tencent concentration, private-asset valuation uncertainty, central debt, governance, capital-allocation transmission and insufficient diversification bar conviction sizing.
-
-### [NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d)
-
-- **Action:** Buy
-- **State:** Pending validated order
-- **Strategy:** NVIDIA bounded baseline allocation
-- **Strategy research:** [Open strategy page](strategies/strategy_7cf884a5530d05afdb99)
-- **Window:** `2026-09-05T10:28:36Z` to `2026-09-06T10:21:09Z`
-- **Market data:** `2026-09-05T10:21:09Z`
-- **Current → target:** 0% → 3.9653%
-- **Copy-ready quantity:** 2
-- **Order:** market
-- **Entry:** Open only while current allocation plan, allocation\_intent\_18c42c83c9de5d41cc9b, assessment\_82fd625a8d93be4bd8f5 and relationship\_ai\_compute\_nvda remain current, fresh NVDA USD and USD/EUR inputs are available, and deterministic code derives a positive whole-share delta toward the persisted two-share target.
-- **Exit:** Reduce or close only when a current deterministic allocation plan directs reduce or close, the full-baseline eligibility frontier no longer clears, a hard blocker appears, or material normalized-earnings, margin, Rubin, export-control, customer-credit, guarantee, commitment, concentration or platform-attachment evidence invalidates the bounded thesis.
-- **Invalidation:** Do not increase exposure if normalized earnings fall below the bear path, gross margin remains below 70%, guarantees or receivables produce material losses, Rubin misses its cycle, export controls intensify, CUDA or networking attachment weakens, the assessment or relationship is superseded, or market or FX inputs become stale.
-- **Rationale:** Open only the deterministic current-plan whole-share delta toward NVIDIA's persisted two-share baseline target. The accepted relationship, 92 effective score, 34.79% base return, 24.06% confidence-adjusted expected return, 25.81% margin of safety and full-baseline payoff ratios support bounded exposure; medium confidence, customer concentration, supply commitments, guarantees, export controls, product-transition risk and insufficient diversification bar conviction sizing.
+No actionable trade signals.
 
 ## Pending validated orders
 
-- **PRX:** Add · Pending validated order
-- **NVDA:** Buy · Pending validated order
+No pending orders.
 
 ## Research alerts — not trade signals
+
+### MTLS — Materialise NV
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-09-04`
+- Research status: `pending`
+- Conclusion: Deterministic price alert awaits bounded research review.
+
+### [03388 — Shenzhen Creality 3D Technology Co., Ltd.](securities/security_b19e8f0343b7da1f3c03)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-09-04`
+- Research status: `pending`
+- Conclusion: Deterministic price alert awaits bounded research review.
 
 ### [VLO — Valero Energy Corporation](securities/security_c5a9e460d3350284d157)
 
@@ -275,6 +262,8 @@ as_of: "2026-09-05T20:37:23Z"
 
 ## Recently expired or completed signals
 
+- **Cancelled:** [NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) — [NVIDIA bounded baseline allocation](strategies/strategy_7cf884a5530d05afdb99) · created `2026-09-05T10:28:36Z`
+- **Expired:** [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4) — [Prosus bounded baseline allocation](strategies/strategy_8caa208dfc702a2584a7) · created `2026-09-05T09:28:03Z`
 - **Cancelled:** [UBER — Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e) — [Uber bounded baseline allocation](strategies/strategy_e4ada1a4934691d1f7ee) · created `2026-09-04T18:14:30Z`
 - **Filled:** [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4) — [Prosus bounded baseline allocation](strategies/strategy_8caa208dfc702a2584a7) · created `2026-09-04T00:01:53Z`
 - **Cancelled:** [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4) — [Prosus bounded baseline allocation](strategies/strategy_8caa208dfc702a2584a7) · created `2026-09-03T22:09:24Z`

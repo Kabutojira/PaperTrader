@@ -4,39 +4,37 @@ type: dashboard
 status: maintained
 tags:
   - dashboard
-created: "2026-09-05"
-updated: "2026-09-05"
+created: "2026-09-06"
+updated: "2026-09-06"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_103f08004374f00ba869"
-as_of: "2026-09-05T20:37:23Z"
+snapshot_id: "decision_36b789b47533ffffeac1"
+as_of: "2026-09-06T10:21:29Z"
 ---
 
 # PaperTrader
 
-**As of `2026-09-05T20:37:23Z` · Investment data: Portfolio state safe — research gaps remain · Operations: Attention required**
+**As of `2026-09-06T10:21:29Z` · Investment data: Unsafe to publish — portfolio, accounting, or active-order state requires attention · Operations: Attention required**
 
-## Rebalance toward model targets
+## Decision blocked — do not copy actions
 
-<section class="decision-cards" aria-label="Decision summary"><article class="decision-card" data-status="rebalance"><span class="decision-card-label">Stance</span><strong>Rebalance toward model targets</strong></article><article class="decision-card" data-status="cash"><span class="decision-card-label">Cash</span><strong>97.030007%</strong></article><article class="decision-card" data-status="exposure"><span class="decision-card-label">Gross exposure</span><strong>2.969994%</strong></article><article class="decision-card" data-status="signals"><span class="decision-card-label">Actionable signals</span><strong>2</strong></article><article class="decision-card" data-status="coverage"><span class="decision-card-label">Assessment coverage</span><strong>48/81</strong></article></section>
+<section class="decision-cards" aria-label="Decision summary"><article class="decision-card" data-status="blocked"><span class="decision-card-label">Stance</span><strong>Decision blocked — do not copy actions</strong></article><article class="decision-card" data-status="cash"><span class="decision-card-label">Cash</span><strong>97.030007%</strong></article><article class="decision-card" data-status="exposure"><span class="decision-card-label">Gross exposure</span><strong>2.969994%</strong></article><article class="decision-card" data-status="signals"><span class="decision-card-label">Actionable signals</span><strong>0</strong></article><article class="decision-card" data-status="coverage"><span class="decision-card-label">Assessment coverage</span><strong>49/82</strong></article></section>
 
 ### Why
 
-- Validated opening actions are pending.
+- The required market reference is stale.
 
 ## Current and target portfolio
 
-Current equity is **10000.02 EUR** with **97.030007% cash**. The target retains **91.950122% cash**.
+Current equity is **10000.02 EUR** with **97.030007% cash**. The target retains **97.030007% cash**.
 
 | Holding | Current | Target | Action | Strategy |
 | --- | ---: | ---: | --- | --- |
-| Cash | 97.030007% | 91.950122% | Trim | — |
-| [NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | 0% | 3.9653% | Buy | [Open](strategies/strategy_7cf884a5530d05afdb99) |
-| [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | 2.969993% | 4.084578% | Add | [Open](strategies/strategy_8caa208dfc702a2584a7) |
+| Cash | 97.030007% | 97.030007% | No trade | — |
+| [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | 2.969993% | 2.969993% | Hold | [Open](strategies/strategy_8caa208dfc702a2584a7) |
 
 ## Actionable trade signals
 
-- **[PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4):** Add · Pending validated order
-- **[NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d):** Buy · Pending validated order
+**No actionable trade signals.**
 
 ## Buy / Initiate research candidates
 
@@ -55,8 +53,8 @@ Current equity is **10000.02 EUR** with **97.030007% cash**. The target retains 
 - Cumulative return: **0.000225174243560771003624%**
 - Running drawdown: **0%**
 - Largest position: **2.969993%**
-- Current assessments: **48/81**
-- Relationship reviews: **20/81**
+- Current assessments: **49/82**
+- Relationship reviews: **20/82**
 - Accepted relationships: **19**
 - Market retrieval failures: **0**
 
@@ -68,4 +66,4 @@ Current equity is **10000.02 EUR** with **97.030007% cash**. The target retains 
 - [[performance|Performance and risk]]
 - [[research-catalog|Research catalog]]
 - [[system-status|System status and audit]]
-- [[daily-reports/daily-report_20260905|Daily report 2026-09-05]]
+- [[daily-reports/daily-report_20260906|Daily report 2026-09-06]]

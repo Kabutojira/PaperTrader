@@ -1,0 +1,18 @@
+{
+  "entity_id": "relationship_a5c78b23d4764c1bd318",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_ai_driven_democratization_physical_creation",
+    "proposed_direction": "positive",
+    "proposed_mechanism": "Higher industrial additive volumes may lift PA12 powder and specialty-polymer demand, but the absolute exposure and consolidated profit sensitivity may be too diluted to drive the investment case.",
+    "relationship_id": "relationship_a5c78b23d4764c1bd318",
+    "security_id": "security_ccb25582c0392492fe9e"
+  },
+  "objective": "Test whether additive-volume growth is material to Evonik.",
+  "operation_id": "01M1V1K2504H4SRCQ2NRTQR6E4",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.evonik.com/content/dam/evonik/documents/Evonik_Roadshow_Presentation1.pdf.coredownload.pdf"
+  ]
+}

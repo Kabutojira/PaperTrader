@@ -1,0 +1,18 @@
+{
+  "entity_id": "relationship_940dd1d9bb87f9aa7275",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_ai_driven_democratization_physical_creation",
+    "proposed_direction": "positive",
+    "proposed_mechanism": "More manufacturable AI-generated geometry may raise automated quotes and factory or network orders across additive, CNC, molding and sheet metal; test additive dilution, capacity utilization and marketplace competition by horizon.",
+    "relationship_id": "relationship_940dd1d9bb87f9aa7275",
+    "security_id": "security_f18cd57a5e086583c861"
+  },
+  "objective": "Test whether Proto Labs can capture AI-generated design fulfillment demand.",
+  "operation_id": "01M1V1JGJGCKFB5654Q902EYTT",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.sec.gov/Archives/edgar/data/1443669/000144366926000010/0001443669-26-000010-index.htm"
+  ]
+}

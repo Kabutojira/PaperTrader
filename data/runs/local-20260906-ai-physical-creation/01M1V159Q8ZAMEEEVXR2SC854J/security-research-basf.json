@@ -1,0 +1,9 @@
+{
+  "operation_type": "security_research", "entity_type": "security", "entity_id": "security_ef418f5ccc7dc5be8e65",
+  "dedupe_key": "security_research:security_ef418f5ccc7dc5be8e65:ai-physical-creation:2026-09",
+  "prompt": "Research and value BASF while testing whether its former additive exposure is now negligible.",
+  "inputs": {"security_id": "security_ef418f5ccc7dc5be8e65", "idea_id": "idea_ai_driven_democratization_physical_creation", "causal_hypothesis": "Any residual material-supply exposure may be immaterial after BASF's 2024 sale of Forward AM, making BASF a likely rejected or negligible thematic relationship despite its chemical scale.", "focused_questions": "Verify the Forward AM divestiture and any residual supply or IP economics, quantify maximum plausible additive sensitivity, then assess the full business, margins, balance sheet, cash flow, concentration, valuation scenarios, rating, and invalidation independently of weak thematic exposure."},
+  "source": "idea_research:01M1V159Q8ZAMEEEVXR2SC854J", "priority": 90, "freshness_days": 30,
+  "depends_on": ["01M1V159Q8ZAMEEEVXR2SC854J"], "not_before": "now", "deadline": "",
+  "source_refs": ["https://forward-am.com/wp-content/uploads/2024/07/Forward-AM-MBO-Public-Announcement_20240703.pdf", "https://www.basf.com/global/en/investors/share-and-adrs"], "max_attempts": 3
+}

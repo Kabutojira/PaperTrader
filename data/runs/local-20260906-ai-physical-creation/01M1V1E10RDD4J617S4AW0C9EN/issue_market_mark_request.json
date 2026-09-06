@@ -1,0 +1,12 @@
+{
+  "issue_code": "market_data_mark_failed",
+  "impact": "affects_candidate",
+  "severity": "error",
+  "title": "Creality canonical assessment blocked by failed market mark",
+  "description": "The current primary research, issued-share count and HKD price cache are present, but data/market/latest.csv records security_b19e8f0343b7da1f3c03 with status error after Yahoo returned YFTzMissingError. Assessment schema version 2 requires a successful identity-matched current mark before it will derive scenario returns, probability-weighted fair value, expected return, margin of safety, buy-below price or rating. No manual market-state override, assessment, strategy, signal, order or accounting change was made. Rerun deterministic market retrieval and schedule a fresh security review after the provider returns status ok.",
+  "entity_type": "security",
+  "entity_id": "security_b19e8f0343b7da1f3c03",
+  "owner": "controller",
+  "related_run_id": "local-20260906-ai-physical-creation",
+  "related_operation_id": "01M1V1E10RDD4J617S4AW0C9EN"
+}

@@ -1,0 +1,7 @@
+{
+  "operation_type": "relationship_research", "entity_type": "relationship", "entity_id": "relationship_06fb961ac41390073d41",
+  "dedupe_key": "relationship_research:idea_ai_driven_democratization_physical_creation:security_798e2fb944d740aca308:2026-09",
+  "prompt": "Test whether additive-volume growth is material to Arkema.",
+  "inputs": {"relationship_id": "relationship_06fb961ac41390073d41", "idea_id": "idea_ai_driven_democratization_physical_creation", "security_id": "security_798e2fb944d740aca308", "proposed_direction": "positive", "proposed_mechanism": "Higher industrial additive volumes may lift PA11, PA12, PEKK, elastomer and resin demand, but exposure dilution relative to group sales and profits may make economic sensitivity only low or medium."},
+  "source": "idea_research:01M1V159Q8ZAMEEEVXR2SC854J", "priority": 82, "freshness_days": 30, "depends_on": ["01M1V1F6487BZG6114432903G2"], "not_before": "now", "deadline": "", "source_refs": ["https://www.arkema.com/global/en/markets-solutions/3d-printing/", "https://live.euronext.com/en/products/equities/company-news/2026-05-06-arkema-first-quarter-2026-results"], "max_attempts": 3
+}

@@ -1,0 +1,17 @@
+{
+  "entity_id": "security_b61c642d038d71be3821",
+  "entity_type": "security",
+  "inputs": {
+    "causal_hypothesis": "AI-assisted additive adoption may expand demand for workflow software and production services, although medical economics may dominate and generic AI tools may disrupt parts of the software stack.",
+    "focused_questions": "Separate software, manufacturing, and medical segments; test recurring software quality, integration and switching costs, service utilization, medical dominance, margins, control weaknesses, liquidity, balance sheet, ADS/listing structure, scenarios, rating, and invalidation.",
+    "idea_id": "idea_ai_driven_democratization_physical_creation",
+    "security_id": "security_b61c642d038d71be3821"
+  },
+  "objective": "Research and value Materialise across additive software, services, and medical workflows.",
+  "operation_id": "01M1V1EJK8HQWBCGTY355450ZS",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.materialise.com/en/news/financial/fourth-quarter-and-full-year-2025-results"
+  ]
+}
