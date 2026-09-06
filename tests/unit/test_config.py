@@ -88,7 +88,7 @@ def test_settings_resolve_canonical_wiki_and_skills(
     assert settings.hermes_auxiliary.web_extract_reasoning_effort == "low"
     assert settings.hermes_auxiliary.web_extract_api_key_env == ""
     assert settings.telegram.maximum_attempts == 3
-    assert settings.telegram.timeout_seconds == 15
+    assert settings.telegram.timeout_seconds == 60
     assert settings.telegram.message_limit == 32768
     assert settings.podcast.tts_command == ("edge-tts",)
     assert settings.podcast.voice == "en-US-AriaNeural"
