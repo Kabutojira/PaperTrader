@@ -825,7 +825,9 @@ def enqueue_daily_podcast(
         prompt=(
             f"Create the {stamp} research-first PaperTrader podcast from all accepted research "
             "since the previous successful episode, using linked maintained wiki knowledge to "
-            "tell one accessible twenty-minute story, then render its ephemeral audio draft once."
+            "tell one accessible twenty-minute story, then render its ephemeral audio draft once. "
+            f"Write only {page_path} and link it only from the frozen report {report_path}; do not "
+            "derive either pathname from a date."
         ),
         inputs={
             "run_id": run_id,

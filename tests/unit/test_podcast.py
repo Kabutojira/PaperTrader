@@ -48,6 +48,8 @@ def test_podcast_skill_excludes_unscoped_advice_validation(repository_root: Path
     assert "Never replace its timestamp with the current clock" in skill
     assert "agent-authored path error is not a frozen-input conflict" in skill
     assert "exact deterministic report bullet" in skill
+    assert "sole report that may be changed" in skill
+    assert "never derive, recalculate, search for, or substitute" in skill
 
 
 def _script(cycle_id: str, *, extra_body: str = "") -> str:
@@ -262,7 +264,7 @@ def test_version_two_podcast_path_is_bound_to_cycle_not_enqueue_time(
         sandbox_repository,
         cycle_id,
         started_at="2026-07-29T09:00:00Z",
-        cutoff="2026-07-29T10:30:00Z",
+        cutoff="2026-07-30T10:30:00Z",
     )
 
     result = enqueue_daily_podcast(
@@ -286,6 +288,14 @@ def test_version_two_podcast_path_is_bound_to_cycle_not_enqueue_time(
     assert manifest["podcast_page_path"] == expected
     assert context["generated_at"] == "2026-07-30T18:00:00Z"
     assert expected != enqueue_time_path
+    assert payload["inputs"]["report_path"] == ("data/wiki/daily-reports/daily-report_20260730.md")
+    row = next(
+        row
+        for row in read_table(sandbox_repository, "operations_todo")
+        if row["operation_id"] == result.operation_id
+    )
+    assert payload["inputs"]["report_path"] in row["prompt"]
+    assert "do not derive either pathname from a date" in row["prompt"]
 
 
 def test_context_validation_rejects_page_not_bound_to_cycle(

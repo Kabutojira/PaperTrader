@@ -35,6 +35,9 @@ three thousand spoken words. The context covers the exclusive cutoff of the most
 successful podcast through the current inclusive research cutoff, or a seven-day bootstrap window.
 It separates accepted developments from audience-relevant unresolved gaps and identifies changed
 wiki pages, linked background pages, the prior podcast, and current portfolio-implication sources.
+Treat the payload `report_path` as the sole report that may be changed. Its calendar date can differ
+from the timestamp date embedded in `run_id`; never derive, recalculate, search for, or substitute a
+daily-report filename from the cycle ID, current clock, or any other date.
 The transcript `page_path` is derived only from the immutable cycle ID as
 `data/wiki/podcasts/daily-podcast_<run_id without daily->.md`. Confirm the payload, frozen context,
 and daily manifest all contain that exact value before drafting.
@@ -137,7 +140,9 @@ than spoken section labels or Markdown headings:
 ## Artifact and rendering procedure
 
 1. Write the timestamped Markdown page at the exact frozen `page_path`, add exactly one transcript
-   link to the daily report, and never add an audio link. Use the exact deterministic report bullet
+   link only to the exact payload `report_path`, and never add an audio link. Do not read another
+   report filename as a writable substitute even when its date appears to match the cycle. Use the
+   exact deterministic report bullet
    `- [[podcasts/daily-podcast_<YYYYMMDDTHHMMSSZ>|Daily research podcast — <YYYY-MM-DDTHHMMSSZ>]]`;
    this is the only daily-report mutation accepted against its frozen hash. Do not invent or
    recalculate the filename.
