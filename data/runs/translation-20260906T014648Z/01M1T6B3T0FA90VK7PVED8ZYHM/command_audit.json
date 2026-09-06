@@ -1,0 +1,66 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "podcast",
+        "translation",
+        "validate-script",
+        "--run-id",
+        "translation-20260906T014648Z",
+        "--operation-id",
+        "01M1T6B3T0FA90VK7PVED8ZYHM"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader podcast translation validate-script --run-id translation-20260906T014648Z --operation-id 01M1T6B3T0FA90VK7PVED8ZYHM",
+      "completed_at": "2026-09-06T01:51:32Z",
+      "exit_code": 0,
+      "profile": "deep",
+      "request": null,
+      "started_at": "2026-09-06T01:51:32Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "podcast",
+        "translation",
+        "render-draft",
+        "--run-id",
+        "translation-20260906T014648Z",
+        "--operation-id",
+        "01M1T6B3T0FA90VK7PVED8ZYHM"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader podcast translation render-draft --run-id translation-20260906T014648Z --operation-id 01M1T6B3T0FA90VK7PVED8ZYHM",
+      "completed_at": "2026-09-06T01:53:35Z",
+      "exit_code": 0,
+      "profile": "deep",
+      "request": null,
+      "started_at": "2026-09-06T01:51:46Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-09-06T01:54:05Z",
+      "exit_code": 0,
+      "profile": "deep",
+      "request": null,
+      "started_at": "2026-09-06T01:54:04Z"
+    }
+  ],
+  "operation_id": "01M1T6B3T0FA90VK7PVED8ZYHM",
+  "profile": "deep",
+  "profile_policy_version": "profile-router-v1",
+  "route_reason": "strict_long_form_podcast_contract",
+  "run_id": "translation-20260906T014648Z"
+}
