@@ -31,6 +31,9 @@ def test_settings_resolve_canonical_wiki_and_skills(
     assert settings.indicators.volume_zscore_threshold == Decimal("2")
     assert settings.orders.default_fill_policy == "next_open"
     assert settings.portfolio.initial_capital == Decimal("10000.00")
+    assert settings.market_data.calendar_for("XHKG") == "XHKG"
+    assert "XHKG" in settings.risk.allowed_exchanges
+    assert "HKD" in settings.risk.allowed_currencies
     assert settings.allocation.mode == "active"
     assert settings.allocation.target_invested_pct == Decimal("60")
     assert settings.allocation.minimum_cash_reserve_pct == Decimal("25")

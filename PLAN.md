@@ -951,3 +951,10 @@ repository snapshots while retaining it in the outer controller snapshot and che
 This lets later operations, including the daily podcast, invoke audited project commands after an
 OAuth refresh has installed the public ciphertext with root-only permissions, without weakening the
 controller's detection of credential-state changes.
+
+## Follow-up — Enable Hong Kong primary listings — Complete (2026-09-06)
+
+Added the `XHKG` exchange calendar and allowed Hong Kong dollars so identity-verified primary
+Hong Kong listings can enter the paper-only watchlist, market/FX monitoring, research, and
+allocation gates without substituting an OTC instrument. Existing position, freshness, FX,
+risk, and paper-execution controls remain unchanged.
