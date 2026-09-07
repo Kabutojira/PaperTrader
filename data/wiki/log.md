@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-08-08"
-updated: "2026-09-06"
+updated: "2026-09-07"
 provenance: repository-contract
 ---
 
@@ -3419,3 +3419,27 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Verified the bullish MACD crossover but classified it as monitoring noise for the fundamental conclusion because volume did not confirm the move and no newer operating evidence changed the thesis.
 - Retained USD 6.60/USD 12.00/USD 18.90 bear/base/bull fair values with 25%/55%/20% probabilities; the lower USD 12.72 mark improves expected return to negative 5.4% but preserves Hold / Watch and no paper trade.
 - Added segment-economics and scenario charts, searched all 29 maintained ideas, and rejected the only thematic comparison for lack of a quantified causal mechanism; no follow-up operation was justified.
+
+## 2026-09-07
+
+- Created candidate packet [[inbox/market-security_3853e54c619d597dcaa1-bollinger_above_upper-6ca1655daf7c]] (6ca1655daf7c).
+
+- Created candidate packet [[inbox/market-security_3853e54c619d597dcaa1-macd_cross_above_signal-5b98321936fe]] (5b98321936fe).
+
+- Classified [[inbox/market-security_3853e54c619d597dcaa1-macd_cross_above_signal-5b98321936fe]] as `ingest`: A new MACD bullish crossover with a material 4.9% period return merits durable wiki review.
+
+- Created candidate packet [[inbox/market-security_89969b7dac39b7db5661-macd_cross_above_signal-a4f241b4f45f]] (a4f241b4f45f).
+
+- Classified [[inbox/market-security_89969b7dac39b7db5661-macd_cross_above_signal-a4f241b4f45f]] as `ingest`: New MACD bullish crossover is a material indicator transition despite the recent negative return and merits durable review.
+
+- Created candidate packet [[inbox/market-security_8a5c43888d224de85c69-macd_cross_below_signal-397b5ba1908a]] (397b5ba1908a).
+
+- Created candidate packet [[inbox/market-security_b19e8f0343b7da1f3c03-volume_anomaly-3b2208505ebc]] (3b2208505ebc).
+
+- Classified [[inbox/market-security_b19e8f0343b7da1f3c03-volume_anomaly-3b2208505ebc]] as `ingest`: Materially strengthened volume anomaly coincides with an 11.3% price increase over the validated period and merits durable review.
+
+- Created candidate packet [[inbox/market-security_d08d763780400dfbffce-bollinger_above_upper-77c8f6140b0c]] (77c8f6140b0c).
+
+- Created candidate packet [[inbox/market-security_fe4648901e7675f157fd-bollinger_below_lower-479448d9d62b]] (479448d9d62b).
+
+- Classified [[inbox/market-security_fe4648901e7675f157fd-bollinger_below_lower-479448d9d62b]] as `ingest`: New Bollinger lower-band breach with a material one-month decline merits durable review for security fe4648901e7675f157fd.

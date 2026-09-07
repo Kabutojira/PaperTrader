@@ -5,7 +5,7 @@ status: maintained
 tags:
   - research
 created: "2026-09-06"
-updated: "2026-09-06"
+updated: "2026-09-07"
 provenance: deterministic-decision-projection
 snapshot_id: "decision_bc4af2ded86b94447131"
 as_of: "2026-09-06T18:01:30Z"
@@ -812,3 +812,13 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_3853e54c619d597dcaa1-bollinger_above_upper-6ca1655daf7c|NIB.F — Bollinger above upper]]
+- [[inbox/market-security_3853e54c619d597dcaa1-macd_cross_above_signal-5b98321936fe|NIB.F — MACD cross above signal]]
+- [[inbox/market-security_89969b7dac39b7db5661-macd_cross_above_signal-a4f241b4f45f|YEC.F — MACD cross above signal]]
+- [[inbox/market-security_8a5c43888d224de85c69-macd_cross_below_signal-397b5ba1908a|PLS.AX — MACD cross below signal]]
+- [[inbox/market-security_b19e8f0343b7da1f3c03-volume_anomaly-3b2208505ebc|03388 — Volume anomaly]]
+- [[inbox/market-security_d08d763780400dfbffce-bollinger_above_upper-77c8f6140b0c|SSUN.VI — Bollinger above upper]]
+- [[inbox/market-security_fe4648901e7675f157fd-bollinger_below_lower-479448d9d62b|ANIC.L — Bollinger below lower]]

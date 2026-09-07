@@ -4,9 +4,15 @@
   "inputs": {
     "assessment_state": "2026-08-10T22:41:29Z",
     "maintenance_mode": "refresh",
-    "market_data_as_of": "2026-09-02T15:54:43Z",
-    "market_data_date": "2026-09-02",
-    "period_end": "2026-09-02",
+    "market_data_as_of": "2026-09-07T19:08:27Z",
+    "market_data_date": "2026-09-07",
+    "merged_input_values": {
+      "source_price_hash": [
+        "f02e5d4563dde569242f85c2d3c44d63eb1bea50a1c6f8ef80fa7935033385a1",
+        "c9fbb548d70e209094c55f9659db1c09ab0469b09c2d17fefcde812ab3df5619"
+      ]
+    },
+    "period_end": "2026-09-07",
     "period_start": "2026-08-05",
     "research_page": "data/wiki/securities/security_89969b7dac39b7db5661.md",
     "research_reasons": [
@@ -33,19 +39,34 @@
         "trigger_types": [
           "rsi_oversold"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_89969b7dac39b7db5661:2cacc3594cc37da27f83:2026-09-07",
+        "market_data_date": "2026-09-07",
+        "observed_at": "2026-09-07T19:08:27Z",
+        "prompt": "Research security_89969b7dac39b7db5661 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_89969b7dac39b7db5661-macd_cross_above_signal-a4f241b4f45f.md"
+        ],
+        "trigger_types": [
+          "macd_cross_above_signal"
+        ]
       }
     ],
     "security_id": "security_89969b7dac39b7db5661",
-    "source_price_hash": "f02e5d4563dde569242f85c2d3c44d63eb1bea50a1c6f8ef80fa7935033385a1",
+    "source_price_hash": "c9fbb548d70e209094c55f9659db1c09ab0469b09c2d17fefcde812ab3df5619",
     "trigger_types": [
+      "macd_cross_above_signal",
       "rsi_oversold"
     ]
   },
-  "objective": "Revalidate security_89969b7dac39b7db5661 with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_89969b7dac39b7db5661 with high priority after price-action alerts: rsi_oversold; decide what changed and whether to act.",
+  "objective": "Revalidate security_89969b7dac39b7db5661 with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_89969b7dac39b7db5661 with high priority after price-action alerts: rsi_oversold; decide what changed and whether to act. | Additional cause: Research security_89969b7dac39b7db5661 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
   "operation_id": "01M0N0ZVAGHN662K112WKAH7GZ",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_89969b7dac39b7db5661-macd_cross_above_signal-a4f241b4f45f.md",
     "data/wiki/inbox/market-security_89969b7dac39b7db5661-rsi_oversold-809c984a49eb.md",
     "source_yaskawa_fy2026_q1_briefing",
     "source_yaskawa_fy2026_q1_qa",
