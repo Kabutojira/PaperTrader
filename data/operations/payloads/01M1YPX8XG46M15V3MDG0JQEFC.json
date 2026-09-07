@@ -1,0 +1,20 @@
+{
+  "entity_id": "daily-20260907T190826Z",
+  "entity_type": "run",
+  "inputs": {
+    "context_path": "data/runs/daily-20260907T190826Z/podcast_context.json",
+    "page_path": "data/wiki/podcasts/daily-podcast_20260907T190826Z.md",
+    "report_path": "data/wiki/daily-reports/daily-report_20260907.md",
+    "run_id": "daily-20260907T190826Z",
+    "target_minutes": 20,
+    "target_words": 3000
+  },
+  "objective": "Create the 20260907T190826Z research-first PaperTrader podcast from all accepted research since the previous successful episode, using linked maintained wiki knowledge to tell one accessible twenty-minute story, then render its ephemeral audio draft once. Write only data/wiki/podcasts/daily-podcast_20260907T190826Z.md and link it only from the frozen report data/wiki/daily-reports/daily-report_20260907.md; do not derive either pathname from a date.",
+  "operation_id": "01M1YPX8XG46M15V3MDG0JQEFC",
+  "operation_type": "daily_podcast",
+  "payload_version": 1,
+  "source_refs": [
+    "data/runs/daily-20260907T190826Z/podcast_context.json",
+    "data/wiki/daily-reports/daily-report_20260907.md"
+  ]
+}

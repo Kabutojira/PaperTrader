@@ -759,6 +759,7 @@ No pending orders.
 
 ### Links
 
+- [[podcasts/daily-podcast_20260907T190826Z|Daily research podcast — 2026-09-07T190826Z]]
 - [[index|Investor dashboard]]
 - [[model-portfolio|Model portfolio]]
 - [[signals|Signals]]

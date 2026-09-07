@@ -1,0 +1,76 @@
+{
+  "commands_run": [
+    "papertrader podcast validate-script --daily-cycle-id daily-20260907T190826Z --script-path data/wiki/podcasts/daily-podcast_20260907T190826Z.md",
+    "papertrader podcast render-draft --daily-cycle-id daily-20260907T190826Z --script-path data/wiki/podcasts/daily-podcast_20260907T190826Z.md",
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader queue validate",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Published the 2,699-word daily research podcast covering physical-creation economics and five current security assessments; the single audited ephemeral draft render succeeded."
+  ],
+  "evidence": [
+    {
+      "claim": "Validated frozen podcast context version three bound the exact transcript and report paths, the prior successful episode, the research window, and six successful research developments.",
+      "source": "data/runs/daily-20260907T190826Z/podcast_context.json"
+    },
+    {
+      "claim": "Accepted idea research established falling digital-creation friction while preserving manufacturability, production, fulfillment, exposure, and economic-capture uncertainty.",
+      "source": "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/agent_result.json"
+    },
+    {
+      "claim": "Accepted Xometry research supported Hold / Watch from strong marketplace growth and improving cash conversion offset by GAAP losses, dilution, unproven AI-attributed conversion, and valuation downside.",
+      "source": "data/runs/daily-20260906T135138Z/01M1V1E3YGYYPSJV217TRVMW8R/agent_result.json"
+    },
+    {
+      "claim": "Accepted TSM research supported Hold / Watch because exceptional demand and investment evidence did not overcome negative expected and base returns at the current mark.",
+      "source": "data/runs/daily-20260906T135138Z/01KZXXN28RT0NVWT6QD0MMKBBK/agent_result.json"
+    },
+    {
+      "claim": "Accepted Samsung preferred-GDR research supported Unrated / Watch because negligible Vienna turnover and unresolved conversion and cross-venue parity made valuation unsupported.",
+      "source": "data/runs/daily-20260906T135138Z/01KZXXN28RT6NFN3258NZ538J2/agent_result.json"
+    },
+    {
+      "claim": "Accepted Ternium research supported Hold / Watch because operating recovery and nearshoring evidence were offset by overbought timing and unfavorable normalized valuation.",
+      "source": "data/runs/daily-20260906T135138Z/01KZYPF0GRFAGJFDT0130F89HA/agent_result.json"
+    },
+    {
+      "claim": "Accepted Corsair research supported Hold / Watch because improving underlying operations did not overcome normalization, cyclicality, relationship, valuation, and downside gates.",
+      "source": "data/runs/daily-20260906T173801Z/01M0303PQ0QPDFP335PHBAXSTN/agent_result.json"
+    },
+    {
+      "claim": "Deterministic script validation passed with 2,699 spoken words and five render chunks for the exact frozen page path.",
+      "source": "papertrader podcast validate-script"
+    },
+    {
+      "claim": "The one permitted audited draft-render invocation succeeded and produced a 1,192-second ephemeral draft outside the repository.",
+      "source": "papertrader podcast render-draft"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260907T190826Z/01M1YPX8XG46M15V3MDG0JQEFC/candidate_slate.md",
+    "data/runs/daily-20260907T190826Z/01M1YPX8XG46M15V3MDG0JQEFC/editorial_outline.md",
+    "data/wiki/daily-reports/daily-report_20260907.md",
+    "data/wiki/podcasts/daily-podcast_20260907T190826Z.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M1YPX8XG46M15V3MDG0JQEFC",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Created a 2,699-word standalone episode in six chapters covering the AI-driven physical-creation thesis, Xometry, Taiwan Semiconductor Manufacturing, Samsung's preferred Vienna GDR, Ternium, and Corsair. No successful research development in the frozen window was excluded; routine maintenance was omitted as non-research. The episode explains Hold / Watch ratings for Xometry, TSM, Ternium, and Corsair, the Unrated / Watch conclusion for Samsung's preferred GDR, and each security's evidence-based Buy and Sell conditions or explicit valuation evidence gap. The exact transcript link was added only to the frozen report. Deterministic preflight passed, and the single audited draft render succeeded with a 1,192-second ephemeral audio draft.",
+  "validation": {
+    "checks": [
+      "Frozen payload, context, and daily manifest all name data/wiki/podcasts/daily-podcast_20260907T190826Z.md and data/wiki/daily-reports/daily-report_20260907.md.",
+      "Candidate slate maps every successful development in the frozen window to exactly one chapter; novelty review found no chapter duplicated the prior episode.",
+      "Spoken prose has the exact opening, required teaser opening, six research chapters, security rating endings, overall synthesis, and exact closing sentences.",
+      "Deterministic preflight accepted 2,699 spoken words in five chunks with no forbidden spoken formatting or numeric glyphs.",
+      "Exactly one audited render-draft invocation succeeded; no renderer retry, direct TTS command, persistent media path, or audio link was created.",
+      "The frozen daily report changed only by the exact required transcript link.",
+      "Strict schema, integrity, wiki, queue, and portfolio checks all returned OK.",
+      "No operation was created or executed beyond this daily podcast, and no allocation, signal, order, execution, cash, portfolio, or performance state was changed."
+    ],
+    "passed": true
+  }
+}
