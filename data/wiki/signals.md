@@ -4,16 +4,16 @@ type: signals
 status: maintained
 tags:
   - signals
-created: "2026-09-06"
-updated: "2026-09-06"
+created: "2026-09-07"
+updated: "2026-09-07"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_bc4af2ded86b94447131"
-as_of: "2026-09-06T18:01:30Z"
+snapshot_id: "decision_d3748b4856431a4fdedd"
+as_of: "2026-09-07T19:41:26Z"
 ---
 
 # Signals
 
-**As of `2026-09-06T18:01:30Z`**
+**As of `2026-09-07T19:41:26Z`**
 
 ## Actionable trade signals
 
@@ -25,20 +25,83 @@ No pending orders.
 
 ## Research alerts — not trade signals
 
-### MTLS — Materialise NV
+### [SSUN.VI — Samsung Electronics Co., Ltd.](securities/security_d08d763780400dfbffce)
 
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_above\_upper`
-- Market date: `2026-09-04`
-- Research status: `pending`
-- Conclusion: Deterministic price alert awaits bounded research review.
+- Market date: `2026-09-07`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### [NIB.F — Nidec Corporation](securities/security_3853e54c619d597dcaa1)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-09-07`
+- Research status: `succeeded`
+- Conclusion: Completed the dependent full review of Nidec Corporation's Frankfurt ordinary shares. The final independent report shows structural accounting misconduct across operating bases, including inventory valuation, impairment testing, capitalized labor, provision reversals, grant recognition and bad-debt allowances, and provisionally reduces cumulative operating profit by JPY 166.4 billion and period profit by JPY 160.7 billion through fiscal Q1 2025 before derivative effects. Preliminary fiscal-2025 sales of JPY 2.700 trillion and net debt of JPY 260 billion explicitly exclude accounting corrections and unresolved quality and customs impacts, so they cannot support normalized per-share earnings. NIB.F remains Unrated / Watch, unsupported and allocation-ineligible at EUR 14.818, with accounting uncertainty, thin Frankfurt liquidity and unsupported valuation as exact hard blockers. No linked idea exists, and no strategy, signal, order, allocation or accounting state changed.
+
+### ANIC.L — Agronomics Limited
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_below\_lower`
+- Market date: `2026-09-07`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [108490 — ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-09-07`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
 
 ### [03388 — Shenzhen Creality 3D Technology Co., Ltd.](securities/security_b19e8f0343b7da1f3c03)
 
 **Research alert — not a trade signal**
 
 - Alert: `volume\_anomaly`
+- Market date: `2026-09-07`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [YEC.F — YASKAWA Electric Corporation](securities/security_89969b7dac39b7db5661)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-09-07`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [PLS.AX — PLS Group Limited](securities/security_8a5c43888d224de85c69)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_below\_signal`
+- Market date: `2026-09-07`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### [NIB.F — Nidec Corporation](securities/security_3853e54c619d597dcaa1)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-09-07`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### MTLS — Materialise NV
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
 - Market date: `2026-09-04`
 - Research status: `pending`
 - Conclusion: Deterministic price alert awaits bounded research review.
@@ -160,24 +223,6 @@ No pending orders.
 - Research status: `succeeded`
 - Conclusion: Completed one bounded Albemarle security review after the 4 September volume anomaly. Current SEC evidence preserves the Q2 operating thesis while the 3 September CEO succession adds execution risk rather than a quantified valuation change. The unchanged USD 9.93/USD 131.25/USD 231.62 bear/base/bull cases at 25%/50%/25% produce USD 126.0125 probability-weighted fair value, -0.21182988745857938335394935% expected return and -0.1588724155939345375154620125% medium-confidence-adjusted return at the USD 126.27999877929688 mark. Deterministic state retains Hold / Watch, quality score 78 and allocation ineligibility because expected return, base return and downside-payoff gates fail. Updated the security page and structured projection, registered four current SEC evidence records, appended exactly one schema-v2 assessment linked to its predecessor and matching page hash, added three analytical charts, and enqueued exactly one dependent lithium-idea refresh. No strategy, signal, order, accoun
 
-### [108490 — ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_above\_upper`
-- Market date: `2026-09-04`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
-### [108490 — ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-09-04`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
 ### [TX — Ternium S.A.](securities/security_2c779e81c27b78c556bb)
 
 **Research alert — not a trade signal**
@@ -195,24 +240,6 @@ No pending orders.
 - Market date: `2026-09-04`
 - Research status: `succeeded`
 - Conclusion: Completed exactly one current Taiwan Semiconductor Manufacturing Company sponsored-ADR security review using the 2025 Form 20-F, SEC-filed Q2 2026 evidence, July revenue, August board resolutions, and the definitive Sony image-sensor joint venture. The 4 September bullish MACD crossover is improving momentum but not an actionable opportunity at the current USD428.91 mark. Updated the security page and structured row, registered six refreshed/current primary sources, and appended scenario-complete assessment assessment\_af482445e24e1513a801 linked to assessment\_46d2ae16336286c36b20. Bear/base/bull values of USD250/USD375/USD495 produce USD373.75 probability-weighted value and -12.86% expected return; deterministic state remains Hold / Watch and allocation-ineligible. Enqueued two bounded candidate relationship reviews and the required dependent Terafab idea refresh; no strategy, signal, order, allocation, or accounting state changed.
-
-### [SSUN.VI — Samsung Electronics Co., Ltd.](securities/security_d08d763780400dfbffce)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-09-04`
-- Research status: `succeeded`
-- Conclusion: Completed exactly one repeat security review for Samsung Electronics preferred GDR using current issuer listing information, the unchanged Q2 2026 results, and canonical market/FX state. The September 4 bullish MACD crossover followed a 16.70% gain from August 7, but only eleven units traded across twenty-one sessions and the crossover session reported zero volume, so the move is constructive technical momentum and non-actionable market noise. Updated the security page and structured row, refreshed two primary sources, and appended schema-v2 assessment assessment\_2b2b7e8f458cbfafe3cb linked to assessment\_27be4a94f4e72cdda9dc. Valuation remains unsupported because preferred-GDR conversion, same-time cross-venue parity and normalized through-cycle earnings remain unresolved; liquidity\_insufficient and valuation\_unsupported keep the deterministic conclusion Unrated / Watch and allocation-ineligible. Enqueued two dependent candidate relationship reviews and created no strategy, signal, ord
-
-### [SSU.VI — Samsung Electronics Co., Ltd.](securities/security_567d0d575bbd30aaa91d)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-09-04`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
 
 ### [SQM — Sociedad Quimica y Minera de Chile S.A.](securities/security_9d4049ed6669a52815d6)
 
@@ -232,15 +259,6 @@ No pending orders.
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
-### [PARRO.PA — Parrot S.A.](securities/security_cc4dcb8f002b61dffe00)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-09-04`
-- Research status: `skipped`
-- Conclusion: Queue triage disposition
-
 ### [CRSR — Corsair Gaming, Inc.](securities/security_55c9ce2fdcd32dad6b8c)
 
 **Research alert — not a trade signal**
@@ -249,15 +267,6 @@ No pending orders.
 - Market date: `2026-09-04`
 - Research status: `succeeded`
 - Conclusion: Completed exactly one repeat security review for Corsair Gaming, Inc. The Q2 Form 10-Q and SEC-filed results release were re-fetched at unchanged hashes, and the current SEC submissions index shows no newer operating filing. The 4 September bullish MACD crossover is verified but lacks volume or fresh fundamental confirmation, so it is monitoring noise rather than a trade signal. Unchanged USD 6.60/USD 12.00/USD 18.90 scenarios produce USD 12.03 probability-weighted value versus the USD 12.72 mark, -5.42% expected return and a deterministic Hold / Watch, allocation-ineligible disposition. Updated the security page and structured row, added two analytical charts, registered current evidence, and appended assessment assessment\_2ca5f196939895f07d63 linked to its predecessor. The complete idea catalog has no accepted or plausible unaccepted causal edge, and the conviction gate fails, so no follow-up, strategy, signal or paper order was created. No allocation, execution, cash, portfolio or p
-
-### [108490 — ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-09-04`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
 
 
 ## Recently expired or completed signals

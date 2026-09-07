@@ -4,33 +4,33 @@ type: dashboard
 status: maintained
 tags:
   - dashboard
-created: "2026-09-06"
-updated: "2026-09-06"
+created: "2026-09-07"
+updated: "2026-09-07"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_bc4af2ded86b94447131"
-as_of: "2026-09-06T18:01:30Z"
+snapshot_id: "decision_d3748b4856431a4fdedd"
+as_of: "2026-09-07T19:41:26Z"
 ---
 
 # PaperTrader
 
-**As of `2026-09-06T18:01:30Z` · Investment data: Unsafe to publish — portfolio, accounting, or active-order state requires attention · Operations: Attention required**
+**As of `2026-09-07T19:41:26Z` · Investment data: Portfolio state safe — research gaps remain · Operations: Attention required**
 
-## Decision blocked — do not copy actions
+## Maintain the current model portfolio
 
-<section class="decision-cards" aria-label="Decision summary"><article class="decision-card" data-status="blocked"><span class="decision-card-label">Stance</span><strong>Decision blocked — do not copy actions</strong></article><article class="decision-card" data-status="cash"><span class="decision-card-label">Cash</span><strong>97.030007%</strong></article><article class="decision-card" data-status="exposure"><span class="decision-card-label">Gross exposure</span><strong>2.969994%</strong></article><article class="decision-card" data-status="signals"><span class="decision-card-label">Actionable signals</span><strong>0</strong></article><article class="decision-card" data-status="coverage"><span class="decision-card-label">Assessment coverage</span><strong>54/83</strong></article></section>
+<section class="decision-cards" aria-label="Decision summary"><article class="decision-card" data-status="maintain"><span class="decision-card-label">Stance</span><strong>Maintain the current model portfolio</strong></article><article class="decision-card" data-status="cash"><span class="decision-card-label">Cash</span><strong>97.082042%</strong></article><article class="decision-card" data-status="exposure"><span class="decision-card-label">Gross exposure</span><strong>2.917958%</strong></article><article class="decision-card" data-status="signals"><span class="decision-card-label">Actionable signals</span><strong>0</strong></article><article class="decision-card" data-status="coverage"><span class="decision-card-label">Assessment coverage</span><strong>53/83</strong></article></section>
 
 ### Why
 
-- The required market reference is stale.
+- No strategy has produced a current actionable trade signal.
 
 ## Current and target portfolio
 
-Current equity is **10000.02 EUR** with **97.030007% cash**. The target retains **97.030007% cash**.
+Current equity is **9994.66 EUR** with **97.082042% cash**. The target retains **97.082042% cash**.
 
 | Holding | Current | Target | Action | Strategy |
 | --- | ---: | ---: | --- | --- |
-| Cash | 97.030007% | 97.030007% | No trade | — |
-| [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | 2.969993% | 2.969993% | Hold | [Open](strategies/strategy_8caa208dfc702a2584a7) |
+| Cash | 97.082042% | 97.082042% | No trade | — |
+| [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | 2.917958% | 2.917958% | Hold | [Open](strategies/strategy_8caa208dfc702a2584a7) |
 
 ## Actionable trade signals
 
@@ -39,7 +39,7 @@ Current equity is **10000.02 EUR** with **97.030007% cash**. The target retains 
 ## Buy / Initiate research candidates
 
 - **[NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d):** Buy / Initiate · Full baseline — Allocation constrained · expected return 32% · The eligible set is not sufficiently diversified.
-- **[UBER — Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e):** Buy / Initiate · Starter — Strategy research pending · expected return 17% · The eligible set is not sufficiently diversified.
+- **[UBER — Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e):** Buy / Initiate · Starter — Allocation constrained · expected return 17% · The eligible set is not sufficiently diversified.
 - **[DLO — DLocal Limited](securities/security_715bde20b6e1e1320c1a):** Buy / Initiate · Valuation unattractive · expected return 22% · Bear/base payoff is below the starter threshold.
 - **[TCEHY — Tencent Holdings Limited](securities/security_de0d83229b369a426b99):** Buy / Initiate · Valuation unattractive · expected return 15% · Expected/bear payoff is below the starter threshold.
 - **[PATH — UiPath, Inc.](securities/security_eca976f0076a425ea1bb):** Buy / Initiate · Valuation unattractive · expected return 15% · Bear/base payoff is below the starter threshold.
@@ -50,10 +50,10 @@ Current equity is **10000.02 EUR** with **97.030007% cash**. The target retains 
 
 ## Performance, risk, and coverage
 
-- Cumulative return: **0.000225174243560771003624%**
-- Running drawdown: **0%**
-- Largest position: **2.969993%**
-- Current assessments: **54/83**
+- Cumulative return: **-0.053374679272064028996376%**
+- Running drawdown: **-0.05359973282283186559405579543%**
+- Largest position: **2.917957%**
+- Current assessments: **53/83**
 - Relationship reviews: **20/83**
 - Accepted relationships: **19**
 - Market retrieval failures: **0**
@@ -66,4 +66,4 @@ Current equity is **10000.02 EUR** with **97.030007% cash**. The target retains 
 - [[performance|Performance and risk]]
 - [[research-catalog|Research catalog]]
 - [[system-status|System status and audit]]
-- [[daily-reports/daily-report_20260906|Daily report 2026-09-06]]
+- [[daily-reports/daily-report_20260907|Daily report 2026-09-07]]

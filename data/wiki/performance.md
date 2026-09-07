@@ -4,33 +4,33 @@ type: performance
 status: maintained
 tags:
   - performance
-created: "2026-09-06"
-updated: "2026-09-06"
+created: "2026-09-07"
+updated: "2026-09-07"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_bc4af2ded86b94447131"
-as_of: "2026-09-06T18:01:30Z"
+snapshot_id: "decision_d3748b4856431a4fdedd"
+as_of: "2026-09-07T19:41:26Z"
 ---
 
 # Performance and risk
 
-**As of `2026-09-06T18:01:30Z`**
+**As of `2026-09-07T19:41:26Z`**
 
 Current performance epoch started `2026-07-28T12:00:00Z` at **10000 EUR**. Prior audit epochs retained: **1**.
 
-<svg class="performance-chart" viewBox="0 0 100 100" role="img" aria-label="Equity history from 2026-07-28 to 2026-09-06; latest equity 10000.0225174243560771003624."><title>Model equity history</title><desc>Equity history from 2026-07-28 to 2026-09-06; latest equity 10000.0225174243560771003624.</desc><polyline fill="none" stroke="currentColor" stroke-width="2" points="0.00,90.00 2.78,90.00 5.56,90.00 8.33,90.00 11.11,90.00 13.89,90.00 16.67,90.00 19.44,90.00 22.22,90.00 25.00,90.00 27.78,90.00 30.56,90.00 33.33,90.00 36.11,90.00 38.89,90.00 41.67,90.00 44.44,90.00 47.22,90.00 50.00,90.00 52.78,90.00 55.56,90.00 58.33,90.00 61.11,90.00 63.89,90.00 66.67,90.00 69.44,90.00 72.22,90.00 75.00,90.00 77.78,90.00 80.56,90.00 83.33,90.00 86.11,90.00 88.89,90.00 91.67,90.00 94.44,10.00 97.22,10.00 100.00,10.00" /></svg>
+<svg class="performance-chart" viewBox="0 0 100 100" role="img" aria-label="Equity history from 2026-07-28 to 2026-09-07; latest equity 9994.6625320727935971003624."><title>Model equity history</title><desc>Equity history from 2026-07-28 to 2026-09-07; latest equity 9994.6625320727935971003624.</desc><polyline fill="none" stroke="currentColor" stroke-width="2" points="0.00,10.34 2.70,10.34 5.41,10.34 8.11,10.34 10.81,10.34 13.51,10.34 16.22,10.34 18.92,10.34 21.62,10.34 24.32,10.34 27.03,10.34 29.73,10.34 32.43,10.34 35.14,10.34 37.84,10.34 40.54,10.34 43.24,10.34 45.95,10.34 48.65,10.34 51.35,10.34 54.05,10.34 56.76,10.34 59.46,10.34 62.16,10.34 64.86,10.34 67.57,10.34 70.27,10.34 72.97,10.34 75.68,10.34 78.38,10.34 81.08,10.34 83.78,10.34 86.49,10.34 89.19,10.34 91.89,10.00 94.59,10.00 97.30,10.00 100.00,90.00" /></svg>
 
 | Daily return | Cumulative return | Drawdown | Realized P/L | Unrealized P/L |
 | ---: | ---: | ---: | ---: | ---: |
-| 0% | 0.000225174243560771003624% | 0% | 0 EUR | 0.0225174243560771003624 EUR |
+| -0.05359973282283186559405579543% | -0.053374679272064028996376% | -0.05359973282283186559405579543% | 0 EUR | -5.3374679272064028996376 EUR |
 
 ## Exposure and concentration
 
-- Cash: 97.030007%
-- Invested exposure: 2.969993%
+- Cash: 97.082042%
+- Invested exposure: 2.917957%
 - Conviction exposure: 0 EUR
-- Baseline exposure: 297 EUR
-- Largest position: 2.969993%
-- Largest sector: 2.969993%
+- Baseline exposure: 291.64 EUR
+- Largest position: 2.917957%
+- Largest sector: 2.917957%
 
 ## Target allocation changes
 
@@ -77,6 +77,7 @@ No target allocation changes.
 | 2026-09-04 | 10000.0225174243560771003624 | 9703.0225174243560771003624 | 297 | 0.000225174243560771003624% | 0.000225174243560771003624% | 0% |
 | 2026-09-05 | 10000.0225174243560771003624 | 9703.0225174243560771003624 | 297 | 0% | 0.000225174243560771003624% | 0% |
 | 2026-09-06 | 10000.0225174243560771003624 | 9703.0225174243560771003624 | 297 | 0% | 0.000225174243560771003624% | 0% |
+| 2026-09-07 | 9994.6625320727935971003624 | 9703.0225174243560771003624 | 291.64001464843752 | -0.05359973282283186559405579543% | -0.053374679272064028996376% | -0.0536% |
 
 No external benchmark is used.
 

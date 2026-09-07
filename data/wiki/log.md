@@ -3443,3 +3443,7 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Created candidate packet [[inbox/market-security_fe4648901e7675f157fd-bollinger_below_lower-479448d9d62b]] (479448d9d62b).
 
 - Classified [[inbox/market-security_fe4648901e7675f157fd-bollinger_below_lower-479448d9d62b]] as `ingest`: New Bollinger lower-band breach with a material one-month decline merits durable review for security fe4648901e7675f157fd.
+
+- Published investor decision snapshot `decision_d3748b4856431a4fdedd`.
+
+- Generated canonical [[daily-reports/daily-report_20260907]] for run `daily-20260907T190826Z`.
