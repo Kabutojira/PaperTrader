@@ -4,16 +4,16 @@ type: signals
 status: maintained
 tags:
   - signals
-created: "2026-09-07"
-updated: "2026-09-07"
+created: "2026-09-08"
+updated: "2026-09-08"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_d3748b4856431a4fdedd"
-as_of: "2026-09-07T19:41:26Z"
+snapshot_id: "decision_32e713083eb5f50f0166"
+as_of: "2026-09-08T18:58:30Z"
 ---
 
 # Signals
 
-**As of `2026-09-07T19:41:26Z`**
+**As of `2026-09-08T18:58:30Z`**
 
 ## Actionable trade signals
 
@@ -30,72 +30,27 @@ No pending orders.
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_above\_upper`
-- Market date: `2026-09-07`
+- Market date: `2026-09-08`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
-
-### [NIB.F — Nidec Corporation](securities/security_3853e54c619d597dcaa1)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_above\_upper`
-- Market date: `2026-09-07`
-- Research status: `succeeded`
-- Conclusion: Completed the dependent full review of Nidec Corporation's Frankfurt ordinary shares. The final independent report shows structural accounting misconduct across operating bases, including inventory valuation, impairment testing, capitalized labor, provision reversals, grant recognition and bad-debt allowances, and provisionally reduces cumulative operating profit by JPY 166.4 billion and period profit by JPY 160.7 billion through fiscal Q1 2025 before derivative effects. Preliminary fiscal-2025 sales of JPY 2.700 trillion and net debt of JPY 260 billion explicitly exclude accounting corrections and unresolved quality and customs impacts, so they cannot support normalized per-share earnings. NIB.F remains Unrated / Watch, unsupported and allocation-ineligible at EUR 14.818, with accounting uncertainty, thin Frankfurt liquidity and unsupported valuation as exact hard blockers. No linked idea exists, and no strategy, signal, order, allocation or accounting state changed.
 
 ### ANIC.L — Agronomics Limited
 
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_below\_lower`
-- Market date: `2026-09-07`
+- Market date: `2026-09-08`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### [108490 — ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c)
+### [FUC.F — Fanuc Corporation](securities/security_96ba305ee7cd586bc348)
 
 **Research alert — not a trade signal**
 
-- Alert: `bollinger\_above\_upper`
-- Market date: `2026-09-07`
+- Alert: `sma\_50\_cross\_below\_200`
+- Market date: `2026-09-08`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
-
-### [03388 — Shenzhen Creality 3D Technology Co., Ltd.](securities/security_b19e8f0343b7da1f3c03)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-09-07`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [YEC.F — YASKAWA Electric Corporation](securities/security_89969b7dac39b7db5661)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-09-07`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [PLS.AX — PLS Group Limited](securities/security_8a5c43888d224de85c69)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_below\_signal`
-- Market date: `2026-09-07`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
-### [NIB.F — Nidec Corporation](securities/security_3853e54c619d597dcaa1)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-09-07`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
 
 ### MTLS — Materialise NV
 

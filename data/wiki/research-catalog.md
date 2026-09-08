@@ -4,11 +4,11 @@ type: research-catalog
 status: maintained
 tags:
   - research
-created: "2026-09-07"
+created: "2026-09-08"
 updated: "2026-09-08"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_d3748b4856431a4fdedd"
-as_of: "2026-09-07T19:41:26Z"
+snapshot_id: "decision_32e713083eb5f50f0166"
+as_of: "2026-09-08T18:58:30Z"
 ---
 
 # Research catalog
@@ -69,6 +69,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [ANET — Volume anomaly](inbox/market-security_6f9a1450edceb9307c9a-volume_anomaly-5023765017be)
 - [ANET — Volume anomaly](inbox/market-security_6f9a1450edceb9307c9a-volume_anomaly-7a6eb592774d)
 - [ANIC.L — Bollinger below lower](inbox/market-security_fe4648901e7675f157fd-bollinger_below_lower-479448d9d62b)
+- [ANIC.L — Bollinger below lower](inbox/market-security_fe4648901e7675f157fd-bollinger_below_lower-f4f8c43b9b27)
 - [ANIC.L — MACD cross below signal](inbox/market-security_fe4648901e7675f157fd-macd_cross_below_signal-19a24fa5422e)
 - [ASML — Bollinger below lower](inbox/market-security_ef35e41886220d51c22c-bollinger_below_lower-f5f33a74b0ad)
 - [ASML — MACD cross above signal](inbox/market-security_ef35e41886220d51c22c-macd_cross_above_signal-56c54b3fee35)
@@ -174,6 +175,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [FUC.F — MACD cross above signal](inbox/market-security_96ba305ee7cd586bc348-macd_cross_above_signal-3076adb7c502)
 - [FUC.F — MACD cross above signal](inbox/market-security_96ba305ee7cd586bc348-macd_cross_above_signal-524af495aaf3)
 - [FUC.F — MACD cross below signal](inbox/market-security_96ba305ee7cd586bc348-macd_cross_below_signal-e8a3ef9b6ba8)
+- [FUC.F — SMA 50 cross below 200](inbox/market-security_96ba305ee7cd586bc348-sma_50_cross_below_200-8b5477836b33)
 - [FUC.F — Volume anomaly](inbox/market-security_96ba305ee7cd586bc348-volume_anomaly-1bb1ee000d56)
 - [FUC.F — Volume anomaly](inbox/market-security_96ba305ee7cd586bc348-volume_anomaly-d6607fa30b24)
 - [GEV — Bollinger below lower](inbox/market-security_4b61970aa8f574446819-bollinger_below_lower-9c7be5f40cd0)
@@ -583,6 +585,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader daily report — 2026-09-05](daily-reports/daily-report_20260905)
 - [PaperTrader daily report — 2026-09-06](daily-reports/daily-report_20260906)
 - [PaperTrader daily report — 2026-09-07](daily-reports/daily-report_20260907)
+- [PaperTrader daily report — 2026-09-08](daily-reports/daily-report_20260908)
 
 ## Idea
 
@@ -657,6 +660,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader daily research podcast — 2026-09-05T102108Z](podcasts/daily-podcast_20260905T102108Z)
 - [PaperTrader daily research podcast — 2026-09-05T171454Z](podcasts/daily-podcast_20260905T171454Z)
 - [PaperTrader daily research podcast — 2026-09-05T235530Z](podcasts/daily-podcast_20260905T235530Z)
+- [PaperTrader daily research podcast — 2026-09-07T190826Z](podcasts/daily-podcast_20260907T190826Z)
 - [Podcast quotidiano di ricerca PaperTrader — 2026-09-05T235530Z](podcasts/daily-podcast_20260905T235530Z_it-IT)
 
 ## Relationship
@@ -820,8 +824,3 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
-
-## Inbox
-
-- [[inbox/market-security_96ba305ee7cd586bc348-sma_50_cross_below_200-8b5477836b33|FUC.F — SMA 50 cross below 200]]
-- [[inbox/market-security_fe4648901e7675f157fd-bollinger_below_lower-f4f8c43b9b27|ANIC.L — Bollinger below lower]]

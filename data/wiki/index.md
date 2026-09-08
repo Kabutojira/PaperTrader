@@ -4,20 +4,20 @@ type: dashboard
 status: maintained
 tags:
   - dashboard
-created: "2026-09-07"
-updated: "2026-09-07"
+created: "2026-09-08"
+updated: "2026-09-08"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_d3748b4856431a4fdedd"
-as_of: "2026-09-07T19:41:26Z"
+snapshot_id: "decision_32e713083eb5f50f0166"
+as_of: "2026-09-08T18:58:30Z"
 ---
 
 # PaperTrader
 
-**As of `2026-09-07T19:41:26Z` · Investment data: Portfolio state safe — research gaps remain · Operations: Attention required**
+**As of `2026-09-08T18:58:30Z` · Investment data: Portfolio state safe — research gaps remain · Operations: Attention required**
 
 ## Maintain the current model portfolio
 
-<section class="decision-cards" aria-label="Decision summary"><article class="decision-card" data-status="maintain"><span class="decision-card-label">Stance</span><strong>Maintain the current model portfolio</strong></article><article class="decision-card" data-status="cash"><span class="decision-card-label">Cash</span><strong>97.082042%</strong></article><article class="decision-card" data-status="exposure"><span class="decision-card-label">Gross exposure</span><strong>2.917958%</strong></article><article class="decision-card" data-status="signals"><span class="decision-card-label">Actionable signals</span><strong>0</strong></article><article class="decision-card" data-status="coverage"><span class="decision-card-label">Assessment coverage</span><strong>53/83</strong></article></section>
+<section class="decision-cards" aria-label="Decision summary"><article class="decision-card" data-status="maintain"><span class="decision-card-label">Stance</span><strong>Maintain the current model portfolio</strong></article><article class="decision-card" data-status="cash"><span class="decision-card-label">Cash</span><strong>97.09953%</strong></article><article class="decision-card" data-status="exposure"><span class="decision-card-label">Gross exposure</span><strong>2.900471%</strong></article><article class="decision-card" data-status="signals"><span class="decision-card-label">Actionable signals</span><strong>0</strong></article><article class="decision-card" data-status="coverage"><span class="decision-card-label">Assessment coverage</span><strong>53/83</strong></article></section>
 
 ### Why
 
@@ -25,12 +25,12 @@ as_of: "2026-09-07T19:41:26Z"
 
 ## Current and target portfolio
 
-Current equity is **9994.66 EUR** with **97.082042% cash**. The target retains **97.082042% cash**.
+Current equity is **9992.86 EUR** with **97.09953% cash**. The target retains **97.09953% cash**.
 
 | Holding | Current | Target | Action | Strategy |
 | --- | ---: | ---: | --- | --- |
-| Cash | 97.082042% | 97.082042% | No trade | — |
-| [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | 2.917958% | 2.917958% | Hold | [Open](strategies/strategy_8caa208dfc702a2584a7) |
+| Cash | 97.09953% | 97.09953% | No trade | — |
+| [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | 2.90047% | 2.90047% | Hold | [Open](strategies/strategy_8caa208dfc702a2584a7) |
 
 ## Actionable trade signals
 
@@ -39,10 +39,11 @@ Current equity is **9994.66 EUR** with **97.082042% cash**. The target retains *
 ## Buy / Initiate research candidates
 
 - **[NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d):** Buy / Initiate · Full baseline — Allocation constrained · expected return 32% · The eligible set is not sufficiently diversified.
-- **[UBER — Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e):** Buy / Initiate · Starter — Allocation constrained · expected return 17% · The eligible set is not sufficiently diversified.
+- **[UBER — Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e):** Buy / Initiate · Starter — Strategy research pending · expected return 17% · The eligible set is not sufficiently diversified.
 - **[DLO — DLocal Limited](securities/security_715bde20b6e1e1320c1a):** Buy / Initiate · Valuation unattractive · expected return 22% · Bear/base payoff is below the starter threshold.
 - **[TCEHY — Tencent Holdings Limited](securities/security_de0d83229b369a426b99):** Buy / Initiate · Valuation unattractive · expected return 15% · Expected/bear payoff is below the starter threshold.
 - **[PATH — UiPath, Inc.](securities/security_eca976f0076a425ea1bb):** Buy / Initiate · Valuation unattractive · expected return 15% · Bear/base payoff is below the starter threshold.
+- **[FUC.F — Fanuc Corporation](securities/security_96ba305ee7cd586bc348):** Buy / Initiate · Research incomplete · expected return 14% · The assessment's registered evidence is not fresh.
 - **[CROX — Crocs, Inc.](securities/security_c150f31c30afdb4a85f9):** Buy / Initiate · Relationship research pending · expected return 19% · A current accepted idea-to-security relationship is unavailable.
 - **[FISV — Fiserv, Inc.](securities/security_d202772e4e62065cd17a):** Buy / Initiate · Valuation unattractive · expected return 17% · Expected/bear payoff is below the starter threshold.
 - **[CSIQ — Canadian Solar Inc.](securities/security_099561384c0f5e697727):** Buy / Initiate · Allocation constrained · expected return 26% · Research quality must be strictly above the configured threshold.
@@ -50,9 +51,9 @@ Current equity is **9994.66 EUR** with **97.082042% cash**. The target retains *
 
 ## Performance, risk, and coverage
 
-- Cumulative return: **-0.053374679272064028996376%**
-- Running drawdown: **-0.05359973282283186559405579543%**
-- Largest position: **2.917957%**
+- Cumulative return: **-0.071374862377532828996376%**
+- Running drawdown: **-0.07159987539661578521581816664%**
+- Largest position: **2.90047%**
 - Current assessments: **53/83**
 - Relationship reviews: **20/83**
 - Accepted relationships: **19**
@@ -66,4 +67,4 @@ Current equity is **9994.66 EUR** with **97.082042% cash**. The target retains *
 - [[performance|Performance and risk]]
 - [[research-catalog|Research catalog]]
 - [[system-status|System status and audit]]
-- [[daily-reports/daily-report_20260907|Daily report 2026-09-07]]
+- [[daily-reports/daily-report_20260908|Daily report 2026-09-08]]
