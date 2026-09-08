@@ -2,9 +2,15 @@
   "entity_id": "security_fe4648901e7675f157fd",
   "entity_type": "security",
   "inputs": {
-    "market_data_as_of": "2026-09-07T19:08:27Z",
-    "market_data_date": "2026-09-07",
-    "period_end": "2026-09-07",
+    "market_data_as_of": "2026-09-08T18:25:36Z",
+    "market_data_date": "2026-09-08",
+    "merged_input_values": {
+      "source_price_hash": [
+        "0811a9e487637ae77f3f615be7d9e04e0ad3aee55edf8b34f41215aa7e3b3acf",
+        "e60291f32d5b423c73e6db44ab42e525f99a561fce605d53985efcdfe7cc67ba"
+      ]
+    },
+    "period_end": "2026-09-08",
     "period_start": "2026-08-07",
     "research_reasons": [
       {
@@ -26,10 +32,23 @@
         "trigger_types": [
           "bollinger_below_lower"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_fe4648901e7675f157fd:71af236102967768bba3:2026-09-08",
+        "market_data_date": "2026-09-08",
+        "observed_at": "2026-09-08T18:25:36Z",
+        "prompt": "Research security_fe4648901e7675f157fd with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_fe4648901e7675f157fd-bollinger_below_lower-f4f8c43b9b27.md"
+        ],
+        "trigger_types": [
+          "bollinger_below_lower"
+        ]
       }
     ],
     "security_id": "security_fe4648901e7675f157fd",
-    "source_price_hash": "0811a9e487637ae77f3f615be7d9e04e0ad3aee55edf8b34f41215aa7e3b3acf",
+    "source_price_hash": "e60291f32d5b423c73e6db44ab42e525f99a561fce605d53985efcdfe7cc67ba",
     "trigger_types": [
       "bollinger_below_lower"
     ]
@@ -39,6 +58,7 @@
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
-    "data/wiki/inbox/market-security_fe4648901e7675f157fd-bollinger_below_lower-479448d9d62b.md"
+    "data/wiki/inbox/market-security_fe4648901e7675f157fd-bollinger_below_lower-479448d9d62b.md",
+    "data/wiki/inbox/market-security_fe4648901e7675f157fd-bollinger_below_lower-f4f8c43b9b27.md"
   ]
 }

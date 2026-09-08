@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-08-08"
-updated: "2026-09-07"
+updated: "2026-09-08"
 provenance: repository-contract
 ---
 
@@ -3447,3 +3447,11 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Published investor decision snapshot `decision_d3748b4856431a4fdedd`.
 
 - Generated canonical [[daily-reports/daily-report_20260907]] for run `daily-20260907T190826Z`.
+
+## 2026-09-08
+
+- Created candidate packet [[inbox/market-security_96ba305ee7cd586bc348-sma_50_cross_below_200-8b5477836b33]] (8b5477836b33).
+
+- Created candidate packet [[inbox/market-security_fe4648901e7675f157fd-bollinger_below_lower-f4f8c43b9b27]] (f4f8c43b9b27).
+
+- Classified [[inbox/market-security_fe4648901e7675f157fd-bollinger_below_lower-f4f8c43b9b27]] as `ingest`: Strengthened Bollinger-band breach with a 6.48% decline over the validated period merits durable review.

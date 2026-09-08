@@ -5,7 +5,7 @@ status: maintained
 tags:
   - research
 created: "2026-09-07"
-updated: "2026-09-07"
+updated: "2026-09-08"
 provenance: deterministic-decision-projection
 snapshot_id: "decision_d3748b4856431a4fdedd"
 as_of: "2026-09-07T19:41:26Z"
@@ -820,3 +820,8 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_96ba305ee7cd586bc348-sma_50_cross_below_200-8b5477836b33|FUC.F — SMA 50 cross below 200]]
+- [[inbox/market-security_fe4648901e7675f157fd-bollinger_below_lower-f4f8c43b9b27|ANIC.L — Bollinger below lower]]
