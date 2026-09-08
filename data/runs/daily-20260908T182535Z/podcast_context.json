@@ -1,0 +1,69 @@
+{
+  "background_wiki_pages": [],
+  "changed_wiki_pages": [],
+  "daily_cycle_id": "daily-20260908T182535Z",
+  "decision_snapshot_path": "data/runs/daily-20260908T182535Z/decision_snapshot.json",
+  "decision_snapshot_sha256": "c55608e6cbe7513cd29a5afa6cd0602a130ec582a138ce47893b86943f21e6ae",
+  "generated_at": "2026-09-08T19:10:40Z",
+  "intervening_daily_cycles": [
+    "daily-20260908T182535Z"
+  ],
+  "page_path": "data/wiki/podcasts/daily-podcast_20260908T182535Z.md",
+  "podcast_context_version": 3,
+  "portfolio_implication_paths": [
+    "data/runs/daily-20260908T182535Z/decision_snapshot.json",
+    "data/wiki/daily-reports/daily-report_20260908.md"
+  ],
+  "previous_successful_podcast": {
+    "context_path": "data/runs/daily-20260907T190826Z/podcast_context.json",
+    "context_sha256": "cb593493e24ad6df3a2144e2e642710a9ab7d7ec647231216bd5457faca4b4bb",
+    "daily_cycle_id": "daily-20260907T190826Z",
+    "page_path": "data/wiki/podcasts/daily-podcast_20260907T190826Z.md",
+    "page_sha256": "d096a879a35207a5d82c2551dec641e7b528b8b1ec4c496bb0e24759ee1833cb",
+    "research_cutoff_at": "2026-09-07T19:41:26Z"
+  },
+  "report_path": "data/wiki/daily-reports/daily-report_20260908.md",
+  "report_sha256": "ec35328231397801c77bbdc40150a8edaf43d41c885369c1f0062fbc1c1ab25d",
+  "research_cutoff_at": "2026-09-08T18:58:30Z",
+  "research_developments": [],
+  "run_id": "daily-20260908T182535Z",
+  "target_minutes": 20,
+  "target_words": 3000,
+  "unresolved_research_gaps": [
+    {
+      "completed_at": "2026-09-08T18:58:04Z",
+      "daily_cycle_id": "daily-20260908T182535Z",
+      "daily_report_items": [],
+      "entity_id": "security_fe4648901e7675f157fd",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "Hermes timed out after 1800s",
+          "source": "data/runs/daily-20260908T182535Z/01KYPB2XDRKAMP0ZX3MWA7Y1JH/validation_report.json"
+        },
+        {
+          "claim": "agent result is missing or a symlink: data/runs/daily-20260908T182535Z/01KYPB2XDRKAMP0ZX3MWA7Y1JH/agent_result.json",
+          "source": "data/runs/daily-20260908T182535Z/01KYPB2XDRKAMP0ZX3MWA7Y1JH/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "Hermes timed out after 1800s",
+        "agent result is missing or a symlink: data/runs/daily-20260908T182535Z/01KYPB2XDRKAMP0ZX3MWA7Y1JH/agent_result.json"
+      ],
+      "files_changed": [],
+      "operation_id": "01KYPB2XDRKAMP0ZX3MWA7Y1JH",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260908T182535Z/01KYPB2XDRKAMP0ZX3MWA7Y1JH/validation_report.json",
+      "status": "failed",
+      "summary": "The accepted research did not produce a valid result."
+    }
+  ],
+  "wiki_orientation_paths": [
+    "data/wiki/SCHEMA.md",
+    "data/wiki/index.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/log.md"
+  ],
+  "window_mode": "since_previous_successful_podcast",
+  "window_start_exclusive": "2026-09-07T19:41:26Z"
+}

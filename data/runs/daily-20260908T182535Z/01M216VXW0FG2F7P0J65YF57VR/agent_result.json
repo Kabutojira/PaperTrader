@@ -1,0 +1,53 @@
+{
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [],
+  "evidence": [
+    {
+      "claim": "The controller-validated podcast context is version three, binds the exact transcript and report paths, defines the window from 2026-09-07T19:41:26Z exclusive through 2026-09-08T18:58:30Z inclusive, and contains an empty research_developments array.",
+      "source": "data/runs/daily-20260908T182535Z/podcast_context.json"
+    },
+    {
+      "claim": "The sole in-window research attempt failed after a timeout, had no agent_result.json, and recorded no changed paths.",
+      "source": "data/runs/daily-20260908T182535Z/01KYPB2XDRKAMP0ZX3MWA7Y1JH/validation_report.json"
+    },
+    {
+      "claim": "The most recent successful podcast was reviewed for continuity and repetition control; no newer accepted research existed to advance or replace its covered conclusions.",
+      "source": "data/wiki/podcasts/daily-podcast_20260907T190826Z.md"
+    },
+    {
+      "claim": "The operation-local slate records zero successful developments, zero selected chapters, and excludes the failed ANIC.L attempt because it is not accepted research.",
+      "source": "data/runs/daily-20260908T182535Z/01M216VXW0FG2F7P0J65YF57VR/candidate_slate.json"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260908T182535Z/01M216VXW0FG2F7P0J65YF57VR/candidate_slate.json"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M216VXW0FG2F7P0J65YF57VR",
+  "operations_created": [],
+  "reason_code": "no_audience_relevant_accepted_research",
+  "status": "skipped",
+  "summary": "Skipped the episode after the required novelty and audience-value review. The frozen version-three context contains zero successful research developments in the window after the previous successful podcast. Its only unresolved item is an ANIC.L security-research attempt that timed out, produced no accepted agent result, changed no research page, and therefore cannot support an evidence-based chapter. The prior episode was reviewed for continuity, but routine deterministic market and portfolio publication was not used as replacement research. No transcript or report link was created, no security rating chapter was warranted, and the draft renderer was not invoked.",
+  "validation": {
+    "checks": [
+      "The selected queue row is running, claimed by daily-20260908T182535Z, and names exactly llm-wiki plus papertrader-daily-podcast.",
+      "The payload, frozen context, and daily manifest all bind data/wiki/podcasts/daily-podcast_20260908T182535Z.md; the payload and context both bind data/wiki/daily-reports/daily-report_20260908.md.",
+      "The frozen context is podcast_context_version 3 and the prior successful podcast was reviewed.",
+      "The candidate slate includes every successful in-window research development: there were none.",
+      "The sole unresolved research gap was excluded because its operation failed without an accepted result or changed research artifact.",
+      "The no-audience-relevant-accepted-research skip rule applies, so no transcript, report link, validate-script call, or render-draft call was produced.",
+      "Strict schema validation passed.",
+      "Strict integrity validation passed.",
+      "Queue validation passed.",
+      "Strict wiki lint passed.",
+      "Strict portfolio reconciliation passed."
+    ],
+    "passed": true
+  }
+}

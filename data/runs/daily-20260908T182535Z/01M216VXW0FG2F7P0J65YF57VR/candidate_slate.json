@@ -1,0 +1,25 @@
+{
+  "candidate_slate_version": 1,
+  "daily_cycle_id": "daily-20260908T182535Z",
+  "operation_id": "01M216VXW0FG2F7P0J65YF57VR",
+  "context_path": "data/runs/daily-20260908T182535Z/podcast_context.json",
+  "page_path": "data/wiki/podcasts/daily-podcast_20260908T182535Z.md",
+  "report_path": "data/wiki/daily-reports/daily-report_20260908.md",
+  "window_start_exclusive": "2026-09-07T19:41:26Z",
+  "research_cutoff_at": "2026-09-08T18:58:30Z",
+  "successful_research_developments": [],
+  "selected_chapters": [],
+  "excluded_items": [
+    {
+      "operation_id": "01KYPB2XDRKAMP0ZX3MWA7Y1JH",
+      "operation_type": "security_research",
+      "entity_id": "security_fe4648901e7675f157fd",
+      "status": "failed",
+      "reason_code": "not_accepted_research",
+      "reason": "The only in-window research attempt timed out and produced no accepted agent result or changed research page, so it cannot support an evidence-based podcast chapter."
+    }
+  ],
+  "disposition": "skipped",
+  "reason_code": "no_audience_relevant_accepted_research",
+  "reason": "The frozen context contains no successful research developments. The sole unresolved item is a failed security-research attempt with no accepted result or research changes; routine deterministic portfolio and market-state publication is not a substitute for new accepted research."
+}
