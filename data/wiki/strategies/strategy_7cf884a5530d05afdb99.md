@@ -4,7 +4,7 @@ type: strategy
 status: ready
 tags: [strategy, research, risk]
 created: "2026-09-05"
-updated: "2026-09-05"
+updated: "2026-09-09"
 provenance: "source_nvda_q2_fy2027_10q; source_nvda_q2_fy2027_release; source_nvda_q2_fy2027_cfo; source_nvda_huggingface_20260903_8k"
 strategy_id: strategy_7cf884a5530d05afdb99
 idea_id: idea_ai_compute_networking_hyperscaler_monetization
@@ -13,8 +13,8 @@ relationship_id: relationship_ai_compute_nvda
 confidence: medium
 next_review: "2026-09-18"
 sleeve: baseline
-allocation_plan_id: allocation_plan_8750d84d9f6b86fd5bd3
-allocation_intent_id: allocation_intent_18c42c83c9de5d41cc9b
+allocation_plan_id: allocation_plan_6f7a4f4479899fcd0d91
+allocation_intent_id: allocation_intent_b8eab1837513d5191d02
 assessment_id: assessment_82fd625a8d93be4bd8f5
 ---
 
@@ -30,8 +30,8 @@ The current allocation plan's scenario returns show why long equity is preferabl
   "chart_id": "nvda-baseline-scenario-returns",
   "kind": "series",
   "title": "NVIDIA current-plan scenario returns",
-  "description": "Bear, base and bull twelve-month returns at the allocation plan's USD 230.36 valuation mark show the upside and downside supporting a bounded full-baseline position.",
-  "as_of": "2026-09-05T10:21:09Z",
+  "description": "Bear, base and bull twelve-month returns at the allocation plan's USD 225.73 valuation mark show the upside and downside supporting a bounded full-baseline position.",
+  "as_of": "2026-09-09T18:24:19Z",
   "sources": [
     {
       "label": "NVIDIA fiscal 2027 second-quarter Form 10-Q",
@@ -39,8 +39,8 @@ The current allocation plan's scenario returns show why long equity is preferabl
       "observed_at": "2026-09-04T06:15:57Z"
     },
     {
-      "label": "PaperTrader allocation plan allocation_plan_8750d84d9f6b86fd5bd3",
-      "observed_at": "2026-09-05T10:21:09Z"
+      "label": "PaperTrader allocation plan allocation_plan_6f7a4f4479899fcd0d91",
+      "observed_at": "2026-09-09T18:24:19Z"
     }
   ],
   "x_axis": {
@@ -60,7 +60,7 @@ The current allocation plan's scenario returns show why long equity is preferabl
       "name": "Scenario return",
       "render": "bar",
       "y_axis": 0,
-      "values": ["-14.04757793219827615411185935", "34.7890255154163396674154933", "94.4782075069453145603933687"]
+      "values": ["-12.28458612164674774643077227", "37.5537172183266910340062889", "98.4671990782942273212071415"]
     }
   ],
   "notes": [
@@ -72,9 +72,9 @@ The current allocation plan's scenario returns show why long equity is preferabl
 
 ## Decision
 
-**Ready — long common equity in the full baseline sleeve.** Current plan `allocation_plan_8750d84d9f6b86fd5bd3` assigns a 3.96% target, capped at 5%, and persists a two-share target. That quantity is allocator-owned, is not an agent sizing decision, and is not yet an order or fill. The accepted [[relationships/relationship_ai_compute_nvda|AI-compute relationship]] and [[securities/security_33d9c44facc75c726c7d|NVIDIA assessment]] support bounded exposure rather than conviction treatment.
+**Ready — long common equity in the full baseline sleeve.** Current plan `allocation_plan_6f7a4f4479899fcd0d91` assigns a 1.94% target, capped at 5%, and persists a one-share target. That quantity is allocator-owned, is not an agent sizing decision, and is not yet an order or fill. The accepted [[relationships/relationship_ai_compute_nvda|AI-compute relationship]] and [[securities/security_33d9c44facc75c726c7d|NVIDIA assessment]] support bounded exposure rather than conviction treatment.
 
-At the USD 230.36 plan mark, bear/base/bull returns are -14.05%/34.79%/94.48%, probability-weighted expected return is 32.08%, and medium-confidence adjusted expected return is 24.06%. The 25.81% margin of safety, 2.48 bear/base payoff ratio and 1.71 expected/bear payoff ratio clear the full-baseline frontier encoded by the allocator. Cash is therefore less attractive for this bounded tranche, but the portfolio's remaining allocation stays under deterministic allocation control.
+At the USD 225.73 plan mark, bear/base/bull returns are -12.28%/37.55%/98.47%, probability-weighted expected return is 34.78%, and medium-confidence adjusted expected return is 26.09%. The 27.30% margin of safety, 3.06 bear/base payoff ratio and 2.12 expected/bear payoff ratio clear the full-baseline frontier encoded by the allocator. Cash is therefore less attractive for this bounded tranche, but the portfolio's remaining allocation stays under deterministic allocation control.
 
 This remains lower-conviction exposure despite quality score 92 and strong expected return because confidence is medium rather than the configured high-conviction minimum. Customer concentration, USD 279 billion of supply commitments, USD 105 billion of capped guarantees, longer receivable terms, export restrictions, rapid product transitions and customer-designed silicon can impair the path from AI demand to shareholder value. The plan also records insufficient diversification, so the 5% ceiling must not be treated as a conviction target.
 
@@ -84,7 +84,7 @@ Baseline-allocation mode permits only long equity. NVIDIA common stock is liquid
 
 ## Entry, exit and risk controls
 
-- **Entry:** open only while allocation plan `allocation_plan_8750d84d9f6b86fd5bd3`, allocation intent `allocation_intent_18c42c83c9de5d41cc9b`, assessment `assessment_82fd625a8d93be4bd8f5` and relationship `relationship_ai_compute_nvda` remain current; require fresh NVDA and USD/EUR inputs and a positive deterministic whole-share delta. The latest observed NVDA mark was USD 230.36 and USD/EUR was 0.8604999780654907, both retrieved at 2026-09-05T10:21:09Z. The strategy does not choose or enlarge the persisted two-share target.
+- **Entry:** open only while allocation plan `allocation_plan_6f7a4f4479899fcd0d91`, allocation intent `allocation_intent_b8eab1837513d5191d02`, assessment `assessment_82fd625a8d93be4bd8f5` and relationship `relationship_ai_compute_nvda` remain current; require fresh NVDA and USD/EUR inputs and a positive deterministic whole-share delta. The latest observed NVDA mark was USD 225.73 and USD/EUR was 0.8590999841690063, both retrieved at 2026-09-09T18:24:19Z. The strategy does not choose or enlarge the persisted one-share target.
 - **Exit:** reduce or close when a current deterministic allocation plan directs it, when the full-baseline eligibility frontier no longer clears, or when a hard blocker appears. Review no later than 2026-09-18 and after material earnings, Rubin, export-control, customer-credit, guarantee or concentration evidence.
 - **Risk budget:** 5% maximum-position ceiling for the full baseline tier, not the current rounded target weight.
 - **Invalidation:** do not increase exposure if normalized earnings fall below the bear path, gross margin remains below 70%, guarantees or receivables produce material losses, Rubin misses its cycle, export controls intensify, CUDA or networking attachment weakens, the assessment or relationship is superseded, or market/FX inputs become stale.

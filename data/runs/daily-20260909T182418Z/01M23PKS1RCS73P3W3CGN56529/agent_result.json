@@ -1,0 +1,96 @@
+{
+  "commands_run": [
+    "papertrader research strategy upsert --request data/runs/daily-20260909T182418Z/01M23PKS1RCS73P3W3CGN56529/strategy-upsert-request.json",
+    "papertrader signal create --request data/runs/daily-20260909T182418Z/01M23PKS1RCS73P3W3CGN56529/signal-create-request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260909T182418Z/01M23PKS1RCS73P3W3CGN56529/enqueue-execute-strategy-request.json",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader queue validate"
+  ],
+  "daily_report_items": [
+    "Updated NVIDIA's ready full-baseline long-equity strategy for the current 1.94% one-share target, created a ready open signal for only the deterministic delta, and queued exactly one separate paper-order review; no order or fill was created by research."
+  ],
+  "evidence": [
+    {
+      "claim": "The current immutable allocation target binds strategy_7cf884a5530d05afdb99 to plan allocation_plan_6f7a4f4479899fcd0d91, intent allocation_intent_b8eab1837513d5191d02, assessment assessment_82fd625a8d93be4bd8f5 and accepted relationship relationship_ai_compute_nvda. It persists a one-share open target at 1.94%, capped at 5%, with rank two, effective score 92, 34.7849225883281666573153411% expected return, 26.08869194124612499298650582% confidence-adjusted expected return and no hard blocker.",
+      "observed_at": "2026-09-09T18:24:19Z",
+      "source": "data/tables/allocation_targets.csv"
+    },
+    {
+      "claim": "Accepted assessment assessment_82fd625a8d93be4bd8f5 uses medium confidence and a twelve-month USD 198/USD 310.50/USD 448 bear/base/bull range with 30%/50%/20% probabilities. Quality score 92 clears baseline quality requirements, while medium confidence and concentration-sensitive gaps support baseline rather than conviction treatment.",
+      "observed_at": "2026-09-04T06:22:45Z",
+      "source": "data/tables/security_assessments.csv"
+    },
+    {
+      "claim": "relationship_ai_compute_nvda remains accepted for the AI-compute idea and NVIDIA security, with a positive beneficiary mechanism, high sensitivity and high confidence in the causal transmission.",
+      "observed_at": "2026-08-07T09:15:09Z",
+      "source": "data/tables/relationships.csv"
+    },
+    {
+      "claim": "NVIDIA's fiscal Q2 filing supports the accelerated-compute platform thesis while documenting material supply commitments, guarantees, receivable, concentration, export and product-transition risks that bound the position.",
+      "observed_at": "2026-09-04T06:15:57Z",
+      "source": "NVIDIA fiscal 2027 second-quarter Form 10-Q",
+      "source_hash": "e2634e509c241c5f45e3f6c115dc38a85645e5fdbee760b4a04f5e9035f6f7a9",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm"
+    },
+    {
+      "claim": "The latest NVDA mark was USD 225.72999572753906 and USD/EUR was 0.8590999841690063, both retrieved at 2026-09-09T18:24:19Z and inside the configured 36-hour freshness window when the signal was created.",
+      "observed_at": "2026-09-09T18:24:19Z",
+      "source": "data/market/latest.csv and data/market/fx/USD_EUR.csv"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M23QEMDRJGEXVJE0QBS0MZN1.json",
+    "data/runs/daily-20260909T182418Z/01M23PKS1RCS73P3W3CGN56529/enqueue-execute-strategy-request.json",
+    "data/runs/daily-20260909T182418Z/01M23PKS1RCS73P3W3CGN56529/signal-create-request.json",
+    "data/runs/daily-20260909T182418Z/01M23PKS1RCS73P3W3CGN56529/strategy-upsert-request.json",
+    "data/tables/signals.csv",
+    "data/tables/strategies.csv",
+    "data/tables/strategy_legs.csv",
+    "data/wiki/log.md",
+    "data/wiki/strategies/strategy_7cf884a5530d05afdb99.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M23PKS1RCS73P3W3CGN56529",
+  "operations_created": [
+    "01M23QEMDRJGEXVJE0QBS0MZN1"
+  ],
+  "status": "succeeded",
+  "summary": "Updated ready baseline strategy strategy_7cf884a5530d05afdb99 for NVIDIA using current allocation plan allocation_plan_6f7a4f4479899fcd0d91 and intent allocation_intent_b8eab1837513d5191d02. Baseline mode selected long common equity only, retained the allocator-owned one-share target and 5% maximum-position ceiling, and documented medium confidence, concentration, commitments, guarantees, export controls and insufficient diversification as reasons it does not qualify for conviction. Created ready open signal signal_051ffe3636d9a4c24a7f and exactly one dependent execute_strategy operation, 01M23QEMDRJGEXVJE0QBS0MZN1. No order, fill, execution, cash, portfolio, performance or allocation state was changed.",
+  "validation": {
+    "checks": [
+      "The selected queue row was the sole routed running operation, matched run daily-20260909T182418Z and strategy_7cf884a5530d05afdb99, and had a live lease when work began.",
+      "The controller preflight identified native llm-wiki 2.1.0, papertrader-controller, papertrader-strategy-research and echart with content hashes.",
+      "Current plan allocation_plan_6f7a4f4479899fcd0d91 preserved assessment assessment_82fd625a8d93be4bd8f5 and bound intent allocation_intent_b8eab1837513d5191d02 with an allocator-owned target quantity of one.",
+      "The accepted relationship endpoints, stable baseline strategy identity, ready long-equity instrument, XNAS venue, USD currency, 5% position cap and fresh market/FX inputs matched canonical state and configured limits.",
+      "The open from zero current and pending weight to a 1.94% target exceeded the configured 1% minimum trade threshold, and the current target had no hard blocker.",
+      "Baseline-allocation mode allowed only long equity; short equity, calls, puts and multi-leg options were ineligible and lacked complete fresh contract quotes and liquidity evidence.",
+      "The strategy was upserted with its current allocation plan and intent before signal creation, and its normalized equity leg retained the allocator-owned one-share target.",
+      "The signal applier created signal_051ffe3636d9a4c24a7f with normalized open action, fresh 2026-09-09T18:24:19Z market timestamp and an expiry after creation.",
+      "Exactly one execute_strategy follow-up was enqueued with the strategy, signal, current plan, intent, persisted target quantity and normalized open action.",
+      "visualization_review and the changed strategy page both identify chart nvda-baseline-scenario-returns exactly.",
+      "papertrader wiki lint --strict returned OK [wiki], including strict chart-fence validation.",
+      "papertrader integrity --strict returned OK [integrity], including signal identity and protected-state integrity.",
+      "papertrader queue validate returned OK [queue].",
+      "Command-audit receipts and the observed repository delta show no changes to allocation targets/history, orders, executions, cash, portfolio, performance or fills."
+    ],
+    "passed": true
+  },
+  "visualization_review": {
+    "charts": [
+      {
+        "chart_id": "nvda-baseline-scenario-returns",
+        "page_path": "data/wiki/strategies/strategy_7cf884a5530d05afdb99.md"
+      }
+    ],
+    "completed": true,
+    "omissions": [
+      {
+        "dataset": "Option and short-structure payoff comparison",
+        "reason": "Baseline-allocation mode permits only long equity, the accepted relationship is positive, and no complete fresh contract quote or contract-level liquidity evidence was supplied; charting ineligible structures would misrepresent the deterministic allocation mandate.",
+        "reason_code": "not_decision_relevant"
+      }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "operation_type": "execute_strategy",
+  "entity_type": "strategy",
+  "entity_id": "strategy_7cf884a5530d05afdb99",
+  "dedupe_key": "execute_strategy:strategy_7cf884a5530d05afdb99:allocation_intent_b8eab1837513d5191d02:signal_051ffe3636d9a4c24a7f",
+  "prompt": "Review the current NVIDIA baseline open signal and create at most its deterministic pending paper order.",
+  "inputs": {
+    "strategy_id": "strategy_7cf884a5530d05afdb99",
+    "signal_id": "signal_051ffe3636d9a4c24a7f",
+    "action": "open",
+    "allocation_plan_id": "allocation_plan_6f7a4f4479899fcd0d91",
+    "allocation_intent_id": "allocation_intent_b8eab1837513d5191d02",
+    "target_quantity": "1"
+  },
+  "source": "strategy_research:01M23PKS1RCS73P3W3CGN56529",
+  "priority": 100,
+  "freshness_days": 0,
+  "depends_on": [
+    "01M23PKS1RCS73P3W3CGN56529"
+  ],
+  "not_before": "now",
+  "deadline": "2026-09-10T18:24:19Z",
+  "source_refs": [
+    "source_nvda_q2_fy2027_10q",
+    "source_nvda_q2_fy2027_release",
+    "source_nvda_q2_fy2027_cfo",
+    "source_nvda_huggingface_20260903_8k",
+    "data/market/latest.csv",
+    "data/market/fx/USD_EUR.csv"
+  ],
+  "max_attempts": 3
+}

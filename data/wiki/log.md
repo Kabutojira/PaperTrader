@@ -3581,3 +3581,9 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Created candidate packet [[inbox/market-security_f2b9760d847b2ba59324-volume_anomaly-6eda5a7a4ed9]] (6eda5a7a4ed9).
 
 - Classified [[inbox/market-security_f2b9760d847b2ba59324-volume_anomaly-6eda5a7a4ed9]] as `ingest`: A newly entered volume anomaly coincides with a material 5.1% decline over the review period and merits durable review.
+
+## [2026-09-09T18:31:32Z] update | NVIDIA bounded baseline allocation
+
+- Rebound [[strategies/strategy_7cf884a5530d05afdb99|NVIDIA's bounded baseline strategy]] to current plan `allocation_plan_6f7a4f4479899fcd0d91` and intent `allocation_intent_b8eab1837513d5191d02`. The allocator persists a one-share, 1.94% open target with a 5% ceiling; position size remains deterministic.
+- At the fresh USD 225.73 mark, canonical bear/base/bull returns are -12.28%/37.55%/98.47%, confidence-adjusted expected return is 26.09%, and margin of safety is 27.30%. Medium confidence, concentration, commitments, guarantees, export controls and insufficient diversification continue to bar conviction sizing.
+- Baseline mode retains long common equity only. No order, fill, allocation or accounting state was changed by this strategy review.
