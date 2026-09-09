@@ -4,37 +4,37 @@ type: performance
 status: maintained
 tags:
   - performance
-created: "2026-09-08"
-updated: "2026-09-08"
+created: "2026-09-09"
+updated: "2026-09-09"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_32e713083eb5f50f0166"
-as_of: "2026-09-08T18:58:30Z"
+snapshot_id: "decision_8b115dd5f9f91ae3d705"
+as_of: "2026-09-09T19:22:57Z"
 ---
 
 # Performance and risk
 
-**As of `2026-09-08T18:58:30Z`**
+**As of `2026-09-09T19:22:57Z`**
 
 Current performance epoch started `2026-07-28T12:00:00Z` at **10000 EUR**. Prior audit epochs retained: **1**.
 
-<svg class="performance-chart" viewBox="0 0 100 100" role="img" aria-label="Equity history from 2026-07-28 to 2026-09-08; latest equity 9992.8625137622467171003624."><title>Model equity history</title><desc>Equity history from 2026-07-28 to 2026-09-08; latest equity 9992.8625137622467171003624.</desc><polyline fill="none" stroke="currentColor" stroke-width="2" points="0.00,10.25 2.63,10.25 5.26,10.25 7.89,10.25 10.53,10.25 13.16,10.25 15.79,10.25 18.42,10.25 21.05,10.25 23.68,10.25 26.32,10.25 28.95,10.25 31.58,10.25 34.21,10.25 36.84,10.25 39.47,10.25 42.11,10.25 44.74,10.25 47.37,10.25 50.00,10.25 52.63,10.25 55.26,10.25 57.89,10.25 60.53,10.25 63.16,10.25 65.79,10.25 68.42,10.25 71.05,10.25 73.68,10.25 76.32,10.25 78.95,10.25 81.58,10.25 84.21,10.25 86.84,10.25 89.47,10.00 92.11,10.00 94.74,10.00 97.37,69.89 100.00,90.00" /></svg>
+<svg class="performance-chart" viewBox="0 0 100 100" role="img" aria-label="Equity history from 2026-07-28 to 2026-09-09; latest equity 9988.9025223071685571003624."><title>Model equity history</title><desc>Equity history from 2026-07-28 to 2026-09-09; latest equity 9988.9025223071685571003624.</desc><polyline fill="none" stroke="currentColor" stroke-width="2" points="0.00,10.16 2.56,10.16 5.13,10.16 7.69,10.16 10.26,10.16 12.82,10.16 15.38,10.16 17.95,10.16 20.51,10.16 23.08,10.16 25.64,10.16 28.21,10.16 30.77,10.16 33.33,10.16 35.90,10.16 38.46,10.16 41.03,10.16 43.59,10.16 46.15,10.16 48.72,10.16 51.28,10.16 53.85,10.16 56.41,10.16 58.97,10.16 61.54,10.16 64.10,10.16 66.67,10.16 69.23,10.16 71.79,10.16 74.36,10.16 76.92,10.16 79.49,10.16 82.05,10.16 84.62,10.16 87.18,10.00 89.74,10.00 92.31,10.00 94.87,48.56 97.44,61.51 100.00,90.00" /></svg>
 
 | Daily return | Cumulative return | Drawdown | Realized P/L | Unrealized P/L |
 | ---: | ---: | ---: | ---: | ---: |
-| -0.01800979577620190149931991223% | -0.071374862377532828996376% | -0.07159987539661578521581816664% | 0 EUR | -7.1374862377532828996376 EUR |
+| -0.03962819912336859900852443823% | -0.110974776928314428996376% | -0.1111997007787901295185432138% | 0 EUR | -11.0974776928314428996376 EUR |
 
 ## Exposure and concentration
 
-- Cash: 97.09953%
-- Invested exposure: 2.90047%
+- Cash: 97.138024%
+- Invested exposure: 2.861976%
 - Conviction exposure: 0 EUR
-- Baseline exposure: 289.84 EUR
-- Largest position: 2.90047%
-- Largest sector: 2.90047%
+- Baseline exposure: 285.88 EUR
+- Largest position: 2.861976%
+- Largest sector: 2.861976%
 
 ## Target allocation changes
 
-No target allocation changes.
+- **[NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d):** Buy from 0% to 1.941599%
 
 ## Committed history
 
@@ -79,6 +79,7 @@ No target allocation changes.
 | 2026-09-06 | 10000.0225174243560771003624 | 9703.0225174243560771003624 | 297 | 0% | 0.000225174243560771003624% | 0% |
 | 2026-09-07 | 9994.6625320727935971003624 | 9703.0225174243560771003624 | 291.64001464843752 | -0.05359973282283186559405579543% | -0.053374679272064028996376% | -0.0536% |
 | 2026-09-08 | 9992.8625137622467171003624 | 9703.0225174243560771003624 | 289.83999633789064 | -0.01800979577620190149931991223% | -0.071374862377532828996376% | -0.0716% |
+| 2026-09-09 | 9988.9025223071685571003624 | 9703.0225174243560771003624 | 285.88000488281248 | -0.03962819912336859900852443823% | -0.110974776928314428996376% | -0.1112% |
 
 No external benchmark is used.
 

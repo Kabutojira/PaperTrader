@@ -35,21 +35,33 @@
       "profile": "deep",
       "recorded_at": "2026-09-09T19:22:35Z",
       "terminal_status": "failed"
+    },
+    {
+      "index": 4,
+      "kind": "finalization",
+      "operation_id": "",
+      "operation_type": "",
+      "profile": "",
+      "recorded_at": "2026-09-09T19:23:22Z",
+      "terminal_status": ""
     }
   ],
-  "completed_at": "",
+  "completed_at": "2026-09-09T19:22:57Z",
   "completion_at": "",
   "daily_cycle_id": "daily-20260909T182418Z",
   "daily_run_version": 2,
-  "fill_outcomes": [],
-  "final_commit_identity": "",
+  "fill_outcomes": [
+    "order_6618f57383c974fd567d:pending:-"
+  ],
+  "final_commit_identity": "daily-20260909T182418Z:checkpoint-004",
   "final_commit_sha": "",
-  "finalization_at": "",
-  "finalization_commit_identity": "",
+  "finalization_at": "2026-09-09T19:22:57Z",
+  "finalization_commit_identity": "daily-20260909T182418Z:checkpoint-004",
+  "finalization_status": "degraded",
   "maximum_operations": 5,
   "model_budget_limit": "100",
   "model_budget_used": "15",
-  "next_checkpoint_index": 4,
+  "next_checkpoint_index": 5,
   "operating_date": "2026-09-09",
   "operation_count": 3,
   "operations_accepted": [
@@ -158,10 +170,10 @@
     "01M0FWY80RRY528G4HT2QM3N1Y:blocked:dependency_unavailable:01M07XKZS0JKBQM0THMPJGWEK5"
   ],
   "remaining_operations": 2,
-  "report_path": "",
-  "research_cutoff_at": "",
+  "report_path": "data/wiki/daily-reports/daily-report_20260909.md",
+  "research_cutoff_at": "2026-09-09T19:22:57Z",
   "run_id": "daily-20260909T182418Z",
-  "snapshot_id": "",
+  "snapshot_id": "decision_8b115dd5f9f91ae3d705",
   "source_sha": "f860e11610cd6e081c4cdc0fa56de6313897c462",
   "started_at": "2026-09-09T18:24:18Z",
   "status": "degraded",
