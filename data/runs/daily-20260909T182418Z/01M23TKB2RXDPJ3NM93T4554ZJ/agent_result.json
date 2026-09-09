@@ -1,0 +1,58 @@
+{
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [],
+  "evidence": [
+    {
+      "claim": "The controller-validated version-three podcast context binds the exact transcript path data/wiki/podcasts/daily-podcast_20260909T182418Z.md and report path data/wiki/daily-reports/daily-report_20260909.md, defines the window from 2026-09-07T19:41:26Z exclusive through 2026-09-09T19:22:57Z inclusive, and contains one successful strategy-research development.",
+      "source": "data/runs/daily-20260909T182418Z/podcast_context.json"
+    },
+    {
+      "claim": "The accepted in-window NVIDIA strategy result retained the prior one-share bounded baseline conclusion and existing valuation, risk, and invalidation evidence while rebinding the strategy to the current allocation plan and creating a ready signal for separate paper-order review.",
+      "source": "data/runs/daily-20260909T182418Z/01M23PKS1RCS73P3W3CGN56529/agent_result.json"
+    },
+    {
+      "claim": "The most recent successful podcast already covered NVIDIA's Buy rating, valuation asymmetry, bounded one-share baseline path, and the distinction between strategy, signal, pending order, and fill; the current accepted development adds no new company evidence or changed investment conclusion.",
+      "source": "data/wiki/podcasts/daily-podcast_20260907T190826Z.md"
+    },
+    {
+      "claim": "The current immutable decision snapshot shows a one-share NVIDIA pending paper order and an unchanged medium-confidence Buy assessment; deterministic order creation is portfolio-state publication rather than new accepted research.",
+      "source": "data/runs/daily-20260909T182418Z/decision_snapshot.json"
+    },
+    {
+      "claim": "The operation-local slate includes the sole successful development, selects zero chapters, and records its exclusion after the required audience-value and novelty review.",
+      "source": "data/runs/daily-20260909T182418Z/01M23TKB2RXDPJ3NM93T4554ZJ/candidate_slate.json"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260909T182418Z/01M23TKB2RXDPJ3NM93T4554ZJ/candidate_slate.json"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M23TKB2RXDPJ3NM93T4554ZJ",
+  "operations_created": [],
+  "reason_code": "no_audience_relevant_accepted_research",
+  "status": "skipped",
+  "summary": "Skipped the episode after the required audience-value and novelty review. The frozen version-three window contains one successful development: an NVIDIA baseline-strategy refresh that preserved the existing medium-confidence Buy conclusion and bounded one-share path while rebinding allocator-owned state. The September seventh podcast had already explained the same thesis, valuation asymmetry, key risks, one-share sizing, and lifecycle distinction, and this run added no new company evidence or changed investment conclusion. The sole candidate was therefore excluded as substantially repeated, leaving zero selected chapters. No security-rating chapter was warranted, the spoken word count is zero because no transcript was created, the daily report was not linked, and validate-script and the draft renderer were not invoked.",
+  "validation": {
+    "checks": [
+      "The selected queue row is running, claimed by daily-20260909T182418Z, and names exactly llm-wiki plus papertrader-daily-podcast.",
+      "The controller preflight records the required native, controller, and routed operation skills with content hashes.",
+      "The payload, frozen context, and daily manifest all bind data/wiki/podcasts/daily-podcast_20260909T182418Z.md; the payload and context bind data/wiki/daily-reports/daily-report_20260909.md.",
+      "The frozen context is podcast_context_version 3, and its exclusive and inclusive cutoffs and prior-podcast identity were reviewed.",
+      "The candidate slate includes the sole successful in-window research development exactly once and selects no chapter after novelty and audience-value review.",
+      "The prior podcast, accepted NVIDIA result, maintained NVIDIA research and strategy pages, related idea page, current daily report, and current decision state were reviewed without changing research or structured investment state.",
+      "The no-audience-relevant-accepted-research skip rule applies, so no transcript, daily-report link, validate-script call, render-draft call, audio artifact, or rating chapter was produced.",
+      "Strict schema validation passed.",
+      "Strict integrity validation passed.",
+      "Queue validation passed.",
+      "Strict wiki lint passed.",
+      "Strict portfolio reconciliation passed."
+    ],
+    "passed": true
+  }
+}

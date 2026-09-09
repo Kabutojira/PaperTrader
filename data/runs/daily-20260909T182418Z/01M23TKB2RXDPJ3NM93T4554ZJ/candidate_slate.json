@@ -1,0 +1,34 @@
+{
+  "candidate_slate_version": 1,
+  "daily_cycle_id": "daily-20260909T182418Z",
+  "operation_id": "01M23TKB2RXDPJ3NM93T4554ZJ",
+  "context_path": "data/runs/daily-20260909T182418Z/podcast_context.json",
+  "page_path": "data/wiki/podcasts/daily-podcast_20260909T182418Z.md",
+  "report_path": "data/wiki/daily-reports/daily-report_20260909.md",
+  "window_start_exclusive": "2026-09-07T19:41:26Z",
+  "research_cutoff_at": "2026-09-09T19:22:57Z",
+  "successful_research_developments": [
+    {
+      "operation_id": "01M23PKS1RCS73P3W3CGN56529",
+      "operation_type": "strategy_research",
+      "entity_id": "strategy_7cf884a5530d05afdb99",
+      "status": "succeeded",
+      "subject": "NVIDIA bounded baseline allocation",
+      "accepted_change": "The existing ready NVIDIA baseline strategy was rebound to the current allocation plan and one-share target, and one ready open signal was created for deterministic paper-order review."
+    }
+  ],
+  "selected_chapters": [],
+  "excluded_items": [
+    {
+      "operation_id": "01M23PKS1RCS73P3W3CGN56529",
+      "operation_type": "strategy_research",
+      "entity_id": "strategy_7cf884a5530d05afdb99",
+      "status": "succeeded",
+      "reason_code": "substantially_repeated_without_new_research_evidence",
+      "reason": "The September seventh podcast already explained NVIDIA's accepted Buy rating, valuation asymmetry, bounded one-share baseline path, and distinction between strategy, signal, pending order, and fill. This run's accepted strategy refresh preserves those conclusions and risks while rebinding the allocator-owned target; it adds no new company evidence, valuation conclusion, or investor question capable of supporting a non-repetitive standalone chapter."
+    }
+  ],
+  "disposition": "skipped",
+  "reason_code": "no_audience_relevant_accepted_research",
+  "reason": "The frozen window contains one successful strategy development, but the required novelty review found it substantially repeats the most recent podcast without new company evidence or a changed investment conclusion. Deterministic creation of a pending paper order is portfolio-state publication, not new accepted research, and is not used to manufacture a chapter."
+}

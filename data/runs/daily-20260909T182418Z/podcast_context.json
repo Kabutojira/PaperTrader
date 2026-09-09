@@ -1,0 +1,168 @@
+{
+  "background_wiki_pages": [
+    {
+      "path": "data/wiki/ideas/idea_ai_compute_networking_hyperscaler_monetization.md",
+      "sha256": "8a9dfb5180137f187eb83ac96445a6a9f05b0d04c7efd5b46160a9e63476158e"
+    },
+    {
+      "path": "data/wiki/securities/security_33d9c44facc75c726c7d.md",
+      "sha256": "45c7ba8d3ac9b36bcff4689c8fd3ed89a6dcbe5653cd9db15146673f1cce91dc"
+    }
+  ],
+  "changed_wiki_pages": [
+    {
+      "path": "data/wiki/strategies/strategy_7cf884a5530d05afdb99.md",
+      "sha256": "b6cc49d44c2914d978f2aea2234d16dc1c4f5288e3d7e28eb3d17c6443ac49fa"
+    }
+  ],
+  "daily_cycle_id": "daily-20260909T182418Z",
+  "decision_snapshot_path": "data/runs/daily-20260909T182418Z/decision_snapshot.json",
+  "decision_snapshot_sha256": "1fb5a8854886c4ff600702a992c428b528b46ea025dc77f10fa8142f482e00fc",
+  "generated_at": "2026-09-09T19:33:59Z",
+  "intervening_daily_cycles": [
+    "daily-20260908T182535Z",
+    "daily-20260909T182418Z"
+  ],
+  "page_path": "data/wiki/podcasts/daily-podcast_20260909T182418Z.md",
+  "podcast_context_version": 3,
+  "portfolio_implication_paths": [
+    "data/runs/daily-20260909T182418Z/decision_snapshot.json",
+    "data/wiki/daily-reports/daily-report_20260909.md"
+  ],
+  "previous_successful_podcast": {
+    "context_path": "data/runs/daily-20260907T190826Z/podcast_context.json",
+    "context_sha256": "cb593493e24ad6df3a2144e2e642710a9ab7d7ec647231216bd5457faca4b4bb",
+    "daily_cycle_id": "daily-20260907T190826Z",
+    "page_path": "data/wiki/podcasts/daily-podcast_20260907T190826Z.md",
+    "page_sha256": "d096a879a35207a5d82c2551dec641e7b528b8b1ec4c496bb0e24759ee1833cb",
+    "research_cutoff_at": "2026-09-07T19:41:26Z"
+  },
+  "report_path": "data/wiki/daily-reports/daily-report_20260909.md",
+  "report_sha256": "80dfe4a537445b19b4f07b22eaf590f2c1b00c13916a71d787748c0bc01b49ea",
+  "research_cutoff_at": "2026-09-09T19:22:57Z",
+  "research_developments": [
+    {
+      "completed_at": "2026-09-09T18:44:06Z",
+      "daily_cycle_id": "daily-20260909T182418Z",
+      "daily_report_items": [
+        "Updated NVIDIA's ready full-baseline long-equity strategy for the current 1.94% one-share target, created a ready open signal for only the deterministic delta, and queued exactly one separate paper-order review; no order or fill was created by research."
+      ],
+      "entity_id": "strategy_7cf884a5530d05afdb99",
+      "entity_type": "strategy",
+      "evidence": [
+        {
+          "claim": "The current immutable allocation target binds strategy_7cf884a5530d05afdb99 to plan allocation_plan_6f7a4f4479899fcd0d91, intent allocation_intent_b8eab1837513d5191d02, assessment assessment_82fd625a8d93be4bd8f5 and accepted relationship relationship_ai_compute_nvda. It persists a one-share open target at 1.94%, capped at 5%, with rank two, effective score 92, 34.7849225883281666573153411% expected return, 26.08869194124612499298650582% confidence-adjusted expected return and no hard blocker.",
+          "observed_at": "2026-09-09T18:24:19Z",
+          "source": "data/tables/allocation_targets.csv"
+        },
+        {
+          "claim": "Accepted assessment assessment_82fd625a8d93be4bd8f5 uses medium confidence and a twelve-month USD 198/USD 310.50/USD 448 bear/base/bull range with 30%/50%/20% probabilities. Quality score 92 clears baseline quality requirements, while medium confidence and concentration-sensitive gaps support baseline rather than conviction treatment.",
+          "observed_at": "2026-09-04T06:22:45Z",
+          "source": "data/tables/security_assessments.csv"
+        },
+        {
+          "claim": "relationship_ai_compute_nvda remains accepted for the AI-compute idea and NVIDIA security, with a positive beneficiary mechanism, high sensitivity and high confidence in the causal transmission.",
+          "observed_at": "2026-08-07T09:15:09Z",
+          "source": "data/tables/relationships.csv"
+        },
+        {
+          "claim": "NVIDIA's fiscal Q2 filing supports the accelerated-compute platform thesis while documenting material supply commitments, guarantees, receivable, concentration, export and product-transition risks that bound the position.",
+          "observed_at": "2026-09-04T06:15:57Z",
+          "source": "NVIDIA fiscal 2027 second-quarter Form 10-Q",
+          "source_hash": "e2634e509c241c5f45e3f6c115dc38a85645e5fdbee760b4a04f5e9035f6f7a9",
+          "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm"
+        },
+        {
+          "claim": "The latest NVDA mark was USD 225.72999572753906 and USD/EUR was 0.8590999841690063, both retrieved at 2026-09-09T18:24:19Z and inside the configured 36-hour freshness window when the signal was created.",
+          "observed_at": "2026-09-09T18:24:19Z",
+          "source": "data/market/latest.csv and data/market/fx/USD_EUR.csv"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M23QEMDRJGEXVJE0QBS0MZN1.json",
+        "data/runs/daily-20260909T182418Z/01M23PKS1RCS73P3W3CGN56529/enqueue-execute-strategy-request.json",
+        "data/runs/daily-20260909T182418Z/01M23PKS1RCS73P3W3CGN56529/signal-create-request.json",
+        "data/runs/daily-20260909T182418Z/01M23PKS1RCS73P3W3CGN56529/strategy-upsert-request.json",
+        "data/tables/signals.csv",
+        "data/tables/strategies.csv",
+        "data/tables/strategy_legs.csv",
+        "data/wiki/log.md",
+        "data/wiki/strategies/strategy_7cf884a5530d05afdb99.md"
+      ],
+      "operation_id": "01M23PKS1RCS73P3W3CGN56529",
+      "operation_type": "strategy_research",
+      "result_path": "data/runs/daily-20260909T182418Z/01M23PKS1RCS73P3W3CGN56529/agent_result.json",
+      "status": "succeeded",
+      "summary": "Updated ready baseline strategy strategy_7cf884a5530d05afdb99 for NVIDIA using current allocation plan allocation_plan_6f7a4f4479899fcd0d91 and intent allocation_intent_b8eab1837513d5191d02. Baseline mode selected long common equity only, retained the allocator-owned one-share target and 5% maximum-position ceiling, and documented medium confidence, concentration, commitments, guarantees, export controls and insufficient diversification as reasons it does not qualify for conviction. Created ready open signal signal_051ffe3636d9a4c24a7f and exactly one dependent execute_strategy operation, 01M23QEMDRJGEXVJE0QBS0MZN1. No order, fill, execution, cash, portfolio, performance or allocation state was changed."
+    }
+  ],
+  "run_id": "daily-20260909T182418Z",
+  "target_minutes": 20,
+  "target_words": 3000,
+  "unresolved_research_gaps": [
+    {
+      "completed_at": "2026-09-08T18:58:04Z",
+      "daily_cycle_id": "daily-20260908T182535Z",
+      "daily_report_items": [],
+      "entity_id": "security_fe4648901e7675f157fd",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "Hermes timed out after 1800s",
+          "source": "data/runs/daily-20260908T182535Z/01KYPB2XDRKAMP0ZX3MWA7Y1JH/validation_report.json"
+        },
+        {
+          "claim": "agent result is missing or a symlink: data/runs/daily-20260908T182535Z/01KYPB2XDRKAMP0ZX3MWA7Y1JH/agent_result.json",
+          "source": "data/runs/daily-20260908T182535Z/01KYPB2XDRKAMP0ZX3MWA7Y1JH/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "Hermes timed out after 1800s",
+        "agent result is missing or a symlink: data/runs/daily-20260908T182535Z/01KYPB2XDRKAMP0ZX3MWA7Y1JH/agent_result.json"
+      ],
+      "files_changed": [],
+      "operation_id": "01KYPB2XDRKAMP0ZX3MWA7Y1JH",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260908T182535Z/01KYPB2XDRKAMP0ZX3MWA7Y1JH/validation_report.json",
+      "status": "failed",
+      "summary": "The accepted research did not produce a valid result."
+    },
+    {
+      "completed_at": "2026-09-09T19:22:26Z",
+      "daily_cycle_id": "daily-20260909T182418Z",
+      "daily_report_items": [],
+      "entity_id": "security_fe4648901e7675f157fd",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "agent result schema: 'insufficient_observations' is not one of ['single_value', 'insufficient_comparability', 'insufficient_history', 'source_unavailable', 'not_decision_relevant', 'no_page_change']",
+          "source": "data/runs/daily-20260909T182418Z/01KYPB2XDRKAMP0ZX3MWA7Y1JH/validation_report.json"
+        },
+        {
+          "claim": "post-run integrity: agent result data/runs/daily-20260909T182418Z/01KYPB2XDRKAMP0ZX3MWA7Y1JH/agent_result.json: 'insufficient_observations' is not one of ['single_value', 'insufficient_comparability', 'insufficient_history', 'source_unavailable', 'not_decision_relevant', 'no_page_change']",
+          "source": "data/runs/daily-20260909T182418Z/01KYPB2XDRKAMP0ZX3MWA7Y1JH/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "agent result schema: 'insufficient_observations' is not one of ['single_value', 'insufficient_comparability', 'insufficient_history', 'source_unavailable', 'not_decision_relevant', 'no_page_change']",
+        "post-run integrity: agent result data/runs/daily-20260909T182418Z/01KYPB2XDRKAMP0ZX3MWA7Y1JH/agent_result.json: 'insufficient_observations' is not one of ['single_value', 'insufficient_comparability', 'insufficient_history', 'source_unavailable', 'not_decision_relevant', 'no_page_change']"
+      ],
+      "files_changed": [],
+      "operation_id": "01KYPB2XDRKAMP0ZX3MWA7Y1JH",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260909T182418Z/01KYPB2XDRKAMP0ZX3MWA7Y1JH/validation_report.json",
+      "status": "failed",
+      "summary": "The accepted research did not produce a valid result."
+    }
+  ],
+  "wiki_orientation_paths": [
+    "data/wiki/SCHEMA.md",
+    "data/wiki/index.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/log.md"
+  ],
+  "window_mode": "since_previous_successful_podcast",
+  "window_start_exclusive": "2026-09-07T19:41:26Z"
+}
