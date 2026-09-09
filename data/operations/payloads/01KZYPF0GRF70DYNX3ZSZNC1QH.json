@@ -4,14 +4,48 @@
   "inputs": {
     "assessment_state": "2026-08-06T18:47:30Z",
     "maintenance_mode": "refresh",
+    "market_data_as_of": "2026-09-09T18:24:19Z",
+    "market_data_date": "2026-09-08",
+    "period_end": "2026-09-08",
+    "period_start": "2026-08-10",
     "research_page": "data/wiki/securities/security_a9eb9838940ef5ceaa0c.md",
-    "security_id": "security_a9eb9838940ef5ceaa0c"
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_a9eb9838940ef5ceaa0c:allocation-maintenance:2026-08-06T18:47:30Z",
+        "observed_at": "2026-08-13T23:14:07Z",
+        "prompt": "Revalidate security_a9eb9838940ef5ceaa0c with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_flnc_q3_2026_10q",
+          "source_flnc_q3_2026_earnings"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_a9eb9838940ef5ceaa0c:ecd53dd67e100d589578:2026-09-08",
+        "market_data_date": "2026-09-08",
+        "observed_at": "2026-09-09T18:24:19Z",
+        "prompt": "Research security_a9eb9838940ef5ceaa0c with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_a9eb9838940ef5ceaa0c-volume_anomaly-97e81e427ee9.md"
+        ],
+        "trigger_types": [
+          "volume_anomaly"
+        ]
+      }
+    ],
+    "security_id": "security_a9eb9838940ef5ceaa0c",
+    "source_price_hash": "4607c4aaed78b75fcc41d7ad298f55f32375f4cd3d8f55307b7968d9a01a58e2",
+    "trigger_types": [
+      "volume_anomaly"
+    ]
   },
-  "objective": "Revalidate security_a9eb9838940ef5ceaa0c with current primary evidence and write one comparable allocation assessment.",
+  "objective": "Revalidate security_a9eb9838940ef5ceaa0c with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_a9eb9838940ef5ceaa0c with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
   "operation_id": "01KZYPF0GRF70DYNX3ZSZNC1QH",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_a9eb9838940ef5ceaa0c-volume_anomaly-97e81e427ee9.md",
     "source_flnc_q3_2026_10q",
     "source_flnc_q3_2026_earnings"
   ]
