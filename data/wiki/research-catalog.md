@@ -734,6 +734,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader daily research podcast — 2026-09-05T171454Z](podcasts/daily-podcast_20260905T171454Z)
 - [PaperTrader daily research podcast — 2026-09-05T235530Z](podcasts/daily-podcast_20260905T235530Z)
 - [PaperTrader daily research podcast — 2026-09-07T190826Z](podcasts/daily-podcast_20260907T190826Z)
+- [PaperTrader daily research podcast — 2026-09-10T181020Z](podcasts/daily-podcast_20260910T181020Z)
 - [Podcast quotidiano di ricerca PaperTrader — 2026-09-05T235530Z](podcasts/daily-podcast_20260905T235530Z_it-IT)
 
 ## Relationship

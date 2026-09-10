@@ -3743,3 +3743,16 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Refreshed the scenario-return chart and entry context from the canonical 2026-09-10 allocation,
   market and FX observations. Medium confidence, autonomy disintermediation, insurance, regulation
   and insufficient diversification continue to prevent conviction treatment.
+
+## [2026-09-10] lint | wiki maintenance 2026-W37
+
+- Inspected all 837 Markdown paths under `data/wiki/`, including 836 current maintained pages, one
+  archived log, and the empty raw-source Markdown inventory, without network access.
+- Added the omitted [[podcasts/daily-podcast_20260910T181020Z|10 September 2026 daily research
+  podcast]] to [[research-catalog]].
+- Found no orphan pages, broken or ambiguous maintained-page links, invalid required frontmatter,
+  unknown tags, raw-source hash drift, byte-size violations, or required log rotation.
+- Preserved 59 overdue review markers, 15 low-like confidence markers, and bounded contrary-evidence
+  disclosures for evidence-bearing follow-up rather than changing investment meaning without
+  current evidence.
+- Files updated: `research-catalog.md`, `log.md`.
