@@ -1,0 +1,74 @@
+{
+  "commands_run": [
+    "papertrader order create-baseline --request data/runs/daily-20260910T181020Z/01M269SAZ8QYDYTYBWTTYSN3X2/order-create-baseline-request.json",
+    "papertrader portfolio reconcile --strict",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Prosus baseline increase: created pending next-open paper order order_9af7249ce4aaa2a7ec50 for the deterministic four-share delta from eight filled shares toward the current twelve-share target; no fill or accounting entry was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The sole current Prosus target binds allocation_plan_4e0ef8323f8d383f6b85 and unchanged allocation_intent_b658846a33beb7586a8e to strategy_8caa208dfc702a2584a7, assessment_7f28dfd9240d6099400b, accepted relationship_e514a92bf6c38d0754ee, a twelve-share full-baseline target, and increase disposition.",
+      "observed_at": "2026-09-10T18:10:21Z",
+      "source": "data/tables/allocation_targets.csv"
+    },
+    {
+      "claim": "The reconciled portfolio held eight Prosus shares before the order, so the deterministic twelve-share target permitted at most a four-share positive delta after pending-order checks.",
+      "observed_at": "2026-09-10T18:42:09Z",
+      "source": "data/tables/portfolio.csv"
+    },
+    {
+      "claim": "The identity-matched Prosus market reference was EUR 35.29499816894531 and was retrieved at 2026-09-10T18:10:21Z, within the configured freshness window at evaluation; no FX conversion was required because the instrument and portfolio base currency are EUR.",
+      "observed_at": "2026-09-10T18:10:21Z",
+      "source": "data/market/latest.csv"
+    },
+    {
+      "claim": "Signal signal_69f8ada6d45a761025c5 matched the strategy and unchanged allocation intent, was live and ready at evaluation, and moved to ordered only after deterministic acceptance.",
+      "observed_at": "2026-09-10T18:42:59Z",
+      "source": "data/tables/signals.csv"
+    },
+    {
+      "claim": "Order order_9af7249ce4aaa2a7ec50 is pending with next_open fill policy, market order type, allocation_intent_b658846a33beb7586a8e, EUR currency, and expiry 2026-09-11T18:45:00Z.",
+      "observed_at": "2026-09-10T18:42:09Z",
+      "source": "data/tables/orders.csv"
+    },
+    {
+      "claim": "Deterministic baseline sizing created one buy/long equity leg for security_8b703a8adf5f864acaa4 with quantity four and contract multiplier one; neither legs nor quantity were supplied in the accepted request.",
+      "observed_at": "2026-09-10T18:42:59Z",
+      "source": "data/tables/order_legs.csv"
+    },
+    {
+      "claim": "The deterministic baseline-order command exited zero, created order_9af7249ce4aaa2a7ec50 with no risk violations, and changed only orders.csv, order_legs.csv, and signals.csv among canonical state; subsequent strict portfolio reconciliation and strict wiki lint both exited zero.",
+      "observed_at": "2026-09-10T18:43:14Z",
+      "source": "data/runs/daily-20260910T181020Z/01M269SAZ8QYDYTYBWTTYSN3X2/command_audit.json"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260910T181020Z/01M269SAZ8QYDYTYBWTTYSN3X2/order-create-baseline-request.json",
+    "data/tables/order_legs.csv",
+    "data/tables/orders.csv",
+    "data/tables/signals.csv"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M269SAZ8QYDYTYBWTTYSN3X2",
+  "operations_created": [],
+  "reason_code": "pending_paper_order_created",
+  "status": "succeeded",
+  "summary": "Created pending paper order order_9af7249ce4aaa2a7ec50 for Prosus's current baseline increase signal. Deterministic sizing produced one four-share long-equity buy leg toward the persisted twelve-share target after eight filled shares. The order remains pending under next_open; no fill, execution, cash, portfolio, performance, or allocation mutation occurred.",
+  "validation": {
+    "checks": [
+      "Controller preflight identified native llm-wiki 2.1.0, papertrader-controller, and papertrader-execute-strategy with content hashes, sequential execution, and yolo enabled.",
+      "The selected queue row was the sole routed running operation, was claimed by daily-20260910T181020Z, and had a live lease at evaluation.",
+      "Payload, active strategy, ready signal, canonical equity leg, current allocation target, immutable assessment, and accepted relationship identities matched before order creation.",
+      "The current allocation disposition was increase and correctly mapped to the open signal lifecycle action; the current plan and immutable allocation intent were not superseded.",
+      "The accepted baseline request omitted legs and quantity; deterministic code derived the exact four-share delta from the persisted twelve-share target, eight filled shares, and pending-order state.",
+      "Fresh Prosus, Tencent, NVIDIA, and USD/EUR references were supplied; deterministic price, FX, cash, exposure, concentration, turnover, reserve, and baseline eligibility validation accepted the request with no risk violations.",
+      "Order idempotency state is canonical: one order exists for signal_69f8ada6d45a761025c5, its status is pending, and the signal status is ordered.",
+      "Strict portfolio reconciliation returned OK and strict wiki lint returned OK.",
+      "The command audit reports no allocation-target/history, execution, cash-ledger, portfolio, or performance changes; the accepted order remains pending and no fill or accounting mutation occurred.",
+      "Git diff validation reported no whitespace errors."
+    ],
+    "passed": true
+  }
+}
