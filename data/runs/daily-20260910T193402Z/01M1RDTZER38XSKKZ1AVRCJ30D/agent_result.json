@@ -1,0 +1,96 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_97f38b2cb2d5ef127f5a",
+    "papertrader research source record --request data/runs/daily-20260910T193402Z/01M1RDTZER38XSKKZ1AVRCJ30D/source_pl_q2_fy2027_10q_request.json",
+    "papertrader research source record --request data/runs/daily-20260910T193402Z/01M1RDTZER38XSKKZ1AVRCJ30D/source_pl_q2_fy2027_results_request.json",
+    "papertrader research source record --request data/runs/daily-20260910T193402Z/01M1RDTZER38XSKKZ1AVRCJ30D/source_pl_sec_submissions_20260910_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260910T193402Z/01M1RDTZER38XSKKZ1AVRCJ30D/assessment_upsert_request.json",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_97f38b2cb2d5ef127f5a"
+  ],
+  "daily_report_items": [
+    "Planet Labs quick check failed closed after current Q2 evidence and the 27.34% oversold decline were reviewed: the canonical current market row is in error state because scipy is unavailable, so no same-run assessment or dependent full security review could be published. No paper trade or accounting state changed."
+  ],
+  "evidence": [
+    {
+      "claim": "The immutable alert period runs from 2026-08-11 through 2026-09-09. PL declined 27.341777388117106% to USD 17.219999313354492 and RSI oversold strengthened; the payload-bound source price hash is 6a96e0e2035eb3148f3b7fc0a9f1d80218a493065e81dd3abed3894e0a33ac21.",
+      "observed_at": "2026-09-10T18:10:21Z",
+      "source": "data/wiki/inbox/market-security_97f38b2cb2d5ef127f5a-rsi_oversold-dae713572a0e.md",
+      "source_hash": "6a96e0e2035eb3148f3b7fc0a9f1d80218a493065e81dd3abed3894e0a33ac21"
+    },
+    {
+      "claim": "For the quarter ended 2026-07-31, revenue was USD 116.1 million, up 58% year over year; six-month net dollar retention was 109%, RPO was USD 753.1 million, cash and short-term investments totaled USD 865.4 million, quarter-end common shares were 363.7 million, and year-to-date capex was USD 47.1 million.",
+      "observed_at": "2026-09-10T20:04:05Z",
+      "source": "Planet Labs PBC Q2 fiscal 2027 Form 10-Q",
+      "source_hash": "99c53136c21eaf5fceaba3b24adb5474519b88960adf28a66f65e4972f26d675",
+      "url": "https://www.sec.gov/Archives/edgar/data/1836833/000119312526382016/pl-20260731.htm"
+    },
+    {
+      "claim": "The issuer reported Q2 adjusted EBITDA of USD 13.9 million, backlog of USD 814.9 million, year-to-date operating cash flow of USD 68.4 million, year-to-date free cash flow of USD 21.3 million, fiscal 2027 revenue guidance of USD 430-441 million, fiscal 2027 capex guidance of USD 100-115 million, and approximately USD 120 million raised through ATM share sales.",
+      "observed_at": "2026-09-10T20:04:05Z",
+      "source": "Planet Labs PBC Q2 fiscal 2027 results filed with the SEC",
+      "source_hash": "1a670def51e459fca66d8c238ea50f0bd11d003bef3751cd6bd8078a7ba71445",
+      "url": "https://www.sec.gov/Archives/edgar/data/1836833/000119312526381874/pl-ex99_1.htm"
+    },
+    {
+      "claim": "The canonical PL row carries the 2026-09-09 USD 17.219999313354492 close but has status error with ModuleNotFoundError: No module named 'scipy'; assessment v2 therefore rejected it as an unsuccessful current market mark.",
+      "observed_at": "2026-09-10T19:43:26Z",
+      "source": "data/market/latest.csv:49"
+    },
+    {
+      "claim": "Assessment upsert exited 2 with 'assessment v2 requires a successful current market mark'. The post-attempt context shows current assessment run_id daily-20260828T210155Z, source_operation_id 01M06M2NP8WCAE6T92D639MR4R, and no immutable assessment history version sourced from operation 01M1RDTZER38XSKKZ1AVRCJ30D.",
+      "observed_at": "2026-09-10T20:12:24Z",
+      "source": "papertrader research assessment upsert receipt and post-attempt security-context receipt"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260910T193402Z/01M1RDTZER38XSKKZ1AVRCJ30D/assessment_upsert_request.json",
+    "data/runs/daily-20260910T193402Z/01M1RDTZER38XSKKZ1AVRCJ30D/security_upsert_request.json",
+    "data/runs/daily-20260910T193402Z/01M1RDTZER38XSKKZ1AVRCJ30D/source_pl_q2_fy2027_10q_request.json",
+    "data/runs/daily-20260910T193402Z/01M1RDTZER38XSKKZ1AVRCJ30D/source_pl_q2_fy2027_results_request.json",
+    "data/runs/daily-20260910T193402Z/01M1RDTZER38XSKKZ1AVRCJ30D/source_pl_sec_submissions_20260910_request.json",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_97f38b2cb2d5ef127f5a.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M1RDTZER38XSKKZ1AVRCJ30D",
+  "operations_created": [],
+  "reason_code": "assessment_current_market_mark_invalid",
+  "status": "failed",
+  "summary": "The bounded Planet Labs quick check verified material Q2 fiscal 2027 evidence and the 27.34% alert-period decline, registered three current SEC sources, and updated the security page with a provisional scenario comparison. The required same-run assessment could not be published: the deterministic assessment command rejected the request because the current canonical market mark is not successful. data/market/latest.csv records the PL mark with status error and ModuleNotFoundError: No module named 'scipy'. A second security-context receipt confirmed that the current assessment remains the 2026-08-28 version and that no history version exists for this operation. Per the quick-check contract, the result is failed rather than succeeded; no strategy, signal, order, fill, accounting change, or full-research follow-up was created.",
+  "validation": {
+    "checks": [
+      "Mandatory pre-assessment security-context receipt succeeded for security_97f38b2cb2d5ef127f5a.",
+      "Current SEC submissions, Q2 Form 10-Q, and SEC-filed Q2 results were retrieved and registered through audited source commands.",
+      "Assessment upsert failed closed because the canonical current market mark is not successful; no assessment row or history version changed.",
+      "Post-attempt security-context confirmed the current assessment is still the 2026-08-28 version and is not sourced from this operation.",
+      "Queue validation passed.",
+      "Strict integrity passed.",
+      "Strict wiki lint passed, including the research chart fence.",
+      "Strict portfolio reconciliation passed and no accounting state changed.",
+      "No dependent full review was enqueued because this operation could not publish the required same-run assessment."
+    ],
+    "passed": false
+  },
+  "visualization_review": {
+    "charts": [
+      {
+        "chart_id": "provisional-scenario-values-september-2026",
+        "page_path": "data/wiki/securities/security_97f38b2cb2d5ef127f5a.md"
+      }
+    ],
+    "completed": true,
+    "omissions": [
+      {
+        "dataset": "Q2 operating metrics history",
+        "reason": "The bounded quick check verified one new fiscal quarter against the baseline checklist; it did not broaden scope to assemble the comparable multi-period operating series required for a valid chart.",
+        "reason_code": "insufficient_history"
+      }
+    ]
+  }
+}

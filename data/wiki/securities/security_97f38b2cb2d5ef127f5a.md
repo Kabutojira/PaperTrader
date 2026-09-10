@@ -4,8 +4,8 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-29"
-updated: "2026-08-28"
-provenance: "source_pl_q1_fy2027_10q; source_pl_q1_fy2027_results_sec; source_pl_sec_submissions_20260828"
+updated: "2026-09-10"
+provenance: "source_pl_q1_fy2027_10q; source_pl_q1_fy2027_results_sec; source_pl_q2_fy2027_10q; source_pl_q2_fy2027_results_sec; source_pl_sec_submissions_20260910"
 security_id: security_97f38b2cb2d5ef127f5a
 issuer_id: issuer_f0de6eb64ff0330bf082
 confidence: medium
@@ -44,6 +44,62 @@ This deterministic monitoring chart is derived from the repository-local market 
 ```
 <!-- papertrader:technical-chart:end -->
 
+The August scenarios remain provisional until the queued full review incorporates the new Q2
+filing, but the current mark has moved materially closer to the retained range.
+
+```echart
+{
+  "schema_version": 1,
+  "chart_id": "provisional-scenario-values-september-2026",
+  "kind": "series",
+  "title": "Provisional scenario values versus the 9 September close",
+  "description": "The latest close remains above the retained bear and base fair values even after a material decline; the Q2 filing requires a full valuation refresh before these scenario values can support a new decision.",
+  "as_of": "2026-09-09",
+  "sources": [
+    {
+      "label": "Planet Labs Q2 fiscal 2027 Form 10-Q",
+      "url": "https://www.sec.gov/Archives/edgar/data/1836833/000119312526382016/pl-20260731.htm",
+      "observed_at": "2026-09-10T20:04:05Z"
+    },
+    {
+      "label": "PaperTrader deterministic adjusted-close cache",
+      "observed_at": "2026-09-10T18:10:21Z"
+    }
+  ],
+  "x_axis": {
+    "type": "category",
+    "label": "Scenario",
+    "values": ["Bear", "Base", "Bull"]
+  },
+  "y_axes": [
+    {
+      "label": "USD per share",
+      "unit": "USD/share",
+      "format": "currency",
+      "currency": "USD"
+    }
+  ],
+  "series": [
+    {
+      "name": "Retained fair value",
+      "render": "bar",
+      "y_axis": 0,
+      "values": ["6.42", "14.36", "27.73"]
+    },
+    {
+      "name": "9 September close",
+      "render": "line",
+      "y_axis": 0,
+      "values": ["17.219999313354492", "17.219999313354492", "17.219999313354492"]
+    }
+  ],
+  "notes": [
+    "Scenario values are the 28 August baseline and are not refreshed Q2 estimates.",
+    "The chart is research presentation only and is not an allocation, signal, or order input."
+  ]
+}
+```
+
 ## Identity
 
 - Immutable security: `security_97f38b2cb2d5ef127f5a`
@@ -64,31 +120,54 @@ contract value with continuing satellite, software, launch, hosting, and researc
 Government demand improves contract visibility but introduces appropriation and termination-for-
 convenience exposure.
 
-For the quarter ended 30 April 2026, revenue was USD 94.2 million, up 42% year over year; 99% of
-annual contract value was recurring, net dollar retention was 113%, and remaining performance
-obligations were USD 816.0 million. Reported backlog was USD 906.1 million, including USD 90.0
-million of cancellable or not-yet-appropriated contract value. Gross margin was 54%, adjusted
-EBITDA was a USD 1.0 million loss, operating cash flow was USD 15.4 million, and free cash flow was
-a USD 2.5 million outflow.
+For the quarter ended 31 July 2026, revenue was USD 116.1 million, up 58% year over year; 98% of
+annual contract value was recurring, six-month net dollar retention was 109%, and remaining
+performance obligations were USD 753.1 million. Reported backlog was USD 814.9 million. Gross
+margin was 57%, adjusted EBITDA was positive USD 13.9 million, and year-to-date operating and free
+cash flow were positive USD 68.4 million and USD 21.3 million. Cash and short-term investments
+totaled USD 865.4 million, including approximately USD 120 million raised through ATM share sales.
 
 ## Thesis and contrary evidence
 
 Daily global imagery, a deep archive, improving high-resolution capacity, and analytics can create
-valuable recurring data economics. Q1 growth, retention, RPO, and backlog show real demand and
-better forward visibility. The contrary case is that satellite replacement, capex, hosting,
+valuable recurring data economics. Q2 growth, retention, RPO, backlog, and cash generation show
+real demand and better operating leverage. The contrary case is that satellite replacement, capex, hosting,
 research, and stock compensation consume part of the apparent software-like economics, while
 large government and satellite-services awards can make growth lumpy and cancellable.
 
 | Evidence | Interpretation |
 | --- | --- |
-| Revenue grew 42% to USD 94.2 million and recurring ACV was 99%. | Demand and recurrence are strong, but one quarter does not prove durable GAAP profitability. |
-| RPO was USD 816.0 million and backlog USD 906.1 million. | Visibility improved, although USD 90.0 million of backlog was cancellable or subject to appropriation. |
-| Cash and short-term investments totaled USD 730.8 million. | Liquidity is substantial, partly reflecting warrant proceeds and USD 460 million of convertible notes. |
-| Adjusted EBITDA was near break-even and operating cash flow positive. | Operating leverage is emerging, but free cash flow remained negative and adjusted EBITDA excludes recurring stock compensation and satellite depreciation. |
-| 27.6 million unvested RSUs were outstanding at quarter-end. | Employee alignment supports execution, while future vesting creates material per-share dilution. |
+| Revenue grew 58% to USD 116.1 million and recurring ACV was 98%. | Demand and recurrence remain strong, although satellite-hardware delivery contributed to growth and one quarter does not prove durable GAAP profitability. |
+| RPO was USD 753.1 million and backlog USD 814.9 million. | Visibility remains substantial but both measures declined sequentially and retain cancellation and appropriation limitations. |
+| Cash and short-term investments totaled USD 865.4 million. | Liquidity strengthened, but approximately USD 120 million came from ATM issuance rather than operations. |
+| Adjusted EBITDA was USD 13.9 million and year-to-date free cash flow was positive. | Operating leverage improved, while adjusted metrics still exclude stock compensation and satellite depreciation and capex is rising. |
+| Common shares reached 363.7 million at quarter-end after 3.8 million ATM shares. | Capital access lowers liquidity risk but confirms material per-share dilution. |
 
-Primary evidence: [Planet Q1 FY2027 results filed with the SEC](https://www.sec.gov/Archives/edgar/data/1836833/000119312526257401/pl-ex99_1.htm)
-and [Planet Q1 FY2027 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1836833/000119312526258304/pl-20260430.htm).
+Primary evidence: [Planet Q2 FY2027 results filed with the SEC](https://www.sec.gov/Archives/edgar/data/1836833/000119312526381874/pl-ex99_1.htm)
+and [Planet Q2 FY2027 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1836833/000119312526382016/pl-20260731.htm).
+
+## 2026-09-10 Q2 and oversold-alert quick check
+
+From 11 August through 9 September, the adjusted close declined 27.34% from USD 23.70 to USD
+17.22. RSI fell to 25.73, the close remained below the USD 21.24 20-day and USD 23.10 50-day
+averages, and MACD stayed below its signal. The 3 September results session fell 8.20% on 31.95
+million shares, followed by continued weakness. The combined alerts are a materially oversold
+condition and adverse timing signal, not by themselves a valuation catalyst.
+
+The new Q2 filing changes the evidence set rather than invalidating the operating thesis. Revenue
+growth, adjusted EBITDA, cash flow, and liquidity improved; fiscal 2027 revenue guidance is USD
+430-441 million. Against that, RPO and backlog declined sequentially, Q2 growth included
+satellite-hardware delivery, fiscal-year capex guidance rose to USD 100-115 million, and the ATM
+issued approximately USD 120 million of equity. These changes affect growth quality, cash,
+capital-intensity, and diluted-share assumptions and therefore require a bounded full valuation
+review.
+
+The August bear/base/bull fair values of USD 6.42/USD 14.36/USD 27.73 are retained only as a
+provisional comparison. At USD 17.22, the weighted USD 14.65 value remains 14.92% below market,
+the base case remains 16.61% below market, and the USD 11.49 buy zone remains 33.29% below market.
+The lower price improves prospective returns but does not clear the expected-return, base-return,
+bear-payoff, margin-of-safety, confidence, or accepted-relationship gates. **Sell / Avoid** and no
+paper trade remain the current bounded disposition pending full review.
 
 ## 2026-07-28 price-action review
 
@@ -160,7 +239,9 @@ assumptions. The Q1 thesis, catalysts, invalidation conditions, and risks theref
 
 ## Valuation
 
-Template: `pre_profit_growth`; method: `revenue_multiple`; horizon: 12 months.
+Template: `pre_profit_growth`; method: `revenue_multiple`; horizon: 12 months. The scenario table
+below is the 28 August baseline and is retained provisionally; the 3 September Q2 filing requires
+the queued full review to refresh its revenue, net-cash, capex, dilution, and multiple assumptions.
 
 At USD 23.93 and 356.4 million reported common shares at 30 April, equity value is approximately USD
 8.53 billion. Subtracting USD 730.8 million of cash and short-term investments and adding the USD
@@ -214,11 +295,13 @@ per-share growth.
 
 ## Disposition
 
-Status: **watching** with **medium** confidence and expected rating **Sell / Avoid**. The business has
-strong growth, recurrence, backlog and liquidity, but the completed scenarios show negative expected
-and base returns, severe bear downside, weak payoff ratios and no margin of safety. The lower-band and
-volume alerts are monitoring signals rather than a paper-trade entry. Review by **2026-09-11**, or sooner after Q2
-results, material contract cancellation, satellite failure, guidance change, financing, dilution or
-capital-allocation news. No conviction strategy or paper signal is justified.
+Status: **watching** with **medium** confidence and expected rating **Sell / Avoid**. Q2 confirms
+strong growth, recurrence, operating leverage, and liquidity, while lower RPO and backlog, higher
+capex, hardware-driven revenue, and ATM dilution make the old scenario inputs incomplete. The
+oversold alert is not a paper-trade entry: the provisional scenarios still show negative expected
+and base returns, severe bear downside, weak payoff ratios, and no margin of safety. Complete the
+queued full review by **2026-09-11**, or sooner after material contract cancellation, satellite
+failure, guidance change, financing, dilution, or capital-allocation news. No conviction strategy
+or paper signal is justified.
 
 See the complete [[research-catalog]] and append-only [[log]].

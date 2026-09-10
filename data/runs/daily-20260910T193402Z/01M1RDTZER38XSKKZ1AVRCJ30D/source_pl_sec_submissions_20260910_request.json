@@ -1,0 +1,18 @@
+{
+  "source_id": "source_pl_sec_submissions_20260910",
+  "url": "https://data.sec.gov/submissions/CIK0001836833.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0001836833.json",
+  "source_type": "regulator_index",
+  "title": "Planet Labs PBC SEC submissions index checked 2026-09-10",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "3a7af1c1ae3c733046f153d1973bbc6d120728650deda8acc41071b73f510c97",
+  "related_entity_ids": "security_97f38b2cb2d5ef127f5a",
+  "checked_at": "2026-09-10T20:04:05Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "The latest operating filings are the September 3, 2026 Form 10-Q and Form 8-K for the quarter ended July 31, 2026.",
+  "summary": "The SEC submissions index establishes that Q2 fiscal 2027 filings supersede the Q1 evidence used in the August 28 baseline review.",
+  "run_id": "daily-20260910T193402Z"
+}

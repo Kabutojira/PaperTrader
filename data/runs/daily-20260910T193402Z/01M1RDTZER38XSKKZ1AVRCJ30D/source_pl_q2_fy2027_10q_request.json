@@ -1,0 +1,18 @@
+{
+  "source_id": "source_pl_q2_fy2027_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1836833/000119312526382016/pl-20260731.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1836833/000119312526382016/pl-20260731.htm",
+  "source_type": "filing",
+  "title": "Planet Labs PBC Q2 fiscal 2027 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "99c53136c21eaf5fceaba3b24adb5474519b88960adf28a66f65e4972f26d675",
+  "related_entity_ids": "security_97f38b2cb2d5ef127f5a",
+  "checked_at": "2026-09-10T20:04:05Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "At July 31, 2026, Planet reported USD 415.1 million of cash, USD 450.3 million of short-term investments, USD 753.1 million of RPO and 109% six-month net dollar retention.",
+  "summary": "The new Q2 filing materially updates revenue conversion, liquidity, cash flow, capital intensity, dilution and contract-visibility evidence and requires full valuation review.",
+  "run_id": "daily-20260910T193402Z"
+}

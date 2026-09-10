@@ -3770,3 +3770,16 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Removed the prior-plan scenario chart because the current plan carries no valid valuation mark
   or comparable scenario returns; charting stale decision inputs would misrepresent the close.
 - Files updated: `strategies/strategy_8caa208dfc702a2584a7.md`, `log.md`.
+
+## [2026-09-10] update | Planet Labs Q2 and oversold quick check
+
+- Updated [[securities/security_97f38b2cb2d5ef127f5a|Planet Labs]] for the 27.34% decline from
+  11 August through 9 September, RSI of 25.73, and the new Q2 fiscal 2027 filing.
+- Q2 revenue growth, adjusted EBITDA, cash flow, and liquidity improved, while sequentially lower
+  RPO and backlog, higher capex, hardware delivery, and ATM dilution require a full valuation
+  refresh. Retained Sell / Avoid and no paper trade against the provisional August scenarios.
+- Registered the SEC-filed Q2 results, Form 10-Q, and current SEC submissions index; queued one
+  dependent full security review to refresh revenue, cash, dilution, and valuation assumptions.
+- Added `provisional-scenario-values-september-2026`; preserved the deterministic
+  `market-technicals` chart unchanged.
+- Files updated: `securities/security_97f38b2cb2d5ef127f5a.md`, `log.md`.
