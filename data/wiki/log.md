@@ -3756,3 +3756,17 @@ boundary after the combined log crossed the configured 5,000-line threshold.
   disclosures for evidence-bearing follow-up rather than changing investment meaning without
   current evidence.
 - Files updated: `research-catalog.md`, `log.md`.
+
+## [2026-09-10] update | Prosus baseline close strategy
+
+- Rebound [[strategies/strategy_8caa208dfc702a2584a7|Prosus bounded baseline allocation]] to
+  current allocation plan `allocation_plan_cf731760648bb43b2e47` and unchanged current intent
+  `allocation_intent_b8f1131f2221ca6c0fec`.
+- Changed the strategy to an exit-only watch posture with zero risk budget because the canonical
+  plan records `market_data_not_ok`, zero target weight, and a zero-share target against eight
+  filled shares.
+- Created one time-bounded close signal and queued exactly one dependent paper execution review;
+  no order, fill, cash, portfolio, performance, or allocation state was changed by this research.
+- Removed the prior-plan scenario chart because the current plan carries no valid valuation mark
+  or comparable scenario returns; charting stale decision inputs would misrepresent the close.
+- Files updated: `strategies/strategy_8caa208dfc702a2584a7.md`, `log.md`.

@@ -1,0 +1,20 @@
+{
+  "entity_id": "strategy_8caa208dfc702a2584a7",
+  "entity_type": "strategy",
+  "inputs": {
+    "action": "close",
+    "allocation_intent_id": "allocation_intent_b8f1131f2221ca6c0fec",
+    "allocation_plan_id": "allocation_plan_cf731760648bb43b2e47",
+    "signal_id": "signal_4122103b7c46f47778dc",
+    "strategy_id": "strategy_8caa208dfc702a2584a7",
+    "target_quantity": "0"
+  },
+  "objective": "Review the current Prosus baseline close signal and create at most its deterministic pending paper order.",
+  "operation_id": "01M26E5GAG7V4B4237P6YFKC2C",
+  "operation_type": "execute_strategy",
+  "payload_version": 1,
+  "source_refs": [
+    "data/market/latest.csv",
+    "data/runs/daily-20260910T193402Z/allocation_plan.json"
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "commands_run": [
+    "papertrader research strategy upsert --request data/runs/daily-20260910T193402Z/01M26DHBSGHPPFYSZV7F91ZT7N/strategy-upsert-request.json",
+    "papertrader signal create --request data/runs/daily-20260910T193402Z/01M26DHBSGHPPFYSZV7F91ZT7N/signal-create-request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260910T193402Z/01M26DHBSGHPPFYSZV7F91ZT7N/enqueue-execute-strategy-request.json",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader queue validate"
+  ],
+  "daily_report_items": [
+    "Rebound the Prosus baseline strategy to the current zero-share watch target, created one ready close signal for the deterministic eight-share exit delta, and queued exactly one separate paper-order review; no order or fill was created by research."
+  ],
+  "evidence": [
+    {
+      "claim": "The current immutable allocation target binds strategy_8caa208dfc702a2584a7 to plan allocation_plan_cf731760648bb43b2e47, intent allocation_intent_b8f1131f2221ca6c0fec, assessment assessment_7f28dfd9240d6099400b and accepted relationship relationship_e514a92bf6c38d0754ee. It assigns watch tier, zero position cap, zero target quantity, zero target weight and close disposition because market_data_not_ok.",
+      "observed_at": "2026-09-10T19:43:26Z",
+      "source": "data/tables/allocation_targets.csv"
+    },
+    {
+      "claim": "The reconciled portfolio contains eight long PRX shares associated with strategy_8caa208dfc702a2584a7, so the current zero-share target is a material risk-reducing close rather than a hold.",
+      "observed_at": "2026-09-10T15:30:00Z",
+      "source": "data/tables/portfolio.csv"
+    },
+    {
+      "claim": "Assessment assessment_7f28dfd9240d6099400b retains medium confidence, quality score 70 and a dated twelve-month EUR 30/EUR 52/EUR 70 bear/base/bull range with 30%/50%/20% probabilities. Those assumptions explain the prior bounded case but are not live current-plan returns after the market-data gate failed.",
+      "observed_at": "2026-08-28T19:18:00Z",
+      "source": "data/tables/security_assessments.csv"
+    },
+    {
+      "claim": "relationship_e514a92bf6c38d0754ee remains accepted between the digital-attention idea and Prosus, with positive beneficiary direction, high sensitivity and medium confidence; the close is a fail-closed allocation response rather than an unsupported reversal of that relationship.",
+      "observed_at": "2026-08-28T20:01:33Z",
+      "source": "data/tables/relationships.csv"
+    },
+    {
+      "claim": "The latest deterministic PRX retrieval record is error status at 2026-09-10T19:43:26Z and retains the prior EUR 35.29499816894531 observation from 2026-09-10T18:10:21Z. Research used that prior timestamp only to time-bind the risk-reducing signal and did not treat it as a valid current-plan valuation mark.",
+      "observed_at": "2026-09-10T19:43:26Z",
+      "source": "data/market/latest.csv"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M26E5GAG7V4B4237P6YFKC2C.json",
+    "data/runs/daily-20260910T193402Z/01M26DHBSGHPPFYSZV7F91ZT7N/enqueue-execute-strategy-request.json",
+    "data/runs/daily-20260910T193402Z/01M26DHBSGHPPFYSZV7F91ZT7N/signal-create-request.json",
+    "data/runs/daily-20260910T193402Z/01M26DHBSGHPPFYSZV7F91ZT7N/strategy-upsert-request.json",
+    "data/tables/signals.csv",
+    "data/tables/strategies.csv",
+    "data/wiki/log.md",
+    "data/wiki/strategies/strategy_8caa208dfc702a2584a7.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M26DHBSGHPPFYSZV7F91ZT7N",
+  "operations_created": [
+    "01M26E5GAG7V4B4237P6YFKC2C"
+  ],
+  "status": "succeeded",
+  "summary": "Updated active baseline strategy strategy_8caa208dfc702a2584a7 to the current Prosus exit-only watch allocation under plan allocation_plan_cf731760648bb43b2e47 and intent allocation_intent_b8f1131f2221ca6c0fec. The canonical plan assigns a zero-share target and zero risk budget because market_data_not_ok, so the strategy permits no retained or increased exposure. Created ready close signal signal_4122103b7c46f47778dc and exactly one dependent execute_strategy operation, 01M26E5GAG7V4B4237P6YFKC2C. The execution follow-up must derive the exact sell quantity and revalidate market data before creating any paper order. No order, fill, execution, cash, portfolio, performance, or allocation state was changed.",
+  "validation": {
+    "checks": [
+      "The selected queue row was the sole routed running operation, matched run daily-20260910T193402Z and strategy_8caa208dfc702a2584a7, and retained a live lease through pre-manifest verification.",
+      "The controller preflight identified native llm-wiki 2.1.0, papertrader-controller, papertrader-strategy-research and echart with content hashes and sequential execution enabled.",
+      "Current plan allocation_plan_cf731760648bb43b2e47 preserved assessment assessment_7f28dfd9240d6099400b and bound intent allocation_intent_b8f1131f2221ca6c0fec with watch tier, zero position cap and an allocator-owned zero-share close target.",
+      "The accepted relationship endpoints, stable baseline strategy identity, active long-equity instrument, XAMS venue and EUR currency matched canonical state; the strategy risk budget was set to the plan's zero position cap.",
+      "The close from eight filled shares and 2.827734741242684908137646312% current weight to zero shares and zero weight exceeded the configured 1% minimum trade threshold.",
+      "Baseline-allocation watch mode allowed only the risk-reducing long-equity close; retaining or increasing equity, short equity, calls, puts and multi-leg options were ineligible.",
+      "The strategy was upserted with its current allocation plan and intent before signal creation without regressing its active lifecycle status; the normalized equity leg identity remained unchanged and deterministic execution owns close quantity.",
+      "The signal applier created signal_4122103b7c46f47778dc with normalized close action, the last successful 2026-09-10T18:10:21Z PRX timestamp and an expiry after creation.",
+      "Exactly one execute_strategy follow-up was enqueued with the strategy, signal, current plan, intent, persisted zero-share target and normalized close action.",
+      "The changed strategy page contains Visual evidence with no chart fence, and visualization_review records exact current-plan, quantity-comparison and ineligible-structure omissions.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "papertrader integrity --strict returned OK [integrity].",
+      "papertrader queue validate returned OK [queue].",
+      "Command-audit receipts and the observed repository delta show no changes to allocation targets/history, orders, order legs, executions, cash, portfolio, performance or fills."
+    ],
+    "passed": true
+  },
+  "visualization_review": {
+    "charts": [],
+    "completed": true,
+    "omissions": [
+      {
+        "dataset": "Current-plan valuation scenarios",
+        "reason": "The current plan carries no valid valuation mark or bear/base/bull returns after market_data_not_ok; charting the prior plan's scenario returns would misrepresent stale decision inputs as support for the current close.",
+        "reason_code": "source_unavailable"
+      },
+      {
+        "dataset": "Current versus target baseline quantity",
+        "reason": "Only two comparable values are decision-relevant—eight current shares and zero target shares—which is below the three-observation chartability threshold and is clearer in prose.",
+        "reason_code": "insufficient_comparability"
+      },
+      {
+        "dataset": "Option and short-structure payoff comparison",
+        "reason": "Baseline watch mode permits only an exit from the existing long equity exposure, and no complete fresh option contract, quote or liquidity inputs were supplied.",
+        "reason_code": "not_decision_relevant"
+      }
+    ]
+  }
+}
