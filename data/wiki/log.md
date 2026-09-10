@@ -3859,3 +3859,16 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Updated `provisional-scenario-values-september-2026`; preserved the deterministic
   `market-technicals` chart unchanged.
 - Files updated: `securities/security_97f38b2cb2d5ef127f5a.md`, `log.md`.
+
+## [2026-09-10] update | Prosus bounded baseline allocation
+
+- Rebound [[strategies/strategy_8caa208dfc702a2584a7|Prosus bounded baseline allocation]] to
+  current allocation plan `allocation_plan_6271cd1bd15ef73f7441` and intent
+  `allocation_intent_451ca921751ca6e57921`.
+- Restored the stable 5% full-baseline risk ceiling and allocator-owned six-share target after fresh
+  market data restored eligibility; the normalized open action remains subject to deterministic
+  holdings and pending-order delta derivation.
+- Refreshed `prosus-baseline-scenario-returns` from the canonical current-plan valuation inputs.
+  Medium confidence, holding-company concentration, private marks, governance, capital-allocation
+  transmission and weak momentum continue to prevent conviction treatment.
+- Files updated: `strategies/strategy_8caa208dfc702a2584a7.md`, `log.md`.
