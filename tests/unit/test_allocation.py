@@ -1155,6 +1155,77 @@ def _create_baseline_strategy(
     return strategy_id
 
 
+def test_superseded_zero_cap_strategy_retains_its_historical_risk_budget(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    _seed_candidates(sandbox_repository, sandbox_settings, 1)
+    market = read_table(sandbox_repository, "market_latest")
+    market[0]["status"] = "error"
+    write_table(sandbox_repository, "market_latest", market)
+    failed_market_plan = plan_allocation(
+        sandbox_repository, sandbox_settings, run_id="market-unavailable", now=NOW
+    )
+    target = read_table(sandbox_repository, "allocation_targets")[0]
+    assert target["tier"] == "watch" and target["position_cap_pct"] == "0"
+    strategy_id = _create_baseline_strategy(
+        sandbox_repository,
+        sandbox_settings,
+        security_id="sec_00",
+        allocation_plan_id=failed_market_plan.allocation_plan_id,
+        quantity=Decimal("1"),
+        status="paused",
+        risk_budget_pct="0",
+    )
+    assert validate_allocation_state(sandbox_repository, sandbox_settings) == []
+
+    _write_price(sandbox_repository, "sec_00", _bar(0))
+    recovered_plan = plan_allocation(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="market-recovered",
+        now=NOW + timedelta(minutes=1),
+    )
+    assert recovered_plan.allocation_plan_id != failed_market_plan.allocation_plan_id
+    current_target = read_table(sandbox_repository, "allocation_targets")[0]
+    assert current_target["allocation_intent_id"] != target["allocation_intent_id"]
+    assert current_target["position_cap_pct"] == "5"
+    strategies = read_table(sandbox_repository, "strategies")
+    assert strategies[0]["allocation_plan_id"] == failed_market_plan.allocation_plan_id
+    assert strategies[0]["risk_budget_pct"] == "0"
+    assert validate_allocation_state(sandbox_repository, sandbox_settings) == []
+
+    # Historical validity cannot authorize trading against the replacement plan.
+    strategies[0]["status"] = "active"
+    write_table(sandbox_repository, "strategies", strategies)
+    with pytest.raises(OrderError, match="current allocation target"):
+        create_signal(
+            sandbox_repository,
+            sandbox_settings,
+            strategy_id=strategy_id,
+            signal_type="open",
+            rationale="Superseded zero-cap strategy cannot open exposure.",
+            market_data_as_of=NOW,
+            run_id="stale-strategy",
+            now=NOW + timedelta(minutes=1),
+        )
+    assert read_table(sandbox_repository, "signals") == []
+
+    strategies[0]["risk_budget_pct"] = "5"
+    write_table(sandbox_repository, "strategies", strategies)
+    assert any(
+        "risk budget differs" in error
+        for error in validate_allocation_state(sandbox_repository, sandbox_settings)
+    )
+    strategies[0]["risk_budget_pct"] = "0"
+    strategies[0]["allocation_intent_id"] = "allocation_intent_unrecorded"
+    write_table(sandbox_repository, "strategies", strategies)
+    assert any(
+        "risk budget differs" in error
+        for error in validate_allocation_state(sandbox_repository, sandbox_settings)
+    )
+
+
 def _create_conviction_strategy(
     repository: Path,
     settings: Settings,

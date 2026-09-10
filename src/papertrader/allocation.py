@@ -2400,6 +2400,23 @@ def validate_allocation_state(repository_root: Path, settings: Settings) -> list
                     settings.allocation.maximum_baseline_position_pct,
                     settings.allocation.maximum_starter_position_pct,
                 }
+                if not compatible_target and row["allocation_intent_id"]:
+                    # A superseded exit-only strategy may legitimately retain a zero cap.
+                    # Validate its recorded intent, never borrow the new plan's risk budget.
+                    historical_caps = {
+                        required_decimal(item["position_cap_pct"], label="historical position cap")
+                        for item in history
+                        if item["allocation_plan_id"] == row["allocation_plan_id"]
+                        and item["allocation_intent_id"] == row["allocation_intent_id"]
+                        and item["strategy_id"] == row["strategy_id"]
+                        and item["security_id"] == row["security_id"]
+                    }
+                    if historical_caps:
+                        if len(historical_caps) != 1 or not historical_caps <= allowed_caps | {
+                            Decimal("0")
+                        }:
+                            raise ValueError("historical allocation-tier position cap is invalid")
+                        allowed_caps = historical_caps
                 if compatible_target and target is not None:
                     expected_cap = required_decimal(
                         target["position_cap_pct"], label="target position cap"

@@ -1005,3 +1005,13 @@ and absent market rows; formatting and accessibility assertions remain strict.
 Recovered the unfinalized checkpoints from Actions run `34520941923` through `daily finalize`
 and `daily complete`, preserving the original preparation errors and failed research evidence.
 The regenerated publication reconciles with canonical state and the research retry remains queued.
+
+## Follow-up — Preserve superseded exit-strategy risk provenance — Complete (2026-09-10)
+
+The next daily attempt (`34527146862`) retrieved market and FX data without errors, exposing an
+allocation checkpoint failure when a zero-cap watch-tier strategy outlived its allocation intent.
+Validate superseded strategies against their exact recorded plan, intent, strategy, and security
+in allocation history. Reject conflicting historical caps, changed risk budgets, and zero caps
+without matching provenance. Current strategy, signal, order, and fill gates still require the
+current allocation intent. Regression coverage reproduces market failure followed by recovery and
+proves that the historical strategy cannot create a signal against the replacement plan.
