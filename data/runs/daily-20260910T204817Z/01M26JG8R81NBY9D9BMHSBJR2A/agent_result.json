@@ -1,0 +1,61 @@
+{
+  "commands_run": [
+    "papertrader portfolio reconcile --strict",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Prosus baseline open action skipped: the portfolio already holds eight shares against the current six-share target, with no pending Prosus order; no paper order or accounting change was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The validated operation payload requests the open action for strategy_8caa208dfc702a2584a7 and ready signal signal_19102cf9fd36fcfdaa66 under allocation intent allocation_intent_451ca921751ca6e57921.",
+      "observed_at": "2026-09-10T21:14:01Z",
+      "source": "data/operations/payloads/01M26JG8R81NBY9D9BMHSBJR2A.json"
+    },
+    {
+      "claim": "The sole current Prosus target binds allocation_plan_6271cd1bd15ef73f7441 and allocation_intent_451ca921751ca6e57921 to the selected strategy, assessment_7f28dfd9240d6099400b, accepted relationship_e514a92bf6c38d0754ee, full tier, and a persisted target quantity of six shares.",
+      "observed_at": "2026-09-10T20:48:19Z",
+      "source": "data/tables/allocation_targets.csv"
+    },
+    {
+      "claim": "The reconciled portfolio currently holds eight long Prosus shares for strategy_8caa208dfc702a2584a7, two shares above the persisted six-share target.",
+      "observed_at": "2026-09-10T21:15:38Z",
+      "source": "data/tables/portfolio.csv"
+    },
+    {
+      "claim": "Every prior Prosus order is terminal; the most recent close and increase orders are cancelled, so no pending quantity reduces the current eight-share holding toward the target.",
+      "observed_at": "2026-09-10T21:14:01Z",
+      "source": "data/tables/orders.csv"
+    },
+    {
+      "claim": "The identity-matched Prosus market row is healthy and fresh for the operation, with a EUR 35.29499816894531 mark retrieved at 2026-09-10T20:48:19Z; stale market data did not cause the skip.",
+      "observed_at": "2026-09-10T20:48:19Z",
+      "source": "data/market/latest.csv"
+    },
+    {
+      "claim": "Strict portfolio reconciliation and strict wiki lint both exited zero and changed no repository paths.",
+      "observed_at": "2026-09-10T21:15:46Z",
+      "source": "data/runs/daily-20260910T204817Z/01M26JG8R81NBY9D9BMHSBJR2A/command_audit.json"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01M26JG8R81NBY9D9BMHSBJR2A",
+  "operations_created": [],
+  "reason_code": "no_positive_baseline_delta",
+  "status": "skipped",
+  "summary": "Skipped the Prosus baseline open action because it no longer has a positive executable delta. The current allocation target is six shares, while the reconciled portfolio already holds eight shares and all prior Prosus orders are terminal. Creating a buy would exceed the current target, and using this open signal to create a sell would violate its lifecycle action. No order, fill, execution, cash, portfolio, performance, allocation, or wiki state was changed.",
+  "validation": {
+    "checks": [
+      "Controller preflight identified native llm-wiki 2.1.0, papertrader-controller, and papertrader-execute-strategy with content hashes, sequential execution, and yolo enabled.",
+      "The selected queue row was running, claimed by daily-20260910T204817Z, and its lease was live at evaluation.",
+      "Payload, active baseline strategy, ready open signal, canonical long-equity leg, current allocation plan and intent, immutable assessment, and accepted relationship identities matched.",
+      "The current market row was identity-matched, status ok, EUR-denominated, and fresh at evaluation; no FX conversion was required because the instrument and base currency are EUR.",
+      "Current holdings are eight shares, all prior Prosus orders are terminal, and the current target is six shares; therefore the open action has no positive deterministic buy delta and must not create an order.",
+      "No order command was invoked because the requested open lifecycle action no longer warrants increased exposure; creating a sell from an open signal would violate the canonical signal lifecycle.",
+      "Strict portfolio reconciliation returned OK and strict wiki lint returned OK.",
+      "Command audit and Git diff inspection showed no changes to allocation targets/history, orders, signals, executions, cash ledger, portfolio, performance, or wiki state."
+    ],
+    "passed": true
+  }
+}
