@@ -3727,3 +3727,15 @@ boundary after the combined log crossed the configured 5,000-line threshold.
   and market observations. Medium confidence, holding-company concentration, private-asset marks,
   governance, capital-allocation transmission and weak momentum continue to prevent conviction
   treatment.
+
+## [2026-09-10] update | Uber bounded baseline allocation
+
+- Updated [[strategies/strategy_e4ada1a4934691d1f7ee]] for current allocation plan
+  `allocation_plan_4e0ef8323f8d383f6b85` and allocation intent
+  `allocation_intent_ae3d5bc9b6efe4a816f1`.
+- Retained long equity as the only baseline-permitted structure, the allocator-owned five-share
+  target and the 5% full-baseline ceiling; deterministic order code remains responsible for
+  quantity.
+- Refreshed the scenario-return chart and entry context from the canonical 2026-09-10 allocation,
+  market and FX observations. Medium confidence, autonomy disintermediation, insurance, regulation
+  and insufficient diversification continue to prevent conviction treatment.

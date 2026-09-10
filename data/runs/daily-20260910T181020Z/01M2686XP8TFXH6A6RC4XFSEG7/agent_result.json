@@ -1,0 +1,97 @@
+{
+  "commands_run": [
+    "papertrader research strategy upsert --request data/runs/daily-20260910T181020Z/01M2686XP8TFXH6A6RC4XFSEG7/strategy-upsert-request.json",
+    "papertrader signal create --request data/runs/daily-20260910T181020Z/01M2686XP8TFXH6A6RC4XFSEG7/signal-create-request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260910T181020Z/01M2686XP8TFXH6A6RC4XFSEG7/enqueue-execute-strategy-request.json",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader queue validate"
+  ],
+  "daily_report_items": [
+    "Updated Uber's ready 5% ceiling full-baseline strategy for the current 3.06% five-share target, created a ready open signal for only the deterministic delta, and queued exactly one separate paper-order review; no order or fill was created by research."
+  ],
+  "evidence": [
+    {
+      "claim": "The current immutable allocation target binds strategy_e4ada1a4934691d1f7ee to plan allocation_plan_4e0ef8323f8d383f6b85, intent allocation_intent_ae3d5bc9b6efe4a816f1, assessment assessment_7fe1690682aa6c66e233 and accepted relationship relationship_d403f81ae5b27c9643dd. It persists a five-share open target at 3.06% from zero current and pending weight, capped at 5%, with rank three, effective score 84, 24.8593102331988521009601598% expected return, 18.64448267489913907572011985% confidence-adjusted expected return and no hard blocker.",
+      "observed_at": "2026-09-10T18:10:21Z",
+      "source": "data/tables/allocation_targets.csv"
+    },
+    {
+      "claim": "Assessment assessment_7fe1690682aa6c66e233 uses medium confidence and a twelve-month USD 55/USD 90/USD 120 bear/base/bull range with 25%/50%/25% probabilities. Its quality score is 84; medium confidence and its older-reference margin-of-safety gap support bounded baseline rather than conviction treatment.",
+      "observed_at": "2026-08-28T19:27:50Z",
+      "source": "data/tables/security_assessments.csv"
+    },
+    {
+      "claim": "relationship_d403f81ae5b27c9643dd remains accepted for the mobility-platform idea and Uber security, with a positive beneficiary mechanism, high sensitivity and medium confidence.",
+      "observed_at": "2026-08-28T19:27:50Z",
+      "source": "data/tables/relationships.csv"
+    },
+    {
+      "claim": "Uber's Q2 2026 filing evidence reported 24% bookings growth, 18% trip growth, 12% revenue growth, USD 1.9 billion operating income and USD 2.8 billion free cash flow, supporting the maintained network-to-cash mechanism while autonomy, insurance, regulation, incentives and partner economics remain material risks.",
+      "observed_at": "2026-08-28T19:27:50Z",
+      "source": "Uber Q2 2026 Form 10-Q",
+      "source_hash": "5aa56769ca3e3d8735d1122e85269a5b9cd68fcb4bd2fa58fa6b19b65b019ffa",
+      "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000032/uber-20260630.htm"
+    },
+    {
+      "claim": "The latest UBER mark was USD 71.08000183105469 and the latest USD/EUR rate was 0.8607000112533569; both were retrieved at 2026-09-10T18:10:21Z and were inside the configured 36-hour freshness window when the signal was created. The same-date technical projection showed RSI 38.91, negative MACD momentum and an active lower-Bollinger-band condition.",
+      "observed_at": "2026-09-10T18:10:21Z",
+      "source": "data/market/latest.csv, data/market/fx/USD_EUR.csv and data/market/indicators.csv"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M26B39R0YQRNP5AZPCDVJRGT.json",
+    "data/runs/daily-20260910T181020Z/01M2686XP8TFXH6A6RC4XFSEG7/enqueue-execute-strategy-request.json",
+    "data/runs/daily-20260910T181020Z/01M2686XP8TFXH6A6RC4XFSEG7/signal-create-request.json",
+    "data/runs/daily-20260910T181020Z/01M2686XP8TFXH6A6RC4XFSEG7/strategy-upsert-request.json",
+    "data/tables/signals.csv",
+    "data/tables/strategies.csv",
+    "data/tables/strategy_legs.csv",
+    "data/wiki/log.md",
+    "data/wiki/strategies/strategy_e4ada1a4934691d1f7ee.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M2686XP8TFXH6A6RC4XFSEG7",
+  "operations_created": [
+    "01M26B39R0YQRNP5AZPCDVJRGT"
+  ],
+  "reason_code": "baseline_signal_created",
+  "status": "succeeded",
+  "summary": "Updated ready baseline strategy strategy_e4ada1a4934691d1f7ee for Uber using current allocation plan allocation_plan_4e0ef8323f8d383f6b85 and intent allocation_intent_ae3d5bc9b6efe4a816f1. Baseline mode selected long common equity only, retained the allocator-owned five-share target and 5% maximum-position ceiling, and documented medium confidence, autonomy disintermediation, insurance, regulation, incentives, dilution, adverse momentum and insufficient diversification as reasons it does not qualify for conviction. Created ready open signal signal_e56e8ff841094ad0bbc0 and exactly one dependent execute_strategy operation, 01M26B39R0YQRNP5AZPCDVJRGT. No order, fill, execution, cash, portfolio, performance or allocation state was changed.",
+  "validation": {
+    "checks": [
+      "The selected queue row was the sole routed running operation, matched run daily-20260910T181020Z and strategy_e4ada1a4934691d1f7ee, and had a live lease through final pre-manifest verification.",
+      "The controller preflight identified native llm-wiki 2.1.0, papertrader-controller, papertrader-strategy-research and echart with content hashes and sequential execution enabled.",
+      "Current plan allocation_plan_4e0ef8323f8d383f6b85 preserved assessment assessment_7fe1690682aa6c66e233 and bound intent allocation_intent_ae3d5bc9b6efe4a816f1 with an allocator-owned target quantity of five.",
+      "The accepted relationship endpoints, stable baseline strategy identity, ready long-equity instrument, XNYS venue, USD currency, 5% position cap and fresh market/FX inputs matched canonical state and configured limits.",
+      "The increase from zero current and pending weight to a 3.06% target exceeded the configured 1% minimum trade threshold, and the current target had no hard blocker.",
+      "Baseline-allocation mode allowed only long equity; short equity, calls, puts and multi-leg options were ineligible and lacked complete fresh contract quotes and liquidity evidence.",
+      "The strategy was upserted with its current allocation plan and intent before signal creation, and its normalized equity leg retained the allocator-owned five-share target.",
+      "The signal applier created signal_e56e8ff841094ad0bbc0 with normalized open action, fresh 2026-09-10T18:10:21Z market timestamp and an expiry after creation.",
+      "Exactly one execute_strategy follow-up was enqueued with the strategy, signal, current plan, intent, persisted target quantity and normalized open action.",
+      "visualization_review and the changed strategy page both identify chart uber-baseline-scenario-returns exactly.",
+      "papertrader wiki lint --strict returned OK [wiki], including strict chart-fence validation.",
+      "papertrader integrity --strict returned OK [integrity], including signal identity and protected-state integrity.",
+      "papertrader queue validate returned OK [queue].",
+      "Command-audit receipts and the observed repository delta show no changes to allocation targets/history, orders, executions, cash, portfolio, performance or fills; git diff validation reported no whitespace errors."
+    ],
+    "passed": true
+  },
+  "visualization_review": {
+    "charts": [
+      {
+        "chart_id": "uber-baseline-scenario-returns",
+        "page_path": "data/wiki/strategies/strategy_e4ada1a4934691d1f7ee.md"
+      }
+    ],
+    "completed": true,
+    "omissions": [
+      {
+        "dataset": "Option and short-structure payoff comparison",
+        "reason": "Baseline-allocation mode permits only long equity, the accepted relationship is positive, and no complete fresh contract quote or contract-level liquidity evidence was supplied; charting ineligible structures would misrepresent the deterministic allocation mandate.",
+        "reason_code": "not_decision_relevant"
+      }
+    ]
+  }
+}
