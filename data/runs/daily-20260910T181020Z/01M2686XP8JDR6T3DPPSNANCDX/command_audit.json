@@ -1,0 +1,213 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "strategy",
+        "upsert",
+        "--request",
+        "data/runs/daily-20260910T181020Z/01M2686XP8JDR6T3DPPSNANCDX/strategy-upsert-request.json"
+      ],
+      "changed_paths": [
+        "data/tables/strategies.csv",
+        "data/tables/strategy_legs.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "d3d50831ed8db36f3e3bd3a5388b34f5f7a159f4729d446e8c7d1b727c793117",
+            8507,
+            384
+          ],
+          "before": [
+            "file",
+            "27a065f30629697715c4e06e2b5884417df9d7bbdaa538bfcbd9590e0ef652af",
+            8492,
+            384
+          ],
+          "path": "data/tables/strategies.csv"
+        },
+        {
+          "after": [
+            "file",
+            "088202ab945ac7ebc4ea9e87d029dd928123d07126cae7fa32587e31a6d31d89",
+            739,
+            384
+          ],
+          "before": [
+            "file",
+            "18b9db7b6f4a2f3c0d4b695486224409b7d9c89dd66a609c87733c5c05f8320c",
+            739,
+            384
+          ],
+          "path": "data/tables/strategy_legs.csv"
+        }
+      ],
+      "command": "papertrader research strategy upsert --request data/runs/daily-20260910T181020Z/01M2686XP8JDR6T3DPPSNANCDX/strategy-upsert-request.json",
+      "completed_at": "2026-09-10T18:37:27Z",
+      "exit_code": 0,
+      "profile": "deep",
+      "request": {
+        "identity": [
+          "file",
+          "781c4a7bda643805cfc3ca3b7c5514b3e8a2ad40312e015f52fc5e0985a9f8c6",
+          2731,
+          384
+        ],
+        "path": "data/runs/daily-20260910T181020Z/01M2686XP8JDR6T3DPPSNANCDX/strategy-upsert-request.json"
+      },
+      "started_at": "2026-09-10T18:37:26Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "signal",
+        "create",
+        "--request",
+        "data/runs/daily-20260910T181020Z/01M2686XP8JDR6T3DPPSNANCDX/signal-create-request.json"
+      ],
+      "changed_paths": [
+        "data/tables/signals.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "66e657ee807d290e399eda2ed1796f65e053dc54cdbda499bb300679bfd86274",
+            9440,
+            384
+          ],
+          "before": [
+            "file",
+            "a4ead6d15bf1c30b70cdb664c6a32284536f945c4dff25670490132554f3ad44",
+            8695,
+            384
+          ],
+          "path": "data/tables/signals.csv"
+        }
+      ],
+      "command": "papertrader signal create --request data/runs/daily-20260910T181020Z/01M2686XP8JDR6T3DPPSNANCDX/signal-create-request.json",
+      "completed_at": "2026-09-10T18:37:34Z",
+      "exit_code": 0,
+      "profile": "deep",
+      "request": {
+        "identity": [
+          "file",
+          "304cdd9fdfb63cb81bc2dda924759e3d5ee91824003fa4f35b2b9c6306da2a30",
+          795,
+          384
+        ],
+        "path": "data/runs/daily-20260910T181020Z/01M2686XP8JDR6T3DPPSNANCDX/signal-create-request.json"
+      },
+      "started_at": "2026-09-10T18:37:34Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/daily-20260910T181020Z/01M2686XP8JDR6T3DPPSNANCDX/enqueue-execute-strategy-request.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M269SAZ8QYDYTYBWTTYSN3X2.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "c1348ce101d1a7bb23edd8687f3960c01c96e1f2f3e6f9a174bf74b872e7f425",
+            203518,
+            384
+          ],
+          "before": [
+            "file",
+            "47d4414e72c69354e455f26d5fedd9c2be28f687eb3be030e72f65dda1e9c2ed",
+            202940,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "ec8f29d0bcac9d94ef7e6a00cd3a366d0d2350f6f377dfc712b4b83e15f2f829",
+            711,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01M269SAZ8QYDYTYBWTTYSN3X2.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/daily-20260910T181020Z/01M2686XP8JDR6T3DPPSNANCDX/enqueue-execute-strategy-request.json",
+      "completed_at": "2026-09-10T18:37:54Z",
+      "exit_code": 0,
+      "profile": "deep",
+      "request": {
+        "identity": [
+          "file",
+          "9cc50981df1247555868908f40cfd66f626f59bf0a5af3056acf962219133906",
+          1009,
+          384
+        ],
+        "path": "data/runs/daily-20260910T181020Z/01M2686XP8JDR6T3DPPSNANCDX/enqueue-execute-strategy-request.json"
+      },
+      "started_at": "2026-09-10T18:37:53Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-09-10T18:38:02Z",
+      "exit_code": 0,
+      "profile": "deep",
+      "request": null,
+      "started_at": "2026-09-10T18:37:59Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "integrity",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader integrity --strict",
+      "completed_at": "2026-09-10T18:38:13Z",
+      "exit_code": 0,
+      "profile": "deep",
+      "request": null,
+      "started_at": "2026-09-10T18:38:06Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "validate"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader queue validate",
+      "completed_at": "2026-09-10T18:38:19Z",
+      "exit_code": 0,
+      "profile": "deep",
+      "request": null,
+      "started_at": "2026-09-10T18:38:18Z"
+    }
+  ],
+  "operation_id": "01M2686XP8JDR6T3DPPSNANCDX",
+  "profile": "deep",
+  "profile_policy_version": "profile-router-v1",
+  "route_reason": "full_strategy_or_execution_decision",
+  "run_id": "daily-20260910T181020Z"
+}

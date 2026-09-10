@@ -1,0 +1,96 @@
+{
+  "commands_run": [
+    "papertrader research strategy upsert --request data/runs/daily-20260910T181020Z/01M2686XP8JDR6T3DPPSNANCDX/strategy-upsert-request.json",
+    "papertrader signal create --request data/runs/daily-20260910T181020Z/01M2686XP8JDR6T3DPPSNANCDX/signal-create-request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260910T181020Z/01M2686XP8JDR6T3DPPSNANCDX/enqueue-execute-strategy-request.json",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader queue validate"
+  ],
+  "daily_report_items": [
+    "Updated Prosus's active 5% ceiling baseline strategy for the current 4.24% twelve-share target, created a ready open signal for only the deterministic remaining delta, and queued exactly one separate paper-order review; no order or fill was created by research."
+  ],
+  "evidence": [
+    {
+      "claim": "The current immutable allocation target binds strategy_8caa208dfc702a2584a7 to plan allocation_plan_4e0ef8323f8d383f6b85, intent allocation_intent_b658846a33beb7586a8e, assessment assessment_7f28dfd9240d6099400b and accepted relationship relationship_e514a92bf6c38d0754ee. It persists a twelve-share increase target at 4.24% from 2.86% current and zero pending weight, capped at 5%, with rank one, effective score 70, 38.8298697890659920486923207% expected return, 29.12240234179949403651924052% confidence-adjusted expected return and no hard blocker.",
+      "observed_at": "2026-09-10T18:10:21Z",
+      "source": "data/tables/allocation_targets.csv"
+    },
+    {
+      "claim": "Assessment assessment_7f28dfd9240d6099400b uses medium confidence and a twelve-month EUR 30/EUR 52/EUR 70 bear/base/bull range with 30%/50%/20% probabilities. Its 70 quality score, concentration-sensitive gap and medium confidence support bounded baseline rather than conviction treatment.",
+      "observed_at": "2026-08-28T19:18:00Z",
+      "source": "data/tables/security_assessments.csv"
+    },
+    {
+      "claim": "relationship_e514a92bf6c38d0754ee remains accepted for the digital-attention idea and Prosus security, with a positive beneficiary mechanism, high sensitivity and medium confidence.",
+      "observed_at": "2026-08-28T20:01:33Z",
+      "source": "data/tables/relationships.csv"
+    },
+    {
+      "claim": "Prosus's 27 August 2026 disclosure reported USD 150.4 billion of NAV, EUR 61.5 NAV per share, Tencent as USD 117.0 billion of assets, and repurchase-driven per-share accretion, while unendorsed private marks, debt, governance and the persistent holding-company discount remain material risk inputs.",
+      "observed_at": "2026-08-28T19:18:00Z",
+      "source": "Prosus net asset value at 27 August 2026",
+      "source_hash": "cc7e5e28e80215c617a50b48075d550b6b567d6a658ac6a2656967d871b36aee",
+      "url": "https://www.prosus.com/investors/investing-in-prosus/net-asset-value?locale=en"
+    },
+    {
+      "claim": "The latest PRX mark was EUR 35.29499816894531, retrieved at 2026-09-10T18:10:21Z and inside the configured 36-hour freshness window when the signal was created; the same-date technical projection showed RSI 32.57354747, a negative MACD histogram and an active lower-Bollinger-band trigger. No FX conversion was required because EUR is the portfolio base currency.",
+      "observed_at": "2026-09-10T18:10:21Z",
+      "source": "data/market/latest.csv and data/market/indicators.csv"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M269SAZ8QYDYTYBWTTYSN3X2.json",
+    "data/runs/daily-20260910T181020Z/01M2686XP8JDR6T3DPPSNANCDX/enqueue-execute-strategy-request.json",
+    "data/runs/daily-20260910T181020Z/01M2686XP8JDR6T3DPPSNANCDX/signal-create-request.json",
+    "data/runs/daily-20260910T181020Z/01M2686XP8JDR6T3DPPSNANCDX/strategy-upsert-request.json",
+    "data/tables/signals.csv",
+    "data/tables/strategies.csv",
+    "data/tables/strategy_legs.csv",
+    "data/wiki/log.md",
+    "data/wiki/strategies/strategy_8caa208dfc702a2584a7.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M2686XP8JDR6T3DPPSNANCDX",
+  "operations_created": [
+    "01M269SAZ8QYDYTYBWTTYSN3X2"
+  ],
+  "status": "succeeded",
+  "summary": "Updated active baseline strategy strategy_8caa208dfc702a2584a7 for Prosus using current allocation plan allocation_plan_4e0ef8323f8d383f6b85 and unchanged intent allocation_intent_b658846a33beb7586a8e. Baseline mode retained long common equity only, the allocator-owned twelve-share target and the 5% maximum-position ceiling while documenting medium confidence, holding-company risks, weak momentum and insufficient diversification as reasons it does not qualify for conviction. Created ready open signal signal_69f8ada6d45a761025c5 and exactly one dependent execute_strategy operation, 01M269SAZ8QYDYTYBWTTYSN3X2. No order, fill, execution, cash, portfolio, performance or allocation state was changed.",
+  "validation": {
+    "checks": [
+      "The selected queue row was the sole routed running operation, matched run daily-20260910T181020Z and strategy_8caa208dfc702a2584a7, and had a live lease through final pre-manifest verification.",
+      "The controller preflight identified native llm-wiki 2.1.0, papertrader-controller, papertrader-strategy-research and echart with content hashes and sequential execution enabled.",
+      "Current plan allocation_plan_4e0ef8323f8d383f6b85 preserved assessment assessment_7f28dfd9240d6099400b and bound unchanged intent allocation_intent_b658846a33beb7586a8e with an allocator-owned target quantity of twelve.",
+      "The accepted relationship endpoints, stable baseline strategy identity, active long-equity instrument, XAMS venue, EUR currency, 5% position cap and fresh market input matched canonical state and configured limits.",
+      "The increase from 2.86% current and zero pending weight to a 4.24% target exceeded the configured 1% minimum trade threshold, and the current target had no hard blocker.",
+      "Baseline-allocation mode allowed only long equity; short equity, calls, puts and multi-leg options were ineligible and lacked complete fresh contract quotes and liquidity evidence.",
+      "The strategy was upserted with its current allocation plan and unchanged intent before signal creation without regressing its active lifecycle status, and its normalized equity leg retained the allocator-owned twelve-share target.",
+      "The signal applier created signal_69f8ada6d45a761025c5 with normalized open action, fresh 2026-09-10T18:10:21Z market timestamp and an expiry after creation.",
+      "Exactly one execute_strategy follow-up was enqueued with the strategy, signal, current plan, intent, persisted target quantity and normalized open action.",
+      "visualization_review and the changed strategy page both identify chart prosus-baseline-scenario-returns exactly.",
+      "papertrader wiki lint --strict returned OK [wiki], including strict chart-fence validation.",
+      "papertrader integrity --strict returned OK [integrity], including signal identity and protected-state integrity.",
+      "papertrader queue validate returned OK [queue].",
+      "Command-audit receipts and the observed repository delta show no changes to allocation targets/history, orders, executions, cash, portfolio, performance or fills."
+    ],
+    "passed": true
+  },
+  "visualization_review": {
+    "charts": [
+      {
+        "chart_id": "prosus-baseline-scenario-returns",
+        "page_path": "data/wiki/strategies/strategy_8caa208dfc702a2584a7.md"
+      }
+    ],
+    "completed": true,
+    "omissions": [
+      {
+        "dataset": "Option and short-structure payoff comparison",
+        "reason": "Baseline-allocation mode permits only long equity, the accepted relationship is positive, and no complete fresh contract quote or contract-level liquidity evidence was supplied; charting ineligible structures would misrepresent the deterministic allocation mandate.",
+        "reason_code": "not_decision_relevant"
+      }
+    ]
+  }
+}

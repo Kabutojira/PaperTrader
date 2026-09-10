@@ -3715,3 +3715,15 @@ boundary after the combined log crossed the configured 5,000-line threshold.
   market and FX observations. Medium confidence, China and ADR risks, artificial-intelligence
   investment, portfolio volatility and insufficient diversification continue to prevent conviction
   treatment.
+
+## [2026-09-10] update | Prosus bounded baseline allocation
+
+- Updated [[strategies/strategy_8caa208dfc702a2584a7]] for current allocation plan
+  `allocation_plan_4e0ef8323f8d383f6b85` and unchanged intent
+  `allocation_intent_b658846a33beb7586a8e`.
+- Retained long equity as the only baseline-permitted structure, the allocator-owned twelve-share
+  target and the 5% position ceiling; deterministic order code remains responsible for quantity.
+- Refreshed the scenario-return chart and entry context from the canonical 2026-09-10 allocation
+  and market observations. Medium confidence, holding-company concentration, private-asset marks,
+  governance, capital-allocation transmission and weak momentum continue to prevent conviction
+  treatment.
