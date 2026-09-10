@@ -1,0 +1,369 @@
+{
+  "background_wiki_pages": [
+    {
+      "path": "data/wiki/ideas/idea_ai_compute_networking_hyperscaler_monetization.md",
+      "sha256": "8a9dfb5180137f187eb83ac96445a6a9f05b0d04c7efd5b46160a9e63476158e"
+    },
+    {
+      "path": "data/wiki/ideas/idea_digital_attention_gaming_ecosystems.md",
+      "sha256": "6e49566a1178ced737a481ac7f0d7cba9348a8066083d7f0916ac4f5c3b90afb"
+    },
+    {
+      "path": "data/wiki/ideas/idea_mobility_platform_autonomy.md",
+      "sha256": "df225c93431dae2cbc58b248cba17332cfefa7502b04581d42664bcdcadb9bba"
+    },
+    {
+      "path": "data/wiki/securities/security_33d9c44facc75c726c7d.md",
+      "sha256": "45c7ba8d3ac9b36bcff4689c8fd3ed89a6dcbe5653cd9db15146673f1cce91dc"
+    },
+    {
+      "path": "data/wiki/securities/security_8b703a8adf5f864acaa4.md",
+      "sha256": "df02c9f9d87c4b7a6a579c43c53c399b7aacd30d1ac9cc0a385e7afd30c1ac98"
+    },
+    {
+      "path": "data/wiki/securities/security_de0d83229b369a426b99.md",
+      "sha256": "81a3fb33395850a012caec47a05cad2c272b56521788a63f46b390aa4e965c32"
+    },
+    {
+      "path": "data/wiki/securities/security_e4822686f60a96824b6e.md",
+      "sha256": "9f0f19364f64dfe1625d5b60198e07ed56b1243f71c284f6ba7d053114f8a57b"
+    }
+  ],
+  "changed_wiki_pages": [
+    {
+      "path": "data/wiki/strategies/strategy_7cf884a5530d05afdb99.md",
+      "sha256": "b6cc49d44c2914d978f2aea2234d16dc1c4f5288e3d7e28eb3d17c6443ac49fa"
+    },
+    {
+      "path": "data/wiki/strategies/strategy_8caa208dfc702a2584a7.md",
+      "sha256": "2a58f9d2ed39c89b6419e86a2bf2d8ba43c73588ebcc8a8361e720917cc77f12"
+    },
+    {
+      "path": "data/wiki/strategies/strategy_e4ada1a4934691d1f7ee.md",
+      "sha256": "5d43bb4f17d533bacccb9ff82180141bd262840748827c6f7f705f858adf5dac"
+    },
+    {
+      "path": "data/wiki/strategies/strategy_ef910e9aff5203a0b901.md",
+      "sha256": "70f2a8a00bf47572c0c6ee586fdd25e955c36f95c2239ad865f4184c07f5457b"
+    }
+  ],
+  "daily_cycle_id": "daily-20260910T181020Z",
+  "decision_snapshot_path": "data/runs/daily-20260910T181020Z/decision_snapshot.json",
+  "decision_snapshot_sha256": "2a602fea3ace243d64895089f2cc7e46cbfedc39a00e66aa9881f43c804e4732",
+  "generated_at": "2026-09-10T19:15:47Z",
+  "intervening_daily_cycles": [
+    "daily-20260908T182535Z",
+    "daily-20260909T182418Z",
+    "daily-20260910T181020Z"
+  ],
+  "page_path": "data/wiki/podcasts/daily-podcast_20260910T181020Z.md",
+  "podcast_context_version": 3,
+  "portfolio_implication_paths": [
+    "data/runs/daily-20260910T181020Z/decision_snapshot.json",
+    "data/wiki/daily-reports/daily-report_20260910.md"
+  ],
+  "previous_successful_podcast": {
+    "context_path": "data/runs/daily-20260907T190826Z/podcast_context.json",
+    "context_sha256": "cb593493e24ad6df3a2144e2e642710a9ab7d7ec647231216bd5457faca4b4bb",
+    "daily_cycle_id": "daily-20260907T190826Z",
+    "page_path": "data/wiki/podcasts/daily-podcast_20260907T190826Z.md",
+    "page_sha256": "d096a879a35207a5d82c2551dec641e7b528b8b1ec4c496bb0e24759ee1833cb",
+    "research_cutoff_at": "2026-09-07T19:41:26Z"
+  },
+  "report_path": "data/wiki/daily-reports/daily-report_20260910.md",
+  "report_sha256": "d08cb3571deb22d777df42742a6760c874112599c7b679452d67629e5d8e73aa",
+  "research_cutoff_at": "2026-09-10T19:03:58Z",
+  "research_developments": [
+    {
+      "completed_at": "2026-09-09T18:44:06Z",
+      "daily_cycle_id": "daily-20260909T182418Z",
+      "daily_report_items": [
+        "Updated NVIDIA's ready full-baseline long-equity strategy for the current 1.94% one-share target, created a ready open signal for only the deterministic delta, and queued exactly one separate paper-order review; no order or fill was created by research."
+      ],
+      "entity_id": "strategy_7cf884a5530d05afdb99",
+      "entity_type": "strategy",
+      "evidence": [
+        {
+          "claim": "The current immutable allocation target binds strategy_7cf884a5530d05afdb99 to plan allocation_plan_6f7a4f4479899fcd0d91, intent allocation_intent_b8eab1837513d5191d02, assessment assessment_82fd625a8d93be4bd8f5 and accepted relationship relationship_ai_compute_nvda. It persists a one-share open target at 1.94%, capped at 5%, with rank two, effective score 92, 34.7849225883281666573153411% expected return, 26.08869194124612499298650582% confidence-adjusted expected return and no hard blocker.",
+          "observed_at": "2026-09-09T18:24:19Z",
+          "source": "data/tables/allocation_targets.csv"
+        },
+        {
+          "claim": "Accepted assessment assessment_82fd625a8d93be4bd8f5 uses medium confidence and a twelve-month USD 198/USD 310.50/USD 448 bear/base/bull range with 30%/50%/20% probabilities. Quality score 92 clears baseline quality requirements, while medium confidence and concentration-sensitive gaps support baseline rather than conviction treatment.",
+          "observed_at": "2026-09-04T06:22:45Z",
+          "source": "data/tables/security_assessments.csv"
+        },
+        {
+          "claim": "relationship_ai_compute_nvda remains accepted for the AI-compute idea and NVIDIA security, with a positive beneficiary mechanism, high sensitivity and high confidence in the causal transmission.",
+          "observed_at": "2026-08-07T09:15:09Z",
+          "source": "data/tables/relationships.csv"
+        },
+        {
+          "claim": "NVIDIA's fiscal Q2 filing supports the accelerated-compute platform thesis while documenting material supply commitments, guarantees, receivable, concentration, export and product-transition risks that bound the position.",
+          "observed_at": "2026-09-04T06:15:57Z",
+          "source": "NVIDIA fiscal 2027 second-quarter Form 10-Q",
+          "source_hash": "e2634e509c241c5f45e3f6c115dc38a85645e5fdbee760b4a04f5e9035f6f7a9",
+          "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm"
+        },
+        {
+          "claim": "The latest NVDA mark was USD 225.72999572753906 and USD/EUR was 0.8590999841690063, both retrieved at 2026-09-09T18:24:19Z and inside the configured 36-hour freshness window when the signal was created.",
+          "observed_at": "2026-09-09T18:24:19Z",
+          "source": "data/market/latest.csv and data/market/fx/USD_EUR.csv"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M23QEMDRJGEXVJE0QBS0MZN1.json",
+        "data/runs/daily-20260909T182418Z/01M23PKS1RCS73P3W3CGN56529/enqueue-execute-strategy-request.json",
+        "data/runs/daily-20260909T182418Z/01M23PKS1RCS73P3W3CGN56529/signal-create-request.json",
+        "data/runs/daily-20260909T182418Z/01M23PKS1RCS73P3W3CGN56529/strategy-upsert-request.json",
+        "data/tables/signals.csv",
+        "data/tables/strategies.csv",
+        "data/tables/strategy_legs.csv",
+        "data/wiki/log.md",
+        "data/wiki/strategies/strategy_7cf884a5530d05afdb99.md"
+      ],
+      "operation_id": "01M23PKS1RCS73P3W3CGN56529",
+      "operation_type": "strategy_research",
+      "result_path": "data/runs/daily-20260909T182418Z/01M23PKS1RCS73P3W3CGN56529/agent_result.json",
+      "status": "succeeded",
+      "summary": "Updated ready baseline strategy strategy_7cf884a5530d05afdb99 for NVIDIA using current allocation plan allocation_plan_6f7a4f4479899fcd0d91 and intent allocation_intent_b8eab1837513d5191d02. Baseline mode selected long common equity only, retained the allocator-owned one-share target and 5% maximum-position ceiling, and documented medium confidence, concentration, commitments, guarantees, export controls and insufficient diversification as reasons it does not qualify for conviction. Created ready open signal signal_051ffe3636d9a4c24a7f and exactly one dependent execute_strategy operation, 01M23QEMDRJGEXVJE0QBS0MZN1. No order, fill, execution, cash, portfolio, performance or allocation state was changed."
+    },
+    {
+      "completed_at": "2026-09-10T18:24:43Z",
+      "daily_cycle_id": "daily-20260910T181020Z",
+      "daily_report_items": [
+        "Updated Tencent's ready 2% starter baseline strategy for the current 1.88% four-share target, created a ready open signal for only the deterministic delta, and queued exactly one separate paper-order review; no order or fill was created by research."
+      ],
+      "entity_id": "strategy_ef910e9aff5203a0b901",
+      "entity_type": "strategy",
+      "evidence": [
+        {
+          "claim": "The current immutable allocation target binds strategy_ef910e9aff5203a0b901 to plan allocation_plan_4e0ef8323f8d383f6b85, intent allocation_intent_818e8692a59dfaa00cad, assessment assessment_6e8ef7291ff81b77d900 and accepted relationship relationship_f625ba3c07d49e1865ff. It persists a four-share open target at 1.88%, capped at 2%, with rank five, effective score 76, 18.851712620552005449220809% expected return, 14.13878446541400408691560675% confidence-adjusted expected return and no hard blocker.",
+          "observed_at": "2026-09-10T18:10:21Z",
+          "source": "data/tables/allocation_targets.csv"
+        },
+        {
+          "claim": "Accepted assessment assessment_6e8ef7291ff81b77d900 uses medium confidence and a twelve-month USD 40/USD 65/USD 90 bear/base/bull range with 25%/50%/25% probabilities. Its quality and current return frontier support a starter allocation while medium confidence and concentration-sensitive gaps prevent conviction treatment.",
+          "observed_at": "2026-08-28T19:23:20Z",
+          "source": "data/tables/security_assessments.csv"
+        },
+        {
+          "claim": "relationship_f625ba3c07d49e1865ff remains accepted for the digital-attention idea and Tencent security, with a positive beneficiary mechanism, high sensitivity and medium confidence.",
+          "observed_at": "2026-08-28T20:03:02Z",
+          "source": "data/tables/relationships.csv"
+        },
+        {
+          "claim": "Tencent's 2026 second-quarter release reported 15% year-on-year revenue growth, 22% gross-profit growth and 18% non-IFRS operating-profit growth, supporting the maintained gaming, advertising and Weixin ecosystem mechanism while artificial-intelligence investment remains a material risk input.",
+          "observed_at": "2026-08-28T19:23:00Z",
+          "source": "Tencent announces 2026 second-quarter results",
+          "source_hash": "64d8d2038eeef993571b96bb3361b6f1a567d6e84157eb16af20d2fd9a095f0a",
+          "url": "https://www.tencent.com/wp-content/uploads/2026/08/Tencent-Announces-2026-Second-Quarter-Results.pdf"
+        },
+        {
+          "claim": "The latest TCEHY mark was USD 54.689998626708984 and the latest USD/EUR rate was 0.8607000112533569; both were retrieved at 2026-09-10T18:10:21Z and were inside the configured 36-hour freshness window when the signal was created.",
+          "observed_at": "2026-09-10T18:10:21Z",
+          "source": "data/market/latest.csv and data/market/fx/USD_EUR.csv"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M268WG401C713HE0TQR365QJ.json",
+        "data/runs/daily-20260910T181020Z/01M23SZ4K8HGGR194CR10CPVHD/enqueue-execute-strategy-request.json",
+        "data/runs/daily-20260910T181020Z/01M23SZ4K8HGGR194CR10CPVHD/signal-create-request.json",
+        "data/runs/daily-20260910T181020Z/01M23SZ4K8HGGR194CR10CPVHD/strategy-upsert-request.json",
+        "data/tables/signals.csv",
+        "data/tables/strategies.csv",
+        "data/tables/strategy_legs.csv",
+        "data/wiki/log.md",
+        "data/wiki/strategies/strategy_ef910e9aff5203a0b901.md"
+      ],
+      "operation_id": "01M23SZ4K8HGGR194CR10CPVHD",
+      "operation_type": "strategy_research",
+      "result_path": "data/runs/daily-20260910T181020Z/01M23SZ4K8HGGR194CR10CPVHD/agent_result.json",
+      "status": "succeeded",
+      "summary": "Updated ready baseline strategy strategy_ef910e9aff5203a0b901 for Tencent using current allocation plan allocation_plan_4e0ef8323f8d383f6b85 and unchanged intent allocation_intent_818e8692a59dfaa00cad. Baseline mode selected long common equity only, retained the allocator-owned four-share target and 2% maximum-position ceiling, and documented medium confidence, China and ADR risks, artificial-intelligence investment, portfolio volatility and insufficient diversification as reasons it does not qualify for conviction. Created ready open signal signal_993ac82b985a022c3df9 and exactly one dependent execute_strategy operation, 01M268WG401C713HE0TQR365QJ. No order, fill, execution, cash, portfolio, performance or allocation state was changed."
+    },
+    {
+      "completed_at": "2026-09-10T18:40:26Z",
+      "daily_cycle_id": "daily-20260910T181020Z",
+      "daily_report_items": [
+        "Updated Prosus's active 5% ceiling baseline strategy for the current 4.24% twelve-share target, created a ready open signal for only the deterministic remaining delta, and queued exactly one separate paper-order review; no order or fill was created by research."
+      ],
+      "entity_id": "strategy_8caa208dfc702a2584a7",
+      "entity_type": "strategy",
+      "evidence": [
+        {
+          "claim": "The current immutable allocation target binds strategy_8caa208dfc702a2584a7 to plan allocation_plan_4e0ef8323f8d383f6b85, intent allocation_intent_b658846a33beb7586a8e, assessment assessment_7f28dfd9240d6099400b and accepted relationship relationship_e514a92bf6c38d0754ee. It persists a twelve-share increase target at 4.24% from 2.86% current and zero pending weight, capped at 5%, with rank one, effective score 70, 38.8298697890659920486923207% expected return, 29.12240234179949403651924052% confidence-adjusted expected return and no hard blocker.",
+          "observed_at": "2026-09-10T18:10:21Z",
+          "source": "data/tables/allocation_targets.csv"
+        },
+        {
+          "claim": "Assessment assessment_7f28dfd9240d6099400b uses medium confidence and a twelve-month EUR 30/EUR 52/EUR 70 bear/base/bull range with 30%/50%/20% probabilities. Its 70 quality score, concentration-sensitive gap and medium confidence support bounded baseline rather than conviction treatment.",
+          "observed_at": "2026-08-28T19:18:00Z",
+          "source": "data/tables/security_assessments.csv"
+        },
+        {
+          "claim": "relationship_e514a92bf6c38d0754ee remains accepted for the digital-attention idea and Prosus security, with a positive beneficiary mechanism, high sensitivity and medium confidence.",
+          "observed_at": "2026-08-28T20:01:33Z",
+          "source": "data/tables/relationships.csv"
+        },
+        {
+          "claim": "Prosus's 27 August 2026 disclosure reported USD 150.4 billion of NAV, EUR 61.5 NAV per share, Tencent as USD 117.0 billion of assets, and repurchase-driven per-share accretion, while unendorsed private marks, debt, governance and the persistent holding-company discount remain material risk inputs.",
+          "observed_at": "2026-08-28T19:18:00Z",
+          "source": "Prosus net asset value at 27 August 2026",
+          "source_hash": "cc7e5e28e80215c617a50b48075d550b6b567d6a658ac6a2656967d871b36aee",
+          "url": "https://www.prosus.com/investors/investing-in-prosus/net-asset-value?locale=en"
+        },
+        {
+          "claim": "The latest PRX mark was EUR 35.29499816894531, retrieved at 2026-09-10T18:10:21Z and inside the configured 36-hour freshness window when the signal was created; the same-date technical projection showed RSI 32.57354747, a negative MACD histogram and an active lower-Bollinger-band trigger. No FX conversion was required because EUR is the portfolio base currency.",
+          "observed_at": "2026-09-10T18:10:21Z",
+          "source": "data/market/latest.csv and data/market/indicators.csv"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M269SAZ8QYDYTYBWTTYSN3X2.json",
+        "data/runs/daily-20260910T181020Z/01M2686XP8JDR6T3DPPSNANCDX/enqueue-execute-strategy-request.json",
+        "data/runs/daily-20260910T181020Z/01M2686XP8JDR6T3DPPSNANCDX/signal-create-request.json",
+        "data/runs/daily-20260910T181020Z/01M2686XP8JDR6T3DPPSNANCDX/strategy-upsert-request.json",
+        "data/tables/signals.csv",
+        "data/tables/strategies.csv",
+        "data/tables/strategy_legs.csv",
+        "data/wiki/log.md",
+        "data/wiki/strategies/strategy_8caa208dfc702a2584a7.md"
+      ],
+      "operation_id": "01M2686XP8JDR6T3DPPSNANCDX",
+      "operation_type": "strategy_research",
+      "result_path": "data/runs/daily-20260910T181020Z/01M2686XP8JDR6T3DPPSNANCDX/agent_result.json",
+      "status": "succeeded",
+      "summary": "Updated active baseline strategy strategy_8caa208dfc702a2584a7 for Prosus using current allocation plan allocation_plan_4e0ef8323f8d383f6b85 and unchanged intent allocation_intent_b658846a33beb7586a8e. Baseline mode retained long common equity only, the allocator-owned twelve-share target and the 5% maximum-position ceiling while documenting medium confidence, holding-company risks, weak momentum and insufficient diversification as reasons it does not qualify for conviction. Created ready open signal signal_69f8ada6d45a761025c5 and exactly one dependent execute_strategy operation, 01M269SAZ8QYDYTYBWTTYSN3X2. No order, fill, execution, cash, portfolio, performance or allocation state was changed."
+    },
+    {
+      "completed_at": "2026-09-10T19:03:34Z",
+      "daily_cycle_id": "daily-20260910T181020Z",
+      "daily_report_items": [
+        "Updated Uber's ready 5% ceiling full-baseline strategy for the current 3.06% five-share target, created a ready open signal for only the deterministic delta, and queued exactly one separate paper-order review; no order or fill was created by research."
+      ],
+      "entity_id": "strategy_e4ada1a4934691d1f7ee",
+      "entity_type": "strategy",
+      "evidence": [
+        {
+          "claim": "The current immutable allocation target binds strategy_e4ada1a4934691d1f7ee to plan allocation_plan_4e0ef8323f8d383f6b85, intent allocation_intent_ae3d5bc9b6efe4a816f1, assessment assessment_7fe1690682aa6c66e233 and accepted relationship relationship_d403f81ae5b27c9643dd. It persists a five-share open target at 3.06% from zero current and pending weight, capped at 5%, with rank three, effective score 84, 24.8593102331988521009601598% expected return, 18.64448267489913907572011985% confidence-adjusted expected return and no hard blocker.",
+          "observed_at": "2026-09-10T18:10:21Z",
+          "source": "data/tables/allocation_targets.csv"
+        },
+        {
+          "claim": "Assessment assessment_7fe1690682aa6c66e233 uses medium confidence and a twelve-month USD 55/USD 90/USD 120 bear/base/bull range with 25%/50%/25% probabilities. Its quality score is 84; medium confidence and its older-reference margin-of-safety gap support bounded baseline rather than conviction treatment.",
+          "observed_at": "2026-08-28T19:27:50Z",
+          "source": "data/tables/security_assessments.csv"
+        },
+        {
+          "claim": "relationship_d403f81ae5b27c9643dd remains accepted for the mobility-platform idea and Uber security, with a positive beneficiary mechanism, high sensitivity and medium confidence.",
+          "observed_at": "2026-08-28T19:27:50Z",
+          "source": "data/tables/relationships.csv"
+        },
+        {
+          "claim": "Uber's Q2 2026 filing evidence reported 24% bookings growth, 18% trip growth, 12% revenue growth, USD 1.9 billion operating income and USD 2.8 billion free cash flow, supporting the maintained network-to-cash mechanism while autonomy, insurance, regulation, incentives and partner economics remain material risks.",
+          "observed_at": "2026-08-28T19:27:50Z",
+          "source": "Uber Q2 2026 Form 10-Q",
+          "source_hash": "5aa56769ca3e3d8735d1122e85269a5b9cd68fcb4bd2fa58fa6b19b65b019ffa",
+          "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000032/uber-20260630.htm"
+        },
+        {
+          "claim": "The latest UBER mark was USD 71.08000183105469 and the latest USD/EUR rate was 0.8607000112533569; both were retrieved at 2026-09-10T18:10:21Z and were inside the configured 36-hour freshness window when the signal was created. The same-date technical projection showed RSI 38.91, negative MACD momentum and an active lower-Bollinger-band condition.",
+          "observed_at": "2026-09-10T18:10:21Z",
+          "source": "data/market/latest.csv, data/market/fx/USD_EUR.csv and data/market/indicators.csv"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M26B39R0YQRNP5AZPCDVJRGT.json",
+        "data/runs/daily-20260910T181020Z/01M2686XP8TFXH6A6RC4XFSEG7/enqueue-execute-strategy-request.json",
+        "data/runs/daily-20260910T181020Z/01M2686XP8TFXH6A6RC4XFSEG7/signal-create-request.json",
+        "data/runs/daily-20260910T181020Z/01M2686XP8TFXH6A6RC4XFSEG7/strategy-upsert-request.json",
+        "data/tables/signals.csv",
+        "data/tables/strategies.csv",
+        "data/tables/strategy_legs.csv",
+        "data/wiki/log.md",
+        "data/wiki/strategies/strategy_e4ada1a4934691d1f7ee.md"
+      ],
+      "operation_id": "01M2686XP8TFXH6A6RC4XFSEG7",
+      "operation_type": "strategy_research",
+      "result_path": "data/runs/daily-20260910T181020Z/01M2686XP8TFXH6A6RC4XFSEG7/agent_result.json",
+      "status": "succeeded",
+      "summary": "Updated ready baseline strategy strategy_e4ada1a4934691d1f7ee for Uber using current allocation plan allocation_plan_4e0ef8323f8d383f6b85 and intent allocation_intent_ae3d5bc9b6efe4a816f1. Baseline mode selected long common equity only, retained the allocator-owned five-share target and 5% maximum-position ceiling, and documented medium confidence, autonomy disintermediation, insurance, regulation, incentives, dilution, adverse momentum and insufficient diversification as reasons it does not qualify for conviction. Created ready open signal signal_e56e8ff841094ad0bbc0 and exactly one dependent execute_strategy operation, 01M26B39R0YQRNP5AZPCDVJRGT. No order, fill, execution, cash, portfolio, performance or allocation state was changed."
+    }
+  ],
+  "run_id": "daily-20260910T181020Z",
+  "target_minutes": 20,
+  "target_words": 3000,
+  "unresolved_research_gaps": [
+    {
+      "completed_at": "2026-09-08T18:58:04Z",
+      "daily_cycle_id": "daily-20260908T182535Z",
+      "daily_report_items": [],
+      "entity_id": "security_fe4648901e7675f157fd",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "Hermes timed out after 1800s",
+          "source": "data/runs/daily-20260908T182535Z/01KYPB2XDRKAMP0ZX3MWA7Y1JH/validation_report.json"
+        },
+        {
+          "claim": "agent result is missing or a symlink: data/runs/daily-20260908T182535Z/01KYPB2XDRKAMP0ZX3MWA7Y1JH/agent_result.json",
+          "source": "data/runs/daily-20260908T182535Z/01KYPB2XDRKAMP0ZX3MWA7Y1JH/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "Hermes timed out after 1800s",
+        "agent result is missing or a symlink: data/runs/daily-20260908T182535Z/01KYPB2XDRKAMP0ZX3MWA7Y1JH/agent_result.json"
+      ],
+      "files_changed": [],
+      "operation_id": "01KYPB2XDRKAMP0ZX3MWA7Y1JH",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260908T182535Z/01KYPB2XDRKAMP0ZX3MWA7Y1JH/validation_report.json",
+      "status": "failed",
+      "summary": "The accepted research did not produce a valid result."
+    },
+    {
+      "completed_at": "2026-09-09T19:22:26Z",
+      "daily_cycle_id": "daily-20260909T182418Z",
+      "daily_report_items": [],
+      "entity_id": "security_fe4648901e7675f157fd",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "agent result schema: 'insufficient_observations' is not one of ['single_value', 'insufficient_comparability', 'insufficient_history', 'source_unavailable', 'not_decision_relevant', 'no_page_change']",
+          "source": "data/runs/daily-20260909T182418Z/01KYPB2XDRKAMP0ZX3MWA7Y1JH/validation_report.json"
+        },
+        {
+          "claim": "post-run integrity: agent result data/runs/daily-20260909T182418Z/01KYPB2XDRKAMP0ZX3MWA7Y1JH/agent_result.json: 'insufficient_observations' is not one of ['single_value', 'insufficient_comparability', 'insufficient_history', 'source_unavailable', 'not_decision_relevant', 'no_page_change']",
+          "source": "data/runs/daily-20260909T182418Z/01KYPB2XDRKAMP0ZX3MWA7Y1JH/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "agent result schema: 'insufficient_observations' is not one of ['single_value', 'insufficient_comparability', 'insufficient_history', 'source_unavailable', 'not_decision_relevant', 'no_page_change']",
+        "post-run integrity: agent result data/runs/daily-20260909T182418Z/01KYPB2XDRKAMP0ZX3MWA7Y1JH/agent_result.json: 'insufficient_observations' is not one of ['single_value', 'insufficient_comparability', 'insufficient_history', 'source_unavailable', 'not_decision_relevant', 'no_page_change']"
+      ],
+      "files_changed": [],
+      "operation_id": "01KYPB2XDRKAMP0ZX3MWA7Y1JH",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260909T182418Z/01KYPB2XDRKAMP0ZX3MWA7Y1JH/validation_report.json",
+      "status": "failed",
+      "summary": "The accepted research did not produce a valid result."
+    }
+  ],
+  "wiki_orientation_paths": [
+    "data/wiki/SCHEMA.md",
+    "data/wiki/index.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/log.md"
+  ],
+  "window_mode": "since_previous_successful_podcast",
+  "window_start_exclusive": "2026-09-07T19:41:26Z"
+}

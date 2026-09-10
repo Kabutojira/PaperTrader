@@ -246,6 +246,7 @@ This equal-weight research benchmark is analytical only, not copy-ready, and can
 
 ### Evidence-linked narrative
 
+- [[podcasts/daily-podcast_20260910T181020Z|Daily research podcast — 2026-09-10T181020Z]]
 - Updated Tencent's ready 2% starter baseline strategy for the current 1.88% four-share target, created a ready open signal for only the deterministic delta, and queued exactly one separate paper-order review; no order or fill was created by research. Evidence is retained in the canonical run artifacts.
 - Updated Prosus's active 5% ceiling baseline strategy for the current 4.24% twelve-share target, created a ready open signal for only the deterministic remaining delta, and queued exactly one separate paper-order review; no order or fill was created by research. Evidence is retained in the canonical run artifacts.
 - Updated Uber's ready 5% ceiling full-baseline strategy for the current 3.06% five-share target, created a ready open signal for only the deterministic delta, and queued exactly one separate paper-order review; no order or fill was created by research. Evidence is retained in the canonical run artifacts.

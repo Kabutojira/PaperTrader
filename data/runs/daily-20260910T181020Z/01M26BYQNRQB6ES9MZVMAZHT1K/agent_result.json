@@ -1,0 +1,68 @@
+{
+  "commands_run": [
+    "papertrader podcast validate-script --daily-cycle-id daily-20260910T181020Z --script-path data/wiki/podcasts/daily-podcast_20260910T181020Z.md",
+    "papertrader podcast render-draft --daily-cycle-id daily-20260910T181020Z --script-path data/wiki/podcasts/daily-podcast_20260910T181020Z.md",
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader queue validate",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Published the 2,880-word daily research podcast covering NVIDIA, Tencent, Prosus, and Uber; the single audited ephemeral draft render succeeded."
+  ],
+  "evidence": [
+    {
+      "claim": "The controller-validated frozen podcast context version three bound the exact transcript and report paths, the prior successful episode, the exclusive and inclusive research cutoffs, and four successful research developments.",
+      "source": "data/runs/daily-20260910T181020Z/podcast_context.json"
+    },
+    {
+      "claim": "Accepted NVIDIA strategy research supported a bounded full-baseline long-equity candidate from strong operating evidence and favorable scenario economics, while medium confidence, customer concentration, commitments, guarantees, export exposure, and insufficient diversification prevented conviction sizing.",
+      "source": "data/runs/daily-20260904T060928Z/01M23SZ4K8HGGR194CR10CPVHD/agent_result.json"
+    },
+    {
+      "claim": "Accepted Tencent strategy research supported a bounded starter allocation from games, advertising, Weixin, fintech, and cloud economics at a refreshed valuation, while China policy, governance, cash-conversion, investment-portfolio, artificial-intelligence-spending, and ADR risks constrained confidence.",
+      "source": "data/runs/daily-20260910T181020Z/01M2686XP8JDR6T3DPPSNANCDX/agent_result.json"
+    },
+    {
+      "claim": "Accepted Prosus strategy research supported a bounded increase from discounted look-through NAV and repurchase accretion, while Tencent concentration, private marks, central debt, governance, capital-allocation transmission, and weak momentum constrained confidence.",
+      "source": "data/runs/daily-20260910T181020Z/01M2686XP8TFXH6A6RC4XFSEG7/agent_result.json"
+    },
+    {
+      "claim": "Accepted Uber strategy research supported a bounded full-baseline long-equity candidate from marketplace growth, cash conversion, and refreshed scenario economics, while autonomy disintermediation, insurance, regulation, incentives, dilution, and insufficient diversification prevented conviction sizing.",
+      "source": "data/runs/daily-20260910T181020Z/01M26BYQNR8AWPTMNYJ8KN0CDN/agent_result.json"
+    },
+    {
+      "claim": "Deterministic script validation passed with 2,880 spoken words and five render chunks for the exact frozen page path.",
+      "source": "papertrader podcast validate-script"
+    },
+    {
+      "claim": "The one permitted audited draft-render invocation succeeded and produced a 1,254-second ephemeral draft outside the repository.",
+      "source": "papertrader podcast render-draft"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260910T181020Z/01M26BYQNRQB6ES9MZVMAZHT1K/candidate_slate.md",
+    "data/runs/daily-20260910T181020Z/01M26BYQNRQB6ES9MZVMAZHT1K/editorial_outline.md",
+    "data/wiki/daily-reports/daily-report_20260910.md",
+    "data/wiki/podcasts/daily-podcast_20260910T181020Z.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M26BYQNRQB6ES9MZVMAZHT1K",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Created a 2,880-word standalone episode in three chapters covering NVIDIA's opportunity-versus-concentration tradeoff, the direct Tencent versus indirect Prosus digital-attention exposure, and Uber's autonomy bargain. All four successful research developments in the frozen window were selected exactly once; none was excluded, and novelty review found no substantial duplication of the prior episode. The episode explains the current Buy / Initiate ratings for NVIDIA, Tencent, Prosus, and Uber, why each position remains bounded, and the evidence-based conditions for retaining the Buy or changing to Sell. The exact transcript link was added only to the frozen report. Deterministic preflight passed, and the single audited draft render succeeded with a 1,254-second ephemeral audio draft.",
+  "validation": {
+    "checks": [
+      "Frozen payload, context, and daily manifest all name data/wiki/podcasts/daily-podcast_20260910T181020Z.md and data/wiki/daily-reports/daily-report_20260910.md.",
+      "Candidate slate maps every successful development in the frozen window to exactly one of three chapters; novelty review found no chapter substantially duplicated the prior episode.",
+      "Spoken prose has the exact opening, required teaser opening, three research chapters, security rating endings, overall synthesis, and exact closing sentences.",
+      "Deterministic preflight accepted 2,880 spoken words in five chunks with no forbidden spoken formatting or numeric glyphs.",
+      "Exactly one audited render-draft invocation succeeded; no renderer retry, direct TTS command, persistent media path, or audio link was created.",
+      "The frozen daily report changed only by the exact required transcript link.",
+      "Strict schema, integrity, wiki, queue, and portfolio checks all returned OK.",
+      "No operation was created or executed beyond this daily podcast, and no allocation, signal, order, execution, cash, portfolio, or performance state was changed."
+    ],
+    "passed": true
+  }
+}
