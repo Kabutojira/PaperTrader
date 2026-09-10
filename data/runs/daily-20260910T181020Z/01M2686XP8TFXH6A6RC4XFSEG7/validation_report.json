@@ -1,0 +1,32 @@
+{
+  "auxiliary_models": {
+    "web_extract": "openai-codex:gpt-5.6-luna"
+  },
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M26B39R0YQRNP5AZPCDVJRGT.json",
+    "data/runs/daily-20260910T181020Z/01M2686XP8TFXH6A6RC4XFSEG7/enqueue-execute-strategy-request.json",
+    "data/runs/daily-20260910T181020Z/01M2686XP8TFXH6A6RC4XFSEG7/signal-create-request.json",
+    "data/runs/daily-20260910T181020Z/01M2686XP8TFXH6A6RC4XFSEG7/strategy-upsert-request.json",
+    "data/tables/signals.csv",
+    "data/tables/strategies.csv",
+    "data/tables/strategy_legs.csv",
+    "data/wiki/log.md",
+    "data/wiki/strategies/strategy_e4ada1a4934691d1f7ee.md"
+  ],
+  "effective_model": "gpt-5.6-sol",
+  "errors": [],
+  "escalation_source": "",
+  "maximum_turns": 160,
+  "mutation_policy": "full_research",
+  "operation_id": "01M2686XP8TFXH6A6RC4XFSEG7",
+  "passed": true,
+  "profile": "deep",
+  "profile_policy_version": "profile-router-v1",
+  "reasoning_effort": "medium",
+  "route_reason": "full_strategy_or_execution_decision",
+  "run_id": "daily-20260910T181020Z",
+  "timeout_seconds": 1800,
+  "validation_version": 1,
+  "weighted_cost": "5"
+}

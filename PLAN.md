@@ -986,3 +986,10 @@ offline unit tests.
 Set `WIKI_PATH` to the temporary repository in the retention CLI test, matching the other CLI
 tests. This prevents the workflow's checkout-level environment from violating the sandbox path
 boundary while preserving production configuration validation and the retention assertions.
+
+## Follow-up — Synchronize finalized daily state for PR validation — Complete (2026-09-10)
+
+Merged the completed September 10 daily publication from `main` after its finalization gate
+passed. PR merge CI had combined the branch with an in-progress daily checkpoint whose canonical
+state had advanced beyond its last published snapshot. The completed checkpoint restores a
+consistent validation input without changing freshness checks or rewriting run evidence.

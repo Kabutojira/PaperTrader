@@ -1,0 +1,29 @@
+{
+  "operation_type": "execute_strategy",
+  "entity_type": "strategy",
+  "entity_id": "strategy_ef910e9aff5203a0b901",
+  "dedupe_key": "execute_strategy:strategy_ef910e9aff5203a0b901:allocation_intent_818e8692a59dfaa00cad:signal_993ac82b985a022c3df9",
+  "prompt": "Review the current Tencent baseline open signal and create at most its deterministic pending paper order.",
+  "inputs": {
+    "strategy_id": "strategy_ef910e9aff5203a0b901",
+    "signal_id": "signal_993ac82b985a022c3df9",
+    "action": "open",
+    "allocation_plan_id": "allocation_plan_4e0ef8323f8d383f6b85",
+    "allocation_intent_id": "allocation_intent_818e8692a59dfaa00cad",
+    "target_quantity": "4"
+  },
+  "source": "strategy_research:01M23SZ4K8HGGR194CR10CPVHD",
+  "priority": 100,
+  "freshness_days": 0,
+  "depends_on": [
+    "01M23SZ4K8HGGR194CR10CPVHD"
+  ],
+  "not_before": "now",
+  "deadline": "2026-09-11T18:30:00Z",
+  "source_refs": [
+    "source_tencent_q2_2026_results",
+    "data/market/latest.csv",
+    "data/market/fx/USD_EUR.csv"
+  ],
+  "max_attempts": 3
+}

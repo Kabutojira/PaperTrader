@@ -1,0 +1,76 @@
+{
+  "commands_run": [
+    "papertrader order create-baseline --request data/runs/daily-20260909T182418Z/01M23QEMDRJGEXVJE0QBS0MZN1/order-create-baseline-request.json",
+    "papertrader order create-baseline --request data/runs/daily-20260909T182418Z/01M23QEMDRJGEXVJE0QBS0MZN1/order-create-baseline-request-02.json",
+    "papertrader portfolio reconcile --strict",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "NVIDIA baseline open: created pending next-open paper order order_6618f57383c974fd567d for the deterministic one-share delta toward the current one-share target; no fill or accounting entry was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The sole current NVIDIA target binds allocation_plan_6f7a4f4479899fcd0d91 and allocation_intent_b8eab1837513d5191d02 to strategy_7cf884a5530d05afdb99, assessment_82fd625a8d93be4bd8f5, accepted relationship_ai_compute_nvda, a one-share target, and an open disposition.",
+      "observed_at": "2026-09-09T18:24:19Z",
+      "source": "data/tables/allocation_targets.csv"
+    },
+    {
+      "claim": "Signal signal_051ffe3636d9a4c24a7f matched the strategy and allocation intent, was live and ready at evaluation, and moved to ordered only after deterministic acceptance.",
+      "observed_at": "2026-09-09T18:54:08Z",
+      "source": "data/tables/signals.csv"
+    },
+    {
+      "claim": "The identity-matched NVIDIA market reference was USD 225.72999572753906 and was retrieved at 2026-09-09T18:24:19Z.",
+      "observed_at": "2026-09-09T18:24:19Z",
+      "source": "data/market/latest.csv"
+    },
+    {
+      "claim": "The current USD-to-EUR risk reference was 0.8590999841690063 and was retrieved at 2026-09-09T18:24:19Z.",
+      "observed_at": "2026-09-09T18:24:19Z",
+      "source": "data/market/fx/USD_EUR.csv"
+    },
+    {
+      "claim": "Order order_6618f57383c974fd567d is pending with next_open fill policy, market order type, allocation_intent_b8eab1837513d5191d02, and expiry 2026-09-10T18:24:19Z.",
+      "observed_at": "2026-09-09T18:54:08Z",
+      "source": "data/tables/orders.csv"
+    },
+    {
+      "claim": "Deterministic baseline sizing created one buy/long equity leg for security_33d9c44facc75c726c7d with quantity one and contract multiplier one; neither legs nor quantity were supplied in the accepted request.",
+      "observed_at": "2026-09-09T18:54:08Z",
+      "source": "data/tables/order_legs.csv"
+    },
+    {
+      "claim": "The first request was safely rejected for a missing existing-position risk reference and changed no paths. The corrected immutable request supplied both NVIDIA and Prosus risk references, exited zero, created order_6618f57383c974fd567d with no risk violations, and changed only orders.csv, order_legs.csv, and signals.csv among canonical state.",
+      "observed_at": "2026-09-09T18:54:35Z",
+      "source": "data/runs/daily-20260909T182418Z/01M23QEMDRJGEXVJE0QBS0MZN1/command_audit.json"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260909T182418Z/01M23QEMDRJGEXVJE0QBS0MZN1/order-create-baseline-request-02.json",
+    "data/runs/daily-20260909T182418Z/01M23QEMDRJGEXVJE0QBS0MZN1/order-create-baseline-request.json",
+    "data/tables/order_legs.csv",
+    "data/tables/orders.csv",
+    "data/tables/signals.csv"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M23QEMDRJGEXVJE0QBS0MZN1",
+  "operations_created": [],
+  "reason_code": "pending_paper_order_created",
+  "status": "succeeded",
+  "summary": "Created pending paper order order_6618f57383c974fd567d for NVIDIA's current baseline open signal. Deterministic sizing produced one one-share long-equity buy leg toward the persisted one-share target. The order remains pending under next_open; no fill, execution, cash, portfolio, performance, or allocation mutation occurred.",
+  "validation": {
+    "checks": [
+      "Controller preflight identified native llm-wiki 2.1.0, papertrader-controller, and papertrader-execute-strategy with content hashes, sequential execution, and yolo enabled.",
+      "The selected queue row was the sole routed running operation, was claimed by daily-20260909T182418Z, and had a live lease at evaluation.",
+      "Payload, ready strategy, ready signal, canonical equity leg, current allocation target, immutable assessment, and accepted relationship identities matched before order creation.",
+      "The current allocation disposition was open and correctly mapped to the open signal lifecycle action; the plan and immutable allocation intent were not superseded.",
+      "The accepted baseline request omitted legs and quantity; deterministic code derived the exact one-share delta from the persisted one-share target, current holdings, and pending-order state.",
+      "The first dispatched request changed no paths after rejecting an incomplete risk-reference set; the corrected request used a new immutable file and was accepted with no risk violations.",
+      "Order idempotency state is canonical: one order exists for signal_051ffe3636d9a4c24a7f, its status is pending, and the signal status is ordered.",
+      "Strict portfolio reconciliation returned OK and strict wiki lint returned OK.",
+      "Allocation targets/history, executions, cash ledger, portfolio, and performance remained unchanged; the accepted order remains pending and no fill or accounting mutation occurred.",
+      "Git diff validation reported no whitespace errors and no protected-state or file-type changes."
+    ],
+    "passed": true
+  }
+}

@@ -1,0 +1,249 @@
+{
+  "checkpoints": [
+    {
+      "index": 0,
+      "kind": "preparation",
+      "operation_id": "",
+      "operation_type": "",
+      "profile": "",
+      "recorded_at": "2026-09-10T18:16:28Z",
+      "terminal_status": ""
+    },
+    {
+      "index": 1,
+      "kind": "operation",
+      "operation_id": "01M23SZ4K8HGGR194CR10CPVHD",
+      "operation_type": "strategy_research",
+      "profile": "deep",
+      "recorded_at": "2026-09-10T18:24:44Z",
+      "terminal_status": "succeeded"
+    },
+    {
+      "index": 2,
+      "kind": "operation",
+      "operation_id": "01M268WG401C713HE0TQR365QJ",
+      "operation_type": "execute_strategy",
+      "profile": "deep",
+      "recorded_at": "2026-09-10T18:30:13Z",
+      "terminal_status": "succeeded"
+    },
+    {
+      "index": 3,
+      "kind": "operation",
+      "operation_id": "01M2686XP8JDR6T3DPPSNANCDX",
+      "operation_type": "strategy_research",
+      "profile": "deep",
+      "recorded_at": "2026-09-10T18:40:26Z",
+      "terminal_status": "succeeded"
+    },
+    {
+      "index": 4,
+      "kind": "operation",
+      "operation_id": "01M269SAZ8QYDYTYBWTTYSN3X2",
+      "operation_type": "execute_strategy",
+      "profile": "deep",
+      "recorded_at": "2026-09-10T18:44:44Z",
+      "terminal_status": "succeeded"
+    },
+    {
+      "index": 5,
+      "kind": "operation",
+      "operation_id": "01M2686XP8TFXH6A6RC4XFSEG7",
+      "operation_type": "strategy_research",
+      "profile": "deep",
+      "recorded_at": "2026-09-10T19:03:34Z",
+      "terminal_status": "succeeded"
+    },
+    {
+      "index": 6,
+      "kind": "finalization",
+      "operation_id": "",
+      "operation_type": "",
+      "profile": "",
+      "recorded_at": "2026-09-10T19:04:26Z",
+      "terminal_status": ""
+    }
+  ],
+  "completed_at": "2026-09-10T19:03:58Z",
+  "completion_at": "",
+  "daily_cycle_id": "daily-20260910T181020Z",
+  "daily_run_version": 2,
+  "fill_outcomes": [
+    "order_6618f57383c974fd567d:expired:-",
+    "order_b6ce4bf449a70f7985d8:pending:-",
+    "order_9af7249ce4aaa2a7ec50:pending:-"
+  ],
+  "final_commit_identity": "daily-20260910T181020Z:checkpoint-006",
+  "final_commit_sha": "",
+  "finalization_at": "2026-09-10T19:03:58Z",
+  "finalization_commit_identity": "daily-20260910T181020Z:checkpoint-006",
+  "finalization_status": "succeeded",
+  "maximum_operations": 5,
+  "model_budget_limit": "100",
+  "model_budget_used": "25",
+  "next_checkpoint_index": 7,
+  "operating_date": "2026-09-10",
+  "operation_count": 5,
+  "operations_accepted": [
+    {
+      "auxiliary_models": {
+        "web_extract": "openai-codex:gpt-5.6-luna"
+      },
+      "checkpoint_index": 1,
+      "effective_model": "gpt-5.6-sol",
+      "escalation_source": "",
+      "maximum_turns": 160,
+      "mutation_policy": "full_research",
+      "operation_id": "01M23SZ4K8HGGR194CR10CPVHD",
+      "profile": "deep",
+      "profile_policy_version": "profile-router-v1",
+      "reasoning_effort": "medium",
+      "route_reason": "full_strategy_or_execution_decision",
+      "terminal_status": "succeeded",
+      "timeout_seconds": 1800,
+      "weighted_cost": "5"
+    },
+    {
+      "auxiliary_models": {
+        "web_extract": "openai-codex:gpt-5.6-luna"
+      },
+      "checkpoint_index": 2,
+      "effective_model": "gpt-5.6-sol",
+      "escalation_source": "",
+      "maximum_turns": 160,
+      "mutation_policy": "full_research",
+      "operation_id": "01M268WG401C713HE0TQR365QJ",
+      "profile": "deep",
+      "profile_policy_version": "profile-router-v1",
+      "reasoning_effort": "medium",
+      "route_reason": "full_strategy_or_execution_decision",
+      "terminal_status": "succeeded",
+      "timeout_seconds": 1800,
+      "weighted_cost": "5"
+    },
+    {
+      "auxiliary_models": {
+        "web_extract": "openai-codex:gpt-5.6-luna"
+      },
+      "checkpoint_index": 3,
+      "effective_model": "gpt-5.6-sol",
+      "escalation_source": "",
+      "maximum_turns": 160,
+      "mutation_policy": "full_research",
+      "operation_id": "01M2686XP8JDR6T3DPPSNANCDX",
+      "profile": "deep",
+      "profile_policy_version": "profile-router-v1",
+      "reasoning_effort": "medium",
+      "route_reason": "full_strategy_or_execution_decision",
+      "terminal_status": "succeeded",
+      "timeout_seconds": 1800,
+      "weighted_cost": "5"
+    },
+    {
+      "auxiliary_models": {
+        "web_extract": "openai-codex:gpt-5.6-luna"
+      },
+      "checkpoint_index": 4,
+      "effective_model": "gpt-5.6-sol",
+      "escalation_source": "",
+      "maximum_turns": 160,
+      "mutation_policy": "full_research",
+      "operation_id": "01M269SAZ8QYDYTYBWTTYSN3X2",
+      "profile": "deep",
+      "profile_policy_version": "profile-router-v1",
+      "reasoning_effort": "medium",
+      "route_reason": "full_strategy_or_execution_decision",
+      "terminal_status": "succeeded",
+      "timeout_seconds": 1800,
+      "weighted_cost": "5"
+    },
+    {
+      "auxiliary_models": {
+        "web_extract": "openai-codex:gpt-5.6-luna"
+      },
+      "checkpoint_index": 5,
+      "effective_model": "gpt-5.6-sol",
+      "escalation_source": "",
+      "maximum_turns": 160,
+      "mutation_policy": "full_research",
+      "operation_id": "01M2686XP8TFXH6A6RC4XFSEG7",
+      "profile": "deep",
+      "profile_policy_version": "profile-router-v1",
+      "reasoning_effort": "medium",
+      "route_reason": "full_strategy_or_execution_decision",
+      "terminal_status": "succeeded",
+      "timeout_seconds": 1800,
+      "weighted_cost": "5"
+    }
+  ],
+  "operations_attempted": [
+    "01M23SZ4K8HGGR194CR10CPVHD",
+    "01M268WG401C713HE0TQR365QJ",
+    "01M2686XP8JDR6T3DPPSNANCDX",
+    "01M269SAZ8QYDYTYBWTTYSN3X2",
+    "01M2686XP8TFXH6A6RC4XFSEG7"
+  ],
+  "originating_github_run_id": "34511450257",
+  "podcast_audio_path": "",
+  "podcast_commit_identity": "",
+  "podcast_operation_id": "",
+  "podcast_page_path": "",
+  "podcast_status": "pending",
+  "podcast_text_at": "",
+  "preparation_at": "2026-09-10T18:10:21Z",
+  "preparation_errors": [],
+  "profile_limits": {
+    "analyst": {
+      "maximum_turns": 80,
+      "model": "gpt-5.6-terra",
+      "mutation_policy": "routine_research",
+      "policy_version": "profile-router-v1",
+      "reasoning_effort": "medium",
+      "timeout_seconds": 1200,
+      "weighted_cost": "2.5"
+    },
+    "deep": {
+      "maximum_turns": 160,
+      "model": "gpt-5.6-sol",
+      "mutation_policy": "full_research",
+      "policy_version": "profile-router-v1",
+      "reasoning_effort": "medium",
+      "timeout_seconds": 1800,
+      "weighted_cost": "5"
+    },
+    "scout": {
+      "maximum_turns": 32,
+      "model": "gpt-5.6-luna",
+      "mutation_policy": "triage_only",
+      "policy_version": "profile-router-v1",
+      "reasoning_effort": "low",
+      "timeout_seconds": 600,
+      "weighted_cost": "1"
+    }
+  },
+  "queue_dispositions": [
+    "01KZCFVCT82RJFGB5HESAFJB6B:blocked:dependency_unavailable:01KZ9ZJVER177B5ASW4ZMQHEG3",
+    "01KZGT11ZGR8JEKWC3RXGSS544:blocked:dependency_unavailable:01KZGT11ZGBPRBKV129FD00TH1",
+    "01M0FWY80RRY528G4HT2QM3N1Y:blocked:dependency_unavailable:01M07XKZS0JKBQM0THMPJGWEK5",
+    "01M23SZ4K8HGGR194CR10CPVHD:rebound:allocation_plan_4e0ef8323f8d383f6b85",
+    "01M23SZ4K8H5K3YY51MYA1XG06:cancelled:superseded_allocation_intent:allocation_plan_4e0ef8323f8d383f6b85"
+  ],
+  "remaining_operations": 0,
+  "report_path": "data/wiki/daily-reports/daily-report_20260910.md",
+  "research_cutoff_at": "2026-09-10T19:03:58Z",
+  "run_id": "daily-20260910T181020Z",
+  "snapshot_id": "decision_3f0087c0f474f071d325",
+  "source_sha": "fc670b73cf82a8c8038c4489e9e477c0b211b21f",
+  "started_at": "2026-09-10T18:10:20Z",
+  "status": "running",
+  "trigger": "schedule",
+  "weighted_model_budget": "100",
+  "weighted_model_budget_used": "25",
+  "workflow_attempts": [
+    {
+      "github_run_id": "34511450257",
+      "resumed_at": "2026-09-10T18:10:20Z",
+      "workflow_attempt": "1"
+    }
+  ]
+}

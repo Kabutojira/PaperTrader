@@ -4,14 +4,53 @@
   "inputs": {
     "assessment_state": "2026-08-09T22:47:07Z",
     "maintenance_mode": "refresh",
+    "market_data_as_of": "2026-09-09T18:24:19Z",
+    "market_data_date": "2026-09-08",
+    "period_end": "2026-09-08",
+    "period_start": "2026-08-10",
     "research_page": "data/wiki/securities/security_f2b9760d847b2ba59324.md",
-    "security_id": "security_f2b9760d847b2ba59324"
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_f2b9760d847b2ba59324:allocation-maintenance:2026-08-09T22:47:07Z",
+        "observed_at": "2026-08-22T15:21:22Z",
+        "prompt": "Revalidate security_f2b9760d847b2ba59324 with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_enph_q2_2026_10q",
+          "source_enph_q2_2026_release",
+          "source_enph_sec_submissions_20260809"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_f2b9760d847b2ba59324:324d09028dc9b9c1e11d:2026-09-08",
+        "market_data_date": "2026-09-08",
+        "observed_at": "2026-09-09T18:24:19Z",
+        "prompt": "Research security_f2b9760d847b2ba59324 with high priority after price-action alerts: macd_cross_above_signal, volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_f2b9760d847b2ba59324-macd_cross_above_signal-84454c420ee0.md",
+          "data/wiki/inbox/market-security_f2b9760d847b2ba59324-volume_anomaly-6eda5a7a4ed9.md"
+        ],
+        "trigger_types": [
+          "macd_cross_above_signal",
+          "volume_anomaly"
+        ]
+      }
+    ],
+    "security_id": "security_f2b9760d847b2ba59324",
+    "source_price_hash": "e36bd288703051140aead6cae08b4a606f963233703c9f83ec0e249963f1059d",
+    "trigger_types": [
+      "macd_cross_above_signal",
+      "volume_anomaly"
+    ]
   },
-  "objective": "Revalidate security_f2b9760d847b2ba59324 with current primary evidence and write one comparable allocation assessment.",
+  "objective": "Revalidate security_f2b9760d847b2ba59324 with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_f2b9760d847b2ba59324 with high priority after price-action alerts: macd_cross_above_signal, volume_anomaly; decide what changed and whether to act.",
   "operation_id": "01M0N0ZVAGQK41AKTEY0NH6JEB",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_f2b9760d847b2ba59324-macd_cross_above_signal-84454c420ee0.md",
+    "data/wiki/inbox/market-security_f2b9760d847b2ba59324-volume_anomaly-6eda5a7a4ed9.md",
     "source_enph_q2_2026_10q",
     "source_enph_q2_2026_release",
     "source_enph_sec_submissions_20260809"

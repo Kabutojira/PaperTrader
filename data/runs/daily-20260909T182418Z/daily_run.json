@@ -1,0 +1,199 @@
+{
+  "checkpoints": [
+    {
+      "index": 0,
+      "kind": "preparation",
+      "operation_id": "",
+      "operation_type": "",
+      "profile": "",
+      "recorded_at": "2026-09-09T18:30:11Z",
+      "terminal_status": ""
+    },
+    {
+      "index": 1,
+      "kind": "operation",
+      "operation_id": "01M23PKS1RCS73P3W3CGN56529",
+      "operation_type": "strategy_research",
+      "profile": "deep",
+      "recorded_at": "2026-09-09T18:44:06Z",
+      "terminal_status": "succeeded"
+    },
+    {
+      "index": 2,
+      "kind": "operation",
+      "operation_id": "01M23QEMDRJGEXVJE0QBS0MZN1",
+      "operation_type": "execute_strategy",
+      "profile": "deep",
+      "recorded_at": "2026-09-09T18:57:24Z",
+      "terminal_status": "succeeded"
+    },
+    {
+      "index": 3,
+      "kind": "operation",
+      "operation_id": "01KYPB2XDRKAMP0ZX3MWA7Y1JH",
+      "operation_type": "security_research",
+      "profile": "deep",
+      "recorded_at": "2026-09-09T19:22:35Z",
+      "terminal_status": "failed"
+    },
+    {
+      "index": 4,
+      "kind": "finalization",
+      "operation_id": "",
+      "operation_type": "",
+      "profile": "",
+      "recorded_at": "2026-09-09T19:23:22Z",
+      "terminal_status": ""
+    },
+    {
+      "index": 5,
+      "kind": "podcast_text",
+      "operation_id": "01M23TKB2RXDPJ3NM93T4554ZJ",
+      "operation_type": "daily_podcast",
+      "profile": "deep",
+      "recorded_at": "2026-09-09T19:50:32Z",
+      "terminal_status": "skipped"
+    }
+  ],
+  "completed_at": "2026-09-09T19:22:57Z",
+  "completion_at": "2026-09-09T19:50:31Z",
+  "daily_cycle_id": "daily-20260909T182418Z",
+  "daily_run_version": 2,
+  "fill_outcomes": [
+    "order_6618f57383c974fd567d:pending:-"
+  ],
+  "final_commit_identity": "daily-20260909T182418Z:checkpoint-005",
+  "final_commit_sha": "",
+  "finalization_at": "2026-09-09T19:22:57Z",
+  "finalization_commit_identity": "daily-20260909T182418Z:checkpoint-004",
+  "finalization_status": "degraded",
+  "maximum_operations": 5,
+  "model_budget_limit": "100",
+  "model_budget_used": "15",
+  "next_checkpoint_index": 6,
+  "operating_date": "2026-09-09",
+  "operation_count": 3,
+  "operations_accepted": [
+    {
+      "auxiliary_models": {
+        "web_extract": "openai-codex:gpt-5.6-luna"
+      },
+      "checkpoint_index": 1,
+      "effective_model": "gpt-5.6-sol",
+      "escalation_source": "",
+      "maximum_turns": 160,
+      "mutation_policy": "full_research",
+      "operation_id": "01M23PKS1RCS73P3W3CGN56529",
+      "profile": "deep",
+      "profile_policy_version": "profile-router-v1",
+      "reasoning_effort": "medium",
+      "route_reason": "full_strategy_or_execution_decision",
+      "terminal_status": "succeeded",
+      "timeout_seconds": 1800,
+      "weighted_cost": "5"
+    },
+    {
+      "auxiliary_models": {
+        "web_extract": "openai-codex:gpt-5.6-luna"
+      },
+      "checkpoint_index": 2,
+      "effective_model": "gpt-5.6-sol",
+      "escalation_source": "",
+      "maximum_turns": 160,
+      "mutation_policy": "full_research",
+      "operation_id": "01M23QEMDRJGEXVJE0QBS0MZN1",
+      "profile": "deep",
+      "profile_policy_version": "profile-router-v1",
+      "reasoning_effort": "medium",
+      "route_reason": "full_strategy_or_execution_decision",
+      "terminal_status": "succeeded",
+      "timeout_seconds": 1800,
+      "weighted_cost": "5"
+    },
+    {
+      "auxiliary_models": {
+        "web_extract": "openai-codex:gpt-5.6-luna"
+      },
+      "checkpoint_index": 3,
+      "effective_model": "gpt-5.6-sol",
+      "escalation_source": "",
+      "maximum_turns": 160,
+      "mutation_policy": "full_research",
+      "operation_id": "01KYPB2XDRKAMP0ZX3MWA7Y1JH",
+      "profile": "deep",
+      "profile_policy_version": "profile-router-v1",
+      "reasoning_effort": "medium",
+      "route_reason": "scenario_complete_security_review",
+      "terminal_status": "failed",
+      "timeout_seconds": 1800,
+      "weighted_cost": "5"
+    }
+  ],
+  "operations_attempted": [
+    "01M23PKS1RCS73P3W3CGN56529",
+    "01M23QEMDRJGEXVJE0QBS0MZN1",
+    "01KYPB2XDRKAMP0ZX3MWA7Y1JH"
+  ],
+  "originating_github_run_id": "34387628250",
+  "podcast_audio_path": "",
+  "podcast_commit_identity": "daily-20260909T182418Z:checkpoint-005",
+  "podcast_operation_id": "01M23TKB2RXDPJ3NM93T4554ZJ",
+  "podcast_page_path": "data/wiki/podcasts/daily-podcast_20260909T182418Z.md",
+  "podcast_status": "skipped",
+  "podcast_text_at": "2026-09-09T19:50:31Z",
+  "preparation_at": "2026-09-09T18:24:19Z",
+  "preparation_errors": [],
+  "profile_limits": {
+    "analyst": {
+      "maximum_turns": 80,
+      "model": "gpt-5.6-terra",
+      "mutation_policy": "routine_research",
+      "policy_version": "profile-router-v1",
+      "reasoning_effort": "medium",
+      "timeout_seconds": 1200,
+      "weighted_cost": "2.5"
+    },
+    "deep": {
+      "maximum_turns": 160,
+      "model": "gpt-5.6-sol",
+      "mutation_policy": "full_research",
+      "policy_version": "profile-router-v1",
+      "reasoning_effort": "medium",
+      "timeout_seconds": 1800,
+      "weighted_cost": "5"
+    },
+    "scout": {
+      "maximum_turns": 32,
+      "model": "gpt-5.6-luna",
+      "mutation_policy": "triage_only",
+      "policy_version": "profile-router-v1",
+      "reasoning_effort": "low",
+      "timeout_seconds": 600,
+      "weighted_cost": "1"
+    }
+  },
+  "queue_dispositions": [
+    "allocation_maintenance:01M23PKS1RXA0QSCX1B1JRQG2Z",
+    "01KZCFVCT82RJFGB5HESAFJB6B:blocked:dependency_unavailable:01KZ9ZJVER177B5ASW4ZMQHEG3",
+    "01KZGT11ZGR8JEKWC3RXGSS544:blocked:dependency_unavailable:01KZGT11ZGBPRBKV129FD00TH1",
+    "01M0FWY80RRY528G4HT2QM3N1Y:blocked:dependency_unavailable:01M07XKZS0JKBQM0THMPJGWEK5"
+  ],
+  "remaining_operations": 2,
+  "report_path": "data/wiki/daily-reports/daily-report_20260909.md",
+  "research_cutoff_at": "2026-09-09T19:22:57Z",
+  "run_id": "daily-20260909T182418Z",
+  "snapshot_id": "decision_8b115dd5f9f91ae3d705",
+  "source_sha": "f860e11610cd6e081c4cdc0fa56de6313897c462",
+  "started_at": "2026-09-09T18:24:18Z",
+  "status": "degraded",
+  "trigger": "schedule",
+  "weighted_model_budget": "100",
+  "weighted_model_budget_used": "15",
+  "workflow_attempts": [
+    {
+      "github_run_id": "34387628250",
+      "resumed_at": "2026-09-09T18:24:18Z",
+      "workflow_attempt": "1"
+    }
+  ]
+}

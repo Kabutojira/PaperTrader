@@ -1,0 +1,19 @@
+{
+  "signal_id": "signal_051ffe3636d9a4c24a7f",
+  "strategy_id": "strategy_7cf884a5530d05afdb99",
+  "run_id": "daily-20260909T182418Z",
+  "fill_policy": "next_open",
+  "order_type": "market",
+  "expires_at": "2026-09-10T18:24:19Z",
+  "now": "2026-09-09T18:46:14Z",
+  "references": [
+    {
+      "security_id": "security_33d9c44facc75c726c7d",
+      "provider_contract_id": "",
+      "price": "225.72999572753906",
+      "currency": "USD",
+      "fx_rate_to_base": "0.8590999841690063",
+      "as_of": "2026-09-09T18:24:19Z"
+    }
+  ]
+}

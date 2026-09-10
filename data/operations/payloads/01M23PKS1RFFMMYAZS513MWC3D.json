@@ -1,0 +1,53 @@
+{
+  "entity_id": "security_8b703a8adf5f864acaa4",
+  "entity_type": "security",
+  "inputs": {
+    "market_data_as_of": "2026-09-10T18:10:21Z",
+    "market_data_date": "2026-09-10",
+    "merged_input_values": {
+      "source_price_hash": [
+        "b1f3b947975b150661908f34875472acb74240b2aed33fdc5581c8b270cf3705",
+        "5e5eed201bd6590546ff67da1cf5cf8ff74f5efb60693ef740826f82432fce53"
+      ]
+    },
+    "period_end": "2026-09-10",
+    "period_start": "2026-08-12",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_8b703a8adf5f864acaa4:765533522bd64d467d03:2026-09-09",
+        "observed_at": "2026-09-09T18:24:19Z",
+        "prompt": "Research security_8b703a8adf5f864acaa4 with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_8b703a8adf5f864acaa4-bollinger_below_lower-13f5c82c0d44.md"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_8b703a8adf5f864acaa4:5e4f7b0a79002b3c8f70:2026-09-10",
+        "market_data_date": "2026-09-10",
+        "observed_at": "2026-09-10T18:10:21Z",
+        "prompt": "Research security_8b703a8adf5f864acaa4 with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_8b703a8adf5f864acaa4-bollinger_below_lower-8208566672e0.md"
+        ],
+        "trigger_types": [
+          "bollinger_below_lower"
+        ]
+      }
+    ],
+    "security_id": "security_8b703a8adf5f864acaa4",
+    "source_price_hash": "5e5eed201bd6590546ff67da1cf5cf8ff74f5efb60693ef740826f82432fce53",
+    "trigger_types": [
+      "bollinger_below_lower"
+    ]
+  },
+  "objective": "Research security_8b703a8adf5f864acaa4 with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act.",
+  "operation_id": "01M23PKS1RFFMMYAZS513MWC3D",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_8b703a8adf5f864acaa4-bollinger_below_lower-13f5c82c0d44.md",
+    "data/wiki/inbox/market-security_8b703a8adf5f864acaa4-bollinger_below_lower-8208566672e0.md"
+  ]
+}

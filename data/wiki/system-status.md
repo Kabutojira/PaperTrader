@@ -4,16 +4,16 @@ type: system-status
 status: maintained
 tags:
   - system-status
-created: "2026-09-08"
-updated: "2026-09-08"
+created: "2026-09-10"
+updated: "2026-09-10"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_32e713083eb5f50f0166"
-as_of: "2026-09-08T18:58:30Z"
+snapshot_id: "decision_3f0087c0f474f071d325"
+as_of: "2026-09-10T19:03:58Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-09-08T18:58:30Z`
+**As of:** `2026-09-10T19:03:58Z`
 **Investment data:** Portfolio state safe — research gaps remain
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -23,25 +23,25 @@ Publication validation confirms that this generated artifact is internally consi
 
 ## Current investment health
 
-- Assessments: 53/83
-- Fresh-evidence assessments: 49/83
+- Assessments: 52/83
+- Fresh-evidence assessments: 48/83
 - Relationship reviews: 20/83
 - Accepted relationships: 19
 - Market success/failure: 91/0
 - Candidate FX gaps: 0
-- Last successful daily run: 2026-09-06
+- Last successful daily run: 2026-09-10
 
 ## Queue and execution health
 
 - Ready or active strategies: 4
-- Active signals: 0
-- Pending orders: 0
+- Active signals: 2
+- Pending orders: 2
 - Queued remediation operations: 0
 - Operations are claimed and executed strictly sequentially.
 
 ## Sequential research backlog
 
-- Research backlog: 271
+- Research backlog: 345
 
 ## Publication health
 
@@ -65,7 +65,7 @@ Resolved and superseded issues remain in the canonical audit but are not current
 - Error **XMTR — Xometry, Inc.: Xometry security review blocked by issuer identity conflict** — The validated operation payload identifies XMTR with issuer\_id issuer\_0b3fe347955c2ce31e63, while canonical data/tables/securities.csv binds the same immutable security\_id to issuer\_dbdde9b294689a9af3d5. The validated security upsert correctly failed closed with an immutable-identity conflict. Four current primary sources were retained, but no security row, research page, assessment, strategy, signal, order, allocation or accounting state was changed. Resolve the canonic
 - Error **Hermes operation validation failed: Security research for SGML on 2026-08-17** — operation artifact directory is not empty: /\_\_w/PaperTrader/PaperTrader/data/runs/Daily report for 2026-08-17/Security research for SGML on 2026-08-17
 - Error **Hermes operation validation failed: Security research for YEC.F on 2026-08-22** — Hermes timed out after 1800s; agent result is missing or a symlink: data/runs/Daily report for 2026-09-07/Security research for YEC.F on 2026-08-22/agent\_result.json
-- Error **Hermes operation validation failed: Security research for ANIC.L on 2026-07-29** — Hermes timed out after 1800s; agent result is missing or a symlink: data/runs/Daily report for 2026-09-08/Security research for ANIC.L on 2026-07-29/agent\_result.json
+- Error **Hermes operation validation failed: Security research for ANIC.L on 2026-07-29** — agent result schema: 'insufficient\_observations' is not one of \['single\_value', 'insufficient\_comparability', 'insufficient\_history', 'recorded source', 'not\_decision\_relevant', 'no\_page\_change'\]; post-run integrity: agent result data/runs/Daily report for 2026-09-09/Security research for ANIC.L on 2026-07-29/agent\_result.json: 'insufficient\_observations' is not one of \['single\_value', 'insufficient\_comparability', 'insufficient\_history', 'recorded source', 'not\_decision\_relevant', 'no\_page\_change'\]
 - Error **ABBNY — ABB Ltd: ABB assessment provenance does not match corrected final research page** — Operation Security research for ABBNY on 2026-09-03 accepted immutable assessment assessment\_a3946a163695f1a9f51f while the security page still carried the prior prose disposition. Deterministic derivation changed the current disposition from Sell / Avoid to Hold / Watch at the lower mark, so the page and structured security summary were corrected after the immutable assessment was written. The current assessment and final page now agree economically, and exactly one assessment version names this operation, bu
 - Error **Hermes operation validation failed: Security research for ABBNY on 2026-09-03** — files\_changed claims paths absent from the actual delta: \['data/operations/operations\_TODO.csv'\]
 - Error **Hermes operation validation failed: Quick check research for TWST on 2026-08-05** — agent result was written before completed change: data/runs/Daily report for 2026-08-12/Quick check research for TWST on 2026-08-05/command\_audit.json; commands\_run does not exactly match deterministic CLI audit receipts
