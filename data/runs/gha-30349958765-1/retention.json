@@ -1,0 +1,15 @@
+{
+  "artifacts": [
+    {
+      "path": "data/runs/gha-30349958765-1/decision_snapshot.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "a68be1a16100ff189f81dde5d1b58884826f0d622e50c8abdaca00b6c3851580",
+      "size": 52964,
+      "snapshot_id": "decision_f7970c846929cff52159"
+    }
+  ],
+  "pruned_at": "2026-09-09T17:29:54Z",
+  "retention_days": 30,
+  "run_id": "gha-30349958765-1",
+  "run_retention_version": 1
+}

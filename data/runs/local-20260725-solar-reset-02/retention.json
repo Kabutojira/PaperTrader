@@ -1,0 +1,32 @@
+{
+  "artifacts": [
+    {
+      "path": "data/runs/local-20260725-solar-reset-02/01KYC8N4FGZWVX9ABGDSRTT465/command_audit.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "5b31de5b16a601951d7d5b9bfd408695e456fc33bc4259757e5719a6c9044150",
+      "size": 808
+    },
+    {
+      "path": "data/runs/local-20260725-solar-reset-02/01KYC8N4FGZWVX9ABGDSRTT465/controller_prompt.md",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "854dee0d92ccdbccf3459225df6dac418b0ba6e6d1d6120deb67547e36cec87c",
+      "size": 1734
+    },
+    {
+      "path": "data/runs/local-20260725-solar-reset-02/01KYC8N4FGZWVX9ABGDSRTT465/harness_preflight.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "de9b57c6f8a5b257767db2f0b848d697ecd5e53cc9b25fb55046d7533be85363",
+      "size": 702
+    },
+    {
+      "path": "data/runs/local-20260725-solar-reset-02/01KYC8N4FGZWVX9ABGDSRTT465/validation_report.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "8896d7f947dc12a1aeaf3bb0f255077c668383cbd81d50162a60aa64a64efa7c",
+      "size": 338
+    }
+  ],
+  "pruned_at": "2026-09-09T17:29:54Z",
+  "retention_days": 30,
+  "run_id": "local-20260725-solar-reset-02",
+  "run_retention_version": 1
+}

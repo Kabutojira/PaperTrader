@@ -1,0 +1,128 @@
+{
+  "artifacts": [
+    {
+      "path": "data/runs/local-20260726-cron-02/01KYFWWE20571YGGDAV45A1F68/command_audit.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "d87856457c04d389a67d4abbbb52f97a79f164361a79cebdabce41891eceb3af",
+      "size": 1492
+    },
+    {
+      "path": "data/runs/local-20260726-cron-02/01KYFWWE20571YGGDAV45A1F68/controller_prompt.md",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "45ffe9a9f4d7860e1355e4c04abe58dc39bf7505a8ba1bcaf9b8d4da48b36d23",
+      "size": 1732
+    },
+    {
+      "path": "data/runs/local-20260726-cron-02/01KYFWWE20571YGGDAV45A1F68/harness_preflight.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "4e884a0e476380373449b9e54be1879dc60b0b22e244315031ec6cb6bff7e1d5",
+      "size": 716
+    },
+    {
+      "path": "data/runs/local-20260726-cron-02/01KYFWWE20571YGGDAV45A1F68/validation_report.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "fab5e3b3568aaea8f315b6869c3a55ebcec9acc35e9b06c897ffee8a92ad7495",
+      "size": 237
+    },
+    {
+      "path": "data/runs/local-20260726-cron-02/01KYFWWE20AG7NT0YKY1YZRJBP/command_audit.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "c7defc1770cadfc464205f6c0c1005701ea93c15b4323eeeb6f7cb9124d14612",
+      "size": 3151
+    },
+    {
+      "path": "data/runs/local-20260726-cron-02/01KYFWWE20AG7NT0YKY1YZRJBP/controller_prompt.md",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "9db843c25480ce73618a9c410482b05284d5edcfee98c068ede8f27c3f6ebee7",
+      "size": 1732
+    },
+    {
+      "path": "data/runs/local-20260726-cron-02/01KYFWWE20AG7NT0YKY1YZRJBP/harness_preflight.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "d2b1c9f7fe42989407aaecf970d8368a3f6ef5c668af75ea9509052afe123ad4",
+      "size": 716
+    },
+    {
+      "path": "data/runs/local-20260726-cron-02/01KYFWWE20AG7NT0YKY1YZRJBP/validation_report.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "28d851ea3ef28e148961d76a9a19d4462415808b3e33b5b54f74a1907ae8eba6",
+      "size": 446
+    },
+    {
+      "path": "data/runs/local-20260726-cron-02/01KYFWWE20AX9YBNKN7V4T3Y2V/command_audit.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "bddbb9d3888629a7f51f3880b1dacaef5a9b374afb9b4255dc633b7312e7faed",
+      "size": 1492
+    },
+    {
+      "path": "data/runs/local-20260726-cron-02/01KYFWWE20AX9YBNKN7V4T3Y2V/controller_prompt.md",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "55c6a9f67a8a936ac08a2adf1c4149df4d9d684832d8098b55cf74fe49a4c428",
+      "size": 1732
+    },
+    {
+      "path": "data/runs/local-20260726-cron-02/01KYFWWE20AX9YBNKN7V4T3Y2V/harness_preflight.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "2fdf0248b55acb52400b5b5768771ae2b28e6065a13c194716484420c6b01ed3",
+      "size": 716
+    },
+    {
+      "path": "data/runs/local-20260726-cron-02/01KYFWWE20AX9YBNKN7V4T3Y2V/validation_report.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "c928de33091e58de3296037ec257f55c664306b998bd018ffb071f4e6b740abb",
+      "size": 237
+    },
+    {
+      "path": "data/runs/local-20260726-cron-02/01KYFWWE20EZTW3FG97T7RH499/command_audit.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "ec48e894a1e64554898ed41a371a2e4c885334d2f7e433ce721ad100869b5e37",
+      "size": 1492
+    },
+    {
+      "path": "data/runs/local-20260726-cron-02/01KYFWWE20EZTW3FG97T7RH499/controller_prompt.md",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "2f71f338b4ee30f73388b85848bd0f22cc83965a2913408fb343dc22cdd92bcf",
+      "size": 1732
+    },
+    {
+      "path": "data/runs/local-20260726-cron-02/01KYFWWE20EZTW3FG97T7RH499/harness_preflight.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "7dcd9c927025ce80c480e96595116f535fefbc4c349b9e1671585f83326e9f0d",
+      "size": 716
+    },
+    {
+      "path": "data/runs/local-20260726-cron-02/01KYFWWE20EZTW3FG97T7RH499/validation_report.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "4ab137d3312b2c2a7f0d5e47016268a63247707e4a21278efe31459d34b9e0fe",
+      "size": 237
+    },
+    {
+      "path": "data/runs/local-20260726-cron-02/01KYFWWE20VFS02GS517HNPRB7/command_audit.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "3268f0d632235efc402f0a4fc0850322afe3b375c2f16b495759bfffb6b2ef29",
+      "size": 1492
+    },
+    {
+      "path": "data/runs/local-20260726-cron-02/01KYFWWE20VFS02GS517HNPRB7/controller_prompt.md",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "328f3dac4f470d7bd0a9054c37be9b69f60bb3d123378c2bad2948a9c0dd193f",
+      "size": 1732
+    },
+    {
+      "path": "data/runs/local-20260726-cron-02/01KYFWWE20VFS02GS517HNPRB7/harness_preflight.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "753b38df5604fa6462e035aa2b8b231221d548dcaa4e7f6b03273185dd12b8f7",
+      "size": 716
+    },
+    {
+      "path": "data/runs/local-20260726-cron-02/01KYFWWE20VFS02GS517HNPRB7/validation_report.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "02cb32c8ad2c9d51a3331919248e45276df2905b24c0b5e66e3cac429299dc17",
+      "size": 237
+    }
+  ],
+  "pruned_at": "2026-09-09T17:29:54Z",
+  "retention_days": 30,
+  "run_id": "local-20260726-cron-02",
+  "run_retention_version": 1
+}

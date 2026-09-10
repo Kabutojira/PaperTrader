@@ -1,0 +1,399 @@
+{
+  "artifacts": [
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/command_audit.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "6379017251fe708462c9adbd1eec2043b3d42667329865e521c2733acd3555e5",
+      "size": 12666
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/controller_prompt.md",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "bbb7c3a555953174ace2928b0eb5ff322776c3ee60a7ba3fa877be62f9f410f7",
+      "size": 3053
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/harness_preflight.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "3cd5b1df7ad6937258386a44946e18e45f2fa74c27e607fef229bcbc5f66ec38",
+      "size": 703
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/validation_report.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "7642642b44ead9ec5a8508cb4a35da1ce7f11f4542b80920093f081c499a20f8",
+      "size": 1658
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDQ3ZR8JZCFH75XC7S7665S/command_audit.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "18f515dde80c9c38042b1886208ddb3dfbf7b154f13f80763a887957af738702",
+      "size": 1927
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDQ3ZR8JZCFH75XC7S7665S/controller_prompt.md",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "9533797f8d999a6bab898bade0086011af778e018a4e5cebb1b0177648519f2f",
+      "size": 3078
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDQ3ZR8JZCFH75XC7S7665S/harness_preflight.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "13152e3a9196c6e82aa6fbb559329de0c95ffcd49ffc729365843a408d3fff04",
+      "size": 727
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDQ3ZR8JZCFH75XC7S7665S/validation_report.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "206556c033f7504f93b9f911eb50559087caf0bf66fcd7b3519cfbea34b2624b",
+      "size": 505
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDQ41PRX8WGX7D75GT71285/command_audit.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "d8b69075a61ea7947416365fed43b3dd91732439ca40d8635573dc2fb92dcbf7",
+      "size": 1927
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDQ41PRX8WGX7D75GT71285/controller_prompt.md",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "346ed5408d81c221818106fd13b6ec955dafa5f6762288f9cf1b03e877831532",
+      "size": 3078
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDQ41PRX8WGX7D75GT71285/harness_preflight.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "55d60b697bd3199e5375c317ad597b04523b85b0c9cc2c52c1bee49f8bc1edac",
+      "size": 727
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDQ41PRX8WGX7D75GT71285/validation_report.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "c069e5613a2f318b018ec5d5e096787b099d149cd910d8e381ed4b2a7543d170",
+      "size": 505
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDQ43N8H9VGQ3TB07HNFKYN/command_audit.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "67bc6642868918554219f6f0e7d8931bf9b4ca9f976a69e549786c3878721d33",
+      "size": 1927
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDQ43N8H9VGQ3TB07HNFKYN/controller_prompt.md",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "4159b5a705882e54d79088816b34e5fade559ab4796aabc4d9413b1e6155b739",
+      "size": 3078
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDQ43N8H9VGQ3TB07HNFKYN/harness_preflight.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "2ee2844539b58dd3a61a77a161e0d35b8c37eed3459850b62f3d3b89c4e76980",
+      "size": 727
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDQ43N8H9VGQ3TB07HNFKYN/validation_report.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "632247e2ae1140d1195730351596d1bcac3b9fb540961d4990565274719b0738",
+      "size": 505
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDQ44MGNEA7NF7WHEQSW8XW/command_audit.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "9d6af1a574eba2ef4a7dc4d58b15091984fd5d00862f3ccbd5164a1aaf979687",
+      "size": 1927
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDQ44MGNEA7NF7WHEQSW8XW/controller_prompt.md",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "004c9536dca6f34b25997f783577bf9e4cd089a488c4bb887c6ff8821e8a9423",
+      "size": 3078
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDQ44MGNEA7NF7WHEQSW8XW/harness_preflight.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "a7eb0e33e85c8417f2b035ed470a69b7c6a90b506b39152911767266dfcdcfb1",
+      "size": 727
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDQ44MGNEA7NF7WHEQSW8XW/validation_report.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "f8f7a3d5a92b4411e9642213f093de54ea11bd9d11f2e227d18c9da0840246ab",
+      "size": 505
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDQ46K0XZT9ZCKA9P2QQNW0/command_audit.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "52fee8944345cce3be72cf5aa7b525a3aec8e95915afe42320d380d7fcff0625",
+      "size": 1927
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDQ46K0XZT9ZCKA9P2QQNW0/controller_prompt.md",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "a8faa506c07db1ee37972e526ce772063071d02cf3b42191a57f83de023801ba",
+      "size": 3078
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDQ46K0XZT9ZCKA9P2QQNW0/harness_preflight.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "394af89cbebc32e6d64333f84fd3a7c8e55fbddaea2a7fb721961ec28eb3a056",
+      "size": 727
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDQ46K0XZT9ZCKA9P2QQNW0/validation_report.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "bc8c388a8514abce104a6c6759db2214c7f80a4fc0dec01c3639bec359aa461f",
+      "size": 505
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDQ47J8A1SSF0NR06CZSTAX/command_audit.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "944ec488f51048f0109edba6bd8c80fbed0405241f095842620aef2100b6533e",
+      "size": 1927
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDQ47J8A1SSF0NR06CZSTAX/controller_prompt.md",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "a369825651eb6f0b1464149588d5beb4564aada493990ec0fa95f0659972d5f0",
+      "size": 3077
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDQ47J8A1SSF0NR06CZSTAX/harness_preflight.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "84a915589a4de5bf12584dd59b1a3d3868305648c9333fca78f1ec2ed9f24e45",
+      "size": 727
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDQ47J8A1SSF0NR06CZSTAX/validation_report.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "f6ecd42ead992dce4c118f84164c67b9f55d2e09036877e36609dd73dea06ebd",
+      "size": 504
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDQ49GRDQNS8H3NK59HRBBB/command_audit.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "7ec81cae52a3bacdd682ac93900fe966d24610b4a4452fa43ec54fb4da26c738",
+      "size": 1927
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDQ49GRDQNS8H3NK59HRBBB/controller_prompt.md",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "a6a40c8d4fb2465112f9b89e0dadbb579e1aa3ac284a4791e79ff0a356449ddd",
+      "size": 3092
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDQ49GRDQNS8H3NK59HRBBB/harness_preflight.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "389391ad4ba3bc6d753f1deecfd0a691159ee62c05f896e377e3858d7101a8cc",
+      "size": 727
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDQ49GRDQNS8H3NK59HRBBB/validation_report.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "b5319e5c4c6e4dca1e5889795f8993086ba43de98a016a1b48aa69cd08564b8c",
+      "size": 519
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDR23M00Q9XYAQZ6RKQWSFS/command_audit.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "1c0c18820ec898b11dfa772b683468a03baf0199c23c84fb6b5330ac2f59fb9d",
+      "size": 1927
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDR23M00Q9XYAQZ6RKQWSFS/controller_prompt.md",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "3b7db2bb699eaf8d6e66a5482bdfebb0e810b47db6f9463a59ad750d991eac10",
+      "size": 3081
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDR23M00Q9XYAQZ6RKQWSFS/harness_preflight.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "8210333426ecc450b8be1861462f878a65e469c0001d7b494cdd5d7ee0396ea3",
+      "size": 727
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDR23M00Q9XYAQZ6RKQWSFS/validation_report.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "c4f74e4b29571d8dd4132206f88c7bde827d2097fc3d0183a18be90b6d254b3f",
+      "size": 508
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDR24K88V57958W94SW5MA2/command_audit.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "ab6c8965a77aeb471b3d7ba2af83ffbda239589a0d2566c579b40d3764a82b48",
+      "size": 1927
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDR24K88V57958W94SW5MA2/controller_prompt.md",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "1ad48304a2237d0f631fff1b8bd35a38c876e8725e08adcb77b7fd97ee3082c9",
+      "size": 3079
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDR24K88V57958W94SW5MA2/harness_preflight.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "b4c5e4b887f51c041286bef18d87a235815c4953debcd51f2fc695f09e459179",
+      "size": 727
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDR24K88V57958W94SW5MA2/validation_report.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "49ce3c0facbdb07d84e5721cce31d95bea27ddde3ad41620cb751e53d0a10f29",
+      "size": 506
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDR25JGXDWR88KX1GVAHB1K/command_audit.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "464737851f2e9c658b8fad8dbd65892f7ccdb007f6eb8c355fefda8314873edf",
+      "size": 1927
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDR25JGXDWR88KX1GVAHB1K/controller_prompt.md",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "46b6991bb51f5e6b08efe4eb96396d77b176a16b1110eb306221df314d5d5ca2",
+      "size": 3083
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDR25JGXDWR88KX1GVAHB1K/harness_preflight.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "157037dd65b7bfcc80daca6972b32bc36200cc5a186933e22c3c9ca30d155b74",
+      "size": 727
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDR25JGXDWR88KX1GVAHB1K/validation_report.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "9fa66a7dbcca119eed264ded6133f6e9182ab933830acbbe16e3ea29a4cc56e6",
+      "size": 510
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDR26HR7DT00RX049FQX19Z/command_audit.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "99eec6699bd93c9d4c66755f8a332d61904d4fed5a799f5e216e50aa85b9445a",
+      "size": 1927
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDR26HR7DT00RX049FQX19Z/controller_prompt.md",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "2103810e3700c5d01bc0bf0eaf85a9ce7594cf0521bd8a14c20faa9900d0e469",
+      "size": 3078
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDR26HR7DT00RX049FQX19Z/harness_preflight.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "9c563390d1e48432397f1c1ff03b094c91aa0514a1362a526a20cd41611acbcc",
+      "size": 727
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDR26HR7DT00RX049FQX19Z/validation_report.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "4adcf87ae112787ae6f38582c7e25644b77a1963028194abf94938365eea64ae",
+      "size": 505
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/command_audit.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "4e131c5593f4a2fb665335268d97161880c83ae60ad17484fe828e34476da189",
+      "size": 19745
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/controller_prompt.md",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "9a8c6e3a133bf8fd158434cbf494457978657fc335a6a52df4cbc9c2bca420bd",
+      "size": 3314
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/harness_preflight.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "e604374f5759940fe01b6d7688e7d40d7767a003f5bd141bcdca6b7934bc19e7",
+      "size": 715
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/validation_report.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "f17636ef71886cc99dd72d4e3c7a923c97d5b8a785ce15e74f0701671449f9b5",
+      "size": 2062
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDRVRX8Q62Z4KQ7YZV0RA5N/command_audit.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "23ecdbe430641950ca3c7e7ba82ddd524f6cf2c2c996b96327dc208417ecb6de",
+      "size": 575
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDRVRX8Q62Z4KQ7YZV0RA5N/controller_prompt.md",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "9f3fdf6e22c2128ce4f370e4a0b06095fcf33373d39ec0fa1e7c02c5fe525993",
+      "size": 3072
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDRVRX8Q62Z4KQ7YZV0RA5N/harness_preflight.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "a0efe3bc9944e13713b63b03406ebb67615a50837aac726bbeda54676b4ea1ea",
+      "size": 703
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDRVRX8Q62Z4KQ7YZV0RA5N/validation_report.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "69f391c8c4f689351c082d0d1779c4b64371b8144a0ec1160627fc7dc36ecfe3",
+      "size": 349
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDRVTVRSXKYD7B5K63KAZD4/command_audit.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "a368f86d5a772b4bb005a7f70c964802a2faf40c3ef7a7ebcc341c03c032369b",
+      "size": 575
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDRVTVRSXKYD7B5K63KAZD4/controller_prompt.md",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "85e57ab47318f6c1e8ad0dd1542f24959eb144e17d0bb16f6b7cca3352d3b8e2",
+      "size": 3066
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDRVTVRSXKYD7B5K63KAZD4/harness_preflight.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "6bd8e678e85d0601b0e8a801a943634697e9583872cc8045c6222d997b5a292a",
+      "size": 703
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDRVTVRSXKYD7B5K63KAZD4/validation_report.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "111b0495c4ea2ca5592bfaef7f2dff9bd25ef1675126333e90210fe301388093",
+      "size": 343
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDRVVV0BFGVXH10CAY670MZ/command_audit.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "5b49eca2d1d77cfa45d7c73f5eef956d39e6ad83b52b665b331612a89fde43e2",
+      "size": 575
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDRVVV0BFGVXH10CAY670MZ/controller_prompt.md",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "92073e349d4dc60c639ad3bddafb612d86e10f414403716f6ec77791257c483f",
+      "size": 3053
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDRVVV0BFGVXH10CAY670MZ/harness_preflight.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "5797d0d1cb35ffa6e4b95977fbcb3f216d4e5f528b40e70598d01c86f69b5b6e",
+      "size": 703
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/01KZDRVVV0BFGVXH10CAY670MZ/validation_report.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "3187fe719eb453de6d673c891327bf851b29d36a354f9797fdeb213b23f64477",
+      "size": 330
+    },
+    {
+      "path": "data/runs/local-20260807T085336Z-terafab/decision_snapshot.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "cab67573888a1d6024a119129f39f851d11037602c34625e05536c6df3aead7f",
+      "size": 244759,
+      "snapshot_id": "decision_7291ada3bc3dd4554729"
+    }
+  ],
+  "pruned_at": "2026-09-09T17:29:54Z",
+  "retention_days": 30,
+  "run_id": "local-20260807T085336Z-terafab",
+  "run_retention_version": 1
+}

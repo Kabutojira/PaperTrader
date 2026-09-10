@@ -1,0 +1,15 @@
+{
+  "artifacts": [
+    {
+      "path": "data/runs/local-20260727-daily-all-04/decision_snapshot.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "7b3c5c529038c13f60c41fb68611695e5091be8123c413a050e361bf8458429c",
+      "size": 36325,
+      "snapshot_id": "decision_87e8728baec9e7b61dae"
+    }
+  ],
+  "pruned_at": "2026-09-09T17:29:54Z",
+  "retention_days": 30,
+  "run_id": "local-20260727-daily-all-04",
+  "run_retention_version": 1
+}

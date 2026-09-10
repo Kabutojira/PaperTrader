@@ -1,0 +1,15 @@
+{
+  "artifacts": [
+    {
+      "path": "data/runs/youtube-allin-backfill-20260729/decision_snapshot.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "9106b21652f093ea95aa8fafac63586857e508582edf44f1cabca19465fbbcaf",
+      "size": 54746,
+      "snapshot_id": "decision_1ad68ce4fd4e7c9bbc28"
+    }
+  ],
+  "pruned_at": "2026-09-09T17:29:54Z",
+  "retention_days": 30,
+  "run_id": "youtube-allin-backfill-20260729",
+  "run_retention_version": 1
+}

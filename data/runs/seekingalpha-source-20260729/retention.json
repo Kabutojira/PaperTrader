@@ -1,0 +1,15 @@
+{
+  "artifacts": [
+    {
+      "path": "data/runs/seekingalpha-source-20260729/decision_snapshot.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "14210a3bcd131398d1df84a23f282b947f31bec905c20e326d1c13c34b444c6c",
+      "size": 54743,
+      "snapshot_id": "decision_46254d925ebea0d84906"
+    }
+  ],
+  "pruned_at": "2026-09-09T17:29:54Z",
+  "retention_days": 30,
+  "run_id": "seekingalpha-source-20260729",
+  "run_retention_version": 1
+}
