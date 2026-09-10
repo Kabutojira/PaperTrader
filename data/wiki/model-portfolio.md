@@ -4,67 +4,67 @@ type: model-portfolio
 status: maintained
 tags:
   - model-portfolio
-created: "2026-09-09"
-updated: "2026-09-09"
+created: "2026-09-10"
+updated: "2026-09-10"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_8b115dd5f9f91ae3d705"
-as_of: "2026-09-09T19:22:57Z"
+snapshot_id: "decision_3f0087c0f474f071d325"
+as_of: "2026-09-10T19:03:58Z"
 ---
 
 # Model portfolio
 
-**As of `2026-09-09T19:22:57Z`**
+**As of `2026-09-10T19:03:58Z`**
 
 Pending targets are projections; only deterministic fills change the current portfolio.
 
 <div class="model-portfolio-grid" id="model-portfolio-grid">
-<article class="portfolio-card" data-scalable="false" data-target-weight="95.196133" data-mark="1" data-fx="1" data-mark-currency="" data-market-data-as-of="2026-09-09T19:22:57Z" data-ticker="CASH" data-company="Cash">
+<article class="portfolio-card" data-scalable="false" data-target-weight="93.871528" data-mark="1" data-fx="1" data-mark-currency="" data-market-data-as-of="2026-09-10T19:03:58Z" data-ticker="CASH" data-company="Cash">
 <h3>Cash</h3>
 <dl class="portfolio-card-values">
-<div><dt>Current</dt><dd>97.138024%</dd></div>
-<div><dt>Target</dt><dd>95.196133%</dd></div>
+<div><dt>Current</dt><dd>97.172267%</dd></div>
+<div><dt>Target</dt><dd>93.871528%</dd></div>
 <div><dt>Action</dt><dd>Trim</dd></div>
 <div><dt>State</dt><dd>Pending validated order</dd></div>
 <div><dt>Research rating</dt><dd>Unrated</dd></div>
 <div><dt>Research action</dt><dd>Hold</dd></div>
 <div><dt>Reference mark</dt><dd>1 </dd></div>
 <div><dt>Base mark</dt><dd>1 EUR</dd></div>
-<div><dt>FX to EUR</dt><dd>1 · 2026-09-09T19:22:57Z</dd></div>
-<div><dt>As of</dt><dd>2026-09-09T19:22:57Z</dd></div>
+<div><dt>FX to EUR</dt><dd>1 · 2026-09-10T19:03:58Z</dd></div>
+<div><dt>As of</dt><dd>2026-09-10T19:03:58Z</dd></div>
 </dl>
 
 </article>
-<article class="portfolio-card" data-scalable="true" data-target-weight="1.941599" data-mark="225.72999572753906" data-fx="0.8590999841690063" data-mark-currency="USD" data-market-data-as-of="2026-09-09T18:24:19Z" data-ticker="NVDA" data-company="NVIDIA Corporation">
-<h3><a href="securities/security_33d9c44facc75c726c7d">NVDA — NVIDIA Corporation</a></h3>
+<article class="portfolio-card" data-scalable="true" data-target-weight="4.242464" data-mark="35.29499816894531" data-fx="1" data-mark-currency="EUR" data-market-data-as-of="2026-09-10T15:30:00Z" data-ticker="PRX" data-company="Prosus N.V.">
+<h3><a href="securities/security_8b703a8adf5f864acaa4">PRX — Prosus N.V.</a></h3>
+<dl class="portfolio-card-values">
+<div><dt>Current</dt><dd>2.827733%</dd></div>
+<div><dt>Target</dt><dd>4.242464%</dd></div>
+<div><dt>Action</dt><dd>Add</dd></div>
+<div><dt>State</dt><dd>Pending validated order</dd></div>
+<div><dt>Research rating</dt><dd>Buy</dd></div>
+<div><dt>Research action</dt><dd>Initiate</dd></div>
+<div><dt>Reference mark</dt><dd>35.29499816894531 EUR</dd></div>
+<div><dt>Base mark</dt><dd>35.29499816894531 EUR</dd></div>
+<div><dt>FX to EUR</dt><dd>1 · 2026-09-10T19:03:58Z</dd></div>
+<div><dt>As of</dt><dd>2026-09-10T15:30:00Z</dd></div>
+</dl>
+<p><a href="strategies/strategy_8caa208dfc702a2584a7">Strategy research</a></p>
+</article>
+<article class="portfolio-card" data-scalable="true" data-target-weight="1.886008" data-mark="54.689998626708984" data-fx="0.8607000112533569" data-mark-currency="USD" data-market-data-as-of="2026-09-10T18:10:21Z" data-ticker="TCEHY" data-company="Tencent Holdings Limited">
+<h3><a href="securities/security_de0d83229b369a426b99">TCEHY — Tencent Holdings Limited</a></h3>
 <dl class="portfolio-card-values">
 <div><dt>Current</dt><dd>0%</dd></div>
-<div><dt>Target</dt><dd>1.941599%</dd></div>
+<div><dt>Target</dt><dd>1.886008%</dd></div>
 <div><dt>Action</dt><dd>Buy</dd></div>
 <div><dt>State</dt><dd>Pending validated order</dd></div>
 <div><dt>Research rating</dt><dd>Buy</dd></div>
 <div><dt>Research action</dt><dd>Initiate</dd></div>
-<div><dt>Reference mark</dt><dd>225.72999572753906 USD</dd></div>
-<div><dt>Base mark</dt><dd>193.9246357559986661823022246 EUR</dd></div>
-<div><dt>FX to EUR</dt><dd>0.8590999841690063 · 2026-09-09T18:24:19Z</dd></div>
-<div><dt>As of</dt><dd>2026-09-09T18:24:19Z</dd></div>
+<div><dt>Reference mark</dt><dd>54.689998626708984 USD</dd></div>
+<div><dt>Base mark</dt><dd>47.07168243345449593566606939 EUR</dd></div>
+<div><dt>FX to EUR</dt><dd>0.8607000112533569 · 2026-09-10T18:10:21Z</dd></div>
+<div><dt>As of</dt><dd>2026-09-10T18:10:21Z</dd></div>
 </dl>
-<p><a href="strategies/strategy_7cf884a5530d05afdb99">Strategy research</a></p>
-</article>
-<article class="portfolio-card" data-scalable="true" data-target-weight="2.862268" data-mark="35.73500061035156" data-fx="1" data-mark-currency="EUR" data-market-data-as-of="2026-09-09T15:30:00Z" data-ticker="PRX" data-company="Prosus N.V.">
-<h3><a href="securities/security_8b703a8adf5f864acaa4">PRX — Prosus N.V.</a></h3>
-<dl class="portfolio-card-values">
-<div><dt>Current</dt><dd>2.861976%</dd></div>
-<div><dt>Target</dt><dd>2.862268%</dd></div>
-<div><dt>Action</dt><dd>Hold</dd></div>
-<div><dt>State</dt><dd>Filled</dd></div>
-<div><dt>Research rating</dt><dd>Buy</dd></div>
-<div><dt>Research action</dt><dd>Initiate</dd></div>
-<div><dt>Reference mark</dt><dd>35.73500061035156 EUR</dd></div>
-<div><dt>Base mark</dt><dd>35.73500061035156 EUR</dd></div>
-<div><dt>FX to EUR</dt><dd>1 · 2026-09-09T19:22:57Z</dd></div>
-<div><dt>As of</dt><dd>2026-09-09T15:30:00Z</dd></div>
-</dl>
-<p><a href="strategies/strategy_8caa208dfc702a2584a7">Strategy research</a></p>
+<p><a href="strategies/strategy_ef910e9aff5203a0b901">Strategy research</a></p>
 </article>
 </div>
 <p class="portfolio-base">Values use the committed EUR snapshot.</p>
@@ -85,7 +85,7 @@ Pending targets are projections; only deterministic fills change the current por
 | Holding | Rating / action | Bear / base / bull | Expected | Buy below | Review | Thesis or cash role |
 | --- | --- | ---: | ---: | ---: | --- | --- |
 | Cash | Unrated / Hold | —% / —% / —% | —% | — | — | Capital retained as the configured portfolio alternative. |
-| [NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | Buy / Initiate | -12.28458612164674774643077227% / 37.5537172183266910340062889% / 98.4671990782942273212071415% | 34.7849225883281666573153411% | 248.4 | 2026-09-18T06:22:45Z | NVIDIA's accelerated-compute, networking and software platform converts current AI infrastructure demand into exceptional revenue and cash-generation potential; the current plan supports bounded long-equity baseline exposure because medium confidence, customer concentration, supply commitments, guarantees, export controls, product-transition risk and insufficient diversification prevent conviction treatment. |
-| [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | Buy / Initiate | -16.04869319266296554909132287% / 45.5155984660508597149083737% / 95.88638255045308038545358% | 37.120467785317156269817506% | 41.6 | 2026-09-27T19:18:00Z | Prosus offers Tencent-dominated look-through value, growing ecommerce exposure and per-share accretion from repurchases below NAV; the current plan's economics justify a bounded long-equity baseline increase because medium confidence, holding-company concentration, private-asset valuation uncertainty, central debt, governance, capital-allocation transmission and insufficient diversification prevent conviction treatment. |
+| [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | Buy / Initiate | -15.00212053730653548039245669% / 47.3296577353353385006530751% / 98.328385412951417212417601% | 38.8298697890659920486923207% | 41.6 | 2026-09-27T19:18:00Z | Prosus offers Tencent-dominated look-through value, growing ecommerce exposure and per-share accretion from repurchases below NAV; the current plan's economics justify a bounded long-equity baseline increase because medium confidence, holding-company concentration, private-asset valuation uncertainty, central debt, governance, capital-allocation transmission, weak momentum and insufficient diversification prevent conviction treatment. |
+| [TCEHY — Tencent Holdings Limited](securities/security_de0d83229b369a426b99) | Buy / Initiate | -26.86048454119876587740257908% / 18.851712620552005449220809% / 64.5639097823027767758441971% | 18.851712620552005449220809% | 52 | 2026-09-27T19:23:20Z | Tencent's gaming, advertising and Weixin ecosystem support cash generation and repurchases; the current plan's starter economics justify only bounded long-equity exposure because medium confidence, China policy and governance exposure, investment-portfolio volatility, artificial-intelligence spending and insufficient diversification prevent conviction treatment. |
 
 [[index|Back to today's decision]]

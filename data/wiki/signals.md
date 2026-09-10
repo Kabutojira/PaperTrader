@@ -4,65 +4,91 @@ type: signals
 status: maintained
 tags:
   - signals
-created: "2026-09-09"
-updated: "2026-09-09"
+created: "2026-09-10"
+updated: "2026-09-10"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_8b115dd5f9f91ae3d705"
-as_of: "2026-09-09T19:22:57Z"
+snapshot_id: "decision_3f0087c0f474f071d325"
+as_of: "2026-09-10T19:03:58Z"
 ---
 
 # Signals
 
-**As of `2026-09-09T19:22:57Z`**
+**As of `2026-09-10T19:03:58Z`**
 
 ## Actionable trade signals
 
-### [NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d)
+### [TCEHY — Tencent Holdings Limited](securities/security_de0d83229b369a426b99)
 
 - **Action:** Buy
 - **State:** Pending validated order
-- **Strategy:** NVIDIA bounded baseline allocation
-- **Strategy research:** [Open strategy page](strategies/strategy_7cf884a5530d05afdb99)
-- **Window:** `2026-09-09T18:38:29Z` to `2026-09-10T18:24:19Z`
-- **Market data:** `2026-09-09T18:24:19Z`
-- **Current → target:** 0% → 1.941599%
-- **Copy-ready quantity:** 1
+- **Strategy:** Tencent bounded baseline allocation
+- **Strategy research:** [Open strategy page](strategies/strategy_ef910e9aff5203a0b901)
+- **Window:** `2026-09-10T18:21:44Z` to `2026-09-11T18:30:00Z`
+- **Market data:** `2026-09-10T18:10:21Z`
+- **Current → target:** 0% → 1.886008%
+- **Copy-ready quantity:** 4
 - **Order:** market
-- **Entry:** Open only while current allocation plan, allocation\_intent\_b8eab1837513d5191d02, assessment\_82fd625a8d93be4bd8f5 and relationship\_ai\_compute\_nvda remain current, fresh NVDA USD and USD/EUR inputs are available, and deterministic code derives a positive whole-share delta toward the persisted one-share target.
-- **Exit:** Reduce or close only when a current deterministic allocation plan directs reduce or close, the full-baseline eligibility frontier no longer clears, a hard blocker appears, or material normalized-earnings, margin, Rubin, export-control, customer-credit, guarantee, commitment, concentration or platform-attachment evidence invalidates the bounded thesis.
-- **Invalidation:** Do not increase exposure if normalized earnings fall below the bear path, gross margin remains below 70%, guarantees or receivables produce material losses, Rubin misses its cycle, export controls intensify, CUDA or networking attachment weakens, the assessment or relationship is superseded, or market or FX inputs become stale.
-- **Rationale:** Open only the deterministic current-plan whole-share delta toward NVIDIA's persisted one-share baseline target. The accepted relationship, 92 effective score, 37.55% base return, 26.09% confidence-adjusted expected return, 27.30% margin of safety and full-baseline payoff ratios support bounded exposure; medium confidence, customer concentration, supply commitments, guarantees, export controls, product-transition risk and insufficient diversification bar conviction sizing.
+- **Entry:** Open only while current allocation plan, allocation\_intent\_818e8692a59dfaa00cad, assessment\_6e8ef7291ff81b77d900 and Digital attention, gaming, and consumer ecosystems to Tencent remain current, fresh TCEHY and USD/EUR inputs are available, and deterministic code derives a positive whole-share delta toward the persisted four-share target.
+- **Exit:** Reduce or close only when a current deterministic allocation plan directs reduce or close, the starter eligibility frontier no longer clears, a hard blocker appears, or material gaming, advertising, Weixin, policy, governance, investment-portfolio or valuation evidence invalidates the bounded thesis.
+- **Invalidation:** Do not increase exposure if gaming or advertising monetization weakens materially, Weixin engagement ceases to support commercial activity, policy or governance risk impairs shareholder economics, artificial-intelligence investment fails to convert into durable cash generation, portfolio-value volatility dominates operations, the assessment or relationship is superseded, or market and FX inputs become stale.
+- **Rationale:** Open only the deterministic current-plan whole-share delta toward Tencent's persisted four-share starter target. The accepted relationship, 76 effective score, 18.85% base return, 14.14% confidence-adjusted expected return and 15.86% margin of safety support bounded baseline exposure; medium confidence, a 26.86% bear loss, China policy and governance exposure, investment-portfolio volatility, artificial-intelligence spending and insufficient diversification bar conviction sizing.
+
+### [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4)
+
+- **Action:** Add
+- **State:** Pending validated order
+- **Strategy:** Prosus bounded baseline allocation
+- **Strategy research:** [Open strategy page](strategies/strategy_8caa208dfc702a2584a7)
+- **Window:** `2026-09-10T18:37:34Z` to `2026-09-11T18:45:00Z`
+- **Market data:** `2026-09-10T18:10:21Z`
+- **Current → target:** 2.827733% → 4.242464%
+- **Copy-ready quantity:** 4
+- **Order:** market
+- **Entry:** Increase only while current allocation plan, allocation\_intent\_b658846a33beb7586a8e, assessment\_7f28dfd9240d6099400b and Digital attention, gaming, and consumer ecosystems to Prosus remain current, a fresh PRX EUR price is available, and deterministic code derives a positive whole-share delta toward the persisted twelve-share target after holdings and pending orders.
+- **Exit:** Reduce or close only when a current deterministic allocation plan directs reduce or close, the baseline eligibility frontier no longer clears, a hard blocker appears, or material Tencent, ecommerce, private-asset, debt, repurchase, governance, capital-allocation or valuation evidence invalidates the bounded thesis.
+- **Invalidation:** Do not increase exposure if Tencent or private-platform economics deteriorate materially, private marks prove unreliable, central net debt rises, governance or cross-holding complexity blocks value transmission, repurchases lose accretion, the holding discount widens persistently despite operating value creation, the assessment or relationship is superseded, or market inputs become stale.
+- **Rationale:** Increase only by the deterministic current-plan whole-share delta toward Prosus's persisted twelve-share baseline target after existing holdings and pending orders. The accepted relationship, 70 effective score, 47.33% base return, 29.12% confidence-adjusted expected return and 32.13% margin of safety support bounded baseline exposure; medium confidence, Tencent concentration, private-asset valuation uncertainty, central debt, governance, capital-allocation transmission, weak momentum and insufficient diversification bar conviction sizing.
 
 ## Pending validated orders
 
-- **NVDA:** Buy · Pending validated order
+- **TCEHY:** Buy · Pending validated order
+- **PRX:** Add · Pending validated order
 
 ## Research alerts — not trade signals
 
-### [VLO — Valero Energy Corporation](securities/security_c5a9e460d3350284d157)
+### [VRT — Vertiv Holdings Co](securities/security_cb88f9154cfeaa15e878)
 
 **Research alert — not a trade signal**
 
-- Alert: `bollinger\_above\_upper`
-- Market date: `2026-09-08`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
+- Alert: `volume\_anomaly`
+- Market date: `2026-09-09`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
 
 ### [VLO — Valero Energy Corporation](securities/security_c5a9e460d3350284d157)
 
 **Research alert — not a trade signal**
 
 - Alert: `rsi\_overbought`
-- Market date: `2026-09-08`
+- Market date: `2026-09-09`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
-### [UBER — Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e)
+### [VLO — Valero Energy Corporation](securities/security_c5a9e460d3350284d157)
 
 **Research alert — not a trade signal**
 
-- Alert: `bollinger\_below\_lower`
-- Market date: `2026-09-08`
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-09-09`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### [VALE — Vale S.A.](securities/security_b2116dcf976c96974d7b)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-09-09`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
@@ -70,8 +96,8 @@ as_of: "2026-09-09T19:22:57Z"
 
 **Research alert — not a trade signal**
 
-- Alert: `volume\_anomaly`
-- Market date: `2026-09-08`
+- Alert: `bollinger\_below\_lower`
+- Market date: `2026-09-09`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
@@ -79,53 +105,44 @@ as_of: "2026-09-09T19:22:57Z"
 
 **Research alert — not a trade signal**
 
-- Alert: `bollinger\_above\_upper`
-- Market date: `2026-09-08`
-- Research status: `succeeded`
-- Conclusion: Revalidated Ternium after its Q2 2026 release and the merged upper-band, overbought-RSI and volume alerts. Steel shipments, Mexican demand, margins and attributable earnings improved, while operating cash flow remained below capex after a large working-capital build and the company moved to modest net debt. A scenario-complete cyclical assessment values the ADS at USD 28 bear, USD 50 base and USD 78 bull with 25%/50%/25% probabilities. The USD 51.50 weighted value is below the USD 53.71 mark, so the canonical conclusion remains Hold / Watch with no strategy. Created exactly one dependent nearshoring-idea refresh.
-
-### [TX — Ternium S.A.](securities/security_2c779e81c27b78c556bb)
-
-**Research alert — not a trade signal**
-
 - Alert: `rsi\_overbought`
-- Market date: `2026-09-08`
+- Market date: `2026-09-09`
 - Research status: `succeeded`
 - Conclusion: Revalidated Ternium after its Q2 2026 release and the merged upper-band, overbought-RSI and volume alerts. Steel shipments, Mexican demand, margins and attributable earnings improved, while operating cash flow remained below capex after a large working-capital build and the company moved to modest net debt. A scenario-complete cyclical assessment values the ADS at USD 28 bear, USD 50 base and USD 78 bull with 25%/50%/25% probabilities. The USD 51.50 weighted value is below the USD 53.71 mark, so the canonical conclusion remains Hold / Watch with no strategy. Created exactly one dependent nearshoring-idea refresh.
 
-### [TSM — Taiwan Semiconductor Manufacturing Company Limited](securities/security_ce9b78a4d0773c950765)
+### [TDY — Teledyne Technologies Incorporated](securities/security_ad5917642acbba28c1f2)
 
 **Research alert — not a trade signal**
 
-- Alert: `bollinger\_above\_upper`
-- Market date: `2026-09-08`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
+- Alert: `rsi\_oversold`
+- Market date: `2026-09-09`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
 
-### [SPCX — Space Exploration Technologies Corp.](securities/security_664f93a7eaca72e76e9b)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_above\_upper`
-- Market date: `2026-09-08`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
-### [SGML — Sigma Lithium Corporation](securities/security_4627aea1bf7d8943d3d8)
+### [TCEHY — Tencent Holdings Limited](securities/security_de0d83229b369a426b99)
 
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_below\_lower`
-- Market date: `2026-09-08`
+- Market date: `2026-09-09`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### [SGML — Sigma Lithium Corporation](securities/security_4627aea1bf7d8943d3d8)
+### [SCCO — Southern Copper Corporation](securities/security_6ad1af8d10d6276a0221)
 
 **Research alert — not a trade signal**
 
 - Alert: `volume\_anomaly`
-- Market date: `2026-09-08`
+- Market date: `2026-09-09`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [RKLB — Rocket Lab Corporation](securities/security_7ca095d63423c55a90e3)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-09-09`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
@@ -134,7 +151,7 @@ as_of: "2026-09-09T19:22:57Z"
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_above\_upper`
-- Market date: `2026-09-08`
+- Market date: `2026-09-09`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
@@ -142,17 +159,8 @@ as_of: "2026-09-09T19:22:57Z"
 
 **Research alert — not a trade signal**
 
-- Alert: `volume\_anomaly`
-- Market date: `2026-09-08`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [QCOM — QUALCOMM Incorporated](securities/security_3a75fc1ccca2ee7c937a)
-
-**Research alert — not a trade signal**
-
 - Alert: `bollinger\_above\_upper`
-- Market date: `2026-09-08`
+- Market date: `2026-09-09`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
@@ -161,16 +169,7 @@ as_of: "2026-09-09T19:22:57Z"
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_below\_lower`
-- Market date: `2026-09-09`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [POWL — Powell Industries, Inc.](securities/security_0b67d6c8e3fd3366a257)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-09-08`
+- Market date: `2026-09-10`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
@@ -179,7 +178,7 @@ as_of: "2026-09-09T19:22:57Z"
 **Research alert — not a trade signal**
 
 - Alert: `rsi\_oversold`
-- Market date: `2026-09-08`
+- Market date: `2026-09-09`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
@@ -188,34 +187,70 @@ as_of: "2026-09-09T19:22:57Z"
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_below\_lower`
-- Market date: `2026-09-08`
+- Market date: `2026-09-09`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### MTLS — Materialise NV
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_above\_upper`
-- Market date: `2026-09-08`
-- Research status: `pending`
-- Conclusion: Deterministic price alert awaits bounded research review.
-
-### [ISRG — Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_below\_lower`
-- Market date: `2026-09-08`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [FLNC — Fluence Energy, Inc.](securities/security_a9eb9838940ef5ceaa0c)
+### [META — Meta Platforms, Inc.](securities/security_d12e746b3c9d392183cc)
 
 **Research alert — not a trade signal**
 
 - Alert: `volume\_anomaly`
-- Market date: `2026-09-08`
+- Market date: `2026-09-09`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [META — Meta Platforms, Inc.](securities/security_d12e746b3c9d392183cc)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-09-09`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### [META — Meta Platforms, Inc.](securities/security_d12e746b3c9d392183cc)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_overbought`
+- Market date: `2026-09-09`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### [LH — Labcorp Holdings Inc.](securities/security_b1f2c48e1a744f5ecf67)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-09-09`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [LAC — Lithium Americas Corp.](securities/security_fb87fac302a5446a1ced)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-09-09`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [GOOGL — Alphabet Inc.](securities/security_c86bb4e75658c07142cf)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_below\_lower`
+- Market date: `2026-09-09`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [GOOGL — Alphabet Inc.](securities/security_c86bb4e75658c07142cf)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-09-09`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
@@ -223,75 +258,12 @@ as_of: "2026-09-09T19:22:57Z"
 
 **Research alert — not a trade signal**
 
-- Alert: `volume\_anomaly`
-- Market date: `2026-09-08`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [ENPH — Enphase Energy, Inc.](securities/security_f2b9760d847b2ba59324)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-09-08`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [BE — Bloom Energy Corporation](securities/security_3e597863f00753e8c65c)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-09-08`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [BE — Bloom Energy Corporation](securities/security_3e597863f00753e8c65c)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_above\_upper`
-- Market date: `2026-09-08`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
-### [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_above\_upper`
-- Market date: `2026-09-08`
-- Research status: `skipped`
-- Conclusion: Queue triage disposition
-
-### [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86)
-
-**Research alert — not a trade signal**
-
-- Alert: `rsi\_overbought`
-- Market date: `2026-09-08`
-- Research status: `skipped`
-- Conclusion: Queue triage disposition
-
-### [ALB — Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-09-08`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [108490 — ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_above\_upper`
+- Alert: `bollinger\_below\_lower`
 - Market date: `2026-09-09`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
 
-### [03388 — Shenzhen Creality 3D Technology Co., Ltd.](securities/security_b19e8f0343b7da1f3c03)
+### [DPZ — Domino's Pizza, Inc.](securities/security_f34181f3df32080a91d1)
 
 **Research alert — not a trade signal**
 
@@ -300,117 +272,137 @@ as_of: "2026-09-09T19:22:57Z"
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### [YEC.F — YASKAWA Electric Corporation](securities/security_89969b7dac39b7db5661)
+### [CROX — Crocs, Inc.](securities/security_c150f31c30afdb4a85f9)
 
 **Research alert — not a trade signal**
 
-- Alert: `sma\_50\_cross\_below\_200`
+- Alert: `volume\_anomaly`
+- Market date: `2026-09-09`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [BE — Bloom Energy Corporation](securities/security_3e597863f00753e8c65c)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
 - Market date: `2026-09-09`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
-### [TXN — Texas Instruments Incorporated](securities/security_83a56943e18793f685b0)
+### [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86)
 
 **Research alert — not a trade signal**
 
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-09-08`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Alert: `rsi\_overbought`
+- Market date: `2026-09-09`
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
 
-### [SPOT — Spotify Technology S.A.](securities/security_2010347f1a0a5ea60f47)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_below\_signal`
-- Market date: `2026-09-08`
-- Research status: `succeeded`
-- Conclusion: Completed exactly one repeat review of Spotify Technology S.A. ordinary shares from the Q2 2026 SEC-furnished results release, June interim report, and canonical 4 August alert plus current 5 August market state. Registered both primary sources, updated the maintained security page and structured security row, and wrote one schema-version-2 assessment linked to its predecessor. USD 330/USD 532/USD 771 bear/base/bull values produce a USD 541.25 weighted value versus USD 482.23. Deterministic state derives Hold / Watch, 12.24% expected return and allocation ineligibility because bear/base payoff, expected/bear payoff and relationship gates fail. The bearish MACD crossover and volume anomaly coincided with a mixed earnings release and represent adverse entry timing rather than thesis invalidation or a stand-alone opportunity. No strategy, signal, order, follow-up operation, allocation or accounting state changed because no idea or accepted relationship is linked and the full strategy gate
-
-### [SGML — Sigma Lithium Corporation](securities/security_4627aea1bf7d8943d3d8)
+### [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86)
 
 **Research alert — not a trade signal**
 
-- Alert: `macd\_cross\_below\_signal`
-- Market date: `2026-09-08`
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-09-09`
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
+
+### [108490 — ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-09-10`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
-### [POWL — Powell Industries, Inc.](securities/security_0b67d6c8e3fd3366a257)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-09-08`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [NBIS — Nebius Group N.V.](securities/security_47a0b06f6c6c478d7c1e)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-09-08`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [MELI — MercadoLibre, Inc.](securities/security_4935c6e39e38273a1731)
+### BAS — BASF SE
 
 **Research alert — not a trade signal**
 
 - Alert: `macd\_cross\_below\_signal`
-- Market date: `2026-09-08`
+- Market date: `2026-09-10`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
-### [MELI — MercadoLibre, Inc.](securities/security_4935c6e39e38273a1731)
+### [XMTR — Xometry, Inc.](securities/security_c2e6db30cb59254de418)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_below\_signal`
+- Market date: `2026-09-09`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### [RXRX — Recursion Pharmaceuticals, Inc.](securities/security_ed7d5b616a196969c815)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_below\_signal`
+- Market date: `2026-09-09`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### [PWR — Quanta Services, Inc.](securities/security_488a9d7f7a8573597724)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-09-09`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [PLTR — Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a)
 
 **Research alert — not a trade signal**
 
 - Alert: `sma\_50\_cross\_above\_200`
-- Market date: `2026-09-08`
+- Market date: `2026-09-09`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### [GEV — GE Vernova Inc.](securities/security_4b61970aa8f574446819)
+### [LAC — Lithium Americas Corp.](securities/security_fb87fac302a5446a1ced)
 
 **Research alert — not a trade signal**
 
 - Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-09-08`
+- Market date: `2026-09-09`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### [ENPH — Enphase Energy, Inc.](securities/security_f2b9760d847b2ba59324)
+### [DLO — DLocal Limited](securities/security_715bde20b6e1e1320c1a)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_below\_signal`
+- Market date: `2026-09-09`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### [COIN — Coinbase Global, Inc.](securities/security_37ddcbdaad296ad831f2)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_below\_signal`
+- Market date: `2026-09-09`
+- Research status: `succeeded`
+- Conclusion: Completed one bounded Coinbase full review using the current SEC-filed Q2 2026 Form 10-Q and fresh identity-matched market/FX state. A scenario-complete sum-of-parts assessment derives USD 28/USD 87/USD 191 bear/base/bull fair values, USD 90.10 probability-weighted fair value and -41.34% expected return versus the USD 153.60 mark. Deterministic state records Strong Sell / Avoid, complete research, allocation ineligibility and no strategy candidate. The security page, structured security and immutable assessment, retained source metadata and wiki log were updated, and exactly one dependent digital-finance idea refresh, Idea research for Digital finance and crypto rails on 2026-08-09, was enqueued. No signal, order, allocation or accounting state changed.
+
+### [AMAT — Applied Materials, Inc.](securities/security_0a56aa634d077fe5796f)
 
 **Research alert — not a trade signal**
 
 - Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-09-08`
+- Market date: `2026-09-09`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
-
-### [CRWD — CrowdStrike Holdings, Inc.](securities/security_8472507d7d320aa388a7)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_below\_signal`
-- Market date: `2026-09-08`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
-### [CRSR — Corsair Gaming, Inc.](securities/security_55c9ce2fdcd32dad6b8c)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_below\_signal`
-- Market date: `2026-09-08`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
 
 
 ## Recently expired or completed signals
 
+- **Cancelled:** [UBER — Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e) — [Uber bounded baseline allocation](strategies/strategy_e4ada1a4934691d1f7ee) · created `2026-09-10T19:00:25Z`
+- **Expired:** [NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) — [NVIDIA bounded baseline allocation](strategies/strategy_7cf884a5530d05afdb99) · created `2026-09-09T18:38:29Z`
 - **Cancelled:** [NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) — [NVIDIA bounded baseline allocation](strategies/strategy_7cf884a5530d05afdb99) · created `2026-09-05T10:28:36Z`
 - **Expired:** [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4) — [Prosus bounded baseline allocation](strategies/strategy_8caa208dfc702a2584a7) · created `2026-09-05T09:28:03Z`
 - **Cancelled:** [UBER — Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e) — [Uber bounded baseline allocation](strategies/strategy_e4ada1a4934691d1f7ee) · created `2026-09-04T18:14:30Z`

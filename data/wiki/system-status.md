@@ -4,16 +4,16 @@ type: system-status
 status: maintained
 tags:
   - system-status
-created: "2026-09-09"
-updated: "2026-09-09"
+created: "2026-09-10"
+updated: "2026-09-10"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_8b115dd5f9f91ae3d705"
-as_of: "2026-09-09T19:22:57Z"
+snapshot_id: "decision_3f0087c0f474f071d325"
+as_of: "2026-09-10T19:03:58Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-09-09T19:22:57Z`
+**As of:** `2026-09-10T19:03:58Z`
 **Investment data:** Portfolio state safe — research gaps remain
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -23,25 +23,25 @@ Publication validation confirms that this generated artifact is internally consi
 
 ## Current investment health
 
-- Assessments: 53/83
-- Fresh-evidence assessments: 49/83
+- Assessments: 52/83
+- Fresh-evidence assessments: 48/83
 - Relationship reviews: 20/83
 - Accepted relationships: 19
 - Market success/failure: 91/0
 - Candidate FX gaps: 0
-- Last successful daily run: 2026-09-06
+- Last successful daily run: 2026-09-10
 
 ## Queue and execution health
 
 - Ready or active strategies: 4
-- Active signals: 1
-- Pending orders: 1
+- Active signals: 2
+- Pending orders: 2
 - Queued remediation operations: 0
 - Operations are claimed and executed strictly sequentially.
 
 ## Sequential research backlog
 
-- Research backlog: 308
+- Research backlog: 345
 
 ## Publication health
 
