@@ -434,6 +434,10 @@ Important coupled checks include:
   limits, including minimum base upside, minimum upside/downside, and their cross-checks against
   risk limits;
 - operation count and model-cost limits;
+- `run_artifact_retention_days` (never below 7) versus how far back operators expect to inspect
+  prompts, transcripts, and per-run snapshots in the working tree;
+- `cycle_time_reserve_minutes` plus the largest profile timeout versus the 180-minute runtime job,
+  and `minimum_operation_seconds` as the smallest Hermes window worth starting;
 - fill expiry, price staleness, slippage, fees, and option quote freshness;
 - classifier command/model presence as a pair.
 
@@ -456,6 +460,20 @@ uv run papertrader integrity --strict
 uv run pytest tests/unit/test_config.py
 ```
 
+Every decision snapshot identity hashes `config.ini`, so a configuration change also changes
+the snapshot ID embedded in the empty-report golden file. Regenerate it deliberately, then
+review the diff (only `snapshot_id` values should move):
+
+```bash
+PAPERTRADER_UPDATE_REFERENCES=1 uv run pytest tests/unit/test_reports_telegram.py -k reference
+git diff tests/reference_outputs/
+```
+
+The same switch rewrites the accounting, allocation, and indicator golden files when their
+behaviour changes intentionally. Editing `schemas/csv_contracts.yaml` is stricter: its bytes are
+part of the published snapshot's source state, so it can only change together with a run that
+republishes `data/published/decision_snapshot.json`.
+
 ## Recover a failed run
 
 1. Read `data/runs/<run-id>/daily_run.json`, `agent_batch.json`, the operation's
@@ -469,6 +487,26 @@ uv run pytest tests/unit/test_config.py
    a dry run and then, if valid, as a normal run.
 6. Retry Pages or the latest Telegram report separately with the committed SHA. Older missed
    reports are not replayed, and delivery never rolls back the successful runtime commit.
+
+## Recover pruned run evidence
+
+`papertrader runs prune` runs after every `daily finalize` and removes bulky evidence from cycles
+older than `operations.run_artifact_retention_days`. Each pruned cycle keeps
+`data/runs/<run-id>/retention.json` listing every removed path with its SHA-256.
+
+1. Preview what a pass would remove with `uv run papertrader runs prune --dry-run`; the JSON lists
+   protected cycles (published, latest, unfinished) and the exact paths.
+2. To read a pruned file, find the commit that last contained it and print it without touching
+   the working tree:
+
+   ```bash
+   sha=$(git log -n 1 --format=%H -- data/runs/<run-id>/<operation-id>/hermes_run.json)
+   git show "${sha}^:data/runs/<run-id>/<operation-id>/hermes_run.json"
+   ```
+
+3. Verify the recovered bytes against the manifest with `sha256sum` before relying on them.
+4. Never restore pruned files into the working tree of a runtime checkout: integrity rejects a
+   manifest whose listed artifact is present again.
 
 ## Replay by run ID
 

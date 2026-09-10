@@ -6,7 +6,7 @@ import argparse
 import json
 import os
 import sys
-from collections.abc import Mapping, Sequence
+from collections.abc import Callable, Mapping, Sequence
 from dataclasses import asdict
 from datetime import date, datetime
 from decimal import Decimal
@@ -120,6 +120,7 @@ from papertrader.research import (
     upsert_security,
     upsert_strategy,
 )
+from papertrader.retention import prune_run_artifacts
 from papertrader.seekingalpha import (
     enqueue_seekingalpha_leads,
     schedule_seekingalpha_discovery,
@@ -130,6 +131,7 @@ from papertrader.telegram import (
     deliver_committed_report,
     deliver_podcast_audio,
     deliver_podcast_script,
+    notify_run_failure,
     record_podcast_audio_failure,
     record_podcast_script_failure,
 )
@@ -441,6 +443,14 @@ def _parser() -> argparse.ArgumentParser:
     logs = commands.add_parser("logs", help="regenerate human-readable log views")
     logs.add_subparsers(dest="logs_command", required=True).add_parser("tail")
 
+    runs = commands.add_parser("runs", help="apply bounded retention to immutable run evidence")
+    runs_commands = runs.add_subparsers(dest="runs_command", required=True)
+    runs_prune = runs_commands.add_parser(
+        "prune", help="remove Git-preserved run evidence older than the retention window"
+    )
+    runs_prune.add_argument("--retention-days", type=int, default=None)
+    runs_prune.add_argument("--dry-run", action="store_true")
+
     agent = commands.add_parser("agent", help="configure and run one credential-scrubbed agent")
     agent_commands = agent.add_subparsers(dest="agent_command", required=True)
     agent_configure = agent_commands.add_parser("configure")
@@ -471,6 +481,11 @@ def _parser() -> argparse.ArgumentParser:
     agent_checkpoint.add_argument("--daily-cycle-id", required=True)
     agent_checkpoint.add_argument("--operation-id")
     agent_checkpoint.add_argument("--operation-type", choices=sorted(OPERATION_SKILLS))
+    agent_checkpoint.add_argument(
+        "--job-deadline",
+        default=os.environ.get("PAPERTRADER_JOB_DEADLINE", ""),
+        help="UTC timestamp after which the enclosing job is killed; empty disables the guard",
+    )
     agent_harness = agent_commands.add_parser(
         "harness", help="run one operation through a local agentic harness"
     )
@@ -515,6 +530,13 @@ def _parser() -> argparse.ArgumentParser:
     telegram_script_failure.add_argument("--script-commit", required=True)
     telegram_script_failure.add_argument("--error", required=True)
     telegram_script_failure.add_argument("--language", default="en-US")
+    telegram_notify_failure = telegram_commands.add_parser(
+        "notify-failure", help="send a best-effort failure notice without touching state"
+    )
+    telegram_notify_failure.add_argument("--run-url", required=True)
+    telegram_notify_failure.add_argument("--failed-job", required=True)
+    telegram_notify_failure.add_argument("--daily-cycle-id", default="")
+    telegram_notify_failure.add_argument("--detail", default="")
 
     workflow = commands.add_parser("workflow", help="handoff validated runtime patches")
     workflow_commands = workflow.add_subparsers(dest="workflow_command", required=True)
@@ -1138,333 +1160,244 @@ def _run_research_command(
     return 0
 
 
-def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> int:
-    if arguments.command == "schema":
-        errors = validate_csv_files(root)
-        errors.extend(validate_json_schemas(root))
-        return _print_result("schema", errors)
-    if arguments.command == "integrity":
-        prepared_daily_cycle_id = arguments.prepared_daily_cycle_id
-        if arguments.prepared_github_run_id:
-            prepared_daily_cycle_id = prepared_daily_cycle_for_github_run(
-                root,
-                arguments.prepared_github_run_id,
-            )
-        require_current_publication = (
-            publication_requires_current_state(
-                root,
-                os.environ,
-                prepared_daily_cycle_id=prepared_daily_cycle_id,
-            )
-            if prepared_daily_cycle_id
-            else None
+def _dispatch_schema(arguments: argparse.Namespace, root: Path, settings: Settings) -> int:
+    errors = validate_csv_files(root)
+    errors.extend(validate_json_schemas(root))
+    return _print_result("schema", errors)
+
+
+def _dispatch_integrity(arguments: argparse.Namespace, root: Path, settings: Settings) -> int:
+    prepared_daily_cycle_id = arguments.prepared_daily_cycle_id
+    if arguments.prepared_github_run_id:
+        prepared_daily_cycle_id = prepared_daily_cycle_for_github_run(
+            root,
+            arguments.prepared_github_run_id,
         )
-        return _print_result(
-            "integrity",
-            validate_integrity(
-                root,
-                os.environ,
-                require_current_publication=require_current_publication,
-            ),
+    require_current_publication = (
+        publication_requires_current_state(
+            root,
+            os.environ,
+            prepared_daily_cycle_id=prepared_daily_cycle_id,
         )
-    if arguments.command == "wiki":
-        if arguments.wiki_command == "lint":
-            return _print_result("wiki", lint_wiki(settings.paths.wiki))
-        if arguments.wiki_command == "maintain":
-            outcome = maintain_wiki(
-                root,
-                settings,
-                run_id=arguments.run_id,
-                hermes_home=arguments.hermes_home.absolute(),
-                environment=os.environ,
-                dry_run=arguments.dry_run,
-            )
-            print(json.dumps(asdict(outcome), sort_keys=True))
-            return 0
-        if arguments.wiki_command == "refresh-homepage":
-            path = refresh_wiki_homepage(root)
-            print(path.relative_to(root).as_posix())
-            return 0
-        if arguments.wiki_command == "sync-technical-charts":
-            changed = sync_security_technical_charts(root)
-            print(json.dumps([path.relative_to(root).as_posix() for path in changed]))
-            return 0
-        candidate_paths = refresh_candidate_packet_display(root, settings)
-        print(json.dumps([path.relative_to(root).as_posix() for path in candidate_paths]))
+        if prepared_daily_cycle_id
+        else None
+    )
+    return _print_result(
+        "integrity",
+        validate_integrity(
+            root,
+            os.environ,
+            require_current_publication=require_current_publication,
+        ),
+    )
+
+
+def _dispatch_wiki(arguments: argparse.Namespace, root: Path, settings: Settings) -> int:
+    if arguments.wiki_command == "lint":
+        return _print_result("wiki", lint_wiki(settings.paths.wiki))
+    if arguments.wiki_command == "maintain":
+        outcome = maintain_wiki(
+            root,
+            settings,
+            run_id=arguments.run_id,
+            hermes_home=arguments.hermes_home.absolute(),
+            environment=os.environ,
+            dry_run=arguments.dry_run,
+        )
+        print(json.dumps(asdict(outcome), sort_keys=True))
         return 0
-    if arguments.command == "classifier":
-        packets = retry_unclassified_candidate_packets(root, settings)
+    if arguments.wiki_command == "refresh-homepage":
+        path = refresh_wiki_homepage(root)
+        print(path.relative_to(root).as_posix())
+        return 0
+    if arguments.wiki_command == "sync-technical-charts":
+        changed = sync_security_technical_charts(root)
+        print(json.dumps([path.relative_to(root).as_posix() for path in changed]))
+        return 0
+    candidate_paths = refresh_candidate_packet_display(root, settings)
+    print(json.dumps([path.relative_to(root).as_posix() for path in candidate_paths]))
+    return 0
+
+
+def _dispatch_classifier(arguments: argparse.Namespace, root: Path, settings: Settings) -> int:
+    packets = retry_unclassified_candidate_packets(root, settings)
+    print(
+        json.dumps(
+            [
+                {
+                    "path": packet.path.relative_to(root).as_posix(),
+                    "decision": packet.decision.decision if packet.decision else "blocked",
+                }
+                for packet in packets
+            ],
+            sort_keys=True,
+        )
+    )
+    return 0
+
+
+def _dispatch_youtube(arguments: argparse.Namespace, root: Path, settings: Settings) -> int:
+    if arguments.youtube_command == "deactivate-all":
+        youtube_result: Mapping[str, object] = {
+            "deactivated_channel_ids": deactivate_youtube_channels(root, settings),
+        }
+    elif arguments.youtube_command == "backfill":
+        youtube_result = backfill_youtube(
+            root,
+            settings,
+            run_id=arguments.run_id,
+            channel_id=arguments.channel_id,
+            count=arguments.count,
+        )
+    else:
+        youtube_result = scan_youtube(
+            root,
+            settings,
+            run_id=arguments.run_id,
+            dry_run=arguments.dry_run,
+        )
+    print(json.dumps(youtube_result, sort_keys=True))
+    return 0
+
+
+def _dispatch_seekingalpha(arguments: argparse.Namespace, root: Path, settings: Settings) -> int:
+    if arguments.seekingalpha_command == "schedule":
+        result = schedule_seekingalpha_discovery(
+            root,
+            settings,
+            run_id=arguments.run_id,
+            dry_run=arguments.dry_run,
+        )
+    else:
+        result = enqueue_seekingalpha_leads(
+            root,
+            settings,
+            _request_object(root, arguments.request),
+        )
+    print(json.dumps(result, sort_keys=True))
+    return 0
+
+
+def _dispatch_market(arguments: argparse.Namespace, root: Path, settings: Settings) -> int:
+    return _print_result("market", update_market_data(root, settings))
+
+
+def _dispatch_daily(arguments: argparse.Namespace, root: Path, settings: Settings) -> int:
+    if arguments.daily_command == "resolve-cycle":
         print(
             json.dumps(
-                [
-                    {
-                        "path": packet.path.relative_to(root).as_posix(),
-                        "decision": packet.decision.decision if packet.decision else "blocked",
-                    }
-                    for packet in packets
-                ],
+                {
+                    "daily_cycle_id": resolve_existing_daily_cycle(
+                        root,
+                        trigger=arguments.trigger,
+                        github_run_id=arguments.github_run_id,
+                        resume_cycle_id=arguments.resume_cycle_id,
+                    )
+                },
                 sort_keys=True,
             )
         )
         return 0
-    if arguments.command == "youtube":
-        if arguments.youtube_command == "deactivate-all":
-            youtube_result: Mapping[str, object] = {
-                "deactivated_channel_ids": deactivate_youtube_channels(root, settings),
-            }
-        elif arguments.youtube_command == "backfill":
-            youtube_result = backfill_youtube(
-                root,
-                settings,
-                run_id=arguments.run_id,
-                channel_id=arguments.channel_id,
-                count=arguments.count,
-            )
-        else:
-            youtube_result = scan_youtube(
-                root,
-                settings,
-                run_id=arguments.run_id,
-                dry_run=arguments.dry_run,
-            )
-        print(json.dumps(youtube_result, sort_keys=True))
+    if arguments.daily_command == "resume-or-create":
+        cycle = resume_or_create_daily_cycle(
+            root,
+            settings,
+            trigger=arguments.trigger,
+            source_sha=arguments.source_sha,
+            github_run_id=arguments.github_run_id,
+            workflow_attempt=arguments.workflow_attempt,
+            resume_cycle_id=arguments.resume_cycle_id,
+        )
+        print(json.dumps(cycle, sort_keys=True))
         return 0
-    if arguments.command == "seekingalpha":
-        if arguments.seekingalpha_command == "schedule":
-            result = schedule_seekingalpha_discovery(
-                root,
-                settings,
-                run_id=arguments.run_id,
-                dry_run=arguments.dry_run,
-            )
-        else:
-            result = enqueue_seekingalpha_leads(
-                root,
-                settings,
-                _request_object(root, arguments.request),
-            )
-        print(json.dumps(result, sort_keys=True))
-        return 0
-    if arguments.command == "market":
-        return _print_result("market", update_market_data(root, settings))
-    if arguments.command == "daily":
-        if arguments.daily_command == "resolve-cycle":
-            print(
-                json.dumps(
-                    {
-                        "daily_cycle_id": resolve_existing_daily_cycle(
-                            root,
-                            trigger=arguments.trigger,
-                            github_run_id=arguments.github_run_id,
-                            resume_cycle_id=arguments.resume_cycle_id,
-                        )
-                    },
-                    sort_keys=True,
-                )
-            )
-            return 0
-        if arguments.daily_command == "resume-or-create":
-            cycle = resume_or_create_daily_cycle(
-                root,
-                settings,
-                trigger=arguments.trigger,
-                source_sha=arguments.source_sha,
-                github_run_id=arguments.github_run_id,
-                workflow_attempt=arguments.workflow_attempt,
-                resume_cycle_id=arguments.resume_cycle_id,
-            )
-            print(json.dumps(cycle, sort_keys=True))
-            return 0
-        if arguments.daily_command == "prepare":
-            daily_preparation = prepare_daily_run(
-                root,
-                settings,
-                run_id=arguments.run_id,
-                trigger=arguments.trigger,
-                source_sha=arguments.source_sha,
-                retrieve_market=not arguments.offline,
-                classify_opportunities=not arguments.skip_classifier,
-            )
-            print(
-                json.dumps(
-                    {
-                        "run_id": daily_preparation.run_id,
-                        "started_at": daily_preparation.started_at.isoformat(),
-                        "errors": daily_preparation.errors,
-                        "queue_dispositions": daily_preparation.queue_dispositions,
-                    },
-                    sort_keys=True,
-                )
-            )
-            return 0
-        if arguments.daily_command == "record-checkpoint":
-            checkpoint = record_cycle_checkpoint(
-                root,
-                daily_cycle_id=arguments.daily_cycle_id,
-                kind=arguments.kind,
-                operation_id=arguments.operation_id,
-                operation_type=arguments.operation_type,
-                terminal_status=arguments.terminal_status,
-                profile=arguments.profile,
-            )
-            print(json.dumps(checkpoint, sort_keys=True))
-            return 0
-        if arguments.daily_command == "complete":
-            print(
-                json.dumps(
-                    complete_daily_cycle(root, daily_cycle_id=arguments.daily_cycle_id),
-                    sort_keys=True,
-                )
-            )
-            return 0
-        daily_finalization = finalize_daily_run(
+    if arguments.daily_command == "prepare":
+        daily_preparation = prepare_daily_run(
             root,
             settings,
             run_id=arguments.run_id,
-            github_report_url=arguments.github_report_url,
+            trigger=arguments.trigger,
+            source_sha=arguments.source_sha,
+            retrieve_market=not arguments.offline,
+            classify_opportunities=not arguments.skip_classifier,
         )
-        print(json.dumps(asdict(daily_finalization), sort_keys=True))
+        print(
+            json.dumps(
+                {
+                    "run_id": daily_preparation.run_id,
+                    "started_at": daily_preparation.started_at.isoformat(),
+                    "errors": daily_preparation.errors,
+                    "queue_dispositions": daily_preparation.queue_dispositions,
+                },
+                sort_keys=True,
+            )
+        )
         return 0
-    if arguments.command == "podcast":
-        if arguments.podcast_command == "translation":
-            if arguments.podcast_translation_command == "enqueue":
-                print(
-                    json.dumps(
-                        asdict(
-                            enqueue_podcast_translation(
-                                root,
-                                settings,
-                                source_commit=arguments.source_commit,
-                                source_script_path=arguments.source_script_path,
-                                source_locale=arguments.source_locale,
-                                target_locale=arguments.target_locale,
-                                target_voice=arguments.target_voice,
-                            )
-                        ),
-                        sort_keys=True,
-                    )
-                )
-                return 0
-            if arguments.podcast_translation_command == "validate-script":
-                print(
-                    json.dumps(
-                        asdict(
-                            validate_podcast_translation_script_file(
-                                root,
-                                settings,
-                                run_id=arguments.run_id,
-                                operation_id=arguments.operation_id,
-                            )
-                        ),
-                        sort_keys=True,
-                    )
-                )
-                return 0
-            if arguments.podcast_translation_command == "render-draft":
-                output_directory = os.environ.get("PAPERTRADER_PODCAST_OUTPUT_DIRECTORY", "")
-                if not output_directory:
-                    raise CanonicalValueError(
-                        "PAPERTRADER_PODCAST_OUTPUT_DIRECTORY is required for draft rendering"
-                    )
-                print(
-                    json.dumps(
-                        asdict(
-                            render_draft_podcast_translation(
-                                root,
-                                settings,
-                                run_id=arguments.run_id,
-                                operation_id=arguments.operation_id,
-                                output_directory=Path(output_directory),
-                                audit_run_id=os.environ.get("PAPERTRADER_AUDIT_RUN_ID", ""),
-                                audit_operation_id=os.environ.get(
-                                    "PAPERTRADER_AUDIT_OPERATION_ID", ""
-                                ),
-                                audit_operation_type=os.environ.get(
-                                    "PAPERTRADER_AUDIT_OPERATION_TYPE", ""
-                                ),
-                            )
-                        ),
-                        sort_keys=True,
-                    )
-                )
-                return 0
-            if arguments.podcast_translation_command == "seal-render":
-                print(
-                    json.dumps(
-                        asdict(
-                            seal_podcast_translation_render(
-                                root,
-                                settings,
-                                run_id=arguments.run_id,
-                                operation_id=arguments.operation_id,
-                                script_commit=arguments.script_commit,
-                                output_directory=arguments.output_directory,
-                            )
-                        ),
-                        sort_keys=True,
-                    )
-                )
-                return 0
-            print(
-                finalize_podcast_translation(
-                    root,
-                    settings,
-                    run_id=arguments.run_id,
-                    operation_id=arguments.operation_id,
-                )
+    if arguments.daily_command == "record-checkpoint":
+        checkpoint = record_cycle_checkpoint(
+            root,
+            daily_cycle_id=arguments.daily_cycle_id,
+            kind=arguments.kind,
+            operation_id=arguments.operation_id,
+            operation_type=arguments.operation_type,
+            terminal_status=arguments.terminal_status,
+            profile=arguments.profile,
+        )
+        print(json.dumps(checkpoint, sort_keys=True))
+        return 0
+    if arguments.daily_command == "complete":
+        print(
+            json.dumps(
+                complete_daily_cycle(root, daily_cycle_id=arguments.daily_cycle_id),
+                sort_keys=True,
             )
-            return 0
-        if arguments.podcast_command == "enqueue":
-            print(
-                json.dumps(
-                    asdict(enqueue_daily_podcast(root, settings, run_id=arguments.run_id)),
-                    sort_keys=True,
-                )
-            )
-            return 0
-        if arguments.podcast_command == "context":
-            if arguments.podcast_context_command == "build":
-                cutoff = parse_timestamp(arguments.cutoff)
-                if cutoff is None:
-                    raise CanonicalValueError("podcast cutoff must be a UTC timestamp")
-                print(
-                    build_podcast_context(
-                        root,
-                        settings,
-                        daily_cycle_id=arguments.daily_cycle_id,
-                        cutoff=cutoff,
-                    )
-                )
-                return 0
-            if arguments.podcast_context_command == "validate":
-                print(
-                    json.dumps(
-                        asdict(
-                            validate_podcast_context(
-                                root,
-                                daily_cycle_id=arguments.daily_cycle_id,
-                            )
-                        ),
-                        sort_keys=True,
-                    )
-                )
-                return 0
-        if arguments.podcast_command == "validate-script":
+        )
+        return 0
+    daily_finalization = finalize_daily_run(
+        root,
+        settings,
+        run_id=arguments.run_id,
+        github_report_url=arguments.github_report_url,
+    )
+    print(json.dumps(asdict(daily_finalization), sort_keys=True))
+    return 0
+
+
+def _dispatch_podcast(arguments: argparse.Namespace, root: Path, settings: Settings) -> int:
+    if arguments.podcast_command == "translation":
+        if arguments.podcast_translation_command == "enqueue":
             print(
                 json.dumps(
                     asdict(
-                        validate_podcast_script_file(
+                        enqueue_podcast_translation(
                             root,
                             settings,
-                            daily_cycle_id=arguments.daily_cycle_id,
-                            script_path=arguments.script_path,
+                            source_commit=arguments.source_commit,
+                            source_script_path=arguments.source_script_path,
+                            source_locale=arguments.source_locale,
+                            target_locale=arguments.target_locale,
+                            target_voice=arguments.target_voice,
                         )
                     ),
                     sort_keys=True,
                 )
             )
             return 0
-        if arguments.podcast_command == "render-draft":
+        if arguments.podcast_translation_command == "validate-script":
+            print(
+                json.dumps(
+                    asdict(
+                        validate_podcast_translation_script_file(
+                            root,
+                            settings,
+                            run_id=arguments.run_id,
+                            operation_id=arguments.operation_id,
+                        )
+                    ),
+                    sort_keys=True,
+                )
+            )
+            return 0
+        if arguments.podcast_translation_command == "render-draft":
             output_directory = os.environ.get("PAPERTRADER_PODCAST_OUTPUT_DIRECTORY", "")
             if not output_directory:
                 raise CanonicalValueError(
@@ -1473,11 +1406,11 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
             print(
                 json.dumps(
                     asdict(
-                        render_draft_podcast(
+                        render_draft_podcast_translation(
                             root,
                             settings,
-                            daily_cycle_id=arguments.daily_cycle_id,
-                            script_path=arguments.script_path,
+                            run_id=arguments.run_id,
+                            operation_id=arguments.operation_id,
                             output_directory=Path(output_directory),
                             audit_run_id=os.environ.get("PAPERTRADER_AUDIT_RUN_ID", ""),
                             audit_operation_id=os.environ.get("PAPERTRADER_AUDIT_OPERATION_ID", ""),
@@ -1490,16 +1423,16 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
                 )
             )
             return 0
-        if arguments.podcast_command == "seal-render":
+        if arguments.podcast_translation_command == "seal-render":
             print(
                 json.dumps(
                     asdict(
-                        seal_podcast_render(
+                        seal_podcast_translation_render(
                             root,
                             settings,
-                            daily_cycle_id=arguments.daily_cycle_id,
+                            run_id=arguments.run_id,
+                            operation_id=arguments.operation_id,
                             script_commit=arguments.script_commit,
-                            script_path=arguments.script_path,
                             output_directory=arguments.output_directory,
                         )
                     ),
@@ -1507,323 +1440,510 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
                 )
             )
             return 0
-        print(finalize_daily_podcast(root, run_id=arguments.run_id))
-        return 0
-    if arguments.command == "indicators":
-        previous, current, indicator_errors = update_indicators(root, settings)
-        if not indicator_errors and arguments.classify_opportunities:
-            bars = {security_id: read_price_cache(root, security_id) for security_id in current}
-            process_opportunity_transitions(
-                root,
-                settings,
-                previous,
-                current,
-                bars,
-            )
-        return _print_result("indicators", indicator_errors)
-    if arguments.command == "queue":
-        return _run_queue_command(arguments, root, settings)
-    if arguments.command == "research":
-        return _run_research_command(arguments, root, settings)
-    if arguments.command == "watchlist":
-        raw = _request_object(root, arguments.request)
-        print(json.dumps(import_watchlist(root, settings, raw), sort_keys=True))
-        return 0
-    if arguments.command == "agent":
-        if arguments.agent_command == "harness":
-            if arguments.harness_command == "start":
-                started = start_local_harness_operation(
-                    root,
-                    settings,
-                    run_id=arguments.run_id,
-                    operation_id=arguments.operation_id,
-                    operation_type=arguments.operation_type,
-                    estimated_cost=required_decimal(
-                        arguments.estimated_cost, label="estimated_cost"
-                    ),
-                )
-                print("null" if started is None else json.dumps(asdict(started), sort_keys=True))
-                return 0
-            finished = finish_local_harness_operation(
-                root,
-                run_id=arguments.run_id,
-                operation_id=arguments.operation_id,
-            )
-            if (root / "data" / "runs" / arguments.run_id / "daily_run.json").is_file():
-                record_local_agent_outcome(
-                    root,
-                    settings,
-                    run_id=arguments.run_id,
-                    operation_id=arguments.operation_id,
-                    status=finished.status,
-                )
-            print(json.dumps(asdict(finished), sort_keys=True))
-            return 0
-        home = arguments.hermes_home.absolute()
-        if arguments.agent_command == "configure":
-            route = route_profile(arguments.operation_type, RoutingContext())
-            path = configure_hermes_home(
-                root,
-                settings,
-                home,
-                replace_unmanaged=arguments.replace_unmanaged,
-                execution_profile=settings.hermes.profile(route.profile),
-            )
-            print(path)
-            return 0
-        if arguments.agent_command == "preflight":
-            report = preflight_hermes(
-                root,
-                settings,
-                home,
-                operation_type=arguments.operation_type,
-                environment=os.environ,
-            )
-            document = asdict(report)
-            document["weighted_cost"] = decimal_text(report.weighted_cost)
-            print(json.dumps(document, sort_keys=True))
-            return 0
-        if arguments.agent_command == "run-batch":
-            batch_result = execute_agent_batch(
+        print(
+            finalize_podcast_translation(
                 root,
                 settings,
                 run_id=arguments.run_id,
-                hermes_home=home,
-                environment=os.environ,
-                maximum_operations=arguments.max_operations,
                 operation_id=arguments.operation_id,
-                operation_type=arguments.operation_type,
             )
+        )
+        return 0
+    if arguments.podcast_command == "enqueue":
+        print(
+            json.dumps(
+                asdict(enqueue_daily_podcast(root, settings, run_id=arguments.run_id)),
+                sort_keys=True,
+            )
+        )
+        return 0
+    if arguments.podcast_command == "context":
+        if arguments.podcast_context_command == "build":
+            cutoff = parse_timestamp(arguments.cutoff)
+            if cutoff is None:
+                raise CanonicalValueError("podcast cutoff must be a UTC timestamp")
+            print(
+                build_podcast_context(
+                    root,
+                    settings,
+                    daily_cycle_id=arguments.daily_cycle_id,
+                    cutoff=cutoff,
+                )
+            )
+            return 0
+        if arguments.podcast_context_command == "validate":
             print(
                 json.dumps(
-                    {
-                        "operation_count": batch_result.operation_count,
-                        "estimated_model_budget_used": str(batch_result.estimated_cost_used),
-                        "outcomes": [asdict(outcome) for outcome in batch_result.outcomes],
-                    },
+                    asdict(
+                        validate_podcast_context(
+                            root,
+                            daily_cycle_id=arguments.daily_cycle_id,
+                        )
+                    ),
                     sort_keys=True,
                 )
             )
             return 0
-        if arguments.agent_command == "run-checkpoint":
-            checkpoint_outcome = run_cycle_operation(
+    if arguments.podcast_command == "validate-script":
+        print(
+            json.dumps(
+                asdict(
+                    validate_podcast_script_file(
+                        root,
+                        settings,
+                        daily_cycle_id=arguments.daily_cycle_id,
+                        script_path=arguments.script_path,
+                    )
+                ),
+                sort_keys=True,
+            )
+        )
+        return 0
+    if arguments.podcast_command == "render-draft":
+        output_directory = os.environ.get("PAPERTRADER_PODCAST_OUTPUT_DIRECTORY", "")
+        if not output_directory:
+            raise CanonicalValueError(
+                "PAPERTRADER_PODCAST_OUTPUT_DIRECTORY is required for draft rendering"
+            )
+        print(
+            json.dumps(
+                asdict(
+                    render_draft_podcast(
+                        root,
+                        settings,
+                        daily_cycle_id=arguments.daily_cycle_id,
+                        script_path=arguments.script_path,
+                        output_directory=Path(output_directory),
+                        audit_run_id=os.environ.get("PAPERTRADER_AUDIT_RUN_ID", ""),
+                        audit_operation_id=os.environ.get("PAPERTRADER_AUDIT_OPERATION_ID", ""),
+                        audit_operation_type=os.environ.get("PAPERTRADER_AUDIT_OPERATION_TYPE", ""),
+                    )
+                ),
+                sort_keys=True,
+            )
+        )
+        return 0
+    if arguments.podcast_command == "seal-render":
+        print(
+            json.dumps(
+                asdict(
+                    seal_podcast_render(
+                        root,
+                        settings,
+                        daily_cycle_id=arguments.daily_cycle_id,
+                        script_commit=arguments.script_commit,
+                        script_path=arguments.script_path,
+                        output_directory=arguments.output_directory,
+                    )
+                ),
+                sort_keys=True,
+            )
+        )
+        return 0
+    print(finalize_daily_podcast(root, run_id=arguments.run_id))
+    return 0
+
+
+def _dispatch_indicators(arguments: argparse.Namespace, root: Path, settings: Settings) -> int:
+    previous, current, indicator_errors = update_indicators(root, settings)
+    if not indicator_errors and arguments.classify_opportunities:
+        bars = {security_id: read_price_cache(root, security_id) for security_id in current}
+        process_opportunity_transitions(
+            root,
+            settings,
+            previous,
+            current,
+            bars,
+        )
+    return _print_result("indicators", indicator_errors)
+
+
+def _dispatch_queue(arguments: argparse.Namespace, root: Path, settings: Settings) -> int:
+    return _run_queue_command(arguments, root, settings)
+
+
+def _dispatch_research(arguments: argparse.Namespace, root: Path, settings: Settings) -> int:
+    return _run_research_command(arguments, root, settings)
+
+
+def _dispatch_watchlist(arguments: argparse.Namespace, root: Path, settings: Settings) -> int:
+    raw = _request_object(root, arguments.request)
+    print(json.dumps(import_watchlist(root, settings, raw), sort_keys=True))
+    return 0
+
+
+def _dispatch_agent(arguments: argparse.Namespace, root: Path, settings: Settings) -> int:
+    if arguments.agent_command == "harness":
+        if arguments.harness_command == "start":
+            started = start_local_harness_operation(
                 root,
                 settings,
-                daily_cycle_id=arguments.daily_cycle_id,
-                hermes_home=home,
-                environment=os.environ,
+                run_id=arguments.run_id,
                 operation_id=arguments.operation_id,
                 operation_type=arguments.operation_type,
+                estimated_cost=required_decimal(arguments.estimated_cost, label="estimated_cost"),
             )
-            print(
-                "null"
-                if checkpoint_outcome is None
-                else json.dumps(asdict(checkpoint_outcome), sort_keys=True, default=str)
-            )
+            print("null" if started is None else json.dumps(asdict(started), sort_keys=True))
             return 0
-        disposition = run_one_operation(
+        finished = finish_local_harness_operation(
+            root,
+            run_id=arguments.run_id,
+            operation_id=arguments.operation_id,
+        )
+        if (root / "data" / "runs" / arguments.run_id / "daily_run.json").is_file():
+            record_local_agent_outcome(
+                root,
+                settings,
+                run_id=arguments.run_id,
+                operation_id=arguments.operation_id,
+                status=finished.status,
+            )
+        print(json.dumps(asdict(finished), sort_keys=True))
+        return 0
+    home = arguments.hermes_home.absolute()
+    if arguments.agent_command == "configure":
+        route = route_profile(arguments.operation_type, RoutingContext())
+        path = configure_hermes_home(
+            root,
+            settings,
+            home,
+            replace_unmanaged=arguments.replace_unmanaged,
+            execution_profile=settings.hermes.profile(route.profile),
+        )
+        print(path)
+        return 0
+    if arguments.agent_command == "preflight":
+        report = preflight_hermes(
+            root,
+            settings,
+            home,
+            operation_type=arguments.operation_type,
+            environment=os.environ,
+        )
+        document = asdict(report)
+        document["weighted_cost"] = decimal_text(report.weighted_cost)
+        print(json.dumps(document, sort_keys=True))
+        return 0
+    if arguments.agent_command == "run-batch":
+        batch_result = execute_agent_batch(
             root,
             settings,
             run_id=arguments.run_id,
             hermes_home=home,
             environment=os.environ,
+            maximum_operations=arguments.max_operations,
             operation_id=arguments.operation_id,
             operation_type=arguments.operation_type,
-            estimated_cost=required_decimal(arguments.estimated_cost, label="estimated_cost"),
         )
-        print(disposition)
+        print(
+            json.dumps(
+                {
+                    "operation_count": batch_result.operation_count,
+                    "estimated_model_budget_used": str(batch_result.estimated_cost_used),
+                    "outcomes": [asdict(outcome) for outcome in batch_result.outcomes],
+                },
+                sort_keys=True,
+            )
+        )
         return 0
-    if arguments.command == "telegram":
-        if arguments.telegram_command == "record-script-failure":
-            failure_result = record_podcast_script_failure(
-                root,
-                daily_cycle_id=arguments.daily_cycle_id,
-                script_commit=arguments.script_commit,
-                error=arguments.error,
-                language=arguments.language,
-            )
-            print(json.dumps(asdict(failure_result), sort_keys=True))
-            return 0
-        if arguments.telegram_command == "record-audio-failure":
-            audio_failure_result = record_podcast_audio_failure(
-                root,
-                daily_cycle_id=arguments.daily_cycle_id,
-                script_commit=arguments.script_commit,
-                error=arguments.error,
-                language=arguments.language,
-            )
-            print(json.dumps(asdict(audio_failure_result), sort_keys=True))
-            return 0
-        if arguments.telegram_command == "deliver-audio":
-            audio_delivery_result = deliver_podcast_audio(
-                root,
-                settings,
-                manifest_path=arguments.manifest_path,
-                audio_path=arguments.audio_path,
-                repository_url=arguments.repository_url,
-                token=os.environ.get("TELEGRAM_BOT_TOKEN", ""),
-                chat_id=os.environ.get("TELEGRAM_CHAT_ID", ""),
-            )
-            print(json.dumps(asdict(audio_delivery_result), sort_keys=True))
-            return 0
-        if arguments.telegram_command == "deliver-podcast-script":
-            script_delivery_result = deliver_podcast_script(
-                root,
-                settings,
-                commit_sha=arguments.commit_sha,
-                script_path=arguments.script_path,
-                daily_cycle_id=arguments.daily_cycle_id,
-                repository_url=arguments.repository_url,
-                token=os.environ.get("TELEGRAM_BOT_TOKEN", ""),
-                chat_id=os.environ.get("TELEGRAM_CHAT_ID", ""),
-                language=arguments.language,
-            )
-            print(json.dumps(asdict(script_delivery_result), sort_keys=True))
-            return 0
-        report_path = (
-            committed_run_report_path(
-                root,
-                commit_sha=arguments.commit_sha,
-                run_id=arguments.run_id,
-            )
-            if arguments.telegram_command == "deliver-run"
-            else arguments.report_path
-        )
-        report_delivery_result = deliver_committed_report(
+    if arguments.agent_command == "run-checkpoint":
+        checkpoint_outcome = run_cycle_operation(
             root,
             settings,
-            commit_sha=arguments.commit_sha,
-            report_path=report_path,
-            repository_url=arguments.repository_url,
-            run_id=arguments.run_id,
+            daily_cycle_id=arguments.daily_cycle_id,
+            hermes_home=home,
+            environment=os.environ,
+            operation_id=arguments.operation_id,
+            operation_type=arguments.operation_type,
+            job_deadline=parse_timestamp(arguments.job_deadline, allow_empty=True),
+        )
+        print(
+            "null"
+            if checkpoint_outcome is None
+            else json.dumps(asdict(checkpoint_outcome), sort_keys=True, default=str)
+        )
+        return 0
+    disposition = run_one_operation(
+        root,
+        settings,
+        run_id=arguments.run_id,
+        hermes_home=home,
+        environment=os.environ,
+        operation_id=arguments.operation_id,
+        operation_type=arguments.operation_type,
+        estimated_cost=required_decimal(arguments.estimated_cost, label="estimated_cost"),
+    )
+    print(disposition)
+    return 0
+
+
+def _dispatch_telegram(arguments: argparse.Namespace, root: Path, settings: Settings) -> int:
+    if arguments.telegram_command == "notify-failure":
+        notification_result = notify_run_failure(
+            settings,
+            daily_cycle_id=arguments.daily_cycle_id,
+            run_url=arguments.run_url,
+            failed_job=arguments.failed_job,
+            detail=arguments.detail,
             token=os.environ.get("TELEGRAM_BOT_TOKEN", ""),
             chat_id=os.environ.get("TELEGRAM_CHAT_ID", ""),
         )
-        print(json.dumps(asdict(report_delivery_result), sort_keys=True))
+        print(json.dumps(asdict(notification_result), sort_keys=True))
         return 0
-    if arguments.command == "workflow":
-        if arguments.workflow_command == "bundle":
-            if arguments.bundle_command == "create":
-                bundle = create_runtime_bundle(
-                    root,
-                    arguments.output_directory,
-                    run_id=arguments.run_id,
-                    base_sha=arguments.base_sha,
-                )
-            else:
-                bundle = apply_runtime_bundle(root, arguments.bundle_directory)
-            print(
-                json.dumps(
-                    {
-                        "base_sha": bundle.base_sha,
-                        "run_id": bundle.run_id,
-                        "patch_sha256": bundle.patch_sha256,
-                        "changed": bundle.changed,
-                        "changed_paths": bundle.changed_paths,
-                        "report_path": bundle.report_path,
-                    },
-                    sort_keys=True,
-                )
-            )
-        elif arguments.workflow_command == "oauth-artifact":
-            path = apply_oauth_ciphertext_artifact(
-                root,
-                arguments.artifact_directory,
-                expected_sha256=arguments.expected_sha256,
-            )
-            print(path.relative_to(root).as_posix())
-        else:
-            checkpoint_result = create_checkpoint(
-                root,
-                settings,
-                daily_cycle_id=arguments.daily_cycle_id,
-                checkpoint_index=arguments.checkpoint_index,
-                kind=arguments.kind,
-                operation_id=arguments.operation_id,
-                operation_type=arguments.operation_type,
-                terminal_status=arguments.terminal_status,
-                profile=arguments.profile,
-                target_branch=arguments.target_branch,
-                remote=arguments.remote,
-                dry_run=arguments.dry_run,
-                github_token=os.environ.get("GITHUB_TOKEN", ""),
-            )
-            print(json.dumps(asdict(checkpoint_result), sort_keys=True))
-        return 0
-    if arguments.command == "portfolio" and arguments.portfolio_command == "reconcile":
-        return _print_result("portfolio", reconcile_portfolio(root))
-    if arguments.command == "performance":
-        row = update_performance(root, settings, run_id=arguments.run_id)
-        print(json.dumps(row, sort_keys=True))
-        return 0
-    if arguments.command == "allocation":
-        if arguments.allocation_command == "plan":
-            plan_result = plan_allocation(root, settings, run_id=arguments.run_id)
-            print(json.dumps(asdict(plan_result), sort_keys=True))
-            return 0
-        elif arguments.allocation_command == "maintain":
-            maintenance_result = maintain_allocation_research(
-                root,
-                settings,
-                run_id=arguments.run_id,
-                backfill=arguments.backfill,
-            )
-            print(json.dumps(asdict(maintenance_result), sort_keys=True))
-            return 0
-        elif arguments.allocation_command == "calibrate":
-            path = write_calibration_report(root, settings, run_id=arguments.run_id)
-            print(path.relative_to(root).as_posix())
-            return 0
-        readiness = allocation_readiness(root, settings)
-        print(json.dumps(asdict(readiness), sort_keys=True))
-        return int(arguments.strict and not readiness.ready)
-    if arguments.command == "advice":
-        if arguments.advice_command == "refresh":
-            snapshot = refresh_advice(
-                root,
-                settings,
-                run_id=arguments.run_id,
-                as_of=parse_timestamp(arguments.as_of) if arguments.as_of else None,
-            )
-            print(json.dumps(asdict(snapshot), sort_keys=True))
-            return 0
-        return _print_result(
-            "advice",
-            validate_advice(
-                root,
-                strict=arguments.strict,
-                require_current_state=publication_requires_current_state(root, os.environ),
-            ),
+    if arguments.telegram_command == "record-script-failure":
+        failure_result = record_podcast_script_failure(
+            root,
+            daily_cycle_id=arguments.daily_cycle_id,
+            script_commit=arguments.script_commit,
+            error=arguments.error,
+            language=arguments.language,
         )
-    if arguments.command == "logs":
-        regenerate_log_tail(root)
-        return _print_result("logs", [])
-    if arguments.command in {
-        "account",
-        "signal",
-        "order",
-        "fills",
-        "portfolio",
-        "corporate-actions",
-        "issue",
-        "report",
-    }:
-        return _run_structured_command(arguments, root, settings)
-    if arguments.command == "runtime-whitelist":
-        paths = tuple(arguments.paths)
-        if arguments.staged or arguments.base_ref:
-            if paths:
-                raise ValueError("explicit paths cannot be combined with Git diff options")
-            paths = changed_paths_from_git(
+        print(json.dumps(asdict(failure_result), sort_keys=True))
+        return 0
+    if arguments.telegram_command == "record-audio-failure":
+        audio_failure_result = record_podcast_audio_failure(
+            root,
+            daily_cycle_id=arguments.daily_cycle_id,
+            script_commit=arguments.script_commit,
+            error=arguments.error,
+            language=arguments.language,
+        )
+        print(json.dumps(asdict(audio_failure_result), sort_keys=True))
+        return 0
+    if arguments.telegram_command == "deliver-audio":
+        audio_delivery_result = deliver_podcast_audio(
+            root,
+            settings,
+            manifest_path=arguments.manifest_path,
+            audio_path=arguments.audio_path,
+            repository_url=arguments.repository_url,
+            token=os.environ.get("TELEGRAM_BOT_TOKEN", ""),
+            chat_id=os.environ.get("TELEGRAM_CHAT_ID", ""),
+        )
+        print(json.dumps(asdict(audio_delivery_result), sort_keys=True))
+        return 0
+    if arguments.telegram_command == "deliver-podcast-script":
+        script_delivery_result = deliver_podcast_script(
+            root,
+            settings,
+            commit_sha=arguments.commit_sha,
+            script_path=arguments.script_path,
+            daily_cycle_id=arguments.daily_cycle_id,
+            repository_url=arguments.repository_url,
+            token=os.environ.get("TELEGRAM_BOT_TOKEN", ""),
+            chat_id=os.environ.get("TELEGRAM_CHAT_ID", ""),
+            language=arguments.language,
+        )
+        print(json.dumps(asdict(script_delivery_result), sort_keys=True))
+        return 0
+    report_path = (
+        committed_run_report_path(
+            root,
+            commit_sha=arguments.commit_sha,
+            run_id=arguments.run_id,
+        )
+        if arguments.telegram_command == "deliver-run"
+        else arguments.report_path
+    )
+    report_delivery_result = deliver_committed_report(
+        root,
+        settings,
+        commit_sha=arguments.commit_sha,
+        report_path=report_path,
+        repository_url=arguments.repository_url,
+        run_id=arguments.run_id,
+        token=os.environ.get("TELEGRAM_BOT_TOKEN", ""),
+        chat_id=os.environ.get("TELEGRAM_CHAT_ID", ""),
+    )
+    print(json.dumps(asdict(report_delivery_result), sort_keys=True))
+    return 0
+
+
+def _dispatch_workflow(arguments: argparse.Namespace, root: Path, settings: Settings) -> int:
+    if arguments.workflow_command == "bundle":
+        if arguments.bundle_command == "create":
+            bundle = create_runtime_bundle(
                 root,
-                staged=arguments.staged,
-                base_ref=arguments.base_ref,
-                head_ref=arguments.head_ref,
+                arguments.output_directory,
+                run_id=arguments.run_id,
+                base_sha=arguments.base_sha,
             )
-        if not paths:
-            raise ValueError("provide paths, --staged, or --base-ref")
-        return _print_result("runtime-whitelist", validate_runtime_paths(paths))
-    return _print_result("command", ["unhandled command"])
+        else:
+            bundle = apply_runtime_bundle(root, arguments.bundle_directory)
+        print(
+            json.dumps(
+                {
+                    "base_sha": bundle.base_sha,
+                    "run_id": bundle.run_id,
+                    "patch_sha256": bundle.patch_sha256,
+                    "changed": bundle.changed,
+                    "changed_paths": bundle.changed_paths,
+                    "report_path": bundle.report_path,
+                },
+                sort_keys=True,
+            )
+        )
+    elif arguments.workflow_command == "oauth-artifact":
+        path = apply_oauth_ciphertext_artifact(
+            root,
+            arguments.artifact_directory,
+            expected_sha256=arguments.expected_sha256,
+        )
+        print(path.relative_to(root).as_posix())
+    else:
+        checkpoint_result = create_checkpoint(
+            root,
+            settings,
+            daily_cycle_id=arguments.daily_cycle_id,
+            checkpoint_index=arguments.checkpoint_index,
+            kind=arguments.kind,
+            operation_id=arguments.operation_id,
+            operation_type=arguments.operation_type,
+            terminal_status=arguments.terminal_status,
+            profile=arguments.profile,
+            target_branch=arguments.target_branch,
+            remote=arguments.remote,
+            dry_run=arguments.dry_run,
+            github_token=os.environ.get("GITHUB_TOKEN", ""),
+        )
+        print(json.dumps(asdict(checkpoint_result), sort_keys=True))
+    return 0
+
+
+def _dispatch_portfolio(arguments: argparse.Namespace, root: Path, settings: Settings) -> int:
+    if arguments.portfolio_command == "reconcile":
+        return _print_result("portfolio", reconcile_portfolio(root))
+    return _dispatch_structured(arguments, root, settings)
+
+
+def _dispatch_performance(arguments: argparse.Namespace, root: Path, settings: Settings) -> int:
+    row = update_performance(root, settings, run_id=arguments.run_id)
+    print(json.dumps(row, sort_keys=True))
+    return 0
+
+
+def _dispatch_allocation(arguments: argparse.Namespace, root: Path, settings: Settings) -> int:
+    if arguments.allocation_command == "plan":
+        plan_result = plan_allocation(root, settings, run_id=arguments.run_id)
+        print(json.dumps(asdict(plan_result), sort_keys=True))
+        return 0
+    elif arguments.allocation_command == "maintain":
+        maintenance_result = maintain_allocation_research(
+            root,
+            settings,
+            run_id=arguments.run_id,
+            backfill=arguments.backfill,
+        )
+        print(json.dumps(asdict(maintenance_result), sort_keys=True))
+        return 0
+    elif arguments.allocation_command == "calibrate":
+        path = write_calibration_report(root, settings, run_id=arguments.run_id)
+        print(path.relative_to(root).as_posix())
+        return 0
+    readiness = allocation_readiness(root, settings)
+    print(json.dumps(asdict(readiness), sort_keys=True))
+    return int(arguments.strict and not readiness.ready)
+
+
+def _dispatch_advice(arguments: argparse.Namespace, root: Path, settings: Settings) -> int:
+    if arguments.advice_command == "refresh":
+        snapshot = refresh_advice(
+            root,
+            settings,
+            run_id=arguments.run_id,
+            as_of=parse_timestamp(arguments.as_of) if arguments.as_of else None,
+        )
+        print(json.dumps(asdict(snapshot), sort_keys=True))
+        return 0
+    return _print_result(
+        "advice",
+        validate_advice(
+            root,
+            strict=arguments.strict,
+            require_current_state=publication_requires_current_state(root, os.environ),
+        ),
+    )
+
+
+def _dispatch_logs(arguments: argparse.Namespace, root: Path, settings: Settings) -> int:
+    regenerate_log_tail(root)
+    return _print_result("logs", [])
+
+
+def _dispatch_runs(arguments: argparse.Namespace, root: Path, settings: Settings) -> int:
+    retention_result = prune_run_artifacts(
+        root,
+        settings,
+        retention_days=arguments.retention_days,
+        dry_run=arguments.dry_run,
+    )
+    print(json.dumps(asdict(retention_result), sort_keys=True))
+    return 0
+
+
+def _dispatch_structured(arguments: argparse.Namespace, root: Path, settings: Settings) -> int:
+    return _run_structured_command(arguments, root, settings)
+
+
+def _dispatch_runtime_whitelist(
+    arguments: argparse.Namespace, root: Path, settings: Settings
+) -> int:
+    paths = tuple(arguments.paths)
+    if arguments.staged or arguments.base_ref:
+        if paths:
+            raise ValueError("explicit paths cannot be combined with Git diff options")
+        paths = changed_paths_from_git(
+            root,
+            staged=arguments.staged,
+            base_ref=arguments.base_ref,
+            head_ref=arguments.head_ref,
+        )
+    if not paths:
+        raise ValueError("provide paths, --staged, or --base-ref")
+    return _print_result("runtime-whitelist", validate_runtime_paths(paths))
+
+
+_COMMAND_HANDLERS: Mapping[str, Callable[[argparse.Namespace, Path, Settings], int]] = {
+    "account": _dispatch_structured,
+    "advice": _dispatch_advice,
+    "agent": _dispatch_agent,
+    "allocation": _dispatch_allocation,
+    "classifier": _dispatch_classifier,
+    "corporate-actions": _dispatch_structured,
+    "daily": _dispatch_daily,
+    "fills": _dispatch_structured,
+    "indicators": _dispatch_indicators,
+    "integrity": _dispatch_integrity,
+    "issue": _dispatch_structured,
+    "logs": _dispatch_logs,
+    "market": _dispatch_market,
+    "order": _dispatch_structured,
+    "performance": _dispatch_performance,
+    "podcast": _dispatch_podcast,
+    "portfolio": _dispatch_portfolio,
+    "queue": _dispatch_queue,
+    "report": _dispatch_structured,
+    "research": _dispatch_research,
+    "runs": _dispatch_runs,
+    "runtime-whitelist": _dispatch_runtime_whitelist,
+    "schema": _dispatch_schema,
+    "seekingalpha": _dispatch_seekingalpha,
+    "signal": _dispatch_structured,
+    "telegram": _dispatch_telegram,
+    "watchlist": _dispatch_watchlist,
+    "wiki": _dispatch_wiki,
+    "workflow": _dispatch_workflow,
+    "youtube": _dispatch_youtube,
+}
+
+
+def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> int:
+    """Route one parsed command to its handler; every handler owns a complete exit path."""
+
+    handler = _COMMAND_HANDLERS.get(arguments.command)
+    if handler is None:
+        return _print_result("command", ["unhandled command"])
+    return handler(arguments, root, settings)
 
 
 def main(argv: Sequence[str] | None = None) -> int:

@@ -12,6 +12,7 @@ from pathlib import Path
 
 import exchange_calendars as xcals
 import pandas as pd
+import pytest
 
 from papertrader.agent_runner import configure_hermes_home
 from papertrader.atomic_io import atomic_write_json, atomic_write_text
@@ -908,6 +909,7 @@ def _initialize_seed_commit(repository: Path) -> str:
     return _git(repository, "rev-parse", "HEAD")
 
 
+@pytest.mark.slow
 def test_clean_checkout_research_to_publication_cycle_is_replay_safe(
     sandbox_repository: Path,
     sandbox_settings: Settings,

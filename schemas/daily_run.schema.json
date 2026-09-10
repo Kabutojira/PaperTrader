@@ -122,7 +122,9 @@
           "additionalProperties": { "type": "string", "minLength": 1 }
         },
         "escalation_source": { "type": "string" },
-        "checkpoint_index": { "type": "integer", "minimum": 0 }
+        "checkpoint_index": { "type": "integer", "minimum": 0 },
+        "duration_seconds": { "type": "integer", "minimum": 0 },
+        "timed_out": { "type": "boolean" }
       }
     },
     "checkpoint": {
@@ -190,6 +192,8 @@
             "remaining_operations": { "type": "integer", "minimum": 0 },
             "weighted_model_budget": { "$ref": "#/$defs/decimal" },
             "weighted_model_budget_used": { "$ref": "#/$defs/decimal" },
+            "operations_timed_out": { "type": "integer", "minimum": 0 },
+            "operation_seconds_used": { "type": "integer", "minimum": 0 },
             "profile_limits": {
               "type": "object",
               "required": ["scout", "analyst", "deep"],

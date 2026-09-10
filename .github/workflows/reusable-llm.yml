@@ -171,6 +171,7 @@ jobs:
           workspace="$(pwd -P)"
           git config --system --add safe.directory "$workspace"
           echo "WIKI_PATH=${workspace}/data/wiki" >> "$GITHUB_ENV"
+          echo "PAPERTRADER_JOB_DEADLINE=$(python3 -c 'import datetime; print((datetime.datetime.now(datetime.UTC) + datetime.timedelta(minutes=180)).strftime("%Y-%m-%dT%H:%M:%SZ"))')" >> "$GITHUB_ENV"
           git config user.name "papertrader-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - name: Install pinned project runner
@@ -201,7 +202,7 @@ jobs:
           uv run ruff check .
           uv run ruff format --check .
           uv run mypy src
-          uv run pytest
+          uv run pytest -m "not slow"
           uv run papertrader schema validate --strict
           integrity_arguments=(integrity --strict)
           if [ -n "$RESOLVED_CYCLE_ID" ]; then
@@ -308,6 +309,7 @@ jobs:
           arguments=(workflow checkpoint --daily-cycle-id "$CYCLE_ID" --checkpoint-index "$CHECKPOINT_INDEX" --kind preparation --target-branch "$TARGET_BRANCH")
           if [ "$DRY_RUN" = "true" ]; then arguments+=(--dry-run); fi
           uv run papertrader "${arguments[@]}"
+      # BEGIN generated checkpoint steps (scripts/render_checkpoint_steps.py; do not edit by hand)
       - name: Routed research checkpoint 01
         id: operation_01
         if: ${{ steps.cycle.outputs.needs_finalization == 'true' && fromJSON(inputs.max_operations) >= 1 }}
@@ -568,6 +570,7 @@ jobs:
           dry_run: ${{ inputs.dry_run }}
           github_token: ${{ !inputs.dry_run && github.token || '' }}
           openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
+      # END generated checkpoint steps
       - name: Finalize accounting, allocation, publication, and report
         id: finalization
         if: ${{ steps.cycle.outputs.needs_finalization == 'true' }}
@@ -580,6 +583,7 @@ jobs:
           report_name="daily-report_$(date -u +%Y%m%d).md"
           report_url="https://github.com/${GITHUB_REPOSITORY}/blob/${TARGET_BRANCH}/data/wiki/daily-reports/${report_name}"
           uv run papertrader daily finalize --run-id "$CYCLE_ID" --github-report-url "$report_url"
+          uv run papertrader runs prune
           if [ "$GENERATE_PODCAST" != "true" ] || [ "$DRY_RUN" = "true" ]; then
             uv run papertrader daily complete --daily-cycle-id "$CYCLE_ID"
           fi
@@ -590,7 +594,7 @@ jobs:
           uv run ruff check .
           uv run ruff format --check .
           uv run mypy src
-          uv run pytest
+          uv run pytest -m "not slow"
           uv run papertrader schema validate --strict
           uv run papertrader integrity --strict
           uv run papertrader advice validate --strict
@@ -830,6 +834,17 @@ jobs:
             echo "podcast_script_delivery_status=skipped" >> "$GITHUB_OUTPUT"
             echo "podcast_audio_delivery_status=skipped" >> "$GITHUB_OUTPUT"
           fi
+      - name: Notify Telegram about a failed or cancelled runtime job
+        if: ${{ (failure() || cancelled()) && inputs.send_telegram && !inputs.dry_run }}
+        continue-on-error: true
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          CYCLE_ID: ${{ steps.cycle.outputs.cycle_id || steps.cycle_resolution.outputs.cycle_id }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}/attempts/${{ github.run_attempt }}
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          uv run papertrader telegram notify-failure --run-url "$RUN_URL" --failed-job runtime --daily-cycle-id "$CYCLE_ID" --detail "job status ${JOB_STATUS}; repository state was not pushed by this step"
       - name: Remove plaintext OAuth and all temporary media
         if: ${{ always() }}
         run: |

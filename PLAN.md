@@ -1,5 +1,9 @@
 # PaperTrader implementation plan
 
+> This file is the completed-step changelog of the build. Every step below is finished; new
+> work is tracked as issues in `data/tables/issues.csv` and as dated entries appended here when
+> a step ships. Read `AGENTS.md` for the current contracts and `README.md` for operation.
+
 ## Step 1 — Scaffold repository contracts — Complete (2026-07-24)
 
 Established the paper-only repository structure, configuration and CLI boundaries, canonical schemas and empty data state, atomic writes, integrity checks, runtime commit whitelist, Hermes-native wiki, project skills, pinned dependencies, workflow scaffolds, and initial test suite.

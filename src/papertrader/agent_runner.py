@@ -10,14 +10,14 @@ import stat
 import subprocess
 from collections.abc import Callable, Mapping, Sequence
 from contextlib import suppress
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from datetime import datetime
 from decimal import Decimal
 from pathlib import Path, PurePosixPath
 
 import yaml
 
-from papertrader.atomic_io import atomic_write_json, atomic_write_text
+from papertrader.atomic_io import atomic_write_bytes, atomic_write_json, atomic_write_text
 from papertrader.config import HermesExecutionProfile, Settings
 from papertrader.issues import (
     operation_validation_impact,
@@ -47,7 +47,13 @@ from papertrader.result_validator import (
     validate_agent_result,
 )
 from papertrader.tables import read_table
-from papertrader.utils import content_hash, format_timestamp, utc_now
+from papertrader.utils import (
+    content_hash,
+    ensure_utc,
+    format_timestamp,
+    parse_timestamp,
+    utc_now,
+)
 
 SAFE_RUN_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$")
 INJECTION_PATTERNS = (
@@ -171,7 +177,7 @@ def _restore_rejected_agent_delta(
                     path.unlink()
                 contents, mode = protected[relative]
                 path.parent.mkdir(parents=True, exist_ok=True)
-                path.write_bytes(contents)
+                atomic_write_bytes(path, contents, allowed_root=root)
                 path.chmod(mode)
                 continue
             tracked = (
@@ -290,6 +296,9 @@ class AgentCheckpointOutcome:
     profile: str
     checkpoint_index: int
     weighted_cost: Decimal
+    timeout_seconds: int = 0
+    duration_seconds: int = 0
+    timed_out: bool = False
 
 
 @dataclass(frozen=True, slots=True)
@@ -1142,8 +1151,13 @@ def run_claimed_operation(
     environment: Mapping[str, str],
     executor: Executor = _subprocess_executor,
     now: Callable[[], datetime] = utc_now,
+    timeout_override: int | None = None,
 ) -> AgentValidation:
-    """Run and validate one already-claimed operation without terminalizing its queue row."""
+    """Run and validate one already-claimed operation without terminalizing its queue row.
+
+    ``timeout_override`` bounds the Hermes wall clock below the routed profile's timeout when
+    the enclosing job has less time left than the profile would normally receive.
+    """
 
     if operation.status != "running" or operation.claimed_by_run_id != run_id:
         raise AgentRunError(f"operation {operation.operation_id} is not claimed by run {run_id}")
@@ -1180,6 +1194,10 @@ def run_claimed_operation(
     artifact_directory.mkdir(parents=True, exist_ok=True)
     try:
         execution_profile, route = select_profile(repository_root, settings, operation)
+        if timeout_override is not None and timeout_override < execution_profile.timeout_seconds:
+            if timeout_override <= 0:
+                raise AgentRunError("Hermes timeout override must be positive")
+            execution_profile = replace(execution_profile, timeout_seconds=timeout_override)
     except ValueError as exc:
         raise AgentRunError(f"cannot route operation profile: {exc}") from exc
     configure_hermes_home(
@@ -1485,6 +1503,7 @@ def _run_claimed_and_disposition(
     hermes_home: Path,
     environment: Mapping[str, str],
     executor: Executor = _subprocess_executor,
+    timeout_override: int | None = None,
 ) -> str:
     """Execute and terminalize one already claimed operation."""
 
@@ -1497,6 +1516,7 @@ def _run_claimed_and_disposition(
             hermes_home=hermes_home,
             environment=environment,
             executor=executor,
+            timeout_override=timeout_override,
         )
     except AgentRunError as exc:
         issue_id = record_issue(
@@ -1598,6 +1618,7 @@ def run_one_operation(
     operation_type: str | None = None,
     estimated_cost: Decimal = Decimal("0"),
     executor: Executor = _subprocess_executor,
+    timeout_override: int | None = None,
 ) -> str:
     """Prepare, claim, execute, validate, and disposition one operation only."""
 
@@ -1629,7 +1650,73 @@ def run_one_operation(
         hermes_home=hermes_home,
         environment=environment,
         executor=executor,
+        timeout_override=timeout_override,
     )
+
+
+@dataclass(frozen=True, slots=True)
+class OperationTelemetry:
+    """Durable wall-clock facts about one Hermes execution."""
+
+    timeout_seconds: int
+    duration_seconds: int
+    timed_out: bool
+
+
+def _operation_telemetry(artifact_directory: Path) -> OperationTelemetry:
+    """Derive timing facts from the retained Hermes run record; absent runs report zeros."""
+
+    empty = OperationTelemetry(timeout_seconds=0, duration_seconds=0, timed_out=False)
+    path = artifact_directory / "hermes_run.json"
+    if path.is_symlink() or not path.is_file():
+        return empty
+    try:
+        record = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return empty
+    if not isinstance(record, dict):
+        return empty
+    started = parse_timestamp(str(record.get("started_at", "")), allow_empty=True)
+    completed = parse_timestamp(str(record.get("completed_at", "")), allow_empty=True)
+    duration = (
+        max(0, int((completed - started).total_seconds()))
+        if started is not None and completed is not None
+        else 0
+    )
+    raw_timeout = record.get("timeout_seconds", 0)
+    timeout = (
+        raw_timeout if isinstance(raw_timeout, int) and not isinstance(raw_timeout, bool) else 0
+    )
+    return OperationTelemetry(
+        timeout_seconds=timeout,
+        duration_seconds=duration,
+        timed_out=record.get("returncode") == 124,
+    )
+
+
+def available_operation_seconds(
+    settings: Settings,
+    *,
+    job_deadline: datetime | None,
+    now: datetime,
+    profile_timeout: int,
+) -> int | None:
+    """Return the Hermes timeout to apply under a job deadline.
+
+    ``None`` means the routed profile fits unchanged; ``0`` means no operation may start because
+    fewer than ``operations.minimum_operation_seconds`` remain after the finalization reserve; any
+    other value is a shortened timeout.
+    """
+
+    if job_deadline is None:
+        return None
+    remaining = ensure_utc(job_deadline) - ensure_utc(now) - settings.operations.cycle_time_reserve
+    available = int(remaining.total_seconds())
+    if available < settings.operations.minimum_operation_seconds:
+        return 0
+    if available >= profile_timeout:
+        return None
+    return available
 
 
 def run_cycle_operation(
@@ -1642,8 +1729,16 @@ def run_cycle_operation(
     operation_id: str | None = None,
     operation_type: str | None = None,
     executor: Executor = _subprocess_executor,
+    job_deadline: datetime | None = None,
+    now: Callable[[], datetime] = utc_now,
 ) -> AgentCheckpointOutcome | None:
-    """Run one routed operation and atomically consume its durable cycle allowance."""
+    """Run one routed operation and atomically consume its durable cycle allowance.
+
+    When ``job_deadline`` is given, the routed profile must fit in the time left before that
+    deadline minus the configured finalization reserve; an operation that cannot receive at
+    least ``operations.minimum_operation_seconds`` is not claimed, and one that fits partially
+    runs with a shortened Hermes timeout so the enclosing job can still finalize and publish.
+    """
 
     from papertrader.daily import (
         DailyRunError,
@@ -1685,6 +1780,11 @@ def run_cycle_operation(
     limit = Decimal(str(manifest.get("weighted_model_budget", "0")))
     if used + profile.cost_weight > limit:
         return None
+    timeout_override = available_operation_seconds(
+        settings, job_deadline=job_deadline, now=now(), profile_timeout=profile.timeout_seconds
+    )
+    if timeout_override == 0:
+        return None
     status = run_one_operation(
         repository_root,
         settings,
@@ -1695,9 +1795,13 @@ def run_cycle_operation(
         operation_type=selected.operation_type,
         estimated_cost=profile.cost_weight,
         executor=executor,
+        timeout_override=timeout_override,
     )
     if status == "no_operation":
         return None
+    telemetry = _operation_telemetry(
+        repository_root / "data" / "runs" / daily_cycle_id / selected.operation_id
+    )
     route_path = (
         repository_root
         / "data"
@@ -1757,6 +1861,8 @@ def run_cycle_operation(
             daily_cycle_id=daily_cycle_id,
             operation_id=selected.operation_id,
             terminal_status=status,
+            duration_seconds=telemetry.duration_seconds,
+            timed_out=telemetry.timed_out,
         )
         checkpoint = record_cycle_checkpoint(
             repository_root,
@@ -1779,6 +1885,9 @@ def run_cycle_operation(
         profile=profile.name,
         checkpoint_index=raw_checkpoint_index,
         weighted_cost=Decimal(str(accounting["weighted_cost"])),
+        timeout_seconds=telemetry.timeout_seconds,
+        duration_seconds=telemetry.duration_seconds,
+        timed_out=telemetry.timed_out,
     )
 
 

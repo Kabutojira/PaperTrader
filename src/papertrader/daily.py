@@ -373,6 +373,8 @@ def record_cycle_operation(
     daily_cycle_id: str,
     operation_id: str,
     terminal_status: str,
+    duration_seconds: int | None = None,
+    timed_out: bool | None = None,
 ) -> dict[str, object]:
     """Consume one cycle iteration and its routed weighted budget exactly once."""
 
@@ -426,12 +428,24 @@ def record_cycle_operation(
         "escalation_source": str(route.get("escalation_source", "")),
         "checkpoint_index": checkpoint_index,
     }
+    if duration_seconds is not None:
+        item["duration_seconds"] = max(0, int(duration_seconds))
+    if timed_out is not None:
+        item["timed_out"] = bool(timed_out)
     attempted.append(operation_id)
     accepted.append(item)
     manifest["operations_attempted"] = attempted
     manifest["operations_accepted"] = accepted
     manifest["operation_count"] = len(attempted)
     manifest["remaining_operations"] = maximum_operations - len(attempted)
+    manifest["operations_timed_out"] = sum(
+        1 for entry in accepted if isinstance(entry, dict) and entry.get("timed_out") is True
+    )
+    manifest["operation_seconds_used"] = sum(
+        int(entry.get("duration_seconds", 0))
+        for entry in accepted
+        if isinstance(entry, dict) and isinstance(entry.get("duration_seconds"), int)
+    )
     manifest["weighted_model_budget_used"] = decimal_text(used + weight)
     manifest["model_budget_used"] = decimal_text(used + weight)
     if terminal_status in {"blocked", "failed"}:

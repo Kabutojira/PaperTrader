@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://papertrader.local/schemas/run_retention.schema.json",
+  "title": "PaperTrader run retention manifest",
+  "description": "Hash-bound record of run evidence removed from the working tree; the exact bytes remain in Git history.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["run_retention_version", "run_id", "retention_days", "pruned_at", "artifacts"],
+  "properties": {
+    "run_retention_version": { "const": 1 },
+    "run_id": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$" },
+    "retention_days": { "type": "integer", "minimum": 7 },
+    "pruned_at": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$" },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "sha256", "size", "pruned_at"],
+        "properties": {
+          "path": { "type": "string", "pattern": "^data/runs/[A-Za-z0-9][A-Za-z0-9_.-]{0,127}/(?:[0-9A-HJKMNP-TV-Z]{26}/)?[A-Za-z0-9_.-]+\\.(?:json|md)$" },
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+          "size": { "type": "integer", "minimum": 0 },
+          "pruned_at": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$" },
+          "snapshot_id": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

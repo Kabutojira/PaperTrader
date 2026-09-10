@@ -5,6 +5,8 @@ from datetime import UTC, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
 
+import pytest
+
 from papertrader.advice import refresh_advice
 from papertrader.config import Settings
 from papertrader.execution import ensure_initial_capital, process_order_fill
@@ -124,6 +126,7 @@ def _reference(price: Decimal, as_of: datetime) -> ReferencePrice:
     )
 
 
+@pytest.mark.slow
 def test_complete_core_cycle_is_replay_safe(
     sandbox_repository: Path,
     sandbox_settings: Settings,
