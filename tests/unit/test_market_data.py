@@ -10,6 +10,7 @@ import pytest
 from hypothesis import given
 from hypothesis import settings as hypothesis_settings
 from hypothesis import strategies as st
+from yfinance.scrapers.history import PriceHistory
 
 from papertrader.config import Settings
 from papertrader.market_data import (
@@ -100,6 +101,16 @@ def _bar(day: date, retrieved_at: datetime) -> PriceBar:
         retrieved_at=retrieved_at,
         source="fixture",
     )
+
+
+def test_yfinance_price_repair_runs_with_locked_dependencies() -> None:
+    # Exercise the real offline repair path: ordinary provider mocks miss its optional SciPy import.
+    frame = _frame()
+    history = PriceHistory(data=None, ticker="EXM", tz="America/New_York")
+    repaired = history._fix_unit_random_mixups(frame, "1d", "America/New_York", False)
+
+    assert repaired["Close"].tolist() == frame["Close"].tolist()
+    assert not repaired["Repaired?"].any()
 
 
 def test_normalize_history_filters_non_sessions_and_uses_decimal_values() -> None:

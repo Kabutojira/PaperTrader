@@ -993,3 +993,15 @@ Merged the completed September 10 daily publication from `main` after its finali
 passed. PR merge CI had combined the branch with an in-progress daily checkpoint whose canonical
 state had advanced beyond its last published snapshot. The completed checkpoint restores a
 consistent validation input without changing freshness checks or rewriting run evidence.
+
+## Follow-up — Restore repaired market retrieval and deterministic dashboard tests — Complete (2026-09-10)
+
+Enabled yfinance's `repair` extra and pinned SciPy in the lockfile because both market and FX
+retrieval request `repair=True`. Added an offline regression that exercises yfinance's actual
+repair path, including its previously missing optional import. Replaced the Securities dashboard
+test's mutable production inputs with a fixed sandbox snapshot and explicit successful, failed,
+and absent market rows; formatting and accessibility assertions remain strict.
+
+Recovered the unfinalized checkpoints from Actions run `34520941923` through `daily finalize`
+and `daily complete`, preserving the original preparation errors and failed research evidence.
+The regenerated publication reconciles with canonical state and the research retry remains queued.

@@ -3,10 +3,19 @@ from __future__ import annotations
 import json
 import re
 from dataclasses import replace
-from datetime import date
+from datetime import UTC, date, datetime
 from pathlib import Path
 
-from papertrader.advice import ActionableSignalView, ModelPortfolioRow, load_published_snapshot
+import pytest
+
+from papertrader.advice import (
+    ActionableSignalView,
+    ModelPortfolioRow,
+    build_decision_snapshot,
+    load_published_snapshot,
+)
+from papertrader.config import Settings
+from papertrader.execution import ensure_initial_capital
 from papertrader.investor_pages import (
     SECURITY_TABLE_COLUMNS,
     _buy_initiate_candidates,
@@ -84,12 +93,59 @@ def test_securities_table_display_helpers_are_deterministic_and_safe() -> None:
     assert 'role="tooltip"' in header
 
 
+@pytest.mark.parametrize("market_status", ["ok", "error", "missing"])
 def test_securities_page_has_readable_columns_and_accessible_header_help(
-    repository_root: Path,
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    monkeypatch: pytest.MonkeyPatch,
+    market_status: str,
 ) -> None:
-    snapshot = load_published_snapshot(repository_root)
+    now = datetime(2026, 9, 1, 20, tzinfo=UTC)
+    ensure_initial_capital(
+        sandbox_repository, sandbox_settings, run_id="dashboard-fixture", occurred_at=now
+    )
+    snapshot = build_decision_snapshot(
+        sandbox_repository, sandbox_settings, run_id="dashboard-fixture", as_of=now
+    )
+    tables = {
+        "securities": [
+            {
+                "security_id": "sec_fixture",
+                "ticker": "TEST",
+                "company_name": "Fixture",
+                "venue_mic": "XPAR",
+                "currency": "EUR",
+                "research_page": "",
+                "next_review_at": "2026-10-01T12:00:00Z",
+            }
+        ],
+        "security_assessments": [
+            {
+                "security_id": "sec_fixture",
+                "assessed_at": "2026-09-01T12:00:00Z",
+                "downside_pct": "-20.4",
+                "base_upside_pct": "25.6",
+                "bull_return_pct": "40.5",
+                "expected_return_pct": "20.6",
+                "buy_below_price": "90.50",
+                "expires_at": "2026-10-01T12:00:00Z",
+            }
+        ],
+        "market_latest": []
+        if market_status == "missing"
+        else [
+            {
+                "security_id": "sec_fixture",
+                "status": market_status,
+                "adjusted_close": "100.25",
+                "close": "101",
+                "retrieved_at": "2026-09-01T18:13:42Z",
+            }
+        ],
+    }
+    monkeypatch.setattr("papertrader.investor_pages.read_table", lambda _root, name: tables[name])
     rendered = _securities_page(
-        repository_root,
+        sandbox_repository,
         snapshot,
         date.fromisoformat(snapshot.report_date),
     )
@@ -111,7 +167,13 @@ def test_securities_page_has_readable_columns_and_accessible_header_help(
     assert "Expected return" in header
     assert "Last data/FX update" in header
     assert "—%" not in rendered
-    assert re.search(r"\| -?\d+(?:\.\d+)? [A-Z]{3} \| \d{4}-\d{2}-\d{2} /", rendered)
+    assert "| -20% / 26% / 40% | 21% | 90.5 EUR |" in rendered
+    if market_status == "ok":
+        assert "| 100.25 EUR |" in rendered
+        assert "| 90.5 EUR | 2026-09-01 / 2026-09-01 | 2026-10-01 |" in rendered
+    else:
+        assert "| — | Unrated / Watch |" in rendered
+        assert "| 90.5 EUR | — / — | 2026-10-01 |" in rendered
     assert not re.search(r"\| \d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z /", rendered)
 
 

@@ -19,7 +19,7 @@ dependencies = [
   "pytubefix==10.10.1",
   "PyYAML==6.0.3",
   "TA-Lib==0.7.1",
-  "yfinance==1.5.2",
+  "yfinance[repair]==1.5.2",
 ]
 
 [project.scripts]
