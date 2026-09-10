@@ -898,3 +898,22 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_2010347f1a0a5ea60f47-sma_50_cross_above_200-0818ff3f21c4|SPOT — SMA 50 cross above 200]]
+- [[inbox/market-security_2c779e81c27b78c556bb-macd_cross_below_signal-62b8995d2c7b|TX — MACD cross below signal]]
+- [[inbox/market-security_33d9c44facc75c726c7d-macd_cross_below_signal-f41980c2bab4|NVDA — MACD cross below signal]]
+- [[inbox/market-security_4627aea1bf7d8943d3d8-bollinger_below_lower-d0b485c012ff|SGML — Bollinger below lower]]
+- [[inbox/market-security_61567714298b9563d1a9-bollinger_above_upper-da9e389f5cbe|WTI — Bollinger above upper]]
+- [[inbox/market-security_61567714298b9563d1a9-volume_anomaly-a4e4f18e39c9|WTI — Volume anomaly]]
+- [[inbox/market-security_66cdcf90aac0d83e76f3-bollinger_below_lower-cb81fea9c205|ALB — Bollinger below lower]]
+- [[inbox/market-security_97f38b2cb2d5ef127f5a-rsi_oversold-5bcd40c07aed|PL — RSI oversold]]
+- [[inbox/market-security_98a1943771da875efed5-bollinger_below_lower-e0cd7622605d|NOMD — Bollinger below lower]]
+- [[inbox/market-security_9b0db3bc77914b23a307-bollinger_below_lower-8d42e3858e24|CSL — Bollinger below lower]]
+- [[inbox/market-security_b1f2c48e1a744f5ecf67-bollinger_below_lower-f0e7f13e663e|LH — Bollinger below lower]]
+- [[inbox/market-security_b1f2c48e1a744f5ecf67-volume_anomaly-f5c924ebc2c7|LH — Volume anomaly]]
+- [[inbox/market-security_c150f31c30afdb4a85f9-rsi_oversold-d0ea61389493|CROX — RSI oversold]]
+- [[inbox/market-security_cd492d97064d8574156e-bollinger_below_lower-77c627665bc7|MP — Bollinger below lower]]
+- [[inbox/market-security_de0d83229b369a426b99-bollinger_below_lower-5b52bc064932|TCEHY — Bollinger below lower]]
+- [[inbox/market-security_e4822686f60a96824b6e-volume_anomaly-d754f1a07536|UBER — Volume anomaly]]

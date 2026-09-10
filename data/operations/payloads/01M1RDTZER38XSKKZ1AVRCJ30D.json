@@ -8,16 +8,17 @@
     "baseline_result_path": "data/runs/daily-20260828T210155Z/01M06M2NP8WCAE6T92D639MR4R/agent_result.json",
     "full_research_requested": true,
     "maintenance_mode": "refresh",
-    "market_data_as_of": "2026-09-10T18:10:21Z",
-    "market_data_date": "2026-09-09",
+    "market_data_as_of": "2026-09-10T20:48:19Z",
+    "market_data_date": "2026-09-10",
     "merged_input_values": {
       "source_price_hash": [
         "42277731b6aeda48b648cc3492de068702bb83182e3cf72a5bac00d409ed08e2",
         "5bcf5128e6a139cb7667efece9c9407dc88d7c662e65ceabfd36d84df2927798",
-        "6a96e0e2035eb3148f3b7fc0a9f1d80218a493065e81dd3abed3894e0a33ac21"
+        "6a96e0e2035eb3148f3b7fc0a9f1d80218a493065e81dd3abed3894e0a33ac21",
+        "c22c2908c629572d35c9c6476ee021ee0ffb639c018a134c540d05d28af0d2da"
       ]
     },
-    "period_end": "2026-09-09",
+    "period_end": "2026-09-10",
     "period_start": "2026-08-07",
     "research_page": "data/wiki/securities/security_97f38b2cb2d5ef127f5a.md",
     "research_reasons": [
@@ -66,10 +67,23 @@
         "trigger_types": [
           "rsi_oversold"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_97f38b2cb2d5ef127f5a:e3fef454e5c9777f3e78:2026-09-10",
+        "market_data_date": "2026-09-10",
+        "observed_at": "2026-09-10T20:48:19Z",
+        "prompt": "Research security_97f38b2cb2d5ef127f5a with high priority after price-action alerts: rsi_oversold; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_97f38b2cb2d5ef127f5a-rsi_oversold-5bcd40c07aed.md"
+        ],
+        "trigger_types": [
+          "rsi_oversold"
+        ]
       }
     ],
     "security_id": "security_97f38b2cb2d5ef127f5a",
-    "source_price_hash": "6a96e0e2035eb3148f3b7fc0a9f1d80218a493065e81dd3abed3894e0a33ac21",
+    "source_price_hash": "c22c2908c629572d35c9c6476ee021ee0ffb639c018a134c540d05d28af0d2da",
     "trigger_types": [
       "rsi_oversold"
     ]
@@ -80,6 +94,7 @@
   "payload_version": 1,
   "source_refs": [
     "data/wiki/inbox/market-security_97f38b2cb2d5ef127f5a-rsi_oversold-50b616694f5b.md",
+    "data/wiki/inbox/market-security_97f38b2cb2d5ef127f5a-rsi_oversold-5bcd40c07aed.md",
     "data/wiki/inbox/market-security_97f38b2cb2d5ef127f5a-rsi_oversold-9e58c6fc7336.md",
     "data/wiki/inbox/market-security_97f38b2cb2d5ef127f5a-rsi_oversold-dae713572a0e.md",
     "source_pl_q1_fy2027_10q",
