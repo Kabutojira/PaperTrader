@@ -37,15 +37,18 @@
       "terminal_status": "failed"
     }
   ],
-  "completed_at": "",
-  "completion_at": "",
+  "completed_at": "2026-09-10T20:30:56Z",
+  "completion_at": "2026-09-10T20:31:04Z",
   "daily_cycle_id": "daily-20260910T193402Z",
   "daily_run_version": 2,
-  "fill_outcomes": [],
+  "fill_outcomes": [
+    "order_c4a81bce6bb463d4bddb:pending:-"
+  ],
   "final_commit_identity": "",
   "final_commit_sha": "",
-  "finalization_at": "",
+  "finalization_at": "2026-09-10T20:30:56Z",
   "finalization_commit_identity": "",
+  "finalization_status": "degraded",
   "maximum_operations": 5,
   "model_budget_limit": "100",
   "model_budget_used": "15",
@@ -126,7 +129,7 @@
   "podcast_commit_identity": "",
   "podcast_operation_id": "",
   "podcast_page_path": "",
-  "podcast_status": "pending",
+  "podcast_status": "skipped",
   "podcast_text_at": "",
   "preparation_at": "2026-09-10T19:43:26Z",
   "preparation_errors": [
@@ -263,10 +266,10 @@
     "01M26B939GSGFCGCT19M8K13VH:cancelled:superseded_allocation_intent:allocation_plan_cf731760648bb43b2e47"
   ],
   "remaining_operations": 2,
-  "report_path": "",
-  "research_cutoff_at": "",
+  "report_path": "data/wiki/daily-reports/daily-report_20260910.md",
+  "research_cutoff_at": "2026-09-10T20:30:56Z",
   "run_id": "daily-20260910T193402Z",
-  "snapshot_id": "",
+  "snapshot_id": "decision_3e0d79f008e7f74f8a18",
   "source_sha": "ec52d7b349ddb13a9cd3fb3ec65d2114fb0fe7d4",
   "started_at": "2026-09-10T19:34:02Z",
   "status": "degraded",

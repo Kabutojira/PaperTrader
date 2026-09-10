@@ -7,8 +7,8 @@ tags:
 created: "2026-09-10"
 updated: "2026-09-10"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_3f0087c0f474f071d325"
-as_of: "2026-09-10T19:03:58Z"
+snapshot_id: "decision_3e0d79f008e7f74f8a18"
+as_of: "2026-09-10T20:30:56Z"
 ---
 
 # Research catalog

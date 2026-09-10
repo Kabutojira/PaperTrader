@@ -3708,6 +3708,10 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 
 - Generated canonical [[daily-reports/daily-report_20260910]] for run `daily-20260910T181020Z`.
 
+- Published investor decision snapshot `decision_3e0d79f008e7f74f8a18`.
+
+- Generated canonical [[daily-reports/daily-report_20260910]] for run `daily-20260910T193402Z`.
+
 ## [2026-09-10] update | Tencent bounded baseline allocation
 
 - Updated [[strategies/strategy_ef910e9aff5203a0b901]] for current allocation plan

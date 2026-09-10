@@ -7,52 +7,21 @@ tags:
 created: "2026-09-10"
 updated: "2026-09-10"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_3f0087c0f474f071d325"
-as_of: "2026-09-10T19:03:58Z"
+snapshot_id: "decision_3e0d79f008e7f74f8a18"
+as_of: "2026-09-10T20:30:56Z"
 ---
 
 # Signals
 
-**As of `2026-09-10T19:03:58Z`**
+**As of `2026-09-10T20:30:56Z`**
 
 ## Actionable trade signals
 
-### [TCEHY — Tencent Holdings Limited](securities/security_de0d83229b369a426b99)
-
-- **Action:** Buy
-- **State:** Pending validated order
-- **Strategy:** Tencent bounded baseline allocation
-- **Strategy research:** [Open strategy page](strategies/strategy_ef910e9aff5203a0b901)
-- **Window:** `2026-09-10T18:21:44Z` to `2026-09-11T18:30:00Z`
-- **Market data:** `2026-09-10T18:10:21Z`
-- **Current → target:** 0% → 1.886008%
-- **Copy-ready quantity:** 4
-- **Order:** market
-- **Entry:** Open only while current allocation plan, allocation\_intent\_818e8692a59dfaa00cad, assessment\_6e8ef7291ff81b77d900 and Digital attention, gaming, and consumer ecosystems to Tencent remain current, fresh TCEHY and USD/EUR inputs are available, and deterministic code derives a positive whole-share delta toward the persisted four-share target.
-- **Exit:** Reduce or close only when a current deterministic allocation plan directs reduce or close, the starter eligibility frontier no longer clears, a hard blocker appears, or material gaming, advertising, Weixin, policy, governance, investment-portfolio or valuation evidence invalidates the bounded thesis.
-- **Invalidation:** Do not increase exposure if gaming or advertising monetization weakens materially, Weixin engagement ceases to support commercial activity, policy or governance risk impairs shareholder economics, artificial-intelligence investment fails to convert into durable cash generation, portfolio-value volatility dominates operations, the assessment or relationship is superseded, or market and FX inputs become stale.
-- **Rationale:** Open only the deterministic current-plan whole-share delta toward Tencent's persisted four-share starter target. The accepted relationship, 76 effective score, 18.85% base return, 14.14% confidence-adjusted expected return and 15.86% margin of safety support bounded baseline exposure; medium confidence, a 26.86% bear loss, China policy and governance exposure, investment-portfolio volatility, artificial-intelligence spending and insufficient diversification bar conviction sizing.
-
-### [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4)
-
-- **Action:** Add
-- **State:** Pending validated order
-- **Strategy:** Prosus bounded baseline allocation
-- **Strategy research:** [Open strategy page](strategies/strategy_8caa208dfc702a2584a7)
-- **Window:** `2026-09-10T18:37:34Z` to `2026-09-11T18:45:00Z`
-- **Market data:** `2026-09-10T18:10:21Z`
-- **Current → target:** 2.827733% → 4.242464%
-- **Copy-ready quantity:** 4
-- **Order:** market
-- **Entry:** Increase only while current allocation plan, allocation\_intent\_b658846a33beb7586a8e, assessment\_7f28dfd9240d6099400b and Digital attention, gaming, and consumer ecosystems to Prosus remain current, a fresh PRX EUR price is available, and deterministic code derives a positive whole-share delta toward the persisted twelve-share target after holdings and pending orders.
-- **Exit:** Reduce or close only when a current deterministic allocation plan directs reduce or close, the baseline eligibility frontier no longer clears, a hard blocker appears, or material Tencent, ecommerce, private-asset, debt, repurchase, governance, capital-allocation or valuation evidence invalidates the bounded thesis.
-- **Invalidation:** Do not increase exposure if Tencent or private-platform economics deteriorate materially, private marks prove unreliable, central net debt rises, governance or cross-holding complexity blocks value transmission, repurchases lose accretion, the holding discount widens persistently despite operating value creation, the assessment or relationship is superseded, or market inputs become stale.
-- **Rationale:** Increase only by the deterministic current-plan whole-share delta toward Prosus's persisted twelve-share baseline target after existing holdings and pending orders. The accepted relationship, 70 effective score, 47.33% base return, 29.12% confidence-adjusted expected return and 32.13% margin of safety support bounded baseline exposure; medium confidence, Tencent concentration, private-asset valuation uncertainty, central debt, governance, capital-allocation transmission, weak momentum and insufficient diversification bar conviction sizing.
+No actionable trade signals.
 
 ## Pending validated orders
 
-- **TCEHY:** Buy · Pending validated order
-- **PRX:** Add · Pending validated order
+No pending orders.
 
 ## Research alerts — not trade signals
 
@@ -402,6 +371,8 @@ as_of: "2026-09-10T19:03:58Z"
 ## Recently expired or completed signals
 
 - **Cancelled:** [UBER — Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e) — [Uber bounded baseline allocation](strategies/strategy_e4ada1a4934691d1f7ee) · created `2026-09-10T19:00:25Z`
+- **Cancelled:** [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4) — [Prosus bounded baseline allocation](strategies/strategy_8caa208dfc702a2584a7) · created `2026-09-10T18:37:34Z`
+- **Cancelled:** [TCEHY — Tencent Holdings Limited](securities/security_de0d83229b369a426b99) — [Tencent bounded baseline allocation](strategies/strategy_ef910e9aff5203a0b901) · created `2026-09-10T18:21:44Z`
 - **Expired:** [NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) — [NVIDIA bounded baseline allocation](strategies/strategy_7cf884a5530d05afdb99) · created `2026-09-09T18:38:29Z`
 - **Cancelled:** [NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) — [NVIDIA bounded baseline allocation](strategies/strategy_7cf884a5530d05afdb99) · created `2026-09-05T10:28:36Z`
 - **Expired:** [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4) — [Prosus bounded baseline allocation](strategies/strategy_8caa208dfc702a2584a7) · created `2026-09-05T09:28:03Z`

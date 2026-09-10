@@ -7,8 +7,8 @@ tags:
 created: "2026-09-10"
 updated: "2026-09-10"
 provenance: deterministic-report-generator
-run_id: "daily-20260910T181020Z"
-snapshot_id: "decision_3f0087c0f474f071d325"
+run_id: "daily-20260910T193402Z"
+snapshot_id: "decision_3e0d79f008e7f74f8a18"
 ---
 
 # PaperTrader daily report — 2026-09-10
@@ -16,26 +16,24 @@ snapshot_id: "decision_3f0087c0f474f071d325"
 ## 1. Investor decision summary
 
 <!-- papertrader-investor-brief:start -->
-# Rebalance toward model targets
+# Decision blocked — do not copy actions
 
-- **Investment data:** Portfolio state safe — research gaps remain
+- **Investment data:** Unsafe to publish — portfolio, accounting, or active-order state requires attention
 - **Operations:** Attention required
-- **As of:** `2026-09-10T19:03:58Z`
+- **As of:** `2026-09-10T20:30:56Z`
 - **Cash:** 9703.02 EUR (97.172267%)
 - **Gross exposure:** 282.36 EUR
-- **Target cash:** 9371.52 EUR (93.871528%)
-- **Actionable signals:** 2
-- **Evidence state:** invested or actionable
+- **Target cash:** 9703.02 EUR (97.172267%)
+- **Actionable signals:** 0
+- **Evidence state:** portfolio blocked
 
 ## Target changes
 
-- **[PRX](securities/security_8b703a8adf5f864acaa4):** Add to 4.242464% (target estimate)
-- **[TCEHY](securities/security_de0d83229b369a426b99):** Buy to 1.886008% (target estimate)
+No target changes.
 
 ## Actionable signals
 
-- **[TCEHY](securities/security_de0d83229b369a426b99):** Buy — Pending validated order
-- **[PRX](securities/security_8b703a8adf5f864acaa4):** Add — Pending validated order
+No actionable trade signals.
 
 ## Price action alerts
 
@@ -156,80 +154,45 @@ snapshot_id: "decision_3f0087c0f474f071d325"
 
 ## Research decisions this run
 
-- **[Tencent bounded baseline allocation](strategies/strategy_ef910e9aff5203a0b901) — succeeded:** Updated ready baseline strategy Tencent bounded baseline allocation for Tencent using current allocation plan current allocation plan and unchanged intent allocation\_intent\_818e8692a59dfaa00cad. Baseline mode selected long common equity only, retained the allocator-owned four-share target and 2% maximum-position ceiling, and documented medium conf…
-- **[Prosus bounded baseline allocation](strategies/strategy_8caa208dfc702a2584a7) — succeeded:** Updated active baseline strategy Prosus bounded baseline allocation for Prosus using current allocation plan current allocation plan and unchanged intent allocation\_intent\_b658846a33beb7586a8e. Baseline mode retained long common equity only, the allocator-owned twelve-share target and the 5% maximum-position ceiling while documenting medium confid…
-- **[Uber bounded baseline allocation](strategies/strategy_e4ada1a4934691d1f7ee) — succeeded:** Updated ready baseline strategy Uber bounded baseline allocation for Uber using current allocation plan current allocation plan and intent allocation\_intent\_ae3d5bc9b6efe4a816f1. Baseline mode selected long common equity only, retained the allocator-owned five-share target and 5% maximum-position ceiling, and documented medium confidence, autonomy…
+- **[Prosus bounded baseline allocation](strategies/strategy_8caa208dfc702a2584a7) — succeeded:** Updated active baseline strategy Prosus bounded baseline allocation to the current Prosus exit-only watch allocation under plan current allocation plan and intent allocation\_intent\_b8f1131f2221ca6c0fec. The canonical plan assigns a zero-share target and zero risk budget because market\_data\_not\_ok, so the strategy permits no retained or increased e…
 
 ## Leading Buy / Initiate research candidate
 
-- **NVDA — NVIDIA Corporation:** Buy / Initiate; expected return 36%; The eligible set is not sufficiently diversified.
+No security currently has both a Buy rating and an Initiate action.
 
 ## Comparison-only research benchmark
 
 This equal-weight research benchmark is analytical only, not copy-ready, and cannot create signals, orders, or allocation targets.
-- PRX 10% (Buy); NVDA 10% (Buy); DLO 10% (Buy); NOMD 10% (Buy); CROX 10% (Buy); CASH 50% (Unrated)
+- CASH 100% (Unrated)
 <!-- papertrader-investor-brief:end -->
 
 ### Deterministic reasons
 
-- Validated opening actions are pending.
+- The latest market retrieval did not succeed.
+- A pending order is expired or has inconsistent state.
 
 ## 2. Model portfolio and target changes
 
 - Current equity: 9985.38 EUR
 - Current cash: 9703.02 EUR (97.172267%)
 - Current gross exposure: 282.36 EUR
-- Target cash: 9371.52 EUR (93.871528%)
+- Target cash: 9703.02 EUR (97.172267%)
 - Pending-order targets are estimates at the snapshot mark; only fills change accounting.
 
 | Holding | Sleeve | Current weight | Target | Current value | Target value | Action | State |
 | --- | --- | ---: | ---: | ---: | ---: | --- | --- |
-| Cash | cash | 97.172267% | 93.871528% | 9703.02  | 9371.52  | Trim | Pending validated order |
-| [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | baseline | 2.827733% | 4.242464% | 282.36  | 423.54  | Add | Pending validated order |
-| [TCEHY — Tencent Holdings Limited](securities/security_de0d83229b369a426b99) | baseline | 0% | 1.886008% | 0  | 188.29  | Buy | Pending validated order |
+| Cash | cash | 97.172267% | 97.172267% | 9703.02  | 9703.02  | No trade | No action |
+| [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | baseline | 2.827733% | 2.827733% | 282.36  | 282.36  | Hold | Filled |
 
 ## 3. Actionable signals and pending orders
 
-### [TCEHY — Tencent Holdings Limited](securities/security_de0d83229b369a426b99)
+No actionable trade signals.
 
-- Action: **Buy**
-- State: Pending validated order (copy ready)
-- Strategy: Tencent bounded baseline allocation
-- Strategy research: [Open strategy page](strategies/strategy_ef910e9aff5203a0b901)
-- Signal window: `2026-09-10T18:21:44Z` to `2026-09-11T18:30:00Z`
-- Market data: `2026-09-10T18:10:21Z`
-- Rationale: Open only the deterministic current-plan whole-share delta toward Tencent's persisted four-share starter target. The accepted relationship, 76 effective score, 18.85% base return, 14.14% confidence-adjusted expected return and 15.86% margin of safety support bounded baseline exposure; medium confidence, a 26.86% bear loss, China policy and governance exposure, investment-portfolio volatility, artificial-intelligence spending and insufficient diversification bar conviction sizing.
-
-### [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4)
-
-- Action: **Add**
-- State: Pending validated order (copy ready)
-- Strategy: Prosus bounded baseline allocation
-- Strategy research: [Open strategy page](strategies/strategy_8caa208dfc702a2584a7)
-- Signal window: `2026-09-10T18:37:34Z` to `2026-09-11T18:45:00Z`
-- Market data: `2026-09-10T18:10:21Z`
-- Rationale: Increase only by the deterministic current-plan whole-share delta toward Prosus's persisted twelve-share baseline target after existing holdings and pending orders. The accepted relationship, 70 effective score, 47.33% base return, 29.12% confidence-adjusted expected return and 32.13% margin of safety support bounded baseline exposure; medium confidence, Tencent concentration, private-asset valuation uncertainty, central debt, governance, capital-allocation transmission, weak momentum and insufficient diversification bar conviction sizing.
+No pending orders.
 
 ## 4. Buy / Initiate research candidates
 
-| Candidate | Rating / action | State | Bear / base / bull | Expected | Buy below | Exact gate |
-| --- | --- | --- | ---: | ---: | ---: | --- |
-| [NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | Buy / Initiate | Full baseline — Allocation constrained | -11.47672838516138708934219202% / 38.8205850323605520644406534% / 100.2950792093318110301752423% | 36% | 248.4 | The eligible set is not sufficiently diversified. |
-| [UBER — Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e) | Buy / Initiate | Full baseline — Strategy research pending | -22.62239929210211982475708407% / 26.617892067469258468579317% / 68.8238560899590112914390893% | 25% | 72 | The eligible set is not sufficiently diversified. |
-| [DPZ — Domino's Pizza, Inc.](securities/security_f34181f3df32080a91d1) | Buy / Initiate | Full baseline — Allocation constrained | -16.00821029769401092693048425% / 18.2106669884306512880237629% / 55.5403513005666464316102143% | 19% | 304 | The eligible set is not sufficiently diversified. |
-| [MELI — MercadoLibre, Inc.](securities/security_4935c6e39e38273a1731) | Buy / Initiate | Starter — Allocation constrained | -25.38625759918339172832811622% / 17.2501666298546701411986745% / 59.8865908588927320107254652% | 17% | 1760 | The eligible set is not sufficiently diversified. |
-| [TCEHY — Tencent Holdings Limited](securities/security_de0d83229b369a426b99) | Buy / Initiate | Starter — Allocation constrained | -26.86048454119876587740257908% / 18.851712620552005449220809% / 64.5639097823027767758441971% | 19% | 52 | A portfolio, sector, or theme concentration cap applies. |
-| [TDY — Teledyne Technologies Incorporated](securities/security_ad5917642acbba28c1f2) | Buy / Initiate | Research incomplete | -14.99084108607574376697557322% / 13.4015459820135829195483954% / 46.1619925990397290963068207% | 14% | 540 | The assessment's registered evidence is not fresh. |
-| [DLO — DLocal Limited](securities/security_715bde20b6e1e1320c1a) | Buy / Initiate | Valuation unattractive | -38.62938954373658233422446133% / 27.5144906146806567055558415% / 100.477327490460497708200093% | 29% | 14.96 | Bear-case loss exceeds the starter limit. |
-| [PATH — UiPath, Inc.](securities/security_eca976f0076a425ea1bb) | Buy / Initiate | Relationship research pending | -33.67722769048608418267627193% / 25.2763476957485076549448197% / 98.9683169285417474519711842% | 29% | 13.6 | A current accepted idea-to-security relationship is unavailable. |
-| [SOFI — SoFi Technologies, Inc.](securities/security_98470cfc01bbcde78fc2) | Buy / Initiate | Valuation unattractive | -35.08366965073728001912978945% / 20.6001159377414086755722134% / 84.6508952156806257233641544% | 17% | 16.72 | Bear-case loss exceeds the starter limit. |
-| [FUC.F — Fanuc Corporation](securities/security_96ba305ee7cd586bc348) | Buy / Initiate | Research incomplete | -24.21875% / 13.6875% / 51.5625% | 14% | 29.104 | The assessment's registered evidence is not fresh. |
-| [CROX — Crocs, Inc.](securities/security_c150f31c30afdb4a85f9) | Buy / Initiate | Relationship research pending | -20.78494652899279545074226458% / 30.9073767161502581997250701% / 85.255204594696394275423204% | 26% | 116.34 | A current accepted idea-to-security relationship is unavailable. |
-| [PYPL — PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00) | Buy / Initiate | Relationship research pending | -17.50047630705118304121044235% / 23.7492855394232254381843365% / 54.6866069242790317977304206% | 18% | 51.648 | A current accepted idea-to-security relationship is unavailable. |
-| [FISV — Fiserv, Inc.](securities/security_d202772e4e62065cd17a) | Buy / Initiate | Allocation constrained | -28.0575562132673673230439232% / 33.6073956039320321143469998% / 95.2723474211314315517379227% | 27% | 52 | Research quality must be strictly above the configured threshold. |
-| [CSIQ — Canadian Solar Inc.](securities/security_099561384c0f5e697727) | Buy / Initiate | Allocation constrained | -24.51708788108800969996348316% / 35.8098064501684234925853866% / 96.210994986266305494484686% | 24% | 14.624 | Research quality must be strictly above the configured threshold. |
-| [NOMD — Nomad Foods Limited](securities/security_98a1943771da875efed5) | Buy / Initiate | Allocation constrained | -19.49910774301633861554933517% / 34.168153761639435640751108% / 78.8908716821859141876681441% | 27% | 12 | Research quality must be strictly above the configured threshold. |
-| [DNA — Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687) | Buy / Initiate | Valuation unattractive | -50.95728985702048016626422936% / 11.4874822169234129553693044% / 142.5625934098716791776661088% | 19% | 6.056 | Bear/base payoff is below the starter threshold. |
+No security currently has both a Buy rating and an Initiate action.
 
 ## 5. Performance and risk
 
@@ -246,16 +209,14 @@ This equal-weight research benchmark is analytical only, not copy-ready, and can
 
 ### Evidence-linked narrative
 
-- [[podcasts/daily-podcast_20260910T181020Z|Daily research podcast — 2026-09-10T181020Z]]
-- Updated Tencent's ready 2% starter baseline strategy for the current 1.88% four-share target, created a ready open signal for only the deterministic delta, and queued exactly one separate paper-order review; no order or fill was created by research. Evidence is retained in the canonical run artifacts.
-- Updated Prosus's active 5% ceiling baseline strategy for the current 4.24% twelve-share target, created a ready open signal for only the deterministic remaining delta, and queued exactly one separate paper-order review; no order or fill was created by research. Evidence is retained in the canonical run artifacts.
-- Updated Uber's ready 5% ceiling full-baseline strategy for the current 3.06% five-share target, created a ready open signal for only the deterministic delta, and queued exactly one separate paper-order review; no order or fill was created by research. Evidence is retained in the canonical run artifacts.
-- Tencent baseline open: created pending next-open paper order [[strategies/strategy_ef910e9aff5203a0b901|Order for Tencent bounded baseline allocation on 2026-09-10]] for the deterministic four-share delta toward the current four-share starter target; no fill or accounting entry was created. Evidence is retained in the canonical run artifacts.
-- Prosus baseline increase: created pending next-open paper order [[strategies/strategy_8caa208dfc702a2584a7|Order for Prosus bounded baseline allocation on 2026-09-10]] for the deterministic four-share delta from eight filled shares toward the current twelve-share target; no fill or accounting entry was created. Evidence is retained in the canonical run artifacts.
+- Rebound the Prosus baseline strategy to the current zero-share watch target, created one ready close signal for the deterministic eight-share exit delta, and queued exactly one separate paper-order review; no order or fill was created by research. Evidence is retained in the canonical run artifacts.
+- Prosus baseline close: created pending next-open paper order [[strategies/strategy_8caa208dfc702a2584a7|Order for Prosus bounded baseline allocation on 2026-09-10]] for the deterministic eight-share sell delta from eight filled shares toward the current zero-share target; no fill or accounting entry was created. Evidence is retained in the canonical run artifacts.
 
 - [[model-portfolio|PaperTrader model portfolio]]
 - [[performance|PaperTrader performance and risk]]
+- [[podcasts/daily-podcast_20260910T181020Z|PaperTrader daily research podcast — 2026-09-10T181020Z]]
 - [[research-catalog|PaperTrader research catalog]]
+- [[securities/security_97f38b2cb2d5ef127f5a|Planet Labs PBC Class A common stock]]
 - [[security-catalog|PaperTrader tracked securities]]
 - [[signals|PaperTrader signals and research alerts]]
 - [[strategies/strategy_8caa208dfc702a2584a7|Prosus bounded baseline allocation]]
@@ -265,16 +226,16 @@ This equal-weight research benchmark is analytical only, not copy-ready, and can
 
 ## 7. Data-quality and coverage impact
 
-- Investment data status: **degraded**
+- Investment data status: **blocked**
 - Operations status: **degraded**
 - Assessments: 52/83
 - Fresh-evidence assessments: 48/83
 - Relationship reviews: 20/83
 - Accepted relationships: 19
 - Ready or active strategies: 4
-- Active signals: 2
-- Pending orders: 2
-- Market-data success/failure: 91/0
+- Active signals: 1
+- Pending orders: 1
+- Market-data success/failure: 0/91
 - Research alerts (not trade signals): 38
 
 ### Current system impacts
@@ -295,6 +256,102 @@ This equal-weight research benchmark is analytical only, not copy-ready, and can
 - **affects candidate**: Hermes operation validation failed: [[securities/security_6cf75bd0ec0aa2a20148|Quick check research for TWST on 2026-08-05]]
 - **affects candidate** — ASML ASML Holding N.V.: ASML assessment rejected after security row update
 - **affects candidate** — WTI W&amp;T Offshore, Inc.: Hermes operation validation failed: [[securities/security_61567714298b9563d1a9|Quick check research for WTI on 2026-08-18]]
+- **affects candidate** — TCEHY Tencent Holdings Limited: Daily preparation degraded: [[securities/security_de0d83229b369a426b99|TCEHY]]
+- **affects candidate** — HOOD Robinhood Markets, Inc.: Daily preparation degraded: [[securities/security_ad3b1f8f59fd599f079a|HOOD]]
+- **affects candidate** — AD Koninklijke Ahold Delhaize N.V.: Daily preparation degraded: [[securities/security_e19c7fe27fbcc4cd923d|AD]]
+- **affects candidate** — CROX Crocs, Inc.: Daily preparation degraded: [[securities/security_c150f31c30afdb4a85f9|CROX]]
+- **affects candidate** — WTI W&amp;T Offshore, Inc.: Daily preparation degraded: [[securities/security_61567714298b9563d1a9|WTI]]
+- **affects candidate** — FCX Freeport-McMoRan Inc.: Daily preparation degraded: [[securities/security_2dbe878dfc899d7ee867|FCX]]
+- **affects candidate** — DLO DLocal Limited: Daily preparation degraded: [[securities/security_715bde20b6e1e1320c1a|DLO]]
+- **affects candidate**: Daily preparation degraded: FX AUD/EUR
+- **affects candidate** — ATKR Atkore Inc.: Daily preparation degraded: [[securities/security_22c2b9d782a62d7a9b86|ATKR]]
+- **affects candidate** — PLS.AX PLS Group Limited: Daily preparation degraded: [[securities/security_8a5c43888d224de85c69|PLS.AX]]
+- **affects candidate** — GEV GE Vernova Inc.: Daily preparation degraded: [[securities/security_4b61970aa8f574446819|GEV]]
+- **affects candidate** — XMTR Xometry, Inc.: Daily preparation degraded: [[securities/security_c2e6db30cb59254de418|XMTR]]
+- **affects candidate**: Daily preparation degraded: FX USD/EUR
+- **affects candidate** — KTOS Kratos Defense &amp; Security Solutions, Inc.: Daily preparation degraded: [[securities/security_0cf8075039299094d614|KTOS]]
+- **affects candidate** — RIO Rio Tinto plc: Daily preparation degraded: [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]]
+- **affects candidate** — SOFI SoFi Technologies, Inc.: Daily preparation degraded: [[securities/security_98470cfc01bbcde78fc2|SOFI]]
+- **affects candidate** — TSLA Tesla, Inc.: Daily preparation degraded: [[securities/security_dc7a111e297be528d96b|TSLA]]
+- **affects candidate** — CSL Carlisle Companies Incorporated: Daily preparation degraded: [[securities/security_9b0db3bc77914b23a307|CSL]]
+- **affects candidate** — SGML Sigma Lithium Corporation: Daily preparation degraded: [[securities/security_4627aea1bf7d8943d3d8|SGML]]
+- **affects candidate** — PYPL PayPal Holdings, Inc.: Daily preparation degraded: [[securities/security_1e8fbdb0f45f2b413e00|PYPL]]
+- **affects candidate** — RKLB Rocket Lab Corporation: Daily preparation degraded: [[securities/security_7ca095d63423c55a90e3|RKLB]]
+- **affects candidate** — ETN Eaton Corporation plc: Daily preparation degraded: [[securities/security_18a3ab0ee6086ee85d0f|ETN]]
+- **affects candidate** — ISRG Intuitive Surgical, Inc.: Daily preparation degraded: [[securities/security_1f9cce545ede94cd6349|ISRG]]
+- **affects candidate** — INTC Intel Corporation: Daily preparation degraded: [[securities/security_dfa34d4b9050964b465e|INTC]]
+- **affects candidate** — DPZ Domino's Pizza, Inc.: Daily preparation degraded: [[securities/security_f34181f3df32080a91d1|DPZ]]
+- **affects candidate** — TWST Twist Bioscience Corporation: Daily preparation degraded: [[securities/security_6cf75bd0ec0aa2a20148|TWST]]
+- **affects candidate** — RBLX Roblox Corporation: Daily preparation degraded: [[securities/security_c9a37d277445869a8809|RBLX]]
+- **affects candidate** — FUC.F Fanuc Corporation: Daily preparation degraded: [[securities/security_96ba305ee7cd586bc348|FUC.F]]
+- **affects candidate** — VALE Vale S.A.: Daily preparation degraded: [[securities/security_b2116dcf976c96974d7b|VALE]]
+- **affects candidate** — DNA Ginkgo Bioworks Holdings, Inc.: Daily preparation degraded: [[securities/security_95351d928b674bbdf687|DNA]]
+- **affects candidate** — EVK Evonik Industries AG: Daily preparation degraded: [[security-catalog#security-security_ccb25582c0392492fe9e|EVK]]
+- **affects candidate** — ANIC.L Agronomics Limited: Daily preparation degraded: [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]]
+- **affects candidate** — GOOGL Alphabet Inc.: Daily preparation degraded: [[securities/security_c86bb4e75658c07142cf|GOOGL]]
+- **affects candidate** — BE Bloom Energy Corporation: Daily preparation degraded: [[securities/security_3e597863f00753e8c65c|BE]]
+- **affects candidate** — TXN Texas Instruments Incorporated: Daily preparation degraded: [[securities/security_83a56943e18793f685b0|TXN]]
+- **affects candidate** — VLO Valero Energy Corporation: Daily preparation degraded: [[securities/security_c5a9e460d3350284d157|VLO]]
+- **affects candidate** — QCOM QUALCOMM Incorporated: Daily preparation degraded: [[securities/security_3a75fc1ccca2ee7c937a|QCOM]]
+- **affects candidate** — MP MP Materials Corp.: Daily preparation degraded: [[securities/security_cd492d97064d8574156e|MP]]
+- **affects candidate** — ANET Arista Networks, Inc.: Daily preparation degraded: [[securities/security_6f9a1450edceb9307c9a|ANET]]
+- **affects candidate**: Daily preparation degraded: FX KRW/EUR
+- **affects candidate** — 108490 ROBOTIS Co., Ltd.: Daily preparation degraded: [[securities/security_0c8b3c4291cd97f56d8c|108490]]
+- **affects candidate** — PARRO.PA Parrot S.A.: Daily preparation degraded: [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]]
+- **affects candidate** — TSM Taiwan Semiconductor Manufacturing Company Limited: Daily preparation degraded: [[securities/security_ce9b78a4d0773c950765|TSM]]
+- **affects candidate** — PL Planet Labs PBC: Daily preparation degraded: [[securities/security_97f38b2cb2d5ef127f5a|PL]]
+- **affects candidate** — PATH UiPath, Inc.: Daily preparation degraded: [[securities/security_eca976f0076a425ea1bb|PATH]]
+- **affects candidate** — ABCL AbCellera Biologics Inc.: Daily preparation degraded: [[securities/security_7bf8f4c9cc12ae410e40|ABCL]]
+- **affects candidate** — RTX RTX Corporation: Daily preparation degraded: [[securities/security_59304f90c440def31dc5|RTX]]
+- **affects candidate** — ENPH Enphase Energy, Inc.: Daily preparation degraded: [[securities/security_f2b9760d847b2ba59324|ENPH]]
+- **affects candidate**: Daily preparation degraded: FX HKD/EUR
+- **affects candidate** — LUNR Intuitive Machines, Inc.: Daily preparation degraded: [[securities/security_a5dc16f3f4b245e6c168|LUNR]]
+- **affects candidate** — MSTR Strategy Inc: Daily preparation degraded: [[securities/security_fe5539a7d3fd9d553bce|MSTR]]
+- **affects candidate** — MTLS Materialise NV: Daily preparation degraded: [[security-catalog#security-security_b61c642d038d71be3821|MTLS]]
+- **affects candidate** — SPCX Space Exploration Technologies Corp.: Daily preparation degraded: [[securities/security_664f93a7eaca72e76e9b|SPCX]]
+- **affects candidate** — NBIS Nebius Group N.V.: Daily preparation degraded: [[securities/security_47a0b06f6c6c478d7c1e|NBIS]]
+- **affects candidate** — CRWD CrowdStrike Holdings, Inc.: Daily preparation degraded: [[securities/security_8472507d7d320aa388a7|CRWD]]
+- **affects candidate** — SSU.VI Samsung Electronics Co., Ltd.: Daily preparation degraded: [[securities/security_567d0d575bbd30aaa91d|SSU.VI]]
+- **affects candidate** — ASML ASML Holding N.V.: Daily preparation degraded: [[securities/security_ef35e41886220d51c22c|ASML]]
+- **affects candidate** — SU Schneider Electric SE: Daily preparation degraded: [[securities/security_dc8486c1d61df62a22fd|SU]]
+- **affects candidate**: Daily preparation degraded: FX GBP/EUR
+- **affects candidate** — LH Labcorp Holdings Inc.: Daily preparation degraded: [[securities/security_b1f2c48e1a744f5ecf67|LH]]
+- **affects candidate** — TX Ternium S.A.: Daily preparation degraded: [[securities/security_2c779e81c27b78c556bb|TX]]
+- **affects candidate** — YEC.F YASKAWA Electric Corporation: Daily preparation degraded: [[securities/security_89969b7dac39b7db5661|YEC.F]]
+- **affects candidate** — META Meta Platforms, Inc.: Daily preparation degraded: [[securities/security_d12e746b3c9d392183cc|META]]
+- **affects candidate** — VRT Vertiv Holdings Co: Daily preparation degraded: [[securities/security_cb88f9154cfeaa15e878|VRT]]
+- **affects candidate** — CRSR Corsair Gaming, Inc.: Daily preparation degraded: [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]]
+- **affects candidate** — RXRX Recursion Pharmaceuticals, Inc.: Daily preparation degraded: [[securities/security_ed7d5b616a196969c815|RXRX]]
+- **affects candidate** — SCCO Southern Copper Corporation: Daily preparation degraded: [[securities/security_6ad1af8d10d6276a0221|SCCO]]
+- **affects candidate** — MSFT Microsoft Corporation: Daily preparation degraded: [[securities/security_204be2a44063993de1a8|MSFT]]
+- **affects candidate** — ABBNY ABB Ltd: Daily preparation degraded: [[securities/security_c120e9f26ebb6159adf9|ABBNY]]
+- **affects candidate** — SSUN.VI Samsung Electronics Co., Ltd.: Daily preparation degraded: [[securities/security_d08d763780400dfbffce|SSUN.VI]]
+- **affects candidate** — PRLB Proto Labs, Inc.: Daily preparation degraded: [[security-catalog#security-security_f18cd57a5e086583c861|PRLB]]
+- **affects candidate** — UBER Uber Technologies, Inc.: Daily preparation degraded: [[securities/security_e4822686f60a96824b6e|UBER]]
+- **affects candidate** — PRX Prosus N.V.: Daily preparation degraded: [[securities/security_8b703a8adf5f864acaa4|PRX]]
+- **affects candidate** — FISV Fiserv, Inc.: Daily preparation degraded: [[securities/security_d202772e4e62065cd17a|FISV]]
+- **affects candidate** — TDY Teledyne Technologies Incorporated: Daily preparation degraded: [[securities/security_ad5917642acbba28c1f2|TDY]]
+- **affects candidate** — PWR Quanta Services, Inc.: Daily preparation degraded: [[securities/security_488a9d7f7a8573597724|PWR]]
+- **affects candidate** — PLTR Palantir Technologies Inc.: Daily preparation degraded: [[securities/security_bdc2f87dadf134760c3a|PLTR]]
+- **affects candidate** — AMAT Applied Materials, Inc.: Daily preparation degraded: [[securities/security_0a56aa634d077fe5796f|AMAT]]
+- **affects candidate** — BAS BASF SE: Daily preparation degraded: [[security-catalog#security-security_ef418f5ccc7dc5be8e65|BAS]]
+- **affects candidate** — NIB.F Nidec Corporation: Daily preparation degraded: [[securities/security_3853e54c619d597dcaa1|NIB.F]]
+- **affects candidate** — NOMD Nomad Foods Limited: Daily preparation degraded: [[securities/security_98a1943771da875efed5|NOMD]]
+- **affects candidate** — COIN Coinbase Global, Inc.: Daily preparation degraded: [[securities/security_37ddcbdaad296ad831f2|COIN]]
+- **affects candidate** — CSIQ Canadian Solar Inc.: Daily preparation degraded: [[securities/security_099561384c0f5e697727|CSIQ]]
+- **affects candidate** — 03388 Shenzhen Creality 3D Technology Co., Ltd.: Daily preparation degraded: [[securities/security_b19e8f0343b7da1f3c03|03388]]
+- **affects candidate** — POWL Powell Industries, Inc.: Daily preparation degraded: [[securities/security_0b67d6c8e3fd3366a257|POWL]]
+- **affects candidate** — AMZN Amazon.com, Inc.: Daily preparation degraded: [[securities/security_2433a056eb0c55961fcc|AMZN]]
+- **affects candidate** — ALB Albemarle Corporation: Daily preparation degraded: [[securities/security_66cdcf90aac0d83e76f3|ALB]]
+- **affects candidate** — SQM Sociedad Quimica y Minera de Chile S.A.: Daily preparation degraded: [[securities/security_9d4049ed6669a52815d6|SQM]]
+- **affects candidate** — SPOT Spotify Technology S.A.: Daily preparation degraded: [[securities/security_2010347f1a0a5ea60f47|SPOT]]
+- **affects candidate** — AKE Arkema S.A.: Daily preparation degraded: [[security-catalog#security-security_798e2fb944d740aca308|AKE]]
+- **affects candidate** — FLNC Fluence Energy, Inc.: Daily preparation degraded: [[securities/security_a9eb9838940ef5ceaa0c|FLNC]]
+- **affects candidate** — LAC Lithium Americas Corp.: Daily preparation degraded: [[securities/security_fb87fac302a5446a1ced|LAC]]
+- **affects candidate** — DDD 3D Systems Corporation: Daily preparation degraded: [[security-catalog#security-security_6ac6a6268ca7c08829ae|DDD]]
+- **affects candidate** — MELI MercadoLibre, Inc.: Daily preparation degraded: [[securities/security_4935c6e39e38273a1731|MELI]]
+- **affects candidate** — NVDA NVIDIA Corporation: Daily preparation degraded: [[securities/security_33d9c44facc75c726c7d|NVDA]]
+- **affects candidate** — SSYS Stratasys Ltd.: Daily preparation degraded: [[security-catalog#security-security_84705b27d28a94f2b318|SSYS]]
 - **publication only**: Hermes operation validation failed: [[daily-reports/daily-report_20260817|Daily podcast for Daily report for 2026-08-17 on 2026-08-17]]
 - **publication only**: Hermes operation validation failed: [[daily-reports/daily-report_20260806|Daily podcast for Daily report for 2026-08-06 on 2026-08-06]]
 - **publication only**: Hermes operation validation failed: [[daily-reports/daily-report_20260805|Daily podcast for Daily report for 2026-08-05 on 2026-08-05]]
@@ -307,111 +364,112 @@ This equal-weight research benchmark is analytical only, not copy-ready, and can
 ### Run diagnostics
 
 - Report date: 2026-09-10
-- Run status: succeeded
-- Generated (UTC): `2026-09-10T19:03:58Z`
+- Run status: degraded
+- Generated (UTC): `2026-09-10T20:30:56Z`
 
 ### Complete market freshness
 
 | Security | Price date | Retrieved at | Status | Error |
 | --- | --- | --- | --- | --- |
-| [[securities/security_099561384c0f5e697727|CSIQ]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_0a56aa634d077fe5796f|AMAT]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_0b67d6c8e3fd3366a257|POWL]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_0c8b3c4291cd97f56d8c|108490]] | 2026-09-10 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_0cf8075039299094d614|KTOS]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_18a3ab0ee6086ee85d0f|ETN]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_1e8fbdb0f45f2b413e00|PYPL]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_1f9cce545ede94cd6349|ISRG]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_2010347f1a0a5ea60f47|SPOT]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_204be2a44063993de1a8|MSFT]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_22c2b9d782a62d7a9b86|ATKR]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_2433a056eb0c55961fcc|AMZN]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_2c779e81c27b78c556bb|TX]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_2dbe878dfc899d7ee867|FCX]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_33d9c44facc75c726c7d|NVDA]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_37ddcbdaad296ad831f2|COIN]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_3853e54c619d597dcaa1|NIB.F]] | 2026-09-10 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_3a75fc1ccca2ee7c937a|QCOM]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_3e597863f00753e8c65c|BE]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_4627aea1bf7d8943d3d8|SGML]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_47a0b06f6c6c478d7c1e|NBIS]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_488a9d7f7a8573597724|PWR]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_4935c6e39e38273a1731|MELI]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_4b61970aa8f574446819|GEV]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_567d0d575bbd30aaa91d|SSU.VI]] | 2026-09-10 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_59304f90c440def31dc5|RTX]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_61567714298b9563d1a9|WTI]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_664f93a7eaca72e76e9b|SPCX]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_66cdcf90aac0d83e76f3|ALB]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[security-catalog#security-security_6ac6a6268ca7c08829ae|DDD]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_6ad1af8d10d6276a0221|SCCO]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_6cf75bd0ec0aa2a20148|TWST]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_6f9a1450edceb9307c9a|ANET]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_715bde20b6e1e1320c1a|DLO]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[security-catalog#security-security_798e2fb944d740aca308|AKE]] | 2026-09-10 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_7bf8f4c9cc12ae410e40|ABCL]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_7ca095d63423c55a90e3|RKLB]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_83a56943e18793f685b0|TXN]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[security-catalog#security-security_84705b27d28a94f2b318|SSYS]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_8472507d7d320aa388a7|CRWD]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_89969b7dac39b7db5661|YEC.F]] | 2026-09-10 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_8a5c43888d224de85c69|PLS.AX]] | 2026-09-10 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_8b703a8adf5f864acaa4|PRX]] | 2026-09-10 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_95351d928b674bbdf687|DNA]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_96ba305ee7cd586bc348|FUC.F]] | 2026-09-10 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_97f38b2cb2d5ef127f5a|PL]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_98470cfc01bbcde78fc2|SOFI]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_98a1943771da875efed5|NOMD]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_9b0db3bc77914b23a307|CSL]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_9d4049ed6669a52815d6|SQM]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_a5dc16f3f4b245e6c168|LUNR]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_a9eb9838940ef5ceaa0c|FLNC]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_ad3b1f8f59fd599f079a|HOOD]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_ad5917642acbba28c1f2|TDY]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_b19e8f0343b7da1f3c03|03388]] | 2026-09-10 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_b1f2c48e1a744f5ecf67|LH]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_b2116dcf976c96974d7b|VALE]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[security-catalog#security-security_b61c642d038d71be3821|MTLS]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_bdc2f87dadf134760c3a|PLTR]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_c120e9f26ebb6159adf9|ABBNY]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_c150f31c30afdb4a85f9|CROX]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_c2e6db30cb59254de418|XMTR]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_c5a9e460d3350284d157|VLO]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_c86bb4e75658c07142cf|GOOGL]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_c9a37d277445869a8809|RBLX]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_cb88f9154cfeaa15e878|VRT]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]] | 2026-09-10 | 2026-09-10T18:10:21Z | ok | — |
-| [[security-catalog#security-security_ccb25582c0392492fe9e|EVK]] | 2026-09-10 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_cd492d97064d8574156e|MP]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_ce9b78a4d0773c950765|TSM]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_d08d763780400dfbffce|SSUN.VI]] | 2026-09-10 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_d12e746b3c9d392183cc|META]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_d202772e4e62065cd17a|FISV]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_dc7a111e297be528d96b|TSLA]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_dc8486c1d61df62a22fd|SU]] | 2026-09-10 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_de0d83229b369a426b99|TCEHY]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_dfa34d4b9050964b465e|INTC]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_e19c7fe27fbcc4cd923d|AD]] | 2026-09-10 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_e4822686f60a96824b6e|UBER]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_eca976f0076a425ea1bb|PATH]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_ed7d5b616a196969c815|RXRX]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_ef35e41886220d51c22c|ASML]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[security-catalog#security-security_ef418f5ccc7dc5be8e65|BAS]] | 2026-09-10 | 2026-09-10T18:10:21Z | ok | — |
-| [[security-catalog#security-security_f18cd57a5e086583c861|PRLB]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_f2b9760d847b2ba59324|ENPH]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_f34181f3df32080a91d1|DPZ]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_fb87fac302a5446a1ced|LAC]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
-| [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]] | 2026-09-10 | 2026-09-10T18:10:21Z | ok | — |
-| [[securities/security_fe5539a7d3fd9d553bce|MSTR]] | 2026-09-09 | 2026-09-10T18:10:21Z | ok | — |
+| [[securities/security_099561384c0f5e697727|CSIQ]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_0a56aa634d077fe5796f|AMAT]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_0b67d6c8e3fd3366a257|POWL]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_0c8b3c4291cd97f56d8c|108490]] | 2026-09-10 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_0cf8075039299094d614|KTOS]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_18a3ab0ee6086ee85d0f|ETN]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_1e8fbdb0f45f2b413e00|PYPL]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_1f9cce545ede94cd6349|ISRG]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_2010347f1a0a5ea60f47|SPOT]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_204be2a44063993de1a8|MSFT]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_22c2b9d782a62d7a9b86|ATKR]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_2433a056eb0c55961fcc|AMZN]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_2c779e81c27b78c556bb|TX]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_2dbe878dfc899d7ee867|FCX]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_33d9c44facc75c726c7d|NVDA]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_37ddcbdaad296ad831f2|COIN]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_3853e54c619d597dcaa1|NIB.F]] | 2026-09-10 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_3a75fc1ccca2ee7c937a|QCOM]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_3e597863f00753e8c65c|BE]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_4627aea1bf7d8943d3d8|SGML]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_47a0b06f6c6c478d7c1e|NBIS]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_488a9d7f7a8573597724|PWR]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_4935c6e39e38273a1731|MELI]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_4b61970aa8f574446819|GEV]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_567d0d575bbd30aaa91d|SSU.VI]] | 2026-09-10 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_59304f90c440def31dc5|RTX]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_61567714298b9563d1a9|WTI]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_664f93a7eaca72e76e9b|SPCX]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_66cdcf90aac0d83e76f3|ALB]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[security-catalog#security-security_6ac6a6268ca7c08829ae|DDD]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_6ad1af8d10d6276a0221|SCCO]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_6cf75bd0ec0aa2a20148|TWST]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_6f9a1450edceb9307c9a|ANET]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_715bde20b6e1e1320c1a|DLO]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[security-catalog#security-security_798e2fb944d740aca308|AKE]] | 2026-09-10 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_7bf8f4c9cc12ae410e40|ABCL]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_7ca095d63423c55a90e3|RKLB]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_83a56943e18793f685b0|TXN]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[security-catalog#security-security_84705b27d28a94f2b318|SSYS]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_8472507d7d320aa388a7|CRWD]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_89969b7dac39b7db5661|YEC.F]] | 2026-09-10 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_8a5c43888d224de85c69|PLS.AX]] | 2026-09-10 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_8b703a8adf5f864acaa4|PRX]] | 2026-09-10 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_95351d928b674bbdf687|DNA]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_96ba305ee7cd586bc348|FUC.F]] | 2026-09-10 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_97f38b2cb2d5ef127f5a|PL]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_98470cfc01bbcde78fc2|SOFI]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_98a1943771da875efed5|NOMD]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_9b0db3bc77914b23a307|CSL]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_9d4049ed6669a52815d6|SQM]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_a5dc16f3f4b245e6c168|LUNR]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_a9eb9838940ef5ceaa0c|FLNC]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_ad3b1f8f59fd599f079a|HOOD]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_ad5917642acbba28c1f2|TDY]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_b19e8f0343b7da1f3c03|03388]] | 2026-09-10 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_b1f2c48e1a744f5ecf67|LH]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_b2116dcf976c96974d7b|VALE]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[security-catalog#security-security_b61c642d038d71be3821|MTLS]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_bdc2f87dadf134760c3a|PLTR]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_c120e9f26ebb6159adf9|ABBNY]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_c150f31c30afdb4a85f9|CROX]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_c2e6db30cb59254de418|XMTR]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_c5a9e460d3350284d157|VLO]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_c86bb4e75658c07142cf|GOOGL]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_c9a37d277445869a8809|RBLX]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_cb88f9154cfeaa15e878|VRT]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]] | 2026-09-10 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[security-catalog#security-security_ccb25582c0392492fe9e|EVK]] | 2026-09-10 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_cd492d97064d8574156e|MP]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_ce9b78a4d0773c950765|TSM]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_d08d763780400dfbffce|SSUN.VI]] | 2026-09-10 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_d12e746b3c9d392183cc|META]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_d202772e4e62065cd17a|FISV]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_dc7a111e297be528d96b|TSLA]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_dc8486c1d61df62a22fd|SU]] | 2026-09-10 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_de0d83229b369a426b99|TCEHY]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_dfa34d4b9050964b465e|INTC]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_e19c7fe27fbcc4cd923d|AD]] | 2026-09-10 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_e4822686f60a96824b6e|UBER]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_eca976f0076a425ea1bb|PATH]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_ed7d5b616a196969c815|RXRX]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_ef35e41886220d51c22c|ASML]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[security-catalog#security-security_ef418f5ccc7dc5be8e65|BAS]] | 2026-09-10 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[security-catalog#security-security_f18cd57a5e086583c861|PRLB]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_f2b9760d847b2ba59324|ENPH]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_f34181f3df32080a91d1|DPZ]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_fb87fac302a5446a1ced|LAC]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]] | 2026-09-10 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
+| [[securities/security_fe5539a7d3fd9d553bce|MSTR]] | 2026-09-09 | 2026-09-10T19:43:26Z | error | ModuleNotFoundError: No module named 'scipy' |
 
 ### Orders and executions
 
 | Order | Strategy | Fill policy | Status | Created |
 | --- | --- | --- | --- | --- |
-| [[strategies/strategy_8caa208dfc702a2584a7|Order for Prosus bounded baseline allocation on 2026-09-10]] | [[strategies/strategy_8caa208dfc702a2584a7|Prosus bounded baseline allocation]] | next_open | pending | 2026-09-10T18:42:09Z |
-| [[strategies/strategy_ef910e9aff5203a0b901|Order for Tencent bounded baseline allocation on 2026-09-10]] | [[strategies/strategy_ef910e9aff5203a0b901|Tencent bounded baseline allocation]] | next_open | pending | 2026-09-10T18:28:11Z |
+| [[strategies/strategy_8caa208dfc702a2584a7|Order for Prosus bounded baseline allocation on 2026-09-10]] | [[strategies/strategy_8caa208dfc702a2584a7|Prosus bounded baseline allocation]] | next_open | cancelled | 2026-09-10T18:42:09Z |
+| [[strategies/strategy_ef910e9aff5203a0b901|Order for Tencent bounded baseline allocation on 2026-09-10]] | [[strategies/strategy_ef910e9aff5203a0b901|Tencent bounded baseline allocation]] | next_open | cancelled | 2026-09-10T18:28:11Z |
+| [[strategies/strategy_8caa208dfc702a2584a7|Order for Prosus bounded baseline allocation on 2026-09-10]] | [[strategies/strategy_8caa208dfc702a2584a7|Prosus bounded baseline allocation]] | next_open | pending | 2026-09-10T20:00:24Z |
 
 | Fill | Order | Security | Side | Quantity | Fill price | Fees |
 | --- | --- | --- | --- | ---: | ---: | ---: |
@@ -420,95 +478,95 @@ This equal-weight research benchmark is analytical only, not copy-ready, and can
 ### Allocation audit
 
 - Mode: `active`
-- Deployment budget: 1497.8 EUR
-- Capital allocated: 437.2270034445591398895356775 EUR
-- Capital unallocated: 4942.175790459830290628017484 EUR
+- Deployment budget: 0 EUR
+- Capital allocated: 0 EUR
+- Capital unallocated: 5708.86951631398865426021744 EUR
 
 | Rank | Security | Target weight | Disposition | Reasons |
 | ---: | --- | ---: | --- | --- |
-| 1 | [[securities/security_8b703a8adf5f864acaa4|PRX]] | 4.24% | hold | A portfolio, sector, or theme concentration cap applies.; The eligible set is not sufficiently diversified.; Research quality is strictly above the configured threshold. |
-| 2 | [[securities/security_33d9c44facc75c726c7d|NVDA]] | 1.93% | open | The eligible set is not sufficiently diversified.; Research quality is strictly above the configured threshold. |
-| 3 | [[securities/security_e4822686f60a96824b6e|UBER]] | 2.45% | open | The eligible set is not sufficiently diversified.; Research quality is strictly above the configured threshold. |
-| 4 | [[securities/security_f34181f3df32080a91d1|DPZ]] | 0% | hold | The eligible set is not sufficiently diversified.; Research quality is strictly above the configured threshold. |
-| 5 | [[securities/security_de0d83229b369a426b99|TCEHY]] | 1.89% | hold | A portfolio, sector, or theme concentration cap applies.; The eligible set is not sufficiently diversified.; Research quality is strictly above the configured threshold. |
-| 6 | [[securities/security_4935c6e39e38273a1731|MELI]] | 0% | hold | The eligible set is not sufficiently diversified.; Research quality is strictly above the configured threshold. |
-| — | [[securities/security_099561384c0f5e697727|CSIQ]] | 0% | excluded | Research quality must be strictly above the configured threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_0a56aa634d077fe5796f|AMAT]] | 0% | excluded | The assessment's registered evidence is not fresh.; Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_0b67d6c8e3fd3366a257|POWL]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold. |
-| — | [[securities/security_0c8b3c4291cd97f56d8c|108490]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_0cf8075039299094d614|KTOS]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_18a3ab0ee6086ee85d0f|ETN]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_1e8fbdb0f45f2b413e00|PYPL]] | 0% | excluded | A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_1f9cce545ede94cd6349|ISRG]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold. |
-| — | [[securities/security_2010347f1a0a5ea60f47|SPOT]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_204be2a44063993de1a8|MSFT]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_22c2b9d782a62d7a9b86|ATKR]] | 0% | excluded | The comparable assessment is stale or expired.; A current accepted idea-to-security relationship is unavailable.; The effective score does not beat the configured cash hurdle. |
-| — | [[securities/security_2433a056eb0c55961fcc|AMZN]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold. |
-| — | [[securities/security_2c779e81c27b78c556bb|TX]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_2dbe878dfc899d7ee867|FCX]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_37ddcbdaad296ad831f2|COIN]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_3853e54c619d597dcaa1|NIB.F]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; Assessment confidence is below the configured minimum.; Accounting evidence is uncertain. Liquidity is insufficient. A supportable valuation is unavailable.; Research quality must be strictly above the configured threshold.; A current accepted idea-to-security relationship is unavailable.; A supportable scenario valuation is unavailable. |
-| — | [[securities/security_3a75fc1ccca2ee7c937a|QCOM]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_3e597863f00753e8c65c|BE]] | 0% | excluded | The assessment's registered evidence is not fresh.; Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_4627aea1bf7d8943d3d8|SGML]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; Assessment confidence is below the configured minimum.; Accounting evidence is uncertain. Solvency risk blocks eligibility. A supportable valuation is unavailable.; Research quality must be strictly above the configured threshold.; A current accepted idea-to-security relationship is unavailable.; A supportable scenario valuation is unavailable. |
-| — | [[securities/security_47a0b06f6c6c478d7c1e|NBIS]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_488a9d7f7a8573597724|PWR]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_4b61970aa8f574446819|GEV]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_567d0d575bbd30aaa91d|SSU.VI]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; Liquidity is insufficient. A supportable valuation is unavailable.; A supportable scenario valuation is unavailable. |
-| — | [[securities/security_59304f90c440def31dc5|RTX]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_61567714298b9563d1a9|WTI]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; Research quality must be strictly above the configured threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_664f93a7eaca72e76e9b|SPCX]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Assessment confidence is below the configured minimum.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold. |
-| — | [[securities/security_66cdcf90aac0d83e76f3|ALB]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_6ad1af8d10d6276a0221|SCCO]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_6cf75bd0ec0aa2a20148|TWST]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_6f9a1450edceb9307c9a|ANET]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_715bde20b6e1e1320c1a|DLO]] | 0% | excluded | Bear-case loss exceeds the starter limit.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_7bf8f4c9cc12ae410e40|ABCL]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; A supportable valuation is unavailable.; A current accepted idea-to-security relationship is unavailable.; A supportable scenario valuation is unavailable. |
-| — | [[securities/security_7ca095d63423c55a90e3|RKLB]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_83a56943e18793f685b0|TXN]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_8472507d7d320aa388a7|CRWD]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold. |
-| — | [[securities/security_89969b7dac39b7db5661|YEC.F]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; Liquidity is insufficient. A supportable valuation is unavailable.; Research quality must be strictly above the configured threshold.; A current accepted idea-to-security relationship is unavailable.; A supportable scenario valuation is unavailable. |
-| — | [[securities/security_8a5c43888d224de85c69|PLS.AX]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_95351d928b674bbdf687|DNA]] | 0% | excluded | Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Research quality must be strictly above the configured threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_96ba305ee7cd586bc348|FUC.F]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_97f38b2cb2d5ef127f5a|PL]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_98470cfc01bbcde78fc2|SOFI]] | 0% | excluded | Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_98a1943771da875efed5|NOMD]] | 0% | excluded | Research quality must be strictly above the configured threshold. |
-| — | [[securities/security_9b0db3bc77914b23a307|CSL]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_9d4049ed6669a52815d6|SQM]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_a5dc16f3f4b245e6c168|LUNR]] | 0% | excluded | A supportable valuation is unavailable.; Research quality must be strictly above the configured threshold.; A current accepted idea-to-security relationship is unavailable.; A supportable scenario valuation is unavailable. |
-| — | [[securities/security_a9eb9838940ef5ceaa0c|FLNC]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; Research quality must be strictly above the configured threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_ad3b1f8f59fd599f079a|HOOD]] | 0% | excluded | The assessment's registered evidence is not fresh.; Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_ad5917642acbba28c1f2|TDY]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_b19e8f0343b7da1f3c03|03388]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; Research quality must be strictly above the configured threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_b1f2c48e1a744f5ecf67|LH]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_b2116dcf976c96974d7b|VALE]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_bdc2f87dadf134760c3a|PLTR]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_c120e9f26ebb6159adf9|ABBNY]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_c150f31c30afdb4a85f9|CROX]] | 0% | excluded | A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_c2e6db30cb59254de418|XMTR]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; Research quality must be strictly above the configured threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_c5a9e460d3350284d157|VLO]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_c86bb4e75658c07142cf|GOOGL]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_c9a37d277445869a8809|RBLX]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_cb88f9154cfeaa15e878|VRT]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; Research quality must be strictly above the configured threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_cd492d97064d8574156e|MP]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_ce9b78a4d0773c950765|TSM]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold. |
-| — | [[securities/security_d08d763780400dfbffce|SSUN.VI]] | 0% | excluded | Liquidity is insufficient. A supportable valuation is unavailable.; A current accepted idea-to-security relationship is unavailable.; A supportable scenario valuation is unavailable. |
-| — | [[securities/security_d12e746b3c9d392183cc|META]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold. |
-| — | [[securities/security_d202772e4e62065cd17a|FISV]] | 0% | excluded | Research quality must be strictly above the configured threshold. |
-| — | [[securities/security_dc7a111e297be528d96b|TSLA]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold. |
-| — | [[securities/security_dc8486c1d61df62a22fd|SU]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_dfa34d4b9050964b465e|INTC]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_e19c7fe27fbcc4cd923d|AD]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold. |
-| — | [[securities/security_eca976f0076a425ea1bb|PATH]] | 0% | excluded | A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_ed7d5b616a196969c815|RXRX]] | 0% | excluded | Assessment confidence is below the configured minimum.; A supportable valuation is unavailable.; Research quality must be strictly above the configured threshold.; A current accepted idea-to-security relationship is unavailable.; A supportable scenario valuation is unavailable. |
-| — | [[securities/security_ef35e41886220d51c22c|ASML]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; A supportable valuation is unavailable.; A supportable scenario valuation is unavailable. |
-| — | [[securities/security_f2b9760d847b2ba59324|ENPH]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; A supportable valuation is unavailable.; A current accepted idea-to-security relationship is unavailable.; A supportable scenario valuation is unavailable. |
-| — | [[securities/security_fb87fac302a5446a1ced|LAC]] | 0% | excluded | The current assessment marks the security ineligible.; The comparable assessment is stale or expired.; Assessment confidence is below the configured minimum.; A supportable valuation is unavailable.; A current accepted idea-to-security relationship is unavailable.; The effective score does not beat the configured cash hurdle. |
-| — | [[securities/security_fe5539a7d3fd9d553bce|MSTR]] | 0% | excluded | The assessment's registered evidence is not fresh.; Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; Research quality must be strictly above the configured threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_099561384c0f5e697727|CSIQ]] | 0% | excluded | The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_0a56aa634d077fe5796f|AMAT]] | 0% | excluded | The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_0b67d6c8e3fd3366a257|POWL]] | 0% | excluded | The latest market retrieval did not succeed. |
+| — | [[securities/security_0c8b3c4291cd97f56d8c|108490]] | 0% | excluded | The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_0cf8075039299094d614|KTOS]] | 0% | excluded | The comparable assessment is stale or expired.; The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_18a3ab0ee6086ee85d0f|ETN]] | 0% | excluded | The comparable assessment is stale or expired.; The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]] | 0% | excluded | The comparable assessment is stale or expired.; The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_1e8fbdb0f45f2b413e00|PYPL]] | 0% | excluded | The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_1f9cce545ede94cd6349|ISRG]] | 0% | excluded | The latest market retrieval did not succeed. |
+| — | [[securities/security_2010347f1a0a5ea60f47|SPOT]] | 0% | excluded | The comparable assessment is stale or expired.; The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_204be2a44063993de1a8|MSFT]] | 0% | excluded | The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_22c2b9d782a62d7a9b86|ATKR]] | 0% | excluded | The comparable assessment is stale or expired.; The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable.; The effective score does not beat the configured cash hurdle. |
+| — | [[securities/security_2433a056eb0c55961fcc|AMZN]] | 0% | excluded | The latest market retrieval did not succeed. |
+| — | [[securities/security_2c779e81c27b78c556bb|TX]] | 0% | excluded | The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_2dbe878dfc899d7ee867|FCX]] | 0% | excluded | The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_33d9c44facc75c726c7d|NVDA]] | 0% | excluded | The latest market retrieval did not succeed. |
+| — | [[securities/security_37ddcbdaad296ad831f2|COIN]] | 0% | excluded | The comparable assessment is stale or expired.; The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_3853e54c619d597dcaa1|NIB.F]] | 0% | excluded | The comparable assessment is stale or expired.; Accounting evidence is uncertain. Liquidity is insufficient. A supportable valuation is unavailable.; The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_3a75fc1ccca2ee7c937a|QCOM]] | 0% | excluded | The comparable assessment is stale or expired.; The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_3e597863f00753e8c65c|BE]] | 0% | excluded | The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_4627aea1bf7d8943d3d8|SGML]] | 0% | excluded | The comparable assessment is stale or expired.; Accounting evidence is uncertain. Solvency risk blocks eligibility. A supportable valuation is unavailable.; The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_47a0b06f6c6c478d7c1e|NBIS]] | 0% | excluded | The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_488a9d7f7a8573597724|PWR]] | 0% | excluded | The comparable assessment is stale or expired.; The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_4935c6e39e38273a1731|MELI]] | 0% | excluded | The latest market retrieval did not succeed. |
+| — | [[securities/security_4b61970aa8f574446819|GEV]] | 0% | excluded | The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]] | 0% | excluded | The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_567d0d575bbd30aaa91d|SSU.VI]] | 0% | excluded | The comparable assessment is stale or expired.; Liquidity is insufficient. A supportable valuation is unavailable.; The latest market retrieval did not succeed. |
+| — | [[securities/security_59304f90c440def31dc5|RTX]] | 0% | excluded | The comparable assessment is stale or expired.; The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_61567714298b9563d1a9|WTI]] | 0% | excluded | The comparable assessment is stale or expired.; The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_664f93a7eaca72e76e9b|SPCX]] | 0% | excluded | The comparable assessment is stale or expired.; The latest market retrieval did not succeed. |
+| — | [[securities/security_66cdcf90aac0d83e76f3|ALB]] | 0% | excluded | The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_6ad1af8d10d6276a0221|SCCO]] | 0% | excluded | The comparable assessment is stale or expired.; The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_6cf75bd0ec0aa2a20148|TWST]] | 0% | excluded | The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_6f9a1450edceb9307c9a|ANET]] | 0% | excluded | The comparable assessment is stale or expired.; The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_715bde20b6e1e1320c1a|DLO]] | 0% | excluded | The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_7bf8f4c9cc12ae410e40|ABCL]] | 0% | excluded | The comparable assessment is stale or expired.; A supportable valuation is unavailable.; The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_7ca095d63423c55a90e3|RKLB]] | 0% | excluded | The comparable assessment is stale or expired.; The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_83a56943e18793f685b0|TXN]] | 0% | excluded | The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_8472507d7d320aa388a7|CRWD]] | 0% | excluded | The latest market retrieval did not succeed. |
+| — | [[securities/security_89969b7dac39b7db5661|YEC.F]] | 0% | excluded | The comparable assessment is stale or expired.; Liquidity is insufficient. A supportable valuation is unavailable.; The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_8a5c43888d224de85c69|PLS.AX]] | 0% | excluded | The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_8b703a8adf5f864acaa4|PRX]] | 0% | close | The latest market retrieval did not succeed. |
+| — | [[securities/security_95351d928b674bbdf687|DNA]] | 0% | excluded | The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_96ba305ee7cd586bc348|FUC.F]] | 0% | excluded | The comparable assessment is stale or expired.; The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_97f38b2cb2d5ef127f5a|PL]] | 0% | excluded | The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_98470cfc01bbcde78fc2|SOFI]] | 0% | excluded | The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_98a1943771da875efed5|NOMD]] | 0% | excluded | The latest market retrieval did not succeed. |
+| — | [[securities/security_9b0db3bc77914b23a307|CSL]] | 0% | excluded | The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_9d4049ed6669a52815d6|SQM]] | 0% | excluded | The comparable assessment is stale or expired.; The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_a5dc16f3f4b245e6c168|LUNR]] | 0% | excluded | A supportable valuation is unavailable.; The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_a9eb9838940ef5ceaa0c|FLNC]] | 0% | excluded | The comparable assessment is stale or expired.; The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_ad3b1f8f59fd599f079a|HOOD]] | 0% | excluded | The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_ad5917642acbba28c1f2|TDY]] | 0% | excluded | The comparable assessment is stale or expired.; The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_b19e8f0343b7da1f3c03|03388]] | 0% | excluded | The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_b1f2c48e1a744f5ecf67|LH]] | 0% | excluded | The comparable assessment is stale or expired.; The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_b2116dcf976c96974d7b|VALE]] | 0% | excluded | The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_bdc2f87dadf134760c3a|PLTR]] | 0% | excluded | The comparable assessment is stale or expired.; The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_c120e9f26ebb6159adf9|ABBNY]] | 0% | excluded | The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_c150f31c30afdb4a85f9|CROX]] | 0% | excluded | The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_c2e6db30cb59254de418|XMTR]] | 0% | excluded | The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_c5a9e460d3350284d157|VLO]] | 0% | excluded | The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_c86bb4e75658c07142cf|GOOGL]] | 0% | excluded | The comparable assessment is stale or expired.; The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_c9a37d277445869a8809|RBLX]] | 0% | excluded | The comparable assessment is stale or expired.; The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_cb88f9154cfeaa15e878|VRT]] | 0% | excluded | The comparable assessment is stale or expired.; The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]] | 0% | excluded | The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_cd492d97064d8574156e|MP]] | 0% | excluded | The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_ce9b78a4d0773c950765|TSM]] | 0% | excluded | The latest market retrieval did not succeed. |
+| — | [[securities/security_d08d763780400dfbffce|SSUN.VI]] | 0% | excluded | Liquidity is insufficient. A supportable valuation is unavailable.; The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_d12e746b3c9d392183cc|META]] | 0% | excluded | The latest market retrieval did not succeed. |
+| — | [[securities/security_d202772e4e62065cd17a|FISV]] | 0% | excluded | The latest market retrieval did not succeed. |
+| — | [[securities/security_dc7a111e297be528d96b|TSLA]] | 0% | excluded | The latest market retrieval did not succeed. |
+| — | [[securities/security_dc8486c1d61df62a22fd|SU]] | 0% | excluded | The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_de0d83229b369a426b99|TCEHY]] | 0% | excluded | The latest market retrieval did not succeed. |
+| — | [[securities/security_dfa34d4b9050964b465e|INTC]] | 0% | excluded | The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_e19c7fe27fbcc4cd923d|AD]] | 0% | excluded | The latest market retrieval did not succeed. |
+| — | [[securities/security_e4822686f60a96824b6e|UBER]] | 0% | excluded | The latest market retrieval did not succeed. |
+| — | [[securities/security_eca976f0076a425ea1bb|PATH]] | 0% | excluded | The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_ed7d5b616a196969c815|RXRX]] | 0% | excluded | A supportable valuation is unavailable.; The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_ef35e41886220d51c22c|ASML]] | 0% | excluded | The comparable assessment is stale or expired.; A supportable valuation is unavailable.; The latest market retrieval did not succeed. |
+| — | [[securities/security_f2b9760d847b2ba59324|ENPH]] | 0% | excluded | The comparable assessment is stale or expired.; A supportable valuation is unavailable.; The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_f34181f3df32080a91d1|DPZ]] | 0% | excluded | The latest market retrieval did not succeed. |
+| — | [[securities/security_fb87fac302a5446a1ced|LAC]] | 0% | excluded | The current assessment marks the security ineligible.; The comparable assessment is stale or expired.; Assessment confidence is below the configured minimum.; A supportable valuation is unavailable.; The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable.; The effective score does not beat the configured cash hurdle. |
+| — | [[securities/security_fe5539a7d3fd9d553bce|MSTR]] | 0% | excluded | The latest market retrieval did not succeed.; A current accepted idea-to-security relationship is unavailable. |
 
 ### Research-operation audit
 
@@ -533,6 +591,10 @@ This equal-weight research benchmark is analytical only, not copy-ready, and can
 | [[strategies/strategy_8caa208dfc702a2584a7|Execute strategy for Prosus bounded baseline allocation on 2026-09-10]] | [[strategies/strategy_8caa208dfc702a2584a7|Prosus bounded baseline allocation]] | succeeded | pending paper order created |
 | [[strategies/strategy_e4ada1a4934691d1f7ee|Strategy research for Uber bounded baseline allocation on 2026-09-10]] | [[strategies/strategy_e4ada1a4934691d1f7ee|Uber bounded baseline allocation]] | succeeded | baseline signal created |
 | [[strategies/strategy_e4ada1a4934691d1f7ee|Execute strategy for Uber bounded baseline allocation on 2026-09-10]] | [[strategies/strategy_e4ada1a4934691d1f7ee|Uber bounded baseline allocation]] | cancelled | superseded allocation intent:current allocation plan |
+| [[daily-reports/daily-report_20260910|Daily podcast for Daily report for 2026-09-10 on 2026-09-10]] | [[daily-reports/daily-report_20260910|Daily report for 2026-09-10]] | succeeded | agent result:succeeded |
+| [[strategies/strategy_e4ada1a4934691d1f7ee|Strategy research for Uber bounded baseline allocation on 2026-09-10]] | [[strategies/strategy_e4ada1a4934691d1f7ee|Uber bounded baseline allocation]] | cancelled | superseded allocation intent:current allocation plan |
+| [[strategies/strategy_8caa208dfc702a2584a7|Strategy research for Prosus bounded baseline allocation on 2026-09-10]] | [[strategies/strategy_8caa208dfc702a2584a7|Prosus bounded baseline allocation]] | succeeded | agent result:succeeded |
+| [[strategies/strategy_8caa208dfc702a2584a7|Execute strategy for Prosus bounded baseline allocation on 2026-09-10]] | [[strategies/strategy_8caa208dfc702a2584a7|Prosus bounded baseline allocation]] | succeeded | pending paper order created |
 
 ### Complete active queue
 
@@ -880,36 +942,132 @@ This equal-weight research benchmark is analytical only, not copy-ready, and can
 - Ready — [[inbox/market-security_fb87fac302a5446a1ced-macd_cross_above_signal-e3f6e2a40c59|Wiki ingest for LAC — MACD cross above signal on 2026-09-10]]
 - Ready — [[securities/security_fb87fac302a5446a1ced|Opportunity research for Market alert for LAC on 2026-09-10]]
 - Ready — [[inbox/market-security_fb87fac302a5446a1ced-volume_anomaly-dc5d5e1db7a1|Wiki ingest for LAC — Volume anomaly on 2026-09-10]]
-- Ready — [[strategies/strategy_e4ada1a4934691d1f7ee|Strategy research for Uber bounded baseline allocation on 2026-09-10]]
 
 ### Open issues and delivery failures
 
+- Warning — [[system-status|Daily preparation degraded: TCEHY]]: TCEHY: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: HOOD]]: HOOD: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: AD]]: AD: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: CROX]]: CROX: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: WTI]]: WTI: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: FCX]]: FCX: ModuleNotFoundError: No module named 'scipy'
 - Error — [[system-status|Hermes operation validation failed: Quick check research for ETN on 2026-08-11]]: agent result schema: 'cd57fc97df50efa0657881b253fc96d4467881b253fc96d4467881b253fc96d446' does not match '^\[a-f0-9\]{64}$'; commands\_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment; post-run integrity: agent result data/runs/Daily report for 2026-08-11/Quick check research for ETN on 2026-08-11/agent\_result.json: 'cd57fc97df50efa0657881b253fc96d4467881b253fc96d4467881b253fc96d446' does not match '^\[a-f0-9\]{64}$'
+- Warning — [[system-status|Daily preparation degraded: DLO]]: DLO: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: FX AUD/EUR]]: FX AUD/EUR: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: ATKR]]: ATKR: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: PLS.AX]]: PLS.AX: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: GEV]]: GEV: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: XMTR]]: XMTR: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: FX USD/EUR]]: FX USD/EUR: ModuleNotFoundError: No module named 'scipy'
 - Error — [[system-status|FANUC assessment source operation is ambiguous within one run]]: The schema-v2 FANUC full-review assessment could not be accepted because the deterministic research applier found both the completed quick\_check\_research operation and this running security\_research operation for the same security and run\_id, then rejected the immutable assessment request with no assessment-state changes. The mandatory security context succeeded; both issuer PDFs were rechecked with unchanged hashes, source history and the security summary were updated through validated command…
+- Warning — [[system-status|Daily preparation degraded: KTOS]]: KTOS: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: RIO]]: RIO: ModuleNotFoundError: No module named 'scipy'
 - Error — [[system-status|Hermes operation validation failed: Quick check research for KTOS on 2026-08-12]]: Hermes timed out after 600s; agent result was written before completed change: data/runs/Daily report for 2026-08-12/Quick check research for KTOS on 2026-08-12/command\_audit.json; commands\_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment
+- Warning — [[system-status|Daily preparation degraded: SOFI]]: SOFI: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: TSLA]]: TSLA: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: CSL]]: CSL: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: SGML]]: SGML: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: PYPL]]: PYPL: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: RKLB]]: RKLB: ModuleNotFoundError: No module named 'scipy'
 - Error — [[system-status|Hermes operation validation failed: Daily podcast for Daily report for 2026-08-17 on 2026-08-17]]: Hermes timed out after 1200s; agent result was written before completed change: data/runs/Daily report for 2026-08-17/Daily podcast for Daily report for 2026-08-17 on 2026-08-17/command\_audit.json; commands\_run does not exactly match deterministic CLI audit receipts
+- Warning — [[system-status|Daily preparation degraded: ETN]]: ETN: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: ISRG]]: ISRG: ModuleNotFoundError: No module named 'scipy'
 - Error — [[system-status|Hermes operation validation failed: Quick check research for HOOD on 2026-08-15]]: operation artifact directory is not empty: /\_\_w/PaperTrader/PaperTrader/data/runs/Daily report for 2026-08-15/Quick check research for HOOD on 2026-08-15
+- Warning — [[system-status|Daily preparation degraded: INTC]]: INTC: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: DPZ]]: DPZ: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: TWST]]: TWST: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: RBLX]]: RBLX: ModuleNotFoundError: No module named 'scipy'
 - Error — [[system-status|Hermes operation validation failed: Quick check research for RKLB on 2026-08-18]]: commands\_run claims commands without deterministic CLI audit receipts: \['scripts/papertrader research assessment upsert --request data/runs/Daily report for 2026-08-18/Quick check research for RKLB on 2026-08-18/assessment\_upsert\_request.json', 'scripts/papertrader research security-context --security-id RKLB'\]
+- Warning — [[system-status|Daily preparation degraded: FUC.F]]: FUC.F: ModuleNotFoundError: No module named 'scipy'
 - Error — [[system-status|Hermes operation validation failed: Daily podcast for Daily report for 2026-08-06 on 2026-08-06]]: commands\_run does not exactly match deterministic CLI audit receipts
 - Error — [[system-status|Hermes operation validation failed: Quick check research for SPOT on 2026-08-16]]: commands\_run does not exactly match deterministic CLI audit receipts
+- Warning — [[system-status|Daily preparation degraded: VALE]]: VALE: ModuleNotFoundError: No module named 'scipy'
 - Error — [[system-status|Hermes operation validation failed: Security research for WTI on 2026-08-18]]: Hermes exited with status 1; agent result is missing or a symlink: data/runs/Daily report for 2026-09-06/Security research for WTI on 2026-08-18/agent\_result.json
 - Error — [[system-status|Xometry security review blocked by issuer identity conflict]]: The validated operation payload identifies XMTR with issuer\_id issuer\_0b3fe347955c2ce31e63, while canonical data/tables/securities.csv binds the same immutable security\_id to issuer\_dbdde9b294689a9af3d5. The validated security upsert correctly failed closed with an immutable-identity conflict. Four current primary sources were retained, but no security row, research page, assessment, strategy, signal, order, allocation or accounting state was changed. Resolve the canonical issuer identity and e…
+- Warning — [[system-status|Daily preparation degraded: DNA]]: DNA: ModuleNotFoundError: No module named 'scipy'
 - Error — [[system-status|Hermes operation validation failed: Security research for SGML on 2026-08-17]]: operation artifact directory is not empty: /\_\_w/PaperTrader/PaperTrader/data/runs/Daily report for 2026-08-17/Security research for SGML on 2026-08-17
+- Warning — [[system-status|Daily preparation degraded: EVK]]: EVK: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: ANIC.L]]: ANIC.L: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: GOOGL]]: GOOGL: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: BE]]: BE: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: TXN]]: TXN: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: VLO]]: VLO: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: QCOM]]: QCOM: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: MP]]: MP: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: ANET]]: ANET: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: FX KRW/EUR]]: FX KRW/EUR: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: 108490]]: 108490: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: PARRO.PA]]: PARRO.PA: ModuleNotFoundError: No module named 'scipy'
 - Error — [[system-status|Hermes operation validation failed: Security research for YEC.F on 2026-08-22]]: Hermes timed out after 1800s; agent result is missing or a symlink: data/runs/Daily report for 2026-09-07/Security research for YEC.F on 2026-08-22/agent\_result.json
+- Warning — [[system-status|Daily preparation degraded: TSM]]: TSM: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: PL]]: PL: ModuleNotFoundError: No module named 'scipy'
 - Error — [[system-status|Hermes operation validation failed: Daily podcast for Daily report for 2026-08-05 on 2026-08-05]]: Hermes exited with status 2; agent result is missing or a symlink: data/runs/Daily report for 2026-08-05/Daily podcast for Daily report for 2026-08-05 on 2026-08-05/agent\_result.json
+- Warning — [[system-status|Daily preparation degraded: PATH]]: PATH: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: ABCL]]: ABCL: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: RTX]]: RTX: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: ENPH]]: ENPH: ModuleNotFoundError: No module named 'scipy'
 - Error — [[system-status|Hermes operation validation failed: Security research for ANIC.L on 2026-07-29]]: agent result schema: 'insufficient\_observations' is not one of \['single\_value', 'insufficient\_comparability', 'insufficient\_history', 'recorded source', 'not\_decision\_relevant', 'no\_page\_change'\]; post-run integrity: agent result data/runs/Daily report for 2026-09-09/Security research for ANIC.L on 2026-07-29/agent\_result.json: 'insufficient\_observations' is not one of \['single\_value', 'insufficient\_comparability', 'insufficient\_history', 'recorded source', 'not\_decision\_relevant', 'no\_page\_cha…
+- Warning — [[system-status|Daily preparation degraded: FX HKD/EUR]]: FX HKD/EUR: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: LUNR]]: LUNR: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: MSTR]]: MSTR: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: MTLS]]: MTLS: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: SPCX]]: SPCX: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: NBIS]]: NBIS: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: CRWD]]: CRWD: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: SSU.VI]]: SSU.VI: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: ASML]]: ASML: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: SU]]: SU: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: FX GBP/EUR]]: FX GBP/EUR: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: LH]]: LH: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: TX]]: TX: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: YEC.F]]: YEC.F: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: META]]: META: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: VRT]]: VRT: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: CRSR]]: CRSR: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: RXRX]]: RXRX: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: SCCO]]: SCCO: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: MSFT]]: MSFT: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: ABBNY]]: ABBNY: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: SSUN.VI]]: SSUN.VI: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: PRLB]]: PRLB: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: UBER]]: UBER: ModuleNotFoundError: No module named 'scipy'
 - Error — [[system-status|ABB assessment provenance does not match corrected final research page]]: Operation Security research for ABBNY on 2026-09-03 accepted immutable assessment assessment\_a3946a163695f1a9f51f while the security page still carried the prior prose disposition. Deterministic derivation changed the current disposition from Sell / Avoid to Hold / Watch at the lower mark, so the page and structured security summary were corrected after the immutable assessment was written. The current assessment and final page now agree economically, and exactly one assessment version names th…
+- Warning — [[system-status|Daily preparation degraded: PRX]]: PRX: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: FISV]]: FISV: ModuleNotFoundError: No module named 'scipy'
 - Error — [[system-status|Hermes operation validation failed: Daily podcast for Daily report for 2026-08-06 on 2026-08-06]]: cannot restore rejected path data/wiki/daily-reports/daily-report\_20260806.md: pre-run path cannot be restored because Git metadata is unavailable; daily podcast spoken transcript must label paper trading
+- Warning — [[system-status|Daily preparation degraded: TDY]]: TDY: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: PWR]]: PWR: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: PLTR]]: PLTR: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: AMAT]]: AMAT: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: BAS]]: BAS: ModuleNotFoundError: No module named 'scipy'
 - Error — [[system-status|Hermes operation validation failed: Security research for ABBNY on 2026-09-03]]: files\_changed claims paths absent from the actual delta: \['data/operations/operations\_TODO.csv'\]
+- Warning — [[system-status|Daily preparation degraded: NIB.F]]: NIB.F: ModuleNotFoundError: No module named 'scipy'
 - Error — [[system-status|Hermes operation validation failed: Daily podcast for Daily report for 2026-08-17 on 2026-08-17]]: non-successful daily podcast must not retain a transcript page
+- Warning — [[system-status|Daily preparation degraded: NOMD]]: NOMD: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: COIN]]: COIN: ModuleNotFoundError: No module named 'scipy'
 - Error — [[system-status|Hermes operation validation failed: Quick check research for TWST on 2026-08-05]]: agent result was written before completed change: data/runs/Daily report for 2026-08-12/Quick check research for TWST on 2026-08-05/command\_audit.json; commands\_run does not exactly match deterministic CLI audit receipts
+- Warning — [[system-status|Daily preparation degraded: CSIQ]]: CSIQ: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: 03388]]: 03388: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: POWL]]: POWL: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: AMZN]]: AMZN: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: ALB]]: ALB: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: SQM]]: SQM: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: SPOT]]: SPOT: ModuleNotFoundError: No module named 'scipy'
 - Error — [[system-status|Hermes operation validation failed: Daily podcast for Daily report for 2026-09-06 on 2026-09-06]]: Hermes exited with status 1; agent result is missing or a symlink: data/runs/Daily report for 2026-09-06/Daily podcast for Daily report for 2026-09-06 on 2026-09-06/agent\_result.json
+- Warning — [[system-status|Daily preparation degraded: AKE]]: AKE: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: FLNC]]: FLNC: ModuleNotFoundError: No module named 'scipy'
 - Error — [[system-status|ASML assessment rejected after security row update]]: The retry operation refreshed the ASML page and security row to the 2026-08-19 USD 1,751.73 mark, but the schema-v2 assessment request was rejected before assessment state changed because valuation\_template\_rationale is a required field and was omitted. The routed-operation no-retry rule forbids correcting and invoking a second assessment request after this rejection. The canonical assessment therefore remains the prior unsupported version, the prepared relationship and idea follow-up requests…
+- Warning — [[system-status|Daily preparation degraded: LAC]]: LAC: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: DDD]]: DDD: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: MELI]]: MELI: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: NVDA]]: NVDA: ModuleNotFoundError: No module named 'scipy'
+- Warning — [[system-status|Daily preparation degraded: SSYS]]: SSYS: ModuleNotFoundError: No module named 'scipy'
 - Error — [[system-status|Hermes operation validation failed: Quick check research for WTI on 2026-08-18]]: completed security research requires this run's comparable assessment
 
 ### Decision provenance
 
-- Validated opening actions are pending.
+- The latest market retrieval did not succeed.
+- A pending order is expired or has inconsistent state.
 
 ### Links
 

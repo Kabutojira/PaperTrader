@@ -7,13 +7,13 @@ tags:
 created: "2026-09-10"
 updated: "2026-09-10"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_3f0087c0f474f071d325"
-as_of: "2026-09-10T19:03:58Z"
+snapshot_id: "decision_3e0d79f008e7f74f8a18"
+as_of: "2026-09-10T20:30:56Z"
 ---
 
 # Performance and risk
 
-**As of `2026-09-10T19:03:58Z`**
+**As of `2026-09-10T20:30:56Z`**
 
 Current performance epoch started `2026-07-28T12:00:00Z` at **10000 EUR**. Prior audit epochs retained: **1**.
 
@@ -34,8 +34,7 @@ Current performance epoch started `2026-07-28T12:00:00Z` at **10000 EUR**. Prior
 
 ## Target allocation changes
 
-- **[PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4):** Add from 2.827733% to 4.242464%
-- **[TCEHY — Tencent Holdings Limited](securities/security_de0d83229b369a426b99):** Buy from 0% to 1.886008%
+No target allocation changes.
 
 ## Committed history
 
