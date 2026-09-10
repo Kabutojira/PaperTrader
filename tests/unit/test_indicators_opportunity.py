@@ -6,6 +6,7 @@ from dataclasses import replace
 from datetime import UTC, date, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 import pytest
 
@@ -29,6 +30,9 @@ from papertrader.queue import prepare_queue
 from papertrader.tables import read_table, write_table
 from papertrader.utils import content_hash
 from papertrader.wiki import lint_wiki, register_wiki_page
+
+if TYPE_CHECKING:
+    from conftest import ReferenceOutputs
 
 
 def _bars(count: int, *, start: date = date(2025, 12, 1)) -> tuple[PriceBar, ...]:
@@ -149,6 +153,7 @@ def test_sma_200_requires_configured_minimum_observation_count(
 def test_indicator_snapshot_matches_reference_output(
     repository_root: Path,
     sandbox_settings: Settings,
+    reference_outputs: ReferenceOutputs,
 ) -> None:
     snapshot = calculate_snapshot(
         "sec_a",
@@ -156,13 +161,8 @@ def test_indicator_snapshot_matches_reference_output(
         sandbox_settings,
         calculated_at=datetime(2026, 7, 24, 22, tzinfo=UTC),
     )
-    expected = json.loads(
-        (repository_root / "tests" / "reference_outputs" / "indicator_snapshot.json").read_text(
-            encoding="utf-8"
-        )
-    )
-
-    assert snapshot_row(snapshot) == expected
+    actual = snapshot_row(snapshot)
+    assert actual == reference_outputs.json("indicator_snapshot.json", actual)
 
 
 def test_technical_series_uses_adjusted_ohlc_and_matches_latest_snapshot(

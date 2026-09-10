@@ -557,6 +557,13 @@ uv run papertrader advice validate --strict
 Each refresh writes an immutable `data/runs/<run-id>/decision_snapshot.json` and atomically updates
 the latest validated publication files:
 
+Run directories are pruned, not rewritten. `papertrader runs prune` (run automatically after
+`daily finalize`) removes prompts, Hermes transcripts, validation reports, command receipts, and
+per-run decision snapshots from cycles older than `operations.run_artifact_retention_days`, and
+leaves a `retention.json` manifest with the SHA-256 of every removed file. `agent_result.json`,
+manifests, allocation plans, and source-discovery artifacts are kept forever; `git show
+<commit>:<path>` restores anything pruned.
+
 - `data/published/decision_snapshot.json`;
 - `data/published/model_portfolio.csv`;
 - `data/published/actionable_signals.csv`;

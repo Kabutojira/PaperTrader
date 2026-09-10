@@ -30,6 +30,11 @@ CHAT_ID = re.compile(r"^(?:-?[0-9]{1,20}|@[A-Za-z0-9_]{5,32})$")
 REPORT_PATH = re.compile(r"^data/wiki/daily-reports/daily-report_[0-9]{8}\.md$")
 RUN_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$")
 REPOSITORY_URL = re.compile(r"^https://github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$")
+RUN_URL = re.compile(
+    r"^https://github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+/actions/runs/[0-9]{1,20}"
+    r"(?:/attempts/[0-9]{1,6})?$"
+)
+FAILURE_NOTICE_LIMIT = 200
 COMMITTED_REPORT_URL = re.compile(
     r"^https://github\.com/(?P<owner>[A-Za-z0-9_.-]+)/(?P<repository>[A-Za-z0-9_.-]+)/"
     r"blob/(?P<commit>[0-9a-f]{40})/"
@@ -211,6 +216,16 @@ class TelegramAudioDeliveryResult:
     issue_id: str
     error: str
     language: str = "en-US"
+
+
+@dataclass(frozen=True, slots=True)
+class TelegramNotificationResult:
+    """Outcome of one best-effort operator notification; never touches repository state."""
+
+    status: str
+    daily_cycle_id: str
+    run_url: str
+    error: str
 
 
 @dataclass(frozen=True, slots=True)
@@ -647,6 +662,98 @@ def _resume_chunk(issue: Mapping[str, str] | None, commit_sha: str, total_chunks
         return 0
     value = int(match.group(1))
     return value if 0 <= value < total_chunks else 0
+
+
+def failure_notice_markdown(
+    *,
+    daily_cycle_id: str,
+    run_url: str,
+    failed_job: str,
+    detail: str = "",
+) -> str:
+    """Render one short MarkdownV2 notice describing a failed automation job."""
+
+    lines = [
+        escape_markdown_v2("PaperTrader automation failed"),
+        f"*Job:* {escape_markdown_v2(failed_job)}",
+    ]
+    if daily_cycle_id:
+        lines.append(f"*Cycle:* `{escape_markdown_v2(daily_cycle_id)}`")
+    if detail:
+        bounded = " ".join(detail.split())[:FAILURE_NOTICE_LIMIT]
+        lines.append(f"*Detail:* {escape_markdown_v2(bounded)}")
+    lines.append(f"[Open the workflow run]({escape_markdown_v2(run_url)})")
+    return "\n".join(lines)
+
+
+def notify_run_failure(
+    settings: Settings,
+    *,
+    daily_cycle_id: str,
+    run_url: str,
+    failed_job: str,
+    token: str,
+    chat_id: str,
+    detail: str = "",
+    transport: TelegramTransport | None = None,
+    sleeper: Callable[[float], None] = time.sleep,
+) -> TelegramNotificationResult:
+    """Send a best-effort failure notice without recording or mutating repository state.
+
+    The notice runs from a failed job whose working tree may be inconsistent, so it must not
+    write issues, logs, or any other tracked file; the workflow run itself is the audit trail.
+    """
+
+    if not RUN_URL.fullmatch(run_url):
+        raise CanonicalValueError("failure notice run URL must identify a GitHub Actions run")
+    if daily_cycle_id and not RUN_ID.fullmatch(daily_cycle_id):
+        raise CanonicalValueError("failure notice daily cycle ID is not canonical")
+    if not failed_job or not RUN_ID.fullmatch(failed_job):
+        raise CanonicalValueError("failure notice job name is not canonical")
+    if not token or not CHAT_ID.fullmatch(chat_id):
+        return TelegramNotificationResult(
+            status="skipped",
+            daily_cycle_id=daily_cycle_id,
+            run_url=run_url,
+            error="Telegram bot token and canonical chat ID are required",
+        )
+    markdown = failure_notice_markdown(
+        daily_cycle_id=daily_cycle_id,
+        run_url=run_url,
+        failed_job=failed_job,
+        detail=detail,
+    )
+    selected_transport = transport or UrllibTelegramTransport()
+    failure = ""
+    for attempt in range(1, settings.telegram.maximum_attempts + 1):
+        try:
+            response = selected_transport.send(
+                token,
+                {
+                    "chat_id": chat_id,
+                    "rich_message": json.dumps(
+                        {"markdown": markdown},
+                        ensure_ascii=False,
+                        separators=(",", ":"),
+                    ),
+                },
+                timeout_seconds=settings.telegram.timeout_seconds,
+            )
+            if response.get("ok") is not True:
+                description = response.get("description", "Telegram rejected the notice")
+                raise TelegramDeliveryError(str(description))
+            failure = ""
+            break
+        except (OSError, TelegramDeliveryError, ValueError) as exc:
+            failure = _safe_error(exc, token, chat_id)
+            if attempt < settings.telegram.maximum_attempts:
+                sleeper(float(2 ** (attempt - 1)))
+    return TelegramNotificationResult(
+        status="failed" if failure else "sent",
+        daily_cycle_id=daily_cycle_id,
+        run_url=run_url,
+        error=failure,
+    )
 
 
 def deliver_committed_report(

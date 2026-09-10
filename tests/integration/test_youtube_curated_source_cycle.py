@@ -5,6 +5,8 @@ from datetime import UTC, datetime
 from decimal import Decimal
 from pathlib import Path
 
+import pytest
+
 from papertrader.atomic_io import atomic_write_text
 from papertrader.config import Settings
 from papertrader.daily import execute_agent_batch, finalize_daily_run, prepare_daily_run
@@ -70,6 +72,7 @@ def _seed_channels(repository: Path) -> None:
     )
 
 
+@pytest.mark.slow
 def test_curated_youtube_ingest_cycle_stays_research_only_and_reproducible(
     sandbox_repository: Path,
     sandbox_settings: Settings,

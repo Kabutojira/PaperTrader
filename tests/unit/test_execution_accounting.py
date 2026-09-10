@@ -1,10 +1,10 @@
 from __future__ import annotations
 
-import json
 from dataclasses import replace
 from datetime import UTC, date, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 import pytest
 from hypothesis import given
@@ -40,6 +40,9 @@ from papertrader.portfolio import build_risk_state, rebuild_portfolio, reconcile
 from papertrader.risk import assess_order_risk, option_max_loss
 from papertrader.tables import append_unique, contract_by_name, read_table, write_table
 from papertrader.utils import stable_id
+
+if TYPE_CHECKING:
+    from conftest import ReferenceOutputs
 
 START = datetime(2026, 7, 20, 15, tzinfo=UTC)
 
@@ -562,6 +565,7 @@ def test_reference_accounting_scenarios_reconcile_exactly(
     sandbox_settings: Settings,
     repository_root: Path,
     scenario: str,
+    reference_outputs: ReferenceOutputs,
 ) -> None:
     strategy_id = f"strategy_{scenario}"
     if scenario == "equity":
@@ -690,12 +694,7 @@ def test_reference_accounting_scenarios_reconcile_exactly(
         "portfolio": read_table(sandbox_repository, "portfolio")[0],
         "performance": read_table(sandbox_repository, "performance_daily")[0],
     }
-    expected_all = json.loads(
-        (repository_root / "tests" / "reference_outputs" / "accounting_scenarios.json").read_text(
-            encoding="utf-8"
-        )
-    )
-    assert actual == expected_all[scenario]
+    assert actual == reference_outputs.json("accounting_scenarios.json", actual, key=scenario)
 
 
 def test_exact_replay_repairs_interrupted_fill_without_duplicate_state(

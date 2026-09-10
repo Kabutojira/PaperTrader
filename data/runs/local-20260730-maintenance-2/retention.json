@@ -1,0 +1,39 @@
+{
+  "artifacts": [
+    {
+      "path": "data/runs/local-20260730-maintenance-2/01KYQCTS30A730MR2AR4HXED20/command_audit.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "ba202698be0c662f6d0a5cc63041b6b4c1c2acbc28bd2d54082e73933871b557",
+      "size": 1498
+    },
+    {
+      "path": "data/runs/local-20260730-maintenance-2/01KYQCTS30A730MR2AR4HXED20/controller_prompt.md",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "d1afb545e36e1ea51173140f8cf6223084e2f20f507d54d52bba6c245f065c87",
+      "size": 2646
+    },
+    {
+      "path": "data/runs/local-20260730-maintenance-2/01KYQCTS30A730MR2AR4HXED20/harness_preflight.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "882a897a7bf1222de2e8352e696ca8011a1e7c247d0682fc034b9db29e72e912",
+      "size": 722
+    },
+    {
+      "path": "data/runs/local-20260730-maintenance-2/01KYQCTS30A730MR2AR4HXED20/validation_report.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "453d9677242f7df686506694e5db05ae8c6846d5b0acd20abdda249bb19c109d",
+      "size": 243
+    },
+    {
+      "path": "data/runs/local-20260730-maintenance-2/decision_snapshot.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "7261a241b068a5de1629af3303eb031e755d035b3b8be4e57b1bd0c5db4b49fc",
+      "size": 116313,
+      "snapshot_id": "decision_0cfdae4fe3cdb1bfe9b5"
+    }
+  ],
+  "pruned_at": "2026-09-09T17:29:54Z",
+  "retention_days": 30,
+  "run_id": "local-20260730-maintenance-2",
+  "run_retention_version": 1
+}

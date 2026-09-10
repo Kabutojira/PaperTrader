@@ -6,7 +6,7 @@ import stat
 import subprocess
 from collections.abc import Mapping, Sequence
 from dataclasses import replace
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -1176,3 +1176,114 @@ def test_wiki_ingest_source_hash_is_verified_before_hermes(
             operation_id=operation_id,
             executor=should_not_run,
         )
+
+
+def test_job_deadline_guard_skips_claims_and_shortens_hermes_timeouts(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    tmp_path: Path,
+) -> None:
+    from papertrader.agent_runner import available_operation_seconds
+    from papertrader.tables import read_table
+
+    home = _hermes_home(sandbox_repository, sandbox_settings, tmp_path)
+    operation_id = _enqueue_opportunity(sandbox_repository, sandbox_settings)
+    cycle = resume_or_create_daily_cycle(
+        sandbox_repository,
+        sandbox_settings,
+        trigger="workflow_dispatch",
+        source_sha="a" * 40,
+        github_run_id="43",
+        workflow_attempt="1",
+        now=datetime(2026, 8, 4, 15, tzinfo=UTC),
+    )
+    cycle_id = str(cycle["daily_cycle_id"])
+    reserve = sandbox_settings.operations.cycle_time_reserve
+    started = datetime(2026, 8, 4, 15, 5, tzinfo=UTC)
+    seen_timeouts: list[int] = []
+
+    def execute(
+        command: Sequence[str],
+        cwd: Path,
+        environment: Mapping[str, str],
+        timeout: int,
+    ) -> subprocess.CompletedProcess[str]:
+        del cwd, environment
+        seen_timeouts.append(timeout)
+        return subprocess.CompletedProcess(command, 0, "", "")
+
+    assert (
+        available_operation_seconds(
+            sandbox_settings, job_deadline=None, now=started, profile_timeout=600
+        )
+        is None
+    )
+    assert (
+        available_operation_seconds(
+            sandbox_settings,
+            job_deadline=started + reserve + timedelta(seconds=299),
+            now=started,
+            profile_timeout=600,
+        )
+        == 0
+    )
+    assert (
+        available_operation_seconds(
+            sandbox_settings,
+            job_deadline=started + reserve + timedelta(seconds=450),
+            now=started,
+            profile_timeout=600,
+        )
+        == 450
+    )
+
+    # Too little time left: nothing is claimed and the queue row keeps its attempt budget.
+    assert (
+        run_cycle_operation(
+            sandbox_repository,
+            sandbox_settings,
+            daily_cycle_id=cycle_id,
+            hermes_home=home,
+            environment={"PATH": "/usr/bin"},
+            operation_id=operation_id,
+            executor=execute,
+            job_deadline=started + reserve + timedelta(seconds=120),
+            now=lambda: started,
+        )
+        is None
+    )
+    row = next(
+        row
+        for row in read_table(sandbox_repository, "operations_todo")
+        if row["operation_id"] == operation_id
+    )
+    assert row["status"] == "ready"
+    assert row["attempt_count"] == "0"
+    assert seen_timeouts == []
+
+    # Partial fit: the routed profile timeout is shortened to the available window.
+    outcome = run_cycle_operation(
+        sandbox_repository,
+        sandbox_settings,
+        daily_cycle_id=cycle_id,
+        hermes_home=home,
+        environment={"PATH": "/usr/bin"},
+        operation_id=operation_id,
+        executor=execute,
+        job_deadline=started + reserve + timedelta(seconds=420),
+        now=lambda: started,
+    )
+    assert outcome is not None
+    assert seen_timeouts == [420]
+    assert outcome.timeout_seconds == 420
+    assert outcome.timed_out is False
+    assert outcome.duration_seconds >= 0
+    manifest = json.loads(
+        (sandbox_repository / "data" / "runs" / cycle_id / "daily_run.json").read_text()
+    )
+    accepted = manifest["operations_accepted"][0]
+    assert accepted["timeout_seconds"] == 420
+    assert accepted["timed_out"] is False
+    assert accepted["duration_seconds"] == outcome.duration_seconds
+    assert manifest["operations_timed_out"] == 0
+    assert manifest["operation_seconds_used"] == outcome.duration_seconds

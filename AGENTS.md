@@ -59,6 +59,7 @@ The repository is the source of truth. Any legacy data import is a separate, one
 │   ├── config.py
 │   ├── models.py
 │   ├── atomic_io.py
+│   ├── file_cache.py
 │   ├── queue.py
 │   ├── dedupe.py
 │   ├── market_data.py
@@ -81,16 +82,19 @@ The repository is the source of truth. Any legacy data import is a separate, one
 │   ├── podcast.py
 │   ├── telegram.py
 │   ├── wiki.py
+│   ├── retention.py
 │   └── integrity.py
 ├── scripts/
 │   ├── papertrader
 │   ├── build_site.py
-│   └── check_site_links.py
+│   ├── check_site_links.py
+│   └── render_checkpoint_steps.py
 ├── schemas/
 │   ├── agent_result.schema.json
 │   ├── decision_snapshot.schema.json
 │   ├── operation_payload.schema.json
 │   ├── research_chart.schema.json
+│   ├── run_retention.schema.json
 │   ├── seekingalpha_discovery.schema.json
 │   ├── seekingalpha_schedule.schema.json
 │   └── csv_contracts.yaml
@@ -211,6 +215,7 @@ Scheduled and manually dispatched runtime workflows may commit only these paths 
 - lawfully storable wiki source assets under `data/wiki/raw/` with extensions `.md`, `.txt`, `.pdf`, `.png`, `.jpg`, `.jpeg`, or `.webp`;
 - canonical and generated CSV files under `data/**/*.csv`, including the rolling one-year price cache in `data/market/prices/`;
 - operation payloads, run manifests, and validation results under `data/operations/` and `data/runs/` with extensions `.json` or `.md`;
+- deletions of aged run evidence under `data/runs/` together with the hash-bound `retention.json` marker that `papertrader runs prune` writes beside each pruned cycle;
 - timestamped podcast transcript pages under `data/wiki/podcasts/`; podcast audio is ephemeral and
   forbidden from the repository;
 - the generated publication snapshot `data/published/decision_snapshot.json` and generated CSV exports under `data/published/`;
@@ -370,6 +375,19 @@ changes the daily-discovery cursor.
 Each completed daily run writes one immutable `data/runs/<run_id>/decision_snapshot.json` that
 validates against `schemas/decision_snapshot.schema.json`, then atomically refreshes these latest
 publication views:
+
+Run evidence is immutable in Git history but bounded in the working tree. After
+`operations.run_artifact_retention_days` (default 30, never below 7), `papertrader runs prune`
+removes bulky per-cycle evidence from finished cycles: `decision_snapshot.json`,
+`controller_prompt.md`, `hermes_run.json`, `hermes_preflight.json`, `harness_preflight.json`,
+`profile_route.json`, `validation_report.json`, `command_audit.json`, and `candidate_slate.json`.
+It never touches `agent_result.json`, `daily_run.json`, `agent_batch.json`, allocation plans,
+source-discovery artifacts, podcast context, request receipts, the cycle that owns the published
+snapshot, the latest finalized cycle, or any unfinished cycle. Each pruned cycle keeps a
+`retention.json` manifest (`schemas/run_retention.schema.json`) listing every removed path with
+its SHA-256, size, and, for the decision snapshot, its `snapshot_id`; integrity accepts a missing
+run snapshot only through that manifest and rejects manifests that list a still-present or
+non-prunable file. Recover exact bytes with `git show <commit>:<path>`.
 
 - `data/published/decision_snapshot.json`;
 - `data/published/model_portfolio.csv`;
@@ -897,12 +915,14 @@ Use one serialized daily orchestration workflow and reusable sub-workflows. Ever
    watchers before queue selection; new ideas are supplied manually.
 4. Run deterministic market retrieval, indicators, corporate actions, queue preparation, and report scaffold.
 5. Call the reusable LLM workflow for due operations strictly one at a time, always running Hermes with `--yolo`, and remain within configured count/cost/time budgets.
+   Before each claim the controller compares the routed profile timeout with the time left before `PAPERTRADER_JOB_DEADLINE` minus `operations.cycle_time_reserve_minutes`; it shortens the Hermes timeout to the remaining window or, below `operations.minimum_operation_seconds`, claims nothing so finalization and publication always fit inside the job. Every accepted operation records `duration_seconds` and `timed_out` in `daily_run.json`, with cycle totals in `operations_timed_out` and `operation_seconds_used`.
 6. Validate the agent's completed changes and result manifest, run fills, rebuild portfolio/performance, lint the wiki, and run integrity checks.
 7. Generate and strictly validate the immutable decision snapshot, CSV exports, investor pages,
    final daily report, and Quartz content.
 8. Run the full test and validation gate, including `papertrader advice validate --strict`.
 9. Rebase against the current default branch, verify every changed path against the automated runtime commit whitelist, commit only when changes exist, and push with a bot identity.
 10. Deploy Pages and send Telegram using secrets introduced only in their specific post-validation steps.
+11. If the runtime job fails or is cancelled, one best-effort `papertrader telegram notify-failure` step sends the run URL to Telegram; it never writes repository state and never receives a Git token.
 
 Manual dispatch inputs must support at least: `operation_id`, `operation_type`, `max_operations`, `dry_run`, `publish_pages`, and `send_telegram`. Manual dispatch is for debugging, replay, and bounded execution; it is not an approval gate.
 
@@ -968,7 +988,7 @@ all pass.
 
 ## Codex implementation behavior
 
-- Read this file and `PLAN.md` before modifying the repository.
+- Read this file before modifying the repository; `PLAN.md` is the completed-step changelog and explains why contracts look the way they do.
 - Inspect existing code, skills, and tests before creating new abstractions. Never introduce parallel agent execution.
 - Implement one bounded plan step at a time.
 - Prefer small modules and pure functions around external I/O.
@@ -976,7 +996,7 @@ all pass.
 - Do not weaken a validation to make a test pass.
 - Do not manually edit generated files when a generator exists.
 - Use conventional commits with a narrow scope.
-- After each plan step, update `PLAN.md` status and record unresolved implementation blockers in `data/tables/issues.csv` through the project CLI.
+- After each shipped step, append its dated entry to `PLAN.md` and record unresolved implementation blockers in `data/tables/issues.csv` through the project CLI.
 - A local agentic harness may execute the applicable project skill directly for debugging. It must run operations sequentially, use the repository CLI for structured state, and execute the same validation gate before finishing.
 
 ## Definition of done

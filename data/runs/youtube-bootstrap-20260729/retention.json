@@ -1,0 +1,15 @@
+{
+  "artifacts": [
+    {
+      "path": "data/runs/youtube-bootstrap-20260729/decision_snapshot.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "a3390ac5dad42db1b24e591f695f665256af3e901620aed19a56f919b44b67f5",
+      "size": 54741,
+      "snapshot_id": "decision_d2bc1d724ae1b108c0fb"
+    }
+  ],
+  "pruned_at": "2026-09-09T17:29:54Z",
+  "retention_days": 30,
+  "run_id": "youtube-bootstrap-20260729",
+  "run_retention_version": 1
+}

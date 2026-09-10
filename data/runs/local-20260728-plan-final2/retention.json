@@ -1,0 +1,15 @@
+{
+  "artifacts": [
+    {
+      "path": "data/runs/local-20260728-plan-final2/decision_snapshot.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "667843ca3cb3a1eae61d74fb515b741a589267d93eeb30390dfa0ee7a46d7d2a",
+      "size": 44343,
+      "snapshot_id": "decision_e055d5ebac7421551a91"
+    }
+  ],
+  "pruned_at": "2026-09-09T17:29:54Z",
+  "retention_days": 30,
+  "run_id": "local-20260728-plan-final2",
+  "run_retention_version": 1
+}

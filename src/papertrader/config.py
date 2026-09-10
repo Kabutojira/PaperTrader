@@ -178,6 +178,9 @@ class OperationSettings:
     cycle_maximum_operations: int
     maximum_model_budget_usd_per_run: Decimal
     maximum_weighted_model_budget_per_cycle: Decimal
+    run_artifact_retention_days: int
+    cycle_time_reserve: timedelta
+    minimum_operation_seconds: int
 
 
 @dataclass(frozen=True, slots=True)
@@ -423,22 +426,9 @@ def _choice(
     return value
 
 
-def _load_runtime_settings(
-    parser: configparser.ConfigParser,
-    environment: Mapping[str, str],
-) -> tuple[
-    MarketDataSettings,
-    IndicatorSettings,
-    PortfolioSettings,
-    RiskSettings,
-    AllocationSettings,
-    RatingSettings,
-    OrderSettings,
-    OperationSettings,
-    ClassifierSettings,
-    YouTubeSettings,
-    SeekingAlphaSettings,
-]:
+def _load_market_settings(parser: configparser.ConfigParser) -> MarketDataSettings:
+    """Parse and validate the ``[market]`` section."""
+
     calendars = tuple(
         sorted((mic.strip().upper(), name.strip()) for mic, name in parser.items("calendars"))
     )
@@ -466,6 +456,12 @@ def _load_runtime_settings(
         raise ConfigurationError(
             "market data timezones must be UTC with Europe/Rome display conversion"
         )
+    return market
+
+
+def _load_indicator_settings(parser: configparser.ConfigParser) -> IndicatorSettings:
+    """Parse and validate the ``[indicators]`` section."""
+
     sma_periods = tuple(int(value) for value in _csv_values(parser, "indicators", "sma_periods"))
     if sma_periods != (20, 50, 200):
         raise ConfigurationError("indicators.sma_periods must be exactly 20,50,200")
@@ -497,6 +493,12 @@ def _load_runtime_settings(
         raise ConfigurationError("MACD fast period must be below slow period")
     if indicators.volume_zscore_threshold <= 0:
         raise ConfigurationError("volume z-score threshold must be positive")
+    return indicators
+
+
+def _load_portfolio_settings(parser: configparser.ConfigParser) -> PortfolioSettings:
+    """Parse and validate the ``[portfolio]`` section."""
+
     base_currency = parser.get("portfolio", "base_currency").strip().upper()
     if len(base_currency) != 3:
         raise ConfigurationError("portfolio.base_currency must be an ISO currency code")
@@ -504,6 +506,16 @@ def _load_runtime_settings(
         base_currency=base_currency,
         initial_capital=_decimal(parser, "portfolio", "initial_capital", minimum=Decimal("0.01")),
     )
+    return portfolio
+
+
+def _load_risk_settings(
+    parser: configparser.ConfigParser,
+    market: MarketDataSettings,
+    portfolio: PortfolioSettings,
+) -> RiskSettings:
+    """Parse and validate the ``[risk]`` section."""
+
     risk = RiskSettings(
         margin_of_safety_pct=_decimal(parser, "risk", "margin_of_safety_pct"),
         maximum_single_position_pct=_decimal(
@@ -553,6 +565,14 @@ def _load_runtime_settings(
         raise ConfigurationError(f"allowed exchanges lack calendars: {missing_calendars}")
     if portfolio.base_currency not in risk.allowed_currencies:
         raise ConfigurationError("portfolio.base_currency must be an allowed risk currency")
+    return risk
+
+
+def _load_allocation_settings(
+    parser: configparser.ConfigParser, risk: RiskSettings
+) -> AllocationSettings:
+    """Parse and validate the ``[allocation]`` section."""
+
     allocation = AllocationSettings(
         mode=_choice(
             parser,
@@ -718,6 +738,12 @@ def _load_runtime_settings(
         raise ConfigurationError(
             "allocation.minimum_trade_pct must not exceed the baseline position cap"
         )
+    return allocation
+
+
+def _load_rating_settings(parser: configparser.ConfigParser) -> RatingSettings:
+    """Parse and validate the ``[ratings]`` section."""
+
     ratings = RatingSettings(
         strong_buy_expected_return_pct=_decimal(
             parser, "ratings", "strong_buy_expected_return_pct", maximum=Decimal("1000")
@@ -758,6 +784,12 @@ def _load_runtime_settings(
         raise ConfigurationError("strong-buy base return must be at least the buy threshold")
     if ratings.strong_sell_expected_return_pct > ratings.sell_expected_return_pct:
         raise ConfigurationError("strong-sell return must not exceed the sell threshold")
+    return ratings
+
+
+def _load_order_settings(parser: configparser.ConfigParser) -> OrderSettings:
+    """Parse and validate the ``[orders]`` section."""
+
     orders = OrderSettings(
         default_fill_policy=_choice(
             parser,
@@ -780,6 +812,14 @@ def _load_runtime_settings(
     )
     if orders.default_fill_policy != "next_open" or orders.default_order_type != "market":
         raise ConfigurationError("version-1 defaults must be next_open and market")
+    return orders
+
+
+def _load_operation_settings(
+    parser: configparser.ConfigParser, environment: Mapping[str, str]
+) -> OperationSettings:
+    """Parse and validate the ``[operations]`` section."""
+
     operations = OperationSettings(
         lease_duration=timedelta(minutes=_positive_int(parser, "operations", "lease_minutes")),
         default_max_attempts=_positive_int(parser, "operations", "default_max_attempts"),
@@ -793,7 +833,16 @@ def _load_runtime_settings(
         maximum_weighted_model_budget_per_cycle=_decimal(
             parser, "operations", "maximum_weighted_model_budget_per_cycle"
         ),
+        run_artifact_retention_days=_positive_int(
+            parser, "operations", "run_artifact_retention_days"
+        ),
+        cycle_time_reserve=timedelta(
+            minutes=_positive_int(parser, "operations", "cycle_time_reserve_minutes")
+        ),
+        minimum_operation_seconds=_positive_int(parser, "operations", "minimum_operation_seconds"),
     )
+    if operations.run_artifact_retention_days < 7:
+        raise ConfigurationError("operations.run_artifact_retention_days must be at least 7")
     raw_cycle_maximum = environment.get("MAX_OPERATIONS", "").strip()
     if not raw_cycle_maximum:
         raw_cycle_maximum = str(
@@ -818,7 +867,16 @@ def _load_runtime_settings(
         maximum_weighted_model_budget_per_cycle=(
             operations.maximum_weighted_model_budget_per_cycle
         ),
+        run_artifact_retention_days=operations.run_artifact_retention_days,
+        cycle_time_reserve=operations.cycle_time_reserve,
+        minimum_operation_seconds=operations.minimum_operation_seconds,
     )
+    return operations
+
+
+def _load_classifier_settings(parser: configparser.ConfigParser) -> ClassifierSettings:
+    """Parse and validate the ``[classifier]`` section."""
+
     raw_command = parser.get("classifier", "command", fallback="").strip()
     classifier = ClassifierSettings(
         command=tuple(shlex.split(raw_command)),
@@ -827,6 +885,12 @@ def _load_runtime_settings(
     )
     if bool(classifier.command) != bool(classifier.model):
         raise ConfigurationError("classifier.command and classifier.model must be set together")
+    return classifier
+
+
+def _load_youtube_settings(parser: configparser.ConfigParser) -> YouTubeSettings:
+    """Parse and validate the ``[youtube]`` section."""
+
     try:
         youtube_enabled = parser.getboolean("youtube", "enabled")
     except (configparser.Error, ValueError) as exc:
@@ -862,6 +926,14 @@ def _load_runtime_settings(
         raise ConfigurationError(
             "youtube.transcript_languages must contain canonical language codes"
         )
+    return youtube
+
+
+def _load_seekingalpha_settings(
+    parser: configparser.ConfigParser, operations: OperationSettings
+) -> SeekingAlphaSettings:
+    """Parse and validate the ``[seekingalpha]`` section."""
+
     try:
         seekingalpha_enabled = parser.getboolean("seekingalpha", "enabled")
         direct_site_access = parser.getboolean("seekingalpha", "direct_site_access")
@@ -913,6 +985,36 @@ def _load_runtime_settings(
         raise ConfigurationError(
             "seekingalpha priorities must strictly increase from news through discovery"
         )
+    return seekingalpha
+
+
+def _load_runtime_settings(
+    parser: configparser.ConfigParser,
+    environment: Mapping[str, str],
+) -> tuple[
+    MarketDataSettings,
+    IndicatorSettings,
+    PortfolioSettings,
+    RiskSettings,
+    AllocationSettings,
+    RatingSettings,
+    OrderSettings,
+    OperationSettings,
+    ClassifierSettings,
+    YouTubeSettings,
+    SeekingAlphaSettings,
+]:
+    market = _load_market_settings(parser)
+    indicators = _load_indicator_settings(parser)
+    portfolio = _load_portfolio_settings(parser)
+    risk = _load_risk_settings(parser, market, portfolio)
+    allocation = _load_allocation_settings(parser, risk)
+    ratings = _load_rating_settings(parser)
+    orders = _load_order_settings(parser)
+    operations = _load_operation_settings(parser, environment)
+    classifier = _load_classifier_settings(parser)
+    youtube = _load_youtube_settings(parser)
+    seekingalpha = _load_seekingalpha_settings(parser, operations)
     return (
         market,
         indicators,

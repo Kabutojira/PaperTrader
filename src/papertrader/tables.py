@@ -7,6 +7,7 @@ from collections.abc import Iterable, Mapping, Sequence
 from pathlib import Path
 
 from papertrader.atomic_io import atomic_write_csv
+from papertrader.file_cache import SignatureCache
 from papertrader.integrity import load_csv_contracts
 from papertrader.models import CsvContract
 from papertrader.utils import CanonicalValueError, require_columns
@@ -29,6 +30,9 @@ def contract_path(repository_root: Path, contract: CsvContract) -> Path:
     return repository_root.joinpath(*contract.path.parts)
 
 
+_ROW_CACHE: SignatureCache[tuple[dict[str, str], ...]] = SignatureCache(capacity=256)
+
+
 def read_csv(
     path: Path,
     columns: Sequence[str],
@@ -36,10 +40,40 @@ def read_csv(
     legacy_columns: Sequence[Sequence[str]] = (),
     legacy_renames: Mapping[str, str] | None = None,
 ) -> list[dict[str, str]]:
-    """Read an RFC 4180 CSV and require its exact ordered header."""
+    """Read an RFC 4180 CSV and require its exact ordered header.
 
+    Parsed rows are memoised per file version; callers always receive fresh row dictionaries.
+    """
+
+    extra = (
+        tuple(columns),
+        tuple(tuple(candidate) for candidate in legacy_columns),
+        tuple(sorted((legacy_renames or {}).items())),
+    )
+    cached = _ROW_CACHE.get_or_load(
+        path,
+        extra,
+        lambda: tuple(
+            _read_csv_uncached(
+                path, columns, legacy_columns=legacy_columns, legacy_renames=legacy_renames
+            )
+        ),
+    )
+    return [dict(row) for row in cached]
+
+
+def _read_csv_uncached(
+    path: Path,
+    columns: Sequence[str],
+    *,
+    legacy_columns: Sequence[Sequence[str]] = (),
+    legacy_renames: Mapping[str, str] | None = None,
+) -> list[dict[str, str]]:
     with path.open("r", encoding="utf-8", newline="") as handle:
         reader = csv.DictReader(handle)
+        # Version-1 assessment headers are a strict prefix ending at run_id. This stays here
+        # rather than in csv_contracts.yaml because every byte of that file is part of the
+        # published decision snapshot's source-state identity.
         legacy_assessment_prefix = (
             path.name == "security_assessments.csv"
             and reader.fieldnames is not None

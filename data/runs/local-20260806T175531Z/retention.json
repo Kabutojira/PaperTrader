@@ -1,0 +1,231 @@
+{
+  "artifacts": [
+    {
+      "path": "data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/command_audit.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "e67fec223c6b824448fbe36fb2f3fa016a9f69b17ff21e56de1ea40843194bbd",
+      "size": 19132
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/controller_prompt.md",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "73ac5888ed4decd6d8536c6e153ea53b05c0831702d84ce0a0a0f7a6549a74eb",
+      "size": 3282
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/harness_preflight.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "9bde7acd52a72ce12a4da94f0abe069d3512b4604f644358e3c9247bf34a9e7f",
+      "size": 707
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/validation_report.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "8852ff4bf7dd9146623e5c96e376a3d52827f31636f6c792aea399476d2a2cb1",
+      "size": 1808
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/01KYR5PTQ8SEPDB26SQZPVANG7/command_audit.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "31cce10c291fc558e2151bb6eecadde5e91b3eeeb17b35e17f9fcf12b5d7dc18",
+      "size": 9199
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/01KYR5PTQ8SEPDB26SQZPVANG7/controller_prompt.md",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "5cd34c8f7303b2cfaa1480e568974006b51ce28d88d51a0289eb99e65ac31d33",
+      "size": 3282
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/01KYR5PTQ8SEPDB26SQZPVANG7/harness_preflight.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "13dd1cc115959210f3281daf5f9a40a4b16e124341e934fbd290d77d26ad499f",
+      "size": 707
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/01KYR5PTQ8SEPDB26SQZPVANG7/validation_report.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "e233543b4b490eabd4e40185398ad44510e78d89ffabdd647aeff812ba8995ec",
+      "size": 1043
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/01KYVJ62SRK1101MYYCE7256NF/command_audit.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "9df1751f19b611b3ea16807ab8b173e0dacd6aa661741d55a42b17bdd102278d",
+      "size": 13429
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/01KYVJ62SRK1101MYYCE7256NF/controller_prompt.md",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "0755ea51fa416904adf914611c755f365b1856355bd85d744d816799550d6044",
+      "size": 3291
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/01KYVJ62SRK1101MYYCE7256NF/harness_preflight.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "c47c1157c9d1a58f8d9bda536f1ada72a72adaa717e61545008ddb9870918cbc",
+      "size": 716
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/01KYVJ62SRK1101MYYCE7256NF/validation_report.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "46e5e5f937ec3fe90c14158e98538ce6a5168992f53fff7af2ae7983906c1603",
+      "size": 1127
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/01KYY98DWGC9ZR46GYDYQ3V4ZP/command_audit.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "76883a273496d0f615757ebfc817d084975fb5d845048badca88ccf2c0eff836",
+      "size": 11872
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/01KYY98DWGC9ZR46GYDYQ3V4ZP/controller_prompt.md",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "647fcd65fd53512298e52d5c3d91d3c829515c9cefef4b71e8058f0c38a96468",
+      "size": 3291
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/01KYY98DWGC9ZR46GYDYQ3V4ZP/harness_preflight.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "00b09af5b92c2b1df0063248b68a8d3a00de5e3cdc2c4ffa5263daadaf8257ce",
+      "size": 716
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/01KYY98DWGC9ZR46GYDYQ3V4ZP/validation_report.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "2d8b569cec8ec00be0977845c9b7cd5fcb531e1efcb28af8a985aa7f0ab3b72f",
+      "size": 1146
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/01KYY98DWGCARDA8HK5QA3Z6K0/command_audit.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "be50b0c724ef75035527dcbd2f87079a6e3cd734f38f59253ba7fb99eeeef556",
+      "size": 10220
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/01KYY98DWGCARDA8HK5QA3Z6K0/controller_prompt.md",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "e626d358e7952a9c5b5509ca3403cac207873e12922d3022756b5d82caf5abe1",
+      "size": 3291
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/01KYY98DWGCARDA8HK5QA3Z6K0/harness_preflight.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "973ccae4e0c836b5a0271ab5ddb669ed1ffd8017641089054c79efa27402e68e",
+      "size": 716
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/01KYY98DWGCARDA8HK5QA3Z6K0/validation_report.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "d60873c2a7bd4ee23608a272bef40b34383618b20c856a810c27cf66d623cdff",
+      "size": 950
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/01KZ8BGD9849XE46VNEK55NX49/command_audit.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "dd99a4e19d9d7a5c28d64382062126c97a2a7d3bfbc0adb2ef533b26b3c771e4",
+      "size": 17581
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/01KZ8BGD9849XE46VNEK55NX49/controller_prompt.md",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "b68c2e5b169573240e8bf38926d09e624a4f86f829d85327daa86ab86762a9da",
+      "size": 3291
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/01KZ8BGD9849XE46VNEK55NX49/harness_preflight.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "60b4faabb3bcc2dfd5e984f912f21df3c9e5a27e2e9b1a12d8f2f9a2e4363471",
+      "size": 716
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/01KZ8BGD9849XE46VNEK55NX49/validation_report.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "a636fcb981b760b07df1a2329168c53965b100fec3e95f290469ab4262b89c86",
+      "size": 1550
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/01KZ8BGD987PPMBBQ719AS2ZAS/command_audit.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "f63cc12ee4443de3108b31f26654763ad5f844111f406f5072fd3d6d5bf7d0e9",
+      "size": 10235
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/01KZ8BGD987PPMBBQ719AS2ZAS/controller_prompt.md",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "b62855ecf9661cdea9fa7e63950e47dd24a253531e9aaeb9bd8225eb9ca4289b",
+      "size": 3291
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/01KZ8BGD987PPMBBQ719AS2ZAS/harness_preflight.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "aab10563cb6ec10cd73bde27798b6ed3dd718377f03a202044c82854c7e81e68",
+      "size": 716
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/01KZ8BGD987PPMBBQ719AS2ZAS/validation_report.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "7885f9086a748f73a72480aa60188507e05571ad8444a39dab364d146c211f70",
+      "size": 955
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/01KZC5YVX8EY4YHH1S06VVHT5T/command_audit.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "d05aa5845e9365d997d4e4b4e5b59870f32fbfd8c70a3892e39da9c842c2a908",
+      "size": 6570
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/01KZC5YVX8EY4YHH1S06VVHT5T/controller_prompt.md",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "4d7888a4baf805a84e7d03ddc924e84637acc2280da34fe948424270e73c3f20",
+      "size": 3282
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/01KZC5YVX8EY4YHH1S06VVHT5T/harness_preflight.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "80b256f5fcdf34b16addf0c567eb555c7ce0f7fc775cc589da97d9148f22a6f7",
+      "size": 707
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/01KZC5YVX8EY4YHH1S06VVHT5T/validation_report.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "a8ddaa512728e0b767ce714a573cb035a0bbb9ff0774012bd9cbc399816feabc",
+      "size": 959
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/01KZC7H968FVJSE93MAANZBZJ5/command_audit.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "73df1ea64103a2a4abb0240ba9a22e3bbea7b82e506fa818442fec042b5ec52b",
+      "size": 680
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/01KZC7H968FVJSE93MAANZBZJ5/controller_prompt.md",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "1ddca0be54809de2d246afa41a201280a5696a755fe1911fcf5553a405032a03",
+      "size": 3282
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/01KZC7H968FVJSE93MAANZBZJ5/harness_preflight.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "ee3116b9793aa059658271cde4a974878a517c3ef37fbd6f3fbffda7e510046b",
+      "size": 707
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/01KZC7H968FVJSE93MAANZBZJ5/validation_report.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "fc8cc21c371e42e64bb95b04e39c379c443e90305ab135c4f1be66dd8c950530",
+      "size": 237
+    },
+    {
+      "path": "data/runs/local-20260806T175531Z/decision_snapshot.json",
+      "pruned_at": "2026-09-09T17:29:54Z",
+      "sha256": "d944c46aea7a4d2ee09f17651c4638c35a29b0d279bb3b5f0103f850b8cc6079",
+      "size": 252259,
+      "snapshot_id": "decision_980a06d6d0cb6b3fe1ff"
+    }
+  ],
+  "pruned_at": "2026-09-09T17:29:54Z",
+  "retention_days": 30,
+  "run_id": "local-20260806T175531Z",
+  "run_retention_version": 1
+}

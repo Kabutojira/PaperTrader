@@ -8,7 +8,7 @@ created: "2026-07-24"
 updated: "2026-07-24"
 provenance: deterministic-report-generator
 run_id: "run-report"
-snapshot_id: "decision_54cd37189d9ee2696169"
+snapshot_id: "decision_ceb77e9e05709c5758a6"
 ---
 
 # PaperTrader daily report — 2026-07-24

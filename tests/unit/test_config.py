@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from datetime import timedelta
 from decimal import Decimal
 from pathlib import Path
 
@@ -46,6 +47,9 @@ def test_settings_resolve_canonical_wiki_and_skills(
     assert settings.operations.maximum_llm_operations_per_run == 20
     assert settings.operations.cycle_maximum_operations == 20
     assert settings.operations.maximum_weighted_model_budget_per_cycle == Decimal("100.00")
+    assert settings.operations.run_artifact_retention_days == 30
+    assert settings.operations.cycle_time_reserve == timedelta(minutes=45)
+    assert settings.operations.minimum_operation_seconds == 300
     assert settings.classifier.command == ("python", "-m", "papertrader.classifier_command")
     assert settings.classifier.model == "gpt-5.6-luna"
     assert settings.youtube.enabled is True

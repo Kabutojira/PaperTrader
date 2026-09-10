@@ -8,6 +8,7 @@ from collections.abc import Mapping
 from dataclasses import replace
 from datetime import UTC, date, datetime
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 import pytest
 
@@ -27,14 +28,19 @@ from papertrader.telegram import (
     deliver_podcast_audio,
     deliver_podcast_script,
     escape_markdown_v2,
+    failure_notice_markdown,
+    notify_run_failure,
     podcast_script_messages,
     record_podcast_audio_failure,
     record_podcast_script_failure,
     split_message,
     telegram_messages,
 )
-from papertrader.utils import content_hash
+from papertrader.utils import CanonicalValueError, content_hash
 from papertrader.wiki import lint_wiki
+
+if TYPE_CHECKING:
+    from conftest import ReferenceOutputs
 
 
 def test_daily_report_changes_exclude_non_public_wiki_directories(
@@ -69,6 +75,7 @@ def test_daily_report_matches_reference_and_registers_one_canonical_page(
     sandbox_repository: Path,
     repository_root: Path,
     sandbox_settings: Settings,
+    reference_outputs: ReferenceOutputs,
 ) -> None:
     generated_at = datetime(2026, 7, 24, 22, tzinfo=UTC)
     arguments = {
@@ -103,10 +110,8 @@ def test_daily_report_matches_reference_and_registers_one_canonical_page(
     path = generate_daily_report(sandbox_repository, **arguments)
     generate_daily_report(sandbox_repository, **arguments)
 
-    expected = (
-        repository_root / "tests" / "reference_outputs" / "daily_report_empty.md"
-    ).read_text(encoding="utf-8")
-    assert path.read_text(encoding="utf-8") == expected
+    actual = path.read_text(encoding="utf-8")
+    assert actual == reference_outputs.text("daily_report_empty.md", actual)
     index = (sandbox_repository / "data" / "wiki" / "index.md").read_text(encoding="utf-8")
     log = (sandbox_repository / "data" / "wiki" / "log.md").read_text(encoding="utf-8")
     assert index.count("[[daily-reports/daily-report_20260724") == 1
@@ -826,3 +831,85 @@ def test_latest_commit_restarts_delivery_instead_of_replaying_an_old_cursor(
     assert len(transport.calls) == sent.total_chunks
     first = json.loads(transport.calls[0]["rich_message"])
     assert first["markdown"].startswith("# Newest daily report")
+
+
+def test_failure_notice_is_best_effort_and_never_touches_repository_state(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    before = sorted(str(path) for path in (sandbox_repository / "data").rglob("*"))
+    issues_before = (sandbox_repository / "data" / "tables" / "issues.csv").read_bytes()
+    transport = _FakeTelegram([TelegramDeliveryError("boom"), {"ok": True}])
+    sleeps: list[float] = []
+
+    result = notify_run_failure(
+        sandbox_settings,
+        daily_cycle_id="daily-20260724T120000Z",
+        run_url="https://github.com/example/PaperTrader/actions/runs/123/attempts/2",
+        failed_job="runtime",
+        detail="job status failure; secret-token must never appear",
+        token="secret-token",
+        chat_id="-123",
+        transport=transport,
+        sleeper=sleeps.append,
+    )
+
+    assert result.status == "sent"
+    assert result.error == ""
+    assert sleeps == [1.0]
+    assert len(transport.calls) == 2
+    markdown = json.loads(transport.calls[-1]["rich_message"])["markdown"]
+    assert "PaperTrader automation failed" in markdown
+    assert "daily\\-20260724T120000Z" in markdown
+    assert "secret\\-token" in markdown or "[redacted]" in markdown
+    assert markdown.endswith(
+        "(https://github\\.com/example/PaperTrader/actions/runs/123/attempts/2)"
+    )
+    after = sorted(str(path) for path in (sandbox_repository / "data").rglob("*"))
+    assert after == before
+    assert (sandbox_repository / "data" / "tables" / "issues.csv").read_bytes() == issues_before
+
+
+def test_failure_notice_skips_without_credentials_and_reports_exhausted_retries(
+    sandbox_settings: Settings,
+) -> None:
+    skipped = notify_run_failure(
+        sandbox_settings,
+        daily_cycle_id="",
+        run_url="https://github.com/example/PaperTrader/actions/runs/123",
+        failed_job="runtime",
+        token="",
+        chat_id="",
+    )
+    assert skipped.status == "skipped"
+
+    transport = _FakeTelegram(
+        [TelegramDeliveryError("secret-token leaked")] * sandbox_settings.telegram.maximum_attempts
+    )
+    failed = notify_run_failure(
+        sandbox_settings,
+        daily_cycle_id="",
+        run_url="https://github.com/example/PaperTrader/actions/runs/123",
+        failed_job="runtime",
+        token="secret-token",
+        chat_id="-123",
+        transport=transport,
+        sleeper=lambda _: None,
+    )
+    assert failed.status == "failed"
+    assert "secret-token" not in failed.error
+    assert len(transport.calls) == sandbox_settings.telegram.maximum_attempts
+
+    with pytest.raises(CanonicalValueError):
+        notify_run_failure(
+            sandbox_settings,
+            daily_cycle_id="",
+            run_url="https://evil.example/actions/runs/1",
+            failed_job="runtime",
+            token="secret-token",
+            chat_id="-123",
+            transport=transport,
+        )
+    assert "Detail" not in failure_notice_markdown(
+        daily_cycle_id="", run_url="https://github.com/o/r/actions/runs/1", failed_job="runtime"
+    )

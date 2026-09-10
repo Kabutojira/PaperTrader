@@ -1,5 +1,9 @@
 # PaperTrader implementation plan
 
+> This file is the completed-step changelog of the build. Every step below is finished; new
+> work is tracked as issues in `data/tables/issues.csv` and as dated entries appended here when
+> a step ships. Read `AGENTS.md` for the current contracts and `README.md` for operation.
+
 ## Step 1 — Scaffold repository contracts — Complete (2026-07-24)
 
 Established the paper-only repository structure, configuration and CLI boundaries, canonical schemas and empty data state, atomic writes, integrity checks, runtime commit whitelist, Hermes-native wiki, project skills, pinned dependencies, workflow scaffolds, and initial test suite.
@@ -976,3 +980,16 @@ requests below the service limit, validates and assembles MP3s outside the check
 through Telegram. Rendering and delivery are separate credential phases, successful delivery
 removes local audio by default, no media or secret enters Git, and network behavior is covered by
 offline unit tests.
+
+## Follow-up — Isolate the retention CLI test from CI wiki paths — Complete (2026-09-10)
+
+Set `WIKI_PATH` to the temporary repository in the retention CLI test, matching the other CLI
+tests. This prevents the workflow's checkout-level environment from violating the sandbox path
+boundary while preserving production configuration validation and the retention assertions.
+
+## Follow-up — Synchronize finalized daily state for PR validation — Complete (2026-09-10)
+
+Merged the completed September 10 daily publication from `main` after its finalization gate
+passed. PR merge CI had combined the branch with an in-progress daily checkpoint whose canonical
+state had advanced beyond its last published snapshot. The completed checkpoint restores a
+consistent validation input without changing freshness checks or rewriting run evidence.

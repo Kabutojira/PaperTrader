@@ -395,13 +395,23 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     telegram_steps = [
         step for step in runtime["steps"] if "TELEGRAM_BOT_TOKEN" in step.get("env", {})
     ]
+    failure_notice = "Notify Telegram about a failed or cancelled runtime job"
     assert {step["name"] for step in telegram_steps} == {
         "Deliver the exact committed podcast script",
         "Deliver the independently sealed ephemeral podcast audio",
+        failure_notice,
     }
     for step in telegram_steps:
         assert step["continue-on-error"] == "true"
-        assert "always()" in step["if"]
+        if step["name"] == failure_notice:
+            assert "failure() || cancelled()" in step["if"]
+            assert "inputs.send_telegram" in step["if"]
+            assert "!inputs.dry_run" in step["if"]
+            assert "GITHUB_TOKEN" not in step["env"]
+            assert "papertrader telegram notify-failure" in step["run"]
+            assert "git " not in step["run"]
+        else:
+            assert "always()" in step["if"]
 
     delivery_state = next(
         step for step in runtime["steps"] if step["name"] == "Validate podcast delivery issue state"
@@ -594,10 +604,12 @@ def test_hermes_runtime_establishes_container_paths_and_profile_ownership(
     assert 'workspace="$(pwd -P)"' in boundary
     assert 'git config --system --add safe.directory "$workspace"' in boundary
     assert 'echo "WIKI_PATH=${workspace}/data/wiki" >> "$GITHUB_ENV"' in boundary
+    assert "PAPERTRADER_JOB_DEADLINE=" in boundary
+    assert f"timedelta(minutes={runtime['timeout-minutes']})" in boundary
     assert handoff == 'chown -R hermes:hermes "$HERMES_HOME"'
     assert 'case "$MAX_OPERATIONS" in' in preflight
     assert 'test "$MAX_OPERATIONS" -gt 0' in preflight
-    assert "uv run pytest" in preflight
+    assert 'uv run pytest -m "not slow"' in preflight
 
 
 def test_daily_forwards_scoped_runtime_secrets_and_auth_only_pushes_do_not_retrigger_ci(
@@ -708,3 +720,21 @@ def test_ci_gates_execute_the_seeded_publication_cycle(repository_root: Path) ->
         assert 'PAPERTRADER_VALIDATE_QUARTZ: "true"' in text
         assert "pytest tests/integration/test_complete_operating_cycle.py" in text
         assert workflow["jobs"]["validate"]["env"]["PAPERTRADER_BASE_URL"] == "localhost"
+
+
+def test_checkpoint_steps_match_their_generator(repository_root: Path) -> None:
+    import importlib.util
+
+    script = repository_root / "scripts" / "render_checkpoint_steps.py"
+    specification = importlib.util.spec_from_file_location("render_checkpoint_steps", script)
+    assert specification is not None and specification.loader is not None
+    module = importlib.util.module_from_spec(specification)
+    specification.loader.exec_module(module)
+    workflow_path = repository_root / ".github" / "workflows" / "reusable-llm.yml"
+    text = workflow_path.read_text(encoding="utf-8")
+
+    assert module.render_workflow(text) == text
+    assert module.MAXIMUM_OPERATIONS == 20
+    assert module.main(["--check", "--workflow", str(workflow_path)]) == 0
+    drifted = text.replace("Routed research checkpoint 07", "Routed research checkpoint 7", 1)
+    assert module.render_workflow(drifted) == text

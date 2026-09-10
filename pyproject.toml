@@ -18,7 +18,6 @@ dependencies = [
   "pandas==3.0.5",
   "pytubefix==10.10.1",
   "PyYAML==6.0.3",
-  "scipy==1.18.0",
   "TA-Lib==0.7.1",
   "yfinance==1.5.2",
 ]
@@ -42,6 +41,9 @@ packages = ["src/papertrader"]
 [tool.pytest.ini_options]
 addopts = "-ra --strict-config --strict-markers"
 testpaths = ["tests"]
+markers = [
+  "slow: full-cycle and property tests that CI runs but the daily runtime preflight skips",
+]
 
 [tool.ruff]
 line-length = 100

@@ -17,6 +17,7 @@ from jsonschema import Draft202012Validator, FormatChecker
 from jsonschema.validators import validator_for
 
 from papertrader.config import ConfigurationError, Settings, load_settings
+from papertrader.file_cache import SignatureCache
 from papertrader.models import CsvContract, DynamicCsvContract
 from papertrader.utils import content_hash
 
@@ -55,6 +56,7 @@ REQUIRED_LAYOUT = (
     "schemas/decision_snapshot.schema.json",
     "schemas/operation_payload.schema.json",
     "schemas/research_chart.schema.json",
+    "schemas/run_retention.schema.json",
     "schemas/seekingalpha_discovery.schema.json",
     "schemas/seekingalpha_schedule.schema.json",
     "schemas/wiki_maintenance_result.schema.json",
@@ -93,10 +95,20 @@ def _mapping(value: object, label: str) -> Mapping[object, object]:
     return value
 
 
+_CONTRACT_CACHE: SignatureCache[tuple[CsvContract, ...]] = SignatureCache(capacity=8)
+_DYNAMIC_CONTRACT_CACHE: SignatureCache[tuple[DynamicCsvContract, ...]] = SignatureCache(capacity=8)
+
+
 def load_csv_contracts(repository_root: Path) -> tuple[CsvContract, ...]:
-    """Load and structurally validate the canonical CSV registry."""
+    """Load and structurally validate the canonical CSV registry (memoised per file version)."""
 
     contract_path = repository_root / "schemas" / "csv_contracts.yaml"
+    return _CONTRACT_CACHE.get_or_load(
+        contract_path, "contracts", lambda: _load_csv_contracts(contract_path)
+    )
+
+
+def _load_csv_contracts(contract_path: Path) -> tuple[CsvContract, ...]:
     raw = yaml.safe_load(contract_path.read_text(encoding="utf-8"))
     root = _mapping(raw, "csv contract document")
     if root.get("version") != 1:
@@ -180,9 +192,15 @@ def load_csv_contracts(repository_root: Path) -> tuple[CsvContract, ...]:
 
 
 def load_dynamic_csv_contracts(repository_root: Path) -> tuple[DynamicCsvContract, ...]:
-    """Load glob-based CSV contracts such as per-security rolling price files."""
+    """Load glob-based CSV contracts such as per-security rolling price files (memoised)."""
 
     contract_path = repository_root / "schemas" / "csv_contracts.yaml"
+    return _DYNAMIC_CONTRACT_CACHE.get_or_load(
+        contract_path, "dynamic", lambda: _load_dynamic_csv_contracts(contract_path)
+    )
+
+
+def _load_dynamic_csv_contracts(contract_path: Path) -> tuple[DynamicCsvContract, ...]:
     raw = yaml.safe_load(contract_path.read_text(encoding="utf-8"))
     root = _mapping(raw, "csv contract document")
     entries = _mapping(root.get("dynamic_contracts", {}), "dynamic_contracts")
@@ -458,7 +476,8 @@ def validate_daily_run_artifacts(repository_root: Path) -> list[str]:
                     repository_root / "data" / "runs" / run_id / "decision_snapshot.json"
                 )
                 if snapshot_path.is_symlink() or not snapshot_path.is_file():
-                    errors.append(f"completed daily run lacks its decision snapshot: {run_id}")
+                    if _pruned_snapshot_id(repository_root, run_id) != snapshot_id:
+                        errors.append(f"completed daily run lacks its decision snapshot: {run_id}")
                 else:
                     try:
                         snapshot = json.loads(snapshot_path.read_text(encoding="utf-8"))
@@ -495,6 +514,91 @@ def validate_daily_run_artifacts(repository_root: Path) -> list[str]:
     for row in run_rows:
         if row["run_id"] not in daily_by_run:
             errors.append(f"run history references a missing daily manifest: {row['run_id']}")
+    return errors
+
+
+def _retention_marker(repository_root: Path, run_id: str) -> Mapping[str, object] | None:
+    path = repository_root / "data" / "runs" / run_id / "retention.json"
+    if path.is_symlink() or not path.is_file():
+        return None
+    try:
+        value = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+    return value if isinstance(value, dict) else None
+
+
+def _pruned_snapshot_id(repository_root: Path, run_id: str) -> str:
+    """Return the snapshot identity recorded when a cycle's snapshot was pruned, or ''."""
+
+    marker = _retention_marker(repository_root, run_id)
+    if marker is None:
+        return ""
+    expected = f"data/runs/{run_id}/decision_snapshot.json"
+    artifacts = marker.get("artifacts")
+    if not isinstance(artifacts, list):
+        return ""
+    for entry in artifacts:
+        if isinstance(entry, dict) and entry.get("path") == expected:
+            snapshot_id = entry.get("snapshot_id")
+            return snapshot_id if isinstance(snapshot_id, str) else ""
+    return ""
+
+
+def validate_run_retention_artifacts(repository_root: Path) -> list[str]:
+    """Validate every retention manifest and confirm pruned evidence is really gone."""
+
+    from papertrader.retention import (
+        PRUNABLE_CYCLE_FILES,
+        PRUNABLE_OPERATION_FILES,
+        RETENTION_MARKER,
+    )
+
+    errors: list[str] = []
+    schema_path = repository_root / "schemas" / "run_retention.schema.json"
+    try:
+        schema = json.loads(schema_path.read_text(encoding="utf-8"))
+        validator = Draft202012Validator(schema, format_checker=FormatChecker())
+    except (OSError, json.JSONDecodeError, TypeError, ValueError) as exc:
+        return [f"cannot load run retention schema: {exc}"]
+    for path in sorted((repository_root / "data" / "runs").glob(f"*/{RETENTION_MARKER}")):
+        relative = path.relative_to(repository_root).as_posix()
+        run_id = path.parent.name
+        if not SAFE_RUN_ID.fullmatch(run_id) or path.is_symlink():
+            errors.append(f"invalid run retention path: {relative}")
+            continue
+        try:
+            value = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            errors.append(f"cannot read run retention manifest {relative}: {exc}")
+            continue
+        schema_errors = sorted(validator.iter_errors(value), key=lambda error: list(error.path))
+        errors.extend(f"run retention {relative}: {error.message}" for error in schema_errors)
+        if schema_errors or not isinstance(value, dict):
+            continue
+        if value.get("run_id") != run_id:
+            errors.append(f"run retention identity does not match path: {relative}")
+        manifest_path = path.parent / "daily_run.json"
+        if manifest_path.is_symlink() or not manifest_path.is_file():
+            errors.append(f"run retention manifest lacks its daily manifest: {relative}")
+        prefix = f"data/runs/{run_id}/"
+        for entry in value.get("artifacts", []):
+            if not isinstance(entry, dict):
+                continue
+            entry_path = str(entry.get("path", ""))
+            parts = PurePosixPath(entry_path).parts
+            allowed = entry_path.startswith(prefix) and (
+                (len(parts) == 4 and parts[3] in PRUNABLE_CYCLE_FILES)
+                or (len(parts) == 5 and parts[4] in PRUNABLE_OPERATION_FILES)
+            )
+            if not allowed:
+                errors.append(f"run retention lists a non-prunable artifact: {entry_path}")
+                continue
+            if parts[3] == "decision_snapshot.json" and not entry.get("snapshot_id"):
+                errors.append(f"pruned decision snapshot lacks its identity: {entry_path}")
+            target = repository_root.joinpath(*parts)
+            if target.is_symlink() or target.exists():
+                errors.append(f"pruned run artifact is still present: {entry_path}")
     return errors
 
 
@@ -1071,6 +1175,7 @@ def validate_integrity(
     errors.extend(validate_skills(repository_root))
     errors.extend(validate_agent_run_artifacts(repository_root))
     errors.extend(validate_daily_run_artifacts(repository_root))
+    errors.extend(validate_run_retention_artifacts(repository_root))
     errors.extend(validate_wiki_maintenance_artifacts(repository_root))
     errors.extend(validate_youtube_scan_artifacts(repository_root))
     errors.extend(validate_seekingalpha_artifacts(repository_root))

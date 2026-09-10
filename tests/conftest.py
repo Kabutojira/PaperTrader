@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import json
+import os
 import shutil
 from dataclasses import replace
 from decimal import Decimal
@@ -99,3 +101,43 @@ def sandbox_settings(sandbox_repository: Path) -> Settings:
         # production account size is asserted directly in test_config.py.
         portfolio=replace(settings.portfolio, initial_capital=Decimal("100000.00")),
     )
+
+
+class ReferenceOutputs:
+    """Golden files under tests/reference_outputs, regenerable on demand.
+
+    Run ``PAPERTRADER_UPDATE_REFERENCES=1 uv run pytest <test>`` to rewrite a golden file from
+    the current behaviour after an intentional change (for example a ``config.ini`` edit, which
+    changes every decision snapshot identity). Review the resulting diff before committing.
+    """
+
+    def __init__(self, repository_root: Path) -> None:
+        self.directory = repository_root / "tests" / "reference_outputs"
+        self.update = os.environ.get("PAPERTRADER_UPDATE_REFERENCES", "") == "1"
+
+    def text(self, name: str, actual: str) -> str:
+        path = self.directory / name
+        if self.update:
+            path.write_text(actual, encoding="utf-8")
+        return path.read_text(encoding="utf-8")
+
+    def json(self, name: str, actual: object, *, key: str | None = None) -> object:
+        path = self.directory / name
+        raw = path.read_text(encoding="utf-8") if path.is_file() else "{}\n"
+        document = json.loads(raw)
+        if self.update:
+            if key is None:
+                document = actual
+            else:
+                document[key] = actual
+            sort_keys = json.dumps(json.loads(raw), indent=2, sort_keys=True) + "\n" == raw
+            path.write_text(
+                json.dumps(document, indent=2, sort_keys=sort_keys, ensure_ascii=False) + "\n",
+                encoding="utf-8",
+            )
+        return document if key is None else document[key]
+
+
+@pytest.fixture
+def reference_outputs(repository_root: Path) -> ReferenceOutputs:
+    return ReferenceOutputs(repository_root)

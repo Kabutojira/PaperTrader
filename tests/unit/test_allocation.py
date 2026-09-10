@@ -1,10 +1,10 @@
 from __future__ import annotations
 
-import json
 from dataclasses import replace
 from datetime import UTC, date, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 import pytest
 from hypothesis import HealthCheck, given
@@ -44,6 +44,9 @@ from papertrader.portfolio import build_risk_state, rebuild_portfolio, reconcile
 from papertrader.research import ResearchStateError, upsert_assessment, upsert_strategy
 from papertrader.tables import contract_by_name, read_table, write_table
 from papertrader.utils import decimal_text, format_timestamp, required_decimal
+
+if TYPE_CHECKING:
+    from conftest import ReferenceOutputs
 
 NOW = datetime(2026, 7, 24, 22, tzinfo=UTC)
 
@@ -580,6 +583,7 @@ ALLOCATION_PERMUTATIONS = (
     deadline=None,
     suppress_health_check=[HealthCheck.function_scoped_fixture],
 )
+@pytest.mark.slow
 def test_allocation_targets_are_order_independent_and_obey_portfolio_properties(
     sandbox_repository: Path,
     sandbox_settings: Settings,
@@ -654,6 +658,7 @@ def test_allocation_plan_matches_reference_output(
     repository_root: Path,
     sandbox_repository: Path,
     sandbox_settings: Settings,
+    reference_outputs: ReferenceOutputs,
 ) -> None:
     _seed_candidates(sandbox_repository, sandbox_settings, 6)
 
@@ -707,11 +712,7 @@ def test_allocation_plan_matches_reference_output(
         ],
     }
     actual["summary"]["unallocated_reasons"] = list(result.unallocated_reasons)
-    expected = json.loads(
-        (repository_root / "tests" / "reference_outputs" / "allocation_plan.json").read_text(
-            encoding="utf-8"
-        )
-    )
+    expected = reference_outputs.json("allocation_plan.json", actual)
 
     assert actual == expected
 
@@ -1219,6 +1220,7 @@ def _create_conviction_strategy(
     return strategy_id
 
 
+@pytest.mark.slow
 def test_active_handoff_is_idempotent_and_order_quantity_is_code_owned(
     sandbox_repository: Path,
     sandbox_settings: Settings,

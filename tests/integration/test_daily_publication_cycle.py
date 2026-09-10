@@ -128,6 +128,7 @@ def test_daily_preparation_enqueues_allocation_maintenance_sequentially(
     assert rows[1]["depends_on"] == rows[0]["operation_id"]
 
 
+@pytest.mark.slow
 def test_empty_daily_cycle_generates_one_reconciled_canonical_report(
     sandbox_repository: Path,
     sandbox_settings: Settings,
