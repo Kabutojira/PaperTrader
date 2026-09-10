@@ -3703,3 +3703,15 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Created candidate packet [[inbox/market-security_fb87fac302a5446a1ced-volume_anomaly-dc5d5e1db7a1]] (dc5d5e1db7a1).
 
 - Classified [[inbox/market-security_fb87fac302a5446a1ced-volume_anomaly-dc5d5e1db7a1]] as `ingest`: A new strong volume-anomaly transition with a recent negative return merits durable review.
+
+## [2026-09-10] update | Tencent bounded baseline allocation
+
+- Updated [[strategies/strategy_ef910e9aff5203a0b901]] for current allocation plan
+  `allocation_plan_4e0ef8323f8d383f6b85` and unchanged intent
+  `allocation_intent_818e8692a59dfaa00cad`.
+- Retained long equity as the only baseline-permitted structure, the allocator-owned four-share
+  target and the 2% starter ceiling; deterministic order code remains responsible for quantity.
+- Refreshed the scenario-return chart and entry context from the canonical 2026-09-10 allocation,
+  market and FX observations. Medium confidence, China and ADR risks, artificial-intelligence
+  investment, portfolio volatility and insufficient diversification continue to prevent conviction
+  treatment.
