@@ -4,14 +4,48 @@
   "inputs": {
     "assessment_state": "2026-08-05T19:59:39Z",
     "maintenance_mode": "refresh",
+    "market_data_as_of": "2026-09-10T18:10:21Z",
+    "market_data_date": "2026-09-09",
+    "period_end": "2026-09-09",
+    "period_start": "2026-08-11",
     "research_page": "data/wiki/securities/security_ad5917642acbba28c1f2.md",
-    "security_id": "security_ad5917642acbba28c1f2"
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_ad5917642acbba28c1f2:allocation-maintenance:2026-08-05T19:59:39Z",
+        "observed_at": "2026-08-28T20:08:25Z",
+        "prompt": "Revalidate security_ad5917642acbba28c1f2 with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_tdy_q2_2026_10q",
+          "source_tdy_q2_2026_results"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_ad5917642acbba28c1f2:020a11cde033a830dc7f:2026-09-09",
+        "market_data_date": "2026-09-09",
+        "observed_at": "2026-09-10T18:10:21Z",
+        "prompt": "Research security_ad5917642acbba28c1f2 with high priority after price-action alerts: rsi_oversold; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_ad5917642acbba28c1f2-rsi_oversold-090a0d92d02c.md"
+        ],
+        "trigger_types": [
+          "rsi_oversold"
+        ]
+      }
+    ],
+    "security_id": "security_ad5917642acbba28c1f2",
+    "source_price_hash": "b82be62efb86ea2306759adb18563353fbfe15f70308beb3d711d12c1305f67c",
+    "trigger_types": [
+      "rsi_oversold"
+    ]
   },
-  "objective": "Revalidate security_ad5917642acbba28c1f2 with current primary evidence and write one comparable allocation assessment.",
+  "objective": "Revalidate security_ad5917642acbba28c1f2 with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_ad5917642acbba28c1f2 with high priority after price-action alerts: rsi_oversold; decide what changed and whether to act.",
   "operation_id": "01M14ZSRN81GKTSA37QZE9X5K2",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_ad5917642acbba28c1f2-rsi_oversold-090a0d92d02c.md",
     "source_tdy_q2_2026_10q",
     "source_tdy_q2_2026_results"
   ]
