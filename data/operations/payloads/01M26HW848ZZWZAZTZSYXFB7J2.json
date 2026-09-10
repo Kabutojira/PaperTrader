@@ -1,0 +1,48 @@
+{
+  "entity_id": "security_97f38b2cb2d5ef127f5a",
+  "entity_type": "security",
+  "inputs": {
+    "baseline_operation_id": "01M06M2NP8WCAE6T92D639MR4R",
+    "changed_gate": "q2_fy2027_operating_cash_capex_contract_visibility_and_dilution_evidence_requires_full_valuation_refresh",
+    "current_market_data_as_of": "2026-09-10T20:48:19Z",
+    "current_market_data_date": "2026-09-10",
+    "current_source_price_hash": "c22c2908c629572d35c9c6476ee021ee0ffb639c018a134c540d05d28af0d2da",
+    "full_research_requested": true,
+    "market_data_as_of": "2026-09-10T20:48:19Z",
+    "market_data_date": "2026-09-10",
+    "period_end": "2026-09-10",
+    "period_start": "2026-08-12",
+    "quick_check_operation_id": "01M1RDTZER38XSKKZ1AVRCJ30D",
+    "research_reasons": [
+      {
+        "cause": "rsi_oversold_strengthened_after_material_period_decline",
+        "source_ref": "data/wiki/inbox/market-security_97f38b2cb2d5ef127f5a-rsi_oversold-5bcd40c07aed.md"
+      },
+      {
+        "cause": "q2_fy2027_evidence_supersedes_q1_growth_cash_capex_contract_visibility_and_dilution_inputs",
+        "source_ref": "source_pl_q2_fy2027_10q"
+      },
+      {
+        "cause": "explicit_full_research_requested_for_comparable_allocation_assessment",
+        "source_ref": "data/operations/payloads/01M1RDTZER38XSKKZ1AVRCJ30D.json"
+      }
+    ],
+    "security_id": "security_97f38b2cb2d5ef127f5a",
+    "source_price_hash": "c22c2908c629572d35c9c6476ee021ee0ffb639c018a134c540d05d28af0d2da",
+    "trigger_types": [
+      "rsi_oversold"
+    ]
+  },
+  "objective": "Fully reassess and revalue Planet Labs after Q2 fiscal 2027 evidence changed revenue, cash flow, capex, contract visibility, liquidity, and diluted-share assumptions while the RSI-oversold decline strengthened through September 10.",
+  "operation_id": "01M26HW848ZZWZAZTZSYXFB7J2",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_97f38b2cb2d5ef127f5a-rsi_oversold-50b616694f5b.md",
+    "data/wiki/inbox/market-security_97f38b2cb2d5ef127f5a-rsi_oversold-5bcd40c07aed.md",
+    "data/wiki/inbox/market-security_97f38b2cb2d5ef127f5a-rsi_oversold-dae713572a0e.md",
+    "source_pl_q2_fy2027_10q",
+    "source_pl_q2_fy2027_results_sec",
+    "source_pl_sec_submissions_20260910"
+  ]
+}

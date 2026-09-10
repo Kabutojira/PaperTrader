@@ -52,9 +52,9 @@ filing, but the current mark has moved materially closer to the retained range.
   "schema_version": 1,
   "chart_id": "provisional-scenario-values-september-2026",
   "kind": "series",
-  "title": "Provisional scenario values versus the 9 September close",
+  "title": "Provisional scenario values versus the 10 September close",
   "description": "The latest close remains above the retained bear and base fair values even after a material decline; the Q2 filing requires a full valuation refresh before these scenario values can support a new decision.",
-  "as_of": "2026-09-09",
+  "as_of": "2026-09-10",
   "sources": [
     {
       "label": "Planet Labs Q2 fiscal 2027 Form 10-Q",
@@ -63,7 +63,7 @@ filing, but the current mark has moved materially closer to the retained range.
     },
     {
       "label": "PaperTrader deterministic adjusted-close cache",
-      "observed_at": "2026-09-10T18:10:21Z"
+      "observed_at": "2026-09-10T20:48:19Z"
     }
   ],
   "x_axis": {
@@ -87,10 +87,10 @@ filing, but the current mark has moved materially closer to the retained range.
       "values": ["6.42", "14.36", "27.73"]
     },
     {
-      "name": "9 September close",
+      "name": "10 September close",
       "render": "line",
       "y_axis": 0,
-      "values": ["17.219999313354492", "17.219999313354492", "17.219999313354492"]
+      "values": ["16.690000534057617", "16.690000534057617", "16.690000534057617"]
     }
   ],
   "notes": [
@@ -148,11 +148,12 @@ and [Planet Q2 FY2027 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1836833
 
 ## 2026-09-10 Q2 and oversold-alert quick check
 
-From 11 August through 9 September, the adjusted close declined 27.34% from USD 23.70 to USD
-17.22. RSI fell to 25.73, the close remained below the USD 21.24 20-day and USD 23.10 50-day
+From 12 August through 10 September, the adjusted close declined 31.88% from USD 24.50 to USD
+16.69. RSI fell to 24.16, the close remained below the USD 20.85 20-day and USD 22.77 50-day
 averages, and MACD stayed below its signal. The 3 September results session fell 8.20% on 31.95
-million shares, followed by continued weakness. The combined alerts are a materially oversold
-condition and adverse timing signal, not by themselves a valuation catalyst.
+million shares, followed by continued weakness including a further 3.08% decline on 10 September.
+The repeated and strengthening alerts are a materially oversold condition and adverse timing
+signal, not by themselves a valuation catalyst.
 
 The new Q2 filing changes the evidence set rather than invalidating the operating thesis. Revenue
 growth, adjusted EBITDA, cash flow, and liquidity improved; fiscal 2027 revenue guidance is USD
@@ -163,11 +164,13 @@ capital-intensity, and diluted-share assumptions and therefore require a bounded
 review.
 
 The August bear/base/bull fair values of USD 6.42/USD 14.36/USD 27.73 are retained only as a
-provisional comparison. At USD 17.22, the weighted USD 14.65 value remains 14.92% below market,
-the base case remains 16.61% below market, and the USD 11.49 buy zone remains 33.29% below market.
+provisional comparison. At USD 16.69, the weighted USD 14.65 value remains 12.21% below market,
+the base case remains 13.96% below market, and the USD 11.49 buy zone remains 31.16% below market.
 The lower price improves prospective returns but does not clear the expected-return, base-return,
-bear-payoff, margin-of-safety, confidence, or accepted-relationship gates. **Sell / Avoid** and no
-paper trade remain the current bounded disposition pending full review.
+bear-payoff, margin-of-safety, confidence, or accepted-relationship gates. The prior **Sell / Avoid**
+reading remains the provisional scenario comparison, while the comparable current assessment is
+**Unrated / Watch** because Q2 has made those valuation inputs incomplete. No paper trade is
+justified pending full review.
 
 ## 2026-07-28 price-action review
 
@@ -295,10 +298,10 @@ per-share growth.
 
 ## Disposition
 
-Status: **watching** with **medium** confidence and expected rating **Sell / Avoid**. Q2 confirms
+Status: **watching** with **medium** confidence and current rating **Unrated / Watch**. Q2 confirms
 strong growth, recurrence, operating leverage, and liquidity, while lower RPO and backlog, higher
 capex, hardware-driven revenue, and ATM dilution make the old scenario inputs incomplete. The
-oversold alert is not a paper-trade entry: the provisional scenarios still show negative expected
+strengthening oversold alert is not a paper-trade entry: the provisional scenarios still show negative expected
 and base returns, severe bear downside, weak payoff ratios, and no margin of safety. Complete the
 queued full review by **2026-09-11**, or sooner after material contract cancellation, satellite
 failure, guidance change, financing, dilution, or capital-allocation news. No conviction strategy

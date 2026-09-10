@@ -1,0 +1,102 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_97f38b2cb2d5ef127f5a",
+    "papertrader research security upsert --request data/runs/daily-20260910T204817Z/01M1RDTZER38XSKKZ1AVRCJ30D/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260910T204817Z/01M1RDTZER38XSKKZ1AVRCJ30D/assessment_upsert_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260910T204817Z/01M1RDTZER38XSKKZ1AVRCJ30D/security_upsert_request_v2.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260910T204817Z/01M1RDTZER38XSKKZ1AVRCJ30D/assessment_upsert_request_v2.json",
+    "papertrader queue enqueue --request data/runs/daily-20260910T204817Z/01M1RDTZER38XSKKZ1AVRCJ30D/enqueue_full_research_request.json",
+    "papertrader research security-context --security-id security_97f38b2cb2d5ef127f5a",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Planet Labs quick check: the 31.88% four-week decline and 24.16 RSI strengthened the oversold alert, but Q2 changed contract-visibility, capex, mix and dilution inputs. PL is Unrated / Watch and allocation-ineligible pending dependent full review 01M26HW848ZZWZAZTZSYXFB7J2; no paper trade was created."
+  ],
+  "evidence": [
+    {
+      "claim": "From 2026-08-12 through 2026-09-10 the adjusted close declined 31.88% from USD 24.50 to USD 16.69. RSI 14 was 24.16, the close remained below the 20-day and 50-day moving averages, MACD remained below its signal, and the 2026-09-10 session declined another 3.08% without an abnormal-volume trigger.",
+      "observed_at": "2026-09-10T20:48:19Z",
+      "source": "PaperTrader deterministic price and technical projections",
+      "source_hash": "c22c2908c629572d35c9c6476ee021ee0ffb639c018a134c540d05d28af0d2da"
+    },
+    {
+      "claim": "The filing supports the bounded Q2 comparison: revenue and operating cash flow improved, while backlog and remaining performance obligations declined, capital expenditure increased, hardware revenue mix rose, and ATM issuance changed the per-share valuation inputs. Those changes make the August scenarios unsuitable as a current supportable valuation without full research.",
+      "observed_at": "2026-09-10T20:04:05Z",
+      "source": "Planet Labs PBC Q2 fiscal 2027 Form 10-Q",
+      "source_hash": "99c53136c21eaf5fceaba3b24adb5474519b88960adf28a66f65e4972f26d675",
+      "url": "https://www.sec.gov/Archives/edgar/data/1836833/000119312526382016/pl-20260731.htm"
+    },
+    {
+      "claim": "The issuer reported stronger quarterly revenue, adjusted EBITDA and liquidity and maintained fiscal 2027 revenue guidance; this supports the operating thesis but does not resolve the changed valuation denominator, capital intensity or contract-conversion assumptions.",
+      "observed_at": "2026-09-10T20:04:05Z",
+      "source": "Planet Labs PBC Q2 fiscal 2027 financial results",
+      "source_hash": "1a670def51e459fca66d8c238ea50f0bd11d003bef3751cd6bd8078a7ba71445",
+      "url": "https://www.sec.gov/Archives/edgar/data/1836833/000119312526381874/pl-ex99_1.htm"
+    },
+    {
+      "claim": "The baseline completed full research for the same immutable security on 2026-08-28, within ten days of this request's original enqueue. The accepted current assessment assessment_36e7f3b062875eeaed9f is the sole immutable history version sourced from this quick check and current run, links predecessor assessment_19f668616dcec205c4ba, records fresh price and FX identity, and omits stale scenario values rather than presenting them as a current fair value. It is Unrated / Watch and allocation-ineligible because valuation is unsupported and the relationship remains pending.",
+      "source": "Baseline result 01M06M2NP8WCAE6T92D639MR4R and PaperTrader deterministic assessment projection"
+    },
+    {
+      "claim": "Exactly one dependent security_research operation, 01M26HW848ZZWZAZTZSYXFB7J2, carries this quick-check identity, full_research_requested=true, all three RSI alert packets, the current market period and price hash, the Q2 sources, and the specific full-revaluation gate. No strategy or signal was created.",
+      "source": "PaperTrader deterministic queue projection"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M26HW848ZZWZAZTZSYXFB7J2.json",
+    "data/runs/daily-20260910T204817Z/01M1RDTZER38XSKKZ1AVRCJ30D/assessment_upsert_request.json",
+    "data/runs/daily-20260910T204817Z/01M1RDTZER38XSKKZ1AVRCJ30D/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260910T204817Z/01M1RDTZER38XSKKZ1AVRCJ30D/enqueue_full_research_request.json",
+    "data/runs/daily-20260910T204817Z/01M1RDTZER38XSKKZ1AVRCJ30D/security_upsert_request.json",
+    "data/runs/daily-20260910T204817Z/01M1RDTZER38XSKKZ1AVRCJ30D/security_upsert_request_v2.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_97f38b2cb2d5ef127f5a.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M1RDTZER38XSKKZ1AVRCJ30D",
+  "operations_created": [
+    "01M26HW848ZZWZAZTZSYXFB7J2"
+  ],
+  "status": "succeeded",
+  "summary": "Completed one bounded Planet Labs quick check through the 2026-09-10 close. The adjusted close fell 31.88% from 2026-08-12 to USD 16.69, RSI reached 24.16, and the repeated oversold alert strengthened, but this remains adverse timing rather than a validated entry. Q2 fiscal 2027 evidence improved revenue, adjusted EBITDA, operating cash flow and liquidity while lower contract visibility, higher capex, hardware mix and ATM dilution made the prior valuation inputs incomplete. Published immutable assessment assessment_36e7f3b062875eeaed9f as schema-v2 Unrated / Watch, valuation-unsupported and allocation-ineligible, and created exactly one dependent full security review, 01M26HW848ZZWZAZTZSYXFB7J2. No strategy, signal, paper order, allocation or accounting state changed.",
+  "validation": {
+    "checks": [
+      "Confirmed the selected row was the sole running LLM operation, matched run daily-20260910T204817Z, immutable security_97f38b2cb2d5ef127f5a, quick_check_research payload and trusted preflight identities.",
+      "Consumed the mandatory successful audited security-context receipt before assessment-state reads and confirmed baseline operation 01M06M2NP8WCAE6T92D639MR4R succeeded for the same security within ten days of original enqueue.",
+      "Confirmed all merged RSI alert causes and the current 2026-08-12 through 2026-09-10 period against canonical market projections and source-price hash c22c2908c629572d35c9c6476ee021ee0ffb639c018a134c540d05d28af0d2da.",
+      "Verified baseline thesis, valuation and buy-zone assumptions, catalysts, risks, invalidation gates and confidence against current SEC-filed Q2 evidence; material evidence and explicit full_research_requested=true require escalation.",
+      "Updated the maintained security page and structured security summary for the 2026-09-10 close, preserved the marker-bounded deterministic market-technicals chart, and updated the affected provisional scenario-comparison chart.",
+      "The first assessment request was rejected without state changes because supported valuation requires complete research; the uniquely named corrected request removed unsupported scenario values and succeeded.",
+      "Confirmed assessment assessment_36e7f3b062875eeaed9f is the sole immutable assessment history version for this operation and run, links its predecessor and expected result path, uses anchored scores, records fresh price and FX identity, and contains no invented scenario values.",
+      "Confirmed the current assessment run_id is exactly daily-20260910T204817Z and source_operation_id is exactly 01M1RDTZER38XSKKZ1AVRCJ30D after the mandatory post-upsert security-context command.",
+      "Confirmed exactly one dependent security_research operation, 01M26HW848ZZWZAZTZSYXFB7J2, carries this quick-check identity, all merged alert packets, the current market period and price hash, Q2 evidence and changed valuation gate.",
+      "Strict schema validation, queue validation, strict integrity, strict wiki lint and strict portfolio reconciliation returned OK.",
+      "No allocation targets/history, strategy, signal, order, fill, execution, cash, portfolio, performance or accounting ledger changed."
+    ],
+    "passed": true
+  },
+  "visualization_review": {
+    "charts": [
+      {
+        "chart_id": "provisional-scenario-values-september-2026",
+        "page_path": "data/wiki/securities/security_97f38b2cb2d5ef127f5a.md"
+      }
+    ],
+    "completed": true,
+    "omissions": [
+      {
+        "dataset": "Q2 operating-metric comparison",
+        "reason": "The bounded quick check verified changed Q2 assumptions but did not establish a consistently defined multi-period operating dataset; the dependent full review must normalize those metrics before charting them.",
+        "reason_code": "insufficient_comparability"
+      }
+    ]
+  }
+}

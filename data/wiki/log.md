@@ -3845,3 +3845,17 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Added `provisional-scenario-values-september-2026`; preserved the deterministic
   `market-technicals` chart unchanged.
 - Files updated: `securities/security_97f38b2cb2d5ef127f5a.md`, `log.md`.
+
+## [2026-09-10] update | Planet Labs strengthened oversold quick check
+
+- Refreshed [[securities/security_97f38b2cb2d5ef127f5a|Planet Labs]] through the 10 September
+  close: the 12 August–10 September decline reached 31.88%, RSI fell to 24.16, and the provisional
+  USD 14.65 weighted value remained below the USD 16.69 market price.
+- Q2 operating evidence still requires a full valuation refresh. Retained the prior Sell / Avoid
+  scenarios only as a provisional comparison, published one Unrated / Watch assessment with an
+  unsupported-valuation blocker, and queued exactly one dependent
+  full security review; no strategy, signal, order, paper trade, allocation, or accounting state
+  changed.
+- Updated `provisional-scenario-values-september-2026`; preserved the deterministic
+  `market-technicals` chart unchanged.
+- Files updated: `securities/security_97f38b2cb2d5ef127f5a.md`, `log.md`.
