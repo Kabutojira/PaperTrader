@@ -241,7 +241,9 @@ def test_prune_refuses_short_windows_and_cli_reports_json(
     sandbox_repository: Path,
     sandbox_settings: Settings,
     capsys: pytest.CaptureFixture[str],
+    monkeypatch: pytest.MonkeyPatch,
 ) -> None:
+    monkeypatch.setenv("WIKI_PATH", str(sandbox_repository / "data" / "wiki"))
     with pytest.raises(RetentionError, match="at least 7 days"):
         prune_run_artifacts(sandbox_repository, sandbox_settings, retention_days=3)
 

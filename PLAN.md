@@ -980,3 +980,9 @@ requests below the service limit, validates and assembles MP3s outside the check
 through Telegram. Rendering and delivery are separate credential phases, successful delivery
 removes local audio by default, no media or secret enters Git, and network behavior is covered by
 offline unit tests.
+
+## Follow-up — Isolate the retention CLI test from CI wiki paths — Complete (2026-09-10)
+
+Set `WIKI_PATH` to the temporary repository in the retention CLI test, matching the other CLI
+tests. This prevents the workflow's checkout-level environment from violating the sandbox path
+boundary while preserving production configuration validation and the retention assertions.
