@@ -9,4 +9,5 @@ order_745a7a020ecf89d5734d,leg_isrg_equity,buy,long,equity,security_1f9cce545ede
 order_9af7249ce4aaa2a7ec50,leg_prosus_equity,buy,long,equity,security_8b703a8adf5f864acaa4,,,,,4,1,,EUR
 order_b6ce4bf449a70f7985d8,leg_tencent_equity,buy,long,equity,security_de0d83229b369a426b99,,,,,4,1,,USD
 order_ba5e4e96c8cfa532417d,leg_prosus_equity,buy,long,equity,security_8b703a8adf5f864acaa4,,,,,8,1,,EUR
+order_c4a81bce6bb463d4bddb,leg_prosus_equity,sell,long,equity,security_8b703a8adf5f864acaa4,,,,,8,1,,EUR
 order_de1bb12ec4a52b7b8c66,leg_uber_equity,buy,long,equity,security_e4822686f60a96824b6e,,,,,3,1,,USD
