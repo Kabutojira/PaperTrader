@@ -3770,6 +3770,10 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 
 - Classified [[inbox/market-security_e4822686f60a96824b6e-volume_anomaly-d754f1a07536]] as `ingest`: A new strong volume anomaly coincides with a material 3.7% decline over the measured period and warrants durable review.
 
+- Published investor decision snapshot `decision_f4e515cd5b75b5628f1a`.
+
+- Generated canonical [[daily-reports/daily-report_20260910]] for run `daily-20260910T204817Z`.
+
 ## [2026-09-10] update | Tencent bounded baseline allocation
 
 - Updated [[strategies/strategy_ef910e9aff5203a0b901]] for current allocation plan

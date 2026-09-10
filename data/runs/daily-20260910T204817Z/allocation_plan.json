@@ -1,9 +1,9 @@
 {
-  "allocation_plan_id": "allocation_plan_6271cd1bd15ef73f7441",
+  "allocation_plan_id": "allocation_plan_dba0c1fffbb70d3bef8a",
   "allocation_plan_version": 1,
-  "as_of": "2026-09-10T20:48:19Z",
-  "capital_allocated_base": "898.2389207548903813117602408",
-  "capital_unallocated_base": "5092.990580910660752948457199",
+  "as_of": "2026-09-10T21:32:37Z",
+  "capital_allocated_base": "792.3539262480544513117602408",
+  "capital_unallocated_base": "4916.515590065934202948457199",
   "cash_base": "9703.0225174243560771003624",
   "current_baseline_exposure_base": "282.35998535156248",
   "current_conviction_exposure_base": "0",
@@ -17,10 +17,8 @@
   "maximum_baseline_exposure_base": "2995.61475083277556713010872",
   "minimum_cash_reserve_base": "2496.3456256939796392750906",
   "mode": "active",
-  "operations_created": [
-    "01M26H85HR973CXFN2FCQS5GYH"
-  ],
-  "pending_gross_exposure_base": "-282.35998535156248",
+  "operations_created": [],
+  "pending_gross_exposure_base": "0",
   "run_id": "daily-20260910T204817Z",
   "target_count": 83,
   "target_invested_exposure_base": "5991.22950166555113426021744",
