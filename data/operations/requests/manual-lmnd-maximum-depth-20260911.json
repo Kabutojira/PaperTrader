@@ -1,0 +1,20 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_8d11e65cd0de084ee461",
+  "dedupe_key": "security_research:security_8d11e65cd0de084ee461:manual-maximum-depth:2026-09-11",
+  "prompt": "Perform a maximum-depth, current primary-source security analysis and scenario valuation of Lemonade (LMND), including business quality, competitive position, unit economics, underwriting and reserve risk, capital structure and debt, dilution, catalysts, downside cases, and explicit portfolio action conditions.",
+  "inputs": {
+    "security_id": "security_8d11e65cd0de084ee461",
+    "full_research_requested": true,
+    "research_depth": "maximum"
+  },
+  "source": "manual-user-request",
+  "priority": 100,
+  "freshness_days": 0,
+  "depends_on": [],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [],
+  "max_attempts": 3
+}

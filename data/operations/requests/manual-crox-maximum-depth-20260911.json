@@ -1,0 +1,20 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_c150f31c30afdb4a85f9",
+  "dedupe_key": "security_research:security_c150f31c30afdb4a85f9:manual-maximum-depth:2026-09-11",
+  "prompt": "Perform a maximum-depth, current primary-source security analysis and scenario valuation of Crocs (CROX), including brand durability, channel and geographic economics, HEYDUDE recovery risk, margins and cash conversion, capital structure and debt, repurchases, catalysts, downside cases, and explicit portfolio action conditions.",
+  "inputs": {
+    "security_id": "security_c150f31c30afdb4a85f9",
+    "full_research_requested": true,
+    "research_depth": "maximum"
+  },
+  "source": "manual-user-request",
+  "priority": 100,
+  "freshness_days": 0,
+  "depends_on": [],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [],
+  "max_attempts": 3
+}
