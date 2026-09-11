@@ -3947,6 +3947,12 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 
 - Classified [[inbox/market-security_fe4648901e7675f157fd-volume_anomaly-8a8c4408b7df]] as `ingest`: New volume anomaly with a material negative return merits durable review.
 
+- Published investor decision snapshot `decision_9bee3282c6d6ab41f863`.
+
+- Saved bounded research finding coverage in [[queries/research-findings-1855dd71bdcfbaf1438f9ca9]].
+
+- Generated canonical [[daily-reports/daily-report_20260911]] for run `daily-20260911T180528Z`.
+
 ## [2026-09-11] update | Planet Labs full Q2 fiscal 2027 review
 
 - Completed the bounded full Q2 review of

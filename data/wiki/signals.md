@@ -7,13 +7,13 @@ tags:
 created: "2026-09-11"
 updated: "2026-09-11"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_2f7362bad8ee76b5f324"
-as_of: "2026-09-11T15:32:33Z"
+snapshot_id: "decision_9bee3282c6d6ab41f863"
+as_of: "2026-09-11T18:11:32Z"
 ---
 
 # Signals
 
-**As of `2026-09-11T15:32:33Z`**
+**As of `2026-09-11T18:11:32Z`**
 
 ## Actionable trade signals
 
@@ -25,14 +25,50 @@ No pending orders.
 
 ## Research alerts — not trade signals
 
-### [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4)
+### EVK — Evonik Industries AG
 
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_below\_lower`
-- Market date: `2026-09-10`
-- Research status: `skipped`
-- Conclusion: Queue triage disposition
+- Market date: `2026-09-11`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### ANIC.L — Agronomics Limited
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_below\_lower`
+- Market date: `2026-09-11`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### ANIC.L — Agronomics Limited
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_oversold`
+- Market date: `2026-09-11`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### ANIC.L — Agronomics Limited
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-09-11`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### AKE — Arkema S.A.
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_below\_lower`
+- Market date: `2026-09-11`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
 
 ### [PLS.AX — PLS Group Limited](securities/security_8a5c43888d224de85c69)
 
@@ -202,8 +238,8 @@ No pending orders.
 
 - Alert: `rsi\_oversold`
 - Market date: `2026-09-10`
-- Research status: `skipped`
-- Conclusion: Queue triage disposition
+- Research status: `failed`
+- Conclusion: retry\_exhausted:agent\_validation\_failed:Hermes operation validation failed: Opportunity research for Market alert for CROX on 2026-09-11
 
 ### [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86)
 
@@ -251,15 +287,6 @@ No pending orders.
 - Conclusion: High-priority security research is ready to run.
 
 ### [NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_below\_signal`
-- Market date: `2026-09-10`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
-### BAS — BASF SE
 
 **Research alert — not a trade signal**
 
