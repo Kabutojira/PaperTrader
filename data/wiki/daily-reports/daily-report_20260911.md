@@ -7,8 +7,8 @@ tags:
 created: "2026-09-11"
 updated: "2026-09-11"
 provenance: deterministic-report-generator
-run_id: "daily-20260911T141718Z"
-snapshot_id: "decision_d195f65cf41cac294c9c"
+run_id: "daily-20260911T152217Z"
+snapshot_id: "decision_2f7362bad8ee76b5f324"
 ---
 
 # PaperTrader daily report — 2026-09-11
@@ -20,7 +20,7 @@ snapshot_id: "decision_d195f65cf41cac294c9c"
 
 - **Investment data:** Portfolio state safe — research gaps remain
 - **Operations:** Attention required
-- **As of:** `2026-09-11T14:28:01Z`
+- **As of:** `2026-09-11T15:32:33Z`
 - **Cash:** 9703.02 EUR (97.172267%)
 - **Gross exposure:** 282.36 EUR
 - **Target cash:** 9703.02 EUR (97.172267%)
@@ -119,13 +119,9 @@ No actionable trade signals.
   - Research: **skipped**
   - Decision: bearish\_alert\_unowned
 
-## Research decisions this run
-
-- **[Market alert for CROX](securities/security_c150f31c30afdb4a85f9) — succeeded:** The 2026-09-09 CROX volume-anomaly transition is a risk-monitoring signal, not a supported new investment opportunity or a demonstrated thesis break. Deterministic market data records a 15.655614095269486% decline from 2026-08-11 through 2026-09-09 and a volume-anomaly entry on the latter date. The latest inspected issuer and SEC-index observation…
-
 ## Leading Buy / Initiate research candidate
 
-- **NVDA — NVIDIA Corporation:** Buy / Initiate; expected return 39%; The eligible set is not sufficiently diversified.
+- **NVDA — NVIDIA Corporation:** Buy / Initiate; expected return 39%; No current allocation plan supports this candidate.
 
 ## Comparison-only research benchmark
 
@@ -160,21 +156,21 @@ No pending orders.
 
 | Candidate | Rating / action | State | Bear / base / bull | Expected | Buy below | Exact gate |
 | --- | --- | --- | ---: | ---: | ---: | --- |
-| [NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | Buy / Initiate | Full baseline — Strategy research pending | -9.32405227763421023458695125% / 42.196372564619079404852281% / 105.1657807051508778530557871% | 39% | 248.4 | The eligible set is not sufficiently diversified. |
-| [DPZ — Domino's Pizza, Inc.](securities/security_f34181f3df32080a91d1) | Buy / Initiate | Full baseline — Allocation constrained | -14.90702477550391515632060136% / 19.760483649290786076289524% / 57.579583749066823784591479% | 21% | 304 | The eligible set is not sufficiently diversified. |
-| [UBER — Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e) | Buy / Initiate | Starter — Strategy research pending | -24.20065897109998713012786596% / 24.035285320018202877972583% / 65.3803804266909371706301106% | 22% | 72 | The eligible set is not sufficiently diversified. |
-| [MELI — MercadoLibre, Inc.](securities/security_4935c6e39e38273a1731) | Buy / Initiate | Starter — Allocation constrained | -26.55699139813618386059660405% / 15.4104420886431396476339079% / 57.3778755754224631558644199% | 15% | 1760 | The eligible set is not sufficiently diversified. |
-| [TCEHY — Tencent Holdings Limited](securities/security_de0d83229b369a426b99) | Buy / Initiate | Starter — Strategy research pending | -25.63673671837889799954064936% / 20.8403028326342907507464448% / 67.317342383647479501033539% | 21% | 52 | The eligible set is not sufficiently diversified. |
-| [TDY — Teledyne Technologies Incorporated](securities/security_ad5917642acbba28c1f2) | Buy / Initiate | Research incomplete | -15.17183570829840737636211232% / 13.1601005867560771165129925% / 45.8507963118189438390611903% | 14% | 540 | The assessment's registered evidence is not fresh. |
-| [DLO — DLocal Limited](securities/security_715bde20b6e1e1320c1a) | Buy / Initiate | Valuation unattractive | -39.6782844907628448637658516% / 25.3351200025260890052865083% / 97.0509373301747067783648848% | 27% | 14.96 | Bear-case loss exceeds the starter limit. |
-| [PATH — UiPath, Inc.](securities/security_eca976f0076a425ea1bb) | Buy / Initiate | Valuation unattractive | -35.11175144730564298612014491% / 22.5666917106448965817730596% / 94.6647456580830710416395653% | 26% | 13.6 | Bear-case loss exceeds the starter limit. |
-| [SOFI — SoFi Technologies, Inc.](securities/security_98470cfc01bbcde78fc2) | Buy / Initiate | Valuation unattractive | -34.6310249943588572389877717% / 21.4410291215911007737916064% / 85.938417793823694964657005% | 18% | 16.72 | Expected/bear payoff is below the starter threshold. |
-| [CROX — Crocs, Inc.](securities/security_c150f31c30afdb4a85f9) | Buy / Initiate | Relationship research pending | -19.1399443908773688940990579% / 33.625836215416575324723233% / 89.1022664131526986544819759% | 29% | 116.34 | A current accepted idea-to-security relationship is unavailable. |
-| [PYPL — PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00) | Buy / Initiate | Relationship research pending | -19.26468037653515499517490972% / 21.1029794351972675072376354% / 51.3787242939965843840470443% | 15% | 51.648 | A current accepted idea-to-security relationship is unavailable. |
-| [FISV — Fiserv, Inc.](securities/security_d202772e4e62065cd17a) | Buy / Initiate | Allocation constrained | -28.46924222009921928208234372% / 32.8428358769585927618470759% / 94.1549139740164048057764956% | 27% | 52 | Research quality must be strictly above the configured threshold. |
-| [CSIQ — Canadian Solar Inc.](securities/security_099561384c0f5e697727) | Buy / Initiate | Allocation constrained | -22.02609203213508996664795095% / 40.2916375642293853749680568% / 102.6861131330031765729161039% | 28% | 14.624 | Research quality must be strictly above the configured threshold. |
-| [NOMD — Nomad Foods Limited](securities/security_98a1943771da875efed5) | Buy / Initiate | Allocation constrained | -18.84580814996816041943686514% / 35.2569864167197326342718914% / 80.3426485556263101790291886% | 28% | 12 | Research quality must be strictly above the configured threshold. |
-| [DNA — Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687) | Buy / Initiate | Valuation unattractive | -50.88495727208644172906233089% / 11.6519139490407315648643109% / 142.9203464650859773940971202% | 19% | 6.056 | Bear/base payoff is below the starter threshold. |
+| [NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | Buy / Initiate | Full baseline — Research incomplete | -9.32405227763421023458695125% / 42.196372564619079404852281% / 105.1657807051508778530557871% | 39% | 248.4 | No current allocation plan supports this candidate. |
+| [DPZ — Domino's Pizza, Inc.](securities/security_f34181f3df32080a91d1) | Buy / Initiate | Full baseline — Research incomplete | -14.90702477550391515632060136% / 19.760483649290786076289524% / 57.579583749066823784591479% | 21% | 304 | No current allocation plan supports this candidate. |
+| [UBER — Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e) | Buy / Initiate | Starter — Research incomplete | -24.20065897109998713012786596% / 24.035285320018202877972583% / 65.3803804266909371706301106% | 22% | 72 | No current allocation plan supports this candidate. |
+| [MELI — MercadoLibre, Inc.](securities/security_4935c6e39e38273a1731) | Buy / Initiate | Starter — Research incomplete | -26.55699139813618386059660405% / 15.4104420886431396476339079% / 57.3778755754224631558644199% | 15% | 1760 | No current allocation plan supports this candidate. |
+| [TCEHY — Tencent Holdings Limited](securities/security_de0d83229b369a426b99) | Buy / Initiate | Starter — Research incomplete | -25.63673671837889799954064936% / 20.8403028326342907507464448% / 67.317342383647479501033539% | 21% | 52 | No current allocation plan supports this candidate. |
+| [TDY — Teledyne Technologies Incorporated](securities/security_ad5917642acbba28c1f2) | Buy / Initiate | Research incomplete | -15.17183570829840737636211232% / 13.1601005867560771165129925% / 45.8507963118189438390611903% | 14% | 540 | No current allocation plan supports this candidate. |
+| [DLO — DLocal Limited](securities/security_715bde20b6e1e1320c1a) | Buy / Initiate | Research incomplete | -39.6782844907628448637658516% / 25.3351200025260890052865083% / 97.0509373301747067783648848% | 27% | 14.96 | No current allocation plan supports this candidate. |
+| [PATH — UiPath, Inc.](securities/security_eca976f0076a425ea1bb) | Buy / Initiate | Research incomplete | -35.11175144730564298612014491% / 22.5666917106448965817730596% / 94.6647456580830710416395653% | 26% | 13.6 | No current allocation plan supports this candidate. |
+| [SOFI — SoFi Technologies, Inc.](securities/security_98470cfc01bbcde78fc2) | Buy / Initiate | Research incomplete | -34.6310249943588572389877717% / 21.4410291215911007737916064% / 85.938417793823694964657005% | 18% | 16.72 | No current allocation plan supports this candidate. |
+| [CROX — Crocs, Inc.](securities/security_c150f31c30afdb4a85f9) | Buy / Initiate | Research incomplete | -19.1399443908773688940990579% / 33.625836215416575324723233% / 89.1022664131526986544819759% | 29% | 116.34 | No current allocation plan supports this candidate. |
+| [PYPL — PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00) | Buy / Initiate | Research incomplete | -19.26468037653515499517490972% / 21.1029794351972675072376354% / 51.3787242939965843840470443% | 15% | 51.648 | No current allocation plan supports this candidate. |
+| [FISV — Fiserv, Inc.](securities/security_d202772e4e62065cd17a) | Buy / Initiate | Research incomplete | -28.46924222009921928208234372% / 32.8428358769585927618470759% / 94.1549139740164048057764956% | 27% | 52 | No current allocation plan supports this candidate. |
+| [CSIQ — Canadian Solar Inc.](securities/security_099561384c0f5e697727) | Buy / Initiate | Research incomplete | -22.02609203213508996664795095% / 40.2916375642293853749680568% / 102.6861131330031765729161039% | 28% | 14.624 | No current allocation plan supports this candidate. |
+| [NOMD — Nomad Foods Limited](securities/security_98a1943771da875efed5) | Buy / Initiate | Research incomplete | -18.84580814996816041943686514% / 35.2569864167197326342718914% / 80.3426485556263101790291886% | 28% | 12 | No current allocation plan supports this candidate. |
+| [DNA — Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687) | Buy / Initiate | Research incomplete | -50.88495727208644172906233089% / 11.6519139490407315648643109% / 142.9203464650859773940971202% | 19% | 6.056 | No current allocation plan supports this candidate. |
 
 ## 5. Performance and risk
 
@@ -188,10 +184,6 @@ No pending orders.
 
 
 ## 6. Research changes
-
-### Evidence-linked narrative
-
-- CROX entered a volume-anomaly state on 2026-09-09 after a 15.655614095269486% decline from 2026-08-11. It is classified as a risk-monitoring signal without a verified contemporaneous primary-source catalyst; no allocation, strategy, signal, order, or accounting state changed. The ready merged quick check covers this alert and the subsequent RSI-ov… Evidence is retained in the canonical run artifacts.
 
 - [[ideas/idea_ai_native_smb_financial_operating_systems|AI-native SMB financial operating systems]]
 - [[model-portfolio|PaperTrader model portfolio]]
@@ -247,104 +239,104 @@ No pending orders.
 
 - Report date: 2026-09-11
 - Run status: degraded
-- Generated (UTC): `2026-09-11T14:28:01Z`
+- Generated (UTC): `2026-09-11T15:32:33Z`
 
 ### Complete market freshness
 
 | Security | Price date | Retrieved at | Status | Error |
 | --- | --- | --- | --- | --- |
-| [[securities/security_099561384c0f5e697727|CSIQ]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_0a56aa634d077fe5796f|AMAT]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_0b67d6c8e3fd3366a257|POWL]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_0c8b3c4291cd97f56d8c|108490]] | 2026-09-11 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_0cf8075039299094d614|KTOS]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_18a3ab0ee6086ee85d0f|ETN]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_1e8fbdb0f45f2b413e00|PYPL]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_1f9cce545ede94cd6349|ISRG]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_2010347f1a0a5ea60f47|SPOT]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_204be2a44063993de1a8|MSFT]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_22c2b9d782a62d7a9b86|ATKR]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_2433a056eb0c55961fcc|AMZN]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_2c779e81c27b78c556bb|TX]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_2dbe878dfc899d7ee867|FCX]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_33d9c44facc75c726c7d|NVDA]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_37ddcbdaad296ad831f2|COIN]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_3853e54c619d597dcaa1|NIB.F]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_3a75fc1ccca2ee7c937a|QCOM]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_3e597863f00753e8c65c|BE]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_4627aea1bf7d8943d3d8|SGML]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_47a0b06f6c6c478d7c1e|NBIS]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_488a9d7f7a8573597724|PWR]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_4935c6e39e38273a1731|MELI]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_4b61970aa8f574446819|GEV]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_567d0d575bbd30aaa91d|SSU.VI]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_59304f90c440def31dc5|RTX]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_61567714298b9563d1a9|WTI]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_664f93a7eaca72e76e9b|SPCX]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_66cdcf90aac0d83e76f3|ALB]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[security-catalog#security-security_6ac6a6268ca7c08829ae|DDD]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_6ad1af8d10d6276a0221|SCCO]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_6cf75bd0ec0aa2a20148|TWST]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_6f9a1450edceb9307c9a|ANET]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_715bde20b6e1e1320c1a|DLO]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[security-catalog#security-security_798e2fb944d740aca308|AKE]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_7bf8f4c9cc12ae410e40|ABCL]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_7ca095d63423c55a90e3|RKLB]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_83a56943e18793f685b0|TXN]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[security-catalog#security-security_84705b27d28a94f2b318|SSYS]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_8472507d7d320aa388a7|CRWD]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_89969b7dac39b7db5661|YEC.F]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_8a5c43888d224de85c69|PLS.AX]] | 2026-09-11 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_8b703a8adf5f864acaa4|PRX]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[security-catalog#security-security_8d11e65cd0de084ee461|LMND]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_95351d928b674bbdf687|DNA]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_96ba305ee7cd586bc348|FUC.F]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_97f38b2cb2d5ef127f5a|PL]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_98470cfc01bbcde78fc2|SOFI]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_98a1943771da875efed5|NOMD]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_9b0db3bc77914b23a307|CSL]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_9d4049ed6669a52815d6|SQM]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_a5dc16f3f4b245e6c168|LUNR]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_a9eb9838940ef5ceaa0c|FLNC]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_ad3b1f8f59fd599f079a|HOOD]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_ad5917642acbba28c1f2|TDY]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_b19e8f0343b7da1f3c03|03388]] | 2026-09-11 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_b1f2c48e1a744f5ecf67|LH]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_b2116dcf976c96974d7b|VALE]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[security-catalog#security-security_b61c642d038d71be3821|MTLS]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_bdc2f87dadf134760c3a|PLTR]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_c120e9f26ebb6159adf9|ABBNY]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_c150f31c30afdb4a85f9|CROX]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_c2e6db30cb59254de418|XMTR]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_c5a9e460d3350284d157|VLO]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_c86bb4e75658c07142cf|GOOGL]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_c9a37d277445869a8809|RBLX]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_cb88f9154cfeaa15e878|VRT]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[security-catalog#security-security_ccb25582c0392492fe9e|EVK]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_cd492d97064d8574156e|MP]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_ce9b78a4d0773c950765|TSM]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_d08d763780400dfbffce|SSUN.VI]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_d12e746b3c9d392183cc|META]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_d202772e4e62065cd17a|FISV]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_dc7a111e297be528d96b|TSLA]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_dc8486c1d61df62a22fd|SU]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_de0d83229b369a426b99|TCEHY]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_dfa34d4b9050964b465e|INTC]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_e19c7fe27fbcc4cd923d|AD]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_e4822686f60a96824b6e|UBER]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_eca976f0076a425ea1bb|PATH]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_ed7d5b616a196969c815|RXRX]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_ef35e41886220d51c22c|ASML]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[security-catalog#security-security_ef418f5ccc7dc5be8e65|BAS]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[security-catalog#security-security_f18cd57a5e086583c861|PRLB]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_f2b9760d847b2ba59324|ENPH]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_f34181f3df32080a91d1|DPZ]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_fb87fac302a5446a1ced|LAC]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
-| [[securities/security_fe5539a7d3fd9d553bce|MSTR]] | 2026-09-10 | 2026-09-11T14:17:19Z | ok | — |
+| [[securities/security_099561384c0f5e697727|CSIQ]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_0a56aa634d077fe5796f|AMAT]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_0b67d6c8e3fd3366a257|POWL]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_0c8b3c4291cd97f56d8c|108490]] | 2026-09-11 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_0cf8075039299094d614|KTOS]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_18a3ab0ee6086ee85d0f|ETN]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_1e8fbdb0f45f2b413e00|PYPL]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_1f9cce545ede94cd6349|ISRG]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_2010347f1a0a5ea60f47|SPOT]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_204be2a44063993de1a8|MSFT]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_22c2b9d782a62d7a9b86|ATKR]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_2433a056eb0c55961fcc|AMZN]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_2c779e81c27b78c556bb|TX]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_2dbe878dfc899d7ee867|FCX]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_33d9c44facc75c726c7d|NVDA]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_37ddcbdaad296ad831f2|COIN]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_3853e54c619d597dcaa1|NIB.F]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_3a75fc1ccca2ee7c937a|QCOM]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_3e597863f00753e8c65c|BE]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_4627aea1bf7d8943d3d8|SGML]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_47a0b06f6c6c478d7c1e|NBIS]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_488a9d7f7a8573597724|PWR]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_4935c6e39e38273a1731|MELI]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_4b61970aa8f574446819|GEV]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_567d0d575bbd30aaa91d|SSU.VI]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_59304f90c440def31dc5|RTX]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_61567714298b9563d1a9|WTI]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_664f93a7eaca72e76e9b|SPCX]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_66cdcf90aac0d83e76f3|ALB]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[security-catalog#security-security_6ac6a6268ca7c08829ae|DDD]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_6ad1af8d10d6276a0221|SCCO]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_6cf75bd0ec0aa2a20148|TWST]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_6f9a1450edceb9307c9a|ANET]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_715bde20b6e1e1320c1a|DLO]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[security-catalog#security-security_798e2fb944d740aca308|AKE]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_7bf8f4c9cc12ae410e40|ABCL]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_7ca095d63423c55a90e3|RKLB]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_83a56943e18793f685b0|TXN]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[security-catalog#security-security_84705b27d28a94f2b318|SSYS]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_8472507d7d320aa388a7|CRWD]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_89969b7dac39b7db5661|YEC.F]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_8a5c43888d224de85c69|PLS.AX]] | 2026-09-11 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_8b703a8adf5f864acaa4|PRX]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[security-catalog#security-security_8d11e65cd0de084ee461|LMND]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_95351d928b674bbdf687|DNA]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_96ba305ee7cd586bc348|FUC.F]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_97f38b2cb2d5ef127f5a|PL]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_98470cfc01bbcde78fc2|SOFI]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_98a1943771da875efed5|NOMD]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_9b0db3bc77914b23a307|CSL]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_9d4049ed6669a52815d6|SQM]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_a5dc16f3f4b245e6c168|LUNR]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_a9eb9838940ef5ceaa0c|FLNC]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_ad3b1f8f59fd599f079a|HOOD]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_ad5917642acbba28c1f2|TDY]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_b19e8f0343b7da1f3c03|03388]] | 2026-09-11 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_b1f2c48e1a744f5ecf67|LH]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_b2116dcf976c96974d7b|VALE]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[security-catalog#security-security_b61c642d038d71be3821|MTLS]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_bdc2f87dadf134760c3a|PLTR]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_c120e9f26ebb6159adf9|ABBNY]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_c150f31c30afdb4a85f9|CROX]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_c2e6db30cb59254de418|XMTR]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_c5a9e460d3350284d157|VLO]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_c86bb4e75658c07142cf|GOOGL]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_c9a37d277445869a8809|RBLX]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_cb88f9154cfeaa15e878|VRT]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[security-catalog#security-security_ccb25582c0392492fe9e|EVK]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_cd492d97064d8574156e|MP]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_ce9b78a4d0773c950765|TSM]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_d08d763780400dfbffce|SSUN.VI]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_d12e746b3c9d392183cc|META]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_d202772e4e62065cd17a|FISV]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_dc7a111e297be528d96b|TSLA]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_dc8486c1d61df62a22fd|SU]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_de0d83229b369a426b99|TCEHY]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_dfa34d4b9050964b465e|INTC]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_e19c7fe27fbcc4cd923d|AD]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_e4822686f60a96824b6e|UBER]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_eca976f0076a425ea1bb|PATH]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_ed7d5b616a196969c815|RXRX]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_ef35e41886220d51c22c|ASML]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[security-catalog#security-security_ef418f5ccc7dc5be8e65|BAS]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[security-catalog#security-security_f18cd57a5e086583c861|PRLB]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_f2b9760d847b2ba59324|ENPH]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_f34181f3df32080a91d1|DPZ]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_fb87fac302a5446a1ced|LAC]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
+| [[securities/security_fe5539a7d3fd9d553bce|MSTR]] | 2026-09-10 | 2026-09-11T15:22:17Z | ok | — |
 
 ### Orders and executions
 
@@ -360,8 +352,8 @@ No pending orders.
 
 - Mode: `active`
 - Deployment budget: 1497.8 EUR
-- Capital allocated: 808.2629627834844636748678833 EUR
-- Capital unallocated: 4900.606553530504190585349557 EUR
+- Capital allocated: 854.8370131064147908788967134 EUR
+- Capital unallocated: 4854.032503207573863381320727 EUR
 
 | Rank | Security | Target weight | Disposition | Reasons |
 | ---: | --- | ---: | --- | --- |
@@ -369,7 +361,7 @@ No pending orders.
 | 2 | [[securities/security_8b703a8adf5f864acaa4|PRX]] | 3.89% | increase | The eligible set is not sufficiently diversified.; Research quality is strictly above the configured threshold. |
 | 3 | [[securities/security_f34181f3df32080a91d1|DPZ]] | 0% | hold | The eligible set is not sufficiently diversified.; Research quality is strictly above the configured threshold. |
 | 4 | [[securities/security_e4822686f60a96824b6e|UBER]] | 1.88% | open | The eligible set is not sufficiently diversified.; Research quality is strictly above the configured threshold. |
-| 5 | [[securities/security_de0d83229b369a426b99|TCEHY]] | 1.39% | open | The eligible set is not sufficiently diversified.; Research quality is strictly above the configured threshold. |
+| 5 | [[securities/security_de0d83229b369a426b99|TCEHY]] | 1.86% | open | The eligible set is not sufficiently diversified.; Research quality is strictly above the configured threshold. |
 | 6 | [[securities/security_4935c6e39e38273a1731|MELI]] | 0% | hold | The eligible set is not sufficiently diversified.; Research quality is strictly above the configured threshold. |
 | — | [[securities/security_099561384c0f5e697727|CSIQ]] | 0% | excluded | Research quality must be strictly above the configured threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_0a56aa634d077fe5796f|AMAT]] | 0% | excluded | The assessment's registered evidence is not fresh.; Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; A current accepted idea-to-security relationship is unavailable. |
@@ -868,5 +860,5 @@ No pending orders.
 
 ### Research finding coverage
 
-[[queries/research-findings-94b7d24559c189adbe536cfc|100 completed findings, including prior-cycle/manual work]] are represented in the linked appendix.
+[[queries/research-findings-e57fa1c6bb04096010e0d459|100 completed findings, including prior-cycle/manual work]] are represented in the linked appendix.
 295 additional findings remain unrepresented and eligible for a later report.

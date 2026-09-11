@@ -210,3 +210,4 @@ daily-20260911T054700Z,2026-09-11T05:47:00Z,2026-09-11T06:36:51Z,degraded,workfl
 daily-20260911T103301Z,2026-09-11T10:33:01Z,2026-09-11T10:33:21Z,succeeded,migration,0,100,0,,Daily run succeeded; 0 agent operations; 0 pending-order dispositions.
 daily-20260911T104617Z,2026-09-11T10:46:17Z,2026-09-11T10:46:37Z,succeeded,migration,0,100,0,,Daily run succeeded; 0 agent operations; 0 pending-order dispositions.
 daily-20260911T141718Z,2026-09-11T14:17:18Z,2026-09-11T14:28:01Z,degraded,workflow_dispatch,2,100,5,,Daily run degraded; 2 agent operations; 0 pending-order dispositions.
+daily-20260911T152217Z,2026-09-11T15:22:17Z,2026-09-11T15:32:33Z,degraded,workflow_dispatch,1,100,2.5,,Daily run degraded; 1 agent operations; 0 pending-order dispositions.

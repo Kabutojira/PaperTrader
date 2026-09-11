@@ -7,13 +7,13 @@ tags:
 created: "2026-09-11"
 updated: "2026-09-11"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_d195f65cf41cac294c9c"
-as_of: "2026-09-11T14:28:01Z"
+snapshot_id: "decision_2f7362bad8ee76b5f324"
+as_of: "2026-09-11T15:32:33Z"
 ---
 
 # Performance and risk
 
-**As of `2026-09-11T14:28:01Z`**
+**As of `2026-09-11T15:32:33Z`**
 
 Current performance epoch started `2026-07-28T12:00:00Z` at **10000 EUR**. Prior audit epochs retained: **1**.
 
