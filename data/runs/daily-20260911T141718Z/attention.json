@@ -1,11 +1,6 @@
 {
-  "as_of": "2026-09-11T14:18:47Z",
+  "as_of": "2026-09-11T14:24:46Z",
   "candidates": [
-    {
-      "attention_class": 2,
-      "disposition": "eligible",
-      "operation_id": "01M2686XP8HDFCYFPVP04QZNQZ"
-    },
     {
       "attention_class": 2,
       "disposition": "eligible",
@@ -1548,7 +1543,7 @@
     }
   ],
   "policy_version": 1,
-  "remaining_operations": 5,
-  "remaining_weighted_budget": "100",
-  "selected_operation_id": "01M2686XP8HDFCYFPVP04QZNQZ"
+  "remaining_operations": 4,
+  "remaining_weighted_budget": "97.5",
+  "selected_operation_id": "01M26H85HR8JVXW2A2YBT7BZPF"
 }
