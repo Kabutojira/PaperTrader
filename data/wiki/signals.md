@@ -7,13 +7,13 @@ tags:
 created: "2026-09-11"
 updated: "2026-09-11"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_5c1cf2c8b3bfd29809e8"
-as_of: "2026-09-11T05:40:32Z"
+snapshot_id: "decision_50dba669726e1d3583ae"
+as_of: "2026-09-11T06:36:51Z"
 ---
 
 # Signals
 
-**As of `2026-09-11T05:40:32Z`**
+**As of `2026-09-11T06:36:51Z`**
 
 ## Actionable trade signals
 
@@ -67,8 +67,8 @@ No pending orders.
 
 - Alert: `volume\_anomaly`
 - Market date: `2026-09-10`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
 
 ### [TDY — Teledyne Technologies Incorporated](securities/security_ad5917642acbba28c1f2)
 
@@ -85,8 +85,8 @@ No pending orders.
 
 - Alert: `bollinger\_below\_lower`
 - Market date: `2026-09-10`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
 
 ### [SGML — Sigma Lithium Corporation](securities/security_4627aea1bf7d8943d3d8)
 
@@ -106,14 +106,23 @@ No pending orders.
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
+### [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_below\_lower`
+- Market date: `2026-09-10`
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
+
 ### [PL — Planet Labs PBC](securities/security_97f38b2cb2d5ef127f5a)
 
 **Research alert — not a trade signal**
 
 - Alert: `rsi\_oversold`
 - Market date: `2026-09-10`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed one bounded full Planet Labs security review using current SEC-filed Q2 fiscal 2027 evidence and fresh canonical price/FX identity. Revenue, retention, operating leverage and liquidity improved, but capital intensity, contract concentration, ATM issuance and broader dilution remain material. Published schema-v2 assessment assessment\_9ea04b63e769b8d9b31d with USD 6.30/USD 12.71/USD 24.00 bear/base/bull values and USD 13.045 probability-weighted value against the USD 16.69 mark. Deterministic gates classify the security Sell / Avoid, allocation-ineligible and no\_new\_position because expected and base returns are negative, payoff and margin-of-safety gates fail, and the canonical relationship remains pending. Retained the existing commercial-space relationship review and created exactly one defense-and-aerospace relationship review. No strategy, signal, paper order, allocation, fill, cash, portfolio, performance or accounting state changed.
 
 ### [NOMD — Nomad Foods Limited](securities/security_98a1943771da875efed5)
 
@@ -121,8 +130,8 @@ No pending orders.
 
 - Alert: `bollinger\_below\_lower`
 - Market date: `2026-09-10`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
 
 ### [MP — MP Materials Corp.](securities/security_cd492d97064d8574156e)
 
@@ -130,8 +139,8 @@ No pending orders.
 
 - Alert: `bollinger\_below\_lower`
 - Market date: `2026-09-10`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
 
 ### [LH — Labcorp Holdings Inc.](securities/security_b1f2c48e1a744f5ecf67)
 
@@ -175,8 +184,8 @@ No pending orders.
 
 - Alert: `bollinger\_below\_lower`
 - Market date: `2026-09-10`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
 
 ### [CROX — Crocs, Inc.](securities/security_c150f31c30afdb4a85f9)
 
@@ -184,8 +193,8 @@ No pending orders.
 
 - Alert: `rsi\_oversold`
 - Market date: `2026-09-10`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
 
 ### [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86)
 
@@ -211,8 +220,8 @@ No pending orders.
 
 - Alert: `bollinger\_below\_lower`
 - Market date: `2026-09-10`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
 
 ### [108490 — ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c)
 
@@ -222,15 +231,6 @@ No pending orders.
 - Market date: `2026-09-10`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
-
-### [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_below\_lower`
-- Market date: `2026-09-10`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
 
 ### [TX — Ternium S.A.](securities/security_2c779e81c27b78c556bb)
 
