@@ -920,3 +920,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_8a5c43888d224de85c69-bollinger_below_lower-0a2f7b464c33|PLS.AX — Bollinger below lower]]
