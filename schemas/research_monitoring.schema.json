@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Bounded monitoring and semantic audit coverage",
+  "type": "object", "additionalProperties": false,
+  "required": ["context_hash", "checks", "conflicts", "limitations"],
+  "properties": {
+    "context_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "checks": {"type": "array", "maxItems": 20, "items": {
+      "type": "object", "additionalProperties": false,
+      "required": ["target_id", "state", "checked_at", "source_hash", "evidence_refs", "reason"],
+      "properties": {
+        "target_id": {"type": "string", "minLength": 1},
+        "state": {"enum": ["checked_no_change", "changed", "partial", "failed", "reserved"]},
+        "checked_at": {"type": ["string", "null"], "format": "date-time"},
+        "source_hash": {"type": "string", "pattern": "^([a-f0-9]{64})?$"},
+        "evidence_refs": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "reason": {"type": "string", "minLength": 1, "maxLength": 2000}
+      }
+    }},
+    "conflicts": {"type": "array", "maxItems": 20, "items": {
+      "type": "object", "additionalProperties": false, "required": ["claim_a", "claim_b", "classification", "reason"],
+      "properties": {"claim_a": {"type": "string"}, "claim_b": {"type": "string"},
+        "classification": {"enum": ["contradiction", "temporal_update", "incomparable", "uncertain"]}, "reason": {"type": "string", "minLength": 1}}
+    }},
+    "limitations": {"type": "array", "items": {"type": "string", "minLength": 1}}
+  }
+}

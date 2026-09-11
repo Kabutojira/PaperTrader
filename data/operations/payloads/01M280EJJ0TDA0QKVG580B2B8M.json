@@ -1,0 +1,20 @@
+{
+  "entity_id": "security_33d9c44facc75c726c7d",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-09-04T06:22:45Z",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_33d9c44facc75c726c7d.md",
+    "security_id": "security_33d9c44facc75c726c7d"
+  },
+  "objective": "Revalidate security_33d9c44facc75c726c7d with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01M280EJJ0TDA0QKVG580B2B8M",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_nvda_huggingface_20260903_8k",
+    "source_nvda_q2_fy2027_10q",
+    "source_nvda_q2_fy2027_cfo",
+    "source_nvda_q2_fy2027_release"
+  ]
+}

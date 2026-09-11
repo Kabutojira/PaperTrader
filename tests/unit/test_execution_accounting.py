@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import TYPE_CHECKING
 
 import pytest
+from conftest import create_reviewed_paper_order
 from hypothesis import given
 from hypothesis import settings as hypothesis_settings
 from hypothesis import strategies as st
@@ -418,7 +419,7 @@ def test_pending_paper_order_cancellation_never_mutates_accounting(
         run_id="run-cancel",
         now=START,
     )
-    order_id, _, _ = create_paper_order(
+    order_id, _, _ = create_reviewed_paper_order(
         sandbox_repository,
         sandbox_settings,
         signal_id=signal_id,
@@ -655,7 +656,7 @@ def test_reference_accounting_scenarios_reconcile_exactly(
     )
     before_order_portfolio = read_table(sandbox_repository, "portfolio")
     state = build_risk_state(sandbox_repository, (order_reference,), as_of=START)
-    order_id, created, _ = create_paper_order(
+    order_id, created, _ = create_reviewed_paper_order(
         sandbox_repository,
         sandbox_settings,
         signal_id=signal_id,
@@ -715,7 +716,7 @@ def test_exact_replay_repairs_interrupted_fill_without_duplicate_state(
         run_id="run-recovery",
         now=START,
     )
-    order_id, _, _ = create_paper_order(
+    order_id, _, _ = create_reviewed_paper_order(
         sandbox_repository,
         sandbox_settings,
         signal_id=signal_id,
@@ -838,7 +839,7 @@ def test_partial_close_preserves_average_cost_and_realizes_decimal_pnl(
         run_id="run-open",
         now=START,
     )
-    opening_order, _, _ = create_paper_order(
+    opening_order, _, _ = create_reviewed_paper_order(
         sandbox_repository,
         sandbox_settings,
         signal_id=opening_signal,
@@ -956,7 +957,7 @@ def test_split_and_dividend_corrections_are_replayed_from_durable_corporate_acti
         run_id="run-actions",
         now=START,
     )
-    order_id, _, _ = create_paper_order(
+    order_id, _, _ = create_reviewed_paper_order(
         sandbox_repository,
         sandbox_settings,
         signal_id=signal_id,

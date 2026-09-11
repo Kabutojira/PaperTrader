@@ -602,7 +602,10 @@ def security_research_context(
         for row in read_table(repository_root, "source_registry")
         if row["source_id"] in evidence_ids
     ]
+    from papertrader.evidence import material_claims
+
     return {
+        "claim_evidence": material_claims(repository_root, {security_id}),
         "security": security,
         "current_assessment": current,
         "current_history_version": versions[-1] if versions else None,

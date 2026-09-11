@@ -53,6 +53,7 @@ from papertrader.queue import (
     prepare_queue,
     recover_superseded_allocation_plan_skips,
     release_expired_leases,
+    retire_automatic_podcasts,
     retire_source_watch_operations,
 )
 from papertrader.reports import NarrativeItem, generate_daily_report
@@ -317,6 +318,8 @@ def complete_daily_cycle(
     manifest["podcast_status"] = (
         manifest.get("podcast_status") if manifest.get("podcast_status") != "pending" else "skipped"
     )
+    if manifest["podcast_status"] == "skipped":
+        manifest["podcast_skip_reason"] = "disabled_by_policy"
     atomic_write_json(path, manifest, allowed_root=repository_root)
     return manifest
 
@@ -593,6 +596,10 @@ def prepare_daily_run(
     ensure_initial_capital(repository_root, settings, run_id=run_id, occurred_at=instant)
     release_dispositions = release_expired_leases(repository_root, now=instant)
     source_watch_dispositions = retire_source_watch_operations(repository_root, now=instant)
+    source_watch_dispositions += tuple(
+        f"{operation_id}:skipped:disabled_by_policy"
+        for operation_id in retire_automatic_podcasts(repository_root, apply=True, now=instant)
+    )
     errors: list[str] = []
     if retrieve_market:
         errors.extend(
@@ -634,6 +641,19 @@ def prepare_daily_run(
             if packet.decision is None
         )
     maintenance_dispositions: tuple[str, ...] = ()
+    from papertrader.monitoring import schedule_monitoring
+    from papertrader.research_calendar import schedule_catalysts
+
+    source_watch_dispositions += tuple(
+        f"protected_monitoring:{operation_id}"
+        for operation_id in schedule_monitoring(
+            repository_root, settings, run_id=run_id, now=instant
+        )
+    )
+    source_watch_dispositions += tuple(
+        f"catalyst_check:{key}"
+        for key in schedule_catalysts(repository_root, settings, now=instant)
+    )
     if settings.allocation.mode in {"report_only", "active"}:
         try:
             maintenance = maintain_allocation_research(

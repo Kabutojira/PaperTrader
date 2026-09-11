@@ -688,6 +688,116 @@ def test_context_uses_attempt_provenance_when_operation_is_retried_later(
     assert gap["failure_errors"] == ["The first attempt failed validation."]
 
 
+def test_default_batch_preserves_but_does_not_claim_queued_podcast(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    run_id = "podcast-manual-only"
+    _completed_manifest(sandbox_repository, run_id)
+    enqueued = enqueue_daily_podcast(sandbox_repository, sandbox_settings, run_id=run_id, now=NOW)
+    prepare_queue(sandbox_repository, now=NOW)
+    before = read_table(sandbox_repository, "operations_todo")
+    assert (
+        claim_next(
+            sandbox_repository,
+            sandbox_settings,
+            run_id=run_id,
+            budget=RunBudget(maximum_operations=1, maximum_cost=5),
+            now=NOW,
+        )
+        is None
+    )
+    assert read_table(sandbox_repository, "operations_todo") == before
+    assert read_table(sandbox_repository, "operations_history") == []
+    manual = claim_next(
+        sandbox_repository,
+        sandbox_settings,
+        run_id=run_id,
+        budget=RunBudget(maximum_operations=1, maximum_cost=5),
+        operation_id=enqueued.operation_id,
+        operation_type="daily_podcast",
+        now=NOW,
+    )
+    assert manual is not None
+    assert manual.operation_id == enqueued.operation_id
+
+
+def test_automatic_podcast_migration_requires_cycle_provenance_and_preserves_manual(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    from papertrader.queue import retire_automatic_podcasts
+
+    ids = {}
+    for trigger in ("schedule", "workflow_dispatch"):
+        run_id = f"legacy-{trigger}"
+        _completed_manifest(sandbox_repository, run_id)
+        enqueued = enqueue_daily_podcast(
+            sandbox_repository, sandbox_settings, run_id=run_id, now=NOW
+        )
+        ids[trigger] = enqueued.operation_id
+        path = sandbox_repository / "data/runs" / run_id / "daily_run.json"
+        manifest = json.loads(path.read_text())
+        manifest["trigger"] = trigger
+        path.write_text(json.dumps(manifest))
+    before = read_table(sandbox_repository, "operations_todo")
+    assert retire_automatic_podcasts(sandbox_repository, now=NOW) == (ids["schedule"],)
+    assert read_table(sandbox_repository, "operations_todo") == before
+    assert retire_automatic_podcasts(sandbox_repository, apply=True, now=NOW) == (ids["schedule"],)
+    assert [row["operation_id"] for row in read_table(sandbox_repository, "operations_todo")] == [
+        ids["workflow_dispatch"]
+    ]
+    history = read_table(sandbox_repository, "operations_history")
+    assert len(history) == 1
+    assert history[0]["terminal_reason"] == "disabled_by_policy"
+    assert history[0]["terminal_status"] == "skipped"
+    assert retire_automatic_podcasts(sandbox_repository, apply=True, now=NOW) == ()
+    assert read_table(sandbox_repository, "operations_history") == history
+
+
+def test_podcast_policy_recovers_after_cycle_transition_before_completion(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    from papertrader import daily
+    from papertrader.queue import retire_automatic_podcasts
+
+    cycle_id = "daily-20260730T180000Z"
+    _cycle_manifest(
+        sandbox_repository,
+        cycle_id,
+        started_at="2026-07-30T17:00:00Z",
+        cutoff="2026-07-30T18:00:00Z",
+    )
+    enqueue_daily_podcast(sandbox_repository, sandbox_settings, run_id=cycle_id, now=NOW)
+    path = sandbox_repository / "data/runs" / cycle_id / "daily_run.json"
+    manifest = json.loads(path.read_text())
+    manifest["trigger"] = "schedule"
+    path.write_text(json.dumps(manifest))
+    complete = daily.complete_daily_cycle
+
+    def interrupted(*args: object, **kwargs: object) -> dict[str, object]:
+        raise RuntimeError("simulated interruption")
+
+    monkeypatch.setattr(daily, "complete_daily_cycle", interrupted)
+    with pytest.raises(RuntimeError, match="simulated interruption"):
+        retire_automatic_podcasts(sandbox_repository, apply=True, now=NOW)
+    partial = json.loads(path.read_text())
+    assert partial["podcast_policy_transition"]["previous_status"] == "queued"
+    assert not partial.get("completion_at")
+    history = read_table(sandbox_repository, "operations_history")
+    monkeypatch.setattr(daily, "complete_daily_cycle", complete)
+    assert retire_automatic_podcasts(sandbox_repository, apply=True, now=NOW) == ()
+    recovered = json.loads(path.read_text())
+    assert recovered["completion_at"] == "2026-07-30T18:00:00Z"
+    assert recovered["podcast_status"] == "skipped"
+    assert recovered["podcast_policy_transition"] == partial["podcast_policy_transition"]
+    assert read_table(sandbox_repository, "operations_history") == history
+    assert read_table(sandbox_repository, "executions") == []
+    assert read_table(sandbox_repository, "cash_ledger") == []
+
+
 def test_failed_podcast_is_recorded_without_requiring_audio(
     sandbox_repository: Path,
     sandbox_settings: Settings,

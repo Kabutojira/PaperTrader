@@ -577,7 +577,7 @@ jobs:
         env:
           CYCLE_ID: ${{ steps.cycle.outputs.cycle_id }}
           TARGET_BRANCH: ${{ inputs.target_branch || github.event.repository.default_branch }}
-          GENERATE_PODCAST: ${{ inputs.generate_podcast }}
+          GENERATE_PODCAST: ${{ (github.event_name == 'workflow_dispatch' && inputs.generate_podcast) }}
           DRY_RUN: ${{ inputs.dry_run }}
         run: |
           report_name="daily-report_$(date -u +%Y%m%d).md"
@@ -615,13 +615,13 @@ jobs:
           result=$(uv run papertrader "${arguments[@]}")
           echo "commit_sha=$(python3 -c 'import json,sys; print(json.load(sys.stdin)["commit_sha"])' <<< "$result")" >> "$GITHUB_OUTPUT"
       - name: Complete an already-finalized cycle when podcast generation is disabled
-        if: ${{ steps.cycle.outputs.needs_finalization == 'false' && (!inputs.generate_podcast || inputs.dry_run) }}
+        if: ${{ steps.cycle.outputs.needs_finalization == 'false' && (!(github.event_name == 'workflow_dispatch' && inputs.generate_podcast) || inputs.dry_run) }}
         env:
           CYCLE_ID: ${{ steps.cycle.outputs.cycle_id }}
         run: uv run papertrader daily complete --daily-cycle-id "$CYCLE_ID"
       - name: Freeze complete cycle podcast context and enqueue text synthesis
         id: podcast_enqueue
-        if: ${{ inputs.generate_podcast && !inputs.dry_run }}
+        if: ${{ (github.event_name == 'workflow_dispatch' && inputs.generate_podcast) && !inputs.dry_run }}
         env:
           CYCLE_ID: ${{ steps.cycle.outputs.cycle_id }}
         run: |
@@ -631,7 +631,7 @@ jobs:
           result=$(uv run papertrader podcast enqueue --run-id "$CYCLE_ID")
           echo "operation_id=$(python3 -c 'import json,sys; print(json.load(sys.stdin)["operation_id"])' <<< "$result")" >> "$GITHUB_OUTPUT"
       - name: Synthesize the transcript and one ephemeral audio draft
-        if: ${{ inputs.generate_podcast && !inputs.dry_run }}
+        if: ${{ (github.event_name == 'workflow_dispatch' && inputs.generate_podcast) && !inputs.dry_run }}
         continue-on-error: true
         env:
           CYCLE_ID: ${{ steps.cycle.outputs.cycle_id }}
@@ -642,7 +642,7 @@ jobs:
           install -d -o hermes -g hermes -m 700 "$PAPERTRADER_PODCAST_OUTPUT_DIRECTORY"
           uv run papertrader agent run --hermes-home "$HERMES_HOME" --run-id "$CYCLE_ID" --operation-id "$PODCAST_OPERATION_ID" --operation-type daily_podcast
       - name: Encrypt a podcast-time OAuth refresh before its text checkpoint
-        if: ${{ inputs.generate_podcast && !inputs.dry_run }}
+        if: ${{ (github.event_name == 'workflow_dispatch' && inputs.generate_podcast) && !inputs.dry_run }}
         env:
           OPENAI_OAUTH_SECRET: ${{ secrets.OPENAI_OAUTH_SECRET }}
         run: |
@@ -663,7 +663,7 @@ jobs:
           rm -f "$identity" "$refreshed" "$verified"
       - name: Finalize text podcast and reserve its checkpoint
         id: podcast_text
-        if: ${{ inputs.generate_podcast && !inputs.dry_run }}
+        if: ${{ (github.event_name == 'workflow_dispatch' && inputs.generate_podcast) && !inputs.dry_run }}
         env:
           CYCLE_ID: ${{ steps.cycle.outputs.cycle_id }}
           PODCAST_OPERATION_ID: ${{ steps.podcast_enqueue.outputs.operation_id }}
@@ -676,7 +676,7 @@ jobs:
           echo "index=$(python3 -c 'import json,sys; print(json.load(sys.stdin)["index"])' <<< "$checkpoint")" >> "$GITHUB_OUTPUT"
       - name: Push the terminal text-podcast checkpoint
         id: podcast_checkpoint
-        if: ${{ inputs.generate_podcast && !inputs.dry_run && steps.podcast_text.outcome == 'success' }}
+        if: ${{ (github.event_name == 'workflow_dispatch' && inputs.generate_podcast) && !inputs.dry_run && steps.podcast_text.outcome == 'success' }}
         env:
           GITHUB_TOKEN: ${{ github.token }}
           CYCLE_ID: ${{ steps.cycle.outputs.cycle_id }}
@@ -688,7 +688,7 @@ jobs:
           echo "commit_sha=$(python3 -c 'import json,sys; print(json.load(sys.stdin)["commit_sha"])' <<< "$result")" >> "$GITHUB_OUTPUT"
       - name: Seal the existing draft against the exact pushed transcript
         id: seal_audio
-        if: ${{ inputs.generate_podcast && !inputs.dry_run && steps.podcast_text.outputs.status == 'succeeded' && steps.podcast_checkpoint.outcome == 'success' }}
+        if: ${{ (github.event_name == 'workflow_dispatch' && inputs.generate_podcast) && !inputs.dry_run && steps.podcast_text.outputs.status == 'succeeded' && steps.podcast_checkpoint.outcome == 'success' }}
         continue-on-error: true
         env:
           CYCLE_ID: ${{ steps.cycle.outputs.cycle_id }}
@@ -704,7 +704,7 @@ jobs:
           echo "script_path=$script_path" >> "$GITHUB_OUTPUT"
       - name: Deliver the exact committed podcast script
         id: deliver_podcast_script
-        if: ${{ always() && inputs.send_telegram && inputs.generate_podcast && !inputs.dry_run && steps.podcast_text.outputs.status == 'succeeded' && steps.podcast_checkpoint.outcome == 'success' }}
+        if: ${{ always() && inputs.send_telegram && (github.event_name == 'workflow_dispatch' && inputs.generate_podcast) && !inputs.dry_run && steps.podcast_text.outputs.status == 'succeeded' && steps.podcast_checkpoint.outcome == 'success' }}
         continue-on-error: true
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -748,7 +748,7 @@ jobs:
           fi
       - name: Record an unavailable Hermes audio draft
         id: audio_failure
-        if: ${{ always() && inputs.send_telegram && inputs.generate_podcast && !inputs.dry_run && steps.podcast_text.outputs.status == 'succeeded' && steps.podcast_checkpoint.outcome == 'success' && steps.seal_audio.outcome != 'success' }}
+        if: ${{ always() && inputs.send_telegram && (github.event_name == 'workflow_dispatch' && inputs.generate_podcast) && !inputs.dry_run && steps.podcast_text.outputs.status == 'succeeded' && steps.podcast_checkpoint.outcome == 'success' && steps.seal_audio.outcome != 'success' }}
         env:
           CYCLE_ID: ${{ steps.cycle.outputs.cycle_id }}
           SCRIPT_COMMIT: ${{ steps.podcast_checkpoint.outputs.commit_sha }}
@@ -757,7 +757,7 @@ jobs:
           echo "status=failed" >> "$GITHUB_OUTPUT"
       - name: Validate podcast delivery issue state
         id: podcast_delivery_state
-        if: ${{ always() && inputs.generate_podcast && !inputs.dry_run }}
+        if: ${{ always() && (github.event_name == 'workflow_dispatch' && inputs.generate_podcast) && !inputs.dry_run }}
         run: |
           if git diff --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"

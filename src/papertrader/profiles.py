@@ -74,6 +74,14 @@ def route_profile(
         (context.decision_change, "decision_changing_conclusion"),
         (context.option_or_multileg, "option_or_multileg_work"),
     )
+    if operation_type == "final_buy_review":
+        if escalation_source:
+            raise ValueError("final review is an independent role, not a research escalation")
+        return ProfileRoute("final_review", PROFILE_POLICY_VERSION, "final_buy_gate", "")
+    if operation_type == "research_triage":
+        if escalation_source:
+            raise ValueError("triage escalation requires a separate full research operation")
+        return ProfileRoute("scout", PROFILE_POLICY_VERSION, "read_only_research_triage", "")
     if operation_type in {"strategy_research", "execute_strategy"}:
         selected = "deep"
         reason = "full_strategy_or_execution_decision"
@@ -250,6 +258,11 @@ def profile_command_allowed(profile: str, arguments: tuple[str, ...]) -> bool:
     """Enforce the minimum profile mutation boundary at CLI dispatch time."""
 
     command = arguments
+    if profile == "final_review":
+        return command[:2] in {
+            ("research", "security-context"),
+            ("research", "assessment-get"),
+        }
     forbidden_for_scout = (
         ("research", "assessment", "upsert"),
         ("research", "relationship", "upsert"),

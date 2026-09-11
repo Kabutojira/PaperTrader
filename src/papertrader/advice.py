@@ -768,6 +768,16 @@ def _source_hashes(repository_root: Path, *, as_of: datetime) -> Mapping[str, st
             continue
         payloads.append((path.relative_to(payload_root).as_posix(), content_hash(raw)))
     hashes["operation_payloads"] = content_hash(payloads)
+    for directory in ("buy-review-packets", "buy-review-results", "research-governance"):
+        artifacts = []
+        for path in sorted((repository_root / "data/operations" / directory).rglob("*.json")):
+            if path.is_symlink() or not path.is_file():
+                raise AdviceError("buy review input must be a regular JSON file")
+            artifacts.append(
+                (path.relative_to(repository_root).as_posix(), content_hash(path.read_bytes()))
+            )
+        if artifacts:
+            hashes[directory.replace("-", "_")] = content_hash(artifacts)
     hashes.update(
         {
             f"fx_{key}": value
@@ -1993,8 +2003,18 @@ def _actionable_signals(
             Decimal("0"),
         )
         action = _signal_action(signal["signal_type"], current_quantity)
-        action_status = "pending_order" if selected_order else "awaiting_order_validation"
-        copy_ready = bool(selected_order and canonical_legs)
+        from papertrader.buy_review import publication_status
+
+        action_status, copy_ready, review_reason = publication_status(
+            repository_root,
+            signal_id=signal["signal_id"],
+            order=selected_order,
+            legs=tuple(leg_from_row(row) for row in canonical_legs)
+            if canonical_legs
+            else normalized_strategy_legs,
+            now=as_of,
+        )
+        copy_ready = copy_ready and bool(selected_order and canonical_legs)
         quantity = ""
         if copy_ready and len(canonical_legs) == 1:
             quantity = decimal_text(
@@ -2044,7 +2064,8 @@ def _actionable_signals(
                 entry_rule=strategy["entry_rule"],
                 exit_rule=strategy["exit_rule"],
                 invalidation=strategy["invalidation"],
-                rationale=signal["rationale"],
+                rationale=signal["rationale"]
+                + (f" Final review: {review_reason}" if review_reason else ""),
                 security_research_page=security["research_page"],
                 strategy_research_page=strategy["research_page"],
                 research_page=strategy["research_page"] or security["research_page"],

@@ -3,17 +3,26 @@ from __future__ import annotations
 import json
 import os
 import shutil
+from collections.abc import Callable
 from dataclasses import replace
+from datetime import datetime
 from decimal import Decimal
 from pathlib import Path
+from typing import Any
 
 import pytest
 
-from papertrader.atomic_io import atomic_write_csv
+from papertrader.atomic_io import atomic_write_csv, atomic_write_json
+from papertrader.buy_review import BuyReviewPending, accept_review, packet_for_operation
 from papertrader.config import Settings, load_settings
 from papertrader.integrity import load_csv_contracts
 from papertrader.issues import regenerate_issue_dashboard
 from papertrader.logs import regenerate_log_tail
+from papertrader.models import RiskAssessment
+from papertrader.orders import create_paper_order
+from papertrader.queue import Operation
+from papertrader.tables import read_table
+from papertrader.utils import format_timestamp
 
 EMPTY_DATA_DIRECTORIES = (
     "logs",
@@ -101,6 +110,97 @@ def sandbox_settings(sandbox_repository: Path) -> Settings:
         # production account size is asserted directly in test_config.py.
         portfolio=replace(settings.portfolio, initial_capital=Decimal("100000.00")),
     )
+
+
+def accept_test_buy_review(
+    root: Path,
+    settings: Settings,
+    operation: Operation,
+    *,
+    accepted_at: datetime,
+    decision: str = "APPROVE",
+    model: str = "gpt-6-astra",
+) -> dict[str, Any]:
+    """Simulate authenticated parent acceptance for an explicit test-only review."""
+    packet = packet_for_operation(root, operation)
+    review = {
+        "review_request_id": packet["review_request_id"],
+        "packet_hash": packet["packet_hash"],
+        "decision": decision,
+        "reason": "Independent fixture review",
+        "examined_evidence": ["fixture:primary"],
+        "counterevidence": "Competing explanation examined",
+        "material_issues": [],
+        "uncertainty": "Demand may miss assumptions",
+        "reconsideration_conditions": [],
+    }
+    result = {
+        "operation_id": operation.operation_id,
+        "status": "succeeded",
+        "summary": "Independent fixture review approved the exact purchase packet.",
+        "evidence": [
+            {
+                "source": "test-only authenticated reviewer fixture",
+                "claim": "The exact immutable purchase packet was independently reviewed.",
+                "url": "https://example.test/papertrader/final-buy-review",
+                "observed_at": format_timestamp(accepted_at),
+            }
+        ],
+        "files_changed": [],
+        "operations_created": [],
+        "issues_recorded": [],
+        "daily_report_items": [],
+        "commands_run": [],
+        "validation": {
+            "passed": True,
+            "checks": ["test-only authenticated final review completed"],
+        },
+        "final_buy_review": review,
+    }
+    run_id = "test-reviewer"
+    directory = root / "data" / "runs" / run_id / operation.operation_id
+    directory.mkdir(parents=True, exist_ok=True)
+    provenance = {
+        "run_id": run_id,
+        "operation_id": operation.operation_id,
+        "profile": "final_review",
+        "completed_at": format_timestamp(accepted_at),
+    }
+    for filename, value in {
+        "hermes_run.json": {
+            **provenance,
+            "model": model,
+            "provider": "openai-codex",
+            "reasoning_effort": "high",
+            "returncode": 0,
+        },
+        "validation_report.json": {**provenance, "passed": True},
+        "agent_result.json": result,
+    }.items():
+        atomic_write_json(directory / filename, value, allowed_root=root)
+    return accept_review(root, settings, operation, result, run_id=run_id, now=accepted_at)
+
+
+def create_reviewed_paper_order(
+    root: Path,
+    settings: Settings,
+    *,
+    order_factory: Callable[..., tuple[str, bool, RiskAssessment]] = create_paper_order,
+    **kwargs: Any,
+) -> tuple[str, bool, RiskAssessment]:
+    """Exercise the mandatory review round trip before creating a test purchase."""
+    with pytest.raises(BuyReviewPending) as pending:
+        order_factory(root, settings, **kwargs)
+    operation = next(
+        Operation.from_row(row)
+        for row in read_table(root, "operations_todo")
+        if row["dedupe_key"] == f"final_buy_review:{pending.value.review_request_id}"
+    )
+    accepted_at = kwargs.get("now")
+    if not isinstance(accepted_at, datetime):
+        raise AssertionError("reviewed paper-order fixtures require an explicit now timestamp")
+    accept_test_buy_review(root, settings, operation, accepted_at=accepted_at)
+    return order_factory(root, settings, **kwargs)
 
 
 class ReferenceOutputs:

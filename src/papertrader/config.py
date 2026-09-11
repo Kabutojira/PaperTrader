@@ -1101,6 +1101,7 @@ def _load_hermes_settings(
         ("scout", "HERMES_SCOUT_MAX_TURNS", ("analyst", "deep")),
         ("analyst", "HERMES_ANALYST_MAX_TURNS", ("deep",)),
         ("deep", "HERMES_DEEP_MAX_TURNS", ()),
+        ("final_review", "HERMES_FINAL_REVIEW_MAX_TURNS", ()),
     )
     for name, override_name, escalation_targets in profile_contract:
         section = f"hermes_profile_{name}"
@@ -1122,11 +1123,14 @@ def _load_hermes_settings(
             raise ConfigurationError(f"{section}.model must be one non-empty identifier")
         if reasoning_effort not in {"low", "medium", "high"}:
             raise ConfigurationError(f"{section}.reasoning_effort is invalid")
+        if name == "final_review" and (model != "gpt-6-astra" or reasoning_effort != "high"):
+            raise ConfigurationError("final buy review requires gpt-6-astra with high reasoning")
         mutation_policy = parser.get(section, "mutation_policy").strip()
         expected_policy = {
             "scout": "triage_only",
             "analyst": "routine_research",
             "deep": "full_research",
+            "final_review": "review_only",
         }[name]
         if mutation_policy != expected_policy:
             raise ConfigurationError(f"{section}.mutation_policy must be {expected_policy}")

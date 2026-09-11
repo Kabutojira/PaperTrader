@@ -83,6 +83,7 @@ def _wiki_changes(wiki_root: Path, report_date: date) -> tuple[str, ...]:
         if (
             isinstance(metadata, dict)
             and str(metadata.get("updated", "")) == report_date.isoformat()
+            and metadata.get("provenance") != "deterministic-research-finding-coverage"
         ):
             changes.append(relative.with_suffix("").as_posix())
     return tuple(changes)
@@ -785,7 +786,21 @@ def _generate_legacy_daily_report(
         / "daily-reports"
         / f"daily-report_{day.strftime('%Y%m%d')}.md"
     )
+    from papertrader.findings import prepare_finding_appendix, record_finding_coverage
+
+    finding_lines, finding_ids, appendix_path = prepare_finding_appendix(
+        repository_root, run_id=run_id, report_date=day, as_of=instant
+    )
+    lines.extend(finding_lines)
     atomic_write_text(path, "\n".join(lines), allowed_root=repository_root)
+    record_finding_coverage(
+        repository_root,
+        run_id=run_id,
+        report_date=day,
+        report_path=path,
+        finding_ids=finding_ids,
+        appendix_path=appendix_path,
+    )
     register_wiki_page(
         repository_root / "data" / "wiki",
         page_key=f"daily-reports/{path.stem}",
@@ -1125,6 +1140,22 @@ def generate_daily_report(
         / f"daily-report_{day.strftime('%Y%m%d')}.md"
     )
     atomic_write_text(path, "\n".join(lines), allowed_root=repository_root)
+    from papertrader.findings import prepare_finding_appendix, record_finding_coverage
+
+    finding_lines, finding_ids, appendix_path = prepare_finding_appendix(
+        repository_root, run_id=run_id, report_date=day, as_of=instant
+    )
+    if finding_lines:
+        lines.extend(finding_lines)
+        atomic_write_text(path, "\n".join(lines), allowed_root=repository_root)
+        record_finding_coverage(
+            repository_root,
+            run_id=run_id,
+            report_date=day,
+            report_path=path,
+            finding_ids=finding_ids,
+            appendix_path=appendix_path,
+        )
     register_wiki_page(
         repository_root / "data" / "wiki",
         page_key=f"daily-reports/{path.stem}",

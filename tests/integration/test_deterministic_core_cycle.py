@@ -6,6 +6,7 @@ from decimal import Decimal
 from pathlib import Path
 
 import pytest
+from conftest import create_reviewed_paper_order
 
 from papertrader.advice import refresh_advice
 from papertrader.config import Settings
@@ -208,7 +209,7 @@ def test_complete_core_cycle_is_replay_safe(
         ],
     )
     order_reference = _reference(prices[-1].close, NOW)
-    order_id, order_created, _ = create_paper_order(
+    order_id, order_created, _ = create_reviewed_paper_order(
         sandbox_repository,
         sandbox_settings,
         signal_id=signal_id,

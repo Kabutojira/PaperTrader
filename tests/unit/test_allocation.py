@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import TYPE_CHECKING
 
 import pytest
+from conftest import create_reviewed_paper_order
 from hypothesis import HealthCheck, given
 from hypothesis import settings as hypothesis_settings
 from hypothesis import strategies as st
@@ -1403,9 +1404,10 @@ def test_active_handoff_is_idempotent_and_order_quantity_is_code_owned(
             run_id="allocation-active",
             now=NOW,
         )
-    order_id, created, assessment = create_baseline_paper_order(
+    order_id, created, assessment = create_reviewed_paper_order(
         sandbox_repository,
         active,
+        order_factory=create_baseline_paper_order,
         signal_id=signal_id,
         strategy_id=strategy_id,
         references=(reference,),
@@ -1571,7 +1573,7 @@ def test_active_handoff_is_idempotent_and_order_quantity_is_code_owned(
         now=fill_time,
     )
     assert signal_created
-    increase_order, increase_created, _ = create_paper_order(
+    increase_order, increase_created, _ = create_reviewed_paper_order(
         sandbox_repository,
         active,
         signal_id=increase_signal,
@@ -1670,7 +1672,7 @@ def test_existing_conviction_exposure_is_not_managed_by_baseline_allocator(
         limit_price=None,
         currency="EUR",
     )
-    order_id, _, _ = create_paper_order(
+    order_id, _, _ = create_reviewed_paper_order(
         sandbox_repository,
         sandbox_settings,
         signal_id=signal_id,

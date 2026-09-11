@@ -6,6 +6,7 @@ from decimal import Decimal
 from pathlib import Path
 
 import pytest
+from conftest import create_reviewed_paper_order
 
 from papertrader.atomic_io import atomic_write_text
 from papertrader.config import Settings
@@ -21,7 +22,7 @@ from papertrader.execution import ensure_initial_capital
 from papertrader.integrity import validate_integrity
 from papertrader.market_data import write_price_cache
 from papertrader.models import OrderLegSpec, PriceBar, ReferencePrice
-from papertrader.orders import create_paper_order, create_signal
+from papertrader.orders import create_signal
 from papertrader.portfolio import build_risk_state
 from papertrader.tables import read_table, write_table
 from papertrader.wiki import lint_wiki
@@ -474,7 +475,7 @@ def test_daily_finalization_fills_next_eligible_base_currency_open(
     reference = ReferencePrice(
         security_id=security_id,
         provider_contract_id="",
-        price=Decimal("101"),
+        price=Decimal("103"),
         currency="EUR",
         fx_rate_to_base=Decimal("1"),
         as_of=datetime(2026, 7, 23, 15, 30, tzinfo=UTC),
@@ -502,7 +503,7 @@ def test_daily_finalization_fills_next_eligible_base_currency_open(
             }
         ],
     )
-    order_id, _, _ = create_paper_order(
+    order_id, _, _ = create_reviewed_paper_order(
         sandbox_repository,
         sandbox_settings,
         signal_id=signal_id,

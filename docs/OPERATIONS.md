@@ -6,6 +6,29 @@ contract.
 
 ## Safety and local setup
 
+### Research hardening activation and inspection
+
+`papertrader research migrate-hardening` previews the immutable legacy census; add `--apply`
+to activate after reviewing the diff and reconciliation. Optional `--as-of` requires a full UTC
+timestamp, not a bare date. Replays retain the original migration identity. Never hand-edit the
+policy, review receipts or research revision JSON. Existing queue overload is retained; new
+automatic admission follows measured capacity with protected exposure and RSI exceptions.
+
+Use `research scope` and `research metrics` for read-only inspection. Explicit ongoing tracking
+uses `research topic-record --request <file> --track`; a saved note or source instruction is not
+tracking authority. Catalyst and forecast maintenance use `research catalyst-record`,
+`research forecast-register`, and `research forecast-resolve`, each with a schema-valid request.
+
+An eligible new-exposure order request can return `awaiting_final_review` without creating an
+order. Run the normal sequential controller to process its independent Astra review. Do not
+hand-author approval files or replace Astra when unavailable. A valid veto/defer is a business
+disposition; an invocation failure remains an operational failure. Reductions and recovery of
+already-recorded executions retain their existing deterministic paths.
+
+Configuration/schema activation can invalidate the latest snapshot identity. Preserve the old
+run artifact and finalize a new supported cycle to generate the replacement. An offline migration
+cycle is only data migration, never proof of a successful live normal-budget workflow.
+
 PaperTrader has no real-execution adapter. Do not add brokerage credentials to the checkout,
 GitHub secrets, Hermes profile, or request files. Configure the canonical wiki path before running
 project commands:
@@ -200,6 +223,17 @@ post-run validation replace interactive prompts.
 
 ### Translate a committed podcast
 
+Daily scheduled runs and default manual daily runs do not produce podcasts. For a manual episode,
+explicitly dispatch daily with `generate_podcast=true`. Media requests are excluded from ordinary
+research batches; select the intended manual operation when using `agent run` directly.
+
+Preview retirement of legacy scheduled podcast requests with
+`uv run papertrader podcast retire-automatic`; apply the previewed policy transition with
+`uv run papertrader podcast retire-automatic --apply`. The command uses the matching scheduled
+cycle manifest, retains manual requests/live leases and prior result artifacts, and records
+`disabled_by_policy`. Daily preparation also applies this migration. Archived queue history and
+cycle receipts support idempotent recovery; do not hand-edit queue rows or delete transcripts.
+
 Use the exact committed transcript as the source and enqueue one target locale:
 
 ```bash
@@ -379,6 +413,53 @@ accounting checks are never deferred.
 If several manual runs complete on the same date, they intentionally share the single canonical
 daily-report path. The latest completed run owns that page, while every run keeps its own immutable
 decision snapshot under `data/runs/<run_id>/`.
+
+## Codex Git and test operators
+
+Repository-scoped Codex configuration is under `.codex/`; discoverable Codex skills are under
+`.agents/skills/`. This is intentionally separate from `skills/`, which contains the Hermes
+research-operation contracts.
+
+`papertrader-git` routes status, staging, commit, push, workflow dispatch, run lookup, monitoring,
+and failure-log retrieval to the GPT-5.6 Luna `git_operator`. The operator derives commit messages
+from the staged diff and stops on ambiguous file scope, unexpected state, divergence, rejection,
+or non-trivial conflicts. It never edits code to make a Git operation succeed.
+
+`papertrader-test` routes local and remote verification to the GPT-5.6 Luna `test_operator`. It
+starts with affected tests, expands toward the CI gate required by the request, and may make only
+an explicitly safe mechanical correction. A substantive failure is packaged with the command,
+test or job, exit code, stable signature, relevant logs/files, SHA, remote run identity, prior
+attempts, constraints, and expected behavior, then handed to the GPT-5.6 Sol `code_fixer`. The
+fixer makes the smallest appropriate change and runs one focused check; the Luna test operator
+then inspects the diff, retests, and routes any commit, push, or remote monitoring back to
+`git_operator`. If a subagent session cannot itself spawn another custom agent, it returns the
+unchanged package with `REQUEST_PARENT_RELAY_TO=<agent>`; the parent transports the package and
+result without taking over triage or verification.
+
+The loop is sequential and bounded to `MAX_TEST_FIX_ATTEMPTS = 3` by default:
+
+```text
+inspect -> targeted test -> classify failure
+  -> mechanical correction -> retest
+  -> substantive repair by code_fixer -> verification by test_operator
+  -> commit/push by git_operator -> SHA-matched workflow watch
+  -> green, or repeat within the bound
+```
+
+Stop before the limit when the same material failure remains after two repairs without meaningful
+progress. Also stop for ambiguous fixes, missing credentials or authorization, merge conflicts,
+or protected financial/investment logic outside the explicit task. The iteration result retains
+the attempt number, SHA, signature, fixer summary, changed files, and local/remote outcomes.
+
+Typical invocations are:
+
+```text
+$papertrader-git commit and push the current changes
+$papertrader-git trigger the daily workflow and report the result
+$papertrader-test run the relevant tests for the current changes
+$papertrader-test commit, push, launch the daily run, watch it and fix failures until green
+$papertrader-test validate this branch before merge
+```
 
 ## Dispatch GitHub workflows
 

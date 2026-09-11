@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Observable adversarial research review",
+  "type": "object", "additionalProperties": false,
+  "required": ["status", "favored_hypothesis", "strongest_alternative", "falsification_condition", "inspection_refs", "contrary_evidence", "blind_spots", "effect_on_conclusion", "reason"],
+  "properties": {
+    "status": {"enum": ["not_searched", "searched", "partial", "blocked", "not_required"]},
+    "favored_hypothesis": {"type": "string", "minLength": 1},
+    "strongest_alternative": {"type": "string", "minLength": 1},
+    "falsification_condition": {"type": "string", "minLength": 1},
+    "inspection_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "contrary_evidence": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "blind_spots": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "effect_on_conclusion": {"type": "string", "minLength": 1},
+    "reason": {"type": "string", "minLength": 1}
+  },
+  "allOf": [{"if": {"properties": {"status": {"const": "searched"}}}, "then": {"properties": {"inspection_refs": {"minItems": 1}}}}]
+}

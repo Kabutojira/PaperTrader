@@ -3899,6 +3899,18 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 
 - Generated canonical [[daily-reports/daily-report_20260911]] for run `daily-20260911T054700Z`.
 
+- Published investor decision snapshot `decision_c575d716ba6095bc68f0`.
+
+- Saved bounded research finding coverage in [[queries/research-findings-daily-20260911T103301Z]].
+
+- Generated canonical [[daily-reports/daily-report_20260911]] for run `daily-20260911T103301Z`.
+
+- Published investor decision snapshot `decision_8412fbcce9e21ff250ba`.
+
+- Saved bounded research finding coverage in [[queries/research-findings-b9288ef6b96529891976570e]].
+
+- Generated canonical [[daily-reports/daily-report_20260911]] for run `daily-20260911T104617Z`.
+
 ## [2026-09-11] update | Planet Labs full Q2 fiscal 2027 review
 
 - Completed the bounded full Q2 review of

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "title": "Stable catalyst occurrence",
+  "type": "object", "additionalProperties": false,
+  "required": ["event_id", "occurrence_key", "security_id", "status", "precision", "scheduled_at", "expected_date", "expected_month", "timezone", "source_history_id", "summary"],
+  "properties": {
+    "event_id": {"type": "string", "pattern": "^[A-Za-z0-9_-]{1,100}$"},
+    "occurrence_key": {"type": "string", "minLength": 1, "maxLength": 100},
+    "security_id": {"type": "string", "minLength": 1},
+    "status": {"enum": ["scheduled", "rescheduled", "cancelled", "completed"]},
+    "precision": {"enum": ["datetime", "date", "month", "unknown"]},
+    "scheduled_at": {"type": ["string", "null"], "format": "date-time"},
+    "expected_date": {"type": ["string", "null"], "format": "date"},
+    "expected_month": {"type": ["string", "null"], "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])$"},
+    "timezone": {"type": "string", "minLength": 1},
+    "source_history_id": {"type": "string", "minLength": 1},
+    "summary": {"type": "string", "minLength": 1, "maxLength": 2000}
+  }
+}

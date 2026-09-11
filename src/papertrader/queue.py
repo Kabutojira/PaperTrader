@@ -35,6 +35,7 @@ from papertrader.utils import (
 
 ACTIVE_STATUSES = frozenset({"queued", "ready", "running", "waiting", "blocked"})
 HISTORY_STATUSES = frozenset({"succeeded", "skipped", "failed", "cancelled", "expired"})
+MANUAL_MEDIA_OPERATIONS = frozenset({"daily_podcast", "podcast_translation"})
 DEPENDENCY_SUCCESS = frozenset({"succeeded", "skipped"})
 SUPPORTED_OPERATIONS = frozenset(
     {
@@ -42,11 +43,13 @@ SUPPORTED_OPERATIONS = frozenset(
         "source_discovery",
         "opportunity_research",
         "quick_check_research",
+        "research_triage",
         "idea_research",
         "security_research",
         "relationship_research",
         "strategy_research",
         "execute_strategy",
+        "final_buy_review",
         "daily_podcast",
         "podcast_translation",
     }
@@ -69,11 +72,13 @@ OPERATION_ENTITY_TYPES = {
     "source_discovery": "source",
     "opportunity_research": "opportunity",
     "quick_check_research": "security",
+    "research_triage": "security",
     "idea_research": "idea",
     "security_research": "security",
     "relationship_research": "relationship",
     "strategy_research": "strategy",
     "execute_strategy": "strategy",
+    "final_buy_review": "strategy",
     "daily_podcast": "run",
     "podcast_translation": "run",
 }
@@ -370,6 +375,10 @@ def _validate_operation_payload_value(
     if mismatches:
         raise QueueError(f"payload {relative} mismatches queue fields: {mismatches}")
     inputs = payload.get("inputs")
+    if operation.operation_type == "research_triage" and (
+        not isinstance(inputs, dict) or inputs.get("security_id") != operation.entity_id
+    ):
+        raise QueueError("research triage security identity differs from its queue entity")
     if (
         operation.operation_type == "wiki_ingest"
         and isinstance(inputs, dict)
@@ -552,6 +561,32 @@ def enqueue_operation(
     if any(marker in prompt for marker in "\r\n"):
         raise QueueError("operation prompt must not contain newlines")
     instant = ensure_utc(now or utc_now()).replace(microsecond=0)
+    delta_fields = (
+        "security_id",
+        "security_research_operation_id",
+        "security_research_result_path",
+    )
+    if operation_type == "idea_research" and all(
+        isinstance(inputs.get(field), str) and inputs[field] for field in delta_fields
+    ):
+        from papertrader.governance import security_change_class
+
+        inputs = {
+            **inputs,
+            "review_mode": "delta",
+            "security_deltas": [
+                {
+                    "security_id": inputs["security_id"],
+                    "security_research_operation_id": inputs["security_research_operation_id"],
+                    "security_research_result_path": inputs["security_research_result_path"],
+                    "change_class": security_change_class(
+                        repository_root,
+                        str(inputs["security_id"]),
+                        str(inputs["security_research_operation_id"]),
+                    ),
+                }
+            ],
+        }
     with _queue_lock(repository_root):
         active = _recover_archived(repository_root, _read_active(repository_root))
         history = read_table(repository_root, "operations_history")
@@ -561,7 +596,71 @@ def enqueue_operation(
         for row in history:
             if row["dedupe_key"] == dedupe_key and row["terminal_status"] in DEPENDENCY_SUCCESS:
                 return row["operation_id"], False
-        if operation_type in MERGEABLE_RESEARCH_TYPES:
+        from papertrader.governance import admission_reason
+
+        scope_reason = admission_reason(
+            repository_root,
+            entity_type=entity_type,
+            entity_id=entity_id,
+            parent_ids=tuple(depends_on),
+            operation_type=operation_type,
+            inputs=inputs,
+            settings=settings,
+            now=instant,
+        )
+        if (
+            operation_type == "idea_research"
+            and inputs.get("review_mode") == "delta"
+            and not scope_reason
+        ):
+            for target in active:
+                if (
+                    target.operation_type != "idea_research"
+                    or target.entity_id != entity_id
+                    or target.status not in {"queued", "ready", "waiting"}
+                ):
+                    continue
+                existing_payload = json.loads(
+                    (repository_root / target.payload_path).read_text(encoding="utf-8")
+                )
+                existing_inputs = existing_payload["inputs"]
+                if existing_inputs.get("review_mode") != "delta":
+                    continue
+                incoming_deltas = inputs.get("security_deltas")
+                if not isinstance(incoming_deltas, list):
+                    raise QueueError(
+                        "delta research requires a list of immutable result references"
+                    )
+                deltas = {
+                    row["security_research_operation_id"]: row
+                    for row in (*existing_inputs["security_deltas"], *incoming_deltas)
+                }
+                existing_inputs["security_deltas"] = [deltas[key] for key in sorted(deltas)]
+                existing_payload["source_refs"] = sorted(
+                    set((*existing_payload.get("source_refs", []), *source_refs))
+                )
+                merged = replace(
+                    target,
+                    updated_at=instant,
+                    depends_on=tuple(sorted(set((*target.depends_on, *depends_on)))),
+                )
+                _validate_operation_payload_value(
+                    repository_root,
+                    merged,
+                    existing_payload,
+                    relative=PurePosixPath(target.payload_path),
+                )
+                atomic_write_json(
+                    repository_root / target.payload_path,
+                    existing_payload,
+                    allowed_root=repository_root,
+                )
+                _write_active(
+                    repository_root,
+                    [merged if row.operation_id == target.operation_id else row for row in active],
+                )
+                return target.operation_id, False
+        if operation_type in MERGEABLE_RESEARCH_TYPES and not scope_reason:
             merge_targets = [
                 operation
                 for operation in active
@@ -620,6 +719,8 @@ def enqueue_operation(
                 market_date = inputs.get("market_data_date")
                 if isinstance(market_date, str) and market_date:
                     reason["market_data_date"] = market_date
+                if isinstance(inputs.get("rsi_attention"), dict):
+                    reason["rsi_attention"] = inputs["rsi_attention"]
                 reasons.append(reason)
                 merged_inputs = _merge_research_inputs(existing_inputs, inputs)
                 if (
@@ -678,7 +779,7 @@ def enqueue_operation(
             operation_id=operation_id,
             created_at=instant,
             updated_at=instant,
-            status="queued",
+            status="blocked" if scope_reason else "queued",
             priority=priority,
             operation_type=operation_type,
             entity_type=entity_type,
@@ -696,7 +797,7 @@ def enqueue_operation(
             max_attempts=max_attempts or settings.operations.default_max_attempts,
             claimed_by_run_id="",
             lease_expires_at=None,
-            last_error="",
+            last_error=scope_reason,
         )
         # Re-parse the generated form so callers cannot bypass row-level invariants.
         operation = Operation.from_row(operation.to_row())
@@ -1506,6 +1607,46 @@ def prepare_queue(
                 updated.append(operation)
                 continue
             operation_inputs = _operation_inputs(repository_root, operation)
+            if operation.operation_type == "research_triage" and operation_inputs.get(
+                "catalyst_occurrence_id"
+            ):
+                from papertrader.research_calendar import catalyst_records
+
+                occurrence = catalyst_records(repository_root).get(
+                    str(operation_inputs["catalyst_occurrence_id"])
+                )
+                if (
+                    occurrence is None
+                    or occurrence["version_id"] != operation_inputs.get("catalyst_version_id")
+                    or occurrence["event"]["status"] in {"cancelled", "completed"}
+                ):
+                    terminal.append(
+                        (operation, "skipped", "catalyst_occurrence_superseded_or_cancelled")
+                    )
+                    continue
+            if (
+                operation.operation_type == "idea_research"
+                and operation_inputs.get("review_mode") == "delta"
+            ):
+                from papertrader.governance import security_change_class
+
+                deltas = operation_inputs.get("security_deltas", [])
+                if (
+                    isinstance(deltas, list)
+                    and deltas
+                    and all(
+                        isinstance(delta, dict)
+                        and security_change_class(
+                            repository_root,
+                            str(delta.get("security_id", "")),
+                            str(delta.get("security_research_operation_id", "")),
+                        )
+                        in {"price_only", "unchanged"}
+                        for delta in deltas
+                    )
+                ):
+                    terminal.append((operation, "skipped", "no_material_security_delta"))
+                    continue
             if operation.operation_type in {
                 "strategy_research",
                 "execute_strategy",
@@ -1838,6 +1979,131 @@ def retire_source_watch_operations(
     )
 
 
+def retire_automatic_podcasts(
+    repository_root: Path,
+    *,
+    apply: bool = False,
+    now: datetime | None = None,
+) -> tuple[str, ...]:
+    """Retire legacy scheduled media using cycle provenance, preserving manual requests.
+
+    A source label alone never proves automatic origin. Live leases are untouched. The
+    durable disposition keeps the complete request and a reference to its prior result.
+    """
+
+    instant = ensure_utc(now or utc_now()).replace(microsecond=0)
+    migration_run = "podcast-policy-v1"
+    retired: list[str] = []
+    for operation in _read_active(repository_root):
+        if operation.operation_type != "daily_podcast" or operation.status == "running":
+            continue
+        _validate_run_id(operation.entity_id)
+        manifest_path = repository_root / "data/runs" / operation.entity_id / "daily_run.json"
+        if any(parent.is_symlink() for parent in (manifest_path, *manifest_path.parents)):
+            raise QueueError("podcast cycle manifest cannot traverse a symlink")
+        if not manifest_path.is_file():
+            continue
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        if (
+            manifest.get("trigger") != "schedule"
+            or manifest.get("run_id") != operation.entity_id
+            or manifest.get("podcast_operation_id") != operation.operation_id
+        ):
+            continue
+        retired.append(operation.operation_id)
+        if not apply:
+            continue
+        prior_result = f"data/runs/{operation.entity_id}/{operation.operation_id}/agent_result.json"
+        relative_result = f"data/runs/{migration_run}/{operation.operation_id}/agent_result.json"
+        result_path = repository_root / relative_result
+        if any(parent.is_symlink() for parent in (result_path, *result_path.parents)):
+            raise QueueError("podcast migration artifact cannot traverse a symlink")
+        result_path.parent.mkdir(parents=True, exist_ok=True)
+        if not result_path.exists():
+            atomic_write_json(
+                result_path,
+                {
+                    "operation_id": operation.operation_id,
+                    "status": "skipped",
+                    "summary": "Automatic podcast disabled by manual-only policy.",
+                    "reason_code": "disabled_by_policy",
+                    "evidence": [
+                        {
+                            "source": manifest_path.relative_to(repository_root).as_posix(),
+                            "claim": f"Scheduled cycle; prior result, if present: {prior_result}",
+                        }
+                    ],
+                    "files_changed": [],
+                    "operations_created": [],
+                    "issues_recorded": [],
+                    "daily_report_items": [],
+                    "commands_run": [],
+                    "validation": {"passed": True, "checks": ["scheduled_cycle_provenance"]},
+                },
+                allowed_root=repository_root,
+            )
+        if operation.status == "blocked":
+            resolve_blocked_operation(
+                repository_root,
+                operation_id=operation.operation_id,
+                run_id=migration_run,
+                terminal_status="skipped",
+                result_path=relative_result,
+                result_summary="Automatic podcast disabled by manual-only policy.",
+                terminal_reason="disabled_by_policy",
+                now=instant,
+            )
+        else:
+            with _queue_lock(repository_root):
+                active = _recover_archived(repository_root, _read_active(repository_root))
+                current = next(
+                    (row for row in active if row.operation_id == operation.operation_id), None
+                )
+                if current is None:
+                    continue
+                if current != operation:
+                    raise QueueError("podcast changed during policy migration")
+                _terminalize(
+                    repository_root,
+                    active,
+                    current,
+                    terminal_status="skipped",
+                    completed_at=instant,
+                    result_path=relative_result,
+                    result_summary="Automatic podcast disabled by manual-only policy.",
+                    terminal_reason="disabled_by_policy",
+                )
+    if apply:
+        # Resume after a crash between queue archival and the cycle transition.
+        for row in read_table(repository_root, "operations_history"):
+            if (
+                row["operation_type"] != "daily_podcast"
+                or row["terminal_reason"] != "disabled_by_policy"
+            ):
+                continue
+            _validate_run_id(row["entity_id"])
+            path = repository_root / "data/runs" / row["entity_id"] / "daily_run.json"
+            if any(parent.is_symlink() for parent in (path, *path.parents)) or not path.is_file():
+                raise QueueError("retired podcast lost its cycle manifest")
+            manifest = json.loads(path.read_text(encoding="utf-8"))
+            if not manifest.get("podcast_policy_transition"):
+                manifest["podcast_policy_transition"] = {
+                    "policy_version": "manual-podcast-v1",
+                    "at": format_timestamp(instant),
+                    "previous_status": manifest.get("podcast_status"),
+                    "operation_id": row["operation_id"],
+                    "result_path": row["result_path"],
+                }
+                manifest["podcast_status"] = "skipped"
+                manifest["podcast_skip_reason"] = "disabled_by_policy"
+                atomic_write_json(path, manifest, allowed_root=repository_root)
+            if manifest.get("daily_run_version") == 2 and manifest.get("finalization_at"):
+                from papertrader.daily import complete_daily_cycle
+
+                complete_daily_cycle(repository_root, daily_cycle_id=row["entity_id"], now=instant)
+    return tuple(retired)
+
+
 def release_expired_leases(
     repository_root: Path,
     *,
@@ -1933,13 +2199,21 @@ def claim_next(
             and (operation.deadline is None or operation.deadline > instant)
             and (operation_id is None or operation.operation_id == operation_id)
             and (operation_type is None or operation.operation_type == operation_type)
+            and (
+                operation.operation_type not in MANUAL_MEDIA_OPERATIONS
+                or operation_id is not None
+                or operation_type in MANUAL_MEDIA_OPERATIONS
+            )
         ]
 
         def claim_key(operation: Operation) -> tuple[object, ...]:
+            from papertrader.scheduling import attention_key
+
             allocation_rank = 2
             if prefer_allocation and _operation_allocation_plan_id(repository_root, operation):
                 allocation_rank = 0 if operation.operation_type == "execute_strategy" else 1
             return (
+                *attention_key(repository_root, settings, operation, now=instant)[:3],
                 allocation_rank,
                 -operation.priority,
                 operation.created_at,

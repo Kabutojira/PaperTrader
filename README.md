@@ -13,6 +13,13 @@ brokerage credential path; its order and fill lifecycle is always simulated.
 
 ## Local setup
 
+Research uses read-only Luna triage and Terra/Sol analysis. An otherwise-eligible new purchase
+requires a separate authenticated Astra final review before order admission and again at fill.
+RSI oversold receives preferred research attention, not automatic buying authority. Daily podcasts
+are disabled unless explicitly requested manually. Scope, evidence and monitoring retain immutable
+provenance; see [the operating runbook](docs/OPERATIONS.md) and
+[implementation evidence](docs/research-hardening-status.md).
+
 Python 3.12 or newer and [uv](https://docs.astral.sh/uv/) are required.
 
 ```bash
@@ -29,6 +36,29 @@ skill. Hermes should set `skills.external_dirs` to the
 checkout's `skills` directory. A local agentic harness can read the same `SKILL.md` files directly
 and must follow `AGENTS.md`, use the project CLI for structured state, and run operations
 sequentially.
+
+Project-local Codex repository-maintenance helpers live on separate surfaces:
+
+- `.agents/skills/papertrader-git` delegates routine Git and GitHub Actions work to the
+  GPT-5.6 Luna `git_operator`;
+- `.agents/skills/papertrader-test` delegates tests and the bounded CI repair loop to the
+  GPT-5.6 Luna `test_operator`;
+- `.codex/agents/code_fixer.toml` assigns narrowly scoped substantive repairs to GPT-5.6 Sol and
+  returns control to the test operator for verification.
+
+They run sequentially and do not participate in Hermes research operations. The default repair
+limit is three attempts. Examples:
+
+```text
+$papertrader-git commit and push the current changes
+$papertrader-git trigger the daily workflow and report the result
+$papertrader-test run the relevant tests for the current changes
+$papertrader-test commit, push, launch the daily run, watch it and fix failures until green
+$papertrader-test validate this branch before merge
+```
+
+Manual daily dispatches default to a non-publishing, non-delivering dry run. A non-dry daily run
+must be explicit. See `docs/OPERATIONS.md` for the delegation and stopping rules.
 
 ## Run an operation from Codex instead of Hermes
 
@@ -420,8 +450,8 @@ the quick check.
 
 ## Daily podcast
 
-Every scheduled daily workflow generates the podcast. Podcast generation remains off by default
-for manual runs; enable it there with the `generate_podcast` workflow-dispatch toggle. An enabled
+Scheduled daily workflows never generate podcasts. Podcast generation is off by default
+for manual runs; explicitly enable it with the `generate_podcast` workflow-dispatch toggle. An enabled
 non-dry daily workflow finishes with one priority-100 `daily_podcast` operation after the canonical
 report and decision snapshot exist. Deterministic code collects all accepted operation results into
 `data/runs/<run_id>/podcast_context.json`. Context version three starts exclusively after the most

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Independent final buy review",
+  "type": "object", "additionalProperties": false,
+  "required": ["review_request_id", "packet_hash", "decision", "reason", "examined_evidence", "counterevidence", "material_issues", "uncertainty", "reconsideration_conditions"],
+  "properties": {
+    "review_request_id": { "type": "string", "pattern": "^buy_review_[a-f0-9]{32}$" },
+    "packet_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "decision": { "enum": ["APPROVE", "REJECT", "DEFER"] },
+    "reason": { "type": "string", "minLength": 1, "maxLength": 4000 },
+    "examined_evidence": { "type": "array", "minItems": 1, "maxItems": 30, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+    "counterevidence": { "type": "string", "minLength": 1, "maxLength": 4000 },
+    "material_issues": { "type": "array", "maxItems": 20, "items": { "type": "string", "minLength": 1 } },
+    "uncertainty": { "type": "string", "minLength": 1, "maxLength": 4000 },
+    "reconsideration_conditions": { "type": "array", "maxItems": 20, "items": { "type": "string", "minLength": 1 } }
+  },
+  "allOf": [{ "if": { "properties": { "decision": { "const": "APPROVE" } } },
+              "then": { "properties": { "material_issues": { "maxItems": 0 }, "reconsideration_conditions": { "maxItems": 0 } } } }]
+}

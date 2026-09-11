@@ -1057,16 +1057,15 @@ def process_opportunity_transitions(
         if eligible_transitions:
             period = [bar for bar in bars if bar.date <= current[security_id].as_of_date][-21:]
             trigger_types = sorted({transition.trigger for transition in eligible_transitions})
-            alert_hash = source_fingerprint(
-                {
-                    "market_data_date": current[security_id].as_of_date.isoformat(),
-                    "source_price_hash": current[security_id].source_price_hash,
-                    "transitions": [
-                        {"trigger": item.trigger, "transition": item.transition}
-                        for item in eligible_transitions
-                    ],
-                }
-            )
+            alert_identity = {
+                "market_data_date": current[security_id].as_of_date.isoformat(),
+                "source_price_hash": current[security_id].source_price_hash,
+                "transitions": [
+                    {"trigger": item.trigger, "transition": item.transition}
+                    for item in eligible_transitions
+                ],
+            }
+            alert_hash = source_fingerprint(alert_identity)
             research_type, recent_research = _alert_research_type(
                 repository_root,
                 security_id,
@@ -1093,6 +1092,40 @@ def process_opportunity_transitions(
                 "period_end": period[-1].date.isoformat(),
                 "source_price_hash": current[security_id].source_price_hash,
             }
+            if "rsi_oversold" in trigger_types:
+                from papertrader.indicators import calculate_series
+
+                series = calculate_series(security_id, bars, settings)
+                episode_start = current[security_id].as_of_date
+                for observation in reversed(series):
+                    if observation.date > episode_start:
+                        continue
+                    if (
+                        observation.rsi_14 is None
+                        or observation.rsi_14 > settings.indicators.rsi_oversold
+                    ):
+                        break
+                    episode_start = observation.date
+                research_inputs["rsi_attention"] = {
+                    "rsi": str(current[security_id].rsi_14),
+                    "threshold": str(settings.indicators.rsi_oversold),
+                    "observed_session": current[security_id].as_of_date.isoformat(),
+                    "source_price_hash": current[security_id].source_price_hash,
+                    "episode_id": "rsi_"
+                    + content_hash(
+                        [
+                            security_id,
+                            episode_start.isoformat(),
+                            str(settings.indicators.rsi_oversold),
+                        ]
+                    )[:24],
+                    "transitions": [
+                        item.transition
+                        for item in eligible_transitions
+                        if item.trigger == "rsi_oversold"
+                    ],
+                    "original_created_at": format_timestamp(instant),
+                }
             if recent_research is not None:
                 research_inputs.update(
                     {

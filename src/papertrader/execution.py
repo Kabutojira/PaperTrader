@@ -461,6 +461,21 @@ def process_order_fill(
     assert expiry is not None
     signal_created = parse_timestamp(signal["created_at"])
     assert signal_created is not None
+    from papertrader.buy_review import (
+        BuyReviewError,
+        clearance_for_fill,
+        validate_clearance,
+        validate_fill_envelope,
+    )
+
+    try:
+        clearance = clearance_for_fill(repository_root, order, legs, risk_state)
+    except BuyReviewError as exc:
+        return str(exc), tuple(row["execution_id"] for row in existing)
+    if clearance is not None:
+        approval_at = parse_timestamp(clearance[1]["accepted_at"])
+        assert approval_at is not None
+        signal_created = max(signal_created, approval_at)
     fills: list[Fill] = []
     for leg in remaining:
         fill = select_fill(
@@ -478,6 +493,16 @@ def process_order_fill(
                 update_signal_status(repository_root, order["signal_id"], "expired")
                 return "expired", tuple(row["execution_id"] for row in existing)
             return "pending", tuple(row["execution_id"] for row in existing)
+        if clearance is not None:
+            try:
+                validate_clearance(repository_root, *clearance, now=fill.executed_at)
+                validate_fill_envelope(
+                    clearance[0], leg, price=fill.fill_price, fx=fill.fx_rate_to_base
+                )
+            except BuyReviewError as exc:
+                return f"final_review_deferred:{exc}", tuple(
+                    row["execution_id"] for row in existing
+                )
         fills.append(fill)
     venues = {
         row["security_id"]: row["venue_mic"] for row in read_table(repository_root, "securities")
@@ -492,11 +517,24 @@ def process_order_fill(
     )
     if strategy is None:
         raise ExecutionError(f"order {order_id} references missing strategy")
+    fill_by_key = {(fill.security_id, fill.provider_contract_id): fill for fill in fills}
+    execution_references = tuple(
+        replace(
+            reference,
+            price=fill_by_key[(reference.security_id, reference.provider_contract_id)].fill_price,
+            fx_rate_to_base=fill_by_key[
+                (reference.security_id, reference.provider_contract_id)
+            ].fx_rate_to_base,
+        )
+        if (reference.security_id, reference.provider_contract_id) in fill_by_key
+        else reference
+        for reference in risk_references
+    )
     assessment = assess_order_risk(
         settings,
         risk_state,
         remaining,
-        risk_references,
+        execution_references,
         venues,
         now=instant,
         activates_new_strategy=strategy["status"] != "active",

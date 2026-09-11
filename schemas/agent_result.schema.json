@@ -23,6 +23,28 @@
       "enum": ["succeeded", "skipped", "blocked", "failed"]
     },
     "summary": { "type": "string", "minLength": 1, "maxLength": 2000 },
+    "final_buy_review": { "type": "object" },
+    "research_topic": { "type": "object" },
+    "research_claims": { "type": "array", "maxItems": 20, "items": { "type": "object" } },
+    "adversarial_review": { "type": "object" },
+    "monitoring_review": { "type": "object" },
+    "catalyst_updates": {"type": "array", "maxItems": 10, "items": {"type": "object"}},
+    "research_forecasts": {"type": "array", "maxItems": 5, "items": {"type": "object"}},
+    "triage_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["disposition", "reason", "examined_evidence"],
+      "properties": {
+        "disposition": {
+          "enum": ["no_material_change", "needs_analysis", "duplicate", "defer", "uncertain"]
+        },
+        "reason": { "type": "string", "minLength": 1, "maxLength": 2000 },
+        "examined_evidence": {
+          "type": "array", "maxItems": 20, "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1, "maxLength": 2000 }
+        }
+      }
+    },
     "reason_code": {
       "type": "string",
       "pattern": "^[a-z][a-z0-9_]{0,127}$"

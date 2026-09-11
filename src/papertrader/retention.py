@@ -103,6 +103,10 @@ def protected_run_ids(repository_root: Path) -> tuple[str, ...]:
     """Return cycles that must keep every artifact regardless of age."""
 
     protected: set[str] = set()
+    for path in (repository_root / "data/operations/buy-review-results").glob("*.json"):
+        review = _load_json_object(path)
+        if review is not None and isinstance(review.get("run_id"), str):
+            protected.add(str(review["run_id"]))
     published = _load_json_object(repository_root / "data" / "published" / "decision_snapshot.json")
     if published is not None and isinstance(published.get("run_id"), str):
         protected.add(str(published["run_id"]))

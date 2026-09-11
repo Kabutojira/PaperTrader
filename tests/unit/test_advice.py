@@ -8,6 +8,7 @@ from decimal import Decimal
 from pathlib import Path
 
 import pytest
+from conftest import create_reviewed_paper_order
 
 from papertrader.advice import (
     AdviceError,
@@ -503,7 +504,7 @@ def _seed_signal(
     )
     order_id = ""
     if with_order:
-        order_id, order_created, _ = create_paper_order(
+        order_id, order_created, _ = create_reviewed_paper_order(
             repository,
             settings,
             signal_id=signal_id,

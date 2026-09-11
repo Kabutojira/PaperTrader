@@ -62,6 +62,20 @@ def test_daily_report_changes_exclude_non_public_wiki_directories(
             "---\n",
             encoding="utf-8",
         )
+    legacy_appendix = wiki_root / "queries/research-findings-daily-20260724T120000Z.md"
+    legacy_appendix.parent.mkdir(parents=True, exist_ok=True)
+    legacy_appendix.write_text(
+        "---\n"
+        'title: "Research findings daily-20260724T120000Z"\n'
+        "type: query\n"
+        "status: maintained\n"
+        "tags: [query, research]\n"
+        'created: "2026-07-24"\n'
+        'updated: "2026-07-24"\n'
+        "provenance: deterministic-research-finding-coverage\n"
+        "---\n",
+        encoding="utf-8",
+    )
 
     changes = _wiki_changes(wiki_root, date(2026, 7, 24))
 
@@ -69,6 +83,7 @@ def test_daily_report_changes_exclude_non_public_wiki_directories(
     assert all(
         not change.startswith(("_archive/", "_meta/", "inbox/", "raw/")) for change in changes
     )
+    assert "queries/research-findings-daily-20260724T120000Z" not in changes
 
 
 def test_daily_report_matches_reference_and_registers_one_canonical_page(

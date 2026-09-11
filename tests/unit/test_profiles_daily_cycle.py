@@ -69,6 +69,31 @@ def test_profile_command_authority_blocks_decision_mutations() -> None:
     assert profile_command_allowed("deep", signal) is True
 
 
+def test_review_and_triage_are_independent_read_only_roles() -> None:
+    from papertrader.command_scope import command_allowed
+
+    sensitive = RoutingContext(current_holding=True, conflicting_evidence=True)
+    assert route_profile("research_triage", sensitive).profile == "scout"
+    assert route_profile("final_buy_review", sensitive).profile == "final_review"
+    for operation_type in ("research_triage", "final_buy_review"):
+        for command in (
+            ("research", "assessment", "upsert"),
+            ("research", "relationship", "upsert"),
+            ("research", "security", "upsert"),
+            ("order", "create"),
+            ("order", "create-baseline"),
+            ("queue", "enqueue"),
+            ("issue", "record"),
+            ("buy-review", "accept"),
+        ):
+            assert not command_allowed(operation_type, command)
+        assert command_allowed(operation_type, ("research", "security-context"))
+    assert not profile_command_allowed("final_review", ("order", "create"))
+    assert not profile_command_allowed("final_review", ("anything", "unknown"))
+    with pytest.raises(ValueError, match="independent role"):
+        route_profile("final_buy_review", sensitive, escalation_source="deep")
+
+
 def test_analyst_relationship_gate_allows_only_unchanged_refresh(
     sandbox_repository: Path,
     monkeypatch: pytest.MonkeyPatch,

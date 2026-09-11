@@ -7,8 +7,8 @@ tags:
 created: "2026-09-11"
 updated: "2026-09-11"
 provenance: deterministic-report-generator
-run_id: "daily-20260911T054700Z"
-snapshot_id: "decision_50dba669726e1d3583ae"
+run_id: "daily-20260911T104617Z"
+snapshot_id: "decision_8412fbcce9e21ff250ba"
 ---
 
 # PaperTrader daily report — 2026-09-11
@@ -20,7 +20,7 @@ snapshot_id: "decision_50dba669726e1d3583ae"
 
 - **Investment data:** Portfolio state safe — research gaps remain
 - **Operations:** Attention required
-- **As of:** `2026-09-11T06:36:51Z`
+- **As of:** `2026-09-11T10:46:37Z`
 - **Cash:** 9703.02 EUR (97.166428%)
 - **Gross exposure:** 282.96 EUR
 - **Target cash:** 9703.02 EUR (97.166428%)
@@ -119,15 +119,9 @@ No actionable trade signals.
   - Research: **skipped**
   - Decision: bearish\_alert\_unowned
 
-## Research decisions this run
-
-- **[PL](securities/security_97f38b2cb2d5ef127f5a) — succeeded:** Completed one bounded full Planet Labs security review using current SEC-filed Q2 fiscal 2027 evidence and fresh canonical price/FX identity. Revenue, retention, operating leverage and liquidity improved, but capital intensity, contract concentration, ATM issuance and broader dilution remain material. Published schema-v2 assessment assessment\_9ea0…
-- **[AI-native SMB financial operating systems](ideas/idea_ai_native_smb_financial_operating_systems) — succeeded:** Updated the maintained AI-native SMB financial operating systems idea with a bounded regulated-insurance operating-system extension. Lemonade remains a candidate rather than an accepted relationship because current primary disclosures support AI-enabled insurance workflows and improving operating measures but do not establish SMB system-of-record…
-- **[ANIC.L](security-catalog#security-security_fe4648901e7675f157fd) — failed:** retry\_exhausted:agent\_validation\_failed:Hermes operation validation failed: Security research for ANIC.L on 2026-09-11
-
 ## Leading Buy / Initiate research candidate
 
-- **NVDA — NVIDIA Corporation:** Buy / Initiate; expected return 39%; The eligible set is not sufficiently diversified.
+- **NVDA — NVIDIA Corporation:** Buy / Initiate; expected return 39%; No current allocation plan supports this candidate.
 
 ## Comparison-only research benchmark
 
@@ -162,21 +156,21 @@ No pending orders.
 
 | Candidate | Rating / action | State | Bear / base / bull | Expected | Buy below | Exact gate |
 | --- | --- | --- | ---: | ---: | ---: | --- |
-| [NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | Buy / Initiate | Full baseline — Strategy research pending | -9.32405227763421023458695125% / 42.196372564619079404852281% / 105.1657807051508778530557871% | 39% | 248.4 | The eligible set is not sufficiently diversified. |
-| [DPZ — Domino's Pizza, Inc.](securities/security_f34181f3df32080a91d1) | Buy / Initiate | Full baseline — Allocation constrained | -14.90702477550391515632060136% / 19.760483649290786076289524% / 57.579583749066823784591479% | 21% | 304 | The eligible set is not sufficiently diversified. |
-| [UBER — Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e) | Buy / Initiate | Starter — Strategy research pending | -24.20065897109998713012786596% / 24.035285320018202877972583% / 65.3803804266909371706301106% | 22% | 72 | The eligible set is not sufficiently diversified. |
-| [MELI — MercadoLibre, Inc.](securities/security_4935c6e39e38273a1731) | Buy / Initiate | Starter — Allocation constrained | -26.55699139813618386059660405% / 15.4104420886431396476339079% / 57.3778755754224631558644199% | 15% | 1760 | The eligible set is not sufficiently diversified. |
-| [TCEHY — Tencent Holdings Limited](securities/security_de0d83229b369a426b99) | Buy / Initiate | Starter — Allocation constrained | -25.63673671837889799954064936% / 20.8403028326342907507464448% / 67.317342383647479501033539% | 21% | 52 | The eligible set is not sufficiently diversified. |
-| [TDY — Teledyne Technologies Incorporated](securities/security_ad5917642acbba28c1f2) | Buy / Initiate | Research incomplete | -15.17183570829840737636211232% / 13.1601005867560771165129925% / 45.8507963118189438390611903% | 14% | 540 | The assessment's registered evidence is not fresh. |
-| [DLO — DLocal Limited](securities/security_715bde20b6e1e1320c1a) | Buy / Initiate | Valuation unattractive | -39.6782844907628448637658516% / 25.3351200025260890052865083% / 97.0509373301747067783648848% | 27% | 14.96 | Bear-case loss exceeds the starter limit. |
-| [PATH — UiPath, Inc.](securities/security_eca976f0076a425ea1bb) | Buy / Initiate | Valuation unattractive | -35.11175144730564298612014491% / 22.5666917106448965817730596% / 94.6647456580830710416395653% | 26% | 13.6 | Bear-case loss exceeds the starter limit. |
-| [SOFI — SoFi Technologies, Inc.](securities/security_98470cfc01bbcde78fc2) | Buy / Initiate | Valuation unattractive | -34.6310249943588572389877717% / 21.4410291215911007737916064% / 85.938417793823694964657005% | 18% | 16.72 | Expected/bear payoff is below the starter threshold. |
-| [CROX — Crocs, Inc.](securities/security_c150f31c30afdb4a85f9) | Buy / Initiate | Relationship research pending | -19.1399443908773688940990579% / 33.625836215416575324723233% / 89.1022664131526986544819759% | 29% | 116.34 | A current accepted idea-to-security relationship is unavailable. |
-| [PYPL — PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00) | Buy / Initiate | Relationship research pending | -19.26468037653515499517490972% / 21.1029794351972675072376354% / 51.3787242939965843840470443% | 15% | 51.648 | A current accepted idea-to-security relationship is unavailable. |
-| [FISV — Fiserv, Inc.](securities/security_d202772e4e62065cd17a) | Buy / Initiate | Allocation constrained | -28.46924222009921928208234372% / 32.8428358769585927618470759% / 94.1549139740164048057764956% | 27% | 52 | Research quality must be strictly above the configured threshold. |
-| [CSIQ — Canadian Solar Inc.](securities/security_099561384c0f5e697727) | Buy / Initiate | Allocation constrained | -22.02609203213508996664795095% / 40.2916375642293853749680568% / 102.6861131330031765729161039% | 28% | 14.624 | Research quality must be strictly above the configured threshold. |
-| [NOMD — Nomad Foods Limited](securities/security_98a1943771da875efed5) | Buy / Initiate | Allocation constrained | -18.84580814996816041943686514% / 35.2569864167197326342718914% / 80.3426485556263101790291886% | 28% | 12 | Research quality must be strictly above the configured threshold. |
-| [DNA — Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687) | Buy / Initiate | Valuation unattractive | -50.88495727208644172906233089% / 11.6519139490407315648643109% / 142.9203464650859773940971202% | 19% | 6.056 | Bear/base payoff is below the starter threshold. |
+| [NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | Buy / Initiate | Full baseline — Research incomplete | -9.32405227763421023458695125% / 42.196372564619079404852281% / 105.1657807051508778530557871% | 39% | 248.4 | No current allocation plan supports this candidate. |
+| [DPZ — Domino's Pizza, Inc.](securities/security_f34181f3df32080a91d1) | Buy / Initiate | Full baseline — Research incomplete | -14.90702477550391515632060136% / 19.760483649290786076289524% / 57.579583749066823784591479% | 21% | 304 | No current allocation plan supports this candidate. |
+| [UBER — Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e) | Buy / Initiate | Starter — Research incomplete | -24.20065897109998713012786596% / 24.035285320018202877972583% / 65.3803804266909371706301106% | 22% | 72 | No current allocation plan supports this candidate. |
+| [MELI — MercadoLibre, Inc.](securities/security_4935c6e39e38273a1731) | Buy / Initiate | Starter — Research incomplete | -26.55699139813618386059660405% / 15.4104420886431396476339079% / 57.3778755754224631558644199% | 15% | 1760 | No current allocation plan supports this candidate. |
+| [TCEHY — Tencent Holdings Limited](securities/security_de0d83229b369a426b99) | Buy / Initiate | Starter — Research incomplete | -25.63673671837889799954064936% / 20.8403028326342907507464448% / 67.317342383647479501033539% | 21% | 52 | No current allocation plan supports this candidate. |
+| [TDY — Teledyne Technologies Incorporated](securities/security_ad5917642acbba28c1f2) | Buy / Initiate | Research incomplete | -15.17183570829840737636211232% / 13.1601005867560771165129925% / 45.8507963118189438390611903% | 14% | 540 | No current allocation plan supports this candidate. |
+| [DLO — DLocal Limited](securities/security_715bde20b6e1e1320c1a) | Buy / Initiate | Research incomplete | -39.6782844907628448637658516% / 25.3351200025260890052865083% / 97.0509373301747067783648848% | 27% | 14.96 | No current allocation plan supports this candidate. |
+| [PATH — UiPath, Inc.](securities/security_eca976f0076a425ea1bb) | Buy / Initiate | Research incomplete | -35.11175144730564298612014491% / 22.5666917106448965817730596% / 94.6647456580830710416395653% | 26% | 13.6 | No current allocation plan supports this candidate. |
+| [SOFI — SoFi Technologies, Inc.](securities/security_98470cfc01bbcde78fc2) | Buy / Initiate | Research incomplete | -34.6310249943588572389877717% / 21.4410291215911007737916064% / 85.938417793823694964657005% | 18% | 16.72 | No current allocation plan supports this candidate. |
+| [CROX — Crocs, Inc.](securities/security_c150f31c30afdb4a85f9) | Buy / Initiate | Research incomplete | -19.1399443908773688940990579% / 33.625836215416575324723233% / 89.1022664131526986544819759% | 29% | 116.34 | No current allocation plan supports this candidate. |
+| [PYPL — PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00) | Buy / Initiate | Research incomplete | -19.26468037653515499517490972% / 21.1029794351972675072376354% / 51.3787242939965843840470443% | 15% | 51.648 | No current allocation plan supports this candidate. |
+| [FISV — Fiserv, Inc.](securities/security_d202772e4e62065cd17a) | Buy / Initiate | Research incomplete | -28.46924222009921928208234372% / 32.8428358769585927618470759% / 94.1549139740164048057764956% | 27% | 52 | No current allocation plan supports this candidate. |
+| [CSIQ — Canadian Solar Inc.](securities/security_099561384c0f5e697727) | Buy / Initiate | Research incomplete | -22.02609203213508996664795095% / 40.2916375642293853749680568% / 102.6861131330031765729161039% | 28% | 14.624 | No current allocation plan supports this candidate. |
+| [NOMD — Nomad Foods Limited](securities/security_98a1943771da875efed5) | Buy / Initiate | Research incomplete | -18.84580814996816041943686514% / 35.2569864167197326342718914% / 80.3426485556263101790291886% | 28% | 12 | No current allocation plan supports this candidate. |
+| [DNA — Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687) | Buy / Initiate | Research incomplete | -50.88495727208644172906233089% / 11.6519139490407315648643109% / 142.9203464650859773940971202% | 19% | 6.056 | No current allocation plan supports this candidate. |
 
 ## 5. Performance and risk
 
@@ -190,11 +184,6 @@ No pending orders.
 
 
 ## 6. Research changes
-
-### Evidence-linked narrative
-
-- Planet Labs full Q2 review: strong growth, retention and liquidity did not overcome capital intensity, dilution and valuation. The refreshed USD 13.045 weighted value is below the USD 16.69 mark; deterministic gates retain Sell / Avoid, allocation-ineligible and no new paper position. One bounded defense-and-aerospace relationship review was queue… Evidence is retained in the canonical run artifacts.
-- Refreshed the AI-native SMB financial operating systems idea with Lemonade as a regulated-insurance operating-system candidate, pending one full security review and one causal-relationship review; no trade decision or accounting state changed. Evidence is retained in the canonical run artifacts.
 
 - [[ideas/idea_ai_native_smb_financial_operating_systems|AI-native SMB financial operating systems]]
 - [[model-portfolio|PaperTrader model portfolio]]
@@ -249,8 +238,8 @@ No pending orders.
 ### Run diagnostics
 
 - Report date: 2026-09-11
-- Run status: degraded
-- Generated (UTC): `2026-09-11T06:36:51Z`
+- Run status: succeeded
+- Generated (UTC): `2026-09-11T10:46:37Z`
 
 ### Complete market freshness
 
@@ -481,6 +470,7 @@ No pending orders.
 | [[securities/security_97f38b2cb2d5ef127f5a|Security research for PL on 2026-09-11]] | [[securities/security_97f38b2cb2d5ef127f5a|PL]] | succeeded | agent result:succeeded |
 | [[ideas/idea_ai_native_smb_financial_operating_systems|Idea research for AI-native SMB financial operating systems on 2026-09-11]] | [[ideas/idea_ai_native_smb_financial_operating_systems|AI-native SMB financial operating systems]] | succeeded | agent result:succeeded |
 | [[security-catalog#security-security_fe4648901e7675f157fd|Security research for ANIC.L on 2026-09-11]] | [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]] | failed | retry exhausted:agent validation failed:Hermes operation validation failed: Security research for ANIC.L on 2026-09-11 |
+| [[daily-reports/daily-report_20260904|Daily podcast for Daily report for 2026-09-04 on 2026-09-11]] | [[daily-reports/daily-report_20260904|Daily report for 2026-09-04]] | skipped | disabled by policy |
 
 ### Complete active queue
 
@@ -661,7 +651,6 @@ No pending orders.
 - Ready — [[ideas/idea_ai_compute_networking_hyperscaler_monetization|Relationship research for relationship between AI compute, networking, and hyperscaler monetization and INTC on 2026-09-04]]
 - Ready — [[ideas/idea_wide_bandgap_power_semiconductors|Relationship research for relationship between Wide-bandgap power semiconductors and INTC on 2026-09-04]]
 - Blocked — [[strategies/strategy_e4ada1a4934691d1f7ee|Execute strategy for Uber bounded baseline allocation on 2026-09-04]]
-- Blocked — [[daily-reports/daily-report_20260904|Daily podcast for Daily report for 2026-09-04 on 2026-09-04]]
 - Ready — [[securities/security_2c779e81c27b78c556bb|Opportunity research for Market alert for TX on 2026-09-05]]
 - Ready — [[inbox/market-security_2c779e81c27b78c556bb-macd_cross_above_signal-b792fe3afa99|Wiki ingest for TX — MACD cross above signal on 2026-09-05]]
 - Ready — [[securities/security_55c9ce2fdcd32dad6b8c|Opportunity research for Market alert for CRSR on 2026-09-05]]
@@ -824,6 +813,8 @@ No pending orders.
 - Ready — [[ideas/idea_defense_aerospace|Relationship research for relationship between Defense and aerospace replenishment cycle and PL on 2026-09-11]]
 - Ready — [[security-catalog#security-security_8d11e65cd0de084ee461|Security research for LMND on 2026-09-11]]
 - Waiting — [[ideas/idea_ai_native_smb_financial_operating_systems|Relationship research for relationship between AI-native SMB financial operating systems and LMND on 2026-09-11]]
+- Ready — [[securities/security_8b703a8adf5f864acaa4|Research triage for PRX on 2026-09-11]]
+- Blocked — [[securities/security_33d9c44facc75c726c7d|Security research for NVDA on 2026-09-11]]
 
 ### Open issues and delivery failures
 
@@ -860,4 +851,10 @@ No pending orders.
 - [[model-portfolio|Model portfolio]]
 - [[signals|Signals]]
 - [[system-status|System status]]
-- GitHub report: https://github.com/Kabutojira/PaperTrader/blob/main/data/wiki/daily-reports/daily-report_20260911.md
+- GitHub report: https://github.com/example/PaperTrader/blob/main/data/wiki/daily-reports/daily-report_20260911.md
+
+
+### Research finding coverage
+
+[[queries/research-findings-b9288ef6b96529891976570e|100 completed findings, including prior-cycle/manual work]] are represented in the linked appendix.
+294 additional findings remain unrepresented and eligible for a later report.

@@ -1,1027 +1,612 @@
-# PaperTrader implementation plan
+# PaperTrader research governance and final-buy review — development plan
 
-> This file is the completed-step changelog of the build. Every step below is finished; new
-> work is tracked as issues in `data/tables/issues.csv` and as dated entries appended here when
-> a step ships. Read `AGENTS.md` for the current contracts and `README.md` for operation.
+**Prepared:** 2026-09-11
 
-## Step 1 — Scaffold repository contracts — Complete (2026-07-24)
+**Repository:** `Kabutojira/PaperTrader`
 
-Established the paper-only repository structure, configuration and CLI boundaries, canonical schemas and empty data state, atomic writes, integrity checks, runtime commit whitelist, Hermes-native wiki, project skills, pinned dependencies, workflow scaffolds, and initial test suite.
+**Inspected baseline:** `d43d79e1240fc11738e2af3ed24f1adaf12b88e5`
 
-## Step 2 — Build deterministic market, queue, and accounting core — Complete (2026-07-24)
+**Deliverable status:** M1–M9 integrated locally as of 2026-09-11; M10 in progress; see
+[`docs/research-hardening-status.md`](docs/research-hardening-status.md) for implemented portions,
+validation evidence, and outstanding milestones. Local production-data activation is complete;
+the main-branch live deployment validation is still in progress.
 
-Implemented normalized market retrieval, rolling price data, indicators and candidate packets, sequential queue processing, deterministic classification, Decimal-safe risk and paper execution, append-only accounting ledgers, generated portfolio and performance views, reporting, issues, logs, and replay-safe test coverage.
+## 1. Objective and interpretation
 
-## Step 3 — Integrate Hermes and reusable project skills — Complete (2026-07-24)
+Improve the existing PaperTrader implementation, not replace it. Transfer WikiPlant's research-governance concepts: controlled exploration, compact archival memory, claim-specific evidence assessment, adversarial research, material-change propagation, coverage accounting, and research-quality evaluation. Add the user's new model-routing, execution-gate, RSI, podcast, and deployment requirements.
 
-Integrated pinned and isolated Hermes execution with the native `llm-wiki` skill and repository skills, mandatory sequential `--yolo` operation handling, actual-change result manifests, command and content auditing, prompt-injection defenses, strict path validation, and evidence-linked terminal outcomes.
-
-## Step 4 — Assemble GitHub workflows, reporting, and publication — Complete (2026-07-24)
-
-Built the serialized daily and reusable workflows for deterministic preparation, bounded Hermes operations, fills and reconciliation, canonical report generation, validated runtime commits, Quartz publication, and retryable Telegram delivery with isolated credentials and manual-dispatch support.
-
-## Step 5 — Validate the complete operating cycle — Complete (2026-07-24)
-
-Validated a clean-checkout research-to-paper-fill lifecycle covering market normalization, classification, sequential research, wiki and structured-state updates, strategy execution, next-session fills, accounting reconciliation, report publication, Telegram delivery, Quartz builds, deterministic replay, and idempotence.
-
-## Step 6 — Persist OpenAI Codex OAuth state as age ciphertext — Complete (2026-07-24)
-
-Replaced the Hermes API-key path with isolated `openai-codex` OAuth, restoring plaintext only inside the runtime boundary and persisting verified refreshes as one age-encrypted artifact, with failure-safe credential-only commits, strict cleanup, and no API-key fallback.
-
-## Step 7 — Add the local Codex harness and execute a researched idea — Complete (2026-07-25)
-
-Added a two-phase local Codex harness that preserves queue claims, skill identity, command receipts, exact-delta validation, manifest-last completion, and daily finalization contracts, then used it to research the solar, storage, and grid-flexibility thesis and enqueue bounded security follow-ups without forcing unsupported trades.
-
-## Step 8 — Add opportunity-cost-aware portfolio allocation — Complete (2026-07-27)
-
-Added evidence-backed security assessments, deterministic Decimal-safe candidate scoring and baseline allocation, FX support, immutable allocation plans, sleeve-aware strategies and order guards, daily reporting and readiness checks, while retaining cash hurdles, diversification limits, staged exposure caps, and the existing conviction and accounting controls.
-
-## Follow-up — Repair daily Hermes execution — Complete (2026-07-27)
-
-Reproduced the hosted failure and fixed the root-to-unprivileged runtime handoff so Hermes can safely read repository data and write its result manifest without receiving source, Git metadata, or credentials; a fresh pinned-container run then completed and passed all controller validation.
-
-## Follow-up — Enforce GitHub Pages link integrity — Complete (2026-07-27)
-
-Published the linked inbox packets and added a deterministic post-build checker for generated HTML routes, assets, directory indexes, and project Pages base paths, eliminating the dead internal links and making future broken references fail the build.
-
-## Follow-up — Make the Quartz homepage results-first — Complete (2026-07-27)
-
-Made the homepage lead with the latest report, current cash, equity, exposure, P/L, returns, positions, and recent operation conclusions, backed by an idempotent deterministic refresh command and canonical tables rather than manually maintained summaries.
-
-## Follow-up — Clarify inbox entries, recover classification, and enrich Telegram delivery — Complete (2026-07-27)
-
-Changed candidate titles to human-readable ticker and indicator labels with security links, added retryable tool-free Hermes classification through the isolated OAuth profile, and upgraded Telegram delivery to rich Markdown with frontmatter removal, commit-pinned wiki links, block-aware splitting, retries, and secret redaction.
-
-## Step 9 — Publish an investor-facing decision dashboard and copyable model portfolio — Complete (2026-07-27)
-
-Added a deterministic, schema-validated decision snapshot and publication exports; results-first portfolio, signal, performance, system-status, and research pages; investor-focused daily and Telegram briefs; and a responsive Quartz dashboard with downloadable data and local-only long-equity scaling. The views distinguish filled holdings, projected validated orders, candidates, and research alerts, preserve an explicit all-cash recommendation when gates are unmet, share one auditable snapshot identity, and cannot feed generated advice back into trading or accounting state.
-
-## Step 10 — Separate investment readiness from operational health — Complete (2026-07-28)
-
-Split the former aggregate data status into investment-data and operations/delivery health, counted current rejected relationships as completed reviews, and kept research backlog and Telegram failures visible without falsely degrading the investment evidence.
-
-## Step 11 — Enforce payoff-aware entries and pending-order discipline — Complete (2026-07-28)
-
-Required at least 10% base-case upside and a 1:1 upside-to-downside ratio in addition to the cash hurdle, enforced the gates across allocation, strategy, signal, order, and pre-fill validation, and prevented repeated deployment tranches while a baseline order remains pending.
-
-## Step 12 — Resize capital and introduce performance epochs — Complete (2026-07-28)
-
-Reduced current model equity to 10,000 EUR through an append-only 90,000 EUR withdrawal, preserved the original capital ledger and historical returns, and added immutable flow-adjusted performance epochs for future contributions or withdrawals.
-
-## Step 13 — Make security and FX evidence directly inspectable — Complete (2026-07-28)
-
-Added a dedicated Securities dashboard and direct ticker-to-security links, exposed native and EUR marks with conversion rates and separate market/FX timestamps, retained distinct strategy links, and removed disclaimer-style prose from investor-facing pages.
-
-## Step 14 — Guarantee latest-only end-of-run Telegram delivery — Complete (2026-07-28)
-
-Kept formatted Rich Markdown delivery after the runtime commit, added bot/destination preflight, consolidated failures into one stable latest-only issue, added committed local-run delivery, and explicitly prevented replay of older missed reports.
-
-## Step 15 — Run daily at 17:00 Europe/Rome and reconcile publication — Complete (2026-07-28)
-
-Changed the seven-day schedule to timezone-aware 17:00 Europe/Rome, migrated live pending ISRG state to cash after the new payoff gates rejected it, regenerated the canonical snapshot and investor pages, and validated the complete application and Quartz publication.
-
-## Step 16 — Merge research alerts, add quick checks, and publish a daily podcast — Complete (2026-07-30)
-
-Merged distinct same-security and repeat-day alert causes into one pre-claim research payload with rising priority; introduced bounded quick checks for securities fully reviewed within ten days, including deterministic escalation back to standard research; and added a final sequential daily podcast operation that collects accepted run changes, writes an evidence-grounded long-form script, uses scoped Hermes TTS, validates and assembles a roughly twenty-minute MP3, and remains one-way from investment decisions.
-
-## Step 17 — Preserve and compare research revisions — Complete (2026-07-30)
-
-### Outcome
-
-Every security refresh explicitly consumes the previous maintained research and previous assessment, then records what changed and why. Old research remains queryable without depending on manual Git-history inspection.
-
-### Implementation
-
-1. Add an append-only structured assessment history contract, for example `data/tables/security_assessment_history.csv`, keyed by immutable `assessment_id`. Keep `security_assessments.csv` as the current projection.
-2. When `papertrader research assessment upsert` accepts a new assessment:
-   - append the accepted version to history exactly once;
-   - link it to `previous_assessment_id` when one exists;
-   - record the source operation, result path, research-page content hash, and assessment schema version;
-   - update the current projection only after the history append validates.
-3. Add a read-only CLI command such as `papertrader research security-context --security-id <id>` that returns a bounded JSON context containing:
-   - current security identity and page;
-   - current and previous assessment;
-   - latest successful security-research operation and result path;
-   - linked ideas, accepted/rejected relationships, strategies, and retained source records;
-   - previous page hash and current page hash.
-4. Update `papertrader-security-research/SKILL.md` to require a **Changes since prior review** section covering:
-   - changed facts and evidence;
-   - changed assumptions;
-   - changed bear/base/bull valuation inputs and outputs;
-   - thesis upgrades or downgrades;
-   - catalysts, risks, blockers, and gaps added, resolved, or unchanged;
-   - rating and portfolio-action changes;
-   - conclusions that remain unchanged and why.
-5. Apply the same revision discipline to idea refreshes when a completed security review changes the candidate universe or idea conclusion. Do not overwrite contradictory historical claims without preserving dates, sources, and confidence.
-6. Update `AGENTS.md`, `data/wiki/SCHEMA.md`, research catalog generation, integrity checks, and wiki lint for the new history and change-summary contract.
-
-### Acceptance criteria
-
-- A second research run cannot succeed without reading the previous structured assessment and most recent successful research result when they exist.
-- The current page contains an explicit delta from the prior review rather than silently replacing it.
-- Replaying an identical accepted assessment creates no duplicate history row.
-- A historical assessment can be retrieved by immutable ID after any number of later updates.
-- Tests cover first research, unchanged refresh, materially changed refresh, contradiction preservation, stale prior evidence, and retry idempotence.
-
-## Step 18 — Introduce scenario-complete valuation and anchored research rubrics — Complete (2026-07-30)
-
-### Outcome
-
-Security research produces internally consistent bear, base, and bull cases with explicit assumptions, probabilities, fair values, returns, and a probability-weighted conclusion. Unsupported valuation is represented honestly rather than with artificial `-100/0` placeholders.
-
-### Assessment version 2
-
-Replace the ambiguous two-number valuation contract with a versioned scenario contract containing at least:
-
-- `valuation_method` and `valuation_template`;
-- current reference price, currency, and market-data timestamp;
-- valuation horizon;
-- bear fair value, return, probability, and key assumptions;
-- base fair value, return, probability, and key assumptions;
-- bull fair value, return, probability, and key assumptions;
-- probability-weighted fair value and expected return;
-- confidence-adjusted expected return;
-- buy-below price and margin of safety;
-- research completeness state;
-- component scores, confidence, hard blockers, soft gaps, evidence references, and run identity.
-
-The CLI must calculate or validate every derived field. The agent supplies scenario assumptions, fair values, and probabilities; it does not hand-calculate canonical returns, expected values, margin of safety, or final ratings.
-
-### Required validation
-
-- Probabilities are integer or canonical decimal percentages, non-negative, and sum exactly to 100.
-- `bear_fair_value <= base_fair_value <= bull_fair_value`.
-- `bear_return_pct <= base_return_pct <= bull_return_pct` within Decimal tolerance.
-- Returns reconcile exactly to the current reference price.
-- Expected fair value and expected return reconcile to scenario probabilities.
-- The price and FX references are fresh and match the immutable instrument identity.
-- A valuation marked unsupported stores no invented fair value or return and receives `Unrated` until the blocker is resolved.
-- Rename the old `downside_pct` concept to `bear_return_pct`; a deeply undervalued security may legitimately have a positive bear-case return.
-
-### Valuation templates
-
-Add explicit prompt and validation templates for at least:
-
-- mature compounder;
-- cyclical or commodity producer;
-- financial company;
-- pre-profit growth company;
-- biotechnology or binary-outcome company;
-- private or illiquid security;
-- fallback/other with a required explanation.
-
-Each template defines the minimum primary evidence, acceptable valuation methods, normalization rules, dilution/debt treatment, scenario drivers, and when valuation must remain unsupported.
-
-### Anchored score rubrics
-
-Define repository-owned scoring anchors for thesis, business quality, balance sheet, valuation, timing, liquidity, and risk. A score of 20, 40, 60, 80, or 100 must have a concrete interpretation. Add examples and boundary fixtures so different research runs remain comparable.
-
-### Acceptance criteria
-
-- No assessment can be accepted with unordered scenarios, inconsistent returns, probabilities not totaling 100, stale price/FX inputs, or an unknown valuation template.
-- Every completed supported valuation has bear, base, bull, expected, and buy-below outputs.
-- Every unsupported valuation explains the exact missing evidence or unsuitable method and is `Unrated` rather than assigned fake extreme returns.
-- Golden fixtures cover at least one security from every valuation template.
-
-## Step 19 — Recalibrate ratings, eligibility, scoring, and allocation — Complete (2026-07-30)
-
-### Outcome
-
-Research quality, security attractiveness, allocation eligibility, and conviction are separate concepts. Attractive synthetic candidates can pass, weak candidates fail for precise reasons, and a zero-position result remains possible without being caused by mathematical double penalties.
-
-### Separate the current overloaded assessment state
-
-Replace the current `ineligible / baseline / conviction` field with independent dimensions:
-
-- `research_status`: `complete | partial | unsupported | stale`;
-- `allocation_eligibility`: deterministically derived `eligible | ineligible`;
-- `conviction_tier`: `watch | baseline | conviction`.
-
-A security may have complete, comparable research and remain allocation-ineligible. A valuation-unsupported security is not automatically described as merely unattractive.
-
-### Rebuild the decision formula
-
-1. Separate security quality from expected return and from portfolio constraints.
-2. Remove accidental double counting where the same risk lowers component scores, lowers confidence, adds a risk penalty, creates a blocker, and fails a payoff gate.
-3. Use confidence to shrink uncertain expected returns toward zero or reduce sizing/rank, rather than making broad classes of medium-confidence candidates mathematically unable to clear the cash hurdle.
-4. Retain explicit hard blockers for identity, stale research, unsupported valuation, stale market/FX, liquidity, solvency, accounting, thesis invalidation, or unsupported instruments.
-5. Replace or supplement the opaque score-only cash hurdle with configurable economic gates based on:
-   - confidence-adjusted expected return;
-   - base-case return;
-   - bear/base and expected/bear payoff ratios;
-   - margin of safety;
-   - minimum confidence;
-   - current accepted relationship;
-   - absence of hard blockers.
-6. Keep the weighted quality score for ranking and sizing, but publish every component and contribution.
-7. Implement the full conviction gate once in deterministic code and reuse it from research, strategy, signal, order, and pre-fill validation. Skills describe the gate; they do not reinterpret it.
-8. Add an **eligibility frontier** for every excluded candidate: distance from the expected-return threshold, base-return threshold, payoff ratio, confidence requirement, relationship completion, and each blocker.
-
-### All-cash semantics
-
-Derive one of these evidence states alongside the portfolio stance:
-
-- `definitive_cash_preference`: coverage is complete and no candidate clears the economic gates;
-- `provisional_cash_research_incomplete`: potentially relevant assessment or relationship work remains incomplete;
-- `provisional_cash_valuation_unsupported`: candidates cannot yet be compared because valuation is unsupported;
-- `provisional_cash_strategy_pending`: allocation passed but strategy/signal work is not complete;
-- `portfolio_blocked`: accounting, market, or operational state prevents a safe decision.
-
-The headline may still be “No trade — hold 100% cash,” but it must include the evidence state and the most important reason.
-
-### Calibration
-
-- Build a deterministic calibration fixture set containing clearly attractive, fair, unattractive, distressed, incomplete, and illiquid examples.
-- Replay the current maintained universe through both the old and new formulas and publish a comparison artifact for review.
-- Do not require the live universe to produce a trade. Require only that obviously attractive fixtures can pass and that no group is structurally impossible to qualify solely because of confidence arithmetic.
-
-### Acceptance criteria
-
-- Medium-confidence candidates are not mathematically excluded by construction.
-- Hard blockers, valuation unattractiveness, relationship gaps, and strategy gaps produce distinct classifications.
-- The allocator can still choose 100% cash, but its reason is definitive or provisional and machine-readable.
-- Every allocation, signal, order, and fill gate uses the same canonical eligibility calculation.
-
-## Step 20 — Publish canonical ratings, actions, near misses, and a research benchmark — Complete (2026-07-30)
-
-### Outcome
-
-Each researched security has a clear investor conclusion, while portfolio actions remain context-aware and the strict target portfolio remains separate from research exploration.
-
-### Canonical investment rating
-
-Add a deterministic rating enum:
-
-- `strong_buy`;
-- `buy`;
-- `hold`;
-- `sell`;
-- `strong_sell`;
-- `unrated`.
-
-Store the rating thresholds in configuration and derive the rating from scenario returns, probability-weighted expected return, confidence, thesis state, and explicit risk rules. The LLM writes the evidence and explanation; deterministic code assigns the canonical rating.
-
-### Portfolio action
-
-Derive a separate context-aware action:
-
-- `initiate`;
-- `add`;
-- `hold`;
-- `trim`;
-- `exit`;
-- `avoid`;
-- `watch`;
-- `short_candidate` when the strategy and risk mandate explicitly support it.
-
-A `Buy` rating may map to `Hold` when the target is already reached. A `Hold` rating may map to `Trim` because of concentration. A `Sell` rating for an unowned security does not automatically authorize a short.
-
-### Required research conclusion
-
-Every security page and investor-facing candidate row must include one concise sentence in this form:
-
-> **Rating: Buy. Portfolio action: Watch for entry below X.** Bear/base/bull returns are A/B/C over N months; probability-weighted expected return is D with medium confidence. Upgrade or downgrade conditions: …
-
-Use `Unrated` when a supportable valuation is unavailable.
-
-### Publication changes
-
-1. Introduce decision snapshot schema version 3 and extend model-portfolio, candidate, security-catalog, daily-report, Telegram, and CSV exports with:
-   - bear/base/bull fair values and returns;
-   - probabilities and expected return;
-   - buy-below price;
-   - rating and portfolio action;
-   - evidence state;
-   - eligibility-frontier distances;
-   - “what would change the rating” conditions.
-2. Replace broad candidate classifications with precise states such as:
-   - `strategy_ready`;
-   - `valuation_attractive`;
-   - `valuation_unattractive`;
-   - `valuation_unsupported`;
-   - `liquidity_blocked`;
-   - `solvency_blocked`;
-   - `relationship_pending`;
-   - `strategy_pending`;
-   - `research_incomplete`;
-   - `market_data_blocked`.
-3. Always publish the top near misses even when the target portfolio is all cash. Show failed gates, threshold distances, attractive entry price, decisive catalyst, next review date, and the exact condition needed to become eligible.
-4. Add a separately generated **research benchmark portfolio** for measurement only:
-   - clearly label it comparison-only and non-copy-ready;
-   - use a deterministic, simple policy such as equal-weighting the highest-rated supportable candidates within broad diversification caps;
-   - create no strategies, signals, orders, fills, or accounting entries;
-   - track its hypothetical performance separately from the target portfolio;
-   - prohibit every benchmark output from becoming an allocation input.
-
-### Acceptance criteria
-
-- Every supported security assessment has exactly one rating and one current portfolio action.
-- No page uses `Hold` as a substitute for missing research; missing research is `Unrated` plus `Watch` or `Avoid` with a reason.
-- An all-cash report still gives useful ranked near misses and exact upgrade conditions.
-- Snapshot v3, CSV exports, Pages, Telegram, and reference-output tests agree exactly.
-- The research benchmark cannot create or influence a target, signal, order, execution, cash entry, position, or performance row.
-
-## Step 21 — Route Hermes Web ExtractPage summarization through OpenRouter Nemotron — Complete (2026-07-30)
-
-### Outcome
-
-Hermes continues to use `openai-codex` and the configured main model for agent reasoning, while the `web_extract` auxiliary task uses OpenRouter model `nvidia/nemotron-3-ultra-550b-a55b:free` during daily runs.
-
-This original Step 21 deployment is superseded by the environment-driven follow-up below; the
-historical implementation record remains here for auditability.
-
-### Hermes configuration
-
-1. Verify the pinned Hermes container supports the current auxiliary model schema. If necessary, update the image by immutable digest and record the Hermes version and native-skill version in preflight artifacts.
-2. Add explicit repository settings for the auxiliary task, preferably in a dedicated `[hermes_auxiliary]` section:
-
-   ```ini
-   web_extract_provider = openrouter
-   web_extract_model = nvidia/nemotron-3-ultra-550b-a55b:free
-   web_extract_reasoning_effort = low
-   web_extract_api_key_env = OPENROUTER_API_KEY
-   ```
-
-3. Extend `HermesSettings`, configuration validation, and `_managed_config()` so the generated isolated `config.yaml` contains:
-
-   ```yaml
-   auxiliary:
-     web_extract:
-       provider: openrouter
-       model: nvidia/nemotron-3-ultra-550b-a55b:free
-       reasoning_effort: low
-   ```
-
-4. Keep the top-level Hermes provider fixed to `openai-codex`. Do not route main research reasoning through OpenRouter.
-5. Preserve `terminal.env_passthrough: []`. Add an integration assertion that Hermes terminal-tool commands cannot read `OPENROUTER_API_KEY`, even though Hermes itself can use it for the auxiliary provider.
-6. Record auxiliary provider, model, reasoning effort, and configuration hash in `hermes_preflight.json` and run metadata without recording the key or a reversible key fingerprint.
-
-### Daily workflow secret boundary
-
-1. Add optional/required `OPENROUTER_API_KEY` to `.github/workflows/reusable-llm.yml` under `workflow_call.secrets`.
-2. Pass it from `.github/workflows/daily.yml`:
-
-   ```yaml
-   secrets:
-     OPENAI_OAUTH_SECRET: ${{ secrets.OPENAI_OAUTH_SECRET }}
-     OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-   ```
-
-3. Expose `OPENROUTER_API_KEY` only to the non-dry `agent run-batch` step that launches Hermes. It must not be job-global, available to discovery actions, commit steps, reporting, Pages, or Telegram.
-4. Replace the current “inference environment must be empty” rule with an exact, purpose-bound allowlist that permits only `OPENROUTER_API_KEY` when `auxiliary.web_extract.provider=openrouter`. Keep every other API key, GitHub token, Telegram token, deployment credential, and broker credential forbidden.
-5. Add an explicit non-dry preflight for missing/empty key with a redacted error. Dry runs remain credential-free.
-6. Update `.env.example` with the variable name only and local setup instructions; never commit a value.
-
-### Reliability and source policy
-
-- The free model endpoint may be rate-limited or unavailable. Configure one bounded fallback to the main provider for `web_extract` if supported by the pinned Hermes version; otherwise surface a stable auxiliary-degradation issue and allow operations not requiring page extraction to continue.
-- Never retry indefinitely or silently change the main research model.
-- Use the free endpoint only for public, non-confidential webpages. Do not send private Drive documents, authenticated pages, user-owned confidential files, personal data, OAuth state, operation secrets, repository credentials, or unpublished source material.
-- Treat every auxiliary summary as untrusted convenience text. Research conclusions still require direct source inspection, citations, and current primary-source verification.
-
-### Acceptance criteria
-
-- A daily non-dry run proves that Web `ExtractPage` summarization selected OpenRouter and the exact Nemotron model, while the main agent remained on `openai-codex`.
-- Missing `OPENROUTER_API_KEY` fails with a redacted actionable message before inference; dry-run validation succeeds without it.
-- Secret-scanning tests prove the key cannot appear in the checkout, diff, run artifacts, logs, command audit, issues, reports, or tool-visible terminal environment.
-- A mocked 401, 429, timeout, and provider outage follow the bounded fallback/degradation policy without leaking the key or corrupting queue state.
-
-## Step 22 — Migrate, backfill, test, and roll out safely — Complete (2026-07-30)
-
-### Migration
-
-1. Version the assessment and decision snapshot schemas rather than changing them ambiguously in place.
-2. Create a deterministic migration command that:
-   - imports each current assessment into history as `legacy_v1`;
-   - preserves its evidence and run provenance;
-   - maps old `downside_pct` and `base_upside_pct` only as legacy fields;
-   - marks scenario probabilities, bull case, expected return, and rating unavailable;
-   - does not invent missing values.
-3. Enqueue bounded security refreshes to produce assessment v2, prioritizing current holdings, target/pending exposure, previously closest candidates, stale assessments, and major watchlist names.
-4. Regenerate allocation plans, snapshot v3, pages, reports, Telegram fixtures, and exports only after enough v2 coverage exists for a meaningful comparison.
-
-### Test matrix
-
-Add or update unit, integration, and reference-output coverage for:
-
-- scenario arithmetic and ordering;
-- valuation-template requirements;
-- unsupported valuation and `Unrated` behavior;
-- assessment history and prior-review comparison;
-- score rubrics, confidence adjustment, risk penalties, and eligibility frontier;
-- rating thresholds and portfolio-action mapping;
-- definitive versus provisional cash stance;
-- near-miss ranking;
-- research benchmark isolation;
-- snapshot v3 and publication parity;
-- OpenRouter auxiliary configuration, secret scope, redaction, fallback, and dry-run behavior;
-- idempotence, exact-delta validation, sequential operation execution, and paper-only invariants.
-
-### Rollout
-
-1. Run the new assessment and rating pipeline in report-only mode against fixed fixtures and the current repository state.
-2. Review the old/new comparison artifact for score distribution, rating distribution, excluded reasons, and candidate eligibility. Adjust configurable thresholds with documented evidence, not to force a desired trade count.
-3. Publish at least three successful daily report-only snapshots with no schema, secret, or reproducibility failures.
-4. Enable active allocation only after assessment-v2 coverage and relationship coverage meet the configured readiness threshold.
-5. Keep rollback limited to configuration and schema-version selection; never delete history, executions, cash entries, or prior snapshots.
-
-## Definition of done
-
-This plan is complete when:
-
-- every new security research explicitly compares itself with the prior revision;
-- every supported valuation contains validated bear, base, and bull scenarios plus probability-weighted value;
-- every researched security has a deterministic rating or an honest `Unrated` state and a context-aware portfolio action;
-- the allocator is calibrated, auditable, and capable of both deploying and correctly retaining cash;
-- an all-cash decision clearly states whether it is definitive or provisional and still presents actionable near-miss information;
-- the target portfolio remains strict while the isolated research benchmark provides learning and measurement;
-- Hermes Web `ExtractPage` summarization uses the validated `AUXILIARY_MODEL` selection, defaults
-  to `openai-codex:gpt-5.6-terra`, and forwards `OPENROUTER_API_KEY` only for an explicit
-  `openrouter:<model>` override without changing the main Codex reasoning provider;
-- all migrations, workflows, tests, Pages, reports, Telegram output, and integrity checks pass from a clean checkout.
-
-## Follow-up — Environment-driven discovery and Hermes budgets — Complete (2026-07-30)
-
-- Prefer the YouTube Data API when `YOUTUBE_DATA_API` is nonempty, with anonymous `pytubefix`
-  fallback only when the key is absent, a 50-upload bound, live exclusion, and a conservative
-  over-180-second regular-video rule.
-- Source the Hermes per-invocation turn cap from `MAX_OPERATIONS` with a 180 default while retaining
-  the distinct workflow `max_operations` queue-row input.
-- Source auxiliary Web ExtractPage provider/model from `AUXILIARY_MODEL`, default to
-  `openai-codex:gpt-5.6-terra`, and require OpenRouter credentials only for an explicit override.
-
-## Follow-up — Schedule native llm-wiki maintenance — Complete (2026-07-31)
-
-- Added a native-only `papertrader wiki maintain` boundary with canonical `WIKI_PATH`, exact pinned
-  `llm-wiki` version/hash evidence, isolated Hermes configuration, filtered environment, and
-  network-disabled `file,terminal` toolsets.
-- Added ISO-week success deduplication and active leases, manual and dry-run execution, immutable
-  report/result/preflight/run artifacts, a wiki-Markdown-only delta allowlist, and strict
-  post-maintenance schema, integrity, wiki, and advice validation.
-- Wired maintenance before the normal sequential agent batch. Weekly scheduled execution remains
-  disabled by default behind `WIKI_MAINTENANCE_ENABLED` until representative manual results are
-  reviewed; failed or expired attempts can retry without creating duplicate successful weeks.
-
-## Follow-up — Remove portfolio approval semantics — Complete (2026-08-07)
-
-Renamed the active decision-publication contract from approved targets to autonomous portfolio
-targets, replaced the non-approved benchmark label with comparison-only research, and removed
-generic disclaimer-style copy from future investor pages, reports, Telegram briefs, and podcasts.
-Snapshot schema version 4 and canonical CSV headers now use the neutral terminology while strict
-readers preserve immutable version 1–3 artifacts through explicit legacy aliases. Deterministic
-risk, eligibility, accounting, paper-only, and sequential-execution controls are unchanged. The
-local Codex harness now also enforces the configured daily `MAX_OPERATIONS` across repeated claims,
-so a locally executed cycle cannot exceed its recorded operation budget.
-
-## Step 23 — Add profile-routed, checkpointed daily execution and ephemeral podcast audio — Planned (2026-08-04)
-
-> Podcast context, synthesis, and delivery details in this step are superseded by Step 24 below.
-
-### Outcome
-
-The scheduled controller executes at most `MAX_OPERATIONS` queued research operations as a durable
-sequence of independent checkpoints. Every iteration selects the correct Hermes execution profile
-for that operation, launches exactly one agent, validates the exact delta, commits and pushes that
-accepted state, and only then moves to the next operation. A failure in a later iteration can stop
-or degrade the cycle, but it cannot discard already pushed research from earlier iterations.
-
-The final podcast is tied to one immutable timestamped daily cycle rather than to one transient
-GitHub Actions attempt or one uncommitted working tree. Its Markdown transcript is committed. Its
-MP3 is generated from the exact committed transcript, passed ephemerally to Telegram, and never
-added to Git, the wiki, Pages, or a runtime commit.
-
-This step supersedes the hosted daily use of one `agent run-batch` followed by one final runtime
-bundle/commit, and supersedes only the committed-audio portion of Step 16. The existing history
-remains unchanged for auditability.
-
-### Non-negotiable invariants
-
-- One queue iteration means one claimed operation, one Hermes process, one execution profile, and
-  at most one accepted runtime checkpoint commit.
-- The target branch is updated only after the operation result, queue transition, repository delta,
-  and refreshed OAuth ciphertext have passed their applicable validation gates.
-- A later failure never rewrites, squashes, force-pushes, or otherwise removes an earlier checkpoint
-  from the same daily cycle.
-- Model/profile selection is deterministic controller policy. Payload text, wiki prose, sources, and
-  the model itself cannot request a cheaper, stronger, or less restricted profile.
-- Scout and analyst profiles have narrower command and mutation permissions than the deep profile;
-  model quality is never the only safety boundary.
-- The deterministic market, allocation, risk, paper-order, accounting, reconciliation, and
-  paper-only boundaries remain authoritative and unchanged.
-- Podcast audio bytes and intermediate TTS chunks are forbidden from every staged diff and every
-  runtime patch. Of the podcast assets, only the Markdown transcript is committed.
-
-### 1. Replace the single Hermes configuration with three execution profiles
-
-Introduce a validated `HermesExecutionProfile` contract containing at least:
-
-- stable profile name and policy version;
-- provider and main model;
-- reasoning effort;
-- maximum turns;
-- timeout;
-- weighted budget cost;
-- enabled toolsets;
-- allowed project-command classes or mutation policy;
-- auxiliary model policy;
-- escalation targets.
-
-Use repository-owned defaults similar to:
-
-```ini
-[hermes_profile_scout]
-model = gpt-5.6-luna
-reasoning_effort = low
-maximum_turns = 32
-timeout_seconds = 600
-cost_weight = 1
-mutation_policy = triage_only
-
-[hermes_profile_analyst]
-model = gpt-5.6-terra
-reasoning_effort = medium
-maximum_turns = 80
-timeout_seconds = 1200
-cost_weight = 2.5
-mutation_policy = routine_research
-
-[hermes_profile_deep]
-model = gpt-5.6-sol
-reasoning_effort = medium
-maximum_turns = 160
-timeout_seconds = 1800
-cost_weight = 5
-mutation_policy = full_research
-```
-
-Treat these values as initial benchmark settings rather than permanent limits. Keep
-`AUXILIARY_MODEL` separate: it configures bounded Hermes auxiliary work such as Web ExtractPage or
-context compression and must never silently become the main model of a research profile.
-
-Resolve the current naming collision as part of the migration:
-
-- `MAX_OPERATIONS` becomes the maximum number of queued research iterations in one daily cycle;
-- the current environment variable named `MAX_OPERATIONS` that actually controls Hermes turns is
-  removed or renamed;
-- turn caps live inside each execution profile, with an optional clearly named override such as
-  `HERMES_SCOUT_MAX_TURNS`, `HERMES_ANALYST_MAX_TURNS`, or `HERMES_DEEP_MAX_TURNS`;
-- `maximum_llm_operations_per_run` remains the repository hard ceiling and the workflow input may
-  select only a value at or below it.
-
-### 2. Route each operation through deterministic profile policy
-
-Add a pure, versioned profile router that receives the validated operation identity, payload
-metadata, current portfolio/research state, and operation type, then returns a profile and a
-machine-readable reason. Persist the decision before inference and include it in preflight, run,
-result, history, and daily-cycle artifacts.
-
-Initial routing policy:
-
-- **Scout / Luna**: cheap classifier decisions, source discovery, stale/duplicate checks, bounded
-  alert materiality screening, and quick checks after their write authority is restricted.
-- **Analyst / Terra**: ordinary wiki ingestion, opportunity research, routine idea refreshes,
-  non-decision-changing relationship refreshes, routine bounded research updates, and the
-  long-form text podcast.
-- **Deep / Sol**: initial or materially changed security valuation, held or allocated securities,
-  broad new idea/value-chain research, relationships whose acceptance changes allocation
-  readiness, strategy research, option or multi-leg work, and non-mechanical execution decisions.
-
-The router must promote work to a stronger profile when any of these conditions applies:
-
-- a current holding, target, pending order, active strategy, or ready signal depends on the
-  conclusion;
-- earnings, guidance, capital structure, dilution, accounting, instrument identity, or the business
-  model changed materially;
-- primary evidence conflicts or the prior valuation is unsupported;
-- the proposed result would change valuation method, scenario values materially, canonical rating,
-  allocation eligibility, portfolio action, confidence tier, or a hard blocker;
-- the selected profile reports insufficient evidence or low confidence.
-
-Escalation is one-way: `scout -> analyst|deep`, `analyst -> deep`, and `deep -> terminal result`.
-Do not force every operation through all three models. An operation already known to require a full
-scenario-complete review goes directly to the deep profile.
-
-Enforce profile authority in the CLI dispatcher, not only in skill prose. At minimum:
-
-- Scout cannot call assessment, relationship, strategy, signal, or order mutation commands.
-- Analyst cannot publish a decision-changing assessment or allocation-enabling relationship without
-  a deterministic materiality gate; it must retain an evidence packet and enqueue a deep review.
-- Only Deep may perform the existing full security/strategy mutation set.
-- All profiles remain unable to edit allocation targets, fills, executions, cash, portfolio, or
-  performance directly.
-
-Record `profile`, `profile_policy_version`, `route_reason`, effective model, reasoning effort,
-maximum turns, auxiliary models, weighted cost, and any escalation source in
-`hermes_preflight.json`, `hermes_run.json`, operation history, and the final daily manifest.
-
-### 3. Introduce one durable timestamped daily-cycle identity
-
-Create the daily cycle before deterministic preparation, with an immutable UTC timestamped ID such
-as:
+The intended decision path is:
 
 ```text
-daily-20260804T150000Z
+Deterministic observations and validation
+  -> Luna for simple semantic triage where judgment is actually necessary
+  -> Existing GPT-5.6 analysis and strategy preparation
+  -> Existing deterministic eligibility, sizing, cash, and risk checks
+  -> GPT-6 Astra final review of a concrete otherwise-eligible buy
+  -> Deterministic approval acceptance and paper-order submission
+  -> Deterministic freshness/risk/approval checks at simulated fill
 ```
 
-Store the Europe/Rome operating date separately for display. The canonical cycle manifest under
-`data/runs/<daily_cycle_id>/daily_run.json` must contain at least:
+Astra is the **last discretionary/model-based gate**, not a replacement for deterministic protections. There must be no subsequent GPT-5.6 investment judgment between an accepted Astra approval and submission of its unchanged approved order intent. A lower-tier model cannot override a veto or approve a different order using an existing review.
 
-- `daily_cycle_id`, `started_at`, local operating date, trigger, and source SHA;
-- originating GitHub run ID and an append-only list of workflow attempts;
-- total `MAX_OPERATIONS`, weighted model budget, and per-profile limits;
-- operation IDs attempted and terminally accepted for this cycle;
-- profile and checkpoint index for every accepted operation;
-- preparation, research cutoff, finalization, podcast-text, and completion timestamps;
-- current cycle status: `running`, `interrupted`, `degraded`, `succeeded`, or `failed`;
-- final report, decision snapshot, podcast transcript, and final commit identities.
+"Buy" means opening or increasing an investment position, including baseline, starter, conviction, and purchase components of supported rolls or multi-leg strategies. Pure cancellations, reductions, closes, and an unambiguous buy-to-cover that only extinguishes an existing short retain their risk-reduction paths. Classify actual positions and legs deterministically; do not trust an action label. A purported close that crosses through zero and opens exposure is not exempt. A mixed roll with new exposure needs approval for its opening component/package. This distinction prevents a purchase safeguard from preventing a risk-reducing exit.
 
-Use `daily_cycle_id` as `claimed_by_run_id` for every operation in the cycle. Keep the transient
-GitHub execution identity, such as run ID and attempt, in controller artifacts rather than using it
-as the investment-operation grouping key.
+The deployment prompt authorizes Codex to commit directly to **`main`**, push, dispatch the daily workflow, monitor that exact run, fix failures, and repeat until a genuine successful daily run. It does not authorize real-money orders, weakening checks, changing access policies, exposing secrets, publishing unrelated private files, or resetting financial history.
 
-Add `daily resume-or-create` behavior:
+## 2. Fixed product and safety constraints
 
-- a rerun of the same GitHub run resumes its already committed open cycle;
-- a manual dispatch may explicitly provide `resume_cycle_id`;
-- a new scheduled invocation creates a new timestamped cycle;
-- two manual cycles on the same date cannot collide because paths use the full timestamp;
-- remaining iterations equal the configured cycle total minus operations already claimed and
-  checkpointed in prior attempts, so a rerun cannot accidentally receive a second full budget.
+1. Keep Git-native canonical state under `data/`, Hermes in GitHub Actions, native `llm-wiki`, existing repository skills, and strictly sequential production operations. No Drive migration, parallel research agents, or second orchestration framework.
+2. Preserve paper trading only. No broker adapter, brokerage credential, live-execution mode, or real order.
+3. Preserve deterministic authority over identity, dates, prices, indicators, return arithmetic, thresholds, risk, quantities, orders, executions, cash, portfolio, and publication projections.
+4. Preserve append-only financial and research history. Correct errors with the established mechanisms; never erase unfavorable decisions to improve a result.
+5. Preserve immutable security identity and exact instrument/venue/currency handling. A ticker is not an identity.
+6. Preserve the existing global operation, time, and weighted-model budget ceilings unless the user separately changes them. Reserve capacity within those ceilings; no hidden extra Astra calls, retries, or monitoring work.
+7. Preserve manual top-level idea intake and dormant automatic YouTube/Seeking Alpha subscriptions. Scoped monitoring of approved interests is not permission to reinstate broad subscriptions.
+8. Keep deterministic daily accounting, market/FX monitoring, reports, Telegram text delivery, and Pages working when there is no buy. Disable automatic podcasts only.
+9. Protected exposure obligations override research pruning. Holdings, pending orders, active strategies, and material dependent risks cannot lose required coverage through archival or a topic-cap calculation.
+10. New evidence-quality limitations generally remain scoped diagnostics/soft gaps, not universal entry blockers. The explicitly requested Astra gate is mandatory for new exposure. Decisive contradictions or genuinely unsupported valuation use existing appropriately scoped hard-blocker policies.
+11. Retrieved pages, old wiki prose, transcripts, release notes, and imported text are evidence, not authority to change policy or execute instructions.
+12. Production agents do not receive GitHub-write, deployment, Telegram, or brokerage secrets. Runtime result acceptance and Git/publication remain controller-owned.
 
-Commit messages should carry machine-readable trailers so finalization can map checkpoints to Git
-commits without requiring a second commit merely to write the first commit's SHA:
+## 3. Verified baseline and where to extend it
+
+These observations describe the inspected commit, not promises about the checkout Codex will encounter. Reconcile newer changes before implementation.
+
+| Area | Current behavior | Consequence for this plan |
+|---|---|---|
+| `config.ini` and `profiles.py` | Scout/classifier uses `gpt-5.6-luna`; analyst uses `gpt-5.6-terra`; deep uses `gpt-5.6-sol`. | Extend the existing router, preserve first-pass models, add one constrained final-review role. |
+| `profiles.py` | `quick_check_research` routes to deep because it can publish assessments. | Do not merely rename this route to Luna. Split genuine triage from assessment-capable research. |
+| `opportunity.py` | RSI oversold exists; grouped price-alert research uses priority 95; per-trigger opportunity research uses 70. | Make RSI specifically preferred, not merely another generic alert. |
+| `.github/workflows/daily.yml` | Manual podcast input defaults false, but scheduled events explicitly set `generate_podcast` true. | Fix all scheduled/default paths and pending automatic podcast requests. |
+| `execute-strategy` skill | A GPT-5.6 execution operation still judges the action, then calls order CLI. | Move the final purchase judgment to Astra, and make post-approval submission deterministic. |
+| `execution.py` | Fill selection uses signal/not-before timing and later deterministic risk validation. | Approval activation time, state binding, expiry, and remaining approved quantity must also be enforced here. |
+| Research skills | Primary-source hierarchy, contrary evidence, causal relationships, prior-review context, and assessment history already exist. | Strengthen their contracts and enforcement rather than invent duplicate systems. |
+| Security/idea propagation | Security results cause idea refreshes; idea research can revisit a broad candidate universe. | Introduce bounded delta updates and materiality-aware coalescing. |
+| Committed system status | Reports a 340-item research backlog in the inspected snapshot. | Measure causes/readiness/age first; do not assume every item is drift or delete a backlog to fit a new cap. |
+| Retention | Run artifacts have reference-aware retention and Git recovery. | Add semantic research dispositions; protect new approval/evidence records from unsafe pruning. |
+
+See the source map at the end. The earlier WikiPlant review is a source of test ideas, **not proof that PaperTrader has the same implementation bugs**.
+
+## 4. Model and authority policy
+
+### 4.1 Roles
+
+| Role | Runtime model | Reasoning default | Permitted work |
+|---|---|---|---|
+| Deterministic checker | No LLM | Not applicable | Schema, indicator arithmetic, hashing, freshness math, sorting, risk, version/identity checks, accounting. |
+| Scout/triage | `gpt-5.6-luna` | `low` | Bounded semantic overlap, source-change classification, relevance proposals, archive-candidate classification, simple update checks. |
+| Analyst | Existing `gpt-5.6-terra` | Preserve current `medium` | Existing routine research authority. |
+| Deep first-pass analyst | Existing `gpt-5.6-sol` | Preserve current `medium` | Scenario-complete assessments, consequential first-pass research, strategy preparation. |
+| Final buy reviewer | `gpt-6-astra` | `high` | Independent final examination of a concrete buy packet; emits a review artifact, not an order or ledger edit. |
+
+The user requested GPT-5.6 first analysis "as it is": keep the Terra/Sol division, not a blanket migration of all research to Astra. `gpt-5.6` is a documented alias for Sol, but explicit existing IDs make route behavior clearer.
+
+OpenAI documents these IDs and reasoning settings. That does **not** prove the repository's Hermes provider/account currently exposes each route. Verify actual provider invocation, tool calling, and schema output. Keep the existing provider/authentication path; do not invent a model alias, use an undisclosed fallback, or introduce API-key onboarding. If Astra is unavailable, defer affected buys and report the exact capability failure. Continue safe unrelated work.
+
+### 4.2 Genuine cheap checks
+
+Introduce a narrowly scoped `research_triage` operation, or an equivalently strict mode supported by the current queue, with outputs such as `no_material_change`, `needs_analysis`, `duplicate`, `defer`, and `uncertain`. Its receipt is a check result, not a new financial assessment.
+
+A Luna check may not create/refresh valuation, increase confidence, accept a causal relationship, change portfolio eligibility, create a strategy/order, or submit final approval. Checking a source without new evidence must not extend the financial assessment's expiration. Use deterministic current-price repricing where appropriate without a gratuitous LLM call.
+
+Escalation produces one deduplicated GPT-5.6 operation with exact reasons and evidence. Retries keep the same investigation identity. Material or portfolio-sensitive uncertainty cannot be dismissed by cheap triage. Luna failures never silently discard a deterministic RSI alert or protected risk obligation.
+
+Do not give the Astra role every command allowed to `deep` merely because it uses a larger model. Define an explicit deny-by-default command capability for its result path and bounded evidence access. The trusted parent records actual model/provider/reasoning/attempt identifiers; agent-supplied model labels cannot authenticate a review.
+
+## 5. Mandatory Astra final-buy gate
+
+This is a cross-cutting execution feature and must ship before any new-exposure path is enabled under the new policy.
+
+### 5.1 Concrete trigger, not every bullish rating
+
+Trigger only when the existing system has produced a concrete buy intent and all current deterministic preflight checks pass: supported identity/instrument, valid research, allocation or conviction strategy, live signal, exact intended legs, permissible sizing, cash/reserve, liquidity, concentration, turnover, price/FX, and existing economic gates.
+
+A `BUY` rating in a wiki page or dashboard alone does not trigger Astra. An otherwise ineligible candidate does not consume a final-review slot. A sell, hold, zero delta, superseded request, or no-trade result does not cause an unnecessary Astra call.
+
+Cover both `order create` and `order create-baseline`, supported options/multi-leg entry paths, retries, manually invoked repository execution, and already pending orders at deployment. Do not introduce a bypass through another CLI, a baseline path, a dry-run flag, or an import path.
+
+### 5.2 Controller-owned review packet
+
+Create the packet with deterministic code after preflight. Suggested contents:
+
+- Stable `review_request_id`, `intent_id`, security/issuer/venue/currency/contract identity, strategy/signal/allocation-intent identity, and policy/schema versions.
+- Immutable assessment version, source-observation/evidence versions, accepted relationship version, and material claim/assumption versions.
+- GPT-5.6 conclusion, scenarios and declared probabilities, risks, invalidation, previous-review delta, contrary evidence, challenge gaps, and template/method.
+- Current validated price/FX/indicator timestamps, RSI trigger/episode where relevant, the full deterministic preflight result, and proposed exact legs/quantity/risk budget.
+- Holdings/pending-exposure context and material common-assumption exposure; no credentials or unnecessary personal information.
+- A finite validity interval and a **controller-set price/size/risk envelope**, all derived from current limits and the concrete intent rather than chosen freely by the model.
+- References to canonical evidence that Astra may inspect read-only when checking decisive claims.
+
+Separate identity fields and economically material hashes from incidental metadata. Do not invalidate a review merely because a new run ID, report, wiki timestamp, or price-only allocation plan ID was created. Conversely, a changed thesis, evidence version, underlying observation, proposed instrument, strategy intent, or increased requested risk cannot reuse old approval.
+
+No arbitrary "plus 5%" price tolerance. Compute any allowed execution range from the same existing valuation/risk/price rules, bounded by the reviewed intent. Initially exact quantity is simplest; a lower unfilled quantity may be accepted only when the existing allocation intent and deterministic limits permit it. Increases and changed leg composition require a new packet.
+
+### 5.3 Astra review contract
+
+Use a fresh, bounded reviewer context. Astra checks original decisive evidence and the reasoning chain; it must not simply endorse the first analyst's conclusion. Consider source dependence, stale financial periods, contradictory evidence, demand versus value capture, what may already be priced in, scenario assumptions, downside, timing, RSI false-positive explanations, and fit of the exact proposed purchase.
+
+Emit one structured disposition:
+
+| Decision | Meaning | System response |
+|---|---|---|
+| `APPROVE` | Exact packet is defensible under its recorded limits. | Parent validates/authenticates the result, binds approval, and may submit deterministically. |
+| `REJECT` | A substantive reason contradicts proceeding on this unchanged intent. | Block this buy intent; report reason and reconsideration conditions. |
+| `DEFER` | Specific decisive information is missing, conflicting, or unavailable. | Keep this intent pending review; enqueue bounded corrective research when justified. |
+
+A runtime timeout, schema error, unavailable model, or missing result is an **operational failure**, never an approval or a reason to pretend the investment was substantively rejected.
+
+Required result fields include packet identity/hash, disposition, concise reasoning, examined evidence references, counterevidence/alternative explanation, material issues, uncertainty, and reconsideration conditions. Forbid silent mutation of first-pass assumptions, valuation, quantities, or policy. If any must change, route a correction through GPT-5.6/deterministic state, recompute preflight, and produce a new material packet.
+
+Astra cannot enlarge the approval envelope. It cannot override a hard gate. `APPROVE` with conditions requiring new information is invalid; use `DEFER` instead. Do not repeatedly ask for a different answer on unchanged inputs. A veto is reconsidered only with new material evidence, a new qualified intent, or an explicit recorded user-requested review—never a bypass.
+
+This gate is not a guarantee of correctness or profit. It adds a documented challenge at the decision boundary; the assessment still contains uncertainty.
+
+### 5.4 Persistence and enforcement
+
+Recommended additions, adapted to existing schema conventions:
 
 ```text
-PaperTrader-Cycle: daily-20260804T150000Z
-PaperTrader-Checkpoint: 003
-PaperTrader-Operation: 01...
-PaperTrader-Profile: analyst
+src/papertrader/buy_review.py
+skills/papertrader-final-buy-review/SKILL.md
+schemas/buy_review_packet.schema.json
+schemas/buy_review_result.schema.json
+data/tables/buy_review_history.csv       # append-only accepted review history
+data/tables/buy_reviews.csv              # current projection
+data/tables/order_buy_approvals.csv      # order/intent -> approved review binding
+data/runs/<cycle>/<operation>/final_buy_packet.json
+data/runs/<cycle>/<operation>/final_buy_review.json
 ```
 
-### 4. Replace `agent run-batch` with a checkpointed workflow loop
+A separate binding table can avoid rewriting historical executions. New data contracts still require explicit versioning and reconciliation. Persist accepted review evidence and model provenance so retention does not delete the only proof supporting an executed purchase.
 
-Refactor `.github/workflows/reusable-llm.yml` into one serialized checkpointed runtime. Preserve
-`checkout.persist-credentials: false`. The job may require `contents: write`, but the GitHub token
-must be injected only into the small post-validation push step and must never be job-global or
-visible to Hermes, terminal tools, source discovery, TTS, or validation commands.
+Enforce clearance in both order admission and the deterministic fill path. The parent, not a general research CLI caller, authenticates the reviewer invocation and records its accepted outcome. A fabricated JSON file with `model=gpt-6-astra` must fail.
 
-The hosted flow becomes:
+Use a logical transaction for approval binding and order creation. A crash after review acceptance resumes the same intent; it does not buy twice or repeatedly pay for identical review. Replays return original receipts and preserve later valid state. Rejection/defer cancels no legitimate protective exit.
 
-1. Check out and fast-forward/rebase to the current target branch; install pinned dependencies;
-   restore and preflight the isolated OAuth/Hermes profile; run the full code/configuration
-   preflight once.
-2. Create or resume the timestamped daily cycle, run deterministic discovery and `daily prepare`,
-   validate that state, and push a **preparation checkpoint** before starting expensive research.
-3. Loop from the next checkpoint index until the cycle reaches `MAX_OPERATIONS` or no ready
-   operation remains:
-   1. fetch and reconcile the current target branch before claiming work;
-   2. select exactly one ready operation and its deterministic execution profile;
-   3. snapshot the repository and spawn exactly one Hermes agent with that profile, operation skill,
-      turn cap, timeout, and mutation policy;
-   4. terminalize or fail that one queue operation through the existing deterministic controller;
-   5. compare the exact delta and run the scoped checkpoint gates: result schema, command audit,
-      queue validation, schema validation, strict integrity, strict wiki lint, advice validation,
-      portfolio reconciliation, path whitelist, and profile mutation policy;
-   6. compare OAuth state, encrypt and verify a refresh immediately when it changed, and stage only
-      the ciphertext beside the validated operation delta;
-   7. stage the exact allowlisted paths and create one checkpoint commit naming the cycle,
-      checkpoint index, operation ID/type, terminal status, and profile;
-   8. fetch/rebase again, repeat the strict data-state gates on the rebased commit, and push it;
-   9. advance the cycle's in-memory and committed accounting only after the push succeeds.
-4. After the loop, run deterministic fills, reconciliation, allocation, snapshot, publication, and
-   `daily finalize` against the final pushed research state. Freeze `research_cutoff_at` and push a
-   separate **finalization checkpoint** even when no research operation ran.
-5. Build and commit the text podcast as described below, then expose the final commit SHA to
-   Telegram reporting and Pages. Deploy Pages only once, after the final text checkpoint.
+### 5.5 No stale or retroactive approval
 
-Remove the hosted dependency on one final runtime patch bundle and one all-or-nothing commit job.
-The bundle commands may remain for local harnesses, dry-run fixtures, or forensic replay, but they
-are no longer the durability boundary of a scheduled daily run.
+For new exposure, effective execution eligibility must start no earlier than:
 
-Provide one repository-owned command or composite action for checkpoint creation so staging,
-trailers, OAuth handling, validation, rebase, and push retry behavior are not duplicated in shell.
-Full Ruff, formatting, MyPy, and pytest checks run before the first push and after finalization;
-per-operation checkpoints use the strict data/runtime gates because agent operations cannot edit
-application code.
+```text
+max(signal activation, order not-before, accepted approval activation)
+```
 
-In dry-run mode, never expose a write token or push. Simulate the same boundaries with local
-throwaway commits on a temporary branch so later iterations consume prior simulated state and the
-checkpoint contracts are still exercised.
+The filled market event must follow that boundary. A review completed after an already observed opening price cannot authorize a retroactive fill at that opening. Update `next_open`, `limit_touch`, and `quote_mid` tests accordingly; use only time-resolution the data can support. A daily OHLC bar must not infer a touch occurred after an intraday approval without evidence.
 
-### 5. Define failure, rollback, and resume semantics
+Use approval validity at the simulated execution time plus current known disqualifying changes under the established conservative fill policy. Expiry alone at a later processing time need not erase an otherwise demonstrably valid historical event, but no review may contain information unavailable at the event it authorizes. Record both event time and processing/acceptance time. Unknown ordering must defer, not invent contemporaneous clearance.
 
-- A schema-valid `succeeded`, `skipped`, `blocked`, or agent-reported `failed` result may be
-  checkpointed with its deterministic queue transition and evidence.
-- A valid agent-reported failure is committed, the daily cycle becomes degraded, and the initial
-  implementation stops claiming further research operations by default before finalization.
-- If Hermes exits or validation rejects its delta, restore the worktree to the last pushed
-  checkpoint. Retain only controller-owned, schema-valid failure evidence, issue state, and bounded
-  queue retry transition; checkpoint that contained failure state when possible, then stop.
-- If state cannot pass strict integrity after cleanup, do not finalize or publish from the dirty
-  checkout. Mark the cycle interrupted in the next resumable attempt; all earlier pushed
-  checkpoints remain valid.
-- Rebase/push receives bounded retries. If the current checkpoint cannot be pushed, no later
-  operation starts. The existing lease expiry/retry contract makes the unpushed operation
-  recoverable, while all previously pushed checkpoints remain available.
-- Never amend, squash, reset, or force-push earlier checkpoints from the cycle.
-- A resumed workflow starts from target-branch HEAD, validates the committed cycle manifest and
-  operation history, skips already terminal operations, calculates the remaining count and weighted
-  budget, and continues with the next checkpoint index.
-- Finalization may proceed after a contained operation failure so the report describes accepted
-  earlier work and the failure. It must not proceed after unresolved repository corruption,
-  accounting failure, or an unpushed operation checkpoint.
+Cap validity by the intent/order expiry, evidence/assessment validity, and market session constraints. Use the current default 24-hour order expiry only where applicable; do not create a long-lived company-wide approval. Pre-fill deterministic cash/exposure and pricing checks remain mandatory, particularly across multiple approved purchases. Track total approved and remaining quantity so approvals cannot be reused beyond their scope.
 
-Persist refreshed OpenAI OAuth ciphertext after every Hermes invocation that changes it. If the
-operation itself cannot be accepted, create a credential-only checkpoint when required so a rotated
-refresh token is not lost merely because research failed.
+Old unfilled buy orders without approval must be held/reviewed or terminalized using a recorded migration disposition. Completed historical executions remain untouched and are labeled pre-policy, not backfilled with fictional approval. Replay/repair of already recorded executions must remain possible without retroactive review.
 
-### 6. Build the final podcast from the complete timestamped cycle
+### 5.6 Operation budget and avoiding starvation
 
-Refactor the queued `daily_podcast` operation into **text-only podcast synthesis**. It is a final
-operation outside the research `MAX_OPERATIONS` allowance and receives its own checkpoint commit.
-Use the deep profile because the roughly 3,000-word connected narrative and its strict spoken-prose
-contract require reliable long-form synthesis. Deterministically preflight the completed script
-before consuming the operation's single ephemeral render attempt.
+Add `final_buy_review` to the existing sequential operation routing. It consumes a real slot, timeout, and model budget, including failures. Allocate a configurable reserved slot from the existing cycle capacity when an eligible intent exists; unused reserved capacity returns to research. Do not add this after an already exhausted budget and pretend it is free.
 
-After the finalization checkpoint:
+The final review should be the last model operation **for its buy intent**. Following acceptance, trusted code submits the exact intent without a second execution-agent opinion. Other unrelated sequential research can still run. If an ordinary batch produces a newly eligible intent too late, persist it and prioritize it next cycle unless reserved capacity is available.
 
-1. Run `podcast context build --daily-cycle-id <id> --cutoff <research_cutoff_at>`.
-2. Select accepted operation-history rows whose `claimed_by_run_id` matches the cycle and whose
-   terminal timestamp falls from `started_at` through the frozen cutoff. This must include operations
-   committed by earlier workflow attempts of the resumed cycle and exclude later/unrelated work.
-3. Include the cycle's final committed daily report, decision snapshot, fills, allocation outcome,
-   portfolio/performance state, operation results, evidence paths, profile metadata, failures, and
-   unresolved gaps. Do not derive the podcast from `git diff`, one workflow attempt, or only the
-   final operation.
-4. Freeze the context under the cycle directory before inference and validate every referenced path,
-   operation, timestamp, and snapshot identity.
-5. Generate a timestamped Markdown page such as
-   `data/wiki/podcasts/daily-podcast_20260804T150000Z.md`, preventing collisions between multiple
-   same-day manual cycles.
-6. Commit only the text page, its normal operation/result artifacts, and a link from the daily
-   report to the transcript. The transcript contains no persistent MP3 link.
+Review deferral/veto is a legitimate business outcome; no purchase is required for a successful daily run. Operational malfunction must remain visible as malfunction.
 
-Change the podcast skill and result contract accordingly:
+## 6. Stronger RSI-oversold research priority
 
-- remove MP3 and TTS chunks from allowed repository writes and `files_changed`;
-- remove audio existence/duration from the text operation's success criteria;
-- preserve the outline, 2,400-3,600-word transcript, provenance, uncertainty,
-  and complete cycle coverage checks;
-- make text success independent from later audio rendering or Telegram availability;
-- if text synthesis fails, retain all earlier research/finalization checkpoints and deliver the
-  normal daily report without audio.
+Preserve the existing RSI computation, period, configured oversold threshold, data provenance, and trigger semantics. The inspected defaults are RSI(14) with oversold level 30. This requirement changes **attention**, not the indicator formula or a buy rule.
 
-### 7. Render and deliver audio ephemerally after the text commit
+### 6.1 Scheduling policy
 
-Create a post-commit podcast-render boundary that has no investment mutation authority and does not
-consume the research operation budget:
+PaperTrader uses higher numeric priorities for more urgent work, unlike WikiPlant's inverse example. Preserve and regression-test the actual scheduler ordering; do not reverse it during migration.
 
-1. Read the exact transcript from the pushed text checkpoint, preferably with
-   `git show <commit>:<podcast_path>`, and verify its cycle ID and content hash.
-2. Extract and split the spoken transcript deterministically at paragraph boundaries.
-3. Invoke only the configured TTS backend sequentially. Do not give the renderer Web access,
-   project mutation commands, Telegram credentials, or permission to rewrite the script.
-4. Write chunks and the final MP3 only beneath a runner-owned temporary directory such as
-   `$RUNNER_TEMP/papertrader-podcast/<daily_cycle_id>/`.
-5. Assemble and verify duration, non-empty size, format, cycle/script binding, and SHA-256. Produce
-   an ephemeral audio manifest containing no secret and no audio content.
-6. Pass the MP3 and manifest to the isolated Telegram delivery job through a one-day GitHub Actions
-   artifact or an equivalent job-scoped handoff. Never copy the MP3 into `data/`, the wiki, Pages,
-   or the Git index.
-7. Extend Telegram delivery with bounded multipart `sendAudio` support. Verify the artifact manifest,
-   script commit, cycle ID, filename, size limit, and hash before sending. Use a caption that links
-   to the committed text podcast and daily report.
-8. Remove the downloaded artifact and all temporary media in `always()` cleanup. Do not retain or
-   publish audio artifacts longer than the minimum handoff period.
+Proposed defaults:
 
-Telegram report delivery and podcast-audio delivery have separate statuses. An audio/TTS/Telegram
-failure records or refreshes one stable latest-only delivery issue, but it cannot roll back the
-text podcast, daily report, research checkpoints, portfolio state, or finalization commit. A later
-retry always regenerates or downloads audio bound to the same committed transcript; it never uses
-an uncommitted script.
+| Class | Suggested priority | Notes |
+|---|---:|---|
+| Non-deferrable exposure/risk obligation | 100 | Genuine current exposure/cash/expiry urgency, not a popularity label. |
+| Ready final-buy review | 99 | Only with valid preflight; no manufactured candidate. |
+| Fresh eligible RSI oversold investigation | 98 | Explicitly above existing generic price-alert research at 95. |
+| Other material price-alert research | Existing 95 | Preserve current behavior unless deduplicated. |
+| Ordinary monitoring/maintenance/research | Existing policy | Age/fairness still apply. |
 
-Add defense in depth:
+Numeric boosts alone are insufficient because existing merge logic can push routine rows toward 100. Add a validated scheduling class/tie-breaker or equivalent policy so fresh RSI research is not buried by accumulated incidental boosts. Urgency class is controller-derived, not arbitrary payload prose.
 
-- explicitly reject `.mp3`, `.wav`, `.m4a`, TTS chunks, and podcast media from the runtime whitelist
-  and staged-diff validator;
-- keep generated media outside the checkout rather than relying only on `.gitignore`;
-- update wiki lint and link checks so podcast pages do not point to nonexistent committed audio;
-- prove that Git history and Pages contain the transcript but no audio bytes.
+Reserve at least one available research slot for eligible RSI-oversold work per normal cycle when present, after genuinely non-deferrable risk and ready final approvals. Record a reason when it cannot run. Reuse unused reserves. Avoid fixed partitions that waste a five-operation cycle when some lanes are empty.
 
-### 8. Preserve credential and token isolation during incremental pushes
+### 6.2 End-to-end propagation
 
-- Keep checkout credentials disabled and never place `GITHUB_TOKEN` or a write credential in the
-  job environment, Hermes profile, repository, command audit, or child terminal environment.
-- Expose the GitHub token only to the bounded checkpoint push command after Hermes has exited and
-  the exact staged delta passed validation; remove any temporary credential helper immediately.
-- Continue exposing the age identity only to OAuth decrypt/encrypt steps. Hermes receives only its
-  private `auth.json`, and plaintext credentials are removed in `always()` cleanup.
-- Encrypt and verify refreshed OAuth state before each operation checkpoint or credential-only
-  checkpoint.
-- Expose Telegram credentials only to the delivery job after the final report/text commit and audio
-  artifact validation. The research runtime and TTS renderer never receive them.
-- Continue forbidding GitHub, Telegram, deployment, brokerage, age, and unrelated API secrets from
-  Hermes and all tool-visible environments.
+Carry the exact RSI value, threshold, observation/session time, indicator source hash, episode ID, transition, freshness, cause, and original queue age through candidate, triage, security research, escalation, and reporting.
 
-### 9. Expected implementation touch points
+A pending ordinary review for that security should absorb the RSI cause and move up without creating redundant full-review work. Preserve running/blocked immutable requests and existing dependency rules; record a new observation separately for incorporation when safe. Don't delete unresolved obligations to simplify a merge.
 
-Update at least:
+Luna can assess novelty and help assemble a focused question. It cannot erase a valid priority cause because it dislikes the investment. If existing deterministic alert creation bypasses the ingestion classifier, preserve that reliability.
 
-- `config.ini`, `.env.example`, and `src/papertrader/config.py` for profiles, turn limits, weighted
-  budgets, and corrected `MAX_OPERATIONS` semantics;
-- queue/run schemas, operation history, result/preflight/run artifacts, and integrity checks for
-  selected profile and daily-cycle identity;
-- `src/papertrader/agent_runner.py` and CLI commands for one-operation execution, profile routing,
-  escalation, checkpoint metadata, and resume accounting;
-- `.github/workflows/daily.yml` and `.github/workflows/reusable-llm.yml` for the durable loop,
-  preparation/operation/finalization checkpoints, and final outputs;
-- workflow bundle code so it remains available for local/debug use but is no longer the scheduled
-  all-or-nothing commit boundary;
-- `src/papertrader/podcast.py`, the podcast skill/schema, wiki paths, and report generation for
-  timestamped text-only podcasts and cutoff-based cycle aggregation;
-- `src/papertrader/telegram.py` and `.github/workflows/reporting.yml` for verified ephemeral audio
-  handoff and `sendAudio` delivery;
-- `AGENTS.md`, `README.md`, `docs/OPERATIONS.md`, workflow contracts, and reference outputs.
+### 6.3 Episode and validity rules
 
-### 10. Test matrix and fault-injection acceptance
+Use entered/strengthened episodes and existing cooldown semantics to avoid one investigation per bar. Material worsening, genuinely new evidence, recovery/re-entry, or an explicit bounded recheck policy can justify another attempt. Preserve first-seen queue age and causal lineage on merges. Detect stale snapshots, holidays, missing history, corrected bars, or indicator recalculation; never synthesize an RSI observation.
 
-Add unit, integration, workflow-contract, and reference-output tests covering:
+If the oversold condition no longer holds before execution, re-evaluate the cause without discarding still-material risk/thesis research. Downgrade or expire only the obsolete urgency and explain it.
 
-- deterministic profile selection, profile-specific commands, reasoning effort, turn limit, timeout,
-  weighted budget, and escalation;
-- a Scout attempt being unable to publish an assessment, relationship, strategy, signal, or order;
-- `MAX_OPERATIONS` as total cycle iterations and profile turn settings as separate values;
-- preparation checkpoint followed by several operation checkpoints and one finalization checkpoint;
-- injected failure at operation N proving commits 0 through N-1 remain on the target branch;
-- rejected agent delta being removed without removing prior checkpoints;
-- contained terminal failure being committed and reported without corrupting the cycle;
-- push/rebase retry, lease recovery, and resume in a later GitHub workflow attempt;
-- resume consuming only the remaining operation count and weighted budget;
-- OAuth refresh after an early operation surviving a later operation failure;
-- finalization and daily reporting over all accepted checkpoint commits;
-- podcast context containing all operations in the timestamped cycle, including prior workflow
-  attempts, while excluding operations outside the start/cutoff window;
-- unique timestamped podcast paths for multiple same-day manual cycles;
-- transcript-only podcast commits and an explicit staged-diff failure for any audio extension;
-- audio generation from the exact committed transcript, manifest/hash validation, Telegram audio
-  delivery, cleanup, bounded retry, and stable failure issue behavior;
-- audio failure leaving the transcript, report, and every prior research checkpoint intact;
-- dry-run local checkpoint simulation with no write token and no push;
-- final strict schema, integrity, advice, wiki, portfolio, Pages-link, and paper-only validation from
-  a clean checkout.
+A completed RSI investigation distinguishes valuation opportunity, deterioration, event risk, and noise. RSI oversold neither raises confidence automatically nor bypasses existing financial gates or Astra. Evaluate the preference later with point-in-time data; do not claim it improves returns merely because it is prioritized.
 
-A hosted fault-injection fixture must demonstrate this exact scenario:
+## 7. Research scope, workload governance, and compact memory
 
-1. prepare and push the cycle checkpoint;
-2. complete and push at least three heterogeneous operations using at least two profiles;
-3. force the next Hermes operation or post-run validation to fail;
-4. verify the already pushed operation commits and queue history remain available;
-5. rerun the workflow, resume the same timestamped cycle without repeating accepted operations or
-   resetting its budget, and complete finalization;
-6. commit the timestamped podcast transcript;
-7. generate and send its MP3 through Telegram without any audio path appearing in Git history.
+### 7.1 Single canonical scope representation
 
-### Rollout
+Extend canonical tables through validated CLI transitions; render human-readable wiki views. Recommended fields in `research_topics.csv` include topic ID, class, anchor IDs, parent IDs, user-request reference, relevance rationale, lifecycle, review/expiry time, and policy version. Do not maintain an independently editable parallel topic list.
 
-1. Add profile routing and audit fields behind a configuration flag while retaining the existing
-   single-commit workflow; benchmark Luna/Terra/Sol outputs and mutation-policy rejections.
-2. Enable the checkpoint loop with a low operation limit and injected failures on a test branch;
-   review commit history, resume behavior, OAuth persistence, and final report parity.
-3. Enable timestamped text-only podcast commits and ephemeral audio delivery; verify Telegram and
-   Pages independently.
-4. Run at least three scheduled cycles with fault injection disabled, no duplicate operations,
-   correct profile routing, one commit per accepted operation, and no committed audio.
-5. Remove the legacy hosted `agent run-batch` plus single final bundle/commit path after the
-   checkpointed controller is the only scheduled path. Retain rollback through a temporary workflow
-   feature flag until the new path has completed the acceptance suite.
+Classes are user-directed, directly adjacent, and peripheral. Operational protection is a separate deterministic overlay derived from holdings/orders/active strategies and their material risk dependencies. User-requested tracking is distinct from a one-off research or saved note.
 
-### Acceptance criteria
+An adjacent topic must justify its own direct economic relevance to the original anchor. Peripheral investigations are terminal; no subresearch, recurring refresh, maintenance relabeling, priority reset, or archive/reactivation reset. Promotion requires an actual newly established direct connection. Contrary evidence is classified by relevance, not agreement.
 
-- A cycle configured for N operations can produce up to N independently pushed operation commits,
-  plus preparation, finalization, and text-podcast checkpoints.
-- Failure at operation N cannot remove commits from operations 1 through N-1.
-- A rerun resumes the same timestamped cycle, does not repeat terminal operations, and cannot exceed
-  the original count or weighted budget.
-- Every operation runs with a recorded deterministic Scout, Analyst, or Deep profile and obeys that
-  profile's mutation policy.
-- No scheduled hosted path uses one uncommitted multi-operation batch as its durability boundary.
-- The final report and podcast context include all accepted operations from the cycle across commits
-  and workflow attempts.
-- The final podcast transcript is committed under a timestamped Markdown path and linked from the
-  daily report.
-- The MP3 is generated from that exact committed transcript, validated, sent to Telegram, cleaned
-  up, and absent from every commit, staged diff, Pages build, and durable repository path.
-- Podcast audio or Telegram failure cannot roll back or invalidate accepted research, finalization,
-  report, or transcript commits.
-- OAuth, GitHub, Telegram, deployment, brokerage, and age secrets remain within their exact existing
-  purpose-bound steps and never reach Hermes tools or repository artifacts.
+Map thesis/claim contributions, not just graph hop counts or ticker tags. A remote supplier with material exposure can qualify; a nearby buzzword association need not. Keep manual top-level idea policy.
 
-## Step 24 — Make the podcast research-first with Hermes-owned ephemeral TTS — Complete (2026-08-17)
+### 7.2 Distinguish discovery, propagation, and repricing
 
-Podcast context version three selects the most recent earlier successful transcript cutoff,
-aggregates accepted research across every intervening cycle, and freezes changed plus relevant
-linked wiki pages. New episodes are accessible narrative research programs: they explain maintained
-knowledge, avoid operation recaps and dense portfolio bookkeeping, spell out spoken quantities, and
-keep paper-trading identity only in frontmatter.
+Add an explicit research change classification:
 
-Hermes now invokes one audited `podcast render-draft` command after writing the script. Edge TTS,
-bounded per-chunk transport retries, chunk assembly, and validation run sequentially beneath a
-controller-provided runner-temp path. The backend is invoked through the controller's active Python
-module environment rather than the agent terminal's mutable `PATH`. After the script checkpoint,
-deterministic `podcast seal-render` binds that existing audio to the exact committed transcript
-without a fallback render. Telegram sends committed spoken text and sealed audio independently in
-the same runtime job, persists only redacted retry issue state, and always removes all media. The
-former upload/download Actions-artifact handoff is removed.
+```text
+price_only | no_material_change | entity_delta
+relationship_change | thesis_change | new_material_exposure | source_correction
+```
 
-## Follow-up — Preserve GitHub Pages subpaths during collection navigation — Complete (2026-09-02)
+Code owns exact factual/version comparisons; the analyst explains semantic materiality with evidence. A changed timestamp or paragraph does not itself prove new information.
 
-Canonicalized the Ideas and Podcasts collection links with trailing slashes so Quartz SPA
-navigation cannot retain an extensionless folder URL and resolve subsequent relative links outside
-the `/PaperTrader` project path. Extended the generated-site checker to reject non-canonical
-directory links and cover this GitHub Pages failure mode in tests.
+Price-only changes use existing deterministic repricing. Unchanged results record a check without generating a broad research tree. Several security deltas for one idea coalesce into one bounded idea update with all immutable result references and a processed-cause ledger. Broad idea discovery runs only when scope or material mechanism changes justify it.
 
-## Follow-up — Improve Securities table readability — Complete (2026-09-02)
+Preserve a comprehensive retained candidate slate where the current skill requires it; **do not impose WikiPlant's literal three-child quota on PaperTrader's value-chain research**. Instead admit expensive investigations selectively under capacity, novelty, and decision relevance. Deferred ideas are not discarded or mislabeled invalid.
 
-Simplified the investor-facing Securities table to ten decision-relevant columns, displayed prices
-and buy-below levels in listing currency, rounded scenario and expected returns to whole percentage
-points, and reduced freshness and review timestamps to UTC dates. Added accessible explanatory help
-to every header and a wide, sidebar-free Quartz layout while retaining horizontal scrolling on
-narrow screens. Canonical market, FX, assessment, and valuation values remain unchanged.
+### 7.3 Backpressure and semantic deduplication
 
-## Follow-up — Isolate agent command audits from controller OAuth ciphertext — Complete (2026-09-05)
+Census active work by root, operation kind, ready/waiting/blocked state, age, cause, dependency, and estimated effort. Select capacity defaults from measured throughput and documented service goals. Existing overload is a migration state, not a schema error.
 
-Excluded the exact controller-owned encrypted OAuth state path from the unprivileged per-command
-repository snapshots while retaining it in the outer controller snapshot and checkpoint validation.
-This lets later operations, including the daily podcast, invoke audited project commands after an
-OAuth refresh has installed the public ciphertext with root-only permissions, without weakening the
-controller's detection of credential-state changes.
+Cap automatic active obligations, not historical knowledge. Protect explicit user requests, risk reduction, material contradictions, final-review prerequisites, and RSI attention under their scheduling rules. Enforce capacity across calendar, discovery, maintenance, and research producers.
 
-## Follow-up — Add content-addressed multilingual podcast publication — Complete (2026-09-06)
+Re-evaluate old automatic questions; resolve obsolete blocked rows through the existing audited commands. Semantic deduplication should compare identity, purpose, evidence version, and time window—not collapse a legitimate later refresh. No arbitrary root reset through a new operation type or run ID.
 
-Added a manual-only `podcast_translation` operation and repository skill that bind one localized
-transcript to the exact committed source path, commit, hash, language, and target Edge Neural voice.
-The deterministic controller validates paragraph preservation, renders one ephemeral draft, seals
-it against the localized commit, and delivers text and audio through locale-scoped Telegram state.
-Translation remains sequential, publication-only, excluded from investment source hashes, and
-never stores media in Git.
+### 7.4 Compact archival dispositions
 
-## Follow-up — Enable Hong Kong primary listings — Complete (2026-09-06)
+Retain a 100–200-word summary target plus stable metadata, original evidence/version references, previous scope, actual conclusion, uncertainty, date, reason for stopping, lineage, and reactivation conditions. Merge duplicates rather than appending a capsule for every rediscovery.
 
-Added the `XHKG` exchange calendar and allowed Hong Kong dollars so identity-verified primary
-Hong Kong listings can enter the paper-only watchlist, market/FX monitoring, research, and
-allocation gates without substituting an OTC instrument. Existing position, freshness, FX,
-risk, and paper-execution controls remain unchanged.
+Separate at least: no material exposure, unsupported thesis, invalidated thesis, unattractive valuation, catalyst expired, and deferred-for-capacity. A supported but expensive company is eligible for low-cost deterministic price-triggered reconsideration; it does not need daily broad research. An archived note is not an independent evidence source.
 
-## Follow-up — Add a manual Grok TTS podcast helper — Complete (2026-09-06)
+Save and verify the capsule before reducing active material. Preserve accounting, identities, assessment/source histories, cited evidence, user notes, unreported findings, and reproducible historical evaluations. Pruning working-tree context does not mean Git history becomes smaller or total storage stops growing.
 
-Added a sequential maintenance helper that renders canonical spoken-transcript sections through
-the xAI Grok TTS REST API, explicitly maps transcript locales to supported language codes, chunks
-requests below the service limit, validates and assembles MP3s outside the checkout, and sends them
-through Telegram. Rendering and delivery are separate credential phases, successful delivery
-removes local audio by default, no media or secret enters Git, and network behavior is covered by
-offline unit tests.
+Archived topics are retrieved selectively, do not spawn work, and have no automatic full-review obligation. A real new catalyst or user request can reactivate them after admission checks without resetting old causal limits. Protected operational entities never become unmonitored simply because their originating idea is archived.
 
-## Follow-up — Isolate the retention CLI test from CI wiki paths — Complete (2026-09-10)
+## 8. Evidence assessment and adversarial research
 
-Set `WIKI_PATH` to the temporary repository in the retention CLI test, matching the other CLI
-tests. This prevents the workflow's checkout-level environment from violating the sandbox path
-boundary while preserving production configuration validation and the retention assertions.
+### 8.1 Extend existing source and assessment history
 
-## Follow-up — Synchronize finalized daily state for PR validation — Complete (2026-09-10)
+Start with decision-driving claims rather than every sentence. Cover material revenue/margin/dilution/debt assumptions, actual exposure to a theme, thesis invalidation, and major catalysts.
 
-Merged the completed September 10 daily publication from `main` after its finalization gate
-passed. PR merge CI had combined the branch with an in-progress daily checkpoint whose canonical
-state had advanced beyond its last published snapshot. The completed checkpoint restores a
-consistent validation input without changing freshness checks or rewriting run evidence.
+Record stable claim versions and evidence links with source-observation IDs, exact locator or permitted extract, support/contradiction/qualification role, observation period, publication/retrieval times, methodology/directness, underlying evidence origin, applicability limits, and assessment rationale. Financial figures also need unit/currency, fiscal period, consolidated/segment scope, and accounting/normalization basis. Trace the relevant valuation assumption to the accepted claim version and to the assessment version that uses it.
 
-## Follow-up — Restore repaired market retrieval and deterministic dashboard tests — Complete (2026-09-10)
+Prefer additions that extend `source_registry`, `source_history`, and immutable assessment histories; introduce `research_claims`, `claim_history`, and `claim_evidence` only with explicit schemas and a single canonical owner. Do not use source ID existence, recent re-fetching, publisher prestige, or number of URLs as proof of the exact proposition.
 
-Enabled yfinance's `repair` extra and pinned SciPy in the lockfile because both market and FX
-retrieval request `repair=True`. Added an offline regression that exercises yfinance's actual
-repair path, including its previously missing optional import. Replaced the Securities dashboard
-test's mutable production inputs with a fixed sandbox snapshot and explicit successful, failed,
-and absent market rows; formatting and accessibility assertions remain strict.
+Separate research urgency, evidence quality, and confidence. Different publications repeating one issuer claim are not independent confirmation. An issuer presentation hosted by a regulator remains an issuer statement. Unknown origin dependence stays unknown. Research summaries and archived wiki capsules cannot confirm their own underlying evidence.
 
-Recovered the unfinalized checkpoints from Actions run `34520941923` through `daily finalize`
-and `daily complete`, preserving the original preparation errors and failed research evidence.
-The regenerated publication reconciles with canonical state and the research retry remains queued.
+Use states such as reported, supported, disputed, uncertain, hypothesis, user-note, superseded; preserve legacy status provenance during migration. Do not invent missing historical passages or automatically mark old assessments high quality.
 
-## Follow-up — Preserve superseded exit-strategy risk provenance — Complete (2026-09-10)
+Keep most new quality findings as candidate-scoped diagnostics/soft gaps initially. Calibrate stricter rules with fixtures and shadow comparisons before enforcing them. Existing decisive evidence/identity/valuation hard blockers remain. No generic requirement for perfect corroboration, a universal increase to margin of safety, or an added arbitrary return hurdle.
 
-The next daily attempt (`34527146862`) retrieved market and FX data without errors, exposing an
-allocation checkpoint failure when a zero-cap watch-tier strategy outlived its allocation intent.
-Validate superseded strategies against their exact recorded plan, intent, strategy, and security
-in allocation history. Reject conflicting historical caps, changed risk budgets, and zero caps
-without matching provenance. Current strategy, signal, order, and fill gates still require the
-current allocation intent. Regression coverage reproduces market failure followed by recovery and
-proves that the historical strategy cannot create a signal against the replacement plan.
+### 8.2 Observable challenge, not a bearish paragraph
 
-## Follow-up — Add Lemonade to AI-native financial operating systems — Complete (2026-09-11)
+Add a structured adversarial-review section to existing idea/security/relationship research results. For consequential conclusions, record favored hypothesis, strongest plausible alternative, falsification condition, search/inspection receipts, relevant contrary evidence, blind spots, and effect on assumptions/confidence/scenarios.
 
-Imported Lemonade, Inc. common stock under immutable `LMND`/`XNYS`/`USD` identity using the
-issuer's SEC-filed 2025 Form 10-K as the identity source. Queued one priority-100 refresh of the
-existing AI-native SMB financial operating-systems idea to generalize its mechanism to regulated
-insurance workflows and evaluate Lemonade as a candidate without pre-accepting the relationship.
-Published one deterministic offline checkpoint so the next GitHub daily run begins from current
-canonical state; its only preparation error is the expected absence of an LMND price cache before
-the network-enabled daily market refresh.
+Distinguish `not_searched`, `searched`, `partial`, `blocked`, and justified `not_required`. A bear case containing smaller numbers does not prove disconfirmation was attempted. Evaluate theme truth, issuer economic capture, and market pricing separately. No artificial equal-weight treatment for weak criticism; evidence merit is claim-specific.
+
+A small challenge fits the existing operation budget. Deeper missing validation is one deduplicated queued operation, scheduled with fairness and protected risk priority. Peripheral research remains terminal even when a deeper unresolved issue is interesting. Use sequential passes only. Astra reuses the prior challenge record as input but independently checks decisive points rather than treating the first model as authority.
+
+### 8.3 Corrections and correlated assumptions
+
+Represent source -> claim -> assumption -> assessment -> relationship/strategy dependencies. A correction creates scoped impact tasks, marks uncertainty appropriately, invalidates materially affected outstanding Astra clearances, and updates the user report. Formatting changes do not invalidate financial conclusions. An unsubstantiated rumor may warrant investigation without automatically canceling every related investment.
+
+Report shared thesis dependence across candidates/holdings, such as multiple exposures relying on the same demand assumption or origin of evidence. Start with visibility, not a new hard concentration rule. Existing sector/theme risk limits stay authoritative.
+
+## 9. Monitoring, calendar, semantic maintenance, reporting, and evaluation
+
+### 9.1 Protected monitoring, not unlimited daily full reviews
+
+Maintain deterministic market/FX/indicator checks for the configured universe. Introduce bounded primary-evidence monitoring for holdings, pending/active exposure, selected user themes, major catalysts, and invalidation conditions. Keep its capacity separate from expensive deep investigations for accounting, but include its real model/time cost in the global cycle ceiling.
+
+Record coverage windows, topics actually checked, search successes/failures, observation/source hashes, and discovered material deltas. A reserved or failed search is not evidence of "no update." Do not promise complete monitoring of every watchlist name within a small daily budget.
+
+A source hash change is a candidate change; cheap triage and materiality review determine what follows. New reporting about an older event may contain new evidence. Preserve publication, event, fiscal period, and retrieval times separately.
+
+### 9.2 Catalysts and dates
+
+Use normalized events with immutable occurrence IDs, evidence, relevant claims/entities, date precision, timezone, status, expected window, pre/post-event questions, and rescheduling history. Integrate with existing operation `not_before`, deadlines, and review dates instead of building a separate scheduler.
+
+Process overdue unhandled occurrences without creating unlimited historical catch-up jobs. Current same-day events may appear in reports even when deeper research cannot run. Test weekends, market holidays, non-UTC deadlines, daylight saving changes, partial dates, cancellations, and event amendments. A peripheral item cannot create a recurring research obligation through the calendar.
+
+### 9.3 Weekly semantic maintenance
+
+Extend the existing native wiki maintenance integration. Keep structural lint deterministic and separate from semantic audit. Maintain a rotating inventory plus priority for changed evidence, material common assumptions, unresolved contradictions, stale important claims, unsupported promotions, redundant broad refreshes, and expired exploratory topics.
+
+Audit contradictions across pages, with entity aliases, periods, units, instrument/segment scope, and assumptions. Do not label a temporal update a contradiction. Do not consider a nonempty historical `last_checked_at` sufficient freshness.
+
+Record exact inventory/page/claim coverage; never call a bounded subset a full audit. Model failure on one source must not suppress independent safe operations or the partial report. Preserve open questions with state, not recurring weekly duplicates.
+
+### 9.4 Reporting and portfolio displays
+
+Add structured finding IDs, material change class, supporting claim/evidence versions, affected assessments/assumptions, confidence/limitations, and report coverage state. Distinguish price-only repricing, new facts, hypothesis, correction, and unresolved risk. Include explicit RSI-oversold attention and final-buy-review status/reasons.
+
+Separate a research `BUY` rating from `awaiting_final_review`, `final_review_rejected`, `approved_order_pending`, and `filled`. Only a canonical live approved order can support a new-exposure copy-ready action. Do not conceal a buy veto by rewriting the original research conclusion to match it; display both and their reasons.
+
+Reports should cover completed but unreported research across cycles/manual operations. Mark a finding represented only when it actually appears in the report or an explicit linked appendix. Saving, publishing, Telegram delivery, and user observation are different receipts. Retry delivery without repeating completed research or fabricating notification receipt.
+
+### 9.5 Learning without hindsight
+
+Add point-in-time research evaluation alongside current portfolio performance and the comparison benchmark. Keep rejected/archived candidates and their original reasons so the dataset is not filtered to successes.
+
+Measure queue latency/admissions/completions, expensive calls per useful conclusion, unchanged-result propagation, evidence dependence, correction latency, challenge effectiveness, final-gate approval/defer/veto rates and reasons, repeated-review rate, time from deterministic eligibility to submission, and RSI investigation latency/yield.
+
+Where forecasts are falsifiable, register their horizon, event definition, probability, and frozen input versions. An intrinsic fair value is not automatically a forecast of market price on a fixed date. A profitable paper fill does not prove the thesis or final reviewer was correct. Replay datasets must use only information available at the decision time, including the Astra approval time.
+
+## 10. Disable automatic podcasts; keep manual generation intact
+
+### 10.1 Required behavior
+
+- Scheduled daily runs never generate a podcast transcript, audio, translation, or podcast delivery.
+- Ordinary manual daily dispatch also defaults to no podcast.
+- Podcast production occurs only from an explicit manual request, e.g. `workflow_dispatch` with `generate_podcast=true`, or the established explicit manual podcast operation.
+- Historical podcast transcripts and manual tools remain. Do not remove TTS or translation functionality just to make daily automation pass.
+- Text report generation/delivery, decision snapshots, Pages, ordinary research, and accounting are unchanged.
+
+### 10.2 Implementation boundaries
+
+Audit `.github/workflows/daily.yml`, `reusable-llm.yml`, reporting/final outcome jobs, CLI defaults, daily-cycle manifests, podcast queue producers, direct operation filters, scheduled reusable callers, and resume logic.
+
+Replace scheduled-event expressions that force `generate_podcast=true`. Centralize a deterministic podcast-origin policy so stale queued podcast operations cannot be executed by a normal research batch. Explicit manual work can be processed only under a matching recorded manual authorization/cycle. Do not infer authorization from a filename or any arbitrary `source` string.
+
+Migrate unfinished cycles deliberately: preserve their original audit, record the policy transition, and mark no-longer-authorized automatic podcast obligations as `skipped/disabled_by_policy` or the established equivalent. Do not leave cycles forever waiting for audio, falsely mark it succeeded, or destroy already published transcripts. Manual requests still pending remain visible for manual processing.
+
+A disabled automatic podcast is a normal outcome; it must not fail `daily_outcome`. A genuinely requested manual podcast failure remains observable. Update documentation, examples, generated reports, and tests that previously assumed daily audio.
+
+## 11. Development milestones and order
+
+Implement within the existing code organization. Proposed module names are contracts to cover, not a demand for needless micro-modules or a new framework. Reuse working code and validate assumptions on the actual checkout.
+
+| Milestone | Implementation | Principal files/areas | Exit evidence |
+|---|---|---|---|
+| M0 | Baseline, queue census, contract/authority inventory, test reproduction, migration design. | `AGENTS.md`, `PLAN.md`, config, tables, current tests and prior analysis. | Recorded baseline SHA, test commands/results, root-cause taxonomy, call graph for every order/fill path. |
+| M1 | Manual-only podcasts and consistent runtime/docs policy. | Daily/reusable workflows, `daily.py`, `podcast.py`, queue, CLI, cycle status. | Schedule/default/manual/resume behavior tested; normal reports preserved. |
+| M2 | Constrained Luna triage; preserve GPT-5.6; add Astra role/capability metadata. | `profiles.py`, `config.py`, `agent_runner.py`, command scope/audit, schemas/skills. | Route and denied-command tests; actual provider availability recorded separately. |
+| M3 | Final-buy packet, authentic review receipt, durable history, all-path order/fill enforcement. | `buy_review.py`, `orders.py`, `execution.py`, `risk.py`, allocation/strategy flows, runner, result validator. | Positive and negative integration matrix; no bypass; no lookahead; safe legacy pending-order migration. |
+| M4 | RSI preferred attention, cause-preserving merges, capacity reservation and episode rules. | `indicators.py`, `opportunity.py`, `queue.py`, `dedupe.py`, triage/research skills, reports. | RSI outranks ordinary alerts, dedupes, and never bypasses final purchase requirements. |
+| M5 | Scope graph, protected obligations, admission backpressure, delta propagation/coalescing. | Research/relationship skills, `research.py`, `queue.py`, scope contracts. | Migration retains obligations; unchanged results stop broad cascades; comprehensive candidates remain accessible. |
+| M6 | Compact archives and explicit research dispositions. | `wiki.py`, `retention.py`, tables, catalog, maintenance/query views. | Reference-safe compaction, no protected pruning, no autonomous archived-topic growth. |
+| M7 | Claim/evidence schema, origin dependence, adversarial reviews, correction impacts. | `research.py`, rubrics/templates, evidence tables, result validator, Astra packet builder. | Source laundering/correction/challenge fixtures; diagnostic effect separated from financial gates. |
+| M8 | Protected monitoring, catalyst occurrences, semantic weekly audit, finding coverage and metrics. | `daily.py`, wiki maintenance, reports/publication/advice, operation payloads. | Honest coverage, failure isolation, no omitted-but-reported findings, point-in-time metrics. |
+| M9 | Cross-cutting migration, offline replay, behavioral/security evaluations, preflight for deployment. | Integrity, atomic IO, tests, migration CLI, schema versions, docs. | Reconstructed-state tests, no ledger changes except expected paper transitions, validated rollback. |
+| M10 | Main commit/push, live daily run, inspect results, fix and repeat until success. | Git/Actions + same validation workflow. | Exact successful run and tested source SHA plus post-run data validation and candid unexercised-path list. |
+
+M3 depends on M2 and uses current first-pass evidence at first; enrich its packet in M7 without delaying basic fail-closed enforcement. M5-M8 changes must preserve M3's state binding. Build and test each milestone before integrating the next. Production activation of the final gate, podcast change, and RSI priority is required; do not leave them silently disabled behind a feature flag after claiming completion.
+
+New topic/evidence policies may begin in diagnostic mode to inspect legacy effects. Promote them deliberately after scoped fixtures, migration reconciliation, and recorded review, never by rewriting historical assessments to make the migration pass. Evidence diagnostics must not accidentally become new blanket cash-only rules.
+
+## 12. Acceptance test matrix
+
+Use the existing test framework and repository fixtures. Add regression assertions about persisted state, effective permissions, and mathematical invariants, not just phase labels or helper method calls. All statuses below are **NOT RUN in this planning task**.
+
+### A. Models and authority
+
+- [ ] A01: Deterministic checks do not invoke a model.
+- [ ] A02: Simple semantic triage actually selects Luna; existing full assessments stay on GPT-5.6.
+- [ ] A03: Luna cannot upsert assessments, elevate confidence, accept material relationships, approve a buy, or create an order.
+- [ ] A04: Material/uncertain triage escalates once without losing the original cause, freshness, or queue age.
+- [ ] A05: Final review selects actual Astra; a model-name field in arbitrary JSON cannot authenticate it.
+- [ ] A06: Astra unavailable/malformed/timeout leaves no approval; no fallback to Luna or GPT-5.6 can authorize purchase.
+- [ ] A07: The final-review role cannot mutate original assessment, quantity, limits, ledgers, or unrelated files.
+- [ ] A08: Profile/reasoning/provider routing and attempt/budget receipts survive restart and audit pruning.
+
+### B. Final buy review and execution
+
+- [ ] B01: Ineligible/hold/no-quantity/no-strategy cases never call Astra.
+- [ ] B02: Otherwise-eligible baseline open/increase and conviction buys require final approval.
+- [ ] B03: Supported option purchases and mixed rolls cannot bypass clearance; legs are bound as a package.
+- [ ] B04: Pure reductions/closes/cancels and strictly risk-reducing buy-to-cover remain available; crossing zero is not exempt.
+- [ ] B05: Direct/manual CLI order creation enforces the same production gate.
+- [ ] B06: Valid approval produces at most one canonical order for its intent, with no later lower-tier model purchase judgment.
+- [ ] B07: Rejected/deferred unchanged packets are not repeatedly reviewed in search of approval.
+- [ ] B08: Changed assessment, relationship, decisive source observation, strategy intent, instrument, or increased quantity invalidates approval.
+- [ ] B09: Incidental report/run timestamps and permitted price-only plan changes do not trigger unnecessary repeat review.
+- [ ] B10: Quote/FX/fill price outside the approved envelope or stale validity defers execution without overriding existing risk checks.
+- [ ] B11: Approval is bound to remaining authorized quantity; partial fills and retries cannot overconsume it.
+- [ ] B12: Acceptance interrupted before order creation resumes without a second purchase or repeated identical model call.
+- [ ] B13: Post-review concurrent/material state change is rejected or deterministically rebased before submission.
+- [ ] B14: A next-open/limit/quote event before approval acceptance can never be filled using that approval.
+- [ ] B15: Daily OHLC timing cannot backfill an unknowable intraday post-approval touch.
+- [ ] B16: Independent approved buys still obey aggregate current cash, exposure, concentration, and turnover at fill.
+- [ ] B17: Existing unfilled legacy buys are reviewed/held; completed historical executions are not retroactively changed.
+- [ ] B18: Recovery of already recorded executions/cash is not blocked by missing historical final review.
+- [ ] B19: Unsupported model/credential failure is operationally visible; a valid business veto is not treated as a coding failure.
+- [ ] B20: A full daily run may succeed with zero buys, without faking exercise of the positive live gate.
+
+### C. RSI scheduling
+
+- [ ] C01: Current configured RSI formula/threshold and source dates are unchanged by priority work.
+- [ ] C02: Eligible oversold research outranks ordinary generic alerts even when legacy merge boosts inflate their raw priority.
+- [ ] C03: Non-deferrable current risk and ready final reviews keep their precedence; available RSI reserve prevents routine starvation.
+- [ ] C04: Depth/recency/age tiebreaking is deterministic, unit-tested, and documented.
+- [ ] C05: Pending ordinary research absorbs RSI reason and retains original queue age/history; no redundant full analysis.
+- [ ] C06: Running/blocked immutable requests and their dependency contracts are not overwritten by alert merging.
+- [ ] C07: Sustained oversold bars do not flood the queue; genuine strengthening/re-entry can be reconsidered under policy.
+- [ ] C08: Corrected, stale, missing-history, holiday, and duplicate snapshots cannot invent events or urgency.
+- [ ] C09: Luna failure/ignore cannot silently erase the policy-required deterministic RSI research cause.
+- [ ] C10: RSI recovery downgrades obsolete urgency while retaining still-material thesis/risk work.
+- [ ] C11: RSI improves attention only; no valuation, cash, risk, or Astra bypass.
+
+### D. Research scope, propagation, archives
+
+- [ ] D01: Only explicit tracking creates a user anchor; one-off save/research does not.
+- [ ] D02: Adjacent topics demonstrate direct contribution to a user anchor; chains cannot rebase their own scope.
+- [ ] D03: Material distant suppliers/risks are admitted; superficial popular associations can be rejected.
+- [ ] D04: Peripheral research cannot spawn through research, calendar, maintenance, discovery, urgency, or archive/reactivation.
+- [ ] D05: Holdings/orders/strategies retain required monitoring when an originating idea is archived.
+- [ ] D06: Opposing evidence remains relevant; disagreement cannot be used to prune a critique.
+- [ ] D07: Multiple security deltas coalesce into one bounded idea update without losing a result reference.
+- [ ] D08: Price-only/unchanged updates do not repeatedly launch broad value-chain discovery.
+- [ ] D09: Candidate slates stay comprehensive while expensive work admission is bounded; user requests are not silently dropped.
+- [ ] D10: Legacy backlog migration preserves ready/waiting/blocked obligations and original disposition reasons.
+- [ ] D11: Archive compaction preserves cited evidence, manual notes, unreported findings, and evaluation records.
+- [ ] D12: Reading an archive does not reactivate it; material new evidence can reactivate without a lineage reset.
+- [ ] D13: Capacity deferral, no exposure, unsupported thesis, invalidation, and unattractive valuation remain distinct.
+- [ ] D14: Reactivation after a price change uses deterministic repricing when sufficient, not a fabricated new root.
+
+### E. Evidence, challenge, monitoring, and reports
+
+- [ ] E01: Ten syndicated articles do not count as ten independent sources.
+- [ ] E02: An issuer statement's hosting domain does not change the origin of its forecast.
+- [ ] E03: A fresh retrieval of old financial-period data does not make it a current-period observation.
+- [ ] E04: Source existence and a plausible hash cannot fabricate inspected support for a material claim.
+- [ ] E05: Claim versions retain exact period/unit/currency/scope, evidence locator, uncertainty, and assessment linkage.
+- [ ] E06: Adversarial review seeks the strongest relevant alternative; a boilerplate bear paragraph is not sufficient.
+- [ ] E07: Unavailable counterevidence search remains partial/blocked; lack of a contrary result is not proof of correctness.
+- [ ] E08: A correction identifies downstream assessments/approvals; purely cosmetic source changes do not invalidate everything.
+- [ ] E09: Common-assumption exposure is reported without silently changing existing portfolio limits.
+- [ ] E10: Cross-page conflicts account for entities, time intervals, units, and conditional statements.
+- [ ] E11: Semantic freshness is elapsed-time/materiality aware, not just a nonempty timestamp.
+- [ ] E12: Monitoring is counted and bounded; a failed/reserved query cannot be logged as successful no-update coverage.
+- [ ] E13: Date precision, timezone/DST, late events, recurrence, rescheduling, and cancellations preserve stable occurrences.
+- [ ] E14: A stage/model/source exception does not discard independently completed work or prevent a possible partial report.
+- [ ] E15: Findings omitted from a limited report remain reportable; manual and prior-cycle findings are included once.
+- [ ] E16: Notification/delivery retry does not rerun research or claim the user read a report.
+- [ ] E17: Output distinguishes research BUY, awaiting Astra, veto, approved pending order, and filled position.
+- [ ] E18: Point-in-time evaluation includes rejected/archived candidates, actual review time, and no future evidence.
+
+### F. Podcast, migration, and deployment
+
+- [ ] F01: Scheduled daily, reusable scheduled caller, and default manual daily perform no transcript/TTS/audio/podcast translation.
+- [ ] F02: Explicit manual request still produces a podcast using the supported manual path.
+- [ ] F03: Queued automatic podcasts and unfinished legacy cycles cannot restart automatic generation.
+- [ ] F04: Disabled-by-policy is not failed and not fabricated success; explicit manual failure remains visible.
+- [ ] F05: Text report, Telegram text, snapshot validation, and Pages still run normally.
+- [ ] F06: Repeated migration is idempotent; later bot/user data is preserved across rebase and recovery.
+- [ ] F07: New tables/artifacts are in validated schemas, allowlists, publication filters, and retention protection.
+- [ ] F08: Prompt-injected source text cannot change models, RSI priorities, risk gates, approval records, commands, or scheduling policy.
+- [ ] F09: Negated/quoted/hypothetical user text cannot create a new research anchor or manual podcast authorization.
+- [ ] F10: Full non-dry-run daily dispatch is identified by exact run/source; child jobs and post-run invariants are checked.
+- [ ] F11: Green with no eligible buys is labeled correctly; final positive live review is not claimed unless observed.
+- [ ] F12: A failing required job is not hidden through skipped jobs, removed tests, weakened assertions, or `continue-on-error`.
+
+## 13. Deployment and testing/fixing loop on main
+
+### 13.1 Preparation
+
+Read this plan and the current checkout. Inspect the working tree, remotes, branch, dependency locks, existing CI commands, credential availability, and workflow inputs. Preserve unrelated user edits. Work on `main` as requested; do not open a feature branch/PR instead. Never force-push, delete history, change protection, or use destructive cleanup.
+
+Use pinned project dependencies and the existing test/lint/type/schema/integrity/publication commands. Discover actual CLI syntax; do not invent validation subcommands. Run locally on fixtures first. Public production data migrations require dry-run diffs and reconciliation before applying the requested repository changes.
+
+Verify actual model routing through the existing provider without revealing credentials. Unavailable access is a real blocker, not permission to substitute another final reviewer. The user authorizes a real paper daily validation run, not a real financial trade.
+
+### 13.2 Repeat until a successful daily run
+
+1. Implement/fix a coherent change and add the relevant regression tests.
+2. Run targeted tests, then the required broader local suite and integrity/publication checks. Record exact commands, outcomes, and unrun checks.
+3. Review the diff for unintended data/policy changes, secrets, and generated clutter.
+4. Fetch `origin/main`; reconcile bot or user commits without overwriting canonical ledgers. Commit the intended changes on `main`, synchronize safely, rerun affected checks after reconciliation, and push normally. If main protection forbids the requested push, report it rather than bypassing it.
+5. Dispatch `.github/workflows/daily.yml` on **`main`** with `dry_run=false`, `generate_podcast=false`, no artificial operation filter, and the normal configured operation budget. Keep research/accounting/report/publication validation enabled. Do not use `max_operations=0`, a dry run, or disabled final review to obtain green.
+6. Capture the returned run URL/ID when available. Otherwise identify the dispatch through workflow, branch, trigger, requested SHA, and creation window; require an unambiguous match. Do not watch whichever run happens to be newest. Main may advance through bot data commits—record the source the run actually used and require it to include the intended code/policy change.
+7. Watch that exact run until completion, including the reusable runtime, delivery, Pages, and aggregate outcome jobs. Read failed-job logs and artifacts. A dispatch receipt or a successful single job is not completion.
+8. On a code/config/schema/integration failure, identify the cause, add a regression when practical, fix it, and return to step 1. On a genuine transient service failure, apply bounded backoff and the project's supported resume/recovery logic instead of resetting accounting or blindly creating overlapping cycles.
+9. After a green run, fetch its data commits and validate canonical reconciliation, accepted reviews, queue dispositions, disabled podcast behavior, report/snapshot consistency, and the lack of unauthorized fills. Confirm the code revision actually exercised.
+10. Finish only with a real successful daily workflow **and** clean applicable post-run invariants. A valid no-buy outcome or Astra veto does not mean the implementation failed. Report any live scenario that did not naturally occur.
+
+Continue the loop while meaningful fixes or safe retries are available. Do not set an arbitrary three-iteration success claim. Conversely, do not run an uncontrolled tight loop against exhausted quota, missing permissions, revoked credentials, a persistent external outage, or a hard session/tool boundary. Stop truthfully with the last commit/run, diagnostics, and minimum unresolved action when those cannot be repaired within authority. Never claim background monitoring or eventual success.
+
+Respect runtime leases, sequential execution, budgets, and attempt records across every repeat. A rerun after a fix must contain the fix; re-running an old failed workflow attempt may use the old source. Choose a fresh dispatch or a supported checkpoint resume deliberately. Do not cancel unrelated scheduled work just to simplify validation.
+
+### 13.3 GitHub CLI command shapes
+
+These are command examples to adapt to the inspected input schema, not an unattended shell loop to copy without error handling:
+
+```bash
+gh workflow view daily.yml -R Kabutojira/PaperTrader --ref main --yaml
+
+git fetch origin main
+# Preserve/reconcile user and bot changes, stage explicit paths, and run tests.
+git commit -m "feat: harden research governance and require Astra buy review"
+git push origin main
+
+gh workflow run daily.yml -R Kabutojira/PaperTrader --ref main \
+  -f dry_run=false \
+  -f generate_podcast=false
+
+# Capture/resolve the run that belongs to this dispatch before watching it.
+gh run watch "$RUN_ID" -R Kabutojira/PaperTrader --exit-status
+gh run view "$RUN_ID" -R Kabutojira/PaperTrader \
+  --json databaseId,headSha,event,status,conclusion,jobs,url
+# For failures:
+gh run view "$RUN_ID" -R Kabutojira/PaperTrader --log-failed
+```
+
+Use paginated API polling if the authenticated environment cannot support `gh run watch`, verifying the same exact run to its terminal result. This is a tooling fallback, not permission to weaken checks.
+
+### 13.4 Final development report
+
+Return completed milestones; changed code/policy/data contracts; migration reconciliation; local test commands/counts/results; actual effective model routing; RSI scheduling examples; Astra approved/vetoed/deferred cases and unavailable live cases; proof automatic podcast did not run; code and bot-state commits; exact final workflow URL/ID/SHA/conclusion; post-run integrity findings; and remaining blockers. Never equate no-trade with a missing implementation or a complete approval-path test.
+
+## 14. Definition of done
+
+- The implementation covers all mandatory user requirements and the adopted PaperTrader-specific governance improvements, with traceability in `docs/research-hardening-status.md`.
+- Current `AGENTS.md`, `PLAN.md`, wiki schema, examples, model settings, workflows, CLI contracts, and actual runtime agree.
+- Cheap semantic checks use Luna without financial authority; first-pass research remains GPT-5.6; eligible new buys require authenticated Astra approval at admission and valid clearance at fill.
+- Existing deterministic gates and accounting remain authoritative; no real-order capability is introduced.
+- RSI oversold has demonstrably stronger timely research attention, not automatic buy power.
+- Podcast generation is exclusively explicit manual work; daily text/publication behavior remains.
+- Scope control, backpressure, delta propagation, compact archival, evidence/challenge/correction workflows, monitoring, reporting coverage, and evaluation are implemented incrementally without deleting protected obligations.
+- Schema migrations, restart/replay, pending legacy orders, report delivery, and bot-commit reconciliation are tested. Legacy missing evidence is labeled, not fabricated.
+- A main-branch live daily run finishes successfully with unchanged safety requirements, and post-run state validates. Unobserved live branches of behavior are explicitly identified.
+
+## 15. Source map and verification limits
+
+Repository observations refer to the pinned baseline. The existing comparison analysis is useful context, but Codex must inspect its actual checkout and not apply stale assumptions blindly.
+
+- [Baseline commit](https://github.com/Kabutojira/PaperTrader/commit/d43d79e1240fc11738e2af3ed24f1adaf12b88e5)
+- [Current architecture and invariants](https://github.com/Kabutojira/PaperTrader/blob/d43d79e1240fc11738e2af3ed24f1adaf12b88e5/AGENTS.md)
+- [Model, indicator, budget configuration](https://github.com/Kabutojira/PaperTrader/blob/d43d79e1240fc11738e2af3ed24f1adaf12b88e5/config.ini)
+- [Profile routing and authority](https://github.com/Kabutojira/PaperTrader/blob/d43d79e1240fc11738e2af3ed24f1adaf12b88e5/src/papertrader/profiles.py)
+- [Scheduled podcast behavior and daily inputs](https://github.com/Kabutojira/PaperTrader/blob/d43d79e1240fc11738e2af3ed24f1adaf12b88e5/.github/workflows/daily.yml)
+- [Indicator transitions and existing 70/95 priorities](https://github.com/Kabutojira/PaperTrader/blob/d43d79e1240fc11738e2af3ed24f1adaf12b88e5/src/papertrader/opportunity.py)
+- [Execution-agent decision path](https://github.com/Kabutojira/PaperTrader/blob/d43d79e1240fc11738e2af3ed24f1adaf12b88e5/skills/papertrader-execute-strategy/SKILL.md)
+- [Simulated fill timing and persistence](https://github.com/Kabutojira/PaperTrader/blob/d43d79e1240fc11738e2af3ed24f1adaf12b88e5/src/papertrader/execution.py)
+- [Security research and propagation](https://github.com/Kabutojira/PaperTrader/blob/d43d79e1240fc11738e2af3ed24f1adaf12b88e5/skills/papertrader-security-research/SKILL.md)
+- [Idea research and candidate universe](https://github.com/Kabutojira/PaperTrader/blob/d43d79e1240fc11738e2af3ed24f1adaf12b88e5/skills/papertrader-idea-research/SKILL.md)
+- [Research/source state validation](https://github.com/Kabutojira/PaperTrader/blob/d43d79e1240fc11738e2af3ed24f1adaf12b88e5/src/papertrader/research.py)
+- [Result schema](https://github.com/Kabutojira/PaperTrader/blob/d43d79e1240fc11738e2af3ed24f1adaf12b88e5/schemas/agent_result.schema.json)
+- [Daily preparation and report collection](https://github.com/Kabutojira/PaperTrader/blob/d43d79e1240fc11738e2af3ed24f1adaf12b88e5/src/papertrader/daily.py)
+- [Retention](https://github.com/Kabutojira/PaperTrader/blob/d43d79e1240fc11738e2af3ed24f1adaf12b88e5/src/papertrader/retention.py)
+- [Committed backlog/status snapshot](https://github.com/Kabutojira/PaperTrader/blob/d43d79e1240fc11738e2af3ed24f1adaf12b88e5/data/wiki/system-status.md)
+- [OpenAI model catalog](https://developers.openai.com/api/docs/models)
+- [GPT-6 Astra model and reasoning settings](https://developers.openai.com/api/docs/models/gpt-6-astra)
+- [GPT-5.6 Sol alias](https://developers.openai.com/api/docs/models/gpt-5.6-sol)
+- [GPT-5.6 Luna](https://developers.openai.com/api/docs/models/gpt-5.6-luna)
+- [Workflow dispatch](https://cli.github.com/manual/gh_workflow_run)
+- [Watching exact runs](https://cli.github.com/manual/gh_run_watch)
+- [Run list identity filters](https://cli.github.com/manual/gh_run_list)
+- [Run/job inspection](https://cli.github.com/manual/gh_run_view)
+
+Official model documentation establishes identifiers and API features, not availability through a particular Hermes account or comparative effectiveness on this project. The RSI preference and proposed scheduling/effort defaults are implementation policies, not proven investing performance. No remote write, daily dispatch, trading operation, or software test was performed while drafting this plan.
+
+## Implementation log
+
+### 2026-09-11 — initial local M1/M2 work (not shipped)
+
+Implemented manual-only daily/reusable podcast behavior, default media queue exclusion, an audited
+legacy scheduled-podcast retirement command, read-only Luna triage with controller escalation, and
+the constrained Astra profile groundwork. Preserved Terra/Sol first-pass routing and all existing
+investment gates. Full local verification passed 557 tests before two final restart/identity
+regressions were added; see the status document for the final verification result. One report
+snapshot identity was regenerated because it includes the intentional configuration hash change.
+
+At that initial checkpoint, the authenticated order/fill gate and milestones M3–M10 remained outstanding. There had been no
+production data migration, commit, push, or live daily dispatch. These changes do not satisfy the
+overall definition of done.
+
+### 2026-09-11 — integrated implementation and migration rehearsal
+
+Implemented the authenticated order/fill gate, shared RSI scheduling, scope/backpressure and
+delta propagation, protected archives, immutable evidence/challenges/corrections, bounded
+monitoring/calendar/forecast/finding coverage, and hash-bound hardening migration. Full pytest:
+598 passed; Ruff and MyPy pass. A disposable production-data migration/finalization passed strict
+schema/integrity/advice/wiki/reconciliation without changing executions, cash or portfolio bytes.
+The zero-model offline migration rehearsal does not satisfy M10. Production activation, source
+commit/push, normal-budget live workflow and post-run validation are the remaining deployment steps.

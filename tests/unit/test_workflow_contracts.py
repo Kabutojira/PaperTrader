@@ -129,7 +129,7 @@ def test_daily_manual_inputs_schedule_and_serialized_reusable_graph(
     )
     assert "vars.MAX_OPERATIONS" not in daily_text
     assert jobs["runtime"]["with"]["generate_podcast"] == (
-        "${{ github.event_name == 'schedule' || inputs.generate_podcast }}"
+        "${{ github.event_name == 'workflow_dispatch' && inputs.generate_podcast }}"
     )
     assert jobs["runtime"]["with"]["wiki_maintenance"] == (
         "${{ (github.event_name == 'workflow_dispatch' && inputs.wiki_maintenance) || "
@@ -144,7 +144,7 @@ def test_daily_manual_inputs_schedule_and_serialized_reusable_graph(
     assert outcome["if"] == "${{ always() }}"
     outcome_step = outcome["steps"][0]
     assert outcome_step["env"]["GENERATE_PODCAST"] == (
-        "${{ github.event_name == 'schedule' || inputs.generate_podcast }}"
+        "${{ github.event_name == 'workflow_dispatch' && inputs.generate_podcast }}"
     )
     assert outcome_step["env"]["PODCAST_STATUS"] == "${{ needs.runtime.outputs.podcast_status }}"
     assert "validated research and report state was published" in outcome_step["run"]
@@ -283,7 +283,10 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
         "Finalize text podcast and reserve its checkpoint",
     ):
         step = next(step for step in runtime["steps"] if step["name"] == step_name)
-        assert step["if"] == "${{ inputs.generate_podcast && !inputs.dry_run }}"
+        assert step["if"] == (
+            "${{ (github.event_name == 'workflow_dispatch' && inputs.generate_podcast) "
+            "&& !inputs.dry_run }}"
+        )
     podcast_enqueue = next(
         step
         for step in runtime["steps"]

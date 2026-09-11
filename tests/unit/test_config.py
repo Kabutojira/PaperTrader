@@ -84,11 +84,16 @@ def test_settings_resolve_canonical_wiki_and_skills(
         "scout",
         "analyst",
         "deep",
+        "final_review",
     ]
     assert settings.hermes.profile("scout").maximum_turns == 32
     assert settings.hermes.profile("analyst").maximum_turns == 80
     assert settings.hermes.profile("deep").maximum_turns == 160
     assert settings.hermes.profile("scout").model == "gpt-5.6-luna"
+    assert settings.hermes.profile("final_review").model == "gpt-6-astra"
+    assert settings.hermes.profile("final_review").reasoning_effort == "high"
+    assert settings.hermes.profile("final_review").mutation_policy == "review_only"
+    assert settings.hermes.profile("final_review").escalation_targets == ()
     assert settings.hermes.profile("analyst").cost_weight == Decimal("2.5")
     assert settings.hermes_auxiliary.web_extract_provider == "openai-codex"
     assert settings.hermes_auxiliary.web_extract_model == "gpt-5.6-terra"

@@ -371,7 +371,7 @@
         "ticker": { "type": "string", "minLength": 1 },
         "company_name": { "type": "string", "minLength": 1 },
         "action": { "enum": ["buy", "add", "hold", "trim", "exit", "no_trade"] },
-        "action_status": { "enum": ["pending_order", "active_signal", "awaiting_order_validation"] },
+        "action_status": { "enum": ["pending_order", "active_signal", "awaiting_order_validation", "awaiting_final_review", "final_review_rejected", "final_review_deferred", "approved_order_pending"] },
         "copy_ready": { "type": "boolean" },
         "quantity": { "type": "string" },
         "order_type": { "type": "string" },

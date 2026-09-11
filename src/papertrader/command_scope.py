@@ -51,6 +51,11 @@ def command_allowed(
     command = normalized_command(arguments)
     if not command:
         return False
+    if operation_type in {"research_triage", "final_buy_review"}:
+        return command[:2] in {
+            ("research", "security-context"),
+            ("research", "assessment-get"),
+        }
     if profile:
         from papertrader.profiles import profile_command_allowed
 

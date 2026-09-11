@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Immutable research-hardening activation and legacy census",
+  "type": "object", "additionalProperties": false,
+  "required": ["policy_version", "effective_at", "automatic_obligation_cap", "throughput_window_days", "observed_completions", "service_goal_days", "legacy_queue", "legacy_scope", "queue_census", "pre_policy_execution_ids", "legacy_pending_orders", "ledger_hashes", "rollback", "migration_id"],
+  "properties": {
+    "policy_version": {"const": 1},
+    "effective_at": {"type": "string", "format": "date-time"},
+    "automatic_obligation_cap": {"type": "integer", "minimum": 5, "maximum": 100},
+    "throughput_window_days": {"const": 14},
+    "observed_completions": {"type": "integer", "minimum": 0},
+    "service_goal_days": {"const": 5},
+    "legacy_queue": {"type": "array", "items": {"type": "object", "additionalProperties": {"type": "string"}, "required": ["operation_id", "status", "created_at", "depends_on", "last_error"]}},
+    "legacy_scope": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["entity_type", "entity_id", "scope_class"], "properties": {"entity_type": {"type": "string"}, "entity_id": {"type": "string"}, "scope_class": {"const": "legacy_unclassified"}}}},
+    "queue_census": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}},
+    "pre_policy_execution_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "legacy_pending_orders": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["order_id", "disposition"], "properties": {"order_id": {"type": "string"}, "disposition": {"const": "hold_new_exposure_until_authenticated_review"}}}},
+    "ledger_hashes": {"type": "object", "additionalProperties": false, "required": ["executions", "cash_ledger", "portfolio"], "properties": {"executions": {"$ref": "#/$defs/hash"}, "cash_ledger": {"$ref": "#/$defs/hash"}, "portfolio": {"$ref": "#/$defs/hash"}}},
+    "rollback": {"type": "string", "minLength": 1},
+    "migration_id": {"$ref": "#/$defs/hash"}
+  },
+  "$defs": {"hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

@@ -756,8 +756,16 @@ class _CycleHermes:
             },
             ("order", "create"),
         )
-        assert response["created"] is True
-        return [], "The validated paper order remains pending until the next eligible open."
+        assert response["created"] is False
+        assert response["status"] == "awaiting_final_review"
+        review_operation = next(
+            row
+            for row in read_table(repository, "operations_todo")
+            if row["dedupe_key"] == f"final_buy_review:{response['review_request_id']}"
+        )
+        return [review_operation["operation_id"]], (
+            "The otherwise eligible purchase awaits independent final review."
+        )
 
     def __call__(
         self,
@@ -780,6 +788,7 @@ class _CycleHermes:
         payload = json.loads((cwd / operation["payload_path"]).read_text(encoding="utf-8"))
         artifact = cwd / "data" / "runs" / run_id / operation_id
         before = snapshot_repository(cwd)
+        final_buy_review: dict[str, object] | None = None
 
         if operation_type == "security_research":
             created, summary = self._security(cwd, environment, artifact, run_id)
@@ -793,6 +802,24 @@ class _CycleHermes:
             created, summary = self._strategy(cwd, environment, artifact, run_id)
         elif operation_type == "execute_strategy":
             created, summary = self._execute(cwd, environment, artifact, payload, run_id)
+        elif operation_type == "final_buy_review":
+            inputs = payload["inputs"]
+            assert isinstance(inputs, dict)
+            packet = json.loads((cwd / str(inputs["packet_path"])).read_text(encoding="utf-8"))
+            final_buy_review = {
+                "review_request_id": packet["review_request_id"],
+                "packet_hash": packet["packet_hash"],
+                "decision": "APPROVE",
+                "reason": (
+                    "The exact synthetic purchase remains supported after independent review."
+                ),
+                "examined_evidence": ["synthetic operating-cycle primary evidence"],
+                "counterevidence": "The fixture's explicit invalidation was independently checked.",
+                "material_issues": [],
+                "uncertainty": "The next eligible open may move outside the approved envelope.",
+                "reconsideration_conditions": [],
+            }
+            created, summary = [], "Independent final review approved the exact purchase packet."
         else:
             raise AssertionError(f"unexpected operating-cycle operation: {operation_type}")
 
@@ -801,8 +828,12 @@ class _CycleHermes:
         changed = tuple(
             path for path in compare_snapshots(before, after).changed if path != audit_path
         )
-        audit = json.loads((cwd / audit_path).read_text(encoding="utf-8"))
-        commands = [entry["command"] for entry in audit["entries"]]
+        audit_file = cwd / audit_path
+        commands = (
+            [entry["command"] for entry in json.loads(audit_file.read_text())["entries"]]
+            if audit_file.is_file()
+            else []
+        )
         result: dict[str, object] = {
             "operation_id": operation_id,
             "status": "succeeded",
@@ -825,6 +856,8 @@ class _CycleHermes:
                 "checks": ["bounded synthetic operating-cycle operation completed"],
             },
         }
+        if final_buy_review is not None:
+            result["final_buy_review"] = final_buy_review
         if operation_type in {
             "opportunity_research",
             "quick_check_research",
@@ -920,8 +953,8 @@ def test_clean_checkout_research_to_publication_cycle_is_replay_safe(
         sandbox_settings,
         operations=replace(
             sandbox_settings.operations,
-            maximum_llm_operations_per_run=6,
-            maximum_model_budget_usd_per_run=Decimal("6"),
+            maximum_llm_operations_per_run=7,
+            maximum_model_budget_usd_per_run=Decimal("21"),
         ),
     )
     started_at = utc_now().replace(microsecond=0) - timedelta(minutes=1)
@@ -970,10 +1003,10 @@ def test_clean_checkout_research_to_publication_cycle_is_replay_safe(
             "PATH": os.environ.get("PATH", "/usr/bin"),
             "OPENROUTER_API_KEY": "test-auxiliary-key",
         },
-        maximum_operations=6,
+        maximum_operations=7,
         executor=executor,
     )
-    assert batch.operation_count == 6
+    assert batch.operation_count == 7
     assert executor.operation_types == [
         "security_research",
         "opportunity_research",
@@ -981,6 +1014,7 @@ def test_clean_checkout_research_to_publication_cycle_is_replay_safe(
         "relationship_research",
         "strategy_research",
         "execute_strategy",
+        "final_buy_review",
     ]
     assert read_table(sandbox_repository, "operations_todo") == []
 
@@ -990,7 +1024,10 @@ def test_clean_checkout_research_to_publication_cycle_is_replay_safe(
     fill_session = _next_session_after(order_created)
     final_at = session_close("XETR", fill_session) + timedelta(hours=1)
     final_dates = (*session_dates, fill_session)
-    final_provider = _RecordedProvider(_market_frame(final_dates))
+    final_frame = _market_frame(final_dates)
+    # Keep the synthetic next open inside the truthful, previously reviewed closing-price bound.
+    final_frame.at[final_frame.index[-1], "Open"] = latest.close
+    final_provider = _RecordedProvider(final_frame)
     assert (
         update_market_data(
             sandbox_repository,
@@ -1122,12 +1159,17 @@ def test_clean_checkout_research_to_publication_cycle_is_replay_safe(
         )["created"]
         is False
     )
+    replay_order_request = executor.replay_requests["create-order.json"].with_name(
+        "replay-approved-order.json"
+    )
+    replay_order_payload = json.loads(
+        executor.replay_requests["create-order.json"].read_text(encoding="utf-8")
+    )
+    # The accepted intent becomes executable at reviewer completion, which is its durable schedule.
+    replay_order_payload["not_before"] = order["not_before"]
+    atomic_write_json(replay_order_request, replay_order_payload, allowed_root=sandbox_repository)
     assert (
-        _plain_request(
-            sandbox_repository,
-            executor.replay_requests["create-order.json"],
-            ("order", "create"),
-        )["created"]
+        _plain_request(sandbox_repository, replay_order_request, ("order", "create"))["created"]
         is False
     )
     executor.rewrite_wiki_pages(sandbox_repository)

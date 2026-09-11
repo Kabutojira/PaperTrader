@@ -21,6 +21,28 @@ The repository is the source of truth. Any legacy data import is a separate, one
 - Do not automatically monitor YouTube or Seeking Alpha. Retain their validated tooling only as
   dormant maintenance capability; new ideas enter through explicit manual requests.
 
+## Project-local Codex delegation
+
+Codex loads reusable contributor workflows from `.agents/skills/` and custom agent definitions
+from `.codex/agents/`. These are development and repository-maintenance helpers; they are separate
+from the Hermes operation skills under `skills/` and may not be routed into a PaperTrader research
+operation.
+
+- `git_operator` and `test_operator` use `gpt-5.6-luna` for bounded mechanical work.
+- `code_fixer` uses the repository's strong `gpt-5.6-sol` tier for a narrowly packaged substantive
+  failure. It returns changes to `test_operator` and does not own commits, pushes, or CI monitoring.
+- Invoke these agents through `papertrader-git` and `papertrader-test`. Run agent work sequentially;
+  the configured second subagent slot exists only so a waiting test operator can hand one failure
+  to a fixer, never for parallel work or fan-out.
+- The test/fix loop is limited to three substantive repair attempts by default and stops earlier
+  for a repeated unchanged failure, ambiguous scope, protected investment logic, or a genuine
+  human blocker.
+- A manually dispatched daily workflow is dry-run, non-publishing, and non-delivering by default.
+  Non-dry runtime changes, Pages publication, or Telegram delivery require explicit authorization.
+
+These helpers do not relax any repository invariant, structured-state ownership rule, credential
+boundary, or paper-only restriction below.
+
 ## Non-negotiable invariants
 
 1. **Paper only.** Do not add broker order APIs, brokerage credentials, a live-order mode, or a real-execution adapter. The execution engine creates only simulated orders and fills.
@@ -553,6 +575,16 @@ A decision that no follow-up is needed is valid and must be logged with evidence
 - Enqueue exactly one dependent full `security_research` when a buy zone, catalyst, invalidation,
   material-evidence, or decision-support gate changed. Never create a strategy or signal directly.
 
+### `research_triage`
+
+- Check one immutable security/investigation using Luna, without changing research state.
+- Write only the result manifest with a structured `triage_review`; the permitted CLI reads are
+  `research security-context` and `research assessment-get`.
+- The controller escalates unresolved/material checks once into full GPT-5.6 security research,
+  preserving the cause, original creation time, evidence, and investigation identity.
+- A no-change check never refreshes an assessment. Protected exposure cannot be dismissed by
+  cheap triage. The deterministic RSI producer retains its existing independent path.
+
 ### `idea_research`
 
 - Create or update one investment idea.
@@ -628,6 +660,9 @@ remains entirely deterministic.
 
 ### `daily_podcast`
 
+- Manual only: scheduled and default daily runs never generate transcripts, TTS, or translations.
+  General research batches exclude podcast operations, including legacy queued requests. Select
+  an explicit manual podcast operation or enable `generate_podcast` on a manual workflow dispatch.
 - Run exactly once as the final sequential LLM operation after the daily report, allocation, and
   decision snapshot are complete.
 - Use context version three to cover accepted research after the most recent successful podcast
@@ -669,6 +704,27 @@ remains entirely deterministic.
   cannot resolve another language's failure.
 
 ## Hermes Agent integration
+
+### Research hardening and final purchase authority
+
+`research_triage` is a read-only Luna check; the controller owns any escalation. First-pass
+research remains on Terra/Sol. `final_buy_review` is an independent Astra/high, review-only
+operation on a controller-created exact preflight packet. Only trusted runner acceptance can
+record approval. Both order creation paths and new-exposure fills enforce it; reductions and
+historical accounting recovery remain available. Research BUY is not purchase authorization.
+
+Immutable research governance artifacts live under `data/operations/research-governance/` and
+validate against the corresponding research schemas. Activate through `research migrate-hardening`
+(preview) and `--apply`, never by hand-writing a marker. Legacy scope is unknown, not an inferred
+user anchor. Only explicit manual `research topic-record --track` establishes ongoing tracking.
+Analytical results include honest structured adversarial review and may submit bounded claims,
+scope updates, catalyst occurrences and frozen forecasts for parent validation. Agents never
+hand-edit these controller-owned artifacts. Audited follow-ups preserve actual operation lineage.
+
+Current RSI oversold attention precedes ordinary priority inflation but does not change financial
+eligibility. Bounded monitoring and final review consume the same global sequential budget.
+No-change coverage requires actual inspected targets. Calendar dates do not prove an event occurred.
+Reports retain unrepresented findings and distinguish saving from publication, delivery and reading.
 
 ### Skills
 

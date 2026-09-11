@@ -1,0 +1,23 @@
+{
+  "commands_run": [],
+  "daily_report_items": [],
+  "evidence": [
+    {
+      "claim": "Scheduled cycle; prior result, if present: data/runs/daily-20260904T180734Z/01M1PV87N00M38FCWEWS8A4SD6/agent_result.json",
+      "source": "data/runs/daily-20260904T180734Z/daily_run.json"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01M1PV87N00M38FCWEWS8A4SD6",
+  "operations_created": [],
+  "reason_code": "disabled_by_policy",
+  "status": "skipped",
+  "summary": "Automatic podcast disabled by manual-only policy.",
+  "validation": {
+    "checks": [
+      "scheduled_cycle_provenance"
+    ],
+    "passed": true
+  }
+}

@@ -39,6 +39,14 @@ When invoked after security research, also require `security_id`, the completed
 `security_research_operation_id`, and its result path; consume that result as untrusted evidence
 and refresh the idea's security conclusion.
 
+When `review_mode=delta`, consume every `security_deltas` result and update only its material
+implications for the maintained idea. Do not repeat broad universe discovery, import identities,
+or spawn unchanged security/relationship work. Existing comprehensive candidate slates remain
+accessible; a genuinely new material issue requires an explicitly justified bounded request.
+For known research scope, preserve the original user anchor/direct contribution. Peripheral
+topics cannot spawn research through any operation type. Optional `research_topic` records only
+this idea's validated scope/disposition; it cannot create user tracking authority.
+
 ## Procedure
 
 1. Read the wiki schema, results-first homepage, complete research and security catalogs, recent
@@ -49,7 +57,7 @@ and refresh the idea's security conclusion.
    row for this idea and its linked security and relationship pages. Mark each edge as current,
    materially stale, contradicted, or missing an endpoint link; do not treat wiki prose as canonical
    relationship state.
-5. Search the complete maintained security universe and external evidence for additional plausible
+5. For a full review (not a delta), search the complete maintained security universe and external evidence for additional plausible
    exposures across every material layer of the value chain. Search beyond issuers already named
    in the seed, current idea page, payload, or accepted relationships. Cover direct beneficiaries,
    enabling suppliers, constrained competitors, and harmed incumbents where evidence supports them,

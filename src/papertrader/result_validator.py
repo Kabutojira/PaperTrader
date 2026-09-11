@@ -254,6 +254,8 @@ def _path_allowed_for_operation(
     seekingalpha_lead: bool = False,
 ) -> bool:
     path = PurePosixPath(raw_path)
+    if operation_type in {"research_triage", "final_buy_review"}:
+        return False
     if raw_path in COMMON_STRUCTURED_PATHS or _is_followup_path(path):
         return True
     if operation_type == "wiki_ingest":
@@ -299,6 +301,8 @@ def _path_allowed_for_operation(
             "data/tables/strategy_legs.csv",
         } or _is_wiki_path(path, frozenset({"strategies"}))
     if operation_type == "execute_strategy":
+        if path.parts[:3] == ("data", "operations", "buy-review-packets"):
+            return created and len(path.parts) == 4 and path.suffix == ".json"
         return raw_path in {
             "data/tables/order_legs.csv",
             "data/tables/orders.csv",
@@ -1003,13 +1007,29 @@ def _security_idea_followup_errors(
             ):
                 continue
             inputs = _payload_inputs(repository_root, row)
+            delta_match = False
+            security_deltas = inputs.get("security_deltas") if inputs is not None else None
+            if isinstance(security_deltas, list):
+                delta_match = any(
+                    isinstance(delta, dict)
+                    and delta.get("security_id") == operation.entity_id
+                    and delta.get("security_research_operation_id") == operation.operation_id
+                    and delta.get("security_research_result_path")
+                    == result_relative_path(run_id, operation.operation_id)
+                    for delta in security_deltas
+                )
             if (
                 inputs is not None
                 and inputs.get("idea_id") == linked_idea_id
-                and inputs.get("security_id") == operation.entity_id
-                and inputs.get("security_research_operation_id") == operation.operation_id
-                and inputs.get("security_research_result_path")
-                == result_relative_path(run_id, operation.operation_id)
+                and (
+                    delta_match
+                    or (
+                        inputs.get("security_id") == operation.entity_id
+                        and inputs.get("security_research_operation_id") == operation.operation_id
+                        and inputs.get("security_research_result_path")
+                        == result_relative_path(run_id, operation.operation_id)
+                    )
+                )
             ):
                 exact.append(operation_id)
         if len(exact) != 1:
@@ -1530,6 +1550,8 @@ def validate_agent_result(
             errors.append(f"agent changed a non-runtime path: {path}")
     for path in changed_paths:
         relative = PurePosixPath(path)
+        if operation.operation_type in {"research_triage", "final_buy_review"}:
+            errors.append(f"read-only reviewer changed a path outside its result: {path}")
         if not _is_operation_artifact(
             relative, run_id, operation.operation_id
         ) and not _path_allowed_for_operation(
@@ -1557,6 +1579,142 @@ def validate_agent_result(
             if state is not None and state.modified_ns > result_state.modified_ns:
                 errors.append(f"agent result was written before completed change: {path}")
     status = result.get("status")
+    topic = result.get("research_topic")
+    from papertrader.research_calendar import record_catalyst, register_forecast
+
+    for field, recorder in (
+        ("catalyst_updates", record_catalyst),
+        ("research_forecasts", register_forecast),
+    ):
+        records = result.get(field, [])
+        if records and operation.operation_type not in RESEARCH_CHART_OPERATIONS:
+            errors.append(f"operation cannot publish {field}")
+        if isinstance(records, list):
+            for record in records:
+                if not isinstance(record, dict):
+                    errors.append(f"{field} entry must be an object")
+                    continue
+                try:
+                    recorder(
+                        repository_root,
+                        record,
+                        operation_id=operation.operation_id,
+                        now=utc_now(),
+                        apply=False,
+                    )
+                    if (
+                        operation.entity_type == "security"
+                        and record["security_id"] != operation.entity_id
+                    ):
+                        errors.append(f"{field} exceeds the bounded security scope")
+                except (RuntimeError, ValueError, OSError) as exc:
+                    errors.append(str(exc))
+    from papertrader.evidence import validate_claim
+    from papertrader.evidence import validate_schema as validate_evidence_schema
+    from papertrader.governance import ROOT as GOVERNANCE_ROOT
+    from papertrader.governance import GovernanceError
+
+    claims = result.get("research_claims", [])
+    challenge = result.get("adversarial_review")
+    if claims and operation.operation_type not in RESEARCH_CHART_OPERATIONS:
+        errors.append("read-only or execution operation cannot publish claim versions")
+    if isinstance(claims, list):
+        seen_claims = set()
+        for claim in claims:
+            if not isinstance(claim, dict):
+                errors.append("claim must be an object")
+                continue
+            try:
+                validate_claim(repository_root, claim, now=utc_now())
+                if claim["claim_id"] in seen_claims:
+                    errors.append("result repeats a claim identity")
+                seen_claims.add(claim["claim_id"])
+                if (
+                    operation.entity_type == "security"
+                    and operation.entity_id not in claim["security_ids"]
+                ):
+                    errors.append("claim is unrelated to the bounded security operation")
+            except (GovernanceError, ValueError, OSError) as exc:
+                errors.append(str(exc))
+    if challenge is not None:
+        try:
+            if not isinstance(challenge, dict):
+                raise GovernanceError("adversarial review must be an object")
+            validate_evidence_schema(repository_root, "research_challenge", challenge)
+            if challenge["status"] == "searched":
+                source_ids = {
+                    row["source_history_id"]
+                    for row in read_table(repository_root, "source_history")
+                }
+                if not set(challenge["inspection_refs"]) <= source_ids:
+                    errors.append(
+                        "searched challenge requires retained immutable inspection references"
+                    )
+        except (GovernanceError, ValueError, OSError) as exc:
+            errors.append(str(exc))
+    elif (
+        status == "succeeded"
+        and operation.operation_type in RESEARCH_CHART_OPERATIONS
+        and (repository_root / GOVERNANCE_ROOT / "policy.json").exists()
+    ):
+        errors.append(
+            "successful research requires an explicit adversarial_review, including "
+            "honest partial/not-searched status"
+        )
+    if topic is not None:
+        from papertrader.governance import GovernanceError, record_topic
+
+        if operation.operation_type not in {
+            "security_research",
+            "idea_research",
+            "relationship_research",
+        } or not isinstance(topic, dict):
+            errors.append("operation cannot change research scope")
+        elif (
+            topic.get("entity_type") != operation.entity_type
+            or topic.get("entity_id") != operation.entity_id
+        ):
+            errors.append("research scope update must match the bounded operation entity")
+        else:
+            try:
+                record_topic(
+                    repository_root, topic, source_operation_id=operation.operation_id, apply=False
+                )
+            except (GovernanceError, ValueError, OSError) as exc:
+                errors.append(str(exc))
+    if operation.operation_type == "final_buy_review" and status == "succeeded":
+        from papertrader.buy_review import BuyReviewError, _validate, packet_for_operation
+
+        review = result.get("final_buy_review")
+        if not isinstance(review, dict):
+            errors.append("final buy review result is required")
+        else:
+            try:
+                _validate(repository_root, "buy_review_result", review)
+                packet = packet_for_operation(repository_root, operation)
+                if review["packet_hash"] != packet["packet_hash"]:
+                    errors.append("final buy review packet hash differs")
+            except (BuyReviewError, OSError, ValueError) as exc:
+                errors.append(str(exc))
+    if operation.operation_type == "research_triage":
+        from papertrader.monitoring import validate_monitoring_result
+
+        if status == "succeeded":
+            try:
+                validate_monitoring_result(repository_root, operation, result, now=utc_now())
+            except (GovernanceError, ValueError, OSError) as exc:
+                errors.append(str(exc))
+        review = result.get("triage_review")
+        if status == "succeeded" and not isinstance(review, dict):
+            errors.append("successful research triage requires its structured check receipt")
+        if result.get("operations_created") or result.get("issues_recorded"):
+            errors.append("research triage cannot mutate queue or issue state")
+        if (
+            isinstance(review, dict)
+            and review.get("disposition") in {"no_material_change", "duplicate"}
+            and not review.get("examined_evidence")
+        ):
+            errors.append("conclusive research triage requires inspected evidence")
     evidence = result.get("evidence")
     if status in {"skipped", "blocked", "failed"} and not evidence:
         errors.append(f"{status} result requires evidence")

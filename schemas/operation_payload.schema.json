@@ -23,11 +23,13 @@
         "source_discovery",
         "opportunity_research",
         "quick_check_research",
+        "research_triage",
         "idea_research",
         "security_research",
         "relationship_research",
         "strategy_research",
         "execute_strategy",
+        "final_buy_review",
         "daily_podcast",
         "podcast_translation"
       ]
@@ -48,6 +50,42 @@
   "allOf": [
     {
       "oneOf": [
+        {
+          "properties": {
+            "operation_type": { "const": "final_buy_review" },
+            "inputs": {
+              "type": "object", "additionalProperties": false,
+              "required": ["review_request_id", "packet_path"],
+              "properties": {
+                "review_request_id": { "type": "string", "pattern": "^buy_review_[a-f0-9]{32}$" },
+                "packet_path": { "type": "string", "pattern": "^data/operations/buy-review-packets/buy_review_[a-f0-9]{32}\\.json$" }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "operation_type": { "const": "research_triage" },
+            "inputs": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["security_id", "investigation_id", "cause", "evidence_refs"],
+              "properties": {
+                "security_id": { "type": "string", "minLength": 1 },
+                "investigation_id": { "type": "string", "minLength": 1, "maxLength": 128 },
+                "cause": { "type": "string", "minLength": 1, "maxLength": 2000 },
+                "monitoring_context_path": {"type": "string", "pattern": "^data/operations/research-governance/monitoring-contexts/[a-f0-9]{24}\\.json$"},
+                "catalyst_occurrence_id": {"type": "string", "pattern": "^[a-f0-9]{24}$"},
+                "catalyst_version_id": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+                "evidence_refs": {
+                  "type": "array", "minItems": 1, "maxItems": 20,
+                  "uniqueItems": true,
+                  "items": { "type": "string", "minLength": 1, "maxLength": 2000 }
+                }
+              }
+            }
+          }
+        },
         {
           "properties": {
             "operation_type": { "const": "daily_podcast" },
@@ -333,7 +371,16 @@
                 "period_start": { "type": "string", "format": "date" },
                 "period_end": { "type": "string", "format": "date" },
                 "source_price_hash": { "$ref": "#/$defs/sha256" },
-                "research_reasons": { "type": "array", "items": { "type": "object" } },
+                "rsi_attention": { "$ref": "#/$defs/rsi_attention" },
+                "research_reasons": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "rsi_attention": { "$ref": "#/$defs/rsi_attention" }
+                    }
+                  }
+                },
                 "merged_input_values": { "type": "object" },
                 "full_research_requested": { "type": "boolean" }
               }
@@ -352,6 +399,17 @@
                 "security_id": { "type": "string", "minLength": 1 },
                 "security_research_operation_id": { "$ref": "#/$defs/ulid" },
                 "security_research_result_path": { "$ref": "#/$defs/repository_path" }
+                ,"review_mode": {"enum": ["delta", "full"]},
+                "security_deltas": {"type": "array", "minItems": 1, "items": {
+                  "type": "object", "additionalProperties": false,
+                  "required": ["security_id", "security_research_operation_id", "security_research_result_path", "change_class"],
+                  "properties": {
+                    "security_id": {"type": "string", "minLength": 1},
+                    "security_research_operation_id": {"$ref": "#/$defs/ulid"},
+                    "security_research_result_path": {"$ref": "#/$defs/repository_path"},
+                    "change_class": {"enum": ["unknown", "new_facts", "price_only", "unchanged"]}
+                  }
+                }}
               },
               "allOf": [
                 {
@@ -391,7 +449,19 @@
                 "market_data_date": { "type": "string", "format": "date" },
                 "period_start": { "type": "string", "format": "date" },
                 "period_end": { "type": "string", "format": "date" },
-                "source_price_hash": { "$ref": "#/$defs/sha256" }
+                "source_price_hash": { "$ref": "#/$defs/sha256" },
+                "rsi_attention": { "$ref": "#/$defs/rsi_attention" },
+                "research_reasons": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "rsi_attention": { "$ref": "#/$defs/rsi_attention" }
+                    }
+                  }
+                },
+                "merged_input_values": { "type": "object" },
+                "full_research_requested": { "type": "boolean" }
               },
               "allOf": [
                 {
@@ -539,6 +609,33 @@
     "decimal_text": {
       "type": "string",
       "pattern": "^-?(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"
+    },
+    "rsi_attention": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rsi",
+        "threshold",
+        "observed_session",
+        "source_price_hash",
+        "episode_id",
+        "transitions",
+        "original_created_at"
+      ],
+      "properties": {
+        "rsi": { "$ref": "#/$defs/decimal_text" },
+        "threshold": { "$ref": "#/$defs/decimal_text" },
+        "observed_session": { "type": "string", "format": "date" },
+        "source_price_hash": { "$ref": "#/$defs/sha256" },
+        "episode_id": { "type": "string", "pattern": "^rsi_[a-f0-9]{24}$" },
+        "transitions": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "enum": ["entered", "strengthened"] }
+        },
+        "original_created_at": { "type": "string", "format": "date-time" }
+      }
     }
   }
 }

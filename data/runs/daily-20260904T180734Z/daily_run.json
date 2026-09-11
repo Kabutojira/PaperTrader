@@ -111,7 +111,15 @@
   "podcast_commit_identity": "daily-20260904T180734Z:checkpoint-004",
   "podcast_operation_id": "01M1PV87N00M38FCWEWS8A4SD6",
   "podcast_page_path": "data/wiki/podcasts/daily-podcast_20260904T180734Z.md",
-  "podcast_status": "blocked",
+  "podcast_policy_transition": {
+    "at": "2026-09-11T10:33:12Z",
+    "operation_id": "01M1PV87N00M38FCWEWS8A4SD6",
+    "policy_version": "manual-podcast-v1",
+    "previous_status": "blocked",
+    "result_path": "data/runs/podcast-policy-v1/01M1PV87N00M38FCWEWS8A4SD6/agent_result.json"
+  },
+  "podcast_skip_reason": "disabled_by_policy",
+  "podcast_status": "skipped",
   "podcast_text_at": "2026-09-04T18:42:27Z",
   "preparation_at": "2026-09-04T18:07:35Z",
   "preparation_errors": [],

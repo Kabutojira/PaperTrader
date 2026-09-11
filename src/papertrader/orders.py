@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from collections import defaultdict
 from collections.abc import Mapping, Sequence
-from dataclasses import replace
+from dataclasses import dataclass, replace
 from datetime import datetime
 from decimal import ROUND_HALF_EVEN, Decimal
 from pathlib import Path, PurePosixPath
@@ -34,6 +34,16 @@ FILL_POLICIES = frozenset({"next_open", "limit_touch", "quote_mid"})
 
 class OrderError(RuntimeError):
     """Raised when a signal or paper-order transition violates its contract."""
+
+
+@dataclass(frozen=True)
+class PreparedOrder:
+    """Deterministically validated intent, before final model review or persistence."""
+
+    order: dict[str, str]
+    legs: tuple[dict[str, str], ...]
+    assessment: RiskAssessment
+    created: bool
 
 
 def _assert_paper_only(settings: Settings) -> None:
@@ -711,7 +721,7 @@ def create_baseline_paper_order(
     )
 
 
-def create_paper_order(
+def prepare_paper_order(
     repository_root: Path,
     settings: Settings,
     *,
@@ -727,8 +737,8 @@ def create_paper_order(
     not_before: datetime | None = None,
     expires_at: datetime | None = None,
     now: datetime | None = None,
-) -> tuple[str, bool, RiskAssessment]:
-    """Validate and persist a pending paper order; no fill or accounting write occurs here."""
+) -> PreparedOrder:
+    """Validate a concrete order without mutating signals, orders, or accounting."""
 
     _assert_paper_only(settings)
     instant = ensure_utc(now or utc_now()).replace(microsecond=0)
@@ -824,14 +834,6 @@ def create_paper_order(
             or existing_leg_rows != expected_leg_rows
         ):
             raise OrderError(f"order identity collision: {order_id}")
-        repaired_signal_status = {
-            "filled": "filled",
-            "cancelled": "cancelled",
-            "expired": "expired",
-        }.get(existing_order["status"], "ordered")
-        if signal["status"] != repaired_signal_status:
-            signal["status"] = repaired_signal_status
-            write_table(repository_root, "signals", signals)
         accepted = RiskAssessment(
             violations=(),
             projected_cash_base=risk_state.cash_base,
@@ -839,7 +841,7 @@ def create_paper_order(
             projected_short_exposure_base=risk_state.short_exposure_base,
             projected_options_risk_base=risk_state.options_risk_base,
         )
-        return order_id, False, accepted
+        return PreparedOrder(existing_order, tuple(expected_leg_rows), accepted, False)
 
     if signal["status"] != "ready":
         raise OrderError(f"signal {signal_id} is not ready for strategy {strategy_id}")
@@ -901,19 +903,79 @@ def create_paper_order(
         )
         if assessment.projected_cash_base < required_reserve:
             raise OrderError("baseline order would breach the minimum cash reserve")
-    # Legs are written first so a crash cannot expose a fillable order without its full leg set.
-    all_leg_rows = [row for row in all_leg_rows if row["order_id"] != order_id]
-    all_leg_rows.extend(expected_leg_rows)
-    all_leg_rows.sort(key=lambda row: (row["order_id"], row["leg_id"]))
-    write_table(repository_root, "order_legs", all_leg_rows)
-    orders.append(order_row)
-    orders.sort(key=lambda row: row["order_id"])
-    write_table(repository_root, "orders", orders)
-    for row in signals:
-        if row["signal_id"] == signal_id:
-            row["status"] = "ordered"
+    return PreparedOrder(order_row, tuple(expected_leg_rows), assessment, True)
+
+
+def create_paper_order(
+    repository_root: Path,
+    settings: Settings,
+    *,
+    signal_id: str,
+    strategy_id: str,
+    legs: Sequence[OrderLegSpec],
+    references: Sequence[ReferencePrice],
+    risk_state: RiskState,
+    run_id: str,
+    fill_policy: str | None = None,
+    order_type: str | None = None,
+    limit_price: Decimal | None = None,
+    not_before: datetime | None = None,
+    expires_at: datetime | None = None,
+    now: datetime | None = None,
+) -> tuple[str, bool, RiskAssessment]:
+    """Require final review before persisting an otherwise eligible purchase."""
+
+    prepared = prepare_paper_order(
+        repository_root,
+        settings,
+        signal_id=signal_id,
+        strategy_id=strategy_id,
+        legs=legs,
+        references=references,
+        risk_state=risk_state,
+        run_id=run_id,
+        fill_policy=fill_policy,
+        order_type=order_type,
+        limit_price=limit_price,
+        not_before=not_before,
+        expires_at=expires_at,
+        now=now,
+    )
+    from papertrader.buy_review import require_order_clearance
+
+    require_order_clearance(
+        repository_root,
+        settings,
+        prepared,
+        references=references,
+        risk_state=risk_state,
+        now=ensure_utc(now or utc_now()).replace(microsecond=0),
+    )
+    order_id = prepared.order["order_id"]
+    if prepared.created:
+        # Write complete legs before exposing an order. Approval already binds this order ID.
+        all_legs = [
+            row for row in read_table(repository_root, "order_legs") if row["order_id"] != order_id
+        ]
+        all_legs.extend(prepared.legs)
+        write_table(
+            repository_root,
+            "order_legs",
+            sorted(all_legs, key=lambda row: (row["order_id"], row["leg_id"])),
+        )
+        orders = read_table(repository_root, "orders")
+        orders.append(prepared.order)
+        orders.sort(key=lambda row: row["order_id"])
+        write_table(repository_root, "orders", orders)
+    signals = read_table(repository_root, "signals")
+    status = {"filled": "filled", "cancelled": "cancelled", "expired": "expired"}.get(
+        prepared.order["status"], "ordered"
+    )
+    for signal in signals:
+        if signal["signal_id"] == signal_id:
+            signal["status"] = status
     write_table(repository_root, "signals", signals)
-    return order_id, True, assessment
+    return order_id, prepared.created, prepared.assessment
 
 
 def _canonical_row_timestamp(

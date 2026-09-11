@@ -25,6 +25,7 @@ from papertrader.allocation import (
     plan_allocation,
     write_calibration_report,
 )
+from papertrader.buy_review import BuyReviewPending
 from papertrader.checkpoints import create_checkpoint
 from papertrader.command_audit import audit_context, canonical_command, record_command
 from papertrader.command_scope import command_allowed, normalized_command
@@ -264,6 +265,8 @@ def _parser() -> argparse.ArgumentParser:
     podcast_commands = podcast.add_subparsers(dest="podcast_command", required=True)
     podcast_enqueue = podcast_commands.add_parser("enqueue")
     podcast_enqueue.add_argument("--run-id", required=True)
+    podcast_retire = podcast_commands.add_parser("retire-automatic")
+    podcast_retire.add_argument("--apply", action="store_true")
     podcast_context = podcast_commands.add_parser("context")
     podcast_context_commands = podcast_context.add_subparsers(
         dest="podcast_context_command", required=True
@@ -422,6 +425,20 @@ def _parser() -> argparse.ArgumentParser:
     security_context.add_argument("--history-limit", type=int, default=2)
     assessment_get = research_commands.add_parser("assessment-get")
     assessment_get.add_argument("--assessment-id", required=True)
+    topic_record = research_commands.add_parser("topic-record")
+    topic_record.add_argument("--request", type=Path, required=True)
+    topic_record.add_argument(
+        "--track",
+        action="store_true",
+        help="explicit manual ongoing tracking; never inferred from source prose",
+    )
+    research_commands.add_parser("scope")
+    for name in ("catalyst-record", "forecast-register", "forecast-resolve"):
+        research_commands.add_parser(name).add_argument("--request", type=Path, required=True)
+    research_commands.add_parser("metrics")
+    hardening = research_commands.add_parser("migrate-hardening")
+    hardening.add_argument("--apply", action="store_true")
+    hardening.add_argument("--as-of")
     assessment_migrate = research_commands.add_parser("migrate-assessments")
     assessment_migrate.add_argument("--run-id", required=True)
     assessment_migrate.add_argument("--enqueue-limit", type=int, default=20)
@@ -756,6 +773,9 @@ def _run_queue_command(
         if not isinstance(inputs, dict):
             raise CanonicalValueError("request inputs must be an object")
         dependencies = tuple(str(value) for value in _sequence(raw, "depends_on"))
+        audit_parent = os.environ.get("PAPERTRADER_AUDIT_OPERATION_ID", "")
+        if audit_parent:
+            dependencies = tuple(dict.fromkeys((*dependencies, audit_parent)))
         source_refs = tuple(str(value) for value in _sequence(raw, "source_refs"))
         operation_id, created = enqueue_operation(
             repository_root,
@@ -1101,6 +1121,74 @@ def _run_structured_command(
 def _run_research_command(
     arguments: argparse.Namespace, repository_root: Path, settings: Settings
 ) -> int:
+    if arguments.research_command == "migrate-hardening":
+        from papertrader.hardening import migrate
+
+        migration_result = migrate(
+            repository_root,
+            settings,
+            now=(parse_timestamp(arguments.as_of) if arguments.as_of else None) or utc_now(),
+            apply=arguments.apply,
+        )
+        summary = {
+            key: value
+            for key, value in migration_result.items()
+            if key not in {"legacy_queue", "legacy_scope"}
+        }
+        summary.update(
+            legacy_operation_count=len(migration_result["legacy_queue"]),
+            legacy_entity_count=len(migration_result["legacy_scope"]),
+            applied=arguments.apply,
+        )
+        print(json.dumps(summary, sort_keys=True))
+        return 0
+    if arguments.research_command == "metrics":
+        from papertrader.findings import research_metrics
+
+        print(json.dumps(research_metrics(repository_root, as_of=utc_now()), sort_keys=True))
+        return 0
+    if arguments.research_command in {"catalyst-record", "forecast-register", "forecast-resolve"}:
+        from papertrader.research_calendar import (
+            record_catalyst,
+            register_forecast,
+            resolve_forecast,
+        )
+
+        request = _request_object(repository_root, arguments.request)
+        if arguments.research_command == "catalyst-record":
+            calendar_result = record_catalyst(repository_root, request, now=utc_now())
+        elif arguments.research_command == "forecast-register":
+            calendar_result = register_forecast(repository_root, request, now=utc_now())
+        else:
+            if set(request) != {"forecast_id", "occurred", "source_history_id"} or not isinstance(
+                request["occurred"], bool
+            ):
+                raise CanonicalValueError(
+                    "forecast resolution requires identity, boolean occurred, and "
+                    "immutable source observation"
+                )
+            calendar_result = resolve_forecast(
+                repository_root,
+                forecast_id=str(request["forecast_id"]),
+                occurred=request["occurred"],
+                source_history_id=str(request["source_history_id"]),
+                now=utc_now(),
+            )
+        print(json.dumps({"result": calendar_result}, sort_keys=True))
+        return 0
+    if arguments.research_command in {"scope", "topic-record"}:
+        from papertrader.governance import record_topic, topics
+
+        if arguments.research_command == "scope":
+            print(json.dumps(topics(repository_root), sort_keys=True))
+        else:
+            version_id = record_topic(
+                repository_root,
+                _request_object(repository_root, arguments.request),
+                manual_tracking=arguments.track,
+            )
+            print(json.dumps({"version_id": version_id}, sort_keys=True))
+        return 0
     if arguments.research_command == "security-context":
         from papertrader.research import security_research_context
 
@@ -1363,6 +1451,19 @@ def _dispatch_daily(arguments: argparse.Namespace, root: Path, settings: Setting
 
 
 def _dispatch_podcast(arguments: argparse.Namespace, root: Path, settings: Settings) -> int:
+    if arguments.podcast_command == "retire-automatic":
+        from papertrader.queue import retire_automatic_podcasts
+
+        print(
+            json.dumps(
+                {
+                    "apply": arguments.apply,
+                    "operation_ids": retire_automatic_podcasts(root, apply=arguments.apply),
+                },
+                sort_keys=True,
+            )
+        )
+        return 0
     if arguments.podcast_command == "translation":
         if arguments.podcast_translation_command == "enqueue":
             print(
@@ -1999,6 +2100,18 @@ def main(argv: Sequence[str] | None = None) -> int:
             )
         settings = load_settings(root, os.environ)
         exit_code = _dispatch(arguments, root, settings)
+    except BuyReviewPending as exc:
+        print(
+            json.dumps(
+                {
+                    "review_request_id": exc.review_request_id,
+                    "status": exc.disposition,
+                    "created": False,
+                },
+                sort_keys=True,
+            )
+        )
+        exit_code = 0
     except (
         CanonicalValueError,
         ConfigurationError,

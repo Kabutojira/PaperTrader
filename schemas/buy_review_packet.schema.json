@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Controller final purchase packet",
+  "type": "object", "additionalProperties": false,
+  "required": ["packet_version", "review_request_id", "material", "material_hash", "packet_hash", "created_at", "valid_until", "order", "references", "preflight", "portfolio_context"],
+  "properties": {
+    "packet_version": { "const": 1 },
+    "review_request_id": { "type": "string", "pattern": "^buy_review_[a-f0-9]{32}$" },
+    "material_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "packet_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "valid_until": { "type": "string", "format": "date-time" },
+    "order": { "type": "object" },
+    "references": { "type": "array", "minItems": 1, "items": { "type": "object" } },
+    "preflight": { "type": "object", "required": ["violations"], "properties": { "violations": { "type": "array", "maxItems": 0 } } },
+    "portfolio_context": { "type": "object" },
+    "material": {
+      "type": "object", "additionalProperties": false,
+      "required": ["policy", "intent", "legs", "state", "envelope"],
+      "properties": {
+        "policy": { "const": "final-buy-v1" },
+        "intent": { "type": "object" }, "state": { "type": "object" },
+        "legs": { "type": "array", "minItems": 1, "items": { "type": "object" } },
+        "envelope": { "type": "array", "minItems": 1, "items": {
+          "type": "object", "additionalProperties": false,
+          "required": ["leg_id", "quantity", "max_price", "max_unit_base"],
+          "properties": { "leg_id": { "type": "string" }, "quantity": { "type": "string" }, "max_price": { "type": "string" }, "max_unit_base": { "type": "string" } }
+        } }
+      }
+    }
+  }
+}

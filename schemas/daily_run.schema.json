@@ -57,6 +57,18 @@
         "podcast_status": {
           "enum": ["pending", "queued", "succeeded", "skipped", "blocked", "failed"]
         },
+        "podcast_skip_reason": { "const": "disabled_by_policy" },
+        "podcast_policy_transition": {
+          "type": "object", "additionalProperties": false,
+          "required": ["policy_version", "at", "previous_status", "operation_id", "result_path"],
+          "properties": {
+            "policy_version": { "const": "manual-podcast-v1" },
+            "at": { "type": "string", "format": "date-time" },
+            "previous_status": { "type": ["string", "null"] },
+            "operation_id": { "type": "string", "pattern": "^[0-9A-HJKMNP-TV-Z]{26}$" },
+            "result_path": { "type": "string", "pattern": "^data/runs/podcast-policy-v1/[0-9A-HJKMNP-TV-Z]{26}/agent_result.json$" }
+          }
+        },
         "podcast_operation_id": {
           "type": "string",
           "pattern": "^(?:|[0-9A-HJKMNP-TV-Z]{26})$"
@@ -84,6 +96,7 @@
             "fill_outcomes": true, "report_path": true, "snapshot_id": true,
             "status": { "enum": ["prepared", "succeeded", "degraded"] },
             "podcast_status": true, "podcast_operation_id": true,
+            "podcast_skip_reason": true, "podcast_policy_transition": true,
             "podcast_page_path": {
               "type": "string",
               "pattern": "^(?:|data/wiki/podcasts/daily-podcast_[0-9]{8}\\.md)$"
@@ -108,7 +121,7 @@
       "properties": {
         "operation_id": { "type": "string", "pattern": "^[0-9A-HJKMNP-TV-Z]{26}$" },
         "terminal_status": { "enum": ["succeeded", "skipped", "blocked", "failed"] },
-        "profile": { "enum": ["scout", "analyst", "deep"] },
+        "profile": { "enum": ["scout", "analyst", "deep", "final_review"] },
         "profile_policy_version": { "const": "profile-router-v1" },
         "route_reason": { "type": "string", "minLength": 1 },
         "effective_model": { "type": "string", "minLength": 1 },
@@ -116,7 +129,7 @@
         "maximum_turns": { "type": "integer", "minimum": 1 },
         "timeout_seconds": { "type": "integer", "minimum": 1 },
         "weighted_cost": { "$ref": "#/$defs/decimal" },
-        "mutation_policy": { "enum": ["triage_only", "routine_research", "full_research"] },
+        "mutation_policy": { "enum": ["triage_only", "routine_research", "full_research", "review_only"] },
         "auxiliary_models": {
           "type": "object",
           "additionalProperties": { "type": "string", "minLength": 1 }
@@ -170,6 +183,7 @@
             "operation_count": true, "model_budget_limit": true, "model_budget_used": true,
             "fill_outcomes": true, "report_path": true, "snapshot_id": true,
             "podcast_status": true, "podcast_operation_id": true,
+            "podcast_skip_reason": true, "podcast_policy_transition": true,
             "daily_cycle_id": { "$ref": "#/$defs/cycle_id" },
             "operating_date": { "type": "string", "format": "date" },
             "originating_github_run_id": { "type": "string", "minLength": 1 },
@@ -201,7 +215,8 @@
               "properties": {
                 "scout": { "$ref": "#/$defs/profile_limit" },
                 "analyst": { "$ref": "#/$defs/profile_limit" },
-                "deep": { "$ref": "#/$defs/profile_limit" }
+                "deep": { "$ref": "#/$defs/profile_limit" },
+                "final_review": { "$ref": "#/$defs/profile_limit" }
               }
             },
             "operations_attempted": {
@@ -250,7 +265,7 @@
         "maximum_turns": { "type": "integer", "minimum": 1 },
         "timeout_seconds": { "type": "integer", "minimum": 1 },
         "weighted_cost": { "$ref": "#/$defs/decimal" },
-        "mutation_policy": { "enum": ["triage_only", "routine_research", "full_research"] },
+        "mutation_policy": { "enum": ["triage_only", "routine_research", "full_research", "review_only"] },
         "policy_version": { "const": "profile-router-v1" }
       }
     }

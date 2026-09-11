@@ -1185,6 +1185,9 @@ def validate_integrity(
     # Imported lazily because canonical table access resolves contracts from this module.
     from papertrader.advice import validate_advice
     from papertrader.allocation import validate_allocation_state
+    from papertrader.buy_review import validate_review_state
+    from papertrader.evidence import validate_evidence_state
+    from papertrader.governance import validate_governance
     from papertrader.market_data import validate_fx_data
     from papertrader.orders import validate_order_state
     from papertrader.portfolio import reconcile_portfolio
@@ -1192,6 +1195,12 @@ def validate_integrity(
 
     errors.extend(validate_queue(repository_root))
     errors.extend(validate_order_state(repository_root))
+    errors.extend(validate_review_state(repository_root))
+    errors.extend(validate_governance(repository_root))
+    errors.extend(validate_evidence_state(repository_root))
+    from papertrader.hardening import validate_hardening
+
+    errors.extend(validate_hardening(repository_root))
     if settings is not None:
         errors.extend(validate_allocation_state(repository_root, settings))
         errors.extend(validate_fx_data(repository_root, settings))
