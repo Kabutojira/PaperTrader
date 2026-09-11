@@ -1,0 +1,78 @@
+{
+  "adversarial_review": {
+    "blind_spots": [
+      "No current-period primary issuer, regulator, or exchange source was incorporated into a research conclusion because the operation failed its validated-input prerequisite.",
+      "No conclusion about fundamentals, valuation, catalyst timing, exposure, allocation eligibility, or paper-trading action can be drawn from this failed operation."
+    ],
+    "contrary_evidence": [
+      "The candidate packet reports a 16.7% period decline and an entered RSI-oversold transition, but those reported values remain unvalidated for this operation because the payload lacks the required canonical references.",
+      "The latest retained Crocs primary-source observations predate the target market period and do not attribute the subsequent price move to a new operating event."
+    ],
+    "effect_on_conclusion": "The operation is failed before an opportunity, risk, or noise classification; no follow-up, claim, catalyst update, forecast, or research-state mutation is asserted.",
+    "falsification_condition": "A controller-validated payload containing the source-price hash, trigger measurements, and deduplication/cooldown evidence, together with current attributable primary evidence, would permit a bounded re-evaluation of the technical interpretation.",
+    "favored_hypothesis": "The RSI-oversold packet may represent a material technical transition for the immutable CROX security over 2026-08-12 through 2026-09-10.",
+    "inspection_refs": [
+      "data/operations/operations_TODO.csv:330",
+      "data/operations/payloads/01M26H85HR8JVXW2A2YBT7BZPF.json:1-18",
+      "data/wiki/inbox/market-security_c150f31c30afdb4a85f9-rsi_oversold-d0ea61389493.md:20-32",
+      "source_history_6170ab4e3ede5ff5672a",
+      "source_history_1dda9aaca66a7281c8c0",
+      "source_history_1494cf073f178b22d034"
+    ],
+    "reason": "The controller-supplied payload is incomplete for the routed operation even though the queue claim itself is live.",
+    "status": "partial",
+    "strongest_alternative": "The transition could be a temporary oversold condition rather than evidence of a fundamental deterioration or a valuation opportunity; an RSI threshold alone establishes neither cause nor expected return."
+  },
+  "catalyst_updates": [],
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader wiki lint --strict",
+    "papertrader --repository /__w/PaperTrader/PaperTrader allocation readiness --strict",
+    "papertrader --repository /__w/PaperTrader/PaperTrader schema validate",
+    "papertrader --repository /__w/PaperTrader/PaperTrader runtime-whitelist validate data/wiki/index.md src/papertrader/cli.py",
+    "papertrader --repository /__w/PaperTrader/PaperTrader allocation readiness --strict",
+    "papertrader --repository /__w/PaperTrader/PaperTrader schema validate",
+    "papertrader --repository /__w/PaperTrader/PaperTrader runtime-whitelist validate data/wiki/index.md src/papertrader/cli.py"
+  ],
+  "daily_report_items": [
+    "CROX RSI-oversold opportunity operation failed preflight because its live claim had an incomplete validated payload; no research classification or paper-trading state changed."
+  ],
+  "evidence": [
+    {
+      "claim": "The selected operation is running, claimed by daily-20260911T152217Z, and had a live lease through 2026-09-11T15:53:21Z when inspected at 2026-09-11T15:26:48Z.",
+      "source": "data/operations/operations_TODO.csv:330"
+    },
+    {
+      "claim": "The payload identifies the CROX security, RSI-oversold trigger, exact dates, and market-data timestamp, but omits trigger measurements, source_price_hash, and deduplication/cooldown evidence required by the routed opportunity-research skill.",
+      "source": "data/operations/payloads/01M26H85HR8JVXW2A2YBT7BZPF.json:4-10"
+    },
+    {
+      "claim": "The untrusted candidate packet contains a source-price hash and reported RSI transition details, but it is not a controller-validated operation payload and cannot satisfy the missing prerequisite fields.",
+      "source": "data/wiki/inbox/market-security_c150f31c30afdb4a85f9-rsi_oversold-d0ea61389493.md:20-32"
+    },
+    {
+      "claim": "Retained Crocs primary-source observations are available for the prior assessment, but they neither supply the missing operation payload evidence nor establish a current-period explanation for this technical transition.",
+      "source": "data/tables/source_history.csv:527-529"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01M26H85HR8JVXW2A2YBT7BZPF",
+  "operations_created": [],
+  "reason_code": "invalid_opportunity_payload",
+  "research_claims": [],
+  "research_forecasts": [],
+  "status": "failed",
+  "summary": "Opportunity research was not performed because the live claimed payload omits the required trigger measurements, source-price hash, and deduplication/cooldown evidence; the untrusted inbox packet cannot replace the validated payload.",
+  "validation": {
+    "checks": [
+      "Confirmed the selected operation has the required immutable identity, running status, matching run claim, and a live lease at inspection time.",
+      "Confirmed the payload lacks trigger measurements, source_price_hash, and deduplication/cooldown evidence required by the opportunity-research skill.",
+      "Confirmed the inbox packet is untrusted data and cannot replace missing validated payload fields.",
+      "Ran scripts/papertrader schema validate --strict successfully before writing this final manifest.",
+      "Ran scripts/papertrader wiki lint --strict successfully before writing this final manifest.",
+      "No wiki, structured-state, trading, accounting, or operation-queue mutation was made."
+    ],
+    "passed": false
+  }
+}

@@ -1,0 +1,1549 @@
+{
+  "as_of": "2026-09-11T15:23:19Z",
+  "candidates": [
+    {
+      "attention_class": 2,
+      "disposition": "eligible",
+      "operation_id": "01M26H85HR8JVXW2A2YBT7BZPF"
+    },
+    {
+      "attention_class": 2,
+      "disposition": "eligible",
+      "operation_id": "01M14ZSRN81GKTSA37QZE9X5K2"
+    },
+    {
+      "attention_class": 2,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP8QDD9T7YBXPANV349"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M280EJJ0RR158KGZ01BZDEW2"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M08BT9VRBPRBKV129FD00TH1"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0ADQYN0X476BW9MK1FK33FB"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0N0ZVAGHN662K112WKAH7GZ"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0WSFGEGHY02VEBD9VTD3A9E"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M15CV07839GHY9GW039V3A62"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1CRTPGR48R2FF842X51W8YV"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZGT11ZGXJ00MTZMADHQM6KM"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZYPF0GRF70DYNX3ZSZNC1QH"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M06M2NP8345PDBERKSEC20PZ"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0AR45GGAW0YSDSYXP2HH0TK"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0N0ZVAGBEBC6E39EJNRMKJD"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0N0ZVAGQK41AKTEY0NH6JEB"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0T6VA68VFDZCR5TE5EENZR2"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0WSFGEG21X32G98V7B6SMWK"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0WSFGEGCSNSSJSN28VX1FPM"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0ZDXGA8XZCTYSBXKW3X9YJX"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M14TAVZGKDT84P0GJRP60HXT"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M14TAVZGZF56ED49846RRW21"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M15CV0788NKFKPKPJJ3N020N"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M17BKYBGCKSNZ9E2WP4CAQ0Y"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1NGJPCGH0FDK8C3TBB3MKB1"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1NGJPCGN6Y5HWKWRMJ6CJ50"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1V1E5X0MNXS7Q1DN1N3PF7Y"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1YMB4ZRESQ0JZQYYH8775ZG"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1RAD7DKGWEKJM9QBHE"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1RB5WKXHXJSMMCV65G"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1RSK65CM2MZNN5PMRN"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1PSNHJR4TGPQHB1WZ6VJN12"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1V1EJK8HQWBCGTY355450ZS"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1R1MKMERNFA534FQS4"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1R7SYJCM7PKYAMM79A"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1RHB1D975SPB2FGAX2"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1RRE5S70HF497BD074"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP82XKJ1QAQT0QF67J0"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP85QQRTG2PEZHA5S5E"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP88012JTDTYN41ATBT"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP8C9074WCKX8WYP6D7"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP8H869G9KC89W482K6"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1V1ENH079N3H8504P53WP8A"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1V1EQFG9EX56SR892Q3BHGF"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1V1F6487BZG6114432903G2"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1V1F82RFHJKRYBWKB3G7BX5"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1V1FA18Q6NH3BYM9CGZER95"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1V1HX1GP5AC5JMCKRJ1XMN1"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1V1HZ0038RPN2ZWXFR4VMKZ"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZVHDGV04PCAYPSK8DJ9P82A"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0DYDVAG954M4ZQ6A4D5E4A8"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0ZDXGA8QG1JK7Y8105KEC0A"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1CRTPGRPX0W0BZK4CJDNB4H"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1PSNHJR4EEMCWC4V2Z4VQWM"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1PSNHJRECHF33Q4SEXPFP66"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1PSNHJRQKWDPPS7NJ72XD7R"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1PSNHJRQRAHS4RZ7DAESFHE"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1PSNHJRT5JYZ9RMGMZ7A2VC"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1RDTZERFQW5EZ33ZPSA7MED"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1RDTZERK7Z09TZQM62XRKPK"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1RDTZERMZDS3G3XB2K5XK5S"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1RDTZERRXWCVR7TMPQP75E8"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1RDTZERYCZNCS3DWA67QPSR"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1YMB4ZREYW6DEE41H69RD85"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1YMB4ZRM7CHXNKM1D9B9PZ5"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2149D808EFRPGBY48H58YED"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1R1Q7T2B0GPZTR2254"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1R5FM799D6TEY5DHSJ"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1R79SAXF3J6BNTZJSY"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1R7P907MP7R65921ZN"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1R804NG13WTBVZVXWW"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1R8C9Y3E68QMHWW95H"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1RA2E587P91YQM6K08"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1RJ4P4N09DFP3XCPNC"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1RRCWCQ2X7RX4NEHBE"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1RSTP3FPEPESATB1YZ"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1RVRV34FQXAD4WVF0H"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1RW0A54KHF7MRW8QF3"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1RW2GRFXEAANT9NBKH"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1RWPVAQB96D842Q3ZG"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1RZHYG6YGQ0ZVNF3CX"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1RZJBFA3M9HE0DR6M1"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP83RS9FX8APNQRN1VR"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP85QAVHZ6S2K06HMYJ"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP87430QRRSC6BWN2T3"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP883Z93S71Z40BEG5Z"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP89FDX8B1WJ5SQR73X"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP89KK0E5WJFPVZQD48"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP89ZBM4BRJR1N4EH3N"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP8BRRKV608Q1KFRASZ"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP8D3TEEGDCK68ZMF8M"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP8FXGDY289XWJAT2AC"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP8J3BFCG0C5KPDF2C7"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP8JBEQABYRK7V5JXGN"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP8KXP81AVR7WQQNMYF"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP8NA8HD84K1K72N14N"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP8NC6CB1C1DKRJ9VXT"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP8QJXVT05VCNCKYT7D"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP8RDT52XCAFDPHPXV9"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M26H85HR477MSBPXCEBVESAK"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M26H85HR6GFPXNMCX9H82602"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M26H85HR7G5SWGP85CTSBAYW"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M26H85HR7R5CN39JY9RTPR6N"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M26H85HR87JWFZBV2JGMXBY6"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M26H85HR8Q9ZDE0B08JSP5S8"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M26H85HRF5WSYGTKW7W8Q77H"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M26H85HRP2P0EFETYP27Y6CB"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M26H85HRTG307X9FHG898GBD"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1DVS7FR96FB1KT36XR99DQA"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1NHP278D8N1V0X1RW6R6M4Z"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1NJT0KRCKCSEN3SKED2A98T"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M27HD1C8J6FPVKYP168D5JJF"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KYQWZK5R5CRMBVHMJ7DGPRR1"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KYQXEQHR2TX5SYSZ78PC57FJ"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KYQYVK38FSPHJ5XKB7T0WXD9"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KYQZRTMR79EG6XT5BPZGNSJY"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KYR14MZRSZTXSDYFC2YZWCAS"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KYR1GDY8T9RTDS2G7WCA8V80"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KYR2CW38HRY2WSCX0MSTYT44"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KYRQ18X8EDCTPPRX31ZJ6K96"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KYRQM6C8FMFJ2C9DPY0W76S0"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KYYGXXBG0NQ4A5YSFFBGWK2B"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZ33NA98BREE07T4TV1ZZGJM"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZ3D3TYG07K1VA09Y61YXPCH"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZ9BRZ9009HEE5TJTRXK6QQF"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZ9Q96FGCGYB9CCA48432BJX"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZBGASDRXT12CV3D8J79YQ1C"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZBK45S0RSQ9JD8VQDDPGJVW"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZC3ZBP0MSA1D6GR3D2NDW7B"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZC4JHY8K5V584C7AF2K548J"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZC6GFCGAK5MV2ZGPDFNBCAS"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZGK9Y689X6WK5CK91YRGM4R"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZK3Q3ZRPMJ9W99SZPX3S14M"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZM7A388FM6JZ48NYZZPF7JF"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZMB0N6G33Q5MAHKWB5NGBZP"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZN91EA8SSN9HCY8R8EJTTCY"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZQXN8PR59A3YY58CX2NGYH6"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZRHA2S0PPNJKSYR78HHHX8T"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZSN7E2GDTNSAM9Z0TVKYTS0"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZSTTSARF7P97T6Z28ZE6PVQ"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZSTTTA0NQF896HWHBDC8R5J"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZVVAM9RXKXERGKQA46KRTE1"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0B8X818VTAGJR84VY4FKNN4"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0CYMREGK0MA8BGGVPK92EMT"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0DYXBDGT3M3T55PNH8YX0VG"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0DYXH905RXAH2C23MFA704Y"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0DZGFQ8AWJ5GYPVG88HQDPS"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0E02FWRTKEGFP0E2BQWQE8T"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0E02PQG736G3882Z3K56YZS"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0E59QER9TZKTJNJMMJV4YYR"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0E5B7A0ZT3FCASE941CRKBG"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0F34R08CY644E0K9CY8VYH8"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0F34WWGH895CQ4XFSFWTXC7"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0F46J18T30YQ0CN66NQQA34"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0F46KZRQCRXNP3DRQSKXAXB"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0F773W8YJV2DXQNCZ7A1E8D"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0F7V8D8MTRZGEVET3HTD4AT"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0JG3F6G4PDPRZBBV2GG5E08"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0JGWFZGXGX44YD7R91ANFYS"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0JGWHY0KZ36QNCR2WXQ35FS"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0K6V97R0NCNXKN173506E1K"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0K7FAV0EYBC68Z0FHX5BZ6E"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0K7ZW4GH4H8W57D6DMV16KR"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0K7ZY30PSS34XKNCJP9MZ38"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0K8Z81G93S2C4Y3MZAR4G0Z"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0N1HJPRKJZV6GFXFPEYKP03"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0N24XV8WPTH5KAKV9VGZSBZ"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0WSW9M832JM6B9QW2BWGRZR"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0ZECXFGEBC6RZMDVGPCPNTZ"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0ZED780ZGJJGRW4GPSC4T3S"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M153S0XRCTK70GSPQ5KTNVB5"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M154B8X8QNX8SK1DJVF0E7CG"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M154XMSRBDR4DW1RZ63PPYPN"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1CXAPXGPZJN42X158FFQSJ7"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1CZJQKG2FYENT1RD901TD3S"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1CZJYE81QWQEDYRGW5DGENW"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1CZK77GZ7WTZKV878JPFSHV"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1CZKD3083X4FHD9J1CJ52QS"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1D0AFC04YGEQKEND1Y52F03"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1D0ZZV84HVMXVVTTN6TT223"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1D1YZ20QNHRKW86E9PW5Q4C"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1D2NMMRCMXJ32CB2BYNSJWE"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1D2NPK85YZW0MP645KGB7GP"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1DVSXYGGYDYDQN7JDHAZKFC"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1H9BSEG4PXDSJJGFZ62MNX9"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1KMKR4GAGEHKCHDEA8ANNMQ"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1NHP550CKF9A4TA65EPXG2C"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1NHP73GXF8NYYVG2YZY6HHE"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1NHPA1839K6TH27CG2RSZJ8"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1SAEEC8FJYDHZM3P4EZ8NJV"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1V3GB30E3AENYGXS01FNXYF"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1VGKTXGZQ7NTEYEAY8JQ5FX"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1VHND4GN9XKPA4EB318EC55"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1VHNPX03MGG107X9NH6SPC0"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1VHNZP81EB002GJVP685MJE"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1VJKHZG5F4FQJWETGQ7TKZY"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1VJKSSG7HT2WGAMRRQT61KS"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1VKDMY8EQREY7T6KNM71VFD"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M27GSY1RZN96JSCSTFYQ8TJX"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZVHDGV0RRFAD0RMP4ZQ9C7N"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZVTZDX045M9BSBEYFK5410K"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M059AZ308VQ9MM0F6GKDKTNF"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0A70B7R57SNMFK4D40XP01R"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0F2AG5805GDB22DG9DEY52B"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0N0ZVAGY3W2WYYXQ9XP2QWJ"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0QKEXGRF51NS1KWFK827A87"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0ZDXGA8R995575WY2FW1M07"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1CRTPGRX3TDMC4DGWBH4S7D"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1RDTZERSJ1XBAHHTAMNCB8S"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1RXA0QSCX1B1JRQG2Z"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KYVJ62SRTMQH1020TSZKFS9T"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KYY98DWGR67KXCBSSSD496KC"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZ8BGD98326NJPSVE6EHWJTV"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZ8BGD985Q85HTC8GAFTZZSX"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZ9JKJCRY0G3AX08CFSYQGTH"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZ9ZJVERRNDDKRQSV3CXZ8HA"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZ9ZJVERS0B7V277DGEJJ8J1"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZEFXEC84Z8C5ZF155S1H9K0"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZEFXEC8636W2C60C8AZZDBB"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZEFXEC8JAGTYCVXEV2W62J5"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZEFXEC8KTF5AD8J2VYCJ9PG"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZEFXEC8M0CH4FYD1ZHN9AA7"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZGGJ4M0HCXGWR7Z9E9MEPZ5"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZGJBGJ06NJ3FSNFQDB30JB2"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZGJBGJ0RSQX6KWXTSDC7QYH"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01KZGT11ZG3W21YWFCHQEGMTC9"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0CME77GF19X03EW9HT2BF8Z"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0E4B9TGBVXA590WV8KRWTT7"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0FWY80RH34WZ9T4RDHGEJ97"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0JFA8J057KYJGD2FBM6RGD2"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M0N0ZVAGT2YW39YGHGZQE0AE"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1CRTPGRMMABEAJ85M536ZHM"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1HD8TDRBRA2TRN90WN2DAN6"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1HD8TDRG1765H2N8V8G3AV1"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1PSNHJRCNMFPCZA8M0VP1D5"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1PSNHJRDNFKRCBGHWAS2434"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1PSNHJRE4GT9SHJK017WG5K"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1PSNHJRH4K5FS115VB3XYC7"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1PSNHJRJ743ECFBBC1MVCNJ"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1PSNHJRJY3KTJRR3HNE5VCA"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1PSNHJRKX10MM67B1KPAGTE"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1PSNHJRNE0W205JJ273VPH3"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1PSNHJRTR0BZPWD36EDY5WJ"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1PSNHJRWW3PS7Z1SJRAFFKF"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1RDTZERBCSJS7DRA83P2ZM8"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1RDTZERFTRWMX45S3BRVDDA"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1RDTZERQJRCP2DEK2WPFDA8"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1RDTZERWN42NHW1Z317HSSH"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1SK15CR37NMTSKV7ENQA4DZ"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1SK15CRRH9KQ1FHBH3YZ332"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1V3RQMR4WN0NX3T3ZFCB0Z8"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1VWRW4G0Z8MKWD1FNRSC48W"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1VWRW4GPWGP1RSC457RDC15"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1VWRW4GR3Y8ZXR8YETQHAYS"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1VWRW4GTQ49SACWP9Y36XHF"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1YMB4ZR9XHYWHAM7FJRVJNR"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1YMB4ZRDQEMAQP5HKTWNAYD"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M1YMB4ZRH91K61JH2KXNGER6"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2149D80MXJZYTYRE0Z4S09V"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1R09H2RBCM6R80BKR5"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1R47S8DPXT9ZRABF0H"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1R4TR424N5GB2NK787"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1R982EE8SDRJ941BA4"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1RCGRR4BZ1NKJQE7D7"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1RFE6SBCVRJ1JNV8A2"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1RFWJW0CWTZTM6KZ62"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1RGECFMP3VCR8R9K5X"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1RJQGPZ70EXD5GVFB7"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1RM61TTBSSTN93KDEA"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1RQJV46EMCXA2QX75S"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1RQMG3YCQC8AENWXVG"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1RS39M8TMM0A0Y1670"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1RVATH97666XKN050K"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1RX4AV5ZD8S8Y06AZQ"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M23PKS1RYS687MMZVWMNYCJ6"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP86FH7DTBP8MMRHZ0W"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP877AHZ5AF9J7PPGBQ"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP88V07ZD4HYMWS2RMP"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP8AVJ9KA3K8KCA4ADV"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP8BK290K26Q6WB78HS"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP8ERS8PSA75Q4JH324"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP8H7MMCNPVS6QY5E7A"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP8HY1NQ5Z2MX06MW9F"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP8JS53EN4T2QDVSSY5"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP8K7V7BGM5AEATB3FS"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP8MN3G6Q2N0JAJEYBP"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP8MRR66T8WZ826QD2W"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP8QG4YPSVCPA8FP3PW"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP8RBJVVBQCDRHHER9C"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP8RZPNGMKP87VJRRF8"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP8SBV53S9PC5T6ANDR"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP8V0B0R6P7HVDTB5XG"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP8X9ZGES9F9785NTVR"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M2686XP8Z69XY92VMVSQR60Z"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M26H85HR4V9H78YQDC13VPB4"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M26H85HR77FG1418Q7YC54M3"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M26H85HR7KNM8C4BSBTXPM71"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M26H85HR7S0H4QJ33059DMKA"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M26H85HR8N9SW7G7MEHPQ9GC"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M26H85HRDDRGV9QSXTBJ4QBG"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M26H85HRDQKSS7QE23BTJPX5"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M26H85HREGW45YV57B80R4J6"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M26H85HRJVBQR659C7ZHW3MH"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M26H85HRNQP574JF5PRY5B6G"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M26H85HRPKDH3F452MW57J14"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M26H85HRS1WT5BKTE3S057NV"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M26H85HRXGXFGNZ5N7PYKJP4"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
+      "operation_id": "01M28D8YCR8Y7KTJ2997XCAJMZ"
+    }
+  ],
+  "policy_version": 1,
+  "remaining_operations": 10,
+  "remaining_weighted_budget": "100",
+  "selected_operation_id": "01M26H85HR8JVXW2A2YBT7BZPF"
+}

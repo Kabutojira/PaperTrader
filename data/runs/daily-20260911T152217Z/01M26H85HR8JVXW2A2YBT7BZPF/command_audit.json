@@ -1,0 +1,150 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "schema",
+        "validate",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader schema validate --strict",
+      "completed_at": "2026-09-11T15:27:20Z",
+      "exit_code": 0,
+      "profile": "analyst",
+      "request": null,
+      "started_at": "2026-09-11T15:27:19Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-09-11T15:27:24Z",
+      "exit_code": 0,
+      "profile": "analyst",
+      "request": null,
+      "started_at": "2026-09-11T15:27:22Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "--repository",
+        "/__w/PaperTrader/PaperTrader",
+        "allocation",
+        "readiness",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader --repository /__w/PaperTrader/PaperTrader allocation readiness --strict",
+      "completed_at": "2026-09-11T15:29:02Z",
+      "exit_code": 1,
+      "profile": "analyst",
+      "request": null,
+      "started_at": "2026-09-11T15:29:01Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "--repository",
+        "/__w/PaperTrader/PaperTrader",
+        "schema",
+        "validate"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader --repository /__w/PaperTrader/PaperTrader schema validate",
+      "completed_at": "2026-09-11T15:29:03Z",
+      "exit_code": 0,
+      "profile": "analyst",
+      "request": null,
+      "started_at": "2026-09-11T15:29:02Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "--repository",
+        "/__w/PaperTrader/PaperTrader",
+        "runtime-whitelist",
+        "validate",
+        "data/wiki/index.md",
+        "src/papertrader/cli.py"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader --repository /__w/PaperTrader/PaperTrader runtime-whitelist validate data/wiki/index.md src/papertrader/cli.py",
+      "completed_at": "2026-09-11T15:29:04Z",
+      "exit_code": 1,
+      "profile": "analyst",
+      "request": null,
+      "started_at": "2026-09-11T15:29:03Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "--repository",
+        "/__w/PaperTrader/PaperTrader",
+        "allocation",
+        "readiness",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader --repository /__w/PaperTrader/PaperTrader allocation readiness --strict",
+      "completed_at": "2026-09-11T15:30:55Z",
+      "exit_code": 1,
+      "profile": "analyst",
+      "request": null,
+      "started_at": "2026-09-11T15:30:54Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "--repository",
+        "/__w/PaperTrader/PaperTrader",
+        "schema",
+        "validate"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader --repository /__w/PaperTrader/PaperTrader schema validate",
+      "completed_at": "2026-09-11T15:30:56Z",
+      "exit_code": 0,
+      "profile": "analyst",
+      "request": null,
+      "started_at": "2026-09-11T15:30:55Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "--repository",
+        "/__w/PaperTrader/PaperTrader",
+        "runtime-whitelist",
+        "validate",
+        "data/wiki/index.md",
+        "src/papertrader/cli.py"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader --repository /__w/PaperTrader/PaperTrader runtime-whitelist validate data/wiki/index.md src/papertrader/cli.py",
+      "completed_at": "2026-09-11T15:30:57Z",
+      "exit_code": 1,
+      "profile": "analyst",
+      "request": null,
+      "started_at": "2026-09-11T15:30:57Z"
+    }
+  ],
+  "operation_id": "01M26H85HR8JVXW2A2YBT7BZPF",
+  "profile": "analyst",
+  "profile_policy_version": "profile-router-v1",
+  "route_reason": "routine_research_or_long_form_synthesis",
+  "run_id": "daily-20260911T152217Z"
+}
