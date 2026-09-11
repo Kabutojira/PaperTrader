@@ -27,3 +27,4 @@ Generated from `data/tables/issues.csv`.
 | publication_only | error | **issue_ee91c351d77e2ce1227d** — Hermes operation validation failed: 01M1VYR8ERXDZPERJWKM7ENAEJ | 2026-09-06T18:13:03Z | delivery | 01M1VYR8ERXDZPERJWKM7ENAEJ |
 | affects_candidate | error | **issue_f50e95ee4d3a5cc05618** — ASML assessment rejected after security row update | 2026-08-19T20:28:51Z | controller | 01M0DB44Q8R22ED9WQC5ZEG526 |
 | affects_candidate | error | **issue_ff655356efa9b9e1d1a8** — Hermes operation validation failed: 01KZPWPFS0QGMTYP3PD0TRQH6K | 2026-08-18T11:39:09Z | controller | 01KZPWPFS0QGMTYP3PD0TRQH6K |
+| affects_candidate | warning | **issue_791af1f27b53701c8794** — Daily preparation degraded: security_8d11e65cd0de084ee461 | 2026-09-11T05:40:24Z | deterministic-controller |  |

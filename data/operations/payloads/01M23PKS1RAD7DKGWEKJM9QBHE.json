@@ -2,21 +2,47 @@
   "entity_id": "security_47a0b06f6c6c478d7c1e",
   "entity_type": "security",
   "inputs": {
+    "assessment_state": "2026-08-18T23:19:57Z",
+    "maintenance_mode": "refresh",
     "market_data_as_of": "2026-09-09T18:24:19Z",
     "market_data_date": "2026-09-08",
     "period_end": "2026-09-08",
     "period_start": "2026-08-10",
+    "research_page": "data/wiki/securities/security_47a0b06f6c6c478d7c1e.md",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_47a0b06f6c6c478d7c1e:bedefd2d28035097007f:2026-09-08",
+        "observed_at": "2026-09-09T18:24:19Z",
+        "prompt": "Research security_47a0b06f6c6c478d7c1e with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_47a0b06f6c6c478d7c1e-macd_cross_above_signal-58a9b41602e9.md"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_47a0b06f6c6c478d7c1e:allocation-maintenance:2026-08-18T23:19:57Z",
+        "observed_at": "2026-09-11T05:40:24Z",
+        "prompt": "Revalidate security_47a0b06f6c6c478d7c1e with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_nbis_q2_2026_financials",
+          "source_nbis_q2_2026_results"
+        ]
+      }
+    ],
     "security_id": "security_47a0b06f6c6c478d7c1e",
     "source_price_hash": "eb329503ae36b91eb3c2a1d8cbefa6c1df15ab02d814a8a155ab4a5fde8b6c22",
     "trigger_types": [
       "macd_cross_above_signal"
     ]
   },
-  "objective": "Research security_47a0b06f6c6c478d7c1e with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
+  "objective": "Research security_47a0b06f6c6c478d7c1e with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act. | Additional cause: Revalidate security_47a0b06f6c6c478d7c1e with current primary evidence and write one comparable allocation assessment.",
   "operation_id": "01M23PKS1RAD7DKGWEKJM9QBHE",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
-    "data/wiki/inbox/market-security_47a0b06f6c6c478d7c1e-macd_cross_above_signal-58a9b41602e9.md"
+    "data/wiki/inbox/market-security_47a0b06f6c6c478d7c1e-macd_cross_above_signal-58a9b41602e9.md",
+    "source_nbis_q2_2026_financials",
+    "source_nbis_q2_2026_results"
   ]
 }

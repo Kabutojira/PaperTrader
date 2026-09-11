@@ -4,16 +4,16 @@ type: system-status
 status: maintained
 tags:
   - system-status
-created: "2026-09-10"
-updated: "2026-09-10"
+created: "2026-09-11"
+updated: "2026-09-11"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_f4e515cd5b75b5628f1a"
-as_of: "2026-09-10T21:32:37Z"
+snapshot_id: "decision_5c1cf2c8b3bfd29809e8"
+as_of: "2026-09-11T05:40:32Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-09-10T21:32:37Z`
+**As of:** `2026-09-11T05:40:32Z`
 **Investment data:** Portfolio state safe — research gaps remain
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -23,8 +23,8 @@ Publication validation confirms that this generated artifact is internally consi
 
 ## Current investment health
 
-- Assessments: 52/83
-- Fresh-evidence assessments: 48/83
+- Assessments: 50/83
+- Fresh-evidence assessments: 46/83
 - Relationship reviews: 20/83
 - Accepted relationships: 19
 - Market success/failure: 91/0
@@ -41,7 +41,7 @@ Publication validation confirms that this generated artifact is internally consi
 
 ## Sequential research backlog
 
-- Research backlog: 361
+- Research backlog: 348
 
 ## Publication health
 
@@ -50,10 +50,10 @@ Publication validation confirms that this generated artifact is internally consi
 
 ## Current issues by investment impact
 
-Current unresolved issues: **23**.
+Current unresolved issues: **24**.
 Resolved and superseded issues remain in the canonical audit but are not current health.
 
-### Affects Candidate (17)
+### Affects Candidate (18)
 
 - Error **Hermes operation validation failed: Security research for PL on 2026-09-10** — agent result schema: 'incomparable' is not one of \['single\_value', 'insufficient\_comparability', 'insufficient\_history', 'recorded source', 'not\_decision\_relevant', 'no\_page\_change'\]; post-run integrity: agent result data/runs/Daily report for 2026-09-10/Security research for PL on 2026-09-10/agent\_result.json: 'incomparable' is not one of \['single\_value', 'insufficient\_comparability', 'insufficient\_history', 'recorded source', 'not\_decision\_relevant', 'no\_page\_change'\]
 - Error **ETN — Eaton Corporation plc: Hermes operation validation failed: Quick check research for ETN on 2026-08-11** — agent result schema: 'cd57fc97df50efa0657881b253fc96d4467881b253fc96d4467881b253fc96d446' does not match '^\[a-f0-9\]{64}$'; commands\_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment; post-run integrity: agent result data/runs/Daily report for 2026-08-11/Quick check research for ETN on 2026-08-11/agent\_result.json: 'cd57fc97df50efa0657881b253fc96d4467881b253fc96d4467881b253fc96d446' does not match '^\[a-f0-9\]{64}$'
@@ -72,6 +72,7 @@ Resolved and superseded issues remain in the canonical audit but are not current
 - Error **Hermes operation validation failed: Quick check research for TWST on 2026-08-05** — agent result was written before completed change: data/runs/Daily report for 2026-08-12/Quick check research for TWST on 2026-08-05/command\_audit.json; commands\_run does not exactly match deterministic CLI audit receipts
 - Error **ASML — ASML Holding N.V.: ASML assessment rejected after security row update** — The retry operation refreshed the ASML page and security row to the 2026-08-19 USD 1,751.73 mark, but the schema-v2 assessment request was rejected before assessment state changed because valuation\_template\_rationale is a required field and was omitted. The routed-operation no-retry rule forbids correcting and invoking a second assessment request after this rejection. The canonical assessment therefore remains the prior unsupported version, the prepared relationship and idea follow-up requests w
 - Error **WTI — W&amp;T Offshore, Inc.: Hermes operation validation failed: Quick check research for WTI on 2026-08-18** — completed security research requires this run's comparable assessment
+- Warning **LMND — Lemonade, Inc.: Daily preparation degraded: LMND** — LMND: price cache is empty
 
 ### Publication Only (6)
 

@@ -1015,3 +1015,13 @@ in allocation history. Reject conflicting historical caps, changed risk budgets,
 without matching provenance. Current strategy, signal, order, and fill gates still require the
 current allocation intent. Regression coverage reproduces market failure followed by recovery and
 proves that the historical strategy cannot create a signal against the replacement plan.
+
+## Follow-up — Add Lemonade to AI-native financial operating systems — Complete (2026-09-11)
+
+Imported Lemonade, Inc. common stock under immutable `LMND`/`XNYS`/`USD` identity using the
+issuer's SEC-filed 2025 Form 10-K as the identity source. Queued one priority-100 refresh of the
+existing AI-native SMB financial operating-systems idea to generalize its mechanism to regulated
+insurance workflows and evaluate Lemonade as a candidate without pre-accepting the relationship.
+Published one deterministic offline checkpoint so the next GitHub daily run begins from current
+canonical state; its only preparation error is the expected absence of an LMND price cache before
+the network-enabled daily market refresh.

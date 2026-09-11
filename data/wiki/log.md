@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-08-08"
-updated: "2026-09-10"
+updated: "2026-09-11"
 provenance: repository-contract
 ---
 
@@ -3876,3 +3876,9 @@ boundary after the combined log crossed the configured 5,000-line threshold.
   Medium confidence, holding-company concentration, private marks, governance, capital-allocation
   transmission and weak momentum continue to prevent conviction treatment.
 - Files updated: `strategies/strategy_8caa208dfc702a2584a7.md`, `log.md`.
+
+## 2026-09-11
+
+- Published investor decision snapshot `decision_5c1cf2c8b3bfd29809e8`.
+
+- Generated canonical [[daily-reports/daily-report_20260911]] for run `daily-20260911T054017Z`.

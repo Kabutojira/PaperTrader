@@ -4,21 +4,21 @@ type: model-portfolio
 status: maintained
 tags:
   - model-portfolio
-created: "2026-09-10"
-updated: "2026-09-10"
+created: "2026-09-11"
+updated: "2026-09-11"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_f4e515cd5b75b5628f1a"
-as_of: "2026-09-10T21:32:37Z"
+snapshot_id: "decision_5c1cf2c8b3bfd29809e8"
+as_of: "2026-09-11T05:40:32Z"
 ---
 
 # Model portfolio
 
-**As of `2026-09-10T21:32:37Z`**
+**As of `2026-09-11T05:40:32Z`**
 
 Pending targets are projections; only deterministic fills change the current portfolio.
 
 <div class="model-portfolio-grid" id="model-portfolio-grid">
-<article class="portfolio-card" data-scalable="false" data-target-weight="97.172267" data-mark="1" data-fx="1" data-mark-currency="" data-market-data-as-of="2026-09-10T21:32:37Z" data-ticker="CASH" data-company="Cash">
+<article class="portfolio-card" data-scalable="false" data-target-weight="97.172267" data-mark="1" data-fx="1" data-mark-currency="" data-market-data-as-of="2026-09-11T05:40:32Z" data-ticker="CASH" data-company="Cash">
 <h3>Cash</h3>
 <dl class="portfolio-card-values">
 <div><dt>Current</dt><dd>97.172267%</dd></div>
@@ -29,8 +29,8 @@ Pending targets are projections; only deterministic fills change the current por
 <div><dt>Research action</dt><dd>Hold</dd></div>
 <div><dt>Reference mark</dt><dd>1 </dd></div>
 <div><dt>Base mark</dt><dd>1 EUR</dd></div>
-<div><dt>FX to EUR</dt><dd>1 · 2026-09-10T21:32:37Z</dd></div>
-<div><dt>As of</dt><dd>2026-09-10T21:32:37Z</dd></div>
+<div><dt>FX to EUR</dt><dd>1 · 2026-09-11T05:40:32Z</dd></div>
+<div><dt>As of</dt><dd>2026-09-11T05:40:32Z</dd></div>
 </dl>
 
 </article>
@@ -45,7 +45,7 @@ Pending targets are projections; only deterministic fills change the current por
 <div><dt>Research action</dt><dd>Initiate</dd></div>
 <div><dt>Reference mark</dt><dd>35.29499816894531 EUR</dd></div>
 <div><dt>Base mark</dt><dd>35.29499816894531 EUR</dd></div>
-<div><dt>FX to EUR</dt><dd>1 · 2026-09-10T21:32:37Z</dd></div>
+<div><dt>FX to EUR</dt><dd>1 · 2026-09-11T05:40:32Z</dd></div>
 <div><dt>As of</dt><dd>2026-09-10T15:30:00Z</dd></div>
 </dl>
 <p><a href="strategies/strategy_8caa208dfc702a2584a7">Strategy research</a></p>

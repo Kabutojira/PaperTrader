@@ -2,17 +2,20 @@
   "entity_id": "security_97f38b2cb2d5ef127f5a",
   "entity_type": "security",
   "inputs": {
+    "assessment_state": "2026-09-10T20:55:26Z",
     "baseline_operation_id": "01M06M2NP8WCAE6T92D639MR4R",
     "changed_gate": "q2_fy2027_operating_cash_capex_contract_visibility_and_dilution_evidence_requires_full_valuation_refresh",
     "current_market_data_as_of": "2026-09-10T20:48:19Z",
     "current_market_data_date": "2026-09-10",
     "current_source_price_hash": "c22c2908c629572d35c9c6476ee021ee0ffb639c018a134c540d05d28af0d2da",
     "full_research_requested": true,
+    "maintenance_mode": "refresh",
     "market_data_as_of": "2026-09-10T20:48:19Z",
     "market_data_date": "2026-09-10",
     "period_end": "2026-09-10",
     "period_start": "2026-08-12",
     "quick_check_operation_id": "01M1RDTZER38XSKKZ1AVRCJ30D",
+    "research_page": "data/wiki/securities/security_97f38b2cb2d5ef127f5a.md",
     "research_reasons": [
       {
         "cause": "rsi_oversold_strengthened_after_material_period_decline",
@@ -25,6 +28,17 @@
       {
         "cause": "explicit_full_research_requested_for_comparable_allocation_assessment",
         "source_ref": "data/operations/payloads/01M1RDTZER38XSKKZ1AVRCJ30D.json"
+      },
+      {
+        "dedupe_key": "security_research:security_97f38b2cb2d5ef127f5a:allocation-maintenance:2026-09-10T20:55:26Z",
+        "observed_at": "2026-09-11T05:40:24Z",
+        "prompt": "Revalidate security_97f38b2cb2d5ef127f5a with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_pl_q2_fy2027_10q",
+          "source_pl_q2_fy2027_results_sec",
+          "source_pl_sec_submissions_20260910"
+        ]
       }
     ],
     "security_id": "security_97f38b2cb2d5ef127f5a",
@@ -33,7 +47,7 @@
       "rsi_oversold"
     ]
   },
-  "objective": "Fully reassess and revalue Planet Labs after Q2 fiscal 2027 evidence changed revenue, cash flow, capex, contract visibility, liquidity, and diluted-share assumptions while the RSI-oversold decline strengthened through September 10.",
+  "objective": "Fully reassess and revalue Planet Labs after Q2 fiscal 2027 evidence changed revenue, cash flow, capex, contract visibility, liquidity, and diluted-share assumptions while the RSI-oversold decline strengthened through September 10. | Additional cause: Revalidate security_97f38b2cb2d5ef127f5a with current primary evidence and write one comparable allocation assessment.",
   "operation_id": "01M26HW848ZZWZAZTZSYXFB7J2",
   "operation_type": "security_research",
   "payload_version": 1,

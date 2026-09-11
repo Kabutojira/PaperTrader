@@ -1,0 +1,17 @@
+{
+  "entity_id": "idea_ai_native_smb_financial_operating_systems",
+  "entity_type": "idea",
+  "inputs": {
+    "idea_id": "idea_ai_native_smb_financial_operating_systems",
+    "security_id": "security_8d11e65cd0de084ee461",
+    "seed_claim": "Generalize AI-native SMB financial operating systems beyond accounting, payroll, tax, banking, commerce, and payments to include insurance companies whose AI-native systems automate underwriting, policy administration, claims, fraud controls, compliance, and customer service; evaluate Lemonade, Inc. as a candidate exposure without assuming the relationship is accepted."
+  },
+  "objective": "Refresh the AI-native SMB financial operating-systems idea to include regulated insurance operating systems and evaluate Lemonade as a candidate.",
+  "operation_id": "01M27FJY08MA62GR1QPRYGZ6Q1",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_ai_native_smb_financial_operating_systems.md",
+    "https://www.sec.gov/Archives/edgar/data/1691421/000169142126000016/lmnd-20251231.htm"
+  ]
+}
