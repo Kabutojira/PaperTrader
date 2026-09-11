@@ -1,0 +1,90 @@
+{
+  "adversarial_review": {
+    "blind_spots": [
+      "No primary issuer or regulator source dated 2026-09-04 through 2026-09-09 was inspected in this operation.",
+      "The bounded evidence does not separate issuer-specific flow from sector, macro, technical, or liquidity-driven trading."
+    ],
+    "contrary_evidence": [
+      "The alert packet records a material 15.655614095269486% decline over the bounded period, and the next session entered RSI oversold; that combination is consistent with, but does not prove, a fundamental adverse development.",
+      "The latest inspected primary-source observations end before the alert period endpoint, so they cannot rule out later issuer-specific information."
+    ],
+    "effect_on_conclusion": "The alternative prevents an opportunity classification and prevents treating the signal as noise. It supports a risk classification with no duplicate follow-up because the already-ready quick check is the appropriate bounded investigation.",
+    "falsification_condition": "A current primary issuer or regulatory disclosure tied to the 2026-08-11 through 2026-09-09 period that reports such deterioration, or a completed identity-matched review that verifies a changed valuation, catalyst, or invalidation, would falsify the no-new-causal-evidence conclusion.",
+    "favored_hypothesis": "The entered volume anomaly confirms a material market-risk signal but does not, on the inspected evidence, identify a new issuer-specific catalyst or invalidate Crocs' latest accepted assessment.",
+    "inspection_refs": [
+      "data/wiki/inbox/market-security_c150f31c30afdb4a85f9-volume_anomaly-3b7fbec0e976.md",
+      "data/market/technical/security_c150f31c30afdb4a85f9.csv:2026-09-09",
+      "data/tables/source_history.csv:source_history_eab916033adfd779edea",
+      "data/tables/source_history.csv:source_history_f008d7de4f3c909cb47f",
+      "data/tables/security_assessment_history.csv:assessment_28d88f3b776ebd1bf2d4",
+      "data/operations/operations_TODO.csv:01M2686XP8MW445X8WQKDKKRTZ"
+    ],
+    "reason": "This operation inspected deterministic price and indicator state, the latest immutable source-history observations, the accepted assessment version, and queue coverage. It did not inspect a current-period primary disclosure, so the causal conclusion is partial rather than searched.",
+    "status": "partial",
+    "strongest_alternative": "The selloff and elevated volume could reflect a material issuer-specific development or a faster-than-assessed deterioration in demand, margins, HEYDUDE execution, cash conversion, leverage, or capital allocation that was not captured by the latest inspected issuer records."
+  },
+  "catalyst_updates": [],
+  "commands_run": [
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "CROX entered a volume-anomaly state on 2026-09-09 after a 15.655614095269486% decline from 2026-08-11. It is classified as a risk-monitoring signal without a verified contemporaneous primary-source catalyst; no allocation, strategy, signal, order, or accounting state changed. The ready merged quick check covers this alert and the subsequent RSI-oversold transition."
+  ],
+  "evidence": [
+    {
+      "claim": "For immutable security security_c150f31c30afdb4a85f9 (CROX, USD, XNAS), the entered volume_anomaly transition has period 2026-08-11 through 2026-09-09, latest adjusted close 111.08999633789062 USD, period return -0.1565561409526948621906097725, trigger strength 0.001608425, and source-price hash 15a229e4523a3424812260b5071cee1efa1135dc3a8daaa96d691f648e26759a.",
+      "observed_at": "2026-09-10T18:10:21Z",
+      "source": "PaperTrader deterministic market packet and technical cache",
+      "source_hash": "15a229e4523a3424812260b5071cee1efa1135dc3a8daaa96d691f648e26759a"
+    },
+    {
+      "claim": "The inspected 2026-09-04 SEC-hosted Q2 results release retained its registered hash, and the inspected SEC submissions index reported no newer operating filing through the 2026-09-03 market date. These observations are not current-period evidence for the 2026-09-09 price and volume move.",
+      "observed_at": "2026-09-04T00:12:16Z",
+      "source": "PaperTrader source history: source_history_eab916033adfd779edea and source_history_f008d7de4f3c909cb47f",
+      "source_hash": "5a9f12df357f7e03d7c8f4b312cef937267aa2b69b6f41a69f44a04e108c7eee"
+    },
+    {
+      "claim": "The latest accepted Crocs assessment version predates the alert, is allocation-ineligible, and retains a pending accepted-relationship gate. The alert alone does not establish a change to its valuation assumptions, catalysts, invalidations, or allocation disposition.",
+      "observed_at": "2026-09-04T00:18:17Z",
+      "source": "PaperTrader assessment history: assessment_28d88f3b776ebd1bf2d4"
+    },
+    {
+      "claim": "Ready quick-check operation 01M2686XP8MW445X8WQKDKKRTZ is scoped to the same security and merges the 2026-09-09 volume anomaly with the subsequent 2026-09-10 RSI-oversold transition; it is the single bounded review already queued for these signals.",
+      "observed_at": "2026-09-11T14:18:47Z",
+      "source": "PaperTrader active operation queue"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01M2686XP8HDFCYFPVP04QZNQZ",
+  "operations_created": [],
+  "reason_code": "risk_no_new_causal_evidence",
+  "research_claims": [],
+  "research_forecasts": [],
+  "status": "succeeded",
+  "summary": "The 2026-09-09 CROX volume-anomaly transition is a risk-monitoring signal, not a supported new investment opportunity or a demonstrated thesis break. Deterministic market data records a 15.655614095269486% decline from 2026-08-11 through 2026-09-09 and a volume-anomaly entry on the latter date. The latest inspected issuer and SEC-index observations predate the period endpoint and do not establish a contemporaneous causal explanation. No research page or structured state changed; the already-ready higher-priority quick-check operation 01M2686XP8MW445X8WQKDKKRTZ covers both this alert and the subsequent 2026-09-10 RSI-oversold transition, so no duplicate follow-up was enqueued.",
+  "validation": {
+    "checks": [
+      "Confirmed the sole target queue row is running, claimed by daily-20260911T141718Z, and has a live lease.",
+      "Confirmed the trusted preflight identifies llm-wiki, papertrader-controller, papertrader-opportunity-research, and echart with hashes, and routing is sequential.",
+      "Confirmed the payload's immutable operation ID, opportunity entity, CROX security identity, trigger type, market-data timestamp, and exact period match the inspected deterministic packet.",
+      "Confirmed the 2026-09-09 technical row carries volume_anomaly and the current 2026-09-10 row carries rsi_oversold; no metric was recomputed or substituted for deterministic state.",
+      "Inspected immutable source-history observations and the latest accepted assessment; neither is contemporaneous primary evidence for the alert endpoint, so no issuer-causal conclusion or assessment update was made.",
+      "Confirmed the existing ready quick-check operation merges this trigger with the subsequent RSI-oversold signal; no duplicate follow-up operation was created.",
+      "Ran scripts/papertrader wiki lint --strict successfully before writing this manifest.",
+      "Confirmed no wiki page, structured CSV, allocation target/history, strategy, signal, order, execution, cash, portfolio, performance, or accounting state changed."
+    ],
+    "passed": true
+  },
+  "visualization_review": {
+    "charts": [],
+    "completed": true,
+    "omissions": [
+      {
+        "dataset": "CROX price and volume series for 2026-08-11 through 2026-09-09",
+        "reason": "The conclusion is retained in this manifest only because no current-period primary evidence changed a primary research page; creating a chart without a page update would not add decision support.",
+        "reason_code": "no_page_change"
+      }
+    ]
+  }
+}
