@@ -1,0 +1,18 @@
+{
+  "source_id": "source_pl_q2_fy2027_results_sec",
+  "url": "https://www.sec.gov/Archives/edgar/data/1836833/000119312526381874/pl-ex99_1.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1836833/000119312526381874/pl-ex99_1.htm",
+  "source_type": "issuer_release",
+  "title": "Planet Labs PBC Q2 fiscal 2027 financial results",
+  "publisher": "Planet Labs PBC via U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "1a670def51e459fca66d8c238ea50f0bd11d003bef3751cd6bd8078a7ba71445",
+  "related_entity_ids": "security_97f38b2cb2d5ef127f5a",
+  "checked_at": "2026-09-11T05:51:50Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Planet reported Q2 fiscal 2027 revenue of USD 116.1 million, 57% GAAP gross margin, USD 13.9 million adjusted EBITDA, 109% net dollar retention and fiscal-year revenue guidance of USD 430-441 million.",
+  "summary": "Fresh retrieval reproduced the retained SEC-filed Q2 results evidence. The release corroborates reported growth, retention, backlog, guidance, adjusted EBITDA and fiscal-year capex guidance used in this review.",
+  "run_id": "daily-20260911T054700Z"
+}

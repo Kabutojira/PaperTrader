@@ -4,12 +4,12 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-29"
-updated: "2026-09-10"
+updated: "2026-09-11"
 provenance: "source_pl_q1_fy2027_10q; source_pl_q1_fy2027_results_sec; source_pl_q2_fy2027_10q; source_pl_q2_fy2027_results_sec; source_pl_sec_submissions_20260910"
 security_id: security_97f38b2cb2d5ef127f5a
 issuer_id: issuer_f0de6eb64ff0330bf082
 confidence: medium
-next_review: "2026-09-11"
+next_review: "2026-09-25"
 ---
 
 # Planet Labs PBC Class A common stock
@@ -44,16 +44,17 @@ This deterministic monitoring chart is derived from the repository-local market 
 ```
 <!-- papertrader:technical-chart:end -->
 
-The August scenarios remain provisional until the queued full review incorporates the new Q2
-filing, but the current mark has moved materially closer to the retained range.
+The full Q2 review now incorporates reported growth, liquidity, capex and dilution into a refreshed
+scenario range. Stronger operations do not offset the valuation and downside asymmetry at the
+current mark.
 
 ```echart
 {
   "schema_version": 1,
-  "chart_id": "provisional-scenario-values-september-2026",
+  "chart_id": "q2-fy2027-scenario-values",
   "kind": "series",
-  "title": "Provisional scenario values versus the 10 September close",
-  "description": "The latest close remains above the retained bear and base fair values even after a material decline; the Q2 filing requires a full valuation refresh before these scenario values can support a new decision.",
+  "title": "Q2 FY2027 scenario values versus the reference price",
+  "description": "The refreshed bear and base fair values remain below the 10 September reference price; only the low-probability bull case offers upside.",
   "as_of": "2026-09-10",
   "sources": [
     {
@@ -81,21 +82,79 @@ filing, but the current mark has moved materially closer to the retained range.
   ],
   "series": [
     {
-      "name": "Retained fair value",
+      "name": "Refreshed fair value",
       "render": "bar",
       "y_axis": 0,
-      "values": ["6.42", "14.36", "27.73"]
+      "values": ["6.30", "12.71", "24.00"]
     },
     {
-      "name": "10 September close",
+      "name": "Reference price",
       "render": "line",
       "y_axis": 0,
       "values": ["16.690000534057617", "16.690000534057617", "16.690000534057617"]
     }
   ],
   "notes": [
-    "Scenario values are the 28 August baseline and are not refreshed Q2 estimates.",
+    "Scenario values use Q2 filing inputs, scenario-specific FY2028 revenue, enterprise-value-to-revenue multiples, post-investment net cash and diluted shares.",
     "The chart is research presentation only and is not an allocation, signal, or order input."
+  ]
+}
+```
+
+Q2 growth came with gross-profit expansion, but GAAP operating losses persisted. This separates
+improving service economics from the still-unproven conversion to durable free cash flow.
+
+```echart
+{
+  "schema_version": 1,
+  "chart_id": "q2-revenue-gross-profit-operating-loss",
+  "kind": "series",
+  "title": "Q2 revenue, gross profit, and GAAP operating loss",
+  "description": "Comparable fiscal-second-quarter results show revenue and gross-profit growth alongside a smaller but continuing GAAP operating loss.",
+  "as_of": "2026-07-31",
+  "sources": [
+    {
+      "label": "Planet Labs Q2 fiscal 2027 Form 10-Q",
+      "url": "https://www.sec.gov/Archives/edgar/data/1836833/000119312526382016/pl-20260731.htm",
+      "observed_at": "2026-09-11T05:51:50Z"
+    }
+  ],
+  "x_axis": {
+    "type": "category",
+    "label": "Fiscal second quarter",
+    "values": ["FY2026", "FY2027"]
+  },
+  "y_axes": [
+    {
+      "label": "USD millions",
+      "unit": "USD millions",
+      "format": "currency",
+      "currency": "USD"
+    }
+  ],
+  "series": [
+    {
+      "name": "Revenue",
+      "render": "bar",
+      "y_axis": 0,
+      "values": ["73.386", "116.052"]
+    },
+    {
+      "name": "Gross profit",
+      "render": "bar",
+      "y_axis": 0,
+      "values": ["42.268", "65.632"]
+    },
+    {
+      "name": "GAAP operating loss",
+      "render": "line",
+      "y_axis": 0,
+      "values": ["-17.960", "-13.509"]
+    }
+  ],
+  "notes": [
+    "Amounts are issuer-reported US dollars converted from thousands to millions; periods and definitions are directly comparable.",
+    "Adjusted EBITDA is excluded because the chart compares GAAP statement-of-operations measures."
   ]
 }
 ```
@@ -188,30 +247,31 @@ capitulation evidence.
 
 ## Changes since prior review
 
-- **Evidence:** fresh retrieval on 28 August reproduced the registered Q1 Form 10-Q and SEC-filed
-  results-release hashes. The current SEC submissions index lists no operating or financial filing
-  after the 10 July Form 8-K; subsequent ownership filings do not change revenue, RPO, backlog,
-  guidance, cash generation, dilution, or satellite-execution evidence.
-- **Market state:** the 28 August close of USD 19.98 is 2.44% below the 31 July close and 19.27% below
-  the 13 August interim high. It fell 5.58% in the latest session on 8.24 million shares, entered
-  below the USD 20.11 lower Bollinger band, and printed volume 3.25 times its recent baseline. The
-  sharp downside transition is a risk signal, not independent evidence that intrinsic value changed.
-- **Assumptions and scenario outputs:** the `pre_profit_growth` revenue-multiple assumptions and
-  USD 6.42/USD 14.36/USD 27.73 bear/base/bull fair values remain unchanged because there is no newer
-  operating filing. The lower mark improves all scenario returns, but the USD 14.65 weighted value
-  remains about 26.7% below market and the USD 11.49 buy zone remains about 42.5% below market.
-- **Thesis, catalysts, risks, and invalidation:** unchanged. Growth, recurring contract value, RPO,
-  backlog and liquidity support the thesis; capital intensity, cash burn, government-contract
-  cancellation, satellite execution, stock compensation and convertible dilution remain material.
-- **Blockers and gaps:** no hard valuation blocker returns. Negative expected and base returns,
-  severe bear downside, medium confidence, adverse timing, no margin of safety, and the absence of
-  an accepted relationship still prevent allocation. The pending Q2 evidence remains a soft timing
-  gap rather than a basis for invented assumptions.
-- **Rating and action:** **Sell / Avoid** is unchanged. The lower price does not clear the expected-
-  return, base-return, downside-payoff, margin-of-safety, timing, confidence, or relationship gates;
-  no strategy, signal or paper order is justified.
-- **Unchanged conclusion:** watchlist monitoring remains appropriate, but neither a lower-band breach
-  nor exceptional volume establishes capitulation, a buy zone, or a changed operating thesis.
+- **Changed facts and evidence:** fresh retrieval of the Q2 Form 10-Q and SEC-filed results found no
+  source drift, and the SEC submissions index showed no newer operating filing. Quarterly revenue
+  rose 58% year over year to USD 116.1 million, GAAP gross margin reached 57%, and six-month operating
+  cash flow was USD 68.4 million. Property-and-equipment purchases of USD 44.7 million show why
+  durable free cash flow remains a harder hurdle than operating cash flow.
+- **Changed assumptions and valuation:** the prior USD 6.42/USD 14.36/USD 27.73 scenarios used Q1
+  evidence. The full Q2 review now incorporates USD 865.4 million of cash and short-term investments,
+  USD 448.3 million carrying-value convertible notes, 363.7 million common shares, 23.9 million
+  unvested RSUs, 13.5 million options, fiscal 2027 revenue guidance of USD 430-441 million and capex
+  guidance of USD 100-115 million. Refreshed bear/base/bull values are USD 6.30/USD 12.71/USD 24.00.
+- **Thesis and evidence change:** Q2 growth, 109% net dollar retention, positive adjusted EBITDA and
+  stronger liquidity support the recurring-data thesis. Lower sequential RPO and backlog, a hardware
+  contribution, ATM issuance and higher capex keep business quality and confidence below the top
+  anchors.
+- **Catalysts, risks, blockers and gaps:** RPO conversion, Pelican monetization, recurring retention
+  and post-investment cash generation remain the catalysts. Contract cancellation, launch or
+  satellite failure, gross-margin reversal, capex, stock compensation and note conversion remain
+  the main risks. The quick check's `valuation_unsupported` hard blocker is resolved; negative
+  expected and base returns, downside asymmetry, timing, medium confidence, no margin of safety and
+  no accepted relationship still prevent allocation.
+- **Rating and action:** **Sell / Avoid** and `no_new_position` are unchanged. The lower reference
+  price does not clear the canonical expected-return, base-return, payoff, margin-of-safety or
+  relationship gates, so no strategy, signal or paper order is justified.
+- **Unchanged conclusion:** watchlist monitoring remains appropriate, but an oversold reading alone
+  is neither a buy zone nor fundamental invalidation.
 
 ## 2026-08-28 lower-band and volume-alert review
 
@@ -242,36 +302,35 @@ assumptions. The Q1 thesis, catalysts, invalidation conditions, and risks theref
 
 ## Valuation
 
-Template: `pre_profit_growth`; method: `revenue_multiple`; horizon: 12 months. The scenario table
-below is the 28 August baseline and is retained provisionally; the 3 September Q2 filing requires
-the queued full review to refresh its revenue, net-cash, capex, dilution, and multiple assumptions.
+Template: `pre_profit_growth`; method: `revenue_multiple`; horizon: 12 months. This method is used
+because Planet remains GAAP loss-making and durable free cash flow is not yet demonstrated. The Q2
+filing supplies the template's required current filing, cash-runway, dilution and unit-economics
+evidence.
 
-At USD 23.93 and 356.4 million reported common shares at 30 April, equity value is approximately USD
-8.53 billion. Subtracting USD 730.8 million of cash and short-term investments and adding the USD
-460 million face value of the 2030 convertible notes gives an approximate USD 8.26 billion
-enterprise value, or 19.1 times the USD 433 million midpoint of FY2027 revenue guidance. The 10-Q
-also reports 27.6 million unvested RSUs, 13.7 million outstanding options, and an initial 38.5
-million-share conversion equivalent for the notes; capped calls offset conversion dilution only
-through their USD 18.04 cap price.
+At 31 July, cash and short-term investments were USD 865.4 million and convertible notes had a USD
+448.3 million carrying value. Reported common shares were 363.7 million, before 23.9 million
+unvested RSUs, 13.5 million options, 1.1 million other warrants and potential note conversion.
+The scenarios therefore use explicit post-investment net cash and progressively wider diluted-share
+counts rather than treating current liquidity as fully distributable or current shares as fully
+diluted.
 
-The scenarios project FY2028 revenue, assign enterprise-value-to-revenue multiples, carry explicit
-post-investment cash or net-cash assumptions, and divide by scenario-specific diluted shares. They
-do not capitalize one quarter's positive operating cash flow as durable free cash flow: Q1 free
-cash flow was negative USD 2.5 million, FY2027 capex guidance is USD 80-95 million, and the issuer
-states only that available liquidity should meet at least twelve months of working-capital and capex
-needs.
+Each case projects FY2028 revenue from the USD 430-441 million FY2027 guidance range, applies an
+enterprise-value-to-revenue multiple, adds scenario post-investment net cash and divides by diluted
+shares. The multiples compress from the current high-growth valuation as risk rises. None of the
+cases capitalizes adjusted EBITDA as GAAP earnings, and each allows for the issuer's USD 100-115
+million FY2027 capex guidance, stock compensation, satellite replacement and contract variability.
 
 | Case | Probability | Fair value | Key assumptions |
 | --- | ---: | ---: | --- |
-| Bear | 30% | USD 6.42 | FY2028 revenue reaches USD 460 million, a 5x multiple reflects weak RPO conversion or margin execution, net cash after note principal and investment falls to USD 170.8 million, and dilution reaches 385 million shares. |
-| Base | 50% | USD 14.36 | FY2028 revenue reaches USD 540 million, a 10x multiple recognizes durable growth but continuing capital intensity, net cash is USD 270.8 million, and RSU, option and other dilution lifts shares to 395 million. |
-| Bull | 20% | USD 27.73 | FY2028 revenue reaches USD 620 million, an exceptional 18x multiple rewards sustained retention, RPO conversion and improving free cash flow, gross cash after investment is USD 680.8 million, and option, RSU and net convertible dilution lifts shares to 427 million. |
+| Bear | 30% | USD 6.30 | FY2028 revenue reaches USD 470 million, a 5x multiple reflects weak RPO conversion or margin execution, post-investment net cash falls to USD 200 million, and dilution reaches 405 million shares. |
+| Base | 50% | USD 12.71 | FY2028 revenue reaches USD 560 million, a 9x multiple recognizes durable growth but continuing capital intensity, post-investment net cash is USD 300 million, and equity awards and other dilution lift shares to 420 million. |
+| Bull | 20% | USD 24.00 | FY2028 revenue reaches USD 680 million, a 15x multiple rewards sustained retention, backlog conversion, margin expansion and improving free cash flow, post-investment net cash reaches USD 600 million, and option, RSU and net convertible dilution lifts shares to 450 million. |
 
-The probability-weighted fair value is USD 14.65, about 26.7% below the USD 19.98 mark. The base
-case is about 28.1% below market, the bear case implies about 67.9% downside, and the deliberately
-rich bull case offers about 38.8% upside. The wider bull upside does not compensate for the weighted
-loss or bear asymmetry, and medium confidence further reduces usable expected return. The completed
-scenarios therefore still establish no current buy zone or margin of safety.
+The probability-weighted fair value is USD 13.05, about 21.8% below the USD 16.69 reference price.
+The base case is about 23.8% below market, the bear case implies about 62.3% downside, and the bull
+case offers about 43.8% upside. Medium confidence further shrinks usable expected return. The base
+case and weighted value remain below market, bear downside exceeds bull upside, and the completed
+scenarios establish neither a current buy zone nor a margin of safety.
 
 ## Idea exposure map
 
@@ -279,32 +338,38 @@ scenarios therefore still establish no current buy zone or margin of safety.
   geospatial data]]:** positive direction, awaiting relationship review. Planet's recurring imagery,
   analytics, dedicated tasking and satellite services provide a direct mechanism by which commercial
   and government demand can become ACV, RPO, backlog, revenue and cash flow. Materiality is supported
-  by Q1 recurrence and contract visibility; reject the edge if backlog does not convert, government
+  by Q2 recurrence and contract visibility; reject the edge if backlog does not convert, government
   awards are cancelled or unfunded, satellite execution fails, or capital intensity and dilution
-  prevent per-share cash generation. This is not a canonical accepted relationship.
-- **Rejected-no-link — all other maintained ideas:** the complete catalog was checked, but no other
-  idea has both a specific causal transmission mechanism and material evidenced exposure. Generic AI,
-  defence, power, commodity, consumer, finance and industrial themes are too superficial to retain
-  without new primary evidence.
+  prevent per-share cash generation. The existing relationship review remains pending; this is not
+  a canonical accepted relationship.
+- **Candidate — [[ideas/idea_defense_aerospace|Defense and aerospace]]:** positive direction,
+  awaiting relationship review. Government imagery, monitoring and dedicated-tasking requirements
+  can transmit defense and security budgets into contracted revenue and backlog. Reject the edge if
+  defense exposure is immaterial, awards are unfunded or cancelled, or satellite execution prevents
+  delivery. This is not a canonical accepted relationship.
+- **Rejected-no-link — other maintained ideas:** the complete catalog was searched. European defense
+  rearmament was rejected because the evidence does not isolate Europe as a material driver; AI
+  software consolidation was rejected because Planet sells geospatial outputs rather than a general
+  software stack. Power, commodity, consumer, finance and industrial themes lack both a specific
+  transmission mechanism and material evidenced exposure.
 
 ## Catalysts and invalidation
 
-Catalysts are Q2 revenue and margin delivery, conversion of RPO into recurring revenue, Pelican
-capacity monetization, sustained net retention, and positive free cash flow after satellite and
-software investment. Invalidate the constructive operating case if RPO fails to convert,
+Catalysts are conversion of RPO and backlog into recurring revenue, Pelican capacity monetization,
+sustained net retention, margin expansion, and positive free cash flow after satellite and software
+investment. Invalidate the constructive operating case if RPO fails to convert,
 government awards are cancelled or unfunded, retention weakens, satellite or launch failures
 interrupt service, gross margin declines persistently, or equity and note dilution overwhelms
 per-share growth.
 
 ## Disposition
 
-Status: **watching** with **medium** confidence and current rating **Unrated / Watch**. Q2 confirms
-strong growth, recurrence, operating leverage, and liquidity, while lower RPO and backlog, higher
-capex, hardware-driven revenue, and ATM dilution make the old scenario inputs incomplete. The
-strengthening oversold alert is not a paper-trade entry: the provisional scenarios still show negative expected
-and base returns, severe bear downside, weak payoff ratios, and no margin of safety. Complete the
-queued full review by **2026-09-11**, or sooner after material contract cancellation, satellite
-failure, guidance change, financing, dilution, or capital-allocation news. No conviction strategy
-or paper signal is justified.
+Status: **watching** with **medium** confidence and current rating **Sell / Avoid**. Q2 confirms
+strong growth, recurrence, operating leverage and liquidity, while lower sequential RPO and backlog,
+higher capex, hardware-driven revenue, ATM issuance and continuing dilution constrain per-share
+value. The refreshed scenarios show negative expected and base returns, severe bear downside, weak
+payoff ratios and no margin of safety. Review by **2026-09-25**, or sooner after material contract
+cancellation, satellite failure, guidance change, financing, dilution or capital-allocation news.
+No conviction strategy or paper signal is justified.
 
 See the complete [[research-catalog]] and append-only [[log]].

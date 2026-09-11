@@ -3882,3 +3882,19 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Published investor decision snapshot `decision_5c1cf2c8b3bfd29809e8`.
 
 - Generated canonical [[daily-reports/daily-report_20260911]] for run `daily-20260911T054017Z`.
+
+## [2026-09-11] update | Planet Labs full Q2 fiscal 2027 review
+
+- Completed the bounded full Q2 review of
+  [[securities/security_97f38b2cb2d5ef127f5a|Planet Labs]] against fresh SEC filing, results and
+  submissions-index evidence.
+- Replaced the unsupported provisional assessment with scenario-complete USD 6.30/USD 12.71/USD
+  24.00 bear/base/bull values. Strong growth and liquidity support the thesis, but negative weighted
+  and base returns, downside asymmetry, dilution, capital intensity and the absent accepted
+  relationship retain Sell / Avoid and `no_new_position`.
+- Added refreshed scenario and comparable Q2 fundamentals charts; preserved the deterministic
+  `market-technicals` chart unchanged.
+- Retained commercial-space infrastructure as a candidate under its existing relationship review
+  and identified defense and aerospace for one bounded relationship review. No strategy, signal,
+  order, paper trade, allocation or accounting state changed.
+- Files updated: `securities/security_97f38b2cb2d5ef127f5a.md`, `log.md`.

@@ -1,0 +1,124 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_97f38b2cb2d5ef127f5a",
+    "papertrader research source record --request data/runs/daily-20260911T054700Z/01M26HW848ZZWZAZTZSYXFB7J2/source_pl_q2_fy2027_10q_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260911T054700Z/01M26HW848ZZWZAZTZSYXFB7J2/source_pl_q2_fy2027_results_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260911T054700Z/01M26HW848ZZWZAZTZSYXFB7J2/source_pl_sec_submissions_refresh_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260911T054700Z/01M26HW848ZZWZAZTZSYXFB7J2/security_upsert_request.json",
+    "papertrader wiki sync-technical-charts",
+    "papertrader research assessment upsert --request data/runs/daily-20260911T054700Z/01M26HW848ZZWZAZTZSYXFB7J2/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260911T054700Z/01M26HW848ZZWZAZTZSYXFB7J2/assessment_upsert_request_v2.json",
+    "papertrader queue enqueue --request data/runs/daily-20260911T054700Z/01M26HW848ZZWZAZTZSYXFB7J2/enqueue_defense_relationship_request.json",
+    "papertrader research assessment-get --assessment-id assessment_9ea04b63e769b8d9b31d",
+    "papertrader wiki lint --strict",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Planet Labs full Q2 review: strong growth, retention and liquidity did not overcome capital intensity, dilution and valuation. The refreshed USD 13.045 weighted value is below the USD 16.69 mark; deterministic gates retain Sell / Avoid, allocation-ineligible and no new paper position. One bounded defense-and-aerospace relationship review was queued."
+  ],
+  "evidence": [
+    {
+      "claim": "For the quarter ended 2026-07-31, revenue was USD 116.052 million, gross profit USD 65.632 million and GAAP operating loss USD 13.509 million, compared with USD 73.386 million, USD 42.268 million and USD 17.960 million in the comparable prior-year quarter. Cash and short-term investments were USD 865.4 million, while reported common shares, unvested RSUs, options and other warrants establish material dilution inputs.",
+      "observed_at": "2026-09-11T05:51:50Z",
+      "source": "Planet Labs PBC Q2 fiscal 2027 Form 10-Q",
+      "source_hash": "99c53136c21eaf5fceaba3b24adb5474519b88960adf28a66f65e4972f26d675",
+      "url": "https://www.sec.gov/Archives/edgar/data/1836833/000119312526382016/pl-20260731.htm"
+    },
+    {
+      "claim": "The issuer reported 62% year-over-year Q2 revenue growth, 97% recurring ACV, 110% net retention, positive adjusted EBITDA and operating cash flow, and maintained fiscal 2027 revenue guidance of USD 430-441 million. RPO and backlog were below April levels, FY2027 capex guidance increased to USD 100-115 million, and hardware contribution and ATM issuance make per-share valuation and cash conversion central risks.",
+      "observed_at": "2026-09-11T05:51:50Z",
+      "source": "Planet Labs PBC Q2 fiscal 2027 financial results filed with the SEC",
+      "source_hash": "1a670def51e459fca66d8c238ea50f0bd11d003bef3751cd6bd8078a7ba71445",
+      "url": "https://www.sec.gov/Archives/edgar/data/1836833/000119312526381874/pl-ex99_1.htm"
+    },
+    {
+      "claim": "The SEC submissions index was checked through 2026-09-11; the 2026-09-03 Q2 Form 10-Q and results filing remain the latest material operating evidence, with subsequent Form 4 and Section 16 notices not changing the operating conclusion.",
+      "observed_at": "2026-09-11T05:51:50Z",
+      "source": "SEC submissions index for Planet Labs PBC",
+      "source_hash": "136da8e3290ca04b92b391318245dc8591b0669459c2cf2e41b15c6f145b7fd2",
+      "url": "https://data.sec.gov/submissions/CIK0001836833.json"
+    },
+    {
+      "claim": "Assessment assessment_9ea04b63e769b8d9b31d is schema version 2, links predecessor assessment_36e7f3b062875eeaed9f, binds source operation 01M26HW848ZZWZAZTZSYXFB7J2 and the expected result path, and records current mark and FX timestamps of 2026-09-11T05:47:01Z. It derives USD 13.045 weighted fair value, -21.84% expected return, -16.38% confidence-adjusted expected return, -23.85% base return and -62.25% bear return, with exact failed economic and relationship gates retained in the eligibility frontier.",
+      "source": "PaperTrader deterministic assessment projection"
+    },
+    {
+      "claim": "No accepted canonical relationship currently exists for Planet Labs. Existing operation 01M154XMSRBDR4DW1RZ63PPYPN remains the sole commercial-space candidate review, and operation 01M27GSY1RZN96JSCSTFYQ8TJX is the sole review created by this operation for the plausible defense-and-aerospace candidate. Other maintained ideas were searched and rejected for lacking a specific material transmission mechanism.",
+      "source": "PaperTrader canonical relationship and queue projections"
+    },
+    {
+      "claim": "The mandatory audited security-context command succeeded before assessment-state reads. The review consumed the current unsupported quick-check assessment and its predecessor context, preserved a complete changes-since-prior-review section, and replaced the provisional conclusion with one new immutable scenario-complete assessment.",
+      "source": "Mandatory PaperTrader security context and prior accepted assessment"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M27GSY1RZN96JSCSTFYQ8TJX.json",
+    "data/runs/daily-20260911T054700Z/01M26HW848ZZWZAZTZSYXFB7J2/assessment_upsert_request.json",
+    "data/runs/daily-20260911T054700Z/01M26HW848ZZWZAZTZSYXFB7J2/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260911T054700Z/01M26HW848ZZWZAZTZSYXFB7J2/enqueue_defense_relationship_request.json",
+    "data/runs/daily-20260911T054700Z/01M26HW848ZZWZAZTZSYXFB7J2/security_upsert_request.json",
+    "data/runs/daily-20260911T054700Z/01M26HW848ZZWZAZTZSYXFB7J2/source_pl_q2_fy2027_10q_refresh_request.json",
+    "data/runs/daily-20260911T054700Z/01M26HW848ZZWZAZTZSYXFB7J2/source_pl_q2_fy2027_results_refresh_request.json",
+    "data/runs/daily-20260911T054700Z/01M26HW848ZZWZAZTZSYXFB7J2/source_pl_sec_submissions_refresh_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_97f38b2cb2d5ef127f5a.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M26HW848ZZWZAZTZSYXFB7J2",
+  "operations_created": [
+    "01M27GSY1RZN96JSCSTFYQ8TJX"
+  ],
+  "status": "succeeded",
+  "summary": "Completed one bounded full Planet Labs security review using current SEC-filed Q2 fiscal 2027 evidence and fresh canonical price/FX identity. Revenue, retention, operating leverage and liquidity improved, but capital intensity, contract concentration, ATM issuance and broader dilution remain material. Published schema-v2 assessment assessment_9ea04b63e769b8d9b31d with USD 6.30/USD 12.71/USD 24.00 bear/base/bull values and USD 13.045 probability-weighted value against the USD 16.69 mark. Deterministic gates classify the security Sell / Avoid, allocation-ineligible and no_new_position because expected and base returns are negative, payoff and margin-of-safety gates fail, and the canonical relationship remains pending. Retained the existing commercial-space relationship review and created exactly one defense-and-aerospace relationship review. No strategy, signal, paper order, allocation, fill, cash, portfolio, performance or accounting state changed.",
+  "validation": {
+    "checks": [
+      "Confirmed the parent supplied the sole running operation, immutable security identity, live lease, validated payload and required preflight skill hashes for this run.",
+      "Consumed the mandatory successful audited security-context receipt before reading or changing assessment state and reviewed the previous failed-attempt diagnostics before making changes.",
+      "Verified immutable issuer, instrument, XNYS venue, USD currency and PL provider identity; the validated security upsert found no identity conflict or duplicate.",
+      "Refreshed all retained SEC source records after direct retrieval; the source CLI validated source identity, hashes and freshness through 2026-09-11T05:51:50Z.",
+      "Updated the maintained security page with a complete changes-since-prior-review account, scenario assumptions, thesis, contrary evidence, catalysts, risks, invalidation, disposition and the full maintained-idea exposure search.",
+      "The first assessment request was rejected without changed paths because its market-data timestamp was stale. A uniquely named immutable corrected request bound the current price and FX identity and succeeded.",
+      "Confirmed assessment assessment_9ea04b63e769b8d9b31d is the sole immutable history version for this operation, links predecessor assessment_36e7f3b062875eeaed9f, source operation/result, schema version 2 and research-page hash, and contains anchored scores and ordered probability-complete scenarios.",
+      "Confirmed the deterministic assessment derived complete research, Sell / Avoid, watch conviction, allocation ineligibility, no_new_position and every exact economic and relationship frontier without an agent-supplied allocation disposition.",
+      "Confirmed the existing commercial-space relationship review and exactly one new defense-and-aerospace relationship review cover all plausible unaccepted edges; there are no payload or accepted linked ideas requiring idea-research follow-ups.",
+      "Validated exact chart fences and the analytical visualization manifest; the marker-bounded market-technicals reference remains unchanged and excluded from the manifest.",
+      "Strict schema validation, queue validation, integrity, wiki lint and portfolio reconciliation returned OK.",
+      "Confirmed no allocation targets/history, strategy, signal, order, fill, execution, cash, portfolio, performance or accounting ledger changed."
+    ],
+    "passed": true
+  },
+  "visualization_review": {
+    "charts": [
+      {
+        "chart_id": "q2-fy2027-scenario-values",
+        "page_path": "data/wiki/securities/security_97f38b2cb2d5ef127f5a.md"
+      },
+      {
+        "chart_id": "q2-revenue-gross-profit-operating-loss",
+        "page_path": "data/wiki/securities/security_97f38b2cb2d5ef127f5a.md"
+      }
+    ],
+    "completed": true,
+    "omissions": [
+      {
+        "dataset": "Like-for-like public-company valuation peers",
+        "reason": "The bounded evidence set did not establish three to eight peers with common as-of dates, currencies, instrument scope and consistently defined forward revenue or meaningful earnings multiples; no incomparable peer chart was invented.",
+        "reason_code": "insufficient_comparability"
+      },
+      {
+        "dataset": "Multi-period cash flow, capex and dilution series",
+        "reason": "Current and comparative filing disclosures mix cash-purchase, capital-expenditure-guidance, award and potential-conversion definitions. The review retained these items in scenario assumptions and prose rather than charting unlike measures.",
+        "reason_code": "insufficient_comparability"
+      }
+    ]
+  }
+}
