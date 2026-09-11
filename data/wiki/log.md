@@ -15,6 +15,18 @@ provenance: repository-contract
 This append-only current log continues an earlier non-public 2026 archive, rotated at a dated entry
 boundary after the combined log crossed the configured 5,000-line threshold.
 
+## [2026-09-11T06:06:33Z] idea research | AI-native SMB financial operating systems
+
+- Expanded [[ideas/idea_ai_native_smb_financial_operating_systems]] to test regulated insurance
+  operating systems separately from its core SMB accounting, payroll, tax, commerce, and payments
+  mechanism.
+- Classified [[security-catalog#security-security_8d11e65cd0de084ee461|LMND]] as a candidate, not
+  an accepted relationship: its current SEC disclosures support AI-enabled underwriting and claims
+  operations, while its consumer-insurance focus, continuing losses, and insurance-specific loss,
+  capital, catastrophe, reserve, reinsurance, and regulatory risks require bounded follow-up.
+- Retained existing SOFI review as pending and existing PayPal and UiPath rejections; created no
+  strategy, signal, order, or paper-trade state.
+
 ## [2026-09-03T12:48:08Z] security research | Crocs
 
 - Reassessed [[securities/security_c150f31c30afdb4a85f9|Crocs]] after the September 1 lower-

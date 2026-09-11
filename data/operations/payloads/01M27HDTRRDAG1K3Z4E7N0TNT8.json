@@ -1,0 +1,20 @@
+{
+  "entity_id": "relationship_c26c365918d8b780cc22",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_ai_native_smb_financial_operating_systems",
+    "proposed_direction": "positive",
+    "proposed_invalidation": "Reject the edge if primary evidence cannot establish material AI-enabled insurance-workflow differentiation or durable risk-adjusted economics, or if the consumer-insurance focus, catastrophe and reserve volatility, reinsurance and capital costs, regulation, continuing losses, or lack of SMB system-of-record exposure dominate the proposed transmission.",
+    "proposed_mechanism": "Lemonade's AI-enabled underwriting, policy servicing, claims, fraud, compliance, and customer-service workflows may provide a regulated-insurance operating-system adjacency, but the transmission must be material to shareholder value and distinct from the idea's core SMB accounting, payroll, tax, banking, commerce, and payments system-of-record mechanism.",
+    "relationship_id": "relationship_c26c365918d8b780cc22",
+    "security_id": "security_8d11e65cd0de084ee461"
+  },
+  "objective": "Review whether Lemonade has a material positive relationship to the AI-native SMB financial operating-systems idea through regulated insurance operations.",
+  "operation_id": "01M27HDTRRDAG1K3Z4E7N0TNT8",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.sec.gov/Archives/edgar/data/1691421/000169142126000016/lmnd-20251231.htm",
+    "https://www.sec.gov/Archives/edgar/data/1691421/000169142126000055/lmnd-20260630.htm"
+  ]
+}

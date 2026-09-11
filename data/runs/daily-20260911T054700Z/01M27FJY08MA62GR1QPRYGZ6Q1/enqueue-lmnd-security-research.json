@@ -1,0 +1,24 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_8d11e65cd0de084ee461",
+  "dedupe_key": "security_research:security_8d11e65cd0de084ee461:regulated-insurance-operating-system:2026-09-11",
+  "prompt": "Research and value Lemonade as a regulated insurance operating-system candidate without assuming SMB system-of-record exposure.",
+  "inputs": {
+    "security_id": "security_8d11e65cd0de084ee461",
+    "idea_id": "idea_ai_native_smb_financial_operating_systems",
+    "causal_hypothesis": "Lemonade's AI-enabled underwriting, policy servicing, claims and fraud workflows may create operating leverage and differentiated insurance economics, but consumer-insurance focus, catastrophe and reserve risk, reinsurance and capital costs, regulation, and continuing losses may prevent durable shareholder-value capture or a core SMB-operating-system link.",
+    "focused_questions": "Validate insurance and AI workflow disclosures; separate underwriting, claims, policy-administration, fraud, customer-service, retention, premium, loss-ratio, expense, reserve, reinsurance, capital, catastrophe, regulation, competition, cash, dilution, valuation, catalysts, and invalidation; determine whether the exposure is an adjacent regulated-insurance operating system rather than an SMB financial system of record."
+  },
+  "source": "idea_research:01M27FJY08MA62GR1QPRYGZ6Q1",
+  "priority": 68,
+  "freshness_days": 30,
+  "depends_on": ["01M27FJY08MA62GR1QPRYGZ6Q1"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "https://www.sec.gov/Archives/edgar/data/1691421/000169142126000016/lmnd-20251231.htm",
+    "https://www.sec.gov/Archives/edgar/data/1691421/000169142126000055/lmnd-20260630.htm"
+  ],
+  "max_attempts": 3
+}

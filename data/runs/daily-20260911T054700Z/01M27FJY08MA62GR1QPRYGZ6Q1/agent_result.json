@@ -1,0 +1,65 @@
+{
+  "commands_run": [
+    "papertrader queue enqueue --request data/runs/daily-20260911T054700Z/01M27FJY08MA62GR1QPRYGZ6Q1/enqueue-lmnd-security-research.json",
+    "papertrader queue enqueue --request data/runs/daily-20260911T054700Z/01M27FJY08MA62GR1QPRYGZ6Q1/enqueue-lmnd-relationship-research.json",
+    "papertrader wiki lint --strict",
+    "papertrader queue validate"
+  ],
+  "daily_report_items": [
+    "Refreshed the AI-native SMB financial operating systems idea with Lemonade as a regulated-insurance operating-system candidate, pending one full security review and one causal-relationship review; no trade decision or accounting state changed."
+  ],
+  "evidence": [
+    {
+      "claim": "Lemonade reported USD 1.237 billion in-force premium, USD 414 premium per customer, 85% annual dollar retention, and a 64% gross loss ratio, while identifying failures in proprietary AI algorithms as risks to underwriting, pricing, and claims.",
+      "observed_at": "2026-09-11T06:06:33Z",
+      "source": "Lemonade 2025 Form 10-K",
+      "source_hash": "86ed36cf753aa6e81c15c5d5cbd48e5ac62c3cd6ee1049999c43bccbe04bcdf7",
+      "url": "https://www.sec.gov/Archives/edgar/data/1691421/000169142126000016/lmnd-20251231.htm"
+    },
+    {
+      "claim": "Lemonade reported USD 1.434 billion in-force premium, USD 294.4 million quarterly revenue, 85% annual dollar retention, a 60% gross loss ratio, and a USD 43.4 million quarterly net loss; insurance-specific loss, capital, reserve, catastrophe, reinsurance, and regulatory risks remain material to the candidate hypothesis.",
+      "observed_at": "2026-09-11T06:06:33Z",
+      "source": "Lemonade Q2 2026 Form 10-Q",
+      "url": "https://www.sec.gov/Archives/edgar/data/1691421/000169142126000055/lmnd-20260630.htm"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M27HD1C8J6FPVKYP168D5JJF.json",
+    "data/operations/payloads/01M27HDTRRDAG1K3Z4E7N0TNT8.json",
+    "data/runs/daily-20260911T054700Z/01M27FJY08MA62GR1QPRYGZ6Q1/enqueue-lmnd-relationship-research.json",
+    "data/runs/daily-20260911T054700Z/01M27FJY08MA62GR1QPRYGZ6Q1/enqueue-lmnd-security-research.json",
+    "data/wiki/ideas/idea_ai_native_smb_financial_operating_systems.md",
+    "data/wiki/log.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M27FJY08MA62GR1QPRYGZ6Q1",
+  "operations_created": [
+    "01M27HD1C8J6FPVKYP168D5JJF",
+    "01M27HDTRRDAG1K3Z4E7N0TNT8"
+  ],
+  "status": "succeeded",
+  "summary": "Updated the maintained AI-native SMB financial operating systems idea with a bounded regulated-insurance operating-system extension. Lemonade remains a candidate rather than an accepted relationship because current primary disclosures support AI-enabled insurance workflows and improving operating measures but do not establish SMB system-of-record exposure or durable shareholder-value capture. Created one dependent Lemonade security review and one pair-specific relationship review; no strategy, signal, order, allocation, execution, cash, portfolio, performance, or other accounting state changed.",
+  "validation": {
+    "checks": [
+      "Confirmed the immutable idea ID and searched the maintained idea, security catalog, and structured relationship state before updating the single idea page.",
+      "Classified Lemonade as a candidate rather than an accepted relationship and retained explicit mechanisms, contrary evidence, invalidation, confidence, and the 2026-10-30 review date.",
+      "Created exactly one dependent security_research operation and exactly one pair-specific relationship_research operation through audited repository CLI commands; the relationship review depends on the security review.",
+      "Completed the chartability pass and recorded the specific comparison-data omission on the changed idea page and in this manifest.",
+      "Strict wiki lint and queue validation passed after the completed changes.",
+      "No strategy, signal, allocation target or history, order, execution, cash, portfolio, performance, or other accounting state changed."
+    ],
+    "passed": true
+  },
+  "visualization_review": {
+    "charts": [],
+    "completed": true,
+    "omissions": [
+      {
+        "dataset": "Lemonade operating measures and cross-company exposure comparison",
+        "reason": "The bounded primary disclosures provide only two comparable quarterly observations and mix end-of-period in-force premium with quarterly revenue, loss-ratio, and net-loss flows; no comparable exposure series exists for the related candidates.",
+        "reason_code": "insufficient_comparability"
+      }
+    ]
+  }
+}
