@@ -3915,6 +3915,12 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 
 - Classified [[inbox/market-security_8a5c43888d224de85c69-bollinger_below_lower-0a2f7b464c33]] as `ingest`: Material downside transition: price entered below the lower Bollinger Band after a 7.2% decline over the measured period.
 
+- Published investor decision snapshot `decision_d195f65cf41cac294c9c`.
+
+- Saved bounded research finding coverage in [[queries/research-findings-94b7d24559c189adbe536cfc]].
+
+- Generated canonical [[daily-reports/daily-report_20260911]] for run `daily-20260911T141718Z`.
+
 ## [2026-09-11] update | Planet Labs full Q2 fiscal 2027 review
 
 - Completed the bounded full Q2 review of

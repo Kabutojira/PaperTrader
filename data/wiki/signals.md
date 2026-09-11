@@ -7,13 +7,13 @@ tags:
 created: "2026-09-11"
 updated: "2026-09-11"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_8412fbcce9e21ff250ba"
-as_of: "2026-09-11T10:46:37Z"
+snapshot_id: "decision_d195f65cf41cac294c9c"
+as_of: "2026-09-11T14:28:01Z"
 ---
 
 # Signals
 
-**As of `2026-09-11T10:46:37Z`**
+**As of `2026-09-11T14:28:01Z`**
 
 ## Actionable trade signals
 
@@ -24,6 +24,24 @@ No actionable trade signals.
 No pending orders.
 
 ## Research alerts — not trade signals
+
+### [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_below\_lower`
+- Market date: `2026-09-10`
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
+
+### [PLS.AX — PLS Group Limited](securities/security_8a5c43888d224de85c69)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_below\_lower`
+- Market date: `2026-09-11`
+- Research status: `blocked`
+- Conclusion: High-priority security research is blocked. scope\_deferred\_for\_capacity
 
 ### [WTI — W&amp;T Offshore, Inc.](securities/security_61567714298b9563d1a9)
 
@@ -105,15 +123,6 @@ No pending orders.
 - Market date: `2026-09-10`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
-
-### [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_below\_lower`
-- Market date: `2026-09-10`
-- Research status: `skipped`
-- Conclusion: Queue triage disposition
 
 ### [PL — Planet Labs PBC](securities/security_97f38b2cb2d5ef127f5a)
 
@@ -222,15 +231,6 @@ No pending orders.
 - Market date: `2026-09-10`
 - Research status: `skipped`
 - Conclusion: Queue triage disposition
-
-### [108490 — ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_above\_upper`
-- Market date: `2026-09-10`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
 
 ### [TX — Ternium S.A.](securities/security_2c779e81c27b78c556bb)
 

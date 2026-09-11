@@ -7,8 +7,8 @@ tags:
 created: "2026-09-11"
 updated: "2026-09-11"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_8412fbcce9e21ff250ba"
-as_of: "2026-09-11T10:46:37Z"
+snapshot_id: "decision_d195f65cf41cac294c9c"
+as_of: "2026-09-11T14:28:01Z"
 ---
 
 # Research catalog
@@ -373,6 +373,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PLS.AX — Bollinger above upper](inbox/market-security_8a5c43888d224de85c69-bollinger_above_upper-270c02b10960)
 - [PLS.AX — Bollinger above upper](inbox/market-security_8a5c43888d224de85c69-bollinger_above_upper-48d79d4d9368)
 - [PLS.AX — Bollinger above upper](inbox/market-security_8a5c43888d224de85c69-bollinger_above_upper-64c211fad8b1)
+- [PLS.AX — Bollinger below lower](inbox/market-security_8a5c43888d224de85c69-bollinger_below_lower-0a2f7b464c33)
 - [PLS.AX — MACD cross below signal](inbox/market-security_8a5c43888d224de85c69-macd_cross_below_signal-397b5ba1908a)
 - [PLS.AX — SMA 50 cross below 200](inbox/market-security_8a5c43888d224de85c69-sma_50_cross_below_200-7377f7b31f5c)
 - [PLS.AX — Volume anomaly](inbox/market-security_8a5c43888d224de85c69-volume_anomaly-5f936629b218)
@@ -756,6 +757,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Query
 
+- [Research findings 94b7d24559c189adbe536cfc](queries/research-findings-94b7d24559c189adbe536cfc)
 - [Research findings b9288ef6b96529891976570e](queries/research-findings-b9288ef6b96529891976570e)
 - [Research findings daily-20260911T103301Z](queries/research-findings-daily-20260911T103301Z)
 
@@ -920,7 +922,3 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
-
-## Inbox
-
-- [[inbox/market-security_8a5c43888d224de85c69-bollinger_below_lower-0a2f7b464c33|PLS.AX — Bollinger below lower]]

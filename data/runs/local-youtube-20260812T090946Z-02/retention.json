@@ -1,0 +1,495 @@
+{
+  "artifacts": [
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G2RNAXKS9RP0MY1R9/command_audit.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "1272fcb780877771f676f47bd6ed02f0bab9669f7319c687f2bf652064f9dd16",
+      "size": 2760
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G2RNAXKS9RP0MY1R9/controller_prompt.md",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "9a16c8484a4ea4be6653c165ca5381d042e75076c3dd565a1db907e49fda47f9",
+      "size": 3048
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G2RNAXKS9RP0MY1R9/harness_preflight.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "09db35486752bdfdfc52733a9b7c89886afc14a59a71eae70ad651bb554126e9",
+      "size": 700
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G2RNAXKS9RP0MY1R9/validation_report.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "95cbe9a010a44bb1f291df061ec3a219791928b9ef24ef00036d39e15ed8c4ec",
+      "size": 554
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G3CHJ4YE6BKXP9RX9/command_audit.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "eea0faf20431cb6467701bcd6319a5f8e76722c983033e50babab1d656da0d7e",
+      "size": 2760
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G3CHJ4YE6BKXP9RX9/controller_prompt.md",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "2036d5f0682c02e72ed3dd9ff4ef81677514a9f14a836ddf9c82c17c9c4de737",
+      "size": 3048
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G3CHJ4YE6BKXP9RX9/harness_preflight.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "6da38c9980e393f8eba82a10e405c9fd147284397b73783c495c620d08cbbbcf",
+      "size": 700
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G3CHJ4YE6BKXP9RX9/validation_report.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "1037682b6a2b5e46a03f861d8fce5d25f2896aeabe4d7ae8a1e27084dd1cfe75",
+      "size": 554
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G3QX14JS5VBH76HN0/command_audit.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "449d491a6e298a7d0a40eeca45bd11032a9f3bac3382f546ab391d198e106c94",
+      "size": 2394
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G3QX14JS5VBH76HN0/controller_prompt.md",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "d7961711dab888e95bcead2fc54f446326998aec6d1f3717e3dab7fb476c7124",
+      "size": 3048
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G3QX14JS5VBH76HN0/harness_preflight.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "84ed4819344f3082ecc0c6f27c8b8a95c4192a178500d8cf24d1e53a90465791",
+      "size": 700
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G3QX14JS5VBH76HN0/validation_report.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "9398c08de1d2de2d31d1557478885bc2a2faaaa0c8a4511c2c93a333d2672fa8",
+      "size": 554
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G663ZCTKEG5CJHK7B/command_audit.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "b50723697145358f7ea96be93ea3172a7a16469775e1ea5c5589b82864dd21da",
+      "size": 2760
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G663ZCTKEG5CJHK7B/controller_prompt.md",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "2e40e20f7c075dc1e2a998021d64e500a675cb844bb736b20ba1ec4756a13fbe",
+      "size": 3048
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G663ZCTKEG5CJHK7B/harness_preflight.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "0e1fec06c69ee46718184c54048fa8b880adb9aa45d71e930763e8de0f6cd0a0",
+      "size": 700
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G663ZCTKEG5CJHK7B/validation_report.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "37242c6dea7a05ef5fd4549dbe626e74ab4e55a7d11a058d5acfd672067ab6e7",
+      "size": 554
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G6RHZ9VJYDV5NKPTT/command_audit.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "01ea52433068ed364ad4c8fb24840f3333af60b7a57c6515d644d7671ffcf455",
+      "size": 2760
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G6RHZ9VJYDV5NKPTT/controller_prompt.md",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "9e7158bf32bd75218957b663b18e68130913e096b7bed3abcd8148285a6efabe",
+      "size": 3048
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G6RHZ9VJYDV5NKPTT/harness_preflight.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "8e9545c74c8edcb4bd4bf77280223d2999fd41447ef0a3271aad1f549e789807",
+      "size": 700
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G6RHZ9VJYDV5NKPTT/validation_report.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "72cb125dd11dbacecaa2bedc5f14ec247c761ba2b2f4851b1f95d543a68c686d",
+      "size": 554
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G889B5DYTST65N0EW/command_audit.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "9436e1c323c079d4f3567645f8158a5d397ebbb6701f79b93b7b9bb5d037437c",
+      "size": 2759
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G889B5DYTST65N0EW/controller_prompt.md",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "614c9245e91b512245e3655817667ff9fb042ed421f118274d8ab1a349d1225c",
+      "size": 3048
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G889B5DYTST65N0EW/harness_preflight.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "b9f9096970ba326e9b5ab61d3856c4d2f75c5096a3a5687c992ed422220f5672",
+      "size": 700
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G889B5DYTST65N0EW/validation_report.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "27ed6188d238167ac72fbf8f0b88f3913a4726ba5baa1a99fb8800471e4c5bd8",
+      "size": 554
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GAXYP4Y8RR9C5G3KN/command_audit.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "3ed6ce0d1d5ed4470c0ceb5f0508a158b3e0a63e7401b010283c72e896f9e684",
+      "size": 2394
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GAXYP4Y8RR9C5G3KN/controller_prompt.md",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "5f211d5a90a86e067d517835ab9d21b38b5fbc9639586e3e4908307796c321cc",
+      "size": 3048
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GAXYP4Y8RR9C5G3KN/harness_preflight.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "bb0ee519453e456acf5c8e3ea7761cdf4a330e9bed033ea87808a7b4249bc855",
+      "size": 700
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GAXYP4Y8RR9C5G3KN/validation_report.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "1ecd7b9a9dc150e7a2dbc5f870135cd37723a1245b9ebe9d322017e348fb55a1",
+      "size": 554
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GB9057VRBFHJ9Y1NX/command_audit.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "e14b7e5515ef8d45f527cef89922d0fae524822894655db9c94b0e396a0d1032",
+      "size": 2394
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GB9057VRBFHJ9Y1NX/controller_prompt.md",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "7d7d2da8b30488fa74dca7b80e1e28bf9a98e5d3bf25c412d8e8bc4a757d3cda",
+      "size": 3048
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GB9057VRBFHJ9Y1NX/harness_preflight.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "3c772e16380f6d95a7b54c5b0e154decc4d29a3b35e6b7f4f43692f1ed6bce34",
+      "size": 700
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GB9057VRBFHJ9Y1NX/validation_report.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "f79acdc7c8d7acc4cfeac6dc1bbd9b27e3e22b05851437527462ad9a988b17ad",
+      "size": 554
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GCWM22YHNBNMM75XE/command_audit.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "b367a5d8ebef90c612effcb11dfb5cafc23d3245ce55173fe4a4e5b316446edd",
+      "size": 2394
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GCWM22YHNBNMM75XE/controller_prompt.md",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "f2b79bf3190ddde8d64d9c98344b8271b3705666fdf358554dd325c70c19584d",
+      "size": 3048
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GCWM22YHNBNMM75XE/harness_preflight.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "8df73915393a3b27948401e63f54c5c87e1e1f370beebc701154c468b6fcac35",
+      "size": 700
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GCWM22YHNBNMM75XE/validation_report.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "7f464086e369aab7ad413f202f42cdd38b91b0a95644e1518b8fad739f1dd904",
+      "size": 554
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GD05JQFX2ZE5MTRWZ/command_audit.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "2560b417b6fc2d158fa78414ae30a6b4d1a8af86ec72c925ad8bf31f552a0f64",
+      "size": 2760
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GD05JQFX2ZE5MTRWZ/controller_prompt.md",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "95cf176f064e422ca7c03dee9f5b1a66245d4f869fadb106c4db425b1f44966e",
+      "size": 3048
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GD05JQFX2ZE5MTRWZ/harness_preflight.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "fc6a40b282bf6d23b4374d29f687bcf3dd4619194647f060b8823bc8e74c44d9",
+      "size": 700
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GD05JQFX2ZE5MTRWZ/validation_report.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "d69c4a84b25163dc930119675490a3fb01a0f8327d47c76da288eb69d2daa990",
+      "size": 554
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GENTSWY2QD1D1RREE/command_audit.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "37cecd9522109fabb3d70476af3bba8b02f502a7d28c48076a6dd0a8da1e22ad",
+      "size": 2760
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GENTSWY2QD1D1RREE/controller_prompt.md",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "2c610a68d23a53cca55b5ebce8b297b1f108ccafda1aa3c76aec40e317e98997",
+      "size": 3048
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GENTSWY2QD1D1RREE/harness_preflight.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "06a4d4ac16c567bada32ec1fab603356b15fb72174584f00d3341bd9d6c85421",
+      "size": 700
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GENTSWY2QD1D1RREE/validation_report.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "99d5c7819ad6d0d4c049d75784d96ab9fbd255bf7e9295ab8ba458f52733ffc0",
+      "size": 554
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GETPHJ2B8PYVG9FE0/command_audit.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "9df946c85ac4fc447f9c03508db1d7f46d53edea837c4e0e8492d866116961bf",
+      "size": 3126
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GETPHJ2B8PYVG9FE0/controller_prompt.md",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "c86c52fbb0b2f602900969b0d3c441d7a28b21d52843eb66bc2659713697125e",
+      "size": 3048
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GETPHJ2B8PYVG9FE0/harness_preflight.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "04358017327ebc60f5173bc006825f7cd04400722030e06cb99bcc2d3935a78b",
+      "size": 700
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GETPHJ2B8PYVG9FE0/validation_report.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "f91b89ca272a5a0aec889855baeaff51d15f202d3aedfae7e10ef59ab7fdde46",
+      "size": 554
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GF9JD930JH9N49P07/command_audit.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "de2702ebbe9d8d7fbca99c9eda20fe164ef6f46864a49cd031c2edeae319b124",
+      "size": 2760
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GF9JD930JH9N49P07/controller_prompt.md",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "28350b3454e685ab7dd9968cdf308dc809aecb7c44b41f01f2af573554c55159",
+      "size": 3048
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GF9JD930JH9N49P07/harness_preflight.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "7d55006f356f7a4683881d35752f113519d33a5a3a914d7bc3615b4fb1ba5ee9",
+      "size": 700
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GF9JD930JH9N49P07/validation_report.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "09933cc6a972baae0712b7d1f9e7f69c136144b385aefd6500454fb78ef15340",
+      "size": 554
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GFY1PFRCMBZ41Q88C/command_audit.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "6943cba6b7b79dcf80b34b0000cc446db759d869ac76330f18067648567df51c",
+      "size": 2760
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GFY1PFRCMBZ41Q88C/controller_prompt.md",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "849ba959d4d9ba1d3632130a9e351969b8b5ebe0f7b0e9b138bc962e508a619d",
+      "size": 3048
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GFY1PFRCMBZ41Q88C/harness_preflight.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "a1c16143acfe7be49c32693327f70f284739fbd4a73f2615ee74de1d2a348a3d",
+      "size": 700
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GFY1PFRCMBZ41Q88C/validation_report.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "ca77e2780be84566ea4a32cafec966202bc6b9d31ace37cf096903c9cffbd664",
+      "size": 554
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GGA0W6TAYFVSGQXR3/command_audit.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "3656a0fbd5e44a4ba65286a38ebef7b11e774fae0292a39a0994b6aafe00a393",
+      "size": 3126
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GGA0W6TAYFVSGQXR3/controller_prompt.md",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "6698e2742c044c2cd12fc3041231e804e00b110028927dd8da34f8dc738bafd3",
+      "size": 3048
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GGA0W6TAYFVSGQXR3/harness_preflight.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "bfdb3016c05c785756f1b40851b1902abcc6d7484644fd0ee49f3cd6af1c3eed",
+      "size": 700
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GGA0W6TAYFVSGQXR3/validation_report.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "1defab44b6c0c7d67a0522908bfb55c1e2f0f4d0a50b3860016d869c7e49c250",
+      "size": 554
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GGG62YPWBRNTM1WFD/command_audit.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "ab8b2fc546fc06ecfb065bc885ab6a3e44d95eb434803893fc76695f989d9421",
+      "size": 2760
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GGG62YPWBRNTM1WFD/controller_prompt.md",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "ca6a6695629311dc537ba1b112fd55ffdd418deaa0bc5fec7cdf3088ce66eb79",
+      "size": 3048
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GGG62YPWBRNTM1WFD/harness_preflight.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "6493099396bd37d3cd184272b0c240175ada7071dbb578cc0b80bc1f0f125c83",
+      "size": 700
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GGG62YPWBRNTM1WFD/validation_report.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "82c7455fb9dfc42253fe24595ca7754366a001eee3be77957142e2786b1a8232",
+      "size": 554
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GHSHA6ZVKD6N2VFBG/command_audit.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "83de7171bbe5df7ddd1cafc46649398590828e340a31725dca84ae7c85b20589",
+      "size": 2760
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GHSHA6ZVKD6N2VFBG/controller_prompt.md",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "f4ec1895bbfd4d48520d9807d48ef854cd15fe286e0452ce5e788c55d5e9ce98",
+      "size": 3048
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GHSHA6ZVKD6N2VFBG/harness_preflight.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "04f6aa9780e0c86fefb00b9cd5310e1fd69c23a1512dba8d0bd3034c468ab3e1",
+      "size": 700
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GHSHA6ZVKD6N2VFBG/validation_report.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "f7e95caa4d01376ef0d8ad90b12cc0d71f9524900769475f1da1a1f9f0073959",
+      "size": 554
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KZMAG4W8YX882WWPKXP630N4/command_audit.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "7e19e7174a0fb6e778c7edd5974b11de6f5cea0d6498cc959601e7f7c41c3474",
+      "size": 2760
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KZMAG4W8YX882WWPKXP630N4/controller_prompt.md",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "573e716e0fd8a9b6c471709cd9eb80512f2e37bc4da2830dd7fce14477fa0bc2",
+      "size": 3048
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KZMAG4W8YX882WWPKXP630N4/harness_preflight.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "d0c28e5a4864e454ea43d559069416f9b6b84de781af55a22ff0379878524cd0",
+      "size": 700
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KZMAG4W8YX882WWPKXP630N4/validation_report.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "afcc4f207ddce5ffa54dd13b199a11d956dd7cde83ac3b4822c5dd19bd8a4f12",
+      "size": 554
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KZP6E8RGQV49A4B29D414XK4/command_audit.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "d22b9dfe0ca590184f4757c55d770ad349ed45f0b7781f1c042ea01376ec333d",
+      "size": 2760
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KZP6E8RGQV49A4B29D414XK4/controller_prompt.md",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "75d9b93bad92ce13248d1c30ba51998ccd46e012b6ea37420a888c508e987954",
+      "size": 3048
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KZP6E8RGQV49A4B29D414XK4/harness_preflight.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "8fb542259de24e3446c3737014089ac154bb570517496580c1720192e6c947b8",
+      "size": 700
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KZP6E8RGQV49A4B29D414XK4/validation_report.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "3a7e84f9c6231389779af8215db27739567c1786d5f0b7288e06a3e9d2f9799e",
+      "size": 554
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KZRGTMMGDHZWVFKTYNG62PGV/command_audit.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "9f57b6e3b875c5a9a830fa3ef1ae40b186edd1ee34ff91e05f241cf586027cfb",
+      "size": 2760
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KZRGTMMGDHZWVFKTYNG62PGV/controller_prompt.md",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "a9ff559b7f073ae87a061f3ce0b7755bb5dd8b7d9be80118c0f403f10d771d33",
+      "size": 3048
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KZRGTMMGDHZWVFKTYNG62PGV/harness_preflight.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "eb81f8bc94b1092fc9b91a567cd0384c1e3dc3d837dc8f38e27a89cfa49412b9",
+      "size": 700
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/01KZRGTMMGDHZWVFKTYNG62PGV/validation_report.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "67f013427929200b05b9525e8c13dbf5a928493c74299f9ffda75543d02fceb2",
+      "size": 554
+    },
+    {
+      "path": "data/runs/local-youtube-20260812T090946Z-02/decision_snapshot.json",
+      "pruned_at": "2026-09-11T14:28:10Z",
+      "sha256": "726fdd144f163cfbe8d8334f648a387321c20405431b238ef65c0365ff94d4eb",
+      "size": 293910,
+      "snapshot_id": "decision_1d6bb13aa87100d2e19c"
+    }
+  ],
+  "pruned_at": "2026-09-11T14:28:10Z",
+  "retention_days": 30,
+  "run_id": "local-youtube-20260812T090946Z-02",
+  "run_retention_version": 1
+}
