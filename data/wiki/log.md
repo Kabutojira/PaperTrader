@@ -3927,6 +3927,26 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 
 - Generated canonical [[daily-reports/daily-report_20260911]] for run `daily-20260911T152217Z`.
 
+- Created candidate packet [[inbox/market-security_798e2fb944d740aca308-bollinger_below_lower-f8d2ad861bef]] (f8d2ad861bef).
+
+- Classified [[inbox/market-security_798e2fb944d740aca308-bollinger_below_lower-f8d2ad861bef]] as `ingest`: Material entry below the lower Bollinger Band with an 8.36% period decline merits durable review.
+
+- Created candidate packet [[inbox/market-security_ccb25582c0392492fe9e-bollinger_below_lower-30a03b792ae7]] (30a03b792ae7).
+
+- Classified [[inbox/market-security_ccb25582c0392492fe9e-bollinger_below_lower-30a03b792ae7]] as `ingest`: New Bollinger-band breach transition with a negative 28-day return merits durable review.
+
+- Created candidate packet [[inbox/market-security_fe4648901e7675f157fd-bollinger_below_lower-e98a4fa79209]] (e98a4fa79209).
+
+- Classified [[inbox/market-security_fe4648901e7675f157fd-bollinger_below_lower-e98a4fa79209]] as `ingest`: New lower-Bollinger-band breach with an 8.4% period decline merits durable review.
+
+- Created candidate packet [[inbox/market-security_fe4648901e7675f157fd-rsi_oversold-8bf310286b9c]] (8bf310286b9c).
+
+- Classified [[inbox/market-security_fe4648901e7675f157fd-rsi_oversold-8bf310286b9c]] as `ingest`: Material RSI oversold entry coincides with an 8.4% decline over the measured period and merits durable review.
+
+- Created candidate packet [[inbox/market-security_fe4648901e7675f157fd-volume_anomaly-8a8c4408b7df]] (8a8c4408b7df).
+
+- Classified [[inbox/market-security_fe4648901e7675f157fd-volume_anomaly-8a8c4408b7df]] as `ingest`: New volume anomaly with a material negative return merits durable review.
+
 ## [2026-09-11] update | Planet Labs full Q2 fiscal 2027 review
 
 - Completed the bounded full Q2 review of

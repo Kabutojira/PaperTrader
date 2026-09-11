@@ -5,13 +5,47 @@
     "causal_hypothesis": "Higher additive volumes may benefit Rilsan PA11, Orgasol PA12, Kepstan PEKK, Pebax elastomers and resins, but the impact must be material relative to Arkema's consolidated specialty-materials portfolio.",
     "focused_questions": "Quantify additive revenue or best supportable upper bound, products and processes, growth versus group scale, proprietary advantage, margins, cyclicality, balance sheet, cash flow, customer concentration, scenarios, rating, and invalidation without attributing group economics to a small niche.",
     "idea_id": "idea_ai_driven_democratization_physical_creation",
-    "security_id": "security_798e2fb944d740aca308"
+    "market_data_as_of": "2026-09-11T18:05:29Z",
+    "market_data_date": "2026-09-11",
+    "period_end": "2026-09-11",
+    "period_start": "2026-08-14",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_798e2fb944d740aca308:ai-physical-creation:2026-09",
+        "observed_at": "2026-09-06T09:40:53Z",
+        "prompt": "Research and value Arkema with additive-material exposure dilution quantified.",
+        "source": "idea_research:01M1V159Q8ZAMEEEVXR2SC854J",
+        "source_refs": [
+          "https://live.euronext.com/en/products/equities/company-news/2026-05-06-arkema-first-quarter-2026-results",
+          "https://www.arkema.com/global/en/markets-solutions/3d-printing/"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_798e2fb944d740aca308:aa4e5ed301fdea67cae1:2026-09-11",
+        "market_data_date": "2026-09-11",
+        "observed_at": "2026-09-11T18:05:29Z",
+        "prompt": "Research security_798e2fb944d740aca308 with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_798e2fb944d740aca308-bollinger_below_lower-f8d2ad861bef.md"
+        ],
+        "trigger_types": [
+          "bollinger_below_lower"
+        ]
+      }
+    ],
+    "security_id": "security_798e2fb944d740aca308",
+    "source_price_hash": "95913c66090840e471e961b9492dd7e0878969268b3026ba7480aff0dfe8a3bf",
+    "trigger_types": [
+      "bollinger_below_lower"
+    ]
   },
-  "objective": "Research and value Arkema with additive-material exposure dilution quantified.",
+  "objective": "Research and value Arkema with additive-material exposure dilution quantified. | Additional cause: Research security_798e2fb944d740aca308 with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act.",
   "operation_id": "01M1V1F6487BZG6114432903G2",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_798e2fb944d740aca308-bollinger_below_lower-f8d2ad861bef.md",
     "https://live.euronext.com/en/products/equities/company-news/2026-05-06-arkema-first-quarter-2026-results",
     "https://www.arkema.com/global/en/markets-solutions/3d-printing/"
   ]

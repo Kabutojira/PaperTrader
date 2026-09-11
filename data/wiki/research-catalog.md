@@ -923,3 +923,11 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_798e2fb944d740aca308-bollinger_below_lower-f8d2ad861bef|AKE — Bollinger below lower]]
+- [[inbox/market-security_ccb25582c0392492fe9e-bollinger_below_lower-30a03b792ae7|EVK — Bollinger below lower]]
+- [[inbox/market-security_fe4648901e7675f157fd-bollinger_below_lower-e98a4fa79209|ANIC.L — Bollinger below lower]]
+- [[inbox/market-security_fe4648901e7675f157fd-rsi_oversold-8bf310286b9c|ANIC.L — RSI oversold]]
+- [[inbox/market-security_fe4648901e7675f157fd-volume_anomaly-8a8c4408b7df|ANIC.L — Volume anomaly]]
