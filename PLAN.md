@@ -623,3 +623,10 @@ integrity and advice validation continue to require an exact current-state publi
 Kept market and FX retrieval enabled during dry-run preparation so finalization validates current
 marks rather than stale checked-in caches. Dry runs still skip model-backed opportunity
 classification and retain their no-commit, no-publication, and no-delivery boundaries.
+
+### 2026-09-14 — latest-session retrieval evidence
+
+Refresh the retrieval timestamp of the newest provider-reobserved price bar even when its economic
+values are unchanged, while continuing to preserve identical historical rows. Market retrieval now
+fails explicitly when the provider response does not reach the expected completed session, and a
+required open position reports that retained provider error during finalization.

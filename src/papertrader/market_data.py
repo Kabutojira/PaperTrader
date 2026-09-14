@@ -473,12 +473,17 @@ def merge_price_bars(
             raise MarketDataError(f"existing price cache contains duplicate date {bar.date}")
         by_date[bar.date] = bar
     incoming_dates: set[date] = set()
+    newest_incoming = max((bar.date for bar in incoming), default=None)
     for bar in incoming:
         if bar.date in incoming_dates:
             raise MarketDataError(f"incoming prices contain duplicate date {bar.date}")
         incoming_dates.add(bar.date)
         previous = by_date.get(bar.date)
-        by_date[bar.date] = previous if previous and _same_economic_bar(previous, bar) else bar
+        by_date[bar.date] = (
+            previous
+            if previous and _same_economic_bar(previous, bar) and bar.date != newest_incoming
+            else bar
+        )
     if not by_date:
         return ()
     newest = max(by_date)
@@ -939,8 +944,14 @@ def update_market_data(
                     raise MarketDataError(
                         f"provider returned no completed session through {expected}"
                     )
+                if incoming[-1].date < expected:
+                    raise MarketDataError(
+                        f"provider latest price {incoming[-1].date} precedes "
+                        f"completed session {expected} for {identity.security_id}"
+                    )
                 break
             except Exception as exc:  # provider libraries expose several runtime error types
+                incoming = ()
                 failure = f"{type(exc).__name__}: {exc}"
                 if attempt < settings.market_data.retrieval_retries:
                     sleeper(float(2 ** (attempt - 1)))

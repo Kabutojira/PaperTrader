@@ -930,6 +930,9 @@ def _base_equity_market_inputs(
     if any(position.instrument_type == "option" for position in open_positions):
         raise DailyRunError("fresh option marks are required for open option positions")
     securities = {row["security_id"]: row for row in read_table(repository_root, "securities")}
+    market_results = {
+        row["security_id"]: row for row in read_table(repository_root, "market_latest")
+    }
     references: list[ReferencePrice] = []
     marks: list[PositionMark] = []
     bars: list[MarketBar] = []
@@ -937,6 +940,16 @@ def _base_equity_market_inputs(
         identity = securities.get(security_id)
         if identity is None:
             raise DailyRunError(f"market input references unknown security {security_id}")
+        market_result = market_results.get(security_id)
+        if (
+            security_id in open_equities
+            and market_result is not None
+            and market_result["status"] in {"error", "stale"}
+        ):
+            detail = market_result["error"] or (
+                f"market refresh ended with status {market_result['status']}"
+            )
+            raise DailyRunError(f"fresh market/FX mark is required for {security_id}: {detail}")
         try:
             cached = read_price_cache(repository_root, security_id)
             if not cached:

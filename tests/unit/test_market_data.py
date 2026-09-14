@@ -4,6 +4,7 @@ from dataclasses import replace
 from datetime import UTC, date, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
+from types import SimpleNamespace
 
 import pandas as pd
 import pytest
@@ -12,6 +13,7 @@ from hypothesis import settings as hypothesis_settings
 from hypothesis import strategies as st
 from yfinance.scrapers.history import PriceHistory
 
+import papertrader.daily as daily_module
 from papertrader.config import Settings
 from papertrader.market_data import (
     MarketDataError,
@@ -203,21 +205,26 @@ def test_rolling_cache_property_never_keeps_more_than_365_calendar_days(
     assert len({bar.date for bar in merged}) == len(merged)
 
 
-def test_merge_preserves_existing_bar_for_timestamp_only_refresh() -> None:
+def test_merge_refreshes_only_the_latest_reobserved_economic_bar() -> None:
     first_retrieval = datetime(2026, 7, 24, 20, tzinfo=UTC)
-    original = _bar(date(2026, 7, 24), first_retrieval)
-    refreshed = replace(original, retrieved_at=first_retrieval + timedelta(hours=1))
+    original_history = (
+        _bar(date(2026, 7, 23), first_retrieval),
+        _bar(date(2026, 7, 24), first_retrieval),
+    )
+    refreshed_at = first_retrieval + timedelta(hours=1)
+    refreshed_history = tuple(replace(bar, retrieved_at=refreshed_at) for bar in original_history)
 
-    unchanged = merge_price_bars((original,), (refreshed,), retention_days=365)
+    unchanged = merge_price_bars(original_history, refreshed_history, retention_days=365)
     corrected = merge_price_bars(
-        (original,),
-        (replace(refreshed, close=Decimal("100.5")),),
+        original_history,
+        (replace(refreshed_history[-1], close=Decimal("100.5")),),
         retention_days=365,
     )
 
-    assert unchanged == (original,)
-    assert corrected[0].retrieved_at == refreshed.retrieved_at
-    assert corrected[0].close == Decimal("100.5")
+    assert unchanged[0] == original_history[0]
+    assert unchanged[-1].retrieved_at == refreshed_at
+    assert corrected[-1].retrieved_at == refreshed_at
+    assert corrected[-1].close == Decimal("100.5")
 
 
 def test_fx_cache_is_decimal_fresh_and_forward_fills_actions(
@@ -401,6 +408,137 @@ def test_market_update_merges_cache_and_persists_corporate_actions(
     assert read_table(sandbox_repository, "market_latest")[0]["status"] == "ok"
     actions = read_table(sandbox_repository, "corporate_actions")
     assert [(row["action_type"], row["value"]) for row in actions] == [("dividend", "0.25")]
+
+
+def test_market_update_refreshes_identical_latest_completed_session(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    write_table(sandbox_repository, "securities", [_security_row()])
+    frame = _frame()
+    first_retrieval = datetime(2026, 7, 24, 20, tzinfo=UTC)
+    refreshed_at = first_retrieval + timedelta(hours=2)
+
+    assert (
+        update_market_data(
+            sandbox_repository,
+            sandbox_settings,
+            provider=_FakeProvider(frame),
+            now=first_retrieval,
+            sleeper=lambda _: None,
+        )
+        == ()
+    )
+    original = read_price_cache(sandbox_repository, "sec_a")
+    assert (
+        update_market_data(
+            sandbox_repository,
+            sandbox_settings,
+            provider=_FakeProvider(frame),
+            now=refreshed_at,
+            sleeper=lambda _: None,
+        )
+        == ()
+    )
+
+    refreshed = read_price_cache(sandbox_repository, "sec_a")
+    assert refreshed[:-1] == original[:-1]
+    assert refreshed[-1] == replace(original[-1], retrieved_at=refreshed_at)
+    assert read_table(sandbox_repository, "market_latest")[0]["retrieved_at"] == (
+        "2026-07-24T22:00:00Z"
+    )
+
+
+def test_market_update_rejects_provider_history_before_expected_session(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    write_table(sandbox_repository, "securities", [_security_row()])
+    first_retrieval = datetime(2026, 7, 24, 20, tzinfo=UTC)
+    assert (
+        update_market_data(
+            sandbox_repository,
+            sandbox_settings,
+            provider=_FakeProvider(_frame()),
+            now=first_retrieval,
+            sleeper=lambda _: None,
+        )
+        == ()
+    )
+
+    provider = _FakeProvider(_frame().iloc[:-1])
+    errors = update_market_data(
+        sandbox_repository,
+        sandbox_settings,
+        provider=provider,
+        now=first_retrieval + timedelta(hours=2),
+        sleeper=lambda _: None,
+    )
+
+    assert provider.calls == sandbox_settings.market_data.retrieval_retries
+    assert errors == (
+        "sec_a: MarketDataError: provider latest price 2026-07-23 precedes "
+        "completed session 2026-07-24 for sec_a",
+    )
+    latest = read_table(sandbox_repository, "market_latest")[0]
+    assert latest["status"] == "error"
+    assert latest["error"] == errors[0].removeprefix("sec_a: ")
+
+
+def test_required_open_security_surfaces_market_provider_error(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    write_table(sandbox_repository, "securities", [_security_row()])
+    write_table(
+        sandbox_repository,
+        "market_latest",
+        [
+            {
+                "security_id": "sec_a",
+                "provider_symbol": "EXM",
+                "price_date": "2026-07-23",
+                "retrieved_at": "2026-07-24T22:00:00Z",
+                "open": "100",
+                "high": "102",
+                "low": "99",
+                "close": "101",
+                "adjusted_close": "101",
+                "volume": "1000",
+                "currency": "USD",
+                "source": "yfinance",
+                "status": "error",
+                "error": "TimeoutError: provider request timed out for EXM",
+            }
+        ],
+    )
+    monkeypatch.setattr(
+        daily_module,
+        "replay_accounting",
+        lambda _repository_root: SimpleNamespace(
+            positions=(
+                SimpleNamespace(
+                    security_id="sec_a",
+                    instrument_type="equity",
+                    quantity=Decimal("8"),
+                ),
+            )
+        ),
+    )
+
+    with pytest.raises(
+        daily_module.DailyRunError,
+        match=(
+            "fresh market/FX mark is required for sec_a: "
+            "TimeoutError: provider request timed out for EXM"
+        ),
+    ):
+        daily_module._base_equity_market_inputs(
+            sandbox_repository,
+            sandbox_settings,
+            now=datetime(2026, 7, 24, 22, tzinfo=UTC),
+        )
 
 
 def test_market_update_appends_provider_action_revisions_as_compensating_entries(
