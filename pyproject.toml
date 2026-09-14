@@ -14,12 +14,12 @@ dependencies = [
   "edge-tts==7.2.8",
   "exchange-calendars==4.13.2",
   "jsonschema==4.26.0",
-  "numpy==2.5.1",
+  "numpy==2.5.3",
   "pandas==3.0.5",
-  "pytubefix==10.10.1",
+  "pytubefix==11.1.0",
   "PyYAML==6.0.3",
   "TA-Lib==0.7.1",
-  "yfinance[repair]==1.5.2",
+  "yfinance[repair]==1.7.0",
 ]
 
 [project.scripts]
