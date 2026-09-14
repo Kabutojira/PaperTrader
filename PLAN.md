@@ -617,3 +617,9 @@ Moved the daily runtime integrity check behind creation or resumption of its con
 Fresh runs can now defer only publication source-state freshness when queued research changed after
 the prior completed snapshot; static checks still run before cycle creation, and post-finalization
 integrity and advice validation continue to require an exact current-state publication.
+
+### 2026-09-14 — dry-run market freshness
+
+Kept market and FX retrieval enabled during dry-run preparation so finalization validates current
+marks rather than stale checked-in caches. Dry runs still skip model-backed opportunity
+classification and retain their no-commit, no-publication, and no-delivery boundaries.

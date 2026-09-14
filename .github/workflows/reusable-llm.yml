@@ -290,7 +290,7 @@ jobs:
           DRY_RUN: ${{ inputs.dry_run }}
         run: |
           arguments=(daily prepare --run-id "$CYCLE_ID" --trigger "$RUN_TRIGGER" --source-sha "$(git rev-parse HEAD)")
-          if [ "$DRY_RUN" = "true" ]; then arguments+=(--offline --skip-classifier); fi
+          if [ "$DRY_RUN" = "true" ]; then arguments+=(--skip-classifier); fi
           uv run papertrader "${arguments[@]}"
           checkpoint=$(uv run papertrader daily record-checkpoint --daily-cycle-id "$CYCLE_ID" --kind preparation)
           echo "index=$(python3 -c 'import json,sys; print(json.load(sys.stdin)["index"])' <<< "$checkpoint")" >> "$GITHUB_OUTPUT"

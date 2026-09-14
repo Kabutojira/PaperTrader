@@ -342,6 +342,14 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     assert runtime_steps.index(
         "Run weekly native llm-wiki maintenance before queued operations"
     ) < runtime_steps.index("Routed research checkpoint 01")
+    preparation_step = next(
+        step
+        for step in runtime["steps"]
+        if step["name"] == "Prepare deterministic daily state and reserve preparation checkpoint"
+    )
+    preparation_run = preparation_step["run"]
+    assert 'if [ "$DRY_RUN" = "true" ]; then arguments+=(--skip-classifier); fi' in preparation_run
+    assert "--offline" not in preparation_run
     assert "Discover curated YouTube sources" not in runtime_steps
     assert "Schedule Seeking Alpha discovery" not in runtime_steps
     assert all("YOUTUBE_DATA_API" not in step.get("env", {}) for step in runtime["steps"])
