@@ -17,9 +17,7 @@
   "maximum_baseline_exposure_base": "2996.38275925562714313010872",
   "minimum_cash_reserve_base": "2496.9856327130226192750906",
   "mode": "active",
-  "operations_created": [
-    "01M2FMRCFGSGFCGCT19M8K13VH"
-  ],
+  "operations_created": [],
   "pending_gross_exposure_base": "0",
   "run_id": "daily-20260914T094240Z",
   "target_count": 83,

@@ -4,17 +4,17 @@ type: system-status
 status: maintained
 tags:
   - system-status
-created: "2026-09-11"
-updated: "2026-09-11"
+created: "2026-09-14"
+updated: "2026-09-14"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_9bee3282c6d6ab41f863"
-as_of: "2026-09-11T18:11:32Z"
+snapshot_id: "decision_94e97ce3286dd035775c"
+as_of: "2026-09-14T09:49:26Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-09-11T18:11:32Z`
-**Investment data:** Portfolio state safe — research gaps remain
+**As of:** `2026-09-14T09:49:26Z`
+**Investment data:** Unsafe to publish — portfolio, accounting, or active-order state requires attention
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
 **Portfolio reconciliation:** Reconciled
@@ -23,8 +23,8 @@ Publication validation confirms that this generated artifact is internally consi
 
 ## Current investment health
 
-- Assessments: 50/83
-- Fresh-evidence assessments: 46/83
+- Assessments: 49/83
+- Fresh-evidence assessments: 45/83
 - Relationship reviews: 20/83
 - Accepted relationships: 19
 - Market success/failure: 92/0
@@ -41,7 +41,7 @@ Publication validation confirms that this generated artifact is internally consi
 
 ## Sequential research backlog
 
-- Research backlog: 341
+- Research backlog: 353
 
 ## Publication health
 
@@ -50,7 +50,7 @@ Publication validation confirms that this generated artifact is internally consi
 
 ## Current issues by investment impact
 
-Current unresolved issues: **23**.
+Current unresolved issues: **24**.
 Resolved and superseded issues remain in the canonical audit but are not current health.
 
 ### Affects Candidate (17)
@@ -81,6 +81,10 @@ Resolved and superseded issues remain in the canonical audit but are not current
 - Error **Hermes operation validation failed: Daily podcast for Daily report for 2026-08-06 on 2026-08-06** — cannot restore rejected path data/wiki/daily-reports/daily-report\_20260806.md: pre-run path cannot be restored because Git metadata is unavailable; daily podcast spoken transcript must label paper trading
 - Error **Hermes operation validation failed: Daily podcast for Daily report for 2026-08-17 on 2026-08-17** — non-successful daily podcast must not retain a transcript page
 - Error **Hermes operation validation failed: Daily podcast for Daily report for 2026-09-06 on 2026-09-06** — Hermes exited with status 1; agent result is missing or a symlink: data/runs/Daily report for 2026-09-06/Daily podcast for Daily report for 2026-09-06 on 2026-09-06/agent\_result.json
+
+### Operational Only (1)
+
+- Error **PRX — Prosus N.V.: Hermes operation validation failed: Research triage for PRX on 2026-09-11** — commands\_run claims commands without deterministic CLI audit receipts: \['scripts/papertrader research assessment-get --assessment-id assessment\_7f28dfd9240d6099400b', 'scripts/papertrader research security-context --security-id PRX'\]; successful research triage requires its structured check receipt
 
 ## Historical audit health
 

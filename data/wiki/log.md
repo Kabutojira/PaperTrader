@@ -4012,3 +4012,9 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Classified [[inbox/market-security_f18cd57a5e086583c861-macd_cross_above_signal-3882d9f8f534]] as `ingest`: A newly entered MACD bullish crossover after a material negative-period return is a decision-relevant market transition for the security.
 
 - Created candidate packet [[inbox/market-security_fb87fac302a5446a1ced-macd_cross_below_signal-b1edd7360bd3]] (b1edd7360bd3).
+
+- Published investor decision snapshot `decision_94e97ce3286dd035775c`.
+
+- Saved bounded research finding coverage in [[queries/research-findings-650bc383615f35f4d084c08f]].
+
+- Generated canonical [[daily-reports/daily-report_20260914]] for run `daily-20260914T094240Z`.
