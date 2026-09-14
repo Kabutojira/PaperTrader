@@ -945,3 +945,11 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_567d0d575bbd30aaa91d-macd_cross_below_signal-06285aa8cb37|SSU.VI — MACD cross below signal]]
+- [[inbox/market-security_89969b7dac39b7db5661-macd_cross_below_signal-5315eb960d39|YEC.F — MACD cross below signal]]
+- [[inbox/market-security_d08d763780400dfbffce-macd_cross_below_signal-571c8cbf4293|SSUN.VI — MACD cross below signal]]
+- [[inbox/market-security_dc8486c1d61df62a22fd-bollinger_below_lower-7db5d1663d20|SU — Bollinger below lower]]
+- [[inbox/market-security_dc8486c1d61df62a22fd-volume_anomaly-b38314de5968|SU — Volume anomaly]]

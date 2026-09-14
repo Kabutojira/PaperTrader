@@ -4024,3 +4024,17 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Saved bounded research finding coverage in [[queries/research-findings-eca2d650a09f9d4a0318e10f]].
 
 - Generated canonical [[daily-reports/daily-report_20260914]] for run `daily-20260914T103100Z`.
+
+- Created candidate packet [[inbox/market-security_567d0d575bbd30aaa91d-macd_cross_below_signal-06285aa8cb37]] (06285aa8cb37).
+
+- Created candidate packet [[inbox/market-security_89969b7dac39b7db5661-macd_cross_below_signal-5315eb960d39]] (5315eb960d39).
+
+- Created candidate packet [[inbox/market-security_d08d763780400dfbffce-macd_cross_below_signal-571c8cbf4293]] (571c8cbf4293).
+
+- Created candidate packet [[inbox/market-security_dc8486c1d61df62a22fd-bollinger_below_lower-7db5d1663d20]] (7db5d1663d20).
+
+- Classified [[inbox/market-security_dc8486c1d61df62a22fd-bollinger_below_lower-7db5d1663d20]] as `ingest`: Material downside transition: security entered Bollinger-below-lower state after an 11.9% period decline.
+
+- Created candidate packet [[inbox/market-security_dc8486c1d61df62a22fd-volume_anomaly-b38314de5968]] (b38314de5968).
+
+- Classified [[inbox/market-security_dc8486c1d61df62a22fd-volume_anomaly-b38314de5968]] as `ingest`: Material volume anomaly coincides with an 11.9% decline over the measured period.
