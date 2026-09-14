@@ -7,18 +7,18 @@ tags:
 created: "2026-09-14"
 updated: "2026-09-14"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_94e97ce3286dd035775c"
-as_of: "2026-09-14T09:49:26Z"
+snapshot_id: "decision_e9f8c6457e560546a6c4"
+as_of: "2026-09-14T10:34:02Z"
 ---
 
 # Model portfolio
 
-**As of `2026-09-14T09:49:26Z`**
+**As of `2026-09-14T10:34:02Z`**
 
 Pending targets are projections; only deterministic fills change the current portfolio.
 
 <div class="model-portfolio-grid" id="model-portfolio-grid">
-<article class="portfolio-card" data-scalable="false" data-target-weight="97.14736" data-mark="1" data-fx="1" data-mark-currency="" data-market-data-as-of="2026-09-14T09:49:26Z" data-ticker="CASH" data-company="Cash">
+<article class="portfolio-card" data-scalable="false" data-target-weight="97.14736" data-mark="1" data-fx="1" data-mark-currency="" data-market-data-as-of="2026-09-14T10:34:02Z" data-ticker="CASH" data-company="Cash">
 <h3>Cash</h3>
 <dl class="portfolio-card-values">
 <div><dt>Current</dt><dd>97.14736%</dd></div>
@@ -29,8 +29,8 @@ Pending targets are projections; only deterministic fills change the current por
 <div><dt>Research action</dt><dd>Hold</dd></div>
 <div><dt>Reference mark</dt><dd>1 </dd></div>
 <div><dt>Base mark</dt><dd>1 EUR</dd></div>
-<div><dt>FX to EUR</dt><dd>1 · 2026-09-14T09:49:26Z</dd></div>
-<div><dt>As of</dt><dd>2026-09-14T09:49:26Z</dd></div>
+<div><dt>FX to EUR</dt><dd>1 · 2026-09-14T10:34:02Z</dd></div>
+<div><dt>As of</dt><dd>2026-09-14T10:34:02Z</dd></div>
 </dl>
 
 </article>
@@ -45,7 +45,7 @@ Pending targets are projections; only deterministic fills change the current por
 <div><dt>Research action</dt><dd>Initiate</dd></div>
 <div><dt>Reference mark</dt><dd>35.6150016784668 EUR</dd></div>
 <div><dt>Base mark</dt><dd>35.6150016784668 EUR</dd></div>
-<div><dt>FX to EUR</dt><dd>1 · 2026-09-14T09:49:26Z</dd></div>
+<div><dt>FX to EUR</dt><dd>1 · 2026-09-14T10:34:02Z</dd></div>
 <div><dt>As of</dt><dd>2026-09-11T15:30:00Z</dd></div>
 </dl>
 <p><a href="strategies/strategy_8caa208dfc702a2584a7">Strategy research</a></p>

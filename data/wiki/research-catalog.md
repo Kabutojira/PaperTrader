@@ -7,8 +7,8 @@ tags:
 created: "2026-09-14"
 updated: "2026-09-14"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_94e97ce3286dd035775c"
-as_of: "2026-09-14T09:49:26Z"
+snapshot_id: "decision_e9f8c6457e560546a6c4"
+as_of: "2026-09-14T10:34:02Z"
 ---
 
 # Research catalog
@@ -782,6 +782,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Research findings b9288ef6b96529891976570e](queries/research-findings-b9288ef6b96529891976570e)
 - [Research findings daily-20260911T103301Z](queries/research-findings-daily-20260911T103301Z)
 - [Research findings e57fa1c6bb04096010e0d459](queries/research-findings-e57fa1c6bb04096010e0d459)
+- [Research findings eca2d650a09f9d4a0318e10f](queries/research-findings-eca2d650a09f9d4a0318e10f)
 
 ## Relationship
 
