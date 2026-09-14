@@ -193,9 +193,7 @@ jobs:
           result=$(uv run papertrader daily resolve-cycle --trigger "$RUN_TRIGGER" --github-run-id "$GITHUB_RUN_ID" --resume-cycle-id "$RESUME_CYCLE_ID")
           cycle_id=$(python3 -c 'import json,sys; print(json.load(sys.stdin)["daily_cycle_id"])' <<< "$result")
           echo "cycle_id=$cycle_id" >> "$GITHUB_OUTPUT"
-      - name: Validate the selected cycle limit and run the full preflight gate
-        env:
-          RESOLVED_CYCLE_ID: ${{ steps.cycle_resolution.outputs.cycle_id }}
+      - name: Validate the selected cycle limit and run the static preflight gates
         run: |
           case "$MAX_OPERATIONS" in ""|*[!0-9]*) echo "::error::MAX_OPERATIONS must be a positive integer"; exit 1;; esac
           test "$MAX_OPERATIONS" -gt 0
@@ -204,11 +202,6 @@ jobs:
           uv run mypy src
           uv run pytest -m "not slow"
           uv run papertrader schema validate --strict
-          integrity_arguments=(integrity --strict)
-          if [ -n "$RESOLVED_CYCLE_ID" ]; then
-            integrity_arguments+=(--prepared-daily-cycle-id "$RESOLVED_CYCLE_ID")
-          fi
-          uv run papertrader "${integrity_arguments[@]}"
       - name: Configure isolated Hermes profile
         env:
           OPERATION_TYPE: ${{ inputs.operation_type }}
@@ -275,6 +268,10 @@ jobs:
           needs_finalization=$(python3 -c 'import json,sys; print("false" if json.load(sys.stdin).get("finalization_at") else "true")' <<< "$result")
           echo "cycle_id=$cycle_id" >> "$GITHUB_OUTPUT"
           echo "needs_finalization=$needs_finalization" >> "$GITHUB_OUTPUT"
+      - name: Validate prepared daily-cycle integrity before research work
+        env:
+          CYCLE_ID: ${{ steps.cycle.outputs.cycle_id }}
+        run: uv run papertrader integrity --strict --prepared-daily-cycle-id "$CYCLE_ID"
       - name: Run weekly native llm-wiki maintenance before queued operations
         if: ${{ steps.cycle.outputs.needs_finalization == 'true' && inputs.wiki_maintenance }}
         env:

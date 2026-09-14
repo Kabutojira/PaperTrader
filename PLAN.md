@@ -610,3 +610,10 @@ monitoring/calendar/forecast/finding coverage, and hash-bound hardening migratio
 schema/integrity/advice/wiki/reconciliation without changing executions, cash or portfolio bytes.
 The zero-model offline migration rehearsal does not satisfy M10. Production activation, source
 commit/push, normal-budget live workflow and post-run validation are the remaining deployment steps.
+
+### 2026-09-14 — fresh daily-cycle publication preflight
+
+Moved the daily runtime integrity check behind creation or resumption of its controller-owned cycle.
+Fresh runs can now defer only publication source-state freshness when queued research changed after
+the prior completed snapshot; static checks still run before cycle creation, and post-finalization
+integrity and advice validation continue to require an exact current-state publication.

@@ -249,13 +249,10 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     preflight_step = next(
         step
         for step in runtime["steps"]
-        if step["name"] == "Validate the selected cycle limit and run the full preflight gate"
+        if step["name"] == "Validate the selected cycle limit and run the static preflight gates"
     )
-    assert preflight_step["env"] == {
-        "RESOLVED_CYCLE_ID": "${{ steps.cycle_resolution.outputs.cycle_id }}"
-    }
-    assert "--prepared-daily-cycle-id" in preflight_step["run"]
-    assert "--prepared-github-run-id" not in preflight_step["run"]
+    assert "papertrader schema validate --strict" in preflight_step["run"]
+    assert "papertrader integrity" not in preflight_step["run"]
     cycle_step = next(
         step
         for step in runtime["steps"]
@@ -265,6 +262,31 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
         "${{ steps.cycle_resolution.outputs.cycle_id }}"
     )
     assert 'echo "needs_finalization=$needs_finalization"' in cycle_step["run"]
+    cycle_integrity_step = next(
+        step
+        for step in runtime["steps"]
+        if step["name"] == "Validate prepared daily-cycle integrity before research work"
+    )
+    assert cycle_integrity_step["env"] == {"CYCLE_ID": "${{ steps.cycle.outputs.cycle_id }}"}
+    assert cycle_integrity_step["run"] == (
+        'uv run papertrader integrity --strict --prepared-daily-cycle-id "$CYCLE_ID"'
+    )
+    runtime_step_names = [step["name"] for step in runtime["steps"]]
+    assert runtime_step_names.index(preflight_step["name"]) < runtime_step_names.index(
+        cycle_step["name"]
+    )
+    assert runtime_step_names.index(cycle_step["name"]) < runtime_step_names.index(
+        cycle_integrity_step["name"]
+    )
+    assert runtime_step_names.index(cycle_integrity_step["name"]) < runtime_step_names.index(
+        "Run weekly native llm-wiki maintenance before queued operations"
+    )
+    postfinalization_step = next(
+        step for step in runtime["steps"] if step["name"] == "Run full post-finalization gate"
+    )
+    assert "uv run papertrader integrity --strict" in postfinalization_step["run"]
+    assert "--prepared-daily-cycle-id" not in postfinalization_step["run"]
+    assert "uv run papertrader advice validate --strict" in postfinalization_step["run"]
     assert workflow["on"]["workflow_call"]["outputs"]["podcast_status"]["value"] == (
         "${{ jobs.runtime.outputs.podcast_status }}"
     )
@@ -304,7 +326,7 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     )
     assert '[ -z "$CYCLE_ID" ] || [ ! -f "$manifest" ]' in publish_outputs["run"]
     assert 'echo "changed=false"' in publish_outputs["run"]
-    runtime_steps = [step["name"] for step in runtime["steps"]]
+    runtime_steps = runtime_step_names
     maintenance_step = next(
         step
         for step in runtime["steps"]
@@ -602,7 +624,7 @@ def test_hermes_runtime_establishes_container_paths_and_profile_ownership(
     steps = {step["name"]: step for step in runtime["steps"]}
     boundary = steps["Establish the container workspace boundary"]["run"]
     handoff = steps["Hand the isolated profile to the Hermes user"]["run"]
-    preflight = steps["Validate the selected cycle limit and run the full preflight gate"]["run"]
+    preflight = steps["Validate the selected cycle limit and run the static preflight gates"]["run"]
 
     assert 'workspace="$(pwd -P)"' in boundary
     assert 'git config --system --add safe.directory "$workspace"' in boundary
