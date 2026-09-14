@@ -5,13 +5,46 @@
     "causal_hypothesis": "A larger flow of AI-generated manufacturable designs may raise demand for automated-quote additive, CNC, injection-molding, and sheet-metal production, but additive may be too small to move consolidated results.",
     "focused_questions": "Test digital-factory versus network economics, process and geography mix, automated quoting, customer behavior, additive exposure, margins, capacity utilization, concentration, cash flow, balance sheet, scenarios, rating, and invalidation.",
     "idea_id": "idea_ai_driven_democratization_physical_creation",
-    "security_id": "security_f18cd57a5e086583c861"
+    "market_data_as_of": "2026-09-14T09:42:46Z",
+    "market_data_date": "2026-09-11",
+    "period_end": "2026-09-11",
+    "period_start": "2026-08-13",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_f18cd57a5e086583c861:ai-physical-creation:2026-09",
+        "observed_at": "2026-09-06T09:40:36Z",
+        "prompt": "Research and value Proto Labs as a digitally quoted manufacturing service.",
+        "source": "idea_research:01M1V159Q8ZAMEEEVXR2SC854J",
+        "source_refs": [
+          "https://www.sec.gov/Archives/edgar/data/1443669/000144366926000010/0001443669-26-000010-index.htm"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_f18cd57a5e086583c861:534e2257d3fc8315845e:2026-09-11",
+        "market_data_date": "2026-09-11",
+        "observed_at": "2026-09-14T09:42:46Z",
+        "prompt": "Research security_f18cd57a5e086583c861 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_f18cd57a5e086583c861-macd_cross_above_signal-3882d9f8f534.md"
+        ],
+        "trigger_types": [
+          "macd_cross_above_signal"
+        ]
+      }
+    ],
+    "security_id": "security_f18cd57a5e086583c861",
+    "source_price_hash": "57549a515f517d4dce7c5d436fbe9a17092af2e5a8ef7a96065406597eeeeea0",
+    "trigger_types": [
+      "macd_cross_above_signal"
+    ]
   },
-  "objective": "Research and value Proto Labs as a digitally quoted manufacturing service.",
+  "objective": "Research and value Proto Labs as a digitally quoted manufacturing service. | Additional cause: Research security_f18cd57a5e086583c861 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
   "operation_id": "01M1V1ENH079N3H8504P53WP8A",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_f18cd57a5e086583c861-macd_cross_above_signal-3882d9f8f534.md",
     "https://www.sec.gov/Archives/edgar/data/1443669/000144366926000010/0001443669-26-000010-index.htm"
   ]
 }

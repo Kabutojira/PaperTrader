@@ -1,0 +1,18 @@
+{
+  "entity_id": "security_cc4dcb8f002b61dffe00",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-08-20T07:54:58Z",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_cc4dcb8f002b61dffe00.md",
+    "security_id": "security_cc4dcb8f002b61dffe00"
+  },
+  "objective": "Revalidate security_cc4dcb8f002b61dffe00 with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01M2FMRCFGGGARH3TVNDX0DEZH",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_parrot_h1_2026_results",
+    "source_parrot_shares_20260731"
+  ]
+}

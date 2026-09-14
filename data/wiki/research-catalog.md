@@ -5,7 +5,7 @@ status: maintained
 tags:
   - research
 created: "2026-09-11"
-updated: "2026-09-11"
+updated: "2026-09-14"
 provenance: deterministic-decision-projection
 snapshot_id: "decision_9bee3282c6d6ab41f863"
 as_of: "2026-09-11T18:11:32Z"
@@ -929,3 +929,19 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_18a3ab0ee6086ee85d0f-macd_cross_above_signal-d7a61222a847|ETN — MACD cross above signal]]
+- [[inbox/market-security_2c779e81c27b78c556bb-rsi_overbought-06c121cac65f|TX — RSI overbought]]
+- [[inbox/market-security_3a75fc1ccca2ee7c937a-bollinger_above_upper-9ad05073a478|QCOM — Bollinger above upper]]
+- [[inbox/market-security_4627aea1bf7d8943d3d8-bollinger_below_lower-ab2170b216de|SGML — Bollinger below lower]]
+- [[inbox/market-security_55c9ce2fdcd32dad6b8c-bollinger_above_upper-b7a9bbe8ee67|CRSR — Bollinger above upper]]
+- [[inbox/market-security_55c9ce2fdcd32dad6b8c-macd_cross_above_signal-a9e000cde1b9|CRSR — MACD cross above signal]]
+- [[inbox/market-security_66cdcf90aac0d83e76f3-bollinger_below_lower-a8fadac262b1|ALB — Bollinger below lower]]
+- [[inbox/market-security_98a1943771da875efed5-bollinger_below_lower-39f8a6b3d474|NOMD — Bollinger below lower]]
+- [[inbox/market-security_9d4049ed6669a52815d6-bollinger_below_lower-43237d713f40|SQM — Bollinger below lower]]
+- [[inbox/market-security_b19e8f0343b7da1f3c03-bollinger_below_lower-d425c581ed5f|03388 — Bollinger below lower]]
+- [[inbox/market-security_c5a9e460d3350284d157-rsi_overbought-1addd47d20ce|VLO — RSI overbought]]
+- [[inbox/market-security_f18cd57a5e086583c861-macd_cross_above_signal-3882d9f8f534|PRLB — MACD cross above signal]]
+- [[inbox/market-security_fb87fac302a5446a1ced-macd_cross_below_signal-b1edd7360bd3|LAC — MACD cross below signal]]

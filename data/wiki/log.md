@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-08-08"
-updated: "2026-09-11"
+updated: "2026-09-14"
 provenance: repository-contract
 ---
 
@@ -3968,3 +3968,47 @@ boundary after the combined log crossed the configured 5,000-line threshold.
   and identified defense and aerospace for one bounded relationship review. No strategy, signal,
   order, paper trade, allocation or accounting state changed.
 - Files updated: `securities/security_97f38b2cb2d5ef127f5a.md`, `log.md`.
+
+## 2026-09-14
+
+- Created candidate packet [[inbox/market-security_18a3ab0ee6086ee85d0f-macd_cross_above_signal-d7a61222a847]] (d7a61222a847).
+
+- Classified [[inbox/market-security_18a3ab0ee6086ee85d0f-macd_cross_above_signal-d7a61222a847]] as `ingest`: A new MACD bullish crossover after a material negative period is a durable, decision-relevant market transition.
+
+- Created candidate packet [[inbox/market-security_2c779e81c27b78c556bb-rsi_overbought-06c121cac65f]] (06c121cac65f).
+
+- Created candidate packet [[inbox/market-security_3a75fc1ccca2ee7c937a-bollinger_above_upper-9ad05073a478]] (9ad05073a478).
+
+- Created candidate packet [[inbox/market-security_4627aea1bf7d8943d3d8-bollinger_below_lower-ab2170b216de]] (ab2170b216de).
+
+- Classified [[inbox/market-security_4627aea1bf7d8943d3d8-bollinger_below_lower-ab2170b216de]] as `ingest`: Material 16.2% decline with a strengthened Bollinger-below-lower transition merits durable review.
+
+- Created candidate packet [[inbox/market-security_55c9ce2fdcd32dad6b8c-bollinger_above_upper-b7a9bbe8ee67]] (b7a9bbe8ee67).
+
+- Created candidate packet [[inbox/market-security_55c9ce2fdcd32dad6b8c-macd_cross_above_signal-a9e000cde1b9]] (a9e000cde1b9).
+
+- Classified [[inbox/market-security_55c9ce2fdcd32dad6b8c-macd_cross_above_signal-a9e000cde1b9]] as `ingest`: A newly entered MACD bullish crossover is a validated market transition for the security and merits durable review context.
+
+- Created candidate packet [[inbox/market-security_66cdcf90aac0d83e76f3-bollinger_below_lower-a8fadac262b1]] (a8fadac262b1).
+
+- Classified [[inbox/market-security_66cdcf90aac0d83e76f3-bollinger_below_lower-a8fadac262b1]] as `ingest`: Material downside transition: the security strengthened a Bollinger-below-lower signal alongside a roughly 10% decline over the measured period.
+
+- Created candidate packet [[inbox/market-security_98a1943771da875efed5-bollinger_below_lower-39f8a6b3d474]] (39f8a6b3d474).
+
+- Classified [[inbox/market-security_98a1943771da875efed5-bollinger_below_lower-39f8a6b3d474]] as `ingest`: Material downside transition: price fell 8.8% over the period and the Bollinger-below-lower trigger strengthened.
+
+- Created candidate packet [[inbox/market-security_9d4049ed6669a52815d6-bollinger_below_lower-43237d713f40]] (43237d713f40).
+
+- Classified [[inbox/market-security_9d4049ed6669a52815d6-bollinger_below_lower-43237d713f40]] as `ingest`: New downside Bollinger-band transition with a material negative period return merits durable monitoring context.
+
+- Created candidate packet [[inbox/market-security_b19e8f0343b7da1f3c03-bollinger_below_lower-d425c581ed5f]] (d425c581ed5f).
+
+- Classified [[inbox/market-security_b19e8f0343b7da1f3c03-bollinger_below_lower-d425c581ed5f]] as `ingest`: Material entry into a Bollinger-band downside condition with a 13% period decline warrants durable review.
+
+- Created candidate packet [[inbox/market-security_c5a9e460d3350284d157-rsi_overbought-1addd47d20ce]] (1addd47d20ce).
+
+- Created candidate packet [[inbox/market-security_f18cd57a5e086583c861-macd_cross_above_signal-3882d9f8f534]] (3882d9f8f534).
+
+- Classified [[inbox/market-security_f18cd57a5e086583c861-macd_cross_above_signal-3882d9f8f534]] as `ingest`: A newly entered MACD bullish crossover after a material negative-period return is a decision-relevant market transition for the security.
+
+- Created candidate packet [[inbox/market-security_fb87fac302a5446a1ced-macd_cross_below_signal-b1edd7360bd3]] (b1edd7360bd3).
