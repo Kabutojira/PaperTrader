@@ -4038,3 +4038,9 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Created candidate packet [[inbox/market-security_dc8486c1d61df62a22fd-volume_anomaly-b38314de5968]] (b38314de5968).
 
 - Classified [[inbox/market-security_dc8486c1d61df62a22fd-volume_anomaly-b38314de5968]] as `ingest`: Material volume anomaly coincides with an 11.9% decline over the measured period.
+
+- Published investor decision snapshot `decision_142ce34792b7ef629791`.
+
+- Saved bounded research finding coverage in [[queries/research-findings-24bd50a6d6bb89e8445ec8c8]].
+
+- Generated canonical [[daily-reports/daily-report_20260914]] for run `daily-20260914T194357Z`.

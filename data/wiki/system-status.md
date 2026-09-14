@@ -7,14 +7,14 @@ tags:
 created: "2026-09-14"
 updated: "2026-09-14"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_e9f8c6457e560546a6c4"
-as_of: "2026-09-14T10:34:02Z"
+snapshot_id: "decision_142ce34792b7ef629791"
+as_of: "2026-09-14T19:47:09Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-09-14T10:34:02Z`
-**Investment data:** Unsafe to publish — portfolio, accounting, or active-order state requires attention
+**As of:** `2026-09-14T19:47:09Z`
+**Investment data:** Portfolio state safe — research gaps remain
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
 **Portfolio reconciliation:** Reconciled
@@ -41,7 +41,7 @@ Publication validation confirms that this generated artifact is internally consi
 
 ## Sequential research backlog
 
-- Research backlog: 353
+- Research backlog: 352
 
 ## Publication health
 
@@ -84,7 +84,7 @@ Resolved and superseded issues remain in the canonical audit but are not current
 
 ### Operational Only (1)
 
-- Error **PRX — Prosus N.V.: Hermes operation validation failed: Research triage for PRX on 2026-09-11** — commands\_run claims commands without deterministic CLI audit receipts: \['scripts/papertrader research assessment-get --assessment-id assessment\_7f28dfd9240d6099400b', 'scripts/papertrader research security-context --security-id PRX'\]
+- Error **PRX — Prosus N.V.: Hermes operation validation failed: Research triage for PRX on 2026-09-14** — commands\_run claims commands without deterministic CLI audit receipts: \['scripts/papertrader research assessment-get --assessment-id assessment\_7f28dfd9240d6099400b', 'scripts/papertrader research security-context --security-id PRX'\]
 
 ## Historical audit health
 

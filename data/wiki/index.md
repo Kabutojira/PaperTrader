@@ -7,30 +7,30 @@ tags:
 created: "2026-09-14"
 updated: "2026-09-14"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_e9f8c6457e560546a6c4"
-as_of: "2026-09-14T10:34:02Z"
+snapshot_id: "decision_142ce34792b7ef629791"
+as_of: "2026-09-14T19:47:09Z"
 ---
 
 # PaperTrader
 
-**As of `2026-09-14T10:34:02Z` · Investment data: Unsafe to publish — portfolio, accounting, or active-order state requires attention · Operations: Attention required**
+**As of `2026-09-14T19:47:09Z` · Investment data: Portfolio state safe — research gaps remain · Operations: Attention required**
 
-## Decision blocked — do not copy actions
+## Maintain the current model portfolio
 
-<section class="decision-cards" aria-label="Decision summary"><article class="decision-card" data-status="blocked"><span class="decision-card-label">Stance</span><strong>Decision blocked — do not copy actions</strong></article><article class="decision-card" data-status="cash"><span class="decision-card-label">Cash</span><strong>97.14736%</strong></article><article class="decision-card" data-status="exposure"><span class="decision-card-label">Gross exposure</span><strong>2.85264%</strong></article><article class="decision-card" data-status="signals"><span class="decision-card-label">Actionable signals</span><strong>0</strong></article><article class="decision-card" data-status="coverage"><span class="decision-card-label">Assessment coverage</span><strong>49/83</strong></article></section>
+<section class="decision-cards" aria-label="Decision summary"><article class="decision-card" data-status="maintain"><span class="decision-card-label">Stance</span><strong>Maintain the current model portfolio</strong></article><article class="decision-card" data-status="cash"><span class="decision-card-label">Cash</span><strong>97.123634%</strong></article><article class="decision-card" data-status="exposure"><span class="decision-card-label">Gross exposure</span><strong>2.876367%</strong></article><article class="decision-card" data-status="signals"><span class="decision-card-label">Actionable signals</span><strong>0</strong></article><article class="decision-card" data-status="coverage"><span class="decision-card-label">Assessment coverage</span><strong>49/83</strong></article></section>
 
 ### Why
 
-- The required market reference is stale.
+- No strategy has produced a current actionable trade signal.
 
 ## Current and target portfolio
 
-Current equity is **9987.94 EUR** with **97.14736% cash**. The target retains **97.14736% cash**.
+Current equity is **9990.38 EUR** with **97.123634% cash**. The target retains **97.123634% cash**.
 
 | Holding | Current | Target | Action | Strategy |
 | --- | ---: | ---: | --- | --- |
-| Cash | 97.14736% | 97.14736% | No trade | — |
-| [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | 2.85264% | 2.85264% | Hold | [Open](strategies/strategy_8caa208dfc702a2584a7) |
+| Cash | 97.123634% | 97.123634% | No trade | — |
+| [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | 2.876366% | 2.876366% | Hold | [Open](strategies/strategy_8caa208dfc702a2584a7) |
 
 ## Actionable trade signals
 
@@ -38,26 +38,27 @@ Current equity is **9987.94 EUR** with **97.14736% cash**. The target retains **
 
 ## Buy / Initiate research candidates
 
-- **[NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d):** Buy / Initiate · Full baseline — Research incomplete · expected return 39% · No current allocation plan supports this candidate.
-- **[UBER — Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e):** Buy / Initiate · Full baseline — Research incomplete · expected return 24% · No current allocation plan supports this candidate.
-- **[DPZ — Domino's Pizza, Inc.](securities/security_f34181f3df32080a91d1):** Buy / Initiate · Full baseline — Research incomplete · expected return 23% · No current allocation plan supports this candidate.
-- **[MELI — MercadoLibre, Inc.](securities/security_4935c6e39e38273a1731):** Buy / Initiate · Starter — Research incomplete · expected return 16% · No current allocation plan supports this candidate.
-- **[TCEHY — Tencent Holdings Limited](securities/security_de0d83229b369a426b99):** Buy / Initiate · Starter — Research incomplete · expected return 19% · No current allocation plan supports this candidate.
-- **[DLO — DLocal Limited](securities/security_715bde20b6e1e1320c1a):** Buy / Initiate · Research incomplete · expected return 28% · No current allocation plan supports this candidate.
-- **[PATH — UiPath, Inc.](securities/security_eca976f0076a425ea1bb):** Buy / Initiate · Research incomplete · expected return 27% · No current allocation plan supports this candidate.
-- **[SOFI — SoFi Technologies, Inc.](securities/security_98470cfc01bbcde78fc2):** Buy / Initiate · Research incomplete · expected return 17% · No current allocation plan supports this candidate.
-- **[CROX — Crocs, Inc.](securities/security_c150f31c30afdb4a85f9):** Buy / Initiate · Research incomplete · expected return 25% · No current allocation plan supports this candidate.
-- **[PYPL — PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00):** Buy / Initiate · Research incomplete · expected return 14% · No current allocation plan supports this candidate.
-- **[FISV — Fiserv, Inc.](securities/security_d202772e4e62065cd17a):** Buy / Initiate · Research incomplete · expected return 20% · No current allocation plan supports this candidate.
-- **[CSIQ — Canadian Solar Inc.](securities/security_099561384c0f5e697727):** Buy / Initiate · Research incomplete · expected return 31% · No current allocation plan supports this candidate.
-- **[NOMD — Nomad Foods Limited](securities/security_98a1943771da875efed5):** Buy / Initiate · Research incomplete · expected return 29% · No current allocation plan supports this candidate.
-- **[DNA — Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687):** Buy / Initiate · Research incomplete · expected return 20% · No current allocation plan supports this candidate.
+- **[NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d):** Buy / Initiate · Full baseline — Allocation constrained · expected return 39% · The eligible set is not sufficiently diversified.
+- **[UBER — Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e):** Buy / Initiate · Full baseline — Strategy research pending · expected return 24% · The eligible set is not sufficiently diversified.
+- **[DPZ — Domino's Pizza, Inc.](securities/security_f34181f3df32080a91d1):** Buy / Initiate · Full baseline — Allocation constrained · expected return 23% · The eligible set is not sufficiently diversified.
+- **[MELI — MercadoLibre, Inc.](securities/security_4935c6e39e38273a1731):** Buy / Initiate · Starter — Allocation constrained · expected return 16% · The eligible set is not sufficiently diversified.
+- **[TCEHY — Tencent Holdings Limited](securities/security_de0d83229b369a426b99):** Buy / Initiate · Starter — Allocation constrained · expected return 19% · The eligible set is not sufficiently diversified.
+- **[DLO — DLocal Limited](securities/security_715bde20b6e1e1320c1a):** Buy / Initiate · Valuation unattractive · expected return 28% · Bear-case loss exceeds the starter limit.
+- **[PATH — UiPath, Inc.](securities/security_eca976f0076a425ea1bb):** Buy / Initiate · Relationship research pending · expected return 27% · A current accepted idea-to-security relationship is unavailable.
+- **[SOFI — SoFi Technologies, Inc.](securities/security_98470cfc01bbcde78fc2):** Buy / Initiate · Valuation unattractive · expected return 17% · Bear-case loss exceeds the starter limit.
+- **[FUC.F — Fanuc Corporation](securities/security_96ba305ee7cd586bc348):** Buy / Initiate · Research incomplete · expected return 14% · The assessment's registered evidence is not fresh.
+- **[CROX — Crocs, Inc.](securities/security_c150f31c30afdb4a85f9):** Buy / Initiate · Relationship research pending · expected return 25% · A current accepted idea-to-security relationship is unavailable.
+- **[PYPL — PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00):** Buy / Initiate · Research incomplete · expected return 14% · The assessment's registered evidence is not fresh.
+- **[FISV — Fiserv, Inc.](securities/security_d202772e4e62065cd17a):** Buy / Initiate · Allocation constrained · expected return 20% · Research quality must be strictly above the configured threshold.
+- **[CSIQ — Canadian Solar Inc.](securities/security_099561384c0f5e697727):** Buy / Initiate · Allocation constrained · expected return 31% · Research quality must be strictly above the configured threshold.
+- **[NOMD — Nomad Foods Limited](securities/security_98a1943771da875efed5):** Buy / Initiate · Allocation constrained · expected return 29% · Research quality must be strictly above the configured threshold.
+- **[DNA — Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687):** Buy / Initiate · Valuation unattractive · expected return 20% · Bear/base payoff is below the starter threshold.
 
 ## Performance, risk, and coverage
 
-- Cumulative return: **-0.120574691479095228996376%**
-- Running drawdown: **-0.1207995937130846320769937327%**
-- Largest position: **2.85264%**
+- Cumulative return: **-0.096174972240814428996376%**
+- Running drawdown: **-0.0963999294165633431363237952%**
+- Largest position: **2.876366%**
 - Current assessments: **49/83**
 - Relationship reviews: **20/83**
 - Accepted relationships: **19**
