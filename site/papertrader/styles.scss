@@ -4,26 +4,148 @@
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  padding: 0.85rem 1.25rem;
+  box-sizing: border-box;
+  padding: 1rem 0;
   border-bottom: 1px solid var(--lightgray);
-  background: color-mix(in srgb, var(--light) 94%, var(--secondary));
+  background: transparent;
 }
 
 .papertrader-brand {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  flex-shrink: 0;
   color: var(--dark);
   font-weight: 750;
   line-height: 1.05;
   text-decoration: none;
 
   small {
+    display: block;
     margin-top: 0.25rem;
     color: var(--darkgray);
     font-size: 0.72rem;
     font-weight: 550;
     letter-spacing: 0.04em;
     text-transform: uppercase;
+  }
+}
+
+.papertrader-brand img {
+  margin: 0;
+  border-radius: 12px;
+}
+
+.research-hero {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  align-items: center;
+  overflow: hidden;
+  margin: 1.5rem 0 2rem;
+  border: 1px solid #366450;
+  border-radius: 1.25rem;
+  background:
+    radial-gradient(ellipse at 95% 0%, #356e50, transparent 65%), #123f32;
+  color: #f7f3e9;
+  box-shadow: 0 12px 32px #123f3212;
+}
+
+.research-hero-copy {
+  padding: 2rem 0 2rem 2rem;
+  z-index: 1;
+
+  .research-eyebrow {
+    color: #e5bd75;
+    font-size: 0.68rem;
+    font-weight: 650;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin: 0 0 1rem;
+  }
+
+  h2 {
+    color: #fffaf0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.65rem, 2.7vw, 2.55rem);
+    font-weight: 400;
+    line-height: 1.12;
+    letter-spacing: -0.035em;
+    margin: 0;
+  }
+
+  > p:not(.research-eyebrow) {
+    color: #d2e1d4;
+    font-size: 0.91rem;
+    line-height: 1.6;
+    max-width: 27rem;
+    margin: 1rem 0;
+  }
+}
+
+.research-hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  color: #d2e1d4;
+  font-size: 0.66rem;
+
+  span::before {
+    content: "";
+    display: inline-block;
+    width: 0.3rem;
+    height: 0.3rem;
+    border-radius: 50%;
+    background: #e5bd75;
+    margin-right: 0.4rem;
+    vertical-align: middle;
+  }
+}
+
+.research-hero-art {
+  width: 120%;
+  max-width: none;
+  height: auto;
+  margin: 0 0 0 -12%;
+}
+
+body {
+  background-image: radial-gradient(
+    ellipse at top left,
+    var(--highlight),
+    transparent 45rem
+  );
+}
+
+article {
+  h1 {
+    letter-spacing: -0.04em;
+  }
+  h2 {
+    letter-spacing: -0.025em;
+  }
+  table {
+    font-variant-numeric: tabular-nums;
+  }
+  th {
+    background: var(--highlight);
+  }
+  tbody tr:nth-child(even) {
+    background: color-mix(in srgb, var(--light) 97%, var(--secondary));
+  }
+}
+
+body[data-slug="index"] article > h1 {
+  font-size: 1.5rem;
+}
+
+.decision-card {
+  border-top: 3px solid var(--secondary);
+  font-variant-numeric: tabular-nums;
+
+  &[data-status="blocked"] {
+    border-top-color: var(--tertiary);
   }
 }
 
@@ -259,6 +381,28 @@
   white-space: normal;
 }
 
+// Quartz 5 wraps the header, article, and related content in one center cell.
+// Place that wrapper explicitly so CSS Grid never creates implicit columns.
+.page > #quartz-body {
+  grid-template:
+    "grid-sidebar-left grid-center grid-sidebar-right" 1fr
+    "grid-sidebar-left grid-footer grid-sidebar-right" auto /
+    minmax(14rem, 17rem) minmax(0, 1fr) minmax(12rem, 15rem);
+  padding-right: 2rem;
+
+  > .center {
+    grid-area: grid-center;
+    min-width: 0;
+  }
+
+  .sidebar {
+    padding-top: 2rem;
+  }
+  .page-header {
+    margin-top: 1rem;
+  }
+}
+
 body:is(
   [data-slug="index"],
   [data-slug="model-portfolio"],
@@ -269,45 +413,26 @@ body:is(
 ) {
   .page > #quartz-body {
     grid-template:
-      "grid-sidebar-left grid-header"
-      "grid-sidebar-left grid-center"
-      "grid-sidebar-left grid-footer" / minmax(14rem, 17rem) minmax(0, 1fr);
+      "grid-sidebar-left grid-center" 1fr
+      "grid-sidebar-left grid-footer" auto / minmax(14rem, 17rem)
+      minmax(0, 1fr);
   }
 
-  .sidebar.right {
+  .page > #quartz-body .sidebar.right {
     display: none;
-  }
-}
-
-@media (min-width: 1200px) {
-  body[data-slug="index"] {
-    .page > #quartz-body {
-      grid-template:
-        "grid-sidebar-left grid-header grid-sidebar-right"
-        "grid-sidebar-left grid-center grid-sidebar-right"
-        "grid-sidebar-left grid-footer grid-sidebar-right" / minmax(
-          14rem,
-          17rem
-        )
-        minmax(0, 1fr) minmax(14rem, 18rem);
-    }
-
-    .sidebar.right {
-      display: flex;
-    }
   }
 }
 
 body[data-slug="security-catalog"] {
   .page > #quartz-body {
     grid-template:
-      "grid-header"
       "grid-center"
       "grid-footer" / minmax(0, 1fr);
+    padding-left: 2rem;
   }
 
-  .sidebar.left,
-  .sidebar.right {
+  .page > #quartz-body .sidebar.left,
+  .page > #quartz-body .sidebar.right {
     display: none;
   }
 
@@ -346,22 +471,44 @@ body[data-slug="index"] .page-footer {
   }
 }
 
+@media (min-width: 801px) and (max-width: 1199px) {
+  .page > #quartz-body {
+    grid-template:
+      "grid-sidebar-left grid-center" 1fr
+      "grid-sidebar-left grid-footer" auto / 14rem minmax(0, 1fr);
+
+    .sidebar.right {
+      display: none;
+    }
+  }
+}
+
 @media (max-width: 800px) {
-  body:is(
-      [data-slug="index"],
-      [data-slug="model-portfolio"],
-      [data-slug="security-catalog"],
-      [data-slug="signals"],
-      [data-slug="performance"],
-      [data-slug="system-status"]
-    )
-    .page
-    > #quartz-body {
+  .research-hero-copy {
+    padding: 1.5rem;
+  }
+  .research-hero {
+    grid-template-columns: 1.5fr 1fr;
+  }
+  .research-hero-art {
+    width: 155%;
+    margin-left: -35%;
+  }
+  body[data-slug] .page > #quartz-body {
     grid-template:
       "grid-sidebar-left"
-      "grid-header"
       "grid-center"
       "grid-footer" / minmax(0, 1fr);
+    padding: 0 1rem;
+
+    .sidebar.right {
+      display: none;
+    }
+
+    .sidebar.left .page-title {
+      font-size: 1.2rem;
+      flex-shrink: 1;
+    }
   }
 
   .papertrader-header {
@@ -404,6 +551,12 @@ body[data-slug="index"] .page-footer {
 }
 
 @media (max-width: 420px) {
+  .research-hero {
+    grid-template-columns: 1fr;
+  }
+  .research-hero-art {
+    display: none;
+  }
   .decision-cards {
     grid-template-columns: 1fr;
   }

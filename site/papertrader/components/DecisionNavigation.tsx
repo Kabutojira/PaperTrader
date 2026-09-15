@@ -3,7 +3,12 @@ import {
   QuartzComponentConstructor,
   QuartzComponentProps,
 } from "../../quartz/components/types";
-import { FullSlug, resolveRelative } from "../../quartz/util/path";
+import {
+  FullSlug,
+  resolveRelative,
+  joinSegments,
+  pathToRoot,
+} from "../../quartz/util/path";
 
 // @ts-ignore
 import dashboardScript from "../scripts/dashboard.inline";
@@ -52,8 +57,15 @@ const DecisionNavigation: QuartzComponent = ({
         class="papertrader-brand"
         href={resolveRelative(current, "index" as FullSlug)}
       >
-        <span>PaperTrader</span>
-        <small>decision dashboard</small>
+        <img
+          src={joinSegments(pathToRoot(current), "static/icon.svg")}
+          width="42"
+          height="42"
+          alt=""
+        />
+        <span>
+          PaperTrader<small>Research, made tangible</small>
+        </span>
       </a>
       <nav class="papertrader-nav" aria-label="Primary navigation">
         {visibleLinks.map((link) => {

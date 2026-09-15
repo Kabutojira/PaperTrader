@@ -26,6 +26,15 @@ const chartColors = [
 
 let echartsPromise: Promise<EChartsApi> | undefined;
 
+function localSiteRoot(): URL {
+  const marker = document.querySelector<HTMLElement>(
+    "[data-papertrader-site-root]",
+  );
+  const root = marker?.dataset.papertraderSiteRoot;
+  if (!root) throw new Error("cannot resolve the local site root");
+  return new URL(`${root}/`, document.baseURI);
+}
+
 function record(value: unknown): ChartObject {
   if (typeof value !== "object" || value === null || Array.isArray(value)) {
     throw new Error("chart specification must be an object");
@@ -64,18 +73,9 @@ function loadECharts(): Promise<EChartsApi> {
   if (current) return Promise.resolve(current);
   if (echartsPromise) return echartsPromise;
   echartsPromise = new Promise((resolve, reject) => {
-    const postscript = [
-      ...document.querySelectorAll<HTMLScriptElement>("script[src]"),
-    ].find((script) =>
-      new URL(script.src, document.baseURI).pathname.endsWith("/postscript.js"),
-    );
-    if (!postscript) {
-      reject(new Error("cannot resolve the local ECharts asset"));
-      return;
-    }
     const source = new URL(
       "static/vendor/echarts/echarts.min.js",
-      postscript.src,
+      localSiteRoot(),
     ).href;
     const script = document.createElement("script");
     script.src = source;
@@ -704,21 +704,13 @@ function appendSources(figure: HTMLElement, spec: ChartObject): void {
     list.append(item);
   }
   if (spec.kind === "technical") {
-    const postscript = [
-      ...document.querySelectorAll<HTMLScriptElement>("script[src]"),
-    ].find((script) =>
-      new URL(script.src, document.baseURI).pathname.endsWith("/postscript.js"),
-    );
     const dataPath = text(spec.data_path, "technical data_path");
-    if (
-      !postscript ||
-      !/^data\/market\/technical\/[A-Za-z0-9_.-]+\.csv$/.test(dataPath)
-    ) {
+    if (!/^data\/market\/technical\/[A-Za-z0-9_.-]+\.csv$/.test(dataPath)) {
       throw new Error("cannot resolve the local technical CSV");
     }
     const item = document.createElement("li");
     const link = document.createElement("a");
-    link.href = new URL(dataPath, new URL(".", postscript.src)).href;
+    link.href = new URL(dataPath, localSiteRoot()).href;
     link.textContent = "Download the canonical technical CSV";
     link.download = `${text(spec.security_id, "security_id")}.csv`;
     item.append(link);

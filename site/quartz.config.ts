@@ -1,5 +1,7 @@
 import { QuartzConfig } from "./quartz/cfg";
 import * as Plugin from "./quartz/plugins";
+import * as Community from "./papertrader/plugins";
+import { layout } from "./quartz.layout";
 
 const config: QuartzConfig = {
   configuration: {
@@ -11,7 +13,6 @@ const config: QuartzConfig = {
     locale: "en-US",
     baseUrl: process.env.PAPERTRADER_BASE_URL,
     ignorePatterns: ["**/.gitkeep", "_archive"],
-    defaultDateType: "modified",
     theme: {
       fontOrigin: "local",
       cdnCaching: false,
@@ -22,8 +23,8 @@ const config: QuartzConfig = {
       },
       colors: {
         lightMode: {
-          light: "#fbfcfa",
-          lightgray: "#e4e9e2",
+          light: "#faf8f2",
+          lightgray: "#e4e5da",
           gray: "#9aa59a",
           darkgray: "#435047",
           dark: "#172019",
@@ -48,30 +49,36 @@ const config: QuartzConfig = {
   },
   plugins: {
     transformers: [
-      Plugin.FrontMatter(),
-      Plugin.CreatedModifiedDate({ priority: ["frontmatter", "git"] }),
-      Plugin.SyntaxHighlighting({
+      Community.NoteProperties(),
+      Community.CreatedModifiedDate({
+        priority: ["frontmatter", "git"],
+        defaultDateType: "modified",
+      }),
+      Community.SyntaxHighlighting({
         theme: { light: "github-light", dark: "github-dark" },
         keepBackground: false,
       }),
-      Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false }),
-      Plugin.GitHubFlavoredMarkdown(),
-      Plugin.TableOfContents(),
-      Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
-      Plugin.Description(),
+      Community.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false }),
+      Community.GitHubFlavoredMarkdown(),
+      Community.TableOfContentsTransformer(),
+      Community.CrawlLinks({ markdownLinkResolution: "shortest" }),
+      Community.Description(),
     ],
-    filters: [Plugin.RemoveDrafts()],
+    filters: [Community.RemoveDrafts()],
     emitters: [
-      Plugin.AliasRedirects(),
+      Community.AliasRedirects(),
       Plugin.ComponentResources(),
-      Plugin.ContentPage(),
-      Plugin.FolderPage(),
-      Plugin.TagPage(),
-      Plugin.ContentIndex({ enableSiteMap: true, enableRSS: true }),
+      Community.ContentIndex({ enableSiteMap: true, enableRSS: true }),
       Plugin.Assets(),
       Plugin.Static(),
-      Plugin.Favicon(),
-      Plugin.NotFoundPage(),
+      Community.Favicon(),
+      Plugin.PageTypes.PageTypeDispatcher(layout),
+    ],
+    pageTypes: [
+      Community.FolderPage(),
+      Community.TagPage(),
+      Community.ContentPage(),
+      Plugin.PageTypes.NotFoundPageType(),
     ],
   },
 };

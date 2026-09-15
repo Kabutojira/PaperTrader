@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#123f32"/>
+  <circle cx="1010" cy="315" r="300" fill="#24553e"/>
+  <circle cx="1010" cy="315" r="240" fill="none" stroke="#497b57"/>
+  <circle cx="1010" cy="315" r="190" fill="none" stroke="#497b57"/>
+  <path d="M880 174h132l55 55v226H880z" fill="#f5f1e7"/>
+  <path d="M1012 174v55h55" fill="#b7d6bc"/>
+  <path d="M925 382V266h56a40 40 0 0 1 0 80h-56" fill="none" stroke="#176b45" stroke-width="24" stroke-linejoin="round"/>
+  <circle cx="1060" cy="437" r="43" fill="#dfb66d"/>
+  <text x="80" y="139" font-family="sans-serif" font-size="24" letter-spacing="4" fill="#e5bd75">THE OPEN INVESTMENT NOTEBOOK</text>
+  <text x="75" y="287" font-family="Georgia,serif" font-size="92" fill="#fffaf0">PaperTrader</text>
+  <text x="80" y="361" font-family="sans-serif" font-size="31" fill="#d2e1d4">Research with roots.</text>
+  <text x="80" y="407" font-family="sans-serif" font-size="31" fill="#d2e1d4">Decisions with evidence.</text>
+  <path d="M80 485h640" stroke="#497b57"/>
+  <text x="80" y="532" font-family="sans-serif" font-size="22" fill="#d2e1d4">Public research  /  Paper trades  /  Traceable decisions</text>
+</svg>

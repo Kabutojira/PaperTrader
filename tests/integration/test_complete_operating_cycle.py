@@ -1289,6 +1289,17 @@ def test_clean_checkout_research_to_publication_cycle_is_replay_safe(
         assert 'class="papertrader-nav"' in homepage_html
         assert "Recently explored ideas" in homepage_html
         assert "Synthetic operating-cycle momentum" in homepage_html
+        # The generated engine is Git-ignored; Quartz 5's default static emitter
+        # skips it. The build wrapper must still publish branding and local charts.
+        for asset in (
+            "icon.svg",
+            "icon.png",
+            "apple-touch-icon.png",
+            "og-image.png",
+            "research-garden.svg",
+            "vendor/echarts/echarts.min.js",
+        ):
+            assert (site_output / "static" / asset).stat().st_size > 0
         for publication_name in (
             "decision_snapshot.json",
             "model_portfolio.csv",

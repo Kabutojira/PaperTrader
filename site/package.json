@@ -1,6 +1,6 @@
 {
   "name": "papertrader-site",
-  "version": "4.5.2",
+  "version": "5.0.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -12,11 +12,39 @@
     "prebuild": "npm run prepare-engine",
     "build": "node build-quartz.mjs",
     "postbuild": "python3 ../scripts/check_site_links.py",
-    "check": "npm run prepare-engine && tsc --noEmit && prettier quartz.config.ts quartz.layout.ts papertrader prepare-quartz.mjs build-quartz.mjs index.d.ts globals.d.ts --check"
+    "check": "npm run prepare-engine && tsc --noEmit && prettier quartz.config.ts quartz.layout.ts papertrader prepare-quartz.mjs build-quartz.mjs quartz.ts index.d.ts globals.d.ts --check"
   },
   "dependencies": {
-    "@jackyzha0/quartz": "https://github.com/jackyzha0/quartz/archive/4923affa7722dfc751f1074348e6dad214fe0c08.tar.gz",
-    "echarts": "6.0.0"
+    "@jackyzha0/quartz": "https://github.com/jackyzha0/quartz/archive/3dff48b5df6d84c9544a5ae19c8f2cbb01dc44e5.tar.gz",
+    "echarts": "6.0.0",
+    "@quartz-community/article-title": "1.0.0",
+    "@quartz-community/backlinks": "1.0.0",
+    "@quartz-community/breadcrumbs": "1.0.0",
+    "@quartz-community/content-meta": "1.0.0",
+    "@quartz-community/darkmode": "1.0.0",
+    "@quartz-community/explorer": "1.0.0",
+    "@quartz-community/footer": "1.0.0",
+    "@quartz-community/page-title": "1.0.0",
+    "@quartz-community/reader-mode": "1.0.0",
+    "@quartz-community/recent-notes": "1.0.0",
+    "@quartz-community/search": "1.0.0",
+    "@quartz-community/table-of-contents": "1.0.0",
+    "@quartz-community/tag-list": "1.0.0",
+    "@quartz-community/alias-redirects": "1.0.0",
+    "@quartz-community/content-index": "1.0.0",
+    "@quartz-community/content-page": "1.0.0",
+    "@quartz-community/crawl-links": "1.0.0",
+    "@quartz-community/created-modified-date": "1.0.0",
+    "@quartz-community/description": "1.0.0",
+    "@quartz-community/favicon": "1.0.0",
+    "@quartz-community/folder-page": "1.0.0",
+    "@quartz-community/github-flavored-markdown": "1.0.0",
+    "@quartz-community/note-properties": "1.0.0",
+    "@quartz-community/obsidian-flavored-markdown": "1.0.0",
+    "@quartz-community/remove-draft": "1.0.0",
+    "@quartz-community/syntax-highlighting": "1.0.0",
+    "@quartz-community/tag-page": "1.0.0",
+    "sharp": "0.35.4"
   },
   "devDependencies": {
     "@types/d3": "7.4.3",
@@ -29,10 +57,13 @@
     "@types/ws": "8.18.1",
     "@types/yargs": "17.0.35",
     "prettier": "3.9.6",
-    "typescript": "5.9.2"
+    "typescript": "5.9.2",
+    "@quartz-community/types": "1.0.0",
+    "@quartz-community/utils": "1.0.0",
+    "esbuild": "0.28.2",
+    "tsx": "4.21.0"
   },
   "overrides": {
-    "property-information": "6.2.0",
-    "sharp": "0.35.3"
+    "property-information": "6.2.0"
   }
 }

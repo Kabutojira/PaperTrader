@@ -3,7 +3,11 @@
     "lib": ["esnext", "DOM", "DOM.Iterable"],
     "module": "esnext",
     "target": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
+    "paths": {
+      "micromorph": ["./node_modules/micromorph/index.d.ts"],
+      "remark-parse/lib": ["./node_modules/remark-parse/lib/index.d.ts"]
+    },
     "strict": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
@@ -18,11 +22,13 @@
   "include": [
     "index.d.ts",
     "globals.d.ts",
+    "quartz.ts",
     "quartz.config.ts",
     "quartz.layout.ts",
     "papertrader/**/*.ts",
     "papertrader/**/*.tsx",
     "quartz/**/*.ts",
     "quartz/**/*.tsx"
-  ]
+  ],
+  "exclude": ["quartz/**/*.test.ts"]
 }

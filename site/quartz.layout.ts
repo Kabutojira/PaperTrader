@@ -1,9 +1,11 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg";
-import * as Component from "./quartz/components";
+import * as Component from "./papertrader/components";
 import { QuartzComponentProps } from "./quartz/components/types";
 import type { SimpleSlug } from "./quartz/util/path";
 import DecisionNavigation from "./papertrader/components/DecisionNavigation";
 import ResearchCharts from "./papertrader/components/ResearchCharts";
+import ResearchHero from "./papertrader/components/ResearchHero";
+import BrandHead from "./papertrader/components/BrandHead";
 
 const dashboardPages = new Set([
   "index",
@@ -23,7 +25,9 @@ const isHomepage = (page: QuartzComponentProps): boolean =>
 const homepageExplorer = Component.Explorer({
   folderDefaultState: "collapsed",
   filterFn: (node) =>
-    !["tags", "inbox", "raw", "_meta", "_archive"].includes(node.slugSegment),
+    !["tags", "inbox", "raw", "_meta", "_archive"].includes(
+      node.slugSegment ?? "",
+    ),
 });
 
 const isCollectionPage = (
@@ -62,7 +66,7 @@ const repositoryUrl = repository
   : "https://github.com";
 
 export const sharedPageComponents: SharedLayout = {
-  head: Component.Head(),
+  head: BrandHead(),
   header: [DecisionNavigation()],
   afterBody: [
     ResearchCharts(),
@@ -79,15 +83,21 @@ export const sharedPageComponents: SharedLayout = {
         isCollectionPage(page, "podcasts/", "podcast"),
     }),
   ],
-  footer: Component.Footer({
-    links: {
-      "Source repository": repositoryUrl,
-    },
-  }),
+  footer: [
+    Component.Footer({
+      links: {
+        "Source repository": repositoryUrl,
+      },
+    }),
+  ],
 };
 
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
+    Component.ConditionalRender({
+      component: ResearchHero(),
+      condition: isHomepage,
+    }),
     Component.ConditionalRender({
       component: Component.Breadcrumbs(),
       condition: (page) => page.fileData.slug !== "index",
@@ -158,4 +168,12 @@ export const defaultListPageLayout: PageLayout = {
     Component.Explorer(),
   ],
   right: [],
+};
+
+export const layout = {
+  defaults: { ...sharedPageComponents, ...defaultContentPageLayout },
+  byPageType: {
+    folder: { ...sharedPageComponents, ...defaultListPageLayout },
+    tag: { ...sharedPageComponents, ...defaultListPageLayout },
+  },
 };

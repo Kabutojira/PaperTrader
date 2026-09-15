@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 360" fill="none">
+  <defs>
+    <linearGradient id="paper" x1="190" y1="55" x2="360" y2="305" gradientUnits="userSpaceOnUse"><stop stop-color="#fffef9"/><stop offset="1" stop-color="#e4e9d8"/></linearGradient>
+    <linearGradient id="leaf" x1="330" y1="90" x2="415" y2="265" gradientUnits="userSpaceOnUse"><stop stop-color="#90bc91"/><stop offset="1" stop-color="#266647"/></linearGradient>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#b4cabb" opacity=".3"/></pattern>
+  </defs>
+  <rect width="560" height="360" fill="url(#dots)"/>
+  <circle cx="291" cy="180" r="134" stroke="#95bda2" stroke-opacity=".25"/>
+  <circle cx="291" cy="180" r="163" stroke="#95bda2" stroke-opacity=".12"/>
+  <ellipse cx="288" cy="304" rx="165" ry="19" fill="#071f1a" opacity=".25"/>
+  <path d="m135 110 168-42 56 216-168 22z" fill="#6c947a" transform="rotate(-7 247 184)"/>
+  <path d="m166 89 167-22 43 222-169 12z" fill="#adc4a3"/>
+  <path d="M207 53h121l45 45v190H207z" fill="url(#paper)"/>
+  <path d="M328 53v45h45" fill="#c9d8bd"/>
+  <rect x="230" y="83" width="58" height="7" rx="3.5" fill="#2f694d"/>
+  <rect x="230" y="107" width="81" height="4" rx="2" fill="#9cac91"/>
+  <rect x="230" y="117" width="65" height="4" rx="2" fill="#c3ccb7"/>
+  <path d="M235 203v-49h101v49z" fill="#e0e7d7"/>
+  <path d="M251 159v39m17-39v39m17-39v39m17-39v39m17-39v39" stroke="#c3d0ba"/>
+  <path d="m243 183 20-14 23 15 20-21 20 9" stroke="#397551" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="230" y="226" width="92" height="4" rx="2" fill="#9cac91"/>
+  <rect x="230" y="237" width="75" height="4" rx="2" fill="#c3ccb7"/>
+  <rect x="230" y="248" width="87" height="4" rx="2" fill="#c3ccb7"/>
+  <path d="M359 284c-1-44 22-92 49-130" stroke="#9bc599" stroke-width="3" stroke-linecap="round"/>
+  <path d="M381 223c-32-2-39-28-37-47 28 1 46 17 37 47Zm12-31c-4-37 15-54 39-57 2 29-9 50-39 57Zm-30 76c-31-3-43-22-45-45 25-2 47 12 45 45Zm14-34c28 5 51-9 60-32-26-8-51 3-60 32Z" fill="url(#leaf)"/>
+  <circle cx="170" cy="234" r="38" fill="#e5bd75"/>
+  <circle cx="170" cy="234" r="27" stroke="#b48642" stroke-width="1.5"/>
+  <path d="m155 235 10 10 20-23" stroke="#6c542e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m141 86 4 10 10 4-10 4-4 10-4-10-10-4 10-4Z" fill="#d8b676"/>
+  <circle cx="420" cy="96" r="4" fill="#c3d5a8"/>
+  <circle cx="113" cy="182" r="3" fill="#91bca1"/>
+</svg>

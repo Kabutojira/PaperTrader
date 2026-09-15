@@ -6,6 +6,7 @@ import {
   mkdirSync,
   rmSync,
 } from "node:fs";
+import sharp from "sharp";
 import { createRequire } from "node:module";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -44,3 +45,18 @@ for (const [sourceName, destinationName] of [
   }
   copyFileSync(vendorSource, join(vendorDestination, destinationName));
 }
+
+// Brand assets are repository-owned; regenerating Quartz must preserve them.
+const brandSource = join(siteRoot, "papertrader", "assets");
+cpSync(brandSource, join(destination, "static"), { recursive: true });
+await sharp(join(brandSource, "icon.svg"))
+  .resize(512, 512)
+  .png()
+  .toFile(join(destination, "static", "icon.png"));
+await sharp(join(brandSource, "social-card.svg"))
+  .png()
+  .toFile(join(destination, "static", "og-image.png"));
+await sharp(join(brandSource, "icon.svg"))
+  .resize(180, 180)
+  .png()
+  .toFile(join(destination, "static", "apple-touch-icon.png"));

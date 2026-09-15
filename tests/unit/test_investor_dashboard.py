@@ -422,11 +422,18 @@ def test_quartz_research_charts_use_pinned_local_echarts_with_fallback(
     renderer = (site / "papertrader" / "scripts" / "research-charts.inline.ts").read_text(
         encoding="utf-8"
     )
+    component = (site / "papertrader" / "components" / "ResearchCharts.tsx").read_text(
+        encoding="utf-8"
+    )
     prepare = (site / "prepare-quartz.mjs").read_text(encoding="utf-8")
     layout = (site / "quartz.layout.ts").read_text(encoding="utf-8")
 
     assert package["dependencies"]["echarts"] == "6.0.0"
     assert "static/vendor/echarts/echarts.min.js" in renderer
+    assert "postscript.js" not in renderer
+    assert "data-papertrader-site-root" in renderer
+    assert "data-papertrader-site-root" in component
+    assert "pathToRoot(fileData.slug!)" in component
     assert "cdn." not in renderer
     assert "fetch(" not in renderer
     assert "View chart data table" in renderer

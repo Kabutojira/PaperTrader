@@ -567,6 +567,35 @@ function pathIsWithin(parent, candidate) {
   return value !== "" && !value.startsWith("..") && !isAbsolute(value);
 }
 
+function publishStaticAssets(engineRoot, outputRoot) {
+  const sourceRoot = resolve(engineRoot, "static");
+  const destinationRoot = resolve(outputRoot, "static");
+  if (
+    !pathIsWithin(engineRoot, sourceRoot) ||
+    !pathIsWithin(outputRoot, destinationRoot)
+  ) {
+    throw new Error("Quartz static assets escape their expected roots");
+  }
+  if (
+    !existsSync(sourceRoot) ||
+    !lstatSync(sourceRoot).isDirectory() ||
+    lstatSync(sourceRoot).isSymbolicLink()
+  ) {
+    throw new Error(
+      `Quartz static source must be a regular directory: ${sourceRoot}`,
+    );
+  }
+  if (
+    existsSync(destinationRoot) &&
+    lstatSync(destinationRoot).isSymbolicLink()
+  ) {
+    throw new Error(
+      `Quartz static destination must not be a symlink: ${destinationRoot}`,
+    );
+  }
+  cpSync(sourceRoot, destinationRoot, { recursive: true, dereference: false });
+}
+
 function validateTechnicalReference(spec, label) {
   assertExactKeys(spec, technicalReferenceKeys, label);
   if (
@@ -906,6 +935,7 @@ try {
   if (result.status !== 0) {
     process.exitCode = result.status ?? 1;
   } else {
+    publishStaticAssets(join(siteRoot, "quartz"), outputPath);
     publishValidatedArtifacts(wikiPath, outputPath);
     publishTechnicalSeries(wikiPath, outputPath);
   }
