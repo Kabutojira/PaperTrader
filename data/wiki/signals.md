@@ -7,13 +7,13 @@ tags:
 created: "2026-09-15"
 updated: "2026-09-15"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_1c22a700d8e39c918096"
-as_of: "2026-09-15T10:28:39Z"
+snapshot_id: "decision_901003f0def6667d8e0a"
+as_of: "2026-09-15T19:11:50Z"
 ---
 
 # Signals
 
-**As of `2026-09-15T10:28:39Z`**
+**As of `2026-09-15T19:11:50Z`**
 
 ## Actionable trade signals
 
@@ -24,6 +24,69 @@ No actionable trade signals.
 No pending orders.
 
 ## Research alerts — not trade signals
+
+### [SU — Schneider Electric SE](securities/security_dc8486c1d61df62a22fd)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_below\_lower`
+- Market date: `2026-09-15`
+- Research status: `blocked`
+- Conclusion: High-priority security research is blocked. scope\_deferred\_for\_capacity
+
+### [PLS.AX — PLS Group Limited](securities/security_8a5c43888d224de85c69)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_below\_lower`
+- Market date: `2026-09-15`
+- Research status: `blocked`
+- Conclusion: High-priority security research is blocked. scope\_deferred\_for\_capacity
+
+### EVK — Evonik Industries AG
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-09-15`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### EVK — Evonik Industries AG
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_below\_lower`
+- Market date: `2026-09-15`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### ANIC.L — Agronomics Limited
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_oversold`
+- Market date: `2026-09-15`
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
+
+### AKE — Arkema S.A.
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-09-15`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [AD — Koninklijke Ahold Delhaize N.V.](securities/security_e19c7fe27fbcc4cd923d)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-09-15`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
 
 ### [WTI — W&amp;T Offshore, Inc.](securities/security_61567714298b9563d1a9)
 
@@ -115,15 +178,6 @@ No pending orders.
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
-### [PLS.AX — PLS Group Limited](securities/security_8a5c43888d224de85c69)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_below\_lower`
-- Market date: `2026-09-15`
-- Research status: `blocked`
-- Conclusion: High-priority security research is blocked. scope\_deferred\_for\_capacity
-
 ### [PL — Planet Labs PBC](securities/security_97f38b2cb2d5ef127f5a)
 
 **Research alert — not a trade signal**
@@ -205,24 +259,6 @@ No pending orders.
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### ANIC.L — Agronomics Limited
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_below\_lower`
-- Market date: `2026-09-14`
-- Research status: `skipped`
-- Conclusion: Queue triage disposition
-
-### ANIC.L — Agronomics Limited
-
-**Research alert — not a trade signal**
-
-- Alert: `rsi\_oversold`
-- Market date: `2026-09-14`
-- Research status: `skipped`
-- Conclusion: Queue triage disposition
-
 ### [ALB — Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3)
 
 **Research alert — not a trade signal**
@@ -250,42 +286,6 @@ No pending orders.
 - Research status: `skipped`
 - Conclusion: Queue triage disposition
 
-### [SU — Schneider Electric SE](securities/security_dc8486c1d61df62a22fd)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-09-14`
-- Research status: `blocked`
-- Conclusion: High-priority security research is blocked. scope\_deferred\_for\_capacity
-
-### [SU — Schneider Electric SE](securities/security_dc8486c1d61df62a22fd)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_below\_lower`
-- Market date: `2026-09-14`
-- Research status: `blocked`
-- Conclusion: High-priority security research is blocked. scope\_deferred\_for\_capacity
-
-### AKE — Arkema S.A.
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_below\_lower`
-- Market date: `2026-09-14`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [YEC.F — YASKAWA Electric Corporation](securities/security_89969b7dac39b7db5661)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_below\_signal`
-- Market date: `2026-09-14`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
 ### [VRT — Vertiv Holdings Co](securities/security_cb88f9154cfeaa15e878)
 
 **Research alert — not a trade signal**
@@ -296,24 +296,6 @@ No pending orders.
 - Conclusion: bearish\_alert\_unowned
 
 ### [VALE — Vale S.A.](securities/security_b2116dcf976c96974d7b)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_below\_signal`
-- Market date: `2026-09-14`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
-### [SSUN.VI — Samsung Electronics Co., Ltd.](securities/security_d08d763780400dfbffce)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_below\_signal`
-- Market date: `2026-09-14`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
-### [SSU.VI — Samsung Electronics Co., Ltd.](securities/security_567d0d575bbd30aaa91d)
 
 **Research alert — not a trade signal**
 

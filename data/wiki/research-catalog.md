@@ -7,8 +7,8 @@ tags:
 created: "2026-09-15"
 updated: "2026-09-15"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_1c22a700d8e39c918096"
-as_of: "2026-09-15T10:28:39Z"
+snapshot_id: "decision_901003f0def6667d8e0a"
+as_of: "2026-09-15T19:11:50Z"
 ---
 
 # Research catalog
@@ -48,8 +48,10 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [ABCL — Volume anomaly](inbox/market-security_7bf8f4c9cc12ae410e40-volume_anomaly-2be7b5c1bf08)
 - [ABCL — Volume anomaly](inbox/market-security_7bf8f4c9cc12ae410e40-volume_anomaly-72614a871395)
 - [ABCL — Volume anomaly](inbox/market-security_7bf8f4c9cc12ae410e40-volume_anomaly-9e9c3f80e222)
+- [AD — Bollinger above upper](inbox/market-security_e19c7fe27fbcc4cd923d-bollinger_above_upper-3c4eddb5e24a)
 - [AD — MACD cross above signal](inbox/market-security_e19c7fe27fbcc4cd923d-macd_cross_above_signal-c44159fd6bd3)
 - [AKE — Bollinger below lower](inbox/market-security_798e2fb944d740aca308-bollinger_below_lower-f8d2ad861bef)
+- [AKE — Volume anomaly](inbox/market-security_798e2fb944d740aca308-volume_anomaly-5b90fad01c8b)
 - [ALB — Bollinger above upper](inbox/market-security_66cdcf90aac0d83e76f3-bollinger_above_upper-01894623a7ef)
 - [ALB — Bollinger above upper](inbox/market-security_66cdcf90aac0d83e76f3-bollinger_above_upper-1f11f98da040)
 - [ALB — Bollinger above upper](inbox/market-security_66cdcf90aac0d83e76f3-bollinger_above_upper-575e58cf3c13)
@@ -200,6 +202,8 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [ETN — Volume anomaly](inbox/market-security_18a3ab0ee6086ee85d0f-volume_anomaly-4d01b00f7097)
 - [ETN — Volume anomaly](inbox/market-security_18a3ab0ee6086ee85d0f-volume_anomaly-c73780a5e2eb)
 - [EVK — Bollinger below lower](inbox/market-security_ccb25582c0392492fe9e-bollinger_below_lower-30a03b792ae7)
+- [EVK — Bollinger below lower](inbox/market-security_ccb25582c0392492fe9e-bollinger_below_lower-bc7e58016a25)
+- [EVK — Volume anomaly](inbox/market-security_ccb25582c0392492fe9e-volume_anomaly-c929b0586d3f)
 - [FCX — Bollinger above upper](inbox/market-security_2dbe878dfc899d7ee867-bollinger_above_upper-1958a6a1e3a0)
 - [FCX — Bollinger above upper](inbox/market-security_2dbe878dfc899d7ee867-bollinger_above_upper-6be595721e61)
 - [FCX — Bollinger above upper](inbox/market-security_2dbe878dfc899d7ee867-bollinger_above_upper-778fbd7eff43)
@@ -812,6 +816,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Research findings 1855dd71bdcfbaf1438f9ca9](queries/research-findings-1855dd71bdcfbaf1438f9ca9)
 - [Research findings 1bf66f0352a4c6da8b139522](queries/research-findings-1bf66f0352a4c6da8b139522)
 - [Research findings 24bd50a6d6bb89e8445ec8c8](queries/research-findings-24bd50a6d6bb89e8445ec8c8)
+- [Research findings 3e1d8164f4db25726640c25f](queries/research-findings-3e1d8164f4db25726640c25f)
 - [Research findings 650bc383615f35f4d084c08f](queries/research-findings-650bc383615f35f4d084c08f)
 - [Research findings 6a72a855adb39b8c5ace18c2](queries/research-findings-6a72a855adb39b8c5ace18c2)
 - [Research findings 94b7d24559c189adbe536cfc](queries/research-findings-94b7d24559c189adbe536cfc)
@@ -981,10 +986,3 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
-
-## Inbox
-
-- [[inbox/market-security_798e2fb944d740aca308-volume_anomaly-5b90fad01c8b|AKE — Volume anomaly]]
-- [[inbox/market-security_ccb25582c0392492fe9e-bollinger_below_lower-bc7e58016a25|EVK — Bollinger below lower]]
-- [[inbox/market-security_ccb25582c0392492fe9e-volume_anomaly-c929b0586d3f|EVK — Volume anomaly]]
-- [[inbox/market-security_e19c7fe27fbcc4cd923d-bollinger_above_upper-3c4eddb5e24a|AD — Bollinger above upper]]

@@ -4172,3 +4172,9 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Classified [[inbox/market-security_ccb25582c0392492fe9e-volume_anomaly-c929b0586d3f]] as `ingest`: New volume-anomaly transition with a material negative price move merits durable wiki review.
 
 - Created candidate packet [[inbox/market-security_e19c7fe27fbcc4cd923d-bollinger_above_upper-3c4eddb5e24a]] (3c4eddb5e24a).
+
+- Published investor decision snapshot `decision_901003f0def6667d8e0a`.
+
+- Saved bounded research finding coverage in [[queries/research-findings-3e1d8164f4db25726640c25f]].
+
+- Generated canonical [[daily-reports/daily-report_20260915]] for run `daily-20260915T184308Z`.

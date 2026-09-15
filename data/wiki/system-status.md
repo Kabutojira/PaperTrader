@@ -7,13 +7,13 @@ tags:
 created: "2026-09-15"
 updated: "2026-09-15"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_1c22a700d8e39c918096"
-as_of: "2026-09-15T10:28:39Z"
+snapshot_id: "decision_901003f0def6667d8e0a"
+as_of: "2026-09-15T19:11:50Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-09-15T10:28:39Z`
+**As of:** `2026-09-15T19:11:50Z`
 **Investment data:** Portfolio state safe — research gaps remain
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -41,7 +41,7 @@ Publication validation confirms that this generated artifact is internally consi
 
 ## Sequential research backlog
 
-- Research backlog: 377
+- Research backlog: 382
 
 ## Publication health
 
@@ -50,10 +50,10 @@ Publication validation confirms that this generated artifact is internally consi
 
 ## Current issues by investment impact
 
-Current unresolved issues: **25**.
+Current unresolved issues: **24**.
 Resolved and superseded issues remain in the canonical audit but are not current health.
 
-### Affects Candidate (17)
+### Affects Candidate (18)
 
 - Error **ETN — Eaton Corporation plc: Hermes operation validation failed: Quick check research for ETN on 2026-08-11** — agent result schema: 'cd57fc97df50efa0657881b253fc96d4467881b253fc96d4467881b253fc96d446' does not match '^\[a-f0-9\]{64}$'; commands\_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment; post-run integrity: agent result data/runs/Daily report for 2026-08-11/Quick check research for ETN on 2026-08-11/agent\_result.json: 'cd57fc97df50efa0657881b253fc96d4467881b253fc96d4467881b253fc96d446' does not match '^\[a-f0-9\]{64}$'
 - Error **FUC.F — Fanuc Corporation: FANUC assessment source operation is ambiguous within one run** — The schema-v2 FANUC full-review assessment could not be accepted because the deterministic research applier found both the completed quick\_check\_research operation and this running security\_research operation for the same security and run\_id, then rejected the immutable assessment request with no assessment-state changes. The mandatory security context succeeded; both issuer PDFs were rechecked with unchanged hashes, source history and the security summary were updated through validated commands
@@ -67,6 +67,7 @@ Resolved and superseded issues remain in the canonical audit but are not current
 - Error **Hermes operation validation failed: Security research for YEC.F on 2026-08-22** — Hermes timed out after 1800s; agent result is missing or a symlink: data/runs/Daily report for 2026-09-07/Security research for YEC.F on 2026-08-22/agent\_result.json
 - Error **Hermes operation validation failed: Security research for ANIC.L on 2026-09-11** — files\_changed claims paths absent from the actual delta: \['data/operations/operations\_TODO.csv'\]
 - Error **ABBNY — ABB Ltd: ABB assessment provenance does not match corrected final research page** — Operation Security research for ABBNY on 2026-09-03 accepted immutable assessment assessment\_a3946a163695f1a9f51f while the security page still carried the prior prose disposition. Deterministic derivation changed the current disposition from Sell / Avoid to Hold / Watch at the lower mark, so the page and structured security summary were corrected after the immutable assessment was written. The current assessment and final page now agree economically, and exactly one assessment version names this operation, bu
+- Error **Hermes operation validation failed: Security research for LMND on 2026-09-11** — claim excerpt exceeds the bounded public-source quote allowance
 - Error **Hermes operation validation failed: Opportunity research for Market alert for CROX on 2026-09-11** — agent result is missing or a symlink: data/runs/Daily report for 2026-09-11/Opportunity research for Market alert for CROX on 2026-09-11/agent\_result.json
 - Error **Hermes operation validation failed: Security research for ABBNY on 2026-09-03** — files\_changed claims paths absent from the actual delta: \['data/operations/operations\_TODO.csv'\]
 - Error **Hermes operation validation failed: Quick check research for TWST on 2026-08-05** — agent result was written before completed change: data/runs/Daily report for 2026-08-12/Quick check research for TWST on 2026-08-05/command\_audit.json; commands\_run does not exactly match deterministic CLI audit receipts
@@ -81,11 +82,6 @@ Resolved and superseded issues remain in the canonical audit but are not current
 - Error **Hermes operation validation failed: Daily podcast for Daily report for 2026-08-06 on 2026-08-06** — cannot restore rejected path data/wiki/daily-reports/daily-report\_20260806.md: pre-run path cannot be restored because Git metadata is unavailable; daily podcast spoken transcript must label paper trading
 - Error **Hermes operation validation failed: Daily podcast for Daily report for 2026-08-17 on 2026-08-17** — non-successful daily podcast must not retain a transcript page
 - Error **Hermes operation validation failed: Daily podcast for Daily report for 2026-09-06 on 2026-09-06** — Hermes exited with status 1; agent result is missing or a symlink: data/runs/Daily report for 2026-09-06/Daily podcast for Daily report for 2026-09-06 on 2026-09-06/agent\_result.json
-
-### Operational Only (2)
-
-- Error **PRX — Prosus N.V.: Hermes operation validation failed: Research triage for PRX on 2026-09-14** — commands\_run claims commands without deterministic CLI audit receipts: \['scripts/papertrader research security-context --security-id PRX --history-limit 2'\]; successful research triage requires its structured check receipt
-- Error **PRX — Prosus N.V.: Hermes operation validation failed: Research triage for PRX on 2026-09-14** — commands\_run claims commands without deterministic CLI audit receipts: \['scripts/papertrader research assessment-get --assessment-id assessment\_7f28dfd9240d6099400b', 'scripts/papertrader research security-context --security-id PRX'\]
 
 ## Historical audit health
 
