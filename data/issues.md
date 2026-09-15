@@ -19,6 +19,7 @@ Generated from `data/tables/issues.csv`.
 | publication_only | error | **issue_86f9f3bc8907460da2fc** — Hermes operation validation failed: 01KZ8VJY48VNMCFW638QQJZGJH | 2026-08-05T11:40:24Z | controller | 01KZ8VJY48VNMCFW638QQJZGJH |
 | affects_candidate | error | **issue_9165f9f83983d25343da** — Hermes operation validation failed: 01KYPB2XDRKAMP0ZX3MWA7Y1JH | 2026-09-11T06:36:32Z | controller | 01KYPB2XDRKAMP0ZX3MWA7Y1JH |
 | affects_candidate | error | **issue_bb796d692e4293326337** — ABB assessment provenance does not match corrected final research page | 2026-09-03T18:37:34Z | controller | 01M07XKZS0JKBQM0THMPJGWEK5 |
+| affects_candidate | error | **issue_c0a12272c134ea6fcf04** — Hermes operation validation failed: 01M27HD1C8J6FPVKYP168D5JJF | 2026-09-15T19:11:37Z | controller | 01M27HD1C8J6FPVKYP168D5JJF |
 | publication_only | error | **issue_c531340c7c3a508426ac** — Hermes operation validation failed: 01KZBHM8JGFW6R10CN34GRREZY | 2026-08-06T12:52:02Z | delivery | 01KZBHM8JGFW6R10CN34GRREZY |
 | affects_candidate | error | **issue_c70d0b51ddd7f7e7fb7b** — Hermes operation validation failed: 01M26H85HR8JVXW2A2YBT7BZPF | 2026-09-11T18:11:13Z | controller | 01M26H85HR8JVXW2A2YBT7BZPF |
 | affects_candidate | error | **issue_c87e986423310946f39f** — Hermes operation validation failed: 01M07XKZS0JKBQM0THMPJGWEK5 | 2026-09-02T16:12:05Z | controller | 01M07XKZS0JKBQM0THMPJGWEK5 |
