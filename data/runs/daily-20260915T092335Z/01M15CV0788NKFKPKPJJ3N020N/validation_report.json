@@ -1,0 +1,43 @@
+{
+  "auxiliary_models": {
+    "web_extract": "openai-codex:gpt-5.6-luna"
+  },
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M2J6YV98KAPVPC0BYZ647YPH.json",
+    "data/runs/daily-20260915T092335Z/01M15CV0788NKFKPKPJJ3N020N/assessment_upsert_request.json",
+    "data/runs/daily-20260915T092335Z/01M15CV0788NKFKPKPJJ3N020N/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260915T092335Z/01M15CV0788NKFKPKPJJ3N020N/assessment_upsert_retry02_request.json",
+    "data/runs/daily-20260915T092335Z/01M15CV0788NKFKPKPJJ3N020N/assessment_upsert_retry03_request.json",
+    "data/runs/daily-20260915T092335Z/01M15CV0788NKFKPKPJJ3N020N/enqueue_idea_refresh_request.json",
+    "data/runs/daily-20260915T092335Z/01M15CV0788NKFKPKPJJ3N020N/security_upsert_request.json",
+    "data/runs/daily-20260915T092335Z/01M15CV0788NKFKPKPJJ3N020N/source_rtx_q2_2026_10q_refresh_request.json",
+    "data/runs/daily-20260915T092335Z/01M15CV0788NKFKPKPJJ3N020N/source_rtx_q2_2026_results_refresh_request.json",
+    "data/runs/daily-20260915T092335Z/01M15CV0788NKFKPKPJJ3N020N/source_rtx_sec_submissions_20260915_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_59304f90c440def31dc5.md"
+  ],
+  "effective_model": "gpt-5.6-sol",
+  "errors": [
+    "claim excerpt exceeds the bounded public-source quote allowance",
+    "observed claim support must match the retained inspected source excerpt"
+  ],
+  "escalation_source": "",
+  "maximum_turns": 160,
+  "mutation_policy": "full_research",
+  "operation_id": "01M15CV0788NKFKPKPJJ3N020N",
+  "passed": false,
+  "profile": "deep",
+  "profile_policy_version": "profile-router-v1",
+  "reasoning_effort": "medium",
+  "route_reason": "scenario_complete_security_review",
+  "run_id": "daily-20260915T092335Z",
+  "timeout_seconds": 1800,
+  "validation_version": 1,
+  "weighted_cost": "5"
+}
