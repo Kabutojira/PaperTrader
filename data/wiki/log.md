@@ -4158,3 +4158,17 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Saved bounded research finding coverage in [[queries/research-findings-6a72a855adb39b8c5ace18c2]].
 
 - Generated canonical [[daily-reports/daily-report_20260915]] for run `daily-20260915T100730Z`.
+
+- Created candidate packet [[inbox/market-security_798e2fb944d740aca308-volume_anomaly-5b90fad01c8b]] (5b90fad01c8b).
+
+- Classified [[inbox/market-security_798e2fb944d740aca308-volume_anomaly-5b90fad01c8b]] as `ingest`: A new volume-anomaly transition accompanied by a 5% decline merits durable review.
+
+- Created candidate packet [[inbox/market-security_ccb25582c0392492fe9e-bollinger_below_lower-bc7e58016a25]] (bc7e58016a25).
+
+- Classified [[inbox/market-security_ccb25582c0392492fe9e-bollinger_below_lower-bc7e58016a25]] as `ingest`: New Bollinger-band breach with a material negative return merits durable review.
+
+- Created candidate packet [[inbox/market-security_ccb25582c0392492fe9e-volume_anomaly-c929b0586d3f]] (c929b0586d3f).
+
+- Classified [[inbox/market-security_ccb25582c0392492fe9e-volume_anomaly-c929b0586d3f]] as `ingest`: New volume-anomaly transition with a material negative price move merits durable wiki review.
+
+- Created candidate packet [[inbox/market-security_e19c7fe27fbcc4cd923d-bollinger_above_upper-3c4eddb5e24a]] (3c4eddb5e24a).
