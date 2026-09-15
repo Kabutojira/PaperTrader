@@ -7,8 +7,8 @@ tags:
 created: "2026-09-15"
 updated: "2026-09-15"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_4c4b57b58cd5e29dca97"
-as_of: "2026-09-15T09:47:41Z"
+snapshot_id: "decision_1c22a700d8e39c918096"
+as_of: "2026-09-15T10:28:39Z"
 ---
 
 # Research catalog
@@ -17,7 +17,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Assessment revision audit
 
-- Immutable assessment versions: **214**
+- Immutable assessment versions: **215**
 - Securities with retained revisions: **83**
 
 ## Candidate
@@ -813,6 +813,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Research findings 1bf66f0352a4c6da8b139522](queries/research-findings-1bf66f0352a4c6da8b139522)
 - [Research findings 24bd50a6d6bb89e8445ec8c8](queries/research-findings-24bd50a6d6bb89e8445ec8c8)
 - [Research findings 650bc383615f35f4d084c08f](queries/research-findings-650bc383615f35f4d084c08f)
+- [Research findings 6a72a855adb39b8c5ace18c2](queries/research-findings-6a72a855adb39b8c5ace18c2)
 - [Research findings 94b7d24559c189adbe536cfc](queries/research-findings-94b7d24559c189adbe536cfc)
 - [Research findings b9288ef6b96529891976570e](queries/research-findings-b9288ef6b96529891976570e)
 - [Research findings daily-20260911T103301Z](queries/research-findings-daily-20260911T103301Z)

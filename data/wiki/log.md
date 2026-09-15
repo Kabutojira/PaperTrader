@@ -4152,3 +4152,9 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Saved bounded research finding coverage in [[queries/research-findings-1bf66f0352a4c6da8b139522]].
 
 - Generated canonical [[daily-reports/daily-report_20260915]] for run `daily-20260915T092335Z`.
+
+- Published investor decision snapshot `decision_1c22a700d8e39c918096`.
+
+- Saved bounded research finding coverage in [[queries/research-findings-6a72a855adb39b8c5ace18c2]].
+
+- Generated canonical [[daily-reports/daily-report_20260915]] for run `daily-20260915T100730Z`.

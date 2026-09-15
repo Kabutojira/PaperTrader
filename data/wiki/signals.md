@@ -7,13 +7,13 @@ tags:
 created: "2026-09-15"
 updated: "2026-09-15"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_4c4b57b58cd5e29dca97"
-as_of: "2026-09-15T09:47:41Z"
+snapshot_id: "decision_1c22a700d8e39c918096"
+as_of: "2026-09-15T10:28:39Z"
 ---
 
 # Signals
 
-**As of `2026-09-15T09:47:41Z`**
+**As of `2026-09-15T10:28:39Z`**
 
 ## Actionable trade signals
 
@@ -85,8 +85,8 @@ No pending orders.
 
 - Alert: `rsi\_oversold`
 - Market date: `2026-09-14`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Reassessed RTX after the 2026-09-02 lower-Bollinger entry and 2026-09-14 RSI-oversold entry. The canonical close fell 12.13% from 2026-08-05 to USD 195.33999633789062. Fresh SEC retrievals reproduced the Q2 filing and results hashes, and the current submissions index showed no later operating filing, so no verified issuer catalyst explains the move. Unchanged USD 142/USD 179.375/USD 246.50 scenarios produce USD 186.8125 probability-weighted value and -4.36546354958465758667999208% expected return. Deterministic rating remains Hold, portfolio action Watch, and allocation ineligible; no strategy, signal, order, allocation, or accounting state changed.
 
 ### [RBLX — Roblox Corporation](securities/security_c9a37d277445869a8809)
 
