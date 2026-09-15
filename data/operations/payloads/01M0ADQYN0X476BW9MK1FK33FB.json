@@ -7,8 +7,8 @@
       "issue_ff655356efa9b9e1d1a8"
     ],
     "maintenance_mode": "refresh",
-    "market_data_as_of": "2026-09-10T20:48:19Z",
-    "market_data_date": "2026-09-10",
+    "market_data_as_of": "2026-09-15T09:23:41Z",
+    "market_data_date": "2026-09-14",
     "merged_input_values": {
       "maintenance_mode": [
         "refresh",
@@ -16,10 +16,11 @@
       ],
       "source_price_hash": [
         "fae0d598bea601e547fd1de224427888e2103e48a12a716e2cf785557571196f",
-        "2c0d4c23858a9504491c6ce0b5d6789f3f1e56dc5a807922ca51c622d1d0e7dd"
+        "2c0d4c23858a9504491c6ce0b5d6789f3f1e56dc5a807922ca51c622d1d0e7dd",
+        "3a87d5180e7d8eece280272fec1130b0d8d03446e1b6602de4bf6d35c725a91e"
       ]
     },
-    "period_end": "2026-09-10",
+    "period_end": "2026-09-14",
     "period_start": "2026-08-06",
     "research_page": "data/wiki/securities/security_61567714298b9563d1a9.md",
     "research_reasons": [
@@ -65,10 +66,23 @@
         "trigger_types": [
           "volume_anomaly"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_61567714298b9563d1a9:2a4f382db8c3114f92d2:2026-09-14",
+        "market_data_date": "2026-09-14",
+        "observed_at": "2026-09-15T09:23:41Z",
+        "prompt": "Research security_61567714298b9563d1a9 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_61567714298b9563d1a9-volume_anomaly-9c6a117d5b86.md"
+        ],
+        "trigger_types": [
+          "volume_anomaly"
+        ]
       }
     ],
     "security_id": "security_61567714298b9563d1a9",
-    "source_price_hash": "2c0d4c23858a9504491c6ce0b5d6789f3f1e56dc5a807922ca51c622d1d0e7dd",
+    "source_price_hash": "3a87d5180e7d8eece280272fec1130b0d8d03446e1b6602de4bf6d35c725a91e",
     "trigger_types": [
       "macd_cross_above_signal",
       "volume_anomaly"
@@ -80,6 +94,7 @@
   "payload_version": 1,
   "source_refs": [
     "data/wiki/inbox/market-security_61567714298b9563d1a9-macd_cross_above_signal-2011a7474c46.md",
+    "data/wiki/inbox/market-security_61567714298b9563d1a9-volume_anomaly-9c6a117d5b86.md",
     "data/wiki/inbox/market-security_61567714298b9563d1a9-volume_anomaly-a4e4f18e39c9.md",
     "source_wti_q2_2026_10q_sec",
     "source_wti_q2_2026_results_sec_ex99"

@@ -7,12 +7,16 @@
       "issue_f50e95ee4d3a5cc05618"
     ],
     "maintenance_mode": "refresh",
+    "market_data_as_of": "2026-09-15T09:23:41Z",
+    "market_data_date": "2026-09-14",
     "merged_input_values": {
       "maintenance_mode": [
         "refresh",
         "assessment_issue_recovery"
       ]
     },
+    "period_end": "2026-09-14",
+    "period_start": "2026-08-14",
     "research_page": "data/wiki/securities/security_ef35e41886220d51c22c.md",
     "research_reasons": [
       {
@@ -31,15 +35,37 @@
         "prompt": "Repair the unresolved assessment for security_ef35e41886220d51c22c with current primary evidence and explicit source-operation provenance.",
         "source": "issue_reconciliation:maintenance-20260903-dashboard-health-v2",
         "source_refs": []
+      },
+      {
+        "dedupe_key": "security_research:security_ef35e41886220d51c22c:5bbbbb174bec731fa6e1:2026-09-14",
+        "market_data_date": "2026-09-14",
+        "observed_at": "2026-09-15T09:23:41Z",
+        "prompt": "Research security_ef35e41886220d51c22c with high priority after price-action alerts: bollinger_below_lower, volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_ef35e41886220d51c22c-bollinger_below_lower-b5586a596a08.md",
+          "data/wiki/inbox/market-security_ef35e41886220d51c22c-volume_anomaly-9b3f5246ec90.md"
+        ],
+        "trigger_types": [
+          "bollinger_below_lower",
+          "volume_anomaly"
+        ]
       }
     ],
-    "security_id": "security_ef35e41886220d51c22c"
+    "security_id": "security_ef35e41886220d51c22c",
+    "source_price_hash": "2b5ddd332c11e4ce981913dd42fb6431b6ee00701e025994f2171a742603627d",
+    "trigger_types": [
+      "bollinger_below_lower",
+      "volume_anomaly"
+    ]
   },
-  "objective": "Revalidate security_ef35e41886220d51c22c with current primary evidence and write one comparable allocation assessment. | Additional cause: Repair the unresolved assessment for security_ef35e41886220d51c22c with current primary evidence and explicit source-operation provenance.",
+  "objective": "Revalidate security_ef35e41886220d51c22c with current primary evidence and write one comparable allocation assessment. | Additional cause: Repair the unresolved assessment for security_ef35e41886220d51c22c with current primary evidence and explicit source-operation provenance. | Additional cause: Research security_ef35e41886220d51c22c with high priority after price-action alerts: bollinger_below_lower, volume_anomaly; decide what changed and whether to act.",
   "operation_id": "01M0DYDVAG954M4ZQ6A4D5E4A8",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_ef35e41886220d51c22c-bollinger_below_lower-b5586a596a08.md",
+    "data/wiki/inbox/market-security_ef35e41886220d51c22c-volume_anomaly-9b3f5246ec90.md",
     "source_asml_q2_2026_6k",
     "source_asml_q2_2026_financials"
   ]
