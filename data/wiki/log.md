@@ -4132,3 +4132,9 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Created candidate packet [[inbox/market-security_f18cd57a5e086583c861-macd_cross_below_signal-16cfd86b8c48]] (16cfd86b8c48).
 
 - Created candidate packet [[inbox/market-security_fe5539a7d3fd9d553bce-macd_cross_below_signal-7c331eb34580]] (7c331eb34580).
+
+- Published investor decision snapshot `decision_4c4b57b58cd5e29dca97`.
+
+- Saved bounded research finding coverage in [[queries/research-findings-1bf66f0352a4c6da8b139522]].
+
+- Generated canonical [[daily-reports/daily-report_20260915]] for run `daily-20260915T092335Z`.
