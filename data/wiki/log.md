@@ -15,6 +15,20 @@ provenance: repository-contract
 This append-only current log continues an earlier non-public 2026 archive, rotated at a dated entry
 boundary after the combined log crossed the configured 5,000-line threshold.
 
+## [2026-09-15T10:13:46Z] security research | RTX Corporation
+
+- Reassessed [[securities/security_59304f90c440def31dc5|RTX]] after the 2 September lower-Bollinger
+  entry and 14 September RSI-oversold entry. The shares fell 12.13% from 5 August to USD 195.34;
+  RSI reached 29.57 and MACD remained bearish, but the move has no current primary-source company
+  explanation.
+- Fresh SEC retrievals reproduced the Q2 filing and results hashes, while the submissions index
+  showed no operating filing after 23 July. Unchanged USD 142/USD 179.375/USD 246.50 scenarios imply
+  USD 186.8125 weighted value and a negative 4.37% expected return at the current mark.
+- The deterministic conclusion remains Hold / Watch and allocation-ineligible. The accepted
+  [[relationships/relationship_1655ac715c33506ec7da|defense-and-aerospace relationship]] remains
+  stale with a bounded review already queued; no new relationship, strategy, signal, order, or
+  paper-trade state was created.
+
 ## [2026-09-11T06:06:33Z] idea research | AI-native SMB financial operating systems
 
 - Expanded [[ideas/idea_ai_native_smb_financial_operating_systems]] to test regulated insurance

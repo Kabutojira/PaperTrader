@@ -4,12 +4,12 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-26"
-updated: "2026-08-21"
-provenance: "source_rtx_q2_2026_10q_sec; source_rtx_q2_2026_results; source_rtx_q2_2026_results_sec_ex99; source_rtx_sec_submissions_20260821; source_5392f8ab153edf73d1e7; source_e4822bd4b442ff51063d; source_d73911b42ea0e59df247; source_e5d2d85e77932d3bf56d; source_8b43e53b8703087510ef; source_ad511f12b8de63d3a443; source_b2d45bca8d0a249be557; deterministic market cache"
+updated: "2026-09-15"
+provenance: "source_rtx_q2_2026_10q_sec; source_rtx_q2_2026_results; source_rtx_q2_2026_results_sec_ex99; source_rtx_sec_submissions_20260915; source_5392f8ab153edf73d1e7; source_e4822bd4b442ff51063d; source_d73911b42ea0e59df247; source_e5d2d85e77932d3bf56d; source_8b43e53b8703087510ef; source_ad511f12b8de63d3a443; source_b2d45bca8d0a249be557; deterministic market cache"
 security_id: security_59304f90c440def31dc5
 issuer_id: issuer_7e0bd218f603cf838669
 confidence: medium
-next_review: "2026-09-04"
+next_review: "2026-10-15"
 ---
 
 # RTX Corporation common stock
@@ -43,6 +43,36 @@ This deterministic monitoring chart is derived from the repository-local market 
 }
 ```
 <!-- papertrader:technical-chart:end -->
+
+The scenario comparison makes the improved but still adverse valuation asymmetry visible. The
+September selloff lowered the mark, but it did not change the primary-evidence earnings range.
+
+```echart
+{
+  "schema_version": 1,
+  "chart_id": "rtx-september-2026-scenarios",
+  "kind": "series",
+  "title": "RTX twelve-month valuation scenarios",
+  "description": "Bear, base and bull values from guided adjusted EPS and explicit earnings multiples are compared with the canonical September mark.",
+  "as_of": "2026-09-14",
+  "sources": [
+    {"label": "RTX Q2 2026 results, SEC-filed Exhibit 99", "url": "https://www.sec.gov/Archives/edgar/data/101829/000010182926000025/a2026-07x238xkerexhibit99.htm", "observed_at": "2026-09-15T10:13:46Z"},
+    {"label": "PaperTrader canonical RTX market cache", "observed_at": "2026-09-15T10:07:37Z"}
+  ],
+  "x_axis": {"type": "category", "label": "Scenario", "values": ["Bear (25%)", "Base (50%)", "Bull (25%)"]},
+  "y_axes": [{"label": "USD per share", "unit": "USD/share", "format": "currency", "currency": "USD"}],
+  "series": [
+    {"name": "Scenario fair value", "render": "bar", "y_axis": 0, "values": ["142.00", "179.375", "246.50"]},
+    {"name": "Current price", "render": "line", "y_axis": 0, "values": ["195.33999633789062", "195.33999633789062", "195.33999633789062"]}
+  ],
+  "notes": ["Scenario values are judgment-owned research outputs, not price targets or trading instructions; probability-weighted fair value is USD 186.8125."]
+}
+```
+
+Comparable multi-period fundamentals are omitted because no new period followed the retained Q2
+filing. A peer-multiple chart is omitted because this bounded alert review retained no same-date,
+definition-consistent peer pack. The canonical alert horizon is already available in the
+marker-bounded technical chart; cash and debt are point-in-time observations and remain in prose.
 
 ## Identity
 
@@ -108,12 +138,13 @@ Primary evidence: [RTX Q2 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/dat
 
 ## Valuation and market context
 
-The current deterministic close is USD 209.91000366210938 for 21 August 2026, retrieved at
-22:17:01Z, with identity-matched USD/EUR FX of 0.8562999963760376 at the same timestamp. RTX's SEC-filed Q2 results
+The current deterministic close is USD 195.33999633789062 for 14 September 2026, retrieved at
+10:07:37Z on 15 September, with identity-matched USD/EUR FX of 0.8665000200271606 at that retrieval.
+RTX's SEC-filed Q2 results
 exhibit raises 2026 adjusted EPS guidance to USD 7.10-7.25 and free-cash-flow guidance to USD
 8.50-8.75 billion. The 10-Q reports USD 8.305 billion of cash, USD 37.383 billion of total debt,
 and 1,365.0 million diluted weighted-average shares for the quarter. The market price is therefore
-about 30.7-31.3 times guided adjusted EPS before separately normalizing acquisition-accounting and
+about 26.9-27.5 times guided adjusted EPS before separately normalizing acquisition-accounting and
 other excluded items.
 
 The repository's `mature_compounder` template and `earnings_multiple` method provide a bounded
@@ -127,11 +158,11 @@ supply constraints, and commercial-cycle risk. They are scenario values, not pri
 | Base | 50% | USD 179.375 | USD 7.175 guidance midpoint at 25x; backlog converts and raised cash guidance is delivered, but leverage, remediation, and cycle risk retain a discount to the current multiple. |
 | Bull | 25% | USD 246.50 | High-end USD 7.25 adjusted EPS at 34x; defense and commercial demand convert cleanly, margins and cash strengthen, and remediation and execution risks recede enough to sustain a premium multiple. |
 
-At the current mark, deterministic scenario returns are approximately **-32.35% / -14.55% /
-+17.43%** for bear/base/bull. Probability-weighted fair value is USD 186.8125, an expected return
-of about **-11.00%** before the medium-confidence adjustment. The configured 20% margin-of-safety
-buy-below price is USD 143.50. A complete valuation is now supportable, but it is decisively
-unattractive relative to cash at the current mark.
+At the current mark, deterministic scenario returns are approximately **-27.31% / -8.17% /
++26.19%** for bear/base/bull. Probability-weighted fair value is USD 186.8125, an expected return
+of about **-4.37%** before the medium-confidence adjustment and **-3.27%** after it. The configured
+20% margin-of-safety buy-below price is USD 143.50. A complete valuation remains supportable, but
+the base and expected cases remain unattractive relative to cash at the current mark.
 
 The deterministic monitor first recorded entry into the RSI-overbought condition on **2026-07-24**
 after a **13.35%** adjusted-close gain from 25 June to 24 July, at a USD 211.50 close and trigger
@@ -217,31 +248,50 @@ latest operating filings through 21 August; later entries are Forms 4 and 144. N
 filing explains the pullback or changes guidance, backlog, cash, leverage, remediation, or contract
 assumptions.
 
+## Alert review — 2026-09-15
+
+The canonical 5 August–14 September observation fell from USD 222.30999756 to USD
+195.33999633789062, a **12.13%** decline. The 2 September lower-Bollinger entry occurred at USD
+200.77999878. By 14 September, RSI had entered oversold territory at **29.56676173**, below the
+configured threshold of 30; the close was **12.39%** below SMA 20, while the MACD histogram remained
+negative at **-1.74335845**. These are exact deterministic measurements for source-price hash
+`260802c85ee1fa04e9dc91bf9a37173ccbd516dd9dffbc29b06f4a19a13b415a`.
+
+The technical deterioration is a bounded **opportunity to recheck**, not a buy signal. The Q2 Form
+10-Q and SEC-filed results exhibit were retrieved unchanged on 15 September, and the current SEC
+submissions index contains no operating filing after 23 July. Current primary evidence therefore
+does not explain the decline or establish a new company catalyst. The price move is classified as
+unexplained market risk/noise for the fundamental thesis: it improves valuation mechanically, but
+not enough to clear the canonical economic gates.
+
 ## Changes since prior review
 
-- **Evidence:** the Q2 Form 10-Q and SEC-filed results exhibit are unchanged, and the newly retained
-  dated SEC submissions index confirms no later operating filing through 21 August. The exact new
-  deterministic evidence is the lower-Bollinger transition at USD 209.91.
+- **Facts and evidence:** the Q2 Form 10-Q and results exhibit retain their exact registered hashes.
+  The current SEC index confirms no later operating filing through 15 September. New information is
+  limited to the deterministic 2 September lower-Bollinger and 14 September RSI-oversold entries.
 - **Assumptions and scenarios:** unchanged. The `mature_compounder` earnings-multiple cases remain
-  USD 142.00/USD 179.375/USD 246.50 with 25%/50%/25% probabilities because no new fundamental
-  evidence changes guided earnings or the scenario drivers. Weighted value remains USD 186.8125;
-  the lower mark improves expected return from about -15.97% to -11.00% but does not clear a gate.
-- **Thesis:** unchanged. Funded backlog, segment growth, margin improvement, and cash generation
-  support the causal thesis, while RTX remains a diversified commercial-and-defense instrument.
-- **Catalysts, risks, and invalidation:** unchanged. Awards, backlog conversion, cash delivery, and
-  remediation progress remain catalysts; Pratt liabilities, leverage, fixed-price execution,
-  suppliers, budget timing, and commercial cyclicality remain controlling risks.
-- **Idea exposure map:** the accepted, positive, medium-sensitivity
-  [[relationships/relationship_1655ac715c33506ec7da|defense-and-aerospace relationship]] remains
-  current on evidence but is due for its already-queued separate review. The complete maintained
-  idea catalog produced no additional pairing with a specific, material RTX transmission mechanism;
-  drone, space, AI-power, and broad manufacturing themes were rejected as superficial overlaps.
-- **Blockers and gaps:** expected return, base return, payoff asymmetry, and margin of safety still
-  fail. Medium confidence and cyclical normalization remain soft gaps; timing improves from adverse
-  to weak because the overbought condition reversed, but the lower-band breach lacks a catalyst.
-- **Rating and action:** **Sell / Avoid** remains unchanged. The security is unowned, the technical
-  pullback is not a short signal, and no strategy, signal, order, allocation, or accounting change
-  is warranted.
+  USD 142.00/USD 179.375/USD 246.50 with 25%/50%/25% probabilities because guided earnings and the
+  scenario drivers have not changed. Weighted value remains USD 186.8125. At USD 195.34, expected
+  return improves from **-11.00%** to **-4.37%**, and medium-confidence-adjusted expected return is
+  **-3.27%**, but the base case remains **-8.17%**.
+- **Thesis and contrary case:** funded defense and commercial backlog, Q2 margin improvement, and
+  cash generation still support the operating thesis. The strongest alternative is that the
+  selloff anticipates slower commercial demand, fixed-price losses, Pratt costs, or cash-conversion
+  weakness not yet visible in filed evidence; that possibility keeps confidence at medium.
+- **Catalysts, risks, blockers, and gaps:** awards, backlog conversion, cash delivery, and Pratt
+  remediation progress remain catalysts. Debt, engine liabilities, fixed-price execution, supply,
+  budget timing, and commercial cyclicality remain risks. Expected return, base return, bear/base
+  and expected/bear payoff, and margin of safety still fail; medium confidence and cyclical
+  normalization remain gaps. No prior blocker or gap is resolved by the alert alone.
+- **Idea exposure map:** the canonical
+  [[relationships/relationship_1655ac715c33506ec7da|defense-and-aerospace edge]] remains accepted,
+  positive, and medium-sensitivity, but its review date is stale and its already-queued bounded
+  relationship review remains necessary. The complete maintained idea catalog was searched again.
+  Drone, space, AI-power, and broad manufacturing ideas remain rejected as superficial thematic
+  overlaps without a specific material RTX transmission mechanism; no new candidate edge is added.
+- **Rating and action:** the deterministic conclusion remains **Hold / Watch**, with allocation
+  ineligible. The lower price and oversold reading do not justify a strategy, signal, order, short,
+  allocation, or accounting change.
 
 ## Catalysts and invalidation
 
@@ -255,8 +305,9 @@ delayed or cancelled, supply constraints cap delivery, or commercial aerospace d
 Status: **watching** with **medium** confidence and a scenario-complete but **allocation-ineligible**
 assessment. Business quality, funded demand, cash generation, the accepted relationship, and deep
 trading liquidity support continued research coverage. The USD 186.8125 weighted value, USD 179.375
-base value, and USD 143.50 buy-below level do not support ownership at the USD 209.91 mark despite
-the lower-Bollinger transition. The canonical conclusion is **Sell / Avoid**, not a short signal. Review by
-**2026-09-04**, or sooner after a major award, program charge, engine-liability, guidance, or
-valuation change. No conviction strategy or paper signal is justified. See the complete
+base value, and USD 143.50 buy-below level do not support ownership at the USD 195.34 mark despite
+the lower-Bollinger and RSI-oversold entries. The canonical conclusion remains **Hold / Watch**, not
+a short signal. Review by **2026-10-15**, or sooner after a major award, program charge,
+engine-liability, guidance, or valuation change. No conviction strategy or paper signal is
+justified. See the complete
 [[research-catalog]] and append-only [[log]] for context.

@@ -15,7 +15,6 @@ Generated from `data/tables/issues.csv`.
 | affects_candidate | error | **issue_5fb2053e3e42e807de14** — Hermes operation validation failed: 01M0ADQYN0X476BW9MK1FK33FB | 2026-09-06T18:01:10Z | controller | 01M0ADQYN0X476BW9MK1FK33FB |
 | affects_candidate | error | **issue_5fbb8df7c71c7f98ab2e** — Xometry security review blocked by issuer identity conflict | 2026-09-06T11:54:46Z | controller | 01M1V1E3YGYYPSJV217TRVMW8R |
 | affects_candidate | error | **issue_64ad20c69d31e7ef47e4** — Hermes operation validation failed: 01KZGT11ZGBPRBKV129FD00TH1 | 2026-08-17T16:15:53Z | controller | 01KZGT11ZGBPRBKV129FD00TH1 |
-| affects_candidate | error | **issue_74cf2f4f38710c48c6b1** — Hermes operation validation failed: 01M15CV0788NKFKPKPJJ3N020N | 2026-09-15T09:47:23Z | controller | 01M15CV0788NKFKPKPJJ3N020N |
 | affects_candidate | error | **issue_813093c20e3c28ebd799** — Hermes operation validation failed: 01M0N0ZVAGHN662K112WKAH7GZ | 2026-09-07T19:41:03Z | controller | 01M0N0ZVAGHN662K112WKAH7GZ |
 | publication_only | error | **issue_86f9f3bc8907460da2fc** — Hermes operation validation failed: 01KZ8VJY48VNMCFW638QQJZGJH | 2026-08-05T11:40:24Z | controller | 01KZ8VJY48VNMCFW638QQJZGJH |
 | affects_candidate | error | **issue_9165f9f83983d25343da** — Hermes operation validation failed: 01KYPB2XDRKAMP0ZX3MWA7Y1JH | 2026-09-11T06:36:32Z | controller | 01KYPB2XDRKAMP0ZX3MWA7Y1JH |
