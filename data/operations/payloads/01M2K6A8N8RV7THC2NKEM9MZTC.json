@@ -1,0 +1,24 @@
+{
+  "entity_id": "security_8b703a8adf5f864acaa4",
+  "entity_type": "security",
+  "inputs": {
+    "evidence_refs": [
+      "data/operations/research-governance/monitoring-contexts/69780f4b058cd5f673f3ab99.json"
+    ],
+    "investigation_id": "semantic_audit:security_8b703a8adf5f864acaa4:2026-W38",
+    "original_cause": "semantic_audit",
+    "original_created_at": "2026-09-14T09:42:46Z",
+    "security_id": "security_8b703a8adf5f864acaa4",
+    "triage_operation_id": "01M2FMRCFG4C2MPF6A19RQRPAW",
+    "triage_reason": "The supplied semantic-audit context names one Prosus issuer NAV target and records its prior hash, but contains no frozen claims. The permitted repository evidence does not provide a current inspection of that target, so absence of a recorded change cannot be treated as no material change.",
+    "triage_result_path": "data/runs/daily-20260915T184308Z/01M2FMRCFG4C2MPF6A19RQRPAW/agent_result.json"
+  },
+  "objective": "Investigate the unresolved cause from triage 01M2FMRCFG4C2MPF6A19RQRPAW.",
+  "operation_id": "01M2K6A8N8RV7THC2NKEM9MZTC",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/operations/research-governance/monitoring-contexts/69780f4b058cd5f673f3ab99.json",
+    "data/runs/daily-20260915T184308Z/01M2FMRCFG4C2MPF6A19RQRPAW/agent_result.json"
+  ]
+}
