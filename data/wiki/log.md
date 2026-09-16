@@ -4238,3 +4238,9 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Created candidate packet [[inbox/market-security_fb87fac302a5446a1ced-bollinger_below_lower-89a88ee0d33d]] (89a88ee0d33d).
 
 - Classified [[inbox/market-security_fb87fac302a5446a1ced-bollinger_below_lower-89a88ee0d33d]] as `ingest`: Material new downside transition: price fell 10.8% and entered below the lower Bollinger Band.
+
+- Published investor decision snapshot `decision_ce666af444e24c07fb8f`.
+
+- Saved bounded research finding coverage in [[queries/research-findings-37645c421b1833328e2224ca]].
+
+- Generated canonical [[daily-reports/daily-report_20260916]] for run `daily-20260916T183714Z`.
