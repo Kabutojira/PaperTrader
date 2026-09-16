@@ -5,7 +5,7 @@ status: maintained
 tags:
   - research
 created: "2026-09-15"
-updated: "2026-09-15"
+updated: "2026-09-16"
 provenance: deterministic-decision-projection
 snapshot_id: "decision_901003f0def6667d8e0a"
 as_of: "2026-09-15T19:11:50Z"
@@ -986,3 +986,26 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_0b67d6c8e3fd3366a257-volume_anomaly-7f3b672994c0|POWL — Volume anomaly]]
+- [[inbox/market-security_22c2b9d782a62d7a9b86-bollinger_above_upper-e7184bb25a0a|ATKR — Bollinger above upper]]
+- [[inbox/market-security_22c2b9d782a62d7a9b86-rsi_overbought-99d6bfc4255a|ATKR — RSI overbought]]
+- [[inbox/market-security_2433a056eb0c55961fcc-bollinger_below_lower-7337de8f9a52|AMZN — Bollinger below lower]]
+- [[inbox/market-security_3a75fc1ccca2ee7c937a-bollinger_above_upper-b84f47461407|QCOM — Bollinger above upper]]
+- [[inbox/market-security_3a75fc1ccca2ee7c937a-rsi_overbought-c18306f4c502|QCOM — RSI overbought]]
+- [[inbox/market-security_47a0b06f6c6c478d7c1e-macd_cross_below_signal-f5950a17e052|NBIS — MACD cross below signal]]
+- [[inbox/market-security_7ca095d63423c55a90e3-macd_cross_above_signal-fa077d755564|RKLB — MACD cross above signal]]
+- [[inbox/market-security_8472507d7d320aa388a7-bollinger_above_upper-3eeb8ab0975e|CRWD — Bollinger above upper]]
+- [[inbox/market-security_89969b7dac39b7db5661-macd_cross_above_signal-82f19c9eaaf3|YEC.F — MACD cross above signal]]
+- [[inbox/market-security_ad3b1f8f59fd599f079a-macd_cross_below_signal-241c17a75ae7|HOOD — MACD cross below signal]]
+- [[inbox/market-security_c120e9f26ebb6159adf9-volume_anomaly-2ee550136665|ABBNY — Volume anomaly]]
+- [[inbox/market-security_c150f31c30afdb4a85f9-volume_anomaly-188abd7bb2e4|CROX — Volume anomaly]]
+- [[inbox/market-security_c2e6db30cb59254de418-volume_anomaly-8d48b2ae3e20|XMTR — Volume anomaly]]
+- [[inbox/market-security_c5a9e460d3350284d157-rsi_overbought-b3511dfae982|VLO — RSI overbought]]
+- [[inbox/market-security_cb88f9154cfeaa15e878-bollinger_below_lower-25d3cc1f81c6|VRT — Bollinger below lower]]
+- [[inbox/market-security_ce9b78a4d0773c950765-macd_cross_below_signal-0890395a2913|TSM — MACD cross below signal]]
+- [[inbox/market-security_d12e746b3c9d392183cc-rsi_overbought-23238dafe511|META — RSI overbought]]
+- [[inbox/market-security_e19c7fe27fbcc4cd923d-bollinger_above_upper-84178a492361|AD — Bollinger above upper]]
+- [[inbox/market-security_fb87fac302a5446a1ced-bollinger_below_lower-89a88ee0d33d|LAC — Bollinger below lower]]
