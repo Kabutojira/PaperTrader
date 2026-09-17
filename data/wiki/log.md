@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-08-08"
-updated: "2026-09-16"
+updated: "2026-09-17"
 provenance: repository-contract
 ---
 
@@ -4244,3 +4244,59 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Saved bounded research finding coverage in [[queries/research-findings-37645c421b1833328e2224ca]].
 
 - Generated canonical [[daily-reports/daily-report_20260916]] for run `daily-20260916T183714Z`.
+
+## 2026-09-17
+
+- Created candidate packet [[inbox/market-security_099561384c0f5e697727-bollinger_below_lower-a90913a2bdb3]] (a90913a2bdb3).
+
+- Classified [[inbox/market-security_099561384c0f5e697727-bollinger_below_lower-a90913a2bdb3]] as `ingest`: Material 23.1% decline with a new Bollinger-band downside transition warrants durable wiki review.
+
+- Created candidate packet [[inbox/market-security_1c055eb9b2bb1f5a8ff2-bollinger_below_lower-0734fff671d4]] (0734fff671d4).
+
+- Classified [[inbox/market-security_1c055eb9b2bb1f5a8ff2-bollinger_below_lower-0734fff671d4]] as `ingest`: New Bollinger-band breach transition with negative return warrants durable monitoring context.
+
+- Created candidate packet [[inbox/market-security_2433a056eb0c55961fcc-bollinger_below_lower-2cf8fc1b86e9]] (2cf8fc1b86e9).
+
+- Classified [[inbox/market-security_2433a056eb0c55961fcc-bollinger_below_lower-2cf8fc1b86e9]] as `ingest`: A strengthened Bollinger-below-lower transition with a 5.2% decline over the review period is a material security-specific market change warranting durable research context.
+
+- Created candidate packet [[inbox/market-security_4935c6e39e38273a1731-volume_anomaly-e34640d59bdb]] (e34640d59bdb).
+
+- Classified [[inbox/market-security_4935c6e39e38273a1731-volume_anomaly-e34640d59bdb]] as `ingest`: A newly entered volume anomaly coincides with a material 3.4% period return and warrants durable review.
+
+- Created candidate packet [[inbox/market-security_4b61970aa8f574446819-volume_anomaly-0705904fbe29]] (0705904fbe29).
+
+- Classified [[inbox/market-security_4b61970aa8f574446819-volume_anomaly-0705904fbe29]] as `ingest`: A newly entered volume anomaly coincides with a material 7.9% decline over the validated period and merits durable review.
+
+- Created candidate packet [[inbox/market-security_66cdcf90aac0d83e76f3-bollinger_below_lower-aceaf2cb5e3d]] (aceaf2cb5e3d).
+
+- Classified [[inbox/market-security_66cdcf90aac0d83e76f3-bollinger_below_lower-aceaf2cb5e3d]] as `ingest`: Material 17.5% decline with a strengthened Bollinger-below-lower transition warrants durable review.
+
+- Created candidate packet [[inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-cbe45a6e9030]] (cbe45a6e9030).
+
+- Classified [[inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-cbe45a6e9030]] as `ingest`: Material RSI oversold entry accompanied by a 17.5% decline over the stated period warrants durable review.
+
+- Created candidate packet [[inbox/market-security_89969b7dac39b7db5661-volume_anomaly-acb2bebf5294]] (acb2bebf5294).
+
+- Classified [[inbox/market-security_89969b7dac39b7db5661-volume_anomaly-acb2bebf5294]] as `ingest`: Material volume anomaly coincides with a 7.9% decline over the period and warrants durable review.
+
+- Created candidate packet [[inbox/market-security_a9eb9838940ef5ceaa0c-macd_cross_below_signal-db1d830dbf42]] (db1d830dbf42).
+
+- Created candidate packet [[inbox/market-security_c5a9e460d3350284d157-rsi_overbought-80b0e6e920b8]] (80b0e6e920b8).
+
+- Created candidate packet [[inbox/market-security_d12e746b3c9d392183cc-rsi_overbought-4e6921fc801f]] (4e6921fc801f).
+
+- Created candidate packet [[inbox/market-security_dc7a111e297be528d96b-macd_cross_below_signal-e1d1d555fd55]] (e1d1d555fd55).
+
+- Created candidate packet [[inbox/market-security_f18cd57a5e086583c861-bollinger_above_upper-032f8573eac1]] (032f8573eac1).
+
+- Created candidate packet [[inbox/market-security_f18cd57a5e086583c861-macd_cross_above_signal-f9dd1d50d72c]] (f9dd1d50d72c).
+
+- Classified [[inbox/market-security_f18cd57a5e086583c861-macd_cross_above_signal-f9dd1d50d72c]] as `ingest`: A new MACD bullish crossover is a validated market-state transition for the security and merits durable monitoring context despite the negative period return.
+
+- Created candidate packet [[inbox/market-security_f18cd57a5e086583c861-volume_anomaly-7c51bf9d787f]] (7c51bf9d787f).
+
+- Classified [[inbox/market-security_f18cd57a5e086583c861-volume_anomaly-7c51bf9d787f]] as `ingest`: New volume anomaly with a material negative return warrants durable review.
+
+- Created candidate packet [[inbox/market-security_f34181f3df32080a91d1-bollinger_below_lower-3e67ad7b9b52]] (3e67ad7b9b52).
+
+- Classified [[inbox/market-security_f34181f3df32080a91d1-bollinger_below_lower-3e67ad7b9b52]] as `ingest`: Material new downside transition: price fell about 10.4% and entered below the lower Bollinger Band.
