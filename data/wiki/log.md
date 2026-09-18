@@ -4416,3 +4416,7 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Classified [[inbox/market-security_ef418f5ccc7dc5be8e65-volume_anomaly-81c86c4a8e7b]] as `ignore`: Volume anomaly entered without a material price move or corroborating evidence warranting durable wiki ingestion.
 
 - Created candidate packet [[inbox/market-security_f18cd57a5e086583c861-bollinger_above_upper-6af8e6478230]] (6af8e6478230).
+
+- Published investor decision snapshot `decision_303eae8d9deff9ebd95d`.
+
+- Generated canonical [[daily-reports/daily-report_20260918]] for run `daily-20260918T180110Z`.

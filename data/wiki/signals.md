@@ -4,16 +4,16 @@ type: signals
 status: maintained
 tags:
   - signals
-created: "2026-09-17"
-updated: "2026-09-17"
+created: "2026-09-18"
+updated: "2026-09-18"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_6fd2373ea995d6ea8fcd"
-as_of: "2026-09-17T19:06:47Z"
+snapshot_id: "decision_303eae8d9deff9ebd95d"
+as_of: "2026-09-18T18:21:00Z"
 ---
 
 # Signals
 
-**As of `2026-09-17T19:06:47Z`**
+**As of `2026-09-18T18:21:00Z`**
 
 ## Actionable trade signals
 
@@ -30,7 +30,7 @@ No pending orders.
 **Research alert — not a trade signal**
 
 - Alert: `volume\_anomaly`
-- Market date: `2026-09-17`
+- Market date: `2026-09-18`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
@@ -39,16 +39,52 @@ No pending orders.
 **Research alert — not a trade signal**
 
 - Alert: `rsi\_overbought`
-- Market date: `2026-09-16`
+- Market date: `2026-09-17`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
-### [RIO — Rio Tinto plc](securities/security_1c055eb9b2bb1f5a8ff2)
+### [TWST — Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148)
 
 **Research alert — not a trade signal**
 
-- Alert: `bollinger\_below\_lower`
-- Market date: `2026-09-16`
+- Alert: `volume\_anomaly`
+- Market date: `2026-09-17`
+- Research status: `blocked`
+- Conclusion: High-priority security research is blocked. scope\_deferred\_for\_capacity
+
+### [SU — Schneider Electric SE](securities/security_dc8486c1d61df62a22fd)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-09-18`
+- Research status: `blocked`
+- Conclusion: High-priority security research is blocked. scope\_deferred\_for\_capacity
+
+### [RXRX — Recursion Pharmaceuticals, Inc.](securities/security_ed7d5b616a196969c815)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-09-17`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [RTX — RTX Corporation](securities/security_59304f90c440def31dc5)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_oversold`
+- Market date: `2026-09-17`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-09-18`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
@@ -57,7 +93,7 @@ No pending orders.
 **Research alert — not a trade signal**
 
 - Alert: `volume\_anomaly`
-- Market date: `2026-09-16`
+- Market date: `2026-09-17`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
@@ -66,25 +102,34 @@ No pending orders.
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_above\_upper`
-- Market date: `2026-09-16`
+- Market date: `2026-09-17`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
-### [PL — Planet Labs PBC](securities/security_97f38b2cb2d5ef127f5a)
+### [PLS.AX — PLS Group Limited](securities/security_8a5c43888d224de85c69)
 
 **Research alert — not a trade signal**
 
-- Alert: `rsi\_oversold`
-- Market date: `2026-09-16`
-- Research status: `succeeded`
-- Conclusion: Completed one bounded full Planet Labs security review using current SEC-filed Q2 fiscal 2027 evidence and fresh canonical price/FX identity. Revenue, retention, operating leverage and liquidity improved, but capital intensity, contract concentration, ATM issuance and broader dilution remain material. Published schema-v2 assessment assessment\_9ea04b63e769b8d9b31d with USD 6.30/USD 12.71/USD 24.00 bear/base/bull values and USD 13.045 probability-weighted value against the USD 16.69 mark. Deterministic gates classify the security Sell / Avoid, allocation-ineligible and no\_new\_position because expected and base returns are negative, payoff and margin-of-safety gates fail, and the canonical relationship remains pending. Retained the existing commercial-space relationship review and created exactly one defense-and-aerospace relationship review. No strategy, signal, paper order, allocation, fill, cash, portfolio, performance or accounting state changed.
+- Alert: `volume\_anomaly`
+- Market date: `2026-09-18`
+- Research status: `blocked`
+- Conclusion: High-priority security research is blocked. scope\_deferred\_for\_capacity
+
+### [NBIS — Nebius Group N.V.](securities/security_47a0b06f6c6c478d7c1e)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-09-17`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
 
 ### [META — Meta Platforms, Inc.](securities/security_d12e746b3c9d392183cc)
 
 **Research alert — not a trade signal**
 
 - Alert: `rsi\_overbought`
-- Market date: `2026-09-16`
+- Market date: `2026-09-17`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
@@ -93,16 +138,61 @@ No pending orders.
 **Research alert — not a trade signal**
 
 - Alert: `volume\_anomaly`
-- Market date: `2026-09-16`
+- Market date: `2026-09-17`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### [GEV — GE Vernova Inc.](securities/security_4b61970aa8f574446819)
+### [INTC — Intel Corporation](securities/security_dfa34d4b9050964b465e)
 
 **Research alert — not a trade signal**
 
 - Alert: `volume\_anomaly`
-- Market date: `2026-09-16`
+- Market date: `2026-09-17`
+- Research status: `blocked`
+- Conclusion: High-priority security research is blocked. scope\_deferred\_for\_capacity
+
+### [INTC — Intel Corporation](securities/security_dfa34d4b9050964b465e)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-09-17`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### [FLNC — Fluence Energy, Inc.](securities/security_a9eb9838940ef5ceaa0c)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_oversold`
+- Market date: `2026-09-17`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [FLNC — Fluence Energy, Inc.](securities/security_a9eb9838940ef5ceaa0c)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-09-17`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [FLNC — Fluence Energy, Inc.](securities/security_a9eb9838940ef5ceaa0c)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_below\_lower`
+- Market date: `2026-09-17`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### EVK — Evonik Industries AG
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-09-18`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
@@ -111,34 +201,61 @@ No pending orders.
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_below\_lower`
-- Market date: `2026-09-16`
+- Market date: `2026-09-17`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### [CSIQ — Canadian Solar Inc.](securities/security_099561384c0f5e697727)
+### [DNA — Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687)
 
 **Research alert — not a trade signal**
 
-- Alert: `bollinger\_below\_lower`
-- Market date: `2026-09-16`
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-09-17`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### [DNA — Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-09-17`
 - Research status: `blocked`
 - Conclusion: High-priority security research is blocked. scope\_deferred\_for\_capacity
+
+### DDD — 3D Systems Corporation
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-09-17`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### [CROX — Crocs, Inc.](securities/security_c150f31c30afdb4a85f9)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-09-17`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### BAS — BASF SE
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-09-18`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
 
 ### [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86)
 
 **Research alert — not a trade signal**
 
 - Alert: `rsi\_overbought`
-- Market date: `2026-09-16`
-- Research status: `skipped`
-- Conclusion: Queue triage disposition
-
-### [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_above\_upper`
-- Market date: `2026-09-16`
+- Market date: `2026-09-17`
 - Research status: `skipped`
 - Conclusion: Queue triage disposition
 
@@ -147,63 +264,108 @@ No pending orders.
 **Research alert — not a trade signal**
 
 - Alert: `rsi\_oversold`
-- Market date: `2026-09-17`
+- Market date: `2026-09-18`
 - Research status: `skipped`
 - Conclusion: Queue triage disposition
 
-### [AMZN — Amazon.com, Inc.](securities/security_2433a056eb0c55961fcc)
+### AKE — Arkema S.A.
 
 **Research alert — not a trade signal**
 
-- Alert: `bollinger\_below\_lower`
-- Market date: `2026-09-16`
+- Alert: `volume\_anomaly`
+- Market date: `2026-09-18`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [AD — Koninklijke Ahold Delhaize N.V.](securities/security_e19c7fe27fbcc4cd923d)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-09-18`
 - Research status: `blocked`
 - Conclusion: High-priority security research is blocked. scope\_deferred\_for\_capacity
 
-### [ALB — Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3)
+### [ABCL — AbCellera Biologics Inc.](securities/security_7bf8f4c9cc12ae410e40)
 
 **Research alert — not a trade signal**
 
-- Alert: `bollinger\_below\_lower`
-- Market date: `2026-09-16`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-09-17`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
 
-### [ALB — Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3)
+### [XMTR — Xometry, Inc.](securities/security_c2e6db30cb59254de418)
 
 **Research alert — not a trade signal**
 
-- Alert: `rsi\_oversold`
-- Market date: `2026-09-16`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-09-17`
+- Research status: `blocked`
+- Conclusion: High-priority security research is blocked. scope\_deferred\_for\_capacity
+
+### [WTI — W&amp;T Offshore, Inc.](securities/security_61567714298b9563d1a9)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_below\_signal`
+- Market date: `2026-09-17`
+- Research status: `succeeded`
+- Conclusion: Completed exactly one full W&amp;T Offshore security review from current SEC-filed Q2 evidence and canonical 5 August 2026 market and FX state. Registered the Q2 Form 10-Q and SEC-filed results exhibit, created the maintained security page, updated the structured security row, and wrote the first scenario-complete assessment. Bear/base/bull fair values of USD 0.79/USD 3.17/USD 6.15 produce a USD 3.32 probability-weighted value versus USD 3.25; deterministic state derives Hold / Watch, watch-tier conviction, and allocation ineligibility because expected return, base return, downside payoff, margin of safety, and relationship gates fail. The bearish MACD transition is adverse timing rather than evidence of fundamental impairment. No strategy, signal, order, follow-up operation, allocation, or accounting state changed because the security has no linked idea or accepted relationship and the strategy gate failed.
+
+### [TWST — Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-09-17`
+- Research status: `blocked`
+- Conclusion: High-priority security research is blocked. scope\_deferred\_for\_capacity
 
 ### [TSLA — Tesla, Inc.](securities/security_dc7a111e297be528d96b)
 
 **Research alert — not a trade signal**
 
-- Alert: `macd\_cross\_below\_signal`
-- Market date: `2026-09-16`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-09-17`
+- Research status: `blocked`
+- Conclusion: High-priority security research is blocked. scope\_deferred\_for\_capacity
 
-### PRLB — Proto Labs, Inc.
+### SSYS — Stratasys Ltd.
 
 **Research alert — not a trade signal**
 
 - Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-09-16`
+- Market date: `2026-09-17`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### [FLNC — Fluence Energy, Inc.](securities/security_a9eb9838940ef5ceaa0c)
+### [GEV — GE Vernova Inc.](securities/security_4b61970aa8f574446819)
 
 **Research alert — not a trade signal**
 
-- Alert: `macd\_cross\_below\_signal`
-- Market date: `2026-09-16`
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-09-17`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [CSL — Carlisle Companies Incorporated](securities/security_9b0db3bc77914b23a307)
+
+**Research alert — not a trade signal**
+
+- Alert: `sma\_50\_cross\_below\_200`
+- Market date: `2026-09-17`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
+
+### [CROX — Crocs, Inc.](securities/security_c150f31c30afdb4a85f9)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-09-17`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
 
 
 ## Recently expired or completed signals

@@ -4,16 +4,16 @@ type: system-status
 status: maintained
 tags:
   - system-status
-created: "2026-09-17"
-updated: "2026-09-17"
+created: "2026-09-18"
+updated: "2026-09-18"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_6fd2373ea995d6ea8fcd"
-as_of: "2026-09-17T19:06:47Z"
+snapshot_id: "decision_303eae8d9deff9ebd95d"
+as_of: "2026-09-18T18:21:00Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-09-17T19:06:47Z`
+**As of:** `2026-09-18T18:21:00Z`
 **Investment data:** Portfolio state safe — research gaps remain
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -23,8 +23,8 @@ Publication validation confirms that this generated artifact is internally consi
 
 ## Current investment health
 
-- Assessments: 49/83
-- Fresh-evidence assessments: 45/83
+- Assessments: 46/83
+- Fresh-evidence assessments: 42/83
 - Relationship reviews: 20/83
 - Accepted relationships: 19
 - Market success/failure: 92/0
@@ -33,7 +33,7 @@ Publication validation confirms that this generated artifact is internally consi
 
 ## Queue and execution health
 
-- Ready or active strategies: 4
+- Ready or active strategies: 3
 - Active signals: 0
 - Pending orders: 0
 - Queued remediation operations: 0
@@ -41,7 +41,7 @@ Publication validation confirms that this generated artifact is internally consi
 
 ## Sequential research backlog
 
-- Research backlog: 364
+- Research backlog: 389
 
 ## Publication health
 
@@ -50,10 +50,10 @@ Publication validation confirms that this generated artifact is internally consi
 
 ## Current issues by investment impact
 
-Current unresolved issues: **26**.
+Current unresolved issues: **27**.
 Resolved and superseded issues remain in the canonical audit but are not current health.
 
-### Affects Candidate (19)
+### Affects Candidate (20)
 
 - Error **ETN — Eaton Corporation plc: Hermes operation validation failed: Quick check research for ETN on 2026-08-11** — agent result schema: 'cd57fc97df50efa0657881b253fc96d4467881b253fc96d4467881b253fc96d446' does not match '^\[a-f0-9\]{64}$'; commands\_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment; post-run integrity: agent result data/runs/Daily report for 2026-08-11/Quick check research for ETN on 2026-08-11/agent\_result.json: 'cd57fc97df50efa0657881b253fc96d4467881b253fc96d4467881b253fc96d446' does not match '^\[a-f0-9\]{64}$'
 - Error **FUC.F — Fanuc Corporation: FANUC assessment source operation is ambiguous within one run** — The schema-v2 FANUC full-review assessment could not be accepted because the deterministic research applier found both the completed quick\_check\_research operation and this running security\_research operation for the same security and run\_id, then rejected the immutable assessment request with no assessment-state changes. The mandatory security context succeeded; both issuer PDFs were rechecked with unchanged hashes, source history and the security summary were updated through validated commands
@@ -72,6 +72,7 @@ Resolved and superseded issues remain in the canonical audit but are not current
 - Error **Hermes operation validation failed: Security research for ABBNY on 2026-09-03** — files\_changed claims paths absent from the actual delta: \['data/operations/operations\_TODO.csv'\]
 - Error **Hermes operation validation failed: Quick check research for TWST on 2026-08-05** — agent result was written before completed change: data/runs/Daily report for 2026-08-12/Quick check research for TWST on 2026-08-05/command\_audit.json; commands\_run does not exactly match deterministic CLI audit receipts
 - Error **Hermes operation validation failed: Security research for ALB on 2026-09-17** — observed claim support must match the retained inspected source excerpt
+- Error **Hermes operation validation failed: Security research for FLNC on 2026-08-13** — claim excerpt exceeds the bounded public-source quote allowance; observed claim support must match the retained inspected source excerpt
 - Error **ASML — ASML Holding N.V.: ASML assessment rejected after security row update** — The retry operation refreshed the ASML page and security row to the 2026-08-19 USD 1,751.73 mark, but the schema-v2 assessment request was rejected before assessment state changed because valuation\_template\_rationale is a required field and was omitted. The routed-operation no-retry rule forbids correcting and invoking a second assessment request after this rejection. The canonical assessment therefore remains the prior unsupported version, the prepared relationship and idea follow-up requests w
 - Error **WTI — W&amp;T Offshore, Inc.: Hermes operation validation failed: Quick check research for WTI on 2026-08-18** — completed security research requires this run's comparable assessment
 
