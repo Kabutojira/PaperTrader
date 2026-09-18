@@ -4,9 +4,15 @@
   "inputs": {
     "assessment_state": "2026-08-06T18:47:30Z",
     "maintenance_mode": "refresh",
-    "market_data_as_of": "2026-09-09T18:24:19Z",
-    "market_data_date": "2026-09-08",
-    "period_end": "2026-09-08",
+    "market_data_as_of": "2026-09-18T18:01:15Z",
+    "market_data_date": "2026-09-17",
+    "merged_input_values": {
+      "source_price_hash": [
+        "4607c4aaed78b75fcc41d7ad298f55f32375f4cd3d8f55307b7968d9a01a58e2",
+        "6b8a1dee6fc4a029566cd7f41ae7fcf549836ce86a9ef8231ae6ee48c002404a"
+      ]
+    },
+    "period_end": "2026-09-17",
     "period_start": "2026-08-10",
     "research_page": "data/wiki/securities/security_a9eb9838940ef5ceaa0c.md",
     "research_reasons": [
@@ -32,19 +38,63 @@
         "trigger_types": [
           "volume_anomaly"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_a9eb9838940ef5ceaa0c:c634d5ed52c39aab90f6:2026-09-17",
+        "market_data_date": "2026-09-17",
+        "observed_at": "2026-09-18T18:01:15Z",
+        "prompt": "Research security_a9eb9838940ef5ceaa0c with high priority after price-action alerts: bollinger_below_lower, rsi_oversold, volume_anomaly; decide what changed and whether to act.",
+        "rsi_attention": {
+          "episode_id": "rsi_64e457b49e6e24c4b34cd852",
+          "observed_session": "2026-09-17",
+          "original_created_at": "2026-09-18T18:01:15Z",
+          "rsi": "24.92377560",
+          "source_price_hash": "6b8a1dee6fc4a029566cd7f41ae7fcf549836ce86a9ef8231ae6ee48c002404a",
+          "threshold": "30",
+          "transitions": [
+            "entered"
+          ]
+        },
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_a9eb9838940ef5ceaa0c-bollinger_below_lower-e294fcced965.md",
+          "data/wiki/inbox/market-security_a9eb9838940ef5ceaa0c-rsi_oversold-fed2d33d1704.md",
+          "data/wiki/inbox/market-security_a9eb9838940ef5ceaa0c-volume_anomaly-20e75ee521c7.md"
+        ],
+        "trigger_types": [
+          "bollinger_below_lower",
+          "rsi_oversold",
+          "volume_anomaly"
+        ]
       }
     ],
+    "rsi_attention": {
+      "episode_id": "rsi_64e457b49e6e24c4b34cd852",
+      "observed_session": "2026-09-17",
+      "original_created_at": "2026-09-18T18:01:15Z",
+      "rsi": "24.92377560",
+      "source_price_hash": "6b8a1dee6fc4a029566cd7f41ae7fcf549836ce86a9ef8231ae6ee48c002404a",
+      "threshold": "30",
+      "transitions": [
+        "entered"
+      ]
+    },
     "security_id": "security_a9eb9838940ef5ceaa0c",
-    "source_price_hash": "4607c4aaed78b75fcc41d7ad298f55f32375f4cd3d8f55307b7968d9a01a58e2",
+    "source_price_hash": "6b8a1dee6fc4a029566cd7f41ae7fcf549836ce86a9ef8231ae6ee48c002404a",
     "trigger_types": [
+      "bollinger_below_lower",
+      "rsi_oversold",
       "volume_anomaly"
     ]
   },
-  "objective": "Revalidate security_a9eb9838940ef5ceaa0c with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_a9eb9838940ef5ceaa0c with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+  "objective": "Revalidate security_a9eb9838940ef5ceaa0c with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_a9eb9838940ef5ceaa0c with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act. | Additional cause: Research security_a9eb9838940ef5ceaa0c with high priority after price-action alerts: bollinger_below_lower, rsi_oversold, volume_anomaly; decide what changed and whether to act.",
   "operation_id": "01KZYPF0GRF70DYNX3ZSZNC1QH",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_a9eb9838940ef5ceaa0c-bollinger_below_lower-e294fcced965.md",
+    "data/wiki/inbox/market-security_a9eb9838940ef5ceaa0c-rsi_oversold-fed2d33d1704.md",
+    "data/wiki/inbox/market-security_a9eb9838940ef5ceaa0c-volume_anomaly-20e75ee521c7.md",
     "data/wiki/inbox/market-security_a9eb9838940ef5ceaa0c-volume_anomaly-97e81e427ee9.md",
     "source_flnc_q3_2026_10q",
     "source_flnc_q3_2026_earnings"

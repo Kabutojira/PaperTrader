@@ -5,13 +5,47 @@
     "causal_hypothesis": "Any residual material-supply exposure may be immaterial after BASF's 2024 sale of Forward AM, making BASF a likely rejected or negligible thematic relationship despite its chemical scale.",
     "focused_questions": "Verify the Forward AM divestiture and any residual supply or IP economics, quantify maximum plausible additive sensitivity, then assess the full business, margins, balance sheet, cash flow, concentration, valuation scenarios, rating, and invalidation independently of weak thematic exposure.",
     "idea_id": "idea_ai_driven_democratization_physical_creation",
-    "security_id": "security_ef418f5ccc7dc5be8e65"
+    "market_data_as_of": "2026-09-18T18:01:15Z",
+    "market_data_date": "2026-09-18",
+    "period_end": "2026-09-18",
+    "period_start": "2026-08-21",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_ef418f5ccc7dc5be8e65:ai-physical-creation:2026-09",
+        "observed_at": "2026-09-06T09:40:57Z",
+        "prompt": "Research and value BASF while testing whether its former additive exposure is now negligible.",
+        "source": "idea_research:01M1V159Q8ZAMEEEVXR2SC854J",
+        "source_refs": [
+          "https://forward-am.com/wp-content/uploads/2024/07/Forward-AM-MBO-Public-Announcement_20240703.pdf",
+          "https://www.basf.com/global/en/investors/share-and-adrs"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_ef418f5ccc7dc5be8e65:b95d327e6db045df2b36:2026-09-18",
+        "market_data_date": "2026-09-18",
+        "observed_at": "2026-09-18T18:01:15Z",
+        "prompt": "Research security_ef418f5ccc7dc5be8e65 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_ef418f5ccc7dc5be8e65-volume_anomaly-81c86c4a8e7b.md"
+        ],
+        "trigger_types": [
+          "volume_anomaly"
+        ]
+      }
+    ],
+    "security_id": "security_ef418f5ccc7dc5be8e65",
+    "source_price_hash": "609d6cbcfe20202cb397c5819ad4393c122a382abe4ccd692f116b18c1cfa795",
+    "trigger_types": [
+      "volume_anomaly"
+    ]
   },
-  "objective": "Research and value BASF while testing whether its former additive exposure is now negligible.",
+  "objective": "Research and value BASF while testing whether its former additive exposure is now negligible. | Additional cause: Research security_ef418f5ccc7dc5be8e65 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
   "operation_id": "01M1V1FA18Q6NH3BYM9CGZER95",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_ef418f5ccc7dc5be8e65-volume_anomaly-81c86c4a8e7b.md",
     "https://forward-am.com/wp-content/uploads/2024/07/Forward-AM-MBO-Public-Announcement_20240703.pdf",
     "https://www.basf.com/global/en/investors/share-and-adrs"
   ]

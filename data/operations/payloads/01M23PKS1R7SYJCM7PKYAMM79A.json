@@ -6,15 +6,16 @@
     "baseline_operation_id": "01M14TAVZGX126SABHZ9D8RQQ8",
     "baseline_result_path": "data/runs/daily-20260831T213829Z/01M14TAVZGX126SABHZ9D8RQQ8/agent_result.json",
     "full_research_requested": true,
-    "market_data_as_of": "2026-09-17T18:45:03Z",
-    "market_data_date": "2026-09-16",
+    "market_data_as_of": "2026-09-18T18:01:15Z",
+    "market_data_date": "2026-09-17",
     "merged_input_values": {
       "source_price_hash": [
         "60e58d13f359231a515122d9351491d47e74fb17d36206e7fb86bca998a6f234",
-        "3fc4ae225faa341c16a915892031b269c0473a0c941ff84334237b4affb7d709"
+        "3fc4ae225faa341c16a915892031b269c0473a0c941ff84334237b4affb7d709",
+        "ebd1c338878e5940fb8b747db348bedc99aae696979ecdd9134e4d7f1eacdbc7"
       ]
     },
-    "period_end": "2026-09-16",
+    "period_end": "2026-09-17",
     "period_start": "2026-08-10",
     "research_reasons": [
       {
@@ -38,21 +39,35 @@
         "trigger_types": [
           "volume_anomaly"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_4b61970aa8f574446819:7c08299512a9636fdffc:2026-09-17",
+        "market_data_date": "2026-09-17",
+        "observed_at": "2026-09-18T18:01:15Z",
+        "prompt": "Research security_4b61970aa8f574446819 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_4b61970aa8f574446819-macd_cross_above_signal-c69f43731a2e.md"
+        ],
+        "trigger_types": [
+          "macd_cross_above_signal"
+        ]
       }
     ],
     "security_id": "security_4b61970aa8f574446819",
-    "source_price_hash": "3fc4ae225faa341c16a915892031b269c0473a0c941ff84334237b4affb7d709",
+    "source_price_hash": "ebd1c338878e5940fb8b747db348bedc99aae696979ecdd9134e4d7f1eacdbc7",
     "trigger_types": [
       "macd_cross_above_signal",
       "volume_anomaly"
     ]
   },
-  "objective": "Quick-check security_4b61970aa8f574446819 after price-action alerts: macd_cross_above_signal; verify the latest research assumptions and escalate to full security research if any material gate changed. | Additional cause: Research security_4b61970aa8f574446819 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+  "objective": "Quick-check security_4b61970aa8f574446819 after price-action alerts: macd_cross_above_signal; verify the latest research assumptions and escalate to full security research if any material gate changed. | Additional cause: Research security_4b61970aa8f574446819 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act. | Additional cause: Research security_4b61970aa8f574446819 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
   "operation_id": "01M23PKS1R7SYJCM7PKYAMM79A",
   "operation_type": "quick_check_research",
   "payload_version": 1,
   "source_refs": [
     "data/wiki/inbox/market-security_4b61970aa8f574446819-macd_cross_above_signal-a358bb85e64f.md",
+    "data/wiki/inbox/market-security_4b61970aa8f574446819-macd_cross_above_signal-c69f43731a2e.md",
     "data/wiki/inbox/market-security_4b61970aa8f574446819-volume_anomaly-0705904fbe29.md"
   ]
 }

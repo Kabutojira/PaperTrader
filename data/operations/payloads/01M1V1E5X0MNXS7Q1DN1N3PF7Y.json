@@ -5,13 +5,46 @@
     "causal_hypothesis": "More manufacturable AI-assisted designs may lift utilization of Stratasys systems and its installed-base materials and service revenue, but industrial qualification and competitive barriers may slow transmission.",
     "focused_questions": "Test installed base, system/material/service mix, recurring proprietary materials, aerospace, automotive, healthcare, utilization leverage, Forward AM integration, concentration, competition, margins, cash flow, balance sheet, scenarios, rating, and invalidation.",
     "idea_id": "idea_ai_driven_democratization_physical_creation",
-    "security_id": "security_84705b27d28a94f2b318"
+    "market_data_as_of": "2026-09-18T18:01:15Z",
+    "market_data_date": "2026-09-17",
+    "period_end": "2026-09-17",
+    "period_start": "2026-08-19",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_84705b27d28a94f2b318:ai-physical-creation:2026-09",
+        "observed_at": "2026-09-06T09:40:20Z",
+        "prompt": "Research and value Stratasys as an industrial polymer printing and materials platform.",
+        "source": "idea_research:01M1V159Q8ZAMEEEVXR2SC854J",
+        "source_refs": [
+          "https://investors.stratasys.com/sec-filings/all-sec-filings/content/0001628280-26-015079/ssys-20251231.htm"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_84705b27d28a94f2b318:654da9ad972a44b655b0:2026-09-17",
+        "market_data_date": "2026-09-17",
+        "observed_at": "2026-09-18T18:01:15Z",
+        "prompt": "Research security_84705b27d28a94f2b318 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_84705b27d28a94f2b318-macd_cross_above_signal-b52a5bb25066.md"
+        ],
+        "trigger_types": [
+          "macd_cross_above_signal"
+        ]
+      }
+    ],
+    "security_id": "security_84705b27d28a94f2b318",
+    "source_price_hash": "c77748f640cd36eb9ece1ab430b1d7122b69ae4e1284464954cad0f4d58c9d47",
+    "trigger_types": [
+      "macd_cross_above_signal"
+    ]
   },
-  "objective": "Research and value Stratasys as an industrial polymer printing and materials platform.",
+  "objective": "Research and value Stratasys as an industrial polymer printing and materials platform. | Additional cause: Research security_84705b27d28a94f2b318 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
   "operation_id": "01M1V1E5X0MNXS7Q1DN1N3PF7Y",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_84705b27d28a94f2b318-macd_cross_above_signal-b52a5bb25066.md",
     "https://investors.stratasys.com/sec-filings/all-sec-filings/content/0001628280-26-015079/ssys-20251231.htm"
   ]
 }

@@ -6,19 +6,53 @@
       "data/operations/research-governance/monitoring-contexts/69780f4b058cd5f673f3ab99.json"
     ],
     "investigation_id": "semantic_audit:security_8b703a8adf5f864acaa4:2026-W38",
+    "market_data_as_of": "2026-09-18T18:01:15Z",
+    "market_data_date": "2026-09-18",
     "original_cause": "semantic_audit",
     "original_created_at": "2026-09-14T09:42:46Z",
+    "period_end": "2026-09-18",
+    "period_start": "2026-08-21",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:triage:security_8b703a8adf5f864acaa4:semantic_audit:security_8b703a8adf5f864acaa4:2026-W38",
+        "observed_at": "2026-09-15T18:47:21Z",
+        "prompt": "Investigate the unresolved cause from triage 01M2FMRCFG4C2MPF6A19RQRPAW.",
+        "source": "controller:research_triage",
+        "source_refs": [
+          "data/operations/research-governance/monitoring-contexts/69780f4b058cd5f673f3ab99.json",
+          "data/runs/daily-20260915T184308Z/01M2FMRCFG4C2MPF6A19RQRPAW/agent_result.json"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_8b703a8adf5f864acaa4:7e8c073a89b0eed2ad97:2026-09-18",
+        "market_data_date": "2026-09-18",
+        "observed_at": "2026-09-18T18:01:15Z",
+        "prompt": "Research security_8b703a8adf5f864acaa4 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_8b703a8adf5f864acaa4-volume_anomaly-7fb3f26c67dc.md"
+        ],
+        "trigger_types": [
+          "volume_anomaly"
+        ]
+      }
+    ],
     "security_id": "security_8b703a8adf5f864acaa4",
+    "source_price_hash": "2dea7124e8528044598a8b41fdd68c194399da099f1a88a8cd2389e8d5c7e136",
     "triage_operation_id": "01M2FMRCFG4C2MPF6A19RQRPAW",
     "triage_reason": "The supplied semantic-audit context names one Prosus issuer NAV target and records its prior hash, but contains no frozen claims. The permitted repository evidence does not provide a current inspection of that target, so absence of a recorded change cannot be treated as no material change.",
-    "triage_result_path": "data/runs/daily-20260915T184308Z/01M2FMRCFG4C2MPF6A19RQRPAW/agent_result.json"
+    "triage_result_path": "data/runs/daily-20260915T184308Z/01M2FMRCFG4C2MPF6A19RQRPAW/agent_result.json",
+    "trigger_types": [
+      "volume_anomaly"
+    ]
   },
-  "objective": "Investigate the unresolved cause from triage 01M2FMRCFG4C2MPF6A19RQRPAW.",
+  "objective": "Investigate the unresolved cause from triage 01M2FMRCFG4C2MPF6A19RQRPAW. | Additional cause: Research security_8b703a8adf5f864acaa4 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
   "operation_id": "01M2K6A8N8RV7THC2NKEM9MZTC",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
     "data/operations/research-governance/monitoring-contexts/69780f4b058cd5f673f3ab99.json",
-    "data/runs/daily-20260915T184308Z/01M2FMRCFG4C2MPF6A19RQRPAW/agent_result.json"
+    "data/runs/daily-20260915T184308Z/01M2FMRCFG4C2MPF6A19RQRPAW/agent_result.json",
+    "data/wiki/inbox/market-security_8b703a8adf5f864acaa4-volume_anomaly-7fb3f26c67dc.md"
   ]
 }

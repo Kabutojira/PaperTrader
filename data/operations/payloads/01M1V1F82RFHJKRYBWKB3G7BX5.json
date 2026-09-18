@@ -5,15 +5,16 @@
     "causal_hypothesis": "Higher industrial additive volumes may benefit Evonik's PA12 powders and specialty polymer portfolio, but consolidated sensitivity may be low.",
     "focused_questions": "Quantify additive revenue or a supportable bound, product families, PA12 position, process and customer exposure, segment fit, margins, cyclicality, cash flow, leverage, concentration, scenarios, rating, and invalidation without mistaking market growth for material group impact.",
     "idea_id": "idea_ai_driven_democratization_physical_creation",
-    "market_data_as_of": "2026-09-15T18:43:13Z",
-    "market_data_date": "2026-09-15",
+    "market_data_as_of": "2026-09-18T18:01:15Z",
+    "market_data_date": "2026-09-18",
     "merged_input_values": {
       "source_price_hash": [
         "cac60b8a132aaafe05a05f990d57817f433280a73f9b62f00b80a5a55f2fa498",
-        "f902e8a0d1711724cec4fc441eb95addfefd79c375a3a45b3526dd56f513142f"
+        "f902e8a0d1711724cec4fc441eb95addfefd79c375a3a45b3526dd56f513142f",
+        "577f4acd169341a1c0a4861363835e186a7edbf3db8efa4f0e7206acf86ecbc1"
       ]
     },
-    "period_end": "2026-09-15",
+    "period_end": "2026-09-18",
     "period_start": "2026-08-14",
     "research_reasons": [
       {
@@ -52,16 +53,29 @@
           "bollinger_below_lower",
           "volume_anomaly"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_ccb25582c0392492fe9e:89f477f8e08816a4cb65:2026-09-18",
+        "market_data_date": "2026-09-18",
+        "observed_at": "2026-09-18T18:01:15Z",
+        "prompt": "Research security_ccb25582c0392492fe9e with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_ccb25582c0392492fe9e-volume_anomaly-c96d6e6f20e4.md"
+        ],
+        "trigger_types": [
+          "volume_anomaly"
+        ]
       }
     ],
     "security_id": "security_ccb25582c0392492fe9e",
-    "source_price_hash": "f902e8a0d1711724cec4fc441eb95addfefd79c375a3a45b3526dd56f513142f",
+    "source_price_hash": "577f4acd169341a1c0a4861363835e186a7edbf3db8efa4f0e7206acf86ecbc1",
     "trigger_types": [
       "bollinger_below_lower",
       "volume_anomaly"
     ]
   },
-  "objective": "Research and value Evonik with PA12 and additive-material exposure dilution quantified. | Additional cause: Research security_ccb25582c0392492fe9e with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act. | Additional cause: Research security_ccb25582c0392492fe9e with high priority after price-action alerts: bollinger_below_lower, volume_anomaly; decide what changed and whether to act.",
+  "objective": "Research and value Evonik with PA12 and additive-material exposure dilution quantified. | Additional cause: Research security_ccb25582c0392492fe9e with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act. | Additional cause: Research security_ccb25582c0392492fe9e with high priority after price-action alerts: bollinger_below_lower, volume_anomaly; decide what changed and whether to act. | Additional cause: Research security_ccb25582c0392492fe9e with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
   "operation_id": "01M1V1F82RFHJKRYBWKB3G7BX5",
   "operation_type": "security_research",
   "payload_version": 1,
@@ -69,6 +83,7 @@
     "data/wiki/inbox/market-security_ccb25582c0392492fe9e-bollinger_below_lower-30a03b792ae7.md",
     "data/wiki/inbox/market-security_ccb25582c0392492fe9e-bollinger_below_lower-bc7e58016a25.md",
     "data/wiki/inbox/market-security_ccb25582c0392492fe9e-volume_anomaly-c929b0586d3f.md",
+    "data/wiki/inbox/market-security_ccb25582c0392492fe9e-volume_anomaly-c96d6e6f20e4.md",
     "https://www.evonik.com/content/dam/evonik/documents/Evonik_Roadshow_Presentation1.pdf.coredownload.pdf"
   ]
 }

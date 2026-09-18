@@ -3,9 +3,15 @@
   "entity_type": "security",
   "inputs": {
     "full_research_requested": true,
-    "market_data_as_of": "2026-09-16T18:37:21Z",
-    "market_data_date": "2026-09-15",
-    "period_end": "2026-09-15",
+    "market_data_as_of": "2026-09-18T18:01:15Z",
+    "market_data_date": "2026-09-17",
+    "merged_input_values": {
+      "source_price_hash": [
+        "75ce8b64d17e70a731f1a0c4410b5b4ff63870b1eea1b6eb6287940adf0ff9ef",
+        "189e62d19c95a3a4cbd98cff3228e7e73d9eae92d94782ecd09c4cfff4d62a5f"
+      ]
+    },
+    "period_end": "2026-09-17",
     "period_start": "2026-08-17",
     "research_depth": "maximum",
     "research_reasons": [
@@ -28,19 +34,37 @@
         "trigger_types": [
           "volume_anomaly"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_c150f31c30afdb4a85f9:288c68795e248a9472bc:2026-09-17",
+        "market_data_date": "2026-09-17",
+        "observed_at": "2026-09-18T18:01:15Z",
+        "prompt": "Research security_c150f31c30afdb4a85f9 with high priority after price-action alerts: macd_cross_above_signal, volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_c150f31c30afdb4a85f9-macd_cross_above_signal-2f4d959c9e0d.md",
+          "data/wiki/inbox/market-security_c150f31c30afdb4a85f9-volume_anomaly-84a5c88f69b4.md"
+        ],
+        "trigger_types": [
+          "macd_cross_above_signal",
+          "volume_anomaly"
+        ]
       }
     ],
     "security_id": "security_c150f31c30afdb4a85f9",
-    "source_price_hash": "75ce8b64d17e70a731f1a0c4410b5b4ff63870b1eea1b6eb6287940adf0ff9ef",
+    "source_price_hash": "189e62d19c95a3a4cbd98cff3228e7e73d9eae92d94782ecd09c4cfff4d62a5f",
     "trigger_types": [
+      "macd_cross_above_signal",
       "volume_anomaly"
     ]
   },
-  "objective": "Perform a maximum-depth, current primary-source security analysis and scenario valuation of Crocs (CROX), including brand durability, channel and geographic economics, HEYDUDE recovery risk, margins and cash conversion, capital structure and debt, repurchases, catalysts, downside cases, and explicit portfolio action conditions. | Additional cause: Research security_c150f31c30afdb4a85f9 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+  "objective": "Perform a maximum-depth, current primary-source security analysis and scenario valuation of Crocs (CROX), including brand durability, channel and geographic economics, HEYDUDE recovery risk, margins and cash conversion, capital structure and debt, repurchases, catalysts, downside cases, and explicit portfolio action conditions. | Additional cause: Research security_c150f31c30afdb4a85f9 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act. | Additional cause: Research security_c150f31c30afdb4a85f9 with high priority after price-action alerts: macd_cross_above_signal, volume_anomaly; decide what changed and whether to act.",
   "operation_id": "01M291W540TPHDJYQG1VH90JT1",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
-    "data/wiki/inbox/market-security_c150f31c30afdb4a85f9-volume_anomaly-188abd7bb2e4.md"
+    "data/wiki/inbox/market-security_c150f31c30afdb4a85f9-macd_cross_above_signal-2f4d959c9e0d.md",
+    "data/wiki/inbox/market-security_c150f31c30afdb4a85f9-volume_anomaly-188abd7bb2e4.md",
+    "data/wiki/inbox/market-security_c150f31c30afdb4a85f9-volume_anomaly-84a5c88f69b4.md"
   ]
 }
