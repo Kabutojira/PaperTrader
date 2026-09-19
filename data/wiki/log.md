@@ -4626,3 +4626,7 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Created candidate packet [[inbox/market-security_fe5539a7d3fd9d553bce-volume_anomaly-826e18365b14]] (826e18365b14).
 
 - Classified [[inbox/market-security_fe5539a7d3fd9d553bce-volume_anomaly-826e18365b14]] as `ingest`: Material volume anomaly with a newly entered trigger and a 36.95% period return warrants durable review.
+
+- Published investor decision snapshot `decision_f32446e72a6bbb2c8a9a`.
+
+- Generated canonical [[daily-reports/daily-report_20260919]] for run `daily-20260919T174011Z`.
