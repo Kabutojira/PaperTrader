@@ -4,9 +4,15 @@
   "inputs": {
     "assessment_state": "2026-08-26T16:24:12Z",
     "maintenance_mode": "refresh",
-    "market_data_as_of": "2026-09-09T18:24:19Z",
-    "market_data_date": "2026-09-08",
-    "period_end": "2026-09-08",
+    "market_data_as_of": "2026-09-19T17:40:18Z",
+    "market_data_date": "2026-09-18",
+    "merged_input_values": {
+      "source_price_hash": [
+        "aeed94d46946d4d268c8ded358e2283d71dd1ce8d4b5ce18caa6abba6e4637b1",
+        "d1e67edcea845416ba44a97240668f5f69abc06974526b82a04e20bf80c28be9"
+      ]
+    },
+    "period_end": "2026-09-18",
     "period_start": "2026-08-10",
     "research_page": "data/wiki/securities/security_3e597863f00753e8c65c.md",
     "research_reasons": [
@@ -36,10 +42,23 @@
         "trigger_types": [
           "volume_anomaly"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_3e597863f00753e8c65c:143201bc2d8afdf86815:2026-09-18",
+        "market_data_date": "2026-09-18",
+        "observed_at": "2026-09-19T17:40:18Z",
+        "prompt": "Research security_3e597863f00753e8c65c with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_3e597863f00753e8c65c-volume_anomaly-d9f39b1cc2b6.md"
+        ],
+        "trigger_types": [
+          "volume_anomaly"
+        ]
       }
     ],
     "security_id": "security_3e597863f00753e8c65c",
-    "source_price_hash": "aeed94d46946d4d268c8ded358e2283d71dd1ce8d4b5ce18caa6abba6e4637b1",
+    "source_price_hash": "d1e67edcea845416ba44a97240668f5f69abc06974526b82a04e20bf80c28be9",
     "trigger_types": [
       "volume_anomaly"
     ]
@@ -50,6 +69,7 @@
   "payload_version": 1,
   "source_refs": [
     "data/wiki/inbox/market-security_3e597863f00753e8c65c-volume_anomaly-c24bef51ddb5.md",
+    "data/wiki/inbox/market-security_3e597863f00753e8c65c-volume_anomaly-d9f39b1cc2b6.md",
     "source_be_2025_10k_sec",
     "source_be_oracle_warrant_2026_8k_sec",
     "source_be_q1_2026_10q_sec",

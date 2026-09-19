@@ -2,10 +2,41 @@
   "entity_id": "security_66cdcf90aac0d83e76f3",
   "entity_type": "security",
   "inputs": {
-    "market_data_as_of": "2026-09-17T18:45:03Z",
-    "market_data_date": "2026-09-16",
-    "period_end": "2026-09-16",
+    "market_data_as_of": "2026-09-19T17:40:18Z",
+    "market_data_date": "2026-09-18",
+    "merged_input_values": {
+      "source_price_hash": [
+        "f2c1779cbdf8ce6415d075e9b0df5e5006d10249f7ac8bb213b9fae9d85140e7",
+        "cd3826f9ba9d1bdd66a6fa5b0af4a71a6683d0f2fe5b36c9fefda6664e394fee"
+      ]
+    },
+    "period_end": "2026-09-18",
     "period_start": "2026-08-18",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_66cdcf90aac0d83e76f3:0703612f3b03e39e3cb2:2026-09-16",
+        "observed_at": "2026-09-17T18:45:03Z",
+        "prompt": "Research security_66cdcf90aac0d83e76f3 with high priority after price-action alerts: bollinger_below_lower, rsi_oversold; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_66cdcf90aac0d83e76f3-bollinger_below_lower-aceaf2cb5e3d.md",
+          "data/wiki/inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-cbe45a6e9030.md"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_66cdcf90aac0d83e76f3:6b235e0a563552cd45c1:2026-09-18",
+        "market_data_date": "2026-09-18",
+        "observed_at": "2026-09-19T17:40:18Z",
+        "prompt": "Research security_66cdcf90aac0d83e76f3 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_66cdcf90aac0d83e76f3-volume_anomaly-eb47f7686c62.md"
+        ],
+        "trigger_types": [
+          "volume_anomaly"
+        ]
+      }
+    ],
     "rsi_attention": {
       "episode_id": "rsi_4a91cd91b88382488be74e95",
       "observed_session": "2026-09-16",
@@ -18,18 +49,20 @@
       ]
     },
     "security_id": "security_66cdcf90aac0d83e76f3",
-    "source_price_hash": "f2c1779cbdf8ce6415d075e9b0df5e5006d10249f7ac8bb213b9fae9d85140e7",
+    "source_price_hash": "cd3826f9ba9d1bdd66a6fa5b0af4a71a6683d0f2fe5b36c9fefda6664e394fee",
     "trigger_types": [
       "bollinger_below_lower",
-      "rsi_oversold"
+      "rsi_oversold",
+      "volume_anomaly"
     ]
   },
-  "objective": "Research security_66cdcf90aac0d83e76f3 with high priority after price-action alerts: bollinger_below_lower, rsi_oversold; decide what changed and whether to act.",
+  "objective": "Research security_66cdcf90aac0d83e76f3 with high priority after price-action alerts: bollinger_below_lower, rsi_oversold; decide what changed and whether to act. | Additional cause: Research security_66cdcf90aac0d83e76f3 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
   "operation_id": "01M2RAZFWRRHSZEGGD2FCK3D9X",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
     "data/wiki/inbox/market-security_66cdcf90aac0d83e76f3-bollinger_below_lower-aceaf2cb5e3d.md",
-    "data/wiki/inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-cbe45a6e9030.md"
+    "data/wiki/inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-cbe45a6e9030.md",
+    "data/wiki/inbox/market-security_66cdcf90aac0d83e76f3-volume_anomaly-eb47f7686c62.md"
   ]
 }

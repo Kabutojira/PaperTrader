@@ -4,9 +4,15 @@
   "inputs": {
     "assessment_state": "2026-08-01T09:27:19Z",
     "maintenance_mode": "refresh",
-    "market_data_as_of": "2026-09-09T18:24:19Z",
-    "market_data_date": "2026-09-08",
-    "period_end": "2026-09-08",
+    "market_data_as_of": "2026-09-19T17:40:18Z",
+    "market_data_date": "2026-09-18",
+    "merged_input_values": {
+      "source_price_hash": [
+        "e1f582a7bf60cd18508baad47766e754cd85be72ada5ac54a422ea876a1c935a",
+        "642d1b6eacfcfed20553ec37ccb08581faebc13f40c4cac0c2ab9cdb89ecf63b"
+      ]
+    },
+    "period_end": "2026-09-18",
     "period_start": "2026-08-10",
     "research_page": "data/wiki/securities/security_3a75fc1ccca2ee7c937a.md",
     "research_reasons": [
@@ -32,10 +38,23 @@
         "trigger_types": [
           "volume_anomaly"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_3a75fc1ccca2ee7c937a:c4caa3b7c91f4d9d45fd:2026-09-18",
+        "market_data_date": "2026-09-18",
+        "observed_at": "2026-09-19T17:40:18Z",
+        "prompt": "Research security_3a75fc1ccca2ee7c937a with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_3a75fc1ccca2ee7c937a-volume_anomaly-12ab4a58473c.md"
+        ],
+        "trigger_types": [
+          "volume_anomaly"
+        ]
       }
     ],
     "security_id": "security_3a75fc1ccca2ee7c937a",
-    "source_price_hash": "e1f582a7bf60cd18508baad47766e754cd85be72ada5ac54a422ea876a1c935a",
+    "source_price_hash": "642d1b6eacfcfed20553ec37ccb08581faebc13f40c4cac0c2ab9cdb89ecf63b",
     "trigger_types": [
       "volume_anomaly"
     ]
@@ -45,6 +64,7 @@
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_3a75fc1ccca2ee7c937a-volume_anomaly-12ab4a58473c.md",
     "data/wiki/inbox/market-security_3a75fc1ccca2ee7c937a-volume_anomaly-bd54afa2231a.md",
     "source_qcom_q3_2026_10q",
     "source_qcom_q3_2026_results"

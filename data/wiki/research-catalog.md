@@ -5,7 +5,7 @@ status: maintained
 tags:
   - research
 created: "2026-09-18"
-updated: "2026-09-18"
+updated: "2026-09-19"
 provenance: deterministic-decision-projection
 snapshot_id: "decision_303eae8d9deff9ebd95d"
 as_of: "2026-09-18T18:21:00Z"
@@ -1058,3 +1058,61 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_0a56aa634d077fe5796f-volume_anomaly-b148eb29a603|AMAT — Volume anomaly]]
+- [[inbox/market-security_0b67d6c8e3fd3366a257-sma_50_cross_below_200-3d1cdf32044d|POWL — SMA 50 cross below 200]]
+- [[inbox/market-security_0b67d6c8e3fd3366a257-volume_anomaly-67c5f637525b|POWL — Volume anomaly]]
+- [[inbox/market-security_0cf8075039299094d614-volume_anomaly-ccc5a005c503|KTOS — Volume anomaly]]
+- [[inbox/market-security_18a3ab0ee6086ee85d0f-macd_cross_above_signal-914073906df8|ETN — MACD cross above signal]]
+- [[inbox/market-security_18a3ab0ee6086ee85d0f-volume_anomaly-5a83c746a389|ETN — Volume anomaly]]
+- [[inbox/market-security_1e8fbdb0f45f2b413e00-volume_anomaly-3df59ac9dd89|PYPL — Volume anomaly]]
+- [[inbox/market-security_1f9cce545ede94cd6349-bollinger_above_upper-a28991db312a|ISRG — Bollinger above upper]]
+- [[inbox/market-security_1f9cce545ede94cd6349-volume_anomaly-5a085bc06949|ISRG — Volume anomaly]]
+- [[inbox/market-security_2010347f1a0a5ea60f47-bollinger_below_lower-c1a422899073|SPOT — Bollinger below lower]]
+- [[inbox/market-security_204be2a44063993de1a8-volume_anomaly-1e0ba1ce9039|MSFT — Volume anomaly]]
+- [[inbox/market-security_22c2b9d782a62d7a9b86-volume_anomaly-b1e0e8f10d93|ATKR — Volume anomaly]]
+- [[inbox/market-security_2433a056eb0c55961fcc-volume_anomaly-4001a62a07c6|AMZN — Volume anomaly]]
+- [[inbox/market-security_37ddcbdaad296ad831f2-volume_anomaly-d4803c20774d|COIN — Volume anomaly]]
+- [[inbox/market-security_3a75fc1ccca2ee7c937a-volume_anomaly-12ab4a58473c|QCOM — Volume anomaly]]
+- [[inbox/market-security_3e597863f00753e8c65c-volume_anomaly-d9f39b1cc2b6|BE — Volume anomaly]]
+- [[inbox/market-security_4935c6e39e38273a1731-bollinger_below_lower-a7bc5aca9f3f|MELI — Bollinger below lower]]
+- [[inbox/market-security_4b61970aa8f574446819-volume_anomaly-914881877326|GEV — Volume anomaly]]
+- [[inbox/market-security_59304f90c440def31dc5-volume_anomaly-de1718d0ca1f|RTX — Volume anomaly]]
+- [[inbox/market-security_664f93a7eaca72e76e9b-volume_anomaly-359369a10c20|SPCX — Volume anomaly]]
+- [[inbox/market-security_66cdcf90aac0d83e76f3-volume_anomaly-eb47f7686c62|ALB — Volume anomaly]]
+- [[inbox/market-security_6ac6a6268ca7c08829ae-bollinger_above_upper-a9989bd0840e|DDD — Bollinger above upper]]
+- [[inbox/market-security_6ac6a6268ca7c08829ae-macd_cross_above_signal-ea867ee1b2e8|DDD — MACD cross above signal]]
+- [[inbox/market-security_6ac6a6268ca7c08829ae-volume_anomaly-fba6871dde59|DDD — Volume anomaly]]
+- [[inbox/market-security_6cf75bd0ec0aa2a20148-bollinger_above_upper-82789f22990c|TWST — Bollinger above upper]]
+- [[inbox/market-security_6cf75bd0ec0aa2a20148-rsi_overbought-5c53cae3d42e|TWST — RSI overbought]]
+- [[inbox/market-security_6f9a1450edceb9307c9a-macd_cross_above_signal-c4ee2be32ebb|ANET — MACD cross above signal]]
+- [[inbox/market-security_6f9a1450edceb9307c9a-volume_anomaly-0a30a48f2f67|ANET — Volume anomaly]]
+- [[inbox/market-security_7ca095d63423c55a90e3-volume_anomaly-abe72983075d|RKLB — Volume anomaly]]
+- [[inbox/market-security_83a56943e18793f685b0-volume_anomaly-e89fe9b4e144|TXN — Volume anomaly]]
+- [[inbox/market-security_97f38b2cb2d5ef127f5a-rsi_oversold-8e6bd06f0017|PL — RSI oversold]]
+- [[inbox/market-security_9d4049ed6669a52815d6-volume_anomaly-16f916538310|SQM — Volume anomaly]]
+- [[inbox/market-security_a5dc16f3f4b245e6c168-volume_anomaly-0425f873b2ad|LUNR — Volume anomaly]]
+- [[inbox/market-security_a9eb9838940ef5ceaa0c-rsi_oversold-57bfd0a0946f|FLNC — RSI oversold]]
+- [[inbox/market-security_ad5917642acbba28c1f2-macd_cross_above_signal-8e3ae4b904e7|TDY — MACD cross above signal]]
+- [[inbox/market-security_ad5917642acbba28c1f2-volume_anomaly-fce5c82835c7|TDY — Volume anomaly]]
+- [[inbox/market-security_b1f2c48e1a744f5ecf67-volume_anomaly-da42f32a7771|LH — Volume anomaly]]
+- [[inbox/market-security_c120e9f26ebb6159adf9-macd_cross_above_signal-3b76c568a17c|ABBNY — MACD cross above signal]]
+- [[inbox/market-security_c2e6db30cb59254de418-volume_anomaly-d32e49b04f75|XMTR — Volume anomaly]]
+- [[inbox/market-security_c5a9e460d3350284d157-volume_anomaly-a0830aeb726b|VLO — Volume anomaly]]
+- [[inbox/market-security_c86bb4e75658c07142cf-volume_anomaly-01b3b07ed5ad|GOOGL — Volume anomaly]]
+- [[inbox/market-security_cd492d97064d8574156e-volume_anomaly-da450790e783|MP — Volume anomaly]]
+- [[inbox/market-security_ce9b78a4d0773c950765-macd_cross_above_signal-fbe258b21534|TSM — MACD cross above signal]]
+- [[inbox/market-security_d202772e4e62065cd17a-bollinger_below_lower-e596867de982|FISV — Bollinger below lower]]
+- [[inbox/market-security_dfa34d4b9050964b465e-volume_anomaly-a450348e63bf|INTC — Volume anomaly]]
+- [[inbox/market-security_ed7d5b616a196969c815-bollinger_above_upper-4ee095e20f56|RXRX — Bollinger above upper]]
+- [[inbox/market-security_ed7d5b616a196969c815-macd_cross_above_signal-7983599d7e47|RXRX — MACD cross above signal]]
+- [[inbox/market-security_ed7d5b616a196969c815-volume_anomaly-ba7938e727c5|RXRX — Volume anomaly]]
+- [[inbox/market-security_ef35e41886220d51c22c-volume_anomaly-121148f6a168|ASML — Volume anomaly]]
+- [[inbox/market-security_f18cd57a5e086583c861-volume_anomaly-cd6b2f9bac6c|PRLB — Volume anomaly]]
+- [[inbox/market-security_f2b9760d847b2ba59324-macd_cross_below_signal-471c25c4f86b|ENPH — MACD cross below signal]]
+- [[inbox/market-security_f2b9760d847b2ba59324-volume_anomaly-1e4166ca207f|ENPH — Volume anomaly]]
+- [[inbox/market-security_fe5539a7d3fd9d553bce-bollinger_above_upper-f99b350a271b|MSTR — Bollinger above upper]]
+- [[inbox/market-security_fe5539a7d3fd9d553bce-macd_cross_above_signal-1042437afdf4|MSTR — MACD cross above signal]]
+- [[inbox/market-security_fe5539a7d3fd9d553bce-volume_anomaly-826e18365b14|MSTR — Volume anomaly]]

@@ -1,0 +1,36 @@
+{
+  "entity_id": "security_97f38b2cb2d5ef127f5a",
+  "entity_type": "security",
+  "inputs": {
+    "baseline_completed_at": "2026-09-11T06:05:26Z",
+    "baseline_operation_id": "01M26HW848ZZWZAZTZSYXFB7J2",
+    "baseline_result_path": "data/runs/daily-20260911T054700Z/01M26HW848ZZWZAZTZSYXFB7J2/agent_result.json",
+    "market_data_as_of": "2026-09-19T17:40:18Z",
+    "market_data_date": "2026-09-18",
+    "period_end": "2026-09-18",
+    "period_start": "2026-08-20",
+    "rsi_attention": {
+      "episode_id": "rsi_eba97df1dea6390627ead045",
+      "observed_session": "2026-09-18",
+      "original_created_at": "2026-09-19T17:40:18Z",
+      "rsi": "29.82469570",
+      "source_price_hash": "400d5118f7c715103601c28f5b35ac3441b953e6a6bdd5965e3d836d0a1b3cf2",
+      "threshold": "30",
+      "transitions": [
+        "entered"
+      ]
+    },
+    "security_id": "security_97f38b2cb2d5ef127f5a",
+    "source_price_hash": "400d5118f7c715103601c28f5b35ac3441b953e6a6bdd5965e3d836d0a1b3cf2",
+    "trigger_types": [
+      "rsi_oversold"
+    ]
+  },
+  "objective": "Quick-check security_97f38b2cb2d5ef127f5a after price-action alerts: rsi_oversold; verify the latest research assumptions and escalate to full security research if any material gate changed.",
+  "operation_id": "01M2XC2BYGGS0TVV614Z6FQ61H",
+  "operation_type": "quick_check_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_97f38b2cb2d5ef127f5a-rsi_oversold-8e6bd06f0017.md"
+  ]
+}

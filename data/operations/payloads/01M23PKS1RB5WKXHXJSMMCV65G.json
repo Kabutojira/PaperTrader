@@ -2,15 +2,16 @@
   "entity_id": "security_d202772e4e62065cd17a",
   "entity_type": "security",
   "inputs": {
-    "market_data_as_of": "2026-09-10T18:10:21Z",
-    "market_data_date": "2026-09-09",
+    "market_data_as_of": "2026-09-19T17:40:18Z",
+    "market_data_date": "2026-09-18",
     "merged_input_values": {
       "source_price_hash": [
         "719d744701fade6b016eafa3afbb6127db0fe838397395fba219f5f3e1fae2eb",
-        "a6cd0060d85532b2107d88d9cadda54de74761242de5018e8e8b05e9cee6c5cb"
+        "a6cd0060d85532b2107d88d9cadda54de74761242de5018e8e8b05e9cee6c5cb",
+        "ac1b12e616f31003f7acd4ce2e9e0597e5dca5a82b6d7021e47be7a294f997ba"
       ]
     },
-    "period_end": "2026-09-09",
+    "period_end": "2026-09-18",
     "period_start": "2026-08-10",
     "research_reasons": [
       {
@@ -34,10 +35,23 @@
         "trigger_types": [
           "bollinger_below_lower"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_d202772e4e62065cd17a:17c3194af24532203849:2026-09-18",
+        "market_data_date": "2026-09-18",
+        "observed_at": "2026-09-19T17:40:18Z",
+        "prompt": "Research security_d202772e4e62065cd17a with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_d202772e4e62065cd17a-bollinger_below_lower-e596867de982.md"
+        ],
+        "trigger_types": [
+          "bollinger_below_lower"
+        ]
       }
     ],
     "security_id": "security_d202772e4e62065cd17a",
-    "source_price_hash": "a6cd0060d85532b2107d88d9cadda54de74761242de5018e8e8b05e9cee6c5cb",
+    "source_price_hash": "ac1b12e616f31003f7acd4ce2e9e0597e5dca5a82b6d7021e47be7a294f997ba",
     "trigger_types": [
       "bollinger_below_lower",
       "volume_anomaly"
@@ -49,6 +63,7 @@
   "payload_version": 1,
   "source_refs": [
     "data/wiki/inbox/market-security_d202772e4e62065cd17a-bollinger_below_lower-4b6225b078ed.md",
+    "data/wiki/inbox/market-security_d202772e4e62065cd17a-bollinger_below_lower-e596867de982.md",
     "data/wiki/inbox/market-security_d202772e4e62065cd17a-volume_anomaly-91acfcb143e4.md"
   ]
 }

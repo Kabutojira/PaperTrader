@@ -5,13 +5,50 @@
     "causal_hypothesis": "AI-assisted design may lift polymer and metal printer, materials, services, and healthcare utilization, but restructuring, dilution, liquidity, and cash burn may overwhelm thematic upside.",
     "focused_questions": "Separate polymer, metal, healthcare, materials and installed-base economics; assess recurring revenue, competition, restructuring, concentration, margins, cash burn, debt, dilution and liquidity before scenarios, rating, and explicit invalidation.",
     "idea_id": "idea_ai_driven_democratization_physical_creation",
-    "security_id": "security_6ac6a6268ca7c08829ae"
+    "market_data_as_of": "2026-09-19T17:40:18Z",
+    "market_data_date": "2026-09-18",
+    "period_end": "2026-09-18",
+    "period_start": "2026-08-20",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_6ac6a6268ca7c08829ae:ai-physical-creation:2026-09",
+        "observed_at": "2026-09-06T09:40:38Z",
+        "prompt": "Research and value 3D Systems with thematic exposure and financial risk separated.",
+        "source": "idea_research:01M1V159Q8ZAMEEEVXR2SC854J",
+        "source_refs": [
+          "https://www.sec.gov/Archives/edgar/data/910638/000119312526255573/d107578d424b5.htm"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_6ac6a6268ca7c08829ae:471dd282ac422f662919:2026-09-18",
+        "market_data_date": "2026-09-18",
+        "observed_at": "2026-09-19T17:40:18Z",
+        "prompt": "Research security_6ac6a6268ca7c08829ae with high priority after price-action alerts: macd_cross_above_signal, volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_6ac6a6268ca7c08829ae-macd_cross_above_signal-ea867ee1b2e8.md",
+          "data/wiki/inbox/market-security_6ac6a6268ca7c08829ae-volume_anomaly-fba6871dde59.md"
+        ],
+        "trigger_types": [
+          "macd_cross_above_signal",
+          "volume_anomaly"
+        ]
+      }
+    ],
+    "security_id": "security_6ac6a6268ca7c08829ae",
+    "source_price_hash": "513aa90bf950cfcd93b59b2df9c0709e02f48a10092c696a16f7403ec2bc4d17",
+    "trigger_types": [
+      "macd_cross_above_signal",
+      "volume_anomaly"
+    ]
   },
-  "objective": "Research and value 3D Systems with thematic exposure and financial risk separated.",
+  "objective": "Research and value 3D Systems with thematic exposure and financial risk separated. | Additional cause: Research security_6ac6a6268ca7c08829ae with high priority after price-action alerts: macd_cross_above_signal, volume_anomaly; decide what changed and whether to act.",
   "operation_id": "01M1V1EQFG9EX56SR892Q3BHGF",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_6ac6a6268ca7c08829ae-macd_cross_above_signal-ea867ee1b2e8.md",
+    "data/wiki/inbox/market-security_6ac6a6268ca7c08829ae-volume_anomaly-fba6871dde59.md",
     "https://www.sec.gov/Archives/edgar/data/910638/000119312526255573/d107578d424b5.htm"
   ]
 }

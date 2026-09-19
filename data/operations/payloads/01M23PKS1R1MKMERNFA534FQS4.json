@@ -2,15 +2,16 @@
   "entity_id": "security_4935c6e39e38273a1731",
   "entity_type": "security",
   "inputs": {
-    "market_data_as_of": "2026-09-17T18:45:03Z",
-    "market_data_date": "2026-09-16",
+    "market_data_as_of": "2026-09-19T17:40:18Z",
+    "market_data_date": "2026-09-18",
     "merged_input_values": {
       "source_price_hash": [
         "5f6d72469e5689a914d28064c5eb78dbd47892a7c201e62eb33295d4c4fd70bf",
-        "df1ab604048bdff63854e4de2288c2ee0a3b6e52b8f4bbf76bf7cbadca0550d3"
+        "df1ab604048bdff63854e4de2288c2ee0a3b6e52b8f4bbf76bf7cbadca0550d3",
+        "eb8b9ee92f69492a51af7576d237549d6b0f5a206a0a482d0c873ff39e15571f"
       ]
     },
-    "period_end": "2026-09-16",
+    "period_end": "2026-09-18",
     "period_start": "2026-08-10",
     "research_reasons": [
       {
@@ -34,20 +35,35 @@
         "trigger_types": [
           "volume_anomaly"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_4935c6e39e38273a1731:1e590eee1fd2f09f4f6f:2026-09-18",
+        "market_data_date": "2026-09-18",
+        "observed_at": "2026-09-19T17:40:18Z",
+        "prompt": "Research security_4935c6e39e38273a1731 with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_4935c6e39e38273a1731-bollinger_below_lower-a7bc5aca9f3f.md"
+        ],
+        "trigger_types": [
+          "bollinger_below_lower"
+        ]
       }
     ],
     "security_id": "security_4935c6e39e38273a1731",
-    "source_price_hash": "df1ab604048bdff63854e4de2288c2ee0a3b6e52b8f4bbf76bf7cbadca0550d3",
+    "source_price_hash": "eb8b9ee92f69492a51af7576d237549d6b0f5a206a0a482d0c873ff39e15571f",
     "trigger_types": [
+      "bollinger_below_lower",
       "sma_50_cross_above_200",
       "volume_anomaly"
     ]
   },
-  "objective": "Research security_4935c6e39e38273a1731 with high priority after price-action alerts: sma_50_cross_above_200; decide what changed and whether to act. | Additional cause: Research security_4935c6e39e38273a1731 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+  "objective": "Research security_4935c6e39e38273a1731 with high priority after price-action alerts: sma_50_cross_above_200; decide what changed and whether to act. | Additional cause: Research security_4935c6e39e38273a1731 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act. | Additional cause: Research security_4935c6e39e38273a1731 with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act.",
   "operation_id": "01M23PKS1R1MKMERNFA534FQS4",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_4935c6e39e38273a1731-bollinger_below_lower-a7bc5aca9f3f.md",
     "data/wiki/inbox/market-security_4935c6e39e38273a1731-sma_50_cross_above_200-78b8cd9eb235.md",
     "data/wiki/inbox/market-security_4935c6e39e38273a1731-volume_anomaly-e34640d59bdb.md"
   ]

@@ -4,9 +4,15 @@
   "inputs": {
     "assessment_state": "2026-08-06T15:48:55Z",
     "maintenance_mode": "refresh",
-    "market_data_as_of": "2026-09-10T20:48:19Z",
-    "market_data_date": "2026-09-10",
-    "period_end": "2026-09-10",
+    "market_data_as_of": "2026-09-19T17:40:18Z",
+    "market_data_date": "2026-09-18",
+    "merged_input_values": {
+      "source_price_hash": [
+        "f75b043ba855b59dd82265e588e17019dbfc8b30cb81e314b65e4e39f833a017",
+        "681844188d3c25eac61aac3bb5d65edb3e7eb96327f4e42d3fc185af62dabf82"
+      ]
+    },
+    "period_end": "2026-09-18",
     "period_start": "2026-08-12",
     "research_page": "data/wiki/securities/security_2010347f1a0a5ea60f47.md",
     "research_reasons": [
@@ -32,19 +38,34 @@
         "trigger_types": [
           "sma_50_cross_above_200"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_2010347f1a0a5ea60f47:fb501b966f39ec688d26:2026-09-18",
+        "market_data_date": "2026-09-18",
+        "observed_at": "2026-09-19T17:40:18Z",
+        "prompt": "Research security_2010347f1a0a5ea60f47 with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_2010347f1a0a5ea60f47-bollinger_below_lower-c1a422899073.md"
+        ],
+        "trigger_types": [
+          "bollinger_below_lower"
+        ]
       }
     ],
     "security_id": "security_2010347f1a0a5ea60f47",
-    "source_price_hash": "f75b043ba855b59dd82265e588e17019dbfc8b30cb81e314b65e4e39f833a017",
+    "source_price_hash": "681844188d3c25eac61aac3bb5d65edb3e7eb96327f4e42d3fc185af62dabf82",
     "trigger_types": [
+      "bollinger_below_lower",
       "sma_50_cross_above_200"
     ]
   },
-  "objective": "Revalidate security_2010347f1a0a5ea60f47 with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_2010347f1a0a5ea60f47 with high priority after price-action alerts: sma_50_cross_above_200; decide what changed and whether to act.",
+  "objective": "Revalidate security_2010347f1a0a5ea60f47 with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_2010347f1a0a5ea60f47 with high priority after price-action alerts: sma_50_cross_above_200; decide what changed and whether to act. | Additional cause: Research security_2010347f1a0a5ea60f47 with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act.",
   "operation_id": "01M06M2NP8345PDBERKSEC20PZ",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_2010347f1a0a5ea60f47-bollinger_below_lower-c1a422899073.md",
     "data/wiki/inbox/market-security_2010347f1a0a5ea60f47-sma_50_cross_above_200-0818ff3f21c4.md",
     "source_spot_q2_2026_interim_6k",
     "source_spot_q2_2026_results_sec_ex99_1"

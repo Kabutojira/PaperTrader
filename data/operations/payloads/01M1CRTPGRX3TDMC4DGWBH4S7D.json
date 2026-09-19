@@ -4,14 +4,55 @@
   "inputs": {
     "assessment_state": "2026-08-22T15:55:59Z",
     "maintenance_mode": "refresh",
+    "market_data_as_of": "2026-09-19T17:40:18Z",
+    "market_data_date": "2026-09-18",
+    "period_end": "2026-09-18",
+    "period_start": "2026-08-20",
     "research_page": "data/wiki/securities/security_fe5539a7d3fd9d553bce.md",
-    "security_id": "security_fe5539a7d3fd9d553bce"
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_fe5539a7d3fd9d553bce:allocation-maintenance:2026-08-22T15:55:59Z",
+        "observed_at": "2026-08-31T20:40:31Z",
+        "prompt": "Revalidate security_fe5539a7d3fd9d553bce with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_mstr_aug10_2026_8k",
+          "source_mstr_aug17_2026_8k",
+          "source_mstr_aug3_2026_8k",
+          "source_mstr_q2_2026_10q",
+          "source_mstr_sec_submissions_20260822"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_fe5539a7d3fd9d553bce:004bcc2faf765dda0385:2026-09-18",
+        "market_data_date": "2026-09-18",
+        "observed_at": "2026-09-19T17:40:18Z",
+        "prompt": "Research security_fe5539a7d3fd9d553bce with high priority after price-action alerts: macd_cross_above_signal, volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_fe5539a7d3fd9d553bce-macd_cross_above_signal-1042437afdf4.md",
+          "data/wiki/inbox/market-security_fe5539a7d3fd9d553bce-volume_anomaly-826e18365b14.md"
+        ],
+        "trigger_types": [
+          "macd_cross_above_signal",
+          "volume_anomaly"
+        ]
+      }
+    ],
+    "security_id": "security_fe5539a7d3fd9d553bce",
+    "source_price_hash": "c60162faee1ec0125d656b10b021336107258ebb68cbabe441d7e832be4d43bc",
+    "trigger_types": [
+      "macd_cross_above_signal",
+      "volume_anomaly"
+    ]
   },
-  "objective": "Revalidate security_fe5539a7d3fd9d553bce with current primary evidence and write one comparable allocation assessment.",
+  "objective": "Revalidate security_fe5539a7d3fd9d553bce with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_fe5539a7d3fd9d553bce with high priority after price-action alerts: macd_cross_above_signal, volume_anomaly; decide what changed and whether to act.",
   "operation_id": "01M1CRTPGRX3TDMC4DGWBH4S7D",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_fe5539a7d3fd9d553bce-macd_cross_above_signal-1042437afdf4.md",
+    "data/wiki/inbox/market-security_fe5539a7d3fd9d553bce-volume_anomaly-826e18365b14.md",
     "source_mstr_aug10_2026_8k",
     "source_mstr_aug17_2026_8k",
     "source_mstr_aug3_2026_8k",
