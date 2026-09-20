@@ -1,0 +1,17 @@
+{
+  "entity_id": "security_8b703a8adf5f864acaa4",
+  "entity_type": "security",
+  "inputs": {
+    "cause": "source_monitor",
+    "evidence_refs": [
+      "data/operations/research-governance/monitoring-contexts/c55dadc7f5dcb94163f368f5.json"
+    ],
+    "investigation_id": "source_monitor:security_8b703a8adf5f864acaa4:2026-09-20",
+    "monitoring_context_path": "data/operations/research-governance/monitoring-contexts/c55dadc7f5dcb94163f368f5.json",
+    "security_id": "security_8b703a8adf5f864acaa4"
+  },
+  "objective": "Inspect only the frozen protected monitoring targets and report actual coverage and material changes.",
+  "operation_id": "01M2ZZ5AVRE0XRBNN7QGT0H0E8",
+  "operation_type": "research_triage",
+  "payload_version": 1
+}
