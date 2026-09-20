@@ -1,11 +1,6 @@
 {
-  "as_of": "2026-09-20T17:53:48Z",
+  "as_of": "2026-09-20T17:55:59Z",
   "candidates": [
-    {
-      "attention_class": 3,
-      "disposition": "eligible",
-      "operation_id": "01M2NR4NQ8E0W8FBNRSB7C6A0C"
-    },
     {
       "attention_class": 3,
       "disposition": "eligible",
@@ -194,6 +189,11 @@
     {
       "attention_class": 3,
       "disposition": "eligible",
+      "operation_id": "01M2K6A8N8RV7THC2NKEM9MZTC"
+    },
+    {
+      "attention_class": 3,
+      "disposition": "eligible",
       "operation_id": "01KZVHDGV04PCAYPSK8DJ9P82A"
     },
     {
@@ -295,11 +295,6 @@
       "attention_class": 3,
       "disposition": "eligible",
       "operation_id": "01M2686XP8C9074WCKX8WYP6D7"
-    },
-    {
-      "attention_class": 3,
-      "disposition": "eligible",
-      "operation_id": "01M2K6A8N8RV7THC2NKEM9MZTC"
     },
     {
       "attention_class": 3,
@@ -1503,7 +1498,7 @@
     }
   ],
   "policy_version": 1,
-  "remaining_operations": 5,
-  "remaining_weighted_budget": "100",
-  "selected_operation_id": "01M2NR4NQ8E0W8FBNRSB7C6A0C"
+  "remaining_operations": 4,
+  "remaining_weighted_budget": "99",
+  "selected_operation_id": "01M2RAZFWR66CYZG0ZXJT2109C"
 }
