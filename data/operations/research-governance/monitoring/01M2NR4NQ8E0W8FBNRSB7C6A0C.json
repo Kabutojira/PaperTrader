@@ -1,0 +1,34 @@
+{
+  "accepted_at": "2026-09-20T17:55:34Z",
+  "checked_count": 0,
+  "complete_no_change": false,
+  "kind": "source_monitor",
+  "operation_id": "01M2NR4NQ8E0W8FBNRSB7C6A0C",
+  "review": {
+    "checks": [
+      {
+        "checked_at": null,
+        "evidence_refs": [
+          "https://www.prosus.com/investors/investing-in-prosus/net-asset-value?locale=en"
+        ],
+        "reason": "The frozen issuer source target returned HTTP 403 during the bounded check; no current source content or replacement hash was available for comparison.",
+        "source_hash": "",
+        "state": "failed",
+        "target_id": "source_prosus_nav_20260827"
+      }
+    ],
+    "conflicts": [],
+    "context_hash": "581576420e403e97cfc4850b72bf28aafd9db3da9c8f8af4d95ca8ee611ae53b",
+    "limitations": [
+      "The sole frozen primary-source target was inaccessible, so material change versus the prior hash could not be determined.",
+      "This bounded monitor is not complete-universe coverage."
+    ]
+  },
+  "schema_version": 1,
+  "security_id": "security_8b703a8adf5f864acaa4",
+  "target_count": 1,
+  "unexamined_target_ids": [],
+  "window_end": "2026-09-16T18:37:21Z",
+  "window_key": "2026-09-16",
+  "window_start": "2026-09-15T18:37:21Z"
+}

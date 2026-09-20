@@ -8,6 +8,40 @@
     "investigation_id": "semantic_audit:security_8b703a8adf5f864acaa4:2026-W38",
     "market_data_as_of": "2026-09-18T18:01:15Z",
     "market_data_date": "2026-09-18",
+    "merged_input_values": {
+      "evidence_refs": [
+        [
+          "data/operations/research-governance/monitoring-contexts/69780f4b058cd5f673f3ab99.json"
+        ],
+        [
+          "data/operations/research-governance/monitoring-contexts/02d9a9931f6592098273ff27.json"
+        ]
+      ],
+      "investigation_id": [
+        "semantic_audit:security_8b703a8adf5f864acaa4:2026-W38",
+        "source_monitor:security_8b703a8adf5f864acaa4:2026-09-16"
+      ],
+      "original_cause": [
+        "semantic_audit",
+        "source_monitor"
+      ],
+      "original_created_at": [
+        "2026-09-14T09:42:46Z",
+        "2026-09-16T18:37:21Z"
+      ],
+      "triage_operation_id": [
+        "01M2FMRCFG4C2MPF6A19RQRPAW",
+        "01M2NR4NQ8E0W8FBNRSB7C6A0C"
+      ],
+      "triage_reason": [
+        "The supplied semantic-audit context names one Prosus issuer NAV target and records its prior hash, but contains no frozen claims. The permitted repository evidence does not provide a current inspection of that target, so absence of a recorded change cannot be treated as no material change.",
+        "The sole frozen monitoring target was checked but the cited issuer source was unavailable at retrieval time (HTTP 403). This does not establish no material change."
+      ],
+      "triage_result_path": [
+        "data/runs/daily-20260915T184308Z/01M2FMRCFG4C2MPF6A19RQRPAW/agent_result.json",
+        "data/runs/daily-20260920T175222Z/01M2NR4NQ8E0W8FBNRSB7C6A0C/agent_result.json"
+      ]
+    },
     "original_cause": "semantic_audit",
     "original_created_at": "2026-09-14T09:42:46Z",
     "period_end": "2026-09-18",
@@ -35,6 +69,16 @@
         "trigger_types": [
           "volume_anomaly"
         ]
+      },
+      {
+        "dedupe_key": "security_research:triage:security_8b703a8adf5f864acaa4:source_monitor:security_8b703a8adf5f864acaa4:2026-09-16",
+        "observed_at": "2026-09-20T17:55:34Z",
+        "prompt": "Investigate the unresolved cause from triage 01M2NR4NQ8E0W8FBNRSB7C6A0C.",
+        "source": "controller:research_triage",
+        "source_refs": [
+          "data/operations/research-governance/monitoring-contexts/02d9a9931f6592098273ff27.json",
+          "data/runs/daily-20260920T175222Z/01M2NR4NQ8E0W8FBNRSB7C6A0C/agent_result.json"
+        ]
       }
     ],
     "security_id": "security_8b703a8adf5f864acaa4",
@@ -46,13 +90,15 @@
       "volume_anomaly"
     ]
   },
-  "objective": "Investigate the unresolved cause from triage 01M2FMRCFG4C2MPF6A19RQRPAW. | Additional cause: Research security_8b703a8adf5f864acaa4 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+  "objective": "Investigate the unresolved cause from triage 01M2FMRCFG4C2MPF6A19RQRPAW. | Additional cause: Research security_8b703a8adf5f864acaa4 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act. | Additional cause: Investigate the unresolved cause from triage 01M2NR4NQ8E0W8FBNRSB7C6A0C.",
   "operation_id": "01M2K6A8N8RV7THC2NKEM9MZTC",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/operations/research-governance/monitoring-contexts/02d9a9931f6592098273ff27.json",
     "data/operations/research-governance/monitoring-contexts/69780f4b058cd5f673f3ab99.json",
     "data/runs/daily-20260915T184308Z/01M2FMRCFG4C2MPF6A19RQRPAW/agent_result.json",
+    "data/runs/daily-20260920T175222Z/01M2NR4NQ8E0W8FBNRSB7C6A0C/agent_result.json",
     "data/wiki/inbox/market-security_8b703a8adf5f864acaa4-volume_anomaly-7fb3f26c67dc.md"
   ]
 }
