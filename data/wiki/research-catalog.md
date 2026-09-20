@@ -4,11 +4,11 @@ type: research-catalog
 status: maintained
 tags:
   - research
-created: "2026-09-19"
-updated: "2026-09-19"
+created: "2026-09-20"
+updated: "2026-09-20"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_f32446e72a6bbb2c8a9a"
-as_of: "2026-09-19T18:12:43Z"
+snapshot_id: "decision_8674bf72fdaa7594eed6"
+as_of: "2026-09-20T17:59:23Z"
 ---
 
 # Research catalog
@@ -860,6 +860,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader daily report — 2026-09-17](daily-reports/daily-report_20260917)
 - [PaperTrader daily report — 2026-09-18](daily-reports/daily-report_20260918)
 - [PaperTrader daily report — 2026-09-19](daily-reports/daily-report_20260919)
+- [PaperTrader daily report — 2026-09-20](daily-reports/daily-report_20260920)
 
 ## Idea
 
@@ -945,6 +946,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Research findings 24bd50a6d6bb89e8445ec8c8](queries/research-findings-24bd50a6d6bb89e8445ec8c8)
 - [Research findings 37645c421b1833328e2224ca](queries/research-findings-37645c421b1833328e2224ca)
 - [Research findings 3e1d8164f4db25726640c25f](queries/research-findings-3e1d8164f4db25726640c25f)
+- [Research findings 522fc62c74bf20f38b642749](queries/research-findings-522fc62c74bf20f38b642749)
 - [Research findings 650bc383615f35f4d084c08f](queries/research-findings-650bc383615f35f4d084c08f)
 - [Research findings 6a72a855adb39b8c5ace18c2](queries/research-findings-6a72a855adb39b8c5ace18c2)
 - [Research findings 94b7d24559c189adbe536cfc](queries/research-findings-94b7d24559c189adbe536cfc)

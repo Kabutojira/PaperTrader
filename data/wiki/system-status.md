@@ -4,17 +4,17 @@ type: system-status
 status: maintained
 tags:
   - system-status
-created: "2026-09-19"
-updated: "2026-09-19"
+created: "2026-09-20"
+updated: "2026-09-20"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_f32446e72a6bbb2c8a9a"
-as_of: "2026-09-19T18:12:43Z"
+snapshot_id: "decision_8674bf72fdaa7594eed6"
+as_of: "2026-09-20T17:59:23Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-09-19T18:12:43Z`
-**Investment data:** Portfolio state safe — research gaps remain
+**As of:** `2026-09-20T17:59:23Z`
+**Investment data:** Unsafe to publish — portfolio, accounting, or active-order state requires attention
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
 **Portfolio reconciliation:** Reconciled
@@ -23,8 +23,8 @@ Publication validation confirms that this generated artifact is internally consi
 
 ## Current investment health
 
-- Assessments: 41/83
-- Fresh-evidence assessments: 38/83
+- Assessments: 37/83
+- Fresh-evidence assessments: 33/83
 - Relationship reviews: 20/83
 - Accepted relationships: 19
 - Market success/failure: 92/0
@@ -87,7 +87,7 @@ Resolved and superseded issues remain in the canonical audit but are not current
 
 ### Operational Only (1)
 
-- Error **PRX — Prosus N.V.: Hermes operation validation failed: Research triage for PRX on 2026-09-16** — commands\_run claims commands without deterministic CLI audit receipts: \['scripts/papertrader research security-context --security-id PRX --history-limit 2'\]
+- Error **PRX — Prosus N.V.: Hermes operation validation failed: Research triage for PRX on 2026-09-17** — commands\_run claims commands without deterministic CLI audit receipts: \['scripts/papertrader research security-context --security-id PRX'\]
 
 ## Historical audit health
 

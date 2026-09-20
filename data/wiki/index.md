@@ -4,24 +4,24 @@ type: dashboard
 status: maintained
 tags:
   - dashboard
-created: "2026-09-19"
-updated: "2026-09-19"
+created: "2026-09-20"
+updated: "2026-09-20"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_f32446e72a6bbb2c8a9a"
-as_of: "2026-09-19T18:12:43Z"
+snapshot_id: "decision_8674bf72fdaa7594eed6"
+as_of: "2026-09-20T17:59:23Z"
 ---
 
 # PaperTrader
 
-**As of `2026-09-19T18:12:43Z` · Investment data: Portfolio state safe — research gaps remain · Operations: Attention required**
+**As of `2026-09-20T17:59:23Z` · Investment data: Unsafe to publish — portfolio, accounting, or active-order state requires attention · Operations: Attention required**
 
-## Maintain the current model portfolio
+## Decision blocked — do not copy actions
 
-<section class="decision-cards" aria-label="Decision summary"><article class="decision-card" data-status="maintain"><span class="decision-card-label">Stance</span><strong>Maintain the current model portfolio</strong></article><article class="decision-card" data-status="cash"><span class="decision-card-label">Cash</span><strong>97.129078%</strong></article><article class="decision-card" data-status="exposure"><span class="decision-card-label">Gross exposure</span><strong>2.870923%</strong></article><article class="decision-card" data-status="signals"><span class="decision-card-label">Actionable signals</span><strong>0</strong></article><article class="decision-card" data-status="coverage"><span class="decision-card-label">Assessment coverage</span><strong>41/83</strong></article></section>
+<section class="decision-cards" aria-label="Decision summary"><article class="decision-card" data-status="blocked"><span class="decision-card-label">Stance</span><strong>Decision blocked — do not copy actions</strong></article><article class="decision-card" data-status="cash"><span class="decision-card-label">Cash</span><strong>97.129078%</strong></article><article class="decision-card" data-status="exposure"><span class="decision-card-label">Gross exposure</span><strong>2.870923%</strong></article><article class="decision-card" data-status="signals"><span class="decision-card-label">Actionable signals</span><strong>0</strong></article><article class="decision-card" data-status="coverage"><span class="decision-card-label">Assessment coverage</span><strong>37/83</strong></article></section>
 
 ### Why
 
-- No strategy has produced a current actionable trade signal.
+- The required market reference is stale.
 
 ## Current and target portfolio
 
@@ -61,7 +61,7 @@ Current equity is **9989.82 EUR** with **97.129078% cash**. The target retains *
 - Cumulative return: **-0.101774947826751708996376%**
 - Running drawdown: **-0.1019998923928263516528560945%**
 - Largest position: **2.870922%**
-- Current assessments: **41/83**
+- Current assessments: **37/83**
 - Relationship reviews: **20/83**
 - Accepted relationships: **19**
 - Market retrieval failures: **0**
@@ -74,4 +74,4 @@ Current equity is **9989.82 EUR** with **97.129078% cash**. The target retains *
 - [[performance|Performance and risk]]
 - [[research-catalog|Research catalog]]
 - [[system-status|System status and audit]]
-- [[daily-reports/daily-report_20260919|Daily report 2026-09-19]]
+- [[daily-reports/daily-report_20260920|Daily report 2026-09-20]]
