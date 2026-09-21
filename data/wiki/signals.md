@@ -4,16 +4,16 @@ type: signals
 status: maintained
 tags:
   - signals
-created: "2026-09-20"
-updated: "2026-09-20"
+created: "2026-09-21"
+updated: "2026-09-21"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_8674bf72fdaa7594eed6"
-as_of: "2026-09-20T17:59:23Z"
+snapshot_id: "decision_326cca55e7f2a74e720e"
+as_of: "2026-09-21T20:20:57Z"
 ---
 
 # Signals
 
-**As of `2026-09-20T17:59:23Z`**
+**As of `2026-09-21T20:20:57Z`**
 
 ## Actionable trade signals
 
@@ -24,6 +24,78 @@ No actionable trade signals.
 No pending orders.
 
 ## Research alerts — not trade signals
+
+### [YEC.F — YASKAWA Electric Corporation](securities/security_89969b7dac39b7db5661)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-09-21`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [SSUN.VI — Samsung Electronics Co., Ltd.](securities/security_d08d763780400dfbffce)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-09-21`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### [FUC.F — Fanuc Corporation](securities/security_96ba305ee7cd586bc348)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-09-21`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### ANIC.L — Agronomics Limited
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_oversold`
+- Market date: `2026-09-21`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [SSUN.VI — Samsung Electronics Co., Ltd.](securities/security_d08d763780400dfbffce)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-09-21`
+- Research status: `blocked`
+- Conclusion: High-priority security research is blocked. scope\_deferred\_for\_capacity
+
+### [SSU.VI — Samsung Electronics Co., Ltd.](securities/security_567d0d575bbd30aaa91d)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-09-21`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-09-21`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [108490 — ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_below\_signal`
+- Market date: `2026-09-21`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
 
 ### [XMTR — Xometry, Inc.](securities/security_c2e6db30cb59254de418)
 
@@ -96,15 +168,6 @@ No pending orders.
 - Market date: `2026-09-18`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
-
-### [SU — Schneider Electric SE](securities/security_dc8486c1d61df62a22fd)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-09-18`
-- Research status: `blocked`
-- Conclusion: High-priority security research is blocked. scope\_deferred\_for\_capacity
 
 ### [SQM — Sociedad Quimica y Minera de Chile S.A.](securities/security_9d4049ed6669a52815d6)
 
@@ -187,15 +250,6 @@ No pending orders.
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-09-18`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
 ### PRLB — Proto Labs, Inc.
 
 **Research alert — not a trade signal**
@@ -222,15 +276,6 @@ No pending orders.
 - Market date: `2026-09-18`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
-
-### [PLS.AX — PLS Group Limited](securities/security_8a5c43888d224de85c69)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-09-18`
-- Research status: `blocked`
-- Conclusion: High-priority security research is blocked. scope\_deferred\_for\_capacity
 
 ### [PL — Planet Labs PBC](securities/security_97f38b2cb2d5ef127f5a)
 
@@ -394,15 +439,6 @@ No pending orders.
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### EVK — Evonik Industries AG
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-09-18`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
 ### [ETN — Eaton Corporation plc](securities/security_18a3ab0ee6086ee85d0f)
 
 **Research alert — not a trade signal**
@@ -502,15 +538,6 @@ No pending orders.
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### ANIC.L — Agronomics Limited
-
-**Research alert — not a trade signal**
-
-- Alert: `rsi\_oversold`
-- Market date: `2026-09-18`
-- Research status: `skipped`
-- Conclusion: Queue triage disposition
-
 ### [ANET — Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a)
 
 **Research alert — not a trade signal**
@@ -539,33 +566,6 @@ No pending orders.
 - Conclusion: High-priority security research is ready to run.
 
 ### [ALB — Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-09-18`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [AD — Koninklijke Ahold Delhaize N.V.](securities/security_e19c7fe27fbcc4cd923d)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-09-18`
-- Research status: `blocked`
-- Conclusion: High-priority security research is blocked. scope\_deferred\_for\_capacity
-
-### BAS — BASF SE
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-09-18`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### AKE — Arkema S.A.
 
 **Research alert — not a trade signal**
 

@@ -4668,3 +4668,7 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Created candidate packet [[inbox/market-security_fe4648901e7675f157fd-rsi_oversold-46f73d8ab459]] (46f73d8ab459).
 
 - Classified [[inbox/market-security_fe4648901e7675f157fd-rsi_oversold-46f73d8ab459]] as `ingest`: Material RSI oversold strengthening accompanied by a 9.4% one-month decline merits durable review.
+
+- Published investor decision snapshot `decision_326cca55e7f2a74e720e`.
+
+- Generated canonical [[daily-reports/daily-report_20260921]] for run `daily-20260921T195105Z`.

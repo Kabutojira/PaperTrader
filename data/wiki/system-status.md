@@ -4,17 +4,17 @@ type: system-status
 status: maintained
 tags:
   - system-status
-created: "2026-09-20"
-updated: "2026-09-20"
+created: "2026-09-21"
+updated: "2026-09-21"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_8674bf72fdaa7594eed6"
-as_of: "2026-09-20T17:59:23Z"
+snapshot_id: "decision_326cca55e7f2a74e720e"
+as_of: "2026-09-21T20:20:57Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-09-20T17:59:23Z`
-**Investment data:** Unsafe to publish — portfolio, accounting, or active-order state requires attention
+**As of:** `2026-09-21T20:20:57Z`
+**Investment data:** Portfolio state safe — research gaps remain
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
 **Portfolio reconciliation:** Reconciled
@@ -23,8 +23,8 @@ Publication validation confirms that this generated artifact is internally consi
 
 ## Current investment health
 
-- Assessments: 37/83
-- Fresh-evidence assessments: 33/83
+- Assessments: 35/83
+- Fresh-evidence assessments: 32/83
 - Relationship reviews: 20/83
 - Accepted relationships: 19
 - Market success/failure: 92/0
@@ -41,7 +41,7 @@ Publication validation confirms that this generated artifact is internally consi
 
 ## Sequential research backlog
 
-- Research backlog: 470
+- Research backlog: 482
 
 ## Publication health
 
@@ -50,15 +50,16 @@ Publication validation confirms that this generated artifact is internally consi
 
 ## Current issues by investment impact
 
-Current unresolved issues: **27**.
+Current unresolved issues: **28**.
 Resolved and superseded issues remain in the canonical audit but are not current health.
 
-### Affects Candidate (20)
+### Affects Candidate (21)
 
 - Error **ETN — Eaton Corporation plc: Hermes operation validation failed: Quick check research for ETN on 2026-08-11** — agent result schema: 'cd57fc97df50efa0657881b253fc96d4467881b253fc96d4467881b253fc96d446' does not match '^\[a-f0-9\]{64}$'; commands\_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment; post-run integrity: agent result data/runs/Daily report for 2026-08-11/Quick check research for ETN on 2026-08-11/agent\_result.json: 'cd57fc97df50efa0657881b253fc96d4467881b253fc96d4467881b253fc96d446' does not match '^\[a-f0-9\]{64}$'
 - Error **FUC.F — Fanuc Corporation: FANUC assessment source operation is ambiguous within one run** — The schema-v2 FANUC full-review assessment could not be accepted because the deterministic research applier found both the completed quick\_check\_research operation and this running security\_research operation for the same security and run\_id, then rejected the immutable assessment request with no assessment-state changes. The mandatory security context succeeded; both issuer PDFs were rechecked with unchanged hashes, source history and the security summary were updated through validated commands
 - Error **KTOS — Kratos Defense &amp; Security Solutions, Inc.: Hermes operation validation failed: Quick check research for KTOS on 2026-08-12** — Hermes timed out after 600s; agent result was written before completed change: data/runs/Daily report for 2026-08-12/Quick check research for KTOS on 2026-08-12/command\_audit.json; commands\_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment
 - Error **Hermes operation validation failed: Quick check research for HOOD on 2026-08-15** — operation artifact directory is not empty: /\_\_w/PaperTrader/PaperTrader/data/runs/Daily report for 2026-08-15/Quick check research for HOOD on 2026-08-15
+- Error **Hermes operation validation failed: Security research for ANIC.L on 2026-09-21** — searched challenge requires retained immutable inspection references
 - Error **RKLB — Rocket Lab Corporation: Hermes operation validation failed: Quick check research for RKLB on 2026-08-18** — commands\_run claims commands without deterministic CLI audit receipts: \['scripts/papertrader research assessment upsert --request data/runs/Daily report for 2026-08-18/Quick check research for RKLB on 2026-08-18/assessment\_upsert\_request.json', 'scripts/papertrader research security-context --security-id RKLB'\]
 - Error **Hermes operation validation failed: Quick check research for SPOT on 2026-08-16** — commands\_run does not exactly match deterministic CLI audit receipts
 - Error **Hermes operation validation failed: Security research for WTI on 2026-08-18** — Hermes exited with status 1; agent result is missing or a symlink: data/runs/Daily report for 2026-09-06/Security research for WTI on 2026-08-18/agent\_result.json
