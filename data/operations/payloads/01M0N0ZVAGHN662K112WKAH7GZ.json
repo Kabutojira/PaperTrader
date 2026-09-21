@@ -4,17 +4,18 @@
   "inputs": {
     "assessment_state": "2026-08-10T22:41:29Z",
     "maintenance_mode": "refresh",
-    "market_data_as_of": "2026-09-17T18:45:03Z",
-    "market_data_date": "2026-09-17",
+    "market_data_as_of": "2026-09-21T19:51:09Z",
+    "market_data_date": "2026-09-21",
     "merged_input_values": {
       "source_price_hash": [
         "f02e5d4563dde569242f85c2d3c44d63eb1bea50a1c6f8ef80fa7935033385a1",
         "c9fbb548d70e209094c55f9659db1c09ab0469b09c2d17fefcde812ab3df5619",
         "3d1444c92b109eb6d7bc9bd148f47a83c90c50e74f4e27bb8d14812b9b01cce9",
-        "54a97693d3ced37fe8bd790ca6288fb4190058ffe929faac80c7532913799ac7"
+        "54a97693d3ced37fe8bd790ca6288fb4190058ffe929faac80c7532913799ac7",
+        "44a910f94e3dda3e4aa7aa30a1e8bae8722872e4e66cb83c89d44b255af44cf2"
       ]
     },
-    "period_end": "2026-09-17",
+    "period_end": "2026-09-21",
     "period_start": "2026-08-05",
     "research_page": "data/wiki/securities/security_89969b7dac39b7db5661.md",
     "research_reasons": [
@@ -80,10 +81,23 @@
         "trigger_types": [
           "volume_anomaly"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_89969b7dac39b7db5661:b832b23c99e464d80e57:2026-09-21",
+        "market_data_date": "2026-09-21",
+        "observed_at": "2026-09-21T19:51:09Z",
+        "prompt": "Research security_89969b7dac39b7db5661 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_89969b7dac39b7db5661-volume_anomaly-7912178d560c.md"
+        ],
+        "trigger_types": [
+          "volume_anomaly"
+        ]
       }
     ],
     "security_id": "security_89969b7dac39b7db5661",
-    "source_price_hash": "54a97693d3ced37fe8bd790ca6288fb4190058ffe929faac80c7532913799ac7",
+    "source_price_hash": "44a910f94e3dda3e4aa7aa30a1e8bae8722872e4e66cb83c89d44b255af44cf2",
     "trigger_types": [
       "macd_cross_above_signal",
       "rsi_oversold",
@@ -98,6 +112,7 @@
     "data/wiki/inbox/market-security_89969b7dac39b7db5661-macd_cross_above_signal-82f19c9eaaf3.md",
     "data/wiki/inbox/market-security_89969b7dac39b7db5661-macd_cross_above_signal-a4f241b4f45f.md",
     "data/wiki/inbox/market-security_89969b7dac39b7db5661-rsi_oversold-809c984a49eb.md",
+    "data/wiki/inbox/market-security_89969b7dac39b7db5661-volume_anomaly-7912178d560c.md",
     "data/wiki/inbox/market-security_89969b7dac39b7db5661-volume_anomaly-acb2bebf5294.md",
     "source_yaskawa_fy2026_q1_briefing",
     "source_yaskawa_fy2026_q1_qa",

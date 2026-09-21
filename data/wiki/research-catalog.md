@@ -5,7 +5,7 @@ status: maintained
 tags:
   - research
 created: "2026-09-20"
-updated: "2026-09-20"
+updated: "2026-09-21"
 provenance: deterministic-decision-projection
 snapshot_id: "decision_8674bf72fdaa7594eed6"
 as_of: "2026-09-20T17:59:23Z"
@@ -1116,3 +1116,14 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_0c8b3c4291cd97f56d8c-macd_cross_below_signal-d671ce34f3b6|108490 — MACD cross below signal]]
+- [[inbox/market-security_567d0d575bbd30aaa91d-macd_cross_above_signal-36acc6d73766|SSU.VI — MACD cross above signal]]
+- [[inbox/market-security_89969b7dac39b7db5661-volume_anomaly-7912178d560c|YEC.F — Volume anomaly]]
+- [[inbox/market-security_8b703a8adf5f864acaa4-macd_cross_above_signal-497a3e40e215|PRX — MACD cross above signal]]
+- [[inbox/market-security_96ba305ee7cd586bc348-volume_anomaly-c911620244a0|FUC.F — Volume anomaly]]
+- [[inbox/market-security_d08d763780400dfbffce-bollinger_above_upper-5019552c6654|SSUN.VI — Bollinger above upper]]
+- [[inbox/market-security_d08d763780400dfbffce-macd_cross_above_signal-86d5689632bc|SSUN.VI — MACD cross above signal]]
+- [[inbox/market-security_fe4648901e7675f157fd-rsi_oversold-46f73d8ab459|ANIC.L — RSI oversold]]

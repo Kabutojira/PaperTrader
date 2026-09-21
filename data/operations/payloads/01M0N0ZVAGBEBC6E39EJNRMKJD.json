@@ -4,9 +4,15 @@
   "inputs": {
     "assessment_state": "2026-08-10T07:31:49Z",
     "maintenance_mode": "refresh",
-    "market_data_as_of": "2026-09-04T18:07:35Z",
-    "market_data_date": "2026-09-04",
-    "period_end": "2026-09-04",
+    "market_data_as_of": "2026-09-21T19:51:09Z",
+    "market_data_date": "2026-09-21",
+    "merged_input_values": {
+      "source_price_hash": [
+        "f8625f58c76d524643acb5b9be000a8451d2408a4baf728fe51b512fa9cc8999",
+        "a1f0dee0b7dde87a5c5dbaa73c7894295b3e935ffb26a94b7302f4c3cad39a32"
+      ]
+    },
+    "period_end": "2026-09-21",
     "period_start": "2026-08-07",
     "research_page": "data/wiki/securities/security_567d0d575bbd30aaa91d.md",
     "research_reasons": [
@@ -34,10 +40,23 @@
         "trigger_types": [
           "macd_cross_above_signal"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_567d0d575bbd30aaa91d:cfb8d6116f76cbf8adbf:2026-09-21",
+        "market_data_date": "2026-09-21",
+        "observed_at": "2026-09-21T19:51:09Z",
+        "prompt": "Research security_567d0d575bbd30aaa91d with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_567d0d575bbd30aaa91d-macd_cross_above_signal-36acc6d73766.md"
+        ],
+        "trigger_types": [
+          "macd_cross_above_signal"
+        ]
       }
     ],
     "security_id": "security_567d0d575bbd30aaa91d",
-    "source_price_hash": "f8625f58c76d524643acb5b9be000a8451d2408a4baf728fe51b512fa9cc8999",
+    "source_price_hash": "a1f0dee0b7dde87a5c5dbaa73c7894295b3e935ffb26a94b7302f4c3cad39a32",
     "trigger_types": [
       "macd_cross_above_signal"
     ]
@@ -47,6 +66,7 @@
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_567d0d575bbd30aaa91d-macd_cross_above_signal-36acc6d73766.md",
     "data/wiki/inbox/market-security_567d0d575bbd30aaa91d-macd_cross_above_signal-59884e1ba540.md",
     "source_samsung_common_gdr_identity",
     "source_samsung_q1_2026_results",

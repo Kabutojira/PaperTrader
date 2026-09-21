@@ -1,0 +1,17 @@
+{
+  "entity_id": "security_de0d83229b369a426b99",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-08-28T19:23:20Z",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_de0d83229b369a426b99.md",
+    "security_id": "security_de0d83229b369a426b99"
+  },
+  "objective": "Revalidate security_de0d83229b369a426b99 with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01M32RBCY8HEQ2623EVPN7S3Y6",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_tencent_q2_2026_results"
+  ]
+}

@@ -2,6 +2,8 @@
   "entity_id": "security_d202772e4e62065cd17a",
   "entity_type": "security",
   "inputs": {
+    "assessment_state": "2026-08-28T19:25:00Z",
+    "maintenance_mode": "refresh",
     "market_data_as_of": "2026-09-19T17:40:18Z",
     "market_data_date": "2026-09-18",
     "merged_input_values": {
@@ -13,6 +15,7 @@
     },
     "period_end": "2026-09-18",
     "period_start": "2026-08-10",
+    "research_page": "data/wiki/securities/security_d202772e4e62065cd17a.md",
     "research_reasons": [
       {
         "dedupe_key": "security_research:security_d202772e4e62065cd17a:6f47da0e43cdce947bfd:2026-09-08",
@@ -48,6 +51,15 @@
         "trigger_types": [
           "bollinger_below_lower"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_d202772e4e62065cd17a:allocation-maintenance:2026-08-28T19:25:00Z",
+        "observed_at": "2026-09-21T19:51:09Z",
+        "prompt": "Revalidate security_d202772e4e62065cd17a with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_fisv_q2_2026_10q"
+        ]
       }
     ],
     "security_id": "security_d202772e4e62065cd17a",
@@ -57,13 +69,14 @@
       "volume_anomaly"
     ]
   },
-  "objective": "Research security_d202772e4e62065cd17a with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act. | Additional cause: Research security_d202772e4e62065cd17a with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act.",
+  "objective": "Research security_d202772e4e62065cd17a with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act. | Additional cause: Research security_d202772e4e62065cd17a with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act. | Additional cause: Revalidate security_d202772e4e62065cd17a with current primary evidence and write one comparable allocation assessment.",
   "operation_id": "01M23PKS1RB5WKXHXJSMMCV65G",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
     "data/wiki/inbox/market-security_d202772e4e62065cd17a-bollinger_below_lower-4b6225b078ed.md",
     "data/wiki/inbox/market-security_d202772e4e62065cd17a-bollinger_below_lower-e596867de982.md",
-    "data/wiki/inbox/market-security_d202772e4e62065cd17a-volume_anomaly-91acfcb143e4.md"
+    "data/wiki/inbox/market-security_d202772e4e62065cd17a-volume_anomaly-91acfcb143e4.md",
+    "source_fisv_q2_2026_10q"
   ]
 }
