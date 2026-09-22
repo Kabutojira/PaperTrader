@@ -5,7 +5,7 @@ status: maintained
 tags:
   - research
 created: "2026-09-21"
-updated: "2026-09-21"
+updated: "2026-09-22"
 provenance: deterministic-decision-projection
 snapshot_id: "decision_326cca55e7f2a74e720e"
 as_of: "2026-09-21T20:20:57Z"
@@ -1125,3 +1125,39 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_0a56aa634d077fe5796f-macd_cross_above_signal-c50caf3fe675|AMAT — MACD cross above signal]]
+- [[inbox/market-security_0cf8075039299094d614-macd_cross_above_signal-e29f4fb113b1|KTOS — MACD cross above signal]]
+- [[inbox/market-security_18a3ab0ee6086ee85d0f-bollinger_above_upper-723ad82e4784|ETN — Bollinger above upper]]
+- [[inbox/market-security_1f9cce545ede94cd6349-bollinger_above_upper-7c29ec1d9e17|ISRG — Bollinger above upper]]
+- [[inbox/market-security_22c2b9d782a62d7a9b86-rsi_overbought-e09d8713cf54|ATKR — RSI overbought]]
+- [[inbox/market-security_37ddcbdaad296ad831f2-bollinger_above_upper-14e0e155e93d|COIN — Bollinger above upper]]
+- [[inbox/market-security_37ddcbdaad296ad831f2-macd_cross_above_signal-89ad6afcb44a|COIN — MACD cross above signal]]
+- [[inbox/market-security_3a75fc1ccca2ee7c937a-bollinger_above_upper-862b1014e492|QCOM — Bollinger above upper]]
+- [[inbox/market-security_47a0b06f6c6c478d7c1e-macd_cross_above_signal-6bef604e2db1|NBIS — MACD cross above signal]]
+- [[inbox/market-security_567d0d575bbd30aaa91d-bollinger_above_upper-eef59fce67f9|SSU.VI — Bollinger above upper]]
+- [[inbox/market-security_6f9a1450edceb9307c9a-bollinger_above_upper-7c4da220fbd9|ANET — Bollinger above upper]]
+- [[inbox/market-security_798e2fb944d740aca308-volume_anomaly-e230f3ab1e92|AKE — Volume anomaly]]
+- [[inbox/market-security_7ca095d63423c55a90e3-bollinger_above_upper-862a8764cb53|RKLB — Bollinger above upper]]
+- [[inbox/market-security_83a56943e18793f685b0-bollinger_above_upper-e38e008f283b|TXN — Bollinger above upper]]
+- [[inbox/market-security_97f38b2cb2d5ef127f5a-macd_cross_above_signal-bf5b5251f9a5|PL — MACD cross above signal]]
+- [[inbox/market-security_98470cfc01bbcde78fc2-volume_anomaly-e66178a399f2|SOFI — Volume anomaly]]
+- [[inbox/market-security_a5dc16f3f4b245e6c168-macd_cross_above_signal-711f80ac52f5|LUNR — MACD cross above signal]]
+- [[inbox/market-security_ad3b1f8f59fd599f079a-macd_cross_above_signal-ad9c1c079d47|HOOD — MACD cross above signal]]
+- [[inbox/market-security_b19e8f0343b7da1f3c03-macd_cross_above_signal-a5ff63c717f5|03388 — MACD cross above signal]]
+- [[inbox/market-security_c86bb4e75658c07142cf-bollinger_above_upper-a7654b464387|GOOGL — Bollinger above upper]]
+- [[inbox/market-security_ce9b78a4d0773c950765-bollinger_above_upper-9892cd985cf9|TSM — Bollinger above upper]]
+- [[inbox/market-security_d08d763780400dfbffce-bollinger_above_upper-7c0a772bdc86|SSUN.VI — Bollinger above upper]]
+- [[inbox/market-security_d12e746b3c9d392183cc-bollinger_above_upper-722eb64b50e0|META — Bollinger above upper]]
+- [[inbox/market-security_d12e746b3c9d392183cc-rsi_overbought-5a7d848a00dc|META — RSI overbought]]
+- [[inbox/market-security_d12e746b3c9d392183cc-volume_anomaly-e2084c2f5405|META — Volume anomaly]]
+- [[inbox/market-security_dc8486c1d61df62a22fd-macd_cross_above_signal-48f69d8602ec|SU — MACD cross above signal]]
+- [[inbox/market-security_de0d83229b369a426b99-macd_cross_above_signal-491061345e08|TCEHY — MACD cross above signal]]
+- [[inbox/market-security_dfa34d4b9050964b465e-bollinger_above_upper-b7ea54775b51|INTC — Bollinger above upper]]
+- [[inbox/market-security_dfa34d4b9050964b465e-rsi_overbought-6189a787778d|INTC — RSI overbought]]
+- [[inbox/market-security_ed7d5b616a196969c815-bollinger_above_upper-4bc4b5091df0|RXRX — Bollinger above upper]]
+- [[inbox/market-security_ef35e41886220d51c22c-macd_cross_above_signal-8f2c7b91aa0b|ASML — MACD cross above signal]]
+- [[inbox/market-security_fe5539a7d3fd9d553bce-bollinger_above_upper-615b16717482|MSTR — Bollinger above upper]]
+- [[inbox/market-security_fe5539a7d3fd9d553bce-rsi_overbought-7f45e00d6cc4|MSTR — RSI overbought]]

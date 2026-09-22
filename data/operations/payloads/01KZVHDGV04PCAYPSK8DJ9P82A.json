@@ -7,15 +7,19 @@
       "issue_35b7b23bc3b07dd61cce"
     ],
     "maintenance_mode": "refresh",
-    "market_data_as_of": "2026-09-19T17:40:18Z",
-    "market_data_date": "2026-09-18",
+    "market_data_as_of": "2026-09-22T18:28:30Z",
+    "market_data_date": "2026-09-21",
     "merged_input_values": {
       "maintenance_mode": [
         "refresh",
         "assessment_issue_recovery"
+      ],
+      "source_price_hash": [
+        "64615f476eb1f546cd99648d185393ab4eda1fdda515a30c7bcc8c2e5d714382",
+        "9faf7a44d58d3908ab03e72e1f65322da9f7185cec2169e008f3be6747805fed"
       ]
     },
-    "period_end": "2026-09-18",
+    "period_end": "2026-09-21",
     "period_start": "2026-08-20",
     "research_page": "data/wiki/securities/security_0cf8075039299094d614.md",
     "research_reasons": [
@@ -48,19 +52,34 @@
         "trigger_types": [
           "volume_anomaly"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_0cf8075039299094d614:c4c6f4a1f563fb08bda1:2026-09-21",
+        "market_data_date": "2026-09-21",
+        "observed_at": "2026-09-22T18:28:30Z",
+        "prompt": "Research security_0cf8075039299094d614 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_0cf8075039299094d614-macd_cross_above_signal-e29f4fb113b1.md"
+        ],
+        "trigger_types": [
+          "macd_cross_above_signal"
+        ]
       }
     ],
     "security_id": "security_0cf8075039299094d614",
-    "source_price_hash": "64615f476eb1f546cd99648d185393ab4eda1fdda515a30c7bcc8c2e5d714382",
+    "source_price_hash": "9faf7a44d58d3908ab03e72e1f65322da9f7185cec2169e008f3be6747805fed",
     "trigger_types": [
+      "macd_cross_above_signal",
       "volume_anomaly"
     ]
   },
-  "objective": "Revalidate security_0cf8075039299094d614 with current primary evidence and write one comparable allocation assessment. | Additional cause: Repair the unresolved assessment for security_0cf8075039299094d614 with current primary evidence and explicit source-operation provenance. | Additional cause: Research security_0cf8075039299094d614 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+  "objective": "Revalidate security_0cf8075039299094d614 with current primary evidence and write one comparable allocation assessment. | Additional cause: Repair the unresolved assessment for security_0cf8075039299094d614 with current primary evidence and explicit source-operation provenance. | Additional cause: Research security_0cf8075039299094d614 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act. | Additional cause: Research security_0cf8075039299094d614 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
   "operation_id": "01KZVHDGV04PCAYPSK8DJ9P82A",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_0cf8075039299094d614-macd_cross_above_signal-e29f4fb113b1.md",
     "data/wiki/inbox/market-security_0cf8075039299094d614-volume_anomaly-ccc5a005c503.md",
     "source_ktos_q2_2026_10q",
     "source_ktos_q2_2026_results"
