@@ -4768,3 +4768,7 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Created candidate packet [[inbox/market-security_fe5539a7d3fd9d553bce-bollinger_above_upper-615b16717482]] (615b16717482).
 
 - Created candidate packet [[inbox/market-security_fe5539a7d3fd9d553bce-rsi_overbought-7f45e00d6cc4]] (7f45e00d6cc4).
+
+- Published investor decision snapshot `decision_52a241f3f3abdf2bdc92`.
+
+- Generated canonical [[daily-reports/daily-report_20260922]] for run `daily-20260922T182822Z`.

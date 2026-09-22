@@ -4,16 +4,16 @@ type: system-status
 status: maintained
 tags:
   - system-status
-created: "2026-09-21"
-updated: "2026-09-21"
+created: "2026-09-22"
+updated: "2026-09-22"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_326cca55e7f2a74e720e"
-as_of: "2026-09-21T20:20:57Z"
+snapshot_id: "decision_52a241f3f3abdf2bdc92"
+as_of: "2026-09-22T19:04:18Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-09-21T20:20:57Z`
+**As of:** `2026-09-22T19:04:18Z`
 **Investment data:** Portfolio state safe — research gaps remain
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -41,7 +41,7 @@ Publication validation confirms that this generated artifact is internally consi
 
 ## Sequential research backlog
 
-- Research backlog: 482
+- Research backlog: 495
 
 ## Publication health
 
@@ -73,7 +73,7 @@ Resolved and superseded issues remain in the canonical audit but are not current
 - Error **Hermes operation validation failed: Security research for ABBNY on 2026-09-03** — files\_changed claims paths absent from the actual delta: \['data/operations/operations\_TODO.csv'\]
 - Error **Hermes operation validation failed: Quick check research for TWST on 2026-08-05** — agent result was written before completed change: data/runs/Daily report for 2026-08-12/Quick check research for TWST on 2026-08-05/command\_audit.json; commands\_run does not exactly match deterministic CLI audit receipts
 - Error **Hermes operation validation failed: Security research for ALB on 2026-09-17** — observed claim support must match the retained inspected source excerpt
-- Error **FLNC — Fluence Energy, Inc.: Hermes operation validation failed: Security research for FLNC on 2026-08-13** — observed claim support must match the retained inspected source excerpt; visualization\_review charts do not match chart ids in changed research pages: expected \[('data/wiki/securities/FLNC.md', 'flnc-guidance-reset-20260916'), ('data/wiki/securities/FLNC.md', 'flnc-september-2026-scenarios')\], got \[('data/wiki/securities/FLNC.md', 'flnc-fy2026-guidance-reset'), ('data/wiki/securities/FLNC.md', 'fl
+- Error **Hermes operation validation failed: Security research for FLNC on 2026-09-22** — Hermes timed out after 1800s; agent result is missing or a symlink: data/runs/Daily report for 2026-09-22/Security research for FLNC on 2026-09-22/agent\_result.json
 - Error **ASML — ASML Holding N.V.: ASML assessment rejected after security row update** — The retry operation refreshed the ASML page and security row to the 2026-08-19 USD 1,751.73 mark, but the schema-v2 assessment request was rejected before assessment state changed because valuation\_template\_rationale is a required field and was omitted. The routed-operation no-retry rule forbids correcting and invoking a second assessment request after this rejection. The canonical assessment therefore remains the prior unsupported version, the prepared relationship and idea follow-up requests w
 - Error **WTI — W&amp;T Offshore, Inc.: Hermes operation validation failed: Quick check research for WTI on 2026-08-18** — completed security research requires this run's comparable assessment
 
