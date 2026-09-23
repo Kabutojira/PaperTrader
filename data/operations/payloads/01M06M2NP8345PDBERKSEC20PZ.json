@@ -4,15 +4,16 @@
   "inputs": {
     "assessment_state": "2026-08-06T15:48:55Z",
     "maintenance_mode": "refresh",
-    "market_data_as_of": "2026-09-19T17:40:18Z",
-    "market_data_date": "2026-09-18",
+    "market_data_as_of": "2026-09-23T18:47:42Z",
+    "market_data_date": "2026-09-22",
     "merged_input_values": {
       "source_price_hash": [
         "f75b043ba855b59dd82265e588e17019dbfc8b30cb81e314b65e4e39f833a017",
-        "681844188d3c25eac61aac3bb5d65edb3e7eb96327f4e42d3fc185af62dabf82"
+        "681844188d3c25eac61aac3bb5d65edb3e7eb96327f4e42d3fc185af62dabf82",
+        "6273662ba810dc0490f0a0e91327af544f006466cb59a5133bed2dacd9caaa3f"
       ]
     },
-    "period_end": "2026-09-18",
+    "period_end": "2026-09-22",
     "period_start": "2026-08-12",
     "research_page": "data/wiki/securities/security_2010347f1a0a5ea60f47.md",
     "research_reasons": [
@@ -51,10 +52,23 @@
         "trigger_types": [
           "bollinger_below_lower"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_2010347f1a0a5ea60f47:d8a042394cce06c6d892:2026-09-22",
+        "market_data_date": "2026-09-22",
+        "observed_at": "2026-09-23T18:47:42Z",
+        "prompt": "Research security_2010347f1a0a5ea60f47 with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_2010347f1a0a5ea60f47-bollinger_below_lower-98272264615c.md"
+        ],
+        "trigger_types": [
+          "bollinger_below_lower"
+        ]
       }
     ],
     "security_id": "security_2010347f1a0a5ea60f47",
-    "source_price_hash": "681844188d3c25eac61aac3bb5d65edb3e7eb96327f4e42d3fc185af62dabf82",
+    "source_price_hash": "6273662ba810dc0490f0a0e91327af544f006466cb59a5133bed2dacd9caaa3f",
     "trigger_types": [
       "bollinger_below_lower",
       "sma_50_cross_above_200"
@@ -65,6 +79,7 @@
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_2010347f1a0a5ea60f47-bollinger_below_lower-98272264615c.md",
     "data/wiki/inbox/market-security_2010347f1a0a5ea60f47-bollinger_below_lower-c1a422899073.md",
     "data/wiki/inbox/market-security_2010347f1a0a5ea60f47-sma_50_cross_above_200-0818ff3f21c4.md",
     "source_spot_q2_2026_interim_6k",

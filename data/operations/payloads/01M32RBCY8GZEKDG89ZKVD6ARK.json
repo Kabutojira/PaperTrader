@@ -2,10 +2,40 @@
   "entity_id": "security_fe4648901e7675f157fd",
   "entity_type": "security",
   "inputs": {
-    "market_data_as_of": "2026-09-21T19:51:09Z",
-    "market_data_date": "2026-09-21",
-    "period_end": "2026-09-21",
+    "market_data_as_of": "2026-09-23T18:47:42Z",
+    "market_data_date": "2026-09-23",
+    "merged_input_values": {
+      "source_price_hash": [
+        "4cf7b269605a35b1ff6ed72ff38893841fd6b98243e7034cd74fb7efd2bde28d",
+        "15b22d4bb95eed56f91032b7f053604eadb14c28ad2bdb8f8259651e8c881cb8"
+      ]
+    },
+    "period_end": "2026-09-23",
     "period_start": "2026-08-21",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_fe4648901e7675f157fd:87ba9f30d99627c55190:2026-09-21",
+        "observed_at": "2026-09-21T19:51:09Z",
+        "prompt": "Research security_fe4648901e7675f157fd with high priority after price-action alerts: rsi_oversold; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_fe4648901e7675f157fd-rsi_oversold-46f73d8ab459.md"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_fe4648901e7675f157fd:99e8d9abecec6b8cab56:2026-09-23",
+        "market_data_date": "2026-09-23",
+        "observed_at": "2026-09-23T18:47:42Z",
+        "prompt": "Research security_fe4648901e7675f157fd with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_fe4648901e7675f157fd-macd_cross_above_signal-9e799aedab9d.md"
+        ],
+        "trigger_types": [
+          "macd_cross_above_signal"
+        ]
+      }
+    ],
     "rsi_attention": {
       "episode_id": "rsi_ebc93d0cea8d55ff78129bca",
       "observed_session": "2026-09-21",
@@ -18,16 +48,18 @@
       ]
     },
     "security_id": "security_fe4648901e7675f157fd",
-    "source_price_hash": "4cf7b269605a35b1ff6ed72ff38893841fd6b98243e7034cd74fb7efd2bde28d",
+    "source_price_hash": "15b22d4bb95eed56f91032b7f053604eadb14c28ad2bdb8f8259651e8c881cb8",
     "trigger_types": [
+      "macd_cross_above_signal",
       "rsi_oversold"
     ]
   },
-  "objective": "Research security_fe4648901e7675f157fd with high priority after price-action alerts: rsi_oversold; decide what changed and whether to act.",
+  "objective": "Research security_fe4648901e7675f157fd with high priority after price-action alerts: rsi_oversold; decide what changed and whether to act. | Additional cause: Research security_fe4648901e7675f157fd with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
   "operation_id": "01M32RBCY8GZEKDG89ZKVD6ARK",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_fe4648901e7675f157fd-macd_cross_above_signal-9e799aedab9d.md",
     "data/wiki/inbox/market-security_fe4648901e7675f157fd-rsi_oversold-46f73d8ab459.md"
   ]
 }
