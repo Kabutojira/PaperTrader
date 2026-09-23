@@ -4,16 +4,16 @@ type: signals
 status: maintained
 tags:
   - signals
-created: "2026-09-22"
-updated: "2026-09-22"
+created: "2026-09-23"
+updated: "2026-09-23"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_52a241f3f3abdf2bdc92"
-as_of: "2026-09-22T19:04:18Z"
+snapshot_id: "decision_e805e40bddf2412fe588"
+as_of: "2026-09-23T19:22:16Z"
 ---
 
 # Signals
 
-**As of `2026-09-22T19:04:18Z`**
+**As of `2026-09-23T19:22:16Z`**
 
 ## Actionable trade signals
 
@@ -30,16 +30,34 @@ No pending orders.
 **Research alert — not a trade signal**
 
 - Alert: `volume\_anomaly`
-- Market date: `2026-09-22`
+- Market date: `2026-09-23`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
+
+### [XMTR — Xometry, Inc.](securities/security_c2e6db30cb59254de418)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-09-22`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### [XMTR — Xometry, Inc.](securities/security_c2e6db30cb59254de418)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_overbought`
+- Market date: `2026-09-22`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
 
 ### [TXN — Texas Instruments Incorporated](securities/security_83a56943e18793f685b0)
 
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_above\_upper`
-- Market date: `2026-09-21`
+- Market date: `2026-09-22`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
@@ -48,16 +66,7 @@ No pending orders.
 **Research alert — not a trade signal**
 
 - Alert: `rsi\_overbought`
-- Market date: `2026-09-21`
-- Research status: `blocked`
-- Conclusion: High-priority security research is blocked. agent\_result:blocked:Quick-check blocked because the immutable payload recorded source does not match the current deterministic market-data identity for TWST; no assessment or wiki state was changed and no follow-up operation was created.
-
-### [TWST — Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_above\_upper`
-- Market date: `2026-09-21`
+- Market date: `2026-09-22`
 - Research status: `blocked`
 - Conclusion: High-priority security research is blocked. agent\_result:blocked:Quick-check blocked because the immutable payload recorded source does not match the current deterministic market-data identity for TWST; no assessment or wiki state was changed and no follow-up operation was created.
 
@@ -66,7 +75,7 @@ No pending orders.
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_above\_upper`
-- Market date: `2026-09-21`
+- Market date: `2026-09-22`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
@@ -75,25 +84,34 @@ No pending orders.
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_above\_upper`
-- Market date: `2026-09-22`
+- Market date: `2026-09-23`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
-### [SSU.VI — Samsung Electronics Co., Ltd.](securities/security_567d0d575bbd30aaa91d)
+### [SSUN.VI — Samsung Electronics Co., Ltd.](securities/security_d08d763780400dfbffce)
 
 **Research alert — not a trade signal**
 
-- Alert: `bollinger\_above\_upper`
+- Alert: `volume\_anomaly`
+- Market date: `2026-09-23`
+- Research status: `blocked`
+- Conclusion: High-priority security research is blocked. scope\_deferred\_for\_capacity
+
+### [SPOT — Spotify Technology S.A.](securities/security_2010347f1a0a5ea60f47)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_below\_lower`
 - Market date: `2026-09-22`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
 
 ### [SOFI — SoFi Technologies, Inc.](securities/security_98470cfc01bbcde78fc2)
 
 **Research alert — not a trade signal**
 
 - Alert: `volume\_anomaly`
-- Market date: `2026-09-21`
+- Market date: `2026-09-22`
 - Research status: `blocked`
 - Conclusion: High-priority security research is blocked. scope\_deferred\_for\_capacity
 
@@ -101,26 +119,26 @@ No pending orders.
 
 **Research alert — not a trade signal**
 
-- Alert: `volume\_anomaly`
-- Market date: `2026-09-21`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-09-22`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
 
-### [RXRX — Recursion Pharmaceuticals, Inc.](securities/security_ed7d5b616a196969c815)
+### [RTX — RTX Corporation](securities/security_59304f90c440def31dc5)
 
 **Research alert — not a trade signal**
 
-- Alert: `bollinger\_above\_upper`
-- Market date: `2026-09-21`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
+- Alert: `rsi\_oversold`
+- Market date: `2026-09-22`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
 
 ### [RKLB — Rocket Lab Corporation](securities/security_7ca095d63423c55a90e3)
 
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_above\_upper`
-- Market date: `2026-09-21`
+- Market date: `2026-09-22`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
@@ -129,7 +147,7 @@ No pending orders.
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_above\_upper`
-- Market date: `2026-09-21`
+- Market date: `2026-09-22`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
@@ -138,16 +156,7 @@ No pending orders.
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_above\_upper`
-- Market date: `2026-09-21`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
-### [MSTR — Strategy Inc](securities/security_fe5539a7d3fd9d553bce)
-
-**Research alert — not a trade signal**
-
-- Alert: `rsi\_overbought`
-- Market date: `2026-09-21`
+- Market date: `2026-09-22`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
@@ -156,7 +165,16 @@ No pending orders.
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_above\_upper`
-- Market date: `2026-09-21`
+- Market date: `2026-09-22`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### [MSTR — Strategy Inc](securities/security_fe5539a7d3fd9d553bce)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_overbought`
+- Market date: `2026-09-22`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
@@ -165,7 +183,7 @@ No pending orders.
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_above\_upper`
-- Market date: `2026-09-21`
+- Market date: `2026-09-22`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
@@ -174,25 +192,16 @@ No pending orders.
 **Research alert — not a trade signal**
 
 - Alert: `rsi\_overbought`
-- Market date: `2026-09-21`
+- Market date: `2026-09-22`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
-### [META — Meta Platforms, Inc.](securities/security_d12e746b3c9d392183cc)
+### [LH — Labcorp Holdings Inc.](securities/security_b1f2c48e1a744f5ecf67)
 
 **Research alert — not a trade signal**
 
 - Alert: `volume\_anomaly`
-- Market date: `2026-09-21`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [MELI — MercadoLibre, Inc.](securities/security_4935c6e39e38273a1731)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-09-21`
+- Market date: `2026-09-22`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
@@ -201,25 +210,16 @@ No pending orders.
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_above\_upper`
-- Market date: `2026-09-21`
+- Market date: `2026-09-22`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
-
-### [INTC — Intel Corporation](securities/security_dfa34d4b9050964b465e)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-09-21`
-- Research status: `blocked`
-- Conclusion: High-priority security research is blocked. scope\_deferred\_for\_capacity
 
 ### [INTC — Intel Corporation](securities/security_dfa34d4b9050964b465e)
 
 **Research alert — not a trade signal**
 
 - Alert: `rsi\_overbought`
-- Market date: `2026-09-21`
+- Market date: `2026-09-22`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
@@ -228,34 +228,16 @@ No pending orders.
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_above\_upper`
-- Market date: `2026-09-21`
+- Market date: `2026-09-22`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
-
-### [GOOGL — Alphabet Inc.](securities/security_c86bb4e75658c07142cf)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_above\_upper`
-- Market date: `2026-09-21`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
-### [FLNC — Fluence Energy, Inc.](securities/security_a9eb9838940ef5ceaa0c)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_below\_lower`
-- Market date: `2026-09-21`
-- Research status: `failed`
-- Conclusion: retry\_exhausted:agent\_validation\_failed:Hermes operation validation failed: Security research for FLNC on 2026-09-22
 
 ### [FLNC — Fluence Energy, Inc.](securities/security_a9eb9838940ef5ceaa0c)
 
 **Research alert — not a trade signal**
 
 - Alert: `rsi\_oversold`
-- Market date: `2026-09-21`
+- Market date: `2026-09-22`
 - Research status: `failed`
 - Conclusion: retry\_exhausted:agent\_validation\_failed:Hermes operation validation failed: Security research for FLNC on 2026-09-22
 
@@ -264,7 +246,7 @@ No pending orders.
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_below\_lower`
-- Market date: `2026-09-21`
+- Market date: `2026-09-22`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
@@ -273,7 +255,7 @@ No pending orders.
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_above\_upper`
-- Market date: `2026-09-21`
+- Market date: `2026-09-22`
 - Research status: `failed`
 - Conclusion: retry\_exhausted:agent\_validation\_failed:Hermes operation validation failed: Quick check research for ETN on 2026-08-11
 
@@ -281,17 +263,26 @@ No pending orders.
 
 **Research alert — not a trade signal**
 
-- Alert: `bollinger\_above\_upper`
-- Market date: `2026-09-21`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
+- Alert: `volume\_anomaly`
+- Market date: `2026-09-22`
+- Research status: `blocked`
+- Conclusion: High-priority security research is blocked. scope\_deferred\_for\_capacity
 
-### [COIN — Coinbase Global, Inc.](securities/security_37ddcbdaad296ad831f2)
+### [DNA — Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687)
 
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_above\_upper`
-- Market date: `2026-09-21`
+- Market date: `2026-09-22`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### [DNA — Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_overbought`
+- Market date: `2026-09-22`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
@@ -300,29 +291,47 @@ No pending orders.
 **Research alert — not a trade signal**
 
 - Alert: `rsi\_overbought`
-- Market date: `2026-09-21`
+- Market date: `2026-09-22`
 - Research status: `skipped`
 - Conclusion: Queue triage disposition
 
-### [ANET — Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a)
+### [ABBNY — ABB Ltd](securities/security_c120e9f26ebb6159adf9)
 
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_above\_upper`
-- Market date: `2026-09-21`
-- Research status: `succeeded`
-- Conclusion: Completed one scenario-complete Arista Networks full review. Freshly rechecked SEC-hosted Q2 sources were unchanged: Q2 revenue was USD 3.036 billion, GAAP operating margin was 45.4%, GAAP diluted EPS was USD 0.95, first-half operating cash flow was USD 2.7765 billion, and cash plus current marketable securities were USD 13.3433 billion, while USD 9.7 billion of non-cancellable purchase commitments and customer concentration remain material risks. The accepted schema-v2 assessment uses a mature-compounder earnings-multiple template with USD 120/USD 182.40/USD 252 bear/base/bull values and a USD 184.20 probability-weighted fair value versus the USD 188.67 mark. Deterministic gates derive Hold / Watch and allocation ineligibility because expected return is -2.37%, base return is -3.32%, bear downside is -36.40%, and margin of safety is negative. No strategy, signal, order, execution, cash, portfolio, fill, performance, or allocation state changed. Exactly one dependent idea-research foll
+- Market date: `2026-09-22`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
 
-### AKE — Arkema S.A.
+### ANIC.L — Agronomics Limited
 
 **Research alert — not a trade signal**
 
-- Alert: `volume\_anomaly`
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-09-23`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [VRT — Vertiv Holdings Co](securities/security_cb88f9154cfeaa15e878)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
 - Market date: `2026-09-22`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### [SU — Schneider Electric SE](securities/security_dc8486c1d61df62a22fd)
+### [VLO — Valero Energy Corporation](securities/security_c5a9e460d3350284d157)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_below\_signal`
+- Market date: `2026-09-22`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### [NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d)
 
 **Research alert — not a trade signal**
 
@@ -331,93 +340,21 @@ No pending orders.
 - Research status: `blocked`
 - Conclusion: High-priority security research is blocked. scope\_deferred\_for\_capacity
 
-### [03388 — Shenzhen Creality 3D Technology Co., Ltd.](securities/security_b19e8f0343b7da1f3c03)
+### [LAC — Lithium Americas Corp.](securities/security_fb87fac302a5446a1ced)
 
 **Research alert — not a trade signal**
 
 - Alert: `macd\_cross\_above\_signal`
 - Market date: `2026-09-22`
-- Research status: `blocked`
-- Conclusion: High-priority security research is blocked. scope\_deferred\_for\_capacity
-
-### [TCEHY — Tencent Holdings Limited](securities/security_de0d83229b369a426b99)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-09-21`
-- Research status: `blocked`
-- Conclusion: High-priority security research is blocked. scope\_deferred\_for\_capacity
-
-### [PL — Planet Labs PBC](securities/security_97f38b2cb2d5ef127f5a)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-09-21`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### [NBIS — Nebius Group N.V.](securities/security_47a0b06f6c6c478d7c1e)
+### [ABCL — AbCellera Biologics Inc.](securities/security_7bf8f4c9cc12ae410e40)
 
 **Research alert — not a trade signal**
 
 - Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-09-21`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [LUNR — Intuitive Machines, Inc.](securities/security_a5dc16f3f4b245e6c168)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-09-21`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [KTOS — Kratos Defense &amp; Security Solutions, Inc.](securities/security_0cf8075039299094d614)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-09-21`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [HOOD — Robinhood Markets, Inc.](securities/security_ad3b1f8f59fd599f079a)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-09-21`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [COIN — Coinbase Global, Inc.](securities/security_37ddcbdaad296ad831f2)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-09-21`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [ASML — ASML Holding N.V.](securities/security_ef35e41886220d51c22c)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-09-21`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [AMAT — Applied Materials, Inc.](securities/security_0a56aa634d077fe5796f)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-09-21`
+- Market date: `2026-09-22`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 

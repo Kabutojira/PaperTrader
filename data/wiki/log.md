@@ -4842,3 +4842,7 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Created candidate packet [[inbox/market-security_fe4648901e7675f157fd-macd_cross_above_signal-9e799aedab9d]] (9e799aedab9d).
 
 - Classified [[inbox/market-security_fe4648901e7675f157fd-macd_cross_above_signal-9e799aedab9d]] as `ingest`: A new MACD bullish crossover is a validated indicator transition for the security and merits durable monitoring context despite the negative period return.
+
+- Published investor decision snapshot `decision_e805e40bddf2412fe588`.
+
+- Generated canonical [[daily-reports/daily-report_20260923]] for run `daily-20260923T184734Z`.

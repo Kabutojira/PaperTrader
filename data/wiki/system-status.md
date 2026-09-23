@@ -4,16 +4,16 @@ type: system-status
 status: maintained
 tags:
   - system-status
-created: "2026-09-22"
-updated: "2026-09-22"
+created: "2026-09-23"
+updated: "2026-09-23"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_52a241f3f3abdf2bdc92"
-as_of: "2026-09-22T19:04:18Z"
+snapshot_id: "decision_e805e40bddf2412fe588"
+as_of: "2026-09-23T19:22:16Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-09-22T19:04:18Z`
+**As of:** `2026-09-23T19:22:16Z`
 **Investment data:** Portfolio state safe — research gaps remain
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -41,7 +41,7 @@ Publication validation confirms that this generated artifact is internally consi
 
 ## Sequential research backlog
 
-- Research backlog: 495
+- Research backlog: 517
 
 ## Publication health
 
@@ -50,10 +50,10 @@ Publication validation confirms that this generated artifact is internally consi
 
 ## Current issues by investment impact
 
-Current unresolved issues: **28**.
+Current unresolved issues: **29**.
 Resolved and superseded issues remain in the canonical audit but are not current health.
 
-### Affects Candidate (21)
+### Affects Candidate (22)
 
 - Error **ETN — Eaton Corporation plc: Hermes operation validation failed: Quick check research for ETN on 2026-08-11** — agent result schema: 'cd57fc97df50efa0657881b253fc96d4467881b253fc96d4467881b253fc96d446' does not match '^\[a-f0-9\]{64}$'; commands\_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment; post-run integrity: agent result data/runs/Daily report for 2026-08-11/Quick check research for ETN on 2026-08-11/agent\_result.json: 'cd57fc97df50efa0657881b253fc96d4467881b253fc96d4467881b253fc96d446' does not match '^\[a-f0-9\]{64}$'
 - Error **FUC.F — Fanuc Corporation: FANUC assessment source operation is ambiguous within one run** — The schema-v2 FANUC full-review assessment could not be accepted because the deterministic research applier found both the completed quick\_check\_research operation and this running security\_research operation for the same security and run\_id, then rejected the immutable assessment request with no assessment-state changes. The mandatory security context succeeded; both issuer PDFs were rechecked with unchanged hashes, source history and the security summary were updated through validated commands
@@ -74,6 +74,7 @@ Resolved and superseded issues remain in the canonical audit but are not current
 - Error **Hermes operation validation failed: Quick check research for TWST on 2026-08-05** — agent result was written before completed change: data/runs/Daily report for 2026-08-12/Quick check research for TWST on 2026-08-05/command\_audit.json; commands\_run does not exactly match deterministic CLI audit receipts
 - Error **Hermes operation validation failed: Security research for ALB on 2026-09-17** — observed claim support must match the retained inspected source excerpt
 - Error **Hermes operation validation failed: Security research for FLNC on 2026-09-22** — Hermes timed out after 1800s; agent result is missing or a symlink: data/runs/Daily report for 2026-09-22/Security research for FLNC on 2026-09-22/agent\_result.json
+- Error **Hermes operation validation failed: Security research for FLNC on 2026-09-23** — Hermes timed out after 1800s; agent result is missing or a symlink: data/runs/Daily report for 2026-09-23/Security research for FLNC on 2026-09-23/agent\_result.json
 - Error **ASML — ASML Holding N.V.: ASML assessment rejected after security row update** — The retry operation refreshed the ASML page and security row to the 2026-08-19 USD 1,751.73 mark, but the schema-v2 assessment request was rejected before assessment state changed because valuation\_template\_rationale is a required field and was omitted. The routed-operation no-retry rule forbids correcting and invoking a second assessment request after this rejection. The canonical assessment therefore remains the prior unsupported version, the prepared relationship and idea follow-up requests w
 - Error **WTI — W&amp;T Offshore, Inc.: Hermes operation validation failed: Quick check research for WTI on 2026-08-18** — completed security research requires this run's comparable assessment
 
