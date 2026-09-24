@@ -5,7 +5,7 @@ status: maintained
 tags:
   - research
 created: "2026-09-23"
-updated: "2026-09-23"
+updated: "2026-09-24"
 provenance: deterministic-decision-projection
 snapshot_id: "decision_e805e40bddf2412fe588"
 as_of: "2026-09-23T19:22:16Z"
@@ -1183,3 +1183,19 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_1c055eb9b2bb1f5a8ff2-volume_anomaly-00026aaa7dcc|RIO — Volume anomaly]]
+- [[inbox/market-security_7bf8f4c9cc12ae410e40-macd_cross_below_signal-fc307c6a3b5d|ABCL — MACD cross below signal]]
+- [[inbox/market-security_89969b7dac39b7db5661-volume_anomaly-542b3edf783e|YEC.F — Volume anomaly]]
+- [[inbox/market-security_8a5c43888d224de85c69-rsi_oversold-e1ef88d0e869|PLS.AX — RSI oversold]]
+- [[inbox/market-security_8d11e65cd0de084ee461-bollinger_below_lower-bb80831fb4e7|LMND — Bollinger below lower]]
+- [[inbox/market-security_8d11e65cd0de084ee461-volume_anomaly-f04baac7ddce|LMND — Volume anomaly]]
+- [[inbox/market-security_96ba305ee7cd586bc348-volume_anomaly-47643a431f37|FUC.F — Volume anomaly]]
+- [[inbox/market-security_ad5917642acbba28c1f2-volume_anomaly-7c3c0efa78c4|TDY — Volume anomaly]]
+- [[inbox/market-security_b1f2c48e1a744f5ecf67-bollinger_below_lower-1e4523881851|LH — Bollinger below lower]]
+- [[inbox/market-security_b61c642d038d71be3821-rsi_overbought-7965b0078e1c|MTLS — RSI overbought]]
+- [[inbox/market-security_bdc2f87dadf134760c3a-macd_cross_above_signal-25975ce316ef|PLTR — MACD cross above signal]]
+- [[inbox/market-security_de0d83229b369a426b99-volume_anomaly-b93cc8c1f2f6|TCEHY — Volume anomaly]]
+- [[inbox/market-security_f2b9760d847b2ba59324-bollinger_below_lower-5255da8dccda|ENPH — Bollinger below lower]]

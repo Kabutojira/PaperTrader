@@ -6,6 +6,10 @@
     "focused_questions": "Validate insurance and AI workflow disclosures; separate underwriting, claims, policy-administration, fraud, customer-service, retention, premium, loss-ratio, expense, reserve, reinsurance, capital, catastrophe, regulation, competition, cash, dilution, valuation, catalysts, and invalidation; determine whether the exposure is an adjacent regulated-insurance operating system rather than an SMB financial system of record.",
     "full_research_requested": true,
     "idea_id": "idea_ai_native_smb_financial_operating_systems",
+    "market_data_as_of": "2026-09-24T18:48:08Z",
+    "market_data_date": "2026-09-23",
+    "period_end": "2026-09-23",
+    "period_start": "2026-08-25",
     "research_depth": "maximum",
     "research_reasons": [
       {
@@ -24,15 +28,37 @@
         "prompt": "Perform a maximum-depth, current primary-source security analysis and scenario valuation of Lemonade (LMND), including business quality, competitive position, unit economics, underwriting and reserve risk, capital structure and debt, dilution, catalysts, downside cases, and explicit portfolio action conditions.",
         "source": "manual-user-request",
         "source_refs": []
+      },
+      {
+        "dedupe_key": "security_research:security_8d11e65cd0de084ee461:69acce4baf4c1541ab78:2026-09-23",
+        "market_data_date": "2026-09-23",
+        "observed_at": "2026-09-24T18:48:08Z",
+        "prompt": "Research security_8d11e65cd0de084ee461 with high priority after price-action alerts: bollinger_below_lower, volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_8d11e65cd0de084ee461-bollinger_below_lower-bb80831fb4e7.md",
+          "data/wiki/inbox/market-security_8d11e65cd0de084ee461-volume_anomaly-f04baac7ddce.md"
+        ],
+        "trigger_types": [
+          "bollinger_below_lower",
+          "volume_anomaly"
+        ]
       }
     ],
-    "security_id": "security_8d11e65cd0de084ee461"
+    "security_id": "security_8d11e65cd0de084ee461",
+    "source_price_hash": "9c0e9c22138814711198114fc7165f378fef84defcf104024a03e5397fa9fae9",
+    "trigger_types": [
+      "bollinger_below_lower",
+      "volume_anomaly"
+    ]
   },
-  "objective": "Research and value Lemonade as a regulated insurance operating-system candidate without assuming SMB system-of-record exposure. | Additional cause: Perform a maximum-depth, current primary-source security analysis and scenario valuation of Lemonade (LMND), including business quality, competitive position, unit economics, underwriting and reserve risk, capital structure and debt, dilution, catalysts, downside cases, and explicit portfolio action conditions.",
+  "objective": "Research and value Lemonade as a regulated insurance operating-system candidate without assuming SMB system-of-record exposure. | Additional cause: Perform a maximum-depth, current primary-source security analysis and scenario valuation of Lemonade (LMND), including business quality, competitive position, unit economics, underwriting and reserve risk, capital structure and debt, dilution, catalysts, downside cases, and explicit portfolio action conditions. | Additional cause: Research security_8d11e65cd0de084ee461 with high priority after price-action alerts: bollinger_below_lower, volume_anomaly; decide what changed and whether to act.",
   "operation_id": "01M27HD1C8J6FPVKYP168D5JJF",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_8d11e65cd0de084ee461-bollinger_below_lower-bb80831fb4e7.md",
+    "data/wiki/inbox/market-security_8d11e65cd0de084ee461-volume_anomaly-f04baac7ddce.md",
     "https://www.sec.gov/Archives/edgar/data/1691421/000169142126000016/lmnd-20251231.htm",
     "https://www.sec.gov/Archives/edgar/data/1691421/000169142126000055/lmnd-20260630.htm"
   ]

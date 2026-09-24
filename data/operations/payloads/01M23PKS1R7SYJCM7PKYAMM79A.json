@@ -2,10 +2,12 @@
   "entity_id": "security_4b61970aa8f574446819",
   "entity_type": "security",
   "inputs": {
+    "assessment_state": "2026-08-31T22:56:03Z",
     "baseline_completed_at": "2026-08-31T23:07:03Z",
     "baseline_operation_id": "01M14TAVZGX126SABHZ9D8RQQ8",
     "baseline_result_path": "data/runs/daily-20260831T213829Z/01M14TAVZGX126SABHZ9D8RQQ8/agent_result.json",
     "full_research_requested": true,
+    "maintenance_mode": "refresh",
     "market_data_as_of": "2026-09-19T17:40:18Z",
     "market_data_date": "2026-09-18",
     "merged_input_values": {
@@ -18,6 +20,7 @@
     },
     "period_end": "2026-09-18",
     "period_start": "2026-08-10",
+    "research_page": "data/wiki/securities/security_4b61970aa8f574446819.md",
     "research_reasons": [
       {
         "dedupe_key": "quick_check_research:security_4b61970aa8f574446819:1d55bec0319d73c2afc0:2026-09-08",
@@ -66,6 +69,18 @@
         "trigger_types": [
           "volume_anomaly"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_4b61970aa8f574446819:allocation-maintenance:2026-08-31T22:56:03Z",
+        "observed_at": "2026-09-24T18:48:08Z",
+        "prompt": "Revalidate security_4b61970aa8f574446819 with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_gev_cfo_transition_20260827",
+          "source_gev_q2_2026_10q",
+          "source_gev_q2_2026_earnings",
+          "source_gev_sec_submissions_20260819"
+        ]
       }
     ],
     "security_id": "security_4b61970aa8f574446819",
@@ -75,7 +90,7 @@
       "volume_anomaly"
     ]
   },
-  "objective": "Quick-check security_4b61970aa8f574446819 after price-action alerts: macd_cross_above_signal; verify the latest research assumptions and escalate to full security research if any material gate changed. | Additional cause: Research security_4b61970aa8f574446819 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act. | Additional cause: Research security_4b61970aa8f574446819 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
+  "objective": "Quick-check security_4b61970aa8f574446819 after price-action alerts: macd_cross_above_signal; verify the latest research assumptions and escalate to full security research if any material gate changed. | Additional cause: Research security_4b61970aa8f574446819 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act. | Additional cause: Research security_4b61970aa8f574446819 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act. | Additional cause: Revalidate security_4b61970aa8f574446819 with current primary evidence and write one comparable allocation assessment.",
   "operation_id": "01M23PKS1R7SYJCM7PKYAMM79A",
   "operation_type": "quick_check_research",
   "payload_version": 1,
@@ -83,6 +98,10 @@
     "data/wiki/inbox/market-security_4b61970aa8f574446819-macd_cross_above_signal-a358bb85e64f.md",
     "data/wiki/inbox/market-security_4b61970aa8f574446819-macd_cross_above_signal-c69f43731a2e.md",
     "data/wiki/inbox/market-security_4b61970aa8f574446819-volume_anomaly-0705904fbe29.md",
-    "data/wiki/inbox/market-security_4b61970aa8f574446819-volume_anomaly-914881877326.md"
+    "data/wiki/inbox/market-security_4b61970aa8f574446819-volume_anomaly-914881877326.md",
+    "source_gev_cfo_transition_20260827",
+    "source_gev_q2_2026_10q",
+    "source_gev_q2_2026_earnings",
+    "source_gev_sec_submissions_20260819"
   ]
 }

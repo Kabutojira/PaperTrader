@@ -4,15 +4,16 @@
   "inputs": {
     "assessment_state": "2026-08-05T19:59:39Z",
     "maintenance_mode": "refresh",
-    "market_data_as_of": "2026-09-19T17:40:18Z",
-    "market_data_date": "2026-09-18",
+    "market_data_as_of": "2026-09-24T18:48:08Z",
+    "market_data_date": "2026-09-23",
     "merged_input_values": {
       "source_price_hash": [
         "b82be62efb86ea2306759adb18563353fbfe15f70308beb3d711d12c1305f67c",
-        "80c9170390cfdd0fa89c28a3eeb2718973090e4bfb3e8954a7eaf7ae56848e83"
+        "80c9170390cfdd0fa89c28a3eeb2718973090e4bfb3e8954a7eaf7ae56848e83",
+        "1ce914804b5b1642ffae6b75f0baef3cd211b5bc3507227e769f49242de63ac7"
       ]
     },
-    "period_end": "2026-09-18",
+    "period_end": "2026-09-23",
     "period_start": "2026-08-11",
     "research_page": "data/wiki/securities/security_ad5917642acbba28c1f2.md",
     "research_reasons": [
@@ -53,23 +54,37 @@
           "macd_cross_above_signal",
           "volume_anomaly"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_ad5917642acbba28c1f2:e12400da26c4eba3eb26:2026-09-23",
+        "market_data_date": "2026-09-23",
+        "observed_at": "2026-09-24T18:48:08Z",
+        "prompt": "Research security_ad5917642acbba28c1f2 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_ad5917642acbba28c1f2-volume_anomaly-7c3c0efa78c4.md"
+        ],
+        "trigger_types": [
+          "volume_anomaly"
+        ]
       }
     ],
     "security_id": "security_ad5917642acbba28c1f2",
-    "source_price_hash": "80c9170390cfdd0fa89c28a3eeb2718973090e4bfb3e8954a7eaf7ae56848e83",
+    "source_price_hash": "1ce914804b5b1642ffae6b75f0baef3cd211b5bc3507227e769f49242de63ac7",
     "trigger_types": [
       "macd_cross_above_signal",
       "rsi_oversold",
       "volume_anomaly"
     ]
   },
-  "objective": "Revalidate security_ad5917642acbba28c1f2 with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_ad5917642acbba28c1f2 with high priority after price-action alerts: rsi_oversold; decide what changed and whether to act. | Additional cause: Research security_ad5917642acbba28c1f2 with high priority after price-action alerts: macd_cross_above_signal, volume_anomaly; decide what changed and whether to act.",
+  "objective": "Revalidate security_ad5917642acbba28c1f2 with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_ad5917642acbba28c1f2 with high priority after price-action alerts: rsi_oversold; decide what changed and whether to act. | Additional cause: Research security_ad5917642acbba28c1f2 with high priority after price-action alerts: macd_cross_above_signal, volume_anomaly; decide what changed and whether to act. | Additional cause: Research security_ad5917642acbba28c1f2 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
   "operation_id": "01M14ZSRN81GKTSA37QZE9X5K2",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
     "data/wiki/inbox/market-security_ad5917642acbba28c1f2-macd_cross_above_signal-8e3ae4b904e7.md",
     "data/wiki/inbox/market-security_ad5917642acbba28c1f2-rsi_oversold-090a0d92d02c.md",
+    "data/wiki/inbox/market-security_ad5917642acbba28c1f2-volume_anomaly-7c3c0efa78c4.md",
     "data/wiki/inbox/market-security_ad5917642acbba28c1f2-volume_anomaly-fce5c82835c7.md",
     "source_tdy_q2_2026_10q",
     "source_tdy_q2_2026_results"

@@ -4,9 +4,15 @@
   "inputs": {
     "assessment_state": "2026-08-05T16:18:44Z",
     "maintenance_mode": "refresh",
-    "market_data_as_of": "2026-09-17T18:45:03Z",
-    "market_data_date": "2026-09-16",
-    "period_end": "2026-09-16",
+    "market_data_as_of": "2026-09-24T18:48:08Z",
+    "market_data_date": "2026-09-23",
+    "merged_input_values": {
+      "source_price_hash": [
+        "0a9fac13524ebbdcddf731be59d3af018dbb2575163396b94f732d36ead1ca91",
+        "853fc65f0465ab8e1aa334f0354b9c22bd01ef3d141adeb0acdaf1b73e92f3e1"
+      ]
+    },
+    "period_end": "2026-09-23",
     "period_start": "2026-08-18",
     "research_page": "data/wiki/securities/security_1c055eb9b2bb1f5a8ff2.md",
     "research_reasons": [
@@ -33,20 +39,35 @@
         "trigger_types": [
           "bollinger_below_lower"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_1c055eb9b2bb1f5a8ff2:5055393b7f6c703913fa:2026-09-23",
+        "market_data_date": "2026-09-23",
+        "observed_at": "2026-09-24T18:48:08Z",
+        "prompt": "Research security_1c055eb9b2bb1f5a8ff2 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_1c055eb9b2bb1f5a8ff2-volume_anomaly-00026aaa7dcc.md"
+        ],
+        "trigger_types": [
+          "volume_anomaly"
+        ]
       }
     ],
     "security_id": "security_1c055eb9b2bb1f5a8ff2",
-    "source_price_hash": "0a9fac13524ebbdcddf731be59d3af018dbb2575163396b94f732d36ead1ca91",
+    "source_price_hash": "853fc65f0465ab8e1aa334f0354b9c22bd01ef3d141adeb0acdaf1b73e92f3e1",
     "trigger_types": [
-      "bollinger_below_lower"
+      "bollinger_below_lower",
+      "volume_anomaly"
     ]
   },
-  "objective": "Revalidate security_1c055eb9b2bb1f5a8ff2 with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_1c055eb9b2bb1f5a8ff2 with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act.",
+  "objective": "Revalidate security_1c055eb9b2bb1f5a8ff2 with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_1c055eb9b2bb1f5a8ff2 with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act. | Additional cause: Research security_1c055eb9b2bb1f5a8ff2 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
   "operation_id": "01KZVHDGV0RRFAD0RMP4ZQ9C7N",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
     "data/wiki/inbox/market-security_1c055eb9b2bb1f5a8ff2-bollinger_below_lower-0734fff671d4.md",
+    "data/wiki/inbox/market-security_1c055eb9b2bb1f5a8ff2-volume_anomaly-00026aaa7dcc.md",
     "source_rio_fy2025_results",
     "source_rio_h1_2026_results",
     "source_rio_q2_2026_production"

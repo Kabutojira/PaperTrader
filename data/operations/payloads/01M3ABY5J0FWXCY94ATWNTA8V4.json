@@ -1,0 +1,59 @@
+{
+  "entity_id": "security_8a5c43888d224de85c69",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-08-31T21:53:45Z",
+    "maintenance_mode": "refresh",
+    "market_data_as_of": "2026-09-24T18:48:08Z",
+    "market_data_date": "2026-09-24",
+    "period_end": "2026-09-24",
+    "period_start": "2026-08-27",
+    "research_page": "data/wiki/securities/security_8a5c43888d224de85c69.md",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_8a5c43888d224de85c69:345e97edd9c3c5abf03d:2026-09-24",
+        "observed_at": "2026-09-24T18:48:08Z",
+        "prompt": "Research security_8a5c43888d224de85c69 with high priority after price-action alerts: rsi_oversold; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_8a5c43888d224de85c69-rsi_oversold-e1ef88d0e869.md"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_8a5c43888d224de85c69:allocation-maintenance:2026-08-31T21:53:45Z",
+        "observed_at": "2026-09-24T18:48:08Z",
+        "prompt": "Revalidate security_8a5c43888d224de85c69 with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_pls_fy2026_annual_report",
+          "source_pls_fy2026_results_presentation"
+        ]
+      }
+    ],
+    "rsi_attention": {
+      "episode_id": "rsi_8c392a0543c2e7a97f99a186",
+      "observed_session": "2026-09-24",
+      "original_created_at": "2026-09-24T18:48:08Z",
+      "rsi": "28.76628440",
+      "source_price_hash": "79f50ba176ef7e94570feb095ff7fc2bc2df55bab82827dd87060310235fc548",
+      "threshold": "30",
+      "transitions": [
+        "entered"
+      ]
+    },
+    "security_id": "security_8a5c43888d224de85c69",
+    "source_price_hash": "79f50ba176ef7e94570feb095ff7fc2bc2df55bab82827dd87060310235fc548",
+    "trigger_types": [
+      "rsi_oversold"
+    ]
+  },
+  "objective": "Research security_8a5c43888d224de85c69 with high priority after price-action alerts: rsi_oversold; decide what changed and whether to act. | Additional cause: Revalidate security_8a5c43888d224de85c69 with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01M3ABY5J0FWXCY94ATWNTA8V4",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_8a5c43888d224de85c69-rsi_oversold-e1ef88d0e869.md",
+    "source_pls_fy2026_annual_report",
+    "source_pls_fy2026_results_presentation"
+  ]
+}
