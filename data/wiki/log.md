@@ -4896,3 +4896,7 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Created candidate packet [[inbox/market-security_f2b9760d847b2ba59324-bollinger_below_lower-5255da8dccda]] (5255da8dccda).
 
 - Classified [[inbox/market-security_f2b9760d847b2ba59324-bollinger_below_lower-5255da8dccda]] as `ingest`: Material downside transition: the security entered a Bollinger-below-lower condition after an 11.46% period decline.
+
+- Published investor decision snapshot `decision_cb396888ef82e2d215d9`.
+
+- Generated canonical [[daily-reports/daily-report_20260924]] for run `daily-20260924T184801Z`.

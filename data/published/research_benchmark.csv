@@ -1,8 +1,8 @@
 snapshot_id,as_of,policy_version,comparison_only,copy_ready,security_id,ticker,company_name,rating,weight_pct,reference_price,currency,research_page
-decision_e805e40bddf2412fe588,2026-09-23T19:22:16Z,equal_weight_rated_v1,true,false,security_099561384c0f5e697727,CSIQ,Canadian Solar Inc.,buy,10,13.140000343322754,USD,data/wiki/securities/security_099561384c0f5e697727.md
-decision_e805e40bddf2412fe588,2026-09-23T19:22:16Z,equal_weight_rated_v1,true,false,security_a9eb9838940ef5ceaa0c,FLNC,"Fluence Energy, Inc.",buy,10,14.229999542236328,USD,data/wiki/securities/security_a9eb9838940ef5ceaa0c.md
-decision_e805e40bddf2412fe588,2026-09-23T19:22:16Z,equal_weight_rated_v1,true,false,security_8b703a8adf5f864acaa4,PRX,Prosus N.V.,buy,10,38.689998626708984,EUR,data/wiki/securities/security_8b703a8adf5f864acaa4.md
-decision_e805e40bddf2412fe588,2026-09-23T19:22:16Z,equal_weight_rated_v1,true,false,security_98a1943771da875efed5,NOMD,Nomad Foods Limited,buy,10,11.989999771118164,USD,data/wiki/securities/security_98a1943771da875efed5.md
-decision_e805e40bddf2412fe588,2026-09-23T19:22:16Z,equal_weight_rated_v1,true,false,security_d202772e4e62065cd17a,FISV,"Fiserv, Inc.",buy,10,52.58000183105469,USD,data/wiki/securities/security_d202772e4e62065cd17a.md
-decision_e805e40bddf2412fe588,2026-09-23T19:22:16Z,equal_weight_rated_v1,true,false,security_f34181f3df32080a91d1,DPZ,"Domino's Pizza, Inc.",buy,10,332.05999755859375,USD,data/wiki/securities/security_f34181f3df32080a91d1.md
-decision_e805e40bddf2412fe588,2026-09-23T19:22:16Z,equal_weight_rated_v1,true,false,,CASH,Cash,unrated,40,1,,
+decision_cb396888ef82e2d215d9,2026-09-24T19:07:31Z,equal_weight_rated_v1,true,false,security_099561384c0f5e697727,CSIQ,Canadian Solar Inc.,buy,10,13.140000343322754,USD,data/wiki/securities/security_099561384c0f5e697727.md
+decision_cb396888ef82e2d215d9,2026-09-24T19:07:31Z,equal_weight_rated_v1,true,false,security_8b703a8adf5f864acaa4,PRX,Prosus N.V.,buy,10,38.689998626708984,EUR,data/wiki/securities/security_8b703a8adf5f864acaa4.md
+decision_cb396888ef82e2d215d9,2026-09-24T19:07:31Z,equal_weight_rated_v1,true,false,security_a9eb9838940ef5ceaa0c,FLNC,"Fluence Energy, Inc.",buy,10,14.229999542236328,USD,data/wiki/securities/security_a9eb9838940ef5ceaa0c.md
+decision_cb396888ef82e2d215d9,2026-09-24T19:07:31Z,equal_weight_rated_v1,true,false,security_d202772e4e62065cd17a,FISV,"Fiserv, Inc.",buy,10,52.58000183105469,USD,data/wiki/securities/security_d202772e4e62065cd17a.md
+decision_cb396888ef82e2d215d9,2026-09-24T19:07:31Z,equal_weight_rated_v1,true,false,security_98a1943771da875efed5,NOMD,Nomad Foods Limited,buy,10,11.989999771118164,USD,data/wiki/securities/security_98a1943771da875efed5.md
+decision_cb396888ef82e2d215d9,2026-09-24T19:07:31Z,equal_weight_rated_v1,true,false,security_f34181f3df32080a91d1,DPZ,"Domino's Pizza, Inc.",buy,10,332.05999755859375,USD,data/wiki/securities/security_f34181f3df32080a91d1.md
+decision_cb396888ef82e2d215d9,2026-09-24T19:07:31Z,equal_weight_rated_v1,true,false,,CASH,Cash,unrated,40,1,,
