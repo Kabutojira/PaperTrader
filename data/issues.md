@@ -8,6 +8,7 @@ Generated from `data/tables/issues.csv`.
 | affects_candidate | error | **issue_30c07892e9981c27b153** — FANUC assessment source operation is ambiguous within one run | 2026-08-20T15:57:26Z | controller | 01M0FXHG7GT03TE1GNSGAPY904 |
 | affects_candidate | error | **issue_35b7b23bc3b07dd61cce** — Hermes operation validation failed: 01KZ9ZJVERDMQV8A3XQQY4AD7Y | 2026-08-12T15:28:02Z | controller | 01KZ9ZJVERDMQV8A3XQQY4AD7Y |
 | publication_only | error | **issue_406f407472eb3a7999d9** — Hermes operation validation failed: 01M081X8BGDJA34XM08JAKQFS1 | 2026-08-17T14:47:27Z | delivery | 01M081X8BGDJA34XM08JAKQFS1 |
+| affects_candidate | error | **issue_461d8d88a09991e9f940** — Hermes operation validation failed: 01M3ABY5J0FWXCY94ATWNTA8V4 | 2026-09-25T19:11:44Z | controller | 01M3ABY5J0FWXCY94ATWNTA8V4 |
 | affects_candidate | error | **issue_4c13a146c674a9a576a6** — Hermes operation validation failed: 01KZGGJ4M0HZBD7MND83X91XEF | 2026-08-15T07:23:01Z | controller | 01KZGGJ4M0HZBD7MND83X91XEF |
 | affects_candidate | error | **issue_4de7cdd19f95cce3c22d** — Hermes operation validation failed: 01M32RBCY8GZEKDG89ZKVD6ARK | 2026-09-21T20:20:45Z | controller | 01M32RBCY8GZEKDG89ZKVD6ARK |
 | affects_candidate | error | **issue_52441ba1c5c89cac50a6** — Hermes operation validation failed: 01KZQX922RR422CPWVFP4APXBZ | 2026-08-18T15:09:55Z | controller | 01KZQX922RR422CPWVFP4APXBZ |
