@@ -4962,3 +4962,7 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Created candidate packet [[inbox/market-security_f18cd57a5e086583c861-volume_anomaly-18a17447098d]] (18a17447098d).
 
 - Created candidate packet [[inbox/market-security_fe4648901e7675f157fd-volume_anomaly-cff91c2ffc03]] (cff91c2ffc03).
+
+- Published investor decision snapshot `decision_a6f0800e760ee3140acb`.
+
+- Generated canonical [[daily-reports/daily-report_20260925]] for run `daily-20260925T190546Z`.

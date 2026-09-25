@@ -4,16 +4,16 @@ type: system-status
 status: maintained
 tags:
   - system-status
-created: "2026-09-24"
-updated: "2026-09-24"
+created: "2026-09-25"
+updated: "2026-09-25"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_cb396888ef82e2d215d9"
-as_of: "2026-09-24T19:07:31Z"
+snapshot_id: "decision_a6f0800e760ee3140acb"
+as_of: "2026-09-25T19:12:04Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-09-24T19:07:31Z`
+**As of:** `2026-09-25T19:12:04Z`
 **Investment data:** Portfolio state safe — research gaps remain
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -23,8 +23,8 @@ Publication validation confirms that this generated artifact is internally consi
 
 ## Current investment health
 
-- Assessments: 34/83
-- Fresh-evidence assessments: 32/83
+- Assessments: 32/83
+- Fresh-evidence assessments: 31/83
 - Relationship reviews: 20/83
 - Accepted relationships: 19
 - Market success/failure: 92/0
@@ -50,14 +50,15 @@ Publication validation confirms that this generated artifact is internally consi
 
 ## Current issues by investment impact
 
-Current unresolved issues: **29**.
+Current unresolved issues: **44**.
 Resolved and superseded issues remain in the canonical audit but are not current health.
 
-### Affects Candidate (22)
+### Affects Candidate (37)
 
 - Error **ETN — Eaton Corporation plc: Hermes operation validation failed: Quick check research for ETN on 2026-08-11** — agent result schema: 'cd57fc97df50efa0657881b253fc96d4467881b253fc96d4467881b253fc96d446' does not match '^\[a-f0-9\]{64}$'; commands\_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment; post-run integrity: agent result data/runs/Daily report for 2026-08-11/Quick check research for ETN on 2026-08-11/agent\_result.json: 'cd57fc97df50efa0657881b253fc96d4467881b253fc96d4467881b253fc96d446' does not match '^\[a-f0-9\]{64}$'
 - Error **FUC.F — Fanuc Corporation: FANUC assessment source operation is ambiguous within one run** — The schema-v2 FANUC full-review assessment could not be accepted because the deterministic research applier found both the completed quick\_check\_research operation and this running security\_research operation for the same security and run\_id, then rejected the immutable assessment request with no assessment-state changes. The mandatory security context succeeded; both issuer PDFs were rechecked with unchanged hashes, source history and the security summary were updated through validated commands
 - Error **KTOS — Kratos Defense &amp; Security Solutions, Inc.: Hermes operation validation failed: Quick check research for KTOS on 2026-08-12** — Hermes timed out after 600s; agent result was written before completed change: data/runs/Daily report for 2026-08-12/Quick check research for KTOS on 2026-08-12/command\_audit.json; commands\_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment
+- Error **Hermes operation validation failed: Security research for PLS.AX on 2026-09-24** — Hermes exited with status 1; agent result is missing or a symlink: data/runs/Daily report for 2026-09-25/Security research for PLS.AX on 2026-09-24/agent\_result.json
 - Error **Hermes operation validation failed: Quick check research for HOOD on 2026-08-15** — operation artifact directory is not empty: /\_\_w/PaperTrader/PaperTrader/data/runs/Daily report for 2026-08-15/Quick check research for HOOD on 2026-08-15
 - Error **Hermes operation validation failed: Security research for ANIC.L on 2026-09-21** — searched challenge requires retained immutable inspection references
 - Error **RKLB — Rocket Lab Corporation: Hermes operation validation failed: Quick check research for RKLB on 2026-08-18** — commands\_run claims commands without deterministic CLI audit receipts: \['scripts/papertrader research assessment upsert --request data/runs/Daily report for 2026-08-18/Quick check research for RKLB on 2026-08-18/assessment\_upsert\_request.json', 'scripts/papertrader research security-context --security-id RKLB'\]
@@ -77,6 +78,20 @@ Resolved and superseded issues remain in the canonical audit but are not current
 - Error **Hermes operation validation failed: Security research for FLNC on 2026-09-23** — observed claim support must match the retained inspected source excerpt
 - Error **ASML — ASML Holding N.V.: ASML assessment rejected after security row update** — The retry operation refreshed the ASML page and security row to the 2026-08-19 USD 1,751.73 mark, but the schema-v2 assessment request was rejected before assessment state changed because valuation\_template\_rationale is a required field and was omitted. The routed-operation no-retry rule forbids correcting and invoking a second assessment request after this rejection. The canonical assessment therefore remains the prior unsupported version, the prepared relationship and idea follow-up requests w
 - Error **WTI — W&amp;T Offshore, Inc.: Hermes operation validation failed: Quick check research for WTI on 2026-08-18** — completed security research requires this run's comparable assessment
+- Warning **PLS.AX — PLS Group Limited: Daily preparation degraded: classifier blocked for data/wiki/inbox/market-PLS.AX-rsi\_oversold-7072b69ac454.md** — classifier blocked for data/wiki/inbox/market-PLS.AX-rsi\_oversold-7072b69ac454.md
+- Warning **TWST — Twist Bioscience Corporation: Daily preparation degraded: classifier blocked for data/wiki/inbox/market-TWST-volume\_anomaly-eca44104d625.md** — classifier blocked for data/wiki/inbox/market-TWST-volume\_anomaly-eca44104d625.md
+- Warning **RBLX — Roblox Corporation: Daily preparation degraded: classifier blocked for data/wiki/inbox/market-RBLX-volume\_anomaly-da215c897da5.md** — classifier blocked for data/wiki/inbox/market-RBLX-volume\_anomaly-da215c897da5.md
+- Warning **FUC.F — Fanuc Corporation: Daily preparation degraded: classifier blocked for data/wiki/inbox/market-FUC.F-volume\_anomaly-55ab37e01463.md** — classifier blocked for data/wiki/inbox/market-FUC.F-volume\_anomaly-55ab37e01463.md
+- Warning **VALE — Vale S.A.: Daily preparation degraded: classifier blocked for data/wiki/inbox/market-VALE-bollinger\_below\_lower-4e9f92c3ade3.md** — classifier blocked for data/wiki/inbox/market-VALE-bollinger\_below\_lower-4e9f92c3ade3.md
+- Warning **DNA — Ginkgo Bioworks Holdings, Inc.: Daily preparation degraded: classifier blocked for data/wiki/inbox/market-DNA-volume\_anomaly-baf6fd98f3b4.md** — classifier blocked for data/wiki/inbox/market-DNA-volume\_anomaly-baf6fd98f3b4.md
+- Warning **EVK — Evonik Industries AG: Daily preparation degraded: classifier blocked for data/wiki/inbox/market-EVK-volume\_anomaly-9c18f8d9013d.md** — classifier blocked for data/wiki/inbox/market-EVK-volume\_anomaly-9c18f8d9013d.md
+- Warning **ANIC.L — Agronomics Limited: Daily preparation degraded: classifier blocked for data/wiki/inbox/market-ANIC.L-volume\_anomaly-cff91c2ffc03.md** — classifier blocked for data/wiki/inbox/market-ANIC.L-volume\_anomaly-cff91c2ffc03.md
+- Warning **PARRO.PA — Parrot S.A.: Daily preparation degraded: classifier blocked for data/wiki/inbox/market-PARRO.PA-bollinger\_below\_lower-1e5a0379c26f.md** — classifier blocked for data/wiki/inbox/market-PARRO.PA-bollinger\_below\_lower-1e5a0379c26f.md
+- Warning **RTX — RTX Corporation: Daily preparation degraded: classifier blocked for data/wiki/inbox/market-RTX-rsi\_oversold-35152eacefc5.md** — classifier blocked for data/wiki/inbox/market-RTX-rsi\_oversold-35152eacefc5.md
+- Warning **SCCO — Southern Copper Corporation: Daily preparation degraded: classifier blocked for data/wiki/inbox/market-SCCO-macd\_cross\_above\_signal-fc616bc5927d.md** — classifier blocked for data/wiki/inbox/market-SCCO-macd\_cross\_above\_signal-fc616bc5927d.md
+- Warning **PRLB — Proto Labs, Inc.: Daily preparation degraded: classifier blocked for data/wiki/inbox/market-PRLB-volume\_anomaly-18a17447098d.md** — classifier blocked for data/wiki/inbox/market-PRLB-volume\_anomaly-18a17447098d.md
+- Warning **BAS — BASF SE: Daily preparation degraded: classifier blocked for data/wiki/inbox/market-BAS-volume\_anomaly-9d5076893945.md** — classifier blocked for data/wiki/inbox/market-BAS-volume\_anomaly-9d5076893945.md
+- Warning **FLNC — Fluence Energy, Inc.: Daily preparation degraded: classifier blocked for data/wiki/inbox/market-FLNC-rsi\_oversold-87f176686042.md** — classifier blocked for data/wiki/inbox/market-FLNC-rsi\_oversold-87f176686042.md
 
 ### Publication Only (6)
 
