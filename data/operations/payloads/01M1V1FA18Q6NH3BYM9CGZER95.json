@@ -5,9 +5,15 @@
     "causal_hypothesis": "Any residual material-supply exposure may be immaterial after BASF's 2024 sale of Forward AM, making BASF a likely rejected or negligible thematic relationship despite its chemical scale.",
     "focused_questions": "Verify the Forward AM divestiture and any residual supply or IP economics, quantify maximum plausible additive sensitivity, then assess the full business, margins, balance sheet, cash flow, concentration, valuation scenarios, rating, and invalidation independently of weak thematic exposure.",
     "idea_id": "idea_ai_driven_democratization_physical_creation",
-    "market_data_as_of": "2026-09-18T18:01:15Z",
-    "market_data_date": "2026-09-18",
-    "period_end": "2026-09-18",
+    "market_data_as_of": "2026-09-25T19:05:53Z",
+    "market_data_date": "2026-09-25",
+    "merged_input_values": {
+      "source_price_hash": [
+        "609d6cbcfe20202cb397c5819ad4393c122a382abe4ccd692f116b18c1cfa795",
+        "041a5b825995215e01c5cf6e203bcd14fd001717df5032f2fb6acb62c0a2b3ab"
+      ]
+    },
+    "period_end": "2026-09-25",
     "period_start": "2026-08-21",
     "research_reasons": [
       {
@@ -32,20 +38,38 @@
         "trigger_types": [
           "volume_anomaly"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_ef418f5ccc7dc5be8e65:943c228d9dfa065bcb84:2026-09-25",
+        "market_data_date": "2026-09-25",
+        "observed_at": "2026-09-25T19:05:53Z",
+        "prompt": "Research security_ef418f5ccc7dc5be8e65 with high priority after price-action alerts: bollinger_below_lower, volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_ef418f5ccc7dc5be8e65-bollinger_below_lower-e4248e74634d.md",
+          "data/wiki/inbox/market-security_ef418f5ccc7dc5be8e65-volume_anomaly-9d5076893945.md"
+        ],
+        "trigger_types": [
+          "bollinger_below_lower",
+          "volume_anomaly"
+        ]
       }
     ],
     "security_id": "security_ef418f5ccc7dc5be8e65",
-    "source_price_hash": "609d6cbcfe20202cb397c5819ad4393c122a382abe4ccd692f116b18c1cfa795",
+    "source_price_hash": "041a5b825995215e01c5cf6e203bcd14fd001717df5032f2fb6acb62c0a2b3ab",
     "trigger_types": [
+      "bollinger_below_lower",
       "volume_anomaly"
     ]
   },
-  "objective": "Research and value BASF while testing whether its former additive exposure is now negligible. | Additional cause: Research security_ef418f5ccc7dc5be8e65 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+  "objective": "Research and value BASF while testing whether its former additive exposure is now negligible. | Additional cause: Research security_ef418f5ccc7dc5be8e65 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act. | Additional cause: Research security_ef418f5ccc7dc5be8e65 with high priority after price-action alerts: bollinger_below_lower, volume_anomaly; decide what changed and whether to act.",
   "operation_id": "01M1V1FA18Q6NH3BYM9CGZER95",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_ef418f5ccc7dc5be8e65-bollinger_below_lower-e4248e74634d.md",
     "data/wiki/inbox/market-security_ef418f5ccc7dc5be8e65-volume_anomaly-81c86c4a8e7b.md",
+    "data/wiki/inbox/market-security_ef418f5ccc7dc5be8e65-volume_anomaly-9d5076893945.md",
     "https://forward-am.com/wp-content/uploads/2024/07/Forward-AM-MBO-Public-Announcement_20240703.pdf",
     "https://www.basf.com/global/en/investors/share-and-adrs"
   ]

@@ -5,16 +5,17 @@
     "causal_hypothesis": "A larger flow of AI-generated manufacturable designs may raise demand for automated-quote additive, CNC, injection-molding, and sheet-metal production, but additive may be too small to move consolidated results.",
     "focused_questions": "Test digital-factory versus network economics, process and geography mix, automated quoting, customer behavior, additive exposure, margins, capacity utilization, concentration, cash flow, balance sheet, scenarios, rating, and invalidation.",
     "idea_id": "idea_ai_driven_democratization_physical_creation",
-    "market_data_as_of": "2026-09-19T17:40:18Z",
-    "market_data_date": "2026-09-18",
+    "market_data_as_of": "2026-09-25T19:05:53Z",
+    "market_data_date": "2026-09-24",
     "merged_input_values": {
       "source_price_hash": [
         "57549a515f517d4dce7c5d436fbe9a17092af2e5a8ef7a96065406597eeeeea0",
         "68fea177a4920f10d49310768efb6c1aa0103e211d451c8554c80671968548ae",
-        "e8887de2b213eafc7c4cdeda60917cefffda3fa2a366e2a04998f48e4c905cb1"
+        "e8887de2b213eafc7c4cdeda60917cefffda3fa2a366e2a04998f48e4c905cb1",
+        "50910ce44d2ab354393e2a7bd04ff6301eb0d9a045c6bfd1ff16af530f2cbe65"
       ]
     },
-    "period_end": "2026-09-18",
+    "period_end": "2026-09-24",
     "period_start": "2026-08-13",
     "research_reasons": [
       {
@@ -66,10 +67,23 @@
         "trigger_types": [
           "volume_anomaly"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_f18cd57a5e086583c861:2c819dc18b8a037529d7:2026-09-24",
+        "market_data_date": "2026-09-24",
+        "observed_at": "2026-09-25T19:05:53Z",
+        "prompt": "Research security_f18cd57a5e086583c861 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_f18cd57a5e086583c861-volume_anomaly-18a17447098d.md"
+        ],
+        "trigger_types": [
+          "volume_anomaly"
+        ]
       }
     ],
     "security_id": "security_f18cd57a5e086583c861",
-    "source_price_hash": "e8887de2b213eafc7c4cdeda60917cefffda3fa2a366e2a04998f48e4c905cb1",
+    "source_price_hash": "50910ce44d2ab354393e2a7bd04ff6301eb0d9a045c6bfd1ff16af530f2cbe65",
     "trigger_types": [
       "macd_cross_above_signal",
       "volume_anomaly"
@@ -82,6 +96,7 @@
   "source_refs": [
     "data/wiki/inbox/market-security_f18cd57a5e086583c861-macd_cross_above_signal-3882d9f8f534.md",
     "data/wiki/inbox/market-security_f18cd57a5e086583c861-macd_cross_above_signal-f9dd1d50d72c.md",
+    "data/wiki/inbox/market-security_f18cd57a5e086583c861-volume_anomaly-18a17447098d.md",
     "data/wiki/inbox/market-security_f18cd57a5e086583c861-volume_anomaly-7c51bf9d787f.md",
     "data/wiki/inbox/market-security_f18cd57a5e086583c861-volume_anomaly-cd6b2f9bac6c.md",
     "https://www.sec.gov/Archives/edgar/data/1443669/000144366926000010/0001443669-26-000010-index.htm"

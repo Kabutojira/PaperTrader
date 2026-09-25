@@ -4,14 +4,70 @@
   "inputs": {
     "assessment_state": "2026-08-06T18:47:30Z",
     "maintenance_mode": "refresh",
+    "market_data_as_of": "2026-09-25T19:05:53Z",
+    "market_data_date": "2026-09-24",
+    "period_end": "2026-09-24",
+    "period_start": "2026-08-26",
     "research_page": "data/wiki/securities/security_a9eb9838940ef5ceaa0c.md",
-    "security_id": "security_a9eb9838940ef5ceaa0c"
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_a9eb9838940ef5ceaa0c:allocation-maintenance:2026-08-06T18:47:30Z",
+        "observed_at": "2026-09-23T18:47:42Z",
+        "prompt": "Revalidate security_a9eb9838940ef5ceaa0c with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_flnc_q3_2026_10q",
+          "source_flnc_q3_2026_earnings"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_a9eb9838940ef5ceaa0c:cc6b59f5ef21be8c430f:2026-09-24",
+        "market_data_date": "2026-09-24",
+        "observed_at": "2026-09-25T19:05:53Z",
+        "prompt": "Research security_a9eb9838940ef5ceaa0c with high priority after price-action alerts: rsi_oversold; decide what changed and whether to act.",
+        "rsi_attention": {
+          "episode_id": "rsi_64e457b49e6e24c4b34cd852",
+          "observed_session": "2026-09-24",
+          "original_created_at": "2026-09-25T19:05:53Z",
+          "rsi": "27.39851252",
+          "source_price_hash": "ba0b17a3353dcc1f3a353aeb5c96d7a928537c5afa2ac67511d09edf8eb3cec7",
+          "threshold": "30",
+          "transitions": [
+            "strengthened"
+          ]
+        },
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_a9eb9838940ef5ceaa0c-rsi_oversold-87f176686042.md"
+        ],
+        "trigger_types": [
+          "rsi_oversold"
+        ]
+      }
+    ],
+    "rsi_attention": {
+      "episode_id": "rsi_64e457b49e6e24c4b34cd852",
+      "observed_session": "2026-09-24",
+      "original_created_at": "2026-09-25T19:05:53Z",
+      "rsi": "27.39851252",
+      "source_price_hash": "ba0b17a3353dcc1f3a353aeb5c96d7a928537c5afa2ac67511d09edf8eb3cec7",
+      "threshold": "30",
+      "transitions": [
+        "strengthened"
+      ]
+    },
+    "security_id": "security_a9eb9838940ef5ceaa0c",
+    "source_price_hash": "ba0b17a3353dcc1f3a353aeb5c96d7a928537c5afa2ac67511d09edf8eb3cec7",
+    "trigger_types": [
+      "rsi_oversold"
+    ]
   },
-  "objective": "Revalidate security_a9eb9838940ef5ceaa0c with current primary evidence and write one comparable allocation assessment.",
+  "objective": "Revalidate security_a9eb9838940ef5ceaa0c with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_a9eb9838940ef5ceaa0c with high priority after price-action alerts: rsi_oversold; decide what changed and whether to act.",
   "operation_id": "01M37SGN5GF70DYNX3ZSZNC1QH",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_a9eb9838940ef5ceaa0c-rsi_oversold-87f176686042.md",
     "source_flnc_q3_2026_10q",
     "source_flnc_q3_2026_earnings"
   ]

@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-08-08"
-updated: "2026-09-24"
+updated: "2026-09-25"
 provenance: repository-contract
 ---
 
@@ -4900,3 +4900,65 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Published investor decision snapshot `decision_cb396888ef82e2d215d9`.
 
 - Generated canonical [[daily-reports/daily-report_20260924]] for run `daily-20260924T184801Z`.
+
+## 2026-09-25
+
+- Created candidate packet [[inbox/market-security_59304f90c440def31dc5-rsi_oversold-35152eacefc5]] (35152eacefc5).
+
+- Created candidate packet [[inbox/market-security_664f93a7eaca72e76e9b-macd_cross_below_signal-709b7d48c7f8]] (709b7d48c7f8).
+
+- Created candidate packet [[inbox/market-security_6ad1af8d10d6276a0221-macd_cross_above_signal-fc616bc5927d]] (fc616bc5927d).
+
+- Created candidate packet [[inbox/market-security_6cf75bd0ec0aa2a20148-bollinger_above_upper-1c37c4640fc2]] (1c37c4640fc2).
+
+- Created candidate packet [[inbox/market-security_6cf75bd0ec0aa2a20148-rsi_overbought-9e046187d873]] (9e046187d873).
+
+- Created candidate packet [[inbox/market-security_6cf75bd0ec0aa2a20148-volume_anomaly-eca44104d625]] (eca44104d625).
+
+- Created candidate packet [[inbox/market-security_7ca095d63423c55a90e3-bollinger_above_upper-2d7b52ab5cf5]] (2d7b52ab5cf5).
+
+- Created candidate packet [[inbox/market-security_8a5c43888d224de85c69-rsi_oversold-7072b69ac454]] (7072b69ac454).
+
+- Created candidate packet [[inbox/market-security_95351d928b674bbdf687-bollinger_above_upper-7d7192175331]] (7d7192175331).
+
+- Created candidate packet [[inbox/market-security_95351d928b674bbdf687-rsi_overbought-b929155a4ac2]] (b929155a4ac2).
+
+- Created candidate packet [[inbox/market-security_95351d928b674bbdf687-volume_anomaly-baf6fd98f3b4]] (baf6fd98f3b4).
+
+- Created candidate packet [[inbox/market-security_96ba305ee7cd586bc348-volume_anomaly-55ab37e01463]] (55ab37e01463).
+
+- Created candidate packet [[inbox/market-security_a9eb9838940ef5ceaa0c-rsi_oversold-87f176686042]] (87f176686042).
+
+- Created candidate packet [[inbox/market-security_b2116dcf976c96974d7b-bollinger_below_lower-4e9f92c3ade3]] (4e9f92c3ade3).
+
+- Created candidate packet [[inbox/market-security_c9a37d277445869a8809-volume_anomaly-da215c897da5]] (da215c897da5).
+
+- Created candidate packet [[inbox/market-security_cc4dcb8f002b61dffe00-bollinger_below_lower-1e5a0379c26f]] (1e5a0379c26f).
+
+- Created candidate packet [[inbox/market-security_cc4dcb8f002b61dffe00-macd_cross_below_signal-787c04bbbc17]] (787c04bbbc17).
+
+- Created candidate packet [[inbox/market-security_ccb25582c0392492fe9e-bollinger_above_upper-ab8c7bebe8b5]] (ab8c7bebe8b5).
+
+- Created candidate packet [[inbox/market-security_ccb25582c0392492fe9e-macd_cross_above_signal-45bd79a57a02]] (45bd79a57a02).
+
+- Created candidate packet [[inbox/market-security_ccb25582c0392492fe9e-volume_anomaly-9c18f8d9013d]] (9c18f8d9013d).
+
+- Created candidate packet [[inbox/market-security_d12e746b3c9d392183cc-bollinger_above_upper-e72058a6c5b4]] (e72058a6c5b4).
+
+- Created candidate packet [[inbox/market-security_d12e746b3c9d392183cc-rsi_overbought-8e3c7194b4e5]] (8e3c7194b4e5).
+
+- Created candidate packet [[inbox/market-security_dfa34d4b9050964b465e-bollinger_above_upper-7aaa09e4fcb5]] (7aaa09e4fcb5).
+
+- Created candidate packet [[inbox/market-security_dfa34d4b9050964b465e-rsi_overbought-65a62bb2436c]] (65a62bb2436c).
+
+- Created candidate packet [[inbox/market-security_ef418f5ccc7dc5be8e65-bollinger_below_lower-e4248e74634d]] (e4248e74634d).
+
+- Created candidate packet [[inbox/market-security_ef418f5ccc7dc5be8e65-volume_anomaly-9d5076893945]] (9d5076893945).
+
+- Created candidate packet [[inbox/market-security_f18cd57a5e086583c861-bollinger_above_upper-0d05b205832e]] (0d05b205832e).
+
+- Created candidate packet [[inbox/market-security_f18cd57a5e086583c861-rsi_overbought-bbc8c08dc1b5]] (bbc8c08dc1b5).
+
+- Created candidate packet [[inbox/market-security_f18cd57a5e086583c861-volume_anomaly-18a17447098d]] (18a17447098d).
+
+- Created candidate packet [[inbox/market-security_fe4648901e7675f157fd-volume_anomaly-cff91c2ffc03]] (cff91c2ffc03).

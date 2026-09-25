@@ -1,0 +1,120 @@
+{
+  "checkpoints": [
+    {
+      "index": 0,
+      "kind": "preparation",
+      "operation_id": "",
+      "operation_type": "",
+      "profile": "",
+      "recorded_at": "2026-09-25T19:10:49Z",
+      "terminal_status": ""
+    }
+  ],
+  "completed_at": "",
+  "completion_at": "",
+  "daily_cycle_id": "daily-20260925T190546Z",
+  "daily_run_version": 2,
+  "fill_outcomes": [],
+  "final_commit_identity": "",
+  "final_commit_sha": "",
+  "finalization_at": "",
+  "finalization_commit_identity": "",
+  "maximum_operations": 5,
+  "model_budget_limit": "100",
+  "model_budget_used": "0",
+  "next_checkpoint_index": 1,
+  "operating_date": "2026-09-25",
+  "operation_count": 0,
+  "operations_accepted": [],
+  "operations_attempted": [],
+  "originating_github_run_id": "36177311537",
+  "podcast_audio_path": "",
+  "podcast_commit_identity": "",
+  "podcast_operation_id": "",
+  "podcast_page_path": "",
+  "podcast_status": "pending",
+  "podcast_text_at": "",
+  "preparation_at": "2026-09-25T19:05:53Z",
+  "preparation_errors": [
+    "classifier blocked for data/wiki/inbox/market-security_59304f90c440def31dc5-rsi_oversold-35152eacefc5.md",
+    "classifier blocked for data/wiki/inbox/market-security_6ad1af8d10d6276a0221-macd_cross_above_signal-fc616bc5927d.md",
+    "classifier blocked for data/wiki/inbox/market-security_6cf75bd0ec0aa2a20148-volume_anomaly-eca44104d625.md",
+    "classifier blocked for data/wiki/inbox/market-security_8a5c43888d224de85c69-rsi_oversold-7072b69ac454.md",
+    "classifier blocked for data/wiki/inbox/market-security_95351d928b674bbdf687-volume_anomaly-baf6fd98f3b4.md",
+    "classifier blocked for data/wiki/inbox/market-security_96ba305ee7cd586bc348-volume_anomaly-55ab37e01463.md",
+    "classifier blocked for data/wiki/inbox/market-security_a9eb9838940ef5ceaa0c-rsi_oversold-87f176686042.md",
+    "classifier blocked for data/wiki/inbox/market-security_b2116dcf976c96974d7b-bollinger_below_lower-4e9f92c3ade3.md",
+    "classifier blocked for data/wiki/inbox/market-security_c9a37d277445869a8809-volume_anomaly-da215c897da5.md",
+    "classifier blocked for data/wiki/inbox/market-security_cc4dcb8f002b61dffe00-bollinger_below_lower-1e5a0379c26f.md",
+    "classifier blocked for data/wiki/inbox/market-security_ccb25582c0392492fe9e-macd_cross_above_signal-45bd79a57a02.md",
+    "classifier blocked for data/wiki/inbox/market-security_ccb25582c0392492fe9e-volume_anomaly-9c18f8d9013d.md",
+    "classifier blocked for data/wiki/inbox/market-security_ef418f5ccc7dc5be8e65-bollinger_below_lower-e4248e74634d.md",
+    "classifier blocked for data/wiki/inbox/market-security_ef418f5ccc7dc5be8e65-volume_anomaly-9d5076893945.md",
+    "classifier blocked for data/wiki/inbox/market-security_f18cd57a5e086583c861-volume_anomaly-18a17447098d.md",
+    "classifier blocked for data/wiki/inbox/market-security_fe4648901e7675f157fd-volume_anomaly-cff91c2ffc03.md"
+  ],
+  "profile_limits": {
+    "analyst": {
+      "maximum_turns": 80,
+      "model": "gpt-5.6-terra",
+      "mutation_policy": "routine_research",
+      "policy_version": "profile-router-v1",
+      "reasoning_effort": "medium",
+      "timeout_seconds": 1200,
+      "weighted_cost": "2.5"
+    },
+    "deep": {
+      "maximum_turns": 160,
+      "model": "gpt-5.6-sol",
+      "mutation_policy": "full_research",
+      "policy_version": "profile-router-v1",
+      "reasoning_effort": "medium",
+      "timeout_seconds": 1800,
+      "weighted_cost": "5"
+    },
+    "final_review": {
+      "maximum_turns": 80,
+      "model": "gpt-6-astra",
+      "mutation_policy": "review_only",
+      "policy_version": "profile-router-v1",
+      "reasoning_effort": "high",
+      "timeout_seconds": 1800,
+      "weighted_cost": "10"
+    },
+    "scout": {
+      "maximum_turns": 32,
+      "model": "gpt-5.6-luna",
+      "mutation_policy": "triage_only",
+      "policy_version": "profile-router-v1",
+      "reasoning_effort": "low",
+      "timeout_seconds": 600,
+      "weighted_cost": "1"
+    }
+  },
+  "queue_dispositions": [
+    "protected_monitoring:01M32RBCY80S598GJBB6YW4TDY",
+    "allocation_maintenance:01M3CZBCK81WWTH9NXP81RKA84",
+    "01KZCFVCT82RJFGB5HESAFJB6B:blocked:dependency_unavailable:01KZ9ZJVER177B5ASW4ZMQHEG3",
+    "01KZGT11ZGR8JEKWC3RXGSS544:blocked:dependency_unavailable:01KZGT11ZGBPRBKV129FD00TH1",
+    "01M0FWY80RRY528G4HT2QM3N1Y:blocked:dependency_unavailable:01M07XKZS0JKBQM0THMPJGWEK5",
+    "01M3ABY5J0F30KEW2JRQJ8BS59:cancelled:superseded_allocation_intent:allocation_plan_eb021d4f32b8e256155d"
+  ],
+  "remaining_operations": 5,
+  "report_path": "",
+  "research_cutoff_at": "",
+  "run_id": "daily-20260925T190546Z",
+  "snapshot_id": "",
+  "source_sha": "ef5d8a123d1d1d27c29e22b641b68e6ccfcb45df",
+  "started_at": "2026-09-25T19:05:46Z",
+  "status": "running",
+  "trigger": "schedule",
+  "weighted_model_budget": "100",
+  "weighted_model_budget_used": "0",
+  "workflow_attempts": [
+    {
+      "github_run_id": "36177311537",
+      "resumed_at": "2026-09-25T19:05:46Z",
+      "workflow_attempt": "1"
+    }
+  ]
+}
