@@ -1375,3 +1375,7 @@ at a dated entry boundary after the live daily run crossed the configured 5,000-
 - Updated [[securities/security_fb87fac302a5446a1ced|Lithium Americas Corp. common shares (NYSE: LAC)]] from Q2 2026 filings, the August Yorkville financing, the current SEC submissions index, and the October oversold alert window. Valuation remains unsupported and no strategy was justified.
 
 - Generated canonical [[daily-reports/daily-report_20261015]] for run `daily-20261015T170629Z`.
+
+- Published investor decision snapshot `decision_3ae00883320e1e44dca3`.
+
+- Generated canonical [[daily-reports/daily-report_20261015]] for run `daily-20261015T184652Z`.

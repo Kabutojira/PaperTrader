@@ -7,8 +7,8 @@ tags:
 created: "2026-10-15"
 updated: "2026-10-15"
 provenance: deterministic-report-generator
-run_id: "daily-20261015T170629Z"
-snapshot_id: "decision_6abcd17bed9d2596a85c"
+run_id: "daily-20261015T184652Z"
+snapshot_id: "decision_3ae00883320e1e44dca3"
 ---
 
 > This generated report contains **2 pages**. Page **1 of 2**. [[daily-reports/daily-report_20261015|Report start]] · [[daily-reports/daily-report_20261015-detail-0002|Next page]]
@@ -23,7 +23,7 @@ snapshot_id: "decision_6abcd17bed9d2596a85c"
 
 - **Investment data:** Portfolio state safe — research gaps remain
 - **Operations:** Attention required
-- **As of:** `2026-10-15T17:27:05Z`
+- **As of:** `2026-10-15T19:02:48Z`
 - **Cash:** 9703.02 EUR (97.1213%)
 - **Gross exposure:** 287.6 EUR
 - **Target cash:** 9703.02 EUR (97.1213%)
@@ -40,6 +40,12 @@ No actionable trade signals.
 
 ## Price action alerts
 
+- **[108490 — ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c): Rsi Oversold** (`2026-10-15`)
+  - Research: **skipped**
+  - Decision: Queue triage disposition
+- **[108490 — ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c): Bollinger Below Lower** (`2026-10-15`)
+  - Research: **skipped**
+  - Decision: Queue triage disposition
 - **[SSUN.VI — Samsung Electronics Co., Ltd.](securities/security_d08d763780400dfbffce): Bollinger Below Lower** (`2026-10-15`)
   - Research: **blocked**
   - Decision: High-priority security research is blocked. scope\_deferred\_for\_capacity
@@ -58,12 +64,6 @@ No actionable trade signals.
 - **[EVK — Evonik Industries AG](security-catalog#security-security_ccb25582c0392492fe9e): Rsi Overbought** (`2026-10-15`)
   - Research: **skipped**
   - Decision: bearish\_alert\_unowned
-- **[108490 — ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c): Rsi Oversold** (`2026-10-15`)
-  - Research: **skipped**
-  - Decision: Queue triage disposition
-- **[108490 — ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c): Bollinger Below Lower** (`2026-10-15`)
-  - Research: **skipped**
-  - Decision: Queue triage disposition
 - **[VRT — Vertiv Holdings Co](securities/security_cb88f9154cfeaa15e878): Bollinger Below Lower** (`2026-10-14`)
   - Research: **ready**
   - Decision: High-priority security research is ready to run.
@@ -143,11 +143,11 @@ No actionable trade signals.
   - Research: **ready**
   - Decision: High-priority security research is ready to run.
 - **[LAC — Lithium Americas Corp.](securities/security_fb87fac302a5446a1ced): Rsi Oversold** (`2026-10-14`)
-  - Research: **ready**
-  - Decision: High-priority security research is ready to run.
+  - Research: **failed**
+  - Decision: The bounded Lithium Americas review completed its source registration, security update, wiki research, unsupported-valuation assessment, and required dependent idea refresh enqueue, but the operation cannot be accepted. The immutable assessment version recorded page hash recorded source state before a required YAML frontmatter repair; the final lint-clean page hashes to recorded source state. Appending a correction would create two immutable versions for this operation and violate the exactly-one-version invariant, while hand-editing immutable history is forbidden. Parent rollback and a clean retry are required.
 - **[LAC — Lithium Americas Corp.](securities/security_fb87fac302a5446a1ced): Bollinger Below Lower** (`2026-10-14`)
-  - Research: **ready**
-  - Decision: High-priority security research is ready to run.
+  - Research: **failed**
+  - Decision: The bounded Lithium Americas review completed its source registration, security update, wiki research, unsupported-valuation assessment, and required dependent idea refresh enqueue, but the operation cannot be accepted. The immutable assessment version recorded page hash recorded source state before a required YAML frontmatter repair; the final lint-clean page hashes to recorded source state. Appending a correction would create two immutable versions for this operation and violate the exactly-one-version invariant, while hand-editing immutable history is forbidden. Parent rollback and a clean retry are required.
 - **[KTOS — Kratos Defense &amp; Security Solutions, Inc.](securities/security_0cf8075039299094d614): Rsi Oversold** (`2026-10-14`)
   - Research: **ready**
   - Decision: High-priority security research is ready to run.
@@ -386,6 +386,10 @@ No actionable trade signals.
   - Research: **skipped**
   - Decision: bearish\_alert\_unowned
 
+## Research decisions this run
+
+- **[LAC](securities/security_fb87fac302a5446a1ced) — failed:** The bounded Lithium Americas review completed its source registration, security update, wiki research, unsupported-valuation assessment, and required dependent idea refresh enqueue, but the operation cannot be accepted. The immutable assessment version recorded page hash recorded source state before a required YAML frontmatter repair; the final li…
+
 ## Leading Buy / Initiate research candidate
 
 - **NVDA — NVIDIA Corporation:** Buy / Initiate; expected return 37%; The assessment's registered evidence is not fresh.
@@ -455,9 +459,14 @@ No pending orders.
 
 ## 6. Research changes
 
+### Evidence-linked narrative
+
+- Lithium Americas review failed final immutable-page binding validation; no research conclusion from this attempt should be accepted until parent rollback and clean retry. Evidence is retained in the canonical run artifacts.
+
 - [[model-portfolio|PaperTrader model portfolio]]
 - [[performance|PaperTrader performance and risk]]
 - [[research-catalog|PaperTrader research catalog]]
+- [[securities/security_fb87fac302a5446a1ced|Lithium Americas Corp. common shares (NYSE: LAC)]]
 - [[security-catalog|PaperTrader tracked securities]]
 - [[signals|PaperTrader signals and research alerts]]
 - [[system-status|PaperTrader system status and audit]]
@@ -466,8 +475,8 @@ No pending orders.
 
 - Investment data status: **degraded**
 - Operations status: **degraded**
-- Assessments: 0/83
-- Fresh-evidence assessments: 0/83
+- Assessments: 1/83
+- Fresh-evidence assessments: 1/83
 - Relationship reviews: 2/83
 - Accepted relationships: 2
 - Ready or active strategies: 0
@@ -490,7 +499,7 @@ No pending orders.
 - **affects candidate** — XMTR Xometry, Inc.: Xometry security review blocked by issuer identity conflict
 - **affects candidate**: Hermes operation validation failed: [[securities/security_4627aea1bf7d8943d3d8|Security research for SGML on 2026-08-17]]
 - **affects candidate**: Hermes operation validation failed: [[securities/security_89969b7dac39b7db5661|Security research for YEC.F on 2026-08-22]]
-- **affects candidate**: Hermes operation validation failed: [[securities/security_fb87fac302a5446a1ced|Security research for LAC on 2026-08-08]]
+- **affects candidate**: Hermes operation validation failed: [[securities/security_fb87fac302a5446a1ced|Security research for LAC on 2026-10-15]]
 - **affects candidate**: Hermes operation validation failed: [[security-catalog#security-security_fe4648901e7675f157fd|Security research for ANIC.L on 2026-09-11]]
 - **affects candidate** — ABBNY ABB Ltd: ABB assessment provenance does not match corrected final research page
 - **affects candidate**: Hermes operation validation failed: [[security-catalog#security-security_8d11e65cd0de084ee461|Security research for LMND on 2026-09-11]]
@@ -516,104 +525,104 @@ No pending orders.
 
 - Report date: 2026-10-15
 - Run status: degraded
-- Generated (UTC): `2026-10-15T17:27:05Z`
+- Generated (UTC): `2026-10-15T19:02:48Z`
 
 ### Complete market freshness
 
 | Security | Price date | Retrieved at | Status | Error |
 | --- | --- | --- | --- | --- |
-| [[securities/security_099561384c0f5e697727|CSIQ]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_0a56aa634d077fe5796f|AMAT]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_0b67d6c8e3fd3366a257|POWL]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_0c8b3c4291cd97f56d8c|108490]] | 2026-10-15 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_0cf8075039299094d614|KTOS]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_18a3ab0ee6086ee85d0f|ETN]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_1e8fbdb0f45f2b413e00|PYPL]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_1f9cce545ede94cd6349|ISRG]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_2010347f1a0a5ea60f47|SPOT]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_204be2a44063993de1a8|MSFT]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_22c2b9d782a62d7a9b86|ATKR]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_2433a056eb0c55961fcc|AMZN]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_2c779e81c27b78c556bb|TX]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_2dbe878dfc899d7ee867|FCX]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_33d9c44facc75c726c7d|NVDA]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_37ddcbdaad296ad831f2|COIN]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_3853e54c619d597dcaa1|NIB.F]] | 2026-10-15 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_3a75fc1ccca2ee7c937a|QCOM]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_3e597863f00753e8c65c|BE]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_4627aea1bf7d8943d3d8|SGML]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_47a0b06f6c6c478d7c1e|NBIS]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_488a9d7f7a8573597724|PWR]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_4935c6e39e38273a1731|MELI]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_4b61970aa8f574446819|GEV]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_567d0d575bbd30aaa91d|SSU.VI]] | 2026-10-15 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_59304f90c440def31dc5|RTX]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_61567714298b9563d1a9|WTI]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_664f93a7eaca72e76e9b|SPCX]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_66cdcf90aac0d83e76f3|ALB]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[security-catalog#security-security_6ac6a6268ca7c08829ae|DDD]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_6ad1af8d10d6276a0221|SCCO]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_6cf75bd0ec0aa2a20148|TWST]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_6f9a1450edceb9307c9a|ANET]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_715bde20b6e1e1320c1a|DLO]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[security-catalog#security-security_798e2fb944d740aca308|AKE]] | 2026-10-15 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_7bf8f4c9cc12ae410e40|ABCL]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_7ca095d63423c55a90e3|RKLB]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_83a56943e18793f685b0|TXN]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[security-catalog#security-security_84705b27d28a94f2b318|SSYS]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_8472507d7d320aa388a7|CRWD]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_89969b7dac39b7db5661|YEC.F]] | 2026-10-15 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_8a5c43888d224de85c69|PLS.AX]] | 2026-10-15 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_8b703a8adf5f864acaa4|PRX]] | 2026-10-15 | 2026-10-15T17:06:33Z | ok | — |
-| [[security-catalog#security-security_8d11e65cd0de084ee461|LMND]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_95351d928b674bbdf687|DNA]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_96ba305ee7cd586bc348|FUC.F]] | 2026-10-15 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_97f38b2cb2d5ef127f5a|PL]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_98470cfc01bbcde78fc2|SOFI]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_98a1943771da875efed5|NOMD]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_9b0db3bc77914b23a307|CSL]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_9d4049ed6669a52815d6|SQM]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_a5dc16f3f4b245e6c168|LUNR]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_a9eb9838940ef5ceaa0c|FLNC]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_ad3b1f8f59fd599f079a|HOOD]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_ad5917642acbba28c1f2|TDY]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_b19e8f0343b7da1f3c03|03388]] | 2026-10-15 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_b1f2c48e1a744f5ecf67|LH]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_b2116dcf976c96974d7b|VALE]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[security-catalog#security-security_b61c642d038d71be3821|MTLS]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_bdc2f87dadf134760c3a|PLTR]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_c120e9f26ebb6159adf9|ABBNY]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_c150f31c30afdb4a85f9|CROX]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_c2e6db30cb59254de418|XMTR]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_c5a9e460d3350284d157|VLO]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_c86bb4e75658c07142cf|GOOGL]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_c9a37d277445869a8809|RBLX]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_cb88f9154cfeaa15e878|VRT]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]] | 2026-10-15 | 2026-10-15T17:06:33Z | ok | — |
-| [[security-catalog#security-security_ccb25582c0392492fe9e|EVK]] | 2026-10-15 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_cd492d97064d8574156e|MP]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_ce9b78a4d0773c950765|TSM]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_d08d763780400dfbffce|SSUN.VI]] | 2026-10-15 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_d12e746b3c9d392183cc|META]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_d202772e4e62065cd17a|FISV]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_dc7a111e297be528d96b|TSLA]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_dc8486c1d61df62a22fd|SU]] | 2026-10-15 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_de0d83229b369a426b99|TCEHY]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_dfa34d4b9050964b465e|INTC]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_e19c7fe27fbcc4cd923d|AD]] | 2026-10-15 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_e4822686f60a96824b6e|UBER]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_eca976f0076a425ea1bb|PATH]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_ed7d5b616a196969c815|RXRX]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_ef35e41886220d51c22c|ASML]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[security-catalog#security-security_ef418f5ccc7dc5be8e65|BAS]] | 2026-10-15 | 2026-10-15T17:06:33Z | ok | — |
-| [[security-catalog#security-security_f18cd57a5e086583c861|PRLB]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_f2b9760d847b2ba59324|ENPH]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_f34181f3df32080a91d1|DPZ]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_fb87fac302a5446a1ced|LAC]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
-| [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]] | 2026-10-15 | 2026-10-15T17:06:33Z | ok | — |
-| [[securities/security_fe5539a7d3fd9d553bce|MSTR]] | 2026-10-14 | 2026-10-15T17:06:33Z | ok | — |
+| [[securities/security_099561384c0f5e697727|CSIQ]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_0a56aa634d077fe5796f|AMAT]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_0b67d6c8e3fd3366a257|POWL]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_0c8b3c4291cd97f56d8c|108490]] | 2026-10-15 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_0cf8075039299094d614|KTOS]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_18a3ab0ee6086ee85d0f|ETN]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_1e8fbdb0f45f2b413e00|PYPL]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_1f9cce545ede94cd6349|ISRG]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_2010347f1a0a5ea60f47|SPOT]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_204be2a44063993de1a8|MSFT]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_22c2b9d782a62d7a9b86|ATKR]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_2433a056eb0c55961fcc|AMZN]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_2c779e81c27b78c556bb|TX]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_2dbe878dfc899d7ee867|FCX]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_33d9c44facc75c726c7d|NVDA]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_37ddcbdaad296ad831f2|COIN]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_3853e54c619d597dcaa1|NIB.F]] | 2026-10-15 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_3a75fc1ccca2ee7c937a|QCOM]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_3e597863f00753e8c65c|BE]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_4627aea1bf7d8943d3d8|SGML]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_47a0b06f6c6c478d7c1e|NBIS]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_488a9d7f7a8573597724|PWR]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_4935c6e39e38273a1731|MELI]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_4b61970aa8f574446819|GEV]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_567d0d575bbd30aaa91d|SSU.VI]] | 2026-10-15 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_59304f90c440def31dc5|RTX]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_61567714298b9563d1a9|WTI]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_664f93a7eaca72e76e9b|SPCX]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_66cdcf90aac0d83e76f3|ALB]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[security-catalog#security-security_6ac6a6268ca7c08829ae|DDD]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_6ad1af8d10d6276a0221|SCCO]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_6cf75bd0ec0aa2a20148|TWST]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_6f9a1450edceb9307c9a|ANET]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_715bde20b6e1e1320c1a|DLO]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[security-catalog#security-security_798e2fb944d740aca308|AKE]] | 2026-10-15 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_7bf8f4c9cc12ae410e40|ABCL]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_7ca095d63423c55a90e3|RKLB]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_83a56943e18793f685b0|TXN]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[security-catalog#security-security_84705b27d28a94f2b318|SSYS]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_8472507d7d320aa388a7|CRWD]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_89969b7dac39b7db5661|YEC.F]] | 2026-10-15 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_8a5c43888d224de85c69|PLS.AX]] | 2026-10-15 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_8b703a8adf5f864acaa4|PRX]] | 2026-10-15 | 2026-10-15T18:46:57Z | ok | — |
+| [[security-catalog#security-security_8d11e65cd0de084ee461|LMND]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_95351d928b674bbdf687|DNA]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_96ba305ee7cd586bc348|FUC.F]] | 2026-10-15 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_97f38b2cb2d5ef127f5a|PL]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_98470cfc01bbcde78fc2|SOFI]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_98a1943771da875efed5|NOMD]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_9b0db3bc77914b23a307|CSL]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_9d4049ed6669a52815d6|SQM]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_a5dc16f3f4b245e6c168|LUNR]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_a9eb9838940ef5ceaa0c|FLNC]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_ad3b1f8f59fd599f079a|HOOD]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_ad5917642acbba28c1f2|TDY]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_b19e8f0343b7da1f3c03|03388]] | 2026-10-15 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_b1f2c48e1a744f5ecf67|LH]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_b2116dcf976c96974d7b|VALE]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[security-catalog#security-security_b61c642d038d71be3821|MTLS]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_bdc2f87dadf134760c3a|PLTR]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_c120e9f26ebb6159adf9|ABBNY]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_c150f31c30afdb4a85f9|CROX]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_c2e6db30cb59254de418|XMTR]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_c5a9e460d3350284d157|VLO]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_c86bb4e75658c07142cf|GOOGL]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_c9a37d277445869a8809|RBLX]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_cb88f9154cfeaa15e878|VRT]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]] | 2026-10-15 | 2026-10-15T18:46:57Z | ok | — |
+| [[security-catalog#security-security_ccb25582c0392492fe9e|EVK]] | 2026-10-15 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_cd492d97064d8574156e|MP]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_ce9b78a4d0773c950765|TSM]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_d08d763780400dfbffce|SSUN.VI]] | 2026-10-15 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_d12e746b3c9d392183cc|META]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_d202772e4e62065cd17a|FISV]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_dc7a111e297be528d96b|TSLA]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_dc8486c1d61df62a22fd|SU]] | 2026-10-15 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_de0d83229b369a426b99|TCEHY]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_dfa34d4b9050964b465e|INTC]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_e19c7fe27fbcc4cd923d|AD]] | 2026-10-15 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_e4822686f60a96824b6e|UBER]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_eca976f0076a425ea1bb|PATH]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_ed7d5b616a196969c815|RXRX]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_ef35e41886220d51c22c|ASML]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[security-catalog#security-security_ef418f5ccc7dc5be8e65|BAS]] | 2026-10-15 | 2026-10-15T18:46:57Z | ok | — |
+| [[security-catalog#security-security_f18cd57a5e086583c861|PRLB]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_f2b9760d847b2ba59324|ENPH]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_f34181f3df32080a91d1|DPZ]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_fb87fac302a5446a1ced|LAC]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
+| [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]] | 2026-10-15 | 2026-10-15T18:46:57Z | ok | — |
+| [[securities/security_fe5539a7d3fd9d553bce|MSTR]] | 2026-10-14 | 2026-10-15T18:46:57Z | ok | — |
 
 ### Orders and executions
 
@@ -715,7 +724,7 @@ No pending orders.
 | — | [[securities/security_ef35e41886220d51c22c|ASML]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; A supportable valuation is unavailable.; A current accepted idea-to-security relationship is unavailable.; A supportable scenario valuation is unavailable. |
 | — | [[securities/security_f2b9760d847b2ba59324|ENPH]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; A supportable valuation is unavailable.; A current accepted idea-to-security relationship is unavailable.; A supportable scenario valuation is unavailable. |
 | — | [[securities/security_f34181f3df32080a91d1|DPZ]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_fb87fac302a5446a1ced|LAC]] | 0% | excluded | The current assessment marks the security ineligible.; The comparable assessment is stale or expired.; Assessment confidence is below the configured minimum.; A supportable valuation is unavailable.; A current accepted idea-to-security relationship is unavailable.; The effective score does not beat the configured cash hurdle. |
+| — | [[securities/security_fb87fac302a5446a1ced|LAC]] | 0% | excluded | Assessment confidence is below the configured minimum.; A supportable valuation is unavailable.; A current accepted idea-to-security relationship is unavailable.; A supportable scenario valuation is unavailable. |
 | — | [[securities/security_fe5539a7d3fd9d553bce|MSTR]] | 0% | excluded | The assessment's registered evidence is not fresh.; The comparable assessment is stale or expired.; Base-case return is below threshold.; Bear/base payoff is below the starter threshold.; Bear-case loss exceeds the starter limit.; Expected/bear payoff is below the starter threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below the starter threshold.; Research quality must be strictly above the configured threshold.; A current accepted idea-to-security relationship is unavailable. |
 
 ### Research-operation audit
@@ -801,6 +810,7 @@ No pending orders.
 | [[inbox/market-security_567d0d575bbd30aaa91d-bollinger_below_lower-6f69e9b23544|Wiki ingest for SSU.VI — Bollinger below lower on 2026-10-15]] | [[inbox/market-security_567d0d575bbd30aaa91d-bollinger_below_lower-6f69e9b23544|SSU.VI — Bollinger below lower]] | skipped | superseded indicator alert:Wiki ingest for SSU.VI — Bollinger below lower on 2026-10-15 |
 | [[inbox/market-security_567d0d575bbd30aaa91d-volume_anomaly-05d8f73e2b22|Wiki ingest for SSU.VI — Volume anomaly on 2026-10-15]] | [[inbox/market-security_567d0d575bbd30aaa91d-volume_anomaly-05d8f73e2b22|SSU.VI — Volume anomaly]] | skipped | superseded indicator alert:Wiki ingest for SSU.VI — Volume anomaly on 2026-10-15 |
 | [[inbox/market-security_d08d763780400dfbffce-bollinger_below_lower-7296dd71702a|Wiki ingest for SSUN.VI — Bollinger below lower on 2026-10-15]] | [[inbox/market-security_d08d763780400dfbffce-bollinger_below_lower-7296dd71702a|SSUN.VI — Bollinger below lower]] | skipped | superseded indicator alert:Opportunity research for Market alert for SSUN.VI on 2026-10-15 |
+| [[securities/security_fb87fac302a5446a1ced|Security research for LAC on 2026-10-15]] | [[securities/security_fb87fac302a5446a1ced|LAC]] | failed | retry exhausted:agent result:failed:The bounded Lithium Americas review completed its source registration, security update, wiki research, unsupported-valuation assessment, and required dependent idea refresh enqueue, but the operation cannot be accepted. The immutable assessment version recorded page hash recorded source state before a required YAML frontmatter repair; the final lint-clean page hashes to recorded source state. Appending a correction would create two immutable versions for this operation and violate the exactly-one-version invariant, while hand-editing immutable history is forbidden. Parent rollback and a clean retry are required. |
 
 ### Complete active queue
 
@@ -850,8 +860,7 @@ No pending orders.
 - Ready — [[ideas/idea_ai_infrastructure_power|Idea research for AI infrastructure and power bottlenecks on 2026-08-08]]
 - Blocked — [[relationships/relationship_670ed88c8e4616316a19|Relationship research for Critical minerals and the lithium cycle to Sigma Lithium on 2026-08-08]]
 - Ready — [[relationships/relationship_solar_storage_grid_flnc|Relationship research for Solar, storage, and grid-flexibility reset to Fluence Energy on 2026-08-08]]
-- Ready — [[securities/security_fb87fac302a5446a1ced|Security research for LAC on 2026-08-08]]
-- Waiting — [[relationships/relationship_ad2f37b49980dbc73a08|Relationship research for Critical minerals and the lithium cycle to Lithium Americas on 2026-08-08]]
+- Blocked — [[relationships/relationship_ad2f37b49980dbc73a08|Relationship research for Critical minerals and the lithium cycle to Lithium Americas on 2026-08-08]]
 - Ready — [[ideas/idea_ai_compute_networking_hyperscaler_monetization|Idea research for AI compute, networking, and hyperscaler monetization on 2026-08-09]]
 - Ready — [[ideas/idea_commercial_space_infrastructure|Idea research for Commercial space infrastructure and geospatial data on 2026-08-09]]
 - Ready — [[ideas/idea_digital_finance_crypto_rails|Idea research for Digital finance and crypto rails on 2026-08-09]]
@@ -1452,6 +1461,7 @@ No pending orders.
 - Ready — [[inbox/market-security_d08d763780400dfbffce-bollinger_below_lower-ac4738806b8b|Wiki ingest for SSUN.VI — Bollinger below lower on 2026-10-15]]
 - Blocked — [[securities/security_d08d763780400dfbffce|Security research for SSUN.VI on 2026-10-15]]
 - Ready — [[securities/security_0c8b3c4291cd97f56d8c|Security research for 108490 on 2026-10-15]]
+- Blocked — [[ideas/idea_critical_minerals_lithium|Idea research for Critical minerals and the lithium cycle on 2026-10-15]]
 
 ### Open issues and delivery failures
 
@@ -1466,10 +1476,3 @@ No pending orders.
 - Error — [[system-status|Hermes operation validation failed: Daily podcast for Daily report for 2026-08-06 on 2026-08-06]]: commands\_run does not exactly match deterministic CLI audit receipts
 - Error — [[system-status|Hermes operation validation failed: Quick check research for SPOT on 2026-08-16]]: commands\_run does not exactly match deterministic CLI audit receipts
 - Error — [[system-status|Hermes operation validation failed: Security research for WTI on 2026-08-18]]: Hermes exited with status 1; agent result is missing or a symlink: data/runs/Daily report for 2026-09-06/Security research for WTI on 2026-08-18/agent\_result.json
-- Error — [[system-status|Xometry security review blocked by issuer identity conflict]]: The validated operation payload identifies XMTR with issuer\_id issuer\_0b3fe347955c2ce31e63, while canonical data/tables/securities.csv binds the same immutable security\_id to issuer\_dbdde9b294689a9af3d5. The validated security upsert correctly failed closed with an immutable-identity conflict. Four current primary sources were retained, but no security row, research page, assessment, strategy, signal, order, allocation or accounting state was changed. Resolve the canonical issuer identity and e…
-- Error — [[system-status|Hermes operation validation failed: Security research for SGML on 2026-08-17]]: operation artifact directory is not empty: /\_\_w/PaperTrader/PaperTrader/data/runs/Daily report for 2026-08-17/Security research for SGML on 2026-08-17
-- Error — [[system-status|Hermes operation validation failed: Security research for YEC.F on 2026-08-22]]: Hermes timed out after 1800s; agent result is missing or a symlink: data/runs/Daily report for 2026-09-07/Security research for YEC.F on 2026-08-22/agent\_result.json
-- Error — [[system-status|Hermes operation validation failed: Security research for LAC on 2026-08-08]]: completed security research requires exactly one immutable assessment version; observed claim support must match the retained inspected source excerpt
-- Error — [[system-status|Hermes operation validation failed: Daily podcast for Daily report for 2026-08-05 on 2026-08-05]]: Hermes exited with status 2; agent result is missing or a symlink: data/runs/Daily report for 2026-08-05/Daily podcast for Daily report for 2026-08-05 on 2026-08-05/agent\_result.json
-- Error — [[system-status|Hermes operation validation failed: Security research for ANIC.L on 2026-09-11]]: files\_changed claims paths absent from the actual delta: \['data/operations/operations\_TODO.csv'\]
-- Error — [[system-status|Hermes operation validation failed: Research triage for PRX on 2026-09-17]]: commands\_run claims commands without deterministic CLI audit receipts: \['scripts/papertrader research security-context --security-id PRX'\]

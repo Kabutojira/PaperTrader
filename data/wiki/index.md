@@ -7,17 +7,17 @@ tags:
 created: "2026-10-15"
 updated: "2026-10-15"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_6abcd17bed9d2596a85c"
-as_of: "2026-10-15T17:27:05Z"
+snapshot_id: "decision_3ae00883320e1e44dca3"
+as_of: "2026-10-15T19:02:48Z"
 ---
 
 # PaperTrader
 
-**As of `2026-10-15T17:27:05Z` · Investment data: Portfolio state safe — research gaps remain · Operations: Attention required**
+**As of `2026-10-15T19:02:48Z` · Investment data: Portfolio state safe — research gaps remain · Operations: Attention required**
 
 ## Maintain the current model portfolio
 
-<section class="decision-cards" aria-label="Decision summary"><article class="decision-card" data-status="maintain"><span class="decision-card-label">Stance</span><strong>Maintain the current model portfolio</strong></article><article class="decision-card" data-status="cash"><span class="decision-card-label">Cash</span><strong>97.1213%</strong></article><article class="decision-card" data-status="exposure"><span class="decision-card-label">Gross exposure</span><strong>2.8787%</strong></article><article class="decision-card" data-status="signals"><span class="decision-card-label">Actionable signals</span><strong>0</strong></article><article class="decision-card" data-status="coverage"><span class="decision-card-label">Assessment coverage</span><strong>0/83</strong></article></section>
+<section class="decision-cards" aria-label="Decision summary"><article class="decision-card" data-status="maintain"><span class="decision-card-label">Stance</span><strong>Maintain the current model portfolio</strong></article><article class="decision-card" data-status="cash"><span class="decision-card-label">Cash</span><strong>97.1213%</strong></article><article class="decision-card" data-status="exposure"><span class="decision-card-label">Gross exposure</span><strong>2.8787%</strong></article><article class="decision-card" data-status="signals"><span class="decision-card-label">Actionable signals</span><strong>0</strong></article><article class="decision-card" data-status="coverage"><span class="decision-card-label">Assessment coverage</span><strong>1/83</strong></article></section>
 
 ### Why
 
@@ -62,7 +62,7 @@ Current equity is **9990.62 EUR** with **97.1213% cash**. The target retains **9
 - Cumulative return: **-0.093774764721283228996376%**
 - Running drawdown: **-0.1291540761869237470394460118%**
 - Largest position: **2.878699%**
-- Current assessments: **0/83**
+- Current assessments: **1/83**
 - Relationship reviews: **2/83**
 - Accepted relationships: **2**
 - Market retrieval failures: **0**

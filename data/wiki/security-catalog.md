@@ -7,13 +7,13 @@ tags:
 created: "2026-10-15"
 updated: "2026-10-15"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_6abcd17bed9d2596a85c"
-as_of: "2026-10-15T17:27:05Z"
+snapshot_id: "decision_3ae00883320e1e44dca3"
+as_of: "2026-10-15T19:02:48Z"
 ---
 
 # Securities
 
-**As of `2026-10-15T17:27:05Z`**
+**As of `2026-10-15T19:02:48Z`**
 
 Ticker links open the maintained security analysis. Prices and buy-below levels use each security's listing currency. Return estimates are rounded to whole percentage points, and update dates are shown in UTC.
 
@@ -57,7 +57,7 @@ Ticker links open the maintained security analysis. Prices and buy-below levels 
 | <span id="security-security_dfa34d4b9050964b465e"></span>[INTC — Intel Corporation](securities/security_dfa34d4b9050964b465e) | 98.12 USD | Sell / Avoid | Research incomplete | The assessment's registered evidence is not fresh. | -67% / -21% / 32% | -19% | 62.4 USD | 2026-10-15 / 2026-10-15 | 2026-10-05 |
 | <span id="security-security_1f9cce545ede94cd6349"></span>[ISRG — Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349) | 420.24 USD | Sell / Avoid | Research incomplete | The assessment's registered evidence is not fresh. | -42% / -20% / 4% | -19% | 269.272 USD | 2026-10-15 / 2026-10-15 | 2026-09-11 |
 | <span id="security-security_0cf8075039299094d614"></span>[KTOS — Kratos Defense &amp; Security Solutions, Inc.](securities/security_0cf8075039299094d614) | 39.33 USD | Hold / Watch | Research incomplete | The assessment's registered evidence is not fresh. | -29% / 6% / 62% | 11% | 33.432 USD | 2026-10-15 / 2026-10-15 | 2026-08-19 |
-| <span id="security-security_fb87fac302a5446a1ced"></span>[LAC — Lithium Americas Corp.](securities/security_fb87fac302a5446a1ced) | 2.07 USD | Unrated / Watch | Research incomplete | The current assessment marks the security ineligible. | — / — / — | — | — | 2026-10-15 / 2026-10-15 | 2026-08-15 |
+| <span id="security-security_fb87fac302a5446a1ced"></span>[LAC — Lithium Americas Corp.](securities/security_fb87fac302a5446a1ced) | 2.07 USD | Unrated / Watch | Valuation unsupported | Assessment confidence is below the configured minimum. | — / — / — | — | — | 2026-10-15 / 2026-10-15 | 2026-11-15 |
 | <span id="security-security_b1f2c48e1a744f5ecf67"></span>[LH — Labcorp Holdings Inc.](securities/security_b1f2c48e1a744f5ecf67) | 317.34 USD | Hold / Watch | Research incomplete | The assessment's registered evidence is not fresh. | -20% / -2% / 17% | -2% | 249.22 USD | 2026-10-15 / 2026-10-15 | 2026-09-04 |
 | <span id="security-security_8d11e65cd0de084ee461"></span>[LMND — Lemonade, Inc.](security-catalog#security-security_8d11e65cd0de084ee461) | 43.86 USD | Unrated / Watch | Unassessed | — | — / — / — | — | — | 2026-10-15 / 2026-10-15 | — |
 | <span id="security-security_a5dc16f3f4b245e6c168"></span>[LUNR — Intuitive Machines, Inc.](securities/security_a5dc16f3f4b245e6c168) | 11.02 USD | Unrated / Watch | Valuation unsupported | The assessment's registered evidence is not fresh. | — / — / — | — | — | 2026-10-15 / 2026-10-15 | 2026-09-16 |

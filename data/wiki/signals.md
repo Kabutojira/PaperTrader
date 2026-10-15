@@ -7,13 +7,13 @@ tags:
 created: "2026-10-15"
 updated: "2026-10-15"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_6abcd17bed9d2596a85c"
-as_of: "2026-10-15T17:27:05Z"
+snapshot_id: "decision_3ae00883320e1e44dca3"
+as_of: "2026-10-15T19:02:48Z"
 ---
 
 # Signals
 
-**As of `2026-10-15T17:27:05Z`**
+**As of `2026-10-15T19:02:48Z`**
 
 ## Actionable trade signals
 
@@ -24,6 +24,24 @@ No actionable trade signals.
 No pending orders.
 
 ## Research alerts — not trade signals
+
+### [108490 — ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_oversold`
+- Market date: `2026-10-15`
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
+
+### [108490 — ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_below\_lower`
+- Market date: `2026-10-15`
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
 
 ### [SSUN.VI — Samsung Electronics Co., Ltd.](securities/security_d08d763780400dfbffce)
 
@@ -78,24 +96,6 @@ No pending orders.
 - Market date: `2026-10-15`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
-
-### [108490 — ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c)
-
-**Research alert — not a trade signal**
-
-- Alert: `rsi\_oversold`
-- Market date: `2026-10-15`
-- Research status: `skipped`
-- Conclusion: Queue triage disposition
-
-### [108490 — ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_below\_lower`
-- Market date: `2026-10-15`
-- Research status: `skipped`
-- Conclusion: Queue triage disposition
 
 ### [VRT — Vertiv Holdings Co](securities/security_cb88f9154cfeaa15e878)
 
@@ -337,8 +337,8 @@ No pending orders.
 
 - Alert: `rsi\_oversold`
 - Market date: `2026-10-14`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `failed`
+- Conclusion: The bounded Lithium Americas review completed its source registration, security update, wiki research, unsupported-valuation assessment, and required dependent idea refresh enqueue, but the operation cannot be accepted. The immutable assessment version recorded page hash recorded source state before a required YAML frontmatter repair; the final lint-clean page hashes to recorded source state. Appending a correction would create two immutable versions for this operation and violate the exactly-one-version invariant, while hand-editing immutable history is forbidden. Parent rollback and a clean retry are required.
 
 ### [LAC — Lithium Americas Corp.](securities/security_fb87fac302a5446a1ced)
 
@@ -346,8 +346,8 @@ No pending orders.
 
 - Alert: `bollinger\_below\_lower`
 - Market date: `2026-10-14`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `failed`
+- Conclusion: The bounded Lithium Americas review completed its source registration, security update, wiki research, unsupported-valuation assessment, and required dependent idea refresh enqueue, but the operation cannot be accepted. The immutable assessment version recorded page hash recorded source state before a required YAML frontmatter repair; the final lint-clean page hashes to recorded source state. Appending a correction would create two immutable versions for this operation and violate the exactly-one-version invariant, while hand-editing immutable history is forbidden. Parent rollback and a clean retry are required.
 
 ### [KTOS — Kratos Defense &amp; Security Solutions, Inc.](securities/security_0cf8075039299094d614)
 
