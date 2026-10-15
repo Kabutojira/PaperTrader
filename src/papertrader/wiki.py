@@ -446,6 +446,19 @@ def _frontmatter(path: Path) -> tuple[Mapping[object, object], str]:
     return metadata, body
 
 
+def wiki_limits(wiki_root: Path) -> tuple[int, int]:
+    """Return the byte and live-log limits owned by the wiki schema."""
+
+    metadata, _ = _frontmatter(wiki_root / "SCHEMA.md")
+    max_page_bytes = metadata.get("max_page_bytes", 100000)
+    log_rotation_lines = metadata.get("log_rotation_lines", 5000)
+    if not isinstance(max_page_bytes, int) or max_page_bytes <= 0:
+        raise WikiFormatError("SCHEMA.md max_page_bytes must be a positive integer")
+    if not isinstance(log_rotation_lines, int) or log_rotation_lines <= 0:
+        raise WikiFormatError("SCHEMA.md log_rotation_lines must be a positive integer")
+    return max_page_bytes, log_rotation_lines
+
+
 def _maintained_pages(wiki_root: Path) -> list[Path]:
     return [
         path
@@ -629,6 +642,172 @@ def _replace_frontmatter_date(text: str, value: date) -> str:
     return updated
 
 
+def _log_archive_text(*, year: str, part: int, event_date: date, body: str) -> str:
+    preserved_body = body if body.endswith("\n") else body + "\n"
+    return (
+        "---\n"
+        f"title: PaperTrader research log — {year} archive part {part}\n"
+        "type: meta\n"
+        "status: maintained\n"
+        "tags:\n"
+        "  - meta\n"
+        "  - log\n"
+        f'created: "{event_date.isoformat()}"\n'
+        f'updated: "{event_date.isoformat()}"\n'
+        "provenance: repository-contract\n"
+        "---\n\n"
+        f"# Research log — {year} archive part {part}\n\n"
+        "Entries were rotated automatically at dated entry boundaries after the live log "
+        "crossed its configured line limit.\n\n"
+        f"{preserved_body}"
+    )
+
+
+def _next_log_archive_part(wiki_root: Path, year: str) -> int:
+    parts = [1]
+    for path in (wiki_root / "_archive").glob(f"log-{year}-part*.md"):
+        match = re.fullmatch(rf"log-{re.escape(year)}-part(\d+)\.md", path.name)
+        if match:
+            parts.append(int(match.group(1)))
+    return max(parts) + 1
+
+
+def _dated_log_entry_fragments(block: str) -> list[str]:
+    """Split one dated block at complete top-level bullet boundaries."""
+
+    heading_end = block.find("\n") + 1
+    if heading_end <= 0:
+        return [block]
+    starts = [heading_end + match.start() for match in re.finditer(r"(?m)^- ", block[heading_end:])]
+    if len(starts) <= 1:
+        return [block]
+    fragments = [block[: starts[1]]]
+    heading = block[:heading_end]
+    for index, start in enumerate(starts[1:], start=1):
+        end = starts[index + 1] if index + 1 < len(starts) else len(block)
+        fragments.append(heading + block[start:end])
+    return fragments
+
+
+def _rotate_wiki_log(
+    wiki_root: Path,
+    log_text: str,
+    *,
+    event_date: date,
+    max_page_bytes: int,
+    line_limit: int,
+) -> str:
+    """Move oldest complete dated blocks into bounded immutable archive segments."""
+
+    if len(log_text.splitlines()) <= line_limit:
+        return log_text
+    frontmatter_end = log_text.find("\n---\n", 4)
+    if frontmatter_end == -1:
+        raise WikiFormatError("log.md is missing YAML frontmatter")
+    body_start = frontmatter_end + len("\n---\n")
+    body = log_text[body_start:]
+    headings = list(re.finditer(r"(?m)^## (?P<label>[^\n]+)\n", body))
+    if not headings:
+        raise WikiFormatError("log.md exceeds its line limit without dated entry boundaries")
+    prologue = body[: headings[0].start()]
+    blocks = [
+        body[match.start() : headings[index + 1].start() if index + 1 < len(headings) else None]
+        for index, match in enumerate(headings)
+    ]
+    removed: list[str] = []
+    frontmatter = log_text[:body_start]
+
+    def live_text() -> str:
+        return frontmatter + prologue + "".join(blocks)
+
+    while blocks and len(live_text().splitlines()) > line_limit:
+        if len(blocks) > 1:
+            removed.append(blocks.pop(0))
+            continue
+        # A single busy date may exceed the threshold. Preserve its heading on both sides and
+        # rotate complete blank-line-delimited entries from its beginning.
+        heading_end = blocks[0].find("\n") + 1
+        entries = list(re.finditer(r"(?m)^- ", blocks[0][heading_end:]))
+        if len(entries) <= 1:
+            break
+        split_at = heading_end + entries[1].start()
+        removed.append(blocks[0][:split_at])
+        blocks[0] = blocks[0][:heading_end] + blocks[0][split_at:]
+    rotated = live_text()
+    if len(rotated.splitlines()) > line_limit:
+        raise WikiFormatError(
+            f"log.md cannot be rotated below {line_limit} lines at a dated entry boundary"
+        )
+    if not removed:
+        return rotated
+
+    archive_root = wiki_root / "_archive"
+    archive_root.mkdir(parents=True, exist_ok=True)
+    yearly: dict[str, list[str]] = {}
+    for block in removed:
+        year_match = re.search(r"\b(\d{4})", block)
+        year = year_match.group(1) if year_match else event_date.strftime("%Y")
+        yearly.setdefault(year, []).append(block)
+    for year, year_blocks in yearly.items():
+        pending = list(year_blocks)
+        part = _next_log_archive_part(wiki_root, year)
+        while pending:
+            accepted: list[str] = []
+            for block in pending:
+                candidate = "".join([*accepted, block])
+                archive = _log_archive_text(
+                    year=year, part=part, event_date=event_date, body=candidate
+                )
+                if len(archive.encode("utf-8")) > max_page_bytes:
+                    break
+                accepted.append(block)
+            if not accepted:
+                fragments = _dated_log_entry_fragments(pending[0])
+                if len(fragments) == 1:
+                    raise WikiFormatError(
+                        "one dated log entry exceeds max_page_bytes and cannot be split safely"
+                    )
+                pending = [*fragments, *pending[1:]]
+                continue
+            chunk = "".join(accepted)
+            pending = pending[len(accepted) :]
+            archive_text = _log_archive_text(
+                year=year, part=part, event_date=event_date, body=chunk
+            )
+            archive_path = archive_root / f"log-{year}-part{part:02d}.md"
+            atomic_write_text(archive_path, archive_text, allowed_root=wiki_root)
+            part += 1
+    return rotated
+
+
+def rotate_wiki_log(wiki_root: Path, *, event_date: date | None = None) -> tuple[Path, ...]:
+    """Rotate an oversized live log and return the controller-owned paths changed."""
+
+    log_path = wiki_root / "log.md"
+    original = log_path.read_text(encoding="utf-8")
+    metadata, _ = _frontmatter(log_path)
+    updated = event_date or date.fromisoformat(str(metadata["updated"]))
+    before_archives = set((wiki_root / "_archive").glob("log-*.md"))
+    max_page_bytes, line_limit = wiki_limits(wiki_root)
+    try:
+        rotated = _rotate_wiki_log(
+            wiki_root,
+            original,
+            event_date=updated,
+            max_page_bytes=max_page_bytes,
+            line_limit=line_limit,
+        )
+        changed = sorted(set((wiki_root / "_archive").glob("log-*.md")) - before_archives)
+        if rotated != original:
+            atomic_write_text(log_path, rotated, allowed_root=wiki_root)
+            changed.append(log_path)
+    except Exception:
+        for path in set((wiki_root / "_archive").glob("log-*.md")) - before_archives:
+            path.unlink(missing_ok=True)
+        raise
+    return tuple(changed)
+
+
 def register_wiki_page(
     wiki_root: Path,
     *,
@@ -691,4 +870,18 @@ def register_wiki_page(
         else:
             log_text = log_text.rstrip() + f"\n\n{heading}\n\n{entry}\n"
         log_text = _replace_frontmatter_date(log_text, event_date)
-        atomic_write_text(log_path, log_text, allowed_root=wiki_root)
+        max_page_bytes, log_rotation_lines = wiki_limits(wiki_root)
+        before_archives = set((wiki_root / "_archive").glob("log-*.md"))
+        try:
+            log_text = _rotate_wiki_log(
+                wiki_root,
+                log_text,
+                event_date=event_date,
+                max_page_bytes=max_page_bytes,
+                line_limit=log_rotation_lines,
+            )
+            atomic_write_text(log_path, log_text, allowed_root=wiki_root)
+        except Exception:
+            for path in set((wiki_root / "_archive").glob("log-*.md")) - before_archives:
+                path.unlink(missing_ok=True)
+            raise

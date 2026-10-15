@@ -21,7 +21,7 @@
       "required": ["source_history_id", "locator", "excerpt", "role", "rationale", "origin_id", "origin_type", "underlying_observation_id", "published_at", "inspected_at", "inspection_status", "applicability_limit"],
       "properties": {
         "source_history_id": {"type": "string", "minLength": 1},
-        "locator": {"type": "string", "minLength": 1}, "excerpt": {"type": "string", "maxLength": 600},
+        "locator": {"type": "string", "minLength": 1}, "excerpt": {"type": "string", "maxLength": 600, "description": "Verbatim public-source quote containing at most 25 whitespace-delimited words; use an empty string when no quote is retained.", "x-maxWords": 25},
         "role": {"enum": ["supports", "contradicts", "qualifies"]},
         "rationale": {"type": "string", "minLength": 20, "maxLength": 2000},
         "origin_id": {"type": "string", "minLength": 1},

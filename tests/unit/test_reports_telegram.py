@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import subprocess
+import sys
 import urllib.parse
 import urllib.request
 from collections.abc import Mapping
@@ -19,7 +20,13 @@ from papertrader.investor_pages import (
     ResearchDecisionView,
     investor_brief_markdown,
 )
-from papertrader.reports import NarrativeItem, _wiki_changes, generate_daily_report
+from papertrader.reports import (
+    NarrativeItem,
+    _split_report_lines,
+    _wiki_changes,
+    _write_daily_report_pages,
+    generate_daily_report,
+)
 from papertrader.tables import read_table
 from papertrader.telegram import (
     TelegramDeliveryError,
@@ -37,7 +44,7 @@ from papertrader.telegram import (
     telegram_messages,
 )
 from papertrader.utils import CanonicalValueError, content_hash
-from papertrader.wiki import lint_wiki
+from papertrader.wiki import lint_wiki, register_wiki_page
 
 if TYPE_CHECKING:
     from conftest import ReferenceOutputs
@@ -135,6 +142,168 @@ def test_daily_report_matches_reference_and_registers_one_canonical_page(
     assert "**No actionable trade signals.**" in index
     assert log.count("Generated canonical [[daily-reports/daily-report_20260724]]") == 1
     assert lint_wiki(sandbox_repository / "data" / "wiki") == []
+
+
+def test_large_daily_report_is_utf8_bounded_lossless_and_repeatable(
+    sandbox_repository: Path,
+) -> None:
+    wiki = sandbox_repository / "data" / "wiki"
+    schema = wiki / "SCHEMA.md"
+    schema.write_text(
+        schema.read_text(encoding="utf-8").replace(
+            "max_page_bytes: 200000", "max_page_bytes: 12000"
+        ),
+        encoding="utf-8",
+    )
+    path = wiki / "daily-reports" / "daily-report_20260724.md"
+    frontmatter = [
+        "---",
+        'title: "Large daily report"',
+        "type: daily-report",
+        "status: maintained",
+        "tags: [daily-report]",
+        'created: "2026-07-24"',
+        'updated: "2026-07-24"',
+        "provenance: deterministic-report-generator",
+        "---",
+        "",
+        "# Large daily report",
+    ]
+    queue = [f"- Queued — `operation_{index:04d}` — café 市場" for index in range(1100)]
+    issues = [f"- High — `issue_{index:04d}`: delivery failure Ω" for index in range(1100)]
+    alerts = [
+        f"| alert_{index:04d} | security_{index:04d} | price move € |" for index in range(1100)
+    ]
+    lines = [
+        *frontmatter,
+        "",
+        "<!-- papertrader-investor-brief:start -->",
+        "# Hold cash — large UTF-8 fixture",
+        "",
+        "- **As of:** `2026-07-24T22:00:00Z`",
+        "",
+        "## Target changes",
+        "",
+        "## Complete active queue",
+        "",
+        *queue,
+        "",
+        "## Open issues and delivery failures",
+        "",
+        *issues,
+        "",
+        "## Research alerts",
+        "",
+        "| Alert | Security | Detail |",
+        "| --- | --- | --- |",
+        *alerts,
+        "<!-- papertrader-investor-brief:end -->",
+    ]
+
+    pages = _write_daily_report_pages(
+        sandbox_repository,
+        path,
+        lines,
+        day=date(2026, 7, 24),
+        run_id="run-large",
+        snapshot_id="decision_0123456789abcdefabcd",
+    )
+    first = {page.name: page.read_bytes() for page in pages}
+    repeated = _write_daily_report_pages(
+        sandbox_repository,
+        path,
+        lines,
+        day=date(2026, 7, 24),
+        run_id="run-large",
+        snapshot_id="decision_0123456789abcdefabcd",
+    )
+    register_wiki_page(
+        wiki,
+        page_key="daily-reports/daily-report_20260724",
+        label="Daily report 2026-07-24",
+        section="Daily reports",
+        event="Generated canonical [[daily-reports/daily-report_20260724]] for run `run-large`.",
+        event_date=date(2026, 7, 24),
+    )
+
+    assert first == {page.name: page.read_bytes() for page in repeated}
+    assert len(pages) > 10
+    assert all(page.stat().st_size <= 12000 for page in pages)
+    rendered = "\n".join(page.read_text(encoding="utf-8") for page in pages)
+    for index in range(1100):
+        assert rendered.count(f"operation_{index:04d}") == 1
+        assert rendered.count(f"issue_{index:04d}") == 1
+        assert rendered.count(f"alert_{index:04d}") == 1
+    assert "café 市場" in rendered
+    assert "contains **" in path.read_text(encoding="utf-8")
+    delivered = "".join(
+        telegram_messages(
+            path.read_text(encoding="utf-8"),
+            committed_url=(
+                "https://github.com/example/PaperTrader/blob/"
+                + "a" * 40
+                + "/data/wiki/daily-reports/daily-report_20260724.md"
+            ),
+        )
+    )
+    assert "Hold cash — large UTF-8 fixture" in delivered
+    assert "complete investor detail follows" in delivered
+    assert lint_wiki(wiki) == []
+
+    _write_daily_report_pages(
+        sandbox_repository,
+        path,
+        [*frontmatter, "", "Small replacement"],
+        day=date(2026, 7, 24),
+        run_id="run-small",
+        snapshot_id="decision_0123456789abcdefabcd",
+    )
+    assert not list(path.parent.glob("daily-report_20260724-detail-*.md"))
+
+
+def test_report_splitter_rejects_oversized_record_without_hanging() -> None:
+    script = (
+        "from papertrader.reports import _split_report_lines\n"
+        "from papertrader.utils import CanonicalValueError\n"
+        "try:\n"
+        "    _split_report_lines(['# Heading', 'x' * 3000], 1000)\n"
+        "except CanonicalValueError as exc:\n"
+        "    print(exc)\n"
+        "else:\n"
+        "    raise SystemExit(2)\n"
+    )
+
+    completed = subprocess.run(
+        [sys.executable, "-c", script],
+        check=False,
+        capture_output=True,
+        text=True,
+        timeout=3,
+    )
+
+    assert completed.returncode == 0
+    assert "report row requires 3000 bytes; page content budget is 1000 bytes" in completed.stdout
+    with pytest.raises(CanonicalValueError, match="report row requires 3000 bytes"):
+        _split_report_lines(["# Heading", "x" * 3000], 1000)
+
+
+def test_report_splitter_never_orphans_table_row_from_required_header() -> None:
+    row = "| [" + ("x" * 960) + "](securities/security_example) |"
+
+    with pytest.raises(
+        CanonicalValueError,
+        match="table continuation plus its repeated header exceeds",
+    ):
+        _split_report_lines(
+            [
+                "# Heading",
+                "| Security |",
+                "| --- |",
+                "| short row |",
+                row,
+            ],
+            1000,
+        )
 
 
 def test_telegram_markdown_escaping_and_bounded_lossless_splitting() -> None:

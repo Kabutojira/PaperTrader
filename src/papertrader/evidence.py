@@ -80,7 +80,7 @@ def validate_claim(root: Path, claim: Mapping[str, Any], *, now: datetime) -> No
         raise GovernanceError("claim observation period is reversed")
     history = {row["source_history_id"]: row for row in read_table(root, "source_history")}
     inspected_support = False
-    for evidence in claim["evidence"]:
+    for evidence_index, evidence in enumerate(claim["evidence"]):
         source = history.get(evidence["source_history_id"])
         if source is None:
             raise GovernanceError(
@@ -97,8 +97,12 @@ def validate_claim(root: Path, claim: Mapping[str, Any], *, now: datetime) -> No
         ):
             raise GovernanceError("claim evidence has unavailable or future inspection provenance")
         excerpt = evidence["excerpt"]
-        if len(excerpt.split()) > 25:
-            raise GovernanceError("claim excerpt exceeds the bounded public-source quote allowance")
+        excerpt_words = len(excerpt.split())
+        if excerpt_words > 25:
+            raise GovernanceError(
+                f"claim {claim['claim_id']} evidence[{evidence_index}] excerpt contains "
+                f"{excerpt_words} words; maximum is 25"
+            )
         observed = evidence["inspection_status"] == "observed"
         if observed and (not excerpt or excerpt not in source["excerpt"]):
             raise GovernanceError(

@@ -1510,6 +1510,7 @@ def validate_agent_result(
     operation_rows_before: Mapping[str, Mapping[str, str]],
     issue_rows_before: Mapping[str, Mapping[str, str]],
     environment: Mapping[str, str],
+    defer_log_rotation: bool = False,
 ) -> AgentValidation:
     """Validate schema, exact changes, receipts, scope, freshness, and repository state."""
 
@@ -1911,10 +1912,16 @@ def validate_agent_result(
             require_current_publication=False,
         )
     )
-    errors.extend(
-        f"post-run wiki lint: {error}" for error in lint_wiki(repository_root / "data" / "wiki")
-    )
     errors.extend(f"post-run portfolio: {error}" for error in reconcile_portfolio(repository_root))
+    wiki_root = repository_root / "data" / "wiki"
+    wiki_errors = lint_wiki(wiki_root)
+    # A log-threshold error is repaired later by the controller, after executor/profile and
+    # forged-artifact checks pass. Every other wiki error remains an agent validation failure.
+    errors.extend(
+        f"post-run wiki lint: {error}"
+        for error in wiki_errors
+        if not (defer_log_rotation and error.startswith("log.md: log exceeds the "))
+    )
     # These four arrays describe controller-observable facts. Treat the agent values as claims:
     # reject invented entries above, but fill omissions and normalize ordering from authoritative
     # snapshots, queue diffs, issue diffs, and command receipts before downstream consumers read

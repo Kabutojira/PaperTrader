@@ -1,16 +1,20 @@
 from __future__ import annotations
 
 import json
+from datetime import date
 from pathlib import Path
 
 import pytest
 
+import papertrader.wiki as wiki_module
 from papertrader.tables import write_table
 from papertrader.wiki import (
     TECHNICAL_CHART_END,
     TECHNICAL_CHART_START,
     lint_wiki,
     parse_research_charts,
+    register_wiki_page,
+    rotate_wiki_log,
     security_technical_chart_errors,
     sync_security_technical_charts,
     technical_chart_spec,
@@ -388,6 +392,151 @@ def test_wiki_log_must_rotate_after_its_line_threshold(sandbox_repository: Path)
     )
 
     assert "log.md: log exceeds the 1-line rotation threshold" in lint_wiki(wiki)
+
+
+def test_register_rotates_log_losslessly_at_dated_boundaries(
+    sandbox_repository: Path,
+) -> None:
+    wiki = sandbox_repository / "data" / "wiki"
+    schema = wiki / "SCHEMA.md"
+    schema.write_text(
+        schema.read_text(encoding="utf-8")
+        .replace("max_page_bytes: 200000", "max_page_bytes: 4000")
+        .replace("log_rotation_lines: 5000", "log_rotation_lines: 35"),
+        encoding="utf-8",
+    )
+    log = wiki / "log.md"
+    original = log.read_text(encoding="utf-8").rstrip()
+    entries = []
+    for day in range(1, 18):
+        marker = f"preserved-event-{day:02d}"
+        entries.append(marker)
+        original += f"\n\n## 2026-08-{day:02d}\n\n- {marker} — café 市場\n"
+    log.write_text(original + "\n", encoding="utf-8")
+
+    register_wiki_page(
+        wiki,
+        page_key="ideas/rotation-fixture",
+        label="Rotation fixture",
+        section="Ideas",
+        event="preserved-event-final — registered rotation fixture.",
+        event_date=date(2026, 8, 18),
+    )
+    archive_paths = sorted((wiki / "_archive").glob("log-2026-part*.md"))
+    combined = log.read_text(encoding="utf-8") + "".join(
+        path.read_text(encoding="utf-8") for path in archive_paths
+    )
+    before = {path.name: path.read_bytes() for path in archive_paths}
+    live_before = log.read_bytes()
+    register_wiki_page(
+        wiki,
+        page_key="ideas/rotation-fixture",
+        label="Rotation fixture",
+        section="Ideas",
+        event="preserved-event-final — registered rotation fixture.",
+        event_date=date(2026, 8, 18),
+    )
+
+    assert archive_paths
+    assert len(log.read_text(encoding="utf-8").splitlines()) <= 35
+    assert all(0 < path.stat().st_size <= 4000 for path in archive_paths)
+    assert all(combined.count(marker) == 1 for marker in [*entries, "preserved-event-final"])
+    assert before == {path.name: path.read_bytes() for path in archive_paths}
+    assert live_before == log.read_bytes()
+
+
+def test_log_rotation_retry_after_live_write_failure_is_lossless_and_idempotent(
+    sandbox_repository: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    wiki = sandbox_repository / "data" / "wiki"
+    schema = wiki / "SCHEMA.md"
+    schema.write_text(
+        schema.read_text(encoding="utf-8")
+        .replace("max_page_bytes: 200000", "max_page_bytes: 4000")
+        .replace("log_rotation_lines: 5000", "log_rotation_lines: 35"),
+        encoding="utf-8",
+    )
+    log = wiki / "log.md"
+    entries = [
+        f"- preserved-{day:02d}\n  continuation with  two  spaces\n\n" for day in range(1, 18)
+    ]
+    oversized = log.read_text(encoding="utf-8").rstrip() + "\n\n"
+    oversized += "".join(
+        f"## 2026-08-{day:02d}\n\n{entry}" for day, entry in enumerate(entries, start=1)
+    )
+    log.write_text(oversized, encoding="utf-8")
+    original = log.read_bytes()
+    real_atomic_write = wiki_module.atomic_write_text
+    failed = False
+
+    def fail_live_write(path: Path, content: str, **kwargs: object) -> None:
+        nonlocal failed
+        if path == log and not failed:
+            failed = True
+            raise OSError("injected live-log write failure")
+        real_atomic_write(path, content, **kwargs)
+
+    monkeypatch.setattr(wiki_module, "atomic_write_text", fail_live_write)
+    with pytest.raises(OSError, match="injected live-log write failure"):
+        rotate_wiki_log(wiki)
+
+    assert log.read_bytes() == original
+    assert list((wiki / "_archive").glob("log-*.md")) == []
+
+    monkeypatch.setattr(wiki_module, "atomic_write_text", real_atomic_write)
+    changed = rotate_wiki_log(wiki)
+    archives = sorted((wiki / "_archive").glob("log-*.md"))
+    archived_before = {path.name: path.read_bytes() for path in archives}
+    live_before = log.read_bytes()
+    assert changed
+    assert rotate_wiki_log(wiki) == ()
+    assert archived_before == {path.name: path.read_bytes() for path in archives}
+    assert live_before == log.read_bytes()
+    combined = log.read_text(encoding="utf-8") + "".join(
+        path.read_text(encoding="utf-8") for path in archives
+    )
+    assert all(combined.count(entry) == 1 for entry in entries)
+
+
+def test_oversized_dated_log_block_splits_at_complete_entry_boundaries(
+    sandbox_repository: Path,
+) -> None:
+    wiki = sandbox_repository / "data" / "wiki"
+    schema = wiki / "SCHEMA.md"
+    schema.write_text(
+        schema.read_text(encoding="utf-8")
+        .replace("max_page_bytes: 200000", "max_page_bytes: 10000")
+        .replace("log_rotation_lines: 5000", "log_rotation_lines: 25"),
+        encoding="utf-8",
+    )
+    log = wiki / "log.md"
+    entries = [
+        (
+            f"- single-date-entry-{index:03d}\n"
+            f"  Preserved continuation {index:03d} with  deliberate  spacing and café 市場.\n\n"
+        )
+        for index in range(200)
+    ]
+    text = log.read_text(encoding="utf-8").rstrip()
+    text += "\n\n## 2026-08-01\n\n" + "".join(entries)
+    text += "## 2026-08-02\n\n- recent-entry-remains-live\n"
+    log.write_text(text, encoding="utf-8")
+
+    first_paths = rotate_wiki_log(wiki)
+    archives = sorted((wiki / "_archive").glob("log-2026-part*.md"))
+    first = {path.name: path.read_bytes() for path in archives}
+    combined = log.read_text(encoding="utf-8") + "".join(
+        path.read_text(encoding="utf-8") for path in archives
+    )
+
+    assert len(archives) > 2
+    assert all(path.stat().st_size <= 10000 for path in archives)
+    assert len(log.read_text(encoding="utf-8").splitlines()) <= 25
+    assert all(combined.count(entry) == 1 for entry in entries)
+    assert first_paths
+    assert rotate_wiki_log(wiki) == ()
+    assert first == {path.name: path.read_bytes() for path in archives}
+    assert lint_wiki(wiki) == []
 
 
 def test_wiki_lint_reports_orphan_and_broken_link(sandbox_repository: Path) -> None:

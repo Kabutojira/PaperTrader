@@ -55,6 +55,7 @@ from papertrader.utils import (
     parse_timestamp,
     utc_now,
 )
+from papertrader.wiki import lint_wiki, rotate_wiki_log
 
 SAFE_RUN_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$")
 INJECTION_PATTERNS = (
@@ -885,7 +886,9 @@ def build_controller_prompt(
             "Link immutable source-history observations and assessment versions, exact periods, "
             "units, scope, evidence origin and applicability. Source count, a publisher domain, "
             "or a fresh retrieval does not prove independent or current-period support. Never "
-            "invent an inspected excerpt. The trusted parent validates and persists accepted "
+            "invent an inspected excerpt. Each evidence excerpt is one verbatim public-source "
+            "quote of at most 25 whitespace-delimited words; use an empty excerpt when no quote "
+            "is retained. The trusted parent validates and persists accepted "
             "records; do not hand-edit governance artifacts. Preserve topic lineage and "
             "protected exposure coverage. A delta idea review must not repeat broad discovery.\n\n"
             "For a material dated catalyst, use catalyst_updates conforming to "
@@ -1464,6 +1467,7 @@ def run_claimed_operation(
             "PAPERTRADER_PROFILE_POLICY_VERSION": route.profile_policy_version,
             "PAPERTRADER_ROUTE_REASON": route.route_reason,
         },
+        defer_log_rotation=True,
     )
     validation_errors = [*validation.errors, *profile_errors]
     if execution.returncode != 0:
@@ -1471,15 +1475,27 @@ def run_claimed_operation(
             validation_errors.append(f"Hermes timed out after {execution_profile.timeout_seconds}s")
         else:
             validation_errors.append(f"Hermes exited with status {execution.returncode}")
+    validation_path = artifact_directory / "validation_report.json"
+    controller_rotation_paths: tuple[Path, ...] = ()
+    if validation_path.exists():
+        validation_errors.append("Hermes created the controller-owned validation report")
+    if not validation_errors and validation.result is not None:
+        try:
+            # Rotation is controller-owned and may only occur after every agent, executor,
+            # profile, and reserved-artifact check has passed.
+            controller_rotation_paths = rotate_wiki_log(repository_root / "data" / "wiki")
+            validation_errors.extend(
+                f"post-rotation wiki lint: {error}"
+                for error in lint_wiki(repository_root / "data" / "wiki")
+            )
+        except (OSError, ValueError) as exc:
+            validation_errors.append(f"controller log rotation failed: {exc}")
     if not validation_errors and validation.result is not None:
         atomic_write_json(
             repository_root / result_relative_path(run_id, operation.operation_id),
             dict(validation.result),
             allowed_root=repository_root,
         )
-    validation_path = artifact_directory / "validation_report.json"
-    if validation_path.exists():
-        validation_errors.append("Hermes created the controller-owned validation report")
     atomic_write_json(
         validation_path,
         {
@@ -1507,9 +1523,15 @@ def run_claimed_operation(
     )
     if validation_errors:
         retained_run_path = run_path.relative_to(repository_root).as_posix()
+        controller_rotation_relative = tuple(
+            path.relative_to(repository_root).as_posix() for path in controller_rotation_paths
+        )
         restore_errors = _restore_rejected_agent_delta(
             repository_root,
-            tuple(path for path in delta.changed if path != retained_run_path),
+            (
+                *(path for path in delta.changed if path != retained_run_path),
+                *controller_rotation_relative,
+            ),
             protected_artifacts,
             frozenset(before.files),
         )
