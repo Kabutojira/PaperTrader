@@ -1,5 +1,5 @@
 export { AliasRedirects } from "@quartz-community/alias-redirects";
-export { ContentIndex } from "@quartz-community/content-index";
+export { ContentIndex } from "./plugins/ContentIndex";
 export { ContentPage } from "@quartz-community/content-page";
 export { CrawlLinks } from "@quartz-community/crawl-links";
 export { CreatedModifiedDate } from "@quartz-community/created-modified-date";

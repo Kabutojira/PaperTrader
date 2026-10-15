@@ -1,0 +1,108 @@
+.papertrader-search {
+  min-width: 0;
+}
+
+.papertrader-search__open {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 0.55rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 0.5rem;
+  background: var(--light);
+  color: var(--darkgray);
+  padding: 0.45rem 0.65rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+.papertrader-search__open:hover,
+.papertrader-search__open:focus-visible {
+  border-color: var(--secondary);
+  color: var(--dark);
+}
+
+.papertrader-search__open svg {
+  width: 1rem;
+  height: 1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+}
+
+.papertrader-search__dialog {
+  width: min(44rem, calc(100vw - 2rem));
+  max-height: min(42rem, calc(100vh - 2rem));
+  box-sizing: border-box;
+  overflow: auto;
+  border: 1px solid var(--lightgray);
+  border-radius: 0.8rem;
+  background: var(--light);
+  color: var(--dark);
+  padding: 1rem;
+  box-shadow: 0 1rem 4rem rgb(0 0 0 / 28%);
+}
+
+.papertrader-search__dialog::backdrop {
+  background: rgb(0 0 0 / 45%);
+}
+
+.papertrader-search__header {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.papertrader-search__header input {
+  min-width: 0;
+  flex: 1;
+  border: 1px solid var(--lightgray);
+  border-radius: 0.45rem;
+  background: var(--light);
+  color: var(--dark);
+  padding: 0.7rem;
+  font: inherit;
+}
+
+.papertrader-search__header button {
+  border: 0;
+  background: transparent;
+  color: var(--secondary);
+  font: inherit;
+  cursor: pointer;
+}
+
+.papertrader-search__status {
+  margin: 0.8rem 0;
+  color: var(--darkgray);
+  font-size: 0.9rem;
+}
+
+.papertrader-search__results {
+  display: grid;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.papertrader-search__results a {
+  display: grid;
+  gap: 0.2rem;
+  border-radius: 0.45rem;
+  padding: 0.65rem;
+  color: var(--dark);
+  text-decoration: none;
+}
+
+.papertrader-search__results a:hover,
+.papertrader-search__results a:focus-visible {
+  background: var(--highlight);
+}
+
+.papertrader-search__results span {
+  overflow: hidden;
+  color: var(--darkgray);
+  font-size: 0.85rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

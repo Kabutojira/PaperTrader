@@ -12,7 +12,7 @@
     "prebuild": "npm run prepare-engine",
     "build": "node build-quartz.mjs",
     "postbuild": "python3 ../scripts/check_site_links.py",
-    "check": "npm run prepare-engine && tsc --noEmit && prettier quartz.config.ts quartz.layout.ts papertrader prepare-quartz.mjs build-quartz.mjs quartz.ts index.d.ts globals.d.ts --check"
+    "check": "npm run prepare-engine && tsc --noEmit && tsx --test papertrader/**/*.test.ts && prettier quartz.config.ts quartz.layout.ts papertrader prepare-quartz.mjs build-quartz.mjs quartz.ts index.d.ts globals.d.ts --check"
   },
   "dependencies": {
     "@jackyzha0/quartz": "https://github.com/jackyzha0/quartz/archive/3dff48b5df6d84c9544a5ae19c8f2cbb01dc44e5.tar.gz",
