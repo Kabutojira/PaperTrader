@@ -7,17 +7,17 @@ tags:
 created: "2026-10-15"
 updated: "2026-10-15"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_f641c45d3a6e7301a8ce"
-as_of: "2026-10-15T16:26:25Z"
+snapshot_id: "decision_6abcd17bed9d2596a85c"
+as_of: "2026-10-15T17:27:05Z"
 ---
 
 # PaperTrader
 
-**As of `2026-10-15T16:26:25Z` · Investment data: Portfolio state safe — research gaps remain · Operations: Attention required**
+**As of `2026-10-15T17:27:05Z` · Investment data: Portfolio state safe — research gaps remain · Operations: Attention required**
 
 ## Maintain the current model portfolio
 
-<section class="decision-cards" aria-label="Decision summary"><article class="decision-card" data-status="maintain"><span class="decision-card-label">Stance</span><strong>Maintain the current model portfolio</strong></article><article class="decision-card" data-status="cash"><span class="decision-card-label">Cash</span><strong>97.15631%</strong></article><article class="decision-card" data-status="exposure"><span class="decision-card-label">Gross exposure</span><strong>2.843691%</strong></article><article class="decision-card" data-status="signals"><span class="decision-card-label">Actionable signals</span><strong>0</strong></article><article class="decision-card" data-status="coverage"><span class="decision-card-label">Assessment coverage</span><strong>0/83</strong></article></section>
+<section class="decision-cards" aria-label="Decision summary"><article class="decision-card" data-status="maintain"><span class="decision-card-label">Stance</span><strong>Maintain the current model portfolio</strong></article><article class="decision-card" data-status="cash"><span class="decision-card-label">Cash</span><strong>97.1213%</strong></article><article class="decision-card" data-status="exposure"><span class="decision-card-label">Gross exposure</span><strong>2.8787%</strong></article><article class="decision-card" data-status="signals"><span class="decision-card-label">Actionable signals</span><strong>0</strong></article><article class="decision-card" data-status="coverage"><span class="decision-card-label">Assessment coverage</span><strong>0/83</strong></article></section>
 
 ### Why
 
@@ -25,12 +25,12 @@ as_of: "2026-10-15T16:26:25Z"
 
 ## Current and target portfolio
 
-Current equity is **9987.02 EUR** with **97.15631% cash**. The target retains **97.15631% cash**.
+Current equity is **9990.62 EUR** with **97.1213% cash**. The target retains **97.1213% cash**.
 
 | Holding | Current | Target | Action | Strategy |
 | --- | ---: | ---: | --- | --- |
-| Cash | 97.15631% | 97.15631% | No trade | — |
-| [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | 2.84369% | 2.84369% | Hold | [Open](strategies/strategy_8caa208dfc702a2584a7) |
+| Cash | 97.1213% | 97.1213% | No trade | — |
+| [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | 2.8787% | 2.8787% | Hold | [Open](strategies/strategy_8caa208dfc702a2584a7) |
 
 ## Actionable trade signals
 
@@ -59,9 +59,9 @@ Current equity is **9987.02 EUR** with **97.15631% cash**. The target retains **
 
 ## Performance, risk, and coverage
 
-- Cumulative return: **-0.129774825756439228996376%**
-- Running drawdown: **-0.1651413886934555757661134967%**
-- Largest position: **2.84369%**
+- Cumulative return: **-0.093774764721283228996376%**
+- Running drawdown: **-0.1291540761869237470394460118%**
+- Largest position: **2.878699%**
 - Current assessments: **0/83**
 - Relationship reviews: **2/83**
 - Accepted relationships: **2**

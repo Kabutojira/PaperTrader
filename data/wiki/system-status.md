@@ -7,13 +7,13 @@ tags:
 created: "2026-10-15"
 updated: "2026-10-15"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_f641c45d3a6e7301a8ce"
-as_of: "2026-10-15T16:26:25Z"
+snapshot_id: "decision_6abcd17bed9d2596a85c"
+as_of: "2026-10-15T17:27:05Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-10-15T16:26:25Z`
+**As of:** `2026-10-15T17:27:05Z`
 **Investment data:** Portfolio state safe — research gaps remain
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -41,7 +41,7 @@ Publication validation confirms that this generated artifact is internally consi
 
 ## Sequential research backlog
 
-- Research backlog: 642
+- Research backlog: 648
 
 ## Publication health
 
@@ -67,7 +67,7 @@ Resolved and superseded issues remain in the canonical audit but are not current
 - Error **XMTR — Xometry, Inc.: Xometry security review blocked by issuer identity conflict** — The validated operation payload identifies XMTR with issuer\_id issuer\_0b3fe347955c2ce31e63, while canonical data/tables/securities.csv binds the same immutable security\_id to issuer\_dbdde9b294689a9af3d5. The validated security upsert correctly failed closed with an immutable-identity conflict. Four current primary sources were retained, but no security row, research page, assessment, strategy, signal, order, allocation or accounting state was changed. Resolve the canonic
 - Error **Hermes operation validation failed: Security research for SGML on 2026-08-17** — operation artifact directory is not empty: /\_\_w/PaperTrader/PaperTrader/data/runs/Daily report for 2026-08-17/Security research for SGML on 2026-08-17
 - Error **Hermes operation validation failed: Security research for YEC.F on 2026-08-22** — Hermes timed out after 1800s; agent result is missing or a symlink: data/runs/Daily report for 2026-09-07/Security research for YEC.F on 2026-08-22/agent\_result.json
-- Error **Hermes operation validation failed: Security research for LAC on 2026-08-08** — claim excerpt exceeds the bounded public-source quote allowance
+- Error **Hermes operation validation failed: Security research for LAC on 2026-08-08** — completed security research requires exactly one immutable assessment version; observed claim support must match the retained inspected source excerpt
 - Error **Hermes operation validation failed: Security research for ANIC.L on 2026-09-11** — files\_changed claims paths absent from the actual delta: \['data/operations/operations\_TODO.csv'\]
 - Error **ABBNY — ABB Ltd: ABB assessment provenance does not match corrected final research page** — Operation Security research for ABBNY on 2026-09-03 accepted immutable assessment assessment\_a3946a163695f1a9f51f while the security page still carried the prior prose disposition. Deterministic derivation changed the current disposition from Sell / Avoid to Hold / Watch at the lower mark, so the page and structured security summary were corrected after the immutable assessment was written. The current assessment and final page now agree economically, and exactly one assessment version names this operation, bu
 - Error **Hermes operation validation failed: Security research for LMND on 2026-09-11** — claim excerpt exceeds the bounded public-source quote allowance

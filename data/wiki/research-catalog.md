@@ -7,8 +7,8 @@ tags:
 created: "2026-10-15"
 updated: "2026-10-15"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_f641c45d3a6e7301a8ce"
-as_of: "2026-10-15T16:26:25Z"
+snapshot_id: "decision_6abcd17bed9d2596a85c"
+as_of: "2026-10-15T17:27:05Z"
 ---
 
 # Research catalog
@@ -307,6 +307,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [EVK — Bollinger below lower](inbox/market-security_ccb25582c0392492fe9e-bollinger_below_lower-bc7e58016a25)
 - [EVK — MACD cross above signal](inbox/market-security_ccb25582c0392492fe9e-macd_cross_above_signal-45bd79a57a02)
 - [EVK — RSI overbought](inbox/market-security_ccb25582c0392492fe9e-rsi_overbought-0b3e0b2b9ffc)
+- [EVK — RSI overbought](inbox/market-security_ccb25582c0392492fe9e-rsi_overbought-fa25fcaf1701)
 - [EVK — Volume anomaly](inbox/market-security_ccb25582c0392492fe9e-volume_anomaly-9c18f8d9013d)
 - [EVK — Volume anomaly](inbox/market-security_ccb25582c0392492fe9e-volume_anomaly-c929b0586d3f)
 - [EVK — Volume anomaly](inbox/market-security_ccb25582c0392492fe9e-volume_anomaly-c96d6e6f20e4)
@@ -548,6 +549,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [NIB.F — MACD cross above signal](inbox/market-security_3853e54c619d597dcaa1-macd_cross_above_signal-8478cd817392)
 - [NIB.F — MACD cross below signal](inbox/market-security_3853e54c619d597dcaa1-macd_cross_below_signal-4e470f8fbb9a)
 - [NIB.F — MACD cross below signal](inbox/market-security_3853e54c619d597dcaa1-macd_cross_below_signal-d1ce93e17fe6)
+- [NIB.F — RSI oversold](inbox/market-security_3853e54c619d597dcaa1-rsi_oversold-636059fc318f)
 - [NIB.F — Volume anomaly](inbox/market-security_3853e54c619d597dcaa1-volume_anomaly-1249876a4ec1)
 - [NIB.F — Volume anomaly](inbox/market-security_3853e54c619d597dcaa1-volume_anomaly-815d3d6124c1)
 - [NIB.F — Volume anomaly](inbox/market-security_3853e54c619d597dcaa1-volume_anomaly-c0eb5fe23c5e)
@@ -827,6 +829,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [SSU.VI — Bollinger above upper](inbox/market-security_567d0d575bbd30aaa91d-bollinger_above_upper-469186538f68)
 - [SSU.VI — Bollinger above upper](inbox/market-security_567d0d575bbd30aaa91d-bollinger_above_upper-8c1924be2a50)
 - [SSU.VI — Bollinger above upper](inbox/market-security_567d0d575bbd30aaa91d-bollinger_above_upper-eef59fce67f9)
+- [SSU.VI — Bollinger below lower](inbox/market-security_567d0d575bbd30aaa91d-bollinger_below_lower-19e5fb1cb8a3)
 - [SSU.VI — Bollinger below lower](inbox/market-security_567d0d575bbd30aaa91d-bollinger_below_lower-6f69e9b23544)
 - [SSU.VI — Bollinger below lower](inbox/market-security_567d0d575bbd30aaa91d-bollinger_below_lower-917454ed7e3a)
 - [SSU.VI — MACD cross above signal](inbox/market-security_567d0d575bbd30aaa91d-macd_cross_above_signal-347a0faa1d0e)
@@ -836,6 +839,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [SSU.VI — MACD cross below signal](inbox/market-security_567d0d575bbd30aaa91d-macd_cross_below_signal-8f9c6c3bd60f)
 - [SSU.VI — MACD cross below signal](inbox/market-security_567d0d575bbd30aaa91d-macd_cross_below_signal-96c9fd7ac047)
 - [SSU.VI — Volume anomaly](inbox/market-security_567d0d575bbd30aaa91d-volume_anomaly-05d8f73e2b22)
+- [SSU.VI — Volume anomaly](inbox/market-security_567d0d575bbd30aaa91d-volume_anomaly-2bab6bdc0199)
 - [SSU.VI — Volume anomaly](inbox/market-security_567d0d575bbd30aaa91d-volume_anomaly-58db175775da)
 - [SSUN.VI — Bollinger above upper](inbox/market-security_d08d763780400dfbffce-bollinger_above_upper-0a5c0bb49ecc)
 - [SSUN.VI — Bollinger above upper](inbox/market-security_d08d763780400dfbffce-bollinger_above_upper-4d2ca04277e3)
@@ -843,6 +847,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [SSUN.VI — Bollinger above upper](inbox/market-security_d08d763780400dfbffce-bollinger_above_upper-77c8f6140b0c)
 - [SSUN.VI — Bollinger above upper](inbox/market-security_d08d763780400dfbffce-bollinger_above_upper-7c0a772bdc86)
 - [SSUN.VI — Bollinger below lower](inbox/market-security_d08d763780400dfbffce-bollinger_below_lower-7296dd71702a)
+- [SSUN.VI — Bollinger below lower](inbox/market-security_d08d763780400dfbffce-bollinger_below_lower-ac4738806b8b)
 - [SSUN.VI — MACD cross above signal](inbox/market-security_d08d763780400dfbffce-macd_cross_above_signal-5f77e49fc4fd)
 - [SSUN.VI — MACD cross above signal](inbox/market-security_d08d763780400dfbffce-macd_cross_above_signal-86d5689632bc)
 - [SSUN.VI — MACD cross above signal](inbox/market-security_d08d763780400dfbffce-macd_cross_above_signal-f92ad63c5616)
@@ -1023,6 +1028,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [YEC.F — MACD cross above signal](inbox/market-security_89969b7dac39b7db5661-macd_cross_above_signal-a4f241b4f45f)
 - [YEC.F — MACD cross below signal](inbox/market-security_89969b7dac39b7db5661-macd_cross_below_signal-5285e64bacc0)
 - [YEC.F — MACD cross below signal](inbox/market-security_89969b7dac39b7db5661-macd_cross_below_signal-5315eb960d39)
+- [YEC.F — MACD cross below signal](inbox/market-security_89969b7dac39b7db5661-macd_cross_below_signal-af084807024c)
 - [YEC.F — RSI oversold](inbox/market-security_89969b7dac39b7db5661-rsi_oversold-51314ebfffea)
 - [YEC.F — RSI oversold](inbox/market-security_89969b7dac39b7db5661-rsi_oversold-809c984a49eb)
 - [YEC.F — RSI oversold](inbox/market-security_89969b7dac39b7db5661-rsi_oversold-a3f287ad1802)
@@ -1351,12 +1357,3 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
-
-## Inbox
-
-- [[inbox/market-security_3853e54c619d597dcaa1-rsi_oversold-636059fc318f|NIB.F — RSI oversold]]
-- [[inbox/market-security_567d0d575bbd30aaa91d-bollinger_below_lower-19e5fb1cb8a3|SSU.VI — Bollinger below lower]]
-- [[inbox/market-security_567d0d575bbd30aaa91d-volume_anomaly-2bab6bdc0199|SSU.VI — Volume anomaly]]
-- [[inbox/market-security_89969b7dac39b7db5661-macd_cross_below_signal-af084807024c|YEC.F — MACD cross below signal]]
-- [[inbox/market-security_ccb25582c0392492fe9e-rsi_overbought-fa25fcaf1701|EVK — RSI overbought]]
-- [[inbox/market-security_d08d763780400dfbffce-bollinger_below_lower-ac4738806b8b|SSUN.VI — Bollinger below lower]]

@@ -1369,3 +1369,7 @@ at a dated entry boundary after the live daily run crossed the configured 5,000-
 - Created candidate packet [[inbox/market-security_d08d763780400dfbffce-bollinger_below_lower-ac4738806b8b]] (ac4738806b8b).
 
 - Classified [[inbox/market-security_d08d763780400dfbffce-bollinger_below_lower-ac4738806b8b]] as `ingest`: Material 12.4% decline with a strengthened Bollinger-below-lower transition merits durable review.
+
+- Published investor decision snapshot `decision_6abcd17bed9d2596a85c`.
+
+- Generated canonical [[daily-reports/daily-report_20261015]] for run `daily-20261015T170629Z`.

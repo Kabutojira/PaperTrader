@@ -7,8 +7,8 @@ tags:
 created: "2026-10-15"
 updated: "2026-10-15"
 provenance: deterministic-report-generator
-run_id: "daily-20261015T134132Z"
-snapshot_id: "decision_f641c45d3a6e7301a8ce"
+run_id: "daily-20261015T170629Z"
+snapshot_id: "decision_6abcd17bed9d2596a85c"
 report_page: 2
 report_page_count: 2
 ---
@@ -19,6 +19,10 @@ report_page_count: 2
 
 ### Open issues and delivery failures
 
+- Error — [[system-status|ABB assessment provenance does not match corrected final research page]]: Operation Security research for ABBNY on 2026-09-03 accepted immutable assessment assessment\_a3946a163695f1a9f51f while the security page still carried the prior prose disposition. Deterministic derivation changed the current disposition from Sell / Avoid to Hold / Watch at the lower mark, so the page and structured security summary were corrected after the immutable assessment was written. The current assessment and final page now agree economically, and exactly one assessment version names th…
+- Error — [[system-status|Hermes operation validation failed: Security research for LMND on 2026-09-11]]: claim excerpt exceeds the bounded public-source quote allowance
+- Error — [[system-status|Hermes operation validation failed: Daily podcast for Daily report for 2026-08-06 on 2026-08-06]]: cannot restore rejected path data/wiki/daily-reports/daily-report\_20260806.md: pre-run path cannot be restored because Git metadata is unavailable; daily podcast spoken transcript must label paper trading
+- Error — [[system-status|Hermes operation validation failed: Opportunity research for Market alert for CROX on 2026-09-11]]: agent result is missing or a symlink: data/runs/Daily report for 2026-09-11/Opportunity research for Market alert for CROX on 2026-09-11/agent\_result.json
 - Error — [[system-status|Hermes operation validation failed: Security research for ABBNY on 2026-09-03]]: files\_changed claims paths absent from the actual delta: \['data/operations/operations\_TODO.csv'\]
 - Error — [[system-status|Hermes operation validation failed: Daily podcast for Daily report for 2026-08-17 on 2026-08-17]]: non-successful daily podcast must not retain a transcript page
 - Error — [[system-status|Hermes operation validation failed: Quick check research for TWST on 2026-08-05]]: agent result was written before completed change: data/runs/Daily report for 2026-08-12/Quick check research for TWST on 2026-08-05/command\_audit.json; commands\_run does not exactly match deterministic CLI audit receipts

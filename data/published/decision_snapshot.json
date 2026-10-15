@@ -1,6 +1,6 @@
 {
   "actionable_signals": [],
-  "as_of": "2026-10-15T16:26:25Z",
+  "as_of": "2026-10-15T17:27:05Z",
   "base_currency": "EUR",
   "candidate_pipeline": [
     {
@@ -67,7 +67,7 @@
       "ticker": "ASML",
       "tier": "watch",
       "valuation_mark": "1650",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -142,7 +142,7 @@
       "ticker": "ANET",
       "tier": "watch",
       "valuation_mark": "195.4199981689453",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -217,7 +217,7 @@
       "ticker": "PLTR",
       "tier": "watch",
       "valuation_mark": "200.97000122070312",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -278,7 +278,7 @@
       "ticker": "NVDA",
       "tier": "watch",
       "valuation_mark": "221.3000030517578",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -351,7 +351,7 @@
       "ticker": "GOOGL",
       "tier": "watch",
       "valuation_mark": "347.6400146484375",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -426,7 +426,7 @@
       "ticker": "TSM",
       "tier": "watch",
       "valuation_mark": "430",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -499,7 +499,7 @@
       "ticker": "ISRG",
       "tier": "watch",
       "valuation_mark": "420.239990234375",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -564,7 +564,7 @@
       "ticker": "PLS.AX",
       "tier": "watch",
       "valuation_mark": "2.9700000286102295",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "AUD"
     },
     {
@@ -639,7 +639,7 @@
       "ticker": "SPOT",
       "tier": "watch",
       "valuation_mark": "523.9600219726562",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -714,7 +714,7 @@
       "ticker": "AMAT",
       "tier": "watch",
       "valuation_mark": "446.6300048828125",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -781,7 +781,7 @@
       "ticker": "TDY",
       "tier": "watch",
       "valuation_mark": "608.9000244140625",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -856,7 +856,7 @@
       "ticker": "META",
       "tier": "watch",
       "valuation_mark": "737.5399780273438",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -919,7 +919,7 @@
       "ticker": "UBER",
       "tier": "watch",
       "valuation_mark": "69.29000091552734",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -982,7 +982,7 @@
       "ticker": "VRT",
       "tier": "watch",
       "valuation_mark": "222.8300018310547",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -1057,7 +1057,7 @@
       "ticker": "GEV",
       "tier": "watch",
       "valuation_mark": "941.780029296875",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -1130,7 +1130,7 @@
       "ticker": "MSFT",
       "tier": "watch",
       "valuation_mark": "533.6900024414062",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -1205,7 +1205,7 @@
       "ticker": "CRWD",
       "tier": "watch",
       "valuation_mark": "249.2899932861328",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -1278,7 +1278,7 @@
       "ticker": "ETN",
       "tier": "watch",
       "valuation_mark": "408.8500061035156",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -1343,7 +1343,7 @@
       "ticker": "DLO",
       "tier": "watch",
       "valuation_mark": "14.6899995803833",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -1406,7 +1406,7 @@
       "ticker": "MELI",
       "tier": "watch",
       "valuation_mark": "1839.1099853515625",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -1471,7 +1471,7 @@
       "ticker": "CSL",
       "tier": "watch",
       "valuation_mark": "326.489990234375",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -1544,7 +1544,7 @@
       "ticker": "AMZN",
       "tier": "watch",
       "valuation_mark": "254.0800018310547",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -1617,7 +1617,7 @@
       "ticker": "LH",
       "tier": "watch",
       "valuation_mark": "317.3399963378906",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -1690,8 +1690,81 @@
       "ticker": "RTX",
       "tier": "watch",
       "valuation_mark": "186.47000122070312",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
+    },
+    {
+      "allocation_intent_id": "",
+      "assessment_id": "assessment_7be713ccc996f281a300",
+      "base_fair_value": "240",
+      "base_probability_pct": "50",
+      "base_return_pct": "-6.97674418604651162790697674",
+      "base_upside_pct": "-6.97674418604651162790697674",
+      "bear_base_payoff_ratio": "0",
+      "bear_fair_value": "190",
+      "bear_probability_pct": "25",
+      "bear_return_pct": "-26.35658914728682170542635659",
+      "bull_fair_value": "330",
+      "bull_probability_pct": "25",
+      "bull_return_pct": "27.906976744186046511627907",
+      "buy_below_price": "192",
+      "candidate_edge": "20",
+      "canonical_rating": "hold",
+      "classification": "research_incomplete",
+      "company_name": "Schneider Electric SE",
+      "confidence": "medium",
+      "confidence_adjusted_expected_return_pct": "-2.325581395348837209302325585",
+      "downside_pct": "-26.35658914728682170542635659",
+      "effective_score": "80",
+      "eligibility_frontier": {
+        "base_return_pct": "-16.97674418604651162790697674",
+        "bear_base_payoff_ratio": "-1",
+        "confidence_levels": "0",
+        "expected_bear_payoff_ratio": "-0.75",
+        "expected_return_pct": "-12.32558139534883720930232558",
+        "hard_blockers": "",
+        "margin_of_safety_pct": "-7.5",
+        "relationship_status": "pending"
+      },
+      "evidence_state": "complete",
+      "expected_bear_payoff_ratio": "0",
+      "expected_return_pct": "-3.10077519379844961240310078",
+      "margin_of_safety_pct": "-7.5",
+      "portfolio_action": "watch",
+      "position_cap_pct": "0",
+      "rank": "",
+      "rating_change_conditions": "Upgrade only if price or stronger normalized earnings clear every expected, base, payoff and margin-of-safety gate after the AI-infrastructure-power relationship is accepted; downgrade if data-centre demand, backlog conversion, margins, cash conversion, leverage, acquisition returns or concentration deteriorate.",
+      "reason_codes": [
+        "assessment_evidence_stale",
+        "assessment_stale",
+        "base_return_below_minimum",
+        "bear_base_payoff_below_starter_minimum",
+        "expected_bear_payoff_below_starter_minimum",
+        "expected_return_below_minimum",
+        "margin_of_safety_below_starter_minimum",
+        "relationship_missing_or_stale"
+      ],
+      "reason_labels": [
+        "The assessment's registered evidence is not fresh.",
+        "The comparable assessment is stale or expired.",
+        "Base-case return is below threshold.",
+        "Bear/base payoff is below the starter threshold.",
+        "Expected/bear payoff is below the starter threshold.",
+        "Confidence-adjusted expected return is below threshold.",
+        "Margin of safety is below the starter threshold.",
+        "A current accepted idea-to-security relationship is unavailable."
+      ],
+      "research_conclusion": "Rating: Hold. Portfolio action: Watch. Bear/base/bull returns are -26.35658914728682170542635659%/-6.97674418604651162790697674%/27.906976744186046511627907% over 12 months; probability-weighted expected return is -3.10077519379844961240310078% with medium confidence. Upgrade or downgrade conditions: Upgrade only if price or stronger normalized earnings clear every expected, base, payoff and margin-of-safety gate after the AI-infrastructure-power relationship is accepted; downgrade if data-centre demand, backlog conversion, margins, cash conversion, leverage, acquisition returns or concentration deteriorate.",
+      "research_page": "data/wiki/securities/security_dc8486c1d61df62a22fd.md",
+      "review_at": "2026-09-30T22:44:59Z",
+      "security_id": "security_dc8486c1d61df62a22fd",
+      "target_quantity": "0",
+      "target_weight_pct": "0",
+      "ticker": "SU",
+      "tier": "watch",
+      "valuation_mark": "258",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
+      "valuation_mark_currency": "EUR"
     },
     {
       "allocation_intent_id": "",
@@ -1765,81 +1838,8 @@
       "ticker": "TXN",
       "tier": "watch",
       "valuation_mark": "280.6499938964844",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
-    },
-    {
-      "allocation_intent_id": "",
-      "assessment_id": "assessment_7be713ccc996f281a300",
-      "base_fair_value": "240",
-      "base_probability_pct": "50",
-      "base_return_pct": "-9.22843965950970281950135972",
-      "base_upside_pct": "-9.22843965950970281950135972",
-      "bear_base_payoff_ratio": "0",
-      "bear_fair_value": "190",
-      "bear_probability_pct": "25",
-      "bear_return_pct": "-28.13918139711184806543857645",
-      "bull_fair_value": "330",
-      "bull_probability_pct": "25",
-      "bull_return_pct": "24.8108954681741586231856304",
-      "buy_below_price": "192",
-      "candidate_edge": "20",
-      "canonical_rating": "hold",
-      "classification": "research_incomplete",
-      "company_name": "Schneider Electric SE",
-      "confidence": "medium",
-      "confidence_adjusted_expected_return_pct": "-4.084718483991955327735437285",
-      "downside_pct": "-28.13918139711184806543857645",
-      "effective_score": "80",
-      "eligibility_frontier": {
-        "base_return_pct": "-19.22843965950970281950135972",
-        "bear_base_payoff_ratio": "-1",
-        "confidence_levels": "0",
-        "expected_bear_payoff_ratio": "-0.75",
-        "expected_return_pct": "-14.08471848399195532773543728",
-        "hard_blockers": "",
-        "margin_of_safety_pct": "-10.16666412353516666666666667",
-        "relationship_status": "pending"
-      },
-      "evidence_state": "complete",
-      "expected_bear_payoff_ratio": "0",
-      "expected_return_pct": "-5.44629131198927377031391638",
-      "margin_of_safety_pct": "-10.16666412353516666666666667",
-      "portfolio_action": "watch",
-      "position_cap_pct": "0",
-      "rank": "",
-      "rating_change_conditions": "Upgrade only if price or stronger normalized earnings clear every expected, base, payoff and margin-of-safety gate after the AI-infrastructure-power relationship is accepted; downgrade if data-centre demand, backlog conversion, margins, cash conversion, leverage, acquisition returns or concentration deteriorate.",
-      "reason_codes": [
-        "assessment_evidence_stale",
-        "assessment_stale",
-        "base_return_below_minimum",
-        "bear_base_payoff_below_starter_minimum",
-        "expected_bear_payoff_below_starter_minimum",
-        "expected_return_below_minimum",
-        "margin_of_safety_below_starter_minimum",
-        "relationship_missing_or_stale"
-      ],
-      "reason_labels": [
-        "The assessment's registered evidence is not fresh.",
-        "The comparable assessment is stale or expired.",
-        "Base-case return is below threshold.",
-        "Bear/base payoff is below the starter threshold.",
-        "Expected/bear payoff is below the starter threshold.",
-        "Confidence-adjusted expected return is below threshold.",
-        "Margin of safety is below the starter threshold.",
-        "A current accepted idea-to-security relationship is unavailable."
-      ],
-      "research_conclusion": "Rating: Hold. Portfolio action: Watch. Bear/base/bull returns are -28.13918139711184806543857645%/-9.22843965950970281950135972%/24.8108954681741586231856304% over 12 months; probability-weighted expected return is -5.44629131198927377031391638% with medium confidence. Upgrade or downgrade conditions: Upgrade only if price or stronger normalized earnings clear every expected, base, payoff and margin-of-safety gate after the AI-infrastructure-power relationship is accepted; downgrade if data-centre demand, backlog conversion, margins, cash conversion, leverage, acquisition returns or concentration deteriorate.",
-      "research_page": "data/wiki/securities/security_dc8486c1d61df62a22fd.md",
-      "review_at": "2026-09-30T22:44:59Z",
-      "security_id": "security_dc8486c1d61df62a22fd",
-      "target_quantity": "0",
-      "target_weight_pct": "0",
-      "ticker": "SU",
-      "tier": "watch",
-      "valuation_mark": "264.3999938964844",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
-      "valuation_mark_currency": "EUR"
     },
     {
       "allocation_intent_id": "",
@@ -1907,7 +1907,7 @@
       "ticker": "ALB",
       "tier": "watch",
       "valuation_mark": "97.97000122070312",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -1980,7 +1980,7 @@
       "ticker": "KTOS",
       "tier": "watch",
       "valuation_mark": "39.33000183105469",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -2055,7 +2055,7 @@
       "ticker": "POWL",
       "tier": "watch",
       "valuation_mark": "169.52999877929688",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -2130,7 +2130,7 @@
       "ticker": "PL",
       "tier": "watch",
       "valuation_mark": "14.130000114440918",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -2205,7 +2205,7 @@
       "ticker": "INTC",
       "tier": "watch",
       "valuation_mark": "98.12000274658203",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -2280,7 +2280,7 @@
       "ticker": "HOOD",
       "tier": "watch",
       "valuation_mark": "101.08000183105469",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -2355,7 +2355,7 @@
       "ticker": "VLO",
       "tier": "watch",
       "valuation_mark": "459.7799987792969",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -2418,7 +2418,7 @@
       "ticker": "PATH",
       "tier": "watch",
       "valuation_mark": "13.0600004196167",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -2481,7 +2481,7 @@
       "ticker": "TCEHY",
       "tier": "watch",
       "valuation_mark": "53.25",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -2548,7 +2548,7 @@
       "ticker": "ABCL",
       "tier": "watch",
       "valuation_mark": "12.369999885559082",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -2623,7 +2623,7 @@
       "ticker": "PWR",
       "tier": "watch",
       "valuation_mark": "660.530029296875",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -2686,7 +2686,7 @@
       "ticker": "SOFI",
       "tier": "watch",
       "valuation_mark": "14.220000267028809",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -2749,7 +2749,7 @@
       "ticker": "SQM",
       "tier": "watch",
       "valuation_mark": "61.63999938964844",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -2822,7 +2822,7 @@
       "ticker": "RIO",
       "tier": "watch",
       "valuation_mark": "91.25",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -2897,7 +2897,7 @@
       "ticker": "QCOM",
       "tier": "watch",
       "valuation_mark": "172.6199951171875",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -2972,7 +2972,7 @@
       "ticker": "BE",
       "tier": "watch",
       "valuation_mark": "239.33999633789062",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -3047,7 +3047,7 @@
       "ticker": "TWST",
       "tier": "watch",
       "valuation_mark": "148.16000366210938",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -3113,8 +3113,8 @@
       "target_weight_pct": "0",
       "ticker": "SSU.VI",
       "tier": "watch",
-      "valuation_mark": "3880",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark": "3610",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "EUR"
     },
     {
@@ -3180,8 +3180,8 @@
       "target_weight_pct": "0",
       "ticker": "SSUN.VI",
       "tier": "watch",
-      "valuation_mark": "2920",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark": "2750",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "EUR"
     },
     {
@@ -3248,7 +3248,7 @@
       "ticker": "ENPH",
       "tier": "watch",
       "valuation_mark": "29.350000381469727",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -3323,7 +3323,7 @@
       "ticker": "RBLX",
       "tier": "watch",
       "valuation_mark": "47.540000915527344",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -3398,7 +3398,7 @@
       "ticker": "TSLA",
       "tier": "watch",
       "valuation_mark": "367.1600036621094",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -3475,7 +3475,7 @@
       "ticker": "SPCX",
       "tier": "watch",
       "valuation_mark": "152.16000366210938",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -3483,38 +3483,38 @@
       "assessment_id": "assessment_7f28dfd9240d6099400b",
       "base_fair_value": "52",
       "base_probability_pct": "50",
-      "base_return_pct": "46.4788732394366197183098592",
-      "base_upside_pct": "46.4788732394366197183098592",
-      "bear_base_payoff_ratio": "3.000000000000000000000000003",
+      "base_return_pct": "44.6453376813453581176661257",
+      "base_upside_pct": "44.6453376813453581176661257",
+      "bear_base_payoff_ratio": "2.697478517487020753216303263",
       "bear_fair_value": "30",
       "bear_probability_pct": "30",
-      "bear_return_pct": "-15.49295774647887323943661972",
+      "bear_return_pct": "-16.55076672230075493211569673",
       "bull_fair_value": "70",
       "bull_probability_pct": "20",
-      "bull_return_pct": "97.1830985915492957746478873",
+      "bull_return_pct": "94.7148776479649051583967076",
       "buy_below_price": "41.6",
       "candidate_edge": "10",
       "canonical_rating": "buy",
       "classification": "research_incomplete",
       "company_name": "Prosus N.V.",
       "confidence": "medium",
-      "confidence_adjusted_expected_return_pct": "28.52112676056338028169014082",
-      "downside_pct": "-15.49295774647887323943661972",
+      "confidence_adjusted_expected_return_pct": "27.22531076518157520815827148",
+      "downside_pct": "-16.55076672230075493211569673",
       "effective_score": "70",
       "eligibility_frontier": {
-        "base_return_pct": "36.4788732394366197183098592",
-        "bear_base_payoff_ratio": "2.000000000000000000000000003",
+        "base_return_pct": "34.6453376813453581176661257",
+        "bear_base_payoff_ratio": "1.697478517487020753216303263",
         "confidence_levels": "0",
-        "expected_bear_payoff_ratio": "1.090909090909090909090909089",
-        "expected_return_pct": "18.52112676056338028169014082",
+        "expected_bear_payoff_ratio": "0.894957676099547533333287338",
+        "expected_return_pct": "17.22531076518157520815827148",
         "hard_blockers": "",
-        "margin_of_safety_pct": "31.73076923076923076923076923",
+        "margin_of_safety_pct": "30.86538314819336538461538462",
         "relationship_status": "pending"
       },
       "evidence_state": "complete",
-      "expected_bear_payoff_ratio": "1.840909090909090909090909089",
-      "expected_return_pct": "38.0281690140845070422535211",
-      "margin_of_safety_pct": "31.73076923076923076923076923",
+      "expected_bear_payoff_ratio": "1.644957676099547533333287338",
+      "expected_return_pct": "36.3004143535754336108776953",
+      "margin_of_safety_pct": "30.86538314819336538461538462",
       "portfolio_action": "hold",
       "position_cap_pct": "0",
       "rank": "",
@@ -3529,7 +3529,7 @@
         "The comparable assessment is stale or expired.",
         "A current accepted idea-to-security relationship is unavailable."
       ],
-      "research_conclusion": "Rating: Buy. Portfolio action: Hold. Bear/base/bull returns are -15.49295774647887323943661972%/46.4788732394366197183098592%/97.1830985915492957746478873% over 12 months; probability-weighted expected return is 38.0281690140845070422535211% with medium confidence. Upgrade or downgrade conditions: Upgrade only after current look-through evidence and an accepted relationship clear all economic and governance gates; downgrade if Tencent value, private-asset economics or buyback accretion weaken, net debt rises, or capital allocation destroys per-share NAV.",
+      "research_conclusion": "Rating: Buy. Portfolio action: Hold. Bear/base/bull returns are -16.55076672230075493211569673%/44.6453376813453581176661257%/94.7148776479649051583967076% over 12 months; probability-weighted expected return is 36.3004143535754336108776953% with medium confidence. Upgrade or downgrade conditions: Upgrade only after current look-through evidence and an accepted relationship clear all economic and governance gates; downgrade if Tencent value, private-asset economics or buyback accretion weaken, net debt rises, or capital allocation destroys per-share NAV.",
       "research_page": "data/wiki/securities/security_8b703a8adf5f864acaa4.md",
       "review_at": "2026-09-27T19:18:00Z",
       "security_id": "security_8b703a8adf5f864acaa4",
@@ -3537,8 +3537,8 @@
       "target_weight_pct": "0",
       "ticker": "PRX",
       "tier": "watch",
-      "valuation_mark": "35.5",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark": "35.95000076293945",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "EUR"
     },
     {
@@ -3601,7 +3601,7 @@
       "ticker": "DPZ",
       "tier": "watch",
       "valuation_mark": "295.8900146484375",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -3609,38 +3609,38 @@
       "assessment_id": "assessment_cc11a683fe32530dd4a5",
       "base_fair_value": "36.38",
       "base_probability_pct": "50",
-      "base_return_pct": "3.293579611277813062944019",
-      "base_upside_pct": "3.293579611277813062944019",
-      "bear_base_payoff_ratio": "0.1057428122348490117257591127",
+      "base_return_pct": "8.1450673604789111109805512",
+      "base_upside_pct": "8.1450673604789111109805512",
+      "bear_base_payoff_ratio": "0.2917998709746609645562343104",
       "bear_fair_value": "24.25",
       "bear_probability_pct": "25",
-      "bear_return_pct": "-31.14707791166885742780669428",
+      "bear_return_pct": "-27.91319726521128107638047368",
       "bull_fair_value": "48.5",
       "bull_probability_pct": "25",
-      "bull_return_pct": "37.7058441766622851443866114",
+      "bull_return_pct": "44.1736054695774378472390526",
       "buy_below_price": "29.104",
       "candidate_edge": "10",
       "canonical_rating": "hold",
       "classification": "research_incomplete",
       "company_name": "Fanuc Corporation",
       "confidence": "medium",
-      "confidence_adjusted_expected_return_pct": "2.4648610289154475954627416",
-      "downside_pct": "-31.14707791166885742780669428",
+      "confidence_adjusted_expected_return_pct": "6.1032267984982460611536903",
+      "downside_pct": "-27.91319726521128107638047368",
       "effective_score": "70",
       "eligibility_frontier": {
-        "base_return_pct": "-6.706420388722186937055981",
-        "bear_base_payoff_ratio": "-0.8942571877651509882742408873",
+        "base_return_pct": "-1.8549326395210888890194488",
+        "bear_base_payoff_ratio": "-0.7082001290253390354437656896",
         "confidence_levels": "0",
-        "expected_bear_payoff_ratio": "-0.6708638114976423295731156026",
-        "expected_return_pct": "-7.5351389710845524045372584",
+        "expected_bear_payoff_ratio": "-0.5313497772931656524532729822",
+        "expected_return_pct": "-3.8967732015017539388463097",
         "hard_blockers": "",
-        "margin_of_safety_pct": "3.188561790260788894997251237",
+        "margin_of_safety_pct": "7.531612452863001649257833975",
         "relationship_status": "pending"
       },
       "evidence_state": "complete",
-      "expected_bear_payoff_ratio": "0.07913618850235767042688439739",
-      "expected_return_pct": "3.2864813718872634606169888",
-      "margin_of_safety_pct": "3.188561790260788894997251237",
+      "expected_bear_payoff_ratio": "0.2186502227068343475467270178",
+      "expected_return_pct": "8.1376357313309947482049204",
+      "margin_of_safety_pct": "7.531612452863001649257833975",
       "portfolio_action": "watch",
       "position_cap_pct": "0",
       "rank": "",
@@ -3665,7 +3665,7 @@
         "Margin of safety is below the starter threshold.",
         "A current accepted idea-to-security relationship is unavailable."
       ],
-      "research_conclusion": "Rating: Hold. Portfolio action: Watch. Bear/base/bull returns are -31.14707791166885742780669428%/3.293579611277813062944019%/37.7058441766622851443866114% over 12 months; probability-weighted expected return is 3.2864813718872634606169888% with medium confidence. Upgrade or downgrade conditions: Upgrade allocation eligibility only if a fresh full review confirms the improved return thresholds and bear/base and expected/bear payoff, relationship, liquidity, confidence, and margin-of-safety gates clear; downgrade if guidance, margins, China demand, competitive position, foreign exchange, or Frankfurt liquidity deteriorates.",
+      "research_conclusion": "Rating: Hold. Portfolio action: Watch. Bear/base/bull returns are -27.91319726521128107638047368%/8.1450673604789111109805512%/44.1736054695774378472390526% over 12 months; probability-weighted expected return is 8.1376357313309947482049204% with medium confidence. Upgrade or downgrade conditions: Upgrade allocation eligibility only if a fresh full review confirms the improved return thresholds and bear/base and expected/bear payoff, relationship, liquidity, confidence, and margin-of-safety gates clear; downgrade if guidance, margins, China demand, competitive position, foreign exchange, or Frankfurt liquidity deteriorates.",
       "research_page": "data/wiki/securities/security_96ba305ee7cd586bc348.md",
       "review_at": "2026-09-03T15:44:00Z",
       "security_id": "security_96ba305ee7cd586bc348",
@@ -3673,8 +3673,8 @@
       "target_weight_pct": "0",
       "ticker": "FUC.F",
       "tier": "watch",
-      "valuation_mark": "35.220001220703125",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark": "33.63999938964844",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "EUR"
     },
     {
@@ -3682,38 +3682,38 @@
       "assessment_id": "assessment_5500db8eb6d933ecfbaf",
       "base_fair_value": "33",
       "base_probability_pct": "50",
-      "base_return_pct": "2.3890799525287312129375669",
-      "base_upside_pct": "2.3890799525287312129375669",
-      "bear_base_payoff_ratio": "0.09356020663330905886049806019",
+      "base_return_pct": "2.4208527304328059216601865",
+      "base_upside_pct": "2.4208527304328059216601865",
+      "bear_base_payoff_ratio": "0.09489034835327618404101680707",
       "bear_fair_value": "24",
       "bear_probability_pct": "25",
-      "bear_return_pct": "-25.53521457997910457240904227",
+      "bear_return_pct": "-25.51210710513977751151986437",
       "bull_fair_value": "42",
       "bull_probability_pct": "25",
-      "bull_return_pct": "30.313374485036566998284176",
+      "bull_return_pct": "30.3538125660053893548402374",
       "buy_below_price": "26.4",
       "candidate_edge": "10",
       "canonical_rating": "hold",
       "classification": "research_incomplete",
       "company_name": "Koninklijke Ahold Delhaize N.V.",
       "confidence": "medium",
-      "confidence_adjusted_expected_return_pct": "1.791809964396548409703175175",
-      "downside_pct": "-25.53521457997910457240904227",
+      "confidence_adjusted_expected_return_pct": "1.815639547824604441245139875",
+      "downside_pct": "-25.51210710513977751151986437",
       "effective_score": "70",
       "eligibility_frontier": {
-        "base_return_pct": "-7.6109200474712687870624331",
-        "bear_base_payoff_ratio": "-0.9064397933666909411395019398",
+        "base_return_pct": "-7.5791472695671940783398135",
+        "bear_base_payoff_ratio": "-0.9051096516467238159589831929",
         "confidence_levels": "0",
-        "expected_bear_payoff_ratio": "-0.6798298450250182058546264549",
-        "expected_return_pct": "-8.208190035603451590296824825",
+        "expected_bear_payoff_ratio": "-0.6788322387350428619692373947",
+        "expected_return_pct": "-8.184360452175395558754860125",
         "hard_blockers": "",
-        "margin_of_safety_pct": "2.33333472049596969696969697",
+        "margin_of_safety_pct": "2.363632664535984848484848485",
         "relationship_status": "pending"
       },
       "evidence_state": "complete",
-      "expected_bear_payoff_ratio": "0.07017015497498179414537354514",
-      "expected_return_pct": "2.3890799525287312129375669",
-      "margin_of_safety_pct": "2.33333472049596969696969697",
+      "expected_bear_payoff_ratio": "0.0711677612649571380307626053",
+      "expected_return_pct": "2.4208527304328059216601865",
+      "margin_of_safety_pct": "2.363632664535984848484848485",
       "portfolio_action": "watch",
       "position_cap_pct": "0",
       "rank": "",
@@ -3738,7 +3738,7 @@
         "Margin of safety is below the starter threshold.",
         "A current accepted idea-to-security relationship is unavailable."
       ],
-      "research_conclusion": "Rating: Hold. Portfolio action: Watch. Bear/base/bull returns are -25.53521457997910457240904227%/2.3890799525287312129375669%/30.313374485036566998284176% over 12 months; probability-weighted expected return is 2.3890799525287312129375669% with medium confidence. Upgrade or downgrade conditions: Upgrade only if current evidence and an accepted relationship clear the canonical expected-return, downside-payoff and margin-of-safety gates; downgrade if volumes, margins or cash conversion weaken, lease-adjusted leverage rises, or distributions become uncovered.",
+      "research_conclusion": "Rating: Hold. Portfolio action: Watch. Bear/base/bull returns are -25.51210710513977751151986437%/2.4208527304328059216601865%/30.3538125660053893548402374% over 12 months; probability-weighted expected return is 2.4208527304328059216601865% with medium confidence. Upgrade or downgrade conditions: Upgrade only if current evidence and an accepted relationship clear the canonical expected-return, downside-payoff and margin-of-safety gates; downgrade if volumes, margins or cash conversion weaken, lease-adjusted leverage rises, or distributions become uncovered.",
       "research_page": "data/wiki/securities/security_e19c7fe27fbcc4cd923d.md",
       "review_at": "2026-09-27T19:12:00Z",
       "security_id": "security_e19c7fe27fbcc4cd923d",
@@ -3746,8 +3746,8 @@
       "target_weight_pct": "0",
       "ticker": "AD",
       "tier": "watch",
-      "valuation_mark": "32.22999954223633",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark": "32.220001220703125",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "EUR"
     },
     {
@@ -3820,7 +3820,7 @@
       "ticker": "ABBNY",
       "tier": "watch",
       "valuation_mark": "93.69999694824219",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -3895,7 +3895,7 @@
       "ticker": "TX",
       "tier": "watch",
       "valuation_mark": "58.54999923706055",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -3970,7 +3970,7 @@
       "ticker": "RKLB",
       "tier": "watch",
       "valuation_mark": "59.18000030517578",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -4043,7 +4043,7 @@
       "ticker": "VALE",
       "tier": "watch",
       "valuation_mark": "13.210000038146973",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -4118,7 +4118,7 @@
       "ticker": "MP",
       "tier": "watch",
       "valuation_mark": "39.95000076293945",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -4193,7 +4193,7 @@
       "ticker": "CRSR",
       "tier": "watch",
       "valuation_mark": "13.180000305175781",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -4268,7 +4268,7 @@
       "ticker": "FCX",
       "tier": "watch",
       "valuation_mark": "69.62000274658203",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -4343,7 +4343,7 @@
       "ticker": "SCCO",
       "tier": "watch",
       "valuation_mark": "200.67999267578125",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -4418,7 +4418,7 @@
       "ticker": "NBIS",
       "tier": "watch",
       "valuation_mark": "186.00999450683594",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -4481,7 +4481,7 @@
       "ticker": "CROX",
       "tier": "watch",
       "valuation_mark": "117.54000091552734",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -4548,7 +4548,7 @@
       "ticker": "PYPL",
       "tier": "watch",
       "valuation_mark": "56.099998474121094",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -4623,7 +4623,7 @@
       "ticker": "COIN",
       "tier": "watch",
       "valuation_mark": "172.88999938964844",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -4698,7 +4698,7 @@
       "ticker": "108490",
       "tier": "watch",
       "valuation_mark": "217500",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "KRW"
     },
     {
@@ -4775,7 +4775,7 @@
       "ticker": "XMTR",
       "tier": "watch",
       "valuation_mark": "95.1500015258789",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -4852,7 +4852,7 @@
       "ticker": "03388",
       "tier": "watch",
       "valuation_mark": "24.299999237060547",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "HKD"
     },
     {
@@ -4917,7 +4917,7 @@
       "ticker": "FLNC",
       "tier": "watch",
       "valuation_mark": "6.210000038146973",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -4982,7 +4982,7 @@
       "ticker": "FISV",
       "tier": "watch",
       "valuation_mark": "46.06999969482422",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -5051,7 +5051,7 @@
       "ticker": "LUNR",
       "tier": "watch",
       "valuation_mark": "11.020000457763672",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -5128,7 +5128,7 @@
       "ticker": "MSTR",
       "tier": "watch",
       "valuation_mark": "143.24000549316406",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -5199,7 +5199,7 @@
       "ticker": "RXRX",
       "tier": "watch",
       "valuation_mark": "3.740000009536743",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -5207,38 +5207,38 @@
       "assessment_id": "assessment_8d710a0fa8813b740807",
       "base_fair_value": "9.09",
       "base_probability_pct": "50",
-      "base_return_pct": "17.441863938024475632717338",
-      "base_upside_pct": "17.441863938024475632717338",
-      "bear_base_payoff_ratio": "0.5973452945147450152635257386",
+      "base_return_pct": "16.8380431216456240898049261",
+      "base_upside_pct": "16.8380431216456240898049261",
+      "bear_base_payoff_ratio": "0.5695650742139745919732364856",
       "bear_fair_value": "5.48",
       "bear_probability_pct": "30",
-      "bear_return_pct": "-29.19896431459030511910989967",
+      "bear_return_pct": "-29.56298390466248404707029758",
       "bull_fair_value": "14.51",
       "bull_probability_pct": "20",
-      "bull_return_pct": "87.4677058020610716645465978",
+      "bull_return_pct": "86.5038510115597365833959821",
       "buy_below_price": "7.272",
       "candidate_edge": "0",
       "canonical_rating": "buy",
       "classification": "research_incomplete",
       "company_name": "Parrot S.A.",
       "confidence": "medium",
-      "confidence_adjusted_expected_return_pct": "13.09108787628552046015126395",
-      "downside_pct": "-29.19896431459030511910989967",
+      "confidence_adjusted_expected_return_pct": "12.63817244380201061059542765",
+      "downside_pct": "-29.56298390466248404707029758",
       "effective_score": "56",
       "eligibility_frontier": {
-        "base_return_pct": "7.441863938024475632717338",
-        "bear_base_payoff_ratio": "-0.4026547054852549847364742614",
+        "base_return_pct": "6.8380431216456240898049261",
+        "bear_base_payoff_ratio": "-0.4304349257860254080267635144",
         "confidence_levels": "0",
-        "expected_bear_payoff_ratio": "-0.3016591706732525796156665999",
-        "expected_return_pct": "3.09108787628552046015126395",
+        "expected_bear_payoff_ratio": "-0.3225001074127432995258953708",
+        "expected_return_pct": "2.63817244380201061059542765",
         "hard_blockers": "",
-        "margin_of_safety_pct": "14.85148766646684268426842684",
+        "margin_of_safety_pct": "14.41143883599174917491749175",
         "relationship_status": "pending"
       },
       "evidence_state": "complete",
-      "expected_bear_payoff_ratio": "0.4483408293267474203843334001",
-      "expected_return_pct": "17.4547838350473606135350186",
-      "margin_of_safety_pct": "14.85148766646684268426842684",
+      "expected_bear_payoff_ratio": "0.4274998925872567004741046292",
+      "expected_return_pct": "16.8508965917360141474605702",
+      "margin_of_safety_pct": "14.41143883599174917491749175",
       "portfolio_action": "initiate",
       "position_cap_pct": "0",
       "rank": "",
@@ -5255,7 +5255,7 @@
         "Research quality must be strictly above the configured threshold.",
         "A current accepted idea-to-security relationship is unavailable."
       ],
-      "research_conclusion": "Rating: Buy. Portfolio action: Initiate. Bear/base/bull returns are -29.19896431459030511910989967%/17.441863938024475632717338%/87.4677058020610716645465978% over 12 months; probability-weighted expected return is 17.4547838350473606135350186% with medium confidence. Upgrade or downgrade conditions: Upgrade only if a refreshed primary-evidence valuation clears the margin-of-safety, expected-return, base-upside, payoff and liquidity gates; downgrade if awards fail to convert, recurring profit reverses, working-capital burn persists, partner funding tightens or dilution destroys per-share value.",
+      "research_conclusion": "Rating: Buy. Portfolio action: Initiate. Bear/base/bull returns are -29.56298390466248404707029758%/16.8380431216456240898049261%/86.5038510115597365833959821% over 12 months; probability-weighted expected return is 16.8508965917360141474605702% with medium confidence. Upgrade or downgrade conditions: Upgrade only if a refreshed primary-evidence valuation clears the margin-of-safety, expected-return, base-upside, payoff and liquidity gates; downgrade if awards fail to convert, recurring profit reverses, working-capital burn persists, partner funding tightens or dilution destroys per-share value.",
       "research_page": "data/wiki/securities/security_cc4dcb8f002b61dffe00.md",
       "review_at": "2026-09-19T07:54:58Z",
       "security_id": "security_cc4dcb8f002b61dffe00",
@@ -5263,8 +5263,8 @@
       "target_weight_pct": "0",
       "ticker": "PARRO.PA",
       "tier": "watch",
-      "valuation_mark": "7.739999771118164",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark": "7.78000020980835",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "EUR"
     },
     {
@@ -5329,7 +5329,7 @@
       "ticker": "CSIQ",
       "tier": "watch",
       "valuation_mark": "10.329999923706055",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -5406,7 +5406,7 @@
       "ticker": "WTI",
       "tier": "watch",
       "valuation_mark": "3.6500000953674316",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -5474,8 +5474,8 @@
       "target_weight_pct": "0",
       "ticker": "YEC.F",
       "tier": "watch",
-      "valuation_mark": "26.200000762939453",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark": "24.5",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "EUR"
     },
     {
@@ -5546,7 +5546,7 @@
       "ticker": "SGML",
       "tier": "watch",
       "valuation_mark": "8.489999771118164",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -5611,7 +5611,7 @@
       "ticker": "NOMD",
       "tier": "watch",
       "valuation_mark": "11.319999694824219",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -5688,7 +5688,7 @@
       "ticker": "DNA",
       "tier": "watch",
       "valuation_mark": "11.529999732971191",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "USD"
     },
     {
@@ -5758,8 +5758,8 @@
       "target_weight_pct": "0",
       "ticker": "NIB.F",
       "tier": "watch",
-      "valuation_mark": "10.829999923706055",
-      "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+      "valuation_mark": "10.118000030517578",
+      "valuation_mark_as_of": "2026-10-15T17:06:33Z",
       "valuation_mark_currency": "EUR"
     },
     {
@@ -5891,17 +5891,17 @@
     "pending_order_count": 0,
     "ready_or_active_strategy_count": 0,
     "required_relationship_review_count": 83,
-    "research_backlog_count": 642,
+    "research_backlog_count": 648,
     "reviewed_relationship_count": 2
   },
   "current_portfolio": {
     "cash_base": "9703.02",
-    "cash_weight_pct": "97.15631",
-    "equity_base": "9987.02",
-    "gross_exposure_base": "284",
-    "invested_value_base": "284",
-    "invested_weight_pct": "2.84369",
-    "net_exposure_base": "284",
+    "cash_weight_pct": "97.1213",
+    "equity_base": "9990.62",
+    "gross_exposure_base": "287.6",
+    "invested_value_base": "287.6",
+    "invested_weight_pct": "2.878699",
+    "net_exposure_base": "287.6",
     "portfolio_kind": "current",
     "realized_pnl_base": "0",
     "rows": [
@@ -5909,7 +5909,7 @@
         "action": "no_trade",
         "action_status": "no_action",
         "allocation_intent_id": "",
-        "as_of": "2026-10-15T16:26:25Z",
+        "as_of": "2026-10-15T17:27:05Z",
         "assessment_id": "",
         "base_fair_value": "",
         "base_probability_pct": "",
@@ -5929,7 +5929,7 @@
         "confidence_adjusted_expected_return_pct": "",
         "current_quantity": "9703.02",
         "current_value_base": "9703.02",
-        "current_weight_pct": "97.15631",
+        "current_weight_pct": "97.1213",
         "delta_value_base": "0",
         "downside_pct": "",
         "effective_score": "",
@@ -5938,7 +5938,7 @@
         "exit_rule": "",
         "expected_bear_payoff_ratio": "",
         "expected_return_pct": "",
-        "fx_as_of": "2026-10-15T16:26:25Z",
+        "fx_as_of": "2026-10-15T17:27:05Z",
         "fx_rate_to_base": "1",
         "holding_type": "cash",
         "instrument_type": "cash",
@@ -5947,7 +5947,7 @@
         "mark": "1",
         "mark_base": "1",
         "mark_currency": "",
-        "market_data_as_of": "2026-10-15T16:26:25Z",
+        "market_data_as_of": "2026-10-15T17:27:05Z",
         "order_id": "",
         "portfolio_action": "hold",
         "position_cap_pct": "",
@@ -5959,12 +5959,12 @@
         "security_research_page": "",
         "signal_id": "",
         "sleeve": "cash",
-        "snapshot_id": "decision_f641c45d3a6e7301a8ce",
+        "snapshot_id": "decision_6abcd17bed9d2596a85c",
         "strategy_id": "",
         "strategy_research_page": "",
         "target_quantity": "9703.02",
         "target_value_base": "9703.02",
-        "target_weight_pct": "97.15631",
+        "target_weight_pct": "97.1213",
         "thesis_summary": "Capital retained as the configured portfolio alternative.",
         "ticker": "CASH",
         "tier": "",
@@ -5977,45 +5977,45 @@
         "action": "hold",
         "action_status": "filled",
         "allocation_intent_id": "allocation_intent_451ca921751ca6e57921",
-        "as_of": "2026-10-15T16:26:25Z",
+        "as_of": "2026-10-15T17:27:05Z",
         "assessment_id": "assessment_7f28dfd9240d6099400b",
         "base_fair_value": "52",
         "base_probability_pct": "50",
-        "base_return_pct": "46.4788732394366197183098592",
-        "base_upside_pct": "46.4788732394366197183098592",
-        "bear_base_payoff_ratio": "3.000000000000000000000000003",
+        "base_return_pct": "44.6453376813453581176661257",
+        "base_upside_pct": "44.6453376813453581176661257",
+        "bear_base_payoff_ratio": "2.697478517487020753216303263",
         "bear_fair_value": "30",
         "bear_probability_pct": "30",
-        "bear_return_pct": "-15.49295774647887323943661972",
+        "bear_return_pct": "-16.55076672230075493211569673",
         "bull_fair_value": "70",
         "bull_probability_pct": "20",
-        "bull_return_pct": "97.1830985915492957746478873",
+        "bull_return_pct": "94.7148776479649051583967076",
         "buy_below_price": "41.6",
         "canonical_rating": "buy",
         "company_name": "Prosus N.V.",
         "confidence": "medium",
-        "confidence_adjusted_expected_return_pct": "28.52112676056338028169014082",
+        "confidence_adjusted_expected_return_pct": "27.22531076518157520815827148",
         "current_quantity": "8",
-        "current_value_base": "284",
-        "current_weight_pct": "2.84369",
+        "current_value_base": "287.6",
+        "current_weight_pct": "2.8787",
         "delta_value_base": "0",
-        "downside_pct": "-15.49295774647887323943661972",
+        "downside_pct": "-16.55076672230075493211569673",
         "effective_score": "70",
         "entry_rule": "Open only while allocation_plan_6271cd1bd15ef73f7441, allocation_intent_451ca921751ca6e57921, assessment_7f28dfd9240d6099400b and relationship_e514a92bf6c38d0754ee remain current, fresh PRX EUR inputs are available, and deterministic code derives a positive whole-share delta toward the persisted six-share target after current holdings and pending orders.",
         "evidence_state": "research_incomplete",
         "exit_rule": "Reduce or close only when a current deterministic allocation plan directs reduce or close, the full-baseline eligibility frontier no longer clears, a hard blocker appears, or material Tencent, private-platform, net-debt, repurchase, governance, capital-allocation or valuation evidence invalidates the bounded thesis.",
-        "expected_bear_payoff_ratio": "1.840909090909090909090909089",
-        "expected_return_pct": "38.0281690140845070422535211",
-        "fx_as_of": "2026-10-15T16:26:25Z",
+        "expected_bear_payoff_ratio": "1.644957676099547533333287338",
+        "expected_return_pct": "36.3004143535754336108776953",
+        "fx_as_of": "2026-10-15T17:27:05Z",
         "fx_rate_to_base": "1",
         "holding_type": "security",
         "instrument_type": "equity",
         "invalidation": "Do not increase exposure if Tencent or private-platform economics deteriorate, private marks become unreliable, central net debt rises, value transmission or repurchase accretion is blocked, capital allocation destroys per-share NAV, the assessment or relationship is superseded, or market inputs become stale.",
-        "margin_of_safety_pct": "31.73076923076923076923076923",
-        "mark": "35.5",
-        "mark_base": "35.5",
+        "margin_of_safety_pct": "30.86538314819336538461538462",
+        "mark": "35.95000076293945",
+        "mark_base": "35.95000076293945",
         "mark_currency": "EUR",
-        "market_data_as_of": "2026-10-14T15:30:00Z",
+        "market_data_as_of": "2026-10-15T15:30:00Z",
         "order_id": "",
         "portfolio_action": "initiate",
         "position_cap_pct": "0",
@@ -6027,31 +6027,31 @@
         "security_research_page": "data/wiki/securities/security_8b703a8adf5f864acaa4.md",
         "signal_id": "",
         "sleeve": "baseline",
-        "snapshot_id": "decision_f641c45d3a6e7301a8ce",
+        "snapshot_id": "decision_6abcd17bed9d2596a85c",
         "strategy_id": "strategy_8caa208dfc702a2584a7",
         "strategy_research_page": "data/wiki/strategies/strategy_8caa208dfc702a2584a7.md",
         "target_quantity": "8",
-        "target_value_base": "284",
-        "target_weight_pct": "2.84369",
+        "target_value_base": "287.6",
+        "target_weight_pct": "2.8787",
         "thesis_summary": "Prosus retains Tencent-dominated look-through value, ecommerce exposure and potential per-share accretion from repurchases below NAV; current full-baseline economics support bounded long-equity exposure, while medium confidence, holding-company concentration, private-asset marks, governance, capital-allocation transmission, weak momentum and insufficient diversification prevent conviction treatment.",
         "ticker": "PRX",
         "tier": "watch",
         "valuation_horizon_months": "12",
-        "valuation_mark": "35.5",
-        "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+        "valuation_mark": "35.95000076293945",
+        "valuation_mark_as_of": "2026-10-15T17:06:33Z",
         "valuation_mark_currency": "EUR"
       }
     ],
-    "unrealized_pnl_base": "-12.9774825756439228996376"
+    "unrealized_pnl_base": "-9.3774764721283228996376"
   },
   "evidence_state": "invested_or_actionable",
   "investment_data_status": "degraded",
   "operations_status": "degraded",
   "performance": {
-    "baseline_exposure_base": "284",
+    "baseline_exposure_base": "287.6",
     "conviction_exposure_base": "0",
-    "cumulative_return_pct": "-0.129774825756439228996376",
-    "daily_return_pct": "-0.04723901973950366320428710595",
+    "cumulative_return_pct": "-0.093774764721283228996376",
+    "daily_return_pct": "-0.01120920715378280305613948434",
     "epoch_opening_equity_base": "10000",
     "epoch_started_at": "2026-07-28T12:00:00Z",
     "history": [
@@ -6543,24 +6543,128 @@
       },
       {
         "cash_base": "9703.0225174243560771003624",
-        "cumulative_return_pct": "-0.129774825756439228996376",
-        "daily_return_pct": "-0.04723901973950366320428710595",
+        "cumulative_return_pct": "-0.093774764721283228996376",
+        "daily_return_pct": "-0.01120920715378280305613948434",
         "date": "2026-10-15",
-        "drawdown_pct": "-0.165141",
-        "equity_base": "9987.0225174243560771003624",
-        "gross_exposure_base": "284"
+        "drawdown_pct": "-0.129154",
+        "equity_base": "9990.6225235278716771003624",
+        "gross_exposure_base": "287.6000061035156"
       }
     ],
-    "largest_position_weight_pct": "2.84369",
-    "largest_sector_weight_pct": "2.84369",
+    "largest_position_weight_pct": "2.878699",
+    "largest_sector_weight_pct": "2.878699",
     "performance_epoch_id": "performance_epoch_f20320f2ff68cb5015b6",
     "prior_epoch_count": 1,
     "realized_pnl_base": "0",
-    "running_drawdown_pct": "-0.1651413886934555757661134967",
-    "unrealized_pnl_base": "-12.9774825756439228996376"
+    "running_drawdown_pct": "-0.1291540761869237470394460118",
+    "unrealized_pnl_base": "-9.3774764721283228996376"
   },
   "report_date": "2026-10-15",
   "research_alerts": [
+    {
+      "alert_id": "alert_896b9dba1d7fb412df0f",
+      "alert_type": "bollinger_below_lower",
+      "company_name": "Samsung Electronics Co., Ltd.",
+      "market_data_date": "2026-10-15",
+      "observed_at": "2026-10-15T17:06:33Z",
+      "research_conclusion": "High-priority security research is blocked. scope_deferred_for_capacity",
+      "research_page": "data/wiki/securities/security_d08d763780400dfbffce.md",
+      "research_status": "blocked",
+      "security_id": "security_d08d763780400dfbffce",
+      "ticker": "SSUN.VI",
+      "visible_label": "Research alert — not a trade signal"
+    },
+    {
+      "alert_id": "alert_5aa6611abf2e674cbd9a",
+      "alert_type": "volume_anomaly",
+      "company_name": "Samsung Electronics Co., Ltd.",
+      "market_data_date": "2026-10-15",
+      "observed_at": "2026-10-15T17:06:33Z",
+      "research_conclusion": "High-priority security research is ready to run.",
+      "research_page": "data/wiki/securities/security_567d0d575bbd30aaa91d.md",
+      "research_status": "ready",
+      "security_id": "security_567d0d575bbd30aaa91d",
+      "ticker": "SSU.VI",
+      "visible_label": "Research alert — not a trade signal"
+    },
+    {
+      "alert_id": "alert_3fa67c134806bf43754e",
+      "alert_type": "bollinger_below_lower",
+      "company_name": "Samsung Electronics Co., Ltd.",
+      "market_data_date": "2026-10-15",
+      "observed_at": "2026-10-15T17:06:33Z",
+      "research_conclusion": "High-priority security research is ready to run.",
+      "research_page": "data/wiki/securities/security_567d0d575bbd30aaa91d.md",
+      "research_status": "ready",
+      "security_id": "security_567d0d575bbd30aaa91d",
+      "ticker": "SSU.VI",
+      "visible_label": "Research alert — not a trade signal"
+    },
+    {
+      "alert_id": "alert_4715675c362f3b6c77d2",
+      "alert_type": "rsi_oversold",
+      "company_name": "Parrot S.A.",
+      "market_data_date": "2026-10-15",
+      "observed_at": "2026-10-15T17:06:33Z",
+      "research_conclusion": "High-priority security research is ready to run.",
+      "research_page": "data/wiki/securities/security_cc4dcb8f002b61dffe00.md",
+      "research_status": "ready",
+      "security_id": "security_cc4dcb8f002b61dffe00",
+      "ticker": "PARRO.PA",
+      "visible_label": "Research alert — not a trade signal"
+    },
+    {
+      "alert_id": "alert_f3ce3208811643440708",
+      "alert_type": "rsi_oversold",
+      "company_name": "Nidec Corporation",
+      "market_data_date": "2026-10-15",
+      "observed_at": "2026-10-15T17:06:33Z",
+      "research_conclusion": "High-priority security research is ready to run.",
+      "research_page": "data/wiki/securities/security_3853e54c619d597dcaa1.md",
+      "research_status": "ready",
+      "security_id": "security_3853e54c619d597dcaa1",
+      "ticker": "NIB.F",
+      "visible_label": "Research alert — not a trade signal"
+    },
+    {
+      "alert_id": "alert_d5511731b03e3e1f4c21",
+      "alert_type": "rsi_overbought",
+      "company_name": "Evonik Industries AG",
+      "market_data_date": "2026-10-15",
+      "observed_at": "2026-10-15T17:06:33Z",
+      "research_conclusion": "bearish_alert_unowned",
+      "research_page": "data/wiki/security-catalog.md#security-security_ccb25582c0392492fe9e",
+      "research_status": "skipped",
+      "security_id": "security_ccb25582c0392492fe9e",
+      "ticker": "EVK",
+      "visible_label": "Research alert — not a trade signal"
+    },
+    {
+      "alert_id": "alert_5e7bc1f7cbd44ebed9da",
+      "alert_type": "rsi_oversold",
+      "company_name": "ROBOTIS Co., Ltd.",
+      "market_data_date": "2026-10-15",
+      "observed_at": "2026-10-15T17:06:33Z",
+      "research_conclusion": "Queue triage disposition",
+      "research_page": "data/wiki/securities/security_0c8b3c4291cd97f56d8c.md",
+      "research_status": "skipped",
+      "security_id": "security_0c8b3c4291cd97f56d8c",
+      "ticker": "108490",
+      "visible_label": "Research alert — not a trade signal"
+    },
+    {
+      "alert_id": "alert_3cca4041ded422a9a7a6",
+      "alert_type": "bollinger_below_lower",
+      "company_name": "ROBOTIS Co., Ltd.",
+      "market_data_date": "2026-10-15",
+      "observed_at": "2026-10-15T17:06:33Z",
+      "research_conclusion": "Queue triage disposition",
+      "research_page": "data/wiki/securities/security_0c8b3c4291cd97f56d8c.md",
+      "research_status": "skipped",
+      "security_id": "security_0c8b3c4291cd97f56d8c",
+      "ticker": "108490",
+      "visible_label": "Research alert — not a trade signal"
+    },
     {
       "alert_id": "alert_3229f3dd26f4dc2aae51",
       "alert_type": "bollinger_below_lower",
@@ -6650,45 +6754,6 @@
       "research_status": "ready",
       "security_id": "security_84705b27d28a94f2b318",
       "ticker": "SSYS",
-      "visible_label": "Research alert — not a trade signal"
-    },
-    {
-      "alert_id": "alert_8634f1dc7bdba28e327b",
-      "alert_type": "bollinger_below_lower",
-      "company_name": "Samsung Electronics Co., Ltd.",
-      "market_data_date": "2026-10-14",
-      "observed_at": "2026-10-15T13:41:38Z",
-      "research_conclusion": "High-priority security research is blocked. scope_deferred_for_capacity",
-      "research_page": "data/wiki/securities/security_d08d763780400dfbffce.md",
-      "research_status": "blocked",
-      "security_id": "security_d08d763780400dfbffce",
-      "ticker": "SSUN.VI",
-      "visible_label": "Research alert — not a trade signal"
-    },
-    {
-      "alert_id": "alert_ea1da8f75e9380b87413",
-      "alert_type": "bollinger_below_lower",
-      "company_name": "Samsung Electronics Co., Ltd.",
-      "market_data_date": "2026-10-14",
-      "observed_at": "2026-10-15T13:41:38Z",
-      "research_conclusion": "High-priority security research is ready to run.",
-      "research_page": "data/wiki/securities/security_567d0d575bbd30aaa91d.md",
-      "research_status": "ready",
-      "security_id": "security_567d0d575bbd30aaa91d",
-      "ticker": "SSU.VI",
-      "visible_label": "Research alert — not a trade signal"
-    },
-    {
-      "alert_id": "alert_a044eb79c3c174936051",
-      "alert_type": "volume_anomaly",
-      "company_name": "Samsung Electronics Co., Ltd.",
-      "market_data_date": "2026-10-14",
-      "observed_at": "2026-10-15T13:41:38Z",
-      "research_conclusion": "High-priority security research is ready to run.",
-      "research_page": "data/wiki/securities/security_567d0d575bbd30aaa91d.md",
-      "research_status": "ready",
-      "security_id": "security_567d0d575bbd30aaa91d",
-      "ticker": "SSU.VI",
       "visible_label": "Research alert — not a trade signal"
     },
     {
@@ -6832,19 +6897,6 @@
       "research_status": "ready",
       "security_id": "security_97f38b2cb2d5ef127f5a",
       "ticker": "PL",
-      "visible_label": "Research alert — not a trade signal"
-    },
-    {
-      "alert_id": "alert_032fa45f2f350bf25ce4",
-      "alert_type": "rsi_oversold",
-      "company_name": "Parrot S.A.",
-      "market_data_date": "2026-10-14",
-      "observed_at": "2026-10-15T13:41:38Z",
-      "research_conclusion": "High-priority security research is ready to run.",
-      "research_page": "data/wiki/securities/security_cc4dcb8f002b61dffe00.md",
-      "research_status": "ready",
-      "security_id": "security_cc4dcb8f002b61dffe00",
-      "ticker": "PARRO.PA",
       "visible_label": "Research alert — not a trade signal"
     },
     {
@@ -7030,19 +7082,6 @@
       "visible_label": "Research alert — not a trade signal"
     },
     {
-      "alert_id": "alert_4218e8876415e9328a42",
-      "alert_type": "rsi_overbought",
-      "company_name": "Evonik Industries AG",
-      "market_data_date": "2026-10-14",
-      "observed_at": "2026-10-15T13:41:38Z",
-      "research_conclusion": "bearish_alert_unowned",
-      "research_page": "data/wiki/security-catalog.md#security-security_ccb25582c0392492fe9e",
-      "research_status": "skipped",
-      "security_id": "security_ccb25582c0392492fe9e",
-      "ticker": "EVK",
-      "visible_label": "Research alert — not a trade signal"
-    },
-    {
       "alert_id": "alert_910a1793e64e2aa89db1",
       "alert_type": "bollinger_below_lower",
       "company_name": "Eaton Corporation plc",
@@ -7186,29 +7225,16 @@
       "visible_label": "Research alert — not a trade signal"
     },
     {
-      "alert_id": "alert_5e7bc1f7cbd44ebed9da",
-      "alert_type": "rsi_oversold",
-      "company_name": "ROBOTIS Co., Ltd.",
+      "alert_id": "alert_d57ed2728280baae9f37",
+      "alert_type": "macd_cross_below_signal",
+      "company_name": "YASKAWA Electric Corporation",
       "market_data_date": "2026-10-15",
-      "observed_at": "2026-10-15T13:41:38Z",
-      "research_conclusion": "High-priority security research is ready to run.",
-      "research_page": "data/wiki/securities/security_0c8b3c4291cd97f56d8c.md",
-      "research_status": "ready",
-      "security_id": "security_0c8b3c4291cd97f56d8c",
-      "ticker": "108490",
-      "visible_label": "Research alert — not a trade signal"
-    },
-    {
-      "alert_id": "alert_3cca4041ded422a9a7a6",
-      "alert_type": "bollinger_below_lower",
-      "company_name": "ROBOTIS Co., Ltd.",
-      "market_data_date": "2026-10-15",
-      "observed_at": "2026-10-15T13:41:38Z",
-      "research_conclusion": "High-priority security research is ready to run.",
-      "research_page": "data/wiki/securities/security_0c8b3c4291cd97f56d8c.md",
-      "research_status": "ready",
-      "security_id": "security_0c8b3c4291cd97f56d8c",
-      "ticker": "108490",
+      "observed_at": "2026-10-15T00:00:00Z",
+      "research_conclusion": "bearish_alert_unowned",
+      "research_page": "data/wiki/securities/security_89969b7dac39b7db5661.md",
+      "research_status": "skipped",
+      "security_id": "security_89969b7dac39b7db5661",
+      "ticker": "YEC.F",
       "visible_label": "Research alert — not a trade signal"
     },
     {
@@ -7217,9 +7243,9 @@
       "company_name": "ROBOTIS Co., Ltd.",
       "market_data_date": "2026-10-15",
       "observed_at": "2026-10-15T00:00:00Z",
-      "research_conclusion": "High-priority security research is ready to run.",
+      "research_conclusion": "Queue triage disposition",
       "research_page": "data/wiki/securities/security_0c8b3c4291cd97f56d8c.md",
-      "research_status": "ready",
+      "research_status": "skipped",
       "security_id": "security_0c8b3c4291cd97f56d8c",
       "ticker": "108490",
       "visible_label": "Research alert — not a trade signal"
@@ -7407,19 +7433,6 @@
       "visible_label": "Research alert — not a trade signal"
     },
     {
-      "alert_id": "alert_6311c23abd09f4d20858",
-      "alert_type": "macd_cross_below_signal",
-      "company_name": "Schneider Electric SE",
-      "market_data_date": "2026-10-14",
-      "observed_at": "2026-10-14T00:00:00Z",
-      "research_conclusion": "bearish_alert_unowned",
-      "research_page": "data/wiki/securities/security_dc8486c1d61df62a22fd.md",
-      "research_status": "skipped",
-      "security_id": "security_dc8486c1d61df62a22fd",
-      "ticker": "SU",
-      "visible_label": "Research alert — not a trade signal"
-    },
-    {
       "alert_id": "alert_a930ecba1bfeb5d26777",
       "alert_type": "macd_cross_below_signal",
       "company_name": "Stratasys Ltd.",
@@ -7430,32 +7443,6 @@
       "research_status": "skipped",
       "security_id": "security_84705b27d28a94f2b318",
       "ticker": "SSYS",
-      "visible_label": "Research alert — not a trade signal"
-    },
-    {
-      "alert_id": "alert_0a70dcde8062c5cd1bff",
-      "alert_type": "macd_cross_below_signal",
-      "company_name": "Samsung Electronics Co., Ltd.",
-      "market_data_date": "2026-10-14",
-      "observed_at": "2026-10-14T00:00:00Z",
-      "research_conclusion": "bearish_alert_unowned",
-      "research_page": "data/wiki/securities/security_d08d763780400dfbffce.md",
-      "research_status": "skipped",
-      "security_id": "security_d08d763780400dfbffce",
-      "ticker": "SSUN.VI",
-      "visible_label": "Research alert — not a trade signal"
-    },
-    {
-      "alert_id": "alert_926bbb113b052d22bc15",
-      "alert_type": "macd_cross_below_signal",
-      "company_name": "Samsung Electronics Co., Ltd.",
-      "market_data_date": "2026-10-14",
-      "observed_at": "2026-10-14T00:00:00Z",
-      "research_conclusion": "bearish_alert_unowned",
-      "research_page": "data/wiki/securities/security_567d0d575bbd30aaa91d.md",
-      "research_status": "skipped",
-      "security_id": "security_567d0d575bbd30aaa91d",
-      "ticker": "SSU.VI",
       "visible_label": "Research alert — not a trade signal"
     },
     {
@@ -7602,19 +7589,6 @@
       "visible_label": "Research alert — not a trade signal"
     },
     {
-      "alert_id": "alert_19abb7b709f2d7765b32",
-      "alert_type": "sma_50_cross_below_200",
-      "company_name": "Parrot S.A.",
-      "market_data_date": "2026-10-14",
-      "observed_at": "2026-10-14T00:00:00Z",
-      "research_conclusion": "bearish_alert_unowned",
-      "research_page": "data/wiki/securities/security_cc4dcb8f002b61dffe00.md",
-      "research_status": "skipped",
-      "security_id": "security_cc4dcb8f002b61dffe00",
-      "ticker": "PARRO.PA",
-      "visible_label": "Research alert — not a trade signal"
-    },
-    {
       "alert_id": "alert_17918f234c7810e23ba1",
       "alert_type": "macd_cross_below_signal",
       "company_name": "NVIDIA Corporation",
@@ -7638,19 +7612,6 @@
       "research_status": "blocked",
       "security_id": "security_98a1943771da875efed5",
       "ticker": "NOMD",
-      "visible_label": "Research alert — not a trade signal"
-    },
-    {
-      "alert_id": "alert_c7fc8a53d6357562b6c0",
-      "alert_type": "macd_cross_below_signal",
-      "company_name": "Nidec Corporation",
-      "market_data_date": "2026-10-14",
-      "observed_at": "2026-10-14T00:00:00Z",
-      "research_conclusion": "bearish_alert_unowned",
-      "research_page": "data/wiki/securities/security_3853e54c619d597dcaa1.md",
-      "research_status": "skipped",
-      "security_id": "security_3853e54c619d597dcaa1",
-      "ticker": "NIB.F",
       "visible_label": "Research alert — not a trade signal"
     },
     {
@@ -8031,19 +7992,6 @@
       "visible_label": "Research alert — not a trade signal"
     },
     {
-      "alert_id": "alert_996f71f8f8437afd44af",
-      "alert_type": "macd_cross_above_signal",
-      "company_name": "BASF SE",
-      "market_data_date": "2026-10-14",
-      "observed_at": "2026-10-14T00:00:00Z",
-      "research_conclusion": "High-priority security research is ready to run.",
-      "research_page": "data/wiki/security-catalog.md#security-security_ef418f5ccc7dc5be8e65",
-      "research_status": "ready",
-      "security_id": "security_ef418f5ccc7dc5be8e65",
-      "ticker": "BAS",
-      "visible_label": "Research alert — not a trade signal"
-    },
-    {
       "alert_id": "alert_4051c9eb82590e04c1f5",
       "alert_type": "macd_cross_below_signal",
       "company_name": "ASML Holding N.V.",
@@ -8054,19 +8002,6 @@
       "research_status": "skipped",
       "security_id": "security_ef35e41886220d51c22c",
       "ticker": "ASML",
-      "visible_label": "Research alert — not a trade signal"
-    },
-    {
-      "alert_id": "alert_27e166f2be52ed426235",
-      "alert_type": "macd_cross_below_signal",
-      "company_name": "Agronomics Limited",
-      "market_data_date": "2026-10-14",
-      "observed_at": "2026-10-14T00:00:00Z",
-      "research_conclusion": "bearish_alert_unowned",
-      "research_page": "data/wiki/security-catalog.md#security-security_fe4648901e7675f157fd",
-      "research_status": "skipped",
-      "security_id": "security_fe4648901e7675f157fd",
-      "ticker": "ANIC.L",
       "visible_label": "Research alert — not a trade signal"
     },
     {
@@ -8106,19 +8041,6 @@
       "research_status": "skipped",
       "security_id": "security_0a56aa634d077fe5796f",
       "ticker": "AMAT",
-      "visible_label": "Research alert — not a trade signal"
-    },
-    {
-      "alert_id": "alert_e422cc4316972a86a589",
-      "alert_type": "macd_cross_above_signal",
-      "company_name": "Arkema S.A.",
-      "market_data_date": "2026-10-14",
-      "observed_at": "2026-10-14T00:00:00Z",
-      "research_conclusion": "High-priority security research is ready to run.",
-      "research_page": "data/wiki/security-catalog.md#security-security_798e2fb944d740aca308",
-      "research_status": "ready",
-      "security_id": "security_798e2fb944d740aca308",
-      "ticker": "AKE",
       "visible_label": "Research alert — not a trade signal"
     },
     {
@@ -8171,16 +8093,6 @@
         "weight_pct": "10"
       },
       {
-        "company_name": "Prosus N.V.",
-        "currency": "EUR",
-        "rating": "buy",
-        "reference_price": "38.689998626708984",
-        "research_page": "data/wiki/securities/security_8b703a8adf5f864acaa4.md",
-        "security_id": "security_8b703a8adf5f864acaa4",
-        "ticker": "PRX",
-        "weight_pct": "10"
-      },
-      {
         "company_name": "NVIDIA Corporation",
         "currency": "USD",
         "rating": "buy",
@@ -8188,6 +8100,16 @@
         "research_page": "data/wiki/securities/security_33d9c44facc75c726c7d.md",
         "security_id": "security_33d9c44facc75c726c7d",
         "ticker": "NVDA",
+        "weight_pct": "10"
+      },
+      {
+        "company_name": "Prosus N.V.",
+        "currency": "EUR",
+        "rating": "buy",
+        "reference_price": "38.689998626708984",
+        "research_page": "data/wiki/securities/security_8b703a8adf5f864acaa4.md",
+        "security_id": "security_8b703a8adf5f864acaa4",
+        "ticker": "PRX",
         "weight_pct": "10"
       },
       {
@@ -8222,41 +8144,41 @@
       }
     ]
   },
-  "run_id": "daily-20261015T134132Z",
-  "snapshot_id": "decision_f641c45d3a6e7301a8ce",
+  "run_id": "daily-20261015T170629Z",
+  "snapshot_id": "decision_6abcd17bed9d2596a85c",
   "source_state_hashes": {
-    "allocation_targets": "d723a6838186a7e33a1bb5f43589f2d8338acda3e6d59c00d0624e88fa41ad05",
+    "allocation_targets": "7bdd4051b4d5df6159b6a88880ea4b284b95b0f2ae0952c4500a16cae5c87532",
     "cash_ledger": "762608e3d4dda9458e988b485dbe28651a7e13d93b5329553ab088c240d51734",
     "configuration": "ebec91d094f2f7c4bae6dd4590e5a79eb41619a40906c348de7dbefa158b0cca",
     "csv_contracts": "18a3159e79a0fce966af02551cd27703e1f8ee242fd18d5e531dce4e6aa7e5d9",
     "decision_schema": "ba1adb9dc310215851098eb14aee75b75582e75056e6c9ed852b0ab1a25eece2",
     "executions": "c921be1356125001b9f9a9ae09592c86b21b46cdc340741567342e1f032976d6",
-    "fx_aud_eur": "18aabe04feb623daedc9ec000cdf52ded7d0624c79a912d9300be6b8dcfa6b27",
-    "fx_gbp_eur": "d219319ef82c64f28a33788e78f68477fbfac36439788c9112dab0ef1454a37b",
-    "fx_hkd_eur": "ba31e034f091d35449b120468e295e91ff75bb072d9923ba2528c0a5da6b479f",
-    "fx_krw_eur": "29eb9220965930f4311963e8dc62fc296224f88f7191a3252d83def42c6d29ff",
-    "fx_usd_eur": "9488db7bdd917eb675b219d00d8395e53ef2eac0de0830b0d46352bd52db5d87",
-    "indicators": "efc4a3f06a123bec187e1fca493beb59cefeefc306c4bd9f6b8c91a58e3dc3eb",
-    "issues": "407d2df5be8afbfda8ded6237b603039633f974e52ff18d6243177948657b896",
-    "market_latest": "80081134a7d27667b608bd161a8efb90ad7d4d826e14707781cea00cbec40841",
-    "operation_payloads": "b1604df5c57364eb142604933929e19136e8cd58de3d40231a9c53badcc7186e",
-    "operations_history": "2d5f0aa1ea71f446a42eaf67269040ab3e36ccb2f8422ac680150a8ffcc6f36c",
-    "operations_todo": "853fa93a4155b6533b4993b11081181bb31205b1d4213c42fd36a84b9e8ba8ad",
+    "fx_aud_eur": "37bee471e8b2024e48e53e7397fc6c1d2f848fa88374367b9d544e327ee2573e",
+    "fx_gbp_eur": "c1cf4b18fbb38d2cbb798d95556a1873e3c3719ade148388b1cbf8d1acd30cf5",
+    "fx_hkd_eur": "55390be99e8ae884fbcd91dd15b2898ca9fd346c66bde94bb56a2d392f1a9a40",
+    "fx_krw_eur": "45c1d4ccc6631b1d2fabd0bef8c5136fc98c28f0ebddddaf2f99bbe96fc43d2d",
+    "fx_usd_eur": "5362a28d45a194d8b4d2191e8e7c4998578ed4afcec4f6e454a774787631aff2",
+    "indicators": "db3bdf74e5b2697ce338edc24d8b1bc7bab5c207615f4e131950dc3b38bb01f4",
+    "issues": "f2a01e1544bc1bc5dfdb0ce81a2d7467b29af933a8d48409d80e01f0356bea03",
+    "market_latest": "2fd962e72794964ed7b172eb0da72aeef55add9927226d9bfe13140a9b107b7b",
+    "operation_payloads": "71bdcfa491a5063a2a54b8a379ceeb7e93ac88209c79d4d5a8cea84e6d31cfd0",
+    "operations_history": "61757c0190b77399cd0198b7576c58081f6cafa0b19a643ca86eb5380bddae84",
+    "operations_todo": "17a1a94e11b64d6675b3d92471c4dfd558451fa141c08fe4f1a4d49364361084",
     "order_legs": "b97f8fb112c24ef0021f966b81ba84a9bd37c9832e48d529ab760d04eb1eca17",
     "orders": "3afc0ba3872e7b435ebdcd26a781937e9053ef9cd4beb5be9996b591338270cf",
-    "performance_daily": "43346b5372304e196731290bde9c0e1452c3181d9fea0d597f7321db5cbc6f50",
+    "performance_daily": "5a1e3b3b5a4346adcdb666c1a0bb391643cf0a88ce4446aae760e16757e4472a",
     "performance_epochs": "bc47865ef0a04d0e2b97b9395a4276b3db677cbcfc1471469d24df7f367ac327",
-    "portfolio": "0658a026005dc3308b7983bb4941ed72db5397f6cf759199723bef5b1537f47e",
+    "portfolio": "d91bb7ca53b7fd9b2c863f5a927808e1cd212344d1871e2c4a8a1198fbbfeb53",
     "relationships": "fe5082f74575191d64b262a1e870b2367ade3ff37ed94f609f22632ba68f61d3",
     "research_governance": "82e50655a4e21ec84532df6d33f1c8b9a51f5e956f41f842163773c5e09a4c69",
-    "runs": "e834abd433bab1c65ba47db1ba10bdcc7644296d14cd4d36be714ea534f465ea",
+    "runs": "c901dc5bc9ce7e0879b089f94534d6c886cd76691da38de96c8c6e8bd00ce79c",
     "securities": "843bbb05987963d7e923c43a88537dc966d88ccb6bcb9031b09e322dae5c6038",
     "security_assessments": "44088eb5ec5861e74e4dae56ce6f09c96256e38016b2984be9a478e6e6dc7b01",
     "signals": "0605a97bca91c9b47f402dfe782968f5551d2c3286a1421173bf91c5a637dc69",
     "source_registry": "e0734b80e6b4b33ab28b84e913be9153b4af3962752e36f81c67a38c5bac4822",
     "strategies": "6527c5d8372e4a07d7c4284ab284851b104339c6e8c25c7647c77afd92cac37e",
     "strategy_legs": "79aa48bc215a644b9795c61ec6169cda1c2d08f97c700754c73ae9d50d55bfd6",
-    "wiki_inbox": "0061ee0e05e26da39da936eda658bcb52e3fe1553ac3140a05b17e6c081ea90f"
+    "wiki_inbox": "3e4f5c421c0a212a6111c1fbbe2f07719cf2471be2da0e61742a86ab8b84d77a"
   },
   "stance": "maintain",
   "stance_reason_codes": [
@@ -8389,7 +8311,7 @@
       "issue_id": "issue_8579d36aa207a8a0a82c",
       "security_id": "",
       "severity": "error",
-      "summary": "claim excerpt exceeds the bounded public-source quote allowance",
+      "summary": "completed security research requires exactly one immutable assessment version; observed claim support must match the retained inspected source excerpt",
       "ticker": "",
       "title": "Hermes operation validation failed: 01KZGT11ZGXJ00MTZMADHQM6KM"
     },
@@ -8576,12 +8498,12 @@
   ],
   "target_portfolio": {
     "cash_base": "9703.02",
-    "cash_weight_pct": "97.15631",
-    "equity_base": "9987.02",
-    "gross_exposure_base": "284",
-    "invested_value_base": "284",
-    "invested_weight_pct": "2.84369",
-    "net_exposure_base": "284",
+    "cash_weight_pct": "97.1213",
+    "equity_base": "9990.62",
+    "gross_exposure_base": "287.6",
+    "invested_value_base": "287.6",
+    "invested_weight_pct": "2.878699",
+    "net_exposure_base": "287.6",
     "portfolio_kind": "target",
     "realized_pnl_base": "0",
     "rows": [
@@ -8589,7 +8511,7 @@
         "action": "no_trade",
         "action_status": "no_action",
         "allocation_intent_id": "",
-        "as_of": "2026-10-15T16:26:25Z",
+        "as_of": "2026-10-15T17:27:05Z",
         "assessment_id": "",
         "base_fair_value": "",
         "base_probability_pct": "",
@@ -8609,7 +8531,7 @@
         "confidence_adjusted_expected_return_pct": "",
         "current_quantity": "9703.02",
         "current_value_base": "9703.02",
-        "current_weight_pct": "97.15631",
+        "current_weight_pct": "97.1213",
         "delta_value_base": "0",
         "downside_pct": "",
         "effective_score": "",
@@ -8618,7 +8540,7 @@
         "exit_rule": "",
         "expected_bear_payoff_ratio": "",
         "expected_return_pct": "",
-        "fx_as_of": "2026-10-15T16:26:25Z",
+        "fx_as_of": "2026-10-15T17:27:05Z",
         "fx_rate_to_base": "1",
         "holding_type": "cash",
         "instrument_type": "cash",
@@ -8627,7 +8549,7 @@
         "mark": "1",
         "mark_base": "1",
         "mark_currency": "",
-        "market_data_as_of": "2026-10-15T16:26:25Z",
+        "market_data_as_of": "2026-10-15T17:27:05Z",
         "order_id": "",
         "portfolio_action": "hold",
         "position_cap_pct": "",
@@ -8639,12 +8561,12 @@
         "security_research_page": "",
         "signal_id": "",
         "sleeve": "cash",
-        "snapshot_id": "decision_f641c45d3a6e7301a8ce",
+        "snapshot_id": "decision_6abcd17bed9d2596a85c",
         "strategy_id": "",
         "strategy_research_page": "",
         "target_quantity": "9703.02",
         "target_value_base": "9703.02",
-        "target_weight_pct": "97.15631",
+        "target_weight_pct": "97.1213",
         "thesis_summary": "Capital retained as the configured portfolio alternative.",
         "ticker": "CASH",
         "tier": "",
@@ -8657,45 +8579,45 @@
         "action": "hold",
         "action_status": "filled",
         "allocation_intent_id": "allocation_intent_451ca921751ca6e57921",
-        "as_of": "2026-10-15T16:26:25Z",
+        "as_of": "2026-10-15T17:27:05Z",
         "assessment_id": "assessment_7f28dfd9240d6099400b",
         "base_fair_value": "52",
         "base_probability_pct": "50",
-        "base_return_pct": "46.4788732394366197183098592",
-        "base_upside_pct": "46.4788732394366197183098592",
-        "bear_base_payoff_ratio": "3.000000000000000000000000003",
+        "base_return_pct": "44.6453376813453581176661257",
+        "base_upside_pct": "44.6453376813453581176661257",
+        "bear_base_payoff_ratio": "2.697478517487020753216303263",
         "bear_fair_value": "30",
         "bear_probability_pct": "30",
-        "bear_return_pct": "-15.49295774647887323943661972",
+        "bear_return_pct": "-16.55076672230075493211569673",
         "bull_fair_value": "70",
         "bull_probability_pct": "20",
-        "bull_return_pct": "97.1830985915492957746478873",
+        "bull_return_pct": "94.7148776479649051583967076",
         "buy_below_price": "41.6",
         "canonical_rating": "buy",
         "company_name": "Prosus N.V.",
         "confidence": "medium",
-        "confidence_adjusted_expected_return_pct": "28.52112676056338028169014082",
+        "confidence_adjusted_expected_return_pct": "27.22531076518157520815827148",
         "current_quantity": "8",
-        "current_value_base": "284",
-        "current_weight_pct": "2.84369",
+        "current_value_base": "287.6",
+        "current_weight_pct": "2.8787",
         "delta_value_base": "0",
-        "downside_pct": "-15.49295774647887323943661972",
+        "downside_pct": "-16.55076672230075493211569673",
         "effective_score": "70",
         "entry_rule": "Open only while allocation_plan_6271cd1bd15ef73f7441, allocation_intent_451ca921751ca6e57921, assessment_7f28dfd9240d6099400b and relationship_e514a92bf6c38d0754ee remain current, fresh PRX EUR inputs are available, and deterministic code derives a positive whole-share delta toward the persisted six-share target after current holdings and pending orders.",
         "evidence_state": "research_incomplete",
         "exit_rule": "Reduce or close only when a current deterministic allocation plan directs reduce or close, the full-baseline eligibility frontier no longer clears, a hard blocker appears, or material Tencent, private-platform, net-debt, repurchase, governance, capital-allocation or valuation evidence invalidates the bounded thesis.",
-        "expected_bear_payoff_ratio": "1.840909090909090909090909089",
-        "expected_return_pct": "38.0281690140845070422535211",
-        "fx_as_of": "2026-10-15T16:26:25Z",
+        "expected_bear_payoff_ratio": "1.644957676099547533333287338",
+        "expected_return_pct": "36.3004143535754336108776953",
+        "fx_as_of": "2026-10-15T17:27:05Z",
         "fx_rate_to_base": "1",
         "holding_type": "security",
         "instrument_type": "equity",
         "invalidation": "Do not increase exposure if Tencent or private-platform economics deteriorate, private marks become unreliable, central net debt rises, value transmission or repurchase accretion is blocked, capital allocation destroys per-share NAV, the assessment or relationship is superseded, or market inputs become stale.",
-        "margin_of_safety_pct": "31.73076923076923076923076923",
-        "mark": "35.5",
-        "mark_base": "35.5",
+        "margin_of_safety_pct": "30.86538314819336538461538462",
+        "mark": "35.95000076293945",
+        "mark_base": "35.95000076293945",
         "mark_currency": "EUR",
-        "market_data_as_of": "2026-10-14T15:30:00Z",
+        "market_data_as_of": "2026-10-15T15:30:00Z",
         "order_id": "",
         "portfolio_action": "initiate",
         "position_cap_pct": "0",
@@ -8707,22 +8629,22 @@
         "security_research_page": "data/wiki/securities/security_8b703a8adf5f864acaa4.md",
         "signal_id": "",
         "sleeve": "baseline",
-        "snapshot_id": "decision_f641c45d3a6e7301a8ce",
+        "snapshot_id": "decision_6abcd17bed9d2596a85c",
         "strategy_id": "strategy_8caa208dfc702a2584a7",
         "strategy_research_page": "data/wiki/strategies/strategy_8caa208dfc702a2584a7.md",
         "target_quantity": "8",
-        "target_value_base": "284",
-        "target_weight_pct": "2.84369",
+        "target_value_base": "287.6",
+        "target_weight_pct": "2.8787",
         "thesis_summary": "Prosus retains Tencent-dominated look-through value, ecommerce exposure and potential per-share accretion from repurchases below NAV; current full-baseline economics support bounded long-equity exposure, while medium confidence, holding-company concentration, private-asset marks, governance, capital-allocation transmission, weak momentum and insufficient diversification prevent conviction treatment.",
         "ticker": "PRX",
         "tier": "watch",
         "valuation_horizon_months": "12",
-        "valuation_mark": "35.5",
-        "valuation_mark_as_of": "2026-10-15T13:41:38Z",
+        "valuation_mark": "35.95000076293945",
+        "valuation_mark_as_of": "2026-10-15T17:06:33Z",
         "valuation_mark_currency": "EUR"
       }
     ],
-    "unrealized_pnl_base": "-12.9774825756439228996376"
+    "unrealized_pnl_base": "-9.3774764721283228996376"
   },
   "version": 5
 }

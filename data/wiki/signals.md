@@ -7,13 +7,13 @@ tags:
 created: "2026-10-15"
 updated: "2026-10-15"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_f641c45d3a6e7301a8ce"
-as_of: "2026-10-15T16:26:25Z"
+snapshot_id: "decision_6abcd17bed9d2596a85c"
+as_of: "2026-10-15T17:27:05Z"
 ---
 
 # Signals
 
-**As of `2026-10-15T16:26:25Z`**
+**As of `2026-10-15T17:27:05Z`**
 
 ## Actionable trade signals
 
@@ -24,6 +24,78 @@ No actionable trade signals.
 No pending orders.
 
 ## Research alerts — not trade signals
+
+### [SSUN.VI — Samsung Electronics Co., Ltd.](securities/security_d08d763780400dfbffce)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_below\_lower`
+- Market date: `2026-10-15`
+- Research status: `blocked`
+- Conclusion: High-priority security research is blocked. scope\_deferred\_for\_capacity
+
+### [SSU.VI — Samsung Electronics Co., Ltd.](securities/security_567d0d575bbd30aaa91d)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-10-15`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [SSU.VI — Samsung Electronics Co., Ltd.](securities/security_567d0d575bbd30aaa91d)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_below\_lower`
+- Market date: `2026-10-15`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [PARRO.PA — Parrot S.A.](securities/security_cc4dcb8f002b61dffe00)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_oversold`
+- Market date: `2026-10-15`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [NIB.F — Nidec Corporation](securities/security_3853e54c619d597dcaa1)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_oversold`
+- Market date: `2026-10-15`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### EVK — Evonik Industries AG
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_overbought`
+- Market date: `2026-10-15`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### [108490 — ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_oversold`
+- Market date: `2026-10-15`
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
+
+### [108490 — ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_below\_lower`
+- Market date: `2026-10-15`
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
 
 ### [VRT — Vertiv Holdings Co](securities/security_cb88f9154cfeaa15e878)
 
@@ -84,33 +156,6 @@ No pending orders.
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_below\_lower`
-- Market date: `2026-10-14`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [SSUN.VI — Samsung Electronics Co., Ltd.](securities/security_d08d763780400dfbffce)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_below\_lower`
-- Market date: `2026-10-14`
-- Research status: `blocked`
-- Conclusion: High-priority security research is blocked. scope\_deferred\_for\_capacity
-
-### [SSU.VI — Samsung Electronics Co., Ltd.](securities/security_567d0d575bbd30aaa91d)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_below\_lower`
-- Market date: `2026-10-14`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [SSU.VI — Samsung Electronics Co., Ltd.](securities/security_567d0d575bbd30aaa91d)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
 - Market date: `2026-10-14`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
@@ -210,15 +255,6 @@ No pending orders.
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_below\_lower`
-- Market date: `2026-10-14`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [PARRO.PA — Parrot S.A.](securities/security_cc4dcb8f002b61dffe00)
-
-**Research alert — not a trade signal**
-
-- Alert: `rsi\_oversold`
 - Market date: `2026-10-14`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
@@ -349,15 +385,6 @@ No pending orders.
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### EVK — Evonik Industries AG
-
-**Research alert — not a trade signal**
-
-- Alert: `rsi\_overbought`
-- Market date: `2026-10-14`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
 ### [ETN — Eaton Corporation plc](securities/security_18a3ab0ee6086ee85d0f)
 
 **Research alert — not a trade signal**
@@ -457,23 +484,14 @@ No pending orders.
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### [108490 — ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c)
+### [YEC.F — YASKAWA Electric Corporation](securities/security_89969b7dac39b7db5661)
 
 **Research alert — not a trade signal**
 
-- Alert: `rsi\_oversold`
+- Alert: `macd\_cross\_below\_signal`
 - Market date: `2026-10-15`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [108490 — ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_below\_lower`
-- Market date: `2026-10-15`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
 
 ### [108490 — ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c)
 
@@ -481,8 +499,8 @@ No pending orders.
 
 - Alert: `sma\_50\_cross\_above\_200`
 - Market date: `2026-10-15`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
 
 ### [03388 — Shenzhen Creality 3D Technology Co., Ltd.](securities/security_b19e8f0343b7da1f3c03)
 
@@ -610,34 +628,7 @@ No pending orders.
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
-### [SU — Schneider Electric SE](securities/security_dc8486c1d61df62a22fd)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_below\_signal`
-- Market date: `2026-10-14`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
 ### SSYS — Stratasys Ltd.
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_below\_signal`
-- Market date: `2026-10-14`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
-### [SSUN.VI — Samsung Electronics Co., Ltd.](securities/security_d08d763780400dfbffce)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_below\_signal`
-- Market date: `2026-10-14`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
-### [SSU.VI — Samsung Electronics Co., Ltd.](securities/security_567d0d575bbd30aaa91d)
 
 **Research alert — not a trade signal**
 
@@ -745,15 +736,6 @@ No pending orders.
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### [PARRO.PA — Parrot S.A.](securities/security_cc4dcb8f002b61dffe00)
-
-**Research alert — not a trade signal**
-
-- Alert: `sma\_50\_cross\_below\_200`
-- Market date: `2026-10-14`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
 ### [NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d)
 
 **Research alert — not a trade signal**
@@ -771,15 +753,6 @@ No pending orders.
 - Market date: `2026-10-14`
 - Research status: `blocked`
 - Conclusion: High-priority security research is blocked. scope\_deferred\_for\_capacity
-
-### [NIB.F — Nidec Corporation](securities/security_3853e54c619d597dcaa1)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_below\_signal`
-- Market date: `2026-10-14`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
 
 ### [NBIS — Nebius Group N.V.](securities/security_47a0b06f6c6c478d7c1e)
 
@@ -1042,25 +1015,7 @@ No pending orders.
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
-### BAS — BASF SE
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-10-14`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
 ### [ASML — ASML Holding N.V.](securities/security_ef35e41886220d51c22c)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_below\_signal`
-- Market date: `2026-10-14`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
-### ANIC.L — Agronomics Limited
 
 **Research alert — not a trade signal**
 
@@ -1095,15 +1050,6 @@ No pending orders.
 - Market date: `2026-10-14`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
-
-### AKE — Arkema S.A.
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-10-14`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
 
 ### [ABBNY — ABB Ltd](securities/security_c120e9f26ebb6159adf9)
 
