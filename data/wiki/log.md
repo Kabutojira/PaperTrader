@@ -1345,3 +1345,7 @@ at a dated entry boundary after the live daily run crossed the configured 5,000-
 - Created candidate packet [[inbox/market-security_fe4648901e7675f157fd-macd_cross_below_signal-0920b21214b6]] (0920b21214b6).
 
 - Created candidate packet [[inbox/market-security_fe5539a7d3fd9d553bce-macd_cross_below_signal-d02bde607e8b]] (d02bde607e8b).
+
+- Published investor decision snapshot `decision_f641c45d3a6e7301a8ce`.
+
+- Generated canonical [[daily-reports/daily-report_20261015]] for run `daily-20261015T134132Z`.

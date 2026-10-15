@@ -1,0 +1,63 @@
+{
+  "artifacts": [
+    {
+      "path": "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/command_audit.json",
+      "pruned_at": "2026-10-15T16:26:41Z",
+      "sha256": "b849c75bd962252eff0568121792e046b623f51e2fdeb315ee7bba479063655d",
+      "size": 45135
+    },
+    {
+      "path": "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/controller_prompt.md",
+      "pruned_at": "2026-10-15T16:26:41Z",
+      "sha256": "ba72d2556bf0cfa9666af3855241ee2090b3d337aa3da41265fbe2ac7342e675",
+      "size": 3576
+    },
+    {
+      "path": "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/harness_preflight.json",
+      "pruned_at": "2026-10-15T16:26:41Z",
+      "sha256": "7585d9f1fe8c3710f620e841f79553dda5a5c06cc3754e89770826c6fc26e789",
+      "size": 927
+    },
+    {
+      "path": "data/runs/local-20260906-ai-physical-creation/01M1V159Q8ZAMEEEVXR2SC854J/validation_report.json",
+      "pruned_at": "2026-10-15T16:26:41Z",
+      "sha256": "9f51e5e8081ba44215798bba96574ba49d8d93919079f1f6b02d38067e48c0a5",
+      "size": 4521
+    },
+    {
+      "path": "data/runs/local-20260906-ai-physical-creation/01M1V1E10RDD4J617S4AW0C9EN/command_audit.json",
+      "pruned_at": "2026-10-15T16:26:41Z",
+      "sha256": "e5443543b7a5ca35a4039076cfe1ffe08f7c3ddcc398cb32c115a1ce324154f9",
+      "size": 12552
+    },
+    {
+      "path": "data/runs/local-20260906-ai-physical-creation/01M1V1E10RDD4J617S4AW0C9EN/controller_prompt.md",
+      "pruned_at": "2026-10-15T16:26:41Z",
+      "sha256": "9439f32eb257ad2875375daaf3fd35c52bb0d71a76417b91e6ea2cfaa1b81d04",
+      "size": 3821
+    },
+    {
+      "path": "data/runs/local-20260906-ai-physical-creation/01M1V1E10RDD4J617S4AW0C9EN/harness_preflight.json",
+      "pruned_at": "2026-10-15T16:26:41Z",
+      "sha256": "8379cf4a9ab712e1be720a38540faf0d3b8950b0dbd4cfe79b1f26079a176281",
+      "size": 939
+    },
+    {
+      "path": "data/runs/local-20260906-ai-physical-creation/01M1V1E10RDD4J617S4AW0C9EN/validation_report.json",
+      "pruned_at": "2026-10-15T16:26:41Z",
+      "sha256": "6468db831c8416ae4b0d0f2ec4924aff485ce1783543223c40a6807905328479",
+      "size": 1413
+    },
+    {
+      "path": "data/runs/local-20260906-ai-physical-creation/decision_snapshot.json",
+      "pruned_at": "2026-10-15T16:26:41Z",
+      "sha256": "1a6f047a461ad558f90c8f92fb6c828bd9115e17500ecfc603a0b711905145e6",
+      "size": 338909,
+      "snapshot_id": "decision_b0130a2b400e87878a4d"
+    }
+  ],
+  "pruned_at": "2026-10-15T16:26:41Z",
+  "retention_days": 30,
+  "run_id": "local-20260906-ai-physical-creation",
+  "run_retention_version": 1
+}

@@ -1,0 +1,81 @@
+{
+  "artifacts": [
+    {
+      "path": "data/runs/daily-20260831T204023Z/01KYPB29WRNJGPJTTY2DB72JWG/controller_prompt.md",
+      "pruned_at": "2026-10-15T16:26:41Z",
+      "sha256": "1e433a92f776fc10b7919f0deccc8955445d534cf263c1eacc4a2f8fc51b5491",
+      "size": 2697
+    },
+    {
+      "path": "data/runs/daily-20260831T204023Z/01KYPB29WRNJGPJTTY2DB72JWG/hermes_preflight.json",
+      "pruned_at": "2026-10-15T16:26:41Z",
+      "sha256": "7d79a9d0ee82fe3ceb11d3cb58830edd15064566114f0ccce399a652d59b7642",
+      "size": 1644
+    },
+    {
+      "path": "data/runs/daily-20260831T204023Z/01KYPB29WRNJGPJTTY2DB72JWG/hermes_run.json",
+      "pruned_at": "2026-10-15T16:26:41Z",
+      "sha256": "9e0bbe89e147f23b63c552a44727761f83e0d82c7e7baae62f5176992bb670dd",
+      "size": 1871
+    },
+    {
+      "path": "data/runs/daily-20260831T204023Z/01KYPB29WRNJGPJTTY2DB72JWG/profile_route.json",
+      "pruned_at": "2026-10-15T16:26:41Z",
+      "sha256": "f57fa1382477b9a94ef05ed3a65aeaedea362bf83d88b582e977b6a88fe6dc5b",
+      "size": 545
+    },
+    {
+      "path": "data/runs/daily-20260831T204023Z/01KYPB29WRNJGPJTTY2DB72JWG/validation_report.json",
+      "pruned_at": "2026-10-15T16:26:41Z",
+      "sha256": "f2d5cb105bd7cd4faa838cdeb88e7de91214124be8f7396ac69e756b38763caa",
+      "size": 1949
+    },
+    {
+      "path": "data/runs/daily-20260831T204023Z/01M1CTT6R0HPES6PFAGQSK31DG/command_audit.json",
+      "pruned_at": "2026-10-15T16:26:41Z",
+      "sha256": "7c7c43c5ab1847a27ceeb097d6ab9a96461726765f5fc4df7815b3a94f7ceb1a",
+      "size": 2107
+    },
+    {
+      "path": "data/runs/daily-20260831T204023Z/01M1CTT6R0HPES6PFAGQSK31DG/controller_prompt.md",
+      "pruned_at": "2026-10-15T16:26:41Z",
+      "sha256": "a41768ce9de36288275b82718fac118225bf23c3ded4d4a4b820cd116c9d2bf1",
+      "size": 3543
+    },
+    {
+      "path": "data/runs/daily-20260831T204023Z/01M1CTT6R0HPES6PFAGQSK31DG/hermes_preflight.json",
+      "pruned_at": "2026-10-15T16:26:41Z",
+      "sha256": "66b47b071b2569ec595ddd85b34fc7a89981c86c5254d06f183428904eda08d6",
+      "size": 1636
+    },
+    {
+      "path": "data/runs/daily-20260831T204023Z/01M1CTT6R0HPES6PFAGQSK31DG/hermes_run.json",
+      "pruned_at": "2026-10-15T16:26:41Z",
+      "sha256": "fc4df46f401dc13655f237889ae7891d0567b166fdeaef74035880c049c57ba0",
+      "size": 1911
+    },
+    {
+      "path": "data/runs/daily-20260831T204023Z/01M1CTT6R0HPES6PFAGQSK31DG/profile_route.json",
+      "pruned_at": "2026-10-15T16:26:41Z",
+      "sha256": "b7768ec4bee2533370a099ea9e36957a8ba2adc6c367d816fdf6d75a15773c7b",
+      "size": 545
+    },
+    {
+      "path": "data/runs/daily-20260831T204023Z/01M1CTT6R0HPES6PFAGQSK31DG/validation_report.json",
+      "pruned_at": "2026-10-15T16:26:41Z",
+      "sha256": "47b250b5436ff8e34a9dd75fd106fc74ffb37d5acbdaec6a0a8a2c6c9f0a4b75",
+      "size": 582
+    },
+    {
+      "path": "data/runs/daily-20260831T204023Z/decision_snapshot.json",
+      "pruned_at": "2026-10-15T16:26:41Z",
+      "sha256": "66eb47e74a93292dec492781909338e5347883fedf42cf0c1ad96d4279cd2022",
+      "size": 359632,
+      "snapshot_id": "decision_0a91d13794f70b4ff0fb"
+    }
+  ],
+  "pruned_at": "2026-10-15T16:26:41Z",
+  "retention_days": 30,
+  "run_id": "daily-20260831T204023Z",
+  "run_retention_version": 1
+}

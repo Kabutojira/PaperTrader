@@ -1,0 +1,15 @@
+{
+  "artifacts": [
+    {
+      "path": "data/runs/local-merge-20260906T110720Z/decision_snapshot.json",
+      "pruned_at": "2026-10-15T16:26:41Z",
+      "sha256": "7b7bad853d8ec6ce0800fe595d9ca27a7aba01730f2a907a4470692e2f90c44d",
+      "size": 388920,
+      "snapshot_id": "decision_3a42d9232b1d61df7c2b"
+    }
+  ],
+  "pruned_at": "2026-10-15T16:26:41Z",
+  "retention_days": 30,
+  "run_id": "local-merge-20260906T110720Z",
+  "run_retention_version": 1
+}

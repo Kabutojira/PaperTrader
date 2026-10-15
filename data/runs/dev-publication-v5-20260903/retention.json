@@ -1,0 +1,15 @@
+{
+  "artifacts": [
+    {
+      "path": "data/runs/dev-publication-v5-20260903/decision_snapshot.json",
+      "pruned_at": "2026-10-15T16:26:41Z",
+      "sha256": "bb2e3f99b2aa174397ccc6cb6e4a9fd9677d7ba4984c852f6e55041cf1c66eae",
+      "size": 354426,
+      "snapshot_id": "decision_dba976b6eaf8e53c9c3f"
+    }
+  ],
+  "pruned_at": "2026-10-15T16:26:41Z",
+  "retention_days": 30,
+  "run_id": "dev-publication-v5-20260903",
+  "run_retention_version": 1
+}
