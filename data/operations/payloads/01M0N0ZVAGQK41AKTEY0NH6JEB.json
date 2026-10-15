@@ -3,6 +3,7 @@
   "entity_type": "security",
   "inputs": {
     "assessment_state": "2026-08-09T22:47:07Z",
+    "full_research_requested": true,
     "maintenance_mode": "refresh",
     "market_data_as_of": "2026-09-24T18:48:08Z",
     "market_data_date": "2026-09-23",
@@ -68,6 +69,15 @@
         "trigger_types": [
           "bollinger_below_lower"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_f2b9760d847b2ba59324:manual-urgent:2026-10-15:1c2fdc2dcbe0",
+        "observed_at": "2026-10-15T08:41:29Z",
+        "prompt": "Urgent user-requested full analysis of ENPH (XNAS, USD): use current primary evidence to refresh thesis, valuation scenarios, risks and catalysts; explain changes since the prior assessment.",
+        "source": "manual-user-request",
+        "source_refs": [
+          "data/operations/requests/urgent-security-analysis-2026-10-15-1c2fdc2dcbe0/user-request.json"
+        ]
       }
     ],
     "security_id": "security_f2b9760d847b2ba59324",
@@ -78,11 +88,12 @@
       "volume_anomaly"
     ]
   },
-  "objective": "Revalidate security_f2b9760d847b2ba59324 with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_f2b9760d847b2ba59324 with high priority after price-action alerts: macd_cross_above_signal, volume_anomaly; decide what changed and whether to act. | Additional cause: Research security_f2b9760d847b2ba59324 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act. | Additional cause: Research security_f2b9760d847b2ba59324 with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act.",
+  "objective": "Revalidate security_f2b9760d847b2ba59324 with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_f2b9760d847b2ba59324 with high priority after price-action alerts: macd_cross_above_signal, volume_anomaly; decide what changed and whether to act. | Additional cause: Research security_f2b9760d847b2ba59324 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act. | Additional cause: Research security_f2b9760d847b2ba59324 with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act. | Additional cause: Urgent user-requested full analysis of ENPH (XNAS, USD): use current primary evidence to refresh thesis, valuation scenarios, risks and catalysts; explain changes since the prior assessment.",
   "operation_id": "01M0N0ZVAGQK41AKTEY0NH6JEB",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/operations/requests/urgent-security-analysis-2026-10-15-1c2fdc2dcbe0/user-request.json",
     "data/wiki/inbox/market-security_f2b9760d847b2ba59324-bollinger_below_lower-5255da8dccda.md",
     "data/wiki/inbox/market-security_f2b9760d847b2ba59324-macd_cross_above_signal-84454c420ee0.md",
     "data/wiki/inbox/market-security_f2b9760d847b2ba59324-volume_anomaly-1e4166ca207f.md",

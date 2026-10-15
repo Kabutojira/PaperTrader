@@ -3,6 +3,7 @@
   "entity_type": "security",
   "inputs": {
     "assessment_state": "2026-08-06T18:47:30Z",
+    "full_research_requested": true,
     "maintenance_mode": "refresh",
     "market_data_as_of": "2026-09-25T19:05:53Z",
     "market_data_date": "2026-09-24",
@@ -43,6 +44,15 @@
         "trigger_types": [
           "rsi_oversold"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_a9eb9838940ef5ceaa0c:manual-urgent:2026-10-15:1c2fdc2dcbe0",
+        "observed_at": "2026-10-15T08:41:31Z",
+        "prompt": "Urgent user-requested full analysis of FLNC (XNAS, USD): use current primary evidence to refresh thesis, valuation scenarios, risks and catalysts; explain changes since the prior assessment.",
+        "source": "manual-user-request",
+        "source_refs": [
+          "data/operations/requests/urgent-security-analysis-2026-10-15-1c2fdc2dcbe0/user-request.json"
+        ]
       }
     ],
     "rsi_attention": {
@@ -62,11 +72,12 @@
       "rsi_oversold"
     ]
   },
-  "objective": "Revalidate security_a9eb9838940ef5ceaa0c with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_a9eb9838940ef5ceaa0c with high priority after price-action alerts: rsi_oversold; decide what changed and whether to act.",
+  "objective": "Revalidate security_a9eb9838940ef5ceaa0c with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_a9eb9838940ef5ceaa0c with high priority after price-action alerts: rsi_oversold; decide what changed and whether to act. | Additional cause: Urgent user-requested full analysis of FLNC (XNAS, USD): use current primary evidence to refresh thesis, valuation scenarios, risks and catalysts; explain changes since the prior assessment.",
   "operation_id": "01M37SGN5GF70DYNX3ZSZNC1QH",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/operations/requests/urgent-security-analysis-2026-10-15-1c2fdc2dcbe0/user-request.json",
     "data/wiki/inbox/market-security_a9eb9838940ef5ceaa0c-rsi_oversold-87f176686042.md",
     "source_flnc_q3_2026_10q",
     "source_flnc_q3_2026_earnings"

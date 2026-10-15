@@ -1,0 +1,21 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_cd492d97064d8574156e",
+  "dedupe_key": "security_research:security_cd492d97064d8574156e:manual-urgent:2026-10-15:1c2fdc2dcbe0",
+  "prompt": "Urgent user-requested full analysis of MP (XNYS, USD): use current primary evidence to refresh thesis, valuation scenarios, risks and catalysts; explain changes since the prior assessment.",
+  "inputs": {
+    "security_id": "security_cd492d97064d8574156e",
+    "full_research_requested": true
+  },
+  "source": "manual-user-request",
+  "priority": 100,
+  "freshness_days": 0,
+  "depends_on": [],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/operations/requests/urgent-security-analysis-2026-10-15-1c2fdc2dcbe0/user-request.json"
+  ],
+  "max_attempts": 3
+}

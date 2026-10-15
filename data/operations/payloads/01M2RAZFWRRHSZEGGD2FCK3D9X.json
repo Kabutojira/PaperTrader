@@ -2,6 +2,7 @@
   "entity_id": "security_66cdcf90aac0d83e76f3",
   "entity_type": "security",
   "inputs": {
+    "full_research_requested": true,
     "market_data_as_of": "2026-09-19T17:40:18Z",
     "market_data_date": "2026-09-18",
     "merged_input_values": {
@@ -35,6 +36,15 @@
         "trigger_types": [
           "volume_anomaly"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_66cdcf90aac0d83e76f3:manual-urgent:2026-10-15:1c2fdc2dcbe0",
+        "observed_at": "2026-10-15T08:41:28Z",
+        "prompt": "Urgent user-requested full analysis of ALB (XNYS, USD): use current primary evidence to refresh thesis, valuation scenarios, risks and catalysts; explain changes since the prior assessment.",
+        "source": "manual-user-request",
+        "source_refs": [
+          "data/operations/requests/urgent-security-analysis-2026-10-15-1c2fdc2dcbe0/user-request.json"
+        ]
       }
     ],
     "rsi_attention": {
@@ -56,11 +66,12 @@
       "volume_anomaly"
     ]
   },
-  "objective": "Research security_66cdcf90aac0d83e76f3 with high priority after price-action alerts: bollinger_below_lower, rsi_oversold; decide what changed and whether to act. | Additional cause: Research security_66cdcf90aac0d83e76f3 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+  "objective": "Research security_66cdcf90aac0d83e76f3 with high priority after price-action alerts: bollinger_below_lower, rsi_oversold; decide what changed and whether to act. | Additional cause: Research security_66cdcf90aac0d83e76f3 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act. | Additional cause: Urgent user-requested full analysis of ALB (XNYS, USD): use current primary evidence to refresh thesis, valuation scenarios, risks and catalysts; explain changes since the prior assessment.",
   "operation_id": "01M2RAZFWRRHSZEGGD2FCK3D9X",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/operations/requests/urgent-security-analysis-2026-10-15-1c2fdc2dcbe0/user-request.json",
     "data/wiki/inbox/market-security_66cdcf90aac0d83e76f3-bollinger_below_lower-aceaf2cb5e3d.md",
     "data/wiki/inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-cbe45a6e9030.md",
     "data/wiki/inbox/market-security_66cdcf90aac0d83e76f3-volume_anomaly-eb47f7686c62.md"

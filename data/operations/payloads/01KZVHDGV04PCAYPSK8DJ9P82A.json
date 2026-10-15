@@ -3,6 +3,7 @@
   "entity_type": "security",
   "inputs": {
     "assessment_state": "2026-08-05T16:29:53Z",
+    "full_research_requested": true,
     "issue_ids": [
       "issue_35b7b23bc3b07dd61cce"
     ],
@@ -65,6 +66,15 @@
         "trigger_types": [
           "macd_cross_above_signal"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_0cf8075039299094d614:manual-urgent:2026-10-15:1c2fdc2dcbe0",
+        "observed_at": "2026-10-15T08:41:32Z",
+        "prompt": "Urgent user-requested full analysis of KTOS (XNAS, USD): use current primary evidence to refresh thesis, valuation scenarios, risks and catalysts; explain changes since the prior assessment.",
+        "source": "manual-user-request",
+        "source_refs": [
+          "data/operations/requests/urgent-security-analysis-2026-10-15-1c2fdc2dcbe0/user-request.json"
+        ]
       }
     ],
     "security_id": "security_0cf8075039299094d614",
@@ -74,11 +84,12 @@
       "volume_anomaly"
     ]
   },
-  "objective": "Revalidate security_0cf8075039299094d614 with current primary evidence and write one comparable allocation assessment. | Additional cause: Repair the unresolved assessment for security_0cf8075039299094d614 with current primary evidence and explicit source-operation provenance. | Additional cause: Research security_0cf8075039299094d614 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act. | Additional cause: Research security_0cf8075039299094d614 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
+  "objective": "Revalidate security_0cf8075039299094d614 with current primary evidence and write one comparable allocation assessment. | Additional cause: Repair the unresolved assessment for security_0cf8075039299094d614 with current primary evidence and explicit source-operation provenance. | Additional cause: Research security_0cf8075039299094d614 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act. | Additional cause: Research security_0cf8075039299094d614 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act. | Additional cause: Urgent user-requested full analysis of KTOS (XNAS, USD): use current primary evidence to refresh thesis, valuation scenarios, risks and catalysts; explain changes since the prior assessment.",
   "operation_id": "01KZVHDGV04PCAYPSK8DJ9P82A",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/operations/requests/urgent-security-analysis-2026-10-15-1c2fdc2dcbe0/user-request.json",
     "data/wiki/inbox/market-security_0cf8075039299094d614-macd_cross_above_signal-e29f4fb113b1.md",
     "data/wiki/inbox/market-security_0cf8075039299094d614-volume_anomaly-ccc5a005c503.md",
     "source_ktos_q2_2026_10q",
