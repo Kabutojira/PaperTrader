@@ -6,15 +6,17 @@ tags:
 - inbox
 - opportunity
 created: '2026-09-25'
-updated: '2026-09-25'
+updated: '2026-10-15'
 provenance: deterministic-market-monitor
 content_hash: 1e5a0379c26fff1581fc2ef50f5bbb6aa3c8b619680ebd71b6a299ca2dddfd22
-classifier_decision: blocked
-classifier_reason: 'classifier exited 2: Hermes classifier response is not JSON'
+classifier_decision: ingest
+classifier_reason: New lower-Bollinger-band breach with a negative monthly return
+  is a material market transition warranting review.
 alert_direction: bullish
 research_gate: eligible
 research_gate_reason: ''
-related_entity_ids: []
+related_entity_ids:
+- security_cc4dcb8f002b61dffe00
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_cc4dcb8f002b61dffe00
@@ -46,5 +48,5 @@ candidate_facts:
 
 ## Research disposition
 
-- Decision: Blocked
-- Reason: Classifier exited 2: hermes classifier response is not json
+- Decision: Ingest
+- Reason: New lower-bollinger-band breach with a negative monthly return is a material market transition warranting review.

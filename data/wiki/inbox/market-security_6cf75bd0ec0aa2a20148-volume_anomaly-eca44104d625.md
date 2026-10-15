@@ -6,15 +6,17 @@ tags:
 - inbox
 - opportunity
 created: '2026-09-25'
-updated: '2026-09-25'
+updated: '2026-10-15'
 provenance: deterministic-market-monitor
 content_hash: eca44104d6252763e5b832017480ec5be6af80cca4107bbd23d13c869fef07dc
-classifier_decision: blocked
-classifier_reason: 'classifier exited 2: Hermes classifier response is not JSON'
+classifier_decision: ingest
+classifier_reason: Material volume anomaly coincides with a 22.6% price increase over
+  the review period.
 alert_direction: neutral
 research_gate: eligible
 research_gate_reason: ''
-related_entity_ids: []
+related_entity_ids:
+- security_6cf75bd0ec0aa2a20148
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_6cf75bd0ec0aa2a20148
@@ -46,5 +48,5 @@ candidate_facts:
 
 ## Research disposition
 
-- Decision: Blocked
-- Reason: Classifier exited 2: hermes classifier response is not json
+- Decision: Ingest
+- Reason: Material volume anomaly coincides with a 22.6% price increase over the review period.

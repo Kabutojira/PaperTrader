@@ -6,15 +6,17 @@ tags:
 - inbox
 - opportunity
 created: '2026-09-25'
-updated: '2026-09-25'
+updated: '2026-10-15'
 provenance: deterministic-market-monitor
 content_hash: cff91c2ffc03ed1954999f28b1f547974065a1a35e54dee42ae9a1b9d62f199e
-classifier_decision: blocked
-classifier_reason: 'classifier exited 2: Hermes classifier response is not JSON'
+classifier_decision: ingest
+classifier_reason: A newly entered volume anomaly is a validated market-state transition
+  tied to a specific security and period.
 alert_direction: neutral
 research_gate: eligible
 research_gate_reason: ''
-related_entity_ids: []
+related_entity_ids:
+- security_fe4648901e7675f157fd
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_fe4648901e7675f157fd
@@ -46,5 +48,5 @@ candidate_facts:
 
 ## Research disposition
 
-- Decision: Blocked
-- Reason: Classifier exited 2: hermes classifier response is not json
+- Decision: Ingest
+- Reason: A newly entered volume anomaly is a validated market-state transition tied to a specific security and period.

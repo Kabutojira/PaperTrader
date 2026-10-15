@@ -7,8 +7,8 @@
       "issue_f50e95ee4d3a5cc05618"
     ],
     "maintenance_mode": "refresh",
-    "market_data_as_of": "2026-09-22T18:28:30Z",
-    "market_data_date": "2026-09-21",
+    "market_data_as_of": "2026-10-15T13:41:38Z",
+    "market_data_date": "2026-10-14",
     "merged_input_values": {
       "maintenance_mode": [
         "refresh",
@@ -17,10 +17,11 @@
       "source_price_hash": [
         "2b5ddd332c11e4ce981913dd42fb6431b6ee00701e025994f2171a742603627d",
         "3022314afaa7b28ef2d209f392f417bdb0387588f88e7f00ae862fec8399bc41",
-        "e1ed9c10454b7024bd6b720c7b904194f0f25b0465cb65fc3364ced2ff3c55b5"
+        "e1ed9c10454b7024bd6b720c7b904194f0f25b0465cb65fc3364ced2ff3c55b5",
+        "f51c9a7381293af39c1d895abd62fe3aec0a9ab4bab4645dc87e600cae8c85ae"
       ]
     },
-    "period_end": "2026-09-21",
+    "period_end": "2026-10-14",
     "period_start": "2026-08-14",
     "research_page": "data/wiki/securities/security_ef35e41886220d51c22c.md",
     "research_reasons": [
@@ -81,10 +82,23 @@
         "trigger_types": [
           "macd_cross_above_signal"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_ef35e41886220d51c22c:ccb22448aece3ccc0d86:2026-10-14",
+        "market_data_date": "2026-10-14",
+        "observed_at": "2026-10-15T13:41:38Z",
+        "prompt": "Research security_ef35e41886220d51c22c with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_ef35e41886220d51c22c-volume_anomaly-69024c87d95e.md"
+        ],
+        "trigger_types": [
+          "volume_anomaly"
+        ]
       }
     ],
     "security_id": "security_ef35e41886220d51c22c",
-    "source_price_hash": "e1ed9c10454b7024bd6b720c7b904194f0f25b0465cb65fc3364ced2ff3c55b5",
+    "source_price_hash": "f51c9a7381293af39c1d895abd62fe3aec0a9ab4bab4645dc87e600cae8c85ae",
     "trigger_types": [
       "bollinger_below_lower",
       "macd_cross_above_signal",
@@ -99,6 +113,7 @@
     "data/wiki/inbox/market-security_ef35e41886220d51c22c-bollinger_below_lower-b5586a596a08.md",
     "data/wiki/inbox/market-security_ef35e41886220d51c22c-macd_cross_above_signal-8f2c7b91aa0b.md",
     "data/wiki/inbox/market-security_ef35e41886220d51c22c-volume_anomaly-121148f6a168.md",
+    "data/wiki/inbox/market-security_ef35e41886220d51c22c-volume_anomaly-69024c87d95e.md",
     "data/wiki/inbox/market-security_ef35e41886220d51c22c-volume_anomaly-9b3f5246ec90.md",
     "source_asml_q2_2026_6k",
     "source_asml_q2_2026_financials"

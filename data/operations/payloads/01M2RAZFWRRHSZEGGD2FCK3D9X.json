@@ -2,17 +2,45 @@
   "entity_id": "security_66cdcf90aac0d83e76f3",
   "entity_type": "security",
   "inputs": {
+    "assessment_state": "2026-09-05T17:31:04Z",
     "full_research_requested": true,
-    "market_data_as_of": "2026-09-19T17:40:18Z",
-    "market_data_date": "2026-09-18",
+    "maintenance_mode": "refresh",
+    "market_data_as_of": "2026-10-15T13:41:38Z",
+    "market_data_date": "2026-10-14",
     "merged_input_values": {
+      "rsi_attention": [
+        {
+          "episode_id": "rsi_4a91cd91b88382488be74e95",
+          "observed_session": "2026-09-16",
+          "original_created_at": "2026-09-17T18:45:03Z",
+          "rsi": "28.94612241",
+          "source_price_hash": "f2c1779cbdf8ce6415d075e9b0df5e5006d10249f7ac8bb213b9fae9d85140e7",
+          "threshold": "30",
+          "transitions": [
+            "entered"
+          ]
+        },
+        {
+          "episode_id": "rsi_1a1f3f8972d6a4318db01173",
+          "observed_session": "2026-10-14",
+          "original_created_at": "2026-10-15T13:41:38Z",
+          "rsi": "28.69679119",
+          "source_price_hash": "64083542878b3e881af40c119a02046e2e29c90796268bbc97963f70e3c5785f",
+          "threshold": "30",
+          "transitions": [
+            "entered"
+          ]
+        }
+      ],
       "source_price_hash": [
         "f2c1779cbdf8ce6415d075e9b0df5e5006d10249f7ac8bb213b9fae9d85140e7",
-        "cd3826f9ba9d1bdd66a6fa5b0af4a71a6683d0f2fe5b36c9fefda6664e394fee"
+        "cd3826f9ba9d1bdd66a6fa5b0af4a71a6683d0f2fe5b36c9fefda6664e394fee",
+        "64083542878b3e881af40c119a02046e2e29c90796268bbc97963f70e3c5785f"
       ]
     },
-    "period_end": "2026-09-18",
+    "period_end": "2026-10-14",
     "period_start": "2026-08-18",
+    "research_page": "data/wiki/securities/security_66cdcf90aac0d83e76f3.md",
     "research_reasons": [
       {
         "dedupe_key": "security_research:security_66cdcf90aac0d83e76f3:0703612f3b03e39e3cb2:2026-09-16",
@@ -45,6 +73,42 @@
         "source_refs": [
           "data/operations/requests/urgent-security-analysis-2026-10-15-1c2fdc2dcbe0/user-request.json"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_66cdcf90aac0d83e76f3:25e7ace8cc7198c0a090:2026-10-14",
+        "market_data_date": "2026-10-14",
+        "observed_at": "2026-10-15T13:41:38Z",
+        "prompt": "Research security_66cdcf90aac0d83e76f3 with high priority after price-action alerts: rsi_oversold; decide what changed and whether to act.",
+        "rsi_attention": {
+          "episode_id": "rsi_1a1f3f8972d6a4318db01173",
+          "observed_session": "2026-10-14",
+          "original_created_at": "2026-10-15T13:41:38Z",
+          "rsi": "28.69679119",
+          "source_price_hash": "64083542878b3e881af40c119a02046e2e29c90796268bbc97963f70e3c5785f",
+          "threshold": "30",
+          "transitions": [
+            "entered"
+          ]
+        },
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-95a6f87c2abe.md"
+        ],
+        "trigger_types": [
+          "rsi_oversold"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_66cdcf90aac0d83e76f3:allocation-maintenance:2026-09-05T17:31:04Z",
+        "observed_at": "2026-10-15T13:41:38Z",
+        "prompt": "Revalidate security_66cdcf90aac0d83e76f3 with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_alb_ceo_succession_20260903_sec",
+          "source_alb_q2_2026_10q_sec",
+          "source_alb_q2_2026_results_sec",
+          "source_alb_sec_submissions_20260905"
+        ]
       }
     ],
     "rsi_attention": {
@@ -59,21 +123,26 @@
       ]
     },
     "security_id": "security_66cdcf90aac0d83e76f3",
-    "source_price_hash": "cd3826f9ba9d1bdd66a6fa5b0af4a71a6683d0f2fe5b36c9fefda6664e394fee",
+    "source_price_hash": "64083542878b3e881af40c119a02046e2e29c90796268bbc97963f70e3c5785f",
     "trigger_types": [
       "bollinger_below_lower",
       "rsi_oversold",
       "volume_anomaly"
     ]
   },
-  "objective": "Research security_66cdcf90aac0d83e76f3 with high priority after price-action alerts: bollinger_below_lower, rsi_oversold; decide what changed and whether to act. | Additional cause: Research security_66cdcf90aac0d83e76f3 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act. | Additional cause: Urgent user-requested full analysis of ALB (XNYS, USD): use current primary evidence to refresh thesis, valuation scenarios, risks and catalysts; explain changes since the prior assessment.",
+  "objective": "Research security_66cdcf90aac0d83e76f3 with high priority after price-action alerts: bollinger_below_lower, rsi_oversold; decide what changed and whether to act. | Additional cause: Research security_66cdcf90aac0d83e76f3 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act. | Additional cause: Urgent user-requested full analysis of ALB (XNYS, USD): use current primary evidence to refresh thesis, valuation scenarios, risks and catalysts; explain changes since the prior assessment. | Additional cause: Research security_66cdcf90aac0d83e76f3 with high priority after price-action alerts: rsi_oversold; decide what changed and whether to act. | Additional cause: Revalidate security_66cdcf90aac0d83e76f3 with current primary evidence and write one comparable allocation assessment.",
   "operation_id": "01M2RAZFWRRHSZEGGD2FCK3D9X",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
     "data/operations/requests/urgent-security-analysis-2026-10-15-1c2fdc2dcbe0/user-request.json",
     "data/wiki/inbox/market-security_66cdcf90aac0d83e76f3-bollinger_below_lower-aceaf2cb5e3d.md",
+    "data/wiki/inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-95a6f87c2abe.md",
     "data/wiki/inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-cbe45a6e9030.md",
-    "data/wiki/inbox/market-security_66cdcf90aac0d83e76f3-volume_anomaly-eb47f7686c62.md"
+    "data/wiki/inbox/market-security_66cdcf90aac0d83e76f3-volume_anomaly-eb47f7686c62.md",
+    "source_alb_ceo_succession_20260903_sec",
+    "source_alb_q2_2026_10q_sec",
+    "source_alb_q2_2026_results_sec",
+    "source_alb_sec_submissions_20260905"
   ]
 }

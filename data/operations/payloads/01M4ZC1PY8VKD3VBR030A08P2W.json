@@ -3,13 +3,76 @@
   "entity_type": "security",
   "inputs": {
     "full_research_requested": true,
-    "security_id": "security_98470cfc01bbcde78fc2"
+    "market_data_as_of": "2026-10-15T13:41:38Z",
+    "market_data_date": "2026-10-14",
+    "period_end": "2026-10-14",
+    "period_start": "2026-09-16",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_98470cfc01bbcde78fc2:manual-urgent-tracking-confirmed:2026-10-15:6cca33d10a25",
+        "observed_at": "2026-10-15T08:49:49Z",
+        "prompt": "Urgent user-confirmed full analysis of SOFI (XNAS, USD): use current primary evidence to reassess thesis, valuation scenarios, risks and catalysts, and explain changes since the prior assessment.",
+        "source": "manual-user-request",
+        "source_refs": [
+          "data/operations/requests/confirm-urgent-mp-sofi-2026-10-15-6cca33d10a25/user-request.json"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_98470cfc01bbcde78fc2:aff3ae82efed7a183cbd:2026-10-14",
+        "market_data_date": "2026-10-14",
+        "observed_at": "2026-10-15T13:41:38Z",
+        "prompt": "Research security_98470cfc01bbcde78fc2 with high priority after price-action alerts: bollinger_below_lower, rsi_oversold, volume_anomaly; decide what changed and whether to act.",
+        "rsi_attention": {
+          "episode_id": "rsi_3652273f9f6ce39aba68e9c1",
+          "observed_session": "2026-10-14",
+          "original_created_at": "2026-10-15T13:41:38Z",
+          "rsi": "25.66601177",
+          "source_price_hash": "075cdac1830d46761ca1a02a3902a0111243e72326bfdb45ae0c8e13374b9727",
+          "threshold": "30",
+          "transitions": [
+            "entered"
+          ]
+        },
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_98470cfc01bbcde78fc2-bollinger_below_lower-131e656e4453.md",
+          "data/wiki/inbox/market-security_98470cfc01bbcde78fc2-rsi_oversold-e06786bc0734.md",
+          "data/wiki/inbox/market-security_98470cfc01bbcde78fc2-volume_anomaly-44adf53a32b8.md"
+        ],
+        "trigger_types": [
+          "bollinger_below_lower",
+          "rsi_oversold",
+          "volume_anomaly"
+        ]
+      }
+    ],
+    "rsi_attention": {
+      "episode_id": "rsi_3652273f9f6ce39aba68e9c1",
+      "observed_session": "2026-10-14",
+      "original_created_at": "2026-10-15T13:41:38Z",
+      "rsi": "25.66601177",
+      "source_price_hash": "075cdac1830d46761ca1a02a3902a0111243e72326bfdb45ae0c8e13374b9727",
+      "threshold": "30",
+      "transitions": [
+        "entered"
+      ]
+    },
+    "security_id": "security_98470cfc01bbcde78fc2",
+    "source_price_hash": "075cdac1830d46761ca1a02a3902a0111243e72326bfdb45ae0c8e13374b9727",
+    "trigger_types": [
+      "bollinger_below_lower",
+      "rsi_oversold",
+      "volume_anomaly"
+    ]
   },
-  "objective": "Urgent user-confirmed full analysis of SOFI (XNAS, USD): use current primary evidence to reassess thesis, valuation scenarios, risks and catalysts, and explain changes since the prior assessment.",
+  "objective": "Urgent user-confirmed full analysis of SOFI (XNAS, USD): use current primary evidence to reassess thesis, valuation scenarios, risks and catalysts, and explain changes since the prior assessment. | Additional cause: Research security_98470cfc01bbcde78fc2 with high priority after price-action alerts: bollinger_below_lower, rsi_oversold, volume_anomaly; decide what changed and whether to act.",
   "operation_id": "01M4ZC1PY8VKD3VBR030A08P2W",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
-    "data/operations/requests/confirm-urgent-mp-sofi-2026-10-15-6cca33d10a25/user-request.json"
+    "data/operations/requests/confirm-urgent-mp-sofi-2026-10-15-6cca33d10a25/user-request.json",
+    "data/wiki/inbox/market-security_98470cfc01bbcde78fc2-bollinger_below_lower-131e656e4453.md",
+    "data/wiki/inbox/market-security_98470cfc01bbcde78fc2-rsi_oversold-e06786bc0734.md",
+    "data/wiki/inbox/market-security_98470cfc01bbcde78fc2-volume_anomaly-44adf53a32b8.md"
   ]
 }

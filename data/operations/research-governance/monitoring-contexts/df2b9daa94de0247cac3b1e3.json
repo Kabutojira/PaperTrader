@@ -1,0 +1,19 @@
+{
+  "claims": {},
+  "context_hash": "2ef769730e973c94d14c0c0e96ffb4c733f6028b5897c1b892ebfeb0b072901b",
+  "coverage_scope": "bounded subset; never complete-universe coverage",
+  "kind": "source_monitor",
+  "schema_version": 1,
+  "security_id": "security_8b703a8adf5f864acaa4",
+  "targets": [
+    {
+      "kind": "primary_source",
+      "previous_hash": "cc7e5e28e80215c617a50b48075d550b6b567d6a658ac6a2656967d871b36aee",
+      "target_id": "source_prosus_nav_20260827",
+      "url": "https://www.prosus.com/investors/investing-in-prosus/net-asset-value?locale=en"
+    }
+  ],
+  "window_end": "2026-10-15T13:41:38Z",
+  "window_key": "2026-10-15",
+  "window_start": "2026-10-14T13:41:38Z"
+}

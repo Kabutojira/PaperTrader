@@ -4,15 +4,16 @@
   "inputs": {
     "assessment_state": "2026-08-05T16:18:44Z",
     "maintenance_mode": "refresh",
-    "market_data_as_of": "2026-09-24T18:48:08Z",
-    "market_data_date": "2026-09-23",
+    "market_data_as_of": "2026-10-15T13:41:38Z",
+    "market_data_date": "2026-10-14",
     "merged_input_values": {
       "source_price_hash": [
         "0a9fac13524ebbdcddf731be59d3af018dbb2575163396b94f732d36ead1ca91",
-        "853fc65f0465ab8e1aa334f0354b9c22bd01ef3d141adeb0acdaf1b73e92f3e1"
+        "853fc65f0465ab8e1aa334f0354b9c22bd01ef3d141adeb0acdaf1b73e92f3e1",
+        "8f8c5c1a4931371f463c2ab78c3729d1c7ca1b26ed3c3d1b5087dfc1b57e7fc0"
       ]
     },
-    "period_end": "2026-09-23",
+    "period_end": "2026-10-14",
     "period_start": "2026-08-18",
     "research_page": "data/wiki/securities/security_1c055eb9b2bb1f5a8ff2.md",
     "research_reasons": [
@@ -52,10 +53,23 @@
         "trigger_types": [
           "volume_anomaly"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_1c055eb9b2bb1f5a8ff2:dffbf504965503caea0e:2026-10-14",
+        "market_data_date": "2026-10-14",
+        "observed_at": "2026-10-15T13:41:38Z",
+        "prompt": "Research security_1c055eb9b2bb1f5a8ff2 with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_1c055eb9b2bb1f5a8ff2-bollinger_below_lower-3d84249a702d.md"
+        ],
+        "trigger_types": [
+          "bollinger_below_lower"
+        ]
       }
     ],
     "security_id": "security_1c055eb9b2bb1f5a8ff2",
-    "source_price_hash": "853fc65f0465ab8e1aa334f0354b9c22bd01ef3d141adeb0acdaf1b73e92f3e1",
+    "source_price_hash": "8f8c5c1a4931371f463c2ab78c3729d1c7ca1b26ed3c3d1b5087dfc1b57e7fc0",
     "trigger_types": [
       "bollinger_below_lower",
       "volume_anomaly"
@@ -67,6 +81,7 @@
   "payload_version": 1,
   "source_refs": [
     "data/wiki/inbox/market-security_1c055eb9b2bb1f5a8ff2-bollinger_below_lower-0734fff671d4.md",
+    "data/wiki/inbox/market-security_1c055eb9b2bb1f5a8ff2-bollinger_below_lower-3d84249a702d.md",
     "data/wiki/inbox/market-security_1c055eb9b2bb1f5a8ff2-volume_anomaly-00026aaa7dcc.md",
     "source_rio_fy2025_results",
     "source_rio_h1_2026_results",

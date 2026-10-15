@@ -6,15 +6,17 @@ tags:
 - inbox
 - opportunity
 created: '2026-09-25'
-updated: '2026-09-25'
+updated: '2026-10-15'
 provenance: deterministic-market-monitor
 content_hash: 9c18f8d9013d43f4693e8a7875cc400201bec7be320169915e6f232b82be3189
-classifier_decision: blocked
-classifier_reason: 'classifier exited 2: Hermes classifier response is not JSON'
+classifier_decision: ingest
+classifier_reason: A newly entered volume anomaly with a confirmed one-month price
+  increase is a material market transition warranting durable review.
 alert_direction: neutral
 research_gate: eligible
 research_gate_reason: ''
-related_entity_ids: []
+related_entity_ids:
+- security_ccb25582c0392492fe9e
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_ccb25582c0392492fe9e
@@ -46,5 +48,5 @@ candidate_facts:
 
 ## Research disposition
 
-- Decision: Blocked
-- Reason: Classifier exited 2: hermes classifier response is not json
+- Decision: Ingest
+- Reason: A newly entered volume anomaly with a confirmed one-month price increase is a material market transition warranting durable review.

@@ -6,15 +6,17 @@ tags:
 - inbox
 - opportunity
 created: '2026-09-25'
-updated: '2026-09-25'
+updated: '2026-10-15'
 provenance: deterministic-market-monitor
 content_hash: e4248e74634d6fc9630a710038a9136cfeb126ee8de41aff406f711f15ade5c2
-classifier_decision: blocked
-classifier_reason: 'classifier exited 2: Hermes classifier response is not JSON'
+classifier_decision: ingest
+classifier_reason: New Bollinger lower-band breach with a roughly 4% decline over
+  the validated period merits durable review.
 alert_direction: bullish
 research_gate: eligible
 research_gate_reason: ''
-related_entity_ids: []
+related_entity_ids:
+- security_ef418f5ccc7dc5be8e65
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_ef418f5ccc7dc5be8e65
@@ -46,5 +48,5 @@ candidate_facts:
 
 ## Research disposition
 
-- Decision: Blocked
-- Reason: Classifier exited 2: hermes classifier response is not json
+- Decision: Ingest
+- Reason: New bollinger lower-band breach with a roughly 4% decline over the validated period merits durable review.

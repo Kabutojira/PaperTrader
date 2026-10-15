@@ -6,15 +6,17 @@ tags:
 - inbox
 - opportunity
 created: '2026-09-25'
-updated: '2026-09-25'
+updated: '2026-10-15'
 provenance: deterministic-market-monitor
 content_hash: 45bd79a57a025a69901bca24376aec1bb170a0592fa97a29867cb8a5669a6b44
-classifier_decision: blocked
-classifier_reason: 'classifier exited 2: Hermes classifier response is not JSON'
+classifier_decision: ingest
+classifier_reason: A new bullish MACD crossover with a positive period return is a
+  material market transition for the tracked security.
 alert_direction: bullish
 research_gate: eligible
 research_gate_reason: ''
-related_entity_ids: []
+related_entity_ids:
+- security_ccb25582c0392492fe9e
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_ccb25582c0392492fe9e
@@ -46,5 +48,5 @@ candidate_facts:
 
 ## Research disposition
 
-- Decision: Blocked
-- Reason: Classifier exited 2: hermes classifier response is not json
+- Decision: Ingest
+- Reason: A new bullish macd crossover with a positive period return is a material market transition for the tracked security.

@@ -1,0 +1,15 @@
+{
+  "entity_id": "source_5308b351cadbb5a4a571",
+  "entity_type": "source",
+  "inputs": {
+    "source_hash": "731e23ed90ec93ed997eb119da623d434e2f8abc233477eb9c66beb86726b68d",
+    "source_path": "data/wiki/inbox/market-security_a5dc16f3f4b245e6c168-rsi_oversold-6498350c83ba.md"
+  },
+  "objective": "Ingest validated candidate packet market-security_a5dc16f3f4b245e6c168-rsi_oversold-6498350c83ba.md into the wiki.",
+  "operation_id": "01M4ZWR1JGCTREXYW46FP8Y1JT",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_a5dc16f3f4b245e6c168-rsi_oversold-6498350c83ba.md"
+  ]
+}

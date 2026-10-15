@@ -6,15 +6,17 @@ tags:
 - inbox
 - opportunity
 created: '2026-09-25'
-updated: '2026-09-25'
+updated: '2026-10-15'
 provenance: deterministic-market-monitor
 content_hash: fc616bc5927d3b0d928d64ab1df3ae6886ca7139bbdd8b13067989636d35cb92
-classifier_decision: blocked
-classifier_reason: 'classifier exited 2: Hermes classifier response is not JSON'
+classifier_decision: ingest
+classifier_reason: A newly entered bullish MACD crossover is a material technical
+  transition for the security and merits durable monitoring context.
 alert_direction: bullish
 research_gate: eligible
 research_gate_reason: ''
-related_entity_ids: []
+related_entity_ids:
+- security_6ad1af8d10d6276a0221
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_6ad1af8d10d6276a0221
@@ -46,5 +48,5 @@ candidate_facts:
 
 ## Research disposition
 
-- Decision: Blocked
-- Reason: Classifier exited 2: hermes classifier response is not json
+- Decision: Ingest
+- Reason: A newly entered bullish macd crossover is a material technical transition for the security and merits durable monitoring context.

@@ -6,15 +6,17 @@ tags:
 - inbox
 - opportunity
 created: '2026-09-25'
-updated: '2026-09-25'
+updated: '2026-10-15'
 provenance: deterministic-market-monitor
 content_hash: 9d507689394575fe41d9db28e8d97a16e06180d7effee6535db53fe6fa5bca9b
-classifier_decision: blocked
-classifier_reason: 'classifier exited 2: Hermes classifier response is not JSON'
+classifier_decision: ingest
+classifier_reason: A newly entered volume anomaly coincides with a material negative
+  return over the validated period and merits durable review.
 alert_direction: neutral
 research_gate: eligible
 research_gate_reason: ''
-related_entity_ids: []
+related_entity_ids:
+- security_ef418f5ccc7dc5be8e65
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_ef418f5ccc7dc5be8e65
@@ -46,5 +48,5 @@ candidate_facts:
 
 ## Research disposition
 
-- Decision: Blocked
-- Reason: Classifier exited 2: hermes classifier response is not json
+- Decision: Ingest
+- Reason: A newly entered volume anomaly coincides with a material negative return over the validated period and merits durable review.

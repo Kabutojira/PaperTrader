@@ -2,12 +2,14 @@
   "entity_id": "security_59304f90c440def31dc5",
   "entity_type": "security",
   "inputs": {
+    "assessment_state": "2026-09-15T10:13:46Z",
     "baseline_completed_at": "2026-09-15T10:25:54Z",
     "baseline_operation_id": "01M15CV0788NKFKPKPJJ3N020N",
     "baseline_result_path": "data/runs/daily-20260915T100730Z/01M15CV0788NKFKPKPJJ3N020N/agent_result.json",
     "full_research_requested": true,
-    "market_data_as_of": "2026-09-25T19:05:53Z",
-    "market_data_date": "2026-09-24",
+    "maintenance_mode": "refresh",
+    "market_data_as_of": "2026-10-15T13:41:38Z",
+    "market_data_date": "2026-10-14",
     "merged_input_values": {
       "rsi_attention": [
         {
@@ -48,11 +50,13 @@
         "6c241ff93ffc33f76dea9552a30ba5f940754c18eb04873a4251a6dec161b6d6",
         "fb18c15443ed30d750823f7eea16bf6bff47a855ef738c22cd6f0fc93a5db7b1",
         "8e5f8f37a316a0576a962f616c18ab848b88ddaac6a9df666d9be94ac5462caa",
-        "69dbede84a60a3d61690224d42d80fd1459394a7b3953c4f402f2bd5b4844933"
+        "69dbede84a60a3d61690224d42d80fd1459394a7b3953c4f402f2bd5b4844933",
+        "6890ae4960b4283dd2601dc572a729131cd2f9781a5c0b561b6cadf12eb67be4"
       ]
     },
-    "period_end": "2026-09-24",
+    "period_end": "2026-10-14",
     "period_start": "2026-08-19",
+    "research_page": "data/wiki/securities/security_59304f90c440def31dc5.md",
     "research_reasons": [
       {
         "dedupe_key": "quick_check_research:security_59304f90c440def31dc5:1d08b496d4d98daca2a7:2026-09-17",
@@ -123,6 +127,30 @@
         "trigger_types": [
           "rsi_oversold"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_59304f90c440def31dc5:07a9148678d241062ec0:2026-10-14",
+        "market_data_date": "2026-10-14",
+        "observed_at": "2026-10-15T13:41:38Z",
+        "prompt": "Research security_59304f90c440def31dc5 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_59304f90c440def31dc5-macd_cross_above_signal-53a29b571426.md"
+        ],
+        "trigger_types": [
+          "macd_cross_above_signal"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_59304f90c440def31dc5:allocation-maintenance:2026-09-15T10:13:46Z",
+        "observed_at": "2026-10-15T13:41:38Z",
+        "prompt": "Revalidate security_59304f90c440def31dc5 with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_rtx_q2_2026_10q_sec",
+          "source_rtx_q2_2026_results_sec_ex99",
+          "source_rtx_sec_submissions_20260915"
+        ]
       }
     ],
     "rsi_attention": {
@@ -137,20 +165,25 @@
       ]
     },
     "security_id": "security_59304f90c440def31dc5",
-    "source_price_hash": "69dbede84a60a3d61690224d42d80fd1459394a7b3953c4f402f2bd5b4844933",
+    "source_price_hash": "6890ae4960b4283dd2601dc572a729131cd2f9781a5c0b561b6cadf12eb67be4",
     "trigger_types": [
+      "macd_cross_above_signal",
       "rsi_oversold",
       "volume_anomaly"
     ]
   },
-  "objective": "Quick-check security_59304f90c440def31dc5 after price-action alerts: rsi_oversold; verify the latest research assumptions and escalate to full security research if any material gate changed. | Additional cause: Quick-check security_59304f90c440def31dc5 after price-action alerts: volume_anomaly; verify the latest research assumptions and escalate to full security research if any material gate changed. | Additional cause: Research security_59304f90c440def31dc5 with high priority after price-action alerts: rsi_oversold; decide what changed and whether to act.",
+  "objective": "Quick-check security_59304f90c440def31dc5 after price-action alerts: rsi_oversold; verify the latest research assumptions and escalate to full security research if any material gate changed. | Additional cause: Quick-check security_59304f90c440def31dc5 after price-action alerts: volume_anomaly; verify the latest research assumptions and escalate to full security research if any material gate changed. | Additional cause: Research security_59304f90c440def31dc5 with high priority after price-action alerts: rsi_oversold; decide what changed and whether to act. | Additional cause: Research security_59304f90c440def31dc5 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act. | Additional cause: Revalidate security_59304f90c440def31dc5 with current primary evidence and write one comparable allocation assessment.",
   "operation_id": "01M2TTW0FRB04CXERG59PJ45K9",
   "operation_type": "quick_check_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_59304f90c440def31dc5-macd_cross_above_signal-53a29b571426.md",
     "data/wiki/inbox/market-security_59304f90c440def31dc5-rsi_oversold-35152eacefc5.md",
     "data/wiki/inbox/market-security_59304f90c440def31dc5-rsi_oversold-b28816e5fdd6.md",
     "data/wiki/inbox/market-security_59304f90c440def31dc5-rsi_oversold-e7e1a143bce1.md",
-    "data/wiki/inbox/market-security_59304f90c440def31dc5-volume_anomaly-de1718d0ca1f.md"
+    "data/wiki/inbox/market-security_59304f90c440def31dc5-volume_anomaly-de1718d0ca1f.md",
+    "source_rtx_q2_2026_10q_sec",
+    "source_rtx_q2_2026_results_sec_ex99",
+    "source_rtx_sec_submissions_20260915"
   ]
 }

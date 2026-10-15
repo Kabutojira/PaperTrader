@@ -5,8 +5,8 @@
     "assessment_state": "2026-08-31T21:53:45Z",
     "full_research_requested": true,
     "maintenance_mode": "refresh",
-    "market_data_as_of": "2026-09-25T19:05:53Z",
-    "market_data_date": "2026-09-25",
+    "market_data_as_of": "2026-10-15T13:41:38Z",
+    "market_data_date": "2026-10-15",
     "merged_input_values": {
       "rsi_attention": [
         {
@@ -30,14 +30,26 @@
           "transitions": [
             "strengthened"
           ]
+        },
+        {
+          "episode_id": "rsi_42cbd689621ffdeca1eed0a0",
+          "observed_session": "2026-10-15",
+          "original_created_at": "2026-10-15T13:41:38Z",
+          "rsi": "22.16279324",
+          "source_price_hash": "52892630417258111580000a243e9117dd68f3ca8f1882ddaa33f9c203dc3bcf",
+          "threshold": "30",
+          "transitions": [
+            "strengthened"
+          ]
         }
       ],
       "source_price_hash": [
         "79f50ba176ef7e94570feb095ff7fc2bc2df55bab82827dd87060310235fc548",
-        "2fc0dd257a4f9ac7706404635302f83c2c7d0b9b83324dbc2c8bd6702233276e"
+        "2fc0dd257a4f9ac7706404635302f83c2c7d0b9b83324dbc2c8bd6702233276e",
+        "52892630417258111580000a243e9117dd68f3ca8f1882ddaa33f9c203dc3bcf"
       ]
     },
-    "period_end": "2026-09-25",
+    "period_end": "2026-10-15",
     "period_start": "2026-08-27",
     "research_page": "data/wiki/securities/security_8a5c43888d224de85c69.md",
     "research_reasons": [
@@ -92,6 +104,32 @@
         "source_refs": [
           "data/operations/requests/urgent-security-analysis-2026-10-15-1c2fdc2dcbe0/user-request.json"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_8a5c43888d224de85c69:8ee325d68276e980672b:2026-10-15",
+        "market_data_date": "2026-10-15",
+        "observed_at": "2026-10-15T13:41:38Z",
+        "prompt": "Research security_8a5c43888d224de85c69 with high priority after price-action alerts: bollinger_below_lower, rsi_oversold; decide what changed and whether to act.",
+        "rsi_attention": {
+          "episode_id": "rsi_42cbd689621ffdeca1eed0a0",
+          "observed_session": "2026-10-15",
+          "original_created_at": "2026-10-15T13:41:38Z",
+          "rsi": "22.16279324",
+          "source_price_hash": "52892630417258111580000a243e9117dd68f3ca8f1882ddaa33f9c203dc3bcf",
+          "threshold": "30",
+          "transitions": [
+            "strengthened"
+          ]
+        },
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_8a5c43888d224de85c69-bollinger_below_lower-5700ad1f4743.md",
+          "data/wiki/inbox/market-security_8a5c43888d224de85c69-rsi_oversold-d59aa5a8b1e7.md"
+        ],
+        "trigger_types": [
+          "bollinger_below_lower",
+          "rsi_oversold"
+        ]
       }
     ],
     "rsi_attention": {
@@ -106,18 +144,21 @@
       ]
     },
     "security_id": "security_8a5c43888d224de85c69",
-    "source_price_hash": "2fc0dd257a4f9ac7706404635302f83c2c7d0b9b83324dbc2c8bd6702233276e",
+    "source_price_hash": "52892630417258111580000a243e9117dd68f3ca8f1882ddaa33f9c203dc3bcf",
     "trigger_types": [
+      "bollinger_below_lower",
       "rsi_oversold"
     ]
   },
-  "objective": "Research security_8a5c43888d224de85c69 with high priority after price-action alerts: rsi_oversold; decide what changed and whether to act. | Additional cause: Revalidate security_8a5c43888d224de85c69 with current primary evidence and write one comparable allocation assessment. | Additional cause: Urgent user-requested full analysis of PLS.AX (XASX, AUD): use current primary evidence to refresh thesis, valuation scenarios, risks and catalysts; explain changes since the prior assessment.",
+  "objective": "Research security_8a5c43888d224de85c69 with high priority after price-action alerts: rsi_oversold; decide what changed and whether to act. | Additional cause: Revalidate security_8a5c43888d224de85c69 with current primary evidence and write one comparable allocation assessment. | Additional cause: Urgent user-requested full analysis of PLS.AX (XASX, AUD): use current primary evidence to refresh thesis, valuation scenarios, risks and catalysts; explain changes since the prior assessment. | Additional cause: Research security_8a5c43888d224de85c69 with high priority after price-action alerts: bollinger_below_lower, rsi_oversold; decide what changed and whether to act.",
   "operation_id": "01M3ABY5J0FWXCY94ATWNTA8V4",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
     "data/operations/requests/urgent-security-analysis-2026-10-15-1c2fdc2dcbe0/user-request.json",
+    "data/wiki/inbox/market-security_8a5c43888d224de85c69-bollinger_below_lower-5700ad1f4743.md",
     "data/wiki/inbox/market-security_8a5c43888d224de85c69-rsi_oversold-7072b69ac454.md",
+    "data/wiki/inbox/market-security_8a5c43888d224de85c69-rsi_oversold-d59aa5a8b1e7.md",
     "data/wiki/inbox/market-security_8a5c43888d224de85c69-rsi_oversold-e1ef88d0e869.md",
     "source_pls_fy2026_annual_report",
     "source_pls_fy2026_results_presentation"

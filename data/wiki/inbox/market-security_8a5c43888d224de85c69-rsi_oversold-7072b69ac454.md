@@ -6,15 +6,17 @@ tags:
 - inbox
 - opportunity
 created: '2026-09-25'
-updated: '2026-09-25'
+updated: '2026-10-15'
 provenance: deterministic-market-monitor
 content_hash: 7072b69ac4542c16ded3d2c08b8663fb67dbfc3fc8c1e4fe8116f07e7f5640db
-classifier_decision: blocked
-classifier_reason: 'classifier exited 2: Hermes classifier response is not JSON'
+classifier_decision: ingest
+classifier_reason: Material RSI oversold transition alongside a 27.7% monthly decline
+  merits durable wiki review.
 alert_direction: bullish
 research_gate: eligible
 research_gate_reason: ''
-related_entity_ids: []
+related_entity_ids:
+- security_8a5c43888d224de85c69
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_8a5c43888d224de85c69
@@ -46,5 +48,5 @@ candidate_facts:
 
 ## Research disposition
 
-- Decision: Blocked
-- Reason: Classifier exited 2: hermes classifier response is not json
+- Decision: Ingest
+- Reason: Material rsi oversold transition alongside a 27.7% monthly decline merits durable wiki review.

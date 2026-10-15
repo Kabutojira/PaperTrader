@@ -6,15 +6,16 @@
     "baseline_operation_id": "01M26HW848ZZWZAZTZSYXFB7J2",
     "baseline_result_path": "data/runs/daily-20260911T054700Z/01M26HW848ZZWZAZTZSYXFB7J2/agent_result.json",
     "full_research_requested": true,
-    "market_data_as_of": "2026-09-22T18:28:30Z",
-    "market_data_date": "2026-09-21",
+    "market_data_as_of": "2026-10-15T13:41:38Z",
+    "market_data_date": "2026-10-14",
     "merged_input_values": {
       "source_price_hash": [
         "400d5118f7c715103601c28f5b35ac3441b953e6a6bdd5965e3d836d0a1b3cf2",
-        "21dca049bf81bf705e2e1a76d40529a685f5a23f236fc0ab9d77e8623a45036e"
+        "21dca049bf81bf705e2e1a76d40529a685f5a23f236fc0ab9d77e8623a45036e",
+        "982cd0e4ebbb4e62a7e302ef34c638cfe427bb63f0c7a8532c45f4babd043852"
       ]
     },
-    "period_end": "2026-09-21",
+    "period_end": "2026-10-14",
     "period_start": "2026-08-20",
     "research_reasons": [
       {
@@ -38,6 +39,19 @@
         "trigger_types": [
           "macd_cross_above_signal"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_97f38b2cb2d5ef127f5a:fb67b5f3d0c8dcf00f3a:2026-10-14",
+        "market_data_date": "2026-10-14",
+        "observed_at": "2026-10-15T13:41:38Z",
+        "prompt": "Research security_97f38b2cb2d5ef127f5a with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_97f38b2cb2d5ef127f5a-bollinger_below_lower-fcc3294b7ee9.md"
+        ],
+        "trigger_types": [
+          "bollinger_below_lower"
+        ]
       }
     ],
     "rsi_attention": {
@@ -52,17 +66,19 @@
       ]
     },
     "security_id": "security_97f38b2cb2d5ef127f5a",
-    "source_price_hash": "21dca049bf81bf705e2e1a76d40529a685f5a23f236fc0ab9d77e8623a45036e",
+    "source_price_hash": "982cd0e4ebbb4e62a7e302ef34c638cfe427bb63f0c7a8532c45f4babd043852",
     "trigger_types": [
+      "bollinger_below_lower",
       "macd_cross_above_signal",
       "rsi_oversold"
     ]
   },
-  "objective": "Quick-check security_97f38b2cb2d5ef127f5a after price-action alerts: rsi_oversold; verify the latest research assumptions and escalate to full security research if any material gate changed. | Additional cause: Research security_97f38b2cb2d5ef127f5a with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
+  "objective": "Quick-check security_97f38b2cb2d5ef127f5a after price-action alerts: rsi_oversold; verify the latest research assumptions and escalate to full security research if any material gate changed. | Additional cause: Research security_97f38b2cb2d5ef127f5a with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act. | Additional cause: Research security_97f38b2cb2d5ef127f5a with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act.",
   "operation_id": "01M2XC2BYGGS0TVV614Z6FQ61H",
   "operation_type": "quick_check_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_97f38b2cb2d5ef127f5a-bollinger_below_lower-fcc3294b7ee9.md",
     "data/wiki/inbox/market-security_97f38b2cb2d5ef127f5a-macd_cross_above_signal-bf5b5251f9a5.md",
     "data/wiki/inbox/market-security_97f38b2cb2d5ef127f5a-rsi_oversold-8e6bd06f0017.md"
   ]
