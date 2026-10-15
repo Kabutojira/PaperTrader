@@ -116,6 +116,7 @@ def create_checkpoint(
         "status",
         "--porcelain=v1",
         "--untracked-files=all",
+        "--no-renames",
         "-z",
         strip=False,
     )

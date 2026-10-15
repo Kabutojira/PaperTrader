@@ -419,6 +419,27 @@ def test_dry_checkpoint_creates_local_trailered_commit_without_push(
     assert "PaperTrader-Checkpoint: 003" in message
     assert "PaperTrader-Profile: analyst" in message
 
+    replacement = run_artifact.with_name("retention.json")
+    replacement.write_bytes(run_artifact.read_bytes())
+    run_artifact.unlink()
+    finalization = create_checkpoint(
+        sandbox_repository,
+        sandbox_settings,
+        daily_cycle_id="daily-20260804T150000Z",
+        checkpoint_index=4,
+        kind="finalization",
+        dry_run=True,
+    )
+
+    assert finalization.changed_paths == tuple(
+        sorted(
+            (
+                "data/runs/daily-20260804T150000Z/checkpoint.json",
+                "data/runs/daily-20260804T150000Z/retention.json",
+            )
+        )
+    )
+
     media = sandbox_repository / "data" / "wiki" / "podcasts" / "forbidden.mp3"
     media.parent.mkdir(parents=True, exist_ok=True)
     media.write_bytes(b"audio")
@@ -427,7 +448,7 @@ def test_dry_checkpoint_creates_local_trailered_commit_without_push(
             sandbox_repository,
             sandbox_settings,
             daily_cycle_id="daily-20260804T150000Z",
-            checkpoint_index=4,
+            checkpoint_index=5,
             kind="operation",
             dry_run=True,
         )
