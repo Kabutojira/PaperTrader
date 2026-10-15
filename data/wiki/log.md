@@ -1349,3 +1349,23 @@ at a dated entry boundary after the live daily run crossed the configured 5,000-
 - Published investor decision snapshot `decision_f641c45d3a6e7301a8ce`.
 
 - Generated canonical [[daily-reports/daily-report_20261015]] for run `daily-20261015T134132Z`.
+
+- Created candidate packet [[inbox/market-security_3853e54c619d597dcaa1-rsi_oversold-636059fc318f]] (636059fc318f).
+
+- Classified [[inbox/market-security_3853e54c619d597dcaa1-rsi_oversold-636059fc318f]] as `ingest`: Material RSI oversold transition coincides with a 32.4% decline over the validated period and merits durable review.
+
+- Created candidate packet [[inbox/market-security_567d0d575bbd30aaa91d-bollinger_below_lower-19e5fb1cb8a3]] (19e5fb1cb8a3).
+
+- Classified [[inbox/market-security_567d0d575bbd30aaa91d-bollinger_below_lower-19e5fb1cb8a3]] as `ingest`: Material strengthened downside indicator with a 12.8% period loss merits durable review.
+
+- Created candidate packet [[inbox/market-security_567d0d575bbd30aaa91d-volume_anomaly-2bab6bdc0199]] (2bab6bdc0199).
+
+- Classified [[inbox/market-security_567d0d575bbd30aaa91d-volume_anomaly-2bab6bdc0199]] as `ingest`: Material volume anomaly strengthened alongside a 12.8% decline over the stated period, warranting durable review.
+
+- Created candidate packet [[inbox/market-security_89969b7dac39b7db5661-macd_cross_below_signal-af084807024c]] (af084807024c).
+
+- Created candidate packet [[inbox/market-security_ccb25582c0392492fe9e-rsi_overbought-fa25fcaf1701]] (fa25fcaf1701).
+
+- Created candidate packet [[inbox/market-security_d08d763780400dfbffce-bollinger_below_lower-ac4738806b8b]] (ac4738806b8b).
+
+- Classified [[inbox/market-security_d08d763780400dfbffce-bollinger_below_lower-ac4738806b8b]] as `ingest`: Material 12.4% decline with a strengthened Bollinger-below-lower transition merits durable review.

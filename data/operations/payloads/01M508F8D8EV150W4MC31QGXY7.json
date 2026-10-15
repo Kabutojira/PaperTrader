@@ -1,0 +1,18 @@
+{
+  "entity_id": "opportunity_d29318fe9264d7812ca8",
+  "entity_type": "opportunity",
+  "inputs": {
+    "market_data_as_of": "2026-10-15T17:06:33Z",
+    "period_end": "2026-10-15",
+    "period_start": "2026-09-17",
+    "security_id": "security_3853e54c619d597dcaa1",
+    "trigger_type": "rsi_oversold"
+  },
+  "objective": "Assess security_3853e54c619d597dcaa1 rsi_oversold transition as opportunity, risk, or noise.",
+  "operation_id": "01M508F8D8EV150W4MC31QGXY7",
+  "operation_type": "opportunity_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_3853e54c619d597dcaa1-rsi_oversold-636059fc318f.md"
+  ]
+}
