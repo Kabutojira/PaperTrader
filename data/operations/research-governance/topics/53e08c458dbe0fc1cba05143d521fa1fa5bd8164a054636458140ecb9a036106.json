@@ -1,0 +1,25 @@
+{
+  "previous_version_id": "",
+  "recorded_at": "2026-10-15T08:49:46Z",
+  "schema_version": 1,
+  "source_operation_id": "",
+  "topic": {
+    "anchor_ids": [],
+    "contributions": [],
+    "entity_id": "security_cd492d97064d8574156e",
+    "entity_type": "security",
+    "evidence_refs": [
+      "data/operations/requests/confirm-urgent-mp-sofi-2026-10-15-6cca33d10a25/user-request.json"
+    ],
+    "lifecycle": "active",
+    "parent_ids": [],
+    "reactivation_conditions": [],
+    "reason": "explicit_tracking",
+    "review_at": null,
+    "scope_class": "user_directed",
+    "summary": "User-confirmed tracking of MP Materials Corp. (MP, XNYS, USD) and an urgent full security review. This records research coverage only; it does not authorize a strategy, order, or financial decision.",
+    "topic_id": "topic_security_cd492d97064d8574156e",
+    "user_request_ref": "data/operations/requests/confirm-urgent-mp-sofi-2026-10-15-6cca33d10a25/user-request.json"
+  },
+  "version_id": "53e08c458dbe0fc1cba05143d521fa1fa5bd8164a054636458140ecb9a036106"
+}

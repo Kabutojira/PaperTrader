@@ -5,7 +5,7 @@ status: maintained
 tags:
   - research
 created: "2026-09-25"
-updated: "2026-09-25"
+updated: "2026-10-15"
 provenance: deterministic-decision-projection
 snapshot_id: "decision_a6f0800e760ee3140acb"
 as_of: "2026-09-25T19:12:04Z"
@@ -1228,3 +1228,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Queries
+
+- [[_meta/research-scope|Research scope and dispositions]]

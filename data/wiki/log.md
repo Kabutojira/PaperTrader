@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-08-08"
-updated: "2026-09-25"
+updated: "2026-10-15"
 provenance: repository-contract
 ---
 
@@ -4966,3 +4966,7 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Published investor decision snapshot `decision_a6f0800e760ee3140acb`.
 
 - Generated canonical [[daily-reports/daily-report_20260925]] for run `daily-20260925T190546Z`.
+
+## 2026-10-15
+
+- Registered explicit MP and SOFI tracking and their urgent priority-100 security reviews.
