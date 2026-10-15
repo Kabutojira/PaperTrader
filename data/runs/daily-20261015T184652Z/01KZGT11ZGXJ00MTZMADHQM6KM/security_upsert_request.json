@@ -1,0 +1,23 @@
+{
+  "security_id": "security_fb87fac302a5446a1ced",
+  "issuer_id": "issuer_8471016731f84aeb44ff",
+  "company_name": "Lithium Americas Corp.",
+  "instrument_name": "Lithium Americas Corp. common shares",
+  "instrument_type": "equity",
+  "ticker": "LAC",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "LAC",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "CA",
+  "sector": "Basic Materials",
+  "industry": "Other Industrial Metals & Mining",
+  "status": "watching",
+  "watchlist_reason": "Thacker Pass offers strategic U.S. lithium exposure, but pre-revenue construction, commodity, funding, commissioning and dilution risks remain unresolved and current per-share valuation is unsupported.",
+  "research_summary": "Q2 evidence confirms construction progress and liquidity, but the October oversold selloff does not resolve pre-revenue execution, financing, dilution, commodity or unsupported-valuation risk.",
+  "research_page": "data/wiki/securities/security_fb87fac302a5446a1ced.md",
+  "last_research_at": "2026-10-15T18:52:08Z",
+  "next_review_at": "2026-11-15T18:52:08Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1966983/000119312526347826/lac-20260630.htm"
+}

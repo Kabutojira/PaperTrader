@@ -1288,7 +1288,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Koninklijke Ahold Delhaize N.V. ordinary shares](securities/security_e19c7fe27fbcc4cd923d)
 - [Kratos Defense &amp; Security Solutions, Inc. common stock](securities/security_0cf8075039299094d614)
 - [Labcorp Holdings Inc. common stock](securities/security_b1f2c48e1a744f5ecf67)
-- [Lithium Americas Corp. common shares](securities/security_fb87fac302a5446a1ced)
+- [Lithium Americas Corp. common shares (NYSE: LAC)](securities/security_fb87fac302a5446a1ced)
 - [MercadoLibre, Inc. common stock](securities/security_4935c6e39e38273a1731)
 - [Meta Platforms, Inc. Class A common stock](securities/security_d12e746b3c9d392183cc)
 - [Microsoft Corporation common stock](securities/security_204be2a44063993de1a8)
