@@ -1,0 +1,6 @@
+[agents]
+enabled = true
+# The test operator may hand one bounded repair to the fixer while it waits. Project
+# instructions still require all agent work and repository operations to run sequentially.
+max_concurrent_threads_per_session = 2
+
