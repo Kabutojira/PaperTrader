@@ -1,0 +1,33 @@
+{
+  "entity_id": "security_cc4dcb8f002b61dffe00",
+  "entity_type": "security",
+  "inputs": {
+    "market_data_as_of": "2026-10-15T13:41:38Z",
+    "market_data_date": "2026-10-14",
+    "period_end": "2026-10-14",
+    "period_start": "2026-09-16",
+    "rsi_attention": {
+      "episode_id": "rsi_6c8e46abcaf3520d0d25b9ab",
+      "observed_session": "2026-10-14",
+      "original_created_at": "2026-10-15T13:41:38Z",
+      "rsi": "27.76108928",
+      "source_price_hash": "e39559a5da33bc67fdb624e149ec0ae4593bc60abcbea518ba54f18934bf1cb9",
+      "threshold": "30",
+      "transitions": [
+        "entered"
+      ]
+    },
+    "security_id": "security_cc4dcb8f002b61dffe00",
+    "source_price_hash": "e39559a5da33bc67fdb624e149ec0ae4593bc60abcbea518ba54f18934bf1cb9",
+    "trigger_types": [
+      "rsi_oversold"
+    ]
+  },
+  "objective": "Research security_cc4dcb8f002b61dffe00 with high priority after price-action alerts: rsi_oversold; decide what changed and whether to act.",
+  "operation_id": "01M4ZWR1JGH0234QV8YHFJSFYX",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_cc4dcb8f002b61dffe00-rsi_oversold-bd8959da0f38.md"
+  ]
+}

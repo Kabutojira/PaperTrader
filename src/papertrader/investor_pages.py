@@ -1495,7 +1495,9 @@ def _catalog(repository_root: Path, snapshot: DecisionSnapshot, day: date) -> st
 
 def _latest_report_link(repository_root: Path) -> str:
     reports = sorted(
-        (repository_root / "data" / "wiki" / "daily-reports").glob("daily-report_*.md")
+        path
+        for path in (repository_root / "data" / "wiki" / "daily-reports").glob("daily-report_*.md")
+        if re.fullmatch(r"daily-report_[0-9]{8}", path.stem)
     )
     if not reports:
         return ""

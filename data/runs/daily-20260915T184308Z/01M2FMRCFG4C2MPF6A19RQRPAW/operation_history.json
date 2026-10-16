@@ -1,0 +1,23 @@
+{
+  "auxiliary_models": {
+    "web_extract": "openai-codex:gpt-5.6-luna"
+  },
+  "checkpoint_index": 1,
+  "cycle_disposition": "succeeded",
+  "daily_cycle_id": "daily-20260915T184308Z",
+  "effective_model": "gpt-5.6-luna",
+  "escalation_source": "",
+  "maximum_turns": 32,
+  "mutation_policy": "triage_only",
+  "operation_history_version": 1,
+  "operation_id": "01M2FMRCFG4C2MPF6A19RQRPAW",
+  "operation_type": "research_triage",
+  "profile": "scout",
+  "profile_policy_version": "profile-router-v1",
+  "queue_status": "succeeded",
+  "queue_updated_at": "2026-09-15T18:47:21Z",
+  "reasoning_effort": "low",
+  "route_reason": "read_only_research_triage",
+  "timeout_seconds": 600,
+  "weighted_cost": "1"
+}

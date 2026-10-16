@@ -4,14 +4,51 @@
   "inputs": {
     "assessment_state": "2026-08-10T22:35:08Z",
     "maintenance_mode": "refresh",
+    "market_data_as_of": "2026-09-23T18:47:42Z",
+    "market_data_date": "2026-09-22",
+    "period_end": "2026-09-22",
+    "period_start": "2026-08-24",
     "research_page": "data/wiki/securities/security_7bf8f4c9cc12ae410e40.md",
-    "security_id": "security_7bf8f4c9cc12ae410e40"
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_7bf8f4c9cc12ae410e40:allocation-maintenance:2026-08-10T22:35:08Z",
+        "observed_at": "2026-08-18T10:34:51Z",
+        "prompt": "Revalidate security_7bf8f4c9cc12ae410e40 with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_abcl635_clinicaltrials_gov",
+          "source_abcl635_phase2_2026_presentation_sec",
+          "source_abcl635_phase2_2026_results_sec",
+          "source_abcl_q2_2026_10q_sec",
+          "source_abcl_q2_2026_results_sec_ex99_1"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_7bf8f4c9cc12ae410e40:67691579b184d31ac893:2026-09-22",
+        "market_data_date": "2026-09-22",
+        "observed_at": "2026-09-23T18:47:42Z",
+        "prompt": "Research security_7bf8f4c9cc12ae410e40 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_7bf8f4c9cc12ae410e40-macd_cross_above_signal-d9a7287a8fe4.md"
+        ],
+        "trigger_types": [
+          "macd_cross_above_signal"
+        ]
+      }
+    ],
+    "security_id": "security_7bf8f4c9cc12ae410e40",
+    "source_price_hash": "0d7e51957bbed3e99af0ab8e1b1d63c151ce0b0a393cd00d283de5a60f86217c",
+    "trigger_types": [
+      "macd_cross_above_signal"
+    ]
   },
-  "objective": "Revalidate security_7bf8f4c9cc12ae410e40 with current primary evidence and write one comparable allocation assessment.",
+  "objective": "Revalidate security_7bf8f4c9cc12ae410e40 with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_7bf8f4c9cc12ae410e40 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
   "operation_id": "01M0A70B7R57SNMFK4D40XP01R",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_7bf8f4c9cc12ae410e40-macd_cross_above_signal-d9a7287a8fe4.md",
     "source_abcl635_clinicaltrials_gov",
     "source_abcl635_phase2_2026_presentation_sec",
     "source_abcl635_phase2_2026_results_sec",

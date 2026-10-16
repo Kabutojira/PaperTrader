@@ -1,0 +1,17 @@
+{
+  "entity_id": "security_e4822686f60a96824b6e",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-08-28T19:27:50Z",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_e4822686f60a96824b6e.md",
+    "security_id": "security_e4822686f60a96824b6e"
+  },
+  "objective": "Revalidate security_e4822686f60a96824b6e with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01M32RBCY8VFR3C935FYTVVNPK",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_uber_q2_2026_10q"
+  ]
+}

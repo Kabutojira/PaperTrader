@@ -1271,7 +1271,14 @@ def changed_paths_from_git(
 
     if staged and base_ref is not None:
         raise ValueError("--staged and --base-ref are mutually exclusive")
-    command = ["git", "diff", "--name-only", "--diff-filter=ACDMRTUXB", "-z"]
+    command = [
+        "git",
+        "diff",
+        "--name-only",
+        "--no-renames",
+        "--diff-filter=ACDMRTUXB",
+        "-z",
+    ]
     if staged:
         command.append("--cached")
     elif base_ref is not None:

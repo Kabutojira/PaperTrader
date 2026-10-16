@@ -1,0 +1,20 @@
+{
+  "entity_id": "security_c2e6db30cb59254de418",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-09-06T13:57:12Z",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_c2e6db30cb59254de418.md",
+    "security_id": "security_c2e6db30cb59254de418"
+  },
+  "objective": "Revalidate security_c2e6db30cb59254de418 with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01M4ZWR1JGAZ1T1FNP9SAG05Z5",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_xmtr_2025_10k",
+    "source_xmtr_ai_marketplace_20260303",
+    "source_xmtr_q2_2026_10q",
+    "source_xmtr_q2_2026_results"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "claim": {
+    "assessment_ids": [
+      "assessment_383acdd93493e25c29e0"
+    ],
+    "assumption_ids": [
+      "rtx-alert-no-filed-operating-catalyst"
+    ],
+    "basis": "Current regulator-index inspection bounded to the issuer's SEC submissions; absence of a later operating filing is used only to avoid attributing the technical decline to a verified new issuer disclosure.",
+    "claim_id": "rtx-no-later-operating-filing-20260915",
+    "currency": "",
+    "evidence": [
+      {
+        "applicability_limit": "Applies only to filings present in the SEC submissions index through inspection; it is not evidence that no other public or private causal information exists.",
+        "excerpt": "No RTX operating filing follows the July 23 Form 10-Q and Form 8-K through September 15.",
+        "inspected_at": "2026-09-15T10:13:46Z",
+        "inspection_status": "observed",
+        "locator": "SEC submissions JSON, recent accession and filing-date arrays inspected 2026-09-15",
+        "origin_id": "sec-cik-0000101829",
+        "origin_type": "independent",
+        "published_at": null,
+        "rationale": "The current regulator index supports only the bounded conclusion that no later SEC operating filing explains the alert-period move.",
+        "role": "supports",
+        "source_history_id": "source_history_257d7d6d08a34a687ded",
+        "underlying_observation_id": "rtx-sec-submissions-through-20260915"
+      }
+    ],
+    "kind": "catalyst",
+    "period_end": "2026-09-15",
+    "period_start": "2026-07-24",
+    "proposition": "The SEC submissions index listed no RTX operating filing after the 2026-07-23 Form 10-Q and Form 8-K through inspection on 2026-09-15.",
+    "scope": "RTX Corporation SEC submission sequence for later operating disclosures",
+    "security_ids": [
+      "security_59304f90c440def31dc5"
+    ],
+    "state": "supported",
+    "uncertainty": "No later SEC operating filing does not exclude undisclosed information, non-SEC public information, sector moves, macro factors, positioning, or liquidity effects.",
+    "unit": "operating filings"
+  },
+  "material_hash": "3f018f47426543df22b5da12a96e3e11e60e21848358f857fee986d710f3e03a",
+  "previous_version_id": "",
+  "recorded_at": "2026-09-15T10:25:54Z",
+  "schema_version": 1,
+  "source_operation_id": "01M15CV0788NKFKPKPJJ3N020N",
+  "version_id": "2b5b657c507d58228ee5b06b69796b8d172c7674250e1e2fa4b70961a5d9ad8d"
+}

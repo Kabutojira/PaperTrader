@@ -5,13 +5,97 @@
     "causal_hypothesis": "More manufacturable AI-assisted designs may lift utilization of Stratasys systems and its installed-base materials and service revenue, but industrial qualification and competitive barriers may slow transmission.",
     "focused_questions": "Test installed base, system/material/service mix, recurring proprietary materials, aerospace, automotive, healthcare, utilization leverage, Forward AM integration, concentration, competition, margins, cash flow, balance sheet, scenarios, rating, and invalidation.",
     "idea_id": "idea_ai_driven_democratization_physical_creation",
-    "security_id": "security_84705b27d28a94f2b318"
+    "market_data_as_of": "2026-10-15T13:41:38Z",
+    "market_data_date": "2026-10-14",
+    "merged_input_values": {
+      "source_price_hash": [
+        "c77748f640cd36eb9ece1ab430b1d7122b69ae4e1284464954cad0f4d58c9d47",
+        "0cb870f1359bbe2a1c5b80d74369522f782fdc78190eb21a40317d5cf4c7dfd8"
+      ]
+    },
+    "period_end": "2026-10-14",
+    "period_start": "2026-08-19",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_84705b27d28a94f2b318:ai-physical-creation:2026-09",
+        "observed_at": "2026-09-06T09:40:20Z",
+        "prompt": "Research and value Stratasys as an industrial polymer printing and materials platform.",
+        "source": "idea_research:01M1V159Q8ZAMEEEVXR2SC854J",
+        "source_refs": [
+          "https://investors.stratasys.com/sec-filings/all-sec-filings/content/0001628280-26-015079/ssys-20251231.htm"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_84705b27d28a94f2b318:654da9ad972a44b655b0:2026-09-17",
+        "market_data_date": "2026-09-17",
+        "observed_at": "2026-09-18T18:01:15Z",
+        "prompt": "Research security_84705b27d28a94f2b318 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_84705b27d28a94f2b318-macd_cross_above_signal-b52a5bb25066.md"
+        ],
+        "trigger_types": [
+          "macd_cross_above_signal"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_84705b27d28a94f2b318:4e4e6b16712c89e1ae17:2026-10-14",
+        "market_data_date": "2026-10-14",
+        "observed_at": "2026-10-15T13:41:38Z",
+        "prompt": "Research security_84705b27d28a94f2b318 with high priority after price-action alerts: bollinger_below_lower, rsi_oversold, volume_anomaly; decide what changed and whether to act.",
+        "rsi_attention": {
+          "episode_id": "rsi_2ac0eae7c5110d0118b8c11f",
+          "observed_session": "2026-10-14",
+          "original_created_at": "2026-10-15T13:41:38Z",
+          "rsi": "29.72905166",
+          "source_price_hash": "0cb870f1359bbe2a1c5b80d74369522f782fdc78190eb21a40317d5cf4c7dfd8",
+          "threshold": "30",
+          "transitions": [
+            "entered"
+          ]
+        },
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_84705b27d28a94f2b318-bollinger_below_lower-7893c63c6d50.md",
+          "data/wiki/inbox/market-security_84705b27d28a94f2b318-rsi_oversold-199e6f39d031.md",
+          "data/wiki/inbox/market-security_84705b27d28a94f2b318-volume_anomaly-b72f8fc9bbeb.md"
+        ],
+        "trigger_types": [
+          "bollinger_below_lower",
+          "rsi_oversold",
+          "volume_anomaly"
+        ]
+      }
+    ],
+    "rsi_attention": {
+      "episode_id": "rsi_2ac0eae7c5110d0118b8c11f",
+      "observed_session": "2026-10-14",
+      "original_created_at": "2026-10-15T13:41:38Z",
+      "rsi": "29.72905166",
+      "source_price_hash": "0cb870f1359bbe2a1c5b80d74369522f782fdc78190eb21a40317d5cf4c7dfd8",
+      "threshold": "30",
+      "transitions": [
+        "entered"
+      ]
+    },
+    "security_id": "security_84705b27d28a94f2b318",
+    "source_price_hash": "0cb870f1359bbe2a1c5b80d74369522f782fdc78190eb21a40317d5cf4c7dfd8",
+    "trigger_types": [
+      "bollinger_below_lower",
+      "macd_cross_above_signal",
+      "rsi_oversold",
+      "volume_anomaly"
+    ]
   },
-  "objective": "Research and value Stratasys as an industrial polymer printing and materials platform.",
+  "objective": "Research and value Stratasys as an industrial polymer printing and materials platform. | Additional cause: Research security_84705b27d28a94f2b318 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act. | Additional cause: Research security_84705b27d28a94f2b318 with high priority after price-action alerts: bollinger_below_lower, rsi_oversold, volume_anomaly; decide what changed and whether to act.",
   "operation_id": "01M1V1E5X0MNXS7Q1DN1N3PF7Y",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_84705b27d28a94f2b318-bollinger_below_lower-7893c63c6d50.md",
+    "data/wiki/inbox/market-security_84705b27d28a94f2b318-macd_cross_above_signal-b52a5bb25066.md",
+    "data/wiki/inbox/market-security_84705b27d28a94f2b318-rsi_oversold-199e6f39d031.md",
+    "data/wiki/inbox/market-security_84705b27d28a94f2b318-volume_anomaly-b72f8fc9bbeb.md",
     "https://investors.stratasys.com/sec-filings/all-sec-filings/content/0001628280-26-015079/ssys-20251231.htm"
   ]
 }

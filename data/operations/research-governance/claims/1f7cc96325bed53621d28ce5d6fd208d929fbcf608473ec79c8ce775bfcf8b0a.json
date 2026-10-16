@@ -1,0 +1,47 @@
+{
+  "claim": {
+    "assessment_ids": [
+      "assessment_383acdd93493e25c29e0"
+    ],
+    "assumption_ids": [
+      "rtx-backlog-conversion",
+      "rtx-balance-sheet-risk"
+    ],
+    "basis": "Issuer-reported point-in-time Form 10-Q amounts used to qualify demand visibility, balance-sheet strength and risk.",
+    "claim_id": "rtx-q2-2026-balance-and-backlog",
+    "currency": "USD",
+    "evidence": [
+      {
+        "applicability_limit": "Supports the reported point-in-time amounts only; it does not prove future backlog conversion, margin, free cash flow, or current balances after 2026-06-30.",
+        "excerpt": "Q2 Form 10-Q remains latest operating filing; it reports USD 289 billion backlog, USD 8.305 billion cash and USD 37.383 billion debt.",
+        "inspected_at": "2026-09-15T10:13:46Z",
+        "inspection_status": "observed",
+        "locator": "RTX Q2 2026 Form 10-Q, backlog and consolidated balance-sheet disclosures",
+        "origin_id": "issuer_7e0bd218f603cf838669",
+        "origin_type": "issuer",
+        "published_at": "2026-07-23T00:00:00Z",
+        "rationale": "The inspected Form 10-Q directly supplies the dated backlog, cash and debt observations used in the assessment.",
+        "role": "supports",
+        "source_history_id": "source_history_06f44d3f199804fe2c37",
+        "underlying_observation_id": "rtx-q2-2026-balance-backlog-10q"
+      }
+    ],
+    "kind": "financial",
+    "period_end": "2026-06-30",
+    "period_start": "2026-06-30",
+    "proposition": "RTX reported USD 289 billion of backlog, USD 8.305 billion of cash and USD 37.383 billion of debt at the Q2 2026 reporting date.",
+    "scope": "RTX Corporation consolidated backlog, cash and total debt at 2026-06-30",
+    "security_ids": [
+      "security_59304f90c440def31dc5"
+    ],
+    "state": "reported",
+    "uncertainty": "Backlog timing and profitability are not guaranteed; cash and debt are point-in-time balances and do not by themselves establish cash conversion or net leverage.",
+    "unit": "USD billions"
+  },
+  "material_hash": "4ccad57139a191f55bbb1b6d8b8ede4a680eb927610524b9cb8c441d3a69275f",
+  "previous_version_id": "",
+  "recorded_at": "2026-09-15T10:25:54Z",
+  "schema_version": 1,
+  "source_operation_id": "01M15CV0788NKFKPKPJJ3N020N",
+  "version_id": "1f7cc96325bed53621d28ce5d6fd208d929fbcf608473ec79c8ce775bfcf8b0a"
+}

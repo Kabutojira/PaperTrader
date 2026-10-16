@@ -22,7 +22,7 @@ from papertrader.tables import write_table
 NOW = datetime(2026, 7, 24, 12, tzinfo=UTC)
 
 
-def claim_fixture(root):
+def claim_fixture(root, *, source_excerpt="Segment revenue increased ten percent in fiscal 2025."):
     write_table(root, "securities", [_security_row()])
     source_id, _ = record_source(
         root,
@@ -40,7 +40,7 @@ def claim_fixture(root):
             "checked_at": "2026-07-24T12:00:00Z",
             "http_status": "200",
             "changed": "true",
-            "excerpt": "Segment revenue increased ten percent in fiscal 2025.",
+            "excerpt": source_excerpt,
             "summary": "Original synthesis of revenue change.",
             "run_id": "fixture",
         },
@@ -85,6 +85,20 @@ def test_claim_requires_actual_retained_inspection_not_plausible_source_id(sandb
     validate_claim(sandbox_repository, claim, now=NOW)
     claim["evidence"][0]["excerpt"] = "Revenue doubled without any qualification."
     with pytest.raises(GovernanceError, match="retained inspected"):
+        validate_claim(sandbox_repository, claim, now=NOW)
+
+
+def test_claim_quote_error_identifies_claim_evidence_and_observed_word_count(
+    sandbox_repository,
+):
+    excerpt = " ".join(f"word{index}" for index in range(26))
+    claim = claim_fixture(sandbox_repository, source_excerpt=excerpt)
+    claim["evidence"][0]["excerpt"] = excerpt
+
+    with pytest.raises(
+        GovernanceError,
+        match=r"claim claim_revenue evidence\[0\] excerpt contains 26 words; maximum is 25",
+    ):
         validate_claim(sandbox_repository, claim, now=NOW)
 
 

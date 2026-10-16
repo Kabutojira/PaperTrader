@@ -13,6 +13,7 @@ from types import SimpleNamespace
 import pytest
 import yaml
 
+import papertrader.agent_runner as agent_runner_module
 from papertrader.agent_runner import (
     AgentRunError,
     _handoff_repository_data,
@@ -346,6 +347,169 @@ def test_missing_research_result_remains_a_hard_failure(
                 command, 0, "", ""
             ),
         )
+
+
+def test_nonzero_executor_never_archives_rejected_oversized_log(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    tmp_path: Path,
+) -> None:
+    home = _hermes_home(sandbox_repository, sandbox_settings, tmp_path)
+    operation_id = _enqueue_opportunity(sandbox_repository, sandbox_settings)
+    schema = sandbox_repository / "data" / "wiki" / "SCHEMA.md"
+    schema.write_text(
+        schema.read_text(encoding="utf-8").replace(
+            "log_rotation_lines: 5000", "log_rotation_lines: 30"
+        ),
+        encoding="utf-8",
+    )
+    subprocess.run(["git", "init", "-b", "main"], cwd=sandbox_repository, check=True)
+    subprocess.run(
+        ["git", "config", "user.email", "test@example.com"], cwd=sandbox_repository, check=True
+    )
+    subprocess.run(["git", "config", "user.name", "Test"], cwd=sandbox_repository, check=True)
+    subprocess.run(["git", "add", "--all"], cwd=sandbox_repository, check=True)
+    subprocess.run(
+        ["git", "commit", "-m", "fixture"],
+        cwd=sandbox_repository,
+        check=True,
+        capture_output=True,
+    )
+    log = sandbox_repository / "data" / "wiki" / "log.md"
+    original_log = log.read_bytes()
+    original_archives = tuple(sorted((sandbox_repository / "data/wiki/_archive").glob("log-*.md")))
+
+    def execute(
+        command: Sequence[str],
+        cwd: Path,
+        environment: Mapping[str, str],
+        timeout: int,
+    ) -> subprocess.CompletedProcess[str]:
+        del timeout
+        result_path = (
+            cwd
+            / "data"
+            / "runs"
+            / environment["PAPERTRADER_AUDIT_RUN_ID"]
+            / environment["PAPERTRADER_AUDIT_OPERATION_ID"]
+            / "agent_result.json"
+        )
+        rejected = log.read_text(encoding="utf-8").rstrip()
+        for day in range(1, 20):
+            rejected += (
+                f"\n\n## 2026-08-{day:02d}\n\n"
+                f"- rejected-source-words-{day:02d} must not survive validation.\n"
+            )
+        log.write_text(rejected + "\n", encoding="utf-8")
+        result_path.write_text(
+            json.dumps(_result(environment["PAPERTRADER_AUDIT_OPERATION_ID"]), sort_keys=True),
+            encoding="utf-8",
+        )
+        return subprocess.CompletedProcess(command, 17, "", "executor failed")
+
+    with pytest.raises(AgentRunError, match="Hermes exited with status 17"):
+        run_one_operation(
+            sandbox_repository,
+            sandbox_settings,
+            run_id="research-nonzero-log",
+            hermes_home=home,
+            environment={"PATH": "/usr/bin"},
+            operation_id=operation_id,
+            executor=execute,
+        )
+
+    assert log.read_bytes() == original_log
+    assert tuple(sorted((sandbox_repository / "data/wiki/_archive").glob("log-*.md"))) == (
+        original_archives
+    )
+    assert not any(
+        b"rejected-source-words" in path.read_bytes()
+        for path in (sandbox_repository / "data/wiki/_archive").glob("log-*.md")
+    )
+
+
+def test_post_rotation_lint_failure_restores_controller_archives_and_log(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    home = _hermes_home(sandbox_repository, sandbox_settings, tmp_path)
+    operation_id = _enqueue_opportunity(sandbox_repository, sandbox_settings)
+    schema = sandbox_repository / "data/wiki/SCHEMA.md"
+    schema.write_text(
+        schema.read_text(encoding="utf-8").replace(
+            "log_rotation_lines: 5000", "log_rotation_lines: 30"
+        ),
+        encoding="utf-8",
+    )
+    subprocess.run(["git", "init", "-b", "main"], cwd=sandbox_repository, check=True)
+    subprocess.run(
+        ["git", "config", "user.email", "test@example.com"], cwd=sandbox_repository, check=True
+    )
+    subprocess.run(["git", "config", "user.name", "Test"], cwd=sandbox_repository, check=True)
+    subprocess.run(["git", "add", "--all"], cwd=sandbox_repository, check=True)
+    subprocess.run(
+        ["git", "commit", "-m", "fixture"],
+        cwd=sandbox_repository,
+        check=True,
+        capture_output=True,
+    )
+    log = sandbox_repository / "data/wiki/log.md"
+    original_log = log.read_bytes()
+    archive_root = sandbox_repository / "data/wiki/_archive"
+    original_archives = {path.name: path.read_bytes() for path in archive_root.glob("log-*.md")}
+
+    def execute(
+        command: Sequence[str],
+        cwd: Path,
+        environment: Mapping[str, str],
+        timeout: int,
+    ) -> subprocess.CompletedProcess[str]:
+        del timeout
+        result_path = (
+            cwd
+            / "data/runs"
+            / environment["PAPERTRADER_AUDIT_RUN_ID"]
+            / environment["PAPERTRADER_AUDIT_OPERATION_ID"]
+            / "agent_result.json"
+        )
+        rejected = log.read_text(encoding="utf-8").rstrip()
+        for day in range(1, 20):
+            rejected += (
+                f"\n\n## 2026-09-{day:02d}\n\n"
+                f"- rejected-post-lint-source-{day:02d} must not survive.\n"
+            )
+        log.write_text(rejected + "\n", encoding="utf-8")
+        result_path.write_text(
+            json.dumps(_result(environment["PAPERTRADER_AUDIT_OPERATION_ID"]), sort_keys=True),
+            encoding="utf-8",
+        )
+        return subprocess.CompletedProcess(command, 0, "", "")
+
+    monkeypatch.setattr(
+        agent_runner_module,
+        "lint_wiki",
+        lambda wiki_root: ["injected post-rotation lint failure"],
+    )
+    with pytest.raises(AgentRunError, match="injected post-rotation lint failure"):
+        run_one_operation(
+            sandbox_repository,
+            sandbox_settings,
+            run_id="research-post-rotation-lint",
+            hermes_home=home,
+            environment={"PATH": "/usr/bin"},
+            operation_id=operation_id,
+            executor=execute,
+        )
+
+    assert log.read_bytes() == original_log
+    assert original_archives == {
+        path.name: path.read_bytes() for path in archive_root.glob("log-*.md")
+    }
+    assert not any(
+        b"rejected-post-lint-source" in path.read_bytes() for path in archive_root.glob("log-*.md")
+    )
 
 
 def test_podcast_validation_failure_with_partial_output_remains_hard(

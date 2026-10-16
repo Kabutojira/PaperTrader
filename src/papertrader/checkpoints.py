@@ -18,7 +18,7 @@ from papertrader.integrity import (
     validate_runtime_paths,
 )
 from papertrader.portfolio import reconcile_portfolio
-from papertrader.wiki import lint_wiki
+from papertrader.wiki import lint_wiki, rotate_wiki_log
 
 
 class CheckpointError(RuntimeError):
@@ -111,11 +111,15 @@ def create_checkpoint(
         raise CheckpointError("invalid checkpoint identity")
     if not dry_run and not github_token:
         raise CheckpointError("a GitHub token is required only for a real checkpoint push")
+    # Agents may append directly to the governed log. Rotate before capturing the exact
+    # checkpoint delta so controller-owned archive files are validated and staged normally.
+    rotate_wiki_log(repository_root / "data" / "wiki")
     raw_status = _git(
         repository_root,
         "status",
         "--porcelain=v1",
         "--untracked-files=all",
+        "--no-renames",
         "-z",
         strip=False,
     )

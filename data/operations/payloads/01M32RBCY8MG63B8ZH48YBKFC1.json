@@ -1,0 +1,17 @@
+{
+  "entity_id": "security_e19c7fe27fbcc4cd923d",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-08-28T19:12:00Z",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_e19c7fe27fbcc4cd923d.md",
+    "security_id": "security_e19c7fe27fbcc4cd923d"
+  },
+  "objective": "Revalidate security_e19c7fe27fbcc4cd923d with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01M32RBCY8MG63B8ZH48YBKFC1",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_ahold_q2_2026_results"
+  ]
+}

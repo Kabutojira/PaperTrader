@@ -11,6 +11,6 @@ export { Footer } from "@quartz-community/footer";
 export { PageTitle } from "@quartz-community/page-title";
 export { ReaderMode } from "@quartz-community/reader-mode";
 export { RecentNotes } from "@quartz-community/recent-notes";
-export { Search } from "@quartz-community/search";
+export { default as Search } from "./components/Search";
 export { TableOfContents } from "@quartz-community/table-of-contents";
 export { TagList } from "@quartz-community/tag-list";

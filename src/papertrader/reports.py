@@ -16,7 +16,7 @@ from papertrader.atomic_io import atomic_write_text
 from papertrader.public_refs import PublicEntityResolver
 from papertrader.tables import read_table
 from papertrader.utils import CanonicalValueError, ensure_utc, parse_timestamp, utc_now
-from papertrader.wiki import register_wiki_page
+from papertrader.wiki import register_wiki_page, wiki_limits
 
 RUN_ID_PATTERN = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$")
 DAILY_REPORT_STEM_PATTERN = re.compile(r"^daily-report_(\d{4})(\d{2})(\d{2})$")
@@ -27,6 +27,9 @@ HOME_SUGGESTION_MAX_CHARS = 400
 REPORT_NARRATIVE_TEXT_MAX_CHARS = 350
 REPORT_NARRATIVE_EVIDENCE_LIMIT = 3
 REPORT_ISSUE_DESCRIPTION_MAX_CHARS = 500
+REPORT_PAGE_SCAFFOLD_BYTES = 2048
+INVESTOR_BRIEF_START = "<!-- papertrader-investor-brief:start -->"
+INVESTOR_BRIEF_END = "<!-- papertrader-investor-brief:end -->"
 
 
 @dataclass(frozen=True, slots=True)
@@ -35,6 +38,194 @@ class NarrativeItem:
 
     text: str
     evidence_refs: tuple[str, ...]
+
+
+def _report_frontmatter(lines: Sequence[str]) -> tuple[list[str], list[str]]:
+    if not lines or lines[0] != "---":
+        raise CanonicalValueError("daily report lacks frontmatter")
+    try:
+        end = list(lines).index("---", 1)
+    except ValueError as exc:
+        raise CanonicalValueError("daily report has unterminated frontmatter") from exc
+    return list(lines[: end + 1]), list(lines[end + 1 :])
+
+
+def _split_report_lines(lines: Sequence[str], byte_budget: int) -> list[list[str]]:
+    """Split complete report content using UTF-8 bytes and repeat table context."""
+
+    chunks: list[list[str]] = []
+    current: list[str] = []
+    latest_heading = ""
+    table_header: tuple[str, str] | None = None
+    index = 0
+    while index < len(lines):
+        line = lines[index]
+        unit = [line]
+        if line == INVESTOR_BRIEF_START:
+            try:
+                brief_end = list(lines).index(INVESTOR_BRIEF_END, index + 1)
+            except ValueError as exc:
+                raise CanonicalValueError(
+                    "daily report has an unterminated investor brief"
+                ) from exc
+            unit = list(lines[index : brief_end + 1])
+        starts_table = (
+            line.startswith("|") and index + 1 < len(lines) and lines[index + 1].startswith("| ---")
+        )
+        if starts_table:
+            unit = [line, lines[index + 1]]
+        candidate = [*current, *unit]
+        if len("\n".join(candidate).encode("utf-8")) <= byte_budget:
+            current.extend(unit)
+            if line.startswith("#"):
+                latest_heading = line
+                table_header = None
+            if starts_table:
+                table_header = (unit[0], unit[1])
+            index += len(unit)
+            continue
+        if current:
+            chunks.append(current)
+            optional_context = (
+                [latest_heading, ""] if latest_heading and not line.startswith("#") else []
+            )
+            required_context = (
+                [*table_header]
+                if line.startswith("|")
+                and table_header is not None
+                and not starts_table
+                and line not in table_header
+                else []
+            )
+            if required_context and (
+                len("\n".join([*required_context, *unit]).encode("utf-8")) > byte_budget
+            ):
+                raise CanonicalValueError(
+                    "table continuation plus its repeated header exceeds the page content budget"
+                )
+            context = [*optional_context, *required_context]
+            # Context is presentation-only. Drop it when it would prevent the pending record
+            # from fitting, but retain a table's required header. The record itself is never
+            # split because that could break a link or Markdown table row.
+            current = (
+                context
+                if len("\n".join([*context, *unit]).encode("utf-8")) <= byte_budget
+                else required_context
+            )
+            continue
+        kind = "investor brief" if len(unit) > 1 else "report row"
+        required = len("\n".join(unit).encode("utf-8"))
+        raise CanonicalValueError(
+            f"{kind} requires {required} bytes; page content budget is {byte_budget} bytes"
+        )
+    if current or not chunks:
+        chunks.append(current)
+    return chunks
+
+
+def _report_navigation(stem: str, page: int, total: int) -> list[str]:
+    links: list[str] = []
+    if page > 1:
+        previous = stem if page == 2 else f"{stem}-detail-{page - 1:04d}"
+        links.append(f"[[daily-reports/{previous}|Previous page]]")
+    links.append(f"[[daily-reports/{stem}|Report start]]")
+    if page < total:
+        links.append(f"[[daily-reports/{stem}-detail-{page + 1:04d}|Next page]]")
+    return [
+        "",
+        f"> This generated report contains **{total} pages**. Page **{page} of {total}**. "
+        + " · ".join(links),
+        "",
+    ]
+
+
+def _write_daily_report_pages(
+    repository_root: Path,
+    path: Path,
+    lines: Sequence[str],
+    *,
+    day: date,
+    run_id: str,
+    snapshot_id: str,
+) -> tuple[Path, ...]:
+    """Write one compatible report or a deterministic chain of bounded report pages."""
+
+    wiki_root = repository_root / "data" / "wiki"
+    max_page_bytes, _ = wiki_limits(wiki_root)
+    text = "\n".join(lines)
+    stale_pattern = f"{path.stem}-detail-*.md"
+    if len(text.encode("utf-8")) <= max_page_bytes:
+        atomic_write_text(path, text, allowed_root=repository_root)
+        for stale in sorted(path.parent.glob(stale_pattern)):
+            stale.unlink()
+        return (path,)
+    if max_page_bytes <= REPORT_PAGE_SCAFFOLD_BYTES * 2:
+        raise CanonicalValueError("wiki max_page_bytes is too small for report pagination")
+
+    frontmatter, body = _report_frontmatter(lines)
+    if INVESTOR_BRIEF_START in body:
+        brief_start = body.index(INVESTOR_BRIEF_START)
+        brief_end = body.index(INVESTOR_BRIEF_END, brief_start + 1)
+        brief = body[brief_start + 1 : brief_end]
+        if len("\n".join(brief).encode("utf-8")) > max_page_bytes - REPORT_PAGE_SCAFFOLD_BYTES:
+            core_end = next(
+                (index for index, line in enumerate(brief) if line == "## Target changes"),
+                min(len(brief), 20),
+            )
+            compact = [
+                INVESTOR_BRIEF_START,
+                *brief[:core_end],
+                "",
+                "- The complete investor detail follows in this bounded report.",
+                INVESTOR_BRIEF_END,
+                "",
+                "## Complete investor detail",
+                "",
+                *brief,
+            ]
+            body = [*body[:brief_start], *compact, *body[brief_end + 1 :]]
+    chunks = _split_report_lines(body, max_page_bytes - REPORT_PAGE_SCAFFOLD_BYTES)
+    total = len(chunks)
+    pages: list[tuple[Path, str]] = []
+    for page_number, chunk in enumerate(chunks, start=1):
+        navigation = _report_navigation(path.stem, page_number, total)
+        if page_number == 1:
+            page_lines = [*frontmatter, *navigation, *chunk]
+            page_path = path
+        else:
+            page_path = path.with_name(f"{path.stem}-detail-{page_number:04d}.md")
+            page_lines = [
+                "---",
+                f'title: "PaperTrader daily report — {day.isoformat()} — page {page_number}"',
+                "type: daily-report",
+                "status: maintained",
+                "tags:",
+                "  - daily-report",
+                f'created: "{day.isoformat()}"',
+                f'updated: "{day.isoformat()}"',
+                "provenance: deterministic-report-generator",
+                f'run_id: "{run_id}"',
+                f'snapshot_id: "{snapshot_id}"',
+                f"report_page: {page_number}",
+                f"report_page_count: {total}",
+                "---",
+                "",
+                f"# PaperTrader daily report — {day.isoformat()} — page {page_number}",
+                *navigation,
+                *chunk,
+            ]
+        page_text = "\n".join(page_lines)
+        if len(page_text.encode("utf-8")) > max_page_bytes:
+            raise CanonicalValueError("daily report paginator exceeded max_page_bytes")
+        pages.append((page_path, page_text))
+    for page_path, page_text in pages[1:]:
+        atomic_write_text(page_path, page_text, allowed_root=repository_root)
+    atomic_write_text(path, pages[0][1], allowed_root=repository_root)
+    expected = {page_path for page_path, _ in pages[1:]}
+    for stale in sorted(path.parent.glob(stale_pattern)):
+        if stale not in expected:
+            stale.unlink()
+    return tuple(page_path for page_path, _ in pages)
 
 
 def _cell(value: str) -> str:
@@ -1139,7 +1330,6 @@ def generate_daily_report(
         / "daily-reports"
         / f"daily-report_{day.strftime('%Y%m%d')}.md"
     )
-    atomic_write_text(path, "\n".join(lines), allowed_root=repository_root)
     from papertrader.findings import prepare_finding_appendix, record_finding_coverage
 
     finding_lines, finding_ids, appendix_path = prepare_finding_appendix(
@@ -1147,7 +1337,15 @@ def generate_daily_report(
     )
     if finding_lines:
         lines.extend(finding_lines)
-        atomic_write_text(path, "\n".join(lines), allowed_root=repository_root)
+    _write_daily_report_pages(
+        repository_root,
+        path,
+        lines,
+        day=day,
+        run_id=run_id,
+        snapshot_id=snapshot.snapshot_id,
+    )
+    if finding_lines:
         record_finding_coverage(
             repository_root,
             run_id=run_id,

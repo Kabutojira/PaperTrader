@@ -1,0 +1,48 @@
+{
+  "claim": {
+    "assessment_ids": [
+      "assessment_383acdd93493e25c29e0"
+    ],
+    "assumption_ids": [
+      "rtx-bear-eps-7.10",
+      "rtx-base-eps-7.175",
+      "rtx-bull-eps-7.25"
+    ],
+    "basis": "Issuer-reported non-GAAP adjusted EPS guidance in an SEC-filed results exhibit; the maintained valuation uses the range explicitly rather than treating it as GAAP EPS.",
+    "claim_id": "rtx-2026-adjusted-eps-guidance",
+    "currency": "USD",
+    "evidence": [
+      {
+        "applicability_limit": "Supports only RTX's stated adjusted EPS and free-cash-flow guidance; it does not validate GAAP comparability, valuation multiples, or delivery after the filing date.",
+        "excerpt": "Adjusted EPS guidance remains USD 7.10-7.25 and free-cash-flow guidance remains USD 8.50-8.75 billion.",
+        "inspected_at": "2026-09-15T10:13:46Z",
+        "inspection_status": "observed",
+        "locator": "SEC-filed Exhibit 99, 2026 guidance section",
+        "origin_id": "issuer_7e0bd218f603cf838669",
+        "origin_type": "issuer",
+        "published_at": "2026-07-23T00:00:00Z",
+        "rationale": "The inspected SEC-filed issuer exhibit directly states the adjusted EPS range used as the scenario earnings anchor.",
+        "role": "supports",
+        "source_history_id": "source_history_e1af9e63570a626b1e0c",
+        "underlying_observation_id": "rtx-q2-2026-guidance-sec-ex99"
+      }
+    ],
+    "kind": "financial",
+    "period_end": "2026-12-31",
+    "period_start": "2026-01-01",
+    "proposition": "RTX reported full-year 2026 adjusted EPS guidance of USD 7.10 to USD 7.25 per share in its Q2 results exhibit.",
+    "scope": "RTX Corporation consolidated adjusted earnings guidance for fiscal 2026",
+    "security_ids": [
+      "security_59304f90c440def31dc5"
+    ],
+    "state": "reported",
+    "uncertainty": "Guidance is issuer-defined non-GAAP information and may change with program charges, Pratt remediation, demand, execution, tax, or other excluded items.",
+    "unit": "USD per share"
+  },
+  "material_hash": "d0a5422d318085ce3c2b6b2a6a0d0fd9e8ae189ff7f9f91e2b359446a77756ad",
+  "previous_version_id": "",
+  "recorded_at": "2026-09-15T10:25:54Z",
+  "schema_version": 1,
+  "source_operation_id": "01M15CV0788NKFKPKPJJ3N020N",
+  "version_id": "eee3e2379adb85c742bcd96d40dc62ee3c82e1ef7153d57bdf7151f3615b1405"
+}

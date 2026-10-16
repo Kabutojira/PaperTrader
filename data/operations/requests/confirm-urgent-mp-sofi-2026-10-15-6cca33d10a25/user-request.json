@@ -1,0 +1,12 @@
+{
+  "request_id": "confirm-urgent-mp-sofi:2026-10-15:6cca33d10a25",
+  "received_at": "2026-10-15T08:49:45Z",
+  "user_request": "add also MP and SOFI, commit and push, launch daily run and monitor results",
+  "context": "The user confirmed adding MP and SOFI after the assistant explained that ongoing explicit tracking is required to exempt these securities from the research capacity cap.",
+  "tracking_securities": [
+    "MP",
+    "SOFI"
+  ],
+  "requested_priority": 100,
+  "daily_run_mode": "dry-run; publication, Telegram, podcast and maintenance disabled"
+}

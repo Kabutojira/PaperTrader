@@ -1,0 +1,22 @@
+{
+  "entity_id": "security_d08d763780400dfbffce",
+  "entity_type": "security",
+  "inputs": {
+    "market_data_as_of": "2026-10-15T13:41:38Z",
+    "market_data_date": "2026-10-14",
+    "period_end": "2026-10-14",
+    "period_start": "2026-09-16",
+    "security_id": "security_d08d763780400dfbffce",
+    "source_price_hash": "1c45bd6f3c7a432f4bbb2d8e8f63bb1cbf63d77435c1fba342f70747f32df166",
+    "trigger_types": [
+      "bollinger_below_lower"
+    ]
+  },
+  "objective": "Research security_d08d763780400dfbffce with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act.",
+  "operation_id": "01M4ZWR1JGYWG84KFJTPPG1EPN",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_d08d763780400dfbffce-bollinger_below_lower-7296dd71702a.md"
+  ]
+}

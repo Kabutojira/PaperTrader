@@ -8,24 +8,30 @@ Generated from `data/tables/issues.csv`.
 | affects_candidate | error | **issue_30c07892e9981c27b153** — FANUC assessment source operation is ambiguous within one run | 2026-08-20T15:57:26Z | controller | 01M0FXHG7GT03TE1GNSGAPY904 |
 | affects_candidate | error | **issue_35b7b23bc3b07dd61cce** — Hermes operation validation failed: 01KZ9ZJVERDMQV8A3XQQY4AD7Y | 2026-08-12T15:28:02Z | controller | 01KZ9ZJVERDMQV8A3XQQY4AD7Y |
 | publication_only | error | **issue_406f407472eb3a7999d9** — Hermes operation validation failed: 01M081X8BGDJA34XM08JAKQFS1 | 2026-08-17T14:47:27Z | delivery | 01M081X8BGDJA34XM08JAKQFS1 |
+| affects_candidate | error | **issue_461d8d88a09991e9f940** — Hermes operation validation failed: 01M3ABY5J0FWXCY94ATWNTA8V4 | 2026-09-25T19:11:44Z | controller | 01M3ABY5J0FWXCY94ATWNTA8V4 |
 | affects_candidate | error | **issue_4c13a146c674a9a576a6** — Hermes operation validation failed: 01KZGGJ4M0HZBD7MND83X91XEF | 2026-08-15T07:23:01Z | controller | 01KZGGJ4M0HZBD7MND83X91XEF |
+| affects_candidate | error | **issue_4de7cdd19f95cce3c22d** — Hermes operation validation failed: 01M32RBCY8GZEKDG89ZKVD6ARK | 2026-09-21T20:20:45Z | controller | 01M32RBCY8GZEKDG89ZKVD6ARK |
 | affects_candidate | error | **issue_52441ba1c5c89cac50a6** — Hermes operation validation failed: 01KZQX922RR422CPWVFP4APXBZ | 2026-08-18T15:09:55Z | controller | 01KZQX922RR422CPWVFP4APXBZ |
 | publication_only | error | **issue_580a89652f2497d6e61d** — Hermes operation validation failed: 01KZB8NMPGA0VTNRHAD458EN3R | 2026-08-06T10:28:41Z | delivery | 01KZB8NMPGA0VTNRHAD458EN3R |
 | affects_candidate | error | **issue_58242ac9c8a0a8fb3c22** — Hermes operation validation failed: 01KZSMSDTRBC9SG0KKDQR4XB87 | 2026-08-16T15:25:17Z | controller | 01KZSMSDTRBC9SG0KKDQR4XB87 |
 | affects_candidate | error | **issue_5fb2053e3e42e807de14** — Hermes operation validation failed: 01M0ADQYN0X476BW9MK1FK33FB | 2026-09-06T18:01:10Z | controller | 01M0ADQYN0X476BW9MK1FK33FB |
 | affects_candidate | error | **issue_5fbb8df7c71c7f98ab2e** — Xometry security review blocked by issuer identity conflict | 2026-09-06T11:54:46Z | controller | 01M1V1E3YGYYPSJV217TRVMW8R |
 | affects_candidate | error | **issue_64ad20c69d31e7ef47e4** — Hermes operation validation failed: 01KZGT11ZGBPRBKV129FD00TH1 | 2026-08-17T16:15:53Z | controller | 01KZGT11ZGBPRBKV129FD00TH1 |
-| affects_candidate | error | **issue_74cf2f4f38710c48c6b1** — Hermes operation validation failed: 01M15CV0788NKFKPKPJJ3N020N | 2026-09-15T09:47:23Z | controller | 01M15CV0788NKFKPKPJJ3N020N |
 | affects_candidate | error | **issue_813093c20e3c28ebd799** — Hermes operation validation failed: 01M0N0ZVAGHN662K112WKAH7GZ | 2026-09-07T19:41:03Z | controller | 01M0N0ZVAGHN662K112WKAH7GZ |
+| affects_candidate | error | **issue_8579d36aa207a8a0a82c** — Hermes operation validation failed: 01KZGT11ZGXJ00MTZMADHQM6KM | 2026-10-15T17:26:53Z | controller | 01KZGT11ZGXJ00MTZMADHQM6KM |
 | publication_only | error | **issue_86f9f3bc8907460da2fc** — Hermes operation validation failed: 01KZ8VJY48VNMCFW638QQJZGJH | 2026-08-05T11:40:24Z | controller | 01KZ8VJY48VNMCFW638QQJZGJH |
 | affects_candidate | error | **issue_9165f9f83983d25343da** — Hermes operation validation failed: 01KYPB2XDRKAMP0ZX3MWA7Y1JH | 2026-09-11T06:36:32Z | controller | 01KYPB2XDRKAMP0ZX3MWA7Y1JH |
+| operational_only | error | **issue_b7693067b26d7ebe0d11** — Hermes operation validation failed: 01M2RAZFWR66CYZG0ZXJT2109C | 2026-09-20T17:59:08Z | controller | 01M2RAZFWR66CYZG0ZXJT2109C |
 | affects_candidate | error | **issue_bb796d692e4293326337** — ABB assessment provenance does not match corrected final research page | 2026-09-03T18:37:34Z | controller | 01M07XKZS0JKBQM0THMPJGWEK5 |
+| affects_candidate | error | **issue_c0a12272c134ea6fcf04** — Hermes operation validation failed: 01M27HD1C8J6FPVKYP168D5JJF | 2026-09-15T19:11:37Z | controller | 01M27HD1C8J6FPVKYP168D5JJF |
 | publication_only | error | **issue_c531340c7c3a508426ac** — Hermes operation validation failed: 01KZBHM8JGFW6R10CN34GRREZY | 2026-08-06T12:52:02Z | delivery | 01KZBHM8JGFW6R10CN34GRREZY |
 | affects_candidate | error | **issue_c70d0b51ddd7f7e7fb7b** — Hermes operation validation failed: 01M26H85HR8JVXW2A2YBT7BZPF | 2026-09-11T18:11:13Z | controller | 01M26H85HR8JVXW2A2YBT7BZPF |
 | affects_candidate | error | **issue_c87e986423310946f39f** — Hermes operation validation failed: 01M07XKZS0JKBQM0THMPJGWEK5 | 2026-09-02T16:12:05Z | controller | 01M07XKZS0JKBQM0THMPJGWEK5 |
 | publication_only | error | **issue_cd9f6a9e31874e85f842** — Hermes operation validation failed: 01M08D6FXRRXXACTTEQWSRA9JQ | 2026-08-17T17:49:26Z | delivery | 01M08D6FXRRXXACTTEQWSRA9JQ |
 | affects_candidate | error | **issue_d28f4a965952a2f0b258** — Hermes operation validation failed: 01KZ9ZJVERYZKAVXNTF2NZCECM | 2026-08-12T17:58:15Z | controller | 01KZ9ZJVERYZKAVXNTF2NZCECM |
-| operational_only | error | **issue_d78ddaa5c522f3f1dd4e** — Hermes operation validation failed: 01M280EJJ0RR158KGZ01BZDEW2 | 2026-09-14T19:46:55Z | controller | 01M280EJJ0RR158KGZ01BZDEW2 |
+| affects_candidate | error | **issue_d9a777bf046fde566eaa** — Hermes operation validation failed: 01M2RAZFWRRHSZEGGD2FCK3D9X | 2026-09-17T19:06:33Z | controller | 01M2RAZFWRRHSZEGGD2FCK3D9X |
+| affects_candidate | error | **issue_e1d0220946b5ed6b0f1f** — Hermes operation validation failed: 01KZYPF0GRF70DYNX3ZSZNC1QH | 2026-09-22T19:03:58Z | controller | 01KZYPF0GRF70DYNX3ZSZNC1QH |
 | publication_only | error | **issue_ee91c351d77e2ce1227d** — Hermes operation validation failed: 01M1VYR8ERXDZPERJWKM7ENAEJ | 2026-09-06T18:13:03Z | delivery | 01M1VYR8ERXDZPERJWKM7ENAEJ |
+| affects_candidate | error | **issue_f44f2f477a0eb7887491** — Hermes operation validation failed: 01M37SGN5GF70DYNX3ZSZNC1QH | 2026-09-24T19:07:11Z | controller | 01M37SGN5GF70DYNX3ZSZNC1QH |
 | affects_candidate | error | **issue_f50e95ee4d3a5cc05618** — ASML assessment rejected after security row update | 2026-08-19T20:28:51Z | controller | 01M0DB44Q8R22ED9WQC5ZEG526 |
 | affects_candidate | error | **issue_ff655356efa9b9e1d1a8** — Hermes operation validation failed: 01KZPWPFS0QGMTYP3PD0TRQH6K | 2026-08-18T11:39:09Z | controller | 01KZPWPFS0QGMTYP3PD0TRQH6K |

@@ -1,0 +1,67 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_8b703a8adf5f864acaa4 --history-limit 2",
+    "papertrader research assessment-get --assessment-id assessment_7f28dfd9240d6099400b"
+  ],
+  "daily_report_items": [],
+  "evidence": [
+    {
+      "claim": "The frozen semantic-audit context has one Prosus primary-source target, no frozen claims, and window 2026-W38.",
+      "source": "data/operations/research-governance/monitoring-contexts/69780f4b058cd5f673f3ab99.json",
+      "source_hash": "9abe83ad26f6543d0f8ba775f1e992ccaa0232e61b7259beae730065ec00666c"
+    },
+    {
+      "claim": "The canonical security identity is Prosus N.V. ordinary shares, security_8b703a8adf5f864acaa4, with one accepted relationship and a current ineligible assessment due to relationship_pending.",
+      "source": "research security-context"
+    },
+    {
+      "claim": "Assessment assessment_7f28dfd9240d6099400b is schema version 2 and was assessed at 2026-08-28T19:18:00Z.",
+      "source": "research assessment-get"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "monitoring_review": {
+    "checks": [
+      {
+        "checked_at": null,
+        "evidence_refs": [
+          "data/operations/research-governance/monitoring-contexts/69780f4b058cd5f673f3ab99.json"
+        ],
+        "reason": "No current source inspection or frozen claim set was available in the permitted evidence; the prior hash is metadata, not a new successful check.",
+        "source_hash": "cc7e5e28e80215c617a50b48075d550b6b567d6a658ac6a2656967d871b36aee",
+        "state": "failed",
+        "target_id": "source_prosus_nav_20260827"
+      }
+    ],
+    "conflicts": [],
+    "context_hash": "9abe83ad26f6543d0f8ba775f1e992ccaa0232e61b7259beae730065ec00666c",
+    "limitations": [
+      "The monitoring context is a bounded subset and does not establish complete-universe coverage.",
+      "No current primary-source content was available for independent comparison within the permitted evidence set.",
+      "The failed target check is not counted as successful no-change coverage and does not refresh the assessment."
+    ]
+  },
+  "operation_id": "01M2FMRCFG4C2MPF6A19RQRPAW",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Completed the bounded Prosus semantic-audit triage. The frozen monitoring context contains one issuer-source target but no frozen claims, and the current source could not be independently inspected in the permitted evidence set; therefore no material-change conclusion is supportable. The investigation remains uncertain and requires controller-owned escalation or later evidence refresh.",
+  "triage_review": {
+    "disposition": "uncertain",
+    "examined_evidence": [
+      "data/operations/research-governance/monitoring-contexts/69780f4b058cd5f673f3ab99.json",
+      "security-context: security_8b703a8adf5f864acaa4",
+      "assessment: assessment_7f28dfd9240d6099400b"
+    ],
+    "reason": "The supplied semantic-audit context names one Prosus issuer NAV target and records its prior hash, but contains no frozen claims. The permitted repository evidence does not provide a current inspection of that target, so absence of a recorded change cannot be treated as no material change."
+  },
+  "validation": {
+    "checks": [
+      "Validated the immutable security identity and investigation context.",
+      "Read-only triage scope preserved: no queue, wiki, assessment, strategy, signal, order, or ledger mutation.",
+      "No successful no-change coverage was claimed for the unavailable target.",
+      "Result contains the required structured monitoring review and only audited canonical commands."
+    ],
+    "passed": true
+  }
+}

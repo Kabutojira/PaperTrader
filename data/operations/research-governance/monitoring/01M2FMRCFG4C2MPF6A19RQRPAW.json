@@ -1,0 +1,35 @@
+{
+  "accepted_at": "2026-09-15T18:47:21Z",
+  "checked_count": 0,
+  "complete_no_change": false,
+  "kind": "semantic_audit",
+  "operation_id": "01M2FMRCFG4C2MPF6A19RQRPAW",
+  "review": {
+    "checks": [
+      {
+        "checked_at": null,
+        "evidence_refs": [
+          "data/operations/research-governance/monitoring-contexts/69780f4b058cd5f673f3ab99.json"
+        ],
+        "reason": "No current source inspection or frozen claim set was available in the permitted evidence; the prior hash is metadata, not a new successful check.",
+        "source_hash": "cc7e5e28e80215c617a50b48075d550b6b567d6a658ac6a2656967d871b36aee",
+        "state": "failed",
+        "target_id": "source_prosus_nav_20260827"
+      }
+    ],
+    "conflicts": [],
+    "context_hash": "9abe83ad26f6543d0f8ba775f1e992ccaa0232e61b7259beae730065ec00666c",
+    "limitations": [
+      "The monitoring context is a bounded subset and does not establish complete-universe coverage.",
+      "No current primary-source content was available for independent comparison within the permitted evidence set.",
+      "The failed target check is not counted as successful no-change coverage and does not refresh the assessment."
+    ]
+  },
+  "schema_version": 1,
+  "security_id": "security_8b703a8adf5f864acaa4",
+  "target_count": 1,
+  "unexamined_target_ids": [],
+  "window_end": "2026-09-14T09:42:46Z",
+  "window_key": "2026-W38",
+  "window_start": "2026-09-07T09:42:46Z"
+}

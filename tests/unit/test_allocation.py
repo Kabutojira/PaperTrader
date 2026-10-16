@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from dataclasses import replace
 from datetime import UTC, date, datetime, timedelta
 from decimal import Decimal
@@ -12,6 +13,7 @@ from hypothesis import HealthCheck, given
 from hypothesis import settings as hypothesis_settings
 from hypothesis import strategies as st
 
+import papertrader.allocation as allocation_module
 from papertrader.allocation import (
     allocation_readiness,
     assessment_payoff_reasons,
@@ -1290,6 +1292,82 @@ def _create_conviction_strategy(
         now=now,
     )
     return strategy_id
+
+
+def test_close_research_payload_omits_missing_allocation_intent(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    _seed_candidates(sandbox_repository, sandbox_settings, 1)
+    active = _settings(sandbox_settings, mode="active")
+    plan_id = "allocation_plan_watch_close"
+    strategy_id = _create_baseline_strategy(
+        sandbox_repository,
+        active,
+        security_id="sec_00",
+        allocation_plan_id=plan_id,
+        quantity=Decimal("1"),
+        status="paused",
+    )
+    assessment = read_table(sandbox_repository, "security_assessments")[0]
+    assessment_id = "assessment_watch_close"
+    candidate = allocation_module._Candidate(
+        security_id="sec_00",
+        security=read_table(sandbox_repository, "securities")[0],
+        assessment=assessment,
+        relationship_id="",
+        themes=(),
+        assessment_id=assessment_id,
+        tier="watch",
+        live_valuation={"position_cap_pct": "0"},
+        score=allocation_module.AssessmentScore(
+            raw_score=Decimal("70"),
+            effective_score=Decimal("70"),
+            candidate_edge=Decimal("10"),
+        ),
+        price=Decimal("100"),
+        price_as_of=NOW,
+        fx_rate=Decimal("1"),
+        assessment_at=NOW - timedelta(hours=1),
+        eligible=False,
+        reasons=["relationship_missing_or_stale"],
+    )
+    rows = [
+        {
+            "allocation_plan_id": plan_id,
+            "allocation_intent_id": "",
+            "security_id": "sec_00",
+            "strategy_id": strategy_id,
+            "tier": "watch",
+            "assessment_id": assessment_id,
+            "target_quantity": "0",
+            "position_cap_pct": "0",
+            "current_weight_pct": "2.89",
+            "target_weight_pct": "0",
+            "rank": "",
+            "effective_score": "70",
+            "assessment_as_of": assessment["assessed_at"],
+            "disposition": "close",
+            "valuation_mark": "100",
+            "valuation_mark_as_of": format_timestamp(NOW),
+        }
+    ]
+
+    operation_ids = allocation_module._enqueue_targets(
+        sandbox_repository,
+        active,
+        {"sec_00": candidate},
+        rows,
+        now=NOW,
+    )
+
+    assert len(operation_ids) == 1
+    operation = read_table(sandbox_repository, "operations_todo")[0]
+    payload = json.loads(
+        (sandbox_repository / operation["payload_path"]).read_text(encoding="utf-8")
+    )
+    assert "allocation_intent_id" not in payload["inputs"]
+    assert payload["inputs"]["disposition"] == "close"
 
 
 @pytest.mark.slow

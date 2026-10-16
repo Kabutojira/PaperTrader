@@ -1,0 +1,44 @@
+{
+  "auxiliary_models": {
+    "web_extract": "openai-codex:gpt-5.6-luna"
+  },
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M357G5RRK5108Q675ABE7X1P.json",
+    "data/runs/daily-20260922T182822Z/01KZYPF0GRF70DYNX3ZSZNC1QH/assessment_upsert_request.json",
+    "data/runs/daily-20260922T182822Z/01KZYPF0GRF70DYNX3ZSZNC1QH/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260922T182822Z/01KZYPF0GRF70DYNX3ZSZNC1QH/assessment_upsert_retry02_request.json",
+    "data/runs/daily-20260922T182822Z/01KZYPF0GRF70DYNX3ZSZNC1QH/assessment_upsert_retry03_request.json",
+    "data/runs/daily-20260922T182822Z/01KZYPF0GRF70DYNX3ZSZNC1QH/assessment_upsert_retry04_request.json",
+    "data/runs/daily-20260922T182822Z/01KZYPF0GRF70DYNX3ZSZNC1QH/enqueue_idea_refresh_request.json",
+    "data/runs/daily-20260922T182822Z/01KZYPF0GRF70DYNX3ZSZNC1QH/security_upsert_request.json",
+    "data/runs/daily-20260922T182822Z/01KZYPF0GRF70DYNX3ZSZNC1QH/source_flnc_fy2026_guidance_reset_request.json",
+    "data/runs/daily-20260922T182822Z/01KZYPF0GRF70DYNX3ZSZNC1QH/source_flnc_q3_2026_10q_refresh_request.json",
+    "data/runs/daily-20260922T182822Z/01KZYPF0GRF70DYNX3ZSZNC1QH/source_flnc_q3_2026_earnings_refresh_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_a9eb9838940ef5ceaa0c.md"
+  ],
+  "effective_model": "gpt-5.6-sol",
+  "errors": [
+    "Hermes timed out after 1800s",
+    "agent result is missing or a symlink: data/runs/daily-20260922T182822Z/01KZYPF0GRF70DYNX3ZSZNC1QH/agent_result.json"
+  ],
+  "escalation_source": "",
+  "maximum_turns": 160,
+  "mutation_policy": "full_research",
+  "operation_id": "01KZYPF0GRF70DYNX3ZSZNC1QH",
+  "passed": false,
+  "profile": "deep",
+  "profile_policy_version": "profile-router-v1",
+  "reasoning_effort": "medium",
+  "route_reason": "scenario_complete_security_review",
+  "run_id": "daily-20260922T182822Z",
+  "timeout_seconds": 1800,
+  "validation_version": 1,
+  "weighted_cost": "5"
+}

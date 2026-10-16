@@ -1,0 +1,26 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_defense_aerospace",
+  "dedupe_key": "idea_research:idea_defense_aerospace:security-result:01M15CV0788NKFKPKPJJ3N020N",
+  "prompt": "Apply a delta-only refresh to the defense and aerospace idea from RTX's completed alert review; update only affected disposition, thesis, catalysts, risks, gates, and confidence without repeating broad discovery.",
+  "inputs": {
+    "idea_id": "idea_defense_aerospace",
+    "seed_claim": "RTX's Q2 evidence and USD 142/USD 179.375/USD 246.50 scenarios are unchanged; the USD 195.34 mark improves valuation but remains below all action gates, while the lower-Bollinger and RSI-oversold entries lack a primary-source operating catalyst.",
+    "security_id": "security_59304f90c440def31dc5",
+    "security_research_operation_id": "01M15CV0788NKFKPKPJJ3N020N",
+    "security_research_result_path": "data/runs/daily-20260915T100730Z/01M15CV0788NKFKPKPJJ3N020N/agent_result.json"
+  },
+  "source": "security_research:01M15CV0788NKFKPKPJJ3N020N",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": [
+    "01M15CV0788NKFKPKPJJ3N020N"
+  ],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_59304f90c440def31dc5.md"
+  ],
+  "max_attempts": 3
+}

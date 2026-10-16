@@ -4,9 +4,15 @@
   "inputs": {
     "assessment_state": "2026-08-18T20:23:55Z",
     "maintenance_mode": "refresh",
-    "market_data_as_of": "2026-09-15T09:23:41Z",
-    "market_data_date": "2026-09-14",
-    "period_end": "2026-09-14",
+    "market_data_as_of": "2026-09-25T19:05:53Z",
+    "market_data_date": "2026-09-24",
+    "merged_input_values": {
+      "source_price_hash": [
+        "ec0cbf8af8b3099705dfd57645d0194c73e568261918d125948e19429889b741",
+        "1dd37515bb333b4bf802c2c77440589ca468567e5f3e4beed0cb743d0b4967ed"
+      ]
+    },
+    "period_end": "2026-09-24",
     "period_start": "2026-08-14",
     "research_page": "data/wiki/securities/security_c9a37d277445869a8809.md",
     "research_reasons": [
@@ -32,10 +38,23 @@
         "trigger_types": [
           "volume_anomaly"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_c9a37d277445869a8809:5d9147a6bdbdfe95a519:2026-09-24",
+        "market_data_date": "2026-09-24",
+        "observed_at": "2026-09-25T19:05:53Z",
+        "prompt": "Research security_c9a37d277445869a8809 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_c9a37d277445869a8809-volume_anomaly-da215c897da5.md"
+        ],
+        "trigger_types": [
+          "volume_anomaly"
+        ]
       }
     ],
     "security_id": "security_c9a37d277445869a8809",
-    "source_price_hash": "ec0cbf8af8b3099705dfd57645d0194c73e568261918d125948e19429889b741",
+    "source_price_hash": "1dd37515bb333b4bf802c2c77440589ca468567e5f3e4beed0cb743d0b4967ed",
     "trigger_types": [
       "volume_anomaly"
     ]
@@ -46,6 +65,7 @@
   "payload_version": 1,
   "source_refs": [
     "data/wiki/inbox/market-security_c9a37d277445869a8809-volume_anomaly-699a987e6359.md",
+    "data/wiki/inbox/market-security_c9a37d277445869a8809-volume_anomaly-da215c897da5.md",
     "source_rblx_q2_2026_10q",
     "source_rblx_q2_2026_shareholder_letter"
   ]

@@ -4,14 +4,49 @@
   "inputs": {
     "assessment_state": "2026-07-28T00:28:34Z",
     "maintenance_mode": "refresh",
+    "market_data_as_of": "2026-09-19T17:40:18Z",
+    "market_data_date": "2026-09-18",
+    "period_end": "2026-09-18",
+    "period_start": "2026-08-20",
     "research_page": "data/wiki/securities/security_22c2b9d782a62d7a9b86.md",
-    "security_id": "security_22c2b9d782a62d7a9b86"
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_22c2b9d782a62d7a9b86:allocation-maintenance:2026-07-28T00:28:34Z",
+        "observed_at": "2026-08-20T07:49:13Z",
+        "prompt": "Revalidate security_22c2b9d782a62d7a9b86 with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_atkr_june_2026_litigation_8k",
+          "source_atkr_q2_2026_10q",
+          "source_atkr_q2_2026_results"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_22c2b9d782a62d7a9b86:31074be1daca5cac1ff1:2026-09-18",
+        "market_data_date": "2026-09-18",
+        "observed_at": "2026-09-19T17:40:18Z",
+        "prompt": "Research security_22c2b9d782a62d7a9b86 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_22c2b9d782a62d7a9b86-volume_anomaly-b1e0e8f10d93.md"
+        ],
+        "trigger_types": [
+          "volume_anomaly"
+        ]
+      }
+    ],
+    "security_id": "security_22c2b9d782a62d7a9b86",
+    "source_price_hash": "d039634e1517444bf1c869403d4c1f5a186a8c279f98cf5f302bb3dfbd092ebf",
+    "trigger_types": [
+      "volume_anomaly"
+    ]
   },
-  "objective": "Revalidate security_22c2b9d782a62d7a9b86 with current primary evidence and write one comparable allocation assessment.",
+  "objective": "Revalidate security_22c2b9d782a62d7a9b86 with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_22c2b9d782a62d7a9b86 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
   "operation_id": "01M0F2AG5805GDB22DG9DEY52B",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_22c2b9d782a62d7a9b86-volume_anomaly-b1e0e8f10d93.md",
     "source_atkr_june_2026_litigation_8k",
     "source_atkr_q2_2026_10q",
     "source_atkr_q2_2026_results"

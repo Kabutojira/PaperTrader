@@ -1,0 +1,266 @@
+{
+  "adversarial_review": {
+    "blind_spots": [
+      "The bounded review inspected the SEC filing sequence and retained primary operating sources but did not establish whether sector, macro, fund-flow, options, analyst, or liquidity factors drove the move.",
+      "The latest operating evidence is dated 2026-07-23 and cannot prove that Q3 execution, cash conversion, remediation costs, or demand remained unchanged through 2026-09-14."
+    ],
+    "contrary_evidence": [
+      "The shares declined 12.13% across the bounded period, entered the lower Bollinger band on 2026-09-02 and reached RSI 29.56676173 on 2026-09-14 while MACD remained negative; markets may be discounting information before a filing.",
+      "The latest operating filing reports material Pratt remediation, fixed-price execution, leverage, supply and commercial-cycle risks that could worsen even though the filing itself is unchanged."
+    ],
+    "effect_on_conclusion": "The alternative keeps confidence at medium, timing at 40, and the relationship marked stale for its already-queued review. It prevents interpreting oversold momentum as a buy signal; unchanged scenarios still fail expected-return, base-return, payoff and margin-of-safety gates, so Hold / Watch and allocation ineligibility remain.",
+    "falsification_condition": "A current issuer or regulator disclosure tied to the 2026-08-05 through 2026-09-14 observation period that reports deterioration in demand, program execution, Pratt liabilities, guidance, or cash delivery—or a later accepted assessment that changes those assumptions—would falsify the no-new-causal-evidence conclusion.",
+    "favored_hypothesis": "RTX's lower-Bollinger and RSI-oversold entries reflect a material technical deterioration that improves valuation mechanically but does not, on current inspected primary evidence, establish a changed operating thesis or actionable opportunity.",
+    "inspection_refs": [
+      "data/wiki/inbox/market-security_59304f90c440def31dc5-bollinger_below_lower-cc8dfbfeed95.md",
+      "data/wiki/inbox/market-security_59304f90c440def31dc5-rsi_oversold-a3e13463a253.md",
+      "data/market/technical/security_59304f90c440def31dc5.csv:2026-09-02",
+      "data/market/technical/security_59304f90c440def31dc5.csv:2026-09-14",
+      "data/tables/source_history.csv:source_history_06f44d3f199804fe2c37",
+      "data/tables/source_history.csv:source_history_e1af9e63570a626b1e0c",
+      "data/tables/source_history.csv:source_history_257d7d6d08a34a687ded",
+      "data/tables/security_assessment_history.csv:assessment_383acdd93493e25c29e0"
+    ],
+    "reason": "Current primary sources were re-retrieved and the current SEC index was inspected, but there is no contemporaneous Q3 operating disclosure and no independent causal evidence in this bounded primary-source review; the causal assessment is therefore partial.",
+    "status": "partial",
+    "strongest_alternative": "The selloff may anticipate slower commercial aerospace demand, additional fixed-price losses, larger Pratt remediation costs, weaker cash conversion, or another issuer-specific adverse development that is not yet visible in filed evidence."
+  },
+  "catalyst_updates": [],
+  "commands_run": [
+    "papertrader research security-context --security-id security_59304f90c440def31dc5",
+    "papertrader research source record --request data/runs/daily-20260915T100730Z/01M15CV0788NKFKPKPJJ3N020N/source_rtx_q2_2026_10q_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260915T100730Z/01M15CV0788NKFKPKPJJ3N020N/source_rtx_q2_2026_results_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260915T100730Z/01M15CV0788NKFKPKPJJ3N020N/source_rtx_sec_submissions_20260915_request.json",
+    "papertrader wiki sync-technical-charts",
+    "papertrader research security upsert --request data/runs/daily-20260915T100730Z/01M15CV0788NKFKPKPJJ3N020N/security_upsert_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260915T100730Z/01M15CV0788NKFKPKPJJ3N020N/security_upsert_retry01_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260915T100730Z/01M15CV0788NKFKPKPJJ3N020N/assessment_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260915T100730Z/01M15CV0788NKFKPKPJJ3N020N/enqueue_idea_refresh_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "RTX fell 12.13% from 2026-08-05 through 2026-09-14 and entered RSI-oversold after an earlier lower-Bollinger entry. Fresh SEC retrievals found no later operating filing or verified issuer catalyst. Unchanged scenarios imply -4.37% expected return; Hold / Watch and allocation ineligibility remain, with no strategy, signal, order, allocation, or accounting change."
+  ],
+  "evidence": [
+    {
+      "claim": "For immutable security security_59304f90c440def31dc5, the 2026-08-05 through 2026-09-14 adjusted close fell from USD 222.30999756 to USD 195.33999633789062; RSI entered oversold at 29.56676173 and source-price hash is 260802c85ee1fa04e9dc91bf9a37173ccbd516dd9dffbc29b06f4a19a13b415a.",
+      "observed_at": "2026-09-15T10:07:37Z",
+      "source": "PaperTrader deterministic market packet and technical cache",
+      "source_hash": "260802c85ee1fa04e9dc91bf9a37173ccbd516dd9dffbc29b06f4a19a13b415a"
+    },
+    {
+      "claim": "The unchanged filing reports USD 289 billion of backlog, USD 8.305 billion of cash and USD 37.383 billion of debt at the Q2 reporting date.",
+      "observed_at": "2026-09-15T10:13:46Z",
+      "source": "RTX Q2 2026 Form 10-Q",
+      "source_hash": "9f013f79edcb3e5eba91055c1da62413a58f51ba47e7380d33744949362f3ec2",
+      "url": "https://www.sec.gov/Archives/edgar/data/101829/000010182926000027/rtx-20260630.htm"
+    },
+    {
+      "claim": "The unchanged exhibit reports adjusted EPS guidance of USD 7.10-7.25 and free-cash-flow guidance of USD 8.50-8.75 billion.",
+      "observed_at": "2026-09-15T10:13:46Z",
+      "source": "RTX Q2 2026 results, SEC-filed Exhibit 99",
+      "source_hash": "4fc01f125ed3318eb3f2e1f15d64c312bd38c0663b1c86a42ab37317124528e6",
+      "url": "https://www.sec.gov/Archives/edgar/data/101829/000010182926000025/a2026-07x238xkerexhibit99.htm"
+    },
+    {
+      "claim": "The current index shows no RTX operating filing after the 2026-07-23 Form 10-Q and Form 8-K through inspection on 2026-09-15.",
+      "observed_at": "2026-09-15T10:13:46Z",
+      "source": "RTX SEC submissions index",
+      "source_hash": "64a89e4194541c25ec8b440e690ac38017849337679aa77b43ffa5e3acc6c2f6",
+      "url": "https://data.sec.gov/submissions/CIK0000101829.json"
+    },
+    {
+      "claim": "Assessment assessment_383acdd93493e25c29e0 links predecessor assessment_1390c2b0774d36c9647c, schema version 2, this operation and result path, and the current research-page hash; it deterministically remains Hold / Watch and allocation-ineligible.",
+      "source": "PaperTrader immutable assessment history"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M2J98JN8KAPVPC0BYZ647YPH.json",
+    "data/runs/daily-20260915T100730Z/01M15CV0788NKFKPKPJJ3N020N/assessment_upsert_request.json",
+    "data/runs/daily-20260915T100730Z/01M15CV0788NKFKPKPJJ3N020N/enqueue_idea_refresh_request.json",
+    "data/runs/daily-20260915T100730Z/01M15CV0788NKFKPKPJJ3N020N/security_upsert_request.json",
+    "data/runs/daily-20260915T100730Z/01M15CV0788NKFKPKPJJ3N020N/security_upsert_retry01_request.json",
+    "data/runs/daily-20260915T100730Z/01M15CV0788NKFKPKPJJ3N020N/source_rtx_q2_2026_10q_refresh_request.json",
+    "data/runs/daily-20260915T100730Z/01M15CV0788NKFKPKPJJ3N020N/source_rtx_q2_2026_results_refresh_request.json",
+    "data/runs/daily-20260915T100730Z/01M15CV0788NKFKPKPJJ3N020N/source_rtx_sec_submissions_20260915_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_59304f90c440def31dc5.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M15CV0788NKFKPKPJJ3N020N",
+  "operations_created": [
+    "01M2J98JN8KAPVPC0BYZ647YPH"
+  ],
+  "reason_code": "hold_watch_after_oversold_alert",
+  "research_claims": [
+    {
+      "assessment_ids": [
+        "assessment_383acdd93493e25c29e0"
+      ],
+      "assumption_ids": [
+        "rtx-bear-eps-7.10",
+        "rtx-base-eps-7.175",
+        "rtx-bull-eps-7.25"
+      ],
+      "basis": "Issuer-reported non-GAAP adjusted EPS guidance in an SEC-filed results exhibit; the maintained valuation uses the range explicitly rather than treating it as GAAP EPS.",
+      "claim_id": "rtx-2026-adjusted-eps-guidance",
+      "currency": "USD",
+      "evidence": [
+        {
+          "applicability_limit": "Supports only RTX's stated adjusted EPS and free-cash-flow guidance; it does not validate GAAP comparability, valuation multiples, or delivery after the filing date.",
+          "excerpt": "Adjusted EPS guidance remains USD 7.10-7.25 and free-cash-flow guidance remains USD 8.50-8.75 billion.",
+          "inspected_at": "2026-09-15T10:13:46Z",
+          "inspection_status": "observed",
+          "locator": "SEC-filed Exhibit 99, 2026 guidance section",
+          "origin_id": "issuer_7e0bd218f603cf838669",
+          "origin_type": "issuer",
+          "published_at": "2026-07-23T00:00:00Z",
+          "rationale": "The inspected SEC-filed issuer exhibit directly states the adjusted EPS range used as the scenario earnings anchor.",
+          "role": "supports",
+          "source_history_id": "source_history_e1af9e63570a626b1e0c",
+          "underlying_observation_id": "rtx-q2-2026-guidance-sec-ex99"
+        }
+      ],
+      "kind": "financial",
+      "period_end": "2026-12-31",
+      "period_start": "2026-01-01",
+      "proposition": "RTX reported full-year 2026 adjusted EPS guidance of USD 7.10 to USD 7.25 per share in its Q2 results exhibit.",
+      "scope": "RTX Corporation consolidated adjusted earnings guidance for fiscal 2026",
+      "security_ids": [
+        "security_59304f90c440def31dc5"
+      ],
+      "state": "reported",
+      "uncertainty": "Guidance is issuer-defined non-GAAP information and may change with program charges, Pratt remediation, demand, execution, tax, or other excluded items.",
+      "unit": "USD per share"
+    },
+    {
+      "assessment_ids": [
+        "assessment_383acdd93493e25c29e0"
+      ],
+      "assumption_ids": [
+        "rtx-backlog-conversion",
+        "rtx-balance-sheet-risk"
+      ],
+      "basis": "Issuer-reported point-in-time Form 10-Q amounts used to qualify demand visibility, balance-sheet strength and risk.",
+      "claim_id": "rtx-q2-2026-balance-and-backlog",
+      "currency": "USD",
+      "evidence": [
+        {
+          "applicability_limit": "Supports the reported point-in-time amounts only; it does not prove future backlog conversion, margin, free cash flow, or current balances after 2026-06-30.",
+          "excerpt": "Q2 Form 10-Q remains latest operating filing; it reports USD 289 billion backlog, USD 8.305 billion cash and USD 37.383 billion debt.",
+          "inspected_at": "2026-09-15T10:13:46Z",
+          "inspection_status": "observed",
+          "locator": "RTX Q2 2026 Form 10-Q, backlog and consolidated balance-sheet disclosures",
+          "origin_id": "issuer_7e0bd218f603cf838669",
+          "origin_type": "issuer",
+          "published_at": "2026-07-23T00:00:00Z",
+          "rationale": "The inspected Form 10-Q directly supplies the dated backlog, cash and debt observations used in the assessment.",
+          "role": "supports",
+          "source_history_id": "source_history_06f44d3f199804fe2c37",
+          "underlying_observation_id": "rtx-q2-2026-balance-backlog-10q"
+        }
+      ],
+      "kind": "financial",
+      "period_end": "2026-06-30",
+      "period_start": "2026-06-30",
+      "proposition": "RTX reported USD 289 billion of backlog, USD 8.305 billion of cash and USD 37.383 billion of debt at the Q2 2026 reporting date.",
+      "scope": "RTX Corporation consolidated backlog, cash and total debt at 2026-06-30",
+      "security_ids": [
+        "security_59304f90c440def31dc5"
+      ],
+      "state": "reported",
+      "uncertainty": "Backlog timing and profitability are not guaranteed; cash and debt are point-in-time balances and do not by themselves establish cash conversion or net leverage.",
+      "unit": "USD billions"
+    },
+    {
+      "assessment_ids": [
+        "assessment_383acdd93493e25c29e0"
+      ],
+      "assumption_ids": [
+        "rtx-alert-no-filed-operating-catalyst"
+      ],
+      "basis": "Current regulator-index inspection bounded to the issuer's SEC submissions; absence of a later operating filing is used only to avoid attributing the technical decline to a verified new issuer disclosure.",
+      "claim_id": "rtx-no-later-operating-filing-20260915",
+      "currency": "",
+      "evidence": [
+        {
+          "applicability_limit": "Applies only to filings present in the SEC submissions index through inspection; it is not evidence that no other public or private causal information exists.",
+          "excerpt": "No RTX operating filing follows the July 23 Form 10-Q and Form 8-K through September 15.",
+          "inspected_at": "2026-09-15T10:13:46Z",
+          "inspection_status": "observed",
+          "locator": "SEC submissions JSON, recent accession and filing-date arrays inspected 2026-09-15",
+          "origin_id": "sec-cik-0000101829",
+          "origin_type": "independent",
+          "published_at": null,
+          "rationale": "The current regulator index supports only the bounded conclusion that no later SEC operating filing explains the alert-period move.",
+          "role": "supports",
+          "source_history_id": "source_history_257d7d6d08a34a687ded",
+          "underlying_observation_id": "rtx-sec-submissions-through-20260915"
+        }
+      ],
+      "kind": "catalyst",
+      "period_end": "2026-09-15",
+      "period_start": "2026-07-24",
+      "proposition": "The SEC submissions index listed no RTX operating filing after the 2026-07-23 Form 10-Q and Form 8-K through inspection on 2026-09-15.",
+      "scope": "RTX Corporation SEC submission sequence for later operating disclosures",
+      "security_ids": [
+        "security_59304f90c440def31dc5"
+      ],
+      "state": "supported",
+      "uncertainty": "No later SEC operating filing does not exclude undisclosed information, non-SEC public information, sector moves, macro factors, positioning, or liquidity effects.",
+      "unit": "operating filings"
+    }
+  ],
+  "research_forecasts": [],
+  "status": "succeeded",
+  "summary": "Reassessed RTX after the 2026-09-02 lower-Bollinger entry and 2026-09-14 RSI-oversold entry. The canonical close fell 12.13% from 2026-08-05 to USD 195.33999633789062. Fresh SEC retrievals reproduced the Q2 filing and results hashes, and the current submissions index showed no later operating filing, so no verified issuer catalyst explains the move. Unchanged USD 142/USD 179.375/USD 246.50 scenarios produce USD 186.8125 probability-weighted value and -4.36546354958465758667999208% expected return. Deterministic rating remains Hold, portfolio action Watch, and allocation ineligible; no strategy, signal, order, allocation, or accounting state changed.",
+  "validation": {
+    "checks": [
+      "Confirmed the sole target queue row is running, claimed by daily-20260915T100730Z, and has a live lease before making changes.",
+      "Confirmed current preflight identifies llm-wiki, papertrader-controller, papertrader-security-research, and echart with content hashes.",
+      "Consumed the audited security-context receipt before reading or changing assessment state and preserved predecessor assessment_1390c2b0774d36c9647c.",
+      "Re-read the prior validation report and repaired every cited issue: source-history excerpts are bounded and claim evidence excerpts exactly match retained observations; adversarial review is substantive and schema-complete.",
+      "Re-retrieved the Q2 Form 10-Q, SEC-filed results exhibit, and current SEC submissions index; hashes and dated source-history observations were recorded through the project CLI.",
+      "Validated immutable identity, duplicate protection, source freshness, current price and FX identity, valuation template, scenarios, scores, blockers, gaps, and page hash through successful security and assessment CLI upserts.",
+      "Confirmed assessment_383acdd93493e25c29e0 is schema version 2, links its predecessor, this operation and result path, and the current security-page hash.",
+      "Searched the complete maintained idea catalog and canonical relationships; retained one accepted-but-stale defense/aerospace edge whose bounded review is already queued, documented rejected superficial pairings, and added no candidate edge.",
+      "Enqueued exactly one dependent delta-only idea refresh for the payload and accepted idea; created no duplicate relationship review and no strategy, signal, order, allocation, execution, cash, portfolio, performance, or accounting change.",
+      "Ran scripts/papertrader wiki sync-technical-charts successfully with no deterministic marker change.",
+      "Ran scripts/papertrader wiki lint --strict successfully after all wiki and structured-state changes.",
+      "Validated this draft against agent_result, research_claim, research_challenge, and embedded research_chart schemas before atomically writing the manifest last."
+    ],
+    "passed": true
+  },
+  "visualization_review": {
+    "charts": [
+      {
+        "chart_id": "rtx-september-2026-scenarios",
+        "page_path": "data/wiki/securities/security_59304f90c440def31dc5.md"
+      }
+    ],
+    "completed": true,
+    "omissions": [
+      {
+        "dataset": "RTX comparable multi-period fundamentals",
+        "reason": "No new reporting period followed the retained Q2 filing in this bounded alert review, so no comparable new fundamental trend was available.",
+        "reason_code": "insufficient_history"
+      },
+      {
+        "dataset": "RTX same-date peer valuation multiples",
+        "reason": "No definition-consistent same-date peer pack was retained; estimating or mixing unlike multiples would be misleading.",
+        "reason_code": "insufficient_comparability"
+      },
+      {
+        "dataset": "RTX cash and debt observations",
+        "reason": "Cash and debt are point-in-time Q2 observations and remain in sourced prose rather than a decorative chart.",
+        "reason_code": "single_value"
+      }
+    ]
+  }
+}

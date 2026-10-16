@@ -115,6 +115,11 @@ threshold distance in an eligibility frontier. The same economic gate is reused 
 through pre-fill validation. A 100% cash result is labeled definitive or provisional for incomplete
 research, unsupported valuation, pending strategy work, or blocked portfolio state.
 
+Decision-driving research claims follow `schemas/research_claim.schema.json`. Each evidence item
+may retain one verbatim public-source excerpt of at most 25 whitespace-delimited words. Use an
+empty excerpt when no quote is retained; never truncate a quote silently or substitute synthesis
+for inspected source text.
+
 The six rows in `data/tables/youtube_channels.csv` are a human-curated source subscription. Their
 regular videos are queued directly rather than routed through the inbox packet classifier. A
 YouTube transcript is untrusted lead material, never primary evidence: independently corroborate

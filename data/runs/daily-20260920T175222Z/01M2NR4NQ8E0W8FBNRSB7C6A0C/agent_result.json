@@ -1,0 +1,57 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_8b703a8adf5f864acaa4 --history-limit 2"
+  ],
+  "daily_report_items": [],
+  "evidence": [
+    {
+      "claim": "The cited issuer source was unavailable during the bounded check and returned HTTP 403.",
+      "source": "https://www.prosus.com/investors/investing-in-prosus/net-asset-value?locale=en",
+      "url": "https://www.prosus.com/investors/investing-in-prosus/net-asset-value?locale=en"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "monitoring_review": {
+    "checks": [
+      {
+        "checked_at": null,
+        "evidence_refs": [
+          "https://www.prosus.com/investors/investing-in-prosus/net-asset-value?locale=en"
+        ],
+        "reason": "The frozen issuer source target returned HTTP 403 during the bounded check; no current source content or replacement hash was available for comparison.",
+        "source_hash": "",
+        "state": "failed",
+        "target_id": "source_prosus_nav_20260827"
+      }
+    ],
+    "conflicts": [],
+    "context_hash": "581576420e403e97cfc4850b72bf28aafd9db3da9c8f8af4d95ca8ee611ae53b",
+    "limitations": [
+      "The sole frozen primary-source target was inaccessible, so material change versus the prior hash could not be determined.",
+      "This bounded monitor is not complete-universe coverage."
+    ]
+  },
+  "operation_id": "01M2NR4NQ8E0W8FBNRSB7C6A0C",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Completed the bounded Prosus source-monitor triage. The frozen primary-source target could not be retrieved because the cited issuer page returned HTTP 403, so the investigation remains uncertain and no research state was changed.",
+  "triage_review": {
+    "disposition": "uncertain",
+    "examined_evidence": [
+      "data/operations/research-governance/monitoring-contexts/02d9a9931f6592098273ff27.json",
+      "https://www.prosus.com/investors/investing-in-prosus/net-asset-value?locale=en"
+    ],
+    "reason": "The sole frozen monitoring target was checked but the cited issuer source was unavailable at retrieval time (HTTP 403). This does not establish no material change."
+  },
+  "validation": {
+    "checks": [
+      "Validated the frozen monitoring context identity and context hash.",
+      "Inspected the canonical security context for security_8b703a8adf5f864acaa4.",
+      "Recorded one in-scope failed target check without asserting no material change.",
+      "Confirmed no wiki, structured research, queue, issue, strategy, signal, order, or accounting state was changed.",
+      "Command string matches the deterministic CLI audit receipt."
+    ],
+    "passed": true
+  }
+}

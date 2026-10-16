@@ -1,0 +1,20 @@
+{
+  "entity_id": "relationship_terafab_nvda",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_terafab_ai_industrial_stack",
+    "maintenance_mode": "refresh",
+    "relationship_id": "relationship_terafab_nvda",
+    "security_id": "security_33d9c44facc75c726c7d"
+  },
+  "objective": "Review the canonical relationship from idea_terafab_ai_industrial_stack to security_33d9c44facc75c726c7d and accept or reject it with current evidence.",
+  "operation_id": "01M37SGN5GP5YMA0S0NM3M7JXD",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_nvda_huggingface_20260903_8k",
+    "source_nvda_q2_fy2027_10q",
+    "source_nvda_q2_fy2027_cfo",
+    "source_nvda_q2_fy2027_release"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "entity_id": "relationship_humanoid_nvda",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_humanoid_robotics_embodied_ai_components",
+    "maintenance_mode": "refresh",
+    "relationship_id": "relationship_humanoid_nvda",
+    "security_id": "security_33d9c44facc75c726c7d"
+  },
+  "objective": "Review the canonical relationship from idea_humanoid_robotics_embodied_ai_components to security_33d9c44facc75c726c7d and accept or reject it with current evidence.",
+  "operation_id": "01M4ZWR1JGB4AC40V524ZVSA9H",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_nvda_huggingface_20260903_8k",
+    "source_nvda_q2_fy2027_10q",
+    "source_nvda_q2_fy2027_cfo",
+    "source_nvda_q2_fy2027_release"
+  ]
+}

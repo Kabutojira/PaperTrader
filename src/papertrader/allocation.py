@@ -1718,7 +1718,6 @@ def _enqueue_targets(
         inputs = {
             "mode": "baseline_allocation",
             "allocation_plan_id": row["allocation_plan_id"],
-            "allocation_intent_id": row["allocation_intent_id"],
             "security_id": row["security_id"],
             "strategy_id": row["strategy_id"],
             "relationship_id": relationship_id,
@@ -1734,6 +1733,8 @@ def _enqueue_targets(
             "assessment_as_of": row["assessment_as_of"],
             "disposition": row["disposition"],
         }
+        if row["allocation_intent_id"]:
+            inputs["allocation_intent_id"] = row["allocation_intent_id"]
         if row["valuation_mark"]:
             inputs["valuation_mark"] = row["valuation_mark"]
         if row["valuation_mark_as_of"]:

@@ -1,0 +1,15 @@
+{
+  "appendix_hash": "cf9954338bcdff416162beef9fdef46303f0a3aa5c2ec0e2c2b9f10ec9d76f36",
+  "appendix_path": "data/wiki/queries/research-findings-522fc62c74bf20f38b642749.md",
+  "delivery": "not_attested_here",
+  "finding_ids": [
+    "finding_dabf68717bb58317bca58939"
+  ],
+  "publication": "not_attested_here",
+  "report_date": "2026-09-20",
+  "report_path": "data/wiki/daily-reports/daily-report_20260920.md",
+  "run_id": "daily-20260920T175222Z",
+  "saved": true,
+  "schema_version": 1,
+  "user_observed": false
+}

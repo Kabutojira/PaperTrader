@@ -4,49 +4,49 @@ type: model-portfolio
 status: maintained
 tags:
   - model-portfolio
-created: "2026-09-15"
-updated: "2026-09-15"
+created: "2026-10-15"
+updated: "2026-10-15"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_4c4b57b58cd5e29dca97"
-as_of: "2026-09-15T09:47:41Z"
+snapshot_id: "decision_3ae00883320e1e44dca3"
+as_of: "2026-10-15T19:02:48Z"
 ---
 
 # Model portfolio
 
-**As of `2026-09-15T09:47:41Z`**
+**As of `2026-10-15T19:02:48Z`**
 
 Pending targets are projections; only deterministic fills change the current portfolio.
 
 <div class="model-portfolio-grid" id="model-portfolio-grid">
-<article class="portfolio-card" data-scalable="false" data-target-weight="97.123634" data-mark="1" data-fx="1" data-mark-currency="" data-market-data-as-of="2026-09-15T09:47:41Z" data-ticker="CASH" data-company="Cash">
+<article class="portfolio-card" data-scalable="false" data-target-weight="97.1213" data-mark="1" data-fx="1" data-mark-currency="" data-market-data-as-of="2026-10-15T19:02:48Z" data-ticker="CASH" data-company="Cash">
 <h3>Cash</h3>
 <dl class="portfolio-card-values">
-<div><dt>Current</dt><dd>97.123634%</dd></div>
-<div><dt>Target</dt><dd>97.123634%</dd></div>
+<div><dt>Current</dt><dd>97.1213%</dd></div>
+<div><dt>Target</dt><dd>97.1213%</dd></div>
 <div><dt>Action</dt><dd>No trade</dd></div>
 <div><dt>State</dt><dd>No action</dd></div>
 <div><dt>Research rating</dt><dd>Unrated</dd></div>
 <div><dt>Research action</dt><dd>Hold</dd></div>
 <div><dt>Reference mark</dt><dd>1 </dd></div>
 <div><dt>Base mark</dt><dd>1 EUR</dd></div>
-<div><dt>FX to EUR</dt><dd>1 · 2026-09-15T09:47:41Z</dd></div>
-<div><dt>As of</dt><dd>2026-09-15T09:47:41Z</dd></div>
+<div><dt>FX to EUR</dt><dd>1 · 2026-10-15T19:02:48Z</dd></div>
+<div><dt>As of</dt><dd>2026-10-15T19:02:48Z</dd></div>
 </dl>
 
 </article>
-<article class="portfolio-card" data-scalable="true" data-target-weight="2.876366" data-mark="35.91999816894531" data-fx="1" data-mark-currency="EUR" data-market-data-as-of="2026-09-14T15:30:00Z" data-ticker="PRX" data-company="Prosus N.V.">
+<article class="portfolio-card" data-scalable="true" data-target-weight="2.8787" data-mark="35.95000076293945" data-fx="1" data-mark-currency="EUR" data-market-data-as-of="2026-10-15T15:30:00Z" data-ticker="PRX" data-company="Prosus N.V.">
 <h3><a href="securities/security_8b703a8adf5f864acaa4">PRX — Prosus N.V.</a></h3>
 <dl class="portfolio-card-values">
-<div><dt>Current</dt><dd>2.876366%</dd></div>
-<div><dt>Target</dt><dd>2.876366%</dd></div>
+<div><dt>Current</dt><dd>2.8787%</dd></div>
+<div><dt>Target</dt><dd>2.8787%</dd></div>
 <div><dt>Action</dt><dd>Hold</dd></div>
 <div><dt>State</dt><dd>Filled</dd></div>
 <div><dt>Research rating</dt><dd>Buy</dd></div>
 <div><dt>Research action</dt><dd>Initiate</dd></div>
-<div><dt>Reference mark</dt><dd>35.91999816894531 EUR</dd></div>
-<div><dt>Base mark</dt><dd>35.91999816894531 EUR</dd></div>
-<div><dt>FX to EUR</dt><dd>1 · 2026-09-15T09:47:41Z</dd></div>
-<div><dt>As of</dt><dd>2026-09-14T15:30:00Z</dd></div>
+<div><dt>Reference mark</dt><dd>35.95000076293945 EUR</dd></div>
+<div><dt>Base mark</dt><dd>35.95000076293945 EUR</dd></div>
+<div><dt>FX to EUR</dt><dd>1 · 2026-10-15T19:02:48Z</dd></div>
+<div><dt>As of</dt><dd>2026-10-15T15:30:00Z</dd></div>
 </dl>
 <p><a href="strategies/strategy_8caa208dfc702a2584a7">Strategy research</a></p>
 </article>
@@ -69,6 +69,6 @@ Pending targets are projections; only deterministic fills change the current por
 | Holding | Rating / action | Bear / base / bull | Expected | Buy below | Review | Thesis or cash role |
 | --- | --- | ---: | ---: | ---: | --- | --- |
 | Cash | Unrated / Hold | —% / —% / —% | —% | — | — | Capital retained as the configured portfolio alternative. |
-| [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | Buy / Initiate | -16.48106478486252701882993049% / 44.7661543729049531673614538% / 94.8775155019874369560634955% | 36.4142608513912058692444469% | 41.6 | 2026-09-27T19:18:00Z | Prosus retains Tencent-dominated look-through value, ecommerce exposure and potential per-share accretion from repurchases below NAV; current full-baseline economics support bounded long-equity exposure, while medium confidence, holding-company concentration, private-asset marks, governance, capital-allocation transmission, weak momentum and insufficient diversification prevent conviction treatment. |
+| [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | Buy / Initiate | -16.55076672230075493211569673% / 44.6453376813453581176661257% / 94.7148776479649051583967076% | 36.3004143535754336108776953% | 41.6 | 2026-09-27T19:18:00Z | Prosus retains Tencent-dominated look-through value, ecommerce exposure and potential per-share accretion from repurchases below NAV; current full-baseline economics support bounded long-equity exposure, while medium confidence, holding-company concentration, private-asset marks, governance, capital-allocation transmission, weak momentum and insufficient diversification prevent conviction treatment. |
 
 [[index|Back to today's decision]]
