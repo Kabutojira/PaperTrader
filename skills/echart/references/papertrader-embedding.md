@@ -57,22 +57,13 @@ For a successful applicable operation, add `visualization_review` to `agent_resu
 operation changes no primary research page, record the `no_page_change` omission. If no chart is
 warranted, leave `charts` empty and give at least one specific omission; never manufacture data.
 
-## Deterministic security technical chart
+## Security monitoring data
 
-Every security page has one repository-owned, marker-bounded schema-version-2 chart with
-`chart_id: "market-technicals"`. It is a stable reference to
-`data/market/technical/<security_id>.csv`; do not inline its daily rows, edit its identity, remove
-its markers, or rebuild it from research evidence. Preserve it when editing the page. Keep the
-complete `## Visual evidence` section immediately after the page's level-one title so price and
-indicator context precedes the research narrative. The site build validates and hydrates the
-reference with adjusted OHLC, volume, Bollinger bands, SMA
-20/50/200, RSI 14, and MACD panels, then publishes the same local CSV as a download. The browser
-does not fetch remote or repository data.
-
-This deterministic baseline is not an agent-authored analytical chart. Exclude
-`market-technicals` from `visualization_review.charts`, and do not count it as satisfying the
-chartability pass. It remains one-way monitoring context and can never feed a conclusion or any
-trading or accounting state.
+Automatic `market-technicals` price, volume, and technical-indicator graphs are retired from wiki
+pages. Do not add these blocks or their markers. The compatibility command
+`papertrader wiki sync-technical-charts` removes old blocks without changing research dates and
+never inserts them. Canonical price and technical CSVs remain available for deterministic
+monitoring and research context. Preserve analytical research charts and their supporting sources.
 
 Quartz renders valid blocks with its pinned local Apache ECharts asset. GitHub, feeds, and
 JavaScript-disabled browsers retain the JSON plus the surrounding prose, so descriptions, sources,

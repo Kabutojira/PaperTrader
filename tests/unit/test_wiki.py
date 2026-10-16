@@ -107,7 +107,7 @@ def test_research_chart_parser_rejects_technical_path_identity_mismatch(
     assert any("data_path must match" in error for error in errors)
 
 
-def test_security_technical_chart_sync_is_idempotent(
+def test_security_technical_chart_sync_does_not_add_price_graphs(
     sandbox_repository: Path,
 ) -> None:
     security_id = "sec-fixture"
@@ -166,20 +166,18 @@ Research content stays unchanged.
         encoding="utf-8",
     )
 
+    original = page.read_text(encoding="utf-8")
     first = sync_security_technical_charts(sandbox_repository)
     first_text = page.read_text(encoding="utf-8")
     second = sync_security_technical_charts(sandbox_repository)
 
-    assert first == (page,)
+    assert first == ()
+    assert first_text == original
     assert second == ()
     assert page.read_text(encoding="utf-8") == first_text
     assert 'updated: "2026-09-01"' in first_text
     assert "Research content stays unchanged." in first_text
-    assert first_text.index("# Fixture security") < first_text.index("## Visual evidence")
-    assert first_text.index("## Visual evidence") < first_text.index(
-        "Research content stays unchanged."
-    )
-    assert first_text.index("## Visual evidence") < first_text.index("## Sources")
+    assert TECHNICAL_CHART_START not in first_text
     assert (
         security_technical_chart_errors(
             page,
@@ -191,8 +189,12 @@ Research content stays unchanged.
     )
 
 
-def test_security_technical_chart_sync_moves_existing_visual_section_after_title(
+@pytest.mark.parametrize("marked", [True, False])
+@pytest.mark.parametrize("analytical", [True, False])
+def test_security_technical_chart_sync_removes_price_graph_and_preserves_research(
     sandbox_repository: Path,
+    marked: bool,
+    analytical: bool,
 ) -> None:
     security_id = "sec-fixture"
     research_page = f"data/wiki/securities/{security_id}.md"
@@ -228,6 +230,9 @@ def test_security_technical_chart_sync_moves_existing_visual_section_after_title
         ],
     )
     chart = json.dumps(technical_chart_spec(security_id, "USD"), indent=2)
+    price_graph = f"```echart\n{chart}\n```\n"
+    if marked:
+        price_graph = f"{TECHNICAL_CHART_START}\n{price_graph}{TECHNICAL_CHART_END}\n"
     page = sandbox_repository / research_page
     page.write_text(
         """---
@@ -249,20 +254,45 @@ Research content stays unchanged.
 ## Visual evidence
 
 """
-        + f"{TECHNICAL_CHART_START}\n```echart\n{chart}\n```\n{TECHNICAL_CHART_END}\n\n"
-        + "Analytical visual evidence stays in this section.\n",
+        + price_graph
+        + "\n"
+        + (
+            "Analytical visual evidence stays in this section.\n\n"
+            + "```echart\n"
+            + json.dumps(_series_chart())
+            + "\n```\n"
+            if analytical
+            else ""
+        )
+        + "\n## Sources\n\n- Fixture source.\n",
         encoding="utf-8",
     )
 
+    assert any(
+        "price charts are disabled" in error
+        for error in security_technical_chart_errors(
+            page,
+            sandbox_repository / "schemas" / "research_chart.schema.json",
+            security_id=security_id,
+            currency="USD",
+        )
+    )
     changed = sync_security_technical_charts(sandbox_repository)
     updated = page.read_text(encoding="utf-8")
 
     assert changed == (page,)
-    assert updated.index("# Fixture security") < updated.index("## Visual evidence")
-    assert updated.index("## Visual evidence") < updated.index("## Identity")
-    assert updated.index(TECHNICAL_CHART_END) < updated.index(
-        "Analytical visual evidence stays in this section."
-    )
+    if analytical:
+        assert updated.index("## Identity") < updated.index("## Visual evidence")
+        assert "Analytical visual evidence stays in this section." in updated
+        assert json.dumps(_series_chart()) in updated
+    else:
+        assert "## Visual evidence" not in updated
+    assert "Research content stays unchanged." in updated
+    assert "## Sources\n\n- Fixture source." in updated
+    assert TECHNICAL_CHART_START not in updated
+    assert TECHNICAL_CHART_END not in updated
+    assert "market-technicals" not in updated
+    assert 'updated: "2026-09-01"' in updated
     assert sync_security_technical_charts(sandbox_repository) == ()
     assert (
         security_technical_chart_errors(

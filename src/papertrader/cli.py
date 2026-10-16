@@ -181,7 +181,7 @@ def _parser() -> argparse.ArgumentParser:
     wiki_commands.add_parser("refresh-inbox")
     wiki_commands.add_parser(
         "sync-technical-charts",
-        help="insert or repair stable technical chart references on security pages",
+        help="remove retired price graphs from security pages without changing research dates",
     )
     wiki_maintain = wiki_commands.add_parser(
         "maintain", help="run the bundled native llm-wiki maintenance procedure"

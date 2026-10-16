@@ -207,24 +207,20 @@ Ticker text alone is never an identity. A new `watchlist` row is immediately inc
 deterministic price monitoring and alerts, while validated research is still required before it can
 participate in allocation, strategy, signal, or paper-order decisions.
 
-## Security technical charts
+## Security market data
 
-Each maintained security page includes a one-year interactive view with adjusted candlesticks,
-Bollinger bands, SMA 20/50/200, volume, RSI 14, and MACD. The daily pipeline persists the complete
-deterministic series at `data/market/technical/<security_id>.csv`; warm-up observations are blank
-instead of invented. Canonical Markdown stores only a stable validated reference, so daily market
-updates do not rewrite research pages. Quartz hydrates the chart during the local build and
-publishes the source CSV as a download—there are no CDN or browser data requests.
+Security wiki pages omit automatic price, volume, and technical-indicator graphs. Analytical
+research charts remain available. The daily pipeline still maintains canonical prices and the
+one-year deterministic series at `data/market/technical/<security_id>.csv` for monitoring.
 
-To regenerate and repair the derived state locally:
+The existing maintenance command removes legacy price graphs without changing research dates:
 
 ```bash
-uv run papertrader indicators update
 uv run papertrader wiki sync-technical-charts
 ```
 
-The chart is presentation-only and never feeds assessments, signals, allocation, simulated orders,
-or accounting.
+It is idempotent and never inserts graphs. Price retrieval, indicators, alerts, and paper-trading
+calculations are unchanged.
 
 ## Hermes execution
 

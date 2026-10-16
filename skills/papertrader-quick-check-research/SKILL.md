@@ -49,9 +49,9 @@ Follow `skills/echart/references/papertrader-embedding.md`. If the security page
 `## Visual evidence` and update only charts affected by the alert, changed assumptions, price versus
 the buy zone, or scenario comparison. Do not rebuild the full security chart pack. An unchanged
 result with no page delta records `no_page_change`; sparse or unchanged data receives a specific
-omission instead of an invented chart. Preserve the marker-bounded `market-technicals` reference
-exactly and exclude it from `visualization_review.charts`; it is deterministic monitoring context,
-not evidence created by this quick check.
+omission instead of an invented chart. Do not add the retired `market-technicals`
+price/volume/indicator monitoring graph. Use canonical market data as research context without
+reinserting automatic price graphs.
 
 ## Source hierarchy
 

@@ -195,7 +195,7 @@ def _seed_security(repository: Path, instant: datetime) -> None:
             }
         ],
     )
-    assert sync_security_technical_charts(repository) == (repository / page,)
+    assert sync_security_technical_charts(repository) == ()
 
 
 def _market_frame(session_dates: Sequence[date]) -> pd.DataFrame:
@@ -452,7 +452,7 @@ class _CycleHermes:
             text=True,
         )
         assert sync.returncode == 0, sync.stderr
-        assert json.loads(sync.stdout) == [page]
+        assert json.loads(sync.stdout) == []
         self._run_request(
             repository,
             environment,

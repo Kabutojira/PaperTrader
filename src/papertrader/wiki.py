@@ -256,57 +256,6 @@ def technical_chart_spec(security_id: str, currency: str) -> dict[str, object]:
     }
 
 
-def _technical_chart_block(security_id: str, currency: str) -> str:
-    payload = json.dumps(
-        technical_chart_spec(security_id, currency),
-        ensure_ascii=False,
-        indent=2,
-    )
-    return (
-        f"{TECHNICAL_CHART_START}\n"
-        "This deterministic monitoring chart is derived from the repository-local market cache. "
-        "Its source CSV remains downloadable and does not feed research scoring or trading "
-        "state.\n\n"
-        f"```echart\n{payload}\n```\n"
-        f"{TECHNICAL_CHART_END}"
-    )
-
-
-def _visual_evidence_section_bounds(page_text: str) -> tuple[int, int] | None:
-    heading = re.search(r"^## Visual evidence\s*$", page_text, flags=re.MULTILINE)
-    if heading is None:
-        return None
-    following_heading = re.search(
-        r"^##(?!#)\s+.+$",
-        page_text[heading.end() :],
-        flags=re.MULTILINE,
-    )
-    end = (
-        heading.end() + following_heading.start()
-        if following_heading is not None
-        else len(page_text)
-    )
-    return heading.start(), end
-
-
-def _move_visual_evidence_after_title(page_text: str) -> str:
-    """Place the complete Visual evidence section immediately after the page H1."""
-
-    bounds = _visual_evidence_section_bounds(page_text)
-    if bounds is None:
-        raise WikiFormatError("security page lacks a Visual evidence section")
-    start, end = bounds
-    section = page_text[start:end].strip("\n")
-    before = page_text[:start].rstrip()
-    after = page_text[end:].lstrip("\n")
-    without_section = before + ("\n\n" + after if after else "\n")
-    title = re.search(r"^#(?!#)\s+.+$", without_section, flags=re.MULTILINE)
-    if title is None:
-        raise WikiFormatError("security page lacks a level-one title")
-    remainder = without_section[title.end() :].lstrip("\n")
-    return (without_section[: title.end()] + f"\n\n{section}\n\n" + remainder).rstrip() + "\n"
-
-
 def security_technical_chart_errors(
     path: Path,
     schema_path: Path,
@@ -314,36 +263,24 @@ def security_technical_chart_errors(
     security_id: str,
     currency: str,
 ) -> list[str]:
-    """Validate the one mandatory deterministic technical chart on a security page."""
+    """Reject retired price graphs while validating remaining analytical charts."""
 
+    charts, errors = parse_research_charts(path, schema_path)
     try:
         page_text = path.read_text(encoding="utf-8")
     except (OSError, UnicodeError) as exc:
-        return [f"cannot read security technical chart: {exc}"]
-    errors: list[str] = []
-    if page_text.count(TECHNICAL_CHART_START) != 1 or page_text.count(TECHNICAL_CHART_END) != 1:
-        errors.append("security page requires one marker-bounded technical chart")
-    visual_bounds = _visual_evidence_section_bounds(page_text)
-    if visual_bounds is None:
-        errors.append("security page requires a Visual evidence section")
-    else:
-        title = re.search(r"^#(?!#)\s+.+$", page_text, flags=re.MULTILINE)
-        if title is None or page_text[title.end() : visual_bounds[0]].strip():
-            errors.append("security page requires Visual evidence immediately after its title")
-    charts, chart_errors = parse_research_charts(path, schema_path)
-    errors.extend(chart_errors)
-    technical = [chart for chart in charts if chart.get("kind") == "technical"]
-    if len(technical) != 1:
-        errors.append("security page requires exactly one technical chart")
-        return errors
-    expected = technical_chart_spec(security_id, currency)
-    if technical[0] != expected:
-        errors.append("security technical chart does not match its canonical identity")
+        return [*errors, f"cannot read security research page: {exc}"]
+    if (
+        TECHNICAL_CHART_START in page_text
+        or TECHNICAL_CHART_END in page_text
+        or any(chart.get("kind") == "technical" for chart in charts)
+    ):
+        errors.append("security price charts are disabled; run wiki sync-technical-charts")
     return errors
 
 
 def validate_security_technical_charts(repository_root: Path) -> list[str]:
-    """Validate every security research page's stable technical chart reference."""
+    """Validate that security pages omit retired monitoring price graphs."""
 
     schema_path = repository_root / "schemas" / "research_chart.schema.json"
     errors: list[str] = []
@@ -377,14 +314,26 @@ def validate_security_technical_charts(repository_root: Path) -> list[str]:
 
 
 def sync_security_technical_charts(repository_root: Path) -> tuple[Path, ...]:
-    """Insert or repair stable technical chart references without changing research dates."""
+    """Remove retired price graphs without changing research text or research dates.
+
+    Retain the historical command name so existing maintenance calls cannot recreate graphs.
+    """
 
     changed: list[Path] = []
-    schema_path = repository_root / "schemas" / "research_chart.schema.json"
     marker_pattern = re.compile(
         rf"{re.escape(TECHNICAL_CHART_START)}.*?{re.escape(TECHNICAL_CHART_END)}",
         flags=re.DOTALL,
     )
+
+    def without_technical_fence(match: re.Match[str]) -> str:
+        try:
+            chart = json.loads(match.group("payload"))
+        except (ValueError, TypeError):
+            return match.group(0)
+        return (
+            "" if isinstance(chart, dict) and chart.get("kind") == "technical" else match.group(0)
+        )
+
     for security in read_table(repository_root, "securities"):
         relative = security["research_page"]
         if not relative:
@@ -401,37 +350,25 @@ def sync_security_technical_charts(repository_root: Path) -> tuple[Path, ...]:
         if not path.is_file() or path.is_symlink():
             raise WikiFormatError(f"security research page is missing or unsafe: {relative}")
         page_text = path.read_text(encoding="utf-8")
-        charts, chart_errors = parse_research_charts(path, schema_path)
-        if chart_errors:
-            raise WikiFormatError(f"cannot sync invalid chart page {relative}: {chart_errors[0]}")
-        if any(chart.get("kind") == "technical" for chart in charts) and not (
-            TECHNICAL_CHART_START in page_text and TECHNICAL_CHART_END in page_text
-        ):
-            raise WikiFormatError(f"unmarked technical chart cannot be replaced safely: {relative}")
-        if page_text.count(TECHNICAL_CHART_START) > 1 or page_text.count(TECHNICAL_CHART_END) > 1:
-            raise WikiFormatError(f"duplicate technical chart markers: {relative}")
-
-        block = _technical_chart_block(security["security_id"], security["currency"])
-        if TECHNICAL_CHART_START in page_text or TECHNICAL_CHART_END in page_text:
-            if TECHNICAL_CHART_START not in page_text or TECHNICAL_CHART_END not in page_text:
-                raise WikiFormatError(f"incomplete technical chart markers: {relative}")
-            updated = marker_pattern.sub(block, page_text, count=1)
-        else:
-            heading = re.search(r"^## Visual evidence\s*$", page_text, flags=re.MULTILINE)
-            if heading is not None:
-                insertion = heading.end()
-                updated = page_text[:insertion] + f"\n\n{block}" + page_text[insertion:]
-            else:
-                sources = re.search(r"^## Sources\s*$", page_text, flags=re.MULTILINE)
-                section = f"## Visual evidence\n\n{block}\n\n"
-                if sources is not None:
-                    updated = page_text[: sources.start()] + section + page_text[sources.start() :]
-                else:
-                    updated = page_text.rstrip() + f"\n\n{section.rstrip()}\n"
-        updated = _move_visual_evidence_after_title(updated)
-        if updated != page_text:
-            atomic_write_text(path, updated, allowed_root=repository_root)
-            changed.append(path)
+        start_count = page_text.count(TECHNICAL_CHART_START)
+        end_count = page_text.count(TECHNICAL_CHART_END)
+        if start_count != end_count or start_count > 1:
+            raise WikiFormatError(f"incomplete or duplicate technical chart markers: {relative}")
+        updated = marker_pattern.sub("", page_text)
+        if TECHNICAL_CHART_START in updated or TECHNICAL_CHART_END in updated:
+            raise WikiFormatError(f"invalid technical chart marker order: {relative}")
+        updated = ECHART_BLOCK_PATTERN.sub(without_technical_fence, updated)
+        if updated == page_text:
+            continue
+        # Drop an empty graph-only section, preserving analytical evidence and its placement.
+        updated = re.sub(
+            r"^## Visual evidence[ \t]*\r?\n\s*(?=^##(?!#)\s|\Z)",
+            "",
+            updated,
+            flags=re.MULTILINE,
+        )
+        atomic_write_text(path, updated, allowed_root=repository_root)
+        changed.append(path)
     return tuple(changed)
 
 

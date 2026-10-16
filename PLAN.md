@@ -630,3 +630,12 @@ Refresh the retrieval timestamp of the newest provider-reobserved price bar even
 values are unchanged, while continuing to preserve identical historical rows. Market retrieval now
 fails explicitly when the provider response does not reach the expected completed session, and a
 required open position reports that retained provider error during finalization.
+
+
+### 2026-10-15 — remove automatic wiki price graphs
+
+Retired the automatic price/volume/indicator blocks from security research pages. The existing
+technical-chart maintenance command now removes legacy blocks idempotently, preserves analytical
+research charts and research dates, and never recreates monitoring graphs. Security-page validation
+rejects reintroduced monitoring graphs. Canonical prices, indicator series, research decisions,
+alerts, allocation, and paper accounting remain unchanged.

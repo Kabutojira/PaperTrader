@@ -108,9 +108,9 @@ accepted rows in `relationships.csv`. Treat both sets as seeds, never as the com
 12. Review balance-sheet strength, liquidity, fresh price and FX state, invalidation, and every
     configured hard blocker. Soft gaps may lower rank but never conceal a hard blocker.
 13. Set confidence and next review date, update the security page/catalog/log, then run
-    `scripts/papertrader wiki sync-technical-charts` so a newly created page receives its canonical
-    deterministic chart reference. Use the security CLI upsert for the short structured row
-    summary.
+    `scripts/papertrader wiki sync-technical-charts` to remove any retired automatic price graphs.
+    Do not insert price/volume/indicator monitoring graphs. Use the security CLI upsert for the
+    short structured row summary.
 14. Before completing, use the assessment CLI to write exactly one current comparable result.
     Supply this operation's immutable ID as `source_operation_id`, research evidence and scenarios,
     never an allocation disposition. Deterministic code
@@ -151,9 +151,9 @@ Represent negative-earnings or otherwise meaningless P/E as `null`. Peer observa
 the same date, definition, instrument scope, currency, and canonical FX basis, with immutable
 security identity rather than ticker alone. Market share requires a common market definition and
 period. State data definitions and material caveats in chart notes, and record a specific omission
-instead of estimating unavailable or incomparable values. Preserve the marker-bounded
-`market-technicals` reference exactly; it does not satisfy this analytical chartability pass and
-must not appear in `visualization_review.charts`.
+instead of estimating unavailable or incomparable values. Do not add the retired
+`market-technicals` monitoring graph; canonical price/indicator data remains available as research
+context and does not satisfy the analytical chartability pass.
 
 ## Source hierarchy
 

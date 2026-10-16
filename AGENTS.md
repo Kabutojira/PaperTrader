@@ -499,10 +499,9 @@ Use only data justified by the operation's bounded scope. Preserve common dates,
 units, currencies, canonical FX basis, immutable identities, sources, and as-of timestamps. A
 missing or meaningless multiple such as P/E for negative earnings is `null`, never invented.
 Existing pages are enriched with analytical charts only on their next normal refresh; there is no
-bulk backfill operation for judgment-owned charts. The deterministic `market-technicals` reference
-is the sole exception: every security page carries it, and the repository migration may backfill it
-once without changing the page's research date. It is excluded from `visualization_review` because
-it is generated monitoring context, not an agent-authored analytical chart.
+bulk backfill operation for judgment-owned charts. Security pages omit the retired deterministic
+`market-technicals` price/volume/indicator graph. Keep canonical market caches and indicator
+calculations for monitoring; do not reinsert the graph or treat its removal as a research refresh.
 
 Quartz renders these blocks with the pinned local Apache ECharts asset and a visible data/source
 fallback. GitHub and no-JavaScript readers retain the JSON and surrounding analysis. Research
