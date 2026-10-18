@@ -5,6 +5,12 @@ valuation. This plan, supplied on 2026-10-18, supersedes the retired trading and
 research-governance plans preserved in the pre-migration Git ref. Implement one
 milestone at a time; validate, commit, push and inspect CI before advancing.
 
+**Schedule update from the user:** launch the research-only daily task at
+13:00 Eastern, expressed as `0 13 * * *` with IANA timezone
+`America/New_York`. This replaces the former daily time and follows daylight
+saving time. Keep the retired trading scheduler frozen; activate this schedule
+with the new independent workflows at M7.
+
 ## Product contract
 
 Retain immutable instrument `security_id` and company `issuer_id`, curated
@@ -63,8 +69,8 @@ label mocked/local checks as live.
 | Milestone | Scope and gate | Status |
 | --- | --- | --- |
 | M0 | Freeze scheduler, verified backup, exact inventory, reproduce/repair retired technical charts, capture assessment/frontmatter ordering failure; dry run changes no source data | Complete: 9056d3df; CI 39142564182 green |
-| M1 | Repeatable dry-run-by-default compact schema migration; preserve identities, current meaning, prose/citations and expiry; schema/reference/wiki tests; no invented evidence | Staged migration local gate passed; push/CI pending |
-| M2 | Standalone market/cache/indicators/valuation/ratings core; sessions/holidays, bounded batching, per-symbol failure/corrections; no LLM or portfolio paths | Pending |
+| M1 | Repeatable dry-run-by-default compact schema migration; preserve identities, current meaning, prose/citations and expiry; schema/reference/wiki tests; no invented evidence | Staged tooling gate passed: 4e3f8223; CI green; active cutover M4 |
+| M2 | Standalone market/cache/indicators/valuation/ratings core; sessions/holidays, bounded batching, per-symbol failure/corrections; no LLM or portfolio paths | Local gate passed; push/CI pending |
 | M3 | One-entity bounded queue, deterministic priorities/retries, retire old producers; census-based disposition of all 340 blocks and 13 waiting relationships; <=30 tasks | Pending |
 | M4 | Two single-model operations; bounded context/web/turn/runtime budgets; final staged Markdown and complete result validated before atomic CSV/wiki/source transaction; idempotent and rollback-safe | Pending |
 | M5 | Weekly bounded discovery/manual import and inline links; validate identity, dedupe issuers/share classes, retain citations/unresearched status; no fan-out | Pending |
@@ -142,5 +148,26 @@ or financial validation to satisfy retired tests.
   share-class tests added. Local gates passed: ten focused tests, 626 full-suite
   tests, Ruff check/format, MyPy (64 source files), and all strict legacy state
   gates. Active data remains unchanged. M0 Quartz build/link evidence remains
-  applicable because no active site input changed. Commit/push and CI pending.
+  applicable because no active site input changed. Milestone commit
+  `4e3f822365465fe7de24efb94901beff74466e5d` pushed to main; CI
+  [39144296402](https://github.com/Kabutojira/PaperTrader/actions/runs/39144296402)
+  completed successfully. Active schema cutover remains M4.
 - Details: [M1 migration](docs/migration/M1.md).
+
+## M2 evidence (in progress)
+
+- Independent market/repricing modules and versioned request/model defaults in
+  `research.ini`; no trading/account/FX imports. Active reader still frozen.
+- Session cache, small sequential batches, failed-symbol retries, HTTP/provider/
+  runtime caps, correction windows, per-symbol corporate-action reconciliation,
+  compact features and native-price research opinions implemented.
+- Tests cover closed-session no-op, holiday/exchange differences, partial failure,
+  correction, split, request budgets and pure unchanged-fact repricing.
+- Local gates: 22 focused tests and all 648 tests passed; Ruff check/format,
+  MyPy (66 source files), and strict schema/integrity/wiki/advice/reconciliation
+  passed. Active data and publication inputs remain unchanged. No live Yahoo
+  request performed; metadata/HTTP behavior is mocked and budgeted, not measured
+  live. Commit/push/CI pending.
+- User's new daily time recorded in `research.ini`: 13:00 America/New_York,
+  daylight-saving aware. It becomes active at workflow cutover; legacy runtime
+  remains disabled.
