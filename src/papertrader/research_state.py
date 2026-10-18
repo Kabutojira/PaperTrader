@@ -233,12 +233,36 @@ def validate_state(
                 raise ValueError("unsupported valuation contains invented scenarios")
         except (ValueError, InvalidOperation) as exc:
             errors.append(f"invalid assessment {row['security_id']}: {exc}")
-    if len(state["research_queue"]) > 30:
-        errors.append("research queue exceeds default pending cap")
+    from papertrader.research_queue import entity_key, queue_limits
+
+    limits = queue_limits(root)
+    if len(state["research_queue"]) > limits.max_pending:
+        errors.append("research queue exceeds configured pending cap")
+    companies: set[tuple[str, str]] = set()
     for row in state["research_queue"]:
         entities: Mapping[str, Any] = securities if row["entity_type"] == "security" else ideas
         if row["entity_type"] not in {"security", "idea"} or row["entity_id"] not in entities:
             errors.append(f"unknown queued entity: {row['entity_id']}")
         if row["status"] not in {"pending", "running", "failed"}:
             errors.append(f"invalid queue status: {row['entity_id']}")
+        try:
+            company = entity_key(state, row["entity_type"], row["entity_id"])
+            if company in companies:
+                raise ValueError("duplicate company work")
+            companies.add(company)
+            if row["manual"] not in {"true", "false"} or not row["reasons"]:
+                raise ValueError("missing queue reason or manual flag")
+            if (
+                not 0 <= int(row["priority"]) <= 100
+                or not 0 <= int(row["attempts"]) <= limits.max_attempts
+            ):
+                raise ValueError("invalid queue priority or attempts")
+            for column in ("created_at", "updated_at", "next_eligible_at"):
+                timestamp(row[column])
+            if row["status"] == "running":
+                timestamp(row["lease_until"])
+            elif row["lease_until"]:
+                raise ValueError("inactive task has a lease")
+        except ValueError as exc:
+            errors.append(f"invalid queued entity {row['entity_id']}: {exc}")
     return errors

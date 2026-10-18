@@ -70,8 +70,8 @@ label mocked/local checks as live.
 | --- | --- | --- |
 | M0 | Freeze scheduler, verified backup, exact inventory, reproduce/repair retired technical charts, capture assessment/frontmatter ordering failure; dry run changes no source data | Complete: 9056d3df; CI 39142564182 green |
 | M1 | Repeatable dry-run-by-default compact schema migration; preserve identities, current meaning, prose/citations and expiry; schema/reference/wiki tests; no invented evidence | Staged tooling gate passed: 4e3f8223; CI green; active cutover M4 |
-| M2 | Standalone market/cache/indicators/valuation/ratings core; sessions/holidays, bounded batching, per-symbol failure/corrections; no LLM or portfolio paths | Local gate passed; push/CI pending |
-| M3 | One-entity bounded queue, deterministic priorities/retries, retire old producers; census-based disposition of all 340 blocks and 13 waiting relationships; <=30 tasks | Pending |
+| M2 | Standalone market/cache/indicators/valuation/ratings core; sessions/holidays, bounded batching, per-symbol failure/corrections; no LLM or portfolio paths | Complete: 823efb96; CI 39146545315 green |
+| M3 | One-entity bounded queue, deterministic priorities/retries, retire old producers; census-based disposition of all 340 blocks and 13 waiting relationships; <=30 tasks | Local gate passed; push/CI pending |
 | M4 | Two single-model operations; bounded context/web/turn/runtime budgets; final staged Markdown and complete result validated before atomic CSV/wiki/source transaction; idempotent and rollback-safe | Pending |
 | M5 | Weekly bounded discovery/manual import and inline links; validate identity, dedupe issuers/share classes, retain citations/unresearched status; no fan-out | Pending |
 | M6 | Deterministic fresh Top 10 Buy/Sell, company/idea catalogs, recent updates and health; optional nonblocking charts; Quartz build and reviewed output/links | Pending |
@@ -167,7 +167,32 @@ or financial validation to satisfy retired tests.
   MyPy (66 source files), and strict schema/integrity/wiki/advice/reconciliation
   passed. Active data and publication inputs remain unchanged. No live Yahoo
   request performed; metadata/HTTP behavior is mocked and budgeted, not measured
-  live. Commit/push/CI pending.
+  live. Milestone commit `823efb96fe670f36b47abca36addf32c3109b4a2` pushed;
+  [CI 39146545315](https://github.com/Kabutojira/PaperTrader/actions/runs/39146545315)
+  passed, including the seeded publication cycle and Quartz build.
 - User's new daily time recorded in `research.ini`: 13:00 America/New_York,
   daylight-saving aware. It becomes active at workflow cutover; legacy runtime
   remains disabled.
+
+## M3 evidence (in progress)
+
+- Replacement company/idea queue and deterministic attention producer implemented;
+  issuer dedupe preserves instrument identities, merged reasons are idempotent,
+  capacity admits no blocked rows, and manual requests displace automatic backlog.
+- Short self-expiring sequential lease, six-hour bounded retry, completion removal,
+  and exhausted entity needs_attention preserve the last accepted research.
+- Real pinned census: all 648 legacy rows accounted for; 320 capacity blocks never
+  replayed; 15 agent-result and five dependency blocks counted without preserving
+  their old tasks; 89 relationship rows become optional inline work, including all
+  13 waiting rows. Three current manual companies retained; new queue capped at30.
+- Local verification: 43 relevant research/queue/migration/inventory tests passed;
+  Ruff check/format and MyPy (67 files) passed; strict legacy schema, integrity,
+  advice, wiki and reconciliation gates passed. Read-only CLI produced the verified
+  census and no changes under data/. Full legacy suite deferred to push-triggered
+  CI because active data, site and consumers remain unchanged.
+- Two regression fixes: normalize detailed error suffixes into canonical blocked
+  reasons, and recognize the 83 existing watching-status companies. No evidence
+  validation or expected baseline count was relaxed.
+- Active reader switch remains M4 and workflow activation M7. Old producer/queue
+  code is frozen until deletion at M8. No live LLM/provider call or deployment.
+- Details: [M3 migration](docs/migration/M3.md). Commit/push/CI pending.
