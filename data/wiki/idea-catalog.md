@@ -4,7 +4,7 @@ title: Idea catalog
 
 # Investment ideas
 
-- [AI compute, networking, and hyperscaler monetization](ideas/idea_ai_compute_networking_hyperscaler_monetization) — maintained; reviewed 2026-08-07
+- [AI compute, networking, and hyperscaler monetization](ideas/idea_ai_compute_networking_hyperscaler_monetization) — needs_attention; reviewed 2026-08-07
 - [AI-Driven Democratization of Physical Creation](ideas/idea_ai_driven_democratization_physical_creation) — maintained; reviewed 2026-09-06
 - [AI infrastructure and power bottlenecks](ideas/idea_ai_infrastructure_power) — maintained; reviewed 2026-09-06
 - [AI-native drug-discovery platforms](ideas/idea_ai_native_drug_discovery) — maintained; reviewed 2026-07-26
