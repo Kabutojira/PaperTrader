@@ -1,6 +1,24 @@
 {
   "buys": [
     {
+      "adjusted_return_pct": "41.43497662535716489167468956",
+      "assessed_at": "2026-10-18T23:21:39.032922Z",
+      "base_fair_value": "0.0800",
+      "company_name": "Agronomics Limited",
+      "confidence": "medium",
+      "currency": "GBP",
+      "expected_return_pct": "59.19282375051023555953527080",
+      "issuer_id": "issuer_ae497c82294cc1e4f730",
+      "price": "0.04460000038146973",
+      "price_date": "2026-10-16",
+      "rating": "buy",
+      "research_page": "data/wiki/securities/security_fe4648901e7675f157fd.md",
+      "security_id": "security_fe4648901e7675f157fd",
+      "ticker": "ANIC.L",
+      "valid_until": "2026-11-17T23:21:39.032922Z",
+      "weighted_fair_value": "0.0710"
+    },
+    {
       "adjusted_return_pct": "29.46060577384070830765617368",
       "assessed_at": "2026-10-18T19:50:33.927425Z",
       "base_fair_value": "310.5",
@@ -20,23 +38,23 @@
     }
   ],
   "coverage": {
-    "current": 16,
+    "current": 17,
     "failed_tickers": 0,
     "instruments": 92,
     "issuers": 91,
-    "researched": 89,
+    "researched": 90,
     "stale": 73,
-    "unrated": 85,
-    "watchlist_complete": 28,
+    "unrated": 84,
+    "watchlist_complete": 29,
     "watchlist_incomplete_research": 44,
     "watchlist_instruments": 92,
-    "watchlist_missing_research": 3,
+    "watchlist_missing_research": 2,
     "watchlist_needs_attention": 2,
     "watchlist_valuation_unsupported": 17
   },
   "last_market_session": "2026-10-16",
-  "last_research_at": "2026-10-18T23:17:23.066155Z",
-  "last_successful_research": "2026-10-18T23:19:13Z",
+  "last_research_at": "2026-10-18T23:21:39.032922Z",
+  "last_successful_research": "2026-10-18T23:24:06Z",
   "phase_health": {
     "market": "succeeded",
     "research": "succeeded"
