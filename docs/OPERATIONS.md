@@ -471,8 +471,11 @@ $papertrader-test validate this branch before merge
 
 ## Dispatch GitHub workflows
 
-The controller is scheduled for 17:00 `Europe/Rome` every day, including weekends. Scheduled and
-manual invocations use the same reusable runtime. Start with a dry run:
+The replacement daily research workflow targets **13:00 ET (`America/New_York`)**
+every day, including weekends. In M7, use `cron: '0 13 * * *'` and
+`timezone: America/New_York` to follow daylight saving automatically. The legacy
+controller remains frozen during migration; do not dispatch it. The commands
+below describe the retired runtime for reference.
 
 ```bash
 gh workflow run daily.yml \

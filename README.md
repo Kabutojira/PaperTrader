@@ -621,8 +621,10 @@ timestamps, does not persist the portfolio value, and never contacts a broker or
 
 ## Daily automation and publication
 
-The scheduled controller in `.github/workflows/daily.yml` runs at 17:00 `Europe/Rome` every day and
-uses one serialized path for both cron and manual runs. Scheduled runs execute at most five queued
+The replacement daily research workflow targets **13:00 ET (`America/New_York`)**
+every day, with daylight saving handled automatically. It will be enabled in M7;
+`.github/workflows/daily.yml` remains frozen during migration. The legacy runtime
+described below uses one serialized path for cron and manual runs. Scheduled runs execute at most five queued
 research iterations; this version-controlled limit avoids unaudited repository-variable drift.
 Manual runs may select a different `max_operations` value at or below the repository hard ceiling.
 The controller does not monitor YouTube or Seeking Alpha. It retires unclaimed legacy work from

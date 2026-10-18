@@ -31,6 +31,10 @@ label mocked/local checks as live.
 
 ## Defaults and data
 
+- Replacement daily research schedule: **13:00 ET (`America/New_York`)** every
+  day, three hours before the regular 16:00 ET US market close. M7 must use
+  `cron: '0 13 * * *'` with `timezone: America/New_York` so daylight saving is
+  automatic. Preserve the legacy workflow freeze until the replacement is ready.
 - `research.max_daily_operations = 3`, `max_pending = 30`, `max_attempts = 2`,
   `assessment_freshness_days = 30`.
 - Discovery defaults: at most weekly, one new idea and two new companies. Catalog
@@ -107,6 +111,9 @@ label mocked/local checks as live.
   market refresh or deployment was performed. M1 is next.
 
 ## Acceptance tracking
+
+Schedule update (2026-10-18): recorded the user-requested 13:00 ET replacement
+target; legacy scheduling and runtime remain disabled during migration.
 
 AC-01 research-only entry points; AC-02 one current assessment and retained sources;
 AC-03 session caching; AC-04 partial market failure; AC-05 <=3 daily/<=30 pending,

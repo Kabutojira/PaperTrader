@@ -1078,7 +1078,10 @@ PaperTrader version 1 is done when a clean scheduled run can:
 10. commit changes and send the committed investor brief to Telegram;
 11. rerun without duplicating work, signals, orders, executions, sources, wiki pages, or publication artifacts.
 
-The daily schedule is 17:00 `Europe/Rome` on all seven days. Scheduled and non-dry manual runs send
+The replacement daily research schedule targets 13:00 `America/New_York` (ET) on
+all seven days, with daylight saving handled automatically. M7 owns enabling the
+replacement; the legacy daily workflow remains frozen. In the retired runtime,
+scheduled and non-dry manual runs send
 the latest committed report after the runtime commit. Delivery verifies the bot and destination,
 uses one stable retry issue, and never replays older missed reports after a newer report exists.
 Local post-commit delivery uses `papertrader telegram deliver-run` so the report path is resolved
