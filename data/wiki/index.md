@@ -30,7 +30,7 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 Last observed market session: 2026-10-16. Last successful research: 2026-10-18T23:24:06Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
-Watchlist valuation coverage: **29 / 92 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 2; unsupported valuation: 17; incomplete research: 44. Needs attention: 2. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
+Watchlist valuation coverage: **62 / 92 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 2; unsupported valuation: 17; incomplete research: 11. Needs attention: 2. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 

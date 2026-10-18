@@ -674,3 +674,26 @@ Validation/commit/CI/deployment and live backfill evidence will be recorded belo
   registered, zero assessment/value changes. ECB is relevant solely to the
   Materialise EUR-reporting/USD-instrument valuation conversion; no portfolio FX
   process, rate cache or exposure table was created. Strict validation passed.
+- Source intake `2d7559a228d92bc16b13fc8249e9b6f1a205fe8b` passed CI39175050377.
+  Four actual sequential company reviews accepted supported bear/base/bull cases:
+  DDD39175166326 (1 model/11 web), commit e78cd7d0801d256683685e9743c87b53ff36cb95,
+  Pages39175406039; MTLS39175506251 (1/11), commit
+  7d121112af596b5e2f4c329be9ec20f73190e293, Pages39175726598;
+  PRLB39175811333 (1/12), commit 4aee401352f735ec9c5f0e50173d2eca2aaae33d,
+  Pages39176024781; ANIC39176118344 (1/12), commit
+  c1add9543e2d319d0e188ba7a5418436d80c2c80, Pages39176371037.
+  All four Pages deployments succeeded and canonical research URLs returned200.
+  Total4 actual model operations/46 web requests; coverage25->29 complete,
+  90 assessed/17 current. Default scheduled limit remains3 operations.
+- Historical narrative recovery: dry-run-by-default manual migration fills only
+  missing downside/catalyst/invalidation fields from explicit, unambiguous text in
+  the same company's same-date current page, with all existing assessment source
+  references present. Ambiguity, page-date/identity/source mismatch, current or
+  unsupported assessments are refused. No model, external request or new valuation.
+  Reviewed33 records applied atomically; coverage29->62 complete,44->11 incomplete,
+  17 unsupported and2 missing unchanged. All original fair values, probabilities,
+  methods, confidence, assessed/expiry dates, citations, pages and queue unchanged.
+  Current17/stale73 and exact Buy/Sell ranking rows unchanged; historical research
+  remains expired. Repeated apply made no changes. Full196 tests, targeted89,
+  Ruff/format/MyPy19 and strict validation passed before apply. Final data/site
+  checks, exact commit, CI and reviewed deployment evidence follow after push.

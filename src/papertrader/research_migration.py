@@ -7,6 +7,7 @@ Production cutover uses the validated transaction controller introduced in M4.
 from __future__ import annotations
 
 import argparse
+import copy
 import csv
 import hashlib
 import io
@@ -15,6 +16,7 @@ import os
 import re
 import tarfile
 import tempfile
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
@@ -22,7 +24,16 @@ import yaml
 
 from papertrader.atomic_io import atomic_write_bytes
 from papertrader.migration_inventory import _git
-from papertrader.research_state import ResearchState, Row, contracts, csv_bytes, validate_state
+from papertrader.research_ratings import valuation_coverage
+from papertrader.research_state import (
+    ResearchState,
+    Row,
+    contracts,
+    csv_bytes,
+    read_state,
+    timestamp,
+    validate_state,
+)
 
 
 def remove_retired_technicals(text: str) -> str:
@@ -67,6 +78,113 @@ def _metadata(content: bytes) -> tuple[dict[str, Any], str]:
     if not isinstance(value, dict):
         raise ValueError("research frontmatter must be a mapping")
     return value, body
+
+
+def existing_narratives(body: str) -> dict[str, str]:
+    """Extract only explicit company narrative labels, without making new judgments."""
+    labels = re.compile(
+        r"\b(?P<downside>Contrary evidence (?:is|includes|remains)|The counter-thesis is|"
+        r"(?:Key |Downside )?Risks (?:include|are)|Risks:)"
+        r"|\b(?P<catalysts>Catalysts (?:are|include)|Catalysts:)"
+        r"|\b(?P<invalidation_conditions>Invalidate (?:the (?:(?:constructive treasury|"
+        r"constructive|broader quality|broader) )?(?:thesis|case) )?(?:if|on)|"
+        r"Invalidate or (?:materially )?downgrade[^.!?]*?\bif|"
+        r"The thesis would be invalidated (?:by|if))",
+        re.I,
+    )
+    forbidden = re.compile(
+        r"\b(?:portfolio action|allocation (?:ineligible|eligibility|eligible)|"
+        r"(?:accepted|pending|canonical) (?:idea )?relationship|"
+        r"(?:canonical|trading) signals?|(?:paper|simulated|pending|trade|trading)[- ]orders?|"
+        r"paper[- ]trad(?:e|ing)|buy[- ]below|"
+        r"RSI|MACD|Bollinger|SMA|cooldown|indicator|crossover)\b",
+        re.I,
+    )
+    choices: dict[str, set[str]] = {}
+    body = re.sub(r"(?ms)^```[^\n]*\n.*?^```[ \t]*$", "", body)
+    for section in re.finditer(r"^## ([^\n]+)\n(.*?)(?=^## |\Z)", body, re.M | re.S):
+        heading, content = section.groups()
+        if not any(
+            word in heading.lower()
+            for word in ("thesis", "economics", "business", "valuation", "risk", "catalyst")
+        ) or any(
+            word in heading.lower()
+            for word in ("idea", "changes", "decision", "disposition", "history")
+        ):
+            continue
+        for paragraph in re.split(r"\n\s*\n", content):
+            text = " ".join(paragraph.replace("**", "").split())
+            matches = list(labels.finditer(text))
+            for index, match in enumerate(matches):
+                end = matches[index + 1].start() if index + 1 < len(matches) else len(text)
+                excerpt = text[match.start() : end].strip()
+                if len(excerpt) > 12000 or forbidden.search(excerpt):
+                    continue
+                assert match.lastgroup is not None
+                choices.setdefault(match.lastgroup, set()).add(excerpt)
+    return {field: next(iter(values)) for field, values in choices.items() if len(values) == 1}
+
+
+def recover_narratives(
+    root: Path, *, apply: bool = False, now: datetime | None = None
+) -> dict[str, Any]:
+    """One-time current-table repair; expired research stays expired, including dates."""
+    from papertrader.research_results import commit_result
+    from papertrader.research_transaction import research_lock, safe_path
+
+    now = now or datetime.now(UTC)
+    with research_lock(root):
+        state = read_state(root)
+        if validate_state(root, state):
+            raise ValueError("invalid current research data")
+        candidate = copy.deepcopy(state)
+        securities = {row["security_id"]: row for row in state["securities"]}
+        sources = {row["source_id"]: row for row in state["source_registry"]}
+        changes, skipped = [], []
+        for assessment in candidate["security_assessments"]:
+            if valuation_coverage(assessment) != "incomplete_research":
+                continue
+            identity = securities[assessment["security_id"]]
+            path = identity["research_page"]
+            content = safe_path(root, path).read_bytes() if path else b""
+            if timestamp(assessment["valid_until"]) >= now or len(content) > 80000:
+                skipped.append(dict(security_id=identity["security_id"], reason="not_historical"))
+                continue
+            metadata, body = _metadata(content)
+            references = list(filter(None, assessment["source_ids"].split("|")))
+            if (
+                metadata.get("security_id") != identity["security_id"]
+                or metadata.get("issuer_id") != identity["issuer_id"]
+                or str(metadata.get("updated", ""))
+                != timestamp(assessment["assessed_at"]).date().isoformat()
+                or not references
+                or any(ref not in body and sources[ref]["url"] not in body for ref in references)
+            ):
+                skipped.append(
+                    dict(security_id=identity["security_id"], reason="page_evidence_mismatch")
+                )
+                continue
+            missing = {
+                field
+                for field in ("downside", "catalysts", "invalidation_conditions")
+                if not assessment[field]
+            }
+            extracted = existing_narratives(body)
+            updates = {field: extracted[field] for field in sorted(missing) if field in extracted}
+            trial = {**assessment, **updates}
+            if not updates or valuation_coverage(trial) != "complete":
+                skipped.append(
+                    dict(security_id=identity["security_id"], reason="ambiguous_or_missing_text")
+                )
+                continue
+            assessment.update(updates)
+            changes.append(dict(security_id=identity["security_id"], page=path, fields=updates))
+        if validate_state(root, candidate):
+            raise ValueError("invalid recovered research data")
+        changed = commit_result(root, candidate, {}) if apply and changes else []
+        return dict(
+            mode="apply" if apply else "dry_run", changes=changes, skipped=skipped, changed=changed
+        )
 
 
 def prepare_migration(
@@ -262,10 +380,21 @@ def stage_migration(root: Path, revision: str, destination: Path) -> dict[str, A
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--repository", type=Path, default=Path.cwd())
-    parser.add_argument("--revision", required=True)
+    mode = parser.add_mutually_exclusive_group(required=True)
+    mode.add_argument("--revision")
+    mode.add_argument("--recover-narratives", action="store_true")
+    parser.add_argument(
+        "--apply", action="store_true", help="apply historical narrative recovery only"
+    )
     parser.add_argument("--stage", type=Path, help="explicit isolated output; never active data")
     arguments = parser.parse_args()
-    if arguments.stage:
+    if arguments.recover_narratives:
+        if arguments.stage:
+            parser.error("narrative recovery does not use a legacy staging directory")
+        report = recover_narratives(arguments.repository, apply=arguments.apply)
+    elif arguments.apply:
+        parser.error("legacy conversion requires --stage, not --apply")
+    elif arguments.stage:
         report = stage_migration(arguments.repository, arguments.revision, arguments.stage)
     else:
         _, _, report = prepare_migration(arguments.repository, arguments.revision)

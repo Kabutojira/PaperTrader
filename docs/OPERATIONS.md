@@ -199,3 +199,15 @@ retains bounded excerpts from all seen windows for the existing copying check;
 only metadata, citations, verified facts and original synthesis can reach the
 current repository. Source hashes bind the fetched document. No model-turn,
 external-request or research-operation budget increases with PDF support.
+
+Historical scenario completeness can be repaired only from existing explicit prose:
+`uv run python -m papertrader.research_migration --recover-narratives` previews;
+add `--apply` after reviewing each proposed excerpt. This manual migration is never
+called by the scheduled runtime. It requires expired supported research, exact
+security/issuer identity, page date matching the assessment date, and all existing
+source references present in the page. It refuses ambiguity and leaves incomplete
+records for real research. Only missing downside/catalyst/invalidation fields can
+change; it preserves dates, values, probabilities, sources, pages and queue state.
+Regenerate deterministic views and validate after applying. Historical completeness
+and current valuation freshness remain separate: recovery cannot renew research or
+admit expired research into Buy/Sell rankings. Repeat application is a no-op.
