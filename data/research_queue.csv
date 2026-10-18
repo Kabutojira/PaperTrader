@@ -24,7 +24,6 @@ security,security_97f38b2cb2d5ef127f5a,80,research_overdue|severe_price_movement
 security,security_98470cfc01bbcde78fc2,100,manual_primary_source_review|research_overdue,2026-10-18T17:00:00Z,2026-10-18T17:00:00Z,pending,0,2026-10-18T17:00:00Z,,true,
 security,security_a5dc16f3f4b245e6c168,80,research_overdue|severe_price_movement,2026-10-18T18:50:04Z,2026-10-18T18:50:04Z,pending,0,2026-10-18T18:50:04Z,,false,
 security,security_a9eb9838940ef5ceaa0c,80,research_overdue|severe_price_movement,2026-10-18T18:50:04Z,2026-10-18T18:50:04Z,pending,0,2026-10-18T18:50:04Z,,false,
-security,security_c150f31c30afdb4a85f9,100,explicit_manual_request|manual_primary_source_review|research_overdue,2026-10-18T17:00:00Z,2026-10-18T18:56:07Z,failed,1,2026-10-19T00:56:07Z,,true,ValueError
 security,security_c2e6db30cb59254de418,80,research_overdue|severe_price_movement,2026-10-18T18:50:04Z,2026-10-18T18:50:04Z,pending,0,2026-10-18T18:50:04Z,,false,
 security,security_cd492d97064d8574156e,100,manual_primary_source_review|research_overdue,2026-10-18T17:00:00Z,2026-10-18T17:00:00Z,pending,0,2026-10-18T17:00:00Z,,true,
 security,security_ed7d5b616a196969c815,80,research_overdue|severe_price_movement,2026-10-18T18:50:04Z,2026-10-18T18:50:04Z,pending,0,2026-10-18T18:50:04Z,,false,
