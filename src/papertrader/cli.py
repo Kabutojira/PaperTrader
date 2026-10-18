@@ -182,7 +182,7 @@ def _parser() -> argparse.ArgumentParser:
     wiki_commands.add_parser(
         "sync-technical-charts",
         help="remove retired price graphs from security pages without changing research dates",
-    )
+    ).add_argument("--dry-run", action="store_true", help="list affected pages without writing")
     wiki_maintain = wiki_commands.add_parser(
         "maintain", help="run the bundled native llm-wiki maintenance procedure"
     )
@@ -1299,7 +1299,7 @@ def _dispatch_wiki(arguments: argparse.Namespace, root: Path, settings: Settings
         print(path.relative_to(root).as_posix())
         return 0
     if arguments.wiki_command == "sync-technical-charts":
-        changed = sync_security_technical_charts(root)
+        changed = sync_security_technical_charts(root, dry_run=arguments.dry_run)
         print(json.dumps([path.relative_to(root).as_posix() for path in changed]))
         return 0
     candidate_paths = refresh_candidate_packet_display(root, settings)

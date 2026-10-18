@@ -18,36 +18,6 @@ next_review: "2026-09-30"
 
 # ROBOTIS Co., Ltd. common shares
 
-## Visual evidence
-
-<!-- papertrader:technical-chart:start -->
-This deterministic monitoring chart is derived from the repository-local market cache. Its source CSV remains downloadable and does not feed research scoring or trading state.
-
-```echart
-{
-  "schema_version": 2,
-  "chart_id": "market-technicals",
-  "kind": "technical",
-  "title": "One-year price, volume, and technical indicators",
-  "description": "Adjusted daily OHLC with Bollinger bands and moving averages, followed by volume, RSI, and MACD panels from the deterministic PaperTrader market cache.",
-  "security_id": "security_0c8b3c4291cd97f56d8c",
-  "currency": "KRW",
-  "price_basis": "adjusted",
-  "window_days": 365,
-  "data_path": "data/market/technical/security_0c8b3c4291cd97f56d8c.csv",
-  "sources": [
-    {
-      "label": "Canonical PaperTrader price cache and deterministic TA-Lib projection"
-    }
-  ],
-  "notes": [
-    "Adjusted OHLC aligns price history with indicators calculated from adjusted close.",
-    "Technical indicators are research alerts, not trade signals."
-  ]
-}
-```
-<!-- papertrader:technical-chart:end -->
-
 ## Decision
 
 **Strong Sell / Avoid; allocation ineligible; no strategy.** ROBOTIS has a real, growing actuator

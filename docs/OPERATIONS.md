@@ -1,5 +1,13 @@
 # PaperTrader operating runbook
 
+> **Research-only migration — 2026-10-18.** The research-only specification in
+> [PLAN.md](../PLAN.md) supersedes conflicting legacy instructions below. Portfolio,
+> trading, allocation, alerts, final-buy review and growing research history are
+> being retired. The legacy daily workflow is frozen; do not enable or dispatch
+> it during migration. Keep the last published site available until M6/M7.
+> Current data remains on legacy contracts until M1. Preserve current research,
+> stable instrument/issuer identities and citations; Git holds historical state.
+
 This runbook covers version-1 operation from a clean checkout. `AGENTS.md`, the JSON/CSV schemas,
 and the repository-local skills remain authoritative if an example here ever conflicts with a
 contract.

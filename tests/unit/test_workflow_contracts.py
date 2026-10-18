@@ -106,8 +106,8 @@ def test_daily_manual_inputs_schedule_and_serialized_reusable_graph(
         "default": "false",
         "type": "boolean",
     }
-    assert "schedule" in triggers
-    assert triggers["schedule"] == [{"cron": "0 17 * * *", "timezone": "Europe/Rome"}]
+    assert "schedule" not in triggers
+    assert daily["jobs"]["runtime"]["if"] == "${{ false }}"
     assert daily["concurrency"] == {
         "group": "papertrader-write",
         "cancel-in-progress": "false",

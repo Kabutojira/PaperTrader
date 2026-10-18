@@ -1,9 +1,6 @@
-name: Serialized daily PaperTrader run
+name: Legacy daily run (frozen for research-only migration)
 
 on:
-  schedule:
-    - cron: "0 17 * * *"
-      timezone: "Europe/Rome"
   workflow_dispatch:
     inputs:
       operation_id:
@@ -61,6 +58,8 @@ concurrency:
 
 jobs:
   runtime:
+    # M0 freeze: even manual dispatch cannot resume the retired trading pipeline.
+    if: ${{ false }}
     uses: ./.github/workflows/reusable-llm.yml
     permissions:
       contents: write

@@ -1,0 +1,10 @@
+{
+  "baseline_ref": "pre-research-only-20261018",
+  "operation_id": "01KZGT11ZGXJ00MTZMADHQM6KM",
+  "run_id": "daily-20261015T184652Z",
+  "reason_code": "assessment_page_hash_mismatch",
+  "recorded_page_sha256": "6fbd020446be71e8560d646c55d5abcda91b70ac0e748eb53c86e4b61ef033f6",
+  "final_page_sha256": "bdfc78542c5deb4c5c66980f01bd6d9e7e84fe6f5663c9ce953e781c4f7cdc8a",
+  "trigger": "Required YAML frontmatter repair after the immutable assessment was accepted",
+  "target_behavior": "Validate final staged Markdown before applying one latest-only assessment; rejected results leave all current research unchanged"
+}

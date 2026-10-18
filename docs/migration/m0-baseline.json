@@ -1,0 +1,58 @@
+{
+  "analytical_charts_preserved": 39,
+  "as_of": "2026-10-18",
+  "assessment_coverage": {
+    "expired": 82,
+    "total": 83
+  },
+  "backup_ref": "pre-research-only-20261018",
+  "backup_tag_object": "2b39cd27d480125e15c68ecf979f401042c050bb",
+  "baseline_sha": "0ab7ec85bf10d55c6a26dcc95511f5c32716a48f",
+  "blocked_by_reason": {
+    "agent_result": 15,
+    "dependency_unavailable": 5,
+    "scope_deferred_for_capacity": 320
+  },
+  "capacity_blocked_by_type": {
+    "opportunity_research": 229,
+    "quick_check_research": 2,
+    "relationship_research": 4,
+    "security_research": 85
+  },
+  "csv_files": 218,
+  "data_bytes": 58902770,
+  "file_count": 8227,
+  "issuers": 91,
+  "last_successful_pages": {
+    "run_id": 38771728304,
+    "sha": "6399463e7bfb91888da28a15ee4100a369a9a2df",
+    "url": "https://github.com/Kabutojira/PaperTrader/actions/runs/38771728304"
+  },
+  "queue_by_status": {
+    "blocked": 340,
+    "ready": 295,
+    "waiting": 13
+  },
+  "recent_failures": [
+    {
+      "date": "2026-10-17",
+      "run_id": 39054418403,
+      "step": "Validate prepared daily-cycle integrity before research work"
+    },
+    {
+      "date": "2026-10-16",
+      "run_id": 38947769282,
+      "step": "Validate prepared daily-cycle integrity before research work"
+    },
+    {
+      "date": "2026-10-16",
+      "run_id": 38897043032,
+      "step": "Run integrity checks"
+    }
+  ],
+  "remote_log_limit": "Failed-step metadata available; failed-log endpoint returned no log content. Chart signature reproduced locally, not asserted from inaccessible logs.",
+  "securities": 92,
+  "sources": 366,
+  "technical_chart_failure_pages": 83,
+  "wiki_pages": 1295
+}

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from datetime import UTC, datetime
 from pathlib import Path
 
@@ -12,8 +13,31 @@ from papertrader.research import (
     upsert_assessment,
 )
 from papertrader.tables import contract_by_name, read_table, write_table
+from papertrader.utils import content_hash
 
 NOW = datetime(2026, 7, 24, 22, tzinfo=UTC)
+
+
+def test_capture_legacy_frontmatter_after_assessment_ordering_failure(
+    sandbox_repository: Path, sandbox_settings: Settings, repository_root: Path
+) -> None:
+    """M0 reproducer; M4 must replace the failing sequence with staged current writes."""
+
+    fixture = json.loads(
+        (repository_root / "tests/fixtures/migration/assessment_page_ordering.json").read_text()
+    )
+    assert fixture["recorded_page_sha256"] != fixture["final_page_sha256"]
+    page = sandbox_repository / "data/wiki/securities/sec_revision.md"
+    page.write_text("---\ntitle: Revision: Corp\n---\n\n# Revision\n")
+    write_table(sandbox_repository, "securities", [_security()])
+    write_table(sandbox_repository, "source_registry", [_source()])
+    assessment = _assessment(assessed_at="2026-07-24T21:00:00Z", score="70")
+    assert upsert_assessment(sandbox_repository, sandbox_settings, assessment, now=NOW)
+    history = read_table(sandbox_repository, "security_assessment_history")
+    assert history[0]["research_page_hash"] == content_hash(page.read_bytes())
+    page.write_text('---\ntitle: "Revision: Corp"\n---\n\n# Revision\n')
+    assert history[0]["research_page_hash"] != content_hash(page.read_bytes())
+    assert read_table(sandbox_repository, "security_assessment_history") == history
 
 
 def test_v2_backfill_priority_orders_exposure_near_miss_stale_and_watchlist() -> None:

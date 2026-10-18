@@ -1,5 +1,13 @@
 # AGENTS.md
 
+> **Research-only migration — 2026-10-18.** The research-only specification in
+> [PLAN.md](PLAN.md) supersedes conflicting legacy instructions below. Portfolio,
+> trading, allocation, alerts, final-buy review and growing research history are
+> being retired. The legacy daily workflow is frozen; do not enable or dispatch
+> it during migration. Keep the last published site available until M6/M7.
+> Current data remains on legacy contracts until M1. Preserve current research,
+> stable instrument/issuer identities and citations; Git holds historical state.
+
 ## Project mission
 
 PaperTrader is a public, Git-native paper-trading research system. It monitors securities, maintains an interlinked investment wiki, converts research into explicit strategies, simulates trades, measures results, and publishes a daily report plus an investor-facing decision dashboard and copyable model portfolio.

@@ -313,13 +313,16 @@ def validate_security_technical_charts(repository_root: Path) -> list[str]:
     return errors
 
 
-def sync_security_technical_charts(repository_root: Path) -> tuple[Path, ...]:
+def sync_security_technical_charts(
+    repository_root: Path, *, dry_run: bool = False
+) -> tuple[Path, ...]:
     """Remove retired price graphs without changing research text or research dates.
 
     Retain the historical command name so existing maintenance calls cannot recreate graphs.
     """
 
-    changed: list[Path] = []
+    # Plan every edit first: an unsafe later page must not leave an earlier page changed.
+    planned: dict[Path, str] = {}
     marker_pattern = re.compile(
         rf"{re.escape(TECHNICAL_CHART_START)}.*?{re.escape(TECHNICAL_CHART_END)}",
         flags=re.DOTALL,
@@ -367,9 +370,11 @@ def sync_security_technical_charts(repository_root: Path) -> tuple[Path, ...]:
             updated,
             flags=re.MULTILINE,
         )
-        atomic_write_text(path, updated, allowed_root=repository_root)
-        changed.append(path)
-    return tuple(changed)
+        planned[path] = updated
+    if not dry_run:
+        for path, updated in planned.items():
+            atomic_write_text(path, updated, allowed_root=repository_root)
+    return tuple(planned)
 
 
 def _frontmatter(path: Path) -> tuple[Mapping[object, object], str]:

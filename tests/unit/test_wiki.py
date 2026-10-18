@@ -39,6 +39,23 @@ def _series_chart() -> dict[str, object]:
     }
 
 
+def test_technical_cleanup_validates_all_pages_before_writing(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    pages = tmp_path / "data/wiki/securities"
+    pages.mkdir(parents=True)
+    first = pages / "first.md"
+    first.write_text(f"# First\n{TECHNICAL_CHART_START}\nold graph\n{TECHNICAL_CHART_END}\n")
+    second = pages / "second.md"
+    second.write_text(f"# Second\n{TECHNICAL_CHART_START}\n")
+    rows = [{"research_page": f"data/wiki/securities/{name}.md"} for name in ("first", "second")]
+    monkeypatch.setattr(wiki_module, "read_table", lambda *args: rows)
+    before = first.read_bytes()
+    with pytest.raises(wiki_module.WikiFormatError, match="incomplete or duplicate"):
+        sync_security_technical_charts(tmp_path)
+    assert first.read_bytes() == before
+
+
 @pytest.mark.slow
 def test_initial_wiki_is_clean(repository_root: Path) -> None:
     assert lint_wiki(repository_root / "data" / "wiki") == []
@@ -281,6 +298,9 @@ Research content stays unchanged.
             currency="USD",
         )
     )
+    before = page.read_bytes()
+    assert sync_security_technical_charts(sandbox_repository, dry_run=True) == (page,)
+    assert page.read_bytes() == before
     changed = sync_security_technical_charts(sandbox_repository)
     updated = page.read_text(encoding="utf-8")
 

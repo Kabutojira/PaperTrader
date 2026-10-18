@@ -14,36 +14,6 @@ next_review: "2026-09-17"
 
 # Nebius Group N.V. Class A ordinary shares
 
-## Visual evidence
-
-<!-- papertrader:technical-chart:start -->
-This deterministic monitoring chart is derived from the repository-local market cache. Its source CSV remains downloadable and does not feed research scoring or trading state.
-
-```echart
-{
-  "schema_version": 2,
-  "chart_id": "market-technicals",
-  "kind": "technical",
-  "title": "One-year price, volume, and technical indicators",
-  "description": "Adjusted daily OHLC with Bollinger bands and moving averages, followed by volume, RSI, and MACD panels from the deterministic PaperTrader market cache.",
-  "security_id": "security_47a0b06f6c6c478d7c1e",
-  "currency": "USD",
-  "price_basis": "adjusted",
-  "window_days": 365,
-  "data_path": "data/market/technical/security_47a0b06f6c6c478d7c1e.csv",
-  "sources": [
-    {
-      "label": "Canonical PaperTrader price cache and deterministic TA-Lib projection"
-    }
-  ],
-  "notes": [
-    "Adjusted OHLC aligns price history with indicators calculated from adjusted close.",
-    "Technical indicators are research alerts, not trade signals."
-  ]
-}
-```
-<!-- papertrader:technical-chart:end -->
-
 ## Identity
 
 - Immutable security: `security_47a0b06f6c6c478d7c1e`
