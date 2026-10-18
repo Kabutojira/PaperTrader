@@ -697,3 +697,22 @@ Validation/commit/CI/deployment and live backfill evidence will be recorded belo
   remains expired. Repeated apply made no changes. Full196 tests, targeted89,
   Ruff/format/MyPy19 and strict validation passed before apply. Final data/site
   checks, exact commit, CI and reviewed deployment evidence follow after push.
+- Narrative recovery `8f92b50d9b9cd1daf8b6591a7c90a7ad2c22c633` passed
+  [CI39177542295](https://github.com/Kabutojira/PaperTrader/actions/runs/39177542295).
+  Reviewed Quartz150 Markdown/205 outputs and internal links passed; actual
+  Pages39177645476 succeeded, public homepage/catalog/metadata returned200 and
+  exact revision matched. Baseline coverage62/92, current17, stale73.
+- Actual remaining Evonik retry
+  [39177725559](https://github.com/Kabutojira/PaperTrader/actions/runs/39177725559)
+  accepted supported EUR scenarios (1 model/12 web), commit
+  51138d32c302b87554df4d79cf9dd829698c765a; automatic Pages39177975040 triggered.
+  Coverage63 complete,11 incomplete,17 unsupported,1 missing;91 assessed/18 current.
+  No attempt counter reset or copied-source-text validation exception.
+- Twelve bounded engineering broker requests across two source-qualification
+  passes opened direct Planet, Nomad Foods and Eaton financial releases plus a
+  PayPal navigation locator. Six endpoint attempts failed (timeout/403); the request total includes redirects;
+  only the3 financial-release metadata leads were registered. No raw source text,
+  financial facts, scenarios or assessments changed during intake. These calls are
+  separate from model operation counters. Native lookup used8 queries,2 page
+  opens and2 document-link opens to identify issuer endpoints; search snippets
+  and navigation were not treated as financial evidence. Strict validation follows.
