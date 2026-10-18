@@ -55,8 +55,11 @@ assessment.assessed_at; set valid_until later than assessed_at and no more than
 context.limits.assessment_freshness_days later. Leave source.published_at empty when
 the exact UTC publication time is unknown; never invent midnight or a timezone.
 Explain thesis, method and assumptions, downside, catalysts, invalidation,
-confidence and limitations. Supported valuations need ordered bear/base/bull per
-share values in the instrument's native currency and probabilities totaling100.
+confidence and limitations. Set confidence to exactly low, medium or high. Set
+assessment.research_status to exactly supported, unrated or valuation_unsupported;
+a not_supportable outcome uses valuation_unsupported. Supported valuations need
+ordered bear/base/bull per share values in the instrument's native currency and
+probabilities totaling100.
 All eight assessment narratives/evidence fields—thesis, method_rationale,
 key_assumptions, downside, catalysts, invalidation_conditions, limitations and
 source_ids—must be nonempty and explain what is known or unknown, including for an

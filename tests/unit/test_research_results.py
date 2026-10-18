@@ -4,7 +4,7 @@ import hashlib
 import json
 import os
 import shutil
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from typing import Any
 from urllib.error import HTTPError
@@ -21,6 +21,7 @@ from papertrader.research_agent import (
     run_model,
 )
 from papertrader.research_cli import main
+from papertrader.research_publication import snapshot
 from papertrader.research_queue import admit
 from papertrader.research_results import (
     ResearchResultValidationError,
@@ -304,6 +305,43 @@ def test_invalid_result_changes_no_source_csv_or_page(current: Path, corruption:
             observations=observed,
         )
     assert data_bytes(current) == before
+
+
+def test_unassessed_needs_attention_may_lack_page_but_assessed_security_may_not(
+    current: Path,
+) -> None:
+    state = read_state(current)
+    security = state["securities"][0]
+    security.update(research_status="needs_attention", research_page="")
+
+    assert validate_state(current, state) == []
+
+    document = result(current)
+    state["source_registry"] = document["sources"]
+    state["security_assessments"] = [document["assessment"]]
+    errors = validate_state(current, state)
+
+    assert any(error.startswith("missing research page:") for error in errors)
+
+
+def test_global_state_failure_uses_redacted_static_diagnostic(current: Path) -> None:
+    state = read_state(current)
+    state["securities"][1].update(research_status="researched", research_page="")
+
+    with pytest.raises(ResearchResultValidationError) as failure:
+        prepare_result(
+            current,
+            state,
+            result(current),
+            operation="research_security",
+            entity_id="security1",
+            now=NOW,
+            observations=observations(),
+        )
+
+    assert failure.value.diagnostic_code == "state.research_page.invalid"
+    assert str(failure.value) == "invalid research result field"
+    assert "security2" not in str(failure.value)
 
 
 @pytest.mark.parametrize(
@@ -682,6 +720,94 @@ def test_invalid_result_does_not_starve_later_entities_and_cycle_is_bounded(curr
     assert (current / "data/wiki/securities/security1.md").read_bytes() == before_page
 
 
+def test_exhausted_first_review_persists_and_unrelated_research_and_publication_continue(
+    current: Path,
+) -> None:
+    accepted, pages = prepare_result(
+        current,
+        read_state(current),
+        result(current),
+        operation="research_security",
+        entity_id="security1",
+        now=NOW,
+        observations=observations(),
+    )
+    with research_lock(current):
+        commit_result(current, accepted, pages)
+    prior_assessment = [row.copy() for row in read_state(current)["security_assessments"]]
+    prior_page = (current / "data/wiki/securities/security1.md").read_bytes()
+
+    state = read_state(current)
+    second = state["securities"][1]
+    old_second_page = current / second["research_page"]
+    second.update(research_status="unresearched", research_page="")
+    admit(
+        state,
+        "security",
+        "security2",
+        reasons={"valuation_coverage_gap"},
+        priority=100,
+        manual=True,
+        now=NOW,
+    )
+    admit(
+        state,
+        "security",
+        "security1",
+        reasons={"research_overdue"},
+        priority=90,
+        now=NOW,
+    )
+    write_state(current, state)
+    old_second_page.unlink()
+    calls: list[str] = []
+
+    def execute(_root: Path, packet: dict[str, Any], _limits: ResearchLimits) -> dict[str, Any]:
+        identity = packet["identity"]["security_id"]
+        calls.append(identity)
+        if identity == "security2":
+            raise RuntimeError("provider body must remain private")
+        return {
+            "result": {
+                "operation": "research_security",
+                "entity_id": identity,
+                "outcome": "no_change",
+                "summary": "Current assessment reviewed without changes.",
+                "assessment": None,
+                "idea": None,
+                "sources": [],
+                "relationships": [],
+                "pages": {},
+            },
+            "observations": {},
+            "usage": {},
+        }
+
+    first = run_cycle(current, dry_run=False, executor=execute, clock=lambda: NOW)
+
+    assert first["exit_code"] == 3
+    assert calls == ["security2", "security1"]
+    assert read_state(current)["research_queue"][0]["status"] == "failed"
+
+    exhausted_at = NOW + timedelta(hours=6)
+    second_run = run_cycle(current, dry_run=False, executor=execute, clock=lambda: exhausted_at)
+    final = read_state(current)
+
+    assert second_run["exit_code"] == 3
+    assert second_run["outcomes"][0]["status"] == "needs_attention"
+    assert calls == ["security2", "security1", "security2"]
+    assert final["research_queue"] == []
+    failed_security = next(row for row in final["securities"] if row["security_id"] == "security2")
+    assert failed_security["research_status"] == "needs_attention"
+    assert failed_security["research_page"] == ""
+    assert final["security_assessments"] == prior_assessment
+    assert (current / "data/wiki/securities/security1.md").read_bytes() == prior_page
+    assert validate_state(current, final) == []
+    publication = snapshot(current, now=exhausted_at)
+    assert publication["coverage"]["watchlist_needs_attention"] == 1
+    assert publication["coverage"]["watchlist_missing_research"] == 1
+
+
 def test_invalid_worker_result_reports_validation_location_and_bounded_usage(current: Path) -> None:
     state = read_state(current)
     admit(state, "security", "security1", reasons={"manual"}, priority=100, manual=True, now=NOW)
@@ -710,7 +836,8 @@ def test_invalid_worker_result_reports_validation_location_and_bounded_usage(cur
         "entity_id": "security1",
         "status": "retry_scheduled",
         "stage": "validation",
-        "error": "ValueError",
+        "error": "ResearchResultValidationError",
+        "code": "state.assessment.invalid",
         "location": "redacted",
         "web_requests": str(ResearchLimits().max_web_calls),
     }
@@ -761,6 +888,8 @@ def test_worker_prompt_states_exact_current_research_contract() -> None:
         "A generic corporate\nhomepage is not financial evidence",
         "All eight assessment narratives/evidence fields",
         "including for an\nunsupported valuation",
+        "confidence to exactly low, medium or high",
+        "research_status to exactly supported, unrated or valuation_unsupported",
         "Never carry unverified prior numbers forward",
     ):
         assert requirement in POLICY

@@ -75,6 +75,9 @@ RESULT_VALIDATION_CODES = frozenset(
         "source.related_entity_ids.target_missing",
         "source.published_at.future",
         "source.published_at.invalid",
+        "state.assessment.invalid",
+        "state.integrity.invalid",
+        "state.research_page.invalid",
     }
 )
 
@@ -94,6 +97,23 @@ def _model_timestamp(value: str, field: str) -> datetime:
         return timestamp(value)
     except ValueError:
         raise ResearchResultValidationError(f"{field}.invalid") from None
+
+
+def _state_validation_code(errors: list[str]) -> str:
+    page_prefixes = (
+        "broken entity wikilink:",
+        "missing or invalid research page:",
+        "missing research page:",
+        "unsafe research page:",
+    )
+    if any(error.startswith(page_prefixes) for error in errors):
+        return "state.research_page.invalid"
+    if any(
+        error.startswith(("assessment identity/currency mismatch:", "invalid assessment "))
+        for error in errors
+    ):
+        return "state.assessment.invalid"
+    return "state.integrity.invalid"
 
 
 def _row(value: Any, columns: tuple[str, ...]) -> Row:
@@ -406,7 +426,7 @@ def prepare_result(
     all_pages.update(pages)
     errors = validate_state(root, candidate, pages=all_pages)
     if errors:
-        raise ValueError("; ".join(errors[:8]))
+        raise ResearchResultValidationError(_state_validation_code(errors))
     return candidate, pages
 
 

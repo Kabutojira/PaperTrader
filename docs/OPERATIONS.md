@@ -176,3 +176,11 @@ are invalid. Every assessment/idea/relationship source token must match a source
 row in the result or current context; a verified lead still needs a complete valid
 source update after reopening. An unresolved source reference is a rejected result,
 not evidence that a company cannot be valued.
+
+An unassessed company may have `needs_attention` with no research page after its
+bounded attempts are exhausted. This records a failed review, never a valuation.
+Assessed or researched companies still require their current valid page. Global
+candidate validation reports only static page/assessment/integrity categories;
+raw rejected results and source text are not published. If Git rejects an invalid
+failure state, recover the observed spent attempt through the deterministic queue
+controller after repair; do not reset attempts or silently repeat a model call.

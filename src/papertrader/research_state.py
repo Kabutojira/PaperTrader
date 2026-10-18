@@ -158,6 +158,7 @@ def validate_state(
     securities = {row["security_id"]: row for row in state["securities"]}
     ideas = {row["idea_id"]: row for row in state["ideas"]}
     sources = {row["source_id"]: row for row in state["source_registry"]}
+    assessed_security_ids = {row["security_id"] for row in state["security_assessments"]}
     for row in state["source_registry"]:
         if not source_url(row["url"]):
             errors.append(f"source URL invalid: {row['source_id']}")
@@ -188,7 +189,12 @@ def validate_state(
         for row in state[name]:
             relative = row["research_page"]
             if not relative:
-                if row.get("research_status", "unresearched") != "unresearched":
+                missing_page_allowed = row.get("research_status", "unresearched") == "unresearched"
+                if name == "securities":
+                    missing_page_allowed = row["security_id"] not in assessed_security_ids and row[
+                        "research_status"
+                    ] in {"unresearched", "needs_attention"}
+                if not missing_page_allowed:
                     errors.append(f"missing research page: {row}")
                 continue
             path = PurePosixPath(relative)

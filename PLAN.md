@@ -595,3 +595,25 @@ Validation/commit/CI/deployment and live backfill evidence will be recorded belo
   instructions: reference lists use exact source IDs joined by pipes, and every
   token must match a supplied source row or existing context source. Existing
   evidence validation and the two-attempt ceiling remain unchanged.
+- Source-format clarification `6dd807981e4a1922d01dd7e5c58ebc89f736f6fc`
+  initially failed CI39171140306 on one stale prompt-text assertion (182 passed).
+  Mechanical correction `41c152e15567f6165d5583f980090dab9d33bb77` passed
+  [CI39171287075](https://github.com/Kabutojira/PaperTrader/actions/runs/39171287075).
+- Actual Stratasys second attempt [39171413149](https://github.com/Kabutojira/PaperTrader/actions/runs/39171413149)
+  used1 model operation/9 web requests. Source-reference checks passed, but global
+  candidate validation rejected the result; no valuation was accepted. Exhaustion
+  exposed a separate persistence bug: an unassessed needs_attention company with
+  no page made state invalid. Commit-runtime refused that state (exit4); automatic
+  Pages39171630508 retained the prior site and skipped build/deployment.
+- Repair permits a blank page only for unassessed unresearched/needs_attention
+  securities; assessed/researched companies still require valid pages. Added safe
+  static global page/assessment diagnostics and explicit model confidence/status
+  enum instructions. Full186 tests78s, Ruff/format, MyPy19 and strict validation
+  passed. Regression proves exhausted failure persists, prior research survives,
+  unrelated review continues and publication remains valid.
+- Recovered the already-observed second attempt through admit/claim/finish and
+  atomic controller writes: zero new model/web calls, queue item removed, Stratasys
+  needs_attention, all83 assessments unchanged. This records the spent attempt;
+  no retry reset. Regenerated views:22 complete/44 incomplete/9 missing/17
+  unsupported,2 needs_attention. Reviewed Quartz build143 Markdown/198 outputs
+  and link check passed; push/CI precedes deployment and further company reviews.

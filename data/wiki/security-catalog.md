@@ -83,7 +83,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Southern Copper Corporation](securities/security_6ad1af8d10d6276a0221) | SCCO (USD) | researched: source_evidence_unavailable | incomplete_research | 91.00 / 135.00 / 187.00 USD | 2026-08-21T23:17:26Z | 2026-09-04T15:55:50Z |
 | [Space Exploration Technologies Corp.](securities/security_664f93a7eaca72e76e9b) | SPCX (USD) | researched: research_expired_or_future | incomplete_research | 50.00 / 110.00 / 195.00 USD | 2026-08-05T19:02:24Z | 2026-08-19T19:02:24Z |
 | [Spotify Technology S.A.](securities/security_2010347f1a0a5ea60f47) | SPOT (USD) | researched: research_expired_or_future | incomplete_research | 330.00 / 532.00 / 771.00 USD | 2026-08-06T15:48:55Z | 2026-08-20T15:48:55Z |
-| Stratasys Ltd. | SSYS (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
+| Stratasys Ltd. | SSYS (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Strategy Inc](securities/security_fe5539a7d3fd9d553bce) | MSTR (USD) | researched: source_evidence_unavailable | incomplete_research | 53.63 / 107.78 / 173.76 USD | 2026-08-22T15:55:59Z | 2026-09-19T08:26:47Z |
 | [Taiwan Semiconductor Manufacturing Company Limited](securities/security_ce9b78a4d0773c950765) | TSM (USD) | researched: research_expired_or_future | complete | 250.00 / 375.00 / 495.00 USD | 2026-09-06T14:13:31Z | 2026-10-04T14:13:31Z |
 | [Teledyne Technologies Incorporated](securities/security_ad5917642acbba28c1f2) | TDY (USD) | researched: research_expired_or_future | incomplete_research | 506.00 / 675.00 / 870.00 USD | 2026-08-05T19:59:39Z | 2026-09-04T19:59:39Z |
