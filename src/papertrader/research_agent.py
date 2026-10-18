@@ -163,10 +163,13 @@ def run_cycle(
     dry_run: bool = True,
     entity_type: str = "",
     entity_id: str = "",
+    reserved_operations: int = 0,
     executor: Callable[[Path, dict[str, Any], ResearchLimits], dict[str, Any]] = run_model,
     clock: Callable[[], datetime] = lambda: datetime.now(UTC),
 ) -> dict[str, Any]:
     limits, queue_budget = research_limits(root), queue_limits(root)
+    if not 0 <= reserved_operations <= queue_budget.max_daily_operations:
+        raise ValueError("invalid reserved research budget")
     outcomes: list[dict[str, str]] = []
     changed: set[str] = set()
     with research_lock(root):
@@ -196,7 +199,7 @@ def run_cycle(
                 model=limits.model,
             )
         excluded: set[tuple[str, str]] = set()
-        for _ in range(1 if entity_id else queue_budget.max_daily_operations):
+        for _ in range(1 if entity_id else queue_budget.max_daily_operations - reserved_operations):
             if entity_id:
                 # Isolate the explicit entity while claiming so global queue age
                 # cannot redirect a manual single-entity run. Restore unrelated

@@ -270,7 +270,7 @@ or financial validation to satisfy retired tests.
   real discovery candidate, active schedule or Pages deployment has occurred.
 - Details: [M5 migration](docs/migration/M5.md).
 
-## M6 evidence (in progress)
+## M6 evidence
 
 - Deterministic Top 10 Buy/Sell, issuer dedupe, confidence-adjusted return,
   current source/price/assessment checks, completeness and explicit blocker checks.
@@ -288,5 +288,29 @@ or financial validation to satisfy retired tests.
   four TS tests, Prettier, internal links and canonical Open Graph URLs passed.
   Homepage inspected: empty current Top10, accurate82-stale coverage, research
   navigation/downloads and no portfolio/signals/performance downloads.
-- Commit/push/CI and actual Pages deployment pending. Existing public site
-  remains available until this reviewed research build is deployed.
+- Commit `49d9f8b911b1ca0ba04cf056167bc6199e51e0c5` pushed;
+  [CI39154597909](https://github.com/Kabutojira/PaperTrader/actions/runs/39154597909)
+  passed the exact complete tree. Actual
+  [Pages39154872413](https://github.com/Kabutojira/PaperTrader/actions/runs/39154872413)
+  deployed that SHA successfully at2026-10-18T18:36:36Z. Public homepage, company
+  catalog, idea catalog and rankings JSON each returned HTTP200; empty current
+  rankings and research navigation were verified from public responses.
+
+## M7 evidence (in progress)
+
+- Drafted independent market/research/Pages workflows, daily13:00 America/New_York
+  using native GitHub timezone scheduling. Manual market runs do not implicitly
+  invoke live research. Scheduled research follows market even on partial failure.
+- Default three-operation budget includes weekly discovery; sequential short
+  leases and independent phase exit codes/compact health. Closed repeats are no-op.
+- Git write token is available only to the post-agent deterministic commit step;
+  agent receives inference OAuth only. Runtime path allowlists and remote divergence
+  checks precede one commit/push. Ephemeral three-day recovery artifacts preserve
+  accepted work on conflicts; no new active research history is created.
+- Pages receives the exact controller-committed SHA via a tiny artifact and builds
+  without inference credentials; no-op content changes skip deployment. Old
+  checkpoint/reporting workflows are removed.
+- Local gate97 focused tests passed, followed by19 runtime/workflow checks after
+  final allowlist/bootstrap/no-artifact hardening. Ruff/format, MyPy76, current
+  validation, zero-call previews and diff checks passed; no active data changed.
+  Exact commit/push/CI and live market/research/Pages smoke remain pending.

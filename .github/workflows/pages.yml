@@ -1,22 +1,10 @@
-name: Build and deploy canonical Quartz wiki
+name: Publish research Quartz site
 
 on:
-  workflow_call:
-    inputs:
-      ref:
-        description: Exact committed repository ref to publish
-        required: false
-        default: ""
-        type: string
-      publish_pages:
-        description: Deploy the verified Pages artifact
-        required: false
-        default: false
-        type: boolean
-    outputs:
-      page_url:
-        description: Published GitHub Pages URL
-        value: ${{ jobs.deploy.outputs.page_url }}
+  workflow_run:
+    workflows: [Research market refresh, Bounded company and idea research]
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
     inputs:
       ref:
@@ -38,7 +26,56 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  resolve:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.head_repository.full_name == github.repository }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      actions: read
+    outputs:
+      sha: ${{ steps.input.outputs.sha }}
+      publish: ${{ steps.input.outputs.publish }}
+    steps:
+      - name: Read trusted controller's committed publication input
+        continue-on-error: true
+        if: ${{ github.event_name == 'workflow_run' }}
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: publication-input
+          path: publication-input
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+      - name: Resolve an exact committed revision
+        id: input
+        env:
+          EVENT: ${{ github.event_name }}
+          REQUESTED_REF: ${{ inputs.ref }}
+          REQUESTED_PUBLISH: ${{ inputs.publish_pages }}
+        run: |
+          python3 - <<'PYCODE'
+          import json, os, re
+          from pathlib import Path
+          if os.environ["EVENT"] == "workflow_run":
+              path = Path("publication-input/publication-input.json")
+              if not path.is_file():
+                  with open(os.environ["GITHUB_OUTPUT"], "a") as stream:
+                      stream.write("publish=false\n")
+                  print("::notice::No committed publication input; retaining the published site")
+                  raise SystemExit(0)
+              value = json.loads(path.read_text())
+              assert set(value) == {"commit_sha", "changed", "phase"}
+              assert type(value["changed"]) is bool and value["phase"] in {"market", "research"}
+              sha, publish = value["commit_sha"], value["changed"]
+          else:
+              sha, publish = os.environ["REQUESTED_REF"], os.environ["REQUESTED_PUBLISH"] == "true"
+          assert re.fullmatch(r"[0-9a-f]{40}", sha), "Pages requires an exact committed SHA"
+          with open(os.environ["GITHUB_OUTPUT"], "a") as stream:
+              stream.write(f"sha={sha}\npublish={str(publish).lower()}\n")
+          PYCODE
   build:
+    needs: resolve
+    if: ${{ github.event_name == 'workflow_dispatch' || needs.resolve.outputs.publish == 'true' }}
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     permissions:
@@ -47,8 +84,11 @@ jobs:
       - name: Check out the exact committed wiki source
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
-          ref: ${{ inputs.ref || github.event.repository.default_branch }}
+          ref: ${{ needs.resolve.outputs.sha }}
           persist-credentials: false
+          fetch-depth: 0
+      - name: Verify the revision belongs to committed main
+        run: git merge-base --is-ancestor HEAD origin/main
       - name: Install locked research build dependencies
         run: |
           python3 -m pip install --disable-pip-version-check uv==0.8.17
@@ -80,15 +120,15 @@ jobs:
         run: |
           python3 -c 'from pathlib import Path; root=Path("site/public"); assert root.is_dir() and any(root.rglob("*.html")); assert not any(path.is_symlink() for path in root.rglob("*"))'
       - name: Upload the verified Pages artifact
-        if: ${{ inputs.publish_pages }}
+        if: ${{ needs.resolve.outputs.publish == 'true' }}
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9
         with:
           path: site/public
           retention-days: 1
 
   deploy:
-    if: ${{ inputs.publish_pages }}
-    needs: build
+    if: ${{ needs.resolve.outputs.publish == 'true' }}
+    needs: [resolve, build]
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     permissions:

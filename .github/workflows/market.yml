@@ -1,0 +1,81 @@
+name: Research market refresh
+
+on:
+  schedule:
+    - cron: "0 13 * * *"
+      timezone: America/New_York
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Preview with zero provider calls and no state writes
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+concurrency:
+  group: papertrader-research-state
+  cancel-in-progress: false
+jobs:
+  market:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Check out current main without stored credentials
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Establish safe workspace
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+      - name: Install locked controller dependencies
+        run: |
+          python3 -m pip install --disable-pip-version-check uv==0.8.17
+          uv sync --locked
+      - name: Validate current research inputs
+        run: uv run papertrader validate
+      - name: Refresh bounded market and deterministic attention
+        id: phase
+        run: |
+          mkdir -p .cache
+          arguments=(market)
+          if [ "${DRY_RUN:-false}" != "true" ]; then arguments+=(--apply); fi
+          set +e
+          uv run papertrader "${arguments[@]}" > .cache/market-outcome.json
+          result=$?
+          set -e
+          cat .cache/market-outcome.json
+          echo "exit_code=$result" >> "$GITHUB_OUTPUT"
+        env:
+          DRY_RUN: ${{ inputs.dry_run || false }}
+      - name: Commit accepted market state once, after the phase
+        if: ${{ !inputs.dry_run && steps.phase.outcome != 'skipped' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: uv run papertrader commit-runtime market --manifest .cache/publication-input.json
+      - name: Hand committed publication inputs to independent Pages
+        if: ${{ !inputs.dry_run && success() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: publication-input
+          path: .cache/publication-input.json
+          retention-days: 3
+      - name: Preserve accepted work on a Git conflict
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: market-recovery
+          path: .cache/recovery.tar.gz
+          if-no-files-found: ignore
+          retention-days: 3
+      - name: Report this phase's explicit exit code
+        if: ${{ always() && steps.phase.outputs.exit_code != '' }}
+        env:
+          market_EXIT: ${{ steps.phase.outputs.exit_code }}
+        run: exit "$market_EXIT"

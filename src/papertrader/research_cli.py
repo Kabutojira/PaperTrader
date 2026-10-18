@@ -7,11 +7,11 @@ import csv
 import hashlib
 import io
 import json
+import os
 from datetime import UTC, datetime
 from pathlib import Path
 
 from papertrader.migration_inventory import _git
-from papertrader.research_agent import run_cycle
 from papertrader.research_discovery import (
     IdentityVerifier,
     discovery_limits,
@@ -22,6 +22,7 @@ from papertrader.research_migration import prepare_migration
 from papertrader.research_publication import publish_views, snapshot
 from papertrader.research_queue import admit, queue_limits, rebuild_legacy_queue
 from papertrader.research_results import commit_result, context_packet, prepare_result
+from papertrader.research_runtime import finalize_commit, market_cycle, research_cycle
 from papertrader.research_state import contracts, csv_bytes, read_state, timestamp, validate_state
 from papertrader.research_transaction import research_lock
 from papertrader.research_web import ResearchWeb
@@ -32,6 +33,11 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--repository", type=Path, default=Path.cwd())
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("validate")
+    market = commands.add_parser("market")
+    market.add_argument("--apply", action="store_true")
+    finalize = commands.add_parser("commit-runtime")
+    finalize.add_argument("phase", choices=["market", "research"])
+    finalize.add_argument("--manifest", type=Path, required=True)
     publication = commands.add_parser("publish")
     publication.add_argument("--apply", action="store_true")
     discovery = commands.add_parser("discover")
@@ -47,6 +53,7 @@ def main(argv: list[str] | None = None) -> int:
     research = commands.add_parser("research")
     research.add_argument("--entity-type", choices=["security", "idea"], default="")
     research.add_argument("--entity-id", default="")
+    research.add_argument("--discovery", action="store_true")
     research.add_argument(
         "--apply",
         action="store_true",
@@ -65,6 +72,16 @@ def main(argv: list[str] | None = None) -> int:
     root = args.repository.resolve()
     now = datetime.now(UTC)
     try:
+        if args.command == "market":
+            response = market_cycle(root, dry_run=not args.apply)
+            print(json.dumps(response, indent=2, sort_keys=True))
+            return int(response["exit_code"])
+        if args.command == "commit-runtime":
+            response = finalize_commit(root, phase=args.phase, token=os.environ.get("GH_TOKEN", ""))
+            args.manifest.parent.mkdir(parents=True, exist_ok=True)
+            args.manifest.write_text(json.dumps(response))
+            print(json.dumps(response))
+            return 0
         if args.command == "discover":
             response = run_discovery(root, dry_run=not args.apply, force=args.force)
             print(json.dumps(response, indent=2, sort_keys=True))
@@ -72,8 +89,12 @@ def main(argv: list[str] | None = None) -> int:
         if args.command == "research":
             if bool(args.entity_id) != bool(args.entity_type):
                 raise ValueError("both entity identity fields are required")
-            response = run_cycle(
-                root, dry_run=not args.apply, entity_type=args.entity_type, entity_id=args.entity_id
+            response = research_cycle(
+                root,
+                dry_run=not args.apply,
+                entity_type=args.entity_type,
+                entity_id=args.entity_id,
+                discovery=args.discovery,
             )
             print(json.dumps(response, indent=2, sort_keys=True))
             return int(response["exit_code"])
@@ -219,6 +240,9 @@ def main(argv: list[str] | None = None) -> int:
             )
             print(json.dumps({"changed": commit_result(root, candidate, pages)}))
             return 0
+    except RuntimeError as exc:
+        print(json.dumps({"status": "infrastructure_error", "error": str(exc)}))
+        return 5
     except (ValueError, OSError, KeyError, TypeError) as exc:
         print(json.dumps({"status": "invalid_data", "error": type(exc).__name__}))
         return 4

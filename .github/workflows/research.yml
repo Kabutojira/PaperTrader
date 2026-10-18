@@ -1,0 +1,150 @@
+name: Bounded company and idea research
+
+on:
+  workflow_run:
+    workflows: [Research market refresh]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Preview with zero model calls and no state writes
+        type: boolean
+        default: true
+      entity_type:
+        description: Optional single entity type
+        type: choice
+        options: ["", security, idea]
+        default: ""
+      entity_id:
+        description: Immutable security or idea ID for one manual review
+        type: string
+        default: ""
+      discovery:
+        description: Include cadence-limited discovery within the three-operation budget
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+concurrency:
+  group: papertrader-research-state
+  cancel-in-progress: false
+jobs:
+  research:
+    if: ${{ github.event_name == 'workflow_dispatch' || (github.event.workflow_run.head_repository.full_name == github.repository && github.event.workflow_run.event == 'schedule') }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    permissions:
+      contents: write
+    container:
+      image: nousresearch/hermes-agent@sha256:9c841866021c54c4596849f6135717e8a4d52ba510b7f52c50aef1de1a283973
+      options: --user 0:0
+    defaults:
+      run:
+        shell: bash
+    env:
+      HERMES_HOME: /tmp/papertrader-research-auth
+    steps:
+      - name: Check out current main without stored credentials
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Establish safe workspace
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+      - name: Install locked controller dependencies
+        env:
+          UV_TOOL_BIN_DIR: /tmp/papertrader-uv/bin
+          UV_TOOL_DIR: /tmp/papertrader-uv/tools
+        run: |
+          uv tool install --no-cache uv==0.8.17
+          test "$("$UV_TOOL_BIN_DIR/uv" --version)" = "uv 0.8.17"
+          echo "$UV_TOOL_BIN_DIR" >> "$GITHUB_PATH"
+          "$UV_TOOL_BIN_DIR/uv" sync --locked
+      - name: Validate current research inputs
+        run: uv run papertrader validate
+      - name: Install checksum-verified age for inference OAuth only
+        if: ${{ !inputs.dry_run }}
+        run: |
+          archive="$RUNNER_TEMP/age-v1.3.1-linux-amd64.tar.gz"
+          curl --fail --location --connect-timeout 15 --max-time 90 --retry 2 --proto '=https' --tlsv1.2 --output "$archive" "https://github.com/FiloSottile/age/releases/download/v1.3.1/age-v1.3.1-linux-amd64.tar.gz"
+          echo "bdc69c09cbdd6cf8b1f333d372a1f58247b3a33146406333e30c0f26e8f51377  $archive" | sha256sum --check --status
+          tar --extract --gzip --file "$archive" --directory "$RUNNER_TEMP"
+          install -m 755 "$RUNNER_TEMP/age/age" /usr/local/bin/age
+          install -m 755 "$RUNNER_TEMP/age/age-keygen" /usr/local/bin/age-keygen
+      - name: Restore inference credential outside the checkout
+        if: ${{ !inputs.dry_run }}
+        env:
+          OPENAI_OAUTH_SECRET: ${{ secrets.OPENAI_OAUTH_SECRET }}
+        run: |
+          install -d -m 700 "$HERMES_HOME"
+          identity="$RUNNER_TEMP/research.agekey"
+          install -m 600 /dev/null "$identity"
+          trap 'rm -f "$identity"' EXIT
+          printf '%s\n' "$OPENAI_OAUTH_SECRET" > "$identity"
+          age --decrypt --identity "$identity" --output "$HERMES_HOME/auth.json" .papertrader/credentials/openai-oauth-auth.json.age
+          chmod 600 "$HERMES_HOME/auth.json"
+          install -m 600 "$HERMES_HOME/auth.json" "$RUNNER_TEMP/research-auth.before.json"
+      - name: Execute sequential bounded research with no Git or deployment credentials
+        id: phase
+        env:
+          DRY_RUN: ${{ inputs.dry_run || false }}
+          ENTITY_TYPE: ${{ inputs.entity_type }}
+          ENTITY_ID: ${{ inputs.entity_id }}
+          DISCOVERY: ${{ github.event_name == 'workflow_run' || inputs.discovery }}
+        run: |
+          mkdir -p .cache
+          arguments=(research)
+          if [ "$DRY_RUN" != "true" ]; then arguments+=(--apply); fi
+          if [ -n "$ENTITY_ID" ]; then arguments+=(--entity-type "$ENTITY_TYPE" --entity-id "$ENTITY_ID"); fi
+          if [ "$DISCOVERY" = "true" ]; then arguments+=(--discovery); fi
+          set +e
+          uv run papertrader "${arguments[@]}" > .cache/research-outcome.json
+          result=$?
+          set -e
+          cat .cache/research-outcome.json
+          echo "exit_code=$result" >> "$GITHUB_OUTPUT"
+      - name: Persist only changed encrypted inference OAuth after the worker exits
+        if: ${{ always() && !inputs.dry_run }}
+        env:
+          OPENAI_OAUTH_SECRET: ${{ secrets.OPENAI_OAUTH_SECRET }}
+        run: |
+          if [ ! -f "$HERMES_HOME/auth.json" ] || [ ! -f "$RUNNER_TEMP/research-auth.before.json" ]; then exit 0; fi
+          if cmp -s "$HERMES_HOME/auth.json" "$RUNNER_TEMP/research-auth.before.json"; then exit 0; fi
+          identity="$RUNNER_TEMP/research.agekey"
+          install -m 600 /dev/null "$identity"
+          trap 'rm -f "$identity"' EXIT
+          printf '%s\n' "$OPENAI_OAUTH_SECRET" > "$identity"
+          recipient=$(age-keygen -y "$identity")
+          age --encrypt --recipient "$recipient" --output "$RUNNER_TEMP/research-auth.age" "$HERMES_HOME/auth.json"
+          install -m 644 "$RUNNER_TEMP/research-auth.age" .papertrader/credentials/openai-oauth-auth.json.age
+      - name: Commit accepted research state once, after the phase
+        if: ${{ !inputs.dry_run && steps.phase.outcome != 'skipped' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: uv run papertrader commit-runtime research --manifest .cache/publication-input.json
+      - name: Hand committed publication inputs to independent Pages
+        if: ${{ !inputs.dry_run && success() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: publication-input
+          path: .cache/publication-input.json
+          retention-days: 3
+      - name: Preserve accepted work on a Git conflict
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: research-recovery
+          path: .cache/recovery.tar.gz
+          if-no-files-found: ignore
+          retention-days: 3
+      - name: Report this phase's explicit exit code
+        if: ${{ always() && steps.phase.outputs.exit_code != '' }}
+        env:
+          research_EXIT: ${{ steps.phase.outputs.exit_code }}
+        run: exit "$research_EXIT"
+      - name: Remove plaintext inference state
+        if: ${{ always() }}
+        run: rm -rf "$HERMES_HOME" "$RUNNER_TEMP/research-auth.before.json" "$RUNNER_TEMP/research.agekey" "$RUNNER_TEMP/research-auth.age"
