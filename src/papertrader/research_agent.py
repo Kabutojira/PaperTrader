@@ -16,6 +16,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
+import pypdf
 import yaml
 
 from papertrader.atomic_io import atomic_write_bytes, atomic_write_text
@@ -151,6 +152,16 @@ def _stage_worker(root: Path, directory: Path) -> Path:
         target = package / name
         shutil.copyfile(root / "src/papertrader" / name, target)
         _agent_access(target, 0o400)
+    # The inference image has its own Python environment. Stage only the locked
+    # pure-Python reader, never the controller's full site-packages/repository.
+    pdf_package = directory / "worker-code" / "pypdf"
+    shutil.copytree(
+        Path(pypdf.__file__).parent,
+        pdf_package,
+        ignore=shutil.ignore_patterns("__pycache__", "*.pyc"),
+    )
+    for path in (pdf_package, *pdf_package.rglob("*")):
+        _agent_access(path, 0o700 if path.is_dir() else 0o400)
     _agent_access(package.parent, 0o700)
     _agent_access(package, 0o700)
     return package.parent

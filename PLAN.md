@@ -617,3 +617,40 @@ Validation/commit/CI/deployment and live backfill evidence will be recorded belo
   no retry reset. Regenerated views:22 complete/44 incomplete/9 missing/17
   unsupported,2 needs_attention. Reviewed Quartz build143 Markdown/198 outputs
   and link check passed; push/CI precedes deployment and further company reviews.
+- Failure-state repair/recovery `7335525bb496c5436fb3bc5e6da7b46f707d998d`
+  passed [CI39172215125](https://github.com/Kabutojira/PaperTrader/actions/runs/39172215125)
+  and reviewed Pages39172344053; public catalogs/metadata returned200.
+- Actual first-time BASF [39172450504](https://github.com/Kabutojira/PaperTrader/actions/runs/39172450504)
+  accepted supported scenarios (1 model/9 web), commit
+  `43c0747d67b6d5768bcafd2938a3eebd24f8dada`, Pages39172711091 passed.
+  Coverage increased22->23 complete. Actual first-time Arkema
+  [39172856987](https://github.com/Kabutojira/PaperTrader/actions/runs/39172856987)
+  accepted supported scenarios (1 model/11 web), commit
+  `29d51ffb057cd734d43dd23b2eddd5b1bdb061c7`, Pages39173070262 passed.
+  Coverage increased23->24; the canonical extensionless research link returned200.
+- Actual Evonik [39173152265](https://github.com/Kabutojira/PaperTrader/actions/runs/39173152265)
+  failed the existing copied-source-text guard (1 model/11 web); bounded retry
+  retained, commit `e54bb78292d86e34a9704de8add6f5046f65f01c`, Pages39173400602
+  passed. No evidence or copyright check was relaxed.
+- Actual Lemonade [39173497599](https://github.com/Kabutojira/PaperTrader/actions/runs/39173497599)
+  accepted explicitly unsupported research (1 model/12 web), commit
+  `3c05e5f0d978cbf1e015392ce28ded322ce19b04`, Pages39173702552 triggered.
+  Its stated blocker was inaccessible PDF-only shareholder letter/10-Q, not a
+  demonstrated absence of public financial evidence. Coverage24 complete/44
+  incomplete/6 missing/18 unsupported;86 current assessment records.
+- Added bounded primary-PDF reading using pinned pypdf6.21.1, verified against
+  official security documentation and PyPI. The isolated worker stages only that
+  pure-Python package alongside its existing allowlist, never full site-packages.
+  At most3 pages/window,250 pages/file,2MB response,1MB decoded stream,4MB decode
+  work,2000 root-recovery objects; no OCR, decryption, images, attachments, scripts
+  or external PDF renderer. Later page reads consume the existing12-request cap;
+  600s/24-turn limits remain unchanged. PDF positioning whitespace is compacted
+  while retaining rows/column separators. Every seen window remains available to
+  the existing copy guard; the model receives only one12k-character excerpt.
+- Six actual engineering HTTP reads successfully opened the35-page Lemonade
+  letter and53-page10-Q, including later statement pages. Native lookup used2
+  search queries plus3 page opens and3 link opens (official docs and issuer PDFs).
+  Only2 verified source metadata leads were added; no raw PDF/text, financial
+  fact, valuation or assessment changed. These requests are separate from Hermes
+  operation counters. Full194 tests77.2s, focused99, Ruff/format, MyPy19, strict
+  current validation and diff check passed. Push/CI precedes model-backed retry.

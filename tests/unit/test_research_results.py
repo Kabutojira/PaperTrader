@@ -1273,7 +1273,7 @@ def test_network_budget_is_hard_and_private_sources_are_forbidden(
 @pytest.mark.parametrize(
     ("mode", "expected"),
     [
-        ("pdf", "pdf_unsupported"),
+        ("pdf", "pdf_invalid"),
         ("too_large", "source_too_large"),
         ("empty", "empty_content"),
     ],

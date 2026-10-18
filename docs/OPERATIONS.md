@@ -153,9 +153,8 @@ what is unknown and why, while leaving unsupported scenario numbers empty. Prefe
 primary financial evidence; justified, clearly attributed trustworthy secondary
 reporting can fill identified gaps with appropriate confidence/limitations. A
 corporate homepage alone is not financial evidence. Broker failures expose safe
-static categories and numeric HTTP status, never provider reason/body. PDF
-extraction remains unavailable and is reported explicitly rather than as a generic
-network error. Per-operation request/time/content limits remain unchanged.
+static categories and numeric HTTP status, never provider reason/body. Unreadable PDFs are reported explicitly rather than as a generic
+network error. Bounded text-PDF extraction is described below. Per-operation request/time/content limits remain unchanged.
 
 First-time research context includes a canonical target_page even when the catalog
 has no page yet, explicit missing valuation fields, compact request reasons and
@@ -184,3 +183,19 @@ candidate validation reports only static page/assessment/integrity categories;
 raw rejected results and source text are not published. If Git rejects an invalid
 failure state, recover the observed spent attempt through the deterministic queue
 controller after repair; do not reset attempts or silently repeat a model call.
+
+The research reader also handles text PDFs with pinned `pypdf==6.21.1`, following
+its [security configuration](https://pypdf.readthedocs.io/en/6.21.1/user/security.html).
+Use `research_web` open with a one-based `page` integer to read later financial
+statements. Each read fetches at most2MB and returns up to3 pages within the same
+12k-character excerpt/request ceiling; the file has at most250 pages. Parser
+stream/decode/object limits are bounded. Encrypted, malformed, excessively complex
+and image-only documents return static errors. There is no OCR, decryption,
+embedded-code execution or external renderer. Do not infer that financial evidence
+is unavailable just because a document requires a later page.
+
+PDF bytes and extracted text stay inside the isolated operation. The controller
+retains bounded excerpts from all seen windows for the existing copying check;
+only metadata, citations, verified facts and original synthesis can reach the
+current repository. Source hashes bind the fetched document. No model-turn,
+external-request or research-operation budget increases with PDF support.
