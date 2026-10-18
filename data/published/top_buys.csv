@@ -1,1 +1,2 @@
 security_id,issuer_id,company_name,ticker,currency,price,price_date,weighted_fair_value,base_fair_value,expected_return_pct,adjusted_return_pct,rating,confidence,assessed_at,valid_until,research_page
+security_33d9c44facc75c726c7d,issuer_7f0f0b334051a9c9a06b,NVIDIA Corporation,NVDA,USD,214.1300048828125,2026-10-16,304.25,310.5,42.08657967691529758236596240,29.46060577384070830765617368,buy,medium,2026-10-18T19:50:33.927425Z,2026-11-17T19:50:33.927425Z,data/wiki/securities/security_33d9c44facc75c726c7d.md

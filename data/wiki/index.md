@@ -9,7 +9,9 @@ Current research opinions in each instrument's native currency. Fair values chan
 
 ## Top 10 Buy
 
-No current, supportable ratings qualify. Expired and unsupported research is excluded.
+| Company / thesis & sources | Ticker | Currency | Price | Price as of | Weighted / base fair value | Implied / adjusted return | Rating | Confidence | Researched / expiry |
+| --- | --- | --- | ---: | --- | ---: | ---: | --- | --- | --- |
+| [NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | NVDA | USD | 214.13 | 2026-10-16 | 304.25 / 310.50 | 42.09% / 29.46% | buy | medium | 2026-10-18T19:50:33.927425Z / 2026-11-17T19:50:33.927425Z |
 
 ## Top 10 Sell
 
@@ -21,12 +23,13 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-91 companies / 92 instruments; 83 assessed, 2 in date, 81 stale; 92 currently unrated. 0 quotes require attention.
+91 companies / 92 instruments; 83 assessed, 3 in date, 80 stale; 91 currently unrated. 0 quotes require attention.
 
-Last observed market session: 2026-10-16. Last successful research: 2026-10-18T19:24:04Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-16. Last successful research: 2026-10-18T19:52:43Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
 ## Recently updated research
 
+- [NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) — 2026-10-18T19:50:33.927425Z; buy
 - [SoFi Technologies, Inc.](securities/security_98470cfc01bbcde78fc2) — 2026-10-18T19:22:08.983560Z; valuation_unsupported
 - [Lithium Americas Corp.](securities/security_fb87fac302a5446a1ced) — 2026-10-15T18:52:08Z; valuation_unsupported
 - [RTX Corporation](securities/security_59304f90c440def31dc5) — 2026-09-15T10:13:46Z; research_expired_or_future
@@ -36,7 +39,6 @@ Last observed market session: 2026-10-16. Last successful research: 2026-10-18T1
 - [Ternium S.A.](securities/security_2c779e81c27b78c556bb) — 2026-09-06T14:48:45Z; research_expired_or_future
 - [Samsung Electronics Co., Ltd.](securities/security_d08d763780400dfbffce) — 2026-09-06T14:35:49Z; valuation_unsupported
 - [Taiwan Semiconductor Manufacturing Company Limited](securities/security_ce9b78a4d0773c950765) — 2026-09-06T14:13:31Z; research_expired_or_future
-- [Xometry, Inc.](securities/security_c2e6db30cb59254de418) — 2026-09-06T13:57:12Z; source_evidence_unavailable
 
 ## Ideas and interesting companies
 

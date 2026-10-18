@@ -1,17 +1,36 @@
 {
-  "buys": [],
+  "buys": [
+    {
+      "adjusted_return_pct": "29.46060577384070830765617368",
+      "assessed_at": "2026-10-18T19:50:33.927425Z",
+      "base_fair_value": "310.5",
+      "company_name": "NVIDIA Corporation",
+      "confidence": "medium",
+      "currency": "USD",
+      "expected_return_pct": "42.08657967691529758236596240",
+      "issuer_id": "issuer_7f0f0b334051a9c9a06b",
+      "price": "214.1300048828125",
+      "price_date": "2026-10-16",
+      "rating": "buy",
+      "research_page": "data/wiki/securities/security_33d9c44facc75c726c7d.md",
+      "security_id": "security_33d9c44facc75c726c7d",
+      "ticker": "NVDA",
+      "valid_until": "2026-11-17T19:50:33.927425Z",
+      "weighted_fair_value": "304.25"
+    }
+  ],
   "coverage": {
-    "current": 2,
+    "current": 3,
     "failed_tickers": 0,
     "instruments": 92,
     "issuers": 91,
     "researched": 83,
-    "stale": 81,
-    "unrated": 92
+    "stale": 80,
+    "unrated": 91
   },
   "last_market_session": "2026-10-16",
-  "last_research_at": "2026-10-18T19:22:08.983560Z",
-  "last_successful_research": "2026-10-18T19:24:04Z",
+  "last_research_at": "2026-10-18T19:50:33.927425Z",
+  "last_successful_research": "2026-10-18T19:52:43Z",
   "phase_health": {
     "market": "succeeded",
     "research": "succeeded"

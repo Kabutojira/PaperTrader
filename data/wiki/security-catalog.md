@@ -52,7 +52,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [MercadoLibre, Inc.](securities/security_4935c6e39e38273a1731) | MELI (USD) | researched: research_expired_or_future | 2026-08-28T20:09:00Z | 2026-09-27T20:09:00Z |
 | [Meta Platforms, Inc.](securities/security_d12e746b3c9d392183cc) | META (USD) | researched: research_expired_or_future | 2026-08-28T19:45:56Z | 2026-09-27T19:45:56Z |
 | [Microsoft Corporation](securities/security_204be2a44063993de1a8) | MSFT (USD) | researched: research_expired_or_future | 2026-08-28T21:23:23Z | 2026-09-27T21:23:23Z |
-| [NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | NVDA (USD) | researched: research_expired_or_future | 2026-09-04T06:22:45Z | 2026-09-18T06:22:45Z |
+| [NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | NVDA (USD) | researched: buy | 2026-10-18T19:50:33.927425Z | 2026-11-17T19:50:33.927425Z |
 | [Nebius Group N.V.](securities/security_47a0b06f6c6c478d7c1e) | NBIS (USD) | researched: research_expired_or_future | 2026-08-18T23:19:57Z | 2026-09-17T23:19:57Z |
 | [Nidec Corporation](securities/security_3853e54c619d597dcaa1) | NIB.F (EUR) | researched: valuation_unsupported | 2026-08-06T19:10:34Z | 2026-08-31T19:10:34Z |
 | [Nomad Foods Limited](securities/security_98a1943771da875efed5) | NOMD (USD) | researched: research_expired_or_future | 2026-08-28T19:32:10Z | 2026-09-27T19:32:10Z |
