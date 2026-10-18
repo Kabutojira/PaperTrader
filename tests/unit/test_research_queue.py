@@ -194,7 +194,8 @@ def test_many_indicators_and_classes_produce_one_company_task(state: ResearchSta
     row = state["research_queue"][0]
     assert row["priority"] == "90"
     assert set(row["reasons"].split("|")) == {
-        "unresearched_candidate",
+        "missing_research",
+        "valuation_coverage_gap",
         "severe_price_movement",
         "material_technical_context",
         "verified_material_evidence",
@@ -205,7 +206,7 @@ def test_many_indicators_and_classes_produce_one_company_task(state: ResearchSta
     assert task
     finish(state, task, now=NOW)
     schedule_attention(state, observations, observations, now=NOW)
-    assert state["research_queue"][0]["reasons"] == "unresearched_candidate"
+    assert state["research_queue"][0]["reasons"] == "missing_research|valuation_coverage_gap"
 
 
 def test_recent_review_avoids_daily_unsupported_research_loop(state: ResearchState) -> None:
@@ -280,3 +281,73 @@ def test_queue_validation_rejects_corrupt_and_duplicate_company_tasks(
     admit(state, "security", sid, reasons={"manual_review"}, priority=100, now=NOW)
     state["research_queue"][0]["attempts"] = "-1"
     assert validate_state(repository_root, state, pages=pages)
+
+
+def complete_assessment(sid: str, *, current: bool = False) -> dict[str, str]:
+    from papertrader.research_ratings import VALUATION_RESEARCH_FIELDS
+
+    row = dict.fromkeys(VALUATION_RESEARCH_FIELDS, "Cited research")
+    row.update(
+        security_id=sid,
+        research_status="supported",
+        assessed_at="2026-09-01T00:00:00Z",
+        valid_until="2026-11-01T00:00:00Z" if current else "2026-10-01T00:00:00Z",
+    )
+    for case, value, probability in (
+        ("bear", "50", "25"),
+        ("base", "100", "50"),
+        ("bull", "150", "25"),
+    ):
+        row[f"{case}_fair_value"] = value
+        row[f"{case}_probability_pct"] = probability
+    return row
+
+
+def test_missing_and_incomplete_coverage_displaces_ordinary_expiry_work(
+    state: ResearchState,
+) -> None:
+    state["security_assessments"] = [complete_assessment(f"s{i:02}") for i in range(39)]
+    state["security_assessments"][38]["downside"] = ""
+    for i in range(30):
+        add(state, f"s{i:02}")
+    schedule_attention(state, [], [], now=NOW)
+    selected = {row["entity_id"]: row for row in state["research_queue"]}
+    assert selected["s39"]["priority"] == selected["s38"]["priority"] == "75"
+    assert "missing_research" in selected["s39"]["reasons"]
+    assert "incomplete_research" in selected["s38"]["reasons"]
+    assert len(selected) == 30
+    assert claim(state, now=NOW)["entity_id"] in {"s38", "s39"}
+
+
+def test_current_sibling_does_not_hide_unvalued_instrument(state: ResearchState) -> None:
+    state["securities"] = state["securities"][:2]
+    state["securities"][1]["issuer_id"] = "issuer00"
+    state["securities"][0]["last_research_at"] = "2026-10-18T16:00:00Z"
+    state["security_assessments"] = [complete_assessment("s00", current=True)]
+    schedule_attention(state, [], [], now=NOW)
+    assert len(state["research_queue"]) == 1
+    task = claim(state, now=NOW)
+    assert task and task["entity_id"] == "s01"
+    finish(state, task, now=NOW)
+    state["security_assessments"].append(complete_assessment("s01", current=True))
+    schedule_attention(state, [], [], now=NOW)
+    assert not state["research_queue"]
+
+
+def test_coverage_backlog_refills_without_unbounded_queue_or_unsupported_loop(
+    state: ResearchState,
+) -> None:
+    schedule_attention(state, [], [], now=NOW)
+    task = claim(state, now=NOW)
+    assert task
+    finish(state, task, now=NOW)
+    unsupported = complete_assessment(task["entity_id"], current=True)
+    unsupported["research_status"] = "valuation_unsupported"
+    for case in ("bear", "base", "bull"):
+        unsupported[f"{case}_fair_value"] = ""
+        unsupported[f"{case}_probability_pct"] = ""
+    state["security_assessments"].append(unsupported)
+    schedule_attention(state, [], [], now=NOW)
+    assert len(state["research_queue"]) == 30
+    assert all(row["entity_id"] != task["entity_id"] for row in state["research_queue"])
+    assert any(row["entity_id"] == "s30" for row in state["research_queue"])

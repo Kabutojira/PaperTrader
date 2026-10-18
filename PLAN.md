@@ -465,3 +465,36 @@ or financial validation to satisfy retired tests.
   Public homepage/catalogs/company/idea/download/metadata links returnedHTTP200.
   Final report commit/CI and reviewed exact-commit Pages deployment are performed
   as the final delivery step; deployment metadata lives only in the site artifact.
+
+## Watchlist coverage follow-up — 2026-10-18
+
+User requirement: every watchlist stock should have research, a valuation and explicit
+bear/base/bull cases. Baseline audit:92 instruments;9 missing assessments,13 unsupported,
+70 with supported scenario values (some missing research detail). Only1 current
+supported ranking qualifies; baseline coverage is separate from valuation freshness.
+
+Implement coverage-first bounded scheduling, per-instrument gap tracking despite
+issuer queue dedupe, visible homepage progress and catalog scenario values. Preserve
+scenario/source validation, original dates and max3 scheduled operations/30 queued/
+2 attempts; never generate unsupported values or reset exhausted entity attempts.
+User explicitly authorized a faster one-time sequential backfill. Use repeated manual
+cycles of at most3 operations, preserving the scheduled default and per-operation
+budgets; no parallel research or unbounded agent cascade.
+
+Validation/commit/CI/deployment and live backfill evidence will be recorded below.
+
+- Coverage-first local gate passed:152 tests in71.6s, Ruff/format, MyPy19, strict
+  data validation, Quartz check/build144 Markdown/200 files and internal links.
+  One stale fixture was corrected without weakening dates; an obsolete sibling
+  suppression test now proves one bounded uncovered-instrument task, no copied
+  valuation and idempotent scheduling. Deterministic current-data update only
+  reprioritizes the bounded queue and generates coverage/catalog views; assessment,
+  source, research prose and financial facts remain unchanged.
+- Baseline complete research22/92; gaps70 =9 missing +13 unsupported +48 missing
+  research detail despite scenario values. Coverage-first priority75; material90,
+  severe movement80 and explicit manual100 remain higher. Future queue refills
+  retain targets outside the cap. Fresh unsupported results avoid daily retry loops.
+- Faster backfill is explicit manual work, separate from normal daily3 operations.
+  Supported and unsupported accepted outcomes, failed validation and exhausted
+  needs_attention cases will be reported distinctly. Feature push/CI and reviewed
+  publication precede actual sequential backfill operations.

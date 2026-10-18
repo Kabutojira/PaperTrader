@@ -69,3 +69,25 @@ See README.md, docs/OPERATIONS.md and docs/migration/ for contracts, migration
 census, exact revisions and evidence. One-time inventory/migration modules read
 pinned Git archives and stage outside the active data; they are not runtime paths.
 The verified `pre-research-only-20261018` tag retains removed data and code.
+
+## Watchlist valuation coverage
+
+Every active/watchlist instrument is a research coverage target: a sourced thesis,
+valuation method, explicit bear/base/bull per-share fair values and probabilities,
+case assumptions, downside, catalysts and invalidation conditions. Coverage counts
+instruments independently; another share class's valuation does not cover a missing
+instrument. The company queue still permits only one active task per issuer.
+
+Missing, unsupported or incomplete valuations receive priority75, above ordinary
+expiry refreshes60 and below severe price movement80/material evidence90/manual100.
+A newly completed unsupported review waits until its next eligible refresh rather
+than retrying every day. Exhausted entities remain visibly needs_attention.
+The30-task queue refills from the canonical watchlist on subsequent market cycles;
+entities outside the queue remain coverage targets in the catalog. The homepage
+reports baseline completeness separately from freshness, and the company catalog
+shows each instrument's bear/base/bull values and coverage gaps. Historical complete
+research never becomes a fresh ranking merely by being counted as baseline coverage.
+
+Existing defaults remain3 sequential research operations per daily cycle, including
+weekly discovery. No valuation is fabricated to satisfy a coverage target; unavailable
+evidence stays explicit and Unrated until sourced scenarios can be supported.

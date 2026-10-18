@@ -8,6 +8,7 @@ from dataclasses import dataclass
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
+from papertrader.research_ratings import valuation_coverage
 from papertrader.research_state import ResearchState, Row, decimal, timestamp
 
 
@@ -141,7 +142,7 @@ def admit(
     queue.append(
         dict(
             entity_type=key[0],
-            entity_id=entity_id if manual else key[1],
+            entity_id=entity_id,
             priority=str(100 if manual else priority),
             reasons="|".join(sorted(reasons)),
             created_at=text,
@@ -262,7 +263,7 @@ def schedule_attention(
     current = {row["security_id"]: row for row in features}
     assessments = {row["security_id"]: row for row in state["security_assessments"]}
     counts: Counter[str] = Counter()
-    candidates: dict[tuple[str, str], tuple[int, set[str]]] = {}
+    candidates: dict[tuple[str, str], tuple[str, int, set[str]]] = {}
     for security in state["securities"]:
         sid = security["security_id"]
         if security["research_status"] == "needs_attention" or security["status"] not in {
@@ -284,13 +285,29 @@ def schedule_attention(
             and timestamp(assessments[row["security_id"]]["valid_until"]) > now
             for row in company
         )
+        coverage = valuation_coverage(assessment)
+        own_recent_review = bool(
+            security["last_research_at"]
+            and now - timestamp(security["last_research_at"]) < timedelta(days=7)
+        )
+        # Every instrument needs its own per-share/native-currency valuation.
+        # A sibling's assessment cannot fill this gap or suppress its first review.
         if (
-            not recently_reviewed
-            and not has_current_review
+            coverage != "complete"
+            and not own_recent_review
             and (assessment is None or timestamp(assessment["valid_until"]) <= now)
         ):
-            priority = 60 if assessment else 20
-            reasons.add("research_overdue" if assessment else "unresearched_candidate")
+            priority = 75
+            reasons.add(coverage)
+            reasons.add("valuation_coverage_gap")
+        elif (
+            not recently_reviewed
+            and not has_current_review
+            and assessment is not None
+            and timestamp(assessment["valid_until"]) <= now
+        ):
+            priority = 60
+            reasons.add("research_overdue")
         feature = current.get(sid, {})
         if feature and feature != old.get(sid) and not recently_reviewed:
             change = max(
@@ -327,14 +344,19 @@ def schedule_attention(
             priority = max(priority, 90)
             reasons.add("verified_material_evidence")
         if reasons:
-            previous_priority, previous_reasons = candidates.get(key, (0, set()))
-            candidates[key] = max(previous_priority, priority), previous_reasons | reasons
+            previous_target, previous_priority, previous_reasons = candidates.get(
+                key, (sid, 0, set())
+            )
+            target = sid if priority > previous_priority else previous_target
+            candidates[key] = target, max(previous_priority, priority), previous_reasons | reasons
     for key in material_entities or set():
         if key[0] == "idea":
             entity_key(state, *key)
-            candidates[key] = 90, {"verified_material_evidence"}
-    for key, (priority, reasons) in sorted(
-        candidates.items(), key=lambda item: (-item[1][0], item[0])
+            candidates[key] = key[1], 90, {"verified_material_evidence"}
+    for key, (target, priority, reasons) in sorted(
+        candidates.items(), key=lambda item: (-item[1][1], item[0])
     ):
-        counts[admit(state, *key, priority=priority, reasons=reasons, now=now, limits=limits)] += 1
+        counts[
+            admit(state, key[0], target, priority=priority, reasons=reasons, now=now, limits=limits)
+        ] += 1
     return dict(counts)

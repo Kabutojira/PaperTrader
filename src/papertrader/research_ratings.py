@@ -14,6 +14,42 @@ from papertrader.research_state import decimal, timestamp
 
 CONFIDENCE = {"low": Decimal("0.4"), "medium": Decimal("0.7"), "high": Decimal("1")}
 
+VALUATION_RESEARCH_FIELDS = (
+    "method",
+    "method_rationale",
+    "source_ids",
+    "thesis",
+    "key_assumptions",
+    "downside",
+    "catalysts",
+    "invalidation_conditions",
+    "horizon_months",
+    "bear_assumptions",
+    "base_assumptions",
+    "bull_assumptions",
+)
+
+
+def valuation_coverage(assessment: Mapping[str, str] | None) -> str:
+    """Baseline research completeness, independent of price or assessment freshness.
+
+    Callers validate canonical scenario mathematics and citations separately.
+    Old complete research counts as baseline coverage, never as a current rating.
+    """
+    if assessment is None:
+        return "missing_research"
+    if assessment.get("research_status") != "supported":
+        return "valuation_unsupported"
+    fields = (
+        *VALUATION_RESEARCH_FIELDS,
+        *(
+            f"{case}_{field}"
+            for case in ("bear", "base", "bull")
+            for field in ("fair_value", "probability_pct")
+        ),
+    )
+    return "complete" if all(assessment.get(field) for field in fields) else "incomplete_research"
+
 
 @dataclass(frozen=True)
 class RatingThresholds:
@@ -135,23 +171,7 @@ def reprice(
         or sum(probabilities) != 100
     ):
         raise ValueError("invalid scenario math")
-    if not all(
-        assessment.get(field)
-        for field in (
-            "method",
-            "method_rationale",
-            "source_ids",
-            "thesis",
-            "key_assumptions",
-            "downside",
-            "catalysts",
-            "invalidation_conditions",
-            "horizon_months",
-            "bear_assumptions",
-            "base_assumptions",
-            "bull_assumptions",
-        )
-    ):
+    if valuation_coverage(assessment) != "complete":
         result["reason"] = "incomplete_research"
         return result
     if assessment.get("limitations", "").strip().lower().startswith("blocker:"):

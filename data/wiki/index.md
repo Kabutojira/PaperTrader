@@ -27,6 +27,8 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 Last observed market session: 2026-10-16. Last successful research: 2026-10-18T20:12:34Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
+Watchlist valuation coverage: **22 / 92 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 9; unsupported valuation: 13; incomplete research: 48. Needs attention: 1. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
+
 ## Recently updated research
 
 - [NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) — 2026-10-18T19:50:33.927425Z; buy

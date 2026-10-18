@@ -13,7 +13,7 @@ from typing import Any
 from urllib.parse import unquote
 
 from papertrader.research_market import _read
-from papertrader.research_ratings import rating_thresholds, reprice
+from papertrader.research_ratings import rating_thresholds, reprice, valuation_coverage
 from papertrader.research_state import (
     ResearchState,
     Row,
@@ -93,11 +93,23 @@ def snapshot(root: Path, *, now: datetime, state: ResearchState | None = None) -
         stale=0,
         unrated=0,
         failed_tickers=0,
+        watchlist_instruments=0,
+        watchlist_complete=0,
+        watchlist_missing_research=0,
+        watchlist_valuation_unsupported=0,
+        watchlist_incomplete_research=0,
+        watchlist_needs_attention=0,
     )
     rows: list[Row] = []
     for security in state["securities"]:
         sid = security["security_id"]
         assessment = assessments.get(sid)
+        coverage_status = valuation_coverage(assessment)
+        if security["status"] in {"active", "watching", "watchlist"}:
+            coverage["watchlist_instruments"] += 1
+            coverage[f"watchlist_{coverage_status}"] += 1
+            if security["research_status"] == "needs_attention":
+                coverage["watchlist_needs_attention"] += 1
         quote = dict(quotes.get(sid, {}))
         # Validate the quote against canonical listing identity, not ticker text.
         if any(
@@ -145,6 +157,9 @@ def snapshot(root: Path, *, now: datetime, state: ResearchState | None = None) -
             coverage["failed_tickers"] += 1
         row = {key: security.get(key, "") for key in RANK_COLUMNS}
         row["entity_status"] = security["research_status"]
+        row["valuation_coverage"] = coverage_status
+        row["bear_fair_value"] = (assessment or {}).get("bear_fair_value", "")
+        row["bull_fair_value"] = (assessment or {}).get("bull_fair_value", "")
         row.update(price=quote.get("close", ""), price_date=quote.get("price_date", ""), **opinion)
         if assessment:
             row.update(
@@ -266,6 +281,19 @@ def render_views(view: dict[str, Any]) -> dict[str, bytes]:
         "Publication has an independent deployment outcome; its revision and build date "
         "appear in the deployed snapshot metadata.\n\n"
     )
+    home += (
+        f"Watchlist valuation coverage: **{coverage['watchlist_complete']} / "
+        f"{coverage['watchlist_instruments']} instruments** have complete sourced "
+        "bear/base/bull research, including historical assessments. "
+        f"Missing research: {coverage['watchlist_missing_research']}; unsupported "
+        f"valuation: {coverage['watchlist_valuation_unsupported']}; incomplete "
+        f"research: {coverage['watchlist_incomplete_research']}. "
+        f"Needs attention: {coverage['watchlist_needs_attention']}. "
+        "Baseline coverage and current freshness are separate: expired research "
+        "never enters current rankings. Missing or incomplete coverage is scheduled "
+        "ahead of ordinary expiry refreshes within the daily budget. "
+        "Unsupported cases remain visible until evidence supports a valuation.\n\n"
+    )
     recent = [
         (row.get("assessed_at", ""), row, row["company_name"])
         for row in view["companies"]
@@ -299,8 +327,8 @@ def render_views(view: dict[str, Any]) -> dict[str, bytes]:
         "---\ntitle: Company catalog\n---\n\n# Companies\n\nHistorical "
         "and stale research remains readable; only current validated "
         "opinions enter rankings.\n\n| Company | Instrument | Status / "
-        "limitation | Researched | Expiry |\n| --- | --- | --- | --- | "
-        "--- |\n"
+        "limitation | Valuation coverage | Bear / base / bull fair value | Researched | Expiry |\n"
+        "| --- | --- | --- | --- | --- | --- | --- |\n"
     )
     for row in sorted(view["companies"], key=lambda row: (row["company_name"], row["security_id"])):
         catalog += (
@@ -308,6 +336,9 @@ def render_views(view: dict[str, Any]) -> dict[str, bytes]:
             f"{_cell(row['ticker'])} ({row['currency']}) | "
             f"{_cell(row.get('entity_status', ''))}: "
             f"{_cell(row.get('reason') or row['rating'])} | "
+            f"{row['valuation_coverage']} | "
+            f"{_number(row['bear_fair_value'])} / {_number(row['base_fair_value'])} / "
+            f"{_number(row['bull_fair_value'])} {row['currency']} | "
             f"{row.get('assessed_at') or 'unresearched'} | "
             f"{row.get('valid_until') or '—'} |\n"
         )

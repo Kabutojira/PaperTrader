@@ -330,7 +330,7 @@ def test_manual_share_class_selection_is_exact_without_duplicate_company_work(
         admit(state, "security", min(ids), reasons={"manual"}, priority=100, manual=True, now=NOW)
 
 
-def test_reviewed_company_does_not_requeue_for_its_stale_other_share_class(catalog: Path) -> None:
+def test_reviewed_share_class_queues_one_uncovered_sibling_valuation(catalog: Path) -> None:
     accept(
         catalog,
         proposal(
@@ -340,6 +340,53 @@ def test_reviewed_company_does_not_requeue_for_its_stale_other_share_class(catal
         manual=True,
     )
     state = read_state(catalog)
-    state["securities"][0]["last_research_at"] = STAMP
+    reviewed, uncovered = state["securities"]
+    reviewed["last_research_at"] = STAMP
+    assessment = dict.fromkeys(contracts(catalog)["security_assessments"].columns, "")
+    assessment.update(
+        security_id=reviewed["security_id"],
+        assessed_at=STAMP,
+        valid_until="2026-11-17T17:00:00Z",
+        research_status="supported",
+        method="normalized_earnings",
+        method_rationale="Cited per-share earning power.",
+        currency="USD",
+        horizon_months="12",
+        thesis="Durable search demand.",
+        key_assumptions="Demand remains stable.",
+        downside="Competition reduces margins.",
+        catalysts="Annual results.",
+        invalidation_conditions="Sustained cash-flow decline.",
+        confidence="medium",
+        limitations="Forecast uncertainty.",
+        source_ids=state["source_registry"][0]["source_id"],
+    )
+    for case, fair, probability in (
+        ("bear", "80", "25"),
+        ("base", "100", "50"),
+        ("bull", "120", "25"),
+    ):
+        assessment.update(
+            {
+                f"{case}_fair_value": fair,
+                f"{case}_probability_pct": probability,
+                f"{case}_assumptions": "Cited demand and multiple.",
+            }
+        )
+    state["security_assessments"].append(assessment)
+    reviewed_assessment = assessment.copy()
+
     schedule_attention(state, [], [], now=NOW)
-    assert not state["research_queue"]
+    assert len(state["research_queue"]) == 1
+    task = state["research_queue"][0]
+    assert task["entity_id"] == uncovered["security_id"]
+    assert task["priority"] == "75"
+    assert task["reasons"] == "missing_research|valuation_coverage_gap"
+    assert state["security_assessments"] == [reviewed_assessment]
+    assert not any(
+        row["security_id"] == uncovered["security_id"] for row in state["security_assessments"]
+    )
+
+    queue = [task.copy()]
+    schedule_attention(state, [], [], now=NOW)
+    assert state["research_queue"] == queue

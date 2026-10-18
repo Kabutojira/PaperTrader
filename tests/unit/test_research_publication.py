@@ -289,3 +289,40 @@ def test_deployed_artifact_has_exact_revision_metadata_and_freshness_banner(
     prepare_site(publication, stale, now=NOW)
     page = (stale / "securities/security00.md").read_text()
     assert "**unrated**" in page and "research_expired_or_future" in page
+
+
+def test_watchlist_coverage_is_per_instrument_and_separate_from_freshness(
+    publication: Path,
+) -> None:
+    from papertrader.research_publication import render_views
+
+    state = read_state(publication)
+    state["security_assessments"].pop(0)
+    unsupported = state["security_assessments"][0]
+    unsupported["research_status"] = "valuation_unsupported"
+    for case in ("bear", "base", "bull"):
+        unsupported[f"{case}_fair_value"] = ""
+        unsupported[f"{case}_probability_pct"] = ""
+    state["security_assessments"][1]["downside"] = ""
+    state["security_assessments"][2]["assessed_at"] = "2026-10-16T17:00:00Z"
+    state["security_assessments"][2]["valid_until"] = "2026-10-17T00:00:00Z"
+    state["securities"][2]["research_status"] = "needs_attention"
+    write_state(publication, state)
+    before = copy.deepcopy(state)
+    view = snapshot(publication, now=NOW)
+    assert view["coverage"]["watchlist_instruments"] == 30
+    assert view["coverage"]["watchlist_complete"] == 27
+    assert view["coverage"]["watchlist_missing_research"] == 1
+    assert view["coverage"]["watchlist_valuation_unsupported"] == 1
+    assert view["coverage"]["watchlist_incomplete_research"] == 1
+    assert view["coverage"]["watchlist_needs_attention"] == 1
+    assert view["coverage"]["stale"] == 1
+    assert all(row["security_id"] != "security03" for row in view["buys"])
+    output = render_views(view)
+    assert b"27 / 30 instruments" in output["data/wiki/index.md"]
+    catalog = output["data/wiki/security-catalog.md"]
+    assert b"Bear / base / bull" in catalog
+    assert b"missing_research" in catalog
+    assert b"valuation_unsupported" in catalog
+    assert b"incomplete_research" in catalog
+    assert read_state(publication) == before

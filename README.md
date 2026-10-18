@@ -68,3 +68,25 @@ The initial migrated coverage had82 expired assessments and no supported current
 valuation. Refresh is deliberately bounded; rankings remain empty until fresh,
 supportable research qualifies. Honest unsupported results do not manufacture prices
 or fair values to fill the lists.
+
+## Watchlist valuation coverage
+
+Every active/watchlist instrument is a research coverage target: a sourced thesis,
+valuation method, explicit bear/base/bull per-share fair values and probabilities,
+case assumptions, downside, catalysts and invalidation conditions. Coverage counts
+instruments independently; another share class's valuation does not cover a missing
+instrument. The company queue still permits only one active task per issuer.
+
+Missing, unsupported or incomplete valuations receive priority75, above ordinary
+expiry refreshes60 and below severe price movement80/material evidence90/manual100.
+A newly completed unsupported review waits until its next eligible refresh rather
+than retrying every day. Exhausted entities remain visibly needs_attention.
+The30-task queue refills from the canonical watchlist on subsequent market cycles;
+entities outside the queue remain coverage targets in the catalog. The homepage
+reports baseline completeness separately from freshness, and the company catalog
+shows each instrument's bear/base/bull values and coverage gaps. Historical complete
+research never becomes a fresh ranking merely by being counted as baseline coverage.
+
+Existing defaults remain3 sequential research operations per daily cycle, including
+weekly discovery. No valuation is fabricated to satisfy a coverage target; unavailable
+evidence stays explicit and Unrated until sourced scenarios can be supported.

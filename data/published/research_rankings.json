@@ -26,7 +26,13 @@
     "issuers": 91,
     "researched": 83,
     "stale": 80,
-    "unrated": 91
+    "unrated": 91,
+    "watchlist_complete": 22,
+    "watchlist_incomplete_research": 48,
+    "watchlist_instruments": 92,
+    "watchlist_missing_research": 9,
+    "watchlist_needs_attention": 1,
+    "watchlist_valuation_unsupported": 13
   },
   "last_market_session": "2026-10-16",
   "last_research_at": "2026-10-18T19:50:33.927425Z",
