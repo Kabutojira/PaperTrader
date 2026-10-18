@@ -995,9 +995,21 @@ def import_watchlist(
             label=f"watchlist security {index}",
         )
         _required(fields, WATCHLIST_SECURITY_FIELDS, label=f"watchlist security {index}")
-        if fields["instrument_type"] not in settings.risk.allowed_instruments:
+        watch_only_bitcoin = (
+            fields["instrument_type"] == "cryptocurrency"
+            and fields["ticker"] == "BTCUSD"
+            and fields["provider_symbol"] == "BTC-USD"
+            and fields["venue_mic"] == "XOFF"
+            and fields["exchange_code"] == "CCC"
+            and fields["currency"] == "USD"
+            and fields["country"] == "ZZ"
+        )
+        if (
+            not watch_only_bitcoin
+            and fields["instrument_type"] not in settings.risk.allowed_instruments
+        ):
             raise ResearchStateError(f"watchlist security {index} instrument_type is not allowed")
-        if fields["venue_mic"] not in settings.risk.allowed_exchanges:
+        if not watch_only_bitcoin and fields["venue_mic"] not in settings.risk.allowed_exchanges:
             raise ResearchStateError(f"watchlist security {index} venue_mic is not allowed")
         if fields["currency"] not in settings.risk.allowed_currencies:
             raise ResearchStateError(f"watchlist security {index} currency is not allowed")

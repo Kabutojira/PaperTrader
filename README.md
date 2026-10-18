@@ -725,3 +725,17 @@ uv run papertrader runtime-whitelist validate --staged
 Development changes may touch source, tests, schemas, skills, workflows, and site configuration.
 Automated runtime commits are intentionally restricted to the data paths documented in
 `AGENTS.md`.
+
+### FinanceAlerts watchlist synchronization
+
+`papertrader watchlist sync-financealerts --tickers /path/to/tickers.txt` adds
+identity-only securities through the existing watchlist importer. It resolves
+GOOG to the existing GOOGL identity and BTC-USD to BTCUSD, validates Yahoo issuer,
+venue and currency metadata before adding equities, and returns a nonzero exit
+code with a per-symbol `failed` map when any import fails. Repeated input is a
+no-op. It never writes assessments, research pages, strategies or portfolios.
+
+Bitcoin alone may be registered as `cryptocurrency`, `watchlist`, provider
+`BTC-USD`, off-exchange MIC `XOFF` and unknown-country code `ZZ`. Its monitoring
+calendar is 24/7. This exception does not change allowed trading instruments or
+venues: cryptocurrency order legs and strategies remain prohibited.

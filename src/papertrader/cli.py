@@ -42,6 +42,7 @@ from papertrader.daily import (
     resume_or_create_daily_cycle,
 )
 from papertrader.execution import ensure_initial_capital, process_order_fill
+from papertrader.financealerts import sync_financealerts
 from papertrader.indicators import update_indicators
 from papertrader.integrity import (
     changed_paths_from_git,
@@ -451,6 +452,8 @@ def _parser() -> argparse.ArgumentParser:
     watchlist_commands = watchlist.add_subparsers(dest="watchlist_command", required=True)
     watchlist_import = watchlist_commands.add_parser("import")
     watchlist_import.add_argument("--request", type=Path, required=True)
+    watchlist_sync = watchlist_commands.add_parser("sync-financealerts")
+    watchlist_sync.add_argument("--tickers", type=Path, required=True)
 
     report = commands.add_parser("report", help="generate the canonical daily report")
     report_commands = report.add_subparsers(dest="report_command", required=True)
@@ -1668,6 +1671,12 @@ def _dispatch_research(arguments: argparse.Namespace, root: Path, settings: Sett
 
 
 def _dispatch_watchlist(arguments: argparse.Namespace, root: Path, settings: Settings) -> int:
+    if arguments.watchlist_command == "sync-financealerts":
+        result = sync_financealerts(
+            root, settings, arguments.tickers.read_text(encoding="utf-8-sig")
+        )
+        print(json.dumps(result, sort_keys=True))
+        return 1 if result["failed"] else 0
     raw = _request_object(root, arguments.request)
     print(json.dumps(import_watchlist(root, settings, raw), sort_keys=True))
     return 0

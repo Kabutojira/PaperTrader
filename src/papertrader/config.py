@@ -52,6 +52,9 @@ class MarketDataSettings:
     def calendar_for(self, venue_mic: str) -> str:
         """Return the configured exchange-calendar name for a venue MIC."""
 
+        # The identity-only Bitcoin exception is off-exchange and closes daily at UTC midnight.
+        if venue_mic == "XOFF":
+            return "24/7"
         calendars = dict(self.calendars)
         try:
             return calendars[venue_mic]

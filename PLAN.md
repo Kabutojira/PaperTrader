@@ -639,3 +639,11 @@ technical-chart maintenance command now removes legacy blocks idempotently, pres
 research charts and research dates, and never recreates monitoring graphs. Security-page validation
 rejects reintroduced monitoring graphs. Canonical prices, indicator series, research decisions,
 alerts, allocation, and paper accounting remain unchanged.
+
+## 2026-10-18 — FinanceAlerts integration M1
+
+Added additive FinanceAlerts ticker ingestion through watchlist import, preserving
+GOOGL identity for GOOG aliases and reporting unverified metadata per symbol.
+Added a Bitcoin-only watchlist registration exception with a 24/7 monitoring
+calendar; allowed trading instruments and order/strategy validation are unchanged.
+No existing research or financial records are modified by synchronization.
