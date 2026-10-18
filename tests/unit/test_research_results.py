@@ -755,7 +755,7 @@ def test_worker_prompt_states_exact_current_research_contract() -> None:
         "target security_id and its immutable issuer_id exactly",
         "Copy context.as_of exactly",
         "Leave source.published_at empty",
-        "Every source ID in an idea row or relationship row must exist",
+        "Every source ID in an assessment, idea row or relationship row must exist",
         "have its exact URL linked\nin the final primary Markdown page",
         "Clearly attributed trustworthy secondary financial reporting",
         "A generic corporate\nhomepage is not financial evidence",
