@@ -55,7 +55,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | NVDA (USD) | researched: buy | complete | 198.00 / 310.50 / 448.00 USD | 2026-10-18T19:50:33.927425Z | 2026-11-17T19:50:33.927425Z |
 | [Nebius Group N.V.](securities/security_47a0b06f6c6c478d7c1e) | NBIS (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-18T21:00:52.243456Z | 2026-11-17T21:00:52.243456Z |
 | [Nidec Corporation](securities/security_3853e54c619d597dcaa1) | NIB.F (EUR) | researched: valuation_unsupported | valuation_unsupported | — / — / — EUR | 2026-08-06T19:10:34Z | 2026-08-31T19:10:34Z |
-| [Nomad Foods Limited](securities/security_98a1943771da875efed5) | NOMD (USD) | researched: research_expired_or_future | incomplete_research | 9.00 / 15.00 / 20.00 USD | 2026-08-28T19:32:10Z | 2026-09-27T19:32:10Z |
+| [Nomad Foods Limited](securities/security_98a1943771da875efed5) | NOMD (USD) | researched: hold | complete | 9.54 / 15.08 / 19.36 USD | 2026-10-18T23:57:11.762336Z | 2026-11-15T23:57:11.762336Z |
 | [PLS Group Limited](securities/security_8a5c43888d224de85c69) | PLS.AX (AUD) | researched: research_expired_or_future | complete | 1.67 / 3.67 / 6.69 AUD | 2026-08-31T21:53:45Z | 2026-09-30T21:53:45Z |
 | [Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a) | PLTR (USD) | researched: research_expired_or_future | complete | 52.29 / 99.24 / 162.50 USD | 2026-08-11T13:45:04Z | 2026-09-10T13:45:04Z |
 | [Parrot S.A.](securities/security_cc4dcb8f002b61dffe00) | PARRO.PA (EUR) | researched: research_expired_or_future | complete | 5.48 / 9.09 / 14.51 EUR | 2026-08-20T07:54:58Z | 2026-09-19T07:54:58Z |
