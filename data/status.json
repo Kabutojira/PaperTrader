@@ -1,0 +1,11 @@
+{
+  "market": {
+    "exit_code": 0,
+    "failed_tickers": {},
+    "http_requests": 280,
+    "last_attempt_at": "2026-10-18T18:50:04Z",
+    "last_success_at": "2026-10-18T18:50:04Z",
+    "provider_calls": 13,
+    "status": "succeeded"
+  }
+}
