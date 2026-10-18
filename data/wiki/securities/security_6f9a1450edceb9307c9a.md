@@ -4,12 +4,12 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-26"
-updated: "2026-08-09"
-provenance: "source_anet_q1_2026_earnings; source_anet_q1_2026_10q; source_anet_q2_2026_earnings; source_anet_q2_2026_10q; source_anet_q2_2026_8k_exhibit; source_anet_sec_submissions_20260808"
+updated: "2026-10-18"
+provenance: "source_anet_q2_2026_earnings; source_web_d683c83593b005f6192ac366; source_web_9e591bb09ecf5a1419161096"
 security_id: security_6f9a1450edceb9307c9a
 issuer_id: issuer_29ad971dc8b75eac1b79
 confidence: medium
-next_review: "2026-08-23"
+next_review: "2026-11-17"
 ---
 
 # Arista Networks, Inc. common stock
@@ -17,98 +17,91 @@ next_review: "2026-08-23"
 ## Identity
 
 - Immutable security: `security_6f9a1450edceb9307c9a`
-- Issuer: `issuer_29ad971dc8b75eac1b79`
-- Instrument: common stock, NYSE (`XNYS`), USD
-- Provider identity: `ANET` / `XNYS` / `USD` / equity
+- Immutable issuer: `issuer_29ad971dc8b75eac1b79`
+- Instrument: Arista Networks, Inc. common stock
+- Ticker and provider symbol: `ANET`
+- Venue: New York Stock Exchange (`XNYS`)
+- Native and reporting currency: USD
 
-Arista is a direct networking exposure within
-[[ideas/idea_ai_compute_networking_hyperscaler_monetization]] through the accepted
-[[relationships/relationship_e5f55616b9beaf661080]].
+The issuer’s Q2 release identifies Arista Networks, Inc. and NYSE ticker ANET. Nothing opened in this review contradicted the supplied common-stock, venue, provider-symbol, or currency identity.
 
-## Changes since prior review
+Arista remains a direct networking exposure within [[ideas/idea_ai_compute_networking_hyperscaler_monetization]] through [[relationships/relationship_e5f55616b9beaf661080]].
 
-- **Facts and evidence:** no new issuer facts appeared after the accepted 8 August quick check. The
-  SEC-hosted Q2 filing and results exhibit were fetched again on 9 August and retained identical
-  hashes. Q2 revenue, USD 0.95 GAAP diluted EPS, USD 2.7765 billion of first-half operating cash
-  flow, USD 13.3433 billion of cash plus current marketable securities, Q3 guidance, and USD 9.7
-  billion of purchase commitments remain the current primary evidence.
-- **Assumptions:** the prior unsupported state is resolved through a full `mature_compounder`
-  earnings-multiple review. The 12-month scenarios normalize forward GAAP EPS at USD 4.00, USD 4.80,
-  and USD 5.60 and apply 30x, 38x, and 45x multiples. The base and bull cases require sustained AI
-  demand and operating leverage; the bear case captures customer, mix, commitment, and multiple
-  compression.
-- **Valuation inputs and outputs:** valuation changes from unsupported with no scenarios to USD
-  120.00/USD 182.40/USD 252.00 bear/base/bull values at 25%/50%/25% probabilities. Probability-
-  weighted fair value is USD 184.20. At USD 188.67, expected return is about -2.37%, base return
-  about -3.32%, bear return about -36.40%, and bull return about 33.57%.
-- **Thesis, catalysts, and risks:** Q2 upgrades the evidence for demand conversion, margins, and
-  liquidity. Q3 guide execution and broader AI Ethernet adoption remain catalysts. Customer and
-  supplier concentration, demand timing, inventory, binding commitments, and premium valuation are
-  unchanged risks and are now reflected explicitly in the scenarios.
-- **Blockers and gaps:** the hard valuation-support blocker is resolved. Medium confidence,
-  concentration sensitivity, unfavorable timing, insufficient margin of safety, and an
-  uncompelling expected return remain soft gaps.
-- **Rating and portfolio action:** the accepted Unrated / Watch quick-check conclusion becomes Hold
-  / Watch after completing valuation. The portfolio action remains unchanged: no strategy, signal,
-  order, or paper exposure.
+## Changes since the prior review
 
-## Economics and thesis
+- The assessment date and evidence checks were refreshed through 2026-10-18.
+- The latest successfully opened financial release remains Q2 2026; no newer financial results were verified.
+- The prior $120.00/$182.40/$252.00 bear/base/bull values and 25%/50%/25% probabilities are retained because there is insufficient new financial evidence to revise normalized EPS or multiples responsibly.
+- The supplied market close declined from the prior review’s $188.67 reference to $176.98 on 2026-10-16. The current price is therefore below the $182.40 base value, although scenario dispersion remains substantial.
+- The evidence limitation is more explicit: SEC document endpoints were inaccessible during this operation, and the issuer’s dynamically rendered filing and release indexes did not expose item-level updates in retrieved text. This does not prove that no intervening filing exists.
 
-Q2 revenue was USD 3.036 billion, up 37.7% year over year, with 45.4% GAAP operating margin and USD
-0.95 diluted GAAP EPS. First-half operating cash flow was USD 2.7765 billion. At 30 June, USD 2.2902
-billion of cash plus USD 11.0531 billion of current marketable securities provide substantial
-resilience. Q3 revenue guidance of approximately USD 3.3 billion supports continued growth.
+## Verified business economics
 
-Arista's Ethernet switching, routing, EOS software, and services can convert AI and cloud-network
-investment into revenue, earnings, and cash. That mechanism remains exposed to a limited set of
-large buyers, customer-built alternatives, competing architectures, merchant silicon, qualification
-and acceptance periods, and volatile AI capital expenditure. Non-cancellable purchase commitments
-of USD 9.7 billion, including USD 9.4 billion expected within 12 months, amplify forecast error.
+Arista sells networking platforms for data-center, AI, campus, and routing environments. Its economics combine hardware revenue with EOS software and services. Large-scale AI and cloud deployments can increase demand for high-throughput Ethernet fabrics, while software and service attachment can support customer retention and margins.
+
+The [Q2 2026 financial release](https://investors.arista.com/Communications/Press-Releases-and-Events/Press-Release-Detail/2026/Arista-Networks-Inc--Reports-Second-Quarter-2026-Financial-Results/default.aspx) reported:
+
+- Revenue of $3.036 billion, up 37.7% year over year and 12.1% sequentially.
+- GAAP operating margin of 45.4%.
+- GAAP diluted EPS of $0.95, compared with $0.70 in Q2 2025.
+- Product revenue of $2.605 billion and service revenue of $430.5 million.
+- A Q3 outlook of approximately $3.3 billion in revenue and non-GAAP diluted EPS of $1.06–$1.08.
+- Introduction of 1.6 Tbps AI-fabric platforms, including liquid-cooled options.
+
+These are verified historical results or management outlook. Durable future AI demand, forward GAAP EPS, market share, product mix, and valuation multiples remain assumptions.
+
+## Thesis
+
+Arista can benefit as accelerated computing expands demand for low-latency, high-throughput networks. Its Ethernet switching and routing platforms, EOS software, and services provide several monetization paths. Q2 demonstrated strong revenue growth, high GAAP profitability, and increasing diluted EPS, while the disclosed 1.6 Tbps products support the strategic link to AI fabrics.
+
+The contrary case is material. A limited number of large customers can change deployment schedules, develop internal alternatives, or select competing architectures. Qualification and acceptance can delay revenue. Product mix, supply execution, excess commitments, and inventory can impair margins. Even if operating results remain strong, a premium earnings multiple can contract.
 
 ## Valuation
 
-Template: `mature_compounder`; method: `earnings_multiple`; horizon: 12 months.
+Method: 12-month earnings multiple applied to normalized forward GAAP diluted EPS. GAAP earnings are used so stock-based compensation and dilution remain in the per-share measure.
 
-| Scenario | Probability | Normalized forward GAAP EPS | Multiple | Fair value | Return vs USD 188.67 |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| Bear | 25% | USD 4.00 | 30x | USD 120.00 | -36.40% |
-| Base | 50% | USD 4.80 | 38x | USD 182.40 | -3.32% |
-| Bull | 25% | USD 5.60 | 45x | USD 252.00 | 33.57% |
+| Scenario | Probability | Normalized forward GAAP EPS | Multiple | Per-share value |
+| --- | ---: | ---: | ---: | ---: |
+| Bear | 25% | $4.00 | 30x | $120.00 |
+| Base | 50% | $4.80 | 38x | $182.40 |
+| Bull | 25% | $5.60 | 45x | $252.00 |
 
-The probability-weighted fair value is USD 184.20, about 2.37% below the mark. The valuation is
-per-share and uses GAAP earnings so stock compensation and dilution remain inside the denominator.
-The base case assumes substantial delivery against Q3 guidance with durable AI-networking demand;
-the bull case requires sustained wins, software attachment, and operating leverage; the bear case
-allows growth deceleration, customer weakness, gross-margin pressure, commitment losses, and
-multiple compression.
+Arithmetic is $4.00 × 30 = $120.00, $4.80 × 38 = $182.40, and $5.60 × 45 = $252.00. Probabilities total 100% and emphasize the base case while retaining symmetric tail weights because both AI-network acceleration and concentration-driven disappointment are plausible.
 
-## Catalysts, risks, and invalidation
+### Bear case
 
-Catalysts are Q3 revenue and GAAP earnings delivery, durable AI back-end and front-end Ethernet wins
-with profitable software and service attachment, and broader customer contribution. Invalidate if
-Ethernet loses share, major customers slow or internalize networking, AI capex or acceptance slows,
-supplier concentration constrains launches, commitments create inventory losses, or per-share
-earnings decelerate enough that a premium multiple cannot be supported.
+Growth decelerates, a major customer reduces deployment, mix pressures margins, supply or inventory commitments prove excessive, and valuation compresses. The combination of $4.00 normalized GAAP EPS and a 30x multiple produces $120.00 per share.
 
-Upgrade requires a lower entry price or higher auditable per-share earnings that clears expected-
-return, base-return, downside-payoff, margin-of-safety, confidence, and relationship gates.
+### Base case
 
-## Disposition
+Arista substantially delivers against its Q3 revenue outlook, AI and cloud Ethernet demand remains durable, and software and services help preserve attractive economics. Customer concentration and valuation risk cap the multiple at 38x. At $4.80 normalized GAAP EPS, fair value is $182.40.
 
-Status: **watching**, rating **Hold / Watch**, confidence **medium**, and allocation **ineligible**.
-The USD 188.67 mark exceeds both base and probability-weighted fair values. No conviction strategy,
-signal, order, or paper trade is justified. Review by **2026-08-23**, or earlier after a material
-customer, architecture, earnings, guidance, commitment, or price change.
+### Bull case
 
-## Evidence and provenance
+AI-fabric wins, 1.6 Tbps platform adoption, software attachment, and operating leverage sustain rapid per-share earnings growth. A 45x multiple on $5.60 normalized GAAP EPS produces $252.00.
 
-- [Arista Q2 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1596532/000159653226000175/anet-20260630.htm)
-  — financial statements, cash flow, concentration, inventory, commitments, and risks; hash checked
-  unchanged on 2026-08-09.
-- [Arista Q2 2026 results, SEC-filed Exhibit 99.1](https://www.sec.gov/Archives/edgar/data/1596532/000159653226000174/ex991q226-earningsrelease.htm)
-  — Q2 revenue, margins, EPS, and Q3 guidance; hash checked unchanged on 2026-08-09.
-- `data/market/latest.csv`, `data/market/indicators.csv`, and `data/market/fx/USD_EUR.csv` —
-  identity-matched paper mark, deterministic market state, and USD/EUR conversion observed
-  2026-08-09T11:05:22Z, with market data as of 2026-08-08T19:23:43Z.
+The supplied 2026-10-16 close of $176.98 is below base fair value, but the gap is modest relative to the $120–$252 scenario range. The evidence supports a valuation, not a high-confidence conclusion.
 
-See the complete [[index]] and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md) for repository context.
+## Catalysts
+
+- Delivery against the approximately $3.3 billion Q3 revenue outlook.
+- Continued adoption of Arista’s 1.6 Tbps and broader Etherlink AI-fabric platforms.
+- Evidence of durable back-end, front-end, and scale-across Ethernet wins.
+- Profitable software and service attachment.
+- Broader customer contribution and continued growth in GAAP diluted EPS.
+
+## Downside and invalidation
+
+The base thesis would be invalidated by a material revenue-trajectory miss, sustained loss of Ethernet share in accelerated-computing fabrics, deteriorating GAAP margins or per-share earnings, significant inventory or commitment losses, or evidence that growth depends on an increasingly narrow customer group. A large enough earnings slowdown or multiple contraction could move value toward the $120 bear case even if the business remains profitable.
+
+## Confidence and limitations
+
+Confidence is **medium**. The Q2 release is direct issuer evidence, but normalized forward EPS and valuation multiples are analytical assumptions. No independent customer-demand, competitive-share, backlog, or post-quarter margin evidence was verified.
+
+The [issuer filing index](https://investors.arista.com/Financial-Information/default.aspx?section=secfilling) and [press-release index](https://investors.arista.com/Communications/Press-Releases-and-Events/default.aspx) were opened on 2026-10-18, but their retrieved text did not expose item-level current entries. Direct SEC document requests returned access errors. Accordingly, the review cannot establish that no material filing or release occurred after Q2. Reassess upon Q3 results or another material filing, and no later than 2026-11-17.
+
+## Evidence
+
+- [Arista Networks, Inc. Reports Second Quarter 2026 Financial Results](https://investors.arista.com/Communications/Press-Releases-and-Events/Press-Release-Detail/2026/Arista-Networks-Inc--Reports-Second-Quarter-2026-Financial-Results/default.aspx) — Q2 revenue, margins, diluted EPS, product and service revenue, Q3 outlook, and AI-fabric product disclosures.
+- [Arista Networks Financial Information and SEC Filings](https://investors.arista.com/Financial-Information/default.aspx?section=secfilling) — issuer filing index checked for freshness; item-level entries were not present in retrieved text.
+- [Arista Networks Press Releases](https://investors.arista.com/Communications/Press-Releases-and-Events/default.aspx) — issuer release index checked for freshness; item-level entries were not present in retrieved text.
