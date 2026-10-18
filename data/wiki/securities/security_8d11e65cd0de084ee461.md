@@ -7,9 +7,9 @@ ticker: LMND
 venue_mic: XNYS
 provider_symbol: LMND
 currency: USD
-research_status: valuation_unsupported
-assessed_at: 2026-10-18T22:44:50.672765Z
-valid_until: 2026-11-17T22:44:50.672765Z
+research_status: supported
+assessed_at: 2026-10-18T22:58:40.076661Z
+valid_until: 2026-11-17T22:58:40.076661Z
 confidence: low
 ---
 
@@ -17,92 +17,135 @@ confidence: low
 
 ## Research update
 
-This is the first research page for the security. Current issuer materials establish meaningful operating progress but do not provide enough accessible filing-level evidence for a defensible per-share valuation. The assessment is therefore **valuation unsupported**, with no bear, base, or bull values or probabilities.
+The assessment has been upgraded from **valuation unsupported** to **supported** because Lemonade's Q2 2026 Form 10-Q and shareholder letter became readable through the research channel. The filing now verifies the balance sheet, earnings, cash flow, financing obligations, share count, equity awards, and reserves needed for a scenario valuation.
+
+The resulting 12-month fair values are **$16.75 bear**, **$33.51 base**, and **$55.85 bull**, with probabilities of **30%**, **50%**, and **20%**. Confidence remains low because Lemonade is still loss-making and the price-to-book multiples are judgmental assumptions rather than observable facts.
 
 ## Identity reconciliation
 
-The issuer identifies Lemonade, Inc. as **NYSE: LMND**, consistent with ticker/provider symbol `LMND`, venue MIC `XNYS`, and the supplied common-stock identity. The issuer's stock page reports the security in U.S. dollars and showed a delayed price of **$44.20** when checked. No identity change was made. The accessible pages do not independently display the internal issuer or security IDs, which remain immutable as supplied.
+The [Q2 2026 Form 10-Q](https://www.lemonade.com/investor-relations-bo/wp-content/uploads/2026/07/LMND-Q2-2026-Form-10-Q-Final.pdf) (`source_web_1f27977f0b189b6eeb79f4b1`) identifies the registrant as Lemonade, Inc. and the security as common stock traded under `LMND` on the New York Stock Exchange. This agrees with the supplied ticker, provider symbol, common-stock class, `XNYS` venue MIC, and USD denomination. The immutable security and issuer IDs have not been changed.
 
-## Business and economics
+## Business economics
 
-Lemonade offers renters, homeowners, car, pet, and life insurance in the United States and insurance products in several European markets. Its economic proposition is that automation and proprietary models can lower service and claims-handling costs while customer growth, cross-selling, and improved underwriting spread fixed technology and operating expenses over a larger premium base.
+Lemonade sells renters, homeowners, car, pet, and life insurance through a technology-centered operating model. Its economic case rests on customer growth, cross-selling, automated sales and service, efficient claims handling, and underwriting models that allow fixed technology and administrative costs to be spread across a larger premium base.
 
-The important counterpoint is that insurance value depends on more than growth. Reserve adequacy, catastrophe exposure, reinsurance pricing and coverage, retained underwriting risk, regulatory capital, investment assets, and product-level loss ratios can dominate reported topline momentum. Those inputs must be verified before assigning an equity value.
+Insurance growth is valuable only if pricing and reserves adequately cover claims and operating costs. Reinsurance cessions also affect both revenue and retained risk. Lemonade's value consequently depends on underwriting quality, reserve adequacy, catastrophe exposure, regulatory capital, reinsurance availability, financing costs, customer-acquisition returns, and dilution—not revenue growth alone.
 
-## Current verified evidence
+## Verified operating evidence
 
-The issuer's [investor snapshot](https://www.lemonade.com/investor?cb=31326) (`source_web_d40ee5b4129fbee3ad4b9126`) reports for Q2 2026:
+The [Q2 2026 shareholder letter](https://www.lemonade.com/investor-relations-bo/wp-content/uploads/docs/LMND-Shareholder-Letter-Q2-2026.pdf) (`source_web_022111116ce0ff97f2ea5a4e`) reports:
 
-- In-force premium of approximately **$1.43 billion**, up **32.4%** year over year.
-- Revenue of **$294 million**, up **79%**.
-- Gross profit of **$113 million**, up **76%**.
-- **3.31 million** customers.
-- Adjusted free cash flow of **$19 million**.
-- A reduction in quota-share cession from roughly 20% to roughly 18%, alongside expanded catastrophe protection.
-- Guidance for approximately 33% in-force-premium growth and an expectation of the first positive adjusted EBITDA quarter in Q4 2026.
+- In-force premium of **$1.434 billion**, up approximately **32%** year over year.
+- **3,308,666** customers, up **23%**.
+- Premium per customer of **$433**, up **8%**.
+- Annual dollar retention of **85%**.
+- Q2 revenue of **$294.4 million**, up **79%**.
+- Q2 gross profit of **$113.2 million**, up **76%**.
+- A claims-handling expense ratio, excluding prior-period development, of **5%**.
+- A Q2 adjusted EBITDA loss of **$19 million** and a GAAP net loss of **$43.4 million**.
 
-These are issuer-reported highlights. Adjusted free cash flow and adjusted EBITDA are non-GAAP measures, and the accessible HTML does not provide the reconciliations or complete financial statements required to assess earnings quality and capital consumption.
+The issuer attributes the unusually rapid revenue growth partly to higher premium retention following reduced quota-share cessions. This means revenue growth should not be interpreted as an equivalent improvement in underlying policy growth or profitability.
 
-The [Q2 results announcement](https://www.lemonade.com/investor/news/lemonade-announces-second-quarter-2026-financial-results) (`source_web_f243e58e657e1a5b7ff0a0ba`) confirms the July 29, 2026 results release and announces that CFO Tim Bixby is expected to move to the board on January 1, 2027, with Nick Stead succeeding him. It also identifies risks including continued losses, underwriting and reserve uncertainty, reinsurance availability, capital requirements, catastrophe exposure, competition, model performance, cybersecurity, regulation, and growth-financing arrangements.
+For full-year 2026, management guides to:
 
-The issuer's [quarterly-results index](https://www.lemonade.com/investor/quarterly-results) (`source_web_a4c4cc66287d24e9810b07be`) confirms that Q1 and Q2 2026 shareholder letters and Forms 10-Q exist. However, the linked reports were PDF-only and could not be read through the available research channel.
+- In-force premium of **$1.632-$1.639 billion**.
+- Gross earned premium of **$1.374-$1.378 billion**.
+- Revenue of **$1.214-$1.220 billion**.
+- Adjusted EBITDA loss of **$47-$51 million**.
+- Stock compensation of approximately **$95 million**.
+- Weighted-average common shares of approximately **78 million**.
 
-The [issuer stock-information page](https://www.lemonade.com/investor/stock-information) (`source_web_51e97f00737329cf7329ee45`) showed a delayed **$44.20** quote. That quote is identity and market context only; it was not used as fair value.
+The guidance implies approximately **$8 million of positive adjusted EBITDA in Q4 2026**, but the issuer cannot fully reconcile that forward-looking non-GAAP target to net loss. It is therefore a catalyst and scenario assumption, not evidence of achieved profitability.
 
-## Valuation method and why it is unsupported
+## Financial position and contrary evidence
 
-No valuation multiple or discounted cash-flow model was applied. A simple revenue multiple would be especially weak here because reported revenue changes with reinsurance structure and does not directly capture retained underwriting economics. A defensible equity bridge requires, at minimum:
+The [Form 10-Q](https://www.lemonade.com/investor-relations-bo/wp-content/uploads/2026/07/LMND-Q2-2026-Form-10-Q-Final.pdf) (`source_web_1f27977f0b189b6eeb79f4b1`) reports at June 30, 2026:
 
-1. Current diluted shares and potentially dilutive awards.
-2. Cash and investments attributable to common shareholders.
-3. Debt and claims created by growth-financing arrangements.
-4. Insurance loss reserves and evidence concerning reserve development.
-5. Statutory capital requirements and subsidiary dividend capacity.
-6. Gross and net loss ratios by product, catastrophe experience, and reinsurance economics.
-7. GAAP operating expenses, stock-based compensation, and cash-flow reconciliation.
-8. A normalized profitability path rather than a single adjusted-EBITDA target.
+- Investments of **$777.7 million**.
+- Cash, cash equivalents, and restricted cash of **$380.3 million**.
+- Unpaid loss and loss-adjustment expense of **$307.5 million**.
+- Unearned premium of **$661.7 million**.
+- Borrowings under financing agreements of **$206.4 million**.
+- Common stockholders' equity of **$499.5 million**.
+- **77.326718 million** issued and outstanding shares.
 
-Because these inputs were not verifiable from accessible primary evidence, any per-share arithmetic would depend on guessed or stale figures. The market quote is not a substitute for intrinsic value.
+For the first half of 2026, Lemonade recorded revenue of **$552.4 million**, a net loss of **$79.2 million**, stock compensation of **$45.7 million**, and operating cash outflow of **$4.0 million**. Financing-agreement proceeds were **$89.9 million**, versus **$41.6 million** of repayments.
 
-## Scenario requirements
+Dilution is material. The filing reports **6.786537 million** outstanding options and **5.324753 million** service-condition RSUs. It also reports **$226.1 million** of unrecognized service-condition RSU expense. Outstanding common shares increased from **75.907215 million** at December 31, 2025 to **77.326718 million** at June 30, 2026.
 
-### Bear
+These facts are meaningful contrary evidence. Strong premium and revenue growth have not yet produced GAAP profitability, book equity declined from **$533.6 million** at year-end to **$499.5 million**, and equity compensation can reduce future per-share value.
 
-A future bear case should model slower premium growth, weaker retention, adverse reserve development, catastrophe losses, higher reinsurance costs, capital needs, and dilution. No value or probability is assigned.
+## Valuation method
 
-### Base
+A price-to-book framework is used because Lemonade remains unprofitable and insurance economics are balance-sheet intensive. Revenue multiples can obscure retained underwriting risk and the effect of reinsurance. Earnings and cash-flow valuation methods are not yet dependable because normalized positive earnings have not been demonstrated.
 
-A future base case should test whether current growth and underwriting improvement convert into sustained GAAP profitability after stock compensation, financing costs, and required insurance capital. No value or probability is assigned.
+### Per-share arithmetic
 
-### Bull
+The starting point is reported common equity of **$499.5 million**. The denominator is a conservative approximation:
 
-A future bull case should require durable loss-ratio improvement, successful scaling of car and international products, continued customer growth, operating leverage, and limited dilution or capital strain. No value or probability is assigned.
+- Reported outstanding shares: **77.326718 million**
+- Outstanding options: **6.786537 million**
+- Service-condition RSUs: **5.324753 million**
+- Approximate fully diluted shares: **89.438008 million**
 
-## Downside and contrary evidence
+This gives approximate diluted book value per share of:
 
-The strongest contrary evidence is structural rather than a single reported metric: rapid premium growth can destroy value if pricing, reserves, or reinsurance are inadequate. Lemonade also retains exposure to catastrophe volatility, regulatory capital constraints, model error, competitive acquisition costs, data and cybersecurity events, and execution across newer products. Management's adjusted-EBITDA objective does not establish GAAP profitability or distributable cash flow.
+**$499.5 million / 89.438008 million = $5.5849**
+
+The calculation deliberately counts all disclosed options and service-condition RSUs without treasury-stock treatment and gives no credit for option exercise proceeds. It excludes future grants and separately disclosed market-condition RSUs. It is conservative, but it is not a formal GAAP diluted-share calculation.
+
+## Scenarios
+
+### Bear — $16.75, 30% probability
+
+The bear case applies **3x** diluted book value:
+
+**$5.5849 × 3 = $16.75 per share**
+
+This case assumes slowing premium growth, failure to sustain positive adjusted EBITDA, adverse reserve or catastrophe experience, higher financing or reinsurance costs, and continued GAAP losses and dilution. A 30% probability reflects the company's ongoing losses and the possibility that growth fails to create per-share book value.
+
+### Base — $33.51, 50% probability
+
+The base case applies **6x** diluted book value:
+
+**$5.5849 × 6 = $33.51 per share**
+
+This case assumes 2026 revenue and in-force premium broadly meet guidance, Q4 adjusted EBITDA turns modestly positive as targeted, and claims efficiency continues improving. It does not assume immediate GAAP profitability. The 50% probability reflects strong current operating momentum offset by underwriting, financing, and execution uncertainty.
+
+### Bull — $55.85, 20% probability
+
+The bull case applies **10x** diluted book value:
+
+**$5.5849 × 10 = $55.85 per share**
+
+This case requires sustained premium and customer growth, durable underwriting improvement, successful scaling of Car and other products, effective catastrophe protection, and conversion of operating leverage into recurring profitability without excessive additional dilution. Its 20% probability recognizes that these outcomes are not yet established by sustained GAAP earnings or operating cash generation.
+
+## Downside
+
+Key downside mechanisms include adverse reserve development, catastrophe losses, inadequate pricing, deterioration in product loss ratios, reinsurance cost or availability problems, regulatory-capital constraints, and failures in underwriting or claims models. Customer acquisition could also become less efficient as growth spending rises.
+
+Capital structure and dilution matter. Financing borrowings rose during the first half, stock compensation increased materially, and unrecognized equity-award expense remains substantial. These claims on future economics can prevent strong company-level growth from becoming per-share value creation.
 
 ## Catalysts
 
-- Delivery against the expected first positive adjusted EBITDA quarter in Q4 2026.
-- Sustained in-force-premium and customer growth.
-- Further improvement in underwriting and claims-handling economics.
-- Evidence that the revised reinsurance program improves risk-adjusted returns.
-- More complete financial and capital disclosure, including at the planned November 17, 2026 investor day.
+- Delivery of approximately **$8 million** of positive adjusted EBITDA in Q4 2026.
+- Full-year revenue and in-force premium within the guided ranges.
+- Sustained improvement in claims-handling and underwriting ratios.
+- In-force-premium growth beginning to outpace growth spending.
+- Evidence that revised reinsurance arrangements reduce catastrophe volatility while preserving profitable retained premiums.
+- Durable positive GAAP earnings or operating cash flow, which would permit a more robust earnings-based valuation.
 
-These are reassessment catalysts, not current valuation evidence.
+## Invalidation conditions
 
-## Invalidation and next evidence threshold
+The thesis would weaken if Lemonade misses its Q4 adjusted-EBITDA objective, annual dollar retention deteriorates, premium growth slows without lower acquisition spending, reserves develop adversely, catastrophe losses rise, financing expense consumes operating improvement, or dilution continues faster than per-share book-value creation.
 
-The `valuation_unsupported` conclusion can be replaced when accessible primary filings provide complete current financial statements, diluted shares, reserves, reinsurance terms, statutory capital, financing obligations, stock compensation, and cash-flow reconciliation. A deterioration in loss ratios, reserves, liquidity, capital adequacy, growth, or the Q4 2026 profitability timetable would weaken the operating thesis.
+The price-to-book method should be replaced if Lemonade establishes stable positive earnings suitable for an earnings or discounted-cash-flow model. It should also be reconsidered if statutory disclosures show that consolidated GAAP equity materially overstates capital economically available to common shareholders.
 
 ## Confidence and limitations
 
-**Confidence: low.** Confidence applies to the completeness of the valuation assessment, not to the existence of the issuer-reported highlights. The detailed Q2 shareholder letter and 10-Q were inaccessible in the available channel, and the SEC archive endpoint could not be opened. Current cash, investments, liabilities, reserves, capital, dilution, and GAAP profitability therefore remain unverified. No prior valuation numbers existed, and none were invented or carried forward.
+**Confidence: low.** The current filing supports a scenario valuation, but the multiples are judgmental and are not based on an independently verified peer set. GAAP common equity is not the same as excess statutory capital or distributable parent liquidity. The diluted share count is a conservative approximation rather than a treasury-stock calculation. The available evidence also does not establish normalized catastrophe losses, mature product margins, or sustained GAAP profitability. Book value can change materially during the 12-month horizon.
 
 ## Sources
 
-- [`source_web_d40ee5b4129fbee3ad4b9126` — Lemonade investor financial-results snapshot](https://www.lemonade.com/investor?cb=31326)
-- [`source_web_f243e58e657e1a5b7ff0a0ba` — Lemonade Q2 2026 results announcement](https://www.lemonade.com/investor/news/lemonade-announces-second-quarter-2026-financial-results)
-- [`source_web_a4c4cc66287d24e9810b07be` — Lemonade quarterly-results index](https://www.lemonade.com/investor/quarterly-results)
-- [`source_web_51e97f00737329cf7329ee45` — Lemonade stock information](https://www.lemonade.com/investor/stock-information)
+- [`source_web_1f27977f0b189b6eeb79f4b1` — Lemonade Q2 2026 Form 10-Q](https://www.lemonade.com/investor-relations-bo/wp-content/uploads/2026/07/LMND-Q2-2026-Form-10-Q-Final.pdf)
+- [`source_web_022111116ce0ff97f2ea5a4e` — Lemonade Q2 2026 shareholder letter](https://www.lemonade.com/investor-relations-bo/wp-content/uploads/docs/LMND-Shareholder-Letter-Q2-2026.pdf)

@@ -27,13 +27,13 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 91 companies / 92 instruments; 86 assessed, 13 in date, 73 stale; 86 currently unrated. 0 quotes require attention.
 
-Last observed market session: 2026-10-16. Last successful research: 2026-10-18T22:46:31Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-16. Last successful research: 2026-10-18T23:00:59Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
-Watchlist valuation coverage: **24 / 92 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 6; unsupported valuation: 18; incomplete research: 44. Needs attention: 2. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
+Watchlist valuation coverage: **25 / 92 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 6; unsupported valuation: 17; incomplete research: 44. Needs attention: 2. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
-- [Lemonade, Inc.](securities/security_8d11e65cd0de084ee461) — 2026-10-18T22:44:50.672765Z; valuation_unsupported
+- [Lemonade, Inc.](securities/security_8d11e65cd0de084ee461) — 2026-10-18T22:58:40.076661Z; insufficient_confidence
 - [Arkema S.A.](securities/security_798e2fb944d740aca308) — 2026-10-18T22:35:52.408763Z; hold
 - [BASF SE](securities/security_ef418f5ccc7dc5be8e65) — 2026-10-18T22:30:31.309524Z; hold
 - [Planet Labs PBC](securities/security_97f38b2cb2d5ef127f5a) — 2026-10-18T21:43:15.665309Z; valuation_unsupported
