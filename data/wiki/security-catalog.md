@@ -60,7 +60,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a) | PLTR (USD) | researched: research_expired_or_future | complete | 52.29 / 99.24 / 162.50 USD | 2026-08-11T13:45:04Z | 2026-09-10T13:45:04Z |
 | [Parrot S.A.](securities/security_cc4dcb8f002b61dffe00) | PARRO.PA (EUR) | researched: research_expired_or_future | complete | 5.48 / 9.09 / 14.51 EUR | 2026-08-20T07:54:58Z | 2026-09-19T07:54:58Z |
 | [PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00) | PYPL (USD) | researched: research_expired_or_future | incomplete_research | 43.04 / 64.56 / 80.70 USD | 2026-08-28T21:56:53Z | 2026-09-11T21:56:53Z |
-| [Planet Labs PBC](securities/security_97f38b2cb2d5ef127f5a) | PL (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-18T21:43:15.665309Z | 2026-10-19T21:43:15.665309Z |
+| [Planet Labs PBC](securities/security_97f38b2cb2d5ef127f5a) | PL (USD) | researched: sell | complete | 7.89 / 11.41 / 15.02 USD | 2026-10-18T23:51:11.153208Z | 2026-11-17T23:51:11.153208Z |
 | [Powell Industries, Inc.](securities/security_0b67d6c8e3fd3366a257) | POWL (USD) | researched: research_expired_or_future | complete | 105.00 / 180.00 / 270.00 USD | 2026-09-05T15:22:00Z | 2026-10-05T15:22:00Z |
 | [Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | PRX (EUR) | researched: research_expired_or_future | incomplete_research | 30.00 / 52.00 / 70.00 EUR | 2026-08-28T19:18:00Z | 2026-09-27T19:18:00Z |
 | [Proto Labs, Inc.](securities/security_f18cd57a5e086583c861) | PRLB (USD) | researched: insufficient_confidence | complete | 44.00 / 75.60 / 108.80 USD | 2026-10-18T23:17:23.066155Z | 2026-11-17T23:17:23.066155Z |

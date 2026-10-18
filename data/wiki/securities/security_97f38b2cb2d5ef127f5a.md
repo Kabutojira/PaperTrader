@@ -2,88 +2,137 @@
 title: Planet Labs PBC Class A common stock
 type: security
 status: maintained
-tags: [security, research, risk]
+tags: [security, research, valuation, risk]
 created: "2026-07-29"
 updated: "2026-10-18"
-provenance: "source_web_3f021c8499b7ae788f1d81b3; source_web_fb591da2a174ba807cd77af7; source_web_ff21a65d6af218ce502edb0d"
+provenance: "source_web_503a0a59ec6ee700f83c0546; source_web_f764ea368ba796e1ec0049d4"
 security_id: security_97f38b2cb2d5ef127f5a
 issuer_id: issuer_f0de6eb64ff0330bf082
-confidence: low
-next_review: "2026-10-19"
+confidence: medium
+next_review: "2026-11-17"
 ---
 
 # Planet Labs PBC Class A common stock
 
 ## Research conclusion
 
-**Research status: valuation unsupported.**
+**Research status: supported.**
 
-A current per-share valuation cannot be supported from the evidence accessible in this review. Planet’s issuer-controlled [quarterly-results page](https://investors.planet.com/financials/quarterly-results/default.aspx), [SEC-filings page](https://investors.planet.com/financials/sec-filings/default.aspx), and [stock-information page](https://investors.planet.com/stock-info/default.aspx) were opened on 18 October 2026. The retrieved HTML identified the Planet Labs PBC investor portal and its financial-navigation structure, but it did not expose quarterly statements, filing rows, a financial summary, quote data, ticker, exchange, currency, or share-class fields.
+Planet's current primary evidence now supports a 12-month revenue-multiple valuation. The bear, base, and bull fair values are **$7.89**, **$11.41**, and **$15.02** per share, with respective probabilities of **25%**, **50%**, and **25%**.
 
-The regulator endpoints attempted during this operation returned HTTP 403. They were not repeatedly requested and are not cited because no usable source identity was returned. The expired prior valuation is therefore not rolled forward: its revenue, cash, debt, capital-expenditure, share-count, dilution, and guidance inputs could not be independently reopened and verified.
+The principal evidence is Planet's September 3, 2026 [Q2 fiscal 2027 results release](https://investors.planet.com/news/news-details/2026/Planet-Reports-Financial-Results-for-Second-Quarter-of-Fiscal-Year-2027/default.aspx) and the associated [issuer PDF and financial tables](https://s29.q4cdn.com/903184914/files/doc_earnings/2027/q2/earnings-result/PL-Q2-27-Press-Release.pdf). The release reports $116.1 million of quarterly revenue, 58% year-over-year growth, 98% recurring ACV, positive year-to-date free cash flow, and $865.4 million of cash, cash equivalents, and short-term investments. These strengths are balanced by continuing GAAP operating losses, $448.3 million of convertible notes, substantial capital expenditures, equity issuance, and sequentially lower Q3 guidance.
 
 ## Identity reconciliation
 
 - Immutable security ID: `security_97f38b2cb2d5ef127f5a`
 - Immutable issuer ID: `issuer_f0de6eb64ff0330bf082`
-- Supplied issuer: Planet Labs PBC
+- Issuer: Planet Labs PBC
 - Supplied instrument: Class A common stock
-- Supplied symbol and venue: `PL` / `XNYS`
-- Supplied native currency: USD
+- Symbol and venue: `PL` / `XNYS`
+- Native currency: USD
 
-The opened issuer pages consistently identify the investor site as belonging to Planet Labs PBC. However, the dynamic stock page did not expose the symbol, exchange, currency, or share class in the retrieved content. Those attributes are retained from the supplied identity record rather than reclassified, and their current-source confirmation remains unresolved.
+The issuer PDF identifies Planet as a public benefit corporation listed on the New York Stock Exchange under `PL`, corroborating the issuer, symbol, and venue. It does not expressly label the quoted instrument as Class A common stock or state the trading currency. Those two attributes remain retained from the supplied immutable identity rather than independently reclassified.
 
-## Business economics and thesis
+## Business economics
 
-Planet’s previously researched economic proposition is recurring access to Earth-observation imagery, data, analytics, and tasking supported by an owned and operated satellite constellation. Such a model can produce valuable recurring data revenue and operating leverage, but it also requires launch, satellite replacement, hosting, software, research, and capital investment. Government contracts may improve visibility while adding appropriation, cancellation, concentration, and delivery risk.
+Planet designs, builds, launches, and operates Earth-observation satellites and sells imagery, geospatial data, analytics, software, and satellite services. The model combines recurring data access with capital-intensive constellation ownership. The recurring element can produce high revenue visibility and operating leverage, while satellite construction, launches, replenishment, and ground infrastructure require sustained investment.
 
-That description remains a useful analytical framework, not a substitute for current financial evidence. The sources opened here do not disclose current revenue mix, retention, remaining performance obligations, backlog, gross margin, free cash flow, liquidity, or dilution. No post-quarter operating improvement or deterioration is asserted.
+Current operating indicators are constructive:
 
-## Required evidence and valuation method
+- Q2 revenue was $116.1 million, up 58% year over year.
+- Recurring ACV represented 98% of ACV.
+- RPO was approximately $753.1 million, with about 46% applicable to the following 12 months.
+- Backlog was approximately $814.9 million, with about 50% applicable to the following 12 months.
+- Q2 adjusted EBITDA was positive $13.9 million.
+- Year-to-date operating cash flow was $68.4 million and free cash flow was $21.3 million.
 
-A forward enterprise-value-to-revenue approach would ordinarily be considered because durable GAAP earnings and free cash flow have not been re-established in current accessible evidence. A supportable model would require, at minimum:
+Backlog and RPO improve visibility but are not cash and do not eliminate cancellation, funding, timing, or delivery risk.
 
-1. latest reported revenue and current fiscal guidance;
-2. cash, short-term investments, debt, and convertible-note terms;
-3. capital expenditure and free cash flow after constellation investment;
-4. common shares plus RSUs, options, warrants, ATM issuance, and potential note dilution;
-5. retention, RPO or backlog, contract-cancellation terms, and revenue composition; and
-6. primary evidence of developments after the latest reporting date.
+## Financial position and contrary evidence
 
-These inputs were not available in the accessible issuer HTML. Applying a revenue multiple without them would create false precision. A market price is not used as a proxy for intrinsic value.
+At July 31, 2026, Planet reported approximately $415.1 million of cash, $450.3 million of short-term investments, and $448.3 million of convertible notes. The valuation therefore uses approximately **$417.2 million of net cash** before lease liabilities: $865.4 million of cash and short-term investments less $448.3 million of notes.
 
-| Case | Probability | Fair value | Status |
-| --- | ---: | ---: | --- |
-| Bear | — | — | Unsupported: current revenue, net cash, capital needs, and diluted shares are unverified. |
-| Base | — | — | Unsupported: current revenue, net cash, capital needs, and diluted shares are unverified. |
-| Bull | — | — | Unsupported: current revenue, net cash, capital needs, and diluted shares are unverified. |
+Material contrary evidence prevents a uniformly bullish interpretation:
 
-No probability-weighted value can be calculated because unsupported scenario probabilities and values must remain empty.
+- GAAP gross margin was 57%, down from 58% in the prior-year quarter.
+- Q2 GAAP operating loss was $13.5 million despite positive adjusted EBITDA.
+- Q3 revenue guidance of $101 million to $105 million is sequentially below Q2 revenue.
+- Q3 adjusted EBITDA is expected to be a loss of $1 million to $6 million.
+- Fiscal-year capital expenditures are expected to be $100 million to $115 million.
+- Planet raised approximately $120 million through its ATM program during Q2, demonstrating access to capital but also actual dilution.
+- Six-month stock-based compensation was $33.5 million.
 
-## Downside and contrary evidence
+The six-month GAAP loss also included a large non-cash warrant-liability remeasurement, illustrating why GAAP net income alone is not an adequate valuation anchor. Conversely, non-GAAP results exclude stock compensation and other economically relevant costs.
 
-Potential downside mechanisms include weak contract conversion, government funding or termination exposure, satellite or launch failures, hardware-driven revenue volatility, sustained capital intensity, continuing GAAP losses, stock compensation, ATM issuance, equity awards, and convertible dilution. The current magnitude and probability of those risks cannot be quantified from the opened sources.
+## Valuation method
 
-The material contrary consideration is therefore evidentiary: neither the constructive recurring-data thesis nor the adverse capital-intensity thesis can be updated with current numbers. Prior reported figures may have been useful when originally retrieved, but carrying them into a fresh assessment without reopening their primary sources would violate research-date and source-integrity requirements.
+A forward EV/revenue method is used because rapid growth, current guidance, and recurring revenue are observable, while durable GAAP earnings are not yet established. Fiscal 2027 revenue guidance is $430 million to $441 million.
 
-## Catalysts and invalidation
+The model uses:
 
-Potential catalysts are publication of accessible current filings and statements, conversion of contracted demand into recurring revenue and cash flow, monetization of higher-resolution capacity, sustained retention, margin expansion, and positive free cash flow after satellite investment. These are analytical conditions rather than verified new events.
+1. scenario revenue equal to the low end, midpoint, and high end of guidance;
+2. EV/revenue multiples of 6x, 9x, and 12x;
+3. $417.2 million of net cash; and
+4. an assumed 380 million diluted shares.
 
-Invalidate a constructive operating thesis if contract conversion weakens, major awards are cancelled or unfunded, retention or gross margin deteriorates, satellite or launch disruption impairs service, liquidity falls materially, or dilution prevents per-share growth. Reconsider any future valuation when current filings alter revenue guidance, cash, debt, capital expenditure, or fully diluted shares.
+Q2 basic and diluted weighted-average shares were 359.6 million. The 380 million denominator is deliberately higher to allow for equity awards and subsequent issuance. It is not a reported fully diluted share count. Convertible notes are subtracted as debt and are not also counted as conversion shares.
 
-## Limitations and confidence
+| Case | Probability | Revenue | EV/revenue | Per-share arithmetic | Fair value |
+| --- | ---: | ---: | ---: | --- | ---: |
+| Bear | 25% | $430.0M | 6x | (($430.0M × 6) + $417.2M) / 380M | **$7.89** |
+| Base | 50% | $435.5M | 9x | (($435.5M × 9) + $417.2M) / 380M | **$11.41** |
+| Bull | 25% | $441.0M | 12x | (($441.0M × 12) + $417.2M) / 380M | **$15.02** |
 
-Confidence is **low**. The three opened issuer pages are valid links to issuer-controlled investor resources, but they are not themselves financial evidence because the retrieved content contains no current financial records. Exact revenue, guidance, contract visibility, cash, debt, capex, free cash flow, share count, awards, and convertible dilution remain unknown in this operation.
+The base case receives the highest probability because it uses guidance midpoint assumptions. Equal tail probabilities recognize meaningful upside from sovereign demand and operating leverage and meaningful downside from execution, capital intensity, dilution, and multiple compression.
 
-The assessment expires on **2026-10-19T21:43:15.665309Z** so unsupported evidence is not treated as fresh for an extended period.
+## Scenario interpretation
+
+### Bear
+
+Revenue reaches only the low end of guidance and investors assign a 6x multiple because sequential slowing continues, gross margin remains pressured, adjusted EBITDA weakens, capital spending stays high, or backlog converts more slowly than anticipated.
+
+### Base
+
+Revenue reaches the midpoint of guidance. A 9x multiple recognizes 58% Q2 growth, recurring ACV, contract visibility, positive free cash flow, and substantial liquidity, while discounting the business for GAAP losses, satellite capital requirements, convertible debt, and dilution.
+
+### Bull
+
+Revenue reaches the high end of guidance and a 12x multiple is sustained as sovereign satellite services, defense demand, AI-enabled analytics, Pelican capacity, backlog conversion, and operating leverage establish durable growth and cash generation.
+
+## Catalysts
+
+Potential catalysts include:
+
+- delivery within or above fiscal 2027 revenue guidance;
+- conversion of RPO and backlog into recognized revenue and cash;
+- continued positive free cash flow after constellation investment;
+- recovery from the guided Q3 adjusted EBITDA loss;
+- monetization of additional Pelican capacity;
+- expansion of sovereign satellite services; and
+- measurable revenue from the NGA award and European government agreements disclosed after quarter-end.
+
+These awards provide commercial evidence, but their ultimate margins, timing, and contribution are not yet established.
+
+## Downside and invalidation
+
+Downside mechanisms include government appropriations or cancellations, delayed contract conversion, launch or satellite failures, constellation-replacement costs, customer concentration, competitive pricing, stock compensation, additional ATM issuance, equity-award dilution, and refinancing or conversion effects from the notes.
+
+Invalidate or materially revise the constructive thesis if revenue falls below guidance without a temporary timing explanation, backlog or RPO fails to convert, recurring ACV deteriorates, gross margin contracts persistently, adjusted EBITDA and free cash flow reverse beyond planned investment, capital requirements rise structurally, a satellite disruption impairs service, government awards are cancelled or unfunded, liquidity falls materially, or dilution prevents per-share economics from keeping pace with enterprise growth.
+
+## Confidence and limitations
+
+Confidence is **medium**. The issuer release provides current revenue, guidance, liquidity, debt, cash flow, backlog, RPO, weighted-average shares, and capital-expenditure evidence. However, the supplied SEC filing and submissions endpoints returned HTTP 403 in this operation. The full 10-Q footnotes for RSUs, options, ESPP shares, exact shares outstanding, remaining ATM capacity, and convertible-note terms could not be inspected.
+
+The 380 million diluted-share denominator is consequently a transparent estimate. The selected multiples are assumptions and remain sensitive to growth duration, margins, capital intensity, interest rates, and market sentiment. Backlog and RPO are not guaranteed revenue. No market price is used as a substitute for intrinsic value.
+
+The assessment is valid through **2026-11-17T23:51:11.153208Z**, unless superseded earlier by new results or a material capital-structure event.
 
 ## Changes since the prior review
 
-- The prior supported valuation has expired and is not carried forward.
-- Current SEC documents could not be retrieved through the available read-only broker; inaccessible URLs are not cited.
-- Accessible issuer pages were added as evidence of the issuer portal and the retrieval limitation, not as evidence for financial metrics.
-- Bear, base, and bull values and probabilities are now empty rather than presenting unverified precision.
-- The immutable security and issuer IDs remain unchanged.
-- Identity attributes `PL`, `XNYS`, Class A, and USD are retained from supplied records with current-source confirmation explicitly unresolved.
-- No relationship, dependent task, valuation conclusion, or external action was created.
+- Reopened the supplied issuer Q2 release and recovered accessible current financial evidence.
+- Replaced `valuation_unsupported` with a supported bear/base/bull assessment.
+- Added current revenue guidance, liquidity, convertible notes, cash flow, capex, backlog, RPO, margins, and share-count evidence.
+- Explicitly incorporated contrary evidence: sequentially lower Q3 revenue guidance, a guided Q3 adjusted EBITDA loss, GAAP operating losses, stock compensation, and ATM dilution.
+- Reconciled `PL` and the New York Stock Exchange from issuer evidence while retaining unresolved Class A and currency confirmation from the supplied identity.
+- Preserved the immutable security and issuer IDs.
+- Created no relationship, dependent task, order, allocation, alert, or external action.

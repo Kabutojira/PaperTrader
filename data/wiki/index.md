@@ -18,6 +18,7 @@ Current research opinions in each instrument's native currency. Fair values chan
 
 | Company / thesis & sources | Ticker | Currency | Price | Price as of | Weighted / base fair value | Implied / adjusted return | Rating | Confidence | Researched / expiry |
 | --- | --- | --- | ---: | --- | ---: | ---: | --- | --- | --- |
+| [Planet Labs PBC](securities/security_97f38b2cb2d5ef127f5a) | PL | USD | 13.56 | 2026-10-16 | 11.43 / 11.41 | -15.69% / -10.98% | sell | medium | 2026-10-18T23:51:11.153208Z / 2026-11-17T23:51:11.153208Z |
 | [Bloom Energy Corporation](securities/security_3e597863f00753e8c65c) | BE | USD | 221.31 | 2026-10-16 | 187.50 / 180.00 | -15.28% / -10.69% | sell | medium | 2026-10-18T20:59:04.577258Z / 2026-11-17T20:59:04.577258Z |
 
 Sell denotes researched overvaluation or downside, regardless of ownership. It is not a short-trade recommendation.
@@ -26,14 +27,15 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-91 companies / 92 instruments; 91 assessed, 18 in date, 73 stale; 83 currently unrated. 0 quotes require attention.
+91 companies / 92 instruments; 91 assessed, 18 in date, 73 stale; 82 currently unrated. 0 quotes require attention.
 
-Last observed market session: 2026-10-16. Last successful research: 2026-10-18T23:47:16Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-16. Last successful research: 2026-10-18T23:53:13Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
-Watchlist valuation coverage: **63 / 92 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 1; unsupported valuation: 17; incomplete research: 11. Needs attention: 2. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
+Watchlist valuation coverage: **64 / 92 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 1; unsupported valuation: 16; incomplete research: 11. Needs attention: 2. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
+- [Planet Labs PBC](securities/security_97f38b2cb2d5ef127f5a) — 2026-10-18T23:51:11.153208Z; sell
 - [Evonik Industries AG](securities/security_ccb25582c0392492fe9e) — 2026-10-18T23:44:47.860390Z; hold
 - [Agronomics Limited](securities/security_fe4648901e7675f157fd) — 2026-10-18T23:21:39.032922Z; buy
 - [Proto Labs, Inc.](securities/security_f18cd57a5e086583c861) — 2026-10-18T23:17:23.066155Z; insufficient_confidence
@@ -42,7 +44,6 @@ Watchlist valuation coverage: **63 / 92 instruments** have complete sourced bear
 - [Lemonade, Inc.](securities/security_8d11e65cd0de084ee461) — 2026-10-18T22:58:40.076661Z; insufficient_confidence
 - [Arkema S.A.](securities/security_798e2fb944d740aca308) — 2026-10-18T22:35:52.408763Z; hold
 - [BASF SE](securities/security_ef418f5ccc7dc5be8e65) — 2026-10-18T22:30:31.309524Z; hold
-- [Planet Labs PBC](securities/security_97f38b2cb2d5ef127f5a) — 2026-10-18T21:43:15.665309Z; valuation_unsupported
 - [CrowdStrike Holdings, Inc.](securities/security_8472507d7d320aa388a7) — 2026-10-18T21:29:09.311608Z; valuation_unsupported
 
 ## Ideas and interesting companies
