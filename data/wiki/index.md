@@ -26,14 +26,15 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-91 companies / 92 instruments; 90 assessed, 17 in date, 73 stale; 84 currently unrated. 0 quotes require attention.
+91 companies / 92 instruments; 91 assessed, 18 in date, 73 stale; 83 currently unrated. 0 quotes require attention.
 
-Last observed market session: 2026-10-16. Last successful research: 2026-10-18T23:24:06Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-16. Last successful research: 2026-10-18T23:47:16Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
-Watchlist valuation coverage: **62 / 92 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 2; unsupported valuation: 17; incomplete research: 11. Needs attention: 2. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
+Watchlist valuation coverage: **63 / 92 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 1; unsupported valuation: 17; incomplete research: 11. Needs attention: 2. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
+- [Evonik Industries AG](securities/security_ccb25582c0392492fe9e) — 2026-10-18T23:44:47.860390Z; hold
 - [Agronomics Limited](securities/security_fe4648901e7675f157fd) — 2026-10-18T23:21:39.032922Z; buy
 - [Proto Labs, Inc.](securities/security_f18cd57a5e086583c861) — 2026-10-18T23:17:23.066155Z; insufficient_confidence
 - [Materialise NV](securities/security_b61c642d038d71be3821) — 2026-10-18T23:13:04.375396Z; hold
@@ -43,7 +44,6 @@ Watchlist valuation coverage: **62 / 92 instruments** have complete sourced bear
 - [BASF SE](securities/security_ef418f5ccc7dc5be8e65) — 2026-10-18T22:30:31.309524Z; hold
 - [Planet Labs PBC](securities/security_97f38b2cb2d5ef127f5a) — 2026-10-18T21:43:15.665309Z; valuation_unsupported
 - [CrowdStrike Holdings, Inc.](securities/security_8472507d7d320aa388a7) — 2026-10-18T21:29:09.311608Z; valuation_unsupported
-- [Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a) — 2026-10-18T21:20:52.492203Z; hold
 
 ## Ideas and interesting companies
 
