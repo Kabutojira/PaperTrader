@@ -647,3 +647,21 @@ GOOGL identity for GOOG aliases and reporting unverified metadata per symbol.
 Added a Bitcoin-only watchlist registration exception with a 24/7 monitoring
 calendar; allowed trading instruments and order/strategy validation are unchanged.
 No existing research or financial records are modified by synchronization.
+
+## 2026-10-18 — FinanceAlerts integration M4
+
+Integrated a public, immutable-revision FinanceAlerts ticker pull into existing
+serialized daily preparation and its runtime checkpoint. Failed symbols/source
+reads produce explicit operational issues and a failing import result while
+allowing the original daily run to continue. Manual dry runs skip import. Added
+snapshot, retry/issue, workflow-boundary and CLI-exit regression tests. No foreign
+write token, research refresh, portfolio or strategy change was introduced.
+
+M4 validation: 622 Python tests passed across all 56 files, with no failures or
+skips, including the seeded operating cycle with Quartz enabled. Repository
+Ruff/format/MyPy, strict schema/advice/wiki/portfolio, TypeScript, four Node tests,
+Prettier and canonical Quartz rendering/postbuild link checks passed. Strict
+integrity reports 83 disabled security-chart errors byte-identical to the
+unchanged baseline. This integration leaves those existing research records and
+all financial data intact. FinanceAlerts' 32 tests and live GOOG/BTC-USD smoke
+checks passed; production convergence starts after both branches are merged.

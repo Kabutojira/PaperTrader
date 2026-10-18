@@ -739,3 +739,12 @@ Bitcoin alone may be registered as `cryptocurrency`, `watchlist`, provider
 `BTC-USD`, off-exchange MIC `XOFF` and unknown-country code `ZZ`. Its monitoring
 calendar is 24/7. This exception does not change allowed trading instruments or
 venues: cryptocurrency order legs and strategies remain prohibited.
+
+The existing daily preparation workflow pulls FinanceAlerts' committed `main`
+ticker file at one resolved SHA before market preparation, with no write token
+for the other repository. Manual dry runs skip this import. The existing
+preparation checkpoint commits successful additions. Failed imports return a
+nonzero result and persist a `financealerts_sync_failed` operational issue per
+symbol; this visible warning does not block the existing daily portfolio run.
+A later successful import resolves its issue. Synchronization does not enqueue
+an automatic research refresh or alter allocation/trading policies.

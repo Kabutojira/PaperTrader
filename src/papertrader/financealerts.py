@@ -2,13 +2,16 @@
 
 from __future__ import annotations
 
+import json
 import re
 from collections.abc import Callable, Mapping
 from pathlib import Path
+from urllib.request import Request, urlopen
 
 import yfinance as yf  # type: ignore[import-untyped]
 
 from papertrader.config import Settings
+from papertrader.issues import record_issue, resolve_matching_issues
 from papertrader.research import ResearchStateError, import_watchlist
 from papertrader.tables import read_table
 
@@ -118,6 +121,7 @@ def sync_financealerts(
     tickers: str,
     *,
     lookup: Callable[[str], Mapping[str, object]] = yahoo_identity,
+    source: str = SOURCE,
 ) -> dict[str, object]:
     """Import each missing identity through watchlist validation and report every failure."""
     if len(tickers) > 100_000:
@@ -151,7 +155,7 @@ def sync_financealerts(
                 settings,
                 {
                     "watchlist_reason": "FinanceAlerts monitoring; identity only.",
-                    "source": SOURCE,
+                    "source": source,
                     "securities": [fields],
                 },
             )
@@ -160,3 +164,74 @@ def sync_financealerts(
         except Exception as error:
             failed[symbol] = str(error)
     return {"created": created, "unchanged": unchanged, "failed": failed}
+
+
+def _remote_text(url: str) -> str:
+    request = Request(url, headers={"User-Agent": "PaperTrader-FinanceAlerts"})
+    with urlopen(request, timeout=30) as response:
+        data: bytes = response.read(100_001)
+    if len(data) > 100_000:
+        raise ResearchStateError("FinanceAlerts response exceeds size limit")
+    return data.decode("utf-8-sig")
+
+
+def read_ticker_snapshot() -> tuple[str, str]:
+    """Resolve main once, then fetch exactly that committed ticker file without credentials."""
+    raw = json.loads(_remote_text("https://api.github.com/repos/Stell0/financealerts/commits/main"))
+    revision = raw.get("sha", "")
+    if not isinstance(revision, str) or not re.fullmatch(r"[0-9a-f]{40}", revision):
+        raise ResearchStateError("invalid FinanceAlerts commit identity")
+    return revision, _remote_text(
+        f"https://raw.githubusercontent.com/Stell0/financealerts/{revision}/config/tickers.txt"
+    )
+
+
+def sync_committed_financealerts(repository_root: Path, settings: Settings) -> dict[str, object]:
+    """Persist failed-import diagnostics for the existing daily report."""
+    try:
+        revision, tickers = read_ticker_snapshot()
+        result = sync_financealerts(
+            repository_root,
+            settings,
+            tickers,
+            source=f"https://github.com/Stell0/financealerts/blob/{revision}/config/tickers.txt",
+        )
+        result["source_revision"] = revision
+    except Exception as error:
+        result = {"created": [], "unchanged": [], "failed": {"source": str(error)}}
+    failures = result["failed"]
+    assert isinstance(failures, dict)
+    for symbol, reason in failures.items():
+        record_issue(
+            repository_root,
+            issue_code="financealerts_sync_failed",
+            impact="operational_only",
+            severity="warning",
+            title=f"FinanceAlerts synchronization failed: {symbol}",
+            description=str(reason),
+            entity_type="ticker",
+            entity_id=str(symbol),
+            owner="financealerts-sync",
+        )
+    if "source" not in failures:
+        resolve_matching_issues(
+            repository_root,
+            issue_code="financealerts_sync_failed",
+            entity_type="ticker",
+            entity_id="source",
+            resolution="FinanceAlerts committed ticker file retrieved successfully.",
+        )
+    successful: list[str] = []
+    for key in ("created", "unchanged"):
+        values = result[key]
+        assert isinstance(values, list)
+        successful.extend(str(value) for value in values)
+    for symbol in successful:
+        resolve_matching_issues(
+            repository_root,
+            issue_code="financealerts_sync_failed",
+            entity_type="ticker",
+            entity_id=str(symbol),
+            resolution="FinanceAlerts security identity synchronized successfully.",
+        )
+    return result

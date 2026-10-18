@@ -281,6 +281,12 @@ jobs:
           arguments=(wiki maintain --run-id "$CYCLE_ID" --hermes-home "$HERMES_HOME")
           if [ "$DRY_RUN" = "true" ]; then arguments+=(--dry-run); fi
           uv run papertrader "${arguments[@]}"
+      - name: Pull committed FinanceAlerts tickers through validated watchlist import
+        if: ${{ steps.cycle.outputs.needs_finalization == 'true' && !inputs.dry_run }}
+        # Import failures are reported in operational issues and the step result;
+        # successful additions are committed by the existing preparation checkpoint.
+        continue-on-error: true
+        run: uv run papertrader watchlist sync-financealerts
       - name: Prepare deterministic daily state and reserve preparation checkpoint
         id: preparation
         if: ${{ steps.cycle.outputs.needs_finalization == 'true' }}

@@ -771,3 +771,17 @@ def test_checkpoint_steps_match_their_generator(repository_root: Path) -> None:
     assert module.main(["--check", "--workflow", str(workflow_path)]) == 0
     drifted = text.replace("Routed research checkpoint 07", "Routed research checkpoint 7", 1)
     assert module.render_workflow(drifted) == text
+
+
+def test_financealerts_pull_runs_before_preparation_without_credentials(
+    repository_root: Path,
+) -> None:
+    workflow = _workflow(repository_root / ".github/workflows/reusable-llm.yml")
+    steps = workflow["jobs"]["runtime"]["steps"]
+    sync = next(step for step in steps if "Pull committed FinanceAlerts tickers" in step["name"])
+    preparation = next(step for step in steps if step.get("id") == "preparation")
+    assert steps.index(sync) < steps.index(preparation)
+    assert "!inputs.dry_run" in sync["if"]
+    assert sync["run"] == "uv run papertrader watchlist sync-financealerts"
+    assert sync["continue-on-error"] == "true"
+    assert "env" not in sync
