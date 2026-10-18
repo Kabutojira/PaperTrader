@@ -58,8 +58,8 @@ label mocked/local checks as live.
 
 | Milestone | Scope and gate | Status |
 | --- | --- | --- |
-| M0 | Freeze scheduler, verified backup, exact inventory, reproduce/repair retired technical charts, capture assessment/frontmatter ordering failure; dry run changes no source data | Local gates passed; commit/push and CI pending |
-| M1 | Repeatable dry-run-by-default compact schema migration; preserve identities, current meaning, prose/citations and expiry; schema/reference/wiki tests; no invented evidence | Pending |
+| M0 | Freeze scheduler, verified backup, exact inventory, reproduce/repair retired technical charts, capture assessment/frontmatter ordering failure; dry run changes no source data | Complete: 9056d3df; CI 39142564182 green |
+| M1 | Repeatable dry-run-by-default compact schema migration; preserve identities, current meaning, prose/citations and expiry; schema/reference/wiki tests; no invented evidence | Staged migration local gate passed; push/CI pending |
 | M2 | Standalone market/cache/indicators/valuation/ratings core; sessions/holidays, bounded batching, per-symbol failure/corrections; no LLM or portfolio paths | Pending |
 | M3 | One-entity bounded queue, deterministic priorities/retries, retire old producers; census-based disposition of all 340 blocks and 13 waiting relationships; <=30 tasks | Pending |
 | M4 | Two single-model operations; bounded context/web/turn/runtime budgets; final staged Markdown and complete result validated before atomic CSV/wiki/source transaction; idempotent and rollback-safe | Pending |
@@ -101,7 +101,10 @@ label mocked/local checks as live.
   `/tmp` fixture quota. Quartz subprocess staging must keep `TMPDIR=/tmp`; putting
   it under ignored `.cache` makes Quartz see zero input pages. No validation was
   relaxed and no source fix was needed for that invocation failure.
-- Milestone commit/push and CI: pending.
+- Milestone commit: `9056d3dff03740a6c3310e086a240186bca4527a`, pushed to main.
+- CI: [39142564182](https://github.com/Kabutojira/PaperTrader/actions/runs/39142564182)
+  completed successfully at that exact SHA. M0 gate complete. No live inference,
+  market refresh or deployment was performed. M1 is next.
 
 ## Acceptance tracking
 
@@ -117,3 +120,20 @@ No acceptance criterion is marked complete merely because code exists. Record
 exact tested commit SHA, local vs mocked vs live result, Actions URLs and remaining
 blockers with each milestone. Preserve unrelated changes; never weaken evidence
 or financial validation to satisfy retired tests.
+
+## M1 evidence (in progress)
+
+- New compact contracts and independent validator implemented; default migration
+  is read-only against a pinned Git revision. Explicit staged output is atomic and
+  repeatable. Active data/reader switch is deferred until M4's transaction path;
+  the old scheduler remains frozen, with no half-migrated publication.
+- Staging input: M0 commit `9056d3dff03740a6c3310e086a240186bca4527a`.
+- Staged at `/tmp/papertrader-research-m1-stage`: 92 securities, 29 ideas, 47 links,
+  83 assessments, 366 sources, empty new queue. 71 historical supported valuations,
+  12 unsupported; 82 expired and zero fresh supported valuations on October18.
+- Identity, scenario, date, source-reference, unsafe-path, duplicate-row and
+  share-class tests added. Local gates passed: ten focused tests, 626 full-suite
+  tests, Ruff check/format, MyPy (64 source files), and all strict legacy state
+  gates. Active data remains unchanged. M0 Quartz build/link evidence remains
+  applicable because no active site input changed. Commit/push and CI pending.
+- Details: [M1 migration](docs/migration/M1.md).

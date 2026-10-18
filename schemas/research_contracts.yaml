@@ -1,0 +1,26 @@
+version: 1
+contracts:
+  securities:
+    path: data/tables/securities.csv
+    primary_key: [security_id]
+    columns: [security_id, issuer_id, company_name, instrument_name, instrument_type, ticker, venue_mic, provider_symbol, currency, country, sector, industry, status, research_status, discovery_provenance, research_page, last_research_at, created_at, updated_at]
+  ideas:
+    path: data/tables/ideas.csv
+    primary_key: [idea_id]
+    columns: [idea_id, title, thesis, status, source_ids, research_page, last_reviewed_on, created_on, discovery_provenance]
+  relationships:
+    path: data/tables/relationships.csv
+    primary_key: [relationship_id]
+    columns: [relationship_id, idea_id, security_id, relationship_type, direction, mechanism, confidence, status, source_ids, research_page, last_reviewed_at]
+  security_assessments:
+    path: data/tables/security_assessments.csv
+    primary_key: [security_id]
+    columns: [security_id, assessed_at, valid_until, research_status, method, method_rationale, currency, horizon_months, bear_fair_value, bear_probability_pct, bear_assumptions, base_fair_value, base_probability_pct, base_assumptions, bull_fair_value, bull_probability_pct, bull_assumptions, thesis, key_assumptions, downside, catalysts, invalidation_conditions, confidence, limitations, source_ids]
+  source_registry:
+    path: data/tables/source_registry.csv
+    primary_key: [source_id]
+    columns: [source_id, url, title, publisher, source_type, license, status, content_hash, published_at, checked_at, related_entity_ids]
+  research_queue:
+    path: data/research_queue.csv
+    primary_key: [entity_type, entity_id]
+    columns: [entity_type, entity_id, priority, reasons, created_at, updated_at, status, attempts, next_eligible_at, lease_until, manual, last_error]
