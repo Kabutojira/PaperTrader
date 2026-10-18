@@ -24,6 +24,10 @@ read-only research_web tool to verify current primary evidence. Every cited sour
 ID must correspond to a URL opened in this operation. Every source row has status
 valid and related_entity_ids includes the target entity. For an existing source_id,
 copy its URL and license unchanged; never assign a new source_id to an existing URL.
+Every source ID in an idea row or relationship row must exist, have status valid,
+be opened through research_web during this operation, and have its exact URL linked
+in the final primary Markdown page. Every relationship must retain the target entity
+ID and a valid supplied counterpart entity ID.
 Use link_only for a new web source unless its license was independently verified.
 Never fabricate URLs, evidence, dates, scenarios or probabilities. A security page
 frontmatter must retain the target security_id and its immutable issuer_id exactly.

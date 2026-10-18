@@ -46,7 +46,22 @@ RESULT_VALIDATION_CODES = frozenset(
         "assessment.valid_until.exceeds_freshness",
         "assessment.valid_until.invalid",
         "assessment.valid_until.not_after_assessed",
+        "assessment.source_ids.missing",
+        "assessment.source_ids.not_currently_opened",
+        "assessment.source_ids.status_invalid",
+        "assessment.source_ids.target_entity_missing",
+        "assessment.source_ids.url_missing_from_page",
         "idea.last_reviewed_on.invalid",
+        "idea.source_ids.missing",
+        "idea.source_ids.not_currently_opened",
+        "idea.source_ids.status_invalid",
+        "idea.source_ids.target_entity_missing",
+        "idea.source_ids.url_missing_from_page",
+        "relationship.source_ids.missing",
+        "relationship.source_ids.not_currently_opened",
+        "relationship.source_ids.status_invalid",
+        "relationship.source_ids.target_entity_missing",
+        "relationship.source_ids.url_missing_from_page",
         "source.published_at.future",
         "source.published_at.invalid",
     }
@@ -334,16 +349,35 @@ def prepare_result(
         _upsert(candidate["ideas"], idea, "idea_id")
         evidence = idea["source_ids"]
     sources = {r["source_id"]: r for r in candidate["source_registry"]}
-    references = set(filter(None, evidence.split("|")))
+    primary_source_field = (
+        "assessment.source_ids" if operation == "research_security" else "idea.source_ids"
+    )
+    reference_fields: dict[str, set[str]] = {}
+    for source_id in filter(None, evidence.split("|")):
+        reference_fields.setdefault(source_id, set()).add(primary_source_field)
     for relationship in result["relationships"]:
-        references.update(filter(None, relationship["source_ids"].split("|")))
-    if not references:
+        for source_id in filter(None, relationship["source_ids"].split("|")):
+            reference_fields.setdefault(source_id, set()).add("relationship.source_ids")
+    if not reference_fields:
         raise ValueError("current research needs sources")
-    for source_id in references:
+    for source_id in sorted(reference_fields):
+        fields = reference_fields[source_id]
+        field = (
+            primary_source_field if primary_source_field in fields else "relationship.source_ids"
+        )
         source = sources.get(source_id)
-        if source is None or source["url"] not in markdown or source["status"] != "valid":
-            raise ValueError("every current citation needs a verified URL and page link")
-        observed = _fresh_observation(observations, source["url"], now)
+        if source is None:
+            raise ResearchResultValidationError(f"{field}.missing")
+        if source["status"] != "valid":
+            raise ResearchResultValidationError(f"{field}.status_invalid")
+        if entity_id not in source["related_entity_ids"].split("|"):
+            raise ResearchResultValidationError(f"{field}.target_entity_missing")
+        if source["url"] not in markdown:
+            raise ResearchResultValidationError(f"{field}.url_missing_from_page")
+        try:
+            observed = _fresh_observation(observations, source["url"], now)
+        except ValueError:
+            raise ResearchResultValidationError(f"{field}.not_currently_opened") from None
         source.update(checked_at=observed["checked_at"], content_hash=observed["content_hash"])
         trusted_prior = next(
             (row for row in state["source_registry"] if row["source_id"] == source_id), None

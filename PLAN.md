@@ -77,7 +77,7 @@ label mocked/local checks as live.
 | M6 | Deterministic fresh Top 10 Buy/Sell, company/idea catalogs, recent updates and health; optional nonblocking charts; Quartz build and reviewed output/links | Complete:49d9f8b9; CI/Pages green |
 | M7 | Independent market/research/Pages workflows, least credentials, compact writes and focused validation; live non-dry market/research smoke; isolate failure cases | Complete:67b650e9 +93f5a5b2; live market and supported execution/unsupported outcome; see evidence |
 | M8 | Delete dead modules/CLI/schemas/skills/actions/tests and old data only after migration gates; rewrite actual-product docs/config/CI; prove no live references; report size reduction | Complete:913ff8b9; CI39159628088/Pages39159817503 green |
-| M9 | Clean-checkout full schemas/source/link integrity/Ruff/MyPy/tests/Quartz; real company/idea refresh, market cycle, isolated failed research/outage, discovery dry run, exact-commit Pages deployment; before/after evidence | Pending |
+| M9 | Clean-checkout full schemas/source/link integrity/Ruff/MyPy/tests/Quartz; real company/idea refresh, market cycle, isolated failed research/outage, discovery dry run, exact-commit Pages deployment; before/after evidence | In progress: supported NVIDIA live valuation accepted; idea retry pending |
 
 ## M0 evidence
 
@@ -403,3 +403,25 @@ or financial validation to satisfy retired tests.
   metadata and company freshness banner regressions.
 - Exact clean-checkout CI, supported live valuation, idea update, closed-market
   repeat, discovery preview and final exact-commit Pages acceptance pending.
+
+- Publication metadata commit `a2620d1495a879c6ecae43dcae846e8102a3a8fc` passed
+  [CI39160351950](https://github.com/Kabutojira/PaperTrader/actions/runs/39160351950).
+  Actual NVIDIA [research39160516606](https://github.com/Kabutojira/PaperTrader/actions/runs/39160516606)
+  accepted a supported earnings-multiple valuation: one model operation,12 web
+  requests; commit `fdc8c5afa7e6e35d80c530b049f70f69a64c2c4b`. Native USD
+  bear/base/bull198/310.50/448, probabilities30/50/20; weighted304.25. Medium
+  confidence and explicit forecast/filing limitations retained. One fresh Buy
+  qualifies; no stale Sell padding. Actual independent
+  [Pages39160767086](https://github.com/Kabutojira/PaperTrader/actions/runs/39160767086)
+  deployed that exact commit.
+- Actual idea [research39160893744](https://github.com/Kabutojira/PaperTrader/actions/runs/39160893744)
+  failed citation validation after10 web requests; no accepted idea change.
+  Retry/status commit `9acecc0ae77312d1fe9406d68421968618af2d61`; independent
+  [Pages39161093626](https://github.com/Kabutojira/PaperTrader/actions/runs/39161093626)
+  succeeded. The discarded response cannot distinguish the original compound
+  missing-source/invalid-status/missing-page-URL branch. Bounded repair preserves
+  citation provenance and static field diagnostics and makes the same strict
+  contract explicit to the worker. Missing relationship-page URL atomic regression
+  and69 affected tests, Ruff/format, MyPy19 and current validation passed. No
+  source/evidence validation was weakened or retry count reset. Push/CI precedes
+  the single remaining authorized idea attempt.

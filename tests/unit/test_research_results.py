@@ -152,6 +152,47 @@ def observations() -> dict[str, dict[str, str]]:
     }
 
 
+def idea_result(root: Path) -> tuple[dict[str, Any], dict[str, str]]:
+    state = read_state(root)
+    document = result(root)
+    idea = state["ideas"][0].copy()
+    idea.update(
+        status="researched",
+        thesis="Verified causal mechanism.",
+        source_ids="source1",
+        last_reviewed_on="2026-10-18",
+    )
+    document.update(
+        operation="research_idea",
+        entity_id="idea1",
+        idea=idea,
+        assessment=None,
+        pages={
+            "data/wiki/ideas/idea1.md": (
+                f"---\nidea_id: idea1\ntitle: Mechanism\n---\n"
+                f"Original causal analysis. [Source]({URL})\n"
+            )
+        },
+    )
+    document["sources"][0]["related_entity_ids"] = "idea1"
+    relationship = dict.fromkeys(contracts(root)["relationships"].columns, "")
+    relationship.update(
+        relationship_id="link1",
+        idea_id="idea1",
+        security_id="security1",
+        relationship_type="beneficiary",
+        direction="positive",
+        mechanism="Verified demand transmission.",
+        confidence="medium",
+        status="current",
+        source_ids="source1",
+        research_page="data/wiki/ideas/idea1.md",
+        last_reviewed_at=STAMP,
+    )
+    document["relationships"] = [relationship]
+    return document, relationship
+
+
 def data_bytes(root: Path) -> dict[str, bytes]:
     return {
         p.relative_to(root).as_posix(): p.read_bytes()
@@ -589,6 +630,8 @@ def test_worker_prompt_states_exact_current_research_contract() -> None:
         "target security_id and its immutable issuer_id exactly",
         "Copy context.as_of exactly",
         "Leave source.published_at empty",
+        "Every source ID in an idea row or relationship row must exist",
+        "have its exact URL linked\nin the final primary Markdown page",
     ):
         assert requirement in POLICY
 
@@ -787,42 +830,7 @@ def test_network_budget_is_hard_and_private_sources_are_forbidden(
 
 def test_idea_and_inline_relationship_update_do_not_create_company_tasks(current: Path) -> None:
     state = read_state(current)
-    document = result(current)
-    idea = state["ideas"][0].copy()
-    idea.update(
-        status="researched",
-        thesis="Verified causal mechanism.",
-        source_ids="source1",
-        last_reviewed_on="2026-10-18",
-    )
-    document.update(
-        operation="research_idea",
-        entity_id="idea1",
-        idea=idea,
-        assessment=None,
-        pages={
-            "data/wiki/ideas/idea1.md": (
-                f"---\nidea_id: idea1\ntitle: Mechanism\n---\n"
-                f"Original causal analysis. [Source]({URL})\n"
-            )
-        },
-    )
-    document["sources"][0]["related_entity_ids"] = "idea1"
-    relationship = dict.fromkeys(contracts(current)["relationships"].columns, "")
-    relationship.update(
-        relationship_id="link1",
-        idea_id="idea1",
-        security_id="security1",
-        relationship_type="beneficiary",
-        direction="positive",
-        mechanism="Verified demand transmission.",
-        confidence="medium",
-        status="current",
-        source_ids="source1",
-        research_page="data/wiki/ideas/idea1.md",
-        last_reviewed_at=STAMP,
-    )
-    document["relationships"] = [relationship]
+    document, relationship = idea_result(current)
     candidate, pages = prepare_result(
         current,
         state,
@@ -839,6 +847,45 @@ def test_idea_and_inline_relationship_update_do_not_create_company_tasks(current
     assert accepted["relationships"] == [relationship]
     assert accepted["securities"] == state["securities"]
     assert accepted["research_queue"] == []
+
+
+def test_relationship_source_url_must_appear_on_final_idea_page(current: Path) -> None:
+    document, relationship = idea_result(current)
+    relationship_url = "https://issuer.example/relationship-evidence"
+    relationship["source_ids"] = "relationship-source-secret"
+    source = document["sources"][0].copy()
+    source.update(
+        source_id="relationship-source-secret",
+        url=relationship_url,
+        title="Relationship evidence",
+    )
+    document["sources"].append(source)
+    observed = observations()
+    observed[relationship_url] = {
+        "url": relationship_url,
+        "final_url": relationship_url,
+        "checked_at": STAMP,
+        "content_hash": "b" * 64,
+        "source_text": "Primary relationship evidence.",
+    }
+    before = data_bytes(current)
+
+    with pytest.raises(ResearchResultValidationError) as failure:
+        prepare_result(
+            current,
+            read_state(current),
+            document,
+            operation="research_idea",
+            entity_id="idea1",
+            now=NOW,
+            observations=observed,
+        )
+
+    assert failure.value.diagnostic_code == "relationship.source_ids.url_missing_from_page"
+    assert str(failure.value) == "invalid research result field"
+    assert relationship_url not in str(failure.value)
+    assert relationship["source_ids"] not in str(failure.value)
+    assert data_bytes(current) == before
 
 
 def test_interrupted_transaction_recovers_before_reader(current: Path) -> None:
