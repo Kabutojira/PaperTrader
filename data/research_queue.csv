@@ -13,6 +13,9 @@ security,security_2433a056eb0c55961fcc,75,incomplete_research|research_overdue|v
 security,security_2c779e81c27b78c556bb,75,incomplete_research|valuation_coverage_gap,2026-10-18T20:41:09Z,2026-10-18T20:41:09Z,pending,0,2026-10-18T20:41:09Z,,false,
 security,security_2dbe878dfc899d7ee867,75,incomplete_research|valuation_coverage_gap,2026-10-18T20:41:09Z,2026-10-18T20:41:09Z,pending,0,2026-10-18T20:41:09Z,,false,
 security,security_3853e54c619d597dcaa1,75,valuation_coverage_gap|valuation_unsupported,2026-10-18T20:41:09Z,2026-10-18T20:41:09Z,pending,0,2026-10-18T20:41:09Z,,false,
+security,security_3a75fc1ccca2ee7c937a,75,incomplete_research|valuation_coverage_gap,2026-10-18T21:16:01Z,2026-10-18T21:16:01Z,pending,0,2026-10-18T21:16:01Z,,false,
+security,security_4627aea1bf7d8943d3d8,75,valuation_coverage_gap|valuation_unsupported,2026-10-18T21:16:01Z,2026-10-18T21:16:01Z,pending,0,2026-10-18T21:16:01Z,,false,
+security,security_488a9d7f7a8573597724,75,incomplete_research|valuation_coverage_gap,2026-10-18T21:16:01Z,2026-10-18T21:16:01Z,pending,0,2026-10-18T21:16:01Z,,false,
 security,security_567d0d575bbd30aaa91d,80,research_overdue|severe_price_movement|valuation_coverage_gap|valuation_unsupported,2026-10-18T17:00:00Z,2026-10-18T21:04:45Z,failed,1,2026-10-19T03:04:45Z,,false,validation:ValueError:papertrader.research_results.prepare_result:229
 security,security_6ac6a6268ca7c08829ae,80,missing_research|severe_price_movement|unresearched_candidate|valuation_coverage_gap,2026-10-18T18:50:04Z,2026-10-18T20:41:09Z,pending,0,2026-10-18T18:50:04Z,,false,
 security,security_6cf75bd0ec0aa2a20148,80,incomplete_research|research_overdue|severe_price_movement|valuation_coverage_gap,2026-10-18T18:50:04Z,2026-10-18T20:41:09Z,pending,0,2026-10-18T18:50:04Z,,false,
