@@ -534,3 +534,26 @@ Validation/commit/CI/deployment and live backfill evidence will be recorded belo
   Full163 tests60.6s, Ruff/format, MyPy19 and strict current validation passed;
   source-index, alias-preservation/new-duplicate rejection and request-budget
   regressions included. Live continuation awaits push/CI.
+
+- Source identity fix `7361375aa6a4aff3ec3bf1ca3701c52b9929ac11` passed exact
+  [CI39166889532](https://github.com/Kabutojira/PaperTrader/actions/runs/39166889532).
+  Bulk cycle [39167105129](https://github.com/Kabutojira/PaperTrader/actions/runs/39167105129)
+  ran3 operations/32 web requests: DDD validation retry, Twist unsupported,
+  Arista supported update; commit `e9d8acd2729b9b9e27032d4030d4182f4967b28c`,
+  independent Pages39167580075 passed. Market refill39167686187 made0 requests.
+  Next [39167856012](https://github.com/Kabutojira/PaperTrader/actions/runs/39167856012)
+  ran3/36: RocketLab and Ginkgo validation retries for missing narrative fields,
+  CrowdStrike unsupported due source access; commit
+  `121ec98a628c103d2c65af1f691e6d0c568c9209`, Pages39168270304 passed.
+  Coverage remains22 complete,45 incomplete,9 missing,16 unsupported; current9.
+- Final contract/diagnostic repair keeps required explanations nonempty even for
+  unsupported conclusions, with explicit unknowns and no invented scenario numbers.
+  Static codes identify missing fields and invalid source metadata. Broker errors
+  distinguish numeric HTTP status, PDF unsupported, empty/oversized content and
+  request-budget exhaustion without response bodies or secrets. Primary evidence
+  is preferred; trustworthy attributed secondary reporting may fill identified
+  gaps with explicit limitations, matching the product source policy. Generic
+  homepages and unverified prior figures are not financial evidence.
+  Full180 tests74.4s, Ruff/format, MyPy19 and current validation passed; no request
+  limit or financial/evidence validation was weakened. Push/CI precedes resuming
+  the one-time backfill; remaining individual failures use bounded retries.

@@ -7,6 +7,7 @@ import shutil
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
+from urllib.error import HTTPError
 
 import pytest
 
@@ -28,7 +29,7 @@ from papertrader.research_results import (
 )
 from papertrader.research_state import contracts, read_state, validate_state, write_state
 from papertrader.research_transaction import apply_files, research_lock
-from papertrader.research_web import ResearchWeb, public_url
+from papertrader.research_web import SOURCE_RESPONSE_MAX_BYTES, ResearchWeb, public_url
 from papertrader.research_worker import POLICY
 
 NOW = datetime(2026, 10, 18, 17, tzinfo=UTC)
@@ -383,6 +384,73 @@ def test_unsupported_valuation_is_honest_and_valid(current: Path) -> None:
     assert not assessment["base_fair_value"]
 
 
+@pytest.mark.parametrize(
+    "field",
+    [
+        "thesis",
+        "method_rationale",
+        "key_assumptions",
+        "downside",
+        "catalysts",
+        "invalidation_conditions",
+        "limitations",
+        "source_ids",
+    ],
+)
+def test_unsupported_valuation_requires_each_narrative_with_static_code(
+    current: Path, field: str
+) -> None:
+    document = result(current, supported=False)
+    document["assessment"][field] = ""
+
+    with pytest.raises(ResearchResultValidationError) as failure:
+        prepare_result(
+            current,
+            read_state(current),
+            document,
+            operation="research_security",
+            entity_id="security1",
+            now=NOW,
+            observations=observations(),
+        )
+
+    assert failure.value.diagnostic_code == f"assessment.{field}.missing"
+    assert str(failure.value) == "invalid research result field"
+
+
+@pytest.mark.parametrize(
+    ("field", "value", "code"),
+    [
+        ("status", "unverified", "source.status.invalid"),
+        ("title", "", "source.title.missing"),
+        (
+            "related_entity_ids",
+            "security2",
+            "source.related_entity_ids.target_missing",
+        ),
+    ],
+)
+def test_source_row_failures_have_static_field_diagnostics(
+    current: Path, field: str, value: str, code: str
+) -> None:
+    document = result(current)
+    document["sources"][0][field] = value
+
+    with pytest.raises(ResearchResultValidationError) as failure:
+        prepare_result(
+            current,
+            read_state(current),
+            document,
+            operation="research_security",
+            entity_id="security1",
+            now=NOW,
+            observations=observations(),
+        )
+
+    assert failure.value.diagnostic_code == code
+    assert str(failure.value) == "invalid research result field"
+
+
 def test_exception_mid_transaction_restores_all_originals(
     current: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
@@ -689,6 +757,11 @@ def test_worker_prompt_states_exact_current_research_contract() -> None:
         "Leave source.published_at empty",
         "Every source ID in an idea row or relationship row must exist",
         "have its exact URL linked\nin the final primary Markdown page",
+        "Clearly attributed trustworthy secondary financial reporting",
+        "A generic corporate\nhomepage is not financial evidence",
+        "All eight assessment narratives/evidence fields",
+        "including for an\nunsupported valuation",
+        "Never carry unverified prior numbers forward",
     ):
         assert requirement in POLICY
 
@@ -1066,6 +1139,77 @@ def test_network_budget_is_hard_and_private_sources_are_forbidden(
         public_url("http://127.0.0.1/private")
     with pytest.raises(ValueError):
         public_url("file:///etc/passwd")
+
+
+@pytest.mark.parametrize(
+    ("mode", "expected"),
+    [
+        ("pdf", "pdf_unsupported"),
+        ("too_large", "source_too_large"),
+        ("empty", "empty_content"),
+    ],
+)
+def test_broker_returns_static_content_error_categories_without_source_data(
+    monkeypatch: pytest.MonkeyPatch, mode: str, expected: str
+) -> None:
+    read_limits: list[int] = []
+
+    class Response:
+        def __init__(self) -> None:
+            self.headers = {"Content-Type": "application/pdf" if mode == "pdf" else "text/html"}
+
+        def __enter__(self) -> Response:
+            return self
+
+        def __exit__(self, *_: object) -> None:
+            return None
+
+        def read(self, limit: int) -> bytes:
+            read_limits.append(limit)
+            if mode == "too_large":
+                return b"x" * limit
+            if mode == "empty":
+                return b"<script>provider secret</script>"
+            return b"provider secret PDF body"
+
+        def geturl(self) -> str:
+            return URL
+
+    class Opener:
+        def open(self, *_: object, **__: object) -> Response:
+            return Response()
+
+    monkeypatch.setattr("papertrader.research_web.public_url", lambda _: None)
+    monkeypatch.setattr("papertrader.research_web.build_opener", lambda *_: Opener())
+
+    outcome = json.loads(ResearchWeb().tool({"action": "open", "url": URL}))
+
+    assert outcome == {"error": expected, "requests_used": 1}
+    assert read_limits == [SOURCE_RESPONSE_MAX_BYTES + 1]
+    assert "provider secret" not in json.dumps(outcome)
+
+
+@pytest.mark.parametrize("status", [403, 404])
+def test_broker_returns_only_numeric_http_status(
+    monkeypatch: pytest.MonkeyPatch, status: int
+) -> None:
+    class Opener:
+        def open(self, *_: object, **__: object) -> None:
+            raise HTTPError(URL, status, "provider secret reason", {}, None)
+
+    monkeypatch.setattr("papertrader.research_web.public_url", lambda _: None)
+    monkeypatch.setattr("papertrader.research_web.build_opener", lambda *_: Opener())
+
+    outcome = json.loads(ResearchWeb().tool({"action": "open", "url": URL}))
+
+    assert outcome == {"error": "http_error", "requests_used": 1, "http_status": status}
+    assert "provider secret" not in json.dumps(outcome)
+
+
+def test_broker_budget_error_is_static_and_does_not_spend_a_request() -> None:
+    outcome = json.loads(ResearchWeb(max_calls=0).tool({"action": "open", "url": URL}))
+
+    assert outcome == {"error": "budget_exhausted", "requests_used": 0}
 
 
 def test_opened_sources_receive_existing_or_deterministic_new_identity(

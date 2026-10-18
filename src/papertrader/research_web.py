@@ -9,6 +9,7 @@ import socket
 import time
 from datetime import UTC, datetime
 from html.parser import HTMLParser
+from urllib.error import HTTPError
 from urllib.parse import urlencode, urljoin, urlsplit
 from urllib.request import HTTPRedirectHandler, Request, build_opener
 
@@ -17,6 +18,24 @@ from papertrader.research_state import source_url
 SOURCE_TEXT_LIMIT = 12_000
 SOURCE_IDENTITY_MAX_ROWS = 5_000
 SOURCE_IDENTITY_MAX_BYTES = 1_000_000
+SOURCE_RESPONSE_MAX_BYTES = 2_000_000
+WEB_ERROR_CATEGORIES = {
+    "budget_exhausted",
+    "empty_content",
+    "invalid_request",
+    "pdf_unsupported",
+    "source_too_large",
+}
+
+
+class ResearchWebError(ValueError):
+    """A controller-owned category safe to return without provider content."""
+
+    def __init__(self, category: str) -> None:
+        if category not in WEB_ERROR_CATEGORIES:
+            raise ValueError("unknown research web error category")
+        self.category = category
+        super().__init__(category)
 
 
 class _Text(HTMLParser):
@@ -45,12 +64,12 @@ class _Text(HTMLParser):
 def public_url(url: str) -> None:
     parsed = urlsplit(url)
     if not source_url(url) or parsed.port not in {None, 80, 443}:
-        raise ValueError("public HTTP(S) source required")
+        raise ResearchWebError("invalid_request")
     addresses = socket.getaddrinfo(parsed.hostname, parsed.port or 443, type=socket.SOCK_STREAM)
     if not addresses or any(
         not ipaddress.ip_address(address[4][0]).is_global for address in addresses
     ):
-        raise ValueError("nonpublic source forbidden")
+        raise ResearchWebError("invalid_request")
 
 
 class ResearchWeb:
@@ -98,7 +117,7 @@ class ResearchWeb:
 
     def take(self, url: str) -> None:
         if self.calls >= self.max_calls or time.monotonic() >= self.deadline:
-            raise ValueError("research_web_budget_exhausted")
+            raise ResearchWebError("budget_exhausted")
         public_url(url)
         self.calls += 1
 
@@ -119,16 +138,18 @@ class ResearchWeb:
         )
         timeout = max(0.1, min(self.timeout, self.deadline - time.monotonic()))
         with build_opener(Redirects()).open(request, timeout=timeout) as response:
-            raw = response.read(2_000_001)
-            if len(raw) > 2_000_000:
-                raise ValueError("source exceeds bounded read size")
+            raw = response.read(SOURCE_RESPONSE_MAX_BYTES + 1)
+            if len(raw) > SOURCE_RESPONSE_MAX_BYTES:
+                raise ResearchWebError("source_too_large")
             if "pdf" in response.headers.get("Content-Type", "").lower():
-                raise ValueError("PDF extraction unavailable; use primary HTML filing/release")
+                raise ResearchWebError("pdf_unsupported")
             content = raw.decode("utf-8", errors="replace")
             final_url = response.geturl()
         parser = _Text()
         parser.feed(content)
         text = " ".join(" ".join(parser.parts).split())
+        if not text:
+            raise ResearchWebError("empty_content")
         checked = datetime.now(UTC).isoformat(timespec="seconds").replace("+00:00", "Z")
         observation = dict(
             url=url,
@@ -156,7 +177,7 @@ class ResearchWeb:
             if args.get("action") == "search":
                 query = args.get("query", "")
                 if not 1 <= len(query) <= 500:
-                    raise ValueError("invalid search query")
+                    raise ResearchWebError("invalid_request")
                 return json.dumps(
                     self.open(
                         "https://www.bing.com/search?" + urlencode({"format": "rss", "q": query}),
@@ -164,8 +185,20 @@ class ResearchWeb:
                     )
                 )
             if args.get("action") != "open":
-                raise ValueError("unknown web action")
+                raise ResearchWebError("invalid_request")
             return json.dumps(self.open(urljoin("", args.get("url", ""))))
-        except Exception as exc:
-            # No provider response, secrets, or arbitrary exception bodies in public results.
-            return json.dumps({"error": type(exc).__name__, "requests_used": self.calls})
+        except HTTPError as exc:
+            # Numeric HTTP status is trustworthy; response bodies and reasons are not.
+            status = exc.code if isinstance(exc.code, int) and 100 <= exc.code <= 599 else None
+            result: dict[str, int | str] = {
+                "error": "http_error",
+                "requests_used": self.calls,
+            }
+            if status is not None:
+                result["http_status"] = status
+            return json.dumps(result)
+        except ResearchWebError as exc:
+            return json.dumps({"error": exc.category, "requests_used": self.calls})
+        except Exception:
+            # No exception text, source content, provider body or secret enters the model response.
+            return json.dumps({"error": "request_failed", "requests_used": self.calls})

@@ -46,6 +46,13 @@ RESULT_VALIDATION_CODES = frozenset(
         "assessment.valid_until.exceeds_freshness",
         "assessment.valid_until.invalid",
         "assessment.valid_until.not_after_assessed",
+        "assessment.thesis.missing",
+        "assessment.method_rationale.missing",
+        "assessment.key_assumptions.missing",
+        "assessment.downside.missing",
+        "assessment.catalysts.missing",
+        "assessment.invalidation_conditions.missing",
+        "assessment.limitations.missing",
         "assessment.source_ids.missing",
         "assessment.source_ids.not_currently_opened",
         "assessment.source_ids.status_invalid",
@@ -62,6 +69,9 @@ RESULT_VALIDATION_CODES = frozenset(
         "relationship.source_ids.status_invalid",
         "relationship.source_ids.target_entity_missing",
         "relationship.source_ids.url_missing_from_page",
+        "source.status.invalid",
+        "source.title.missing",
+        "source.related_entity_ids.target_missing",
         "source.published_at.future",
         "source.published_at.invalid",
     }
@@ -202,13 +212,13 @@ def prepare_result(
         raise ValueError("unknown research entity")
     for value in result["sources"]:
         row = _row(value, schema["source_registry"].columns).copy()
+        if row["status"] != "valid":
+            raise ResearchResultValidationError("source.status.invalid")
+        if not row["title"]:
+            raise ResearchResultValidationError("source.title.missing")
+        if entity_id not in row["related_entity_ids"].split("|"):
+            raise ResearchResultValidationError("source.related_entity_ids.target_missing")
         observed = _fresh_observation(observations, row["url"], now)
-        if (
-            row["status"] != "valid"
-            or not row["title"]
-            or entity_id not in row["related_entity_ids"].split("|")
-        ):
-            raise ValueError("invalid current entity source")
         row.update(checked_at=observed["checked_at"], content_hash=observed["content_hash"])
         prior = next(
             (r for r in state["source_registry"] if r["source_id"] == row["source_id"]), None
@@ -323,8 +333,9 @@ def prepare_result(
             "limitations",
             "source_ids",
         )
-        if not all(assessment[field] for field in required):
-            raise ValueError("missing current research explanations or evidence")
+        for field in required:
+            if not assessment[field]:
+                raise ResearchResultValidationError(f"assessment.{field}.missing")
         if (
             result["outcome"] == "not_supportable"
             and assessment["research_status"] != "valuation_unsupported"

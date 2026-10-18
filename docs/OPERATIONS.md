@@ -147,3 +147,12 @@ sources return source_id/source_url/source_license for reuse. Existing legacy
 same-URL aliases retain their identities and citations; new duplicate URL IDs and
 URL/license changes under existing IDs remain invalid. This lookup makes no
 additional network or model request and grants no source-content trust exception.
+
+Research explanations must remain nonempty even for unsupported conclusions: state
+what is unknown and why, while leaving unsupported scenario numbers empty. Prefer
+primary financial evidence; justified, clearly attributed trustworthy secondary
+reporting can fill identified gaps with appropriate confidence/limitations. A
+corporate homepage alone is not financial evidence. Broker failures expose safe
+static categories and numeric HTTP status, never provider reason/body. PDF
+extraction remains unavailable and is reported explicitly rather than as a generic
+network error. Per-operation request/time/content limits remain unchanged.
