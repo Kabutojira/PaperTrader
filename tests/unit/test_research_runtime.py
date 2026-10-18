@@ -12,7 +12,9 @@ import papertrader.research_runtime as runtime
 from papertrader.research_agent import run_cycle
 from papertrader.research_market import PRICE_COLUMNS, _write
 from papertrader.research_queue import admit
+from papertrader.research_results import commit_result
 from papertrader.research_state import contracts, read_state, write_state
+from papertrader.research_transaction import research_lock
 
 NOW = datetime(2026, 10, 18, 20, tzinfo=UTC)
 STAMP = "2026-10-18T20:00:00Z"
@@ -83,6 +85,16 @@ class Provider:
 
 
 def test_closed_repeat_is_no_network_and_no_state_commit(runtime_root: Path) -> None:
+    state = read_state(runtime_root)
+    idea = dict.fromkeys(contracts(runtime_root)["ideas"].columns, "")
+    idea.update(
+        idea_id="idea1",
+        title="Multiline checkout regression",
+        thesis="First supported line.\nSecond supported line.",
+        status="unresearched",
+    )
+    state["ideas"].append(idea)
+    write_state(runtime_root, state)
     provider = Provider()
     assert (
         runtime.market_cycle(runtime_root, dry_run=True, now=NOW, provider=provider)[
@@ -93,6 +105,11 @@ def test_closed_repeat_is_no_network_and_no_state_commit(runtime_root: Path) -> 
     assert provider.calls == []
     first = runtime.market_cycle(runtime_root, dry_run=False, now=NOW, provider=provider)
     assert first["exit_code"] == 0 and first["provider_calls"] > 0
+    ideas_path = runtime_root / contracts(runtime_root)["ideas"].path
+    staged = ideas_path.read_bytes()
+    checkout = staged.replace(b"\r\n", b"\n").replace(b"\n", b"\r\n")
+    assert checkout != staged
+    ideas_path.write_bytes(checkout)
     before = {
         p.relative_to(runtime_root): p.read_bytes()
         for p in (runtime_root / "data").rglob("*")
@@ -106,6 +123,11 @@ def test_closed_repeat_is_no_network_and_no_state_commit(runtime_root: Path) -> 
         for p in (runtime_root / "data").rglob("*")
         if p.is_file()
     }
+    changed_state = read_state(runtime_root)
+    changed_state["ideas"][0]["thesis"] = "First supported line.\nMaterially changed line."
+    with research_lock(runtime_root):
+        assert commit_result(runtime_root, changed_state, {}) == ["data/tables/ideas.csv"]
+    assert read_state(runtime_root)["ideas"][0]["thesis"].endswith("Materially changed line.")
 
 
 def test_market_outage_preserves_other_quotes_and_old_good_bar(runtime_root: Path) -> None:

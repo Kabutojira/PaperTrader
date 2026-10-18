@@ -425,3 +425,30 @@ or financial validation to satisfy retired tests.
   and69 affected tests, Ruff/format, MyPy19 and current validation passed. No
   source/evidence validation was weakened or retry count reset. Push/CI precedes
   the single remaining authorized idea attempt.
+
+- Citation repair `3a63bab65f9f0f809c929e939b1fce013785d72e` passed
+  [CI39161494875](https://github.com/Kabutojira/PaperTrader/actions/runs/39161494875).
+  AI-compute idea final attempt [39161620066](https://github.com/Kabutojira/PaperTrader/actions/runs/39161620066)
+  failed stable-source URL identity validation,11 web requests. It is now
+  needs_attention, not reset/replayed; prior research remains intact. Compact
+  state commit `002a268fd1e1ff8d0cb56f2286798cb785212714`; independent Pages39161860638 succeeded.
+- Different existing defensive-consumer idea [39162062924](https://github.com/Kabutojira/PaperTrader/actions/runs/39162062924)
+  updated successfully, one model operation/12 web requests; commit
+  `3853e72ad921f9ab25f7a876f832528196a73c32`. Independent
+  [Pages39162269997](https://github.com/Kabutojira/PaperTrader/actions/runs/39162269997)
+  deployed that exact commit. Required live company and idea updates now passed.
+- Closed-session market repeats [39162409315](https://github.com/Kabutojira/PaperTrader/actions/runs/39162409315)
+  and [39162539432](https://github.com/Kabutojira/PaperTrader/actions/runs/39162539432)
+  each made0 provider/HTTP requests and0 failed tickers. First filled two available
+  queue slots. Second exposed a timestamp-only status commit caused by Git CSV
+  CRLF conversion inside multiline cells; this was a failed no-commit acceptance
+  check, despite zero network calls. CSV-only logical newline comparison now
+  matches canonical reads, leaves non-CSV byte comparison exact and preserves real
+  edits. A fresh-checkout multiline regression proves no data/status write, then
+  proves a real text change still applies. Live no-commit repeat awaits push/CI.
+- Final local gate:148 tests passed in61.8s (two dependency deprecation warnings),
+  Ruff/format, MyPy19, strict data validation, zero-call market/research/discovery
+  previews, Quartz check/build144 Markdown/200 files and links passed. Intentional
+  invalid research, provider outage, Git conflict and Pages failure were injected
+  local fixtures, not actual external outages. Discovery preview returned due=true,
+  limits1 idea/2 companies/8 identity requests,0 model calls and no state mutation.

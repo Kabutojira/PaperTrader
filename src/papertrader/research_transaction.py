@@ -61,6 +61,19 @@ def recover_transaction(root: Path) -> None:
     journal.unlink()
 
 
+def _normalize_csv_newlines(body: bytes) -> bytes:
+    # Git's CSV eol=crlf checkout conversion also touches newlines inside
+    # RFC 4180 quoted cells. Research readers already normalize those logical
+    # field newlines, so comparisons use the same newline equivalence.
+    return body.replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+
+
+def _same_content(name: str, current: bytes, proposed: bytes) -> bool:
+    if not name.endswith(".csv"):
+        return current == proposed
+    return _normalize_csv_newlines(current) == _normalize_csv_newlines(proposed)
+
+
 def apply_files(root: Path, files: Mapping[str, bytes]) -> list[str]:
     """Caller holds research_lock. Stage final Markdown before matching tables.
 
@@ -70,7 +83,8 @@ def apply_files(root: Path, files: Mapping[str, bytes]) -> list[str]:
     changed = {
         name: body
         for name, body in files.items()
-        if not safe_path(root, name).exists() or safe_path(root, name).read_bytes() != body
+        if not safe_path(root, name).exists()
+        or not _same_content(name, safe_path(root, name).read_bytes(), body)
     }
     if not changed:
         return []
