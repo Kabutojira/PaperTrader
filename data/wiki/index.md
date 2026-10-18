@@ -23,14 +23,15 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-91 companies / 92 instruments; 83 assessed, 3 in date, 80 stale; 91 currently unrated. 0 quotes require attention.
+91 companies / 92 instruments; 83 assessed, 4 in date, 79 stale; 90 currently unrated. 0 quotes require attention.
 
-Last observed market session: 2026-10-16. Last successful research: 2026-10-18T20:12:34Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-16. Last successful research: 2026-10-18T20:12:34Z. Market: succeeded; research: degraded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
 Watchlist valuation coverage: **22 / 92 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 9; unsupported valuation: 13; incomplete research: 48. Needs attention: 1. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
+- [MP Materials Corp.](securities/security_cd492d97064d8574156e) — 2026-10-18T20:45:53.247385Z; hold
 - [NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) — 2026-10-18T19:50:33.927425Z; buy
 - [SoFi Technologies, Inc.](securities/security_98470cfc01bbcde78fc2) — 2026-10-18T19:22:08.983560Z; valuation_unsupported
 - [Defensive consumer cash-return resilience](ideas/idea_defensive_consumer_cash_return) — 2026-10-18; maintained
@@ -40,7 +41,6 @@ Watchlist valuation coverage: **22 / 92 instruments** have complete sourced bear
 - [AI-native SMB financial operating systems](ideas/idea_ai_native_smb_financial_operating_systems) — 2026-09-11; maintained
 - [Corsair Gaming, Inc.](securities/security_55c9ce2fdcd32dad6b8c) — 2026-09-06T17:44:28Z; research_expired_or_future
 - [Ternium S.A.](securities/security_2c779e81c27b78c556bb) — 2026-09-06T14:48:45Z; research_expired_or_future
-- [Samsung Electronics Co., Ltd.](securities/security_d08d763780400dfbffce) — 2026-09-06T14:35:49Z; valuation_unsupported
 
 ## Ideas and interesting companies
 

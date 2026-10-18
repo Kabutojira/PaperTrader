@@ -47,7 +47,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Labcorp Holdings Inc.](securities/security_b1f2c48e1a744f5ecf67) | LH (USD) | researched: research_expired_or_future | incomplete_research | 253.40 / 311.52 / 371.00 USD | 2026-08-21T22:54:07Z | 2026-09-04T22:54:07Z |
 | Lemonade, Inc. | LMND (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Lithium Americas Corp.](securities/security_fb87fac302a5446a1ced) | LAC (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-15T18:52:08Z | 2026-11-15T18:52:08Z |
-| [MP Materials Corp.](securities/security_cd492d97064d8574156e) | MP (USD) | researched: research_expired_or_future | complete | 18.00 / 40.00 / 72.00 USD | 2026-08-19T13:32:43Z | 2026-09-18T13:32:43Z |
+| [MP Materials Corp.](securities/security_cd492d97064d8574156e) | MP (USD) | researched: hold | complete | 18.00 / 40.00 / 72.00 USD | 2026-10-18T20:45:53.247385Z | 2026-11-17T20:45:53.247385Z |
 | Materialise NV | MTLS (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [MercadoLibre, Inc.](securities/security_4935c6e39e38273a1731) | MELI (USD) | researched: research_expired_or_future | incomplete_research | 1,400.00 / 2,200.00 / 3,000.00 USD | 2026-08-28T20:09:00Z | 2026-09-27T20:09:00Z |
 | [Meta Platforms, Inc.](securities/security_d12e746b3c9d392183cc) | META (USD) | researched: research_expired_or_future | incomplete_research | 400.00 / 600.00 / 800.00 USD | 2026-08-28T19:45:56Z | 2026-09-27T19:45:56Z |
