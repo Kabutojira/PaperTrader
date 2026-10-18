@@ -25,14 +25,15 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-91 companies / 92 instruments; 83 assessed, 10 in date, 73 stale; 88 currently unrated. 0 quotes require attention.
+91 companies / 92 instruments; 84 assessed, 11 in date, 73 stale; 87 currently unrated. 0 quotes require attention.
 
-Last observed market session: 2026-10-16. Last successful research: 2026-10-18T21:47:09Z. Market: succeeded; research: degraded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-16. Last successful research: 2026-10-18T22:32:44Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
-Watchlist valuation coverage: **22 / 92 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 9; unsupported valuation: 17; incomplete research: 44. Needs attention: 2. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
+Watchlist valuation coverage: **23 / 92 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 8; unsupported valuation: 17; incomplete research: 44. Needs attention: 2. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
+- [BASF SE](securities/security_ef418f5ccc7dc5be8e65) — 2026-10-18T22:30:31.309524Z; hold
 - [Planet Labs PBC](securities/security_97f38b2cb2d5ef127f5a) — 2026-10-18T21:43:15.665309Z; valuation_unsupported
 - [CrowdStrike Holdings, Inc.](securities/security_8472507d7d320aa388a7) — 2026-10-18T21:29:09.311608Z; valuation_unsupported
 - [Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a) — 2026-10-18T21:20:52.492203Z; hold
@@ -42,7 +43,6 @@ Watchlist valuation coverage: **22 / 92 instruments** have complete sourced bear
 - [MP Materials Corp.](securities/security_cd492d97064d8574156e) — 2026-10-18T20:45:53.247385Z; hold
 - [NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) — 2026-10-18T19:50:33.927425Z; buy
 - [SoFi Technologies, Inc.](securities/security_98470cfc01bbcde78fc2) — 2026-10-18T19:22:08.983560Z; valuation_unsupported
-- [Defensive consumer cash-return resilience](ideas/idea_defensive_consumer_cash_return) — 2026-10-18; maintained
 
 ## Ideas and interesting companies
 

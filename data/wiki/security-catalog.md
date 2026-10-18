@@ -20,7 +20,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a) | ANET (USD) | researched: hold | complete | 120.00 / 182.40 / 252.00 USD | 2026-10-18T21:20:52.492203Z | 2026-11-17T21:20:52.492203Z |
 | Arkema S.A. | AKE (EUR) | unresearched: unresearched | missing_research | — / — / — EUR | unresearched | — |
 | [Atkore Inc.](securities/security_22c2b9d782a62d7a9b86) | ATKR (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-07-28T00:28:34Z | 2026-08-27T00:28:34Z |
-| BASF SE | BAS (EUR) | unresearched: unresearched | missing_research | — / — / — EUR | unresearched | — |
+| [BASF SE](securities/security_ef418f5ccc7dc5be8e65) | BAS (EUR) | researched: hold | complete | 27.90 / 50.80 / 70.90 EUR | 2026-10-18T22:30:31.309524Z | 2026-11-17T22:30:31.309524Z |
 | [Bloom Energy Corporation](securities/security_3e597863f00753e8c65c) | BE (USD) | researched: sell | complete | 90.00 / 180.00 / 300.00 USD | 2026-10-18T20:59:04.577258Z | 2026-11-17T20:59:04.577258Z |
 | [Canadian Solar Inc.](securities/security_099561384c0f5e697727) | CSIQ (USD) | researched: research_expired_or_future | complete | 10.16 / 18.28 / 26.41 USD | 2026-08-31T08:45:47Z | 2026-09-30T08:45:47Z |
 | [Carlisle Companies Incorporated](securities/security_9b0db3bc77914b23a307) | CSL (USD) | researched: research_expired_or_future | incomplete_research | 282.66 / 363.42 / 444.18 USD | 2026-08-31T22:11:17Z | 2026-09-30T22:11:17Z |
