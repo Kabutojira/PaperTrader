@@ -175,7 +175,8 @@ def run_cycle(
         if errors:
             raise ValueError("; ".join(errors[:8]))
         if entity_id:
-            requested_key = entity_key(state, entity_type, entity_id)
+            entity_key(state, entity_type, entity_id)
+            requested_key = (entity_type, entity_id)
             admit(
                 state,
                 entity_type,

@@ -12,6 +12,12 @@ from pathlib import Path
 
 from papertrader.migration_inventory import _git
 from papertrader.research_agent import run_cycle
+from papertrader.research_discovery import (
+    IdentityVerifier,
+    discovery_limits,
+    prepare_candidates,
+    run_discovery,
+)
 from papertrader.research_migration import prepare_migration
 from papertrader.research_queue import admit, queue_limits, rebuild_legacy_queue
 from papertrader.research_results import commit_result, context_packet, prepare_result
@@ -25,6 +31,12 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--repository", type=Path, default=Path.cwd())
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("validate")
+    discovery = commands.add_parser("discover")
+    discovery.add_argument("--apply", action="store_true")
+    discovery.add_argument("--force", action="store_true", help="Explicit manual cadence override")
+    imports = commands.add_parser("import-candidates")
+    imports.add_argument("--request", type=Path, required=True)
+    imports.add_argument("--apply", action="store_true")
     for name in ("context", "enqueue"):
         child = commands.add_parser(name)
         child.add_argument("entity_type", choices=["security", "idea"])
@@ -50,6 +62,10 @@ def main(argv: list[str] | None = None) -> int:
     root = args.repository.resolve()
     now = datetime.now(UTC)
     try:
+        if args.command == "discover":
+            response = run_discovery(root, dry_run=not args.apply, force=args.force)
+            print(json.dumps(response, indent=2, sort_keys=True))
+            return int(response["exit_code"])
         if args.command == "research":
             if bool(args.entity_id) != bool(args.entity_type):
                 raise ValueError("both entity identity fields are required")
@@ -127,6 +143,48 @@ def main(argv: list[str] | None = None) -> int:
                 )
                 changed = commit_result(root, state, {})
                 print(json.dumps(dict(status=outcome, changed=changed)))
+                return 0
+            if args.command == "import-candidates":
+                document = json.loads(args.request.read_text())
+                if not args.apply:
+                    print(
+                        json.dumps(
+                            {
+                                "status": "dry_run",
+                                "limits": vars(discovery_limits(root)),
+                                "network_calls": 0,
+                            }
+                        )
+                    )
+                    return 0
+                limits = discovery_limits(root)
+                broker = ResearchWeb()
+                if (
+                    not isinstance(document, dict)
+                    or not isinstance(document.get("ideas"), list)
+                    or not isinstance(document.get("companies"), list)
+                    or len(document["ideas"]) > limits.weekly_max_ideas
+                    or len(document["companies"]) > limits.weekly_max_companies
+                ):
+                    raise ValueError("bounded import required before network access")
+                for value in document["ideas"] + document["companies"]:
+                    for url in value["source_urls"]:
+                        broker.open(url)
+                candidate, pages, created = prepare_candidates(
+                    root,
+                    state,
+                    document,
+                    now=datetime.now(UTC),
+                    observations=broker.observations,
+                    verify_identity=IdentityVerifier(root, limits),
+                    limits=limits,
+                    manual=True,
+                )
+                print(
+                    json.dumps(
+                        {"created": created, "changed": commit_result(root, candidate, pages)}
+                    )
+                )
                 return 0
             result = json.loads(args.result.read_text())
             if not args.apply:

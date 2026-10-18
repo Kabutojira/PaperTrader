@@ -118,8 +118,12 @@ def admit(
     ):
         raise ValueError("invalid priority or compact reasons")
     queue = state["research_queue"]
-    existing = next((row for row in queue if _key(row) == key), None)
+    existing = next((row for row in queue if entity_key(state, *_key(row)) == key), None)
     if existing is not None:
+        if manual and existing["entity_id"] != entity_id:
+            if existing["manual"] == "true" or existing["status"] == "running":
+                raise ValueError("another share-class request is already active for this company")
+            existing["entity_id"] = entity_id
         merged = "|".join(sorted(set(existing["reasons"].split("|")) | reasons))
         new_priority = str(max(int(existing["priority"]), 100 if manual else priority))
         if (merged, new_priority, manual or existing["manual"] == "true") != (
@@ -150,7 +154,7 @@ def admit(
     queue.append(
         dict(
             entity_type=key[0],
-            entity_id=key[1],
+            entity_id=entity_id if manual else key[1],
             priority=str(100 if manual else priority),
             reasons="|".join(sorted(reasons)),
             created_at=text,
@@ -283,12 +287,20 @@ def schedule_attention(
         reasons: set[str] = set()
         priority = 0
         assessment = assessments.get(sid)
-        recently_reviewed = bool(
-            security["last_research_at"]
-            and now - timestamp(security["last_research_at"]) < timedelta(days=7)
+        company = [row for row in state["securities"] if row["issuer_id"] == security["issuer_id"]]
+        recently_reviewed = any(
+            row["last_research_at"] and now - timestamp(row["last_research_at"]) < timedelta(days=7)
+            for row in company
         )
-        if not recently_reviewed and (
-            assessment is None or timestamp(assessment["valid_until"]) <= now
+        has_current_review = any(
+            row["security_id"] in assessments
+            and timestamp(assessments[row["security_id"]]["valid_until"]) > now
+            for row in company
+        )
+        if (
+            not recently_reviewed
+            and not has_current_review
+            and (assessment is None or timestamp(assessment["valid_until"]) <= now)
         ):
             priority = 60 if assessment else 20
             reasons.add("research_overdue" if assessment else "unresearched_candidate")

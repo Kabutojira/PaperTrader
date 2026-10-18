@@ -72,7 +72,7 @@ label mocked/local checks as live.
 | M1 | Repeatable dry-run-by-default compact schema migration; preserve identities, current meaning, prose/citations and expiry; schema/reference/wiki tests; no invented evidence | Staged tooling gate passed: 4e3f8223; CI green; active cutover M4 |
 | M2 | Standalone market/cache/indicators/valuation/ratings core; sessions/holidays, bounded batching, per-symbol failure/corrections; no LLM or portfolio paths | Complete: 823efb96; CI 39146545315 green |
 | M3 | One-entity bounded queue, deterministic priorities/retries, retire old producers; census-based disposition of all 340 blocks and 13 waiting relationships; <=30 tasks | Complete: 421332ff; CI 39147632827 green |
-| M4 | Two single-model operations; bounded context/web/turn/runtime budgets; final staged Markdown and complete result validated before atomic CSV/wiki/source transaction; idempotent and rollback-safe | Local gate passed; push/CI pending |
+| M4 | Two single-model operations; bounded context/web/turn/runtime budgets; final staged Markdown and complete result validated before atomic CSV/wiki/source transaction; idempotent and rollback-safe | Complete: 87e7514c; CI 39151401843 green |
 | M5 | Weekly bounded discovery/manual import and inline links; validate identity, dedupe issuers/share classes, retain citations/unresearched status; no fan-out | Pending |
 | M6 | Deterministic fresh Top 10 Buy/Sell, company/idea catalogs, recent updates and health; optional nonblocking charts; Quartz build and reviewed output/links | Pending |
 | M7 | Independent market/research/Pages workflows, least credentials, compact writes and focused validation; live non-dry market/research smoke; isolate failure cases | Pending |
@@ -199,7 +199,7 @@ or financial validation to satisfy retired tests.
   [CI39147632827](https://github.com/Kabutojira/PaperTrader/actions/runs/39147632827)
   completed successfully, including the complete legacy suite and Quartz build.
 
-## M4 evidence (in progress)
+## M4 evidence
 
 - Added two staged operations, one model configuration and a small bounded
   read-only web broker. The worker receives inference OAuth only; Git/deployment
@@ -241,4 +241,29 @@ or financial validation to satisfy retired tests.
   this covered newline correction; push CI will run the entire final tree.
 - Hermes integration/OS identity, live research network availability and deployment
   remain to be verified live in M7/M9. Current checks use mocked worker/network
-  responses and do not represent live checks. Commit/push/CI pending.
+  responses and do not represent live checks. Milestone commit
+  `87e7514c12f550907109bdfd0e02a92fa4926f17` pushed;
+  [CI39151401843](https://github.com/Kabutojira/PaperTrader/actions/runs/39151401843)
+  passed on the exact final tree, including the complete suite and Quartz build.
+
+## M5 evidence (in progress)
+
+- Added bounded research_idea discovery mode and manual candidate imports; source
+  verification and independent yfinance listing identity checks precede creation.
+  Defaults1 new idea/2 companies, weekly attempt cadence, web12 plus identity HTTP8.
+- Issuer dedupe handles share classes; explicit import preserves distinct instrument
+  IDs under the existing issuer. New sourced pages remain unresearched with no
+  assessment dates, valuations or automatic queue tasks. Relationships are inline.
+- Manual research selection now preserves an explicitly requested share class while
+  deduping company tasks; conflicting distinct manual instrument goals are rejected
+  explicitly. Company-level current review suppresses stale-sibling queue storms
+  without changing the sibling's old valuation or freshness.
+- Discovery keeps only its current status/last attempt under optional status.json;
+  failed attempts do not mutate research or retry indefinitely. Dry run is default.
+- Local gate passed: 66 discovery, queue, result and migration tests; Ruff lint/format,
+  MyPy74, current-data validation and default discovery dry run passed. Dry run made
+  zero model calls and changed no active data. Legal-form aliases and distinct
+  issuer/share-class identities have explicit regression coverage.
+- Commit/push and exact-tree CI are pending. No live model/provider invocation,
+  real discovery candidate, active schedule or Pages deployment has occurred.
+- Details: [M5 migration](docs/migration/M5.md).

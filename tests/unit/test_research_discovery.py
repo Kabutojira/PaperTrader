@@ -1,0 +1,345 @@
+from __future__ import annotations
+
+import json
+import shutil
+from datetime import UTC, datetime, timedelta
+from pathlib import Path
+from typing import Any
+
+import pytest
+
+from papertrader.research_discovery import company_key, prepare_candidates, run_discovery
+from papertrader.research_queue import admit, claim, schedule_attention
+from papertrader.research_results import commit_result
+from papertrader.research_state import contracts, read_state, validate_state, write_state
+from papertrader.research_transaction import research_lock
+
+NOW = datetime(2026, 10, 18, 17, tzinfo=UTC)
+STAMP = "2026-10-18T17:00:00Z"
+
+
+@pytest.fixture
+def catalog(repository_root: Path, tmp_path: Path) -> Path:
+    root = tmp_path / "catalog"
+    root.mkdir()
+    (root / "schemas").mkdir()
+    shutil.copy2(
+        repository_root / "schemas/research_contracts.yaml",
+        root / "schemas/research_contracts.yaml",
+    )
+    shutil.copy2(repository_root / "research.ini", root / "research.ini")
+    for operation in ("research_security", "research_idea"):
+        shutil.copytree(repository_root / "skills" / operation, root / "skills" / operation)
+    write_state(root, {name: [] for name in contracts(root)})
+    return root
+
+
+def company(name: str = "Alpha Industrial Ltd.", symbol: str = "ALP") -> dict[str, Any]:
+    return dict(
+        company_name=name,
+        instrument_name="Ordinary shares",
+        ticker=symbol,
+        venue_mic="XNAS",
+        provider_symbol=symbol,
+        currency="USD",
+        country="US",
+        thesis="Demand creates operating leverage; working capital remains uncertain.",
+        source_urls=["https://issuer.example/filing"],
+        idea_id="",
+        idea_title="",
+        mechanism="",
+    )
+
+
+def proposal(companies: list[dict[str, Any]] | None = None, *, idea: bool = True) -> dict[str, Any]:
+    return dict(
+        operation="research_idea",
+        mode="discovery",
+        summary="Primary-evidence candidates, not completed research.",
+        ideas=[
+            dict(
+                title="Industrial bottlenecks",
+                thesis="Supply constraints may change industry economics.",
+                source_urls=["https://issuer.example/filing"],
+            )
+        ]
+        if idea
+        else [],
+        companies=companies if companies is not None else [company()],
+    )
+
+
+def observations(now: datetime = NOW) -> dict[str, dict[str, str]]:
+    return {
+        "https://issuer.example/filing": dict(
+            url="https://issuer.example/filing",
+            checked_at=now.isoformat().replace("+00:00", "Z"),
+            content_hash="a" * 64,
+            source_text=(
+                "Alpha Industrial Ltd. publishes primary operating evidence "
+                "and verified public listing identity."
+            ),
+        )
+    }
+
+
+def metadata(value: dict[str, Any]) -> dict[str, str]:
+    return dict(
+        symbol=value["provider_symbol"],
+        longName=value["company_name"],
+        currency="USD",
+        instrumentType="EQUITY",
+        exchangeName="NMS",
+    )
+
+
+def accept(root: Path, document: dict[str, Any], *, manual: bool = False) -> dict[str, Any]:
+    state, pages, report = prepare_candidates(
+        root,
+        read_state(root),
+        document,
+        now=NOW,
+        observations=observations(),
+        verify_identity=metadata,
+        manual=manual,
+    )
+    with research_lock(root):
+        commit_result(root, state, pages)
+    return report
+
+
+def test_candidates_create_sources_pages_links_without_queue_or_valuations(catalog: Path) -> None:
+    value = company()
+    value.update(
+        idea_title="Industrial bottlenecks",
+        mechanism="Supply constraints transmit to component pricing.",
+    )
+    report = accept(catalog, proposal([value]))
+    state = read_state(catalog)
+    assert len(report["ideas"]) == len(report["companies"]) == 1
+    assert len(state["relationships"]) == 1
+    assert state["relationships"][0]["mechanism"] == value["mechanism"]
+    assert len(state["source_registry"]) == 1
+    assert (
+        state["securities"][0]["research_status"] == state["ideas"][0]["status"] == "unresearched"
+    )
+    assert state["securities"][0]["last_research_at"] == state["ideas"][0]["last_reviewed_on"] == ""
+    assert not state["research_queue"] and not state["security_assessments"]
+    assert validate_state(catalog, state) == []
+    for row in [*state["securities"], *state["ideas"]]:
+        text = (catalog / row["research_page"]).read_text()
+        assert "Unresearched candidate" in text and "https://issuer.example/filing" in text
+
+
+def test_share_class_discovery_dedupes_issuer_but_manual_import_preserves_instruments(
+    catalog: Path,
+) -> None:
+    first = company("Alphabet Inc.", "GOOG")
+    second = company("Alphabet Inc. Class A", "GOOGL")
+    report = accept(catalog, proposal([first, second], idea=False))
+    state = read_state(catalog)
+    assert len(report["companies"]) == len(report["known_issuers"]) == 1
+    assert len(state["securities"]) == 1
+    original = state["securities"][0].copy()
+    accept(catalog, proposal([second], idea=False), manual=True)
+    state = read_state(catalog)
+    assert len(state["securities"]) == 2
+    assert {row["issuer_id"] for row in state["securities"]} == {original["issuer_id"]}
+    assert len({row["security_id"] for row in state["securities"]}) == 2
+    assert original in state["securities"]
+    assert {row["provider_symbol"] for row in state["securities"]} == {"GOOG", "GOOGL"}
+
+
+def test_company_key_normalizes_equivalent_legal_spellings_and_share_class() -> None:
+    assert company_key("Atlas, Incorporated") == company_key("Atlas Inc.")
+    assert company_key("Atlas Corporation") == company_key("Atlas Corp.")
+    assert company_key("Atlas Limited") == company_key("Atlas Ltd.")
+    assert company_key("Atlas Company") == company_key("Atlas Co.")
+    assert company_key("Alphabet Inc. Class A") == company_key("Alphabet Inc.")
+    assert company_key("Atlas Inc.") != company_key("Atlas Corporation")
+
+
+def test_equal_basename_with_distinct_legal_issuers_keeps_both_identities(
+    catalog: Path,
+) -> None:
+    verified: list[tuple[str, str]] = []
+
+    def verify(value: dict[str, Any]) -> dict[str, str]:
+        verified.append((value["company_name"], value["provider_symbol"]))
+        return metadata(value)
+
+    document = proposal(
+        [company("Atlas Inc.", "ATLI"), company("Atlas Corporation", "ATLC")],
+        idea=False,
+    )
+    state, pages, report = prepare_candidates(
+        catalog,
+        read_state(catalog),
+        document,
+        now=NOW,
+        observations=observations(),
+        verify_identity=verify,
+        manual=True,
+    )
+    with research_lock(catalog):
+        commit_result(catalog, state, pages)
+    accepted = read_state(catalog)
+
+    assert verified == [("Atlas Inc.", "ATLI"), ("Atlas Corporation", "ATLC")]
+    assert len(report["companies"]) == 2
+    assert report["known_issuers"] == []
+    assert len({row["issuer_id"] for row in accepted["securities"]}) == 2
+    assert len({row["security_id"] for row in accepted["securities"]}) == 2
+    assert {row["provider_symbol"] for row in accepted["securities"]} == {"ATLI", "ATLC"}
+
+
+def test_repeated_candidate_import_is_idempotent(catalog: Path) -> None:
+    document = proposal()
+    accept(catalog, document)
+    before = {
+        path: path.stat().st_mtime_ns for path in (catalog / "data").rglob("*") if path.is_file()
+    }
+    accept(catalog, document)
+    assert {path: path.stat().st_mtime_ns for path in before} == before
+    state = read_state(catalog)
+    assert len(state["ideas"]) == len(state["securities"]) == len(state["source_registry"]) == 1
+
+
+@pytest.mark.parametrize(
+    "bad",
+    ["company_limit", "idea_limit", "currency", "name", "venue", "unopened", "ticker", "cascade"],
+)
+def test_invalid_candidate_batch_changes_nothing(catalog: Path, bad: str) -> None:
+    document = proposal()
+    observed = observations()
+    verify = metadata
+    if bad == "company_limit":
+        document["companies"] *= 3
+    elif bad == "idea_limit":
+        document["ideas"] *= 2
+    elif bad == "currency":
+        document["companies"][0]["currency"] = "EUR"
+    elif bad == "name":
+
+        def unrelated(value: dict[str, Any]) -> dict[str, str]:
+            return {**metadata(value), "longName": "Unrelated Corp."}
+
+        verify = unrelated
+    elif bad == "venue":
+        document["companies"][0]["venue_mic"] = "XNYS"
+    elif bad == "ticker":
+        document["companies"][0]["ticker"] = "INVENTED"
+    elif bad == "unopened":
+        observed = {}
+    else:
+        document["companies"][0]["follow_up_tasks"] = ["unlimited"]
+    before = read_state(catalog)
+    with pytest.raises(ValueError):
+        prepare_candidates(
+            catalog, before, document, now=NOW, observations=observed, verify_identity=verify
+        )
+    assert read_state(catalog) == before
+    assert not list((catalog / "data/wiki").rglob("*.md"))
+
+
+def test_weekly_discovery_is_once_in_seven_days_and_dry_run_is_read_only(catalog: Path) -> None:
+    calls = []
+
+    def execute(*_: Any) -> dict[str, Any]:
+        calls.append(1)
+        return dict(result=proposal(), observations=observations(), usage={})
+
+    assert (
+        run_discovery(catalog, executor=execute, verify_identity=metadata, clock=lambda: NOW)[
+            "status"
+        ]
+        == "dry_run"
+    )
+    assert not calls and not (catalog / "data/status.json").exists()
+    assert (
+        run_discovery(
+            catalog, dry_run=False, executor=execute, verify_identity=metadata, clock=lambda: NOW
+        )["status"]
+        == "succeeded"
+    )
+    assert (
+        run_discovery(
+            catalog,
+            dry_run=False,
+            executor=execute,
+            verify_identity=metadata,
+            clock=lambda: NOW + timedelta(days=6),
+        )["status"]
+        == "not_due"
+    )
+    assert len(calls) == 1
+    state = read_state(catalog)
+    assert not state["research_queue"]
+    status = json.loads((catalog / "data/status.json").read_text())["research"]
+    assert status["last_discovery_attempt_at"] == status["last_discovery_success_at"] == STAMP
+
+
+def test_failed_discovery_is_bounded_and_leaves_catalogs_unchanged(catalog: Path) -> None:
+    before = read_state(catalog)
+
+    def failing(*_: Any) -> dict[str, Any]:
+        raise RuntimeError("private provider content")
+
+    response = run_discovery(
+        catalog, dry_run=False, executor=failing, verify_identity=metadata, clock=lambda: NOW
+    )
+    assert response["exit_code"] == 3
+    assert read_state(catalog) == before
+    assert "private" not in (catalog / "data/status.json").read_text()
+    assert (
+        run_discovery(catalog, dry_run=False, executor=failing, clock=lambda: NOW)["status"]
+        == "not_due"
+    )
+
+
+def test_manual_share_class_selection_is_exact_without_duplicate_company_work(
+    catalog: Path,
+) -> None:
+    accept(
+        catalog,
+        proposal(
+            [company("Alphabet Inc.", "GOOG"), company("Alphabet Inc. Class A", "GOOGL")],
+            idea=False,
+        ),
+        manual=True,
+    )
+    state = read_state(catalog)
+    ids = [row["security_id"] for row in state["securities"]]
+    other = max(ids)
+    admit(state, "security", min(ids), reasons={"overdue"}, priority=60, now=NOW)
+    admit(
+        state,
+        "security",
+        other,
+        reasons={"explicit_manual_request"},
+        priority=100,
+        manual=True,
+        now=NOW,
+    )
+    assert len(state["research_queue"]) == 1
+    assert state["research_queue"][0]["entity_id"] == other
+    task = claim(state, now=NOW)
+    assert task and task["entity_id"] == other
+    # A second distinct manual instrument goal is explicitly rejected, not lost.
+    with pytest.raises(ValueError, match="share-class"):
+        admit(state, "security", min(ids), reasons={"manual"}, priority=100, manual=True, now=NOW)
+
+
+def test_reviewed_company_does_not_requeue_for_its_stale_other_share_class(catalog: Path) -> None:
+    accept(
+        catalog,
+        proposal(
+            [company("Alphabet Inc.", "GOOG"), company("Alphabet Inc. Class A", "GOOGL")],
+            idea=False,
+        ),
+        manual=True,
+    )
+    state = read_state(catalog)
+    state["securities"][0]["last_research_at"] = STAMP
+    schedule_attention(state, [], [], now=NOW)
+    assert not state["research_queue"]
