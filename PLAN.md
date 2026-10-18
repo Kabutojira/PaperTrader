@@ -716,3 +716,18 @@ Validation/commit/CI/deployment and live backfill evidence will be recorded belo
   separate from model operation counters. Native lookup used8 queries,2 page
   opens and2 document-link opens to identify issuer endpoints; search snippets
   and navigation were not treated as financial evidence. Strict validation follows.
+- Qualified-source intake `2e26b56d559b8b7ab93da6f550f6a52a61903ef0` passed
+  CI39178034524. Evonik Pages39177975040 succeeded; canonical research page and
+  publication metadata returned200 with exact51138d32 revision.
+- Actual Planet re-review39178154636 accepted supported USD bear/base/bull cases
+  (1 model/12 web), commit03669deb5e5fa9159d766e9199e9524c9731fc9f;
+  Pages39178369524 triggered. Coverage64 complete/11 incomplete/16 unsupported/
+  1 missing;91 assessed/19 current. Direct issuer financial evidence resolved its
+  earlier retrieval blocker without weakening valuation validation.
+- Seven engineering broker requests qualified a Nebius issuer financial PDF and
+  issuer-authored SoFi release distributed by Business Wire/FinancialContent.
+  Twist/CrowdStrike issuer and Business Wire endpoints and Nasdaq returned403 or
+  timed out (5 failed attempts). Only2 verified source metadata records added,
+  no source text or financial/assessment changes. Native source lookup used7
+  queries,3 page opens and2 document-link opens; unrelated proxy/search hits were
+  rejected. Existing per-operation source/time/turn limits remain unchanged.
