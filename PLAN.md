@@ -584,3 +584,14 @@ Validation/commit/CI/deployment and live backfill evidence will be recorded belo
   preventing immediate stale-trigger replay.
   Full183 tests63s, Ruff/format, MyPy19 and strict current validation passed.
   Targeted first-time company verification follows exact push/CI.
+- Issuer-source/context commit `1d0195542b0148e210af6b3f19dcb52b9d108df8`
+  passed [CI39170579526](https://github.com/Kabutojira/PaperTrader/actions/runs/39170579526).
+  Targeted Stratasys [39170697396](https://github.com/Kabutojira/PaperTrader/actions/runs/39170697396)
+  attempted1 model operation/12 web requests; validation rejected an unresolved
+  assessment source reference (`assessment.source_ids.missing`, prepare_result383).
+  No valuation/page was accepted. Retry state commit
+  `a03fc96a77f6c3ae7f62fc86ffb74bfd7fafb597`, Pages39170965264 succeeded.
+  This does not establish that valuation is unsupported. Clarified the result
+  instructions: reference lists use exact source IDs joined by pipes, and every
+  token must match a supplied source row or existing context source. Existing
+  evidence validation and the two-attempt ceiling remain unchanged.

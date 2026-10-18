@@ -169,3 +169,10 @@ excerpt while exposing up to20 IR/source locator URLs. It executes no page scrip
 A stale company review records its review time for the7-day cooldown but never
 renews assessed_at/valid_until, fair values or cited evidence without an accepted
 research result. Coverage counts do not increase for skipped/unchanged reviews.
+
+Reference lists (`source_ids`, `related_entity_ids`) use exact immutable IDs joined
+with `|`. URLs, display citation labels, shortened IDs and comma-separated lists
+are invalid. Every assessment/idea/relationship source token must match a source
+row in the result or current context; a verified lead still needs a complete valid
+source update after reopening. An unresolved source reference is a rejected result,
+not evidence that a company cannot be valued.

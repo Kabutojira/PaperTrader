@@ -37,7 +37,13 @@ valid and related_entity_ids includes the target entity. Each opened source retu
 source_id, source_url and source_license. Copy that exact tuple into the source row;
 it selects the stable current ID for a known URL and a deterministic link_only ID
 for a new URL. Never guess or replace a source identity.
-Every source ID in an idea row or relationship row must exist, have status valid,
+source_ids and related_entity_ids are strings of exact IDs separated only by |;
+never use commas, URLs, citation labels, brackets or shortened IDs in these fields.
+Every source_ids token in the assessment, idea and relationships must equal a
+source_id in sources or context.sources. Include a complete source row in sources
+for each newly opened URL and every supplied lead that needs status changed to valid.
+Before returning, compare every reference token with those exact source_id values.
+Every source ID in an assessment, idea row or relationship row must exist, have status valid,
 be opened through research_web during this operation, and have its exact URL linked
 in the final primary Markdown page. Every relationship must retain the target entity
 ID and a valid supplied counterpart entity ID.
