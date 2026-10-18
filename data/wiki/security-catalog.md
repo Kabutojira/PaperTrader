@@ -63,7 +63,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Planet Labs PBC](securities/security_97f38b2cb2d5ef127f5a) | PL (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-18T21:43:15.665309Z | 2026-10-19T21:43:15.665309Z |
 | [Powell Industries, Inc.](securities/security_0b67d6c8e3fd3366a257) | POWL (USD) | researched: research_expired_or_future | complete | 105.00 / 180.00 / 270.00 USD | 2026-09-05T15:22:00Z | 2026-10-05T15:22:00Z |
 | [Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | PRX (EUR) | researched: research_expired_or_future | incomplete_research | 30.00 / 52.00 / 70.00 EUR | 2026-08-28T19:18:00Z | 2026-09-27T19:18:00Z |
-| Proto Labs, Inc. | PRLB (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
+| [Proto Labs, Inc.](securities/security_f18cd57a5e086583c861) | PRLB (USD) | researched: insufficient_confidence | complete | 44.00 / 75.60 / 108.80 USD | 2026-10-18T23:17:23.066155Z | 2026-11-17T23:17:23.066155Z |
 | [QUALCOMM Incorporated](securities/security_3a75fc1ccca2ee7c937a) | QCOM (USD) | researched: research_expired_or_future | incomplete_research | 100.00 / 160.00 / 220.00 USD | 2026-08-01T09:27:19Z | 2026-08-31T09:27:19Z |
 | [Quanta Services, Inc.](securities/security_488a9d7f7a8573597724) | PWR (USD) | researched: research_expired_or_future | incomplete_research | 417.50 / 534.40 / 668.00 USD | 2026-08-03T07:23:05Z | 2026-09-02T07:23:05Z |
 | [ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c) | 108490 (KRW) | researched: research_expired_or_future | complete | 20,625.00 / 70,968.00 / 282,667.00 KRW | 2026-09-01T06:49:44Z | 2026-09-30T06:49:44Z |

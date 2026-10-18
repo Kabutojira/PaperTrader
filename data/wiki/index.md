@@ -25,14 +25,15 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-91 companies / 92 instruments; 88 assessed, 15 in date, 73 stale; 85 currently unrated. 0 quotes require attention.
+91 companies / 92 instruments; 89 assessed, 16 in date, 73 stale; 85 currently unrated. 0 quotes require attention.
 
-Last observed market session: 2026-10-16. Last successful research: 2026-10-18T23:15:04Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-16. Last successful research: 2026-10-18T23:19:13Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
-Watchlist valuation coverage: **27 / 92 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 4; unsupported valuation: 17; incomplete research: 44. Needs attention: 2. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
+Watchlist valuation coverage: **28 / 92 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 3; unsupported valuation: 17; incomplete research: 44. Needs attention: 2. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
+- [Proto Labs, Inc.](securities/security_f18cd57a5e086583c861) — 2026-10-18T23:17:23.066155Z; insufficient_confidence
 - [Materialise NV](securities/security_b61c642d038d71be3821) — 2026-10-18T23:13:04.375396Z; hold
 - [3D Systems Corporation](securities/security_6ac6a6268ca7c08829ae) — 2026-10-18T23:08:20.258117Z; insufficient_confidence
 - [Lemonade, Inc.](securities/security_8d11e65cd0de084ee461) — 2026-10-18T22:58:40.076661Z; insufficient_confidence
@@ -42,7 +43,6 @@ Watchlist valuation coverage: **27 / 92 instruments** have complete sourced bear
 - [CrowdStrike Holdings, Inc.](securities/security_8472507d7d320aa388a7) — 2026-10-18T21:29:09.311608Z; valuation_unsupported
 - [Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a) — 2026-10-18T21:20:52.492203Z; hold
 - [Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148) — 2026-10-18T21:19:03.768482Z; valuation_unsupported
-- [Nebius Group N.V.](securities/security_47a0b06f6c6c478d7c1e) — 2026-10-18T21:00:52.243456Z; valuation_unsupported
 
 ## Ideas and interesting companies
 
