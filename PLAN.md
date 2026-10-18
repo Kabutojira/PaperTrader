@@ -654,3 +654,23 @@ Validation/commit/CI/deployment and live backfill evidence will be recorded belo
   fact, valuation or assessment changed. These requests are separate from Hermes
   operation counters. Full194 tests77.2s, focused99, Ruff/format, MyPy19, strict
   current validation and diff check passed. Push/CI precedes model-backed retry.
+- PDF feature `34869bdc2c02116bb30ed3e7bd4c861725df1491` passed
+  [CI39174340576](https://github.com/Kabutojira/PaperTrader/actions/runs/39174340576).
+  Actual PDF-backed Lemonade re-review
+  [39174468118](https://github.com/Kabutojira/PaperTrader/actions/runs/39174468118)
+  accepted supported bear/base/bull scenarios (1 model/12 web), using both issuer
+  PDFs; commit `3aaf62d864063dcee43bd4ee647c7ba75f7d2eb3`, Pages39174714383
+  passed, canonical research link/metadata returned200. Coverage25/92 complete,
+  86 assessed,13 current. This live result resolved the demonstrated PDF-access
+  blocker without changing any evidence or numerical validation.
+- Next missing-company source qualification used7 bounded HTTP requests: issuer
+  Materialise financial release, Agronomics issuer-authored RNS via Investegate,
+  ECB reference PDF and Protolabs distributed release opened successfully;
+  Protolabs issuer/SEC PDFs returned403 and its distributed release returned503
+  before one successful bounded retry. No bypass or
+  whole-pass retry. Native lookup used7 queries (three company, two Protolabs,
+  one ECB, one newer Agronomics NAV) plus explicit issuer/document link lookup;
+  no unrelated search hit was accepted as evidence. Only4 current metadata leads
+  registered, zero assessment/value changes. ECB is relevant solely to the
+  Materialise EUR-reporting/USD-instrument valuation conversion; no portfolio FX
+  process, rate cache or exposure table was created. Strict validation passed.
