@@ -78,8 +78,9 @@ def test_seeded_agent_operation_audits_structured_change_and_terminalizes(
         audited = subprocess.run(
             [
                 sys.executable,
-                "-m",
-                "papertrader",
+                "-c",
+                "import sys; from papertrader.cli import main; "
+                "raise SystemExit(main(sys.argv[1:]))",
                 "--repository",
                 str(cwd),
                 "issue",
@@ -123,8 +124,9 @@ def test_seeded_agent_operation_audits_structured_change_and_terminalizes(
         enqueued = subprocess.run(
             [
                 sys.executable,
-                "-m",
-                "papertrader",
+                "-c",
+                "import sys; from papertrader.cli import main; "
+                "raise SystemExit(main(sys.argv[1:]))",
                 "--repository",
                 str(cwd),
                 "queue",

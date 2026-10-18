@@ -1,0 +1,145 @@
+idea_id,title,thesis,status,source_ids,research_page,last_reviewed_on,created_on,discovery_provenance
+idea_ai_compute_networking_hyperscaler_monetization,"AI compute, networking, and hyperscaler monetization","AI infrastructure spending is broadening beyond accelerators into Ethernet networking, advanced
+foundry capacity, packaging, memory, data centres, power, cloud, and software. Current supplier and
+cloud evidence confirms demand and some monetization. The core risk has shifted from whether capex
+exists to whether utilization, pricing, and recurring revenue outgrow depreciation, energy,
+competition, and custom-silicon substitution.",maintained,source_amat_q3_2026_10q|source_amzn_q2_2026_10q|source_amzn_q2_2026_results|source_anet_q1_2026_10q|source_anet_q1_2026_earnings|source_anet_q2_2026_10q|source_anet_q2_2026_8k_exhibit|source_anet_q2_2026_earnings|source_intc_august_2026_equity_8k|source_intc_q2_2026_10q|source_intc_q2_2026_release|source_meta_q2_2026_10q|source_meta_q2_2026_results|source_nvda_huggingface_20260903_8k|source_nvda_q1_fy2027_10q|source_nvda_q2_fy2027_10q|source_nvda_q2_fy2027_cfo|source_nvda_q2_fy2027_release|youtube_ViqYWhLimGg|youtube_wcV0SRPFK9s,data/wiki/ideas/idea_ai_compute_networking_hyperscaler_monetization.md,2026-08-07,2026-07-26,user seed; Arista Networks; TSMC; Alphabet; NVIDIA fiscal Q1 2027 review and accepted relationship
+idea_ai_driven_democratization_physical_creation,AI-Driven Democratization of Physical Creation,"Generative 3D systems and AI-assisted CAD could reduce the expertise, time, and marginal cost needed
+to turn text, photographs, sketches, or functional requirements into editable geometry. NVIDIA's
+research progression is directional evidence: Magic3D reported roughly 40 minutes per prompt in
+2023, while LATTE3D reported feed-forward generation in about 400 milliseconds in 2024. That is not
+proof of engineering-grade geometry. It does show that one historical bottleneck—creating a digital
+object at all—is becoming cheaper and faster.",maintained,source_creality_2026_interim_report|source_creality_2026_prospectus|source_xmtr_ai_marketplace_20260303,data/wiki/ideas/idea_ai_driven_democratization_physical_creation.md,2026-09-06,2026-09-06,"user seed; primary technical, issuer, exchange, and regulatory evidence"
+idea_ai_infrastructure_power,AI infrastructure and power bottlenecks,"Rapid data-centre construction is raising concentrated electricity demand faster than some grids,
+generation equipment, transformers, switchgear, cooling systems, and interconnections can expand.
+Suppliers with qualified products, available capacity, disciplined contracts, and strong cash
+conversion can benefit from multi-year backlogs. The theme is not sufficient on its own: current
+growth expectations are high, backlogs can be cancelled or delayed, and capacity expansion can
+turn scarcity into oversupply.",maintained,source_be_2025_10k_sec|source_be_oracle_warrant_2026_8k_sec|source_be_q1_2026_10q_sec|source_be_q2_2026_results_ir|source_be_scandium_response_2026_8k_sec|source_etn_q1_2026_10q|source_etn_q2_2026_10q|source_etn_q2_2026_earnings_date|source_etn_q2_2026_results|source_gev_q2_2026_10q|source_gev_q2_2026_earnings|source_gev_sec_submissions_20260819|source_nvda_q2_fy2027_cfo|source_powl_q3_fy2026_10q|source_powl_q3_fy2026_release|source_schneider_fy2025_results|source_schneider_h1_2026_results|source_vrt_q2_2026_10q|source_vrt_q2_2026_results|youtube_ViqYWhLimGg|youtube_ktY0IrrdSM8|youtube_u-AXyF9kY9k,data/wiki/ideas/idea_ai_infrastructure_power.md,2026-09-06,2026-07-26,user seed; IEA Energy and AI; issuer filings and releases; linked security research including Powell Industries
+idea_ai_native_drug_discovery,AI-native drug-discovery platforms,"AI models linked to proprietary biological and chemical data and automated wet labs can shorten
+some discovery loops and improve candidate selection. Pharma investment and regulatory engagement
+confirm adoption, but clinical translation—not model output—is the economic bottleneck. Platform
+companies must demonstrate repeatable milestone revenue or owned-pipeline value before cash burn,
+dilution, and partner bargaining power consume the benefit.",maintained,source_rxrx_clinicaltrials_20260812|source_rxrx_q1_2026_10q|source_rxrx_q2_2026_10q|source_rxrx_q2_2026_results_exhibit,data/wiki/ideas/idea_ai_native_drug_discovery.md,2026-07-26,2026-07-26,user seed; FDA; Eli Lilly; Recursion
+idea_ai_native_smb_financial_operating_systems,AI-native SMB financial operating systems,"Platforms that combine authoritative accounting, payroll, tax, commerce, and payment data can use
+domain-constrained agents to automate SMB workflows and attach adjacent services. The moat is not a
+chat interface: it is trusted records, permissioned actions, compliance logic, distribution, expert
+escalation, and liability management. General-purpose agents, open data, free substitutes, and
+weak SMB credit can compress pricing or move value outside the application vendor.",maintained,,data/wiki/ideas/idea_ai_native_smb_financial_operating_systems.md,2026-09-11,2026-07-26,user seed; Intuit; IRS; CFPB; Lemonade 2025 Form 10-K; Lemonade Q2 2026 Form 10-Q
+idea_anduril_product_company_disruption,Anduril product-company disruption and future-IPO exposure,"Anduril's significance is a defence business-model test: finance reusable products and software
+before a bespoke program, retain intellectual property, sell deployable systems, and use common
+Lattice and manufacturing infrastructure across programs. Current contract evidence shows movement
+from prototypes toward enterprise procurement and production. Anduril remains private, however, so
+an IPO thesis lacks audited public economics, a filing, or an investable instrument.",maintained,source_pltr_q1_2026_earnings|source_pltr_q1_2026_earnings_release|source_pltr_q2_2026_10q|source_pltr_q2_2026_earnings_release|source_pltr_sec_submissions_20260811|youtube_jfxHHglA5Eo,data/wiki/ideas/idea_anduril_product_company_disruption.md,2026-07-26,2026-07-26,user seed; US Army and Department of Defense; Anduril; Palantir
+idea_cable_broadband_convergence,Cable broadband convergence and leveraged FCF,"US cable operators are using mobile bundles, simpler pricing, rural expansion, and network upgrades
+to defend broadband relationships. Mobile growth is real, but current results do not yet show broad
+fixed-broadband stabilization. Highly leveraged equity can rerate sharply if losses slow and capex
+normalizes, yet the same leverage magnifies competitive, refinancing, and merger-integration risk.",maintained,,data/wiki/ideas/idea_cable_broadband_convergence.md,2026-07-26,2026-07-26,user seed; Charter Communications; Comcast
+idea_commercial_space_infrastructure,Commercial space infrastructure and geospatial data,"Government demand for proliferated, resilient space systems and commercial lunar services supports
+a listed stack of launch, spacecraft, components, sensors, and data. Backlog and launch cadence are
+necessary but insufficient: reliability, fixed-price execution, capital needs, customer
+concentration, and recurring service revenue determine per-share value.",maintained,source_iridium_q2_2026_10q|source_rklb_iridium_merger_8k|source_rklb_q1_2026_10q|youtube_Mey5z-pk5yQ|youtube_pMbb5BfWUCY,data/wiki/ideas/idea_commercial_space_infrastructure.md,2026-07-26,2026-07-26,user seed; NASA; U.S. Space Force; Rocket Lab
+idea_critical_minerals_copper,Critical minerals and structural copper scarcity,"Grid expansion, data centres, electric vehicles, renewables, and industrial electrification can
+raise copper demand faster than long-lead mine supply. The durable claim is a constrained project
+pipeline and disciplined capital cycle, not a perpetual one-way spot-price forecast. Low-cost,
+long-life producers may capture upside; smelters without secure concentrate and manufacturers
+without pass-through pricing can instead lose margin.",maintained,source_fcx_q2_2026_10q|source_fcx_q2_2026_results_sec|source_fcx_sec_submissions_20260730|source_fcx_sec_submissions_20260806|source_fcx_sec_submissions_20260821|source_rio_fy2025_results|source_rio_h1_2026_results|source_rio_q2_2026_production|source_rio_q2_2026_production_results|source_scco_q1_2026_results|source_scco_q2_2026_10q|source_scco_q2_2026_results,data/wiki/ideas/idea_critical_minerals_copper.md,2026-07-26,2026-07-26,user seed; IEA Global Critical Minerals Outlook 2026; issuer filings and releases
+idea_critical_minerals_lithium,Critical minerals and the lithium cycle,"Lithium's 2025-to-2026 rebound reflects both a cyclical recovery from oversupply and stronger
+battery demand, especially stationary storage. A late-decade shortfall remains plausible because
+the downturn cut investment and projects require financing and commissioning time. The investable
+claim is not that spot prices rise continuously: supply restarts, contract lags, chemistry changes,
+recycling, and capital intensity can separate commodity prices from shareholder returns.",maintained,source_alb_ceo_succession_20260903_sec|source_alb_q1_2026_results_sec|source_alb_q2_2026_10q_sec|source_alb_q2_2026_earnings_date|source_alb_q2_2026_results_sec|source_lac_q1_2026_10q|source_lac_q2_2026_10q_sec|source_lac_q2_2026_results_sec|source_pls_fy2026_annual_report|source_pls_fy2026_results_presentation|source_sgml_aug_2026_q2_schedule|source_sgml_july_2026_update|source_sgml_q1_2026_mda|source_sgml_q2_2026_financials|source_sgml_q2_2026_mda|source_sqm_mt_holland_fid_2026|source_sqm_q1_2026_6k|source_sqm_q2_2026_6k,data/wiki/ideas/idea_critical_minerals_lithium.md,2026-07-26,2026-07-26,user seed; IEA Global Critical Minerals Outlook 2026; issuer filings
+idea_cybersecurity_geopolitical_continuity,Cybersecurity resilience and geopolitical continuity,"Cybersecurity is increasingly an operational-continuity and regulatory requirement rather than a
+purely discretionary IT project. State-linked intrusion campaigns and EU risk-management mandates
+support durable spending, but attractive investment returns require vendors to turn that priority
+into retained recurring revenue, cash flow, and trust without valuation or platform-consolidation
+risk overwhelming the growth.",maintained,source_crwd_q1_2027_10q|source_crwd_q1_2027_results_exhibit|source_crwd_q2_2027_10q|source_crwd_q2_2027_results_exhibit|source_crwd_sec_submissions_20260811|source_crwd_sec_submissions_20260831,data/wiki/ideas/idea_cybersecurity_geopolitical_continuity.md,2026-07-26,2026-07-26,user seed; CISA; European Commission; CrowdStrike
+idea_defense_aerospace,Defense and aerospace replenishment cycle,"European rearmament, allied stockpile replenishment, and demand for air defence, missiles, sensors,
+and engines can support a multi-year production and service cycle. Public budgets and current
+backlogs confirm demand, but appropriations do not automatically become profitable revenue:
+contract structure, capacity, suppliers, labor, export approvals, execution, and valuation decide
+shareholder returns.",maintained,source_rtx_q2_2026_10q_sec|source_rtx_q2_2026_results|source_rtx_q2_2026_results_sec_ex99|youtube_jfxHHglA5Eo,data/wiki/ideas/idea_defense_aerospace.md,2026-07-26,2026-07-26,user seed; European Defence Agency 2026 data; RTX Q2 2026 release
+idea_defensive_consumer_cash_return,Defensive consumer cash-return resilience,"Recurring grocery, frozen-food and franchise demand can preserve operating cash flow through weak
+consumer volumes and input-cost cycles. That resilience reaches shareholders only when price/mix
+does not permanently damage volume, capital spending and leases remain covered, leverage stays
+manageable, and dividends or repurchases do not displace necessary reinvestment. A high headline
+yield is therefore an output to test, not the idea itself.",maintained,source_ahold_q2_2026_results|source_dpz_q2_2026_10q|source_nomd_q2_2026_results,data/wiki/ideas/idea_defensive_consumer_cash_return.md,2026-08-28,2026-08-28,"Ahold Delhaize, Nomad Foods and Domino's Q2 2026 issuer results"
+idea_digital_attention_gaming_ecosystems,"Digital attention, gaming, and consumer ecosystems","Creator platforms can compound when more useful content raises engagement and monetization, which
+funds creator rewards, safety, infrastructure, and discovery. Engagement alone is not sufficient:
+bookings or subscriptions, cohort retention, creator earnings, free cash flow after platform costs,
+and share-count discipline must improve together. Safety and regulatory controls are core operating
+costs and trust inputs, not optional overlays.",maintained,source_prosus_nav_20260827|source_rblx_q1_2026_shareholder_letter|source_rblx_q2_2026_10q|source_rblx_q2_2026_shareholder_letter|source_tencent_q2_2026_results,data/wiki/ideas/idea_digital_attention_gaming_ecosystems.md,2026-07-26,2026-07-26,user seed; Roblox SEC filings and issuer releases
+idea_digital_finance_crypto_rails,Digital finance and crypto rails,"US stablecoin law, tokenized-securities guidance, and growing regulated platform activity improve
+the foundation for continuous settlement, custody, payments, and tokenization. Platforms with
+distribution, compliance, liquidity, and trusted custody can diversify beyond spot trading. Their
+economics remain exposed to crypto prices and volumes, interest rates, reserve-income sharing,
+take-rate compression, cyber loss, regulatory implementation, and stock-based compensation.",maintained,source_coin_july_2026_management_8k|source_coin_q1_2026_10q|source_coin_q2_2026_10q|source_coin_sec_submissions_20260819|source_fisv_q2_2026_10q|source_hood_sec_submissions_20260822|source_meli_q2_2026_10q|source_sofi_q2_2026_10q|source_sofi_q2_2026_results,data/wiki/ideas/idea_digital_finance_crypto_rails.md,2026-07-26,2026-07-26,user seed; U.S. Congress; Federal Reserve; SEC; Coinbase
+idea_energy_refining,Crude-product dislocation and refining margins,"Crude supply can recover faster than refinery throughput and product exports, lowering feedstock
+prices while gasoline and diesel remain tight. Complex refiners with reliable operations and useful
+regional configurations can capture elevated cracks even when crude markets move toward surplus.
+The opportunity is cyclical and operational: refinery restarts, weaker demand, outages at the
+selected company, or regulatory costs can normalize earnings quickly.",maintained,source_vlo_q2_2026_10q|source_vlo_q2_2026_results|source_vlo_sec_submissions_20260831,data/wiki/ideas/idea_energy_refining.md,2026-07-26,2026-07-26,user seed; IEA Oil Market Report July 2026; Valero releases
+idea_eu_digital_product_passport,EU Digital Product Passport compliance infrastructure,"The EU Digital Product Passport is moving from legislation into operating infrastructure. It can
+create recurring demand for product identifiers, lifecycle data, registry integration, access
+controls, and compliance workflows across regulated value chains. The regulatory need is real, but
+open standards, a public registry, decentralized storage, and long implementation periods may
+commoditize the stack or keep vendor revenue immaterial.",maintained,,data/wiki/ideas/idea_eu_digital_product_passport.md,2026-07-26,2026-07-26,user seed; European Commission; EUR-Lex
+idea_humanoid_robotics_embodied_ai_components,Humanoid robotics and embodied-AI component supply chain,"Industrial robots, humanoids, and autonomous machines can increase demand for motion control,
+sensors, edge compute, connectors, power electronics, batteries, copper, and rare-earth magnets.
+The investable claim is narrower than unit growth: qualified suppliers must show material content,
+repeat paid deployments, uptime, and margins. Conventional industrial automation is already scaled;
+general-purpose humanoid economics remain early.",maintained,source_abb_q2_2026_results|source_fanuc_q1_fy2026_reference|source_fanuc_q1_fy2026_results|source_mp_q1_2026_results|source_nvda_q2_fy2027_10q|source_nvda_q2_fy2027_cfo|source_nvda_q2_fy2027_release|source_robotis_2026_h1_balance|source_robotis_2026_h1_business|source_robotis_2026_h1_cashflow|source_robotis_2026_h1_income|source_robotis_dart_company_profile|source_robotis_uzbekistan_investment,data/wiki/ideas/idea_humanoid_robotics_embodied_ai_components.md,2026-08-07,2026-07-26,user seed; International Federation of Robotics; NVIDIA; MP Materials; NVIDIA fiscal Q1 2027 review and accepted relationship
+idea_japan_sanaenomics_strategic_investment,Japan strategic-investment value chain,"Japan's Takaichi government has formally selected 17 strategic fields and is developing multi-year
+public-private investment roadmaps spanning supply support, procurement, regulation, talent, and
+international expansion. This improves policy visibility for selected semiconductor, AI, defence,
+space, power, automation, and advanced-technology suppliers. Equity value still requires funded
+programs to become company orders, profitable backlog, and cash flow rather than policy targets.",maintained,,data/wiki/ideas/idea_japan_sanaenomics_strategic_investment.md,2026-07-26,2026-07-26,user seed; Prime Minister's Office of Japan; METI; Ministry of Defense
+idea_macro_hedge_gold,Gold and cash-generative miners as a macro hedge,"Gold can diversify portfolios exposed to inflation, geopolitical shocks, and reserve-system risk,
+while low-cost miners add operating leverage and distributable cash flow. The two exposures are not
+equivalent: bullion avoids mine execution, tax, and cost risk, whereas miners can compound or destroy
+the metal-price benefit. Record metal prices also raise mean-reversion and valuation risk.",maintained,,data/wiki/ideas/idea_macro_hedge_gold.md,2026-07-26,2026-07-26,user seed; Federal Reserve; World Gold Council; Newmont releases
+idea_mobility_platform_autonomy,Mobility-platform network economics and autonomy,"A scaled mobility marketplace can use rider demand, driver and courier supply, routing, pricing,
+payments, membership, delivery and advertising to increase trips and cash generation without owning
+every vehicle. Autonomous fleets can strengthen that network if third-party operators need demand,
+dispatch and utilization, but can harm it if vehicle providers vertically integrate and bypass the
+marketplace. The investable mechanism is therefore network monetization after insurance, incentive,
+regulatory, stock-compensation and autonomy-investment costs—not trip growth alone.",maintained,source_uber_q2_2026_10q,data/wiki/ideas/idea_mobility_platform_autonomy.md,2026-08-28,2026-08-28,Uber Q2 2026 issuer results
+idea_nearshoring_friendshoring_manufacturing,Nearshoring and friendshoring manufacturing capacity,"Trade-policy uncertainty, continuity mandates, and manufacturing incentives can redirect selected
+capacity toward Mexico, North America, India, and parts of Southeast Asia. The investable signal is
+not an announcement count: it is conversion into operating plants, occupied industrial space,
+cross-border freight, supplier utilization, and cash earnings.",maintained,source_ternium_h1_2026_financials_sec|source_ternium_july_2026_sustainability_6k|source_ternium_q1_2026_results|source_ternium_q2_2026_event|source_ternium_q2_2026_results_sec|source_ustr_usmca_joint_statement_20260723,data/wiki/ideas/idea_nearshoring_friendshoring_manufacturing.md,2026-07-26,2026-07-26,user seed; USTR; Government of India; Ternium
+idea_nuclear_uranium,Nuclear expansion and uranium fuel-cycle bottlenecks,"Nuclear construction and life extension are increasing demand for uranium and fuel services, while
+conversion and enrichment capacity are more concentrated and slower to expand than the mining-only
+narrative implies. Contracted, operating suppliers can retain strategic value, but reactor growth
+does not automatically translate into near-term equity returns because contract lags, operational
+interruptions, project execution, and valuation determine cash realization.",maintained,,data/wiki/ideas/idea_nuclear_uranium.md,2026-07-26,2026-07-26,user seed; IEA Global Critical Minerals Outlook 2026; Cameco releases
+idea_precision_biology_healthcare_automation,Precision biology and healthcare automation,"AI-enabled discovery, synthetic biology, diagnostics, laboratory automation, and robotic procedures
+can shorten individual research or care workflows. They do not yet establish a common improvement
+in clinical success or economics. The investable version therefore requires company-level proof:
+validated outcomes, recurring consumables or data revenue, regulatory clearance, reimbursement,
+and cash conversion before funding needs exhaust the option value.",maintained,source_isrg_q2_2026_10q|source_isrg_q2_2026_earnings|source_isrg_q2_2026_sec_exhibit|source_isrg_sec_submissions_20260811|source_rxrx_clinicaltrials_20260812|source_rxrx_q1_2026_10q|source_rxrx_q2_2026_10q|source_rxrx_q2_2026_results_exhibit,data/wiki/ideas/idea_precision_biology_healthcare_automation.md,2026-07-26,2026-07-26,user seed; FDA; Intuitive Surgical
+idea_solar_storage_grid_flexibility_reset,"Solar, storage, and grid-flexibility reset","Electric-load growth, grid congestion, and the need to balance variable generation can create a
+multi-year demand tailwind for storage, grid equipment, power management, and selected solar
+suppliers. The investable claim is narrower than a sector recovery: only companies that convert
+backlogs into cash at durable margins, control inventories and warranty exposure, and retain access
+to financing should benefit. Module shipment growth or announced capacity alone is not enough.",maintained,source_atkr_q2_2026_10q|source_atkr_q2_2026_results|source_enph_q1_2026_10q|source_enph_q2_2026_10q|source_enph_q2_2026_release|source_enph_sec_submissions_20260809|source_flnc_q2_2026_10q|source_flnc_q2_2026_earnings|source_flnc_q2_2026_sec_exhibit|source_flnc_q3_2026_10q|source_flnc_q3_2026_earnings,data/wiki/ideas/idea_solar_storage_grid_flexibility_reset.md,2026-07-25,2026-07-25,user seed; IEA Electricity 2026; EIA; Federal Reserve; IRS; issuer releases
+idea_sovereign_small_drone_supply_chains,Sovereign small-drone and trusted-component supply chains,"High battlefield attrition and growing public-safety and industrial use are increasing demand for
+small drones, counter-drone systems, and their components. US and EU policy is explicitly favoring
+trusted domestic or allied supply. Durable public-market value nevertheless requires volume orders,
+local component content, competitive unit economics, and margins that survive rapid redesign and
+commoditisation.",maintained,,data/wiki/ideas/idea_sovereign_small_drone_supply_chains.md,2026-07-26,2026-07-26,user seed; European Commission; UK Ministry of Defence; US executive policy; FAA
+idea_structural_silver_deficit,Structural silver deficit,"Six consecutive annual deficits and reliance on above-ground bullion can support silver, but the
+2026 evidence is not a one-way industrial-demand story. High prices are already driving
+photovoltaic thrifting and substitution, weaker price-sensitive consumption, more recycling, and
+some demand destruction. The investable case is therefore a volatile precious-metal and inventory
+tightness thesis, not a simple perpetual scarcity extrapolation.",maintained,,data/wiki/ideas/idea_structural_silver_deficit.md,2026-07-26,2026-07-26,user seed; U.S. Geological Survey; Silver Institute
+idea_terafab_ai_industrial_stack,Terafab and the vertically coordinated AI hardware stack,"Terafab is an investable industrial-stack idea only as a staged, hybrid buildout. Current primary
+records support a proposed Texas campus, a SpaceX goal of one terawatt of annual compute-hardware
+production, logic, memory and advanced-packaging ambitions, shared SpaceX/Tesla engineering, and a
+proposed Intel contribution. They do not establish a finished fab, a production process, binding
+customer volumes, competitive yield, or Nvidia silicon production.",maintained,source_nvda_q2_fy2027_10q|source_nvda_q2_fy2027_cfo|source_nvda_q2_fy2027_release|source_nvda_space_computing_20260316|source_nvda_vera_spacexai_20260531|source_spacex_terafab_prospectus_20260605|youtube_Mey5z-pk5yQ|youtube_h7XVJ64IhY4|youtube_oyjpF7xPiC4,data/wiki/ideas/idea_terafab_ai_industrial_stack.md,2026-08-07,2026-08-07,user seed; Texas Comptroller JETI records; SpaceX prospectus; NVIDIA; NIST; issuer filings; completed relationship graph and NVIDIA repeat review
+idea_wide_bandgap_power_semiconductors,Wide-bandgap power semiconductors,"Silicon carbide and gallium nitride can enable higher-voltage, higher-frequency, denser, and more
+efficient power conversion in AI data centres, EVs, chargers, and inverters. NVIDIA's 800 VDC
+architecture creates a concrete new design cycle, but technical suitability does not guarantee
+supplier returns: qualification, yield, utilization, packaging, price competition, and capital
+intensity determine whether content growth becomes free cash flow.",maintained,,data/wiki/ideas/idea_wide_bandgap_power_semiconductors.md,2026-07-26,2026-07-26,user seed; NVIDIA; U.S. Department of Energy; Infineon

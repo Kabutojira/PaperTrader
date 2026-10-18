@@ -8,9 +8,10 @@ from jsonschema.validators import validator_for
 
 from papertrader.integrity import (
     load_csv_contracts,
-    validate_csv_files,
     validate_json_schemas,
 )
+from papertrader.research_state import contracts as research_contracts
+from papertrader.research_state import read_state as read_research_state
 
 
 def _schema_validator(repository_root: Path, name: str):  # type: ignore[no-untyped-def]
@@ -21,41 +22,17 @@ def _schema_validator(repository_root: Path, name: str):  # type: ignore[no-unty
 
 
 def test_every_declared_csv_exists_with_exact_header(repository_root: Path) -> None:
-    contracts = load_csv_contracts(repository_root)
+    contracts = research_contracts(repository_root)
 
-    assert len(contracts) == 29
-    assert validate_csv_files(repository_root) == []
-    assert {contract.name for contract in contracts} == {
-        "allocation_history",
-        "allocation_targets",
-        "cash_ledger",
-        "corporate_actions",
-        "executions",
-        "indicators",
-        "issues",
-        "market_latest",
-        "operations_history",
-        "operations_todo",
-        "order_legs",
-        "orders",
-        "performance_daily",
-        "performance_epochs",
-        "portfolio",
-        "published_actionable_signals",
-        "published_model_portfolio",
-        "published_research_benchmark",
+    assert set(contracts) == {
+        "ideas",
         "relationships",
-        "runs",
+        "research_queue",
         "securities",
         "security_assessments",
-        "security_assessment_history",
-        "signals",
-        "source_history",
         "source_registry",
-        "youtube_channels",
-        "strategies",
-        "strategy_legs",
     }
+    assert set(read_research_state(repository_root)) == set(contracts)
 
 
 def test_append_only_and_generated_contract_flags(repository_root: Path) -> None:

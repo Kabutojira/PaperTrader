@@ -138,8 +138,8 @@ def test_local_harness_allows_audited_read_only_queue_validation(
     completed = subprocess.run(
         [
             sys.executable,
-            "-m",
-            "papertrader",
+            "-c",
+            "import sys; from papertrader.cli import main; raise SystemExit(main(sys.argv[1:]))",
             "--repository",
             str(sandbox_repository),
             "queue",

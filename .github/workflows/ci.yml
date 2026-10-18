@@ -37,18 +37,10 @@ jobs:
         run: uv run ruff format --check .
       - name: Type-check Python
         run: uv run mypy src
-      - name: Validate schemas
-        run: uv run papertrader schema validate --strict
+      - name: Validate current research schemas and references
+        run: uv run papertrader validate
       - name: Run tests
         run: uv run pytest
-      - name: Run integrity checks
-        run: uv run papertrader integrity --strict
-      - name: Validate investor publication snapshot and exports
-        run: uv run papertrader advice validate --strict
-      - name: Lint wiki
-        run: uv run papertrader wiki lint --strict
-      - name: Reconcile empty scaffold
-        run: uv run papertrader portfolio reconcile --strict
       - name: Use pinned Node.js
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
         with:

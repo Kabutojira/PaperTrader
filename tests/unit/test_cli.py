@@ -10,6 +10,7 @@ from papertrader.agent_runner import HermesPreflight, SkillIdentity
 from papertrader.cli import main
 from papertrader.config import Settings
 from papertrader.execution import ensure_initial_capital
+from papertrader.research_cli import main as research_main
 from papertrader.tables import read_table
 from papertrader.utils import parse_timestamp
 
@@ -65,29 +66,10 @@ def test_cli_refreshes_results_first_wiki_homepage(
     assert "| Cash | 100% | 100% |" in homepage
 
 
-def test_cli_strict_allocation_readiness_fails_for_unbackfilled_universe(
-    monkeypatch, repository_root: Path
-) -> None:  # type: ignore[no-untyped-def]
-    _set_repository_environment(monkeypatch, repository_root)
-
-    assert (
-        main(
-            [
-                "--repository",
-                str(repository_root),
-                "allocation",
-                "readiness",
-                "--strict",
-            ]
-        )
-        == 1
-    )
-
-
 def test_cli_starts_without_a_mode_environment_switch(monkeypatch, repository_root: Path) -> None:  # type: ignore[no-untyped-def]
-    monkeypatch.setenv("WIKI_PATH", str(repository_root / "data" / "wiki"))
+    monkeypatch.delenv("WIKI_PATH", raising=False)
 
-    assert main(["--repository", str(repository_root), "schema", "validate"]) == 0
+    assert research_main(["--repository", str(repository_root), "validate"]) == 0
 
 
 def test_cli_agent_preflight_serializes_profile_weighted_cost(

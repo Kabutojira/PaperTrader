@@ -50,11 +50,22 @@ def contracts(root: Path) -> dict[str, ResearchContract]:
 
 
 def csv_bytes(contract: ResearchContract, rows: list[Row]) -> bytes:
+    normalized = [
+        {column: _normalize_newlines(value) for column, value in row.items()} for row in rows
+    ]
     buffer = io.StringIO(newline="")
     writer = csv.DictWriter(buffer, fieldnames=contract.columns, extrasaction="raise")
     writer.writeheader()
-    writer.writerows(sorted(rows, key=lambda row: tuple(row[key] for key in contract.primary_key)))
+    writer.writerows(
+        sorted(normalized, key=lambda row: tuple(row[key] for key in contract.primary_key))
+    )
     return buffer.getvalue().encode("utf-8")
+
+
+def _normalize_newlines(value: str) -> str:
+    """Keep logical CSV prose stable across Git's CRLF worktree conversion."""
+
+    return value.replace("\r\n", "\n").replace("\r", "\n")
 
 
 def read_state(root: Path) -> ResearchState:
@@ -70,7 +81,9 @@ def read_state(root: Path) -> ResearchState:
             rows = list(reader)
         if any(None in row or any(value is None for value in row.values()) for row in rows):
             raise ValueError(f"malformed CSV: {contract.path}")
-        result[name] = rows
+        result[name] = [
+            {column: _normalize_newlines(value) for column, value in row.items()} for row in rows
+        ]
     return result
 
 
@@ -83,7 +96,13 @@ def write_state(root: Path, state: ResearchState) -> None:
         atomic_write_csv(
             path,
             contract.columns,
-            sorted(state[name], key=lambda row: tuple(row[key] for key in contract.primary_key)),
+            sorted(
+                (
+                    {column: _normalize_newlines(value) for column, value in row.items()}
+                    for row in state[name]
+                ),
+                key=lambda row: tuple(row[key] for key in contract.primary_key),
+            ),
             allowed_root=root,
         )
 

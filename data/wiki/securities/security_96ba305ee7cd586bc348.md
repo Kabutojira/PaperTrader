@@ -53,7 +53,7 @@ Watch and allocation ineligibility; no strategy work is justified.
 
 ## Changes since prior review
 
-Compared with quick-check assessment `assessment_cc11a683fe32530dd4a5`, no retained primary fact,
+Compared with quick-check assessment [prior research in Git](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/tables/security_assessment_history.csv), no retained primary fact,
 source hash, earnings input, scenario assumption, fair value, probability, catalyst, risk,
 invalidation, blocker, or soft gap changed. The current EUR 32.599998474121094 mark and the EUR
 24.25 / EUR 36.38 / EUR 48.50 scenarios remain unchanged, as do the approximately 11.59% expected
@@ -62,7 +62,7 @@ level. The business thesis, balance-sheet conclusion, medium confidence, and all
 also remain unchanged.
 
 The full review resolves the quick-check escalation without upgrading the canonical structured
-rating: **Hold / Watch** remains unchanged from `assessment_cc11a683fe32530dd4a5`. The earlier page
+rating: **Hold / Watch** remains unchanged from [prior research in Git](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/tables/security_assessment_history.csv). The earlier page
 prose describing a price-only Buy threshold is superseded because the deterministic canonical gate
 also retains bear/base and expected/bear payoff failures. The absent accepted relationship and thin
 Frankfurt liquidity remain unresolved. No new hard blocker was added, no gap was resolved, and no

@@ -10,7 +10,7 @@ from pathlib import Path
 import pytest
 
 from papertrader.research_migration import prepare_migration, stage_migration
-from papertrader.research_state import read_state, validate_state
+from papertrader.research_state import contracts, csv_bytes, read_state, validate_state
 
 BASELINE = "9056d3dff03740a6c3310e086a240186bca4527a"
 
@@ -98,6 +98,28 @@ def test_staging_is_explicit_validated_and_idempotent(
     assert not (destination / "data/operations").exists()
     with pytest.raises(ValueError, match="outside active data"):
         stage_migration(repository_root, BASELINE, repository_root / "data/migrated")
+
+
+def test_clean_checkout_crlf_inside_quoted_prose_is_logically_idempotent(
+    repository_root: Path, tmp_path: Path
+) -> None:
+    state, _, _ = prepare_migration(repository_root, BASELINE)
+    destination = tmp_path / "crlf-checkout"
+    stage_migration(repository_root, BASELINE, destination)
+    contract = contracts(destination)["security_assessments"]
+    path = destination / contract.path
+    staged = path.read_bytes()
+    # Git stores text-normalized CSV and .gitattributes checks every LF out as
+    # CRLF, including newlines embedded inside RFC 4180 quoted prose cells.
+    checkout = staged.replace(b"\r\n", b"\n").replace(b"\n", b"\r\n")
+    assert checkout != staged
+    path.write_bytes(checkout)
+
+    checked_out = read_state(destination)["security_assessments"]
+
+    assert any("\n" in value for row in checked_out for value in row.values())
+    assert not any("\r" in value for row in checked_out for value in row.values())
+    assert csv_bytes(contract, checked_out) == csv_bytes(contract, state["security_assessments"])
 
 
 @pytest.mark.parametrize("mutation", ["duplicate", "source", "probabilities", "path", "missing"])

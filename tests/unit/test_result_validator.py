@@ -1226,8 +1226,9 @@ def test_audited_request_cannot_change_after_structured_command(
         completed = subprocess.run(
             [
                 sys.executable,
-                "-m",
-                "papertrader",
+                "-c",
+                "import sys; from papertrader.cli import main; "
+                "raise SystemExit(main(sys.argv[1:]))",
                 "--repository",
                 str(cwd),
                 "issue",

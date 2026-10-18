@@ -23,7 +23,7 @@ dependencies = [
 ]
 
 [project.scripts]
-papertrader = "papertrader.cli:main"
+papertrader = "papertrader.research_cli:main"
 
 [dependency-groups]
 dev = [

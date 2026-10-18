@@ -1,0 +1,674 @@
+from __future__ import annotations
+
+import json
+import os
+import shutil
+from datetime import UTC, datetime
+from pathlib import Path
+from typing import Any
+
+import pytest
+
+from papertrader import research_transaction
+from papertrader.research_agent import ResearchLimits, agent_environment, run_cycle, run_model
+from papertrader.research_cli import main
+from papertrader.research_queue import admit
+from papertrader.research_results import commit_result, prepare_result
+from papertrader.research_state import contracts, read_state, validate_state, write_state
+from papertrader.research_transaction import apply_files, research_lock
+from papertrader.research_web import ResearchWeb, public_url
+
+NOW = datetime(2026, 10, 18, 17, tzinfo=UTC)
+STAMP = "2026-10-18T17:00:00Z"
+URL = "https://issuer.example/earnings"
+
+
+@pytest.fixture
+def current(repository_root: Path, tmp_path: Path) -> Path:
+    root = tmp_path / "current"
+    root.mkdir()
+    shutil.copytree(repository_root / "schemas", root / "schemas")
+    shutil.copytree(repository_root / "skills", root / "skills")
+    shutil.copy2(repository_root / "research.ini", root / "research.ini")
+    schema = contracts(root)
+    state = {name: [] for name in schema}
+    for sid in ("security1", "security2"):
+        row = dict.fromkeys(schema["securities"].columns, "")
+        row.update(
+            security_id=sid,
+            issuer_id="issuer" + sid[-1],
+            company_name="Example",
+            instrument_name="Ordinary",
+            instrument_type="equity",
+            ticker="EX",
+            venue_mic="XNYS",
+            provider_symbol="EX",
+            currency="USD",
+            status="watching",
+            research_status="researched",
+            research_page=f"data/wiki/securities/{sid}.md",
+        )
+        state["securities"].append(row)
+        path = root / row["research_page"]
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(
+            f"---\nsecurity_id: {sid}\nissuer_id: {row['issuer_id']}\n"
+            "title: Example\n---\nCurrent thesis.\n"
+        )
+    idea = dict.fromkeys(schema["ideas"].columns, "")
+    idea.update(
+        idea_id="idea1",
+        title="Mechanism",
+        status="unresearched",
+        research_page="data/wiki/ideas/idea1.md",
+    )
+    state["ideas"].append(idea)
+    path = root / idea["research_page"]
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("---\nidea_id: idea1\ntitle: Mechanism\n---\nMechanism.\n")
+    write_state(root, state)
+    assert validate_state(root, read_state(root)) == []
+    return root
+
+
+def result(root: Path, *, supported: bool = True) -> dict[str, Any]:
+    schema = contracts(root)
+    assessment = dict.fromkeys(schema["security_assessments"].columns, "")
+    assessment.update(
+        security_id="security1",
+        assessed_at=STAMP,
+        valid_until="2026-11-17T17:00:00Z",
+        research_status="supported" if supported else "valuation_unsupported",
+        method="normalized_earnings",
+        method_rationale="Per-share earning power and a justified multiple.",
+        currency="USD",
+        horizon_months="12",
+        thesis="Durable demand.",
+        key_assumptions="Earnings remain stable.",
+        downside="Demand contracts.",
+        catalysts="Next annual results.",
+        invalidation_conditions="Sustained negative cash flow.",
+        confidence="medium",
+        limitations="Estimation uncertainty."
+        if supported
+        else "Reliable normalized earnings unavailable.",
+        source_ids="source1",
+    )
+    if supported:
+        for case, fair, prob in [
+            ("bear", "50", "25"),
+            ("base", "100", "50"),
+            ("bull", "150", "25"),
+        ]:
+            assessment.update(
+                {
+                    f"{case}_fair_value": fair,
+                    f"{case}_probability_pct": prob,
+                    f"{case}_assumptions": "Cited earning power, justified case multiple.",
+                }
+            )
+    source = dict.fromkeys(schema["source_registry"].columns, "")
+    source.update(
+        source_id="source1",
+        url=URL,
+        title="Issuer earnings",
+        publisher="Issuer",
+        source_type="earnings_release",
+        license="link_only",
+        status="valid",
+        related_entity_ids="security1",
+    )
+    markdown = (
+        "---\nsecurity_id: security1\nissuer_id: issuer1\ntitle: Example\n---\n# Research\n"
+        f"Original synthesis. [Earnings]({URL})\n"
+    )
+    return dict(
+        operation="research_security",
+        entity_id="security1",
+        outcome="updated" if supported else "not_supportable",
+        summary="Current primary review.",
+        assessment=assessment,
+        idea=None,
+        sources=[source],
+        relationships=[],
+        pages={"data/wiki/securities/security1.md": markdown},
+    )
+
+
+def observations() -> dict[str, dict[str, str]]:
+    return {
+        URL: dict(
+            url=URL,
+            final_url=URL,
+            checked_at=STAMP,
+            content_hash="a" * 64,
+            source_text="Issuer earnings release with primary financial evidence.",
+        )
+    }
+
+
+def data_bytes(root: Path) -> dict[str, bytes]:
+    return {
+        p.relative_to(root).as_posix(): p.read_bytes()
+        for p in (root / "data").rglob("*")
+        if p.is_file()
+    }
+
+
+def test_final_frontmatter_and_current_rows_applied_together_idempotently(current: Path) -> None:
+    before_other = (current / "data/wiki/securities/security2.md").read_bytes()
+    document = result(current)
+    # October15 regression: final frontmatter is staged before matching current rows;
+    # no immutable page hash or assessment revision is written before this correction.
+    document["pages"]["data/wiki/securities/security1.md"] += "\nReviewed frontmatter is final.\n"
+    state, pages = prepare_result(
+        current,
+        read_state(current),
+        document,
+        operation="research_security",
+        entity_id="security1",
+        now=NOW,
+        observations=observations(),
+    )
+    with research_lock(current):
+        changed = commit_result(current, state, pages)
+    assert "data/wiki/securities/security1.md" in changed
+    assert "data/tables/security_assessments.csv" in changed
+    assert read_state(current)["security_assessments"][0]["base_fair_value"] == "100"
+    times = {p: p.stat().st_mtime_ns for p in (current / "data").rglob("*") if p.is_file()}
+    state, pages = prepare_result(
+        current,
+        read_state(current),
+        document,
+        operation="research_security",
+        entity_id="security1",
+        now=NOW,
+        observations=observations(),
+    )
+    with research_lock(current):
+        assert commit_result(current, state, pages) == []
+    assert {p: p.stat().st_mtime_ns for p in times} == times
+    assert (current / "data/wiki/securities/security2.md").read_bytes() == before_other
+    assert not list((current / "data").rglob("*history*"))
+
+
+@pytest.mark.parametrize(
+    "corruption",
+    [
+        "probability",
+        "unknown_source",
+        "unopened",
+        "identity",
+        "issuer",
+        "future",
+        "expiry",
+        "unsafe_path",
+        "script",
+        "retired_chart",
+        "partial",
+        "missing_risk",
+    ],
+)
+def test_invalid_result_changes_no_source_csv_or_page(current: Path, corruption: str) -> None:
+    document = result(current)
+    observed = observations()
+    page = "data/wiki/securities/security1.md"
+    if corruption == "probability":
+        document["assessment"]["bull_probability_pct"] = "50"
+    elif corruption == "unknown_source":
+        document["assessment"]["source_ids"] = "invented"
+    elif corruption == "unopened":
+        observed = {}
+    elif corruption == "identity":
+        document["assessment"]["security_id"] = "security2"
+    elif corruption == "issuer":
+        document["pages"][page] = document["pages"][page].replace("issuer1", "issuer2")
+    elif corruption == "future":
+        document["assessment"]["assessed_at"] = "2026-10-19T17:00:00Z"
+    elif corruption == "expiry":
+        document["assessment"]["valid_until"] = "2027-01-01T00:00:00Z"
+    elif corruption == "unsafe_path":
+        document["pages"]["data/wiki/securities/../../.env"] = document["pages"].pop(page)
+    elif corruption == "script":
+        document["pages"][page] += "<script>alert(1)</script>"
+    elif corruption == "retired_chart":
+        document["pages"][page] += '\n```echart\n{"chart_id":"market-technicals"}\n```\n'
+    elif corruption == "partial":
+        del document["assessment"]["thesis"]
+    else:
+        document["assessment"]["downside"] = ""
+    before = data_bytes(current)
+    with pytest.raises(ValueError):
+        prepare_result(
+            current,
+            read_state(current),
+            document,
+            operation="research_security",
+            entity_id="security1",
+            now=NOW,
+            observations=observed,
+        )
+    assert data_bytes(current) == before
+
+
+def test_unsupported_valuation_is_honest_and_valid(current: Path) -> None:
+    state, pages = prepare_result(
+        current,
+        read_state(current),
+        result(current, supported=False),
+        operation="research_security",
+        entity_id="security1",
+        now=NOW,
+        observations=observations(),
+    )
+    with research_lock(current):
+        commit_result(current, state, pages)
+    assessment = read_state(current)["security_assessments"][0]
+    assert assessment["research_status"] == "valuation_unsupported"
+    assert not assessment["base_fair_value"]
+
+
+def test_exception_mid_transaction_restores_all_originals(
+    current: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    before = data_bytes(current)
+    write = research_transaction.atomic_write_bytes
+    count = 0
+
+    def failing(*args: Any, **kwargs: Any) -> None:
+        nonlocal count
+        count += 1
+        if count == 2:
+            raise OSError("simulated disk failure")
+        write(*args, **kwargs)
+
+    monkeypatch.setattr(research_transaction, "atomic_write_bytes", failing)
+    with research_lock(current), pytest.raises(OSError):
+        apply_files(
+            current,
+            {
+                "data/wiki/securities/security1.md": b"replaced",
+                "data/wiki/securities/security2.md": b"replaced",
+            },
+        )
+    assert data_bytes(current) == before
+    assert not (current / ".cache/research-transaction.json").exists()
+
+
+def test_copyrighted_source_prose_over_25_words_is_rejected(current: Path) -> None:
+    copied = " ".join(f"evidence{index}" for index in range(40))
+    document = result(current)
+    page = "data/wiki/securities/security1.md"
+    document["pages"][page] += f"\n{copied}\n"
+    observed = observations()
+    observed[URL]["source_text"] = f"Introduction {copied} conclusion"
+    before = data_bytes(current)
+
+    with pytest.raises(ValueError, match="copies more than 25"):
+        prepare_result(
+            current,
+            read_state(current),
+            document,
+            operation="research_security",
+            entity_id="security1",
+            now=NOW,
+            observations=observed,
+        )
+
+    assert data_bytes(current) == before
+
+
+def test_new_source_cannot_self_assert_a_copy_exempt_license(current: Path) -> None:
+    copied = " ".join(f"filingword{index}" for index in range(30))
+    document = result(current)
+    document["sources"][0]["license"] = "public-domain-us-government"
+    document["pages"]["data/wiki/securities/security1.md"] += f"\n{copied}\n"
+    observed = observations()
+    observed[URL]["source_text"] = copied
+
+    with pytest.raises(ValueError, match="copies more than 25"):
+        prepare_result(
+            current,
+            read_state(current),
+            document,
+            operation="research_security",
+            entity_id="security1",
+            now=NOW,
+            observations=observed,
+        )
+
+
+def test_existing_cited_source_is_refreshed_even_when_omitted_from_result_sources(
+    current: Path,
+) -> None:
+    state = read_state(current)
+    source = result(current)["sources"][0]
+    source.update(checked_at="2026-10-01T00:00:00Z", content_hash="b" * 64)
+    state["source_registry"] = [source]
+    write_state(current, state)
+    document = result(current)
+    document["sources"] = []
+
+    candidate, _ = prepare_result(
+        current,
+        read_state(current),
+        document,
+        operation="research_security",
+        entity_id="security1",
+        now=NOW,
+        observations=observations(),
+    )
+
+    refreshed = candidate["source_registry"][0]
+    assert refreshed["checked_at"] == STAMP
+    assert refreshed["content_hash"] == "a" * 64
+
+
+def test_new_source_id_cannot_reuse_an_existing_registry_url(current: Path) -> None:
+    state = read_state(current)
+    existing = result(current)["sources"][0]
+    existing.update(checked_at=STAMP, content_hash="a" * 64)
+    state["source_registry"] = [existing]
+    write_state(current, state)
+    document = result(current)
+    document["sources"][0]["source_id"] = "source2"
+    document["assessment"]["source_ids"] = "source2"
+
+    with pytest.raises(ValueError, match="stable source identity"):
+        prepare_result(
+            current,
+            read_state(current),
+            document,
+            operation="research_security",
+            entity_id="security1",
+            now=NOW,
+            observations=observations(),
+        )
+
+
+def test_plain_prose_may_explain_retired_technical_chart(current: Path) -> None:
+    document = result(current)
+    document["pages"]["data/wiki/securities/security1.md"] += (
+        "\nThe former market-technicals chart was removed and is not required.\n"
+    )
+    prepare_result(
+        current,
+        read_state(current),
+        document,
+        operation="research_security",
+        entity_id="security1",
+        now=NOW,
+        observations=observations(),
+    )
+
+
+def test_invalid_result_does_not_starve_later_entities_and_cycle_is_bounded(current: Path) -> None:
+    state = read_state(current)
+    admit(state, "security", "security1", reasons={"manual"}, priority=100, manual=True, now=NOW)
+    admit(state, "security", "security2", reasons={"manual"}, priority=100, manual=True, now=NOW)
+    admit(state, "idea", "idea1", reasons={"manual"}, priority=100, manual=True, now=NOW)
+    with research_lock(current):
+        commit_result(current, state, {})
+    calls = []
+
+    def execute(root: Path, packet: dict[str, Any], limits: ResearchLimits) -> dict[str, Any]:
+        calls.append(packet["identity"].get("security_id") or packet["identity"]["idea_id"])
+        if packet["identity"].get("security_id") == "security1":
+            raise ValueError("secret must not enter public error")
+        return dict(
+            result=dict(
+                operation=packet["operation"],
+                entity_id=calls[-1],
+                outcome="no_change",
+                summary="Reviewed, no change.",
+                assessment=None,
+                idea=None,
+                sources=[],
+                relationships=[],
+                pages={},
+            ),
+            observations={},
+            usage={},
+        )
+
+    before_page = (current / "data/wiki/securities/security1.md").read_bytes()
+    response = run_cycle(current, dry_run=False, executor=execute, clock=lambda: NOW)
+    assert len(calls) == 3
+    assert response["exit_code"] == 3
+    assert "secret" not in json.dumps(response)
+    state = read_state(current)
+    assert len(state["research_queue"]) == 1
+    assert state["research_queue"][0]["entity_id"] == "security1"
+    assert state["research_queue"][0]["status"] == "failed"
+    assert (current / "data/wiki/securities/security1.md").read_bytes() == before_page
+
+
+def test_explicit_cycle_claims_only_the_requested_entity(current: Path) -> None:
+    state = read_state(current)
+    older = NOW.replace(day=17)
+    admit(state, "security", "security1", reasons={"manual"}, priority=100, manual=True, now=older)
+    with research_lock(current):
+        commit_result(current, state, {})
+    unrelated_before = read_state(current)["research_queue"][0].copy()
+    calls: list[str] = []
+
+    def execute(_root: Path, packet: dict[str, Any], _limits: ResearchLimits) -> dict[str, Any]:
+        calls.append(packet["identity"]["security_id"])
+        return dict(
+            result=dict(
+                operation="research_security",
+                entity_id="security2",
+                outcome="no_change",
+                summary="Reviewed, no change.",
+                assessment=None,
+                idea=None,
+                sources=[],
+                relationships=[],
+                pages={},
+            ),
+            observations={},
+            usage={},
+        )
+
+    response = run_cycle(
+        current,
+        dry_run=False,
+        entity_type="security",
+        entity_id="security2",
+        executor=execute,
+        clock=lambda: NOW,
+    )
+
+    assert response["exit_code"] == 0
+    assert calls == ["security2"]
+    assert read_state(current)["research_queue"] == [unrelated_before]
+
+
+def test_dry_run_never_invokes_model_and_environment_excludes_secrets(
+    current: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    monkeypatch.setenv("GITHUB_TOKEN", "private-write")
+    monkeypatch.setenv("TELEGRAM_BOT_TOKEN", "private-delivery")
+    monkeypatch.setenv("OPENAI_OAUTH_SECRET", "private-encryption-key")
+    environment = agent_environment(current, [])
+    assert not {"GITHUB_TOKEN", "TELEGRAM_BOT_TOKEN", "OPENAI_OAUTH_SECRET"} & environment.keys()
+    before = data_bytes(current)
+    response = run_cycle(
+        current,
+        entity_type="security",
+        entity_id="security1",
+        executor=lambda *args: pytest.fail("dry-run model invocation"),
+        clock=lambda: NOW,
+    )
+    assert response["status"] == "dry_run"
+    assert data_bytes(current) == before
+    assert main(["--repository", str(current), "validate"]) == 0
+
+
+def test_corrupt_current_state_fails_before_claim_or_model(current: Path) -> None:
+    state = read_state(current)
+    state["securities"][0]["currency"] = "US"
+    write_state(current, state)
+    before = data_bytes(current)
+
+    with pytest.raises(ValueError, match="invalid security currency"):
+        run_cycle(
+            current,
+            dry_run=False,
+            executor=lambda *_: pytest.fail("model invoked for corrupt state"),
+            clock=lambda: NOW,
+        )
+
+    assert data_bytes(current) == before
+    assert main(["--repository", str(current), "research", "--apply"]) == 4
+    assert data_bytes(current) == before
+
+
+def test_model_process_drops_root_privileges_and_sees_only_staged_worker(
+    repository_root: Path, tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    home = tmp_path / "hermes-home"
+    home.mkdir()
+    (home / "auth.json").write_text('{"token":"inference-only"}')
+    python = tmp_path / "hermes-python"
+    python.write_text("")
+    hermes_code = tmp_path / "hermes-code"
+    hermes_code.mkdir()
+    monkeypatch.setenv("HERMES_HOME", str(home))
+    monkeypatch.setenv("PAPERTRADER_HERMES_PYTHON", str(python))
+    monkeypatch.setenv("PAPERTRADER_HERMES_CODE", str(hermes_code))
+    monkeypatch.setenv("GITHUB_TOKEN", "repository-write-secret")
+    monkeypatch.setenv("TELEGRAM_BOT_TOKEN", "delivery-secret")
+    monkeypatch.setattr("papertrader.research_agent.os.geteuid", lambda: 0)
+    ownership: list[tuple[Path, int, int]] = []
+    monkeypatch.setattr(
+        "papertrader.research_agent.os.chown",
+        lambda path, uid, gid: ownership.append((Path(path), uid, gid)),
+    )
+    captured: dict[str, Any] = {}
+
+    class Process:
+        returncode = 0
+        pid = 123
+
+        def communicate(self, timeout: int | None = None) -> tuple[str, str]:
+            del timeout
+            return json.dumps({"result": {}, "observations": {}, "usage": {}}), ""
+
+    def popen(command: list[str], **kwargs: Any) -> Process:
+        captured.update(command=command, **kwargs)
+        request = Path(command[-1])
+        captured["request"] = json.loads(request.read_text())
+        captured["request_mode"] = request.stat().st_mode & 0o777
+        return Process()
+
+    monkeypatch.setattr("papertrader.research_agent.subprocess.Popen", popen)
+    response = run_model(repository_root, {"operation": "research_security"}, ResearchLimits())
+
+    assert response["usage"] == {}
+    assert captured["user"] == 10_000
+    assert captured["group"] == 10_000
+    assert captured["extra_groups"] == ()
+    assert captured["request_mode"] == 0o600
+    environment = captured["env"]
+    assert "GITHUB_TOKEN" not in environment
+    assert "TELEGRAM_BOT_TOKEN" not in environment
+    assert str(repository_root / "src") not in environment["PYTHONPATH"].split(os.pathsep)
+    assert str(repository_root / ".git") not in environment["PYTHONPATH"]
+    assert "worker-code" in environment["PYTHONPATH"]
+    assert captured["cwd"] != repository_root
+    assert any(path.name == "auth.json" and uid == gid == 10_000 for path, uid, gid in ownership)
+
+
+def test_network_budget_is_hard_and_private_sources_are_forbidden(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    broker = ResearchWeb(max_calls=1)
+    monkeypatch.setattr("papertrader.research_web.public_url", lambda _: None)
+    broker.take(URL)
+    with pytest.raises(ValueError, match="budget"):
+        broker.take(URL)
+    monkeypatch.undo()
+    with pytest.raises(ValueError):
+        public_url("http://127.0.0.1/private")
+    with pytest.raises(ValueError):
+        public_url("file:///etc/passwd")
+
+
+def test_idea_and_inline_relationship_update_do_not_create_company_tasks(current: Path) -> None:
+    state = read_state(current)
+    document = result(current)
+    idea = state["ideas"][0].copy()
+    idea.update(
+        status="researched",
+        thesis="Verified causal mechanism.",
+        source_ids="source1",
+        last_reviewed_on="2026-10-18",
+    )
+    document.update(
+        operation="research_idea",
+        entity_id="idea1",
+        idea=idea,
+        assessment=None,
+        pages={
+            "data/wiki/ideas/idea1.md": (
+                f"---\nidea_id: idea1\ntitle: Mechanism\n---\n"
+                f"Original causal analysis. [Source]({URL})\n"
+            )
+        },
+    )
+    document["sources"][0]["related_entity_ids"] = "idea1"
+    relationship = dict.fromkeys(contracts(current)["relationships"].columns, "")
+    relationship.update(
+        relationship_id="link1",
+        idea_id="idea1",
+        security_id="security1",
+        relationship_type="beneficiary",
+        direction="positive",
+        mechanism="Verified demand transmission.",
+        confidence="medium",
+        status="current",
+        source_ids="source1",
+        research_page="data/wiki/ideas/idea1.md",
+        last_reviewed_at=STAMP,
+    )
+    document["relationships"] = [relationship]
+    candidate, pages = prepare_result(
+        current,
+        state,
+        document,
+        operation="research_idea",
+        entity_id="idea1",
+        now=NOW,
+        observations=observations(),
+    )
+    with research_lock(current):
+        commit_result(current, candidate, pages)
+    accepted = read_state(current)
+    assert accepted["ideas"][0]["thesis"] == "Verified causal mechanism."
+    assert accepted["relationships"] == [relationship]
+    assert accepted["securities"] == state["securities"]
+    assert accepted["research_queue"] == []
+
+
+def test_interrupted_transaction_recovers_before_reader(current: Path) -> None:
+    import base64
+
+    page = current / "data/wiki/securities/security1.md"
+    original = page.read_bytes()
+    cache = current / ".cache"
+    cache.mkdir()
+    (cache / "research-transaction.json").write_text(
+        json.dumps(
+            {
+                "data/wiki/securities/security1.md": base64.b64encode(original).decode(),
+                "data/wiki/securities/partial.md": None,
+            }
+        )
+    )
+    page.write_bytes(b"partial update")
+    (page.parent / "partial.md").write_bytes(b"partial new file")
+    with research_lock(current):
+        assert page.read_bytes() == original
+        assert not (page.parent / "partial.md").exists()
+    assert not (cache / "research-transaction.json").exists()

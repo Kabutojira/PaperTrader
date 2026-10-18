@@ -261,8 +261,9 @@ class _CycleHermes:
         result = subprocess.run(
             [
                 sys.executable,
-                "-m",
-                "papertrader",
+                "-c",
+                "import sys; from papertrader.cli import main; "
+                "raise SystemExit(main(sys.argv[1:]))",
                 "--repository",
                 str(repository),
                 *arguments,
@@ -438,8 +439,9 @@ class _CycleHermes:
         sync = subprocess.run(
             [
                 sys.executable,
-                "-m",
-                "papertrader",
+                "-c",
+                "import sys; from papertrader.cli import main; "
+                "raise SystemExit(main(sys.argv[1:]))",
                 "--repository",
                 str(repository),
                 "wiki",
@@ -914,8 +916,8 @@ def _plain_request(
     result = subprocess.run(
         [
             sys.executable,
-            "-m",
-            "papertrader",
+            "-c",
+            "import sys; from papertrader.cli import main; raise SystemExit(main(sys.argv[1:]))",
             "--repository",
             str(repository),
             *arguments,

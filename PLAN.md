@@ -71,8 +71,8 @@ label mocked/local checks as live.
 | M0 | Freeze scheduler, verified backup, exact inventory, reproduce/repair retired technical charts, capture assessment/frontmatter ordering failure; dry run changes no source data | Complete: 9056d3df; CI 39142564182 green |
 | M1 | Repeatable dry-run-by-default compact schema migration; preserve identities, current meaning, prose/citations and expiry; schema/reference/wiki tests; no invented evidence | Staged tooling gate passed: 4e3f8223; CI green; active cutover M4 |
 | M2 | Standalone market/cache/indicators/valuation/ratings core; sessions/holidays, bounded batching, per-symbol failure/corrections; no LLM or portfolio paths | Complete: 823efb96; CI 39146545315 green |
-| M3 | One-entity bounded queue, deterministic priorities/retries, retire old producers; census-based disposition of all 340 blocks and 13 waiting relationships; <=30 tasks | Local gate passed; push/CI pending |
-| M4 | Two single-model operations; bounded context/web/turn/runtime budgets; final staged Markdown and complete result validated before atomic CSV/wiki/source transaction; idempotent and rollback-safe | Pending |
+| M3 | One-entity bounded queue, deterministic priorities/retries, retire old producers; census-based disposition of all 340 blocks and 13 waiting relationships; <=30 tasks | Complete: 421332ff; CI 39147632827 green |
+| M4 | Two single-model operations; bounded context/web/turn/runtime budgets; final staged Markdown and complete result validated before atomic CSV/wiki/source transaction; idempotent and rollback-safe | Local gate passed; push/CI pending |
 | M5 | Weekly bounded discovery/manual import and inline links; validate identity, dedupe issuers/share classes, retain citations/unresearched status; no fan-out | Pending |
 | M6 | Deterministic fresh Top 10 Buy/Sell, company/idea catalogs, recent updates and health; optional nonblocking charts; Quartz build and reviewed output/links | Pending |
 | M7 | Independent market/research/Pages workflows, least credentials, compact writes and focused validation; live non-dry market/research smoke; isolate failure cases | Pending |
@@ -195,4 +195,50 @@ or financial validation to satisfy retired tests.
   validation or expected baseline count was relaxed.
 - Active reader switch remains M4 and workflow activation M7. Old producer/queue
   code is frozen until deletion at M8. No live LLM/provider call or deployment.
-- Details: [M3 migration](docs/migration/M3.md). Commit/push/CI pending.
+- Details: [M3 migration](docs/migration/M3.md). Commit `421332ffe0a1af67e2febba9541e19fd6ca4ecb1` pushed;
+  [CI39147632827](https://github.com/Kabutojira/PaperTrader/actions/runs/39147632827)
+  completed successfully, including the complete legacy suite and Quartz build.
+
+## M4 evidence (in progress)
+
+- Added two staged operations, one model configuration and a small bounded
+  read-only web broker. The worker receives inference OAuth only; Git/deployment
+  tokens are absent from its environment and no shell/file tools are exposed.
+- Complete result validation checks target identity, final frontmatter, current
+  fetched citations, numerical scenarios, source dates, freshness, safe paths and
+  optional charts. No immutable assessment/page hash or research history writes.
+- Recoverable logical transaction stages Markdown before CSVs; one ignored
+  temporary rollback journal supports exception and restart recovery. The cycle
+  continues unrelated tasks after failure, with at most three attempts per day.
+- First local gate: 61 relevant tests passed, Ruff check/format and MyPy73 passed.
+  These were mocked tests; no live model/research provider invocation occurred.
+- Canonical compact schema cut over from pinned M0 revision9056d3df: 92 security
+  identities, 29 ideas, 47 relationships, 83 latest assessments, 366 current source
+  records and 30 new entity tasks. All historical fair values/dates remain as
+  migrated; no assessment was made fresh. All1307 wiki assets preserved; one page
+  has obsolete assessment-ID tokens replaced by backup-ref links. Seven active
+  files changed. Repeating the exact migration changed zero files; validation
+  passed. Migration refuses to overwrite subsequent current research.
+- Supported CLI now routes to research-only commands. CI uses current research
+  contracts instead of retired portfolio/advice/reconciliation gates. Legacy
+  modules, old tables and fixture tests remain only until M8 deletion. Their
+  workflow is frozen and the public site has not been republished.
+- Post-cutover gate passed: 94 focused checks and all686 repository tests;
+  Ruff lint/format, MyPy73, current-data validation, research-only CLI help and
+  diff checks passed. Quartz check/build/link validation passed with1292 Markdown
+  inputs. Six legacy audit fixtures now explicitly use the retired internal
+  fixture CLI; one purely retired allocation-readiness test was removed. No old
+  commands were restored to the supported entry point.
+- Hardening regressions cover current citation metadata refresh and URL identity,
+  immutable trusted license metadata, copied-source rejection, semantic validation
+  before model/queue writes, an isolated five-module worker bundle and configured
+  UID/GID10000 with no supplementary groups, exact manual entity selection, and
+  actual retired-chart markers without rejecting innocent prose mentions.
+- Final serialization correction normalizes logical CRLF/CR/LF in CSV values;
+  a pinned migration regression simulates Git checkout conversion inside quoted
+  prose. After this correction49 affected tests, Ruff/format, MyPy73, current CLI
+  validation and migration preview passed. The686-test full gate predates only
+  this covered newline correction; push CI will run the entire final tree.
+- Hermes integration/OS identity, live research network availability and deployment
+  remain to be verified live in M7/M9. Current checks use mocked worker/network
+  responses and do not represent live checks. Commit/push/CI pending.
