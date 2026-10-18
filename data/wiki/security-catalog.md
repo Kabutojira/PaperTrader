@@ -78,7 +78,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Schneider Electric SE](securities/security_dc8486c1d61df62a22fd) | SU (EUR) | research_expired_or_future | 2026-08-31T22:44:59Z | 2026-09-30T22:44:59Z |
 | [Shenzhen Creality 3D Technology Co., Ltd.](securities/security_b19e8f0343b7da1f3c03) | 03388 (HKD) | research_expired_or_future | 2026-09-06T10:14:38Z | 2026-09-20T10:14:38Z |
 | [Sigma Lithium Corporation](securities/security_4627aea1bf7d8943d3d8) | SGML (USD) | source_evidence_unavailable | 2026-08-06T18:28:23Z | 2026-08-15T12:00:00Z |
-| [SoFi Technologies, Inc.](securities/security_98470cfc01bbcde78fc2) | SOFI (USD) | research_expired_or_future | 2026-09-02T14:33:05Z | 2026-10-02T14:33:05Z |
+| [SoFi Technologies, Inc.](securities/security_98470cfc01bbcde78fc2) | SOFI (USD) | valuation_unsupported | 2026-10-18T19:22:08.983560Z | 2026-10-19T19:22:08.983560Z |
 | [Sociedad Quimica y Minera de Chile S.A.](securities/security_9d4049ed6669a52815d6) | SQM (USD) | source_evidence_unavailable | 2026-08-22T15:25:04Z | 2026-09-05T15:25:04Z |
 | [Southern Copper Corporation](securities/security_6ad1af8d10d6276a0221) | SCCO (USD) | source_evidence_unavailable | 2026-08-21T23:17:26Z | 2026-09-04T15:55:50Z |
 | [Space Exploration Technologies Corp.](securities/security_664f93a7eaca72e76e9b) | SPCX (USD) | research_expired_or_future | 2026-08-05T19:02:24Z | 2026-08-19T19:02:24Z |

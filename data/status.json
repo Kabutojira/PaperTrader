@@ -9,10 +9,11 @@
     "status": "succeeded"
   },
   "research": {
-    "exit_code": 3,
-    "last_attempt_at": "2026-10-18T19:11:47Z",
+    "exit_code": 0,
+    "last_attempt_at": "2026-10-18T19:24:04Z",
+    "last_success_at": "2026-10-18T19:24:04Z",
     "model_operations": 1,
-    "status": "degraded",
-    "web_requests": 12
+    "status": "succeeded",
+    "web_requests": 10
   }
 }
