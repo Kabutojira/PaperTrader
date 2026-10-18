@@ -7,6 +7,7 @@ import json
 import os
 import shutil
 import signal
+import stat
 import subprocess
 import tempfile
 from collections.abc import Callable
@@ -17,7 +18,7 @@ from typing import Any
 
 import yaml
 
-from papertrader.atomic_io import atomic_write_text
+from papertrader.atomic_io import atomic_write_bytes, atomic_write_text
 from papertrader.research_queue import admit, claim, entity_key, finish, queue_limits
 from papertrader.research_results import (
     ResearchResultValidationError,
@@ -40,6 +41,7 @@ class ResearchLimits:
 
 HERMES_UID = 10_000
 HERMES_GID = 10_000
+MAX_AUTH_BYTES = 1_000_000
 SAFE_EXCEPTION_TYPES = {
     "FileNotFoundError",
     "JSONDecodeError",
@@ -153,6 +155,29 @@ def _stage_worker(root: Path, directory: Path) -> Path:
     return package.parent
 
 
+def _auth_bytes(path: Path, error: str) -> bytes:
+    descriptor = -1
+    try:
+        descriptor = os.open(path, os.O_RDONLY | os.O_NOFOLLOW)
+        metadata = os.fstat(descriptor)
+        if not stat.S_ISREG(metadata.st_mode) or not 1 <= metadata.st_size <= MAX_AUTH_BYTES:
+            raise RuntimeError(error)
+        with os.fdopen(descriptor, "rb") as handle:
+            descriptor = -1
+            content = handle.read(MAX_AUTH_BYTES + 1)
+        if not 1 <= len(content) <= MAX_AUTH_BYTES:
+            raise RuntimeError(error)
+        document = json.loads(content)
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError, RecursionError):
+        raise RuntimeError(error) from None
+    finally:
+        if descriptor >= 0:
+            os.close(descriptor)
+    if not isinstance(document, dict):
+        raise RuntimeError(error)
+    return content
+
+
 def run_model(root: Path, packet: dict[str, Any], limits: ResearchLimits) -> dict[str, Any]:
     """Run inside the pinned Hermes image; no repository-write token in child env."""
     home_path = Path(os.environ.get("HERMES_HOME", "/tmp/papertrader-hermes"))
@@ -161,12 +186,10 @@ def run_model(root: Path, packet: dict[str, Any], limits: ResearchLimits) -> dic
     home = home_path.resolve()
     python = Path(os.environ.get("PAPERTRADER_HERMES_PYTHON", "/opt/hermes/.venv/bin/python"))
     hermes_code = Path(os.environ.get("PAPERTRADER_HERMES_CODE", "/opt/hermes"))
-    if (
-        not python.is_file()
-        or not (home / "auth.json").is_file()
-        or (home / "auth.json").is_symlink()
-    ):
+    if not python.is_file():
         raise RuntimeError("isolated_research_inference_unavailable")
+    shared_auth = home / "auth.json"
+    initial_auth = _auth_bytes(shared_auth, "isolated_research_inference_unavailable")
     for name in ("plugins", "hooks", "memories"):
         if (home / name).exists():
             raise RuntimeError("unmanaged_research_profile")
@@ -177,18 +200,24 @@ def run_model(root: Path, packet: dict[str, Any], limits: ResearchLimits) -> dic
         "skills": {"external_dirs": []},
         "worktree": False,
     }
-    atomic_write_text(home / "config.yaml", yaml.safe_dump(configuration), allowed_root=home)
-    _agent_access(home, 0o700)
-    _agent_access(home / "auth.json", 0o600)
-    _agent_access(home / "config.yaml", 0o600)
     with tempfile.TemporaryDirectory(prefix="papertrader-research-") as work:
         directory = Path(work)
         _agent_access(directory, 0o700)
+        profile = directory / "profile"
+        profile.mkdir()
+        _agent_access(profile, 0o700)
+        profile_auth = profile / "auth.json"
+        atomic_write_bytes(profile_auth, initial_auth, allowed_root=profile)
+        atomic_write_text(
+            profile / "config.yaml", yaml.safe_dump(configuration), allowed_root=profile
+        )
+        _agent_access(profile_auth, 0o600)
+        _agent_access(profile / "config.yaml", 0o600)
         worker_code = _stage_worker(root, directory)
         request = directory / "request.json"
         request.write_text(json.dumps(dict(context=packet, limits=vars(limits))))
         _agent_access(request, 0o600)
-        environment = agent_environment(home, [worker_code, hermes_code])
+        environment = agent_environment(profile, [worker_code, hermes_code])
         credentials: dict[str, Any] = {}
         if os.geteuid() == 0:
             credentials = {"user": HERMES_UID, "group": HERMES_GID, "extra_groups": ()}
@@ -203,11 +232,16 @@ def run_model(root: Path, packet: dict[str, Any], limits: ResearchLimits) -> dic
             **credentials,
         )
         try:
-            stdout, _ = process.communicate(timeout=limits.timeout_seconds)
-        except subprocess.TimeoutExpired:
-            os.killpg(process.pid, signal.SIGKILL)
-            process.communicate()
-            raise RuntimeError("research_timeout") from None
+            try:
+                stdout, _ = process.communicate(timeout=limits.timeout_seconds)
+            except subprocess.TimeoutExpired:
+                os.killpg(process.pid, signal.SIGKILL)
+                process.communicate()
+                raise RuntimeError("research_timeout") from None
+        finally:
+            refreshed_auth = _auth_bytes(profile_auth, "invalid_refreshed_inference_auth")
+            if refreshed_auth != initial_auth:
+                atomic_write_bytes(shared_auth, refreshed_auth, allowed_root=home)
         if process.returncode or len(stdout.encode()) > 300000:
             raise RuntimeError("research_model_failed")
         document = json.loads(stdout)

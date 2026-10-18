@@ -132,3 +132,11 @@ research never becomes a fresh ranking merely by being counted as baseline cover
 Existing defaults remain3 sequential research operations per daily cycle, including
 weekly discovery. No valuation is fabricated to satisfy a coverage target; unavailable
 evidence stays explicit and Unrated until sourced scenarios can be supported.
+
+Each model operation receives a new temporary Hermes profile. Only inference auth
+and controller-owned configuration are copied in; valid refreshed auth is copied
+back for deterministic encryption after the phase. Generated profile memory,
+hooks, plugins and logs are discarded between operations. A failed profile guard
+can consume an operation attempt without invoking the model; phase operation
+counters are budgeted attempts, not measured API calls. Inspect per-entity stage
+and observed web usage when distinguishing inference from preflight failures.

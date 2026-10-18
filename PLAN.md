@@ -498,3 +498,22 @@ Validation/commit/CI/deployment and live backfill evidence will be recorded belo
   Supported and unsupported accepted outcomes, failed validation and exhausted
   needs_attention cases will be reported distinctly. Feature push/CI and reviewed
   publication precede actual sequential backfill operations.
+
+- Feature commit `93966f977c8c41a86499b6ebb7e68d7ccb368b54` passed exact
+  [CI39164471227](https://github.com/Kabutojira/PaperTrader/actions/runs/39164471227)
+  and [Pages39164582344](https://github.com/Kabutojira/PaperTrader/actions/runs/39164582344).
+  Published coverage22/92 and catalog cases verifiedHTTP200.
+- Actual accelerated pilot [39164710193](https://github.com/Kabutojira/PaperTrader/actions/runs/39164710193)
+  accepted MP Materials update with11 web requests; next two operation attempts
+  failed before inference because the first Hermes process created profile
+  directories that the shared-profile guard then rejected. One actual inference
+  invocation, three budgeted operation attempts. Accepted/state commit
+  `46a10c948a8d3614e2b0ffaa3c12d30868107131`; independent Pages39164945142 passed.
+  Baseline complete count stayed22 because MP was already complete; current4,
+  stale79. Prior research and failed attempt counts remain intact.
+- Runtime repair uses a fresh temporary Hermes profile for each operation, copies
+  only bounded valid inference auth/config and safely preserves token refreshes.
+  Generated plugin/hook/memory directories are discarded; unmanaged external
+  profiles, symlinks, malformed/oversized auth and Git/deployment credentials remain
+  rejected. Sequential mock regression plus full160 tests70.7s, Ruff/format,
+  MyPy19 and strict data validation passed. Live repaired pilot awaits push/CI.

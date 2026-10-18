@@ -10,7 +10,13 @@ from typing import Any
 import pytest
 
 from papertrader import research_transaction
-from papertrader.research_agent import ResearchLimits, agent_environment, run_cycle, run_model
+from papertrader.research_agent import (
+    MAX_AUTH_BYTES,
+    ResearchLimits,
+    agent_environment,
+    run_cycle,
+    run_model,
+)
 from papertrader.research_cli import main
 from papertrader.research_queue import admit
 from papertrader.research_results import (
@@ -809,8 +815,184 @@ def test_model_process_drops_root_privileges_and_sees_only_staged_worker(
     assert str(repository_root / "src") not in environment["PYTHONPATH"].split(os.pathsep)
     assert str(repository_root / ".git") not in environment["PYTHONPATH"]
     assert "worker-code" in environment["PYTHONPATH"]
+    assert environment["HERMES_HOME"] != str(home)
     assert captured["cwd"] != repository_root
     assert any(path.name == "auth.json" and uid == gid == 10_000 for path, uid, gid in ownership)
+    assert {path.name for path in home.iterdir()} == {"auth.json"}
+
+
+@pytest.mark.parametrize("unmanaged", ["plugins", "hooks", "memories"])
+def test_shared_unmanaged_research_profile_is_rejected_before_model_start(
+    repository_root: Path,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    unmanaged: str,
+) -> None:
+    home = tmp_path / "shared-auth"
+    home.mkdir()
+    (home / "auth.json").write_text('{"token":"initial"}')
+    (home / unmanaged).mkdir()
+    python = tmp_path / "hermes-python"
+    python.write_text("")
+    monkeypatch.setenv("HERMES_HOME", str(home))
+    monkeypatch.setenv("PAPERTRADER_HERMES_PYTHON", str(python))
+    monkeypatch.setattr(
+        "papertrader.research_agent.subprocess.Popen",
+        lambda *_args, **_kwargs: pytest.fail("model started with unmanaged shared profile"),
+    )
+
+    with pytest.raises(RuntimeError, match="unmanaged_research_profile"):
+        run_model(repository_root, {"operation": "research_security"}, ResearchLimits())
+
+
+def test_sequential_model_operations_use_fresh_profiles_and_sync_oauth(
+    repository_root: Path, tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    home = tmp_path / "shared-auth"
+    home.mkdir()
+    (home / "auth.json").write_text('{"token":"initial"}')
+    python = tmp_path / "hermes-python"
+    python.write_text("")
+    hermes_code = tmp_path / "hermes-code"
+    hermes_code.mkdir()
+    monkeypatch.setenv("HERMES_HOME", str(home))
+    monkeypatch.setenv("PAPERTRADER_HERMES_PYTHON", str(python))
+    monkeypatch.setenv("PAPERTRADER_HERMES_CODE", str(hermes_code))
+    profiles: list[Path] = []
+    starting_tokens: list[str] = []
+
+    class Process:
+        returncode = 0
+        pid = 123
+
+        def __init__(self, environment: dict[str, str]) -> None:
+            self.environment = environment
+
+        def communicate(self, timeout: int | None = None) -> tuple[str, str]:
+            del timeout
+            profile = Path(self.environment["HERMES_HOME"])
+            profiles.append(profile)
+            assert {path.name for path in profile.iterdir()} == {"auth.json", "config.yaml"}
+            starting_tokens.append(json.loads((profile / "auth.json").read_text())["token"])
+            for name in ("plugins", "hooks", "memories"):
+                (profile / name).mkdir()
+            (profile / "operation.log").write_text("ephemeral private trace")
+            (profile / "auth.json").write_text(json.dumps({"token": f"refreshed-{len(profiles)}"}))
+            return json.dumps({"result": {}, "observations": {}, "usage": {}}), ""
+
+    monkeypatch.setattr(
+        "papertrader.research_agent.subprocess.Popen",
+        lambda _command, **kwargs: Process(kwargs["env"]),
+    )
+
+    for _ in range(2):
+        run_model(repository_root, {"operation": "research_security"}, ResearchLimits())
+
+    assert starting_tokens == ["initial", "refreshed-1"]
+    assert json.loads((home / "auth.json").read_text()) == {"token": "refreshed-2"}
+    assert len(set(profiles)) == 2
+    assert all(not profile.exists() for profile in profiles)
+    assert {path.name for path in home.iterdir()} == {"auth.json"}
+
+
+def test_failed_model_discards_profile_but_keeps_valid_oauth_refresh(
+    repository_root: Path, tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    home = tmp_path / "shared-auth"
+    home.mkdir()
+    (home / "auth.json").write_text('{"token":"initial"}')
+    python = tmp_path / "hermes-python"
+    python.write_text("")
+    hermes_code = tmp_path / "hermes-code"
+    hermes_code.mkdir()
+    monkeypatch.setenv("HERMES_HOME", str(home))
+    monkeypatch.setenv("PAPERTRADER_HERMES_PYTHON", str(python))
+    monkeypatch.setenv("PAPERTRADER_HERMES_CODE", str(hermes_code))
+    profiles: list[Path] = []
+
+    class Process:
+        returncode = 1
+        pid = 123
+
+        def __init__(self, environment: dict[str, str]) -> None:
+            self.environment = environment
+
+        def communicate(self, timeout: int | None = None) -> tuple[str, str]:
+            del timeout
+            profile = Path(self.environment["HERMES_HOME"])
+            profiles.append(profile)
+            (profile / "operation.log").write_text("must be discarded")
+            (profile / "auth.json").write_text('{"token":"legitimate-refresh"}')
+            return "", ""
+
+    monkeypatch.setattr(
+        "papertrader.research_agent.subprocess.Popen",
+        lambda _command, **kwargs: Process(kwargs["env"]),
+    )
+
+    with pytest.raises(RuntimeError, match="research_model_failed"):
+        run_model(repository_root, {"operation": "research_security"}, ResearchLimits())
+
+    assert json.loads((home / "auth.json").read_text()) == {"token": "legitimate-refresh"}
+    assert all(not profile.exists() for profile in profiles)
+    assert {path.name for path in home.iterdir()} == {"auth.json"}
+
+
+@pytest.mark.parametrize("mutation", ["symlink", "malformed", "oversized"])
+def test_unsafe_refreshed_oauth_never_reaches_shared_home(
+    repository_root: Path,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    mutation: str,
+) -> None:
+    home = tmp_path / "shared-auth"
+    home.mkdir()
+    (home / "auth.json").write_text('{"token":"initial"}')
+    python = tmp_path / "hermes-python"
+    python.write_text("")
+    hermes_code = tmp_path / "hermes-code"
+    hermes_code.mkdir()
+    outside = tmp_path / "outside-auth.json"
+    outside.write_text('{"token":"outside"}')
+    monkeypatch.setenv("HERMES_HOME", str(home))
+    monkeypatch.setenv("PAPERTRADER_HERMES_PYTHON", str(python))
+    monkeypatch.setenv("PAPERTRADER_HERMES_CODE", str(hermes_code))
+    profiles: list[Path] = []
+
+    class Process:
+        returncode = 0
+        pid = 123
+
+        def __init__(self, environment: dict[str, str]) -> None:
+            self.environment = environment
+
+        def communicate(self, timeout: int | None = None) -> tuple[str, str]:
+            del timeout
+            profile = Path(self.environment["HERMES_HOME"])
+            profiles.append(profile)
+            auth = profile / "auth.json"
+            if mutation == "symlink":
+                auth.unlink()
+                auth.symlink_to(outside)
+            elif mutation == "malformed":
+                auth.write_text("not-json")
+            else:
+                auth.write_bytes(b"x" * (MAX_AUTH_BYTES + 1))
+            (profile / "operation.log").write_text("must be discarded")
+            return json.dumps({"result": {}, "observations": {}, "usage": {}}), ""
+
+    monkeypatch.setattr(
+        "papertrader.research_agent.subprocess.Popen",
+        lambda _command, **kwargs: Process(kwargs["env"]),
+    )
+
+    with pytest.raises(RuntimeError, match="invalid_refreshed_inference_auth"):
+        run_model(repository_root, {"operation": "research_security"}, ResearchLimits())
+
+    assert json.loads((home / "auth.json").read_text()) == {"token": "initial"}
+    assert outside.read_text() == '{"token":"outside"}'
+    assert all(not profile.exists() for profile in profiles)
+    assert {path.name for path in home.iterdir()} == {"auth.json"}
 
 
 def test_network_budget_is_hard_and_private_sources_are_forbidden(
