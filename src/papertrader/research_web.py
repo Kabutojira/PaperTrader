@@ -15,6 +15,8 @@ from urllib.request import HTTPRedirectHandler, Request, build_opener
 from papertrader.research_state import source_url
 
 SOURCE_TEXT_LIMIT = 12_000
+SOURCE_IDENTITY_MAX_ROWS = 5_000
+SOURCE_IDENTITY_MAX_BYTES = 1_000_000
 
 
 class _Text(HTMLParser):
@@ -52,11 +54,47 @@ def public_url(url: str) -> None:
 
 
 class ResearchWeb:
-    def __init__(self, *, max_calls: int = 12, timeout: int = 15, runtime: int = 600) -> None:
+    def __init__(
+        self,
+        *,
+        max_calls: int = 12,
+        timeout: int = 15,
+        runtime: int = 600,
+        source_identities: list[dict[str, str]] | None = None,
+    ) -> None:
         self.max_calls, self.timeout = max_calls, timeout
         self.deadline = time.monotonic() + runtime
         self.calls = 0
         self.observations: dict[str, dict[str, str]] = {}
+        identities = [] if source_identities is None else source_identities
+        if (
+            not isinstance(identities, list)
+            or len(identities) > SOURCE_IDENTITY_MAX_ROWS
+            or len(json.dumps(identities, separators=(",", ":")).encode())
+            > SOURCE_IDENTITY_MAX_BYTES
+            or any(
+                not isinstance(row, dict)
+                or set(row) != {"source_id", "url", "license"}
+                or any(not isinstance(value, str) for value in row.values())
+                or not row["source_id"]
+                or not source_url(row["url"])
+                for row in identities
+            )
+        ):
+            raise ValueError("invalid bounded source identity index")
+        self.source_identities = {row["url"]: row.copy() for row in reversed(identities)}
+
+    def source_identity(self, requested_url: str, final_url: str) -> dict[str, str]:
+        existing = self.source_identities.get(requested_url) or self.source_identities.get(
+            final_url
+        )
+        if existing:
+            return existing.copy()
+        return {
+            "source_id": "source_web_" + hashlib.sha256(final_url.encode()).hexdigest()[:24],
+            "url": final_url,
+            "license": "link_only",
+        }
 
     def take(self, url: str) -> None:
         if self.calls >= self.max_calls or time.monotonic() >= self.deadline:
@@ -103,6 +141,12 @@ class ResearchWeb:
             source_text=text[:SOURCE_TEXT_LIMIT],
         )
         if not search:
+            identity = self.source_identity(url, final_url)
+            observation.update(
+                source_id=identity["source_id"],
+                source_url=identity["url"],
+                source_license=identity["license"],
+            )
             self.observations[url] = observation
             self.observations[final_url] = {**observation, "url": final_url}
         return {**observation, "untrusted_source_text": text[:SOURCE_TEXT_LIMIT]}

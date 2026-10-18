@@ -140,3 +140,10 @@ hooks, plugins and logs are discarded between operations. A failed profile guard
 can consume an operation attempt without invoking the model; phase operation
 counters are budgeted attempts, not measured API calls. Inspect per-entity stage
 and observed web usage when distinguishing inference from preflight failures.
+
+The web broker receives a bounded current source-identity index (ID, exact URL,
+license only; at most5000 rows/1MB), outside the model's research context. Opened
+sources return source_id/source_url/source_license for reuse. Existing legacy
+same-URL aliases retain their identities and citations; new duplicate URL IDs and
+URL/license changes under existing IDs remain invalid. This lookup makes no
+additional network or model request and grants no source-content trust exception.

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import shutil
@@ -13,6 +14,7 @@ from papertrader import research_transaction
 from papertrader.research_agent import (
     MAX_AUTH_BYTES,
     ResearchLimits,
+    _source_identity_index,
     agent_environment,
     run_cycle,
     run_model,
@@ -499,6 +501,53 @@ def test_new_source_id_cannot_reuse_an_existing_registry_url(current: Path) -> N
         )
 
 
+def test_existing_source_alias_can_refresh_its_own_stable_identity(current: Path) -> None:
+    state = read_state(current)
+    source = result(current)["sources"][0]
+    source.update(checked_at="2026-10-01T00:00:00Z", content_hash="b" * 64)
+    alias = source.copy()
+    alias.update(
+        source_id="source_alias",
+        title="Legacy citation for the same page",
+        related_entity_ids="security2",
+    )
+    state["source_registry"] = [source, alias]
+    write_state(current, state)
+
+    candidate, _ = prepare_result(
+        current,
+        read_state(current),
+        result(current),
+        operation="research_security",
+        entity_id="security1",
+        now=NOW,
+        observations=observations(),
+    )
+
+    accepted = {row["source_id"]: row for row in candidate["source_registry"]}
+    assert set(accepted) == {"source1", "source_alias"}
+    assert accepted["source1"]["checked_at"] == STAMP
+    assert accepted["source1"]["content_hash"] == "a" * 64
+    assert accepted["source_alias"] == alias
+    assert candidate["security_assessments"][0]["source_ids"] == "source1"
+
+
+def test_source_identity_index_prefers_target_alias_and_contains_no_metadata(current: Path) -> None:
+    state = read_state(current)
+    target = result(current)["sources"][0]
+    target.update(title="private title", publisher="private publisher")
+    other = target.copy()
+    other.update(source_id="aaa_other_alias", related_entity_ids="security2")
+    state["source_registry"] = [other, target]
+
+    index = _source_identity_index(state, "security1")
+
+    assert index == [{"source_id": "source1", "url": URL, "license": "link_only"}]
+    assert set(index[0]) == {"source_id", "url", "license"}
+    assert "private title" not in json.dumps(index)
+    assert "private publisher" not in json.dumps(index)
+
+
 def test_plain_prose_may_explain_retired_technical_chart(current: Path) -> None:
     document = result(current)
     document["pages"]["data/wiki/securities/security1.md"] += (
@@ -631,7 +680,9 @@ def test_worker_prompt_states_exact_current_research_contract() -> None:
     for requirement in (
         "exactly every column in context.contracts",
         "Every source row has status\nvalid",
-        "copy its URL and license unchanged",
+        "source_id, source_url and source_license",
+        "Copy that exact tuple into the source row",
+        "Never guess or replace a source identity",
         "related_entity_ids includes the target entity",
         "target security_id and its immutable issuer_id exactly",
         "Copy context.as_of exactly",
@@ -802,13 +853,20 @@ def test_model_process_drops_root_privileges_and_sees_only_staged_worker(
         return Process()
 
     monkeypatch.setattr("papertrader.research_agent.subprocess.Popen", popen)
-    response = run_model(repository_root, {"operation": "research_security"}, ResearchLimits())
+    source_identities = [{"source_id": "source1", "url": URL, "license": "link_only"}]
+    response = run_model(
+        repository_root,
+        {"operation": "research_security", "_source_identity_index": source_identities},
+        ResearchLimits(),
+    )
 
     assert response["usage"] == {}
     assert captured["user"] == 10_000
     assert captured["group"] == 10_000
     assert captured["extra_groups"] == ()
     assert captured["request_mode"] == 0o600
+    assert captured["request"]["source_identities"] == source_identities
+    assert "_source_identity_index" not in captured["request"]["context"]
     environment = captured["env"]
     assert "GITHUB_TOKEN" not in environment
     assert "TELEGRAM_BOT_TOKEN" not in environment
@@ -1008,6 +1066,57 @@ def test_network_budget_is_hard_and_private_sources_are_forbidden(
         public_url("http://127.0.0.1/private")
     with pytest.raises(ValueError):
         public_url("file:///etc/passwd")
+
+
+def test_opened_sources_receive_existing_or_deterministic_new_identity(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    requested = "https://issuer.example/redirect"
+    new_url = "https://issuer.example/new-primary-source"
+    destinations = iter([URL, new_url])
+
+    class Response:
+        def __init__(self, final_url: str) -> None:
+            self.final_url = final_url
+            self.headers = {"Content-Type": "text/html"}
+
+        def __enter__(self) -> Response:
+            return self
+
+        def __exit__(self, *_: object) -> None:
+            return None
+
+        def read(self, _: int) -> bytes:
+            return b"<html><body>Primary evidence.</body></html>"
+
+        def geturl(self) -> str:
+            return self.final_url
+
+    class Opener:
+        def open(self, *_: object, **__: object) -> Response:
+            return Response(next(destinations))
+
+    monkeypatch.setattr("papertrader.research_web.public_url", lambda _: None)
+    monkeypatch.setattr("papertrader.research_web.build_opener", lambda *_: Opener())
+    broker = ResearchWeb(
+        source_identities=[{"source_id": "source1", "url": URL, "license": "link_only"}]
+    )
+
+    existing = broker.open(requested)
+    discovered = broker.open(new_url)
+
+    assert (existing["source_id"], existing["source_url"], existing["source_license"]) == (
+        "source1",
+        URL,
+        "link_only",
+    )
+    assert discovered["source_url"] == new_url
+    assert discovered["source_license"] == "link_only"
+    assert discovered["source_id"] == (
+        "source_web_" + hashlib.sha256(new_url.encode()).hexdigest()[:24]
+    )
+    assert broker.observations[requested]["source_id"] == "source1"
+    assert broker.observations[new_url]["source_id"] == discovered["source_id"]
 
 
 def test_idea_and_inline_relationship_update_do_not_create_company_tasks(current: Path) -> None:

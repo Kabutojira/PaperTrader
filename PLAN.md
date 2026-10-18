@@ -517,3 +517,20 @@ Validation/commit/CI/deployment and live backfill evidence will be recorded belo
   profiles, symlinks, malformed/oversized auth and Git/deployment credentials remain
   rejected. Sequential mock regression plus full160 tests70.7s, Ruff/format,
   MyPy19 and strict data validation passed. Live repaired pilot awaits push/CI.
+
+- Profile fix `c635d1af9714d3bab3902b34fd44608297bb9fdf` passed exact
+  [CI39165572235](https://github.com/Kabutojira/PaperTrader/actions/runs/39165572235).
+  Repaired live pilot [39165699992](https://github.com/Kabutojira/PaperTrader/actions/runs/39165699992)
+  ran all three inference operations,34 web requests: updated,not_supportable,
+  retry_scheduled (source alias validation). Accepted/state commit
+  `316a6e23444bd4ba25699dc34972b6cd1fa189b2`; Pages39166230122 succeeded.
+  Complete22, incomplete47, missing9, unsupported14, current6/stale77.
+- Source-identity repair preserves existing same-URL legacy aliases when updating
+  their unchanged stable ID/URL/license, while still rejecting genuinely new IDs
+  for a known URL. Broker-only bounded identity index exposes no source prose or
+  credentials and stays outside model context; each opened source supplies its
+  exact registered ID/URL/license or deterministic new link_only ID. Current index
+  315 unique URLs/about48.7KB, cap5000 rows/1MB. No citation/evidence math weakened.
+  Full163 tests60.6s, Ruff/format, MyPy19 and strict current validation passed;
+  source-index, alias-preservation/new-duplicate rejection and request-budget
+  regressions included. Live continuation awaits push/CI.

@@ -225,7 +225,7 @@ def prepare_result(
             ),
             None,
         )
-        if duplicate:
+        if duplicate and prior is None:
             raise ValueError("verified source URL already has a stable source identity")
         if row["published_at"]:
             published = _model_timestamp(row["published_at"], "source.published_at")

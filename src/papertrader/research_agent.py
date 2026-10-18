@@ -26,8 +26,9 @@ from papertrader.research_results import (
     context_packet,
     prepare_result,
 )
-from papertrader.research_state import contracts, read_state, validate_state
+from papertrader.research_state import ResearchState, contracts, read_state, validate_state
 from papertrader.research_transaction import research_lock
+from papertrader.research_web import SOURCE_IDENTITY_MAX_BYTES, SOURCE_IDENTITY_MAX_ROWS
 
 
 @dataclass(frozen=True)
@@ -155,6 +156,34 @@ def _stage_worker(root: Path, directory: Path) -> Path:
     return package.parent
 
 
+def _source_identity_index(state: ResearchState, entity_id: str) -> list[dict[str, str]]:
+    """Expose only one stable identity tuple per current URL to the web broker."""
+
+    registry = state["source_registry"]
+    if len(registry) > SOURCE_IDENTITY_MAX_ROWS:
+        raise ValueError("source identity index exceeds row budget")
+    chosen: dict[str, dict[str, str]] = {}
+    for row in sorted(
+        registry,
+        key=lambda value: (
+            value["url"],
+            entity_id not in value["related_entity_ids"].split("|"),
+            value["source_id"],
+        ),
+    ):
+        chosen.setdefault(
+            row["url"],
+            {key: row[key] for key in ("source_id", "url", "license")},
+        )
+    result = [chosen[url] for url in sorted(chosen)]
+    if (
+        len(json.dumps(result, ensure_ascii=False, separators=(",", ":")).encode())
+        > SOURCE_IDENTITY_MAX_BYTES
+    ):
+        raise ValueError("source identity index exceeds byte budget")
+    return result
+
+
 def _auth_bytes(path: Path, error: str) -> bytes:
     descriptor = -1
     try:
@@ -214,8 +243,18 @@ def run_model(root: Path, packet: dict[str, Any], limits: ResearchLimits) -> dic
         _agent_access(profile_auth, 0o600)
         _agent_access(profile / "config.yaml", 0o600)
         worker_code = _stage_worker(root, directory)
+        source_identities = packet.get("_source_identity_index", [])
+        model_packet = {key: value for key, value in packet.items() if not key.startswith("_")}
         request = directory / "request.json"
-        request.write_text(json.dumps(dict(context=packet, limits=vars(limits))))
+        request.write_text(
+            json.dumps(
+                dict(
+                    context=model_packet,
+                    limits=vars(limits),
+                    source_identities=source_identities,
+                )
+            )
+        )
         _agent_access(request, 0o600)
         environment = agent_environment(profile, [worker_code, hermes_code])
         credentials: dict[str, Any] = {}
@@ -336,6 +375,7 @@ def run_cycle(
                 }
                 packet["limits"] = vars(limits)
                 packet["skill"] = (root / "skills" / operation / "SKILL.md").read_text()
+                packet["_source_identity_index"] = _source_identity_index(state, task["entity_id"])
                 stage = "model"
                 response = executor(root, packet, limits)
                 stage = "validation"
