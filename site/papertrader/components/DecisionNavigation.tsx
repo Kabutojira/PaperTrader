@@ -10,20 +10,13 @@ import {
   pathToRoot,
 } from "../../quartz/util/path";
 
-// @ts-ignore
-import dashboardScript from "../scripts/dashboard.inline";
 import styles from "../styles.scss";
 
 const links = [
-  { label: "Today", slug: "index" },
-  { label: "Model portfolio", slug: "model-portfolio" },
-  { label: "Securities", slug: "security-catalog" },
-  { label: "Signals", slug: "signals" },
-  { label: "Ideas", slug: "ideas", collectionPrefix: "ideas/" },
-  { label: "Podcasts", slug: "podcasts", collectionPrefix: "podcasts/" },
+  { label: "Rankings", slug: "index" },
+  { label: "Companies", slug: "security-catalog" },
+  { label: "Ideas", slug: "idea-catalog" },
   { label: "Research", slug: "research-catalog" },
-  { label: "Performance", slug: "performance" },
-  { label: "System status", slug: "system-status" },
 ] as const;
 
 function linkIsActive(current: string, target: string): boolean {
@@ -43,14 +36,8 @@ function linkIsActive(current: string, target: string): boolean {
 
 const DecisionNavigation: QuartzComponent = ({
   fileData,
-  allFiles,
 }: QuartzComponentProps) => {
   const current = (fileData.slug ?? "index") as FullSlug;
-  const visibleLinks = links.filter(
-    (link) =>
-      !("collectionPrefix" in link) ||
-      allFiles.some((page) => page.slug?.startsWith(link.collectionPrefix)),
-  );
   return (
     <div class="papertrader-header">
       <a
@@ -68,12 +55,10 @@ const DecisionNavigation: QuartzComponent = ({
         </span>
       </a>
       <nav class="papertrader-nav" aria-label="Primary navigation">
-        {visibleLinks.map((link) => {
+        {links.map((link) => {
           const { label, slug } = link;
           const active = linkIsActive(current, slug);
-          const destination = (
-            "collectionPrefix" in link ? `${slug}/index` : slug
-          ) as FullSlug;
+          const destination = slug as FullSlug;
           return (
             <a
               href={resolveRelative(current, destination)}
@@ -90,6 +75,5 @@ const DecisionNavigation: QuartzComponent = ({
 };
 
 DecisionNavigation.css = styles;
-DecisionNavigation.afterDOMLoaded = dashboardScript;
 
 export default (() => DecisionNavigation) satisfies QuartzComponentConstructor;

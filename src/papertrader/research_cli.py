@@ -19,6 +19,7 @@ from papertrader.research_discovery import (
     run_discovery,
 )
 from papertrader.research_migration import prepare_migration
+from papertrader.research_publication import publish_views, snapshot
 from papertrader.research_queue import admit, queue_limits, rebuild_legacy_queue
 from papertrader.research_results import commit_result, context_packet, prepare_result
 from papertrader.research_state import contracts, csv_bytes, read_state, timestamp, validate_state
@@ -31,6 +32,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--repository", type=Path, default=Path.cwd())
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("validate")
+    publication = commands.add_parser("publish")
+    publication.add_argument("--apply", action="store_true")
     discovery = commands.add_parser("discover")
     discovery.add_argument("--apply", action="store_true")
     discovery.add_argument("--force", action="store_true", help="Explicit manual cadence override")
@@ -113,6 +116,14 @@ def main(argv: list[str] | None = None) -> int:
                             )
                     report["changed"] = commit_result(root, state, pages)
                 print(json.dumps(report, indent=2, sort_keys=True))
+                return 0
+            if args.command == "publish":
+                response = (
+                    {"changed": publish_views(root, now=now)}
+                    if args.apply
+                    else snapshot(root, now=now)
+                )
+                print(json.dumps(response, indent=2, sort_keys=True))
                 return 0
             state = read_state(root)
             if args.command == "validate":

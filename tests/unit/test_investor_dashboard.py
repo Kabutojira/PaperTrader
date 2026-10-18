@@ -380,38 +380,29 @@ def test_quartz_uses_external_dashboard_source_and_validated_publication_copy(
     assert '!["tags", "inbox", "raw", "_meta", "_archive"].includes(' in layout
     assert "node.slugSegment" in layout
     assert '"security-catalog",' in layout
-    assert '{ label: "Securities", slug: "security-catalog" }' in navigation
-    assert '{ label: "Securities", slug: "securities" }' not in navigation
-    assert '{ label: "Ideas", slug: "ideas", collectionPrefix: "ideas/" }' in navigation
-    assert '{ label: "Podcasts", slug: "podcasts", collectionPrefix: "podcasts/" }' in navigation
-    assert '"collectionPrefix" in link' in navigation
-    assert "`${slug}/index`" in navigation
+    for link in (
+        '{ label: "Rankings", slug: "index" }',
+        '{ label: "Companies", slug: "security-catalog" }',
+        '{ label: "Ideas", slug: "idea-catalog" }',
+        '{ label: "Research", slug: "research-catalog" }',
+    ):
+        assert link in navigation
+    for retired in ("Model portfolio", "Signals", "Performance", "Podcasts", "System status"):
+        assert retired not in navigation
     assert "href={resolveRelative(current, destination)}" in navigation
     assert 'title: "Recently explored ideas"' in layout
-    assert 'title: "Latest podcast transcripts"' in layout
-    assert layout.count("limit: 3") == 2
+    assert 'title: "Latest podcast transcripts"' not in layout
+    assert layout.count("limit: 3") == 1
     assert 'linkToMore: "ideas/" as SimpleSlug' in layout
-    assert 'linkToMore: "podcasts/" as SimpleSlug' in layout
     assert '"papertrader/**/*.ts"' in tsconfig
     assert '"papertrader/**/*.tsx"' in tsconfig
     assert "prettier quartz.config.ts quartz.layout.ts papertrader" in package
-    for name in (
-        "decision_snapshot.json",
-        "model_portfolio.csv",
-        "actionable_signals.csv",
-        "research_benchmark.csv",
-    ):
-        assert name in build
-    assert "isSymbolicLink()" in build
-    assert "CSV header does not match" in build
-    assert "differs from decision_snapshot.json" in build
-    assert "publication artifact hash changed during copy" in build
-    assert "![3, 4, 5].includes(snapshot.version)" in build
-    assert "version4PublicationFiles" in build
-    assert '"allocation_intent_id"' in build
-    assert '"valuation_mark_as_of"' in build
-    assert '"bear_base_payoff_ratio"' in build
-    assert "copyFileSync" in build
+    assert "prepare_research_site.py" in build
+    assert "papertrader-research-site-" in build
+    assert "symlink output" in build
+    assert 'join(temporary, "data")' in build
+    for retired in ("decision_snapshot.json", "model_portfolio.csv", "actionable_signals.csv"):
+        assert retired not in build
 
 
 def test_quartz_research_charts_use_pinned_local_echarts_with_fallback(
@@ -438,12 +429,10 @@ def test_quartz_research_charts_use_pinned_local_echarts_with_fallback(
     assert "fetch(" not in renderer
     assert "View chart data table" in renderer
     assert "View validated chart JSON" in renderer
-    assert 'case "technical"' in renderer
-    assert "Adjusted OHLC" in renderer
-    assert "MACD histogram" in renderer
-    assert "Download the canonical technical CSV" in renderer
     assert 'renderer: "svg"' in renderer
-    assert "hydratedWikiCopy" in (site / "build-quartz.mjs").read_text(encoding="utf-8")
-    assert "publishTechnicalSeries" in (site / "build-quartz.mjs").read_text(encoding="utf-8")
+    build = (site / "build-quartz.mjs").read_text(encoding="utf-8")
+    assert "prepare_research_site.py" in build
+    assert "hydratedWikiCopy" not in build
+    assert "publishTechnicalSeries" not in build
     assert '["LICENSE", "LICENSE"]' in prepare
     assert "ResearchCharts()" in layout

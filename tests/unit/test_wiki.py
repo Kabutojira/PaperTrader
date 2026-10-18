@@ -56,9 +56,23 @@ def test_technical_cleanup_validates_all_pages_before_writing(
     assert first.read_bytes() == before
 
 
-@pytest.mark.slow
 def test_initial_wiki_is_clean(repository_root: Path) -> None:
-    assert lint_wiki(repository_root / "data" / "wiki") == []
+    from datetime import UTC, datetime
+    from tempfile import TemporaryDirectory
+
+    from papertrader.research_publication import prepare_site
+    from papertrader.research_state import read_state, validate_state
+
+    state = read_state(repository_root)
+    assert validate_state(repository_root, state) == []
+    with TemporaryDirectory(prefix="papertrader-wiki-test-", dir="/tmp") as temporary:
+        output = Path(temporary) / "research-site"
+        report = prepare_site(repository_root, output, now=datetime(2026, 10, 18, 20, tzinfo=UTC))
+        assert report["pages"] > 4
+        assert (output / "index.md").is_file()
+        assert (output / "security-catalog.md").is_file()
+        assert not (output / "strategies").exists()
+        assert not (output / "model-portfolio.md").exists()
 
 
 def test_research_chart_parser_accepts_declarative_decimal_series(

@@ -136,9 +136,26 @@ def reprice(
     ):
         raise ValueError("invalid scenario math")
     if not all(
-        assessment.get(field) for field in ("method", "method_rationale", "source_ids", "thesis")
+        assessment.get(field)
+        for field in (
+            "method",
+            "method_rationale",
+            "source_ids",
+            "thesis",
+            "key_assumptions",
+            "downside",
+            "catalysts",
+            "invalidation_conditions",
+            "horizon_months",
+            "bear_assumptions",
+            "base_assumptions",
+            "bull_assumptions",
+        )
     ):
         result["reason"] = "incomplete_research"
+        return result
+    if assessment.get("limitations", "").strip().lower().startswith("blocker:"):
+        result["reason"] = "valuation_blocked"
         return result
     weighted = sum(
         (

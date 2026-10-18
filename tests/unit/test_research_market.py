@@ -270,6 +270,19 @@ def _assessment() -> Row:
         "method_rationale": "Normalized issuer earnings at a stated multiple",
         "source_ids": "source_fixture",
         "thesis": "Fixture thesis",
+        **dict.fromkeys(
+            (
+                "key_assumptions",
+                "downside",
+                "catalysts",
+                "invalidation_conditions",
+                "bear_assumptions",
+                "base_assumptions",
+                "bull_assumptions",
+            ),
+            "Cited fixture assumption",
+        ),
+        "horizon_months": "12",
     }
 
 

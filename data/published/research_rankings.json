@@ -1,0 +1,18 @@
+{
+  "buys": [],
+  "coverage": {
+    "current": 1,
+    "failed_tickers": 92,
+    "instruments": 92,
+    "issuers": 91,
+    "researched": 83,
+    "stale": 82,
+    "unrated": 92
+  },
+  "last_market_session": "2026-10-15",
+  "last_research_at": "2026-10-15T18:52:08Z",
+  "last_successful_publish": "",
+  "last_successful_research": "",
+  "sells": [],
+  "version": 1
+}

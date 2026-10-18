@@ -246,7 +246,7 @@ or financial validation to satisfy retired tests.
   [CI39151401843](https://github.com/Kabutojira/PaperTrader/actions/runs/39151401843)
   passed on the exact final tree, including the complete suite and Quartz build.
 
-## M5 evidence (in progress)
+## M5 evidence
 
 - Added bounded research_idea discovery mode and manual candidate imports; source
   verification and independent yfinance listing identity checks precede creation.
@@ -264,6 +264,29 @@ or financial validation to satisfy retired tests.
   MyPy74, current-data validation and default discovery dry run passed. Dry run made
   zero model calls and changed no active data. Legal-form aliases and distinct
   issuer/share-class identities have explicit regression coverage.
-- Commit/push and exact-tree CI are pending. No live model/provider invocation,
+- Commit `94071e34f6f2e25853170f3354d80856d73be802` pushed;
+  [CI39152747505](https://github.com/Kabutojira/PaperTrader/actions/runs/39152747505)
+  passed on the exact tree. No live model/provider invocation,
   real discovery candidate, active schedule or Pages deployment has occurred.
 - Details: [M5 migration](docs/migration/M5.md).
+
+## M6 evidence (in progress)
+
+- Deterministic Top 10 Buy/Sell, issuer dedupe, confidence-adjusted return,
+  current source/price/assessment checks, completeness and explicit blocker checks.
+- Generated concise homepage, company/idea catalogs, methodology and small exports.
+  Initial rankings are empty, with82 stale assessments clearly counted.
+- Quartz input includes current research and linked sources; retired navigation,
+  portfolio exports, technical-series hydration and browser action/scaler script
+  are absent. Retired referenced pages link to the verified backup ref.
+- Local focused gate117 passed; final publication12 passed after source-path and
+  generated-page overwrite regressions. Ruff/format, MyPy75 and current-data
+  validation passed. Prior full suite711 passed/4 retired-contract failures;
+  those four were repaired and covered by the117-test retest. Exact push CI
+  must verify the final full tree before M7.
+- Reviewed Quartz build:145 Markdown inputs,199 emitted files; TypeScript,
+  four TS tests, Prettier, internal links and canonical Open Graph URLs passed.
+  Homepage inspected: empty current Top10, accurate82-stale coverage, research
+  navigation/downloads and no portfolio/signals/performance downloads.
+- Commit/push/CI and actual Pages deployment pending. Existing public site
+  remains available until this reviewed research build is deployed.

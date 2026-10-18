@@ -11,16 +11,16 @@ const ResearchHero: QuartzComponent = ({ fileData }) => (
       <h2>
         Research with roots.
         <br />
-        Decisions with evidence.
+        Valuations with evidence.
       </h2>
       <p>
-        Follow the ideas, explore the research, and track a portfolio built on
-        paper.
+        Explore companies, follow investment ideas, and examine sourced
+        valuations.
       </p>
       <div class="research-hero-tags" aria-label="Project principles">
         <span>Public research</span>
-        <span>Paper trades</span>
-        <span>Traceable decisions</span>
+        <span>Company discovery</span>
+        <span>Current evidence</span>
       </div>
     </div>
     <img

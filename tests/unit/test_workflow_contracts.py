@@ -746,13 +746,16 @@ def test_quartz_and_dependency_update_sources_are_immutable(repository_root: Pat
 
 
 def test_ci_gates_execute_the_seeded_publication_cycle(repository_root: Path) -> None:
-    for name in ("ci.yml", "reusable-non-llm.yml"):
-        path = repository_root / ".github" / "workflows" / name
-        text = path.read_text(encoding="utf-8")
-        workflow = _workflow(path)
-        assert 'PAPERTRADER_VALIDATE_QUARTZ: "true"' in text
-        assert "pytest tests/integration/test_complete_operating_cycle.py" in text
-        assert workflow["jobs"]["validate"]["env"]["PAPERTRADER_BASE_URL"] == "localhost"
+    path = repository_root / ".github" / "workflows" / "ci.yml"
+    text = path.read_text(encoding="utf-8")
+    workflow = _workflow(path)
+    assert 'PAPERTRADER_VALIDATE_QUARTZ: "true"' in text
+    assert "pytest tests/unit/test_research_results.py" in text
+    assert "papertrader validate" in text
+    assert "npm run check --prefix site" in text
+    assert "npm run build --prefix site" in text
+    assert "test_complete_operating_cycle.py" not in text
+    assert workflow["jobs"]["validate"]["env"]["PAPERTRADER_BASE_URL"] == "localhost"
 
 
 def test_checkpoint_steps_match_their_generator(repository_root: Path) -> None:

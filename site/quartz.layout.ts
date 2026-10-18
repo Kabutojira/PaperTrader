@@ -9,11 +9,9 @@ import BrandHead from "./papertrader/components/BrandHead";
 
 const dashboardPages = new Set([
   "index",
-  "model-portfolio",
   "security-catalog",
-  "signals",
-  "performance",
-  "system-status",
+  "idea-catalog",
+  "research-catalog",
 ]);
 
 const isDashboardPage = (page: QuartzComponentProps): boolean =>
@@ -50,16 +48,6 @@ const recentIdeas = Component.RecentNotes({
     page.frontmatter?.type === "idea",
 });
 
-const recentPodcasts = Component.RecentNotes({
-  title: "Latest podcast transcripts",
-  limit: 3,
-  linkToMore: "podcasts/" as SimpleSlug,
-  showTags: false,
-  filter: (page) =>
-    page.slug?.startsWith("podcasts/") === true &&
-    page.frontmatter?.type === "podcast",
-});
-
 const repository = process.env.GITHUB_REPOSITORY;
 const repositoryUrl = repository
   ? `https://github.com/${repository}`
@@ -75,12 +63,6 @@ export const sharedPageComponents: SharedLayout = {
       condition: (page) =>
         page.fileData.slug === "index" &&
         isCollectionPage(page, "ideas/", "idea"),
-    }),
-    Component.ConditionalRender({
-      component: recentPodcasts,
-      condition: (page) =>
-        page.fileData.slug === "index" &&
-        isCollectionPage(page, "podcasts/", "podcast"),
     }),
   ],
   footer: [
