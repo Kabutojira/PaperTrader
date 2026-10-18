@@ -69,7 +69,7 @@ label mocked/local checks as live.
 | Milestone | Scope and gate | Status |
 | --- | --- | --- |
 | M0 | Freeze scheduler, verified backup, exact inventory, reproduce/repair retired technical charts, capture assessment/frontmatter ordering failure; dry run changes no source data | Complete: 9056d3df; CI 39142564182 green |
-| M1 | Repeatable dry-run-by-default compact schema migration; preserve identities, current meaning, prose/citations and expiry; schema/reference/wiki tests; no invented evidence | Staged tooling gate passed: 4e3f8223; CI green; active cutover M4 |
+| M1 | Repeatable dry-run-by-default compact schema migration; preserve identities, current meaning, prose/citations and expiry; schema/reference/wiki tests; no invented evidence | Complete:4e3f8223 tooling,87e7514c active cutover; CI green |
 | M2 | Standalone market/cache/indicators/valuation/ratings core; sessions/holidays, bounded batching, per-symbol failure/corrections; no LLM or portfolio paths | Complete: 823efb96; CI 39146545315 green |
 | M3 | One-entity bounded queue, deterministic priorities/retries, retire old producers; census-based disposition of all 340 blocks and 13 waiting relationships; <=30 tasks | Complete: 421332ff; CI 39147632827 green |
 | M4 | Two single-model operations; bounded context/web/turn/runtime budgets; final staged Markdown and complete result validated before atomic CSV/wiki/source transaction; idempotent and rollback-safe | Complete: 87e7514c; CI 39151401843 green |
@@ -77,7 +77,7 @@ label mocked/local checks as live.
 | M6 | Deterministic fresh Top 10 Buy/Sell, company/idea catalogs, recent updates and health; optional nonblocking charts; Quartz build and reviewed output/links | Complete:49d9f8b9; CI/Pages green |
 | M7 | Independent market/research/Pages workflows, least credentials, compact writes and focused validation; live non-dry market/research smoke; isolate failure cases | Complete:67b650e9 +93f5a5b2; live market and supported execution/unsupported outcome; see evidence |
 | M8 | Delete dead modules/CLI/schemas/skills/actions/tests and old data only after migration gates; rewrite actual-product docs/config/CI; prove no live references; report size reduction | Complete:913ff8b9; CI39159628088/Pages39159817503 green |
-| M9 | Clean-checkout full schemas/source/link integrity/Ruff/MyPy/tests/Quartz; real company/idea refresh, market cycle, isolated failed research/outage, discovery dry run, exact-commit Pages deployment; before/after evidence | In progress: supported NVIDIA live valuation accepted; idea retry pending |
+| M9 | Clean-checkout full schemas/source/link integrity/Ruff/MyPy/tests/Quartz; real company/idea refresh, market cycle, isolated failed research/outage, discovery dry run, exact-commit Pages deployment; before/after evidence | Complete:ac323009 runtime; CI39163037009, live company/idea/market and Pages evidence below |
 
 ## M0 evidence
 
@@ -388,7 +388,7 @@ or financial validation to satisfy retired tests.
   Backup tag still resolves to0ab7ec85. A content-identical CSV index/EOL marker
   was cleared with update-index --refresh; Git diff was empty and values unchanged.
 
-## M9 evidence (in progress)
+## M9 evidence
 
 - Added artifact-only publication revision/build-date/deployment metadata, without
   granting Pages repository writes or creating a research/history table. Current
@@ -452,3 +452,16 @@ or financial validation to satisfy retired tests.
   invalid research, provider outage, Git conflict and Pages failure were injected
   local fixtures, not actual external outages. Discovery preview returned due=true,
   limits1 idea/2 companies/8 identity requests,0 model calls and no state mutation.
+
+- Final runtime commit `ac3230095e34b2bf349648ced4733d8d73b1eec2` passed exact
+  clean-checkout [CI39163037009](https://github.com/Kabutojira/PaperTrader/actions/runs/39163037009).
+  Actual final [market39163162212](https://github.com/Kabutojira/PaperTrader/actions/runs/39163162212)
+  succeeded in21s:0 provider/HTTP requests,0 failed tickers,changed=[],0 commits;
+  local and remote HEAD remainedac323009. Independent Pages runs39163201128 and
+  39163205197 skipped build/deploy for unchanged publication inputs.
+- M9 acceptance report: [docs/migration/ACCEPTANCE.md](docs/migration/ACCEPTANCE.md),
+  including AC01–12 evidence, exact revisions/run links, measured budgets/runtime,
+  migration dispositions, before/after counts and explicit actual/injected checks.
+  Public homepage/catalogs/company/idea/download/metadata links returnedHTTP200.
+  Final report commit/CI and reviewed exact-commit Pages deployment are performed
+  as the final delivery step; deployment metadata lives only in the site artifact.
