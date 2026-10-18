@@ -8,7 +8,7 @@ Historical and stale research remains readable; only current validated opinions 
 
 | Company | Instrument | Status / limitation | Valuation coverage | Bear / base / bull fair value | Researched | Expiry |
 | --- | --- | --- | --- | --- | --- | --- |
-| 3D Systems Corporation | DDD (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
+| [3D Systems Corporation](securities/security_6ac6a6268ca7c08829ae) | DDD (USD) | researched: insufficient_confidence | complete | 1.79 / 2.83 / 4.15 USD | 2026-10-18T23:08:20.258117Z | 2026-11-17T23:08:20.258117Z |
 | [ABB Ltd](securities/security_c120e9f26ebb6159adf9) | ABBNY (USD) | researched: research_expired_or_future | incomplete_research | 62.40 / 86.80 / 105.00 USD | 2026-09-03T18:26:50Z | 2026-10-03T18:26:50Z |
 | [ASML Holding N.V.](securities/security_ef35e41886220d51c22c) | ASML (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-08-19T15:40:58Z | 2026-08-26T12:00:00Z |
 | [AbCellera Biologics Inc.](securities/security_7bf8f4c9cc12ae410e40) | ABCL (USD) | researched: source_evidence_unavailable | valuation_unsupported | — / — / — USD | 2026-08-10T22:35:08Z | 2026-08-24T22:35:08Z |
