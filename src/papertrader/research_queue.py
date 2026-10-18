@@ -126,17 +126,23 @@ def admit(
             existing["entity_id"] = entity_id
         merged = "|".join(sorted(set(existing["reasons"].split("|")) | reasons))
         new_priority = str(max(int(existing["priority"]), 100 if manual else priority))
-        if (merged, new_priority, manual or existing["manual"] == "true") != (
+        manual_retry = manual and existing["status"] == "failed"
+        details_changed = (merged, new_priority, manual or existing["manual"] == "true") != (
             existing["reasons"],
             existing["priority"],
             existing["manual"] == "true",
-        ):
+        )
+        if details_changed or manual_retry:
             existing.update(
                 reasons=merged,
                 priority=new_priority,
                 updated_at=instant(now),
                 manual="true" if manual or existing["manual"] == "true" else "false",
             )
+            if manual_retry:
+                # Explicit retries may bypass elapsed backoff, but never reset
+                # attempts or expand the one-entity queue.
+                existing.update(status="pending", next_eligible_at=instant(now), lease_until="")
         return "merged"
     if len(queue) >= limits.max_pending:
         automatic = [

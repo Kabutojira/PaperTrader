@@ -124,6 +124,31 @@ def test_bounded_retries_do_not_starve_other_companies(state: ResearchState) -> 
     assert all(row["entity_id"] != "s00" for row in state["research_queue"])
 
 
+def test_explicit_manual_retry_bypasses_backoff_without_resetting_attempts(
+    state: ResearchState,
+) -> None:
+    add(state, manual=True)
+    task = claim(state, now=NOW)
+    assert task
+    assert finish(state, task, now=NOW, error="validation:ValueError:papertrader.module.fn:1") == (
+        "retry_scheduled"
+    )
+    failed = state["research_queue"][0]
+    assert failed["attempts"] == "1"
+    delayed_until = failed["next_eligible_at"]
+
+    admit(state, "security", "s00", reasons={"automatic"}, priority=90, now=NOW)
+    assert failed["status"] == "failed"
+    assert failed["next_eligible_at"] == delayed_until
+
+    assert add(state, manual=True) == "merged"
+    assert failed["status"] == "pending"
+    assert failed["next_eligible_at"] == "2026-10-18T17:00:00Z"
+    assert failed["attempts"] == "1"
+    retry = claim(state, now=NOW)
+    assert retry and retry["attempts"] == "2"
+
+
 def test_expired_lease_recovers_and_old_owner_cannot_finish(state: ResearchState) -> None:
     add(state)
     first = claim(state, now=NOW)

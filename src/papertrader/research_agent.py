@@ -35,6 +35,19 @@ class ResearchLimits:
 
 HERMES_UID = 10_000
 HERMES_GID = 10_000
+SAFE_EXCEPTION_TYPES = {
+    "FileNotFoundError",
+    "JSONDecodeError",
+    "KeyError",
+    "OSError",
+    "PermissionError",
+    "RuntimeError",
+    "TimeoutError",
+    "TypeError",
+    "UnicodeDecodeError",
+    "ValueError",
+}
+FAILURE_STAGES = {"context", "model", "validation", "commit"}
 WORKER_FILES = (
     "__init__.py",
     "atomic_io.py",
@@ -42,6 +55,43 @@ WORKER_FILES = (
     "research_web.py",
     "research_worker.py",
 )
+
+
+def _failure_diagnostic(exc: Exception, stage: str) -> dict[str, str]:
+    """Return a useful failure location without exception text or external paths."""
+    safe_stage = stage if stage in FAILURE_STAGES else "validation"
+    exception_type = type(exc).__name__
+    if exception_type not in SAFE_EXCEPTION_TYPES:
+        exception_type = "Exception"
+    package = Path(__file__).resolve().parent
+    location = "papertrader.unknown:0"
+    traceback = exc.__traceback__
+    while traceback is not None:
+        code = traceback.tb_frame.f_code
+        try:
+            relative = Path(code.co_filename).resolve().relative_to(package)
+        except ValueError:
+            traceback = traceback.tb_next
+            continue
+        module = ".".join(("papertrader", *relative.with_suffix("").parts))
+        function = code.co_name
+        if function.isidentifier():
+            location = f"{module}.{function}:{traceback.tb_lineno}"
+        traceback = traceback.tb_next
+    return {"stage": safe_stage, "error": exception_type, "location": location}
+
+
+def _bounded_usage(response: dict[str, Any], limits: ResearchLimits) -> dict[str, str]:
+    """Expose only trustworthy bounded counters from a completed worker response."""
+    usage = response.get("usage")
+    if not isinstance(usage, dict):
+        raise ValueError("invalid worker usage")
+    calls = usage.get("web_requests")
+    if calls is None:
+        return {}
+    if type(calls) is int and 0 <= calls <= limits.max_web_calls:
+        return {"web_requests": str(calls)}
+    raise ValueError("invalid worker web usage")
 
 
 def research_limits(root: Path) -> ResearchLimits:
@@ -172,6 +222,7 @@ def run_cycle(
         raise ValueError("invalid reserved research budget")
     outcomes: list[dict[str, str]] = []
     changed: set[str] = set()
+    total_web_requests = 0
     with research_lock(root):
         state = read_state(root)
         errors = validate_state(root, state)
@@ -230,6 +281,8 @@ def run_cycle(
             operation = (
                 "research_security" if task["entity_type"] == "security" else "research_idea"
             )
+            stage = "context"
+            operation_usage: dict[str, str] = {}
             try:
                 packet = context_packet(
                     root, state, operation=operation, entity_id=task["entity_id"]
@@ -238,8 +291,13 @@ def run_cycle(
                 packet["contracts"] = {
                     name: list(contract.columns) for name, contract in contracts(root).items()
                 }
+                packet["limits"] = vars(limits)
                 packet["skill"] = (root / "skills" / operation / "SKILL.md").read_text()
+                stage = "model"
                 response = executor(root, packet, limits)
+                stage = "validation"
+                operation_usage = _bounded_usage(response, limits)
+                total_web_requests += int(operation_usage.get("web_requests", "0"))
                 candidate, pages = prepare_result(
                     root,
                     state,
@@ -250,20 +308,34 @@ def run_cycle(
                     observations=response["observations"],
                     freshness_days=limits.assessment_freshness_days,
                 )
+                stage = "commit"
                 finish(candidate, task, now=clock(), limits=queue_budget)
                 changed.update(commit_result(root, candidate, pages))
                 state = candidate
                 outcomes.append(
-                    dict(entity_id=task["entity_id"], status=response["result"]["outcome"])
+                    dict(
+                        entity_id=task["entity_id"],
+                        status=response["result"]["outcome"],
+                        **operation_usage,
+                    )
                 )
             except Exception as exc:
-                # Public failure codes contain no prompts, provider bodies or credential data.
+                # Diagnostics use only a fixed stage, allowlisted type and project source location.
+                diagnostic = _failure_diagnostic(exc, stage)
+                failure_code = ":".join(
+                    (diagnostic["stage"], diagnostic["error"], diagnostic["location"])
+                )
                 disposition = finish(
-                    state, task, now=clock(), error=type(exc).__name__, limits=queue_budget
+                    state, task, now=clock(), error=failure_code, limits=queue_budget
                 )
                 changed.update(commit_result(root, state, {}))
                 outcomes.append(
-                    dict(entity_id=task["entity_id"], status=disposition, error=type(exc).__name__)
+                    dict(
+                        entity_id=task["entity_id"],
+                        status=disposition,
+                        **diagnostic,
+                        **operation_usage,
+                    )
                 )
     failed = any("error" in outcome for outcome in outcomes)
     return dict(
@@ -272,4 +344,5 @@ def run_cycle(
         outcomes=outcomes,
         changed=sorted(changed),
         model=limits.model,
+        web_requests=total_web_requests,
     )

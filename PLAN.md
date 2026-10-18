@@ -313,4 +313,23 @@ or financial validation to satisfy retired tests.
 - Local gate97 focused tests passed, followed by19 runtime/workflow checks after
   final allowlist/bootstrap/no-artifact hardening. Ruff/format, MyPy76, current
   validation, zero-call previews and diff checks passed; no active data changed.
-  Exact commit/push/CI and live market/research/Pages smoke remain pending.
+  Commit `67b650e9ca27836f5d10b20477e7c7bbdc1b5742` pushed;
+  [CI39155683073](https://github.com/Kabutojira/PaperTrader/actions/runs/39155683073)
+  passed the exact full tree. Daily13:00 America/New_York schedule is active.
+- Actual non-dry [market39155945162](https://github.com/Kabutojira/PaperTrader/actions/runs/39155945162)
+  succeeded:13 provider calls,280 HTTP requests,0 failed tickers; one commit
+  `e24dbc6de8f0c5ba8765f4fbf885070b6876327a`. Independent
+  [Pages39156021647](https://github.com/Kabutojira/PaperTrader/actions/runs/39156021647)
+  deployed that exact commit. Manual market did not start live research.
+- Actual single Crocs [research39156247805](https://github.com/Kabutojira/PaperTrader/actions/runs/39156247805)
+  failed validation withValueError/exit3. No valuation changed; retry/status-only
+  commit `2732f9b56388a826130f9424f73c5828acd8edcd`. Pages independently skipped
+  deployment because no publication inputs changed. This is a live failed check,
+  not a successful valuation refresh.
+- Bounded repair adds safe stage/type/project-location codes (no payload/message
+  dumps), observed web usage and exact result-contract guidance. Explicit manual
+  retry clears failed backoff while retaining attempt count/max2. No financial or
+  source validation was weakened.61 affected tests, Ruff/format, MyPy76, current
+  validation and diff passed; no active data changed. Final model-packet limits
+  regression57 affected/50 final tests passed; configured freshness now reaches
+  the model explicitly. Repair push/CI and one live Crocs retry pending. The prior discarded result cannot reveal its exact reason.

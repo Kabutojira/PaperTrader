@@ -17,6 +17,7 @@ from papertrader.research_results import commit_result, prepare_result
 from papertrader.research_state import contracts, read_state, validate_state, write_state
 from papertrader.research_transaction import apply_files, research_lock
 from papertrader.research_web import ResearchWeb, public_url
+from papertrader.research_worker import POLICY
 
 NOW = datetime(2026, 10, 18, 17, tzinfo=UTC)
 STAMP = "2026-10-18T17:00:00Z"
@@ -428,19 +429,115 @@ def test_invalid_result_does_not_starve_later_entities_and_cycle_is_bounded(curr
                 pages={},
             ),
             observations={},
-            usage={},
+            usage={"web_requests": limits.max_web_calls},
         )
 
     before_page = (current / "data/wiki/securities/security1.md").read_bytes()
     response = run_cycle(current, dry_run=False, executor=execute, clock=lambda: NOW)
     assert len(calls) == 3
     assert response["exit_code"] == 3
+    assert response["web_requests"] == ResearchLimits().max_web_calls * 2
     assert "secret" not in json.dumps(response)
+    failed = next(outcome for outcome in response["outcomes"] if "error" in outcome)
+    assert failed["stage"] == "model"
+    assert failed["error"] == "ValueError"
+    assert failed["location"].startswith("papertrader.research_agent.run_cycle:")
+    assert "/" not in failed["location"]
     state = read_state(current)
     assert len(state["research_queue"]) == 1
     assert state["research_queue"][0]["entity_id"] == "security1"
     assert state["research_queue"][0]["status"] == "failed"
+    assert state["research_queue"][0]["last_error"].startswith(
+        "model:ValueError:papertrader.research_agent.run_cycle:"
+    )
     assert (current / "data/wiki/securities/security1.md").read_bytes() == before_page
+
+
+def test_invalid_worker_result_reports_validation_location_and_bounded_usage(current: Path) -> None:
+    state = read_state(current)
+    admit(state, "security", "security1", reasons={"manual"}, priority=100, manual=True, now=NOW)
+    with research_lock(current):
+        commit_result(current, state, {})
+
+    def execute(_root: Path, _packet: dict[str, Any], limits: ResearchLimits) -> dict[str, Any]:
+        document = result(current)
+        document["assessment"]["bear_probability_pct"] = "30"
+        return dict(
+            result=document,
+            observations=observations(),
+            usage={
+                "web_requests": limits.max_web_calls,
+                "provider_body": "secret source prose",
+            },
+        )
+
+    response = run_cycle(current, dry_run=False, executor=execute, clock=lambda: NOW)
+
+    assert response["exit_code"] == 3
+    assert response["web_requests"] == ResearchLimits().max_web_calls
+    assert "secret source prose" not in json.dumps(response)
+    [outcome] = response["outcomes"]
+    assert outcome | {"location": "redacted"} == {
+        "entity_id": "security1",
+        "status": "retry_scheduled",
+        "stage": "validation",
+        "error": "ValueError",
+        "location": "redacted",
+        "web_requests": str(ResearchLimits().max_web_calls),
+    }
+    assert outcome["location"].startswith("papertrader.research_results.prepare_result:")
+    assert "/" not in outcome["location"]
+
+
+def test_worker_prompt_states_exact_current_research_contract() -> None:
+    for requirement in (
+        "exactly every column in context.contracts",
+        "Every source row has status\nvalid",
+        "copy its URL and license unchanged",
+        "related_entity_ids includes the target entity",
+        "target security_id and its immutable issuer_id exactly",
+    ):
+        assert requirement in POLICY
+
+
+def test_model_context_receives_configured_nonsecret_research_limits(current: Path) -> None:
+    configuration = current / "research.ini"
+    configuration.write_text(
+        configuration.read_text().replace(
+            "assessment_freshness_days = 30", "assessment_freshness_days = 7"
+        )
+    )
+    seen: dict[str, Any] = {}
+
+    def execute(_root: Path, packet: dict[str, Any], limits: ResearchLimits) -> dict[str, Any]:
+        seen.update(packet)
+        return dict(
+            result=dict(
+                operation="research_security",
+                entity_id="security1",
+                outcome="no_change",
+                summary="Reviewed, no change.",
+                assessment=None,
+                idea=None,
+                sources=[],
+                relationships=[],
+                pages={},
+            ),
+            observations={},
+            usage={"web_requests": 0},
+        )
+
+    response = run_cycle(
+        current,
+        dry_run=False,
+        entity_type="security",
+        entity_id="security1",
+        executor=execute,
+        clock=lambda: NOW,
+    )
+
+    assert response["exit_code"] == 0
+    assert seen["limits"] == vars(ResearchLimits(assessment_freshness_days=7))
 
 
 def test_explicit_cycle_claims_only_the_requested_entity(current: Path) -> None:
