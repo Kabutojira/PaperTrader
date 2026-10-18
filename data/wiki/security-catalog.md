@@ -21,7 +21,7 @@ Historical and stale research remains readable; only current validated opinions 
 | Arkema S.A. | AKE (EUR) | unresearched: unresearched | missing_research | — / — / — EUR | unresearched | — |
 | [Atkore Inc.](securities/security_22c2b9d782a62d7a9b86) | ATKR (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-07-28T00:28:34Z | 2026-08-27T00:28:34Z |
 | BASF SE | BAS (EUR) | unresearched: unresearched | missing_research | — / — / — EUR | unresearched | — |
-| [Bloom Energy Corporation](securities/security_3e597863f00753e8c65c) | BE (USD) | researched: source_evidence_unavailable | complete | 90.00 / 180.00 / 300.00 USD | 2026-08-26T16:24:12Z | 2026-09-25T16:24:12Z |
+| [Bloom Energy Corporation](securities/security_3e597863f00753e8c65c) | BE (USD) | researched: sell | complete | 90.00 / 180.00 / 300.00 USD | 2026-10-18T20:59:04.577258Z | 2026-11-17T20:59:04.577258Z |
 | [Canadian Solar Inc.](securities/security_099561384c0f5e697727) | CSIQ (USD) | researched: research_expired_or_future | complete | 10.16 / 18.28 / 26.41 USD | 2026-08-31T08:45:47Z | 2026-09-30T08:45:47Z |
 | [Carlisle Companies Incorporated](securities/security_9b0db3bc77914b23a307) | CSL (USD) | researched: research_expired_or_future | incomplete_research | 282.66 / 363.42 / 444.18 USD | 2026-08-31T22:11:17Z | 2026-09-30T22:11:17Z |
 | [Coinbase Global, Inc.](securities/security_37ddcbdaad296ad831f2) | COIN (USD) | researched: source_evidence_unavailable | complete | 28.00 / 87.00 / 191.00 USD | 2026-08-21T22:43:18Z | 2026-09-04T22:43:18Z |
@@ -53,7 +53,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Meta Platforms, Inc.](securities/security_d12e746b3c9d392183cc) | META (USD) | researched: research_expired_or_future | incomplete_research | 400.00 / 600.00 / 800.00 USD | 2026-08-28T19:45:56Z | 2026-09-27T19:45:56Z |
 | [Microsoft Corporation](securities/security_204be2a44063993de1a8) | MSFT (USD) | researched: research_expired_or_future | incomplete_research | 375.00 / 500.00 / 625.00 USD | 2026-08-28T21:23:23Z | 2026-09-27T21:23:23Z |
 | [NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | NVDA (USD) | researched: buy | complete | 198.00 / 310.50 / 448.00 USD | 2026-10-18T19:50:33.927425Z | 2026-11-17T19:50:33.927425Z |
-| [Nebius Group N.V.](securities/security_47a0b06f6c6c478d7c1e) | NBIS (USD) | researched: research_expired_or_future | incomplete_research | 75.00 / 165.00 / 325.00 USD | 2026-08-18T23:19:57Z | 2026-09-17T23:19:57Z |
+| [Nebius Group N.V.](securities/security_47a0b06f6c6c478d7c1e) | NBIS (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-18T21:00:52.243456Z | 2026-11-17T21:00:52.243456Z |
 | [Nidec Corporation](securities/security_3853e54c619d597dcaa1) | NIB.F (EUR) | researched: valuation_unsupported | valuation_unsupported | — / — / — EUR | 2026-08-06T19:10:34Z | 2026-08-31T19:10:34Z |
 | [Nomad Foods Limited](securities/security_98a1943771da875efed5) | NOMD (USD) | researched: research_expired_or_future | incomplete_research | 9.00 / 15.00 / 20.00 USD | 2026-08-28T19:32:10Z | 2026-09-27T19:32:10Z |
 | [PLS Group Limited](securities/security_8a5c43888d224de85c69) | PLS.AX (AUD) | researched: research_expired_or_future | complete | 1.67 / 3.67 / 6.69 AUD | 2026-08-31T21:53:45Z | 2026-09-30T21:53:45Z |

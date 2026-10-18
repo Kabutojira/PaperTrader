@@ -20,27 +20,46 @@
     }
   ],
   "coverage": {
-    "current": 4,
+    "current": 6,
     "failed_tickers": 0,
     "instruments": 92,
     "issuers": 91,
     "researched": 83,
-    "stale": 79,
-    "unrated": 90,
+    "stale": 77,
+    "unrated": 89,
     "watchlist_complete": 22,
-    "watchlist_incomplete_research": 48,
+    "watchlist_incomplete_research": 47,
     "watchlist_instruments": 92,
     "watchlist_missing_research": 9,
     "watchlist_needs_attention": 1,
-    "watchlist_valuation_unsupported": 13
+    "watchlist_valuation_unsupported": 14
   },
   "last_market_session": "2026-10-16",
-  "last_research_at": "2026-10-18T20:45:53.247385Z",
+  "last_research_at": "2026-10-18T21:00:52.243456Z",
   "last_successful_research": "2026-10-18T20:12:34Z",
   "phase_health": {
     "market": "succeeded",
     "research": "degraded"
   },
-  "sells": [],
+  "sells": [
+    {
+      "adjusted_return_pct": "-10.69404841719795374610135901",
+      "assessed_at": "2026-10-18T20:59:04.577258Z",
+      "base_fair_value": "180",
+      "company_name": "Bloom Energy Corporation",
+      "confidence": "medium",
+      "currency": "USD",
+      "expected_return_pct": "-15.27721202456850535157337002",
+      "issuer_id": "issuer_1dbb3f443520b01d8540",
+      "price": "221.30999755859375",
+      "price_date": "2026-10-16",
+      "rating": "sell",
+      "research_page": "data/wiki/securities/security_3e597863f00753e8c65c.md",
+      "security_id": "security_3e597863f00753e8c65c",
+      "ticker": "BE",
+      "valid_until": "2026-11-17T20:59:04.577258Z",
+      "weighted_fair_value": "187.5"
+    }
+  ],
   "version": 1
 }

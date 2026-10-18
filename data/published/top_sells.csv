@@ -1,1 +1,2 @@
 security_id,issuer_id,company_name,ticker,currency,price,price_date,weighted_fair_value,base_fair_value,expected_return_pct,adjusted_return_pct,rating,confidence,assessed_at,valid_until,research_page
+security_3e597863f00753e8c65c,issuer_1dbb3f443520b01d8540,Bloom Energy Corporation,BE,USD,221.30999755859375,2026-10-16,187.5,180,-15.27721202456850535157337002,-10.69404841719795374610135901,sell,medium,2026-10-18T20:59:04.577258Z,2026-11-17T20:59:04.577258Z,data/wiki/securities/security_3e597863f00753e8c65c.md

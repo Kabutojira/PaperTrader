@@ -15,7 +15,9 @@ Current research opinions in each instrument's native currency. Fair values chan
 
 ## Top 10 Sell
 
-No current, supportable ratings qualify. Expired and unsupported research is excluded.
+| Company / thesis & sources | Ticker | Currency | Price | Price as of | Weighted / base fair value | Implied / adjusted return | Rating | Confidence | Researched / expiry |
+| --- | --- | --- | ---: | --- | ---: | ---: | --- | --- | --- |
+| [Bloom Energy Corporation](securities/security_3e597863f00753e8c65c) | BE | USD | 221.31 | 2026-10-16 | 187.50 / 180.00 | -15.28% / -10.69% | sell | medium | 2026-10-18T20:59:04.577258Z / 2026-11-17T20:59:04.577258Z |
 
 Sell denotes researched overvaluation or downside, regardless of ownership. It is not a short-trade recommendation.
 
@@ -23,14 +25,16 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-91 companies / 92 instruments; 83 assessed, 4 in date, 79 stale; 90 currently unrated. 0 quotes require attention.
+91 companies / 92 instruments; 83 assessed, 6 in date, 77 stale; 89 currently unrated. 0 quotes require attention.
 
 Last observed market session: 2026-10-16. Last successful research: 2026-10-18T20:12:34Z. Market: succeeded; research: degraded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
-Watchlist valuation coverage: **22 / 92 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 9; unsupported valuation: 13; incomplete research: 48. Needs attention: 1. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
+Watchlist valuation coverage: **22 / 92 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 9; unsupported valuation: 14; incomplete research: 47. Needs attention: 1. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
+- [Nebius Group N.V.](securities/security_47a0b06f6c6c478d7c1e) — 2026-10-18T21:00:52.243456Z; valuation_unsupported
+- [Bloom Energy Corporation](securities/security_3e597863f00753e8c65c) — 2026-10-18T20:59:04.577258Z; sell
 - [MP Materials Corp.](securities/security_cd492d97064d8574156e) — 2026-10-18T20:45:53.247385Z; hold
 - [NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) — 2026-10-18T19:50:33.927425Z; buy
 - [SoFi Technologies, Inc.](securities/security_98470cfc01bbcde78fc2) — 2026-10-18T19:22:08.983560Z; valuation_unsupported
@@ -39,8 +43,6 @@ Watchlist valuation coverage: **22 / 92 instruments** have complete sourced bear
 - [RTX Corporation](securities/security_59304f90c440def31dc5) — 2026-09-15T10:13:46Z; research_expired_or_future
 - [Planet Labs PBC](securities/security_97f38b2cb2d5ef127f5a) — 2026-09-11T05:51:50Z; research_expired_or_future
 - [AI-native SMB financial operating systems](ideas/idea_ai_native_smb_financial_operating_systems) — 2026-09-11; maintained
-- [Corsair Gaming, Inc.](securities/security_55c9ce2fdcd32dad6b8c) — 2026-09-06T17:44:28Z; research_expired_or_future
-- [Ternium S.A.](securities/security_2c779e81c27b78c556bb) — 2026-09-06T14:48:45Z; research_expired_or_future
 
 ## Ideas and interesting companies
 
