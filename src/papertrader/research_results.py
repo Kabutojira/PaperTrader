@@ -38,6 +38,36 @@ RESULT_KEYS = {
 OUTCOMES = {"updated", "no_change", "not_supportable", "skip_as_stale"}
 MAX_SOURCE_QUOTE_WORDS = 25
 COPY_EXEMPT_LICENSE_PREFIXES = ("public-domain", "permissive", "user-owned")
+RESULT_VALIDATION_CODES = frozenset(
+    {
+        "assessment.assessed_at.future",
+        "assessment.assessed_at.invalid",
+        "assessment.assessed_at.stale",
+        "assessment.valid_until.exceeds_freshness",
+        "assessment.valid_until.invalid",
+        "assessment.valid_until.not_after_assessed",
+        "idea.last_reviewed_on.invalid",
+        "source.published_at.future",
+        "source.published_at.invalid",
+    }
+)
+
+
+class ResearchResultValidationError(ValueError):
+    """A controller-owned diagnostic code without a model-controlled value."""
+
+    def __init__(self, diagnostic_code: str) -> None:
+        if diagnostic_code not in RESULT_VALIDATION_CODES:
+            raise ValueError("unknown research result validation code")
+        self.diagnostic_code = diagnostic_code
+        super().__init__("invalid research result field")
+
+
+def _model_timestamp(value: str, field: str) -> datetime:
+    try:
+        return timestamp(value)
+    except ValueError:
+        raise ResearchResultValidationError(f"{field}.invalid") from None
 
 
 def _row(value: Any, columns: tuple[str, ...]) -> Row:
@@ -182,8 +212,10 @@ def prepare_result(
         )
         if duplicate:
             raise ValueError("verified source URL already has a stable source identity")
-        if row["published_at"] and timestamp(row["published_at"]) > now:
-            raise ValueError("future source publication date")
+        if row["published_at"]:
+            published = _model_timestamp(row["published_at"], "source.published_at")
+            if published > now:
+                raise ResearchResultValidationError("source.published_at.future")
         if prior:
             row["related_entity_ids"] = "|".join(
                 sorted(
@@ -256,12 +288,16 @@ def prepare_result(
         assessment = _row(result["assessment"], schema["security_assessments"].columns)
         if assessment["security_id"] != entity_id:
             raise ValueError("assessment identity mismatch")
-        assessed = timestamp(assessment["assessed_at"])
-        expires = timestamp(assessment["valid_until"])
-        if not now - timedelta(hours=1) <= assessed <= now + timedelta(
-            minutes=5
-        ) or not assessed < expires <= assessed + timedelta(days=freshness_days):
-            raise ValueError("assessment freshness outside configured bounds")
+        assessed = _model_timestamp(assessment["assessed_at"], "assessment.assessed_at")
+        expires = _model_timestamp(assessment["valid_until"], "assessment.valid_until")
+        if assessed < now - timedelta(hours=1):
+            raise ResearchResultValidationError("assessment.assessed_at.stale")
+        if assessed > now + timedelta(minutes=5):
+            raise ResearchResultValidationError("assessment.assessed_at.future")
+        if expires <= assessed:
+            raise ResearchResultValidationError("assessment.valid_until.not_after_assessed")
+        if expires > assessed + timedelta(days=freshness_days):
+            raise ResearchResultValidationError("assessment.valid_until.exceeds_freshness")
         required = (
             "thesis",
             "method_rationale",
@@ -291,13 +327,10 @@ def prepare_result(
         if result["assessment"] is not None:
             raise ValueError("idea operation cannot replace company valuation")
         idea = _row(result["idea"], schema["ideas"].columns)
-        if (
-            idea["idea_id"] != entity_id
-            or idea["research_page"] != page
-            or not idea["thesis"]
-            or idea["last_reviewed_on"] != now.date().isoformat()
-        ):
+        if idea["idea_id"] != entity_id or idea["research_page"] != page or not idea["thesis"]:
             raise ValueError("invalid current idea result")
+        if idea["last_reviewed_on"] != now.date().isoformat():
+            raise ResearchResultValidationError("idea.last_reviewed_on.invalid")
         _upsert(candidate["ideas"], idea, "idea_id")
         evidence = idea["source_ids"]
     sources = {r["source_id"]: r for r in candidate["source_registry"]}

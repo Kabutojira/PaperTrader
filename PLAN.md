@@ -332,4 +332,17 @@ or financial validation to satisfy retired tests.
   source validation was weakened.61 affected tests, Ruff/format, MyPy76, current
   validation and diff passed; no active data changed. Final model-packet limits
   regression57 affected/50 final tests passed; configured freshness now reaches
-  the model explicitly. Repair push/CI and one live Crocs retry pending. The prior discarded result cannot reveal its exact reason.
+  the model explicitly. The prior discarded result cannot reveal its exact reason.
+
+- Repair1 commit `1b7a34a17fddc80cc1726ff913ab57df617579bb` passed
+  [CI39157205413](https://github.com/Kabutojira/PaperTrader/actions/runs/39157205413).
+  Actual Crocs retry [39157423259](https://github.com/Kabutojira/PaperTrader/actions/runs/39157423259)
+  consumed attempt2/max2 and failed validation at timestamp parser line114;
+  12 actual web requests, one model operation. No assessment changed. Commit
+  `56ee81ea575d50c3f542106b541ba63a190a1701` records needs_attention; automatic
+  scheduling skips it. Independent Pages39157656531 retained the prior site.
+- Repair2 adds static field/category codes for model timestamp failures and
+  explicit UTC-Z/source-publication-date guidance, keeping all date/freshness
+  validation strict.68 affected/61 final tests, Ruff/format, MyPy76, current
+  validation and diff passed. No source data or exhausted retry state changed.
+  Repair2 push/CI and a different queued manual company (SoFi) live check pending.

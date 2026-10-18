@@ -27,6 +27,10 @@ copy its URL and license unchanged; never assign a new source_id to an existing 
 Use link_only for a new web source unless its license was independently verified.
 Never fabricate URLs, evidence, dates, scenarios or probabilities. A security page
 frontmatter must retain the target security_id and its immutable issuer_id exactly.
+Every timestamp is strict UTC ISO-8601 ending in Z. Copy context.as_of exactly into
+assessment.assessed_at; set valid_until later than assessed_at and no more than
+context.limits.assessment_freshness_days later. Leave source.published_at empty when
+the exact UTC publication time is unknown; never invent midnight or a timezone.
 Explain thesis, method and assumptions, downside, catalysts, invalidation,
 confidence and limitations. Supported valuations need ordered bear/base/bull per
 share values in the instrument's native currency and probabilities totaling100.

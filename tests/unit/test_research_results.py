@@ -13,7 +13,11 @@ from papertrader import research_transaction
 from papertrader.research_agent import ResearchLimits, agent_environment, run_cycle, run_model
 from papertrader.research_cli import main
 from papertrader.research_queue import admit
-from papertrader.research_results import commit_result, prepare_result
+from papertrader.research_results import (
+    ResearchResultValidationError,
+    commit_result,
+    prepare_result,
+)
 from papertrader.research_state import contracts, read_state, validate_state, write_state
 from papertrader.research_transaction import apply_files, research_lock
 from papertrader.research_web import ResearchWeb, public_url
@@ -250,6 +254,67 @@ def test_invalid_result_changes_no_source_csv_or_page(current: Path, corruption:
             observations=observed,
         )
     assert data_bytes(current) == before
+
+
+@pytest.mark.parametrize(
+    ("field", "value", "code"),
+    [
+        ("source.published_at", "2026-10-18", "source.published_at.invalid"),
+        (
+            "source.published_at",
+            "2026-10-18T19:00:00+02:00",
+            "source.published_at.invalid",
+        ),
+        ("source.published_at", "2026-10-19T17:00:00Z", "source.published_at.future"),
+        ("assessment.assessed_at", "2026-10-18", "assessment.assessed_at.invalid"),
+        (
+            "assessment.assessed_at",
+            "2026-10-18T19:00:00+02:00",
+            "assessment.assessed_at.invalid",
+        ),
+        (
+            "assessment.assessed_at",
+            "2026-10-18T17:06:00Z",
+            "assessment.assessed_at.future",
+        ),
+        (
+            "assessment.assessed_at",
+            "2026-10-18T15:59:00Z",
+            "assessment.assessed_at.stale",
+        ),
+        ("assessment.valid_until", "2026-11-17", "assessment.valid_until.invalid"),
+        (
+            "assessment.valid_until",
+            "2026-11-17T19:00:00+02:00",
+            "assessment.valid_until.invalid",
+        ),
+        (
+            "assessment.valid_until",
+            "2026-11-18T17:00:00Z",
+            "assessment.valid_until.exceeds_freshness",
+        ),
+    ],
+)
+def test_model_timestamps_have_strict_field_specific_codes(
+    current: Path, field: str, value: str, code: str
+) -> None:
+    document = result(current)
+    section, column = field.split(".")
+    target = document["sources"][0] if section == "source" else document["assessment"]
+    target[column] = value
+
+    with pytest.raises(ResearchResultValidationError) as failure:
+        prepare_result(
+            current,
+            read_state(current),
+            document,
+            operation="research_security",
+            entity_id="security1",
+            now=NOW,
+            observations=observations(),
+        )
+
+    assert failure.value.diagnostic_code == code
 
 
 def test_unsupported_valuation_is_honest_and_valid(current: Path) -> None:
@@ -489,6 +554,32 @@ def test_invalid_worker_result_reports_validation_location_and_bounded_usage(cur
     assert "/" not in outcome["location"]
 
 
+def test_model_timestamp_diagnostic_never_exposes_rejected_value(current: Path) -> None:
+    state = read_state(current)
+    admit(state, "security", "security1", reasons={"manual"}, priority=100, manual=True, now=NOW)
+    with research_lock(current):
+        commit_result(current, state, {})
+    rejected = "secret-provider-date"
+
+    def execute(_root: Path, _packet: dict[str, Any], _limits: ResearchLimits) -> dict[str, Any]:
+        document = result(current)
+        document["sources"][0]["published_at"] = rejected
+        return dict(result=document, observations=observations(), usage={"web_requests": 1})
+
+    response = run_cycle(current, dry_run=False, executor=execute, clock=lambda: NOW)
+
+    assert rejected not in json.dumps(response)
+    [outcome] = response["outcomes"]
+    assert outcome["stage"] == "validation"
+    assert outcome["error"] == "ResearchResultValidationError"
+    assert outcome["code"] == "source.published_at.invalid"
+    assert outcome["location"].startswith("papertrader.research_results._model_timestamp:")
+    queue = read_state(current)["research_queue"]
+    assert len(queue) == 1
+    assert "source.published_at.invalid" in queue[0]["last_error"]
+    assert rejected not in queue[0]["last_error"]
+
+
 def test_worker_prompt_states_exact_current_research_contract() -> None:
     for requirement in (
         "exactly every column in context.contracts",
@@ -496,6 +587,8 @@ def test_worker_prompt_states_exact_current_research_contract() -> None:
         "copy its URL and license unchanged",
         "related_entity_ids includes the target entity",
         "target security_id and its immutable issuer_id exactly",
+        "Copy context.as_of exactly",
+        "Leave source.published_at empty",
     ):
         assert requirement in POLICY
 

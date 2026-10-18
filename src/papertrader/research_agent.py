@@ -19,7 +19,12 @@ import yaml
 
 from papertrader.atomic_io import atomic_write_text
 from papertrader.research_queue import admit, claim, entity_key, finish, queue_limits
-from papertrader.research_results import commit_result, context_packet, prepare_result
+from papertrader.research_results import (
+    ResearchResultValidationError,
+    commit_result,
+    context_packet,
+    prepare_result,
+)
 from papertrader.research_state import contracts, read_state, validate_state
 from papertrader.research_transaction import research_lock
 
@@ -41,6 +46,7 @@ SAFE_EXCEPTION_TYPES = {
     "KeyError",
     "OSError",
     "PermissionError",
+    "ResearchResultValidationError",
     "RuntimeError",
     "TimeoutError",
     "TypeError",
@@ -78,7 +84,10 @@ def _failure_diagnostic(exc: Exception, stage: str) -> dict[str, str]:
         if function.isidentifier():
             location = f"{module}.{function}:{traceback.tb_lineno}"
         traceback = traceback.tb_next
-    return {"stage": safe_stage, "error": exception_type, "location": location}
+    result = {"stage": safe_stage, "error": exception_type, "location": location}
+    if isinstance(exc, ResearchResultValidationError):
+        result["code"] = exc.diagnostic_code
+    return result
 
 
 def _bounded_usage(response: dict[str, Any], limits: ResearchLimits) -> dict[str, str]:
@@ -322,9 +331,11 @@ def run_cycle(
             except Exception as exc:
                 # Diagnostics use only a fixed stage, allowlisted type and project source location.
                 diagnostic = _failure_diagnostic(exc, stage)
-                failure_code = ":".join(
-                    (diagnostic["stage"], diagnostic["error"], diagnostic["location"])
-                )
+                failure_parts = [diagnostic["stage"], diagnostic["error"]]
+                if "code" in diagnostic:
+                    failure_parts.append(diagnostic["code"])
+                failure_parts.append(diagnostic["location"])
+                failure_code = ":".join(failure_parts)
                 disposition = finish(
                     state, task, now=clock(), error=failure_code, limits=queue_budget
                 )
