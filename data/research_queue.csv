@@ -1,4 +1,5 @@
 entity_type,entity_id,priority,reasons,created_at,updated_at,status,attempts,next_eligible_at,lease_until,manual,last_error
+idea,idea_ai_compute_networking_hyperscaler_monetization,100,explicit_manual_request,2026-10-18T19:55:39Z,2026-10-18T19:57:12Z,failed,1,2026-10-19T01:57:12Z,,true,validation:ValueError:papertrader.research_results.prepare_result:345
 security,security_099561384c0f5e697727,60,research_overdue,2026-10-18T17:00:00Z,2026-10-18T17:00:00Z,pending,0,2026-10-18T17:00:00Z,,false,
 security,security_0a56aa634d077fe5796f,80,research_overdue|severe_price_movement,2026-10-18T17:00:00Z,2026-10-18T18:50:04Z,pending,0,2026-10-18T17:00:00Z,,false,
 security,security_0b67d6c8e3fd3366a257,60,research_overdue,2026-10-18T17:00:00Z,2026-10-18T17:00:00Z,pending,0,2026-10-18T17:00:00Z,,false,
