@@ -76,7 +76,7 @@ label mocked/local checks as live.
 | M5 | Weekly bounded discovery/manual import and inline links; validate identity, dedupe issuers/share classes, retain citations/unresearched status; no fan-out | Complete: 94071e34; CI39152747505 green |
 | M6 | Deterministic fresh Top 10 Buy/Sell, company/idea catalogs, recent updates and health; optional nonblocking charts; Quartz build and reviewed output/links | Complete:49d9f8b9; CI/Pages green |
 | M7 | Independent market/research/Pages workflows, least credentials, compact writes and focused validation; live non-dry market/research smoke; isolate failure cases | Complete:67b650e9 +93f5a5b2; live market and supported execution/unsupported outcome; see evidence |
-| M8 | Delete dead modules/CLI/schemas/skills/actions/tests and old data only after migration gates; rewrite actual-product docs/config/CI; prove no live references; report size reduction | Local gate passed; exact CI/deployment pending |
+| M8 | Delete dead modules/CLI/schemas/skills/actions/tests and old data only after migration gates; rewrite actual-product docs/config/CI; prove no live references; report size reduction | Complete:913ff8b9; CI39159628088/Pages39159817503 green |
 | M9 | Clean-checkout full schemas/source/link integrity/Ruff/MyPy/tests/Quartz; real company/idea refresh, market cycle, isolated failed research/outage, discovery dry run, exact-commit Pages deployment; before/after evidence | Pending |
 
 ## M0 evidence
@@ -357,7 +357,7 @@ or financial validation to satisfy retired tests.
   deployed that exact commit. M7's live execution/independence gate passed;
   M9 still requires a supported live company valuation and an idea update.
 
-## M8 evidence (in progress)
+## M8 evidence
 
 - Deleted unused trading/accounting/allocation/order, alert/classifier, history/
   governance, final-review, media/podcast/translation/TTS modules and skills.
@@ -381,3 +381,25 @@ or financial validation to satisfy retired tests.
   Quartz145 Markdown/200 emitted files and internal links passed. Public outputs
   contain research navigation and no retired exports. No test/provider/model call
   was misreported as live. Exact push CI and reviewed M8 deployment pending.
+
+- M8 commit `913ff8b98be8f4127ef6f8a34f0b0c1a57d3c58c` passed exact-tree
+  [CI39159628088](https://github.com/Kabutojira/PaperTrader/actions/runs/39159628088)
+  and reviewed [Pages39159817503](https://github.com/Kabutojira/PaperTrader/actions/runs/39159817503).
+  Backup tag still resolves to0ab7ec85. A content-identical CSV index/EOL marker
+  was cleared with update-index --refresh; Git diff was empty and values unchanged.
+
+## M9 evidence (in progress)
+
+- Added artifact-only publication revision/build-date/deployment metadata, without
+  granting Pages repository writes or creating a research/history table. Current
+  market/research health appears on the homepage. Current company pages receive
+  a derived status/rating/expiry banner; stale text cannot appear current when
+  navigated to directly. These annotations do not change canonical research facts.
+- Two primary NVIDIA release URLs were manually probed successfully (four bounded
+  HTTP reads total); this is source-access verification, not a valuation/model run.
+- Full local147 tests passed in69.5s; Ruff/format, MyPy19, strict current
+  validation and diff passed. TypeScript/four TS tests/Prettier, actual Quartz
+ 145 Markdown/201 files and internal links passed, including exact-SHA artifact
+  metadata and company freshness banner regressions.
+- Exact clean-checkout CI, supported live valuation, idea update, closed-market
+  repeat, discovery preview and final exact-commit Pages acceptance pending.

@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from datetime import UTC, datetime
 from pathlib import Path
@@ -16,4 +17,17 @@ parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("--repository", type=Path, required=True)
 parser.add_argument("--output", type=Path, required=True)
 args = parser.parse_args()
-print(json.dumps(prepare_site(args.repository.resolve(), args.output, now=datetime.now(UTC))))
+now = datetime.now(UTC)
+publication = None
+sha = os.environ.get("PAPERTRADER_PUBLICATION_SHA", "")
+if sha:
+    publication = dict(
+        commit_sha=sha,
+        built_at=now.isoformat(timespec="seconds").replace("+00:00", "Z"),
+        run_url=f"https://github.com/{os.environ['GITHUB_REPOSITORY']}/actions/runs/{os.environ['GITHUB_RUN_ID']}",
+    )
+print(
+    json.dumps(
+        prepare_site(args.repository.resolve(), args.output, now=now, publication=publication)
+    )
+)

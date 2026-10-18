@@ -256,3 +256,36 @@ def test_fresh_generated_views_override_stale_committed_link_targets(
     assert "# Companies" in catalog
     assert "[Current rankings](../index.md)" in rendered_company
     assert "[Company catalog](../security-catalog.md)" in rendered_company
+
+
+def test_deployed_artifact_has_exact_revision_metadata_and_freshness_banner(
+    publication: Path, tmp_path: Path
+) -> None:
+    import json
+
+    output = tmp_path / "published"
+    metadata = {
+        "commit_sha": "a" * 40,
+        "built_at": "2026-10-18T20:00:00Z",
+        "run_url": "https://github.com/example/research/actions/runs/123",
+    }
+    prepare_site(publication, output, now=NOW, publication=metadata)
+    home = (output / "index.md").read_text()
+    assert "Published snapshot" in home and metadata["commit_sha"] in home
+    assert metadata["built_at"] in home and metadata["run_url"] in home
+    assert json.loads((output / "data/publication.json").read_text()) == metadata
+    page = (output / "securities/security00.md").read_text()
+    assert "Current research opinion:" in page and "strong_buy" in page
+    assert "2026-11-17T17:00:00Z" in page
+    assert (
+        "Current research opinion:"
+        not in (publication / "data/wiki/securities/security00.md").read_text()
+    )
+    state = read_state(publication)
+    for row in state["security_assessments"]:
+        row["valid_until"] = "2026-10-18T18:00:00Z"
+    write_state(publication, state)
+    stale = tmp_path / "stale"
+    prepare_site(publication, stale, now=NOW)
+    page = (stale / "securities/security00.md").read_text()
+    assert "**unrated**" in page and "research_expired_or_future" in page

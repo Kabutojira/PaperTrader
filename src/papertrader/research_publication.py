@@ -144,6 +144,7 @@ def snapshot(root: Path, *, now: datetime, state: ResearchState | None = None) -
         if quote.get("status") != "current":
             coverage["failed_tickers"] += 1
         row = {key: security.get(key, "") for key in RANK_COLUMNS}
+        row["entity_status"] = security["research_status"]
         row.update(price=quote.get("close", ""), price_date=quote.get("price_date", ""), **opinion)
         if assessment:
             row.update(
@@ -186,7 +187,10 @@ def snapshot(root: Path, *, now: datetime, state: ResearchState | None = None) -
             (row.get("last_research_at", "") for row in state["securities"]), default=""
         ),
         last_successful_research=status.get("research", {}).get("last_success_at", ""),
-        last_successful_publish=status.get("publication", {}).get("last_success_at", ""),
+        phase_health={
+            phase: status.get(phase, {}).get("status", "not_recorded")
+            for phase in ("market", "research")
+        },
         companies=rows,
         ideas=state["ideas"],
     )
@@ -257,8 +261,10 @@ def render_views(view: dict[str, Any]) -> dict[str, bytes]:
         f"Last observed market session: {view['last_market_session'] or 'unavailable'}. "
         "Last successful research: "
         f"{view['last_successful_research'] or 'not recorded since cutover'}. "
-        "Last successful publication: "
-        f"{view['last_successful_publish'] or 'not recorded since cutover'}.\n\n"
+        f"Market: {view['phase_health']['market']}; "
+        f"research: {view['phase_health']['research']}. "
+        "Publication has an independent deployment outcome; its revision and build date "
+        "appear in the deployed snapshot metadata.\n\n"
     )
     recent = [
         (row.get("assessed_at", ""), row, row["company_name"])
@@ -300,6 +306,7 @@ def render_views(view: dict[str, Any]) -> dict[str, bytes]:
         catalog += (
             f"| {_link(row, row['company_name'])} | "
             f"{_cell(row['ticker'])} ({row['currency']}) | "
+            f"{_cell(row.get('entity_status', ''))}: "
             f"{_cell(row.get('reason') or row['rating'])} | "
             f"{row.get('assessed_at') or 'unresearched'} | "
             f"{row.get('valid_until') or '—'} |\n"
@@ -354,14 +361,44 @@ def publish_views(root: Path, *, now: datetime) -> list[str]:
     return apply_files(root, render_views(snapshot(root, now=now)))
 
 
-def prepare_site(root: Path, output: Path, *, now: datetime) -> dict[str, int]:
+def prepare_site(
+    root: Path, output: Path, *, now: datetime, publication: dict[str, str] | None = None
+) -> dict[str, int]:
     """Build an isolated current-page closure, without mutating the checkout."""
     if output.exists() and any(output.iterdir()):
         raise ValueError("site staging output must be empty")
     if output.resolve().is_relative_to(root.resolve()):
         raise ValueError("site staging must be outside the repository")
     state = read_state(root)
-    files = render_views(snapshot(root, now=now, state=state))
+    view = snapshot(root, now=now, state=state)
+    files = render_views(view)
+    opinions = {
+        row["research_page"].removeprefix("data/wiki/"): row
+        for row in view["companies"]
+        if row["research_page"]
+    }
+    if publication is not None:
+        if (
+            set(publication) != {"commit_sha", "built_at", "run_url"}
+            or not re.fullmatch(r"[0-9a-f]{40}", publication["commit_sha"])
+            or not re.fullmatch(
+                r"https://github.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+/actions/runs/[0-9]+",
+                publication["run_url"],
+            )
+        ):
+            raise ValueError("invalid publication metadata")
+        timestamp(publication["built_at"])
+        files["data/published/publication.json"] = (
+            json.dumps(publication, sort_keys=True, indent=2) + "\n"
+        ).encode()
+        files["data/wiki/index.md"] += (
+            "\n## Published snapshot\n\n"
+            f"Built {publication['built_at']} from committed revision "
+            f"`{publication['commit_sha']}`. "
+            f"[Independent deployment outcome]({publication['run_url']}). "
+            "This metadata describes the artifact served here; a failed newer deployment "
+            "leaves this snapshot available.\n"
+        ).encode()
     wiki = root / "data/wiki"
     available = {
         path.relative_to(wiki).as_posix(): path
@@ -423,6 +460,23 @@ def prepare_site(root: Path, output: Path, *, now: datetime) -> dict[str, int]:
             retained[name] = path.read_bytes()
             continue
         text = path.read_text()
+        if name in opinions:
+            row = opinions[name]
+            frontmatter, body = text.split("\n---\n", 1)
+            text = (
+                frontmatter
+                + "\n---\n\n"
+                + (
+                    f"> Current research opinion: **{row['rating']}**; "
+                    f"entity status: {row['entity_status']}. "
+                    f"{row.get('reason') or 'Current supported valuation'}. "
+                    f"Assessed: {row.get('assessed_at') or 'not yet'}; "
+                    f"expiry: {row.get('valid_until') or 'not applicable'}. "
+                    "Older conclusions below remain historical when research is "
+                    "stale or unsupported.\n\n"
+                )
+                + body
+            )
 
         def rewrite(target: str, label: str, original: str, origin: str = name) -> str:
             resolved = resolve_link(target, origin)

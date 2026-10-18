@@ -103,3 +103,10 @@ They read a pinned Git revision and default to read-only preview or explicit sta
 outside active data. The verified pre-research-only-20261018 tag is the backup, not
 another permanent active copy. See root PLAN.md and docs/migration/ for exact SHAs,
 run links, blocked-task dispositions, actual-vs-mocked checks and outstanding work.
+
+Published artifacts include their exact committed revision, build timestamp and
+independent deployment run link. This is artifact metadata, not an assertion that
+a newer failed deployment succeeded. The previous site's metadata remains served
+on failure. Every company page also shows derived current rating, entity status
+and assessment expiry before historical prose; these annotations do not rewrite
+research dates, fair values or citations.

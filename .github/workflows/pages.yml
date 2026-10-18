@@ -115,6 +115,7 @@ jobs:
       - name: Build current research rankings and cited wiki
         env:
           WIKI_PATH: ${{ github.workspace }}/data/wiki
+          PAPERTRADER_PUBLICATION_SHA: ${{ needs.resolve.outputs.sha }}
         run: npm run build --prefix site
       - name: Reject symlinks and an empty Pages output
         run: |

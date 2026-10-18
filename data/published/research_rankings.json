@@ -11,8 +11,11 @@
   },
   "last_market_session": "2026-10-16",
   "last_research_at": "2026-10-18T19:22:08.983560Z",
-  "last_successful_publish": "",
   "last_successful_research": "2026-10-18T19:24:04Z",
+  "phase_health": {
+    "market": "succeeded",
+    "research": "succeeded"
+  },
   "sells": [],
   "version": 1
 }
