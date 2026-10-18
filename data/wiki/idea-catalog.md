@@ -16,7 +16,7 @@ title: Idea catalog
 - [Critical minerals and the lithium cycle](ideas/idea_critical_minerals_lithium) — maintained; reviewed 2026-07-26
 - [Cybersecurity resilience and geopolitical continuity](ideas/idea_cybersecurity_geopolitical_continuity) — maintained; reviewed 2026-07-26
 - [Defense and aerospace replenishment cycle](ideas/idea_defense_aerospace) — maintained; reviewed 2026-07-26
-- [Defensive consumer cash-return resilience](ideas/idea_defensive_consumer_cash_return) — maintained; reviewed 2026-08-28
+- [Defensive consumer cash-return resilience](ideas/idea_defensive_consumer_cash_return) — maintained; reviewed 2026-10-18
 - [Digital attention, gaming, and consumer ecosystems](ideas/idea_digital_attention_gaming_ecosystems) — maintained; reviewed 2026-07-26
 - [Digital finance and crypto rails](ideas/idea_digital_finance_crypto_rails) — maintained; reviewed 2026-07-26
 - [Crude-product dislocation and refining margins](ideas/idea_energy_refining) — maintained; reviewed 2026-07-26
