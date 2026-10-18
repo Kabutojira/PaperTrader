@@ -79,4 +79,4 @@ Confidence is **high** in mobile adoption and **low-to-medium** in fixed-broadba
 stabilization. Review by **2026-10-31**, or sooner after merger closing, refinancing, capex guidance,
 or another quarter of broadband and mobile cohort evidence.
 
-See the complete [[index]] and append-only [[log]] for repository context.
+See the complete [[index]] and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md) for repository context.

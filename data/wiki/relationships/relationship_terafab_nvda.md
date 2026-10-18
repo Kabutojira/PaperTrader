@@ -67,4 +67,4 @@ first orbital shipment, or a disclosed custom-silicon substitution.
 
 See [[ideas/idea_terafab_ai_industrial_stack|the idea]],
 [[securities/security_33d9c44facc75c726c7d|the security review]], [[research-catalog]] and
-[[log]].
+[log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md).

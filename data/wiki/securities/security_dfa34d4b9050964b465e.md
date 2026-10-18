@@ -148,8 +148,8 @@ foundry investment will earn its cost of capital.
 
 ## Alert review: opportunity, risk, or noise?
 
-The [[inbox/market-security_dfa34d4b9050964b465e-macd_cross_above_signal-7ecada46ac6f|3 September
-bullish MACD crossover]] covers 2026-08-06 through 2026-09-03. The adjusted close fell 8.16%, from
+The [3 September
+bullish MACD crossover](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_dfa34d4b9050964b465e-macd_cross_above_signal-7ecada46ac6f.md) covers 2026-08-06 through 2026-09-03. The adjusted close fell 8.16%, from
 USD 99.81 to USD 91.67, even as MACD crossed just above its signal line at -3.031 versus -3.228.
 RSI was neutral at 45.48 and volume was not anomalous. The close remained below its 20-day and
 50-day averages of USD 94.24 and USD 101.35, while staying above the USD 73.85 200-day average.

@@ -186,9 +186,9 @@ the hard `valuation_unsupported` blocker prevent strategy research.
   (`source_nidec_fy2026_filing_extension`, checked 2026-08-06).
 - Canonical market and indicator state: `data/market/latest.csv` and
   `data/market/indicators.csv`, retrieved 2026-08-06.
-- Alert packets: [[inbox/market-security_3853e54c619d597dcaa1-bollinger_above_upper-7c97de19e971|NIB.F above upper band]],
-  [[inbox/market-security_3853e54c619d597dcaa1-volume_anomaly-1249876a4ec1|NIB.F August 4 volume anomaly]], and
-  [[inbox/market-security_3853e54c619d597dcaa1-volume_anomaly-c0eb5fe23c5e|NIB.F August 6 volume anomaly]].
+- Alert packets: [NIB.F above upper band](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_3853e54c619d597dcaa1-bollinger_above_upper-7c97de19e971.md),
+  [NIB.F August 4 volume anomaly](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_3853e54c619d597dcaa1-volume_anomaly-1249876a4ec1.md), and
+  [NIB.F August 6 volume anomaly](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_3853e54c619d597dcaa1-volume_anomaly-c0eb5fe23c5e.md).
 
 Next review: **2026-08-31**, or sooner after the quality investigation report, annual securities
 report, auditor conclusion, restatement, guidance, material customer claim, liquidity or financing

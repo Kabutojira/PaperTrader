@@ -106,7 +106,7 @@ price from issuer fundamentals.
 
 ## 2026-09-04 price-action review
 
-The canonical [[inbox/market-security_d08d763780400dfbffce-macd_cross_above_signal-f92ad63c5616|alert]]
+The canonical [alert](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_d08d763780400dfbffce-macd_cross_above_signal-f92ad63c5616.md)
 period runs from 7 August through 4 September. The adjusted close rose from EUR 2,605 to EUR 3,040,
 a **16.70% gain**. On 4 September MACD crossed above its signal with strength `0.60327972`; RSI was
 57.80 and the close was above the 20-, 50- and 200-session averages. Yet the provider reported zero

@@ -134,4 +134,4 @@ insurance extension pending security and relationship research. Review by **2026
 after quantified retention, attach-rate, service-cost, open-banking, credit-loss, insurance loss,
 reserve, reinsurance, capital, or regulatory disclosures.
 
-See the complete [[index]] and append-only [[log]] for repository context.
+See the complete [[index]] and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md) for repository context.

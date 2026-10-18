@@ -120,4 +120,4 @@ component materiality. Review by **2026-10-15**, or sooner after material multi-
 NVIDIA-attributable platform revenue, supplier revenue disclosure, safety certification, or a major
 failed deployment.
 
-See the complete [[index]] and append-only [[log]] for repository context.
+See the complete [[index]] and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md) for repository context.

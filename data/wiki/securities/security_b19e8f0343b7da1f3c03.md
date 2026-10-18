@@ -329,4 +329,4 @@ margin-of-safety gate after the candidate relationship is accepted.
 - [Global offering prospectus](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0520/2026052000023.pdf), published 20 May 2026.
 - [August 2026 monthly return](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0903/2026090300994.pdf), submitted 3 September 2026.
 
-See the complete [[research-catalog]], [[security-catalog]], and append-only [[log]].
+See the complete [[research-catalog]], [[security-catalog]], and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md).

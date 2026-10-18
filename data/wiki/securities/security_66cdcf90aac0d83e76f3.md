@@ -108,8 +108,8 @@ Primary evidence: [Q2 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/91
 the [SEC submissions index](https://data.sec.gov/submissions/CIK0000915913.json), and the
 [3 September CEO-succession Form 8-K](https://www.sec.gov/Archives/edgar/data/915913/000114036126035623/ef20081522_8k.htm).
 
-The [[inbox/market-security_66cdcf90aac0d83e76f3-volume_anomaly-be69ea94fbb1|4 September volume
-anomaly]] is adverse timing evidence. The close fell from USD 137.75 on 2 September to USD 132.16
+The [4 September volume
+anomaly](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_66cdcf90aac0d83e76f3-volume_anomaly-be69ea94fbb1.md) is adverse timing evidence. The close fell from USD 137.75 on 2 September to USD 132.16
 on the CEO announcement date and USD 126.28 on 4 September, but the filing contains no revised
 operating outlook. The current RSI of 42.09 is neutral, the close is below the 20-day average and
 barely above the lower Bollinger band, while MACD remains above its signal. That mixed state and an

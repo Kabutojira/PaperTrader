@@ -141,7 +141,7 @@ sovereignty or geopolitics are insufficient; direct drone-demand channels are cl
 Status: **watching**, confidence **medium**. There is no hard blocker, but margin of safety, timing,
 concentration and valuation gaps constrain eligibility. Review by **2026-09-19**, or after a
 financing, material contract conversion, product launch, liquidity event or updated release. No
-strategy or signal is justified. See the complete [[research-catalog]] and append-only [[log]].
+strategy or signal is justified. See the complete [[research-catalog]] and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md).
 
 ## Sources
 

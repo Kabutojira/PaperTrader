@@ -111,4 +111,4 @@ customer, architecture, earnings, guidance, commitment, or price change.
   identity-matched paper mark, deterministic market state, and USD/EUR conversion observed
   2026-08-09T11:05:22Z, with market data as of 2026-08-08T19:23:43Z.
 
-See the complete [[index]] and append-only [[log]] for repository context.
+See the complete [[index]] and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md) for repository context.

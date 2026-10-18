@@ -82,4 +82,4 @@ Confidence is **high** in regulatory and infrastructure development and **medium
 platform economics. Review by **2026-10-31**, or sooner after implementing rules, rate changes,
 major custody events, or material platform results.
 
-See the complete [[index]] and append-only [[log]] for repository context.
+See the complete [[index]] and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md) for repository context.

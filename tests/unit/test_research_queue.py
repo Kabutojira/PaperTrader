@@ -9,13 +9,13 @@ from pathlib import Path
 
 import pytest
 
+from papertrader.migration_queue import rebuild_legacy_queue
 from papertrader.research_migration import prepare_migration
 from papertrader.research_queue import (
     QueueLimits,
     admit,
     claim,
     finish,
-    rebuild_legacy_queue,
     recover,
     schedule_attention,
 )

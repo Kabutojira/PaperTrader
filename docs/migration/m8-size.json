@@ -1,0 +1,21 @@
+{
+  "before": {
+    "files": 8236,
+    "bytes": 58658418
+  },
+  "after": {
+    "files": 249,
+    "bytes": 5201146
+  },
+  "deleted": 7987,
+  "sources_before": 368,
+  "sources_after": 318,
+  "rows": {
+    "securities": 92,
+    "ideas": 29,
+    "relationships": 47,
+    "security_assessments": 83,
+    "source_registry": 318,
+    "research_queue": 28
+  }
+}

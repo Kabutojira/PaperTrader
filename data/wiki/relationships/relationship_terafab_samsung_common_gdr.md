@@ -64,4 +64,4 @@ internal Terafab memory or logic, or material sourcing disclosure.
 
 See [[ideas/idea_terafab_ai_industrial_stack|the idea]],
 [[securities/security_567d0d575bbd30aaa91d|the security review]], [[research-catalog]] and
-[[log]].
+[log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md).

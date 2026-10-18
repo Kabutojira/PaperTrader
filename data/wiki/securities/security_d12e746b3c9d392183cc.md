@@ -170,5 +170,5 @@ downside-payoff gates. The canonical AI-monetization relationship is pending.
 Next review: **2026-09-27**, or sooner after a material advertising, AI monetization, capital-
 spending, cash-conversion, legal, regulatory, or Reality Labs development.
 
-Related navigation: [[security-catalog|Securities]], [[signals|Signals and research alerts]], and
+Related navigation: [[security-catalog|Securities]], [Signals and research alerts](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/signals.md), and
 [[research-catalog|Research catalog]].

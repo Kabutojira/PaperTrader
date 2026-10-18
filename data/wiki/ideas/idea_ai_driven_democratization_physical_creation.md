@@ -282,4 +282,4 @@ probability-weighted return.
 - [Forward AM management buyout announcement](https://forward-am.com/wp-content/uploads/2024/07/Forward-AM-MBO-Public-Announcement_20240703.pdf), 2024-07-03.
 - [Forward AM company history](https://forward-am.com/about-us/our-story/), reviewed 2026-09-06.
 
-See the complete [[index]], [[research-catalog]], [[security-catalog]], and append-only [[log]].
+See the complete [[index]], [[research-catalog]], [[security-catalog]], and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md).

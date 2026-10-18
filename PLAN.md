@@ -73,10 +73,10 @@ label mocked/local checks as live.
 | M2 | Standalone market/cache/indicators/valuation/ratings core; sessions/holidays, bounded batching, per-symbol failure/corrections; no LLM or portfolio paths | Complete: 823efb96; CI 39146545315 green |
 | M3 | One-entity bounded queue, deterministic priorities/retries, retire old producers; census-based disposition of all 340 blocks and 13 waiting relationships; <=30 tasks | Complete: 421332ff; CI 39147632827 green |
 | M4 | Two single-model operations; bounded context/web/turn/runtime budgets; final staged Markdown and complete result validated before atomic CSV/wiki/source transaction; idempotent and rollback-safe | Complete: 87e7514c; CI 39151401843 green |
-| M5 | Weekly bounded discovery/manual import and inline links; validate identity, dedupe issuers/share classes, retain citations/unresearched status; no fan-out | Pending |
-| M6 | Deterministic fresh Top 10 Buy/Sell, company/idea catalogs, recent updates and health; optional nonblocking charts; Quartz build and reviewed output/links | Pending |
-| M7 | Independent market/research/Pages workflows, least credentials, compact writes and focused validation; live non-dry market/research smoke; isolate failure cases | Pending |
-| M8 | Delete dead modules/CLI/schemas/skills/actions/tests and old data only after migration gates; rewrite actual-product docs/config/CI; prove no live references; report size reduction | Pending |
+| M5 | Weekly bounded discovery/manual import and inline links; validate identity, dedupe issuers/share classes, retain citations/unresearched status; no fan-out | Complete: 94071e34; CI39152747505 green |
+| M6 | Deterministic fresh Top 10 Buy/Sell, company/idea catalogs, recent updates and health; optional nonblocking charts; Quartz build and reviewed output/links | Complete:49d9f8b9; CI/Pages green |
+| M7 | Independent market/research/Pages workflows, least credentials, compact writes and focused validation; live non-dry market/research smoke; isolate failure cases | Complete:67b650e9 +93f5a5b2; live market and supported execution/unsupported outcome; see evidence |
+| M8 | Delete dead modules/CLI/schemas/skills/actions/tests and old data only after migration gates; rewrite actual-product docs/config/CI; prove no live references; report size reduction | Local gate passed; exact CI/deployment pending |
 | M9 | Clean-checkout full schemas/source/link integrity/Ruff/MyPy/tests/Quartz; real company/idea refresh, market cycle, isolated failed research/outage, discovery dry run, exact-commit Pages deployment; before/after evidence | Pending |
 
 ## M0 evidence
@@ -296,7 +296,7 @@ or financial validation to satisfy retired tests.
   catalog, idea catalog and rankings JSON each returned HTTP200; empty current
   rankings and research navigation were verified from public responses.
 
-## M7 evidence (in progress)
+## M7 evidence
 
 - Drafted independent market/research/Pages workflows, daily13:00 America/New_York
   using native GitHub timezone scheduling. Manual market runs do not implicitly
@@ -346,3 +346,38 @@ or financial validation to satisfy retired tests.
   validation strict.68 affected/61 final tests, Ruff/format, MyPy76, current
   validation and diff passed. No source data or exhausted retry state changed.
   Repair2 push/CI and a different queued manual company (SoFi) live check pending.
+
+- Repair2 commit `93f5a5b202efe84e686d8e9d4958610a17bab3fe` passed
+  [CI39158112093](https://github.com/Kabutojira/PaperTrader/actions/runs/39158112093).
+  Live SoFi [research39158371221](https://github.com/Kabutojira/PaperTrader/actions/runs/39158371221)
+  succeeded with an honest not_supportable outcome, one model operation and10
+  web requests. Current source/page/assessment/queue updates committed together
+  as `580d16a9ee6dc3a6414cc4ebe41f396a2fa077b9`. No fair values were invented.
+  Independent [Pages39158604453](https://github.com/Kabutojira/PaperTrader/actions/runs/39158604453)
+  deployed that exact commit. M7's live execution/independence gate passed;
+  M9 still requires a supported live company valuation and an idea update.
+
+## M8 evidence (in progress)
+
+- Deleted unused trading/accounting/allocation/order, alert/classifier, history/
+  governance, final-review, media/podcast/translation/TTS modules and skills.
+  Supported runtime retains19 modules, with inventory/queue migration isolated
+  from active CLI imports. Old migration is no longer a runtime CLI command.
+- Current active data:249 files/5,201,146 bytes versus8,236/58,658,418 immediately
+  before pruning;7,987 files removed. All92 instruments,29 ideas,47 relationships
+  and83 current assessments retained with identical values. Current references
+  retain318 source records;50 unreferenced records removed. Current queue28;
+  zero legacy blocked/waiting dependency rows remain. Exact stats in
+  docs/migration/m8-size.json; the verified pre-migration tag preserves history.
+- Kept current sourced wiki closure and analytical ECharts; removed unused technical
+  series renderer/schema/CSS, old exports, huge operation/run/report trees and
+  obsolete tests. One-time chart cleanup and frontmatter/hash fixtures remain.
+- Rewrote AGENTS/README/runbook/environment/configuration/dependencies to describe
+  the actual product; focused mocked complete-cycle test covers supported valuation,
+  invalid-result preservation, independent market repeat and current rankings.
+- Locked installation succeeded with17 obsolete packages uninstalled. Full current
+  suite146 passed in73s; Ruff/format, MyPy19, strict current validation, zero-call
+  previews and import/reference audit passed. TypeScript/four TS tests/Prettier,
+  Quartz145 Markdown/200 emitted files and internal links passed. Public outputs
+  contain research navigation and no retired exports. No test/provider/model call
+  was misreported as live. Exact push CI and reviewed M8 deployment pending.

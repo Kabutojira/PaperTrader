@@ -104,4 +104,4 @@ Confidence is **medium** in the current margin dislocation and **low-to-medium**
 Review by **2026-08-12** with the next IEA report, or sooner after Valero's second-quarter result,
 material refinery restarts, product-inventory changes, or geopolitical escalation.
 
-See the complete [[index]] and append-only [[log]] for repository context.
+See the complete [[index]] and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md) for repository context.

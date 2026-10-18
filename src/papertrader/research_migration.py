@@ -25,6 +25,31 @@ from papertrader.migration_inventory import _git
 from papertrader.research_state import ResearchState, Row, contracts, csv_bytes, validate_state
 
 
+def remove_retired_technicals(text: str) -> str:
+    """Pure archive migration: remove retired graphs, preserve analytical evidence."""
+    start = "<!-- papertrader:technical-chart:start -->"
+    end = "<!-- papertrader:technical-chart:end -->"
+    if text.count(start) != text.count(end) or text.count(start) > 1:
+        raise ValueError("incomplete or duplicate technical chart markers")
+    updated = re.sub(re.escape(start) + ".*?" + re.escape(end), "", text, flags=re.S)
+    if start in updated or end in updated:
+        raise ValueError("invalid technical chart marker order")
+
+    def fence(match: re.Match[str]) -> str:
+        try:
+            chart = json.loads(match[1])
+        except ValueError:
+            return match[0]
+        return "" if isinstance(chart, dict) and chart.get("kind") == "technical" else match[0]
+
+    updated = re.sub(r"^```echart[^\n]*\n(.*?)^```[ \t]*$", fence, updated, flags=re.M | re.S)
+    if updated != text:
+        updated = re.sub(
+            r"^## Visual evidence[ \t]*\r?\n\s*(?=^##(?!#)\s|\Z)", "", updated, flags=re.M
+        )
+    return updated
+
+
 def _section(text: str, names: tuple[str, ...]) -> str:
     for match in re.finditer(r"^## ([^\n]+)\n(.*?)(?=^## |\Z)", text, re.M | re.S):
         heading, body = match.group(1), match.group(2)
@@ -63,7 +88,11 @@ def prepare_migration(
             assert file is not None
             content = file.read()
             if entry.name.startswith("data/wiki/"):
-                assets[entry.name] = content
+                assets[entry.name] = (
+                    remove_retired_technicals(content.decode()).encode()
+                    if entry.name.startswith("data/wiki/securities/") and entry.name.endswith(".md")
+                    else content
+                )
             archive_path = Path(entry.name)
             if archive_path.parent.as_posix() == "data/tables" and archive_path.stem in names:
                 legacy[archive_path.stem] = list(

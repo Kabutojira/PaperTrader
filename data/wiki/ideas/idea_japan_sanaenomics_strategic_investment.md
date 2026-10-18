@@ -87,4 +87,4 @@ Confidence is **high** in the stated policy framework and **medium** in implemen
 medium** in broad equity attribution. Review by **2026-10-31**, or sooner after final roadmaps,
 budget allocations, or material issuer orders.
 
-See the complete [[index]] and append-only [[log]] for repository context.
+See the complete [[index]] and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md) for repository context.

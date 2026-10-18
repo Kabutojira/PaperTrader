@@ -57,21 +57,21 @@ marker-bounded technical chart; cash and debt are point-in-time observations and
 
 RTX's release confirms the listed instrument and three operating segments. This page evaluates it
 through [[ideas/idea_defense_aerospace]], never ticker text alone, and separately records the
-[[inbox/market-security_59304f90c440def31dc5-rsi_overbought-22069206cbf5|24 July RSI-overbought
-entry]], [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-fac3019c4101|same-session
-strengthening]], [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-c4c8f0b60fc6|27 July
-RSI strengthening]], [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-a6de68653afb|scheduled-run
-RSI reconciliation]], [[inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-7a832eb2d5ae|upper-Bollinger entry]],
-and [[inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-c288bb87ff70|27 July
-upper-Bollinger strengthening]], plus its
-[[inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-b275f066a05b|scheduled-run
-reconciliation]].
+[24 July RSI-overbought
+entry](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_59304f90c440def31dc5-rsi_overbought-22069206cbf5.md), [same-session
+strengthening](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_59304f90c440def31dc5-rsi_overbought-fac3019c4101.md), [27 July
+RSI strengthening](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_59304f90c440def31dc5-rsi_overbought-c4c8f0b60fc6.md), [scheduled-run
+RSI reconciliation](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_59304f90c440def31dc5-rsi_overbought-a6de68653afb.md), [upper-Bollinger entry](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-7a832eb2d5ae.md),
+and [27 July
+upper-Bollinger strengthening](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-c288bb87ff70.md), plus its
+[scheduled-run
+reconciliation](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-b275f066a05b.md).
 
-The repeat check also covers the [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-1d1f51178b2e|31 July
-RSI re-entry]], [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-2a2e6bf5ce40|4 August
-strengthening]], and [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-8910e4772383|5 August
-strengthening]], followed by the [[inbox/market-security_59304f90c440def31dc5-bollinger_below_lower-19de952490e0|21 August
-lower-Bollinger entry]].
+The repeat check also covers the [31 July
+RSI re-entry](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_59304f90c440def31dc5-rsi_overbought-1d1f51178b2e.md), [4 August
+strengthening](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_59304f90c440def31dc5-rsi_overbought-2a2e6bf5ce40.md), and [5 August
+strengthening](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_59304f90c440def31dc5-rsi_overbought-8910e4772383.md), followed by the [21 August
+lower-Bollinger entry](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_59304f90c440def31dc5-bollinger_below_lower-19de952490e0.md).
 
 ## Business economics
 
@@ -284,4 +284,4 @@ the lower-Bollinger and RSI-oversold entries. The canonical conclusion remains *
 a short signal. Review by **2026-10-15**, or sooner after a major award, program charge,
 engine-liability, guidance, or valuation change. No conviction strategy or paper signal is
 justified. See the complete
-[[research-catalog]] and append-only [[log]] for context.
+[[research-catalog]] and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md) for context.

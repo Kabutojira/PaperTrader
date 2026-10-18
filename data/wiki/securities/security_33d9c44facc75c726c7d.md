@@ -269,6 +269,6 @@ no thematic-only edge is proposed.
 - [NVIDIA fiscal 2027 second-quarter results](https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27pr.htm)
 - [NVIDIA fiscal 2027 second-quarter CFO commentary](https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27cfocommentary.htm)
 - [NVIDIA Hugging Face acquisition Form 8-K](https://www.sec.gov/Archives/edgar/data/1045810/000104581026000080/nvda-20260902.htm)
-- [PaperTrader canonical NVDA alert packet](../inbox/market-security_33d9c44facc75c726c7d-macd_cross_above_signal-b5b67bfce931.md)
+- [PaperTrader canonical NVDA alert packet](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_33d9c44facc75c726c7d-macd_cross_above_signal-b5b67bfce931.md)
 
-See the complete [[research-catalog]], results-first [[index]], and append-only [[log]].
+See the complete [[research-catalog]], results-first [[index]], and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md).

@@ -112,4 +112,4 @@ Confidence is **medium** in a structurally tight late-decade balance and **low-t
 current prices provide broad upside across the value chain. Review by **2026-09-30**, or sooner
 after material project, China-demand, treatment-charge, substitution, or producer-guidance changes.
 
-See the complete [[index]] and append-only [[log]] for repository context.
+See the complete [[index]] and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md) for repository context.

@@ -83,4 +83,4 @@ Confidence is **medium-high** in adoption and **low-to-medium** in repeatable pl
 Review by **2026-11-15**, or sooner after REC-4881 data, a material partnership milestone, or a
 financing event.
 
-See the complete [[index]] and append-only [[log]] for repository context.
+See the complete [[index]] and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md) for repository context.

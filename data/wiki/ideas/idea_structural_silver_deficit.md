@@ -84,4 +84,4 @@ Confidence is **high** in the recent multi-year deficit and **medium** in contin
 confidence in any miner basket is **low** without issuer work. Review by **2026-10-31**, or sooner
 after major inventory, ETP-flow, recycling, PV-thrifting, or mine-supply data.
 
-See the complete [[index]] and append-only [[log]] for repository context.
+See the complete [[index]] and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md) for repository context.

@@ -195,4 +195,4 @@ and the balance sheet is still manageable. Nevertheless, negative weighted and b
 severe bear asymmetry, no margin of safety, incomplete project-level economics, and an overbought
 price above the upper band block allocation and strategy work. Review by **2026-09-20**, or earlier
 after material commissioning, cash-conversion, trade-policy, or pricing evidence. See the complete
-[[research-catalog]] and append-only [[log]].
+[[research-catalog]] and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md).

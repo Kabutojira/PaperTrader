@@ -155,4 +155,4 @@ platform. Review by **2026-09-30**, or sooner after a binding phase agreement, n
 order, first-wafer evidence, material financing change, a quantified NVIDIA or SpaceXAI order,
 Nvidia qualification, or an xLight scanner trial.
 
-See the complete [[research-catalog]] and append-only [[log]] for repository context.
+See the complete [[research-catalog]] and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md) for repository context.

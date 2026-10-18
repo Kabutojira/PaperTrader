@@ -1,4 +1,0 @@
-{
-  "issue_id": "issue_28b5a9f9299cf97510ab",
-  "resolution": "The local harness now classifies queue validation as a safe read-only command; its regression test passes and the same operation succeeded on its bounded retry."
-}

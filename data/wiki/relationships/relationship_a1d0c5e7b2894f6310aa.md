@@ -48,4 +48,4 @@ Primary evidence: [Ahold Delhaize Q2 2026 results](https://newsroom.aholddelhaiz
 
 Review by **2026-09-30**, or after material results, guidance, distribution or refinancing evidence.
 
-See [[research-catalog]] and [[log]].
+See [[research-catalog]] and [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md).

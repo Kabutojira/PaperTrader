@@ -66,4 +66,4 @@ Confidence is **medium** for healthcare-workflow automation and **low** for a br
 clinical-success uplift. Review by **2026-10-31**, or sooner after a material clinical readout,
 regulatory change, reimbursement decision, product correction, or financing.
 
-See the complete [[index]] and append-only [[log]].
+See the complete [[index]] and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md).

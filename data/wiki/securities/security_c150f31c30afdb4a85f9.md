@@ -232,5 +232,5 @@ accepted-needs-review or candidate pairing, so no relationship or idea follow-up
 Next review: **2026-10-03**, or sooner after a material guidance, margin, HEYDUDE, wholesale,
 inventory, debt, repurchase, sourcing, tariff, or consumer-demand development.
 
-Related navigation: [[security-catalog|Securities]], [[signals|Signals and research alerts]], and
+Related navigation: [[security-catalog|Securities]], [Signals and research alerts](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/signals.md), and
 [[research-catalog|Research catalog]].

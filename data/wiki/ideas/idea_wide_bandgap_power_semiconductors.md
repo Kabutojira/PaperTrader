@@ -81,4 +81,4 @@ Confidence is **high** in the engineering advantage and **medium** in architectu
 **low-to-medium** in broad supplier economics. Review by **2026-11-30**, or sooner after production
 qualification, capacity-utilization, pricing, or reliability disclosures.
 
-See the complete [[index]] and append-only [[log]] for repository context.
+See the complete [[index]] and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md) for repository context.

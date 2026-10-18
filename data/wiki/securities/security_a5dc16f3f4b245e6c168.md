@@ -225,4 +225,4 @@ without per-share progress.
 - **Rating and action:** unchanged at Unrated / Watch and allocation-ineligible. The Q2 reaction is
   fundamental rather than noise, but it does not justify a strategy, signal or paper order.
 
-See the complete [[research-catalog]] and append-only [[log]].
+See the complete [[research-catalog]] and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md).

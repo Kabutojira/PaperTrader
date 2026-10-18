@@ -74,4 +74,4 @@ Confidence is **medium** in consumer-demand recurrence and **low-to-medium** in 
 transmission across the three different models. Review by **2026-09-30**, or after the next results,
 guidance change, distribution decision or material refinancing.
 
-See [[index]], [[research-catalog]], and [[log]].
+See [[index]], [[research-catalog]], and [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md).

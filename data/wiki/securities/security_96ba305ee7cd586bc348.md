@@ -84,7 +84,7 @@ strategy or signal is justified.
   relationship, and liquidity gates still block a strategy or signal.
 
 See the deterministic packet
-[[inbox/market-security_96ba305ee7cd586bc348-bollinger_below_lower-7a90cf00ae43]].
+[inbox/market-security_96ba305ee7cd586bc348-bollinger_below_lower-7a90cf00ae43](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_96ba305ee7cd586bc348-bollinger_below_lower-7a90cf00ae43.md).
 
 ### Prior alert retained for context
 
@@ -101,7 +101,7 @@ See the deterministic packet
   provides no verified fundamental explanation. The alert cannot establish intrinsic value or a
   standalone entry signal.
 
-See the deterministic packet [[inbox/market-security_96ba305ee7cd586bc348-volume_anomaly-1bb1ee000d56]].
+See the deterministic packet [inbox/market-security_96ba305ee7cd586bc348-volume_anomaly-1bb1ee000d56](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_96ba305ee7cd586bc348-volume_anomaly-1bb1ee000d56.md).
 
 ## Current primary evidence
 
@@ -232,4 +232,4 @@ accepted. Downgrade if earnings, margins, competitive position, or liquidity det
   pending relationship, while Frankfurt liquidity, the unexplained volume anomaly, and unproven
   humanoid revenue remain explicit research risks.
 
-See the complete [[research-catalog]], current [[index]], and append-only [[log]].
+See the complete [[research-catalog]], current [[index]], and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md).

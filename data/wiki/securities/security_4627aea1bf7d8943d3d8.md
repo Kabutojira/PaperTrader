@@ -96,10 +96,10 @@ funded liquidity.
 ## Market indicator context
 
 The deterministic 24 July packet recorded an entered RSI-oversold transition after a 20.74% decline
-from 25 June. The [[inbox/market-security_4627aea1bf7d8943d3d8-macd_cross_above_signal-714b4dd20b98|30
-July MACD crossover]] then followed a 19.58% decline from 1 July, while the
-[[inbox/market-security_4627aea1bf7d8943d3d8-sma_50_cross_below_200-fe17d3d3655f|4 August bearish
-moving-average crossover]] followed a 5.93% decline from 7 July. At the current 5 August state, RSI
+from 25 June. The [30
+July MACD crossover](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_4627aea1bf7d8943d3d8-macd_cross_above_signal-714b4dd20b98.md) then followed a 19.58% decline from 1 July, while the
+[4 August bearish
+moving-average crossover](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_4627aea1bf7d8943d3d8-sma_50_cross_below_200-fe17d3d3655f.md) followed a 5.93% decline from 7 July. At the current 5 August state, RSI
 was 45.05 and MACD remained above its signal, while the 50-day average of USD 10.52 was below the
 USD 12.53 200-day average. This is mixed rebound volatility inside a weak long-term trend, not a
 valuation input, catalyst, invalidation, or trade signal.

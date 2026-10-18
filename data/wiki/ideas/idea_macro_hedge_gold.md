@@ -82,4 +82,4 @@ Confidence is **medium** in gold's diversification role and **low-to-medium** in
 hedge. Review by **2026-08-28**, or sooner after a material rate-path change, central-bank demand
 revision, gold drawdown, or major miner guidance change.
 
-See the complete [[index]] and append-only [[log]] for repository context.
+See the complete [[index]] and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md) for repository context.

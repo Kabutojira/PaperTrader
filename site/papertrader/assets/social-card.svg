@@ -10,7 +10,7 @@
   <text x="80" y="139" font-family="sans-serif" font-size="24" letter-spacing="4" fill="#e5bd75">THE OPEN INVESTMENT NOTEBOOK</text>
   <text x="75" y="287" font-family="Georgia,serif" font-size="92" fill="#fffaf0">PaperTrader</text>
   <text x="80" y="361" font-family="sans-serif" font-size="31" fill="#d2e1d4">Research with roots.</text>
-  <text x="80" y="407" font-family="sans-serif" font-size="31" fill="#d2e1d4">Decisions with evidence.</text>
+  <text x="80" y="407" font-family="sans-serif" font-size="31" fill="#d2e1d4">Valuations with evidence.</text>
   <path d="M80 485h640" stroke="#497b57"/>
-  <text x="80" y="532" font-family="sans-serif" font-size="22" fill="#d2e1d4">Public research  /  Paper trades  /  Traceable decisions</text>
+  <text x="80" y="532" font-family="sans-serif" font-size="22" fill="#d2e1d4">Public research  /  Company discovery  /  Current evidence</text>
 </svg>

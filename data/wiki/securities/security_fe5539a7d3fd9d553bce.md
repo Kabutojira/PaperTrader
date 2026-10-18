@@ -33,7 +33,7 @@ relationship or strategy is linked to this security. Related system context: [[i
   840,447 bitcoin holding, USD 4.8 billion reserve, disclosed claims and common-share denominator
   therefore remain the latest primary-evidence inputs.
 - **Alert and timing:** the exact new alert is
-  [[inbox/market-security_fe5539a7d3fd9d553bce-volume_anomaly-7f83a7474bf5|the strengthened 2026-08-21 volume anomaly]].
+  [the strengthened 2026-08-21 volume anomaly](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_fe5539a7d3fd9d553bce-volume_anomaly-7f83a7474bf5.md).
   Adjusted close rose 30.09% from USD 91.67 on July 24 to USD 119.25 on August 21. The last session
   traded 45.84 million shares at a 2.0969 volume z-score; price was above the USD 111.41 upper
   Bollinger band and RSI remained below its overbought threshold at 66.07.

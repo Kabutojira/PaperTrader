@@ -46,4 +46,4 @@ Primary evidence: [Uber Q2 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/da
 
 Review by **2026-09-30**, or after material autonomy, bookings, cash-flow, insurance or regulatory evidence.
 
-See [[research-catalog]] and [[log]].
+See [[research-catalog]] and [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md).

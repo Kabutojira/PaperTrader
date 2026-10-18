@@ -244,5 +244,5 @@ independently prevent allocation or strategy work.
 Next review: **2026-09-27**, or sooner after a material merchant, tax, regulatory,
 foreign-exchange, litigation, cash-conversion, or capital-allocation development.
 
-Related navigation: [[security-catalog|Securities]], [[signals|Signals and research alerts]], and
+Related navigation: [[security-catalog|Securities]], [Signals and research alerts](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/signals.md), and
 [[research-catalog|Research catalog]].

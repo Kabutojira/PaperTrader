@@ -61,4 +61,4 @@ Confidence is **medium** in current network scale and **low-to-medium** in the a
 path. Review by **2026-09-30**, or after material autonomy agreements, regulatory changes, insurance
 developments or the next results.
 
-See [[index]], [[research-catalog]], and [[log]].
+See [[index]], [[research-catalog]], and [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md).

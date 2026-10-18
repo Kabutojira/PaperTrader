@@ -65,4 +65,4 @@ material project economics.
 
 See [[ideas/idea_terafab_ai_industrial_stack|the idea]],
 [[securities/security_dfa34d4b9050964b465e|the security review]], [[research-catalog]] and
-[[log]].
+[log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md).

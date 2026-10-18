@@ -89,4 +89,4 @@ Confidence is **medium** that the product-company model is winning meaningful pr
 **2026-10-31**, or sooner upon a public filing, audited financing disclosure, major acceptance
 milestone, or production delay.
 
-See the complete [[index]] and append-only [[log]] for repository context.
+See the complete [[index]] and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md) for repository context.

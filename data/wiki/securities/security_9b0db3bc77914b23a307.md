@@ -172,7 +172,7 @@ canonical gates; no conviction strategy research is justified.
   `data/market/indicators.csv`, and
   `data/market/prices/security_9b0db3bc77914b23a307.csv`, retrieved
   `2026-08-31T21:38:36Z`; USD/EUR FX was current through `2026-08-31T21:38:36Z`.
-- Current alert packet: [[inbox/market-security_9b0db3bc77914b23a307-volume_anomaly-bdcdeb54f9da|CSL strengthened volume anomaly]].
+- Current alert packet: [CSL strengthened volume anomaly](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_9b0db3bc77914b23a307-volume_anomaly-bdcdeb54f9da.md).
 
 Next review: **2026-09-30**, or sooner after material pricing, margin, cash-flow, construction-demand,
 leverage, acquisition, repurchase, or guidance evidence.

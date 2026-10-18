@@ -199,9 +199,9 @@ passing. The assessment is ineligible and does not justify conviction strategy r
   (`source_schneider_fy2025_results`, checked 2026-08-31; hash unchanged).
 - Canonical market and indicator state: `data/market/latest.csv`, `data/market/indicators.csv`, and
   `data/market/prices/security_dc8486c1d61df62a22fd.csv`, retrieved `2026-08-31T21:38:36Z`.
-- Alert packets: [[inbox/market-security_dc8486c1d61df62a22fd-bollinger_above_upper-885d2463351c|SU upper-Bollinger entry]],
-  [[inbox/market-security_dc8486c1d61df62a22fd-macd_cross_above_signal-094629fe26cb|SU bullish-MACD entry]],
-  and [[inbox/market-security_dc8486c1d61df62a22fd-bollinger_above_upper-15c4988e4d0d|SU strengthened upper-Bollinger state]].
+- Alert packets: [SU upper-Bollinger entry](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_dc8486c1d61df62a22fd-bollinger_above_upper-885d2463351c.md),
+  [SU bullish-MACD entry](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_dc8486c1d61df62a22fd-macd_cross_above_signal-094629fe26cb.md),
+  and [SU strengthened upper-Bollinger state](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_dc8486c1d61df62a22fd-bollinger_above_upper-15c4988e4d0d.md).
 
 Next review: **2026-09-30**, or sooner after material data-centre demand, backlog, customer,
 capacity, pricing, margin, working-capital, cash-conversion, leverage, acquisition, supply-chain or

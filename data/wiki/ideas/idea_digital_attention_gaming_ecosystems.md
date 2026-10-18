@@ -65,4 +65,4 @@ near-term monetization because current guidance shows safety-related volatility.
 **2026-10-31**, or sooner after Q2 results, a material safety or regulatory action, or a large change
 in bookings guidance.
 
-See the complete [[index]] and append-only [[log]].
+See the complete [[index]] and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md).

@@ -346,4 +346,4 @@ payoff ratios and no margin of safety. Review by **2026-09-25**, or sooner after
 cancellation, satellite failure, guidance change, financing, dilution or capital-allocation news.
 No conviction strategy or paper signal is justified.
 
-See the complete [[research-catalog]] and append-only [[log]].
+See the complete [[research-catalog]] and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md).

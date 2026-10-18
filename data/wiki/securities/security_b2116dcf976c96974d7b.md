@@ -23,7 +23,7 @@ next_review: "2026-09-24"
 
 This assessment compares Vale's diversified iron-ore and base-metals economics with
 [[securities/security_1c055eb9b2bb1f5a8ff2|Rio Tinto]] and addresses the deterministic
-[[inbox/market-security_b2116dcf976c96974d7b-volume_anomaly-5974ff93bdc6|24 August volume anomaly]].
+[24 August volume anomaly](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_b2116dcf976c96974d7b-volume_anomaly-5974ff93bdc6.md).
 
 ## Economics and thesis
 

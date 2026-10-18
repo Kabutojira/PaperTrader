@@ -165,8 +165,8 @@ security page, assessment version, rating, or portfolio action exists to overwri
 - Canonical market and indicator state: `data/market/latest.csv`, `data/market/indicators.csv`, and
   `data/market/prices/security_3a75fc1ccca2ee7c937a.csv`, retrieved `2026-08-01T09:07:38Z`;
   USD/EUR FX was retrieved at the same time.
-- Alert packets: [[inbox/market-security_3a75fc1ccca2ee7c937a-volume_anomaly-73cae404a6a1|QCOM volume anomaly]]
-  and [[inbox/market-security_3a75fc1ccca2ee7c937a-rsi_oversold-43fc4f1bab70|QCOM RSI-oversold transition]].
+- Alert packets: [QCOM volume anomaly](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_3a75fc1ccca2ee7c937a-volume_anomaly-73cae404a6a1.md)
+  and [QCOM RSI-oversold transition](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_3a75fc1ccca2ee7c937a-rsi_oversold-43fc4f1bab70.md).
 
 Next review: **2026-08-31**, or sooner after material handset, automotive, IoT, licensing, margin,
 memory-supply, pricing, inventory, debt, trade-restriction, customer-concentration, product-launch,

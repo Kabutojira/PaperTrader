@@ -156,4 +156,4 @@ fresh cross-venue parity check confirms the EUR line is representative.
 Review by **2026-08-31**, or earlier after evidence that ERP operations stabilized, a material
 forecast change, or a durable improvement in Frankfurt liquidity.
 
-See the complete [[research-catalog]] and append-only [[log]].
+See the complete [[research-catalog]] and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md).

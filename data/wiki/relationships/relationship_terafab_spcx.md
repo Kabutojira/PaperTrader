@@ -70,4 +70,4 @@ evidence, a material financing change, or a revised Terafab schedule.
 
 See [[ideas/idea_terafab_ai_industrial_stack|the idea]],
 [[securities/security_664f93a7eaca72e76e9b|the security review]], [[research-catalog]] and
-[[log]].
+[log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md).

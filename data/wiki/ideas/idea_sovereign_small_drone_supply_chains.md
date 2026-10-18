@@ -88,4 +88,4 @@ Confidence is **medium** in sovereign procurement growth and **low-to-medium** i
 supplier returns. Review by **2026-09-15**, after the Alliance's planned first meeting, or sooner
 after material awards, component-origin disclosures, or civil BVLOS rule changes.
 
-See the complete [[index]] and append-only [[log]] for repository context.
+See the complete [[index]] and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md) for repository context.

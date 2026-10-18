@@ -92,4 +92,4 @@ Confidence is **medium** in continued regional capacity investment and **low-to-
 listed-equity premium. Review by **2026-11-15**, or sooner after the USMCA joint-review outcome,
 Pesquería commissioning evidence, or a material change in cross-border activity.
 
-See the complete [[index]] and append-only [[log]] for repository context.
+See the complete [[index]] and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md) for repository context.

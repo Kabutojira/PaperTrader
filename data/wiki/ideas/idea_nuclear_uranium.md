@@ -89,4 +89,4 @@ Confidence is **medium** in a multi-year fuel-cycle constraint and **low-to-medi
 upside without security-specific valuation. Review by **2026-08-31**, or sooner after Cameco's
 scheduled second-quarter release, a major capacity announcement, or a reactor-policy reversal.
 
-See the complete [[index]] and append-only [[log]] for repository context.
+See the complete [[index]] and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md) for repository context.

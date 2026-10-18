@@ -26,7 +26,7 @@ and the xAI/X advertising, subscription, model-access, cloud, and AI-infrastruct
 The Class A shares have one vote each while Class B shares have ten votes each. Elon Musk held about
 82.4% of voting power immediately after the June 2026 initial public offering, making governance and
 capital allocation unusually concentrated. This research page complements the stable identity in
-[[security-catalog]] and the triggering [[inbox/market-security_664f93a7eaca72e76e9b-volume_anomaly-31c89c5fa198|SPCX volume-anomaly packet]]. No accepted canonical idea-security relationship currently exists.
+[[security-catalog]] and the triggering [SPCX volume-anomaly packet](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_664f93a7eaca72e76e9b-volume_anomaly-31c89c5fa198.md). No accepted canonical idea-security relationship currently exists.
 
 ## Economics and thesis
 

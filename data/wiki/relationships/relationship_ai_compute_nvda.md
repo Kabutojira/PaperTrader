@@ -66,4 +66,4 @@ or a major customer capex revision.
 
 See [[ideas/idea_ai_compute_networking_hyperscaler_monetization|the idea]],
 [[securities/security_33d9c44facc75c726c7d|the security review]], [[research-catalog]] and
-[[log]].
+[log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md).

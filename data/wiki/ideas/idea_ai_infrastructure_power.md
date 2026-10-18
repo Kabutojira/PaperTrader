@@ -236,4 +236,4 @@ prices offer attractive risk-adjusted exposure. Review by **2026-09-12**, or soo
 security or relationship review completes, Powell reports fiscal Q4, a material award changes, or
 large projects are cancelled or deferred.
 
-See the complete [[research-catalog]], results-first [[index]] and append-only [[log]].
+See the complete [[research-catalog]], results-first [[index]] and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md).

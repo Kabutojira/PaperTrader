@@ -184,5 +184,5 @@ downside payoff, margin of safety, and timing.
 Next review: **2026-09-21**, or sooner after a material regulatory, custody, credit, net-deposit,
 capital, acquisition, product-economics, or market-structure development.
 
-Related navigation: [[security-catalog|Securities]], [[signals|Signals and research alerts]], and
+Related navigation: [[security-catalog|Securities]], [Signals and research alerts](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/signals.md), and
 [[research-catalog|Research catalog]].

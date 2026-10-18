@@ -64,4 +64,4 @@ certification or a major failed program.
 
 See [[ideas/idea_humanoid_robotics_embodied_ai_components|the idea]],
 [[securities/security_33d9c44facc75c726c7d|the security review]], [[research-catalog]] and
-[[log]].
+[log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md).

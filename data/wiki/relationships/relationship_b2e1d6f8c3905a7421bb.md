@@ -45,4 +45,4 @@ Primary evidence: [Nomad Foods Q2 2026 results](https://www.nomadfoods.com/news/
 
 Review by **2026-09-30**, or after results, restructuring, volume, cash-conversion or refinancing evidence.
 
-See [[research-catalog]] and [[log]].
+See [[research-catalog]] and [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md).

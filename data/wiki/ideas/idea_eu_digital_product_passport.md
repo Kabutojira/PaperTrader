@@ -88,4 +88,4 @@ Confidence is **high** in the legal and infrastructure rollout and **low-to-medi
 vendor economics. Review by **2026-11-30**, or sooner after battery access-right rules, service-
 provider rules, production registry metrics, or a material vendor disclosure.
 
-See the complete [[index]] and append-only [[log]] for repository context.
+See the complete [[index]] and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md) for repository context.

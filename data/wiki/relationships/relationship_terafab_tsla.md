@@ -66,4 +66,4 @@ material capex disclosure or a related-party governance filing.
 
 See [[ideas/idea_terafab_ai_industrial_stack|the idea]],
 [[securities/security_dc7a111e297be528d96b|the security review]], [[research-catalog]] and
-[[log]].
+[log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md).

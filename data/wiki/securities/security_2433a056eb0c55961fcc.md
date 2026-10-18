@@ -159,9 +159,9 @@ This repeat review consumes the bounded prior assessment and the new video-deriv
 - Canonical market and indicator state: `data/market/latest.csv`, `data/market/indicators.csv`, and
   `data/market/prices/security_2433a056eb0c55961fcc.csv`, retrieved `2026-08-28T19:01:02Z`;
   USD/EUR FX was retrieved at the same time.
-- Alert packets: [[inbox/market-security_2433a056eb0c55961fcc-volume_anomaly-e61b5356f36f|AMZN volume anomaly]],
-  [[inbox/market-security_2433a056eb0c55961fcc-bollinger_above_upper-0d1101e5c09b|AMZN upper-Bollinger transition]],
-  and [[inbox/market-security_2433a056eb0c55961fcc-macd_cross_above_signal-f8b94c946cb3|AMZN bullish MACD transition]].
+- Alert packets: [AMZN volume anomaly](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_2433a056eb0c55961fcc-volume_anomaly-e61b5356f36f.md),
+  [AMZN upper-Bollinger transition](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_2433a056eb0c55961fcc-bollinger_above_upper-0d1101e5c09b.md),
+  and [AMZN bullish MACD transition](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_2433a056eb0c55961fcc-macd_cross_above_signal-f8b94c946cb3.md).
 
 Next review: **2026-09-27**, or sooner after material AWS growth, retail-margin, AI utilization,
 capital-spending, free-cash-flow, leverage, dilution, regulatory, security, or capital-allocation

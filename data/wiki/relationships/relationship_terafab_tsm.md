@@ -64,4 +64,4 @@ material customer-design change or TSMC disclosure of relevant demand.
 
 See [[ideas/idea_terafab_ai_industrial_stack|the idea]],
 [[securities/security_ce9b78a4d0773c950765|the security review]], [[research-catalog]] and
-[[log]].
+[log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md).

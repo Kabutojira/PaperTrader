@@ -150,8 +150,8 @@ stock compensation and capital-allocation discipline determine how much reaches 
 Primary evidence is the [SEC-filed fiscal Q2 2027 results release](https://www.sec.gov/Archives/edgar/data/1734722/000173472226000047/path-2026731xex991.htm),
 supplemented for prior-period context by the [fiscal Q1 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1734722/000173472226000041/path-20260430.htm).
 
-The canonical [[inbox/market-security_eca976f0076a425ea1bb-volume_anomaly-502b5b004541|4 September
-volume anomaly]] spans 7 August through 4 September and shows only a 0.93% period return. The USD 15.19
+The canonical [4 September
+volume anomaly](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_eca976f0076a425ea1bb-volume_anomaly-502b5b004541.md) spans 7 August through 4 September and shows only a 0.93% period return. The USD 15.19
 close was nevertheless 16.63% below the prior session after fiscal Q2 results, on 104.5 million shares and
 a 2.37 volume z-score. RSI fell from 71.04 to 45.27 and MACD moved below its signal. The requested trigger
 is therefore a **material adverse earnings-reaction risk signal despite a low endpoint-to-endpoint return**,

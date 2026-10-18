@@ -141,4 +141,4 @@ Confidence is **medium** in the physical demand and grid-constraint mechanism an
 that it currently translates into broad supplier equity returns. Review by **2026-08-24**, or sooner
 after a material policy change, rate decision, earnings release, or evidence of project cancellation.
 
-See the complete [[index]] and append-only [[log]] for repository context.
+See the complete [[index]] and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md) for repository context.

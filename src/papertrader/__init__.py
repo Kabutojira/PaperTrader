@@ -1,4 +1,4 @@
-"""PaperTrader's deterministic, paper-only application core."""
+"""PaperTrader's current company and idea research core."""
 
 __all__ = ["__version__"]
 

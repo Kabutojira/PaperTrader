@@ -60,4 +60,4 @@ risk, cash burn, dilution, valuation, and downside. No relationship or strategy 
 Confidence is **high** in government demand and **medium** in durable listed economics. Review by
 **2026-10-31**, or sooner after a major mission, Neutron milestone, award, or financing.
 
-See the complete [[index]] and append-only [[log]].
+See the complete [[index]] and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md).

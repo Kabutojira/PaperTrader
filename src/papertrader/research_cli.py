@@ -3,27 +3,22 @@
 from __future__ import annotations
 
 import argparse
-import csv
-import hashlib
-import io
 import json
 import os
 from datetime import UTC, datetime
 from pathlib import Path
 
-from papertrader.migration_inventory import _git
 from papertrader.research_discovery import (
     IdentityVerifier,
     discovery_limits,
     prepare_candidates,
     run_discovery,
 )
-from papertrader.research_migration import prepare_migration
 from papertrader.research_publication import publish_views, snapshot
-from papertrader.research_queue import admit, queue_limits, rebuild_legacy_queue
+from papertrader.research_queue import admit, queue_limits
 from papertrader.research_results import commit_result, context_packet, prepare_result
 from papertrader.research_runtime import finalize_commit, market_cycle, research_cycle
-from papertrader.research_state import contracts, csv_bytes, read_state, timestamp, validate_state
+from papertrader.research_state import read_state, validate_state
 from papertrader.research_transaction import research_lock
 from papertrader.research_web import ResearchWeb
 
@@ -62,12 +57,6 @@ def main(argv: list[str] | None = None) -> int:
     apply = commands.add_parser("apply-result")
     apply.add_argument("--result", type=Path, required=True)
     apply.add_argument("--apply", action="store_true")
-    migration = commands.add_parser("migrate")
-    migration.add_argument("--revision", required=True)
-    migration.add_argument(
-        "--as-of", required=True, help="Fixed UTC migration timestamp ending in Z"
-    )
-    migration.add_argument("--apply", action="store_true")
     args = parser.parse_args(argv)
     root = args.repository.resolve()
     now = datetime.now(UTC)
@@ -99,45 +88,6 @@ def main(argv: list[str] | None = None) -> int:
             print(json.dumps(response, indent=2, sort_keys=True))
             return int(response["exit_code"])
         with research_lock(root):
-            if args.command == "migrate":
-                state, pages, report = prepare_migration(root, args.revision)
-                sha = report["input_revision"]
-                raw = _git(root, "show", f"{sha}:data/operations/operations_TODO.csv")
-                report["queue"] = rebuild_legacy_queue(
-                    state,
-                    list(csv.DictReader(io.StringIO(raw.decode()))),
-                    now=timestamp(args.as_of),
-                    limits=queue_limits(root),
-                )
-                report["queue_policy"] = (
-                    "current company/idea demand only; no legacy tasks or dependencies"
-                )
-                report["rows"] = {name: len(rows) for name, rows in state.items()}
-                report["table_hashes"] = {
-                    name: hashlib.sha256(csv_bytes(contract, state[name])).hexdigest()
-                    for name, contract in contracts(root).items()
-                }
-                errors = validate_state(root, state, pages=pages)
-                if errors:
-                    raise ValueError("; ".join(errors[:8]))
-                # Keep all current prose/assets, writing only actual changed bytes.
-                if args.apply:
-                    if (root / "data/tables/ideas.csv").exists():
-                        current = read_state(root)
-                        if any(
-                            csv_bytes(contract, current[name]) != csv_bytes(contract, state[name])
-                            for name, contract in contracts(root).items()
-                        ) or any(
-                            not (root / name).is_file() or (root / name).read_bytes() != content
-                            for name, content in pages.items()
-                        ):
-                            raise ValueError(
-                                "compact data already exists; migration cannot overwrite "
-                                "subsequent research"
-                            )
-                    report["changed"] = commit_result(root, state, pages)
-                print(json.dumps(report, indent=2, sort_keys=True))
-                return 0
             if args.command == "publish":
                 response = (
                     {"changed": publish_views(root, now=now)}

@@ -151,5 +151,5 @@ the relationship gate is also pending.
 Next review: **2026-08-31**, or sooner after a material Search, Cloud, AI monetization, capex,
 free-cash-flow, equity issuance, or antitrust-remedy development.
 
-Related navigation: [[security-catalog|Securities]], [[signals|Signals and research alerts]], and
+Related navigation: [[security-catalog|Securities]], [Signals and research alerts](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/signals.md), and
 [[research-catalog|Research catalog]].
