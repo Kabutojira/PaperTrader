@@ -557,3 +557,30 @@ Validation/commit/CI/deployment and live backfill evidence will be recorded belo
   Full180 tests74.4s, Ruff/format, MyPy19 and current validation passed; no request
   limit or financial/evidence validation was weakened. Push/CI precedes resuming
   the one-time backfill; remaining individual failures use bounded retries.
+
+- Contract/diagnostic commit `b8c890a83fb2f73e077dfea482ac83ddadc285e9` passed
+  [CI39168835285](https://github.com/Kabutojira/PaperTrader/actions/runs/39168835285).
+  Live [39169015991](https://github.com/Kabutojira/PaperTrader/actions/runs/39169015991)
+  ran3/33 web requests: Planet unsupported, LUNR skip_as_stale, Fluence no_change;
+  commit `ec11e2297f2189a738d57eb318c959f6258cfc12`, Pages39169370606 passed.
+  Coverage22 complete/44 incomplete/9 missing/17 unsupported, current10/stale73.
+  Accepted unchanged/unsupported results are not counted as completed valuations.
+- Source-access diagnosis: public RSS search returned unrelated results for exact
+  company/financial queries; native source lookup found direct issuer releases
+  that the broker could open. Ten bounded diagnostic HTTP reads tested this; a
+  separate12-request source-lead qualification opened7 issuer links for6 of the9
+  never-assessed instruments, with5 explicit HTTP failures. Native source URL
+  lookup used18 search queries; these manual intake/engineering requests are
+  separate from Hermes operation counters. No valuations were inferred in intake.
+  Only current URL/title/publisher/hash/check-time/issuer metadata was registered;
+  no raw article, financial fact, scenario, assessment or research prose changed.
+- First-pass context now supplies canonical target_page for an empty prior page,
+  explicit missing valuation/research fields, compact queue reasons and recently
+  checked source leads within the12-source cap. Financial excerpts omit large
+  navigation/header/footer blocks while retaining20 bounded IR/source locators;
+  source/model/request/content ceilings remain unchanged. Locator links and search
+  results are not citation evidence until opened. A stale company review now uses
+  the existing7-day review cooldown without changing assessment dates or numbers,
+  preventing immediate stale-trigger replay.
+  Full183 tests63s, Ruff/format, MyPy19 and strict current validation passed.
+  Targeted first-time company verification follows exact push/CI.

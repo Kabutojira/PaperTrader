@@ -1344,3 +1344,110 @@ def test_interrupted_transaction_recovers_before_reader(current: Path) -> None:
         assert page.read_bytes() == original
         assert not (page.parent / "partial.md").exists()
     assert not (cache / "research-transaction.json").exists()
+
+
+def test_initial_coverage_context_includes_target_path_gaps_and_recent_issuer_leads(
+    current: Path,
+) -> None:
+    from papertrader.research_results import context_packet
+
+    state = read_state(current)
+    state["securities"][0]["research_page"] = ""
+    state["securities"][0]["research_status"] = "unresearched"
+    schema = contracts(current)
+    for i in range(13):
+        row = dict.fromkeys(schema["source_registry"].columns, "")
+        row.update(
+            source_id=f"old{i}",
+            url=f"https://issuer.example/old{i}",
+            related_entity_ids="security1",
+            checked_at="2026-08-01T00:00:00Z",
+        )
+        state["source_registry"].append(row)
+    lead = dict.fromkeys(schema["source_registry"].columns, "")
+    lead.update(
+        source_id="source_z_latest",
+        url=URL,
+        title="Issuer earnings release",
+        license="link_only",
+        status="available",
+        checked_at=STAMP,
+        related_entity_ids="security1",
+    )
+    state["source_registry"].append(lead)
+    write_state(current, state)
+    before = data_bytes(current)
+    packet = context_packet(current, state, operation="research_security", entity_id="security1")
+    assert packet["target_page"] == "data/wiki/securities/security1.md"
+    assert packet["identity"]["research_page"] == ""
+    assert packet["valuation_coverage"]["status"] == "missing_research"
+    assert "base_fair_value" in packet["valuation_coverage"]["missing_fields"]
+    assert "invalidation_conditions" in packet["valuation_coverage"]["missing_fields"]
+    assert packet["sources"][0]["source_id"] == "source_z_latest"
+    assert len(packet["sources"]) == 12
+    assert data_bytes(current) == before
+
+
+def test_skipped_coverage_review_has_cooldown_without_inventing_assessment(current: Path) -> None:
+    from papertrader.research_queue import schedule_attention
+
+    state = read_state(current)
+    admit(state, "security", "security1", reasons={"valuation_coverage_gap"}, priority=75, now=NOW)
+    write_state(current, state)
+    original_assessments = state["security_assessments"]
+
+    def executor(_root: Path, packet: dict[str, Any], _limits: ResearchLimits) -> dict[str, Any]:
+        assert "valuation_coverage_gap" in packet["request"]["reasons"]
+        return dict(
+            result=dict(
+                operation="research_security",
+                entity_id="security1",
+                outcome="skip_as_stale",
+                summary="Reviewed current context; no supported update.",
+                assessment=None,
+                idea=None,
+                sources=[],
+                relationships=[],
+                pages={},
+            ),
+            observations={},
+            usage={},
+        )
+
+    response = run_cycle(
+        current,
+        dry_run=False,
+        entity_type="security",
+        entity_id="security1",
+        executor=executor,
+        clock=lambda: NOW,
+    )
+    assert response["outcomes"][0]["status"] == "skip_as_stale"
+    reviewed = read_state(current)
+    assert reviewed["security_assessments"] == original_assessments
+    assert reviewed["securities"][0]["last_research_at"] == STAMP
+    schedule_attention(reviewed, [], [], now=NOW)
+    assert all(row["entity_id"] != "security1" for row in reviewed["research_queue"])
+
+
+def test_source_reader_keeps_financial_body_after_large_navigation() -> None:
+    from papertrader.research_web import SOURCE_TEXT_LIMIT, _Text
+
+    parser = _Text()
+    navigation = "<a href='/menu'>Menu entry </a>" * 2000
+    navigation += "<a href='/investor/financial-results'>Investor results</a>"
+    parser.feed(
+        f"<html><head><title>Issuer results</title></head><body><header>{navigation}</header>"
+        "<nav>Navigation outside header</nav><main><h1>Results</h1>"
+        "Revenue 120 million. Diluted earnings per share 2.50."
+        "<a href='/filing'>Financial filing</a></main><footer>Repeated navigation</footer>"
+        "<script>untrusted executable content</script></body></html>"
+    )
+    text = " ".join(parser.parts)[:SOURCE_TEXT_LIMIT]
+    assert "Revenue 120 million" in text
+    assert "Diluted earnings per share 2.50" in text
+    assert "[link: /filing]" in text
+    assert "Menu entry" not in text
+    assert "[link: /menu]" not in text
+    assert "untrusted executable" not in text
+    assert parser.source_links == ["/investor/financial-results"]

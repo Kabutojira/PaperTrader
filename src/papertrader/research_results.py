@@ -14,6 +14,7 @@ import yaml
 from jsonschema import Draft202012Validator
 
 from papertrader.research_queue import instant
+from papertrader.research_ratings import VALUATION_RESEARCH_FIELDS, valuation_coverage
 from papertrader.research_state import (
     ResearchState,
     Row,
@@ -270,11 +271,12 @@ def prepare_result(
             or result["relationships"]
         ):
             raise ValueError("unchanged outcome cannot partially write research")
-        if result["outcome"] == "no_change":
-            if kind == "securities":
-                entity.update(last_research_at=instant(now), updated_at=instant(now))
-            else:
-                entity["last_reviewed_on"] = now.date().isoformat()
+        if kind == "securities":
+            # Record the actual review for the existing cooldown, without
+            # changing assessment dates, fair values, sources or freshness.
+            entity.update(last_research_at=instant(now), updated_at=instant(now))
+        elif result["outcome"] == "no_change":
+            entity["last_reviewed_on"] = now.date().isoformat()
         return candidate, {}
     page = entity["research_page"] or f"data/wiki/{kind}/{entity_id}.md"
     if set(result["pages"]) != {page}:
@@ -431,21 +433,42 @@ def context_packet(
         (row for row in state["security_assessments"] if row["security_id"] == entity_id), None
     )
     refs = set((assessment or entity).get("source_ids", "").split("|"))
-    sources = [
-        row
-        for row in state["source_registry"]
-        if row["source_id"] in refs or entity_id in row["related_entity_ids"].split("|")
-    ][:12]
+    sources = sorted(
+        (
+            row
+            for row in state["source_registry"]
+            if row["source_id"] in refs or entity_id in row["related_entity_ids"].split("|")
+        ),
+        key=lambda row: (
+            timestamp(row["checked_at"]).timestamp() if row["checked_at"] else 0,
+            row["source_id"],
+        ),
+        reverse=True,
+    )[:12]
     page = entity["research_page"]
     content = (root / page).read_text()[:40000] if page else ""
     packet: dict[str, Any] = dict(
         operation=operation,
         identity=entity,
+        target_page=page or f"data/wiki/{kind}/{entity_id}.md",
         assessment=assessment,
         relationships=links,
         sources=sources,
         current_markdown=content,
     )
+    if kind == "securities":
+        fields = (
+            *VALUATION_RESEARCH_FIELDS,
+            *(
+                f"{case}_{field}"
+                for case in ("bear", "base", "bull")
+                for field in ("fair_value", "probability_pct")
+            ),
+        )
+        packet["valuation_coverage"] = dict(
+            status=valuation_coverage(assessment),
+            missing_fields=[field for field in fields if not (assessment or {}).get(field)],
+        )
     packet["related_entities"] = [
         row
         for row in state["ideas" if kind == "securities" else "securities"]

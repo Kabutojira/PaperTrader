@@ -369,6 +369,9 @@ def run_cycle(
                 packet = context_packet(
                     root, state, operation=operation, entity_id=task["entity_id"]
                 )
+                packet["request"] = dict(
+                    reasons=task["reasons"].split("|")[:12], priority=task["priority"]
+                )
                 packet["as_of"] = clock().isoformat().replace("+00:00", "Z")
                 packet["contracts"] = {
                     name: list(contract.columns) for name, contract in contracts(root).items()

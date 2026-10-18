@@ -42,18 +42,38 @@ class _Text(HTMLParser):
     def __init__(self) -> None:
         super().__init__()
         self.parts: list[str] = []
+        self.source_links: list[str] = []
         self.hidden = 0
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
-        if tag in {"script", "style"}:
+        if tag in {"script", "style", "nav", "header", "footer"}:
             self.hidden += 1
         if tag == "a":
             for key, value in attrs:
-                if key == "href" and value:
+                if key != "href" or not value:
+                    continue
+                if (
+                    len(self.source_links) < 20
+                    and len(value) <= 2048
+                    and any(
+                        term in value.lower()
+                        for term in (
+                            "investor",
+                            "financial",
+                            "earnings",
+                            "report",
+                            "://ir.",
+                            "/ir/",
+                        )
+                    )
+                    and value not in self.source_links
+                ):
+                    self.source_links.append(value)
+                if not self.hidden:
                     self.parts.append(" [link: " + value + "] ")
 
     def handle_endtag(self, tag: str) -> None:
-        if tag in {"script", "style"}:
+        if tag in {"script", "style", "nav", "header", "footer"}:
             self.hidden = max(0, self.hidden - 1)
 
     def handle_data(self, data: str) -> None:
@@ -170,7 +190,15 @@ class ResearchWeb:
             )
             self.observations[url] = observation
             self.observations[final_url] = {**observation, "url": final_url}
-        return {**observation, "untrusted_source_text": text[:SOURCE_TEXT_LIMIT]}
+        return {
+            **observation,
+            "source_links": "\n".join(
+                link
+                for value in parser.source_links
+                if source_url(link := urljoin(final_url, value))
+            ),
+            "untrusted_source_text": text[:SOURCE_TEXT_LIMIT],
+        }
 
     def tool(self, args: dict[str, str], **_: object) -> str:
         try:

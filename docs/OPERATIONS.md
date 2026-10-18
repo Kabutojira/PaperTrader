@@ -156,3 +156,16 @@ corporate homepage alone is not financial evidence. Broker failures expose safe
 static categories and numeric HTTP status, never provider reason/body. PDF
 extraction remains unavailable and is reported explicitly rather than as a generic
 network error. Per-operation request/time/content limits remain unchanged.
+
+First-time research context includes a canonical target_page even when the catalog
+has no page yet, explicit missing valuation fields, compact request reasons and
+up to12 recently checked relevant source records. Verified manual source leads
+remain metadata-only until the research operation reopens and cites them. Prefer
+direct issuer releases when a public search endpoint returns irrelevant results;
+search snippets and IR navigation links do not establish financial facts.
+
+The HTML reader excludes navigation/header/footer text from the bounded financial
+excerpt while exposing up to20 IR/source locator URLs. It executes no page script.
+A stale company review records its review time for the7-day cooldown but never
+renews assessed_at/valid_until, fair values or cited evidence without an accepted
+research result. Coverage counts do not increase for skipped/unchanged reviews.
