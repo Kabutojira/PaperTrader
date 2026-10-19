@@ -946,3 +946,61 @@ Validation/commit/CI/deployment and live backfill evidence will be recorded belo
   because the full diluted-claim evidence remains inaccessible within the caps.
   All other assessments/pages/citations remain unchanged; queue16/manual1, existing
   attempts preserved. Strict data validation passed; exact intake CI follows.
+- Financing intake `938505dc3a154041ef1f4a520bbf9113b9d93f4e` passed
+  [CI39189491333](https://github.com/Kabutojira/PaperTrader/actions/runs/39189491333).
+  Common-GDR Pages39189391786 succeeded. Final qualified Twist single
+  [39189589800](https://github.com/Kabutojira/PaperTrader/actions/runs/39189589800)
+  completed1 model operation/8 web requests and accepted supported USD51/78/107
+  scenarios, low confidence, with3 current sources. Revision
+  `3b1bf57ab05af6c2ef5de78784687cd2eb18259d`; independent Pages39189879362 triggered.
+
+### Faster watchlist backfill: final coverage and remaining evidence limits
+
+The user-authorized sequential acceleration is finished. All92 instruments retain
+stable identities and current assessment records;86 have complete sourced
+bear/base/bull valuation cases, up from22 at the start of the coverage follow-up.
+This includes the documented33 historical narrative recoveries, which changed no
+fair values or research dates. It does not mean every valuation was newly refreshed:
+41 assessments are in date and51 remain stale. Expired valuations, unsupported
+cases and insufficient-confidence cases do not populate current rankings.
+
+Six companies remain explicitly `valuation_unsupported`; they have current sourced
+research with limitations, rather than fabricated scenario values:
+
+| Company | Evidence needed before a supportable per-share valuation |
+| --- | --- |
+| Nidec (NIB.F) | Reliable corrected financial statements, quantified accounting/quality exposures and verified Frankfurt instrument conversion |
+| Sigma Lithium (SGML) | Detailed financial/debt/share notes, current operating restart evidence and normalized cash conversion |
+| AbCellera (ABCL) | Verifiable clinical/program detail and defensible risk-adjusted commercial cash-flow assumptions |
+| Intuitive Machines (LUNR) | Complete diluted economic claims, debt/senior claims and post-acquisition reconciliation; full quarterly filing exceeds the reader cap |
+| Recursion (RXRX) | Clinical/commercial probability inputs and reconciled post-financing capitalization |
+| Lithium Americas (LAC) | Current project operating/capital model, financing waterfall and diluted capitalization |
+
+There are0 missing research records and0 incomplete supported cases. Crocs retains
+its existing needs_attention state after exhausted historical attempts; its complete
+historical valuation is preserved. No attempts were reset to hide failures. There
+are15 compact queue rows (11 pending and4 failed with bounded retry state),0 manual
+requests,0 legacy blocked rows/dependencies. Remaining ordinary stale coverage
+continues through the scheduled bounded queue; unsupported cases await substantive
+new evidence or normal eligible review, without automatic task cascades.
+
+Final local data/publication gate: strict schema/source/reference validation passed,
+100 targeted publication/result/link tests passed, deterministic publication preview
+made no writes, and reviewed Quartz output built148 pages/205 files with valid links.
+Current rankings contain4 Buys and3 Sells with unique issuers and no stale padding.
+The source repair's full204-test gate and subsequent clean Actions CI passed; the
+final documentation push will receive another exact-revision CI check.
+
+Measured current footprint:258 tracked data files/5,493,701 bytes versus the frozen
+pre-migration tag8,227 files/58,834,441 bytes (about91% smaller by bytes);19 Python modules
+remain. Current catalogs preserve92 instruments/91 issuers,29 ideas and446 source
+metadata rows. Active work fell from648 legacy rows to15. Research uses one model
+configuration, sequentially; the scheduled default stays3 operations,12 web requests
+per operation and30 queued entities. Market remains LLM-free; actual completed-session
+repeat evidence is0 provider requests/0 changes/0 commits. Engineering source
+qualification and mocked tests are separately identified above; none is claimed as
+live company research. Daily market starts13:00 America/New_York and scheduled
+research follows, with weekly discovery still bounded independently within its cycle.
+
+Final publication/CI run evidence follows after the documentation push; no further
+research operation is pending from the explicit faster-backfill request.
