@@ -19,7 +19,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Applied Materials, Inc.](securities/security_0a56aa634d077fe5796f) | AMAT (USD) | needs_attention: source_evidence_unavailable | complete | 286.00 / 448.00 / 646.00 USD | 2026-09-03T12:34:21Z | 2026-10-03T12:34:21Z |
 | [Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a) | ANET (USD) | researched: hold | complete | 120.00 / 182.40 / 252.00 USD | 2026-10-18T21:20:52.492203Z | 2026-11-17T21:20:52.492203Z |
 | [Arkema S.A.](securities/security_798e2fb944d740aca308) | AKE (EUR) | researched: hold | complete | 30.00 / 56.00 / 89.00 EUR | 2026-10-18T22:35:52.408763Z | 2026-11-17T22:35:52.408763Z |
-| [Atkore Inc.](securities/security_22c2b9d782a62d7a9b86) | ATKR (USD) | researched: hold | complete | 72.96 / 95.00 / 100.00 USD | 2026-10-19T00:29:33.206502Z | 2026-11-18T00:29:33.206502Z |
+| [Atkore Inc.](securities/security_22c2b9d782a62d7a9b86) | ATKR (USD) | researched: market_stale_or_unavailable | complete | 72.96 / 95.00 / 100.00 USD | 2026-10-19T00:29:33.206502Z | 2026-11-18T00:29:33.206502Z |
 | [BASF SE](securities/security_ef418f5ccc7dc5be8e65) | BAS (EUR) | researched: hold | complete | 27.90 / 50.80 / 70.90 EUR | 2026-10-18T22:30:31.309524Z | 2026-11-17T22:30:31.309524Z |
 | [Bloom Energy Corporation](securities/security_3e597863f00753e8c65c) | BE (USD) | researched: sell | complete | 90.00 / 180.00 / 300.00 USD | 2026-10-18T20:59:04.577258Z | 2026-11-17T20:59:04.577258Z |
 | [Canadian Solar Inc.](securities/security_099561384c0f5e697727) | CSIQ (USD) | researched: research_expired_or_future | complete | 10.16 / 18.28 / 26.41 USD | 2026-08-31T08:45:47Z | 2026-09-30T08:45:47Z |
@@ -62,7 +62,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00) | PYPL (USD) | researched: hold | complete | 43.04 / 64.56 / 80.70 USD | 2026-10-19T00:51:10.686036Z | 2026-11-18T00:51:10.686036Z |
 | [Planet Labs PBC](securities/security_97f38b2cb2d5ef127f5a) | PL (USD) | researched: sell | complete | 7.89 / 11.41 / 15.02 USD | 2026-10-18T23:51:11.153208Z | 2026-11-17T23:51:11.153208Z |
 | [Powell Industries, Inc.](securities/security_0b67d6c8e3fd3366a257) | POWL (USD) | researched: research_expired_or_future | complete | 105.00 / 180.00 / 270.00 USD | 2026-09-05T15:22:00Z | 2026-10-05T15:22:00Z |
-| [Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | PRX (EUR) | researched: hold | complete | 27.00 / 48.50 / 63.00 EUR | 2026-10-19T00:25:13.322131Z | 2026-11-17T00:25:13.322131Z |
+| [Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | PRX (EUR) | researched: buy | complete | 27.00 / 48.50 / 63.00 EUR | 2026-10-19T00:25:13.322131Z | 2026-11-17T00:25:13.322131Z |
 | [Proto Labs, Inc.](securities/security_f18cd57a5e086583c861) | PRLB (USD) | researched: insufficient_confidence | complete | 44.00 / 75.60 / 108.80 USD | 2026-10-18T23:17:23.066155Z | 2026-11-17T23:17:23.066155Z |
 | [QUALCOMM Incorporated](securities/security_3a75fc1ccca2ee7c937a) | QCOM (USD) | researched: research_expired_or_future | complete | 100.00 / 160.00 / 220.00 USD | 2026-08-01T09:27:19Z | 2026-08-31T09:27:19Z |
 | [Quanta Services, Inc.](securities/security_488a9d7f7a8573597724) | PWR (USD) | researched: research_expired_or_future | complete | 417.50 / 534.40 / 668.00 USD | 2026-08-03T07:23:05Z | 2026-09-02T07:23:05Z |

@@ -1,12 +1,14 @@
 {
   "market": {
-    "exit_code": 0,
-    "failed_tickers": {},
-    "http_requests": 0,
-    "last_attempt_at": "2026-10-18T21:41:45Z",
+    "exit_code": 2,
+    "failed_tickers": {
+      "security_22c2b9d782a62d7a9b86": "required_session_missing"
+    },
+    "http_requests": 277,
+    "last_attempt_at": "2026-10-19T21:17:09Z",
     "last_success_at": "2026-10-18T21:41:45Z",
-    "provider_calls": 0,
-    "status": "succeeded"
+    "provider_calls": 13,
+    "status": "degraded"
   },
   "research": {
     "exit_code": 3,
