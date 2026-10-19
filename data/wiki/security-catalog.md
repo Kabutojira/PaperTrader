@@ -49,7 +49,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Lithium Americas Corp.](securities/security_fb87fac302a5446a1ced) | LAC (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-15T18:52:08Z | 2026-11-15T18:52:08Z |
 | [MP Materials Corp.](securities/security_cd492d97064d8574156e) | MP (USD) | researched: hold | complete | 18.00 / 40.00 / 72.00 USD | 2026-10-18T20:45:53.247385Z | 2026-11-17T20:45:53.247385Z |
 | [Materialise NV](securities/security_b61c642d038d71be3821) | MTLS (USD) | researched: hold | complete | 6.30 / 9.00 / 12.20 USD | 2026-10-18T23:13:04.375396Z | 2026-11-17T23:13:04.375396Z |
-| [MercadoLibre, Inc.](securities/security_4935c6e39e38273a1731) | MELI (USD) | researched: research_expired_or_future | incomplete_research | 1,400.00 / 2,200.00 / 3,000.00 USD | 2026-08-28T20:09:00Z | 2026-09-27T20:09:00Z |
+| [MercadoLibre, Inc.](securities/security_4935c6e39e38273a1731) | MELI (USD) | researched: hold | complete | 1,440.00 / 2,200.00 / 3,120.00 USD | 2026-10-19T00:17:51.170792Z | 2026-11-18T00:17:51.170792Z |
 | [Meta Platforms, Inc.](securities/security_d12e746b3c9d392183cc) | META (USD) | researched: research_expired_or_future | complete | 400.00 / 600.00 / 800.00 USD | 2026-08-28T19:45:56Z | 2026-09-27T19:45:56Z |
 | [Microsoft Corporation](securities/security_204be2a44063993de1a8) | MSFT (USD) | researched: research_expired_or_future | complete | 375.00 / 500.00 / 625.00 USD | 2026-08-28T21:23:23Z | 2026-09-27T21:23:23Z |
 | [NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | NVDA (USD) | researched: buy | complete | 198.00 / 310.50 / 448.00 USD | 2026-10-18T19:50:33.927425Z | 2026-11-17T19:50:33.927425Z |

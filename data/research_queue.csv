@@ -15,7 +15,6 @@ security,security_3853e54c619d597dcaa1,75,valuation_coverage_gap|valuation_unsup
 security,security_3a75fc1ccca2ee7c937a,75,incomplete_research|valuation_coverage_gap,2026-10-18T21:16:01Z,2026-10-18T21:16:01Z,pending,0,2026-10-18T21:16:01Z,,false,
 security,security_4627aea1bf7d8943d3d8,75,valuation_coverage_gap|valuation_unsupported,2026-10-18T21:16:01Z,2026-10-18T21:16:01Z,pending,0,2026-10-18T21:16:01Z,,false,
 security,security_488a9d7f7a8573597724,75,incomplete_research|valuation_coverage_gap,2026-10-18T21:16:01Z,2026-10-18T21:16:01Z,pending,0,2026-10-18T21:16:01Z,,false,
-security,security_4935c6e39e38273a1731,75,incomplete_research|valuation_coverage_gap,2026-10-18T21:24:35Z,2026-10-18T21:24:35Z,pending,0,2026-10-18T21:24:35Z,,false,
 security,security_55c9ce2fdcd32dad6b8c,75,incomplete_research|valuation_coverage_gap,2026-10-18T21:24:35Z,2026-10-18T21:24:35Z,pending,0,2026-10-18T21:24:35Z,,false,
 security,security_567d0d575bbd30aaa91d,80,research_overdue|severe_price_movement|valuation_coverage_gap|valuation_unsupported,2026-10-18T17:00:00Z,2026-10-18T21:04:45Z,failed,1,2026-10-19T03:04:45Z,,false,validation:ValueError:papertrader.research_results.prepare_result:229
 security,security_59304f90c440def31dc5,75,incomplete_research|valuation_coverage_gap,2026-10-18T21:41:45Z,2026-10-18T21:41:45Z,pending,0,2026-10-18T21:41:45Z,,false,
