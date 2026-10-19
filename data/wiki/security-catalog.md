@@ -91,7 +91,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Ternium S.A.](securities/security_2c779e81c27b78c556bb) | TX (USD) | researched: research_expired_or_future | complete | 28.00 / 50.00 / 78.00 USD | 2026-09-06T14:48:45Z | 2026-09-20T14:48:45Z |
 | [Tesla, Inc.](securities/security_dc7a111e297be528d96b) | TSLA (USD) | researched: research_expired_or_future | complete | 137.00 / 272.00 / 491.00 USD | 2026-08-31T22:31:16Z | 2026-09-30T22:31:16Z |
 | [Texas Instruments Incorporated](securities/security_83a56943e18793f685b0) | TXN (USD) | researched: hold | complete | 150.00 / 256.50 / 374.00 USD | 2026-10-19T01:18:02.186939Z | 2026-11-17T01:18:02.186939Z |
-| [Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148) | TWST (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-19T02:10:25.767600Z | 2026-11-18T02:10:25.767600Z |
+| [Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148) | TWST (USD) | researched: insufficient_confidence | complete | 51.00 / 78.00 / 107.00 USD | 2026-10-19T02:22:31.996188Z | 2026-11-18T02:22:31.996188Z |
 | [Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e) | UBER (USD) | researched: research_expired_or_future | complete | 55.00 / 90.00 / 120.00 USD | 2026-08-28T19:27:50Z | 2026-09-27T19:27:50Z |
 | [UiPath, Inc.](securities/security_eca976f0076a425ea1bb) | PATH (USD) | researched: research_expired_or_future | complete | 9.00 / 17.00 / 27.00 USD | 2026-09-05T10:45:22Z | 2026-10-03T10:45:22Z |
 | [Vale S.A.](securities/security_b2116dcf976c96974d7b) | VALE (USD) | researched: source_evidence_unavailable | complete | 9.00 / 14.50 / 20.00 USD | 2026-08-25T15:48:11Z | 2026-09-24T15:48:11Z |
