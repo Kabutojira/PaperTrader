@@ -13,6 +13,7 @@ Current research opinions in each instrument's native currency. Fair values chan
 | --- | --- | --- | ---: | --- | ---: | ---: | --- | --- | --- |
 | [Agronomics Limited](securities/security_fe4648901e7675f157fd) | ANIC.L | GBP | 0.04 | 2026-10-16 | 0.07 / 0.08 | 59.19% / 41.43% | buy | medium | 2026-10-18T23:21:39.032922Z / 2026-11-17T23:21:39.032922Z |
 | [NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | NVDA | USD | 214.13 | 2026-10-16 | 304.25 / 310.50 | 42.09% / 29.46% | buy | medium | 2026-10-18T19:50:33.927425Z / 2026-11-17T19:50:33.927425Z |
+| [Fiserv, Inc.](securities/security_d202772e4e62065cd17a) | FISV | USD | 47.55 | 2026-10-16 | 62.89 / 65.70 | 32.26% / 22.58% | buy | medium | 2026-10-19T00:38:18.749675Z / 2026-11-18T00:38:18.749675Z |
 
 ## Top 10 Sell
 
@@ -27,14 +28,15 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-91 companies / 92 instruments; 91 assessed, 25 in date, 66 stale; 75 currently unrated. 0 quotes require attention.
+91 companies / 92 instruments; 91 assessed, 26 in date, 65 stale; 74 currently unrated. 0 quotes require attention.
 
-Last observed market session: 2026-10-16. Last successful research: 2026-10-19T00:35:47Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-16. Last successful research: 2026-10-19T00:40:49Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
-Watchlist valuation coverage: **73 / 92 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 1; unsupported valuation: 13; incomplete research: 5. Needs attention: 2. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
+Watchlist valuation coverage: **74 / 92 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 1; unsupported valuation: 13; incomplete research: 4. Needs attention: 2. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
+- [Fiserv, Inc.](securities/security_d202772e4e62065cd17a) — 2026-10-19T00:38:18.749675Z; buy
 - [RTX Corporation](securities/security_59304f90c440def31dc5) — 2026-10-19T00:33:47.630267Z; hold
 - [Atkore Inc.](securities/security_22c2b9d782a62d7a9b86) — 2026-10-19T00:29:33.206502Z; hold
 - [Prosus N.V.](securities/security_8b703a8adf5f864acaa4) — 2026-10-19T00:25:13.322131Z; hold
@@ -44,7 +46,6 @@ Watchlist valuation coverage: **73 / 92 instruments** have complete sourced bear
 - [Nebius Group N.V.](securities/security_47a0b06f6c6c478d7c1e) — 2026-10-19T00:06:53.146702Z; insufficient_confidence
 - [Eaton Corporation plc](securities/security_18a3ab0ee6086ee85d0f) — 2026-10-19T00:02:37.029896Z; hold
 - [Nomad Foods Limited](securities/security_98a1943771da875efed5) — 2026-10-18T23:57:11.762336Z; hold
-- [Planet Labs PBC](securities/security_97f38b2cb2d5ef127f5a) — 2026-10-18T23:51:11.153208Z; sell
 
 ## Ideas and interesting companies
 

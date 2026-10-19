@@ -34,7 +34,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Enphase Energy, Inc.](securities/security_f2b9760d847b2ba59324) | ENPH (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-08-09T22:47:07Z | 2026-08-29T05:09:37Z |
 | [Evonik Industries AG](securities/security_ccb25582c0392492fe9e) | EVK (EUR) | researched: hold | complete | 10.01 / 18.97 / 27.61 EUR | 2026-10-18T23:44:47.860390Z | 2026-11-17T23:44:47.860390Z |
 | [Fanuc Corporation](securities/security_96ba305ee7cd586bc348) | FUC.F (EUR) | researched: research_expired_or_future | complete | 24.25 / 36.38 / 48.50 EUR | 2026-08-20T15:44:00Z | 2026-09-03T15:44:00Z |
-| [Fiserv, Inc.](securities/security_d202772e4e62065cd17a) | FISV (USD) | researched: research_expired_or_future | incomplete_research | 35.00 / 65.00 / 95.00 USD | 2026-08-28T19:25:00Z | 2026-09-27T19:25:00Z |
+| [Fiserv, Inc.](securities/security_d202772e4e62065cd17a) | FISV (USD) | researched: buy | complete | 36.00 / 65.70 / 96.20 USD | 2026-10-19T00:38:18.749675Z | 2026-11-18T00:38:18.749675Z |
 | [Fluence Energy, Inc.](securities/security_a9eb9838940ef5ceaa0c) | FLNC (USD) | researched: research_expired_or_future | complete | 4.59 / 11.09 / 20.84 USD | 2026-08-06T18:47:30Z | 2026-08-20T18:47:30Z |
 | [Freeport-McMoRan Inc.](securities/security_2dbe878dfc899d7ee867) | FCX (USD) | researched: research_expired_or_future | complete | 32.64 / 47.36 / 65.12 USD | 2026-08-21T22:32:19Z | 2026-09-20T22:32:19Z |
 | [GE Vernova Inc.](securities/security_4b61970aa8f574446819) | GEV (USD) | researched: research_expired_or_future | complete | 571.58 / 1,016.02 / 1,386.39 USD | 2026-08-31T22:56:03Z | 2026-09-30T22:56:03Z |
