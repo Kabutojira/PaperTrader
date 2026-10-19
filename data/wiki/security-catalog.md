@@ -67,7 +67,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [QUALCOMM Incorporated](securities/security_3a75fc1ccca2ee7c937a) | QCOM (USD) | researched: research_expired_or_future | complete | 100.00 / 160.00 / 220.00 USD | 2026-08-01T09:27:19Z | 2026-08-31T09:27:19Z |
 | [Quanta Services, Inc.](securities/security_488a9d7f7a8573597724) | PWR (USD) | researched: research_expired_or_future | complete | 417.50 / 534.40 / 668.00 USD | 2026-08-03T07:23:05Z | 2026-09-02T07:23:05Z |
 | [ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c) | 108490 (KRW) | researched: research_expired_or_future | complete | 20,625.00 / 70,968.00 / 282,667.00 KRW | 2026-09-01T06:49:44Z | 2026-09-30T06:49:44Z |
-| [RTX Corporation](securities/security_59304f90c440def31dc5) | RTX (USD) | researched: research_expired_or_future | incomplete_research | 142.00 / 179.38 / 246.50 USD | 2026-09-15T10:13:46Z | 2026-10-15T10:13:46Z |
+| [RTX Corporation](securities/security_59304f90c440def31dc5) | RTX (USD) | researched: hold | complete | 142.00 / 179.38 / 246.50 USD | 2026-10-19T00:33:47.630267Z | 2026-11-17T00:33:47.630267Z |
 | [Recursion Pharmaceuticals, Inc.](securities/security_ed7d5b616a196969c815) | RXRX (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-08-12T01:51:17Z | 2026-09-11T01:51:17Z |
 | [Rio Tinto plc](securities/security_1c055eb9b2bb1f5a8ff2) | RIO (USD) | researched: hold | complete | 68.00 / 93.50 / 126.50 USD | 2026-10-19T00:21:16.741131Z | 2026-11-18T00:21:16.741131Z |
 | [Robinhood Markets, Inc.](securities/security_ad3b1f8f59fd599f079a) | HOOD (USD) | researched: source_evidence_unavailable | complete | 42.40 / 69.00 / 112.50 USD | 2026-08-22T15:36:50Z | 2026-09-21T15:36:50Z |
