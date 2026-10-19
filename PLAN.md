@@ -1002,5 +1002,13 @@ qualification and mocked tests are separately identified above; none is claimed 
 live company research. Daily market starts13:00 America/New_York and scheduled
 research follows, with weekly discovery still bounded independently within its cycle.
 
-Final publication/CI run evidence follows after the documentation push; no further
-research operation is pending from the explicit faster-backfill request.
+Final reviewed documentation revision `39e743f4b8e25baca71379440b210b4446920bb4`
+passed [CI39190145118](https://github.com/Kabutojira/PaperTrader/actions/runs/39190145118)
+with complete tests/static/schema/reference/Quartz gates. Actual
+[Pages39189879362](https://github.com/Kabutojira/PaperTrader/actions/runs/39189879362)
+succeeded from accepted research revision `3b1bf57ab05af6c2ef5de78784687cd2eb18259d`.
+Public metadata verifies that exact SHA; coverage JSON, homepage, catalog and9
+company pages all returned200 in13 bounded live HTTP checks. Served coverage is86
+complete/6 unsupported/41 in date/51 stale, with4 Buys and3 Sells. Subsequent changes
+are documentation-only, so publication is not repeated for unchanged research inputs.
+No further research operation is pending from the explicit faster-backfill request.
