@@ -81,16 +81,16 @@
     "researched": 92,
     "stale": 51,
     "unrated": 68,
-    "watchlist_complete": 83,
+    "watchlist_complete": 84,
     "watchlist_incomplete_research": 0,
     "watchlist_instruments": 92,
     "watchlist_missing_research": 0,
     "watchlist_needs_attention": 1,
-    "watchlist_valuation_unsupported": 9
+    "watchlist_valuation_unsupported": 8
   },
   "last_market_session": "2026-10-16",
-  "last_research_at": "2026-10-19T01:56:11.907430Z",
-  "last_successful_research": "2026-10-19T01:59:27Z",
+  "last_research_at": "2026-10-19T02:10:25.767600Z",
+  "last_successful_research": "2026-10-19T02:12:43Z",
   "phase_health": {
     "market": "succeeded",
     "research": "succeeded"

@@ -32,22 +32,22 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 91 companies / 92 instruments; 92 assessed, 41 in date, 51 stale; 68 currently unrated. 0 quotes require attention.
 
-Last observed market session: 2026-10-16. Last successful research: 2026-10-19T01:59:27Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-16. Last successful research: 2026-10-19T02:12:43Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
-Watchlist valuation coverage: **83 / 92 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 0; unsupported valuation: 9; incomplete research: 0. Needs attention: 1. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
+Watchlist valuation coverage: **84 / 92 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 0; unsupported valuation: 8; incomplete research: 0. Needs attention: 1. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
+- [Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148) — 2026-10-19T02:10:25.767600Z; valuation_unsupported
+- [Enphase Energy, Inc.](securities/security_f2b9760d847b2ba59324) — 2026-10-19T02:07:45.077644Z; insufficient_confidence
+- [Intuitive Machines, Inc.](securities/security_a5dc16f3f4b245e6c168) — 2026-10-19T02:05:15.000191Z; valuation_unsupported
 - [Samsung Electronics Co., Ltd.](securities/security_d08d763780400dfbffce) — 2026-10-19T01:56:11.907430Z; insufficient_confidence
-- [Enphase Energy, Inc.](securities/security_f2b9760d847b2ba59324) — 2026-10-19T01:43:44.718479Z; valuation_unsupported
-- [Intuitive Machines, Inc.](securities/security_a5dc16f3f4b245e6c168) — 2026-10-19T01:40:00.411740Z; valuation_unsupported
 - [Sociedad Quimica y Minera de Chile S.A.](securities/security_9d4049ed6669a52815d6) — 2026-10-19T01:37:34.979892Z; buy
 - [YASKAWA Electric Corporation](securities/security_89969b7dac39b7db5661) — 2026-10-19T01:34:58.259599Z; insufficient_confidence
 - [Stratasys Ltd.](securities/security_84705b27d28a94f2b318) — 2026-10-19T01:30:41.606846Z; hold
 - [Lithium Americas Corp.](securities/security_fb87fac302a5446a1ced) — 2026-10-19T01:28:48.199824Z; valuation_unsupported
 - [ASML Holding N.V.](securities/security_ef35e41886220d51c22c) — 2026-10-19T01:26:52.646344Z; hold
 - [CrowdStrike Holdings, Inc.](securities/security_8472507d7d320aa388a7) — 2026-10-19T01:19:40.825907Z; insufficient_confidence
-- [Texas Instruments Incorporated](securities/security_83a56943e18793f685b0) — 2026-10-19T01:18:02.186939Z; hold
 
 ## Ideas and interesting companies
 
