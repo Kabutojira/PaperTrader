@@ -835,3 +835,30 @@ Validation/commit/CI/deployment and live backfill evidence will be recorded belo
   GBP0.0446 price,0.0710/0.0800 weighted/base fair value,59.19%/41.43% returns.
   Exact commit/CI/deployment evidence follows after push; no live check is inferred
   from these local tests.
+- Precision/source-intake revision `07b7008b8a42a01fcdf4bbe2af91eb0482ba6300`
+  passed [CI39183479096](https://github.com/Kabutojira/PaperTrader/actions/runs/39183479096).
+  Reviewed exact-revision Pages39183585182 succeeded; public metadata/homepage
+  returned200 and displayed ANIC0.0446/0.0710. Prior Pages39183041860 also succeeded.
+- Actual queue cycle39183589551 accepted current unsupported reviews for Samsung
+  common GDR, Recursion and Nidec:3 model operations/29 web requests, revision
+  `9cb8ca52924c45f3081c31e20e674d94e4e40a2a`, Pages39184313559 succeeded.
+  Coverage remains76 complete;91 assessed/32 current/59 stale. These are valid
+  research outcomes, not invented valuations or failed task retries. Missing GDR
+  entitlement/venue evidence, uncertain clinical cash flows and unreliable corrected
+  financial inputs remain explicit limitations.
+- Actual queue cycle39184455494 accepted complete supported cases for Texas
+  Instruments (medium confidence) and CrowdStrike (low confidence), while Sigma
+  Lithium remains unsupported. Three model operations/27 web requests, revision
+  `a83d18b34af8273412562c2ccd5ad2f77b1a25c7`, Pages39185006506 triggered.
+  Coverage78 complete/1 incomplete/12 unsupported/1 missing;91 assessed/34 current/
+  57 stale. CrowdStrike remains excluded from current Buy/Sell rankings.
+- Targeted GDR identity intake opened5 primary references in6 broker requests:
+  both Vienna ISIN/ticker listing pages, both current Citibank depositary program
+  pages, and Samsung's preferred-GDR prospectus (first3 pages and historical
+  financial pages5-7). Only metadata is registered; exchange prices were not
+  imported into market state. The document serves historical financial context,
+  not a current financial forecast. New evidence addresses the common review's
+  missing entitlement and venue questions without changing any instrument ID,
+  currency, quote, assessment, source citation or page. Preferred GDR admitted as
+  its own manual target after common task completion:23 queue rows/8 manual tasks,
+  with all existing attempts preserved. Common and preferred tasks never coexist.

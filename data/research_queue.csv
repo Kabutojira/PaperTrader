@@ -17,6 +17,7 @@ security,security_95351d928b674bbdf687,80,incomplete_research|research_overdue|s
 security,security_9d4049ed6669a52815d6,100,explicit_manual_valuation_coverage_backfill|verified_source_available,2026-10-19T00:59:14Z,2026-10-19T00:59:14Z,pending,0,2026-10-19T00:59:14Z,,true,
 security,security_a5dc16f3f4b245e6c168,100,explicit_manual_valuation_coverage_backfill|verified_source_available,2026-10-19T00:59:14Z,2026-10-19T00:59:14Z,pending,0,2026-10-19T00:59:14Z,,true,
 security,security_c2e6db30cb59254de418,80,research_overdue|severe_price_movement,2026-10-18T18:50:04Z,2026-10-18T18:50:04Z,pending,0,2026-10-18T18:50:04Z,,false,
+security,security_d08d763780400dfbffce,100,explicit_manual_valuation_coverage_backfill|historical_financials_in_prospectus_PDF_pages_5_to_7|verified_depositary_and_Vienna_identity_sources_available,2026-10-19T01:23:17Z,2026-10-19T01:23:17Z,pending,0,2026-10-19T01:23:17Z,,true,
 security,security_ef35e41886220d51c22c,100,explicit_manual_valuation_coverage_backfill|verified_financial_source_available,2026-10-19T00:47:06Z,2026-10-19T00:47:06Z,pending,0,2026-10-19T00:47:06Z,,true,
 security,security_f2b9760d847b2ba59324,100,explicit_manual_valuation_coverage_backfill|verified_source_available,2026-10-19T00:59:14Z,2026-10-19T00:59:14Z,pending,0,2026-10-19T00:59:14Z,,true,
 security,security_fb87fac302a5446a1ced,100,explicit_manual_valuation_coverage_backfill|verified_financial_source_available,2026-10-19T00:47:06Z,2026-10-19T00:47:06Z,pending,0,2026-10-19T00:47:06Z,,true,
