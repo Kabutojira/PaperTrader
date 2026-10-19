@@ -4,12 +4,12 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-08-07"
-updated: "2026-08-10"
-provenance: "source_abcl_q2_2026_10q_sec; source_abcl_q2_2026_results_sec_ex99_1; source_abcl635_clinicaltrials_gov; source_abcl635_phase2_2026_results_sec; source_abcl635_phase2_2026_presentation_sec"
+updated: "2026-10-19"
+provenance: "source_web_0c87d2a51ff740e40619c5f3; source_abcl635_clinicaltrials_gov"
 security_id: security_7bf8f4c9cc12ae410e40
 issuer_id: issuer_6647bd573a38716cbcbd
-confidence: medium
-next_review: "2026-08-24"
+confidence: low
+next_review: "2026-11-16"
 ---
 
 # AbCellera Biologics Inc. common shares
@@ -17,127 +17,80 @@ next_review: "2026-08-24"
 ## Identity
 
 - Immutable security: `security_7bf8f4c9cc12ae410e40`
-- Issuer: `issuer_6647bd573a38716cbcbd`
-- Instrument: common shares, Nasdaq Global Select Market (`XNAS`), USD
-- Provider identity: `ABCL` / `XNAS` / `USD` / equity
+- Immutable issuer: `issuer_6647bd573a38716cbcbd`
+- Supplied instrument: AbCellera Biologics Inc. common shares
+- Supplied provider symbol and MIC: `ABCL` / `XNAS`
+- Native and reporting currency: USD
 
-AbCellera is a clinical-stage antibody company combining partnered discovery economics with an
-internally led pipeline. No maintained idea or accepted relationship is currently linked to this
-security.
+The issuer's Q2 2026 release identifies AbCellera as Nasdaq-listed under `ABCL`, reports all financial information in U.S. dollars, and reports common shares outstanding. This is consistent with the supplied identity. The issuer release does not itself use the ISO MIC `XNAS`, so the MIC remains reconciled through the supplied identity rather than independently restated or changed.
 
-## Economics and thesis
+## Business economics
 
-The investable thesis is that AbCellera's discovery, T-cell-engager, GPCR and ion-channel platforms
-can repeatedly create partnered programs while a successful internal drug retains more economics.
-The Jazz and Vertex agreements are concrete platform validation: Jazz paid USD 56 million for two
-initial programs with another USD 28 million due when a third starts, and Vertex paid USD 28 million
-while funding research and development. These payments do not establish clinical success or durable
-royalty revenue.
+AbCellera is a clinical-stage biotechnology company that combines partnered antibody-discovery programs with internally developed drug candidates. Partnered programs may generate research payments, option fees, milestones, and royalties, while internal programs retain more potential economics but require AbCellera to bear more clinical-development risk and cost.
 
-Q2 revenue was USD 4.1 million and net loss was USD 55.4 million. Partner-led programs with
-downstream interests declined to 35 from 44 at year-end, and clinical molecules with downstreams
-declined to 12. At 30 June, cash, equivalents and marketable securities were USD 540.1 million;
-restricted cash and government claims lifted stated available liquidity above USD 675 million.
-Management expects the current resources to fund at least 36 months, but continued losses and a
-306.5-million share count make burn and dilution central to per-share value.
+The accessible [Q2 2026 issuer release](https://investors.abcellera.com/news/news-releases/2026/AbCellera-Reports-Q2-2026-Business-Results/default.aspx) reported:
 
-## Clinical evidence and decision gates
+- Q2 revenue of USD 4.1 million, versus USD 17.1 million in Q2 2025.
+- Q2 research and development expense of USD 46.0 million.
+- Q2 net loss of USD 55.4 million, versus USD 34.7 million one year earlier.
+- USD 540.1 million of cash, cash equivalents, and marketable securities at June 30, 2026.
+- 306,469,632 common shares issued and outstanding at June 30, 2026.
+- 35 partner-led programs believed to be progressing in which AbCellera retained downstream interests, down from 44 at December 31, 2025.
+- Downstream interests in 12 clinical molecules believed to be progressing.
 
-ABCL635 is now the decisive value driver. On 10 August, the company reported that the randomized,
-double-blind Phase 2 portion enrolled 92 postmenopausal women and met both week-four efficacy
-endpoints after one 600 mg subcutaneous dose. Moderate-to-severe vasomotor-symptom frequency fell
-by 8.8 events per day versus 3.5 for placebo, a placebo-adjusted difference of 5.3 (`p<0.001`);
-severity fell by 1.4 points versus 0.3, a difference of 1.1 (`p<0.001`). The treated group also
-showed significant sleep and patient-global-impression improvements.
+The release also described Jazz and Vertex collaborations with upfront payments and potential downstream economics. Those agreements validate partner interest in the platform but do not establish that options or milestones will be achieved, products will be approved, or royalties will become durable revenue. Declining program count, lower revenue, and a wider loss are material contrary evidence to a simple platform-growth thesis.
 
-Through the four-week cutoff, no treated participant had a serious, grade 3-or-higher, or
-discontinuation-causing adverse event. Headache, fatigue, and injection-site reactions were more
-common than placebo, and one mild transaminase increase resolved within one week. These top-line
-data materially de-risk early efficacy and tolerability, but they are issuer-reported interim data
-from 46 treated participants. Twelve-week follow-up, dose selection, regulatory interaction, and
-confirmatory late-stage development remain ahead; cross-trial claims of best-in-class efficacy are
-not head-to-head evidence.
+## Clinical evidence
 
-ClinicalTrials.gov continues to identify `NCT07118891` as an active, not-recruiting randomized
-Phase 1/2 study. The Q2 10-Q states that the FDA may require bridging or repeated U.S. studies before
-a Phase 3 start and that preliminary data can change after fuller review. ABCL575 completed Phase 1
-dosing but is not planned to advance, while ABCL386 and ABCL688 remain preclinical or IND-enabling.
+ABCL635 remains a potentially important internal program. The [ClinicalTrials.gov record for NCT07118891](https://clinicaltrials.gov/study/NCT07118891) was reachable in this review, but the retrieved response exposed only glossary-level text and did not provide substantive study fields from which efficacy, safety, enrollment, duration, or status could be independently summarized.
 
-Primary evidence:
+The previous research page recorded positive issuer-reported Phase 2 top-line results. The supplied SEC-hosted result release and presentation were reopened during this operation but returned HTTP 403. Their exact clinical figures therefore were not carried forward as currently verified evidence. This is an evidence-access limitation, not evidence that the previously reported result was reversed.
 
-- [Q2 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1703057/000170305726000046/abcl-20260630.htm)
-- [Q2 2026 results, SEC-filed Exhibit 99.1](https://www.sec.gov/Archives/edgar/data/1703057/000170305726000044/q22026earningspressrelease.htm)
-- [ABCL635 Phase 1/2 registry record](https://clinicaltrials.gov/study/NCT07118891)
-- [ABCL635 Phase 2 top-line results, SEC-filed Exhibit 99.1](https://www.sec.gov/Archives/edgar/data/1703057/000170305726000053/a2026-08x10abcl635phase2.htm)
-- [ABCL635 Phase 2 clinical update, SEC-filed Exhibit 99.2](https://www.sec.gov/Archives/edgar/data/1703057/000170305726000053/abcl635phase2clinicalupd.htm)
+## Valuation
 
-## Alert review
+Research status: **valuation unsupported**.
 
-From 13 July through 10 August, the adjusted close rose 43.25% from USD 6.52 to USD 9.34. On 10
-August alone it rose 34.78% on 45.72 million shares; deterministic indicators recorded a 1.1496
-volume z-score, RSI of 77.21, and a close above the upper Bollinger band. The same-day SEC-filed
-positive ABCL635 Phase 2 results provide a direct primary-source explanation for the move.
+The appropriate framework would be a program-level risk-adjusted NPV plus bounded platform and net-cash value, divided by a defensible fully diluted share count. A supportable calculation would require, at minimum:
 
-The alert is a genuine fundamental opportunity signal because the key program produced positive
-controlled efficacy and initial safety evidence, not technical noise. It is also a near-term entry
-risk: the abrupt repricing and overbought indicators do not establish intrinsic value, and the
-small, short-duration top-line dataset leaves late-stage, regulatory, commercial, funding, and
-dilution uncertainty. The assessment therefore changes, but the market move is not actionable.
+1. ABCL635 longer-duration efficacy and safety, dose selection, and evidence that results replicate in a larger controlled population.
+2. A documented regulatory path, pivotal-trial design, remaining development cost, timing, and probability of approval.
+3. A bounded treated population, price, gross-to-net adjustment, penetration curve, duration of therapy, margins, and commercialization economics.
+4. Partnership terms or a costed independent commercialization plan.
+5. Program-level assumptions for other internal and partnered assets rather than treating headline milestones as expected revenue.
+6. A durable operating-cash-burn forecast and fully diluted share path.
 
-## Valuation, catalysts, and risks
+These inputs are absent or not verifiable from the accessible sources. Cash is not treated as freely distributable because it funds clinical development, platform operations, facilities, and continuing losses. Management's liquidity statements and potential collaboration milestones cannot substitute for probability-adjusted product economics.
 
-No supportable fair-value scenarios are recorded. The `biotechnology_binary` template requires a
-risk-adjusted NPV with technical, regulatory, commercial, timing, and dilution probabilities. The
-Phase 2 result resolves the prior absence of controlled efficacy evidence, but the repository still
-lacks a defensible probability of late-stage and regulatory success, FDA-agreed development path,
-Phase 3 cost and timing, dose and durability evidence beyond four weeks, pricing and net economics,
-treated population and penetration, commercialization or partner terms, durable cash burn, and a
-fully diluted share path. Management's USD 6 billion-plus market estimate is not substituted for
-independently bounded revenue. Cash is not treated as distributable because it funds clinical and
-platform work.
+Accordingly, bear, base, and bull fair values and probabilities are all left blank. A current market price is not used as a proxy for fair value.
 
-Catalysts are completion of ABCL635's 12-week follow-up, dose selection, FDA interaction and a
-late-stage plan, additional medical-conference data, ABCL575 Phase 1 data in Q4, Jazz's third-program
-start, partner options, and 2027 clinical entries for ABCL386 or ABCL688. Risks are failure to
-replicate efficacy or durability in larger trials, an emerging safety signal, FDA bridging or study
-requirements, early-program attrition, partner control of downstream execution, lumpy revenue,
-sustained losses, dilution, competitive menopause treatments, manufacturing execution, and
-intellectual-property disputes.
+## Downside and contrary evidence
 
-Invalidate the upgraded thesis if ABCL635's efficacy, durability, or tolerability fails to replicate
-in longer and larger controlled studies, if regulators require an uneconomic path, if partners
-discontinue programs faster than new funded programs replenish them, if burn shortens the stated
-runway materially, or if dilution prevents operating progress from accruing to each share.
+Material downside mechanisms include clinical failure, loss of efficacy with longer follow-up, an emerging safety signal, burdensome regulatory requirements, trial delays, inability to select a competitive dose, partner program discontinuations, failure to earn contingent milestones, lumpy revenue, continued operating losses, and dilution before product economics are established.
 
-## Disposition
+The Q2 evidence is mixed: liquidity provides time to develop assets, but quarterly revenue was small relative to R&D spending, the net loss widened, and the reported count of progressing partner-led programs with downstream stakes declined. These facts prevent liquidity alone from supporting a positive valuation conclusion.
 
-Status: **watching**, confidence **medium**, rating **Unrated**, action **Watch**. Positive controlled
-Phase 2 efficacy and initial tolerability materially strengthen the thesis, while strong liquidity
-and funded partnerships support continued development. Unsupported risk-adjusted valuation and
-late-stage clinical, regulatory, commercial, burn, and dilution risk keep the security allocation-
-ineligible; no strategy, signal, or order is justified. Review by **2026-08-24**, or immediately on
-material 12-week, regulatory, development-plan, financing, or partnership evidence.
+## Catalysts and invalidation
+
+Evidence that could make valuation supportable includes complete longer-duration ABCL635 data, dose selection, documented regulatory feedback, a pivotal-development plan, bounded trial costs and timing, credible patient and pricing economics, commercialization or partnership terms, updated cash-flow guidance, and a fully diluted capitalization forecast. Other internal-program results or funded collaborations matter only if their probability-adjusted economics can be bounded.
+
+The qualitative thesis would weaken if ABCL635 efficacy or tolerability does not persist, regulators require an uneconomic development path, partner attrition continues without replenishment, collaboration economics fail to generate meaningful recurring revenue, cash consumption shortens the development runway materially, or dilution prevents operating progress from accruing to each share.
+
+The valuation-unsupported conclusion should be revisited if the missing clinical, regulatory, commercial, cost, timing, and capitalization inputs become available from readable primary evidence.
+
+## Confidence and limitations
+
+Confidence is **low**. The issuer release is useful primary evidence for Q2 financial condition, business metrics, and disclosed collaborations, but it is management-authored and contains forward-looking statements. The accessible registry response did not expose substantive study details. Four supplied SEC-hosted leads returned HTTP 403 and therefore could not serve as current cited evidence. No inaccessible figures were silently carried into the valuation.
 
 ## Changes since prior review
 
-- **Facts and evidence changed:** the 10 August SEC filing and exhibits replace an imminent binary
-  catalyst with positive controlled Phase 2 evidence: both week-four efficacy endpoints met
-  `p<0.001`, sleep and patient impression improved, and no treated participant had a serious,
-  grade 3-or-higher, or discontinuation-causing event through four weeks. The reference mark rose
-  from USD 6.53 to USD 9.34, while the alert period returned 43.25% on newly anomalous volume.
-- **Assumptions and scenarios changed:** the prior assumption that ABCL635 efficacy was unknown is
-  resolved positively at the top-line four-week stage. No bear, base, bull, probability, expected-
-  value, buy-below, or margin-of-safety output is invented because late-stage success, regulatory
-  path, cost, launch timing, commercial economics, burn, and dilution remain unbounded.
-- **Thesis and catalysts changed:** the thesis score rises from balanced support to strong support;
-  the next gates become 12-week durability, dose selection, regulatory interaction, and late-stage
-  design rather than the initial Phase 2 readout.
-- **Risks changed:** immediate Phase 2 efficacy failure recedes, but replication, longer-duration
-  safety, cross-trial comparability, development cost, competition, commercialization, and dilution
-  remain material. Partner attrition, platform economics, and cash-consumption risks are unchanged.
-- **Blockers and gaps:** `valuation_unsupported` remains the hard blocker. Medium confidence and an
-  uncompelling unquantified valuation remain soft gaps; no linked idea, accepted relationship, or
-  strategy exists.
-- **Rating and action unchanged:** despite materially better clinical evidence, the comparable
-  conclusion remains Unrated / Watch and allocation-ineligible because intrinsic value cannot yet
-  be bounded. No strategy, signal, order, allocation, or accounting state changes.
+- The assessment remains `valuation_unsupported`, but all previously empty narrative gaps are now explicitly addressed.
+- Bear, base, and bull assumptions now state why each scenario cannot be quantified; scenario values and probabilities remain empty rather than being fabricated.
+- Key assumptions and invalidation conditions are now explicit.
+- Current accessible issuer evidence confirms substantial liquidity while also documenting low revenue, a wider loss, and fewer progressing partner-led programs with downstream stakes.
+- Exact prior ABCL635 efficacy and safety figures are not repeated because the supplied SEC sources could not be reopened in this operation.
+- Identity is unchanged: `security_7bf8f4c9cc12ae410e40` remains tied to `issuer_6647bd573a38716cbcbd`.
+
+## Sources
+
+- [`source_web_0c87d2a51ff740e40619c5f3` — AbCellera Reports Q2 2026 Business Results](https://investors.abcellera.com/news/news-releases/2026/AbCellera-Reports-Q2-2026-Business-Results/default.aspx)
+- [`source_abcl635_clinicaltrials_gov` — NCT07118891](https://clinicaltrials.gov/study/NCT07118891)
