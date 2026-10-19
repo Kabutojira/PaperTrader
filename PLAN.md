@@ -731,3 +731,27 @@ Validation/commit/CI/deployment and live backfill evidence will be recorded belo
   no source text or financial/assessment changes. Native source lookup used7
   queries,3 page opens and2 document-link opens; unrelated proxy/search hits were
   rejected. Existing per-operation source/time/turn limits remain unchanged.
+- Source intake a20280efa1aca17039c03b3bd999dda2abdead32 passed
+  [CI39178452137](https://github.com/Kabutojira/PaperTrader/actions/runs/39178452137).
+  Planet Pages39178369524 succeeded; exact03669deb metadata and canonical page200.
+- Actual sequential refreshes: Nomad39178555848 accepted supported cases
+  (1 model/11 web), commitac1a53113266ed3876179e9b519e80b6f4e8166f,
+  Pages39178797169 succeeded and exact metadata/canonical page200; Eaton39178914303
+  accepted supported cases (1/10), commit5e400a7b62e710ef35ed5340d09f4c807fbfd064,
+  Pages39179196670 succeeded; Nebius39179216761 accepted supported cases (1/12),
+  commitfb155701b95f29189219e9aa3544e909c8741078, Pages39179517327 triggered.
+  Three actual model operations/33 web requests; coverage64->67 complete,
+  9 incomplete/15 unsupported/1 missing,91 assessed/22 current. Nebius has low
+  confidence and remains ineligible for current Buy/Sell rankings.
+- Next source qualification used16 broker HTTP requests across bounded passes:
+  8 usable financial documents/releases (including2 already registered),1 unusable
+  MercadoLibre redirect shell,7 denied endpoints. The embedded issuer document
+  locator resolved to MercadoLibre's actual19-page shareholder letter; Rio Tinto's
+  74-page results also opened within the existing PDF limits. Six new metadata-only
+  references added for MercadoLibre, Atkore(two), AbCellera, Fiserv and RTX. Rio and
+  Prosus existing references preserved. No raw content, financial fact, assessment,
+  page or queue was modified during intake. ASML/SQM/TI/Recursion/Enphase denied
+  endpoints were not registered as verified evidence. Native lookups covered
+  issuer and issuer-distributed releases; unrelated proxy hits were rejected.
+  Strict validation passed. Research proceeds sequentially; Pages remains an
+  independently recoverable phase and does not gate another accepted review.
