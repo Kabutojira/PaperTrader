@@ -10,7 +10,7 @@ Historical and stale research remains readable; only current validated opinions 
 | --- | --- | --- | --- | --- | --- | --- |
 | [3D Systems Corporation](securities/security_6ac6a6268ca7c08829ae) | DDD (USD) | researched: insufficient_confidence | complete | 1.79 / 2.83 / 4.15 USD | 2026-10-18T23:08:20.258117Z | 2026-11-17T23:08:20.258117Z |
 | [ABB Ltd](securities/security_c120e9f26ebb6159adf9) | ABBNY (USD) | researched: research_expired_or_future | complete | 62.40 / 86.80 / 105.00 USD | 2026-09-03T18:26:50Z | 2026-10-03T18:26:50Z |
-| [ASML Holding N.V.](securities/security_ef35e41886220d51c22c) | ASML (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-08-19T15:40:58Z | 2026-08-26T12:00:00Z |
+| [ASML Holding N.V.](securities/security_ef35e41886220d51c22c) | ASML (USD) | researched: hold | complete | 1,260.34 / 1,851.12 / 2,552.18 USD | 2026-10-19T01:26:52.646344Z | 2026-11-18T01:26:52Z |
 | [AbCellera Biologics Inc.](securities/security_7bf8f4c9cc12ae410e40) | ABCL (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-19T00:42:23.067619Z | 2026-11-16T00:42:23.067619Z |
 | [Agronomics Limited](securities/security_fe4648901e7675f157fd) | ANIC.L (GBP) | researched: buy | complete | 0.0300 / 0.0800 / 0.1100 GBP | 2026-10-18T23:21:39.032922Z | 2026-11-17T23:21:39.032922Z |
 | [Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3) | ALB (USD) | researched: research_expired_or_future | complete | 9.93 / 131.25 / 231.62 USD | 2026-09-05T17:31:04Z | 2026-10-05T17:31:04Z |
@@ -46,7 +46,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Kratos Defense & Security Solutions, Inc.](securities/security_0cf8075039299094d614) | KTOS (USD) | researched: research_expired_or_future | complete | 28.09 / 41.79 / 63.59 USD | 2026-08-05T16:29:53Z | 2026-08-19T16:29:53Z |
 | [Labcorp Holdings Inc.](securities/security_b1f2c48e1a744f5ecf67) | LH (USD) | researched: research_expired_or_future | complete | 253.40 / 311.52 / 371.00 USD | 2026-08-21T22:54:07Z | 2026-09-04T22:54:07Z |
 | [Lemonade, Inc.](securities/security_8d11e65cd0de084ee461) | LMND (USD) | researched: insufficient_confidence | complete | 16.75 / 33.51 / 55.85 USD | 2026-10-18T22:58:40.076661Z | 2026-11-17T22:58:40.076661Z |
-| [Lithium Americas Corp.](securities/security_fb87fac302a5446a1ced) | LAC (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-15T18:52:08Z | 2026-11-15T18:52:08Z |
+| [Lithium Americas Corp.](securities/security_fb87fac302a5446a1ced) | LAC (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-19T01:28:48.199824Z | 2026-11-18T01:28:48.199824Z |
 | [MP Materials Corp.](securities/security_cd492d97064d8574156e) | MP (USD) | researched: hold | complete | 18.00 / 40.00 / 72.00 USD | 2026-10-18T20:45:53.247385Z | 2026-11-17T20:45:53.247385Z |
 | [Materialise NV](securities/security_b61c642d038d71be3821) | MTLS (USD) | researched: hold | complete | 6.30 / 9.00 / 12.20 USD | 2026-10-18T23:13:04.375396Z | 2026-11-17T23:13:04.375396Z |
 | [MercadoLibre, Inc.](securities/security_4935c6e39e38273a1731) | MELI (USD) | researched: hold | complete | 1,440.00 / 2,200.00 / 3,120.00 USD | 2026-10-19T00:17:51.170792Z | 2026-11-18T00:17:51.170792Z |
@@ -83,7 +83,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Southern Copper Corporation](securities/security_6ad1af8d10d6276a0221) | SCCO (USD) | researched: source_evidence_unavailable | complete | 91.00 / 135.00 / 187.00 USD | 2026-08-21T23:17:26Z | 2026-09-04T15:55:50Z |
 | [Space Exploration Technologies Corp.](securities/security_664f93a7eaca72e76e9b) | SPCX (USD) | researched: research_expired_or_future | complete | 50.00 / 110.00 / 195.00 USD | 2026-08-05T19:02:24Z | 2026-08-19T19:02:24Z |
 | [Spotify Technology S.A.](securities/security_2010347f1a0a5ea60f47) | SPOT (USD) | researched: research_expired_or_future | complete | 330.00 / 532.00 / 771.00 USD | 2026-08-06T15:48:55Z | 2026-08-20T15:48:55Z |
-| Stratasys Ltd. | SSYS (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
+| [Stratasys Ltd.](securities/security_84705b27d28a94f2b318) | SSYS (USD) | researched: hold | complete | 3.48 / 6.40 / 10.00 USD | 2026-10-19T01:30:41.606846Z | 2026-11-18T01:30:41.606846Z |
 | [Strategy Inc](securities/security_fe5539a7d3fd9d553bce) | MSTR (USD) | researched: source_evidence_unavailable | complete | 53.63 / 107.78 / 173.76 USD | 2026-08-22T15:55:59Z | 2026-09-19T08:26:47Z |
 | [Taiwan Semiconductor Manufacturing Company Limited](securities/security_ce9b78a4d0773c950765) | TSM (USD) | researched: research_expired_or_future | complete | 250.00 / 375.00 / 495.00 USD | 2026-09-06T14:13:31Z | 2026-10-04T14:13:31Z |
 | [Teledyne Technologies Incorporated](securities/security_ad5917642acbba28c1f2) | TDY (USD) | researched: research_expired_or_future | complete | 506.00 / 675.00 / 870.00 USD | 2026-08-05T19:59:39Z | 2026-09-04T19:59:39Z |

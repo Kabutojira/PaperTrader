@@ -29,14 +29,17 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-91 companies / 92 instruments; 91 assessed, 34 in date, 57 stale; 71 currently unrated. 0 quotes require attention.
+91 companies / 92 instruments; 92 assessed, 36 in date, 56 stale; 69 currently unrated. 0 quotes require attention.
 
-Last observed market session: 2026-10-16. Last successful research: 2026-10-19T01:21:39Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-16. Last successful research: 2026-10-19T01:33:18Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
-Watchlist valuation coverage: **78 / 92 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 1; unsupported valuation: 12; incomplete research: 1. Needs attention: 2. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
+Watchlist valuation coverage: **80 / 92 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 0; unsupported valuation: 11; incomplete research: 1. Needs attention: 1. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
+- [Stratasys Ltd.](securities/security_84705b27d28a94f2b318) — 2026-10-19T01:30:41.606846Z; hold
+- [Lithium Americas Corp.](securities/security_fb87fac302a5446a1ced) — 2026-10-19T01:28:48.199824Z; valuation_unsupported
+- [ASML Holding N.V.](securities/security_ef35e41886220d51c22c) — 2026-10-19T01:26:52.646344Z; hold
 - [CrowdStrike Holdings, Inc.](securities/security_8472507d7d320aa388a7) — 2026-10-19T01:19:40.825907Z; insufficient_confidence
 - [Texas Instruments Incorporated](securities/security_83a56943e18793f685b0) — 2026-10-19T01:18:02.186939Z; hold
 - [Sigma Lithium Corporation](securities/security_4627aea1bf7d8943d3d8) — 2026-10-19T01:15:37.228751Z; valuation_unsupported
@@ -44,9 +47,6 @@ Watchlist valuation coverage: **78 / 92 instruments** have complete sourced bear
 - [Recursion Pharmaceuticals, Inc.](securities/security_ed7d5b616a196969c815) — 2026-10-19T01:07:51.346928Z; valuation_unsupported
 - [Samsung Electronics Co., Ltd.](securities/security_567d0d575bbd30aaa91d) — 2026-10-19T01:04:59.194293Z; valuation_unsupported
 - [Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148) — 2026-10-19T00:54:53.817222Z; valuation_unsupported
-- [Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349) — 2026-10-19T00:52:56.668629Z; sell
-- [PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00) — 2026-10-19T00:51:10.686036Z; hold
-- [AbCellera Biologics Inc.](securities/security_7bf8f4c9cc12ae410e40) — 2026-10-19T00:42:23.067619Z; valuation_unsupported
 
 ## Ideas and interesting companies
 

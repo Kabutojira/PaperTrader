@@ -4,155 +4,140 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-26"
-updated: "2026-10-15"
-provenance: "source_lac_q2_2026_10q_sec; source_lac_q2_2026_results_sec; source_lac_sec_submissions_20261015; source_lac_yorkville_20260813_8k_sec; deterministic market cache"
+updated: "2026-10-19"
+provenance: "source_web_5d4f49ed365ce9bbd671d50c"
 security_id: security_fb87fac302a5446a1ced
 issuer_id: issuer_8471016731f84aeb44ff
 confidence: low
-next_review: "2026-11-15"
+next_review: "2026-11-18"
 ---
 
 # Lithium Americas Corp. common shares (NYSE: LAC)
 
-## Visual evidence
-
-
-
-```echart
-{
-  "schema_version": 1,
-  "chart_id": "lac-alert-window-close",
-  "kind": "series",
-  "title": "LAC adjusted close during the October alert window",
-  "description": "The seven completed NYSE sessions in the bounded alert period show a persistent selloff rather than a one-session dislocation.",
-  "as_of": "2026-10-14",
-  "sources": [
-    {
-      "label": "PaperTrader canonical yfinance daily-price cache",
-      "url": "https://finance.yahoo.com/quote/LAC/history/",
-      "observed_at": "2026-10-15T18:46:57Z"
-    }
-  ],
-  "x_axis": {
-    "type": "time",
-    "label": "NYSE session",
-    "values": ["2026-10-06", "2026-10-07", "2026-10-08", "2026-10-09", "2026-10-12", "2026-10-13", "2026-10-14"]
-  },
-  "y_axes": [
-    {"label": "Adjusted close", "unit": "USD/share", "format": "currency", "currency": "USD"}
-  ],
-  "series": [
-    {"name": "Adjusted close", "render": "line", "y_axis": 0, "values": ["2.53999996", "2.41000009", "2.35999990", "2.34999990", "2.25000000", "2.20000005", "2.06999993"]}
-  ],
-  "notes": [
-    "Adjusted close fell throughout the bounded alert period; RSI 14 reached 17.68 on 2026-10-14 and the close was below the lower Bollinger band.",
-    "yfinance is used only for paper marks and deterministic technical monitoring, not for fundamental evidence."
-  ]
-}
-```
-
-The alert-window chart is decision-relevant because it distinguishes a persistent seven-session decline from a single noisy print. No fundamental time-series chart was added: the issuer is pre-revenue, only two comparable cash dates were retained, and project-capex, liquidity, debt and dilution measures are not like-for-like series. No valuation-scenario chart was added because per-share valuation remains unsupported.
-
 ## Identity and instrument
 
 - **Immutable security:** `security_fb87fac302a5446a1ced`
-- **Issuer:** Lithium Americas Corp. (`issuer_8471016731f84aeb44ff`)
-- **Instrument:** common shares on the New York Stock Exchange (`XNYS`), USD, yfinance symbol `LAC`
-- **Business:** a pre-revenue developer constructing Thacker Pass Phase 1 in Nevada through a joint venture owned 62% by Lithium Americas and 38% by General Motors.
-- **Related maintained idea:** [[ideas/idea_critical_minerals_lithium|Critical-minerals lithium cycle]]
-- **Canonical relationship:** [[relationships/relationship_ad2f37b49980dbc73a08|Lithium cycle → Lithium Americas]], accepted but overdue for its already-queued review.
+- **Immutable issuer:** `issuer_8471016731f84aeb44ff`
+- **Instrument:** Lithium Americas Corp. common shares
+- **Listing:** New York Stock Exchange (`XNYS`)
+- **Ticker and provider symbol:** `LAC`
+- **Native valuation currency:** USD
+- **Related idea:** [[ideas/idea_critical_minerals_lithium|Critical minerals and the lithium cycle]]
 
-Identity remains consistent across the security table, SEC CIK `0001966983`, XNYS listing and provider symbol. No duplicate instrument identity was found.
+The issuer's Q2 release identifies Lithium Americas Corp. under both NYSE and TSX ticker `LAC`. This is consistent with the supplied issuer, common-share class, exchange, symbol and currency. No identity change is warranted. The company develops Thacker Pass in Nevada through a joint venture in which Lithium Americas holds 62% and General Motors holds 38%.
 
 ## Current conclusion
 
-**Decision: continue watching; research remains incomplete for allocation and no strategy work is justified.** Thacker Pass construction is advancing and the June filing indicates substantial liquidity, but LAC remains pre-revenue and exposed to construction, commissioning, lithium-price, funding and per-share dilution risk. The October oversold signal is a risk/attention event, not proof of undervaluation. A current project NAV or probability-weighted DCF cannot be defended from the bounded evidence because the review lacks a current primary-source project model with scenario lithium prices, operating costs, taxes, sustaining capital, ramp economics, debt claims and fully diluted share outcomes on one consistent basis.
+**Research status: valuation unsupported.**
 
-## Alert review
+Thacker Pass construction is advancing, but the evidence available in this review cannot support a current bear, base and bull per-share NAV. The missing evidence is not cured by the recent share-price movement. A lower market price is neither a project-value assumption nor a substitute for a fully diluted valuation.
 
-The deterministic alert period is **2026-10-06 through 2026-10-14**. The adjusted close declined from USD 2.54 to USD 2.07. On 2026-10-14, RSI 14 was 17.68 and the close of USD 2.07 was below the lower Bollinger band of USD 2.0805. The prior MACD-cross and volume events did not reverse the broader downtrend.
+The accessible Q2 release confirms substantial construction activity, liquidity and strategic financing. It also shows why valuation remains unusually sensitive: Lithium Americas is pre-revenue, the definitive capital estimate was still in preparation, cost pressures were emerging, and the capital structure includes project debt, warrants, convertible debentures and continuing equity issuance.
 
-The SEC submissions index was inspected through 2026-10-15. No operating filing followed the August Q2 package; the latest listed 8-K, filed 2026-09-11, reports an executive retirement. The bounded search therefore found no new primary operating evidence that explains the October move. Classification: **risk/technical overshoot with unresolved fundamental attribution**, not a fundamental opportunity signal.
+## Business economics
 
-## Business and project economics
+Lithium Americas' economics depend principally on converting its 62% Thacker Pass interest into qualified, saleable battery-grade lithium carbonate. Phase 1 is designed for nominal production of 40,000 tonnes per year. Mechanical completion remained targeted for late 2027, followed by commissioning and ramp-up.
 
-The Q2 Form 10-Q says Lithium Americas will not generate operating revenue until Thacker Pass begins production, with mechanical completion targeted in late 2027 and ramp-up during 2028. The Q2 release reported:
+At June 30, 2026, the issuer reported approximately $1.3 billion of cash and restricted cash, including $530.3 million at the joint-venture level. This liquidity is material, but restricted and project-level balances are not equivalent to unrestricted parent cash.
 
-- approximately USD 1.3 billion of cash and restricted cash at 2026-06-30, including USD 530.3 million at the joint-venture level;
-- USD 1.622 billion of cumulative construction cost within the disclosed USD 2.93 billion Phase 1 capex estimate;
-- USD 1.3-1.6 billion of total 2026 capex guidance;
-- more than 95% detailed engineering completion and more than 80% procurement completion; and
-- 40,000 tonnes per year of nominal Phase 1 lithium-carbonate capacity.
+The issuer reported $1.8 billion of capitalized construction and other project-related costs, including approximately $1.6 billion counted within the technical report's $2.93 billion Phase 1 capital estimate. Detailed engineering exceeded 95% and procurement exceeded 80%. More than 1,600 workers were on site, with electrical, structural-steel and major-equipment work progressing.
 
-These facts support construction progress, not profitable operation. Restricted cash and project-level cash are not interchangeable with unrestricted parent liquidity. The company also states that it expects operating losses while Phase 1 is under development.
+These milestones reduce some early construction uncertainty but do not establish economic production. Shareholder value still depends on completion, commissioning, product qualification, realized lithium prices, operating costs, sustaining capital, taxes and the financing waterfall.
 
-## Funding, balance sheet and dilution
+## Material contrary evidence
 
-The June filing reports USD 822.8 million cash and USD 456.4 million restricted cash. DOE loan advances, General Motors' joint-venture contribution and Orion financing reduce near-term project-funding risk, but they also introduce restrictions, warrants, interest, priority claims and conditions.
+The Q2 update does not support a one-sided construction-success narrative:
 
-In August, Lithium Americas issued USD 150 million principal of subordinated convertible debentures to Yorkville, with another USD 25 million potentially available. The debentures carry a five-year maturity and a base 5% rate, with higher rates under specified conditions. The March 2026 at-the-market program had issued 13.0 million shares through June at an average USD 5.36 and another 1.1 million shares after quarter end at an average USD 3.87. Shares outstanding were 363.0 million on 2026-08-12. Funding availability improved, but dilution and financing complexity increased.
+- The company was preparing a definitive capital estimate using updated quantities, labor needs and productivity rates.
+- The existing $2.93 billion estimate did not incorporate all recent tariffs, Middle East conflict effects, fuel-price changes or other inflationary increases.
+- Estimated tariff exposure was $80-$100 million, primarily expected during 2026.
+- Management identified reduced sea-lane availability, constrained U.S. fabrication capacity, logistics pressure, inflation and a competitive skilled-labor market.
+- The project remained exposed to construction completion, commissioning and production-ramp risk.
 
-## Thesis, catalysts and invalidation
+These factors could increase remaining capital needs or delay cash generation even if physical progress continues.
 
-### Thesis
+## Funding and dilution
 
-Thacker Pass offers large-scale domestic lithium exposure with strategic counterparties and government-backed construction funding. Existing common shareholders benefit only if Phase 1 is completed and commissioned near plan, battery-grade output qualifies, normalized lithium economics support the asset, and future financing claims and dilution do not absorb the project value.
+Cumulative DOE loan advances reached $1.209 billion after a $342 million advance in June 2026. Government-backed project financing reduces immediate funding risk but creates debt-service obligations, conditions and senior claims that must be incorporated into equity NAV.
 
-### Contrary evidence and risks
+The March 2026 at-the-market program authorized up to $250 million of common-share sales. Through June 30, 2026, the company had sold 13.0 million shares at an average price of $5.36, with a further 1.1 million shares sold after quarter end at an average of $3.87. The issuer reported 363,042,943 shares outstanding on August 12, 2026.
 
-- LAC is pre-revenue and expects operating losses until production begins.
-- Remaining construction, commissioning and ramp risk is material despite engineering and procurement progress.
-- Project economics remain highly sensitive to lithium prices, unit costs and timing.
-- Restricted and joint-venture cash cannot all fund parent obligations.
-- ATM shares, DOE and joint-venture warrants, Orion claims and Yorkville convertibles complicate fully diluted per-share value.
-- The October price decline has no confirmed company-specific operating explanation in the primary-source search.
+The company also agreed to issue $150 million of subordinated convertible debentures to Yorkville, with up to another $25 million available subject to conditions. These instruments improve funding flexibility but complicate fully diluted per-share value. A defensible valuation must model conversion terms, warrants, additional ATM issuance and all other senior or dilutive claims rather than divide project NPV by basic shares alone.
 
-### Catalysts
+## Valuation method and missing coverage
 
-- Evidence that construction remains within the USD 2.93 billion estimate and late-2027 mechanical-completion target.
-- Additional DOE draws under satisfied conditions.
-- Commissioning and qualification evidence supporting a 2028 production ramp.
-- A current technical report or other primary project model sufficient for a fully diluted NAV.
+A project NAV is the appropriate method for this pre-revenue developer. A complete model would estimate attributable after-tax project cash flows and then reconcile parent and project-level financial claims before dividing by fully diluted shares.
 
-### Invalidation
+The current evidence does not provide a mutually consistent set of the following required inputs:
 
-The thesis weakens materially if construction cost or schedule slips, funding conditions fail, qualified production is delayed, lithium economics fall below the level needed to support Phase 1, or dilution and priority claims transfer too much value away from existing common shares.
+1. Scenario lithium-carbonate prices and realized-price adjustments.
+2. Annual saleable output through commissioning, ramp-up and steady state.
+3. Recovery, product-quality and customer-qualification assumptions.
+4. Cash operating costs by scenario.
+5. Sustaining capital, royalties, taxes and working capital.
+6. Updated remaining capital expenditure and its timing.
+7. Scenario discount rates and reserve-life treatment.
+8. Parent and project cash available to common shareholders.
+9. DOE debt, other debt, interest and priority claims.
+10. GM, DOE or other warrant outcomes.
+11. Yorkville conversion outcomes and possible additional issuance.
+12. Future ATM issuance and a reconciled fully diluted share count.
 
-## Idea exposure map
+Accordingly, bear, base and bull fair values and probabilities are intentionally blank. Unsupported does not mean zero value; it means that available evidence cannot produce a reliable per-share estimate.
 
-### Canonical accepted edge
+## Thesis and assumptions
 
-- [[ideas/idea_critical_minerals_lithium|Critical-minerals lithium cycle]] — **accepted-needs-review**, positive direction, high sensitivity. Durable EV and stationary-storage demand and constrained supply can improve lithium pricing, project economics and financing value. The edge is materially stale because its 2026-08-15 review date has passed. Its canonical dependent relationship-review operation already exists, so this review does not enqueue a duplicate.
+Thacker Pass offers large-scale domestic lithium exposure with strategic and government support. The constructive thesis requires the project to finish near plan, commission successfully, qualify battery-grade output and operate at margins sufficient to cover sustaining investment, taxes and financing claims.
 
-### Candidates and rejected associations
+Those requirements are not being treated as verified valuation assumptions. They are the conditions that a future model must test. The accepted lithium-cycle relationship remains economically plausible because stronger lithium demand and constrained supply can improve realized pricing and project economics, but commodity upside does not automatically translate into common-share value when construction costs, debt and dilution are unresolved.
 
-No additional maintained idea has a sufficiently specific, material transmission mechanism to LAC beyond the accepted lithium-cycle edge. Domestic industrial policy and EV adoption are already components of that maintained idea rather than separate canonical relationships. Superficial links to AI power demand, nearshoring, commercial space, digital finance, defense and healthcare automation were rejected for lack of direct material exposure.
+## Downside
 
-## Valuation and assessment
+Principal downside channels are:
 
-The selected repository template is `cyclical_commodity` with the `nav` method. Valuation is **unsupported**, not zero. The minimum defensible evidence set is incomplete: the bounded review does not provide a current, internally consistent primary-source model for scenario lithium prices, annual output and ramp, operating costs, sustaining capital, taxes, remaining capex and timing, net debt and encumbering claims, and fully diluted shares. Bear/base/bull fair values and probabilities are therefore intentionally blank.
+- a higher definitive capital estimate or additional tariff and inflation costs;
+- construction or mechanical-completion delays;
+- unsuccessful commissioning or slower-than-planned ramp-up;
+- failure to qualify battery-grade product;
+- weak lithium pricing or higher operating costs;
+- financing-condition failures or expensive replacement capital;
+- increased interest, debt or other priority claims; and
+- convertible, warrant or equity dilution that transfers value away from existing shares.
 
-The quality assessment uses only repository anchors. Thesis is 60/100; business quality 40/100; balance sheet 60/100; valuation 20/100; timing 20/100; liquidity 100/100; and risk penalty 80/100. Confidence remains **low**. The hard blocker is `valuation_unsupported`; soft gaps are construction, commodity normalization, dilution, funding complexity, confidence and timing. The next review is due 2026-11-15 or sooner on an operating filing, material financing change, capex/schedule revision or relationship decision.
+As a pre-revenue issuer, LAC can experience substantial common-equity impairment even if the underlying resource remains strategically important.
 
-## Changes since prior review
+## Catalysts
 
-- **Evidence:** Q2 2026 replaced Q1 as the latest operating evidence. The August Yorkville closing and SEC submissions check were added.
-- **Project:** late-2027 mechanical completion and 2028 ramp remain the disclosed targets; cumulative construction progress and 2026 capex guidance are now quantified.
-- **Liquidity and claims:** reported cash and restricted cash increased, but so did DOE borrowing, ATM dilution and convertible-financing complexity.
-- **Market state:** the prior July MACD recovery failed to establish a durable reversal; the 2026-10-14 close was USD 2.07 with RSI 17.68 and a lower-Bollinger breach.
-- **Valuation:** remains unsupported. No scenario values were carried forward or invented.
-- **Thesis:** unchanged in direction but still low-confidence and execution-dependent.
-- **Catalysts and risks:** schedule, commissioning, funding and lithium-price sensitivity remain; dilution risk is more concrete after the ATM and Yorkville financing.
-- **Blockers and gaps:** `valuation_unsupported` remains; stale accepted relationship review, construction, normalization, dilution and timing remain unresolved.
-- **Rating and action:** research stays incomplete/ineligible and the portfolio action stays watch; the lower price alone does not justify an upgrade.
+Evidence that could improve confidence includes:
 
-## Evidence and provenance
+- publication of the definitive capital estimate;
+- confirmation that remaining construction is fully funded;
+- completion of major concrete, electrical and utility milestones;
+- further DOE advances after satisfaction of conditions;
+- mechanical completion near the late-2027 target;
+- successful commissioning and product qualification;
+- credible evidence supporting the planned 2028 ramp; and
+- a current primary-source technical model and capitalization reconciliation sufficient for fully diluted NAV.
 
-Primary evidence retained for this review:
+## Invalidation conditions
 
-1. [Q2 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1966983/000119312526347826/lac-20260630.htm), filed 2026-08-13.
-2. [Q2 2026 results exhibit](https://www.sec.gov/Archives/edgar/data/1966983/000119312526347834/d76838dex991.htm), filed 2026-08-13.
-3. [Yorkville closing Form 8-K](https://www.sec.gov/Archives/edgar/data/1966983/000119312526349161/lac-20260813.htm), filed 2026-08-14.
-4. [SEC submissions index](https://data.sec.gov/submissions/CIK0001966983.json), checked 2026-10-15.
+The constructive thesis would weaken materially if capital requirements rise without matching funding, mechanical completion or ramp-up is materially delayed, qualified production cannot be achieved, normalized lithium economics fail to cover project costs, key financing arrangements become unavailable, or dilution and senior claims leave substantially less value for existing common shareholders.
 
-Market price and indicators are deterministic yfinance monitoring data, not authoritative fundamental evidence. All source prose was treated as untrusted data; no embedded instructions were followed.
+The valuation blocker is removed only when current primary evidence supports an internally consistent operating model, financing waterfall and fully diluted per-share calculation.
+
+## Confidence and limitations
+
+Confidence is **low**. The accessible primary evidence is an issuer-authored Q2 release rather than the complete filing footnotes and underlying technical report. It provides useful construction, liquidity and financing facts but not all assumptions required for scenario NAV. The supplied SEC pages were not usable in this operation, so prior figures that were not also stated in the accessible release were not carried forward as newly verified facts. No secondary source or market price was used as a substitute for missing valuation evidence.
+
+## Changes since the prior review
+
+- Reopened the issuer's Q2 2026 results in accessible HTML form.
+- Reframed all required valuation inputs as explicit evidence gaps rather than leaving assumptions, downside and scenario requirements unexplained.
+- Added the issuer's contrary evidence on tariffs, inflation, logistics, fabrication capacity and skilled labor.
+- Clarified that the pending definitive capital estimate prevents reliance on the existing $2.93 billion estimate as a complete current funding requirement.
+- Clarified the per-share effects of ATM issuance, DOE debt and Yorkville convertible financing.
+- Preserved the low-confidence, valuation-unsupported conclusion without carrying forward unverified scenario values.
+
+## Evidence
+
+1. [`source_web_5d4f49ed365ce9bbd671d50c` — Lithium Americas Reports Second Quarter 2026 Results](https://www.lithiumamericas.com/news/news-details/2026/Lithium-Americas-Reports-Second-Quarter-2026-Results/default.aspx), Lithium Americas Corp., accessed 2026-10-19.
