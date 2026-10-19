@@ -29,14 +29,17 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-91 companies / 92 instruments; 91 assessed, 32 in date, 59 stale; 72 currently unrated. 0 quotes require attention.
+91 companies / 92 instruments; 91 assessed, 34 in date, 57 stale; 71 currently unrated. 0 quotes require attention.
 
-Last observed market session: 2026-10-16. Last successful research: 2026-10-19T01:12:40Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-16. Last successful research: 2026-10-19T01:21:39Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
-Watchlist valuation coverage: **76 / 92 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 1; unsupported valuation: 13; incomplete research: 2. Needs attention: 2. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
+Watchlist valuation coverage: **78 / 92 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 1; unsupported valuation: 12; incomplete research: 1. Needs attention: 2. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
+- [CrowdStrike Holdings, Inc.](securities/security_8472507d7d320aa388a7) — 2026-10-19T01:19:40.825907Z; insufficient_confidence
+- [Texas Instruments Incorporated](securities/security_83a56943e18793f685b0) — 2026-10-19T01:18:02.186939Z; hold
+- [Sigma Lithium Corporation](securities/security_4627aea1bf7d8943d3d8) — 2026-10-19T01:15:37.228751Z; valuation_unsupported
 - [Nidec Corporation](securities/security_3853e54c619d597dcaa1) — 2026-10-19T01:10:04.361736Z; valuation_unsupported
 - [Recursion Pharmaceuticals, Inc.](securities/security_ed7d5b616a196969c815) — 2026-10-19T01:07:51.346928Z; valuation_unsupported
 - [Samsung Electronics Co., Ltd.](securities/security_567d0d575bbd30aaa91d) — 2026-10-19T01:04:59.194293Z; valuation_unsupported
@@ -44,9 +47,6 @@ Watchlist valuation coverage: **76 / 92 instruments** have complete sourced bear
 - [Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349) — 2026-10-19T00:52:56.668629Z; sell
 - [PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00) — 2026-10-19T00:51:10.686036Z; hold
 - [AbCellera Biologics Inc.](securities/security_7bf8f4c9cc12ae410e40) — 2026-10-19T00:42:23.067619Z; valuation_unsupported
-- [Fiserv, Inc.](securities/security_d202772e4e62065cd17a) — 2026-10-19T00:38:18.749675Z; buy
-- [RTX Corporation](securities/security_59304f90c440def31dc5) — 2026-10-19T00:33:47.630267Z; hold
-- [Atkore Inc.](securities/security_22c2b9d782a62d7a9b86) — 2026-10-19T00:29:33.206502Z; hold
 
 ## Ideas and interesting companies
 
