@@ -920,3 +920,29 @@ Validation/commit/CI/deployment and live backfill evidence will be recorded belo
   Queue19/manual4; next default3 tasks are LUNR/ENPH/TWST, then a common-GDR single.
   Strict current data validation passed; financial assessment/page changes remain
   solely the responsibility of accepted isolated research results.
+- Source-intake revision `00fdd18b5428cdc7057a8d7658080cdc4832e183` passed
+  [CI39188021655](https://github.com/Kabutojira/PaperTrader/actions/runs/39188021655).
+  Preferred-GDR Pages39187847092 succeeded; public metadata, homepage and company
+  page returned200 with exact accepted9abb revision.
+- Actual three-company cycle39188210514 completed3 model operations/31 web requests:
+  LUNR10, ENPH11, TWST10. Enphase accepted supported USD8.03/19.28/38.22 cases,
+  low confidence; LUNR/TWST remain honestly unsupported after accessing full tables.
+  Accepted revision `3c9c904f574cd4baa8e8e2b3c659a5cadde6ccf9`, exact-revision
+  Pages39188908016 succeeded. Coverage84/92 complete,8 unsupported;41 current/51 stale.
+  LUNR still lacks post-acquisition diluted-claim/debt reconciliation; Twist lacks
+  verified subsequent financing terms. No failure, timeout or case invention.
+- Actual common-GDR single39189070501 completed1 model operation/10 web requests,
+  accepted supported EUR2401.59/5003.30/7961.19 scenarios at low confidence,
+  revision `a1d9369f8ab8530ad2db8b07feee954441befcec`; Pages39189391786 triggered.
+  Coverage85/92 complete,7 unsupported; all92 assessed,41 current/51 stale.
+  Each Samsung instrument keeps its own entitlement bridge and current valuation;
+  neither low-confidence instrument enters Buy/Sell rankings.
+- Final capitalization-source qualification used7 bounded engineering requests:
+  3 usable primary documents (Twist offering8-K and issuer pricing release; LUNR
+  acquisition8-K),3 refused issuer routes and1 oversized LUNR quarterly filing.
+  No body/request/financial-validation limits were relaxed. Register only Twist's
+  2 newly verified financing references and admit1 new bounded review addressing
+  its specific failed-source limitation. LUNR receives no further immediate review
+  because the full diluted-claim evidence remains inaccessible within the caps.
+  All other assessments/pages/citations remain unchanged; queue16/manual1, existing
+  attempts preserved. Strict data validation passed; exact intake CI follows.
