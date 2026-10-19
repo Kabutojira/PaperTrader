@@ -4,12 +4,12 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-26"
-updated: "2026-08-11"
-provenance: "Eaton Q2 2026 Form 10-Q and results exhibit; PaperTrader market and FX caches; 2026-08-11 quick check"
+updated: "2026-10-19"
+provenance: "Eaton Q2 2026 issuer release and issuer-hosted financial statements"
 security_id: security_18a3ab0ee6086ee85d0f
 issuer_id: issuer_f95d7e49ebda3ca93218
 confidence: medium
-next_review: "2026-09-02"
+next_review: "2026-11-18"
 ---
 
 # Eaton Corporation plc ordinary shares
@@ -17,100 +17,70 @@ next_review: "2026-09-02"
 ## Identity
 
 - Immutable security: `security_18a3ab0ee6086ee85d0f`
-- Issuer: `issuer_f95d7e49ebda3ca93218`
-- Instrument: Irish ordinary shares, New York Stock Exchange (`XNYS`), USD
-- Provider identity: `ETN` / `XNYS` / `USD` / equity
+- Immutable issuer: `issuer_f95d7e49ebda3ca93218`
+- Issuer: Eaton Corporation plc
+- Instrument: ordinary shares
+- Listing: New York Stock Exchange (`XNYS`)
+- Provider symbol and ticker: `ETN`
+- Native valuation currency: USD
 
-The filing confirms Eaton Corporation plc and its exchange-listed ordinary shares. This review is
-linked to [[ideas/idea_ai_infrastructure_power]] and the complete [[research-catalog]].
+The issuer materials identify Eaton Corporation plc and use diluted ordinary-share data. Nothing in the opened evidence contradicts the supplied `ETN`/`XNYS`/USD identity. The company is incorporated in Ireland, while its shares trade in the United States.
 
-## Changes since prior review
+## Changes in this review
 
-- **2026-08-11 quick check:** The 2026-08-04 alert packet recorded a bullish MACD crossover
-  alongside a Bollinger-above-upper transition and a 12.41% period return. The latest identity-
-  matched mark was USD 444.96 as of 2026-08-10, above the prior USD 415.20 mark and materially
-  above the USD 350 base case, while no new primary evidence or thesis invalidation was supplied.
-  The technical strength is treated as a positive repricing signal, not a new entry condition;
-  the existing Sell/Avoid conclusion remains unchanged and no full research escalation is warranted.
+This review replaces inaccessible SEC document links with an opened Eaton-hosted results release and financial-statement package, refreshes the assessment through 2026-10-19, and completes explicit thesis-invalidation conditions. The operating thesis remains supported, but the valuation continues to require a premium multiple and must account for materially higher acquisition debt, interest expense and adjustment items.
 
-- **Evidence:** Q2 results and the Q2 Form 10-Q replace the pre-earnings Q1 evidence boundary.
-  Sales reached USD 8.531 billion, organic growth was 14%, operating cash flow was USD 1.1 billion,
-  free cash flow was USD 874 million, and full-year adjusted-EPS guidance rose to USD 13.40-13.60.
-- **Alert:** The July 31 close rose 7.32% in one session to USD 415.20 on 4.55 million shares. The
-  deterministic 20-session return was 4.19% and volume anomaly strength rose from 0.0146 to 0.1564.
-  This is a results-driven positive repricing, not noise, but it worsens entry valuation.
-- **Assumptions and valuation:** The old two-case Q1 proxy is replaced by a scenario-complete
-  earnings-multiple assessment. Bear/base/bull fair values are USD 285/USD 350/USD 450 with
-  25%/50%/25% probabilities. The USD 358.75 probability-weighted value remains below the mark.
-- **Thesis and catalysts:** Broad electrical orders, backlog and margins strengthen the AI-power
-  mechanism. Raised guidance and the planned Mobility separation are new catalysts.
-- **Risks, blockers and gaps:** No hard blocker is added. Acquisition leverage, integration,
-  working-capital growth, data-centre concentration, margin normalization and overvaluation remain.
-- **Rating and action:** Research becomes scenario-complete, but the decision remains watch/no
-  paper trade. The evidence upgrade does not overcome the adverse valuation and payoff frontiers.
+## Business economics and thesis
 
-## Economics and thesis
+Eaton sells electrical distribution, power-quality, thermal-management, aerospace and mobility products. Its economics depend on converting qualified customer demand and backlog into sales while maintaining pricing, manufacturing execution and segment margins. The electrical businesses provide direct exposure to data-center, utility, commercial and industrial power investment.
 
-Eaton supplies electrical distribution, power quality, thermal, aerospace and mobility products.
-Q2 2026 sales rose 21% to USD 8.531 billion, including 14% organic growth. Electrical Americas
-sales grew 18% organically, margin reached 27.5%, rolling orders rose 41% and backlog rose 33%.
-Electrical Global organic sales grew 18%, margin reached 19.8%, orders rose 33% and backlog rose
-103%. The electrical businesses retained a 1.2 rolling book-to-bill ratio. This broad conversion of
-power demand into revenue, orders and high-margin backlog strongly supports the mechanism in
-[[ideas/idea_ai_infrastructure_power]] and the accepted
-[[relationships/relationship_87b95f713a902d531f2f|AI-infrastructure relationship]].
+In Q2 2026, Eaton reported USD 8.531 billion of sales, up 21% year over year, including 14% organic growth. Electrical Americas generated USD 3.951 billion of sales and a 27.5% operating margin; Electrical Global generated USD 2.517 billion and a 19.8% margin. Rolling orders rose 41% organically in Electrical Americas and 33% in Electrical Global, while their backlogs increased 33% and 103%, respectively. The electrical businesses retained a 1.2 rolling book-to-bill ratio. These figures support a positive relationship with [[ideas/idea_ai_infrastructure_power]].
 
-Cash conversion improved: quarterly operating cash flow was USD 1.1 billion and free cash flow was
-USD 874 million. However, cash plus short-term investments was only USD 695 million against USD
-20.611 billion of short- and long-term debt at June 30. Receivables and inventory also rose to USD
-6.673 billion and USD 5.417 billion. The balance sheet remains serviceable rather than strong after
-large acquisitions, making integration and refinancing sensitivity material valuation constraints.
+Cash generation was also positive: quarterly operating cash flow was USD 1.127 billion and free cash flow was USD 874 million. The demand signal is broad, but backlog is not equivalent to guaranteed revenue and the opened materials do not disclose customer-level concentration or cancellation rates.
 
-## Evidence and gates
+## Contrary evidence and balance-sheet risk
 
-| Evidence | Interpretation |
-| --- | --- |
-| Q2 organic sales grew 14%; Electrical Americas and Global organic sales each grew 18%. | The demand mechanism is broad and is converting into reported revenue. |
-| Electrical Americas orders rose 41% and backlog 33%; Global orders rose 33% and backlog 103%. | Strong visibility, subject to cancellations, normalization and acquisition mix. |
-| Electrical Americas margin reached 27.5%; consolidated segment margin was 23.1%. | Strong economics, though total margin was 80 basis points below Q2 2025. |
-| Operating cash flow was USD 1.1 billion and free cash flow USD 874 million. | Cash conversion supports the thesis after a weaker Q1. |
-| Cash and short-term investments were USD 695 million versus USD 20.611 billion debt. | Acquisition leverage and integration remain material residual risks. |
+The headline growth does not remove important contrary evidence. Q2 segment margin of 23.1% was 80 basis points below the prior-year quarter. GAAP diluted EPS fell to USD 2.11 from USD 2.51, while adjusted EPS rose to USD 3.15 from USD 2.95. The difference reflects acquisition and divestiture charges, restructuring costs and intangible amortization; these adjustments improve comparability but do not make the associated economic costs irrelevant.
 
-Primary evidence: [Eaton Q2 2026 results exhibit](https://www.sec.gov/Archives/edgar/data/1551182/000155118226000027/etn06302026exhibit99.htm)
-and [Eaton Q2 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1551182/000155118226000030/etn-20260630.htm).
+At June 30, 2026, cash was USD 483 million and short-term investments were USD 212 million. Short-term debt, the current portion of long-term debt and long-term debt totaled USD 20.611 billion. Net interest expense rose to USD 201 million in Q2 from USD 71 million a year earlier. Goodwill and other intangible assets reached USD 32.840 billion following acquisitions, including Boyd Thermal. Integration performance, cash conversion and deleveraging therefore matter materially to equity value.
 
-## 2026-07-31 price and volume alert
+## Guidance and valuation
 
-The canonical July 31 close was USD 415.200012, up 7.32% from USD 386.890015 on July 30 and up
-4.19% over July 2-31. Volume was 4,548,500 shares, and deterministic anomaly strength increased
-from 0.014594865 to 0.1564304. The same-day Q2 release provides a direct explanation: record sales,
-strong electrical orders and backlog, improved sequential Electrical Americas margin, stronger cash
-flow and raised organic-growth and adjusted-EPS guidance. The alert is therefore a **positive
-fundamental repricing**, but not an entry opportunity at the resulting mark.
+Eaton guided to 2026 adjusted EPS of USD 13.40-13.60, GAAP EPS of USD 10.36-10.56, organic growth of 11%-13% and segment margins of 24.1%-24.5%. The following 12-month scenarios use adjusted EPS as the earnings anchor but treat the exclusions and balance sheet as constraints on the applicable multiple.
 
-## Valuation, catalysts, and risks
+| Scenario | Probability | EPS anchor | Multiple | Fair value |
+| --- | ---: | ---: | ---: | ---: |
+| Bear | 25% | USD 13.40 | about 21.3x | USD 285 |
+| Base | 50% | USD 13.50 | 26.0x | USD 351 |
+| Bull | 25% | USD 13.60 | about 33.0x | USD 449 |
 
-The mature-compounder earnings-multiple template uses fresh Q2 guidance, the latest diluted share
-count and net debt. The bear case is USD 285 (25% probability): roughly USD 10.36 GAAP EPS at a
-27.5-times multiple if integration costs, leverage and margin normalization dominate. The base case
-is USD 350 (50%): roughly USD 13.50 adjusted EPS at 25.9 times as backlog converts but the current
-premium moderates. The bull case is USD 450 (25%): sustained mid-teens growth, margin resilience,
-Mobility separation benefits and visible deleveraging support a roughly 33-times multiple on guided
-adjusted EPS. The probability-weighted value is USD 358.75, below the USD 415.20 mark; the valuation
-is supported but does not clear the expected-return, base-upside, payoff or margin-of-safety gates.
+The probability-weighted value is USD 359 per share. The bear case assumes multiple compression as leverage, interest expense, integration costs or margin normalization dominate. The base assumes guidance delivery, adequate backlog conversion and no material acquisition shortfall. The bull requires persistent electrical demand, resilient margins, strong cash generation and visible debt reduction. The multiples are analyst assumptions, not issuer forecasts, and account for most of the scenario spread.
 
-Catalysts are backlog conversion, raised guidance delivery, acquisition synergies, capacity ramp,
-deleveraging and the planned first-quarter 2027 Mobility separation. Invalidate on order or backlog
-contraction, cancellations, sustained margin compression, poor cash conversion, acquisition
-underperformance, leverage-constrained capital allocation or evidence that customer concentration
-and over-ordering are masking weaker end demand.
+## Catalysts
 
-## Disposition
+- Conversion of Electrical Americas and Electrical Global backlog into profitable revenue.
+- Delivery of the 2026 organic-growth, margin and adjusted-EPS outlook.
+- Sustained free-cash-flow generation and debt reduction.
+- Successful integration of Boyd Thermal and other acquired operations.
+- Completion of the planned Mobility combination with Dana. Eaton expects the Reverse Morris Trust transaction to close in the first quarter of 2027, subject to shareholder, regulatory and customary closing conditions, and expects to receive an approximately USD 1.1 billion pre-closing cash distribution subject to adjustments and transaction costs.
 
-Status: **watching**, confidence **medium**, research **complete**, allocation **ineligible**. The
-business and causal thesis strengthened, while the 7.32% results-day repricing left the USD 415.20
-mark above both the USD 350 base case and USD 358.75 probability-weighted value. No conviction
-strategy is justified. One dependent idea refresh is required after this security result is accepted;
-the security operation does not edit the idea page directly.
+## Downside and invalidation
 
-See [[index]] for the current paper-only investor decision.
+Downside can result from electrical-order normalization, backlog cancellations, data-center project delays, margin compression, weak cash conversion, acquisition underperformance, refinancing pressure or a lower market multiple. The thesis should be invalidated or materially reduced if:
+
+1. Electrical orders or backlog contract across successive reporting periods.
+2. Book-to-bill falls below one without a credible temporary explanation.
+3. Cancellations or project delays prevent backlog conversion.
+4. Segment margins remain below guidance or free cash flow weakens while debt remains elevated.
+5. Boyd Thermal or other acquisitions fail to earn acceptable returns.
+6. The Mobility transaction fails, is materially delayed or causes significant value leakage.
+7. Customer concentration, duplicate ordering or industry capacity additions show that reported demand is less durable than assumed.
+
+## Confidence and limitations
+
+Confidence is **medium**. The assessment is grounded in issuer-reported Q2 results, financial statements and guidance, but no later quarterly financial release was used. The materials do not disclose customer-level backlog concentration, cancellation rates, acquisition return targets or a fully separated Mobility forecast. Adjusted EPS excludes economically relevant acquisition, divestiture, restructuring and amortization costs. The valuation multiple range is necessarily judgmental, making fair value sensitive to market sentiment even if operating guidance is achieved.
+
+## Sources
+
+- [Eaton Reports Record Second Quarter 2026 Results](https://origin-edge.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-reports-record-second-quarter-2026-results.html) (`source_web_c71b05a94aa5982990c9f575`)
+- [Eaton Corporation plc Q2 2026 financial statements and earnings-release notes](https://origin-edge.eaton.com/content/dam/eaton/company/investor-relations/quarterly-earnings/filings/2026/q2/q2-2026-financials-only.pdf) (`source_web_be84eb4c8ce55c344b16259b`)

@@ -30,7 +30,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [CrowdStrike Holdings, Inc.](securities/security_8472507d7d320aa388a7) | CRWD (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-18T21:29:09.311608Z | 2026-11-17T21:29:09.311608Z |
 | [DLocal Limited](securities/security_715bde20b6e1e1320c1a) | DLO (USD) | researched: research_expired_or_future | complete | 9.00 / 18.70 / 29.40 USD | 2026-08-28T21:13:00Z | 2026-09-27T21:13:00Z |
 | [Domino's Pizza, Inc.](securities/security_f34181f3df32080a91d1) | DPZ (USD) | researched: research_expired_or_future | complete | 270.00 / 380.00 / 500.00 USD | 2026-08-28T19:34:25Z | 2026-09-27T19:34:25Z |
-| [Eaton Corporation plc](securities/security_18a3ab0ee6086ee85d0f) | ETN (USD) | researched: research_expired_or_future | incomplete_research | 285.00 / 350.00 / 450.00 USD | 2026-08-03T06:01:36Z | 2026-09-02T06:01:36Z |
+| [Eaton Corporation plc](securities/security_18a3ab0ee6086ee85d0f) | ETN (USD) | researched: hold | complete | 285.00 / 351.00 / 449.00 USD | 2026-10-19T00:02:37.029896Z | 2026-11-18T00:02:37.029896Z |
 | [Enphase Energy, Inc.](securities/security_f2b9760d847b2ba59324) | ENPH (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-08-09T22:47:07Z | 2026-08-29T05:09:37Z |
 | [Evonik Industries AG](securities/security_ccb25582c0392492fe9e) | EVK (EUR) | researched: hold | complete | 10.01 / 18.97 / 27.61 EUR | 2026-10-18T23:44:47.860390Z | 2026-11-17T23:44:47.860390Z |
 | [Fanuc Corporation](securities/security_96ba305ee7cd586bc348) | FUC.F (EUR) | researched: research_expired_or_future | complete | 24.25 / 36.38 / 48.50 EUR | 2026-08-20T15:44:00Z | 2026-09-03T15:44:00Z |
