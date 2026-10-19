@@ -43,7 +43,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Intuitive Machines, Inc.](securities/security_a5dc16f3f4b245e6c168) | LUNR (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-19T02:05:15.000191Z | 2026-11-18T02:05:15.000191Z |
 | [Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349) | ISRG (USD) | researched: sell | complete | 240.00 / 342.00 / 450.00 USD | 2026-10-19T00:52:56.668629Z | 2026-11-18T00:52:56.668629Z |
 | [Koninklijke Ahold Delhaize N.V.](securities/security_e19c7fe27fbcc4cd923d) | AD (EUR) | researched: research_expired_or_future | complete | 24.00 / 33.00 / 42.00 EUR | 2026-08-28T19:12:00Z | 2026-09-27T19:12:00Z |
-| [Kratos Defense & Security Solutions, Inc.](securities/security_0cf8075039299094d614) | KTOS (USD) | researched: research_expired_or_future | complete | 28.09 / 41.79 / 63.59 USD | 2026-08-05T16:29:53Z | 2026-08-19T16:29:53Z |
+| [Kratos Defense & Security Solutions, Inc.](securities/security_0cf8075039299094d614) | KTOS (USD) | researched: hold | complete | 28.09 / 41.79 / 63.59 USD | 2026-10-19T21:19:48.861579Z | 2026-11-18T21:19:48.861579Z |
 | [Labcorp Holdings Inc.](securities/security_b1f2c48e1a744f5ecf67) | LH (USD) | researched: research_expired_or_future | complete | 253.40 / 311.52 / 371.00 USD | 2026-08-21T22:54:07Z | 2026-09-04T22:54:07Z |
 | [Lemonade, Inc.](securities/security_8d11e65cd0de084ee461) | LMND (USD) | researched: insufficient_confidence | complete | 16.75 / 33.51 / 55.85 USD | 2026-10-18T22:58:40.076661Z | 2026-11-17T22:58:40.076661Z |
 | [Lithium Americas Corp.](securities/security_fb87fac302a5446a1ced) | LAC (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-19T01:28:48.199824Z | 2026-11-18T01:28:48.199824Z |
@@ -82,7 +82,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Sociedad Quimica y Minera de Chile S.A.](securities/security_9d4049ed6669a52815d6) | SQM (USD) | researched: buy | complete | 42.00 / 77.00 / 120.00 USD | 2026-10-19T01:37:34.979892Z | 2026-11-18T01:37:34.979892Z |
 | [Southern Copper Corporation](securities/security_6ad1af8d10d6276a0221) | SCCO (USD) | researched: source_evidence_unavailable | complete | 91.00 / 135.00 / 187.00 USD | 2026-08-21T23:17:26Z | 2026-09-04T15:55:50Z |
 | [Space Exploration Technologies Corp.](securities/security_664f93a7eaca72e76e9b) | SPCX (USD) | researched: research_expired_or_future | complete | 50.00 / 110.00 / 195.00 USD | 2026-08-05T19:02:24Z | 2026-08-19T19:02:24Z |
-| [Spotify Technology S.A.](securities/security_2010347f1a0a5ea60f47) | SPOT (USD) | researched: research_expired_or_future | complete | 330.00 / 532.00 / 771.00 USD | 2026-08-06T15:48:55Z | 2026-08-20T15:48:55Z |
+| [Spotify Technology S.A.](securities/security_2010347f1a0a5ea60f47) | SPOT (USD) | researched: hold | complete | 317.00 / 510.00 / 739.00 USD | 2026-10-19T21:21:50.964829Z | 2026-11-18T21:21:50.964829Z |
 | [Stratasys Ltd.](securities/security_84705b27d28a94f2b318) | SSYS (USD) | researched: hold | complete | 3.48 / 6.40 / 10.00 USD | 2026-10-19T01:30:41.606846Z | 2026-11-18T01:30:41.606846Z |
 | [Strategy Inc](securities/security_fe5539a7d3fd9d553bce) | MSTR (USD) | researched: source_evidence_unavailable | complete | 53.63 / 107.78 / 173.76 USD | 2026-08-22T15:55:59Z | 2026-09-19T08:26:47Z |
 | [Taiwan Semiconductor Manufacturing Company Limited](securities/security_ce9b78a4d0773c950765) | TSM (USD) | researched: research_expired_or_future | complete | 250.00 / 375.00 / 495.00 USD | 2026-09-06T14:13:31Z | 2026-10-04T14:13:31Z |
@@ -96,7 +96,9 @@ Historical and stale research remains readable; only current validated opinions 
 | [UiPath, Inc.](securities/security_eca976f0076a425ea1bb) | PATH (USD) | researched: research_expired_or_future | complete | 9.00 / 17.00 / 27.00 USD | 2026-09-05T10:45:22Z | 2026-10-03T10:45:22Z |
 | [Vale S.A.](securities/security_b2116dcf976c96974d7b) | VALE (USD) | researched: source_evidence_unavailable | complete | 9.00 / 14.50 / 20.00 USD | 2026-08-25T15:48:11Z | 2026-09-24T15:48:11Z |
 | [Valero Energy Corporation](securities/security_c5a9e460d3350284d157) | VLO (USD) | researched: research_expired_or_future | complete | 216.00 / 286.00 / 378.00 USD | 2026-08-31T23:26:30Z | 2026-09-30T23:26:30Z |
+| [Veralto Corporation](securities/security_1b773169da5023ce4682) | VLTO (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Vertiv Holdings Co](securities/security_cb88f9154cfeaa15e878) | VRT (USD) | researched: research_expired_or_future | complete | 166.25 / 281.40 / 402.00 USD | 2026-08-08T11:46:19Z | 2026-09-07T11:46:19Z |
 | [W&T Offshore, Inc.](securities/security_61567714298b9563d1a9) | WTI (USD) | researched: research_expired_or_future | complete | 0.7900 / 3.17 / 6.15 USD | 2026-08-06T14:22:30Z | 2026-08-20T14:22:30Z |
 | [Xometry, Inc.](securities/security_c2e6db30cb59254de418) | XMTR (USD) | researched: source_evidence_unavailable | complete | 50.00 / 85.00 / 130.00 USD | 2026-09-06T13:57:12Z | 2026-10-04T13:57:12Z |
+| [Xylem Inc.](securities/security_d2be67701e612ee6625d) | XYL (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [YASKAWA Electric Corporation](securities/security_89969b7dac39b7db5661) | YEC.F (EUR) | researched: insufficient_confidence | complete | 14.82 / 23.68 / 33.07 EUR | 2026-10-19T01:34:58.259599Z | 2026-11-18T01:34:58.259599Z |

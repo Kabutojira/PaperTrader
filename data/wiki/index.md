@@ -31,14 +31,16 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-91 companies / 92 instruments; 92 assessed, 41 in date, 51 stale; 69 currently unrated. 1 quotes require attention.
+93 companies / 94 instruments; 92 assessed, 43 in date, 49 stale; 69 currently unrated. 3 quotes require attention.
 
-Last observed market session: 2026-10-19. Last successful research: 2026-10-19T02:25:03Z. Market: degraded; research: degraded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-19. Last successful research: 2026-10-19T21:23:51Z. Market: degraded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
-Watchlist valuation coverage: **86 / 92 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 0; unsupported valuation: 6; incomplete research: 0. Needs attention: 3. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
+Watchlist valuation coverage: **86 / 94 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 2; unsupported valuation: 6; incomplete research: 0. Needs attention: 3. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
+- [Spotify Technology S.A.](securities/security_2010347f1a0a5ea60f47) — 2026-10-19T21:21:50.964829Z; hold
+- [Kratos Defense & Security Solutions, Inc.](securities/security_0cf8075039299094d614) — 2026-10-19T21:19:48.861579Z; hold
 - [Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148) — 2026-10-19T02:22:31.996188Z; insufficient_confidence
 - [Samsung Electronics Co., Ltd.](securities/security_567d0d575bbd30aaa91d) — 2026-10-19T02:16:05.391547Z; insufficient_confidence
 - [Enphase Energy, Inc.](securities/security_f2b9760d847b2ba59324) — 2026-10-19T02:07:45.077644Z; insufficient_confidence
@@ -47,8 +49,6 @@ Watchlist valuation coverage: **86 / 92 instruments** have complete sourced bear
 - [Sociedad Quimica y Minera de Chile S.A.](securities/security_9d4049ed6669a52815d6) — 2026-10-19T01:37:34.979892Z; buy
 - [YASKAWA Electric Corporation](securities/security_89969b7dac39b7db5661) — 2026-10-19T01:34:58.259599Z; insufficient_confidence
 - [Stratasys Ltd.](securities/security_84705b27d28a94f2b318) — 2026-10-19T01:30:41.606846Z; hold
-- [Lithium Americas Corp.](securities/security_fb87fac302a5446a1ced) — 2026-10-19T01:28:48.199824Z; valuation_unsupported
-- [ASML Holding N.V.](securities/security_ef35e41886220d51c22c) — 2026-10-19T01:26:52.646344Z; hold
 
 ## Ideas and interesting companies
 
