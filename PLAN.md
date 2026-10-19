@@ -877,7 +877,8 @@ Validation/commit/CI/deployment and live backfill evidence will be recorded belo
   Coverage82/92 complete,10 unsupported,0 incomplete/missing;39 current/53 stale.
   Actual Enphase single39186596487 used1 model operation/9 web requests and remained
   unsupported, revision `a336e95f31f8f7b2fd00442850b67d81654215f9`;
-  Pages39186839806 succeeded. Currency remains USD; no invented scenario values.
+  Pages39186839806 succeeded. Coverage is now40 current/52 stale; this Enphase
+  review replaced expired research. Currency remains USD; no invented scenario values.
 - Source-access regression: long HTML releases exposed only their first12,000
   characters, hiding later financial tables. Added overlapping bounded windows via
   the existing page argument and explicit window metadata/tool instructions.
@@ -897,3 +898,25 @@ Validation/commit/CI/deployment and live backfill evidence will be recorded belo
   tests passed (2 warnings); Ruff, formatting, MyPy, strict current data validation,
   worker staging/policy checks and diff checks passed. No site implementation or
   current research content changed, so no redundant local Quartz build was needed.
+- HTML-window repair revision `d5cf104e761986b51e52c1d06c9c57bfb0b95093`
+  passed [CI39187410174](https://github.com/Kabutojira/PaperTrader/actions/runs/39187410174).
+  Actual preferred-GDR single39187518603 used1 model operation/12 web requests,
+  accepted supported EUR970/2000/3720 scenarios at low confidence, revision
+  `9abb66734e4791e416634c792a4053ce5ad882be`; independent Pages39187847092 triggered.
+  Coverage83/92 complete,9 unsupported; all92 assessed,41 current/51 stale.
+  Low confidence remains excluded from current Buy/Sell rankings.
+- Additional finite Twist qualification used6 engineering broker requests:2 usable
+  full-exhibit windows via the public FAST-EDGAR filing archive,1 request curtailed
+  by the test broker's redirect budget, and2 refused financing-release/filing
+  routes. The first usable archived read required a redirect (2 HTTP requests).
+  Registered1 metadata-only issuer-filing reference with financial tables available
+  in HTML window2; no snippets, raw text or financial assumptions imported.
+  One new bounded Twist review is warranted by the full company exhibit replacing
+  the previous secondary summary/announcement locator.
+- Samsung common gets one new bounded manual review after primary depositary/venue
+  evidence resolved its earlier identity blocker and the preferred review validated
+  shared current issuer financial evidence. No previous attempts or assessment are
+  reset; common and preferred instruments keep separate identities and valuations.
+  Queue19/manual4; next default3 tasks are LUNR/ENPH/TWST, then a common-GDR single.
+  Strict current data validation passed; financial assessment/page changes remain
+  solely the responsibility of accepted isolated research results.
