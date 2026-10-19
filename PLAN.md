@@ -722,7 +722,7 @@ Validation/commit/CI/deployment and live backfill evidence will be recorded belo
 - Actual Planet re-review39178154636 accepted supported USD bear/base/bull cases
   (1 model/12 web), commit03669deb5e5fa9159d766e9199e9524c9731fc9f;
   Pages39178369524 triggered. Coverage64 complete/11 incomplete/16 unsupported/
-  1 missing;91 assessed/19 current. Direct issuer financial evidence resolved its
+  1 missing;91 assessed/18 current. Direct issuer financial evidence resolved its
   earlier retrieval blocker without weakening valuation validation.
 - Seven engineering broker requests qualified a Nebius issuer financial PDF and
   issuer-authored SoFi release distributed by Business Wire/FinancialContent.
@@ -741,7 +741,7 @@ Validation/commit/CI/deployment and live backfill evidence will be recorded belo
   Pages39179196670 succeeded; Nebius39179216761 accepted supported cases (1/12),
   commitfb155701b95f29189219e9aa3544e909c8741078, Pages39179517327 triggered.
   Three actual model operations/33 web requests; coverage64->67 complete,
-  9 incomplete/15 unsupported/1 missing,91 assessed/22 current. Nebius has low
+  9 incomplete/15 unsupported/1 missing,91 assessed/20 current. Nebius has low
   confidence and remains ineligible for current Buy/Sell rankings.
 - Next source qualification used16 broker HTTP requests across bounded passes:
   8 usable financial documents/releases (including2 already registered),1 unusable
@@ -755,3 +755,42 @@ Validation/commit/CI/deployment and live backfill evidence will be recorded belo
   issuer and issuer-distributed releases; unrelated proxy hits were rejected.
   Strict validation passed. Research proceeds sequentially; Pages remains an
   independently recoverable phase and does not gate another accepted review.
+- Source intake `9f1dcf1330482445076442284eab5d534c814967` passed
+  CI39179605492. Subsequent actual sequential reviews:
+
+  | Company | Research run | Model/web | Accepted revision | Pages run |
+  | --- | --- | --- | --- | --- |
+  | SoFi | 39179710741 | 1/12 | eed5e6f2ce0146aae54fdf1af2b3c81be949a1c4 | 39179983548 |
+  | MercadoLibre | 39180065252 | 1/9 | f2b40eb5fbb33e633ef2f43745c9d5cab9c5da25 | 39180290554 |
+  | Rio Tinto | 39180326233 | 1/11 | 54045d2be07ae1eda3e5a7a3a56cb5cbb1d33b7f | 39180594056 |
+  | Prosus | 39180612820 | 1/10 | 05106d46f58447739e895cbf12501c01600fda94 | 39180871603 |
+  | Atkore | 39180931175 | 1/11 | 4a7c50a92e2c2d9ab504f94ea619be710c963339 | 39181202538 |
+  | RTX | 39181257576 | 1/10 | 237605c7ee8d1fa2fd889c3931eb9fe86cc95fb8 | 39181495165 |
+  | Fiserv | 39181600317 | 1/11 | 717f616e0af9a468f581be5ccf31785b157586fa | 39181873301 |
+  | AbCellera | 39181902603 | 1/12 | 1dc3df3d5160fe4e34865f952688ec58fabb08a5 | 39182142499 |
+
+  All eight research runs and listed independent Pages deployments succeeded.
+  Seven accepted complete supported cases; AbCellera remains honestly unsupported
+  because the risk-adjusted pipeline/commercial assumptions are insufficient.
+  No numerical, evidence or copied-text gate was relaxed. Eight actual model
+  operations/86 web requests. Coverage67->74 complete,4 incomplete,13 unsupported,
+  1 missing;91 assessed/27 current/64 stale. SoFi and Nebius low-confidence cases
+  remain excluded from current Buy/Sell rankings. Freshness counts use the actual
+  committed snapshots: replacing already-current unsupported research improves
+  completeness without adding another current record.
+- Next bounded intake registered7 metadata-only financial references:6 issuer
+  releases (some publicly redistributed),1 secondary S&P Capital IQ summary for
+  Twist, explicitly labeled financial_reporting. Nine engineering broker requests
+  yielded7 usable opens; LUNR403 and an oversized CrowdStrike endpoint were
+  refused. A different public CrowdStrike release endpoint opened within existing
+  limits. No source text or scenarios were imported. Native document lookups
+  supplied locators; unrelated SQM search results were discarded. Existing ECB
+  reference linked to ASML only for an explicit EUR-reporting/USD valuation bridge;
+  no FX subsystem or portfolio process was added.
+- Seven explicit user-requested coverage goals merged/admitted with preserved
+  attempts into26 queue rows (cap30): PYPL, ISRG, TXN, ASML, LAC, CRWD, TWST.
+  No other manual request was displaced. Controller validation confirms all
+  assessments, values, dates, current citations, research pages and market state
+  unchanged. Preview selection is PYPL/ISRG/TWST; execute through the existing
+  three-operation sequential cycle, discovery disabled. Scheduled defaults remain
+  unchanged. Strict validation and exact CI evidence follow before live dispatch.
