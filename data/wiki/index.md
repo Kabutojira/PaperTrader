@@ -30,14 +30,15 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-91 companies / 92 instruments; 92 assessed, 40 in date, 52 stale; 68 currently unrated. 0 quotes require attention.
+91 companies / 92 instruments; 92 assessed, 41 in date, 51 stale; 68 currently unrated. 0 quotes require attention.
 
-Last observed market session: 2026-10-16. Last successful research: 2026-10-19T01:45:43Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-16. Last successful research: 2026-10-19T01:59:27Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
-Watchlist valuation coverage: **82 / 92 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 0; unsupported valuation: 10; incomplete research: 0. Needs attention: 1. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
+Watchlist valuation coverage: **83 / 92 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 0; unsupported valuation: 9; incomplete research: 0. Needs attention: 1. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
+- [Samsung Electronics Co., Ltd.](securities/security_d08d763780400dfbffce) — 2026-10-19T01:56:11.907430Z; insufficient_confidence
 - [Enphase Energy, Inc.](securities/security_f2b9760d847b2ba59324) — 2026-10-19T01:43:44.718479Z; valuation_unsupported
 - [Intuitive Machines, Inc.](securities/security_a5dc16f3f4b245e6c168) — 2026-10-19T01:40:00.411740Z; valuation_unsupported
 - [Sociedad Quimica y Minera de Chile S.A.](securities/security_9d4049ed6669a52815d6) — 2026-10-19T01:37:34.979892Z; buy
@@ -47,7 +48,6 @@ Watchlist valuation coverage: **82 / 92 instruments** have complete sourced bear
 - [ASML Holding N.V.](securities/security_ef35e41886220d51c22c) — 2026-10-19T01:26:52.646344Z; hold
 - [CrowdStrike Holdings, Inc.](securities/security_8472507d7d320aa388a7) — 2026-10-19T01:19:40.825907Z; insufficient_confidence
 - [Texas Instruments Incorporated](securities/security_83a56943e18793f685b0) — 2026-10-19T01:18:02.186939Z; hold
-- [Sigma Lithium Corporation](securities/security_4627aea1bf7d8943d3d8) — 2026-10-19T01:15:37.228751Z; valuation_unsupported
 
 ## Ideas and interesting companies
 

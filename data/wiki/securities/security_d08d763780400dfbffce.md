@@ -2,189 +2,109 @@
 title: Samsung Electronics preferred GDR
 type: security
 status: maintained
-tags: [security, research, risk]
+tags: [security, research, risk, valuation]
 created: "2026-08-06"
-updated: "2026-09-06"
-provenance: "source_samsung_preferred_gdr_identity; source_samsung_preferred_q2_2026_results"
+updated: "2026-10-19"
+provenance: "source_web_7e5bd96010ca77baf3d125f7; source_web_39106ef9cbf4a822cd7b8d5c; source_web_5f5f11357334f115e2cacc71; source_web_f7574415d195f86ff8cb28c4; source_samsung_preferred_gdr_identity; source_web_38c557cf96a6c4117e6fe620; source_web_720ab212d49148d89149f884"
 security_id: security_d08d763780400dfbffce
 issuer_id: issuer_adf6eb6a528f8576f0ed
-confidence: medium
-last_researched: "2026-09-06T14:35:49Z"
-next_review: "2026-09-20"
+confidence: low
+last_researched: "2026-10-19T01:56:11.907430Z"
+next_review: "2026-11-18"
 ---
 
 # Samsung Electronics preferred GDR
 
-## Visual evidence
-
-
-
-```echart
-{
-  "schema_version": 1,
-  "chart_id": "samsung-preferred-gdr-alert-window-20260904",
-  "kind": "candlestick",
-  "title": "Preferred GDR rose on extremely sparse Vienna turnover",
-  "description": "The exact August 7 through September 4 alert window shows a 16.7% adjusted-close gain and the September 4 bullish MACD crossover, but only five sessions recorded any units traded.",
-  "as_of": "2026-09-04",
-  "sources": [
-    {
-      "label": "Canonical PaperTrader SSUN.VI adjusted-price cache",
-      "observed_at": "2026-09-06T13:51:39Z"
-    }
-  ],
-  "currency": "EUR",
-  "rows": [
-    {"at": "2026-08-07", "open": "2615", "close": "2605", "low": "2605", "high": "2670", "volume": "0"},
-    {"at": "2026-08-10", "open": "2640", "close": "2630", "low": "2605", "high": "2645", "volume": "0"},
-    {"at": "2026-08-11", "open": "2735", "close": "2790", "low": "2735", "high": "2790", "volume": "0"},
-    {"at": "2026-08-12", "open": "2830", "close": "2945", "low": "2830", "high": "2945", "volume": "0"},
-    {"at": "2026-08-13", "open": "2865", "close": "2990", "low": "2835", "high": "2990", "volume": "0"},
-    {"at": "2026-08-14", "open": "2980", "close": "2990", "low": "2980", "high": "3000", "volume": "4"},
-    {"at": "2026-08-17", "open": "3060", "close": "3130", "low": "3060", "high": "3130", "volume": "0"},
-    {"at": "2026-08-18", "open": "2920", "close": "2775", "low": "2775", "high": "2920", "volume": "1"},
-    {"at": "2026-08-19", "open": "2790", "close": "2800", "low": "2790", "high": "2820", "volume": "1"},
-    {"at": "2026-08-20", "open": "2935", "close": "2915", "low": "2875", "high": "2935", "volume": "0"},
-    {"at": "2026-08-21", "open": "3110", "close": "2900", "low": "2900", "high": "3110", "volume": "0"},
-    {"at": "2026-08-24", "open": "2855", "close": "2835", "low": "2835", "high": "2900", "volume": "2"},
-    {"at": "2026-08-25", "open": "2980", "close": "2990", "low": "2980", "high": "3015", "volume": "0"},
-    {"at": "2026-08-26", "open": "3015", "close": "3010", "low": "2995", "high": "3015", "volume": "3"},
-    {"at": "2026-08-27", "open": "3005", "close": "2950", "low": "2950", "high": "3020", "volume": "0"},
-    {"at": "2026-08-28", "open": "2905", "close": "2970", "low": "2905", "high": "2970", "volume": "0"},
-    {"at": "2026-08-31", "open": "2950", "close": "2900", "low": "2900", "high": "2950", "volume": "0"},
-    {"at": "2026-09-01", "open": "2955", "close": "2930", "low": "2915", "high": "2955", "volume": "0"},
-    {"at": "2026-09-02", "open": "2930", "close": "2955", "low": "2910", "high": "2955", "volume": "0"},
-    {"at": "2026-09-03", "open": "2905", "close": "2925", "low": "2890", "high": "2925", "volume": "0"},
-    {"at": "2026-09-04", "open": "3005", "close": "3040", "low": "3005", "high": "3050", "volume": "0"}
-  ],
-  "notes": [
-    "Prices are adjusted daily OHLC for immutable security security_d08d763780400dfbffce; the provider reported zero volume in sixteen of twenty-one sessions and only eleven units across the full window.",
-    "Sparse prints can move discontinuously and make indicator transitions unreliable for execution; this chart is evidence, not a trade input."
-  ]
-}
-```
-
-## Identity
+## Identity and instrument reconciliation
 
 - Immutable security: `security_d08d763780400dfbffce`
-- Issuer: `issuer_adf6eb6a528f8576f0ed`
-- Instrument: preferred global depositary receipt, Vienna (`XWBO`), EUR
-- Provider identity: `SSUN.VI` / `XWBO` / `EUR` / equity
-- Underlying issuer identity: Samsung preferred shares, KRX `005935`, ISIN `KR7005931001`
-- Issuer-listed preferred GDR identity: LSE `SMSEL`, ISIN `US7960502018`
+- Immutable issuer: `issuer_adf6eb6a528f8576f0ed`
+- Maintained provider identity: `SSUN.VI` / `XWBO` / EUR
+- Vienna identity: `SSUN`, preferred registered GDR, ISIN `US7960502018`
+- Underlying preferred share: KRX `005935`, ISIN `KR7005931001`
+- Depositary ratio: one GDR represents 25 non-voting preferred shares
 
-This is a distinct instrument from the [[securities/security_567d0d575bbd30aaa91d|Samsung common
-GDR]]. The issuer reported 815,974,664 preferred shares outstanding at the end of Q1 2026. The
-maintained identity is the sparse EUR-traded Vienna provider line and must not be substituted with
-the common GDR, Korean preferred share, or London preferred GDR when measuring price or liquidity.
+The [Vienna Stock Exchange listing](https://www.wienerborse.at/aktien-global-market/samsung-electro-regs-gdr-pfd-US7960502018/) (`source_web_39106ef9cbf4a822cd7b8d5c`) identifies the maintained security as ticker SSUN and ISIN US7960502018. Samsung's [listing information](https://www.samsung.com/global/ir/stock-information/listing-Info/) (`source_samsung_preferred_gdr_identity`) links that ISIN to its preferred GDR and the Korean preferred share.
 
-Primary identity evidence: [Samsung listing information](https://www.samsung.com/global/ir/stock-information/listing-Info/)
-(`source_samsung_preferred_gdr_identity`).
+The [2025 GDR prospectus](https://images.samsung.com/is/content/samsung/assets/global/ir/docs/Samsung_Final_Prospectus_20250210.pdf) (`source_web_7e5bd96010ca77baf3d125f7`) and [Citi depositary record](https://depositaryreceipts.citi.com/adr/guides/pgm_dispaDivd.aspx?cusip=796050201&pageId=15&subpageID=113) (`source_web_5f5f11357334f115e2cacc71`) independently establish the 25:1 underlying-share-to-GDR ratio. The Vienna line trades in EUR even though the prospectus describes the GDR as USD-denominated.
+
+There is unresolved London-ticker inconsistency. Samsung's listing page says `SMSEL`, while the prospectus and Citi identify `SMSD LI`. The preferred class, ISIN and depositary ratio agree, so the immutable Vienna security and issuer IDs are retained without alteration.
 
 ## Business economics
 
-Samsung combines memory semiconductors, foundry and logic chips, smartphones, displays, appliances,
-and Harman. Detailed Q2 2026 results reported KRW 171.5 trillion revenue, KRW 89.5 trillion operating
-profit, KRW 71.6 trillion net profit, and KRW 10,899 preferred-share EPS. Device Solutions generated
-KRW 127.5 trillion sales and KRW 89.2 trillion operating profit as memory sales reached KRW 120.8
-trillion. Cash rose to KRW 190.0 trillion, debt fell to KRW 22.4 trillion, and quarterly operating
-cash flow reached KRW 105.1 trillion. Device eXperience nevertheless posted a KRW 0.8 trillion
-operating loss as component costs rose.
+Samsung combines memory semiconductors, foundry and logic products, displays, smartphones and networks, consumer electronics and Harman. Its economics are highly cyclical because memory selling prices, utilization and product mix can move consolidated profit substantially even when the broader franchise remains intact.
 
-Primary operating evidence: [Samsung Q2 2026 earnings results](https://images.samsung.com/is/content/samsung/assets/global/ir/docs/2026_2Q_conference_eng.pdf)
-(`source_samsung_preferred_q2_2026_results`).
+Samsung's [Q2 2026 release](https://news.samsungsemiconductor.com/global/samsung-electronics-announces-second-quarter-2026-results/) (`source_web_f7574415d195f86ff8cb28c4`) reported quarterly revenue of KRW 171.5 trillion, operating profit of KRW 89.5 trillion and preferred-share EPS of KRW 10,849. Device Solutions supplied almost all operating profit, supported by AI-server memory, HBM4 and industry-wide price increases. This concentration is both the principal catalyst and the principal normalization risk. Mobile and networks recorded an operating loss, while visual display and appliances were slightly loss-making.
 
-## Thesis and contrary evidence
-
-The positive thesis is preferred-share participation in Samsung's AI-led server-memory earnings,
-broad device franchises, technology depth, and net financial strength. The preferred instrument
-also has a distinct distribution and market-price relationship to common equity. Contrary evidence
-is that exceptional memory profitability may normalize, foundry and System LSI execution remains
-uneven, Device eXperience was loss-making, and export restrictions, capital intensity, customer
-concentration, currency translation, depositary terms, and cross-listing basis can separate the GDR
-price from issuer fundamentals.
-
-## 2026-09-04 price-action review
-
-The canonical [alert](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_d08d763780400dfbffce-macd_cross_above_signal-f92ad63c5616.md)
-period runs from 7 August through 4 September. The adjusted close rose from EUR 2,605 to EUR 3,040,
-a **16.70% gain**. On 4 September MACD crossed above its signal with strength `0.60327972`; RSI was
-57.80 and the close was above the 20-, 50- and 200-session averages. Yet the provider reported zero
-volume on the crossover day, only eleven units across the 21-session window, and nonzero volume on
-just five sessions.
-
-No newer detailed issuer earnings release was found in the bounded primary-source check. The
-unchanged Q2 results continue to support the operating thesis but do not explain the exact alert
-window. The move is **constructive technical momentum but non-actionable market noise**: negligible
-Vienna turnover prevents reliable price discovery, valuation remains unsupported, and the evidence
-does not justify a strategy or paper order.
+The prospectus provides useful cycle evidence: consolidated profit was KRW 39.9 trillion in 2021, KRW 55.7 trillion in 2022 and KRW 15.5 trillion in 2023; the first nine months of 2024 produced KRW 26.7 trillion. That range argues against treating one exceptional 2026 quarter as a permanent earnings run rate. The prospectus also identifies semiconductor and display cyclicality, selling-price pressure, competition, manufacturing complexity and supplier dependence as material risks.
 
 ## Valuation
 
-A supportable EUR intrinsic range is unavailable. The repository has a fresh identity-matched EUR
-mark, a fresh KRW/EUR series, and current issuer earnings, but the retained primary evidence does not
-establish a complete Vienna-GDR conversion and same-timestamp parity bridge among the Korean
-preferred share, London GDR, and Vienna line. It also lacks normalized through-cycle preferred-share
-earnings suitable for a downside-aware multiple. Applying a multiple to an exceptional memory
-quarter or inferring value from the common GDR would invent precision.
+### Method
 
-The `mature_compounder` template and `earnings_multiple` method are selected because the issuer is a
-profitable diversified technology franchise, but valuation is recorded as unsupported with no
-bear, base, or bull values. `valuation_unsupported` and `liquidity_insufficient` are hard blockers.
+A normalized earnings multiple is applied to preferred-share EPS. For each scenario:
 
-## Catalysts, risks, and invalidation
+`fair value in EUR = normalized preferred EPS in KRW × P/E multiple × 25 underlying shares ÷ KRW per EUR`
 
-Catalysts are sustained HBM4 and server-memory shipments, durable AI-led DRAM and SSD pricing,
-advanced-node foundry wins, persistent cash conversion, and primary evidence that closes the
-preferred-GDR parity and normalized-earnings gaps. Risks include memory-price normalization, weak
-non-memory segment profitability, foundry execution, export restrictions, capital intensity,
-currency and depositary effects, preferred/common basis changes, and negligible Vienna turnover.
-Invalidate the positive operating thesis if server-memory demand or margins reverse structurally,
-technology execution slips, net financial strength deteriorates materially, or cash conversion
-fails as memory conditions normalize.
+The 25:1 conversion is now supported by primary depositary evidence, resolving the prior conversion gap. The [ECB reference-rate sheet for 16 October 2026](https://www.ecb.europa.eu/stats/shared/pdf/eurofxref.pdf?6928fbfb480e2a947b975020269c1b05=) (`source_web_38c557cf96a6c4117e6fe620`) reports KRW 1,499.01 per EUR. Scenario rates bracket that observation rather than assuming currency is fixed.
 
-## Idea exposure map
+| Scenario | Probability | Normalized EPS | Multiple | FX assumption | Per-GDR arithmetic | Fair value |
+|---|---:|---:|---:|---:|---|---:|
+| Bear | 30% | KRW 7,500 | 8× | KRW 1,550/EUR | 7,500 × 8 × 25 ÷ 1,550 | **EUR 970** |
+| Base | 50% | KRW 12,000 | 10× | KRW 1,500/EUR | 12,000 × 10 × 25 ÷ 1,500 | **EUR 2,000** |
+| Bull | 20% | KRW 18,000 | 12× | KRW 1,450/EUR | 18,000 × 12 × 25 ÷ 1,450 | **EUR 3,720** |
 
-- **Candidate — [[ideas/idea_ai_compute_networking_hyperscaler_monetization|AI compute, networking
-  and hyperscaler monetization]]:** positive, medium materiality. Samsung's record memory results
-  provide a specific AI-server-memory transmission mechanism, but this immutable preferred GDR has
-  no accepted canonical relationship and instrument liquidity remains separate. A dependent
-  relationship review must test durable HBM demand, customer qualification and margin attribution;
-  reversal of AI-memory demand or sustained qualification losses would invalidate the link.
-- **Candidate — [[ideas/idea_terafab_ai_industrial_stack|Terafab AI industrial stack]]:** positive
-  near-term and potentially negative long-term, low confidence. Samsung can bridge HBM, memory,
-  foundry and packaging needs while internal Terafab capability matures, but no contract is
-  disclosed and the accepted graph edge currently belongs only to the distinct common GDR. A
-  dependent relationship review must decide whether a second instrument-level edge adds canonical
-  information or should be rejected as redundant; competitive internal yield and qualification
-  would invalidate the bridge benefit.
-- **Rejected-no-link — all other maintained ideas:** the complete catalog was searched, but no
-  current primary evidence established another security-specific causal mechanism with material
-  exposure. Broad labels such as energy, defence, healthcare, fintech or Japan policy are not enough.
+The probabilities total 100%. The base case receives the highest weight because AI-server memory can remain structurally stronger than the last trough while current quarterly profitability still normalizes. The bear case receives more weight than the bull case because the current profit mix is unusually concentrated in memory and non-memory divisions showed weak profitability.
+
+### Interpretation
+
+The Vienna page displayed EUR 2,740 on 16 October 2026, above the EUR 2,000 base value and between the base and bull outcomes. It showed no bid or ask, and the exchange notes that displayed prices can be turnoverless. Consequently, the mark is useful as an observed reference but not as proof of executable value or cross-venue parity.
+
+This valuation is scenario-complete but low confidence. It does not use the Vienna price as fair value, annualize Q2 EPS, or infer preferred value from the common GDR.
+
+## Thesis and contrary evidence
+
+The positive thesis is exposure to Samsung's technology breadth, AI-led server-memory demand, HBM4 product momentum, advanced-node opportunities and financial resilience. Sustained memory scarcity could support normalized EPS materially above prior-cycle levels.
+
+Contrary evidence is substantial. Record Q2 profit depended heavily on memory pricing and mix; several non-memory businesses were loss-making. Semiconductor cycles, foundry execution, export restrictions, customer qualification, capital intensity and won depreciation could all reduce intrinsic EUR value. Depositary fees and a persistent Korea-London-Vienna basis add instrument-specific uncertainty.
+
+## Catalysts
+
+- Sustained HBM4 and server-memory shipments.
+- Successful HBM4E customer qualification.
+- Continued DRAM and enterprise-SSD supply tightness.
+- Advanced-node foundry design wins and improved utilization.
+- Recovery in mobile and consumer-device profitability.
+- Strong cash conversion and a firmer won.
+- Narrower preferred-GDR pricing differences across Korea, London and Vienna.
+
+## Downside and invalidation
+
+Downside would follow a structural reversal in server-memory demand or pricing, HBM qualification losses, delayed advanced-node execution, persistent losses outside memory, weaker cash generation or balance-sheet deterioration. A weaker won reduces translated EUR value.
+
+Rebuild the valuation if the 25:1 ratio changes, if ISIN US7960502018 ceases to represent the maintained Vienna instrument, or if preferred EPS cannot be reconciled with Samsung's capital structure. The base case is invalid if sustainable preferred EPS settles materially below KRW 12,000 or the warranted multiple remains below 10×.
+
+## Evidence limitations
+
+Samsung's [earnings-release index](https://www.samsung.com/global/ir/financial-information/earnings-release/) (`source_web_720ab212d49148d89149f884`) displays a Q3 2026 entry, but its detailed contents were not inspected in this operation. The latest detailed operating evidence actually examined was Q2 2026. Historical evidence supplies consolidated profit but not a complete through-cycle preferred-EPS series. Normalized EPS, multiples and scenario exchange rates are therefore explicit analyst assumptions rather than issuer guidance.
+
+Vienna liquidity remains an additional limitation. Sparse or turnoverless observations can diverge from executable prices, and the model does not separately quantify depositary fees, tax, preferred/common basis or timing differences.
 
 ## Changes since prior review
 
-- **Facts and evidence:** the issuer listing still verifies the preferred-share and London preferred-
-  GDR identities; its page bytes changed without changing those material fields. The Q2 issuer PDF
-  is byte-for-byte unchanged and remains the latest detailed operating baseline found.
-- **Alert:** the prior 4 August crossover was nearly flat; the new 4 September crossover followed a
-  16.70% gain and stronger trend readings. The conclusion remains non-actionable because the latest
-  session had zero reported volume and the full window had only eleven units.
-- **Assumptions and valuation:** current KRW/EUR data resolves the prior FX-series gap, but conversion,
-  same-time cross-venue parity, normalized cycle earnings and routine Vienna liquidity remain open.
-  The `mature_compounder` / `earnings_multiple` selection is unchanged and no bear, base or bull
-  value is invented.
-- **Thesis, catalysts and risks:** the AI-memory and net-cash thesis, normalization risk, foundry and
-  Device eXperience execution risks, catalysts and invalidation are unchanged. The alert adds no
-  primary evidence that upgrades or downgrades them.
-- **Ideas, rating and action:** two causal candidates are now explicit for separate relationship
-  review, but no canonical relationship is accepted. Medium-confidence research remains unsupported,
-  allocation-ineligible and **watch**; no strategy, signal or order is justified.
+- Verified the missing 25:1 preferred-share-to-GDR conversion through both the prospectus and depositary record.
+- Reconciled the Vienna line to ISIN US7960502018 and EUR trading while preserving the immutable security and issuer IDs.
+- Identified, rather than silently resolving, the conflicting London ticker references.
+- Used historical issuer profit variability and current Q2 preferred EPS to construct normalized bear, base and bull assumptions.
+- Replaced `valuation_unsupported` with a low-confidence, scenario-complete EUR valuation of EUR 970 / EUR 2,000 / EUR 3,720.
+- Retained explicit liquidity, cross-venue basis, currency and earnings-normalization limitations.
 
-## Disposition
+## Sources
 
-Status: **watching**, **medium** confidence, and **ineligible** for allocation. Strong issuer
-fundamentals do not cure unsupported instrument-level valuation or the Vienna line's negligible
-turnover. Review by **2026-09-20**, or earlier if primary parity, conversion, normalized-cycle or
-sustained venue-liquidity evidence becomes available. See the [[research-catalog|research
-catalog]] for the wider maintained universe.
+- [Samsung preferred GDR prospectus](https://images.samsung.com/is/content/samsung/assets/global/ir/docs/Samsung_Final_Prospectus_20250210.pdf) — `source_web_7e5bd96010ca77baf3d125f7`
+- [Vienna preferred GDR listing](https://www.wienerborse.at/aktien-global-market/samsung-electro-regs-gdr-pfd-US7960502018/) — `source_web_39106ef9cbf4a822cd7b8d5c`
+- [Citi depositary program](https://depositaryreceipts.citi.com/adr/guides/pgm_dispaDivd.aspx?cusip=796050201&pageId=15&subpageID=113) — `source_web_5f5f11357334f115e2cacc71`
+- [Samsung Q2 2026 results](https://news.samsungsemiconductor.com/global/samsung-electronics-announces-second-quarter-2026-results/) — `source_web_f7574415d195f86ff8cb28c4`
+- [Samsung listing information](https://www.samsung.com/global/ir/stock-information/listing-Info/) — `source_samsung_preferred_gdr_identity`
+- [ECB exchange rates for 16 October 2026](https://www.ecb.europa.eu/stats/shared/pdf/eurofxref.pdf?6928fbfb480e2a947b975020269c1b05=) — `source_web_38c557cf96a6c4117e6fe620`
+- [Samsung earnings-release index](https://www.samsung.com/global/ir/financial-information/earnings-release/) — `source_web_720ab212d49148d89149f884`
