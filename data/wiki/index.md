@@ -27,14 +27,15 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-91 companies / 92 instruments; 91 assessed, 23 in date, 68 stale; 77 currently unrated. 0 quotes require attention.
+91 companies / 92 instruments; 91 assessed, 24 in date, 67 stale; 76 currently unrated. 0 quotes require attention.
 
-Last observed market session: 2026-10-16. Last successful research: 2026-10-19T00:27:30Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-16. Last successful research: 2026-10-19T00:31:50Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
-Watchlist valuation coverage: **71 / 92 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 1; unsupported valuation: 14; incomplete research: 6. Needs attention: 2. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
+Watchlist valuation coverage: **72 / 92 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 1; unsupported valuation: 13; incomplete research: 6. Needs attention: 2. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
+- [Atkore Inc.](securities/security_22c2b9d782a62d7a9b86) — 2026-10-19T00:29:33.206502Z; hold
 - [Prosus N.V.](securities/security_8b703a8adf5f864acaa4) — 2026-10-19T00:25:13.322131Z; hold
 - [Rio Tinto plc](securities/security_1c055eb9b2bb1f5a8ff2) — 2026-10-19T00:21:16.741131Z; hold
 - [MercadoLibre, Inc.](securities/security_4935c6e39e38273a1731) — 2026-10-19T00:17:51.170792Z; hold
@@ -44,7 +45,6 @@ Watchlist valuation coverage: **71 / 92 instruments** have complete sourced bear
 - [Nomad Foods Limited](securities/security_98a1943771da875efed5) — 2026-10-18T23:57:11.762336Z; hold
 - [Planet Labs PBC](securities/security_97f38b2cb2d5ef127f5a) — 2026-10-18T23:51:11.153208Z; sell
 - [Evonik Industries AG](securities/security_ccb25582c0392492fe9e) — 2026-10-18T23:44:47.860390Z; hold
-- [Agronomics Limited](securities/security_fe4648901e7675f157fd) — 2026-10-18T23:21:39.032922Z; buy
 
 ## Ideas and interesting companies
 
