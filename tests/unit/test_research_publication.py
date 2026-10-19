@@ -8,7 +8,14 @@ from pathlib import Path
 import pytest
 
 from papertrader.research_market import LATEST_COLUMNS, PRICE_COLUMNS, _write
-from papertrader.research_publication import prepare_site, publish_views, snapshot
+from papertrader.research_publication import (
+    _money,
+    _number,
+    prepare_site,
+    publish_views,
+    render_views,
+    snapshot,
+)
 from papertrader.research_state import contracts, read_state, write_state
 
 NOW = datetime(2026, 10, 18, 20, tzinfo=UTC)
@@ -131,6 +138,41 @@ def test_rankings_are_bounded_ordered_native_currency_and_issuer_deduped(publica
     home = (publication / "data/wiki/index.md").read_text()
     assert "Top 10 Buy" in home and "Top 10 Sell" in home
     assert "securities/security14" in home and "source" in home
+
+
+@pytest.mark.parametrize(
+    ("value", "expected"),
+    [
+        ("0.0449", "0.0449"),
+        ("-0.00449", "-0.00449"),
+        ("12.346", "12.35"),
+        ("0", "0.00"),
+        ("", "—"),
+    ],
+)
+def test_money_uses_adaptive_precision(value: str, expected: str) -> None:
+    assert _money(value) == expected
+
+
+def test_low_price_rankings_keep_money_precision_but_not_percentage_precision(
+    publication: Path,
+) -> None:
+    view = snapshot(publication, now=NOW)
+    row = view["buys"][0]
+    row.update(
+        price="0.0449",
+        weighted_fair_value="0.0715",
+        base_fair_value="0.08",
+        expected_return_pct="59.191",
+        adjusted_return_pct="41.4337",
+    )
+
+    home = render_views(view)["data/wiki/index.md"].decode()
+
+    assert "| 0.0449 |" in home
+    assert "0.0715 / 0.0800" in home
+    assert "59.19% / 41.43%" in home
+    assert _number("0") == "0.00"
 
 
 def test_publication_rejects_symlink_transaction_directory(

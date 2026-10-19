@@ -12,7 +12,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [ABB Ltd](securities/security_c120e9f26ebb6159adf9) | ABBNY (USD) | researched: research_expired_or_future | complete | 62.40 / 86.80 / 105.00 USD | 2026-09-03T18:26:50Z | 2026-10-03T18:26:50Z |
 | [ASML Holding N.V.](securities/security_ef35e41886220d51c22c) | ASML (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-08-19T15:40:58Z | 2026-08-26T12:00:00Z |
 | [AbCellera Biologics Inc.](securities/security_7bf8f4c9cc12ae410e40) | ABCL (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-19T00:42:23.067619Z | 2026-11-16T00:42:23.067619Z |
-| [Agronomics Limited](securities/security_fe4648901e7675f157fd) | ANIC.L (GBP) | researched: buy | complete | 0.03 / 0.08 / 0.11 GBP | 2026-10-18T23:21:39.032922Z | 2026-11-17T23:21:39.032922Z |
+| [Agronomics Limited](securities/security_fe4648901e7675f157fd) | ANIC.L (GBP) | researched: buy | complete | 0.0300 / 0.0800 / 0.1100 GBP | 2026-10-18T23:21:39.032922Z | 2026-11-17T23:21:39.032922Z |
 | [Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3) | ALB (USD) | researched: research_expired_or_future | complete | 9.93 / 131.25 / 231.62 USD | 2026-09-05T17:31:04Z | 2026-10-05T17:31:04Z |
 | [Alphabet Inc.](securities/security_c86bb4e75658c07142cf) | GOOGL (USD) | researched: research_expired_or_future | complete | 260.00 / 360.00 / 480.00 USD | 2026-08-01T16:32:28Z | 2026-08-31T16:32:28Z |
 | [Amazon.com, Inc.](securities/security_2433a056eb0c55961fcc) | AMZN (USD) | researched: research_expired_or_future | complete | 200.00 / 270.00 / 360.00 USD | 2026-08-28T19:39:15Z | 2026-09-27T19:39:15Z |
@@ -97,6 +97,6 @@ Historical and stale research remains readable; only current validated opinions 
 | [Vale S.A.](securities/security_b2116dcf976c96974d7b) | VALE (USD) | researched: source_evidence_unavailable | complete | 9.00 / 14.50 / 20.00 USD | 2026-08-25T15:48:11Z | 2026-09-24T15:48:11Z |
 | [Valero Energy Corporation](securities/security_c5a9e460d3350284d157) | VLO (USD) | researched: research_expired_or_future | complete | 216.00 / 286.00 / 378.00 USD | 2026-08-31T23:26:30Z | 2026-09-30T23:26:30Z |
 | [Vertiv Holdings Co](securities/security_cb88f9154cfeaa15e878) | VRT (USD) | researched: research_expired_or_future | complete | 166.25 / 281.40 / 402.00 USD | 2026-08-08T11:46:19Z | 2026-09-07T11:46:19Z |
-| [W&T Offshore, Inc.](securities/security_61567714298b9563d1a9) | WTI (USD) | researched: research_expired_or_future | complete | 0.79 / 3.17 / 6.15 USD | 2026-08-06T14:22:30Z | 2026-08-20T14:22:30Z |
+| [W&T Offshore, Inc.](securities/security_61567714298b9563d1a9) | WTI (USD) | researched: research_expired_or_future | complete | 0.7900 / 3.17 / 6.15 USD | 2026-08-06T14:22:30Z | 2026-08-20T14:22:30Z |
 | [Xometry, Inc.](securities/security_c2e6db30cb59254de418) | XMTR (USD) | researched: source_evidence_unavailable | complete | 50.00 / 85.00 / 130.00 USD | 2026-09-06T13:57:12Z | 2026-10-04T13:57:12Z |
 | [YASKAWA Electric Corporation](securities/security_89969b7dac39b7db5661) | YEC.F (EUR) | researched: source_evidence_unavailable | valuation_unsupported | — / — / — EUR | 2026-08-10T22:41:29Z | 2026-08-31T16:00:00Z |

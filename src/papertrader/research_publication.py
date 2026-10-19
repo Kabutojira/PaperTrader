@@ -76,6 +76,16 @@ def _number(value: str) -> str:
     return f"{decimal(value):,.2f}" if value else "—"
 
 
+def _money(value: str) -> str:
+    if not value:
+        return "—"
+    amount = decimal(value)
+    if amount == 0:
+        return "0.00"
+    places = 2 if abs(amount) >= 1 else max(4, -abs(amount).adjusted() + 2)
+    return f"{amount:,.{places}f}"
+
+
 def snapshot(root: Path, *, now: datetime, state: ResearchState | None = None) -> dict[str, Any]:
     state = read_state(root) if state is None else state
     errors = validate_state(root, state)
@@ -228,9 +238,9 @@ def _table(rows: list[Row]) -> str:
             _link(row, row["company_name"]),
             row["ticker"],
             row["currency"],
-            _number(row["price"]),
+            _money(row["price"]),
             row["price_date"],
-            f"{_number(row['weighted_fair_value'])} / {_number(row['base_fair_value'])}",
+            f"{_money(row['weighted_fair_value'])} / {_money(row['base_fair_value'])}",
             f"{_number(row['expected_return_pct'])}% / {_number(row['adjusted_return_pct'])}%",
             row["rating"],
             row["confidence"],
@@ -337,8 +347,8 @@ def render_views(view: dict[str, Any]) -> dict[str, bytes]:
             f"{_cell(row.get('entity_status', ''))}: "
             f"{_cell(row.get('reason') or row['rating'])} | "
             f"{row['valuation_coverage']} | "
-            f"{_number(row['bear_fair_value'])} / {_number(row['base_fair_value'])} / "
-            f"{_number(row['bull_fair_value'])} {row['currency']} | "
+            f"{_money(row['bear_fair_value'])} / {_money(row['base_fair_value'])} / "
+            f"{_money(row['bull_fair_value'])} {row['currency']} | "
             f"{row.get('assessed_at') or 'unresearched'} | "
             f"{row.get('valid_until') or '—'} |\n"
         )

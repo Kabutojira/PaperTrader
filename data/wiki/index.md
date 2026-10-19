@@ -11,7 +11,7 @@ Current research opinions in each instrument's native currency. Fair values chan
 
 | Company / thesis & sources | Ticker | Currency | Price | Price as of | Weighted / base fair value | Implied / adjusted return | Rating | Confidence | Researched / expiry |
 | --- | --- | --- | ---: | --- | ---: | ---: | --- | --- | --- |
-| [Agronomics Limited](securities/security_fe4648901e7675f157fd) | ANIC.L | GBP | 0.04 | 2026-10-16 | 0.07 / 0.08 | 59.19% / 41.43% | buy | medium | 2026-10-18T23:21:39.032922Z / 2026-11-17T23:21:39.032922Z |
+| [Agronomics Limited](securities/security_fe4648901e7675f157fd) | ANIC.L | GBP | 0.0446 | 2026-10-16 | 0.0710 / 0.0800 | 59.19% / 41.43% | buy | medium | 2026-10-18T23:21:39.032922Z / 2026-11-17T23:21:39.032922Z |
 | [NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | NVDA | USD | 214.13 | 2026-10-16 | 304.25 / 310.50 | 42.09% / 29.46% | buy | medium | 2026-10-18T19:50:33.927425Z / 2026-11-17T19:50:33.927425Z |
 | [Fiserv, Inc.](securities/security_d202772e4e62065cd17a) | FISV | USD | 47.55 | 2026-10-16 | 62.89 / 65.70 | 32.26% / 22.58% | buy | medium | 2026-10-19T00:38:18.749675Z / 2026-11-18T00:38:18.749675Z |
 

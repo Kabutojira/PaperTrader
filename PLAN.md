@@ -794,3 +794,44 @@ Validation/commit/CI/deployment and live backfill evidence will be recorded belo
   unchanged. Preview selection is PYPL/ISRG/TWST; execute through the existing
   three-operation sequential cycle, discovery disabled. Scheduled defaults remain
   unchanged. Strict validation and exact CI evidence follow before live dispatch.
+- Verified coverage intake `ff839ec6f4b64de7c3791f5100e0e962ad2ac7bc` passed
+  [CI39182376493](https://github.com/Kabutojira/PaperTrader/actions/runs/39182376493).
+  Actual max-three queue cycle
+  [39182554342](https://github.com/Kabutojira/PaperTrader/actions/runs/39182554342)
+  completed3 sequential model operations/25 web requests. PayPal and Intuitive
+  Surgical accepted complete supported USD scenarios; Twist remains unsupported.
+  Accepted revision `8ea1792d9674fe70a0800c79882115fec2b95610`, independent
+  Pages39183041860 triggered. Coverage76/92 complete,2 incomplete,13 unsupported,
+  1 missing;91 assessed/29 current/62 stale. Discovery disabled, scheduled defaults
+  and all evidence/numerical gates unchanged.
+- Final source-qualification pass used19 bounded engineering broker requests
+  across company-specific passes:11 usable opens and8 refused responses
+  (access/timeout, excessive size, encrypted or unextractable PDF). Registered10
+  new metadata-only references and retained Stratasys's existing source identity.
+  Usable issuer financial evidence covers Sigma Lithium, Yaskawa, Intuitive
+  Machines, Recursion (including October financing/clinical updates), SQM,
+  Samsung, Enphase and Stratasys. Nidec's usable source is only its current audit
+  disclosure index; its encrypted financial PDFs remain unavailable to the broker.
+  Native search/document-link lookups identified public originals or attributed
+  issuer redistributions; snippets were not imported as facts. No raw source text,
+  financial values, dates, pages or current assessment citations changed.
+- Nine explicit coverage requests merged/admitted, retaining every pre-existing
+  attempt count;28 queue rows/13 manual tasks, no evictions. Samsung common's
+  remaining attempt is preserved; preferred GDR remains a separate instrument and
+  waits until the common request finishes. ECB reference links are solely optional
+  explicit native-currency valuation bridges, with no market FX subsystem.
+  Stratasys gets a new bounded manual review after the documented source-identity,
+  diagnostics and result-contract repairs and a fresh successful issuer financial
+  source open. Its two earlier failed attempts remain recorded in Git; no existing
+  queue counter or needs_attention flag was reset, no automatic replay was enabled.
+  This renewed manual work is limited to the normal per-task attempt budget.
+- Presentation-only precision repair separates money from percentage formatting:
+  subunit prices/fair values retain useful decimals instead of rounding to zero or
+  materially distorting displayed comparisons. All stored financial values and
+  rating/return calculations remain unchanged. Full202 tests,20 focused publication
+  tests, Ruff/format/MyPy/strict validation and diff checks passed. Deterministic
+  publication changed only homepage and security catalog Markdown. Reviewed Quartz
+  build148 pages/205 files and internal link checks passed; actual ANIC.L row shows
+  GBP0.0446 price,0.0710/0.0800 weighted/base fair value,59.19%/41.43% returns.
+  Exact commit/CI/deployment evidence follows after push; no live check is inferred
+  from these local tests.
