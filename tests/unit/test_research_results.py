@@ -1311,7 +1311,10 @@ def test_broker_returns_static_content_error_categories_without_source_data(
     monkeypatch.setattr("papertrader.research_web.public_url", lambda _: None)
     monkeypatch.setattr("papertrader.research_web.build_opener", lambda *_: Opener())
 
-    outcome = json.loads(ResearchWeb().tool({"action": "open", "url": URL}))
+    request: dict[str, object] = {"action": "open", "url": URL}
+    if mode == "too_large":
+        request["page"] = 2
+    outcome = json.loads(ResearchWeb().tool(request))
 
     assert outcome == {"error": expected, "requests_used": 1}
     assert read_limits == [SOURCE_RESPONSE_MAX_BYTES + 1]

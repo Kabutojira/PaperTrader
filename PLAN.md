@@ -862,3 +862,38 @@ Validation/commit/CI/deployment and live backfill evidence will be recorded belo
   currency, quote, assessment, source citation or page. Preferred GDR admitted as
   its own manual target after common task completion:23 queue rows/8 manual tasks,
   with all existing attempts preserved. Common and preferred tasks never coexist.
+- GDR intake revision `3b16e6f671a8d7003253a5e5a96e5b908b4b9f59` passed
+  [CI39185173960](https://github.com/Kabutojira/PaperTrader/actions/runs/39185173960).
+  Actual cycle39185320906 completed3 model operations/30 web requests: ASML and
+  Stratasys accepted complete USD scenarios; Lithium Americas remains unsupported.
+  Revision `664088b7e6545d71b1fcae186b04fd46694dd2c6`, Pages39185895532 succeeded.
+  All92 instruments now have an assessment;80 complete/11 unsupported/1 incomplete,
+  36 current/56 stale. Stratasys's accepted new bounded review resolves its attention
+  state; the two historical failures remain in Git. Crocs remains needs_attention.
+- Actual cycle39185932394 completed3 model operations/30 web requests: Yaskawa
+  accepted complete EUR scenarios (low confidence), SQM complete USD scenarios
+  (medium), and Intuitive Machines remains unsupported. Revision
+  `b0804f62b5fb560c2ae3bd654ccff7e8d5c00530`, Pages39186552227 succeeded.
+  Coverage82/92 complete,10 unsupported,0 incomplete/missing;39 current/53 stale.
+  Actual Enphase single39186596487 used1 model operation/9 web requests and remained
+  unsupported, revision `a336e95f31f8f7b2fd00442850b67d81654215f9`;
+  Pages39186839806 succeeded. Currency remains USD; no invented scenario values.
+- Source-access regression: long HTML releases exposed only their first12,000
+  characters, hiding later financial tables. Added overlapping bounded windows via
+  the existing page argument and explicit window metadata/tool instructions.
+  Each window still costs one request;12-request/600-second/24-turn operation,
+  2MB body/12k excerpt/15-second HTTP limits and all-seen-excerpt copy guard remain.
+  PDF semantics and financial validation are unchanged; no raw text is persisted.
+  Focused87 tests passed; full verification and exact pushed CI evidence follow.
+- Finite actual engineering qualification used12 broker requests:10 usable windows
+  across LUNR/ENPH/SGML/LAC and2 refused Twist full-report sources (403). ENPH's
+  third window and LUNR's second expose missing balance-sheet/cash-flow/share tables.
+  Only those2 entities receive new bounded manual reviews; SGML/LAC's later prose
+  does not resolve their substantive valuation blockers. No citations, financial
+  facts, dates or pages were imported by this qualification. Queue18/manual3,
+  including existing Samsung preferred request; original attempts preserved and
+  no new source rows. Live research paused until source repair passes pushed CI.
+- Reader repair verification:101 focused HTML/PDF/results/runtime tests and full204
+  tests passed (2 warnings); Ruff, formatting, MyPy, strict current data validation,
+  worker staging/policy checks and diff checks passed. No site implementation or
+  current research content changed, so no redundant local Quartz build was needed.

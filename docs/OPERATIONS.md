@@ -164,7 +164,13 @@ direct issuer releases when a public search endpoint returns irrelevant results;
 search snippets and IR navigation links do not establish financial facts.
 
 The HTML reader excludes navigation/header/footer text from the bounded financial
-excerpt while exposing up to20 IR/source locator URLs. It executes no page script.
+excerpt while exposing up to20 IR/source locator URLs. Long normalized bodies are
+available through one-based, slightly overlapping12k-character text windows using
+the same `page` argument as PDF reads. The response reports the window index/count
+and whether the body spans multiple windows. Every window refetch consumes an
+ordinary request and retains the same12-call,2MB-response,15-second-network and
+operation-time limits; source identity and the full-body hash remain unchanged.
+All seen bounded excerpts stay ephemeral for the copying guard. It executes no page script.
 A stale company review records its review time for the7-day cooldown but never
 renews assessed_at/valid_until, fair values or cited evidence without an accepted
 research result. Coverage counts do not increase for skipped/unchanged reviews.

@@ -21,6 +21,7 @@ from pypdf.errors import LimitReachedError
 from papertrader.research_state import source_url
 
 SOURCE_TEXT_LIMIT = 12_000
+HTML_WINDOW_OVERLAP = 500
 SOURCE_IDENTITY_MAX_ROWS = 5_000
 SOURCE_IDENTITY_MAX_BYTES = 1_000_000
 SOURCE_RESPONSE_MAX_BYTES = 2_000_000
@@ -149,6 +150,34 @@ class _Text(HTMLParser):
             self.parts.append(data)
 
 
+def html_text(text: str, page: int) -> tuple[str, dict[str, str]]:
+    """Return one bounded, slightly overlapping window from normalized HTML text."""
+    if not text:
+        raise ResearchWebError("empty_content")
+    stride = SOURCE_TEXT_LIMIT - HTML_WINDOW_OVERLAP
+    count = 1 + max(0, len(text) - SOURCE_TEXT_LIMIT + stride - 1) // stride
+    if page > count:
+        raise ResearchWebError("pdf_page_invalid")
+    start = (page - 1) * stride
+    end = min(start + SOURCE_TEXT_LIMIT, len(text))
+    if start and not text[start - 1].isspace() and not text[start].isspace():
+        boundary = text.find(" ", start, min(start + HTML_WINDOW_OVERLAP, end))
+        if boundary >= 0:
+            start = boundary + 1
+    if end < len(text) and not text[end - 1].isspace() and not text[end].isspace():
+        boundary = text.rfind(" ", max(start, end - HTML_WINDOW_OVERLAP), end)
+        if boundary > start:
+            end = boundary
+    excerpt = text[start:end].strip()
+    if not excerpt:
+        raise ResearchWebError("empty_content")
+    return excerpt, {
+        "html_window_index": str(page),
+        "html_window_count": str(count),
+        "html_text_truncated": str(count > 1).lower(),
+    }
+
+
 def public_url(url: str) -> None:
     parsed = urlsplit(url)
     if not source_url(url) or parsed.port not in {None, 80, 443}:
@@ -240,11 +269,9 @@ class ResearchWeb:
         if is_pdf:
             text, details = pdf_text(raw, page)
         else:
-            if page != 1:
-                raise ResearchWebError("pdf_page_invalid")
             parser = _Text()
             parser.feed(raw.decode("utf-8", errors="replace"))
-            text = " ".join(" ".join(parser.parts).split())[:SOURCE_TEXT_LIMIT]
+            text, details = html_text(" ".join(" ".join(parser.parts).split()), page)
             links = parser.source_links
         if not text:
             raise ResearchWebError("empty_content")

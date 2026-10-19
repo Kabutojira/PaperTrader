@@ -91,6 +91,7 @@ def test_pdf_windows_retain_source_identity_and_all_seen_copyright_evidence(
     assert "Financial statements page 4" not in first["untrusted_source_text"]
     assert later["pdf_pages_read"] == "4,5"
     assert "Financial statements page 5" in later["untrusted_source_text"]
+    assert "html_window_count" not in first and "html_window_count" not in later
     assert first["source_id"] == later["source_id"] == repeated["source_id"]
     assert first["content_hash"] == hashlib.sha256(raw).hexdigest()
     assert "source_text" not in first  # The model receives one bounded excerpt.
