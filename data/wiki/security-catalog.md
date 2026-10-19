@@ -41,7 +41,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687) | DNA (USD) | researched: research_expired_or_future | complete | 3.33 / 7.57 / 16.47 USD | 2026-08-19T21:23:58Z | 2026-09-18T21:23:58Z |
 | [Intel Corporation](securities/security_dfa34d4b9050964b465e) | INTC (USD) | researched: source_evidence_unavailable | complete | 32.00 / 78.00 / 130.00 USD | 2026-09-05T17:18:42Z | 2026-10-05T17:18:42Z |
 | [Intuitive Machines, Inc.](securities/security_a5dc16f3f4b245e6c168) | LUNR (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-08-17T17:27:00Z | 2026-09-16T17:27:00Z |
-| [Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349) | ISRG (USD) | researched: research_expired_or_future | incomplete_research | 243.96 / 336.59 / 436.81 USD | 2026-08-12T00:12:37Z | 2026-09-11T00:12:37Z |
+| [Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349) | ISRG (USD) | researched: sell | complete | 240.00 / 342.00 / 450.00 USD | 2026-10-19T00:52:56.668629Z | 2026-11-18T00:52:56.668629Z |
 | [Koninklijke Ahold Delhaize N.V.](securities/security_e19c7fe27fbcc4cd923d) | AD (EUR) | researched: research_expired_or_future | complete | 24.00 / 33.00 / 42.00 EUR | 2026-08-28T19:12:00Z | 2026-09-27T19:12:00Z |
 | [Kratos Defense & Security Solutions, Inc.](securities/security_0cf8075039299094d614) | KTOS (USD) | researched: research_expired_or_future | complete | 28.09 / 41.79 / 63.59 USD | 2026-08-05T16:29:53Z | 2026-08-19T16:29:53Z |
 | [Labcorp Holdings Inc.](securities/security_b1f2c48e1a744f5ecf67) | LH (USD) | researched: research_expired_or_future | complete | 253.40 / 311.52 / 371.00 USD | 2026-08-21T22:54:07Z | 2026-09-04T22:54:07Z |
@@ -59,7 +59,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [PLS Group Limited](securities/security_8a5c43888d224de85c69) | PLS.AX (AUD) | researched: research_expired_or_future | complete | 1.67 / 3.67 / 6.69 AUD | 2026-08-31T21:53:45Z | 2026-09-30T21:53:45Z |
 | [Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a) | PLTR (USD) | researched: research_expired_or_future | complete | 52.29 / 99.24 / 162.50 USD | 2026-08-11T13:45:04Z | 2026-09-10T13:45:04Z |
 | [Parrot S.A.](securities/security_cc4dcb8f002b61dffe00) | PARRO.PA (EUR) | researched: research_expired_or_future | complete | 5.48 / 9.09 / 14.51 EUR | 2026-08-20T07:54:58Z | 2026-09-19T07:54:58Z |
-| [PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00) | PYPL (USD) | researched: research_expired_or_future | incomplete_research | 43.04 / 64.56 / 80.70 USD | 2026-08-28T21:56:53Z | 2026-09-11T21:56:53Z |
+| [PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00) | PYPL (USD) | researched: hold | complete | 43.04 / 64.56 / 80.70 USD | 2026-10-19T00:51:10.686036Z | 2026-11-18T00:51:10.686036Z |
 | [Planet Labs PBC](securities/security_97f38b2cb2d5ef127f5a) | PL (USD) | researched: sell | complete | 7.89 / 11.41 / 15.02 USD | 2026-10-18T23:51:11.153208Z | 2026-11-17T23:51:11.153208Z |
 | [Powell Industries, Inc.](securities/security_0b67d6c8e3fd3366a257) | POWL (USD) | researched: research_expired_or_future | complete | 105.00 / 180.00 / 270.00 USD | 2026-09-05T15:22:00Z | 2026-10-05T15:22:00Z |
 | [Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | PRX (EUR) | researched: hold | complete | 27.00 / 48.50 / 63.00 EUR | 2026-10-19T00:25:13.322131Z | 2026-11-17T00:25:13.322131Z |
@@ -91,7 +91,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Ternium S.A.](securities/security_2c779e81c27b78c556bb) | TX (USD) | researched: research_expired_or_future | complete | 28.00 / 50.00 / 78.00 USD | 2026-09-06T14:48:45Z | 2026-09-20T14:48:45Z |
 | [Tesla, Inc.](securities/security_dc7a111e297be528d96b) | TSLA (USD) | researched: research_expired_or_future | complete | 137.00 / 272.00 / 491.00 USD | 2026-08-31T22:31:16Z | 2026-09-30T22:31:16Z |
 | [Texas Instruments Incorporated](securities/security_83a56943e18793f685b0) | TXN (USD) | researched: research_expired_or_future | incomplete_research | 150.00 / 256.50 / 374.00 USD | 2026-08-20T09:10:50Z | 2026-09-19T09:10:50Z |
-| [Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148) | TWST (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-18T21:19:03.768482Z | 2026-10-19T21:19:03.768482Z |
+| [Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148) | TWST (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-19T00:54:53.817222Z | 2026-11-18T00:54:53.817222Z |
 | [Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e) | UBER (USD) | researched: research_expired_or_future | complete | 55.00 / 90.00 / 120.00 USD | 2026-08-28T19:27:50Z | 2026-09-27T19:27:50Z |
 | [UiPath, Inc.](securities/security_eca976f0076a425ea1bb) | PATH (USD) | researched: research_expired_or_future | complete | 9.00 / 17.00 / 27.00 USD | 2026-09-05T10:45:22Z | 2026-10-03T10:45:22Z |
 | [Vale S.A.](securities/security_b2116dcf976c96974d7b) | VALE (USD) | researched: source_evidence_unavailable | complete | 9.00 / 14.50 / 20.00 USD | 2026-08-25T15:48:11Z | 2026-09-24T15:48:11Z |

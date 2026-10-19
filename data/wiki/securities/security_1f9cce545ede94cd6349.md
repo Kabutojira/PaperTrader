@@ -4,12 +4,12 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-26"
-updated: "2026-08-12"
-provenance: source_isrg_q2_2026_10q
+updated: "2026-10-19"
+provenance: source_web_a188f6e1d74d308f613ebb80
 security_id: security_1f9cce545ede94cd6349
 issuer_id: issuer_98d3ab01583161cae27f
-confidence: high
-next_review: "2026-09-11"
+confidence: medium
+next_review: "2026-11-18"
 ---
 
 # Intuitive Surgical, Inc. common stock
@@ -17,91 +17,64 @@ next_review: "2026-09-11"
 ## Identity
 
 - Immutable security: `security_1f9cce545ede94cd6349`
-- Issuer: `issuer_98d3ab01583161cae27f`
-- Instrument: common stock, Nasdaq (`XNAS`), USD
+- Immutable issuer: `issuer_98d3ab01583161cae27f`
+- Supplied instrument identity: common stock, Nasdaq (`XNAS`), USD
 - Provider identity: `ISRG` / `XNAS` / `USD` / equity
 
-Intuitive is an established healthcare-automation exposure within
-[[ideas/idea_precision_biology_healthcare_automation]].
+The issuer-authored Q2 release identifies Intuitive and Nasdaq ticker ISRG. It does not independently enumerate the XNAS MIC, trading currency, or legal share-class details, so those fields remain reconciled to the supplied immutable identity rather than being changed. Intuitive remains an evidenced healthcare-automation exposure within [[ideas/idea_precision_biology_healthcare_automation]].
 
-## Economics and thesis
+## Business economics
 
-Q2 2026 combined procedures grew 16%: da Vinci 15% and Ion 36%. The da Vinci installed base grew
-12% to 11,710 and Ion grew 21% to 1,096. Instruments and accessories revenue rose 18% to USD 1.73
-billion, demonstrating recurring utilization economics rather than dependence on system placements.
+Intuitive sells and leases da Vinci surgical systems and Ion endoluminal systems, then earns recurring instruments, accessories, and service revenue as customers use the installed base. This creates an economic link from placements to future procedures and from procedures to recurring revenue, although placements under operating and usage-based leases can defer or reshape revenue recognition and cash realization.
 
-Total revenue rose 19% to USD 2.89 billion and GAAP operating income rose 31% to USD 972 million.
-Cash and investments reached USD 8.63 billion after USD 380 million of share repurchases. The
-evidence validates repeatable procedure and installed-base growth, but it does not establish that
-robotic procedures improve every clinical outcome or lower total cost in every indication.
+The [issuer-authored Q2 2026 earnings release distributed through GlobeNewswire](https://www.financialcontent.com/article/gnwcq-2026-7-16-intuitive-announces-second-quarter-earnings) reported:
 
-## Evidence and gates
+- Combined da Vinci and Ion procedures increased approximately 16% year over year; da Vinci grew approximately 15% and Ion approximately 36%.
+- The da Vinci installed base increased 12% to 11,710 systems, while the Ion installed base increased 21% to 1,096.
+- Revenue increased 19% to USD 2.89 billion.
+- Instruments and accessories revenue increased 18% to USD 1.73 billion, showing that procedure-linked recurring revenue is material.
+- GAAP operating income increased to USD 972 million from USD 743 million, while Q2 GAAP operating expense included USD 213 million of share-based compensation.
+- GAAP net income was USD 818 million, or USD 2.29 per diluted share.
+- Cash, cash equivalents, and investments were USD 8.63 billion after USD 380 million of quarterly repurchases.
 
-| Evidence | Interpretation |
-| --- | --- |
-| Procedures grew 16%. | Utilization demand is broad and recurring. |
-| Installed bases grew 12% and 21%. | The future consumables and service base is expanding. |
-| Instruments/accessories were 60% of quarterly revenue. | Recurring procedure-linked economics are material. |
-| GAAP operating income grew to USD 972 million. | Adoption converts into operating leverage. |
-| Cash and investments were USD 8.63 billion. | Balance-sheet resilience is strong. |
-| Tariffs are guided to reduce gross margin by about 1% of revenue. | Global manufacturing and trade policy remain material. |
+These figures support strong adoption and operating leverage. They do not independently prove that every robotic procedure improves clinical outcomes or lowers total care costs in every indication.
 
-Primary evidence: [Intuitive Surgical Q2 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1035267/000103526726000058/isrg-20260630.htm) and [SEC-filed Q2 earnings Exhibit 99.1](https://www.sec.gov/Archives/edgar/data/1035267/000103526726000047/q226ex-991earningsrelease.htm). The [27 July Form 8-K](https://www.sec.gov/Archives/edgar/data/1035267/000103526726000063/isrg-20260723.htm) concerns amended bylaws rather than operating results.
+## Outlook and contrary evidence
 
-## Valuation, catalysts, and risks
+Management expected 2026 da Vinci procedure growth of approximately 13.5% to 15.5%, near the midpoint, a non-GAAP gross margin of 68% to 69%, and non-GAAP operating-expense growth of 11% to 13%. The gross-margin outlook incorporated an estimated tariff impact equal to approximately 1% of revenue and warned that additional tariffs could be material.
 
-The validated 11 August close is USD 401.23. A 12-month `mature_compounder` earnings-multiple
-valuation uses first-half revenue of USD 5.663 billion, 32.3% GAAP operating margin, 358.5 million
-diluted shares, USD 419 million of stock compensation already included in expense, and USD 8.626
-billion of cash and investments with no financial debt. It values after-tax operating earnings plus
-net financial assets per diluted share, rather than adding interest income to an earnings multiple.
+Material contrary considerations include hospital capital-budget constraints, greater use of leasing rather than immediate system sales, tariff and supply-chain exposure, competition, reimbursement uncertainty, training and safety requirements, regulation, and the possibility that a premium valuation multiple contracts even while procedures continue growing. The Q2 release is issuer-authored and forward-looking guidance remains uncertain.
 
-| Case | Probability | Assumptions | Fair value | Return from USD 401.23 |
-| --- | ---: | --- | ---: | ---: |
-| Bear | 25% | USD 11.0bn revenue, 30% operating margin, 20% tax, 30x, 360m diluted shares; procedure and placement growth slow while tariff, hospital-budget, competition and dilution pressure persist. | USD 243.96 | -39.2% |
-| Base | 50% | USD 11.5bn revenue, 32% operating margin, 20% tax, 38x, 358m diluted shares; procedure-linked recurring revenue remains durable and stock compensation remains in GAAP expense. | USD 336.59 | -16.1% |
-| Bull | 25% | USD 12.0bn revenue, 34% operating margin, 20% tax, 45x, 356m diluted shares; da Vinci 5 and Ion sustain high-end growth and leverage while dilution moderates. | USD 436.81 | 8.9% |
+## Valuation
 
-The probability-weighted fair value is USD 338.49, 15.6% below the mark. The scenario set is now
-complete, but both its expected and base outcomes are below market and the bear case is severe. No
-margin of safety or canonical buy zone exists at the current price.
+A 12-month forward GAAP EPS multiple is used. This approach keeps share-based compensation in earnings and avoids carrying forward detailed net-cash or diluted-share inputs that could not be refreshed from the inaccessible filing leads. Scenario EPS and multiples are analyst assumptions, not company guidance.
 
-The model separates placements, leases, procedures, consumables and service economics, normalizes
-the one-time tariff refund, and stresses hospital capital budgets, procedure growth, reimbursement,
-competition, recalls, training, safety, regulation, sole-source supply and dilution. The July bylaw
-amendments add a governance-monitoring item but do not change the operating or valuation conclusion.
+| Case | Probability | Per-share arithmetic | Principal drivers | Fair value |
+| --- | ---: | --- | --- | ---: |
+| Bear | 25% | USD 8.00 GAAP EPS × 30x | Procedure growth falls below outlook; placements, margins, and hospital demand weaken; tariff pressure persists. | USD 240.00 |
+| Base | 50% | USD 9.00 GAAP EPS × 38x | Recurring procedure revenue remains durable, but growth moderates and GAAP costs continue. | USD 342.00 |
+| Bull | 25% | USD 10.00 GAAP EPS × 45x | Da Vinci 5 and Ion utilization sustain strong growth and operating leverage absorbs tariffs and investment. | USD 450.00 |
 
-Catalysts are sustained procedure growth, da Vinci 5 utilization, Ion adoption, recurring-revenue
-growth, and margin resilience. Invalidate if clinical or safety evidence weakens, utilization slows,
-hospital budgets defer placements, competitors erode installed-base returns, tariffs or supply
-constraints compress margins, or valuation requires implausible procedure growth.
+The probabilities total 100%. The base case receives the largest weight because verified Q2 momentum is strong but does not eliminate execution or valuation risk. Equal tail weights reflect a meaningful downside from multiple compression and a plausible upside path if utilization and GAAP per-share earnings remain unusually durable.
 
-## Disposition
+## Downside, catalysts, and invalidation
 
-Status: **watching**, confidence **high**. Review by **2026-09-11**, or sooner after material
-operating, safety or valuation evidence. The scenario-complete conclusion is **Sell / Avoid** and
-allocation-ineligible: strong business quality, balance-sheet strength and liquidity remain
-evidence-backed, but expected and base returns are negative and downside protection is absent. The
-bullish MACD transition was momentum after a drawdown, not a validated entry signal. There is no
-position to trim and no short strategy, so Avoid is a research disposition rather than an order.
+**Downside:** The bear value is USD 240 per share. A slowdown in procedures, hospital placement deferrals, weaker lease economics, tariffs above management's assumptions, competitive pressure, or safety, regulatory, reimbursement, training, and supply problems could reduce both earnings and the applicable multiple.
+
+**Catalysts:** Sustained procedure growth, da Vinci 5 utilization, Ion adoption, recurring instruments and accessories growth, productive leasing, and GAAP operating-income growth faster than revenue could support the higher scenarios. Tariff relief and durable per-share conversion would also improve the valuation case.
+
+**Invalidation conditions:** Invalidate the positive operating thesis if procedure growth persistently falls below management's range without a temporary explanation, instruments and accessories materially trail procedure growth, installed-base additions fail to generate utilization, or clinical, safety, regulatory, reimbursement, training, competition, supply, or hospital-economics evidence deteriorates. Replace the valuation if a subsequent filing establishes materially different diluted-share, GAAP earnings, cash, debt, or recurring-revenue economics, or if premium multiples are no longer supported by durable per-share growth.
+
+## Confidence and limitations
+
+Confidence is **medium**. The accessible issuer-authored release supplies current operating evidence, but the supplied SEC Form 10-Q, SEC exhibit, submissions index, and issuer-site release returned HTTP errors during this operation and are not used as current citations. Consequently, this review lacks refreshed filing footnotes, complete cash-flow evidence, debt detail, and a full diluted-share analysis. Q3 results were not evidenced as of the assessment time. Clinical and cost-effectiveness claims also remain outside the scope of the financial release.
 
 ## Changes since prior review
 
-- **Evidence:** Fresh SEC retrievals matched the retained Q2 exhibit and Form 10-Q hashes. The SEC
-  index changed only for later ownership-related records; the Q2 Form 10-Q remains the latest
-  periodic financial filing. A post-Q2 Form 8-K amended bylaws, correcting the prior statement that
-  every later filing was an ownership report, but it does not supersede the operating evidence.
-- **Assumptions and scenarios:** The unsupported two-case EPS sensitivity was replaced by a
-  25%/50%/25% bear/base/bull valuation using current revenue, GAAP operating margin, stock
-  compensation, diluted shares and net financial assets. Values are USD 243.96/USD 336.59/USD
-  436.81; the USD 338.49 weighted value is below the USD 401.23 mark.
-- **Thesis, catalysts and risks:** Procedure growth, recurring revenue, operating leverage, cash
-  strength, da Vinci 5 and Ion catalysts, and the clinical, hospital-budget, tariff, competition,
-  safety, supply and dilution risks remain unchanged. The bylaw amendment is a new governance item;
-  neither a business-thesis invalidation nor a positive valuation catalyst fired.
-- **Blockers and gaps:** `valuation_unsupported` is resolved. Negative expected and base returns,
-  inadequate bear/base and expected/bear payoff, no margin of safety, weak timing and valuation that
-  is not compelling remain decision gaps; there is no hard evidence blocker.
-- **Rating and action:** The prior **Unrated / Watch** conclusion becomes **Sell / Avoid** with a
-  complete high-confidence assessment. Allocation remains ineligible, no strategy is justified,
-  and the unchanged bullish-MACD interpretation remains non-actionable.
+- Filled the previously missing `invalidation_conditions` coverage field with measurable operating and valuation failure conditions.
+- Refreshed procedure, installed-base, revenue, GAAP earnings, liquidity, guidance, tariff, and share-based-compensation evidence from the accessible issuer-authored Q2 release.
+- Replaced the prior net-financial-assets model with a transparent forward GAAP EPS multiple because the detailed filing inputs could not be reopened and should not be carried forward unverified.
+- Set bear, base, and bull values at USD 240, USD 342, and USD 450 with 25%/50%/25% probabilities.
+- Reduced confidence from high to medium because only the distributed issuer release was accessible and Q3 evidence was not available.
+
+Assessment time: **2026-10-19T00:52:56.668629Z**. Review by **2026-11-18T00:52:56.668629Z**, or earlier if new quarterly, safety, regulatory, or material operating evidence becomes available.
