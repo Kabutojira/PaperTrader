@@ -10,10 +10,10 @@
   },
   "research": {
     "exit_code": 0,
-    "last_attempt_at": "2026-10-19T00:05:19Z",
-    "last_success_at": "2026-10-19T00:05:19Z",
+    "last_attempt_at": "2026-10-19T00:09:34Z",
+    "last_success_at": "2026-10-19T00:09:34Z",
     "model_operations": 1,
     "status": "succeeded",
-    "web_requests": 10
+    "web_requests": 12
   }
 }

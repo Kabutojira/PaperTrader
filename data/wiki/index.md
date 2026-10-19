@@ -29,12 +29,13 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 91 companies / 92 instruments; 91 assessed, 20 in date, 71 stale; 80 currently unrated. 0 quotes require attention.
 
-Last observed market session: 2026-10-16. Last successful research: 2026-10-19T00:05:19Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-16. Last successful research: 2026-10-19T00:09:34Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
-Watchlist valuation coverage: **66 / 92 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 1; unsupported valuation: 16; incomplete research: 9. Needs attention: 2. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
+Watchlist valuation coverage: **67 / 92 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 1; unsupported valuation: 15; incomplete research: 9. Needs attention: 2. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
+- [Nebius Group N.V.](securities/security_47a0b06f6c6c478d7c1e) — 2026-10-19T00:06:53.146702Z; insufficient_confidence
 - [Eaton Corporation plc](securities/security_18a3ab0ee6086ee85d0f) — 2026-10-19T00:02:37.029896Z; hold
 - [Nomad Foods Limited](securities/security_98a1943771da875efed5) — 2026-10-18T23:57:11.762336Z; hold
 - [Planet Labs PBC](securities/security_97f38b2cb2d5ef127f5a) — 2026-10-18T23:51:11.153208Z; sell
@@ -44,7 +45,6 @@ Watchlist valuation coverage: **66 / 92 instruments** have complete sourced bear
 - [Materialise NV](securities/security_b61c642d038d71be3821) — 2026-10-18T23:13:04.375396Z; hold
 - [3D Systems Corporation](securities/security_6ac6a6268ca7c08829ae) — 2026-10-18T23:08:20.258117Z; insufficient_confidence
 - [Lemonade, Inc.](securities/security_8d11e65cd0de084ee461) — 2026-10-18T22:58:40.076661Z; insufficient_confidence
-- [Arkema S.A.](securities/security_798e2fb944d740aca308) — 2026-10-18T22:35:52.408763Z; hold
 
 ## Ideas and interesting companies
 

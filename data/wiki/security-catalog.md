@@ -53,7 +53,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Meta Platforms, Inc.](securities/security_d12e746b3c9d392183cc) | META (USD) | researched: research_expired_or_future | complete | 400.00 / 600.00 / 800.00 USD | 2026-08-28T19:45:56Z | 2026-09-27T19:45:56Z |
 | [Microsoft Corporation](securities/security_204be2a44063993de1a8) | MSFT (USD) | researched: research_expired_or_future | complete | 375.00 / 500.00 / 625.00 USD | 2026-08-28T21:23:23Z | 2026-09-27T21:23:23Z |
 | [NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | NVDA (USD) | researched: buy | complete | 198.00 / 310.50 / 448.00 USD | 2026-10-18T19:50:33.927425Z | 2026-11-17T19:50:33.927425Z |
-| [Nebius Group N.V.](securities/security_47a0b06f6c6c478d7c1e) | NBIS (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-18T21:00:52.243456Z | 2026-11-17T21:00:52.243456Z |
+| [Nebius Group N.V.](securities/security_47a0b06f6c6c478d7c1e) | NBIS (USD) | researched: insufficient_confidence | complete | 63.00 / 158.00 / 300.00 USD | 2026-10-19T00:06:53.146702Z | 2026-11-18T00:06:53.146702Z |
 | [Nidec Corporation](securities/security_3853e54c619d597dcaa1) | NIB.F (EUR) | researched: valuation_unsupported | valuation_unsupported | — / — / — EUR | 2026-08-06T19:10:34Z | 2026-08-31T19:10:34Z |
 | [Nomad Foods Limited](securities/security_98a1943771da875efed5) | NOMD (USD) | researched: hold | complete | 9.54 / 15.08 / 19.36 USD | 2026-10-18T23:57:11.762336Z | 2026-11-15T23:57:11.762336Z |
 | [PLS Group Limited](securities/security_8a5c43888d224de85c69) | PLS.AX (AUD) | researched: research_expired_or_future | complete | 1.67 / 3.67 / 6.69 AUD | 2026-08-31T21:53:45Z | 2026-09-30T21:53:45Z |
