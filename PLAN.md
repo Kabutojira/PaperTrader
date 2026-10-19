@@ -1012,3 +1012,33 @@ company pages all returned200 in13 bounded live HTTP checks. Served coverage is8
 complete/6 unsupported/41 in date/51 stale, with4 Buys and3 Sells. Subsequent changes
 are documentation-only, so publication is not repeated for unchanged research inputs.
 No further research operation is pending from the explicit faster-backfill request.
+
+## Explicit analysis of the15 active-queue companies —2026-10-19
+
+User requested analysis of every company in the active queue. Fixed scope captured
+outside active data: AMAT, ROBOTIS108490, KTOS, SPOT, MSFT, AMZN, TX, FCX, QCOM,
+PWR, CRSR, RKLB, DNA, XMTR and MSTR. All15 currently have complete historical
+valuations whose validity has expired. This is a fresh research request, distinct
+from restoring baseline narrative completeness. Accepted results will replace the
+current assessment and page only through the existing staged/validated transaction.
+
+All15 existing rows are now explicit manual priority100, with no new task rows or
+counter resets. AMAT/ROBOTIS/RKLB/DNA retain their one previous failed attempt and
+one remaining retry. Manual admission bypasses their elapsed backoff through the
+existing supported policy. The next3 claims are AMAT, ROBOTIS and KTOS. Execute
+sequential default3-operation cycles with discovery disabled; continue through the
+fixed scope, with any additional retries bounded by each row's original maximum2.
+Preserve accepted prior valuations on failed validation; unsupported is an honest
+research outcome. Scheduled defaults remain unchanged.
+
+Bounded engineering source preflight used24 broker requests:20 readable opens and4
+refusals (2 HTTP403,2 oversized bodies). Register15 new metadata-only primary
+references: readable issuer results, archived company filing exhibits, FCX's40-page
+Q2 results PDF and October2 operations update, and Strategy's October12 capital/
+Bitcoin update. ROBOTIS retains its existing DART identities; the existing report
+and balance/income pages were read without replacing their source metadata. The
+ECB reference is linked to Spotify solely for an explicit EUR-to-native-USD
+valuation bridge; no market FX subsystem is added. No excerpts, facts, forecasts,
+assessment dates or wiki research changed during this preflight. Strict current
+data validation and transaction invariants passed. Commit/CI precede live dispatch;
+record each actual cycle's outcomes, request counts, revision and Pages evidence.
