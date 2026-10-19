@@ -16,7 +16,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3) | ALB (USD) | researched: research_expired_or_future | complete | 9.93 / 131.25 / 231.62 USD | 2026-09-05T17:31:04Z | 2026-10-05T17:31:04Z |
 | [Alphabet Inc.](securities/security_c86bb4e75658c07142cf) | GOOGL (USD) | researched: research_expired_or_future | complete | 260.00 / 360.00 / 480.00 USD | 2026-08-01T16:32:28Z | 2026-08-31T16:32:28Z |
 | [Amazon.com, Inc.](securities/security_2433a056eb0c55961fcc) | AMZN (USD) | researched: research_expired_or_future | complete | 200.00 / 270.00 / 360.00 USD | 2026-08-28T19:39:15Z | 2026-09-27T19:39:15Z |
-| [Applied Materials, Inc.](securities/security_0a56aa634d077fe5796f) | AMAT (USD) | researched: source_evidence_unavailable | complete | 286.00 / 448.00 / 646.00 USD | 2026-09-03T12:34:21Z | 2026-10-03T12:34:21Z |
+| [Applied Materials, Inc.](securities/security_0a56aa634d077fe5796f) | AMAT (USD) | needs_attention: source_evidence_unavailable | complete | 286.00 / 448.00 / 646.00 USD | 2026-09-03T12:34:21Z | 2026-10-03T12:34:21Z |
 | [Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a) | ANET (USD) | researched: hold | complete | 120.00 / 182.40 / 252.00 USD | 2026-10-18T21:20:52.492203Z | 2026-11-17T21:20:52.492203Z |
 | [Arkema S.A.](securities/security_798e2fb944d740aca308) | AKE (EUR) | researched: hold | complete | 30.00 / 56.00 / 89.00 EUR | 2026-10-18T22:35:52.408763Z | 2026-11-17T22:35:52.408763Z |
 | [Atkore Inc.](securities/security_22c2b9d782a62d7a9b86) | ATKR (USD) | researched: hold | complete | 72.96 / 95.00 / 100.00 USD | 2026-10-19T00:29:33.206502Z | 2026-11-18T00:29:33.206502Z |
@@ -66,7 +66,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Proto Labs, Inc.](securities/security_f18cd57a5e086583c861) | PRLB (USD) | researched: insufficient_confidence | complete | 44.00 / 75.60 / 108.80 USD | 2026-10-18T23:17:23.066155Z | 2026-11-17T23:17:23.066155Z |
 | [QUALCOMM Incorporated](securities/security_3a75fc1ccca2ee7c937a) | QCOM (USD) | researched: research_expired_or_future | complete | 100.00 / 160.00 / 220.00 USD | 2026-08-01T09:27:19Z | 2026-08-31T09:27:19Z |
 | [Quanta Services, Inc.](securities/security_488a9d7f7a8573597724) | PWR (USD) | researched: research_expired_or_future | complete | 417.50 / 534.40 / 668.00 USD | 2026-08-03T07:23:05Z | 2026-09-02T07:23:05Z |
-| [ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c) | 108490 (KRW) | researched: research_expired_or_future | complete | 20,625.00 / 70,968.00 / 282,667.00 KRW | 2026-09-01T06:49:44Z | 2026-09-30T06:49:44Z |
+| [ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c) | 108490 (KRW) | needs_attention: research_expired_or_future | complete | 20,625.00 / 70,968.00 / 282,667.00 KRW | 2026-09-01T06:49:44Z | 2026-09-30T06:49:44Z |
 | [RTX Corporation](securities/security_59304f90c440def31dc5) | RTX (USD) | researched: hold | complete | 142.00 / 179.38 / 246.50 USD | 2026-10-19T00:33:47.630267Z | 2026-11-17T00:33:47.630267Z |
 | [Recursion Pharmaceuticals, Inc.](securities/security_ed7d5b616a196969c815) | RXRX (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-19T01:07:51.346928Z | 2026-11-17T01:07:51.346928Z |
 | [Rio Tinto plc](securities/security_1c055eb9b2bb1f5a8ff2) | RIO (USD) | researched: hold | complete | 68.00 / 93.50 / 126.50 USD | 2026-10-19T00:21:16.741131Z | 2026-11-18T00:21:16.741131Z |
