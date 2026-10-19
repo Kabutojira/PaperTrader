@@ -2,10 +2,10 @@
 title: Samsung Electronics common GDR
 type: security
 status: maintained
-tags: [security, research, risk]
+tags: [security, research, valuation, risk]
 created: "2026-07-29"
 updated: "2026-10-19"
-provenance: "source_web_f7574415d195f86ff8cb28c4; source_samsung_common_gdr_identity; source_web_38c557cf96a6c4117e6fe620"
+provenance: "source_web_2891ff45d9f9bfece13125e8; source_web_506a5622765fb567404e6b71; source_web_f7574415d195f86ff8cb28c4; source_samsung_common_gdr_identity; source_web_38c557cf96a6c4117e6fe620"
 security_id: security_567d0d575bbd30aaa91d
 issuer_id: issuer_adf6eb6a528f8576f0ed
 confidence: low
@@ -16,80 +16,137 @@ next_review: "2026-11-18"
 
 ## Research conclusion
 
-Samsung's operating thesis is supported by exceptional memory-led earnings, but a defensible EUR valuation for the specified `SSU.VI` instrument is not. Current evidence resolves the foreign-exchange bridge and current share count but does not verify the GDR-to-ordinary-share entitlement, the Vienna line, or normalized through-cycle earnings. Research status is therefore **valuation unsupported**, with no bear, base, or bull values.
+New depositary and exchange evidence resolves the prior valuation blockers. The specified instrument can now be reconciled to Samsung's common GDR, and a 12-month scenario valuation in EUR is supportable. The resulting values are **EUR 2,401.59 bear**, **EUR 5,003.30 base**, and **EUR 7,961.19 bull** per GDR, with respective probabilities of 30%, 50%, and 20%.
+
+Confidence remains **low** because the normalized earnings assumptions rely heavily on one exceptional, supply-constrained memory quarter rather than a complete through-cycle financial record.
 
 ## Identity reconciliation
 
 - Immutable security: `security_567d0d575bbd30aaa91d`
 - Immutable issuer: `issuer_adf6eb6a528f8576f0ed`
-- Supplied instrument identity: Samsung Electronics common GDR, `SSU.VI`, MIC `XWBO`, EUR
-- Issuer-confirmed common GDR: London symbol `SMSN`, ISIN `US7960508882`
-- Issuer-confirmed Korean common share: `005930`, ISIN `KR7005930003`
+- Supplied identity: Samsung Electronics common GDR, provider symbol `SSU.VI`, MIC `XWBO`, EUR
+- Verified common-GDR ISIN: `US7960508882`
+- Vienna exchange symbol: `SSU`
+- London exchange symbol: `SMSN`
+- Depositary entitlement: 25 ordinary shares per GDR
 
-[Samsung's listing information](https://www.samsung.com/global/ir/stock-information/listing-Info/) (`source_samsung_common_gdr_identity`) confirms that Samsung common GDRs are listed in London under `SMSN` and reports 5,846,278,608 common shares and 802,371,203 preferred shares outstanding at June 30, 2026. The accessible issuer page does **not** state the number of ordinary shares represented by one GDR and does not corroborate ticker `SSU.VI` or MIC `XWBO`. The supplied IDs are retained unchanged, but instrument-level identity uncertainty remains material.
+[Samsung's listing page](https://www.samsung.com/global/ir/stock-information/listing-Info/) (`source_samsung_common_gdr_identity`) identifies the London common GDR as `SMSN`, ISIN `US7960508882`, and the underlying Korean common share as `005930`, ISIN `KR7005930003`. It also reports 5,846,278,608 common shares outstanding at June 30, 2026.
 
-## Business economics
+[Citi's active depositary-program page](https://depositaryreceipts.citi.com/adr/guides/pgm_dispaDivd.aspx?Type=D&cusip=796050888&pageId=15&subpageID=113) (`source_web_2891ff45d9f9bfece13125e8`) independently identifies Samsung common GDR CUSIP `796050888`, US ISIN `US7960508882`, London ticker `SMSN`, and an ordinary-share-to-DR ratio of **25:1**.
 
-Samsung combines memory semiconductors, foundry and logic chips, smartphones, displays, appliances, networks, and Harman. The semiconductor portfolio creates substantial operating leverage when memory prices and high-value server demand rise, while the device businesses provide distribution and diversification. The same structure creates cyclicality, capital intensity, and periods in which record memory profit can conceal weak economics elsewhere.
+The [Vienna Stock Exchange page](https://www.wienerborse.at/en/stock-global-market/samsung-electr-gdr-US7960508882/) (`source_web_506a5622765fb567404e6b71`) identifies the traded security as Samsung Electronics GDR, ISIN `US7960508882`, under symbol `SSU`. The ISIN connects the Vienna security to the same common GDR documented by Samsung and Citi. The exchange displays symbol `SSU`, not the provider-form symbol `SSU.VI`; the `.VI` suffix and supplied MIC `XWBO` therefore remain provider and venue metadata rather than text independently displayed on the page. The immutable IDs are unchanged.
 
-[Samsung's second-quarter release](https://news.samsungsemiconductor.com/global/samsung-electronics-announces-second-quarter-2026-results/) (`source_web_f7574415d195f86ff8cb28c4`) reports:
+## Business economics and current evidence
 
-- consolidated revenue of KRW 171.5 trillion;
-- operating profit of KRW 89.5 trillion;
+Samsung combines memory semiconductors, foundry and logic chips, smartphones, displays, appliances, networks, and Harman. Memory creates substantial operating leverage when pricing and high-value server demand rise, while the device businesses provide distribution and diversification. The combination also produces considerable cyclicality and capital intensity.
+
+[Samsung's second-quarter 2026 release](https://news.samsungsemiconductor.com/global/samsung-electronics-announces-second-quarter-2026-results/) (`source_web_f7574415d195f86ff8cb28c4`) reports:
+
+- consolidated revenue of KRW 171.5 trillion and operating profit of KRW 89.5 trillion;
 - common- and preferred-share EPS of KRW 10,849;
 - Device Solutions revenue of KRW 127.5 trillion and operating profit of KRW 89.2 trillion;
-- record memory results supported by server products, HBM4, enterprise SSD demand, supply constraints, and rising industry prices; and
-- an operating loss of KRW 0.7 trillion in Mobile eXperience and Networks, plus a slight loss in Visual Display and Digital Appliances.
+- record memory results supported by server products, HBM4, enterprise SSD demand, limited capacity, and rising industry prices;
+- an operating loss of KRW 0.7 trillion in Mobile eXperience and Networks; and
+- a slight operating loss in Visual Display and Digital Appliances.
 
-These facts support strong AI-memory exposure but also provide contrary evidence: almost all consolidated operating profit came from Device Solutions, current supply constraints are unusually favorable, and important consumer-device operations were unprofitable.
+The evidence supports the AI-memory thesis but also supplies important contrary evidence. Device Solutions generated almost all consolidated operating profit, current memory conditions include both shortages and rising prices, and several non-memory operations were unprofitable. Treating the quarter as a permanent earnings rate would therefore be aggressive.
 
-## Valuation method and unresolved coverage
+## Valuation method
 
-An earnings-multiple method is conceptually appropriate for an equity GDR, but three inputs are essential:
+The model applies scenario P/E multiples to normalized common-share EPS and converts the resulting ordinary-share value into EUR per GDR:
 
-1. normalized common-share earnings across the memory cycle;
-2. the legally effective number of common shares represented by each GDR; and
-3. contemporaneous KRW/EUR translation.
+`EUR per GDR = normalized KRW EPS × P/E multiple × 25 ordinary shares per GDR ÷ KRW per EUR`
 
-The third input is now available. The [ECB reference-rate sheet for October 16, 2026](https://www.ecb.europa.eu/stats/shared/pdf/eurofxref.pdf?6928fbfb480e2a947b975020269c1b05=) (`source_web_38c557cf96a6c4117e6fe620`) reports KRW 1,499.01 per EUR. That permits currency conversion but cannot resolve the missing depositary ratio or cross-venue basis.
+The [ECB reference-rate sheet for October 16, 2026](https://www.ecb.europa.eu/stats/shared/pdf/eurofxref.pdf?6928fbfb480e2a947b975020269c1b05=) (`source_web_38c557cf96a6c4117e6fe620`) reports **KRW 1,499.01 per EUR**. The 25:1 ratio comes from Citi's active depositary-program record.
 
-The earnings input also remains unsuitable for a scenario-complete valuation. Annualizing the record second-quarter EPS would assume that supply-constrained memory pricing and segment profitability persist unchanged. Selecting a lower normalized EPS without a verified cycle framework would be equally arbitrary. Samsung's [financial-highlights page](https://www.samsung.com/global/ir/financial-information/financial-valuation-snapshot/) (`source_web_c21c4c600fcccd918973340e`) states that its snapshot is updated after business reports and directs readers to earnings releases for the latest results, but the accessible page provides no normalized or forward earnings measure.
+The method uses equity earnings multiples directly, so no separate net-cash adjustment is made. The principal uncertainty is normalized earnings rather than the instrument conversion mechanics.
 
-Because the instrument ratio and normalized earnings are both unresolved, no per-GDR arithmetic can be completed honestly. Bear, base, and bull fair values, assumptions, and probabilities are intentionally empty rather than carried forward or inferred from the market price.
+## Bear scenario — EUR 2,401.59, 30%
 
-## Thesis and assumptions
+Assumptions:
 
-The positive thesis is exposure to AI-led server DRAM, HBM, enterprise SSDs, advanced foundry demand, broad device distribution, and substantial operating leverage. The principal assumption requiring future verification is that a meaningful portion of current memory earnings can persist after shortages ease.
+- normalized common-share EPS: KRW 18,000;
+- P/E multiple: 8.0x;
+- severe normalization of memory pricing and supply conditions;
+- weaker AI-infrastructure spending or HBM execution;
+- continuing weak profitability in device operations; and
+- a valuation discount for cyclicality and GDR liquidity.
 
-A supportable valuation would additionally require verified depositary documentation for `US7960508882`, independent confirmation that the Vienna `SSU.VI` line is the same fungible common GDR, a current cross-venue comparison, and normalized earnings built from more than one exceptionally favorable quarter.
+Arithmetic:
 
-## Downside and contrary evidence
+`KRW 18,000 × 8.0 × 25 ÷ 1,499.01 = EUR 2,401.59`
 
-Downside mechanisms include memory-price normalization, weaker AI-infrastructure spending, HBM qualification or yield problems, advanced-node foundry execution risk, high capital requirements, export restrictions, customer concentration, and persistent consumer-device margin pressure. For this security, EUR/KRW movements, depositary terms, cross-venue basis, and sparse Vienna turnover may cause returns to diverge from the Korean ordinary shares.
+A 30% probability reflects meaningful memory-cycle risk and the extreme concentration of current profit in Device Solutions.
 
-The strongest contrary evidence is concentration: second-quarter Device Solutions operating profit was nearly equal to consolidated operating profit, while mobile/network and consumer-electronics groupings reported losses. This makes extrapolation of one record memory quarter particularly hazardous.
+## Base scenario — EUR 5,003.30, 50%
 
-## Catalysts and invalidation
+Assumptions:
 
-Potential catalysts are sustained HBM4 and enterprise-memory demand after supply expands, durable cash conversion through a less favorable pricing environment, profitable advanced-node foundry ramps, recovery in device margins, and publication of verifiable depositary and Vienna-listing terms.
+- normalized common-share EPS: KRW 30,000;
+- P/E multiple: 10.0x;
+- AI-led server memory, HBM and enterprise SSD demand remains structurally strong;
+- shortages and record pricing partially normalize; and
+- device profitability improves only gradually.
 
-The positive operating thesis would be invalidated by a structural reversal in server-memory demand or pricing, loss of HBM or foundry technology competitiveness, sustained deterioration in cash generation or liquidity, or continued dependence on one exceptional segment. Any future instrument valuation must also be invalidated if its assumed GDR ratio, fungibility, or currency treatment cannot be confirmed.
+Arithmetic:
+
+`KRW 30,000 × 10.0 × 25 ÷ 1,499.01 = EUR 5,003.30`
+
+The 50% probability makes this the central case because it preserves substantial AI-memory earnings without assuming that the record second quarter continues indefinitely.
+
+## Bull scenario — EUR 7,961.19, 20%
+
+Assumptions:
+
+- normalized common-share EPS: KRW 43,396, equal to four times second-quarter EPS of KRW 10,849;
+- P/E multiple: 11.0x;
+- prolonged memory undersupply and strong HBM4, server DRAM and enterprise SSD demand;
+- successful foundry ramps and additional advanced-node design wins; and
+- recovery in mobile and consumer-device profitability.
+
+Arithmetic:
+
+`KRW 43,396 × 11.0 × 25 ÷ 1,499.01 = EUR 7,961.19`
+
+The probability is limited to 20% because this scenario extrapolates an all-time-high quarter generated under unusually favorable memory conditions.
+
+## Downside and instrument risks
+
+Fundamental downside includes memory-price normalization, weaker AI capital spending, HBM qualification or yield setbacks, foundry underutilization, elevated capital expenditure, export restrictions, customer concentration, and persistent weakness outside Device Solutions.
+
+Instrument-level risks include EUR/KRW movements, changes to depositary terms, custody and fee effects, cross-venue basis differences, and sparse Vienna liquidity. The opened Vienna page showed only seven trades and a last-trade volume of one security on October 16, 2026. A displayed price may therefore be less informative than a liquid primary-market quotation.
+
+## Catalysts
+
+Potential catalysts include:
+
+- sustained HBM4 and enterprise-memory demand after supply expands;
+- continued server-product mix gains and successful HBM4E adoption;
+- profitable second-generation 2nm and other advanced-node foundry ramps;
+- recovery in mobile and consumer-device margins;
+- durable cash conversion through less favorable memory pricing; and
+- improved Vienna liquidity or tighter parity with the London common GDR.
+
+## Invalidation conditions
+
+The positive operating thesis would be invalidated by a structural reversal in server-memory demand or pricing, loss of competitiveness in HBM or advanced foundry processes, sustained deterioration in cash generation or liquidity, or continuing dependence on one exceptional segment without recovery elsewhere.
+
+The per-GDR valuation must be recalculated if the 25:1 depositary ratio changes, Vienna symbol `SSU` ceases to represent ISIN `US7960508882`, or KRW/EUR moves materially. The earnings framework should be withdrawn if later filings show that reported second-quarter EPS is not comparable with recurring common-share earnings.
 
 ## Changes since the prior review
 
-- A current ECB rate now resolves the previously missing KRW/EUR translation input.
-- Samsung's refreshed listing page provides the June 2026 share count and confirms the London common GDR's symbol and ISIN.
-- The same listing evidence exposes an unresolved identity limitation: it does not corroborate `SSU.VI` on `XWBO` or state the GDR ratio.
-- The accessible second-quarter issuer release confirms record memory-led results and weak profitability in several device businesses.
-- The valuation-coverage gap remains unresolved because normalized earnings and the instrument conversion ratio are still missing.
-- Prior claims that one GDR represents 25 common shares are not carried forward because that ratio was not verified in a source opened for this review.
+- Citi now verifies the active common-GDR program and the **25 ordinary shares per GDR** entitlement.
+- The Vienna Stock Exchange now verifies that symbol `SSU` represents ISIN `US7960508882` and supplies a current EUR quotation.
+- These records resolve the prior depositary-ratio and Vienna-line identity gaps.
+- A complete bear/base/bull valuation has replaced the prior `valuation_unsupported` conclusion.
+- The assessment remains low confidence because normalized earnings are scenario assumptions anchored primarily to one record quarter rather than a full memory cycle.
 
 ## Limitations and status
 
-The latest detailed operating evidence examined covers the quarter ended June 30, 2026. A supplied first-quarter PDF could not be read through the available broker, and no inaccessible figures were guessed or reused. No later detailed primary financial statements were available in the opened evidence.
+The detailed primary operating evidence examined covers the quarter ended June 30, 2026. The supplied first- and second-quarter PDFs were too large for the available broker, so no inaccessible figures were guessed. No later detailed primary financial statements, multi-year normalized EPS analysis, live London/Vienna arbitrage comparison, depositary fee model, or forward consensus estimates were available.
 
-**Research status:** `valuation_unsupported`  
+The valuation therefore resolves the instrument-level coverage gap but retains substantial earnings-cycle uncertainty.
+
+**Research status:** `supported`  
 **Confidence:** low  
 **Assessment valid through:** 2026-11-18
-
-The operating case remains credible, but a scenario-complete EUR valuation for `SSU.VI` is not supportable from the verified evidence.
