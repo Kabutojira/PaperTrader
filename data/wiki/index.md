@@ -14,6 +14,7 @@ Current research opinions in each instrument's native currency. Fair values chan
 | [Agronomics Limited](securities/security_fe4648901e7675f157fd) | ANIC.L | GBP | 0.0446 | 2026-10-16 | 0.0710 / 0.0800 | 59.19% / 41.43% | buy | medium | 2026-10-18T23:21:39.032922Z / 2026-11-17T23:21:39.032922Z |
 | [NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | NVDA | USD | 214.13 | 2026-10-16 | 304.25 / 310.50 | 42.09% / 29.46% | buy | medium | 2026-10-18T19:50:33.927425Z / 2026-11-17T19:50:33.927425Z |
 | [Fiserv, Inc.](securities/security_d202772e4e62065cd17a) | FISV | USD | 47.55 | 2026-10-16 | 62.89 / 65.70 | 32.26% / 22.58% | buy | medium | 2026-10-19T00:38:18.749675Z / 2026-11-18T00:38:18.749675Z |
+| [Sociedad Quimica y Minera de Chile S.A.](securities/security_9d4049ed6669a52815d6) | SQM | USD | 60.20 | 2026-10-16 | 79.00 / 77.00 | 31.23% / 21.86% | buy | medium | 2026-10-19T01:37:34.979892Z / 2026-11-18T01:37:34.979892Z |
 
 ## Top 10 Sell
 
@@ -29,14 +30,17 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-91 companies / 92 instruments; 92 assessed, 36 in date, 56 stale; 69 currently unrated. 0 quotes require attention.
+91 companies / 92 instruments; 92 assessed, 39 in date, 53 stale; 68 currently unrated. 0 quotes require attention.
 
-Last observed market session: 2026-10-16. Last successful research: 2026-10-19T01:33:18Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-16. Last successful research: 2026-10-19T01:42:00Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
-Watchlist valuation coverage: **80 / 92 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 0; unsupported valuation: 11; incomplete research: 1. Needs attention: 1. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
+Watchlist valuation coverage: **82 / 92 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 0; unsupported valuation: 10; incomplete research: 0. Needs attention: 1. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
+- [Intuitive Machines, Inc.](securities/security_a5dc16f3f4b245e6c168) — 2026-10-19T01:40:00.411740Z; valuation_unsupported
+- [Sociedad Quimica y Minera de Chile S.A.](securities/security_9d4049ed6669a52815d6) — 2026-10-19T01:37:34.979892Z; buy
+- [YASKAWA Electric Corporation](securities/security_89969b7dac39b7db5661) — 2026-10-19T01:34:58.259599Z; insufficient_confidence
 - [Stratasys Ltd.](securities/security_84705b27d28a94f2b318) — 2026-10-19T01:30:41.606846Z; hold
 - [Lithium Americas Corp.](securities/security_fb87fac302a5446a1ced) — 2026-10-19T01:28:48.199824Z; valuation_unsupported
 - [ASML Holding N.V.](securities/security_ef35e41886220d51c22c) — 2026-10-19T01:26:52.646344Z; hold
@@ -44,9 +48,6 @@ Watchlist valuation coverage: **80 / 92 instruments** have complete sourced bear
 - [Texas Instruments Incorporated](securities/security_83a56943e18793f685b0) — 2026-10-19T01:18:02.186939Z; hold
 - [Sigma Lithium Corporation](securities/security_4627aea1bf7d8943d3d8) — 2026-10-19T01:15:37.228751Z; valuation_unsupported
 - [Nidec Corporation](securities/security_3853e54c619d597dcaa1) — 2026-10-19T01:10:04.361736Z; valuation_unsupported
-- [Recursion Pharmaceuticals, Inc.](securities/security_ed7d5b616a196969c815) — 2026-10-19T01:07:51.346928Z; valuation_unsupported
-- [Samsung Electronics Co., Ltd.](securities/security_567d0d575bbd30aaa91d) — 2026-10-19T01:04:59.194293Z; valuation_unsupported
-- [Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148) — 2026-10-19T00:54:53.817222Z; valuation_unsupported
 
 ## Ideas and interesting companies
 

@@ -5,155 +5,136 @@ status: maintained
 tags:
   - security
   - research
-  - risk
+  - valuation
 created: "2026-07-29"
-updated: "2026-08-10"
-provenance: "source_yaskawa_fy2026_q1_results; source_yaskawa_fy2026_q1_briefing; source_yaskawa_fy2026_q1_qa; deterministic market cache"
+updated: "2026-10-19"
+provenance: "source_web_f6ac2c1b54a5d56a752cd658; source_web_38c557cf96a6c4117e6fe620"
 security_id: security_89969b7dac39b7db5661
 issuer_id: issuer_a10383b9a5262a1907f8
 ticker: YEC.F
 venue_mic: XFRA
 currency: EUR
-confidence: medium
-next_review: "2026-08-31"
+confidence: low
+next_review: "2026-11-18"
 ---
 
 # YASKAWA Electric Corporation Frankfurt ordinary shares
 
-## Decision
+## Research conclusion
 
-**Unrated / Watch and ineligible for paper allocation.** Yaskawa has credible motion-control and
-industrial-robotics economics, but the Frankfurt `YEC.F` line has insufficient routine liquidity
-for a reproducible paper entry. The 4 August bullish MACD cross and one-session volume spike do not
-resolve that blocker. The retained two-point earnings sensitivity is not a scenario-complete
-schema-v2 valuation, so no supported buy zone or conviction strategy exists.
+Yaskawa is a profitable industrial-automation company with strong first-half growth in Motion Control, offset by weak Robotics profitability and continuing ERP-related execution costs. A scenario-complete 12-month valuation now produces **EUR 14.82 bear, EUR 23.68 base, and EUR 33.07 bull** fair values. The supplied 16 October 2026 YEC.F close of EUR 24.40 is slightly above the base value and lies within the broad scenario range.
 
-## Identity
+Confidence is **low** because the valuation multiples are judgmental, foreign-exchange translation is uncertain, and the opened issuer evidence does not independently establish the Frankfurt line's one-for-one relationship with Yaskawa's Japanese ordinary shares.
 
-- Immutable security: `security_89969b7dac39b7db5661`
-- Issuer: YASKAWA Electric Corporation
-- Instrument: ordinary equity traded in Frankfurt
-- Venue and provider identity: `XFRA` / `YEC.F`
-- Trading and valuation currency: EUR
-- Issuer primary listing: Tokyo and Fukuoka, code `6506`
+## Identity and instrument reconciliation
 
-The monitored Frankfurt identity is unique in canonical state. It is not interchangeable with a
-ticker-only reference to the more liquid Japanese line.
+- Immutable security ID: `security_89969b7dac39b7db5661`
+- Immutable issuer ID: `issuer_a10383b9a5262a1907f8`
+- Monitored instrument: YASKAWA Electric Corporation Frankfurt ordinary shares
+- Provider symbol and venue: `YEC.F` / `XFRA`
+- Instrument currency: EUR
+- Issuer identity in the current filing: YASKAWA Electric Corporation
+- Issuer's disclosed primary listings: Tokyo and Fukuoka
+- Issuer's disclosed Japanese ticker: `6506`
 
-## Alert review
+The issuer filing confirms the company, Japanese common-share count, and ticker 6506. It does **not** document the Frankfurt provider symbol, MIC, EUR quotation, or a depositary/share-conversion ratio. The existing identity is retained unchanged, but valuation arithmetic assumes that one YEC.F unit represents one ordinary share. That assumption must be revisited if authoritative venue evidence establishes a different ratio.
 
-The adjusted close fell from EUR 39.20 on 1 July to EUR 25.00 on 29 July, a **36.22%** decline over
-the canonical observation period. RSI was **28.44**, crossing into oversold territory. The close
-remained above the EUR 21.83 lower Bollinger band and the volume z-score was **-0.46** in the
-triggering snapshot. That snapshot reported 29 July turnover of 30 shares; a subsequent provider
-refresh revised the same bar to zero volume without changing its OHLC or adjusted close. The
-refreshed cache has nine of 21 observation-period sessions and 126 of 254 cached sessions at zero
-volume, strengthening rather than resolving the venue-liquidity concern.
+## Business economics
 
-The move spans Yaskawa's 10 July first-quarter results. Those results provide a plausible
-fundamental contributor: revenue increased 10.6%, while operating profit fell 19.2% and profit
-attributable to owners fell 21.7%. Robotics revenue grew 2.0%, but Robotics operating profit fell
-82.3% because of production disruption from the new ERP system and European restructuring costs.
-The issuer nevertheless kept its full-year forecast unchanged and reported firm orders. The
-conclusion is **operating-execution and venue-liquidity risk**, not a confirmed thesis break and
-not an actionable oversold opportunity.
+Yaskawa supplies motion-control equipment, drives, industrial robots, and system-engineering products. Its economics depend on automation capital spending, product mix, factory utilization, and the conversion of orders into production and shipments.
 
-### 4 August quick check
+For the six months ended 31 August 2026, revenue increased **9.8%** to JPY 285.6 billion. Operating profit nevertheless declined **5.5%** to JPY 22.1 billion because ERP implementation affected production and shipments, indirect expenses increased, and Europe incurred temporary restructuring expenses. Profit attributable to owners rose **4.1%** to JPY 19.0 billion.
 
-From 7 July through 4 August, the adjusted close fell **21.72%**, from EUR 37.30 to EUR 29.20. MACD
-crossed above its signal with a small positive trigger strength, while reported volume rose to
-7,300 shares and triggered the volume-anomaly threshold. The isolated turnover did not persist:
-the next three cached sessions reported 45, zero, and zero shares, followed by 170 shares on 10
-August. The 10 August close was EUR 29.30, only **0.34%** above the alert close; MACD remained above
-signal, but no configured indicator trigger was active.
+Segment results were divergent:
 
-This is **technical stabilization, not a changed investment gate**. The monitored price remains
-above the entire retained earnings sensitivity, and one exceptional session does not demonstrate
-routine Frankfurt liquidity. The issuer's IR page still listed the 10 July first-quarter filing as
-its latest financial result when checked on 10 August. No new primary evidence fired an operating
-catalyst or invalidation.
+- **Motion Control:** revenue rose 21.7% to JPY 137.3 billion and operating profit rose 32.8% to JPY 16.0 billion. Management attributed growth mainly to semiconductor, data-center, machine-tool, and oil-and-gas demand.
+- **Robotics:** revenue declined 0.7% to JPY 118.4 billion and operating profit fell 43.3% to JPY 6.0 billion. ERP disruption in Japan and European restructuring costs outweighed overseas demand.
+- **System Engineering:** revenue rose 11.2%, while operating profit increased 79.5%, supported by port-crane activity and project profitability.
 
-## Business thesis
+The central thesis is therefore not simply automation growth. It is that Motion Control strength and eventual Robotics normalization can produce better consolidated operating leverage than the first-half result showed.
 
-Yaskawa sells AC servo motors and controllers, drives, industrial robots, and system-engineering
-products. Motion Control participates in semiconductor equipment and data-center cooling demand;
-Robotics adds exposure to automotive, general-industry, semiconductor-transfer, collaborative,
-and AI-enabled robots. This provides a credible incumbent route into the broader
-[[ideas/idea_humanoid_robotics_embodied_ai_components|humanoid robotics and embodied-AI component
-supply chain]], but the wiki currently has no accepted canonical relationship between that idea
-and this security.
+## Current forecast and financial position
 
-First-quarter Motion Control revenue rose 21.5% and operating profit rose 50.1%. Management also
-reported semiconductor-related AC-servo orders up more than 200% year on year and semiconductor
-Robotics orders up 141%. These figures support demand. Contrary evidence is the severe Robotics
-margin compression, dependence on cyclical capital spending, and the need to prove that ERP
-normalization converts orders into deliveries and profit.
+Management revised its FY2026 forecast to:
 
-## Financial position
+- Revenue: **JPY 600.0 billion**
+- Operating profit: **JPY 57.5 billion**
+- Profit before tax: **JPY 65.5 billion**
+- Profit attributable to owners: **JPY 47.5 billion**
+- Diluted EPS: **JPY 183.11**
 
-At 31 May 2026, Yaskawa reported JPY 57.6 billion of cash, JPY 104.7 billion of current and
-non-current bonds and borrowings, and a 58.8% equity ratio. First-quarter operating cash flow was
-JPY 21.4 billion and purchases of property, plant, equipment, and intangibles were JPY 7.6 billion.
-The balance sheet is adequate, but not net-cash, and inventory of JPY 215.2 billion remains a
-meaningful working-capital exposure.
+Compared with the April forecast, revenue increased by JPY 20.0 billion, but operating-profit guidance fell by JPY 2.5 billion. This combination is important contrary evidence: favorable currency and demand support sales, while execution costs and business mix limit profitability.
 
-## Valuation status
+At 31 August 2026, Yaskawa reported JPY 66.1 billion of cash, JPY 109.3 billion of current and non-current bonds and borrowings, JPY 218.1 billion of inventories, and a 59.8% ratio of equity attributable to owners to total assets. First-half operating cash flow was JPY 45.6 billion, while purchases of property, plant, equipment, and intangible assets were JPY 27.3 billion. Liquidity appears adequate, but the company is not net-cash and inventory remains a material cyclical exposure.
 
-Management maintained FY2026 guidance of JPY 580 billion revenue, JPY 60 billion operating profit,
-JPY 47 billion profit attributable to owners, and JPY 181.21 EPS. Using the issuer's JPY 170 per
-EUR planning rate, the prior review retained a **16x–20x** forward-earnings sensitivity of roughly
-**EUR 17.05–21.32** per share over 12 months. Against the 10 August EUR 29.30 close, that range is
-about **41.81% to 27.24% below** the monitored mark.
+## Valuation
 
-This is not a schema-v2 bear/base/bull valuation: it has no complete probability set and no fresh
-same-timestamp primary-market parity check for the Frankfurt line. The comparable assessment is
-therefore explicitly valuation-unsupported rather than converting the legacy sensitivity into an
-invented price target or buy zone.
+### Method
 
-## Catalysts, risks, and invalidation
+The valuation applies forward P/E multiples to scenario EPS and converts each result into EUR using the ECB's 16 October 2026 reference rate of **JPY 177.82 per EUR**.
 
-Potential catalysts are normalization of ERP-affected production, conversion of strong
-semiconductor orders, recovery in European automation, and restoration of Robotics margins.
-Material risks are extended ERP disruption, European restructuring costs, cyclical semiconductor
-and automotive orders, inventory and working-capital pressure, foreign-exchange sensitivity, and
-the Frankfurt line's sparse trading.
+| Scenario | Probability | EPS assumption | P/E | Arithmetic | Fair value |
+|---|---:|---:|---:|---:|---:|
+| Bear | 25% | JPY 155 | 17x | 155 × 17 / 177.82 | **EUR 14.82** |
+| Base | 50% | JPY 183.11 | 23x | 183.11 × 23 / 177.82 | **EUR 23.68** |
+| Bull | 25% | JPY 210 | 28x | 210 × 28 / 177.82 | **EUR 33.07** |
 
-The operating thesis weakens if production fails to normalize, orders do not convert into revenue,
-or Robotics margins remain near first-quarter levels after temporary costs recede. The monitored
-instrument remains ineligible until turnover becomes sufficient for deterministic fills and a
-fresh cross-venue parity check confirms the EUR line is representative.
+The probabilities total 100%. The base EPS is management's revised forecast. Bear and bull EPS, all multiples, and the probabilities are analytical assumptions rather than company guidance.
+
+### Scenario rationale
+
+**Bear — EUR 14.82:** ERP disruption and European restructuring remain costly, Robotics profitability recovers slowly, and semiconductor or data-center investment moderates. EPS falls to JPY 155 and cyclical execution risk compresses the multiple to 17x.
+
+**Base — EUR 23.68:** Yaskawa delivers JPY 183.11 EPS. Motion Control growth offsets a gradual rather than immediate Robotics recovery, and the market assigns 23x earnings to a high-quality automation franchise with unresolved execution risk.
+
+**Bull — EUR 33.07:** Semiconductor, data-center, and general automation demand remains strong; ERP constraints recede; and Robotics margins recover. EPS reaches JPY 210 and improved execution supports a 28x multiple.
+
+The supplied EUR 24.40 market close is approximately aligned with the base scenario, but it is not used as fair value. The supplied snapshot reported zero volume for 16 October, so the observed Frankfurt price may be less representative than a liquid primary-market quote.
+
+## Downside and contrary evidence
+
+The strongest contrary evidence is the disconnect between sales growth and consolidated operating profit. First-half operating profit declined despite 9.8% revenue growth, and Robotics operating profit fell 43.3%. A prolonged ERP problem, continuing European costs, adverse product mix, or weaker capital spending could keep earnings below management's forecast.
+
+Additional risks include:
+
+- dependence on cyclical semiconductor, automotive, and general-industry investment;
+- JPY 218.1 billion of inventory and associated working-capital risk;
+- gross borrowings exceeding cash;
+- foreign-exchange sensitivity in both reported earnings and the EUR valuation;
+- unsupported one-for-one Frankfurt share parity; and
+- sparse reported turnover in the monitored Frankfurt line.
+
+## Catalysts
+
+Potential catalysts include normalization of production and shipments after the ERP implementation, delivery of revised full-year guidance, continued semiconductor and data-center investment, improving European automation demand, recovery of Robotics profitability after restructuring costs, and sustained operating cash generation.
+
+## Invalidation conditions
+
+The base thesis should be reconsidered if:
+
+1. management materially cuts the JPY 183.11 EPS forecast;
+2. ERP disruption remains a significant constraint beyond FY2026;
+3. Robotics margins fail to recover after restructuring expenses subside;
+4. Motion Control demand contracts despite the current semiconductor and data-center cycle;
+5. inventories rise while operating cash conversion deteriorates; or
+6. authoritative venue evidence shows that YEC.F has a conversion ratio other than one ordinary share per unit.
+
+## Confidence and limitations
+
+Confidence is **low**. The issuer states that the first-half report was not subject to an audit procedure. No opened peer-comparable study anchors the selected multiples, and management provides only one earnings forecast rather than scenario guidance. The ECB rate is a spot reference rate, not a 12-month forecast. Most importantly, issuer evidence does not independently verify the Frankfurt share mapping. The valuation is therefore a transparent scenario model, not a precise price target.
 
 ## Changes since prior review
 
-- **Changed market evidence:** the 4 August close recovered to EUR 29.20 with a bullish MACD cross
-  and 7,300 reported shares, but subsequent turnover immediately returned to 45, zero, zero, and
-  170 shares through 10 August.
-- **Unchanged thesis and primary evidence:** the 10 July first-quarter result remains the latest
-  financial result listed by the issuer; demand, ERP normalization, Robotics-margin recovery,
-  balance-sheet, catalyst, risk, and invalidation conclusions are unchanged.
-- **Valuation and buy zone:** the legacy sensitivity remains below the mark, but it is not
-  scenario-complete; valuation is now recorded explicitly as unsupported and no buy zone exists.
-- **Decision and escalation:** Unrated / Watch, allocation-ineligible, and no full security review.
-  Neither the technical rebound nor one-session turnover changed a material decision gate.
+- Replaced the incomplete 16x–20x sensitivity with probability-weighted bear, base, and bull scenarios.
+- Updated the earnings anchor from JPY 181.21 to management's revised **JPY 183.11 diluted EPS** forecast.
+- Incorporated first-half results showing strong Motion Control growth but continued Robotics and ERP-related pressure.
+- Updated cash, debt, inventory, and cash-flow evidence through 31 August 2026.
+- Updated EUR translation to the ECB's 16 October 2026 JPY/EUR reference rate.
+- Preserved the immutable security and issuer IDs while explicitly documenting the unresolved Frankfurt mapping uncertainty.
 
-## Evidence
+## Sources
 
-- [Yaskawa FY2026 first-quarter results, 10 July 2026](https://www.yaskawa-global.com/wp-content/uploads/2026/07/20260710_en.pdf)
-- [Yaskawa FY2026 first-quarter results briefing](https://www.yaskawa-global.com/wp-content/uploads/2026/07/20260710_haifu_en.pdf)
-- [Yaskawa FY2026 first-quarter briefing Q&A](https://www.yaskawa-global.com/wp-content/uploads/2026/07/261Q_QA_EN.pdf)
-- PaperTrader triggering market and indicator snapshot as of `2026-07-29T16:55:24Z`, source-price
-  hash `13913fe9f36b6c39970bc802b6f80acc2755effa73cd8b31d7606adf7e8f16a8`
-- PaperTrader subsequent cache refresh at `2026-07-30T06:16:16Z`, which preserved the EUR 25.00
-  close and RSI-oversold state while revising 29 July volume to zero; source-price hash
-  `15d085715e784c95486d59249904aa72c7d723a28f7f1fd58866ec716a43b91c`
-- PaperTrader 4 August MACD/volume snapshot as of `2026-08-05T06:59:21Z`, source-price hash
-  `872c416d184aac8061b04c45cbaea989e7d6df576a96ac8ae684964bbab11329`
-- PaperTrader current market and indicator cache as of `2026-08-10T22:29:08Z`, source-price hash
-  `8ed34b4323570c67e96f0d4888c928df377ab27c97cecc8e117a8281600dafc8`
-- [Yaskawa investor-relations page](https://www.yaskawa-global.com/ir/), checked 10 August 2026 for
-  the latest listed financial result
+- [`source_web_f6ac2c1b54a5d56a752cd658` — YASKAWA consolidated first-half FY2026 results, 9 October 2026](https://www.yaskawa-global.com/wp-content/uploads/2026/10/20261009_en.pdf)
+- [`source_web_38c557cf96a6c4117e6fe620` — ECB euro foreign-exchange reference rates, 16 October 2026](https://www.ecb.europa.eu/stats/shared/pdf/eurofxref.pdf?6928fbfb480e2a947b975020269c1b05=)
 
-Review by **2026-08-31**, or earlier after evidence that ERP operations stabilized, a material
-forecast change, or a durable improvement in Frankfurt liquidity.
-
-See the complete [[research-catalog]] and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md).
+Review by **18 November 2026**, or earlier following a material guidance revision, evidence on ERP normalization, a major change in Robotics profitability, or authoritative clarification of the Frankfurt share ratio.

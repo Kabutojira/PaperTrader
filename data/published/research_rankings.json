@@ -53,26 +53,44 @@
       "ticker": "FISV",
       "valid_until": "2026-11-18T00:38:18.749675Z",
       "weighted_fair_value": "62.89"
+    },
+    {
+      "adjusted_return_pct": "21.86046395209349095755756914",
+      "assessed_at": "2026-10-19T01:37:34.979892Z",
+      "base_fair_value": "77",
+      "company_name": "Sociedad Quimica y Minera de Chile S.A.",
+      "confidence": "medium",
+      "currency": "USD",
+      "expected_return_pct": "31.22923421727641565365367020",
+      "issuer_id": "issuer_b9d09bec8ea0e49d27e5",
+      "price": "60.20000076293945",
+      "price_date": "2026-10-16",
+      "rating": "buy",
+      "research_page": "data/wiki/securities/security_9d4049ed6669a52815d6.md",
+      "security_id": "security_9d4049ed6669a52815d6",
+      "ticker": "SQM",
+      "valid_until": "2026-11-18T01:37:34.979892Z",
+      "weighted_fair_value": "79.0"
     }
   ],
   "coverage": {
-    "current": 36,
+    "current": 39,
     "failed_tickers": 0,
     "instruments": 92,
     "issuers": 91,
     "researched": 92,
-    "stale": 56,
-    "unrated": 69,
-    "watchlist_complete": 80,
-    "watchlist_incomplete_research": 1,
+    "stale": 53,
+    "unrated": 68,
+    "watchlist_complete": 82,
+    "watchlist_incomplete_research": 0,
     "watchlist_instruments": 92,
     "watchlist_missing_research": 0,
     "watchlist_needs_attention": 1,
-    "watchlist_valuation_unsupported": 11
+    "watchlist_valuation_unsupported": 10
   },
   "last_market_session": "2026-10-16",
-  "last_research_at": "2026-10-19T01:30:41.606846Z",
-  "last_successful_research": "2026-10-19T01:33:18Z",
+  "last_research_at": "2026-10-19T01:40:00.411740Z",
+  "last_successful_research": "2026-10-19T01:42:00Z",
   "phase_health": {
     "market": "succeeded",
     "research": "succeeded"
