@@ -38,7 +38,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Fluence Energy, Inc.](securities/security_a9eb9838940ef5ceaa0c) | FLNC (USD) | researched: research_expired_or_future | complete | 4.59 / 11.09 / 20.84 USD | 2026-08-06T18:47:30Z | 2026-08-20T18:47:30Z |
 | [Freeport-McMoRan Inc.](securities/security_2dbe878dfc899d7ee867) | FCX (USD) | researched: research_expired_or_future | complete | 32.64 / 47.36 / 65.12 USD | 2026-08-21T22:32:19Z | 2026-09-20T22:32:19Z |
 | [GE Vernova Inc.](securities/security_4b61970aa8f574446819) | GEV (USD) | researched: research_expired_or_future | complete | 571.58 / 1,016.02 / 1,386.39 USD | 2026-08-31T22:56:03Z | 2026-09-30T22:56:03Z |
-| [Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687) | DNA (USD) | researched: research_expired_or_future | complete | 3.33 / 7.57 / 16.47 USD | 2026-08-19T21:23:58Z | 2026-09-18T21:23:58Z |
+| [Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687) | DNA (USD) | researched: sell | complete | 3.33 / 7.57 / 16.47 USD | 2026-10-20T20:17:35.294967Z | 2026-11-19T20:17:35.294967Z |
 | [Intel Corporation](securities/security_dfa34d4b9050964b465e) | INTC (USD) | researched: source_evidence_unavailable | complete | 32.00 / 78.00 / 130.00 USD | 2026-09-05T17:18:42Z | 2026-10-05T17:18:42Z |
 | [Intuitive Machines, Inc.](securities/security_a5dc16f3f4b245e6c168) | LUNR (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-19T02:05:15.000191Z | 2026-11-18T02:05:15.000191Z |
 | [Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349) | ISRG (USD) | researched: sell | complete | 240.00 / 342.00 / 450.00 USD | 2026-10-19T00:52:56.668629Z | 2026-11-18T00:52:56.668629Z |
@@ -51,7 +51,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Materialise NV](securities/security_b61c642d038d71be3821) | MTLS (USD) | researched: hold | complete | 6.30 / 9.00 / 12.20 USD | 2026-10-18T23:13:04.375396Z | 2026-11-17T23:13:04.375396Z |
 | [MercadoLibre, Inc.](securities/security_4935c6e39e38273a1731) | MELI (USD) | researched: hold | complete | 1,440.00 / 2,200.00 / 3,120.00 USD | 2026-10-19T00:17:51.170792Z | 2026-11-18T00:17:51.170792Z |
 | [Meta Platforms, Inc.](securities/security_d12e746b3c9d392183cc) | META (USD) | researched: research_expired_or_future | complete | 400.00 / 600.00 / 800.00 USD | 2026-08-28T19:45:56Z | 2026-09-27T19:45:56Z |
-| [Microsoft Corporation](securities/security_204be2a44063993de1a8) | MSFT (USD) | researched: research_expired_or_future | complete | 375.00 / 500.00 / 625.00 USD | 2026-08-28T21:23:23Z | 2026-09-27T21:23:23Z |
+| [Microsoft Corporation](securities/security_204be2a44063993de1a8) | MSFT (USD) | researched: hold | complete | 418.00 / 567.00 / 698.00 USD | 2026-10-20T20:13:08.599471Z | 2026-11-19T20:13:08.599471Z |
 | [NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | NVDA (USD) | researched: buy | complete | 198.00 / 310.50 / 448.00 USD | 2026-10-18T19:50:33.927425Z | 2026-11-17T19:50:33.927425Z |
 | [Nebius Group N.V.](securities/security_47a0b06f6c6c478d7c1e) | NBIS (USD) | researched: insufficient_confidence | complete | 63.00 / 158.00 / 300.00 USD | 2026-10-19T00:06:53.146702Z | 2026-11-18T00:06:53.146702Z |
 | [Nidec Corporation](securities/security_3853e54c619d597dcaa1) | NIB.F (EUR) | researched: valuation_unsupported | valuation_unsupported | — / — / — EUR | 2026-10-19T01:10:04.361736Z | 2026-11-18T01:10:04.361736Z |
@@ -72,7 +72,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Rio Tinto plc](securities/security_1c055eb9b2bb1f5a8ff2) | RIO (USD) | researched: hold | complete | 68.00 / 93.50 / 126.50 USD | 2026-10-19T00:21:16.741131Z | 2026-11-18T00:21:16.741131Z |
 | [Robinhood Markets, Inc.](securities/security_ad3b1f8f59fd599f079a) | HOOD (USD) | researched: source_evidence_unavailable | complete | 42.40 / 69.00 / 112.50 USD | 2026-08-22T15:36:50Z | 2026-09-21T15:36:50Z |
 | [Roblox Corporation](securities/security_c9a37d277445869a8809) | RBLX (USD) | researched: research_expired_or_future | complete | 28.23 / 39.58 / 53.00 USD | 2026-08-18T20:23:55Z | 2026-09-01T20:23:55Z |
-| [Rocket Lab Corporation](securities/security_7ca095d63423c55a90e3) | RKLB (USD) | researched: research_expired_or_future | complete | 15.00 / 34.00 / 60.00 USD | 2026-08-09T21:30:46Z | 2026-08-23T21:30:46Z |
+| [Rocket Lab Corporation](securities/security_7ca095d63423c55a90e3) | RKLB (USD) | researched: insufficient_confidence | complete | 18.00 / 32.00 / 53.00 USD | 2026-10-20T20:15:25.373186Z | 2026-11-19T20:15:25.373186Z |
 | [Samsung Electronics Co., Ltd.](securities/security_567d0d575bbd30aaa91d) | SSU.VI (EUR) | researched: insufficient_confidence | complete | 2,401.59 / 5,003.30 / 7,961.19 EUR | 2026-10-19T02:16:05.391547Z | 2026-11-18T02:16:05.391547Z |
 | [Samsung Electronics Co., Ltd.](securities/security_d08d763780400dfbffce) | SSUN.VI (EUR) | researched: insufficient_confidence | complete | 970.00 / 2,000.00 / 3,720.00 EUR | 2026-10-19T01:56:11.907430Z | 2026-11-18T01:56:11.907430Z |
 | [Schneider Electric SE](securities/security_dc8486c1d61df62a22fd) | SU (EUR) | researched: research_expired_or_future | complete | 190.00 / 240.00 / 330.00 EUR | 2026-08-31T22:44:59Z | 2026-09-30T22:44:59Z |

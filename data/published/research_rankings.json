@@ -92,13 +92,13 @@
     }
   ],
   "coverage": {
-    "current": 44,
+    "current": 47,
     "failed_tickers": 2,
     "instruments": 94,
     "issuers": 93,
     "researched": 92,
-    "stale": 48,
-    "unrated": 69,
+    "stale": 45,
+    "unrated": 67,
     "watchlist_complete": 86,
     "watchlist_incomplete_research": 0,
     "watchlist_instruments": 94,
@@ -107,8 +107,8 @@
     "watchlist_valuation_unsupported": 6
   },
   "last_market_session": "2026-10-20",
-  "last_research_at": "2026-10-20T12:08:40.691805Z",
-  "last_successful_research": "2026-10-19T21:23:51Z",
+  "last_research_at": "2026-10-20T20:17:35.294967Z",
+  "last_successful_research": "2026-10-20T20:19:22Z",
   "phase_health": {
     "market": "degraded",
     "research": "succeeded"
@@ -131,6 +131,24 @@
       "ticker": "ISRG",
       "valid_until": "2026-11-18T00:52:56.668629Z",
       "weighted_fair_value": "343.50"
+    },
+    {
+      "adjusted_return_pct": "-12.70921919387947838001899566",
+      "assessed_at": "2026-10-20T20:17:35.294967Z",
+      "base_fair_value": "7.57",
+      "company_name": "Ginkgo Bioworks Holdings, Inc.",
+      "confidence": "medium",
+      "currency": "USD",
+      "expected_return_pct": "-18.15602741982782625716999380",
+      "issuer_id": "issuer_a743f8506828e2be799d",
+      "price": "9.869999885559082",
+      "price_date": "2026-10-20",
+      "rating": "sell",
+      "research_page": "data/wiki/securities/security_95351d928b674bbdf687.md",
+      "security_id": "security_95351d928b674bbdf687",
+      "ticker": "DNA",
+      "valid_until": "2026-11-19T20:17:35.294967Z",
+      "weighted_fair_value": "8.078"
     },
     {
       "adjusted_return_pct": "-11.07479717915868889133567902",
