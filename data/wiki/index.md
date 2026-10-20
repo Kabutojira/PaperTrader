@@ -31,7 +31,7 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-93 companies / 94 instruments; 92 assessed, 43 in date, 49 stale; 69 currently unrated. 3 quotes require attention.
+93 companies / 94 instruments; 92 assessed, 44 in date, 48 stale; 69 currently unrated. 3 quotes require attention.
 
 Last observed market session: 2026-10-19. Last successful research: 2026-10-19T21:23:51Z. Market: degraded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
@@ -39,6 +39,7 @@ Watchlist valuation coverage: **86 / 94 instruments** have complete sourced bear
 
 ## Recently updated research
 
+- [Tesla, Inc.](securities/security_dc7a111e297be528d96b) — 2026-10-20T07:22:52.282468Z; insufficient_confidence
 - [Spotify Technology S.A.](securities/security_2010347f1a0a5ea60f47) — 2026-10-19T21:21:50.964829Z; hold
 - [Kratos Defense & Security Solutions, Inc.](securities/security_0cf8075039299094d614) — 2026-10-19T21:19:48.861579Z; hold
 - [Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148) — 2026-10-19T02:22:31.996188Z; insufficient_confidence
@@ -48,7 +49,6 @@ Watchlist valuation coverage: **86 / 94 instruments** have complete sourced bear
 - [Samsung Electronics Co., Ltd.](securities/security_d08d763780400dfbffce) — 2026-10-19T01:56:11.907430Z; insufficient_confidence
 - [Sociedad Quimica y Minera de Chile S.A.](securities/security_9d4049ed6669a52815d6) — 2026-10-19T01:37:34.979892Z; buy
 - [YASKAWA Electric Corporation](securities/security_89969b7dac39b7db5661) — 2026-10-19T01:34:58.259599Z; insufficient_confidence
-- [Stratasys Ltd.](securities/security_84705b27d28a94f2b318) — 2026-10-19T01:30:41.606846Z; hold
 
 ## Ideas and interesting companies
 
