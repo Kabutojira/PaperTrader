@@ -39,7 +39,7 @@ Watchlist valuation coverage: **86 / 94 instruments** have complete sourced bear
 
 ## Recently updated research
 
-- [Tesla, Inc.](securities/security_dc7a111e297be528d96b) — 2026-10-20T07:22:52.282468Z; insufficient_confidence
+- [Tesla, Inc.](securities/security_dc7a111e297be528d96b) — 2026-10-20T12:08:40.691805Z; insufficient_confidence
 - [Spotify Technology S.A.](securities/security_2010347f1a0a5ea60f47) — 2026-10-19T21:21:50.964829Z; hold
 - [Kratos Defense & Security Solutions, Inc.](securities/security_0cf8075039299094d614) — 2026-10-19T21:19:48.861579Z; hold
 - [Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148) — 2026-10-19T02:22:31.996188Z; insufficient_confidence
