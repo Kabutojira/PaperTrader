@@ -1,6 +1,7 @@
 entity_type,entity_id,priority,reasons,created_at,updated_at,status,attempts,next_eligible_at,lease_until,manual,last_error
 security,security_099561384c0f5e697727,60,research_overdue,2026-10-19T21:17:09Z,2026-10-19T21:17:09Z,pending,0,2026-10-19T21:17:09Z,,false,
 security,security_0b67d6c8e3fd3366a257,60,research_overdue,2026-10-19T21:17:09Z,2026-10-19T21:17:09Z,pending,0,2026-10-19T21:17:09Z,,false,
+security,security_1b773169da5023ce4682,75,missing_research|valuation_coverage_gap,2026-10-20T20:11:28Z,2026-10-20T20:11:28Z,pending,0,2026-10-20T20:11:28Z,,false,
 security,security_204be2a44063993de1a8,100,explicit_user_request_analyze_active_queue_20261019|incomplete_research|research_overdue|valuation_coverage_gap,2026-10-18T17:00:00Z,2026-10-19T06:20:46Z,pending,0,2026-10-18T17:00:00Z,,true,
 security,security_2433a056eb0c55961fcc,100,explicit_user_request_analyze_active_queue_20261019|incomplete_research|research_overdue|valuation_coverage_gap,2026-10-18T20:14:56Z,2026-10-19T06:20:46Z,pending,0,2026-10-18T20:14:56Z,,true,
 security,security_2c779e81c27b78c556bb,100,explicit_user_request_analyze_active_queue_20261019|incomplete_research|research_overdue|valuation_coverage_gap,2026-10-18T20:41:09Z,2026-10-19T21:17:09Z,pending,0,2026-10-18T20:41:09Z,,true,
@@ -26,4 +27,5 @@ security,security_b19e8f0343b7da1f3c03,60,research_overdue,2026-10-19T21:17:09Z,
 security,security_b1f2c48e1a744f5ecf67,60,research_overdue,2026-10-19T21:17:09Z,2026-10-19T21:17:09Z,pending,0,2026-10-19T21:17:09Z,,false,
 security,security_b2116dcf976c96974d7b,60,research_overdue,2026-10-19T21:17:09Z,2026-10-19T21:17:09Z,pending,0,2026-10-19T21:17:09Z,,false,
 security,security_c2e6db30cb59254de418,100,explicit_user_request_analyze_active_queue_20261019|research_overdue|severe_price_movement,2026-10-18T18:50:04Z,2026-10-19T06:20:46Z,pending,0,2026-10-18T18:50:04Z,,true,
+security,security_d2be67701e612ee6625d,75,missing_research|valuation_coverage_gap,2026-10-20T20:11:28Z,2026-10-20T20:11:28Z,pending,0,2026-10-20T20:11:28Z,,false,
 security,security_fe5539a7d3fd9d553bce,100,explicit_user_request_analyze_active_queue_20261019|incomplete_research|research_overdue|severe_price_movement|valuation_coverage_gap,2026-10-18T18:50:04Z,2026-10-19T06:20:46Z,pending,0,2026-10-18T18:50:04Z,,true,
