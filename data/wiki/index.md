@@ -32,14 +32,17 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-93 companies / 94 instruments; 92 assessed, 47 in date, 45 stale; 67 currently unrated. 1 quotes require attention.
+93 companies / 94 instruments; 92 assessed, 50 in date, 42 stale; 65 currently unrated. 1 quotes require attention.
 
-Last observed market session: 2026-10-21. Last successful research: 2026-10-20T20:19:22Z. Market: degraded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-21. Last successful research: 2026-10-21T20:32:09Z. Market: degraded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
-Watchlist valuation coverage: **86 / 94 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 2; unsupported valuation: 6; incomplete research: 0. Needs attention: 3. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
+Watchlist valuation coverage: **85 / 94 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 2; unsupported valuation: 7; incomplete research: 0. Needs attention: 3. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
+- [Amazon.com, Inc.](securities/security_2433a056eb0c55961fcc) — 2026-10-21T20:29:36.380404Z; hold
+- [Strategy Inc](securities/security_fe5539a7d3fd9d553bce) — 2026-10-21T20:27:33.369332Z; valuation_unsupported
+- [Xometry, Inc.](securities/security_c2e6db30cb59254de418) — 2026-10-21T20:25:31.299835Z; hold
 - [Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687) — 2026-10-20T20:17:35.294967Z; sell
 - [Rocket Lab Corporation](securities/security_7ca095d63423c55a90e3) — 2026-10-20T20:15:25.373186Z; insufficient_confidence
 - [Microsoft Corporation](securities/security_204be2a44063993de1a8) — 2026-10-20T20:13:08.599471Z; hold
@@ -47,9 +50,6 @@ Watchlist valuation coverage: **86 / 94 instruments** have complete sourced bear
 - [Spotify Technology S.A.](securities/security_2010347f1a0a5ea60f47) — 2026-10-19T21:21:50.964829Z; hold
 - [Kratos Defense & Security Solutions, Inc.](securities/security_0cf8075039299094d614) — 2026-10-19T21:19:48.861579Z; hold
 - [Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148) — 2026-10-19T02:22:31.996188Z; insufficient_confidence
-- [Samsung Electronics Co., Ltd.](securities/security_567d0d575bbd30aaa91d) — 2026-10-19T02:16:05.391547Z; insufficient_confidence
-- [Enphase Energy, Inc.](securities/security_f2b9760d847b2ba59324) — 2026-10-19T02:07:45.077644Z; insufficient_confidence
-- [Intuitive Machines, Inc.](securities/security_a5dc16f3f4b245e6c168) — 2026-10-19T02:05:15.000191Z; valuation_unsupported
 
 ## Ideas and interesting companies
 

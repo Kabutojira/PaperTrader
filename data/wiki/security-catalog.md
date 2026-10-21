@@ -15,7 +15,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Agronomics Limited](securities/security_fe4648901e7675f157fd) | ANIC.L (GBP) | researched: buy | complete | 0.0300 / 0.0800 / 0.1100 GBP | 2026-10-18T23:21:39.032922Z | 2026-11-17T23:21:39.032922Z |
 | [Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3) | ALB (USD) | researched: research_expired_or_future | complete | 9.93 / 131.25 / 231.62 USD | 2026-09-05T17:31:04Z | 2026-10-05T17:31:04Z |
 | [Alphabet Inc.](securities/security_c86bb4e75658c07142cf) | GOOGL (USD) | researched: research_expired_or_future | complete | 260.00 / 360.00 / 480.00 USD | 2026-08-01T16:32:28Z | 2026-08-31T16:32:28Z |
-| [Amazon.com, Inc.](securities/security_2433a056eb0c55961fcc) | AMZN (USD) | researched: research_expired_or_future | complete | 200.00 / 270.00 / 360.00 USD | 2026-08-28T19:39:15Z | 2026-09-27T19:39:15Z |
+| [Amazon.com, Inc.](securities/security_2433a056eb0c55961fcc) | AMZN (USD) | researched: hold | complete | 200.00 / 270.00 / 360.00 USD | 2026-10-21T20:29:36.380404Z | 2026-11-20T20:29:36.380404Z |
 | [Applied Materials, Inc.](securities/security_0a56aa634d077fe5796f) | AMAT (USD) | needs_attention: source_evidence_unavailable | complete | 286.00 / 448.00 / 646.00 USD | 2026-09-03T12:34:21Z | 2026-10-03T12:34:21Z |
 | [Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a) | ANET (USD) | researched: hold | complete | 120.00 / 182.40 / 252.00 USD | 2026-10-18T21:20:52.492203Z | 2026-11-17T21:20:52.492203Z |
 | [Arkema S.A.](securities/security_798e2fb944d740aca308) | AKE (EUR) | researched: hold | complete | 30.00 / 56.00 / 89.00 EUR | 2026-10-18T22:35:52.408763Z | 2026-11-17T22:35:52.408763Z |
@@ -84,7 +84,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Space Exploration Technologies Corp.](securities/security_664f93a7eaca72e76e9b) | SPCX (USD) | researched: research_expired_or_future | complete | 50.00 / 110.00 / 195.00 USD | 2026-08-05T19:02:24Z | 2026-08-19T19:02:24Z |
 | [Spotify Technology S.A.](securities/security_2010347f1a0a5ea60f47) | SPOT (USD) | researched: hold | complete | 317.00 / 510.00 / 739.00 USD | 2026-10-19T21:21:50.964829Z | 2026-11-18T21:21:50.964829Z |
 | [Stratasys Ltd.](securities/security_84705b27d28a94f2b318) | SSYS (USD) | researched: hold | complete | 3.48 / 6.40 / 10.00 USD | 2026-10-19T01:30:41.606846Z | 2026-11-18T01:30:41.606846Z |
-| [Strategy Inc](securities/security_fe5539a7d3fd9d553bce) | MSTR (USD) | researched: source_evidence_unavailable | complete | 53.63 / 107.78 / 173.76 USD | 2026-08-22T15:55:59Z | 2026-09-19T08:26:47Z |
+| [Strategy Inc](securities/security_fe5539a7d3fd9d553bce) | MSTR (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-21T20:27:33.369332Z | 2026-11-20T20:27:33.369332Z |
 | [Taiwan Semiconductor Manufacturing Company Limited](securities/security_ce9b78a4d0773c950765) | TSM (USD) | researched: research_expired_or_future | complete | 250.00 / 375.00 / 495.00 USD | 2026-09-06T14:13:31Z | 2026-10-04T14:13:31Z |
 | [Teledyne Technologies Incorporated](securities/security_ad5917642acbba28c1f2) | TDY (USD) | researched: research_expired_or_future | complete | 506.00 / 675.00 / 870.00 USD | 2026-08-05T19:59:39Z | 2026-09-04T19:59:39Z |
 | [Tencent Holdings Limited](securities/security_de0d83229b369a426b99) | TCEHY (USD) | researched: research_expired_or_future | complete | 40.00 / 65.00 / 90.00 USD | 2026-08-28T19:23:20Z | 2026-09-27T19:23:20Z |
@@ -99,6 +99,6 @@ Historical and stale research remains readable; only current validated opinions 
 | [Veralto Corporation](securities/security_1b773169da5023ce4682) | VLTO (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Vertiv Holdings Co](securities/security_cb88f9154cfeaa15e878) | VRT (USD) | researched: research_expired_or_future | complete | 166.25 / 281.40 / 402.00 USD | 2026-08-08T11:46:19Z | 2026-09-07T11:46:19Z |
 | [W&T Offshore, Inc.](securities/security_61567714298b9563d1a9) | WTI (USD) | researched: research_expired_or_future | complete | 0.7900 / 3.17 / 6.15 USD | 2026-08-06T14:22:30Z | 2026-08-20T14:22:30Z |
-| [Xometry, Inc.](securities/security_c2e6db30cb59254de418) | XMTR (USD) | researched: source_evidence_unavailable | complete | 50.00 / 85.00 / 130.00 USD | 2026-09-06T13:57:12Z | 2026-10-04T13:57:12Z |
+| [Xometry, Inc.](securities/security_c2e6db30cb59254de418) | XMTR (USD) | researched: hold | complete | 47.00 / 79.00 / 116.00 USD | 2026-10-21T20:25:31.299835Z | 2026-11-20T20:25:31.299835Z |
 | [Xylem Inc.](securities/security_d2be67701e612ee6625d) | XYL (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [YASKAWA Electric Corporation](securities/security_89969b7dac39b7db5661) | YEC.F (EUR) | researched: insufficient_confidence | complete | 14.82 / 23.68 / 33.07 EUR | 2026-10-19T01:34:58.259599Z | 2026-11-18T01:34:58.259599Z |

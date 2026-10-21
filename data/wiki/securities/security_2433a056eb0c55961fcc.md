@@ -7,8 +7,8 @@ tags:
   - research
   - risk
 created: "2026-08-01"
-updated: "2026-08-28"
-provenance: "source_amzn_q2_2026_10q|source_amzn_q2_2026_results"
+updated: "2026-10-21"
+provenance: "source_web_1f2d27a2ac79abff763aa58f|source_web_1a8b270d7239b04a970a63ff"
 security_id: security_2433a056eb0c55961fcc
 issuer_id: issuer_85fa8ff84ea190add8f0
 ticker: AMZN
@@ -16,155 +16,107 @@ venue_mic: XNAS
 provider_symbol: AMZN
 currency: USD
 confidence: medium
-next_review: "2026-09-27"
+next_review: "2026-11-20"
 ---
 
 # Amazon.com, Inc. common stock
 
-## Decision
+## Valuation conclusion
 
-**Hold / Watch; no strategy.** Amazon's Q2 2026 operating evidence remains strong: consolidated
-sales grew 20%, operating income grew 43%, and AWS sales grew 37%. The refreshed USD 256.26 mark
-is below the USD 270 base case, but the unchanged scenarios provide only 5.4% base upside and 7.3%
-probability-weighted return. Trailing free cash flow is negative as AI infrastructure investment
-surged, long-term debt increased, and the downside payoff remains inadequate. The video mention is
-a research lead, not evidence that changes the assessment or creates a paper-trade opportunity.
+Amazon’s operating evidence remains strong, but valuation headroom is limited. Q2 2026 net sales increased 20% to USD 200.606 billion, operating income increased 43% to USD 27.461 billion, and AWS sales increased 37% to USD 42.232 billion. Advertising services grew 26%, and North America, International, and AWS were all profitable. These results support the long-term business thesis.
+
+The principal contrary evidence is cash conversion and capital intensity. Trailing operating cash flow reached USD 161.403 billion, but property purchases net of proceeds and incentives reached USD 169.007 billion, leaving a USD 7.604 billion free-cash-flow outflow. Long-term debt increased to USD 128.894 billion, and long-term lease liabilities were USD 94.338 billion. At the supplied USD 262.37 market mark, the USD 270 base fair value offers little cushion, even though the probability-weighted scenario value is USD 275.
 
 ## Immutable identity
 
 - Security ID: `security_2433a056eb0c55961fcc`
 - Issuer ID: `issuer_85fa8ff84ea190add8f0`
+- Issuer: Amazon.com, Inc.
 - Instrument: Amazon.com, Inc. common stock
-- Listing: Nasdaq Global Select Market (`XNAS`)
-- Provider symbol: `AMZN`
-- Currency: `USD`
+- Ticker and provider symbol: `AMZN`
+- Listing venue: Nasdaq (`XNAS`)
+- Native valuation currency: `USD`
 
-The SEC filing cover identifies Amazon common stock as `AMZN` on Nasdaq, consistent with the
-canonical issuer, instrument, venue, currency, and provider identity. No duplicate immutable
-identity is present in the security table.
+The opened issuer release identifies Amazon.com, Inc. as Nasdaq-listed under `AMZN`, and the filing presents the common shares and financial statements in U.S. dollars. This is consistent with the supplied identity. No evidence reviewed in this operation indicates an issuer, share-class, symbol, venue, or currency mismatch.
 
-## Alert review
+## Business economics
 
-The deterministic alerts comprise two distinct market dates:
+Amazon combines several businesses with different economics:
 
-- On July 30, volume reached **101,839,800 shares**, entering a volume anomaly while the adjusted
-  close was USD 235.50 and the July 1–30 return was **-2.57%**. The earnings release followed that
-  session's close, so it cannot explain the same-session volume anomaly; no contemporaneous primary
-  filing establishes a cause. This earlier signal is unexplained attention rather than a trade case.
-- On July 31, the first regular session after results, the adjusted close rose **15.32%** to
-  **USD 271.58** on **128,881,300 shares**. The July 2–31 return reached **11.91%**, the close ended
-  **2.99% above** the upper Bollinger band, and MACD crossed above its signal.
-- The canonical July 31 indicator row reports RSI **67.88**, a **3.42** volume z-score, and source
-  price hash `b81fd0db00c2f4206bc6e0d6d5704687c29289da6da636fee699dffb9269df93`.
+- **AWS** supplies cloud compute, storage, databases, networking, model services, and custom chips. In Q2, AWS generated USD 42.232 billion of sales and USD 16.621 billion of operating income, representing most reported segment operating profit.
+- **North America retail and services** generated USD 116.177 billion of sales and USD 9.123 billion of operating income. Scale, delivery density, marketplace fees, subscriptions, and advertising can improve the economics of the consumer network.
+- **International** generated USD 42.197 billion of sales and USD 1.717 billion of operating income. It offers a runway for scale benefits but remains exposed to currency, regulation, trade policy, and uneven local profitability.
+- **Advertising** grew 26% to USD 19.809 billion in the quarter. It monetizes customer purchase intent and seller demand without carrying the same inventory burden as first-party retail.
 
-The July 31 move is materially explained by the July 30 after-close release: sales and operating
-income exceeded the prior-year quarter, AWS accelerated, and Q3 operating-income guidance remained
-well above the prior-year comparator. The repricing supports the business thesis, but it moved the
-shares beyond the base fair value and therefore increases valuation and timing risk.
+The positive mechanism is that customer traffic attracts sellers and advertisers, fulfillment density improves convenience, Prime encourages engagement, and AWS monetizes enterprise computing demand. The principal economic tension is that AI and fulfillment infrastructure require large spending before utilization, pricing, and cash returns are known.
 
-## Business and financial evidence
+## Verified financial evidence
 
-Q2 net sales rose 20% to USD 200.606 billion and operating income rose 43% to USD 27.461 billion.
-North America, International, and AWS sales grew 16%, 15%, and 37%; segment operating income was
-USD 9.1 billion, USD 1.7 billion, and USD 16.6 billion. AWS supplied about 60% of segment operating
-income, demonstrating both attractive economics and material concentration in the highest-margin
-engine. Third-quarter guidance calls for USD 197–202 billion of sales and USD 22.5–26.5 billion of
-operating income.
+For Q2 2026, Amazon reported:
 
-Reported Q2 net income of USD 62.647 billion is not a suitable recurring earnings anchor because it
-included USD 53.4 billion of non-operating pre-tax income, primarily an observable-value increase
-in Amazon's Anthropic investment. The scenario valuation therefore normalizes from operating
-income, recurring taxes, financing costs, stock compensation, and diluted shares rather than
-capitalizing that investment mark.
+- Net sales of USD 200.606 billion, up 20% year over year.
+- Operating income of USD 27.461 billion, up 43%.
+- AWS sales of USD 42.232 billion, up 37%.
+- AWS operating income of USD 16.621 billion, up 64%.
+- North America operating income of USD 9.123 billion.
+- International operating income of USD 1.717 billion.
+- Q3 guidance for USD 197-202 billion of sales and USD 22.5-26.5 billion of operating income.
 
-Trailing-twelve-month operating cash flow rose 33% to USD 161.403 billion, but property purchases
-net of proceeds and incentives increased to USD 169.007 billion, producing a USD 7.604 billion free-
-cash-flow outflow. Cash capital expenditure was USD 96.3 billion in the first half, primarily for
-technology infrastructure supporting AWS and fulfillment capacity, and management expects these
-investments to increase in 2026. The reinvestment runway is substantial, but cash returns must
-follow.
+Reported Q2 net income of USD 62.647 billion is not an appropriate recurring earnings anchor. It included USD 53.4 billion of non-operating pre-tax income, primarily associated with Amazon’s Anthropic investment. The valuation therefore does not capitalize reported GAAP EPS or that investment remeasurement as recurring operating earnings.
 
-At June 30, cash and marketable securities totaled USD 122.988 billion versus USD 128.894 billion of
-long-term debt and USD 94.338 billion of long-term lease liabilities. Liquidity remains supported by
-large operating cash flow, but net financial strength is no longer a clear downside cushion.
-Amazon had 10.783 billion common shares outstanding at quarter-end and 244.4 million restricted
-stock units outstanding, making dilution an explicit per-share consideration.
+Trailing operating income was USD 93.712 billion, while trailing operating cash flow was USD 161.403 billion. Property purchases net of proceeds and incentives rose to USD 169.007 billion, producing negative trailing free cash flow. At June 30, Amazon held USD 78.213 billion of cash and equivalents and USD 44.775 billion of marketable securities, compared with USD 128.894 billion of long-term debt and USD 94.338 billion of long-term lease liabilities. Common shares outstanding were 10.783 billion, and common shares plus stock-based awards were 11.027 billion.
 
-## Thesis, contrary evidence, catalysts, and invalidation
+## Valuation method and scenarios
 
-The constructive thesis is that Amazon combines high-frequency consumer distribution, third-party
-seller services, advertising, subscriptions, and cloud infrastructure. AWS growth and margin,
-retail operating leverage, advertising monetization, delivery speed, and a broad customer base can
-compound operating earnings while AI services extend the cloud runway. Current segment sales and
-operating-income growth strongly support that mechanism.
+A normalized forward earnings multiple is used because reported earnings contain an unusually large investment gain. Scenario EPS is intended to represent recurring earnings after operating costs, depreciation, recurring financing costs, taxes, stock compensation, and dilution. The model uses approximately 11 billion diluted shares or share equivalents.
 
-Contrary evidence is that AWS now contributes most segment operating profit while the company is
-funding a very large, long-lived AI capacity build before utilization and pricing are fully proven.
-Negative trailing free cash flow, higher debt and lease obligations, energy-contract valuation,
-competition, regulation, labor and logistics costs, cybersecurity, third-party seller quality,
-foreign exchange, and stock compensation can impair per-share conversion. The Anthropic mark makes
-reported net income unusually non-recurring and should not be treated as operating quality.
+- **Bear — 25% probability: USD 200 per share.** USD 8.00 normalized forward EPS multiplied by 25x equals USD 200. AWS slows, retail margins weaken, and depreciation and financing costs catch up with the infrastructure build while free cash flow remains negative.
+- **Base — 50% probability: USD 270 per share.** USD 9.00 normalized forward EPS multiplied by 30x equals USD 270. AWS and advertising remain strong, retail margins broadly hold, and operating growth absorbs higher infrastructure costs, but capital intensity limits multiple expansion.
+- **Bull — 25% probability: USD 360 per share.** USD 10.00 normalized forward EPS multiplied by 36x equals USD 360. AWS growth and margins remain unusually strong, AI and custom-chip capacity achieves high utilization, and free cash flow improves as revenue catches up with investment.
 
-Catalysts are sustained AWS growth, stronger retail margins, advertising growth, successful AI-chip
-and model monetization, improving utilization, and a return to positive free cash flow without
-slowing the business. Invalidate or materially downgrade the thesis if AWS growth or margins weaken
-without lower investment, retail margins reverse, AI capacity remains underutilized, operating cash
-conversion deteriorates, leverage or dilution rises materially, or regulatory, security, labor,
-energy, or capital-allocation failures impair per-share economics.
+The probabilities total 100% and produce a probability-weighted value of USD 275. The supplied USD 262.37 market mark is below that value and slightly below the USD 270 base case, but the difference is narrow relative to the range of plausible outcomes. The market mark is a comparison point, not an input treated as fair value.
 
-## Valuation
+## Assumptions and contrary evidence
 
-The selected repository template is `mature_compounder`, using an `earnings_multiple` method. It
-normalizes the non-cash Anthropic gain, recurring taxes, financing costs, stock compensation,
-capital intensity, debt, and diluted shares. The fresh reference mark is USD 256.26. The 12-month
-scenarios and operating assumptions are unchanged because the retained primary evidence is
-unchanged:
+The base case requires continued AWS and advertising growth, stable retail operating leverage, manageable dilution, and enough infrastructure utilization to offset higher depreciation, financing, semiconductor, and energy costs. It also assumes that the Anthropic remeasurement is excluded from recurring earnings.
 
-- **Bear (25%): USD 200.00.** USD 8.00 normalized forward EPS at 25x; AWS growth slows, retail costs
-  rise, and AI depreciation and financing costs pressure per-share earnings. Return: **-22.0%**.
-- **Base (50%): USD 270.00.** USD 9.00 normalized forward EPS at 30x; AWS and advertising remain
-  strong while AI investment absorbs cash and limits multiple expansion. Return: **+5.4%**.
-- **Bull (25%): USD 360.00.** USD 10.00 normalized forward EPS at 36x; AWS growth and retail margins
-  persist and AI infrastructure converts rapidly into durable revenue and cash flow. Return:
-  **+40.5%**.
+Material contrary evidence includes:
 
-The probability-weighted value is USD 275.00, for about **7.3% expected return** and **5.5%
-confidence-adjusted expected return**. The configured 20% margin-of-safety buy-below price is USD
-216.00. Base upside, expected return, downside payoff, margin of safety, timing, and the pending
-canonical relationship fail the full strategy gate. The assessment remains ineligible for
-allocation and does not justify strategy research.
+- Negative trailing free cash flow despite strong operating cash flow.
+- A large increase in property spending associated primarily with AI infrastructure.
+- Higher debt and lease obligations.
+- Dependence on AWS for most segment operating income.
+- Limited or single-source exposure for some semiconductor products used in AI infrastructure.
+- Intense competition across cloud, retail, advertising, devices, content, logistics, and emerging AI services.
+- Regulatory, tariff, labor, cybersecurity, inventory, international, and supplier risks.
+- The possibility that new AI products or capacity fail to earn returns sufficient to recover their investment.
 
-## Changes since prior review
+## Catalysts
 
-This repeat review consumes the bounded prior assessment and the new video-derived research lead.
+Potential catalysts are sustained AWS growth and margins, rising utilization of AI infrastructure, successful Trainium and Bedrock monetization, continued advertising growth, retail and fulfillment productivity, stronger International profitability, and a return to positive free cash flow without sacrificing durable growth.
 
-- **Evidence:** the retained Q2 filing and release are unchanged; the only new deterministic input
-  is the USD 256.26 mark and corresponding USD/EUR rate retrieved on August 28.
-- **Assumptions and valuation:** the `mature_compounder` earnings-multiple method, USD 200/270/360
-  scenarios, 25%/50%/25% probabilities, and USD 216 buy zone are unchanged. Repricing lifts
-  expected return from 1.3% to 7.3%, but not enough to clear the canonical gate.
-- **Thesis and contrary evidence:** strong AWS, retail and advertising economics remain offset by
-  AI capital intensity, concentration, leverage, negative trailing free cash flow and dilution.
-- **Catalysts, risks, blockers, and gaps:** no hard blocker is asserted. Medium confidence, weak
-  timing, inadequate base upside and downside payoff, and a pending canonical relationship remain.
-- **Rating and action:** Hold / Watch and allocation-ineligible are unchanged; no strategy, signal,
-  order, or paper-trading state is created.
+## Invalidation conditions
+
+The thesis would be materially weakened if AWS growth or margins deteriorate while infrastructure spending remains high; AI capacity remains underutilized; normalized earnings fail to absorb depreciation, financing costs, and dilution; retail margins reverse; or free cash flow remains negative without a credible path to recovery. Material regulatory, security, labor, semiconductor-supply, energy, or capital-allocation failures would also invalidate important assumptions. Reported net income should not be treated as confirming the thesis when it is dominated by non-operating investment gains.
+
+## Confidence and limitations
+
+Confidence is **medium**. The Q2 release and filing provide detailed operating, balance-sheet, share-count, and cash-flow evidence, but future AI utilization, depreciation, energy requirements, and pricing are uncertain. Scenario EPS and multiples are analytical assumptions rather than company guidance. The recent supplied issuer leads were reopened, but their SEC URLs returned HTTP errors; this review therefore uses accessible Yahoo-hosted copies of the same filing documents under `link_only` licenses. No later quarterly filing was established as opened evidence during this operation.
+
+## Changes since the prior review
+
+- Refreshed the expired assessment through October 21, 2026.
+- Reopened the supplied Q2 issuer evidence using accessible filing copies and replaced prior citation tokens with the stable source identities returned in this operation.
+- Retained the USD 200/270/360 scenarios and 25%/50%/25% probabilities because the opened financial evidence supports the same operating range.
+- Clarified the per-share arithmetic and why the Anthropic remeasurement is excluded from normalized earnings.
+- Updated the valuation comparison to the supplied USD 262.37 market mark.
+- Refreshed the AI-infrastructure beneficiary relationship while explicitly recognizing utilization, depreciation, financing, semiconductor, energy, and dilution risks.
 
 ## Sources
 
-- [Amazon Q2 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1018724/000101872426000026/amzn-20260630.htm)
-  (`source_amzn_q2_2026_10q`, rechecked 2026-08-28; content unchanged).
-- [Amazon Q2 2026 results](https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260630xex991.htm)
-  (`source_amzn_q2_2026_results`, rechecked 2026-08-28; content unchanged).
-- Canonical market and indicator state: `data/market/latest.csv`, `data/market/indicators.csv`, and
-  `data/market/prices/security_2433a056eb0c55961fcc.csv`, retrieved `2026-08-28T19:01:02Z`;
-  USD/EUR FX was retrieved at the same time.
-- Alert packets: [AMZN volume anomaly](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_2433a056eb0c55961fcc-volume_anomaly-e61b5356f36f.md),
-  [AMZN upper-Bollinger transition](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_2433a056eb0c55961fcc-bollinger_above_upper-0d1101e5c09b.md),
-  and [AMZN bullish MACD transition](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_2433a056eb0c55961fcc-macd_cross_above_signal-f8b94c946cb3.md).
+- [Amazon Announces Second Quarter Results](https://cdn.yahoofinance.com/prod/sec-filings/0001018724/000101872426000024/amzn-20260630xex991.htm) (`source_web_1f2d27a2ac79abff763aa58f`, checked 2026-10-21).
+- [Amazon.com, Inc. Form 10-Q for the quarter ended June 30, 2026](https://cdn.yahoofinance.com/prod/sec-filings/0001018724/000101872426000026/amzn-20260630.htm) (`source_web_1a8b270d7239b04a970a63ff`, checked 2026-10-21).
 
-Next review: **2026-09-27**, or sooner after material AWS growth, retail-margin, AI utilization,
-capital-spending, free-cash-flow, leverage, dilution, regulatory, security, or capital-allocation
-evidence.
+Next review: **2026-11-20**, or earlier if a new quarterly filing materially changes AWS growth, retail margins, infrastructure spending, free cash flow, leverage, dilution, or normalized earnings.
 
-[[security-catalog|Tracked securities]] · [[research-catalog|Research catalog]] · [[index|Today's decision]]
+[[security-catalog|Tracked securities]] · [[research-catalog|Research catalog]]

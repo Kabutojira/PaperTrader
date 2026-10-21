@@ -13,12 +13,12 @@
   "research": {
     "discovery_status": "succeeded",
     "exit_code": 0,
-    "last_attempt_at": "2026-10-20T20:19:22Z",
+    "last_attempt_at": "2026-10-21T20:32:09Z",
     "last_discovery_attempt_at": "2026-10-19T21:18:52Z",
     "last_discovery_success_at": "2026-10-19T21:19:48Z",
-    "last_success_at": "2026-10-20T20:19:22Z",
+    "last_success_at": "2026-10-21T20:32:09Z",
     "model_operations": 3,
     "status": "succeeded",
-    "web_requests": 33
+    "web_requests": 32
   }
 }
