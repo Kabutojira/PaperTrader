@@ -4,195 +4,76 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-26"
-updated: "2026-09-06"
-provenance: "source_ternium_h1_2026_financials_sec; source_ternium_q2_2026_results_sec; source_ternium_july_2026_sustainability_6k; source_ternium_q1_2026_results; source_ustr_usmca_joint_statement_20260723; deterministic market cache"
+updated: "2026-10-22"
+provenance: "source_web_bf908def8ace17d331f2b3dc; source_web_94e03e162990b43ce2554c79"
 security_id: security_2c779e81c27b78c556bb
 issuer_id: issuer_bc5aa26231f1e18e929d
 confidence: medium
-next_review: "2026-09-20"
+next_review: "2026-11-21"
 ---
 
 # Ternium S.A. ADS
 
-## Visual evidence
-
-
-
-The bullish MACD crossover improves short-term momentum, but the USD 58 close is above both the
-USD 57.55 upper Bollinger band and the unchanged USD 51.50 probability-weighted fair value. That
-combination is adverse entry timing rather than evidence that normalized earnings changed.
-
-```echart
-{
-  "schema_version": 1,
-  "chart_id": "quarterly-operating-recovery",
-  "kind": "series",
-  "title": "Quarterly shipments, sales, and adjusted EBITDA",
-  "description": "Ternium's second-quarter recovery combined higher shipments with stronger sales and adjusted EBITDA.",
-  "as_of": "2026-06-30",
-  "sources": [
-    {
-      "label": "Ternium second-quarter and first-half 2026 results filed with the SEC",
-      "url": "https://www.sec.gov/Archives/edgar/data/1342874/000134287426000044/prternium2q2026.htm",
-      "observed_at": "2026-09-06T14:48:45Z"
-    }
-  ],
-  "x_axis": {
-    "type": "category",
-    "label": "Quarter",
-    "values": ["Q2 2025", "Q1 2026", "Q2 2026"]
-  },
-  "y_axes": [
-    {"label": "USD million", "unit": "USD million", "format": "currency", "currency": "USD"},
-    {"label": "Steel shipments", "unit": "thousand tons", "format": "decimal"}
-  ],
-  "series": [
-    {"name": "Net sales", "render": "bar", "y_axis": 0, "values": ["3947", "3934", "4340"]},
-    {"name": "Adjusted EBITDA", "render": "line", "y_axis": 0, "values": ["403", "479", "717"]},
-    {"name": "Steel shipments", "render": "line", "y_axis": 1, "values": ["3719", "3709", "3858"]}
-  ],
-  "notes": [
-    "Adjusted EBITDA is the issuer's non-GAAP measure; net sales and shipments use the issuer's consistent quarterly definitions.",
-    "The three observations show recovery, not a complete steel cycle, so valuation continues to use normalized rather than annualized peak earnings."
-  ]
-}
-```
-
-```echart
-{
-  "schema_version": 1,
-  "chart_id": "valuation-scenarios-versus-market",
-  "kind": "series",
-  "title": "Valuation scenarios versus the September market price",
-  "description": "The unchanged normalized-earnings scenarios leave both base and probability-weighted value below the September 4 adjusted close.",
-  "as_of": "2026-09-04",
-  "sources": [
-    {
-      "label": "Ternium Q2 and H1 2026 SEC filings",
-      "url": "https://www.sec.gov/Archives/edgar/data/1342874/000134287426000046/a2026junternium6-k.htm",
-      "observed_at": "2026-09-06T14:48:45Z"
-    },
-    {
-      "label": "PaperTrader deterministic adjusted market cache",
-      "observed_at": "2026-09-06T13:51:39Z"
-    }
-  ],
-  "x_axis": {
-    "type": "category",
-    "label": "Reference",
-    "values": ["Bear", "Base", "Weighted value", "Market price", "Bull"]
-  },
-  "y_axes": [
-    {"label": "USD per ADS", "unit": "USD", "format": "currency", "currency": "USD"}
-  ],
-  "series": [
-    {"name": "Value", "render": "bar", "y_axis": 0, "values": ["28", "50", "51.5", "58", "78"]}
-  ],
-  "notes": [
-    "Each ADS represents ten ordinary shares.",
-    "Bear, base, and bull probabilities remain 25%, 50%, and 25%; the market price is not assigned a scenario probability.",
-    "The chart is presentation only and does not feed the assessment or allocation state."
-  ]
-}
-```
-
 ## Identity
 
 - Immutable security: `security_2c779e81c27b78c556bb`
-- Issuer: `issuer_bc5aa26231f1e18e929d`
-- Instrument: ADS, NYSE (`XNYS`), USD; each ADS represents ten ordinary shares
-- Provider identity: `TX` / `XNYS` / `USD` / equity
+- Immutable issuer: `issuer_bc5aa26231f1e18e929d`
+- Instrument: Ternium S.A. American Depositary Shares
+- Market identity supplied for this review: `TX` / `XNYS` / USD / equity
+- Issuer reporting currency: USD
+- ADS ratio: ten ordinary shares per ADS
 
-Ternium is a capacity-builder and materials exposure within
-[[ideas/idea_nearshoring_friendshoring_manufacturing]]. The accepted
-[[relationships/relationship_510158d3d515d91d5c14|nearshoring relationship]] defines the causal
-link; deterministic price alerts are market context, not fundamental evidence.
+The opened Form 6-K materials identify the registrant as Ternium S.A., identify its NYSE ticker as TX and state that each ADS represents ten ordinary shares. They therefore support the supplied issuer, instrument, ticker and currency reconciliation. The opened evidence does not independently encode the `XNYS` MIC, so that field remains reconciled from the supplied identity rather than inferred or changed.
 
-## Changes since prior review
+## Changes since the prior review
 
-- **Evidence:** The SEC-filed consolidated interim statements confirm the first-half income
-  statement, share count, debt, liquidity and contingent-liability detail used in the prior review.
-  The SEC submissions index shows no later operating-results filing through 6 September; the
-  intervening August filings are specialized-disclosure reports rather than new trading evidence.
-- **Facts and thesis:** The last reported operating facts remain Q2 revenue of USD 4.34 billion,
-  adjusted EBITDA of USD 717 million, 3.858 million tonnes of steel shipments and USD 344 million
-  of equity-holder net income. Mexican demand and import substitution still support the accepted
-  nearshoring mechanism, but Pesquería utilization, customer qualification and project returns
-  remain undisclosed. The thesis score and medium confidence are unchanged.
-- **Balance sheet, catalysts, risks, blockers and gaps:** June net debt of USD 112 million and Q2
-  operating cash flow below capex remain manageable but constraining. Commissioning, customer
-  qualification, working-capital release and USMCA policy remain the catalysts; cyclicality,
-  non-Mexican exposures, Usiminas, currencies and trade policy remain risks. There is no new hard
-  blocker. Medium confidence, normalization uncertainty, weak timing and insufficient margin of
-  safety remain soft gaps; none was resolved by the technical crossover.
-- **Valuation assumptions and outputs:** USD 28/USD 50/USD 78 bear/base/bull fair values and
-  25%/50%/25% probabilities are unchanged because no new fundamental evidence supports revising
-  normalized ADS earnings or multiples. Weighted value remains USD 51.50, now compared with the
-  fresher USD 58 mark rather than USD 53.71, worsening the expected, base and bear return frontier.
-- **Alert, rating and action:** From 7 August through 4 September, adjusted close rose 7.61% to USD
-  58. MACD crossed above its signal by 0.0336, while RSI remained overbought at 73.76 and price
-  stayed above the USD 57.55 upper band. This is constructive momentum but adverse entry timing,
-  not a fundamental opportunity. The conclusion remains **Hold / Watch**, with no strategy,
-  signal or paper order.
+This review replaces the stale valuation with a fully specified 12-month normalized-earnings assessment. The operating evidence remains the second quarter and first half ended June 30, 2026, but the valuation now separates verified results from scenario assumptions and gives distinct downside, catalyst, invalidation and limitation analyses.
 
-## Economics and thesis
+Bear, base and bull fair values are now USD 32, USD 55 and USD 84 per ADS. Their probabilities are 25%, 50% and 25%. The refreshed base value is close to the supplied October 22 market snapshot of USD 55.36, leaving limited central-case valuation separation. This market snapshot is context, not evidence used to derive fair value.
 
-Ternium produces flat and long steel across Mexico, Brazil, Argentina, Colombia and Central
-America. Its Pesquería investment can expand locally compliant Mexican supply for automotive,
-appliance, construction and industrial customers. Q2 management said Mexican market fundamentals
-strengthened as inventories normalized and measures against unfair imports became more effective;
-it also cited new pipeline projects, substitution of Asian imports at several OEMs and public
-infrastructure as sources of additional volume.
+## Business economics and thesis
 
-The mechanism is credible but not pure. Brazil, Argentina, iron ore, currencies, steel prices,
-trade policy, Usiminas, non-controlling interests and a large capital program all affect ADS-holder
-returns. Q2 consolidated net income was USD 465 million, but only USD 344 million was attributable
-to equity holders. Management expects Q3 adjusted EBITDA to rise again on higher shipments and
-margin, yet this is forward-looking guidance rather than realized cash conversion.
+Ternium produces steel across Mexico, Brazil, Argentina and other American markets and also has mining operations. Its economics are driven by shipment volume, realized steel revenue per ton, raw-material and slab costs, plant utilization, regional currencies, trade policy and the capital intensity required to build and maintain production capacity. Non-controlling interests matter because consolidated income does not all accrue to Ternium's ADS holders.
 
-## Evidence and gates
+The investment thesis centers on Mexico. In the second quarter, Mexican steel shipments increased both sequentially and year over year, while management attributed stronger market conditions to normalized inventories, measures against unfairly traded imports, pipeline activity, public infrastructure and substitution of Asian imports at several industrial customers. The Pesquería investment can turn those conditions into additional locally produced supply, but commissioning, customer qualification, utilization and project returns remain essential unverified steps.
 
-| Evidence | Interpretation |
-| --- | --- |
-| Q2 steel shipments were 3.858 million tonnes, up 4% sequentially and year over year. | Demand and utilization improved, including in Mexico, but company-wide volume does not isolate nearshoring demand. |
-| Revenue rose 10% sequentially and year over year to USD 4.34 billion; adjusted EBITDA rose 50% sequentially to USD 717 million. | Price, volume and margin improved together, a meaningful operating confirmation. |
-| Equity-holder net income was USD 344 million, or USD 1.75 per ADS. | Attributable earnings improved, but two quarters do not establish mid-cycle earnings. |
-| Operating cash flow was USD 256 million after a USD 418 million working-capital build; capex was USD 431 million. | Earnings have not yet translated into self-funding free cash flow during the buildout. |
-| Net debt was USD 112 million versus USD 327 million net cash at March end. | Leverage remains modest, but balance-sheet flexibility is trending down. |
-| Pesquería's steel shop was progressing on schedule. | Schedule risk eased, while commissioning, customer qualification, utilization and returns remain unproven. |
+## Verified operating evidence
 
-Primary evidence: [Ternium's SEC-filed Q2 2026 results](https://www.sec.gov/Archives/edgar/data/1342874/000134287426000044/prternium2q2026.htm),
-the [SEC-filed consolidated interim financial statements](https://www.sec.gov/Archives/edgar/data/1342874/000134287426000046/a2026junternium6-k.htm),
-the [8 July 2026 sustainability filing](https://www.sec.gov/Archives/edgar/data/1342874/000155485526001509/MainDocument.htm),
-[Q1 2026 results](https://www.sec.gov/Archives/edgar/data/1342874/000134287426000030/prternium1q2026.htm),
-and the [23 July U.S.-Mexico USMCA-review statement](https://ustr.gov/about/policy-offices/press-office/press-releases/2026/july/joint-statement-ambassador-jamieson-greer-and-mexican-secretary-economy-marcelo-ebrard).
+Ternium reported second-quarter steel shipments of 3.858 million tons, net sales of USD 4.340 billion and adjusted EBITDA of USD 717 million. Adjusted EBITDA increased 50% sequentially, reflecting higher volume and improved margins. Equity-holder net income was USD 344 million, or USD 1.75 per ADS. For the first half, equity-holder net income was USD 557 million and earnings were USD 2.84 per ADS.
 
-## Valuation, catalysts, and risks
+The recovery did not yet produce positive free cash flow. First-half operating cash flow was USD 473 million, capital expenditure was USD 837 million and issuer-defined free cash flow was negative USD 364 million. Working capital absorbed USD 651 million. At June 30, cash and cash equivalents were USD 1.431 billion, other current investments were USD 1.301 billion and total current and non-current borrowings were approximately USD 2.844 billion. The issuer characterized the resulting position as USD 112 million of net debt, compared with USD 327 million of net cash at March 31.
 
-The 12-month valuation uses the repository's `cyclical_commodity` template and
-`normalized_earnings` method. It deliberately does not capitalize the annualized USD 2.84 of first-
-half ADS earnings as a permanent run rate. The **bear** case uses USD 3.50 normalized ADS earnings
-and an 8 times multiple for weak steel pricing, working-capital pressure and ramp friction, yielding
-USD 28. The **base** case uses USD 5.00 and 10 times for improved but cyclical margins, yielding USD
-50. The **bull** case uses USD 6.50 and 12 times for sustained Mexican volume, favorable pricing and
-clean commissioning, yielding USD 78. At 25%/50%/25%, weighted value is USD 51.50 versus the USD
-58 mark. Base and bear values are now further below market, so payoff asymmetry and margin of
-safety fail despite the bull case remaining above market. The deterministic assessment owns the
-exact return calculations.
+The interim statements also show why consolidated profit requires care: first-half net income was USD 837 million, of which USD 557 million was attributable to owners of the parent and USD 280 million to non-controlling interests. First-half income tax included a net gain, and the release explains that currency movements can create deferred-tax effects.
 
-Catalysts are further Mexican shipment and margin growth, customer qualification, on-schedule
-steel-shop commissioning, working-capital release and operating cash flow above capex. Invalidate
-the thesis if USMCA or tariffs fragment rather than support regional demand, imports pressure
-prices, commissioning slips, customers do not qualify or use capacity, working capital stays
-elevated, or Usiminas, currencies, litigation and non-Mexican operations absorb the benefit.
+## Valuation method
 
-## Disposition
+A normalized-earnings method is used because a steel producer's quarterly profit, working capital and free cash flow can vary sharply across the cycle. The reported USD 2.84 of first-half ADS earnings is evidence of improved profitability, but it is not simply doubled: the period included deferred-tax benefits, improving steel conditions and only six months of operations.
 
-Status: **watching**, allocation eligibility **ineligible**, conviction tier **watch**, confidence
-**medium**. Canonical conclusion: **Hold / Watch**. Results materially improved, the accepted
-relationship remains economically supported but is overdue for its separate canonical refresh,
-and the balance sheet is still manageable. Nevertheless, negative weighted and base returns,
-severe bear asymmetry, no margin of safety, incomplete project-level economics, and an overbought
-price above the upper band block allocation and strategy work. Review by **2026-09-20**, or earlier
-after material commissioning, cash-conversion, trade-policy, or pricing evidence. See the complete
-[[research-catalog]] and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md).
+| Scenario | Normalized earnings per ADS | Multiple | Fair value | Probability | Principal drivers |
+| --- | ---: | ---: | ---: | ---: | --- |
+| Bear | USD 4.00 | 8x | USD 32 | 25% | Steel-price and demand weakness, import pressure, ramp friction and poor cash conversion |
+| Base | USD 5.50 | 10x | USD 55 | 50% | Sustained but cyclical Mexican improvement, broadly on-schedule commissioning and partial working-capital normalization |
+| Bull | USD 7.00 | 12x | USD 84 | 25% | Durable import substitution, successful qualification and utilization, supportive pricing and strong cash conversion |
+
+The fair-value arithmetic is normalized ADS earnings multiplied by the scenario multiple. The 25%/50%/25% probabilities sum to 100%. The base case receives the greatest weight because the reported recovery is real but neither a severe reversal nor a durable high-return ramp has yet been demonstrated. Equal tail probabilities reflect meaningful downside from steel cyclicality and project execution alongside substantial upside if Mexican capacity earns attractive returns.
+
+## Downside and contrary evidence
+
+The strongest contrary evidence is cash conversion. Despite improved adjusted EBITDA, first-half capital expenditure exceeded operating cash flow, working capital increased materially and the balance sheet shifted from net cash to modest net debt. The Pesquería build may create future earnings, but it presently consumes capital.
+
+Other downside channels include weaker steel pricing, renewed import competition, uneven Brazilian demand, weak Argentine manufacturing, raw-material inflation, currency volatility, Usiminas-related litigation and losses, and the diversion of consolidated earnings to non-controlling interests. These factors can offset Mexican growth before it reaches ADS-holder earnings.
+
+## Catalysts and invalidation
+
+Potential catalysts are realization of the issuer's guided sequential third-quarter improvement, additional Mexican shipment growth, successful steel-shop commissioning, customer qualification, rising utilization, working-capital release and operating cash flow moving above capital expenditure.
+
+The central thesis fails if Mexican volume or pricing reverses materially, the project encounters a major delay or overrun, customers do not qualify or use the added capacity, working-capital absorption persists, or leverage rises without corresponding attributable earnings. Material deterioration caused by imports, regional currencies, Usiminas, litigation or trade-policy fragmentation would also invalidate the thesis.
+
+## Confidence and limitations
+
+Confidence is **medium**. The August 4 filings provide detailed IFRS accounts, operating metrics and reconciliations, but the latest opened evidence covers only the period through June 30, 2026. It does not establish whether third-quarter guidance was achieved. The opened documents also do not provide enough project-level information to verify remaining capital expenditure, customer qualification, utilization or return on invested capital. Scenario earnings and multiples are therefore transparent analytical assumptions, not issuer guidance.
+
+## Sources
+
+- `source_web_bf908def8ace17d331f2b3dc` — [Ternium Announces Second Quarter and First Half of 2026 Results](https://cdn.yahoofinance.com/prod/sec-filings/0001342874/000134287426000044/prternium2q2026.htm)
+- `source_web_94e03e162990b43ce2554c79` — [Ternium Consolidated Condensed Interim Financial Statements as of June 30, 2026](https://cdn.yahoofinance.com/prod/sec-filings/0001342874/000134287426000046/a2026junternium6-k.htm)

@@ -74,13 +74,13 @@
     }
   ],
   "coverage": {
-    "current": 49,
+    "current": 52,
     "failed_tickers": 6,
     "instruments": 94,
     "issuers": 93,
     "researched": 92,
-    "stale": 43,
-    "unrated": 66,
+    "stale": 40,
+    "unrated": 63,
     "watchlist_complete": 85,
     "watchlist_incomplete_research": 0,
     "watchlist_instruments": 94,
@@ -89,13 +89,31 @@
     "watchlist_valuation_unsupported": 7
   },
   "last_market_session": "2026-10-22",
-  "last_research_at": "2026-10-21T20:29:36.380404Z",
-  "last_successful_research": "2026-10-21T20:32:09Z",
+  "last_research_at": "2026-10-22T20:26:18.005794Z",
+  "last_successful_research": "2026-10-22T20:28:23Z",
   "phase_health": {
     "market": "degraded",
     "research": "succeeded"
   },
   "sells": [
+    {
+      "adjusted_return_pct": "-19.60953422301598723545221776",
+      "assessed_at": "2026-10-22T20:24:15.882831Z",
+      "base_fair_value": "47.36",
+      "company_name": "Freeport-McMoRan Inc.",
+      "confidence": "medium",
+      "currency": "USD",
+      "expected_return_pct": "-28.01362031859426747921745394",
+      "issuer_id": "issuer_5076f0e0e1dd7cc8bca7",
+      "price": "64.58999633789062",
+      "price_date": "2026-10-22",
+      "rating": "sell",
+      "research_page": "data/wiki/securities/security_2dbe878dfc899d7ee867.md",
+      "security_id": "security_2dbe878dfc899d7ee867",
+      "ticker": "FCX",
+      "valid_until": "2026-11-21T20:24:15.882831Z",
+      "weighted_fair_value": "46.496"
+    },
     {
       "adjusted_return_pct": "-15.82629341140039038715894880",
       "assessed_at": "2026-10-19T00:52:56.668629Z",

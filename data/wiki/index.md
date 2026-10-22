@@ -20,6 +20,7 @@ Current research opinions in each instrument's native currency. Fair values chan
 
 | Company / thesis & sources | Ticker | Currency | Price | Price as of | Weighted / base fair value | Implied / adjusted return | Rating | Confidence | Researched / expiry |
 | --- | --- | --- | ---: | --- | ---: | ---: | --- | --- | --- |
+| [Freeport-McMoRan Inc.](securities/security_2dbe878dfc899d7ee867) | FCX | USD | 64.59 | 2026-10-22 | 46.50 / 47.36 | -28.01% / -19.61% | sell | medium | 2026-10-22T20:24:15.882831Z / 2026-11-21T20:24:15.882831Z |
 | [Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349) | ISRG | USD | 443.85 | 2026-10-22 | 343.50 / 342.00 | -22.61% / -15.83% | sell | medium | 2026-10-19T00:52:56.668629Z / 2026-11-18T00:52:56.668629Z |
 | [Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687) | DNA | USD | 9.71 | 2026-10-22 | 8.08 / 7.57 | -16.81% / -11.77% | sell | medium | 2026-10-20T20:17:35.294967Z / 2026-11-19T20:17:35.294967Z |
 
@@ -29,14 +30,17 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-93 companies / 94 instruments; 92 assessed, 49 in date, 43 stale; 66 currently unrated. 6 quotes require attention.
+93 companies / 94 instruments; 92 assessed, 52 in date, 40 stale; 63 currently unrated. 6 quotes require attention.
 
-Last observed market session: 2026-10-22. Last successful research: 2026-10-21T20:32:09Z. Market: degraded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-22. Last successful research: 2026-10-22T20:28:23Z. Market: degraded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
 Watchlist valuation coverage: **85 / 94 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 2; unsupported valuation: 7; incomplete research: 0. Needs attention: 3. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
+- [QUALCOMM Incorporated](securities/security_3a75fc1ccca2ee7c937a) — 2026-10-22T20:26:18.005794Z; hold
+- [Freeport-McMoRan Inc.](securities/security_2dbe878dfc899d7ee867) — 2026-10-22T20:24:15.882831Z; sell
+- [Ternium S.A.](securities/security_2c779e81c27b78c556bb) — 2026-10-22T20:22:14.499873Z; hold
 - [Amazon.com, Inc.](securities/security_2433a056eb0c55961fcc) — 2026-10-21T20:29:36.380404Z; hold
 - [Strategy Inc](securities/security_fe5539a7d3fd9d553bce) — 2026-10-21T20:27:33.369332Z; valuation_unsupported
 - [Xometry, Inc.](securities/security_c2e6db30cb59254de418) — 2026-10-21T20:25:31.299835Z; hold
@@ -44,9 +48,6 @@ Watchlist valuation coverage: **85 / 94 instruments** have complete sourced bear
 - [Rocket Lab Corporation](securities/security_7ca095d63423c55a90e3) — 2026-10-20T20:15:25.373186Z; insufficient_confidence
 - [Microsoft Corporation](securities/security_204be2a44063993de1a8) — 2026-10-20T20:13:08.599471Z; hold
 - [Tesla, Inc.](securities/security_dc7a111e297be528d96b) — 2026-10-20T12:08:40.691805Z; research_expired_or_future
-- [Spotify Technology S.A.](securities/security_2010347f1a0a5ea60f47) — 2026-10-19T21:21:50.964829Z; market_stale_or_unavailable
-- [Kratos Defense & Security Solutions, Inc.](securities/security_0cf8075039299094d614) — 2026-10-19T21:19:48.861579Z; hold
-- [Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148) — 2026-10-19T02:22:31.996188Z; insufficient_confidence
 
 ## Ideas and interesting companies
 
