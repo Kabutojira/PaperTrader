@@ -11,20 +11,17 @@ Current research opinions in each instrument's native currency. Fair values chan
 
 | Company / thesis & sources | Ticker | Currency | Price | Price as of | Weighted / base fair value | Implied / adjusted return | Rating | Confidence | Researched / expiry |
 | --- | --- | --- | ---: | --- | ---: | ---: | --- | --- | --- |
-| [Agronomics Limited](securities/security_fe4648901e7675f157fd) | ANIC.L | GBP | 0.0440 | 2026-10-21 | 0.0710 / 0.0800 | 61.36% / 42.95% | buy | medium | 2026-10-18T23:21:39.032922Z / 2026-11-17T23:21:39.032922Z |
-| [NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | NVDA | USD | 221.97 | 2026-10-21 | 304.25 / 310.50 | 37.07% / 25.95% | buy | medium | 2026-10-18T19:50:33.927425Z / 2026-11-17T19:50:33.927425Z |
-| [Sociedad Quimica y Minera de Chile S.A.](securities/security_9d4049ed6669a52815d6) | SQM | USD | 58.44 | 2026-10-21 | 79.00 / 77.00 | 35.18% / 24.63% | buy | medium | 2026-10-19T01:37:34.979892Z / 2026-11-18T01:37:34.979892Z |
-| [Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | PRX | EUR | 34.58 | 2026-10-21 | 46.02 / 48.50 | 33.10% / 23.17% | buy | medium | 2026-10-19T00:25:13.322131Z / 2026-11-17T00:25:13.322131Z |
-| [Fiserv, Inc.](securities/security_d202772e4e62065cd17a) | FISV | USD | 48.21 | 2026-10-21 | 62.89 / 65.70 | 30.45% / 21.32% | buy | medium | 2026-10-19T00:38:18.749675Z / 2026-11-18T00:38:18.749675Z |
+| [Agronomics Limited](securities/security_fe4648901e7675f157fd) | ANIC.L | GBP | 0.0430 | 2026-10-22 | 0.0710 / 0.0800 | 65.12% / 45.58% | buy | medium | 2026-10-18T23:21:39.032922Z / 2026-11-17T23:21:39.032922Z |
+| [NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | NVDA | USD | 212.21 | 2026-10-22 | 304.25 / 310.50 | 43.37% / 30.36% | buy | medium | 2026-10-18T19:50:33.927425Z / 2026-11-17T19:50:33.927425Z |
+| [Sociedad Quimica y Minera de Chile S.A.](securities/security_9d4049ed6669a52815d6) | SQM | USD | 56.37 | 2026-10-22 | 79.00 / 77.00 | 40.15% / 28.10% | buy | medium | 2026-10-19T01:37:34.979892Z / 2026-11-18T01:37:34.979892Z |
+| [Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | PRX | EUR | 33.93 | 2026-10-22 | 46.02 / 48.50 | 35.65% / 24.95% | buy | medium | 2026-10-19T00:25:13.322131Z / 2026-11-17T00:25:13.322131Z |
 
 ## Top 10 Sell
 
 | Company / thesis & sources | Ticker | Currency | Price | Price as of | Weighted / base fair value | Implied / adjusted return | Rating | Confidence | Researched / expiry |
 | --- | --- | --- | ---: | --- | ---: | ---: | --- | --- | --- |
-| [Bloom Energy Corporation](securities/security_3e597863f00753e8c65c) | BE | USD | 238.53 | 2026-10-21 | 187.50 / 180.00 | -21.39% / -14.98% | sell | medium | 2026-10-18T20:59:04.577258Z / 2026-11-17T20:59:04.577258Z |
-| [Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349) | ISRG | USD | 428.12 | 2026-10-21 | 343.50 / 342.00 | -19.77% / -13.84% | sell | medium | 2026-10-19T00:52:56.668629Z / 2026-11-18T00:52:56.668629Z |
-| [Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687) | DNA | USD | 10.01 | 2026-10-21 | 8.08 / 7.57 | -19.30% / -13.51% | sell | medium | 2026-10-20T20:17:35.294967Z / 2026-11-19T20:17:35.294967Z |
-| [Planet Labs PBC](securities/security_97f38b2cb2d5ef127f5a) | PL | USD | 13.71 | 2026-10-21 | 11.43 / 11.41 | -16.61% / -11.63% | sell | medium | 2026-10-18T23:51:11.153208Z / 2026-11-17T23:51:11.153208Z |
+| [Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349) | ISRG | USD | 443.85 | 2026-10-22 | 343.50 / 342.00 | -22.61% / -15.83% | sell | medium | 2026-10-19T00:52:56.668629Z / 2026-11-18T00:52:56.668629Z |
+| [Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687) | DNA | USD | 9.71 | 2026-10-22 | 8.08 / 7.57 | -16.81% / -11.77% | sell | medium | 2026-10-20T20:17:35.294967Z / 2026-11-19T20:17:35.294967Z |
 
 Sell denotes researched overvaluation or downside, regardless of ownership. It is not a short-trade recommendation.
 
@@ -32,9 +29,9 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-93 companies / 94 instruments; 92 assessed, 50 in date, 42 stale; 65 currently unrated. 1 quotes require attention.
+93 companies / 94 instruments; 92 assessed, 49 in date, 43 stale; 66 currently unrated. 6 quotes require attention.
 
-Last observed market session: 2026-10-21. Last successful research: 2026-10-21T20:32:09Z. Market: degraded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-22. Last successful research: 2026-10-21T20:32:09Z. Market: degraded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
 Watchlist valuation coverage: **85 / 94 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 2; unsupported valuation: 7; incomplete research: 0. Needs attention: 3. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
@@ -46,8 +43,8 @@ Watchlist valuation coverage: **85 / 94 instruments** have complete sourced bear
 - [Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687) — 2026-10-20T20:17:35.294967Z; sell
 - [Rocket Lab Corporation](securities/security_7ca095d63423c55a90e3) — 2026-10-20T20:15:25.373186Z; insufficient_confidence
 - [Microsoft Corporation](securities/security_204be2a44063993de1a8) — 2026-10-20T20:13:08.599471Z; hold
-- [Tesla, Inc.](securities/security_dc7a111e297be528d96b) — 2026-10-20T12:08:40.691805Z; insufficient_confidence
-- [Spotify Technology S.A.](securities/security_2010347f1a0a5ea60f47) — 2026-10-19T21:21:50.964829Z; hold
+- [Tesla, Inc.](securities/security_dc7a111e297be528d96b) — 2026-10-20T12:08:40.691805Z; research_expired_or_future
+- [Spotify Technology S.A.](securities/security_2010347f1a0a5ea60f47) — 2026-10-19T21:21:50.964829Z; market_stale_or_unavailable
 - [Kratos Defense & Security Solutions, Inc.](securities/security_0cf8075039299094d614) — 2026-10-19T21:19:48.861579Z; hold
 - [Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148) — 2026-10-19T02:22:31.996188Z; insufficient_confidence
 
