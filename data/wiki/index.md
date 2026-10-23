@@ -30,14 +30,17 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-93 companies / 94 instruments; 92 assessed, 52 in date, 40 stale; 63 currently unrated. 2 quotes require attention.
+93 companies / 94 instruments; 92 assessed, 55 in date, 37 stale; 61 currently unrated. 2 quotes require attention.
 
-Last observed market session: 2026-10-23. Last successful research: 2026-10-22T20:28:23Z. Market: degraded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-23. Last successful research: 2026-10-23T20:15:14Z. Market: degraded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
-Watchlist valuation coverage: **85 / 94 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 2; unsupported valuation: 7; incomplete research: 0. Needs attention: 3. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
+Watchlist valuation coverage: **84 / 94 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 2; unsupported valuation: 8; incomplete research: 0. Needs attention: 3. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
+- [Powell Industries, Inc.](securities/security_0b67d6c8e3fd3366a257) — 2026-10-23T20:13:28.238153Z; valuation_unsupported
+- [Corsair Gaming, Inc.](securities/security_55c9ce2fdcd32dad6b8c) — 2026-10-23T20:11:46.578958Z; hold
+- [Quanta Services, Inc.](securities/security_488a9d7f7a8573597724) — 2026-10-23T20:09:37.071756Z; hold
 - [QUALCOMM Incorporated](securities/security_3a75fc1ccca2ee7c937a) — 2026-10-22T20:26:18.005794Z; hold
 - [Freeport-McMoRan Inc.](securities/security_2dbe878dfc899d7ee867) — 2026-10-22T20:24:15.882831Z; sell
 - [Ternium S.A.](securities/security_2c779e81c27b78c556bb) — 2026-10-22T20:22:14.499873Z; hold
@@ -45,9 +48,6 @@ Watchlist valuation coverage: **85 / 94 instruments** have complete sourced bear
 - [Strategy Inc](securities/security_fe5539a7d3fd9d553bce) — 2026-10-21T20:27:33.369332Z; valuation_unsupported
 - [Xometry, Inc.](securities/security_c2e6db30cb59254de418) — 2026-10-21T20:25:31.299835Z; hold
 - [Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687) — 2026-10-20T20:17:35.294967Z; sell
-- [Rocket Lab Corporation](securities/security_7ca095d63423c55a90e3) — 2026-10-20T20:15:25.373186Z; insufficient_confidence
-- [Microsoft Corporation](securities/security_204be2a44063993de1a8) — 2026-10-20T20:13:08.599471Z; hold
-- [Tesla, Inc.](securities/security_dc7a111e297be528d96b) — 2026-10-20T12:08:40.691805Z; research_expired_or_future
 
 ## Ideas and interesting companies
 
