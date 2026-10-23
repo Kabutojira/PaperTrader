@@ -11,18 +11,18 @@ Current research opinions in each instrument's native currency. Fair values chan
 
 | Company / thesis & sources | Ticker | Currency | Price | Price as of | Weighted / base fair value | Implied / adjusted return | Rating | Confidence | Researched / expiry |
 | --- | --- | --- | ---: | --- | ---: | ---: | --- | --- | --- |
-| [Agronomics Limited](securities/security_fe4648901e7675f157fd) | ANIC.L | GBP | 0.0430 | 2026-10-22 | 0.0710 / 0.0800 | 65.12% / 45.58% | buy | medium | 2026-10-18T23:21:39.032922Z / 2026-11-17T23:21:39.032922Z |
-| [NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | NVDA | USD | 212.21 | 2026-10-22 | 304.25 / 310.50 | 43.37% / 30.36% | buy | medium | 2026-10-18T19:50:33.927425Z / 2026-11-17T19:50:33.927425Z |
-| [Sociedad Quimica y Minera de Chile S.A.](securities/security_9d4049ed6669a52815d6) | SQM | USD | 56.37 | 2026-10-22 | 79.00 / 77.00 | 40.15% / 28.10% | buy | medium | 2026-10-19T01:37:34.979892Z / 2026-11-18T01:37:34.979892Z |
-| [Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | PRX | EUR | 33.93 | 2026-10-22 | 46.02 / 48.50 | 35.65% / 24.95% | buy | medium | 2026-10-19T00:25:13.322131Z / 2026-11-17T00:25:13.322131Z |
+| [NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | NVDA | USD | 210.96 | 2026-10-23 | 304.25 / 310.50 | 44.22% / 30.96% | buy | medium | 2026-10-18T19:50:33.927425Z / 2026-11-17T19:50:33.927425Z |
+| [Sociedad Quimica y Minera de Chile S.A.](securities/security_9d4049ed6669a52815d6) | SQM | USD | 57.13 | 2026-10-23 | 79.00 / 77.00 | 38.27% / 26.79% | buy | medium | 2026-10-19T01:37:34.979892Z / 2026-11-18T01:37:34.979892Z |
+| [Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | PRX | EUR | 34.17 | 2026-10-23 | 46.02 / 48.50 | 34.69% / 24.29% | buy | medium | 2026-10-19T00:25:13.322131Z / 2026-11-17T00:25:13.322131Z |
 
 ## Top 10 Sell
 
 | Company / thesis & sources | Ticker | Currency | Price | Price as of | Weighted / base fair value | Implied / adjusted return | Rating | Confidence | Researched / expiry |
 | --- | --- | --- | ---: | --- | ---: | ---: | --- | --- | --- |
-| [Freeport-McMoRan Inc.](securities/security_2dbe878dfc899d7ee867) | FCX | USD | 64.59 | 2026-10-22 | 46.50 / 47.36 | -28.01% / -19.61% | sell | medium | 2026-10-22T20:24:15.882831Z / 2026-11-21T20:24:15.882831Z |
-| [Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349) | ISRG | USD | 443.85 | 2026-10-22 | 343.50 / 342.00 | -22.61% / -15.83% | sell | medium | 2026-10-19T00:52:56.668629Z / 2026-11-18T00:52:56.668629Z |
-| [Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687) | DNA | USD | 9.71 | 2026-10-22 | 8.08 / 7.57 | -16.81% / -11.77% | sell | medium | 2026-10-20T20:17:35.294967Z / 2026-11-19T20:17:35.294967Z |
+| [Freeport-McMoRan Inc.](securities/security_2dbe878dfc899d7ee867) | FCX | USD | 65.22 | 2026-10-23 | 46.50 / 47.36 | -28.70% / -20.09% | sell | medium | 2026-10-22T20:24:15.882831Z / 2026-11-21T20:24:15.882831Z |
+| [Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349) | ISRG | USD | 452.29 | 2026-10-23 | 343.50 / 342.00 | -24.05% / -16.84% | sell | medium | 2026-10-19T00:52:56.668629Z / 2026-11-18T00:52:56.668629Z |
+| [Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687) | DNA | USD | 9.98 | 2026-10-23 | 8.08 / 7.57 | -19.06% / -13.34% | sell | medium | 2026-10-20T20:17:35.294967Z / 2026-11-19T20:17:35.294967Z |
+| [Planet Labs PBC](securities/security_97f38b2cb2d5ef127f5a) | PL | USD | 13.41 | 2026-10-23 | 11.43 / 11.41 | -14.77% / -10.34% | sell | medium | 2026-10-18T23:51:11.153208Z / 2026-11-17T23:51:11.153208Z |
 
 Sell denotes researched overvaluation or downside, regardless of ownership. It is not a short-trade recommendation.
 
@@ -30,9 +30,9 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-93 companies / 94 instruments; 92 assessed, 52 in date, 40 stale; 63 currently unrated. 6 quotes require attention.
+93 companies / 94 instruments; 92 assessed, 52 in date, 40 stale; 63 currently unrated. 2 quotes require attention.
 
-Last observed market session: 2026-10-22. Last successful research: 2026-10-22T20:28:23Z. Market: degraded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-23. Last successful research: 2026-10-22T20:28:23Z. Market: degraded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
 Watchlist valuation coverage: **85 / 94 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 2; unsupported valuation: 7; incomplete research: 0. Needs attention: 3. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
