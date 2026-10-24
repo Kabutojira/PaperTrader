@@ -4,12 +4,12 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-26"
-updated: "2026-08-11"
-provenance: "source_pltr_q1_2026_earnings; source_pltr_q2_2026_10q; Warp Speed material; U.S. Army procurement notice"
+updated: "2026-10-24"
+provenance: "source_web_f5345cc4c6d3c0369252d714"
 security_id: security_bdc2f87dadf134760c3a
 issuer_id: issuer_7273af0280c612edebab
-confidence: medium
-next_review: "2026-08-25"
+confidence: low
+next_review: "2026-11-23"
 ---
 
 # Palantir Technologies Inc. Class A common stock
@@ -17,115 +17,56 @@ next_review: "2026-08-25"
 ## Identity
 
 - Immutable security: `security_bdc2f87dadf134760c3a`
-- Issuer: `issuer_7273af0280c612edebab`
-- Instrument: Class A common stock, Nasdaq (`XNAS`), USD
-- Provider identity: `PLTR` / `XNAS` / `USD` / equity
+- Immutable issuer: `issuer_7273af0280c612edebab`
+- Supplied instrument: Palantir Technologies Inc. Class A common stock
+- Supplied market identity: `PLTR` / Nasdaq (`XNAS`) / USD / equity
 
-This review tests Palantir as an indirect public exposure to
-[[ideas/idea_anduril_product_company_disruption]]. It is not ownership in Anduril.
+The opened [Yahoo Finance PLTR page](https://finance.yahoo.com/quote/PLTR/) identifies Palantir Technologies Inc. under ticker PLTR, labels the venue NasdaqGS, and reports prices in USD. This reconciles the company, ticker, venue family, and native currency. The page does not explicitly establish the Class A entitlement, so that element remains dependent on the supplied immutable identity rather than newly verified evidence.
 
-## Economics and thesis
+## Current evidence
 
-The SEC-filed Q2 2026 Form 10-Q supersedes the Q1 operating baseline. Q2 revenue grew 93% to USD
-1.935 billion. U.S. commercial revenue grew 149% to USD 764 million and U.S. government revenue
-grew 90% to USD 809 million. GAAP operating income was USD 912 million, a 47% margin, and cash from
-operations was USD 1.216 billion. Management raised full-year revenue guidance to USD 8.150-8.158
-billion and adjusted free-cash-flow guidance to USD 4.5-4.7 billion. Growth, profitability and cash
-conversion therefore strengthened rather than invalidated the broad operating thesis.
+The accessible secondary page reports a regular-session close of **USD 196.75 on 23 October 2026**. It also reports Q2 FY2026 revenue of approximately USD 1.94 billion, 93% year-over-year Q2 revenue growth, a 54.86% quarterly profit margin, USD 9.41 billion of most-recent-quarter cash, and a 2.14% debt-to-equity ratio. These figures indicate rapid growth, substantial reported profitability, and favorable headline liquidity.
 
-The balance sheet remains a strength. At 30 June 2026, cash and equivalents plus marketable
-securities were USD 9.409 billion against USD 1.794 billion of total liabilities. Six-month stock
-compensation was USD 467 million and 2.403 billion common shares were outstanding at quarter end,
-so dilution and per-share economics remain material despite strong GAAP profitability and liquidity.
+Those headlines are not enough to reproduce a valuation. The page does not expose the complete financial statements, GAAP-to-free-cash-flow reconciliation, stock-based compensation and diluted-share bridge, contractual obligations, current issuer guidance, or sufficient customer and segment disclosures. It also lists 2 November 2026 as the next earnings date, making the evidence set particularly susceptible to near-term change.
 
-The Anduril link is operational but economically unquantified. Anduril uses Palantir Warp Speed in
-production, and the companies participate together in the Army TITAN ecosystem. Palantir does not
-disclose Anduril-derived revenue, margin, contract duration, or concentration. The Army's separate
-Anduril enterprise contract has a maximum potential value up to USD 20 billion, but the Army says
-that amount is not obligated; it is not Palantir revenue.
+## Valuation status
 
-## Evidence and gates
+**Research status: valuation unsupported.**
 
-| Evidence | Interpretation |
-| --- | --- |
-| Q2 revenue rose 93%; U.S. commercial revenue rose 149%. | Palantir has powerful organic growth independent of the proxy thesis. |
-| GAAP operating margin was 47%; operating cash flow was USD 1.216 billion. | Scale is converting into accounting profit and cash. |
-| Six-month stock compensation was USD 467 million. | Per-share dilution remains a material valuation input. |
-| Cash and marketable securities were USD 9.409 billion. | Solvency and near-term liquidity are not blockers. |
-| Anduril uses Warp Speed and partners on TITAN. | The operating relationship is real. |
-| No Anduril-linked revenue is disclosed. | Proxy materiality cannot be measured. |
-| Anduril's USD 20 billion Army ceiling is not obligated. | Procurement ceiling cannot be treated as backlog or pull-through. |
+A free-cash-flow-yield framework remains conceptually suitable for a profitable software company, but no bear, base, or bull values are adopted in this review. The previous scenario inputs were outside the configured freshness window and could not be independently verified from an accessible primary source. They are therefore not carried forward.
 
-Primary evidence: [Palantir Q2 2026 10-Q](https://www.sec.gov/Archives/edgar/data/1321655/000132165526000041/pltr-20260630.htm),
-[Q2 earnings release](https://www.sec.gov/Archives/edgar/data/1321655/000132165526000039/a2026q2ex991pressrelease.htm),
-[Warp Speed](https://www.palantir.com/warpspeed/), [TITAN](https://www.palantir.com/titan/), and
-[U.S. Army Anduril contract notice](https://www.army.mil/article/291074/u_s_army_awards_enterprise_contract_for_it_commercial_solutions).
+A supportable 12-month valuation requires:
 
-## Changes since prior review
+1. current issuer revenue guidance and scenario growth assumptions;
+2. verified GAAP and adjusted free cash flow, including reconciliation and normalization;
+3. cash, debt, liabilities, and commitments from the latest balance sheet;
+4. current basic and diluted shares plus a defensible dilution assumption;
+5. explicit scenario yields or multiples and reproducible per-share arithmetic; and
+6. ordered bear, base, and bull values with probabilities totaling 100%.
 
-- **Evidence:** Fresh retrievals confirm that the Q2 Form 10-Q and SEC-filed earnings release are
-  unchanged since the quick check. Q2 remains the current operating baseline, and no new evidence
-  quantifies Anduril-derived revenue, margin, contract duration or cash flow.
-- **Assumptions and scenarios:** The unsupported legacy two-case revenue sensitivity is replaced by
-  a scenario-complete `mature_compounder` free-cash-flow-yield valuation. It starts from the USD
-  8.154 billion midpoint of 2026 revenue guidance, explicitly normalizes the unusually high 2026
-  adjusted free-cash-flow margin, includes USD 7.615 billion of net liquid assets, and models
-  dilution above the 2.570 billion Q2 diluted weighted-average share count. Bear/base/bull fair
-  values are now USD 52.29/USD 99.24/USD 162.50 with 25%/50%/25% probabilities; the prior review had
-  no accepted scenarios or buy-below value.
-- **Thesis and evidence quality:** The broad growth, profitability, cash-conversion and balance-sheet
-  thesis remains strong rather than receiving another upgrade. The proxy thesis remains unproven
-  because Anduril economics are still undisclosed. Confidence remains medium.
-- **Catalysts, risks and invalidation:** Sustained organic growth, durable GAAP profitability and
-  disclosed Warp Speed economics remain catalysts. Multiple compression, growth and margin
-  normalization, stock compensation, dilution and government concentration remain risks. The
-  invalidation tests are unchanged.
-- **Blockers and gaps:** `valuation_unsupported` is resolved by the ordered scenarios. The remaining
-  valuation and timing gaps become measured rather than unbounded: even the bull value is below the
-  USD 175.23 mark. The rejected, low-confidence
-  [[relationships/relationship_250194f6a9e3a1817632|Anduril relationship]] remains unchanged and
-  independently prevents the proxy idea from supporting allocation.
-- **Rating and action:** The conclusion changes from **Unrated / Watch** to **Strong Sell / Avoid**.
-  Allocation remains ineligible, now because scenario returns and margin of safety fail rather than
-  because valuation is unsupported. No strategy, signal or paper order is justified.
-- **Unchanged conclusion:** The 7 July–4 August cluster remains earnings-backed momentum and adverse
-  entry timing, not a buy signal. By 10 August the close was USD 175.23, RSI remained overbought and
-  price remained above the upper Bollinger band, while the one-session MACD-cross and volume anomaly
-  were no longer active.
+The USD 196.75 close is a verified market observation for PLTR, but a reference price cannot create fair value in the absence of supported scenario values. The valuation score and reference fields therefore remain empty.
 
-## Valuation, catalysts, and risks
+## Economics, risks, and contrary evidence
 
-The selected repository template is `mature_compounder` and the permitted method is
-`free_cash_flow_yield`. The 12-month model starts with the issuer's USD 8.150-8.158 billion 2026
-revenue guidance and USD 4.5-4.7 billion adjusted free-cash-flow guidance. It deliberately uses
-2027 free-cash-flow margins below the 56.4% 2026 guidance midpoint, includes USD 7.615 billion of
-net liquid assets from the Q2 balance sheet, and raises scenario share counts above the Q2 diluted
-weighted average to treat stock compensation and dilution explicitly.
+The limited evidence supports a provisional view that Palantir is achieving unusually strong reported growth and profitability. It does not establish the durability or quality of those economics. Important unresolved issues include cash conversion, stock-based compensation, per-share dilution, government and customer concentration, contract termination exposure, competition, and the sensitivity of a high market valuation to slower growth or lower margins.
 
-| Scenario | Probability | Explicit assumptions | Value per share | Return from USD 175.23 |
-| --- | ---: | --- | ---: | ---: |
-| Bear | 25% | 30% 2027 revenue growth, 42% FCF margin, 30x FCF, USD 7.615 billion net liquid assets, 2.70 billion diluted shares | USD 52.29 | -70.2% |
-| Base | 50% | 45% 2027 revenue growth, 48% FCF margin, 45x FCF, USD 7.615 billion net liquid assets, 2.65 billion diluted shares | USD 99.24 | -43.4% |
-| Bull | 25% | 60% 2027 revenue growth, 53% FCF margin, 60x FCF, USD 7.615 billion net liquid assets, 2.60 billion diluted shares | USD 162.50 | -7.3% |
+Headline cash and low debt-to-equity appear favorable, but financing resilience cannot be scored without the underlying balance sheet, liability structure, commitments, and any restrictions on cash. Balance-sheet risk is kept separate from residual operating, governance, concentration, and evidence risks.
 
-The probability-weighted fair value is USD 103.32, a -41.0% expected return before the deterministic
-medium-confidence adjustment. The 20% research margin-of-safety policy implies a USD 82.65
-buy-below price; the current price is about 69.6% above weighted fair value. These outcomes are
-severe overvaluation even though the scenarios grant exceptional growth, free-cash-flow conversion
-and valuation multiples. The model assigns no value to the Anduril Army ceiling because neither
-revenue attribution nor obligation is disclosed.
+## Catalysts and invalidation
 
-Catalysts are sustained organic growth, disclosed Warp Speed customer expansion, durable GAAP cash
-conversion, and measurable defence-manufacturing revenue. Invalidate the proxy if Anduril-linked
-economics remain immaterial; invalidate the broader thesis if growth decelerates sharply, government
-concentration or termination rights hurt visibility, dilution offsets earnings, or valuation leaves
-no downside margin.
+The next complete issuer filing or earnings release is the key evidence catalyst. A current disclosure containing guidance, free cash flow, dilution, and customer or segment trends could restore a reproducible valuation.
 
-## Disposition
+The provisional operating thesis would weaken if revenue growth slows materially, margins or cash conversion deteriorate, dilution offsets enterprise growth, government-contract developments reduce visibility, or customer adoption proves less durable than the headline growth rate. Any valuation conclusion remains invalid until current primary evidence supports complete per-share scenario arithmetic.
 
-Status: **watching**, confidence **medium**, rating **Strong Sell**, portfolio action **Avoid**, and
-allocation eligibility **ineligible**. Q2 materially strengthened the operating checklist, but the
-USD 175.23 mark exceeds even the bull fair value and fails expected-return, base-return, payoff and
-margin-of-safety gates. Revisit after material operating evidence or near the USD 82.65 buy-below
-frontier; no strategy or signal is created. See [[research-catalog]] for the maintained research
-graph.
+## Confidence and limitations
+
+Confidence is **low**. The supplied Q2 Form 10-Q, earnings release, and SEC submissions index were reopened first, but each returned an HTTP error and yielded no usable source identity. No cause is inferred, and the inaccessible pages are not cited as evidence. The only usable opened source is the secondary [Yahoo Finance PLTR page](https://finance.yahoo.com/quote/PLTR/). Its market observation and financial headlines are useful but cannot substitute for current primary financial statements.
+
+## Changes since the prior review
+
+- The review date advances to 24 October 2026.
+- The 23 October regular-session close is verified at USD 196.75 for PLTR on Nasdaq in USD.
+- The former scenario valuation is withdrawn because its inputs are stale and could not be independently reverified.
+- Research status changes from supported to `valuation_unsupported`.
+- Scenario values, probabilities, valuation reference fields, and all five rubric scores are left empty rather than inferred from incomplete evidence.
+- The prior Anduril relationship is not updated because no current relationship evidence was opened in this operation.
