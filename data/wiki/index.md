@@ -33,14 +33,15 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-93 companies / 94 instruments; 94 assessed, 80 in date, 14 stale; 53 currently unrated. 1 quotes require attention.
+93 companies / 94 instruments; 94 assessed, 81 in date, 13 stale; 53 currently unrated. 1 quotes require attention.
 
-Last observed market session: 2026-10-23. Last successful research: 2026-10-24T15:53:54Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-23. Last successful research: 2026-10-24T15:58:05Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
-Watchlist valuation coverage: **68 / 93 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 0; unsupported valuation: 25; incomplete research: 0. Needs attention: 3. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
+Watchlist valuation coverage: **67 / 93 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 0; unsupported valuation: 26; incomplete research: 0. Needs attention: 3. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
+- [Tencent Holdings Limited](securities/security_de0d83229b369a426b99) — 2026-10-24T15:55:36.134973Z; valuation_unsupported
 - [Schneider Electric SE](securities/security_dc8486c1d61df62a22fd) — 2026-10-24T15:51:58.361044Z; hold
 - [Meta Platforms, Inc.](securities/security_d12e746b3c9d392183cc) — 2026-10-24T15:48:18.636792Z; valuation_unsupported
 - [Taiwan Semiconductor Manufacturing Company Limited](securities/security_ce9b78a4d0773c950765) — 2026-10-24T15:44:48.694444Z; hold
@@ -50,7 +51,6 @@ Watchlist valuation coverage: **68 / 93 instruments** have complete sourced bear
 - [Alphabet Inc.](securities/security_c86bb4e75658c07142cf) — 2026-10-24T15:26:30.343218Z; valuation_unsupported
 - [Valero Energy Corporation](securities/security_c5a9e460d3350284d157) — 2026-10-24T15:23:14.568355Z; valuation_unsupported
 - [ABB Ltd](securities/security_c120e9f26ebb6159adf9) — 2026-10-24T15:19:06.065625Z; valuation_unsupported
-- [Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a) — 2026-10-24T15:15:36.223838Z; valuation_unsupported
 
 ## Ideas and interesting companies
 
