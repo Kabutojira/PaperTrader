@@ -7,52 +7,33 @@ tags:
   - research
   - risk
 created: "2026-07-30"
-updated: "2026-08-31"
-provenance: "source_csl_q2_2026_10q|source_csl_q2_2026_release|source_csl_fy2025_release"
+updated: "2026-10-24"
+provenance: "source_web_550efb64216a4201c000d302|source_web_abed0fec59863fd7f376b4f5"
 security_id: security_9b0db3bc77914b23a307
 issuer_id: issuer_1038b47ad058326af5aa
 ticker: CSL
 venue_mic: XNYS
 provider_symbol: CSL
 currency: USD
-confidence: medium
-next_review: "2026-09-30"
+confidence: low
+next_review: "2026-11-23"
 ---
 
 # Carlisle Companies Incorporated common stock
 
-## Decision
+## Research conclusion
 
-**Watch; no strategy.** Carlisle combines a leading North American building-envelope franchise,
-durable re-roofing demand, high margins, and active per-share capital allocation. The filed Q2
-accounts confirm record revenue, but also price-cost margin pressure, weak first-half cash
-conversion, and substantial net debt. The 2026-08-28 volume anomaly strengthened as the share price
-fell 2.03% in one session and 9.82% from 2026-07-29. That is material risk attention, not a fresh
-fundamental catalyst. A probability-weighted value of USD 363.42 offers only 4.86% upside at the
-USD 346.58 mark before the repository's medium-confidence adjustment.
+**Valuation unsupported.** The current review could not verify the financial inputs needed for a refreshed Carlisle valuation. The three supplied SEC leads—the Q2 2026 Form 10-Q, Q2 2026 earnings release, and FY2025 earnings release—were reopened first, but each returned HTTP 403. They were not treated as opened evidence or cited in this assessment.
 
-## Changes since prior review
+Two accessible Carlisle issuer pages display CSL market information and identify an investor financial-information area. They do not expose current earnings, cash flow, debt, diluted-share, segment, guidance, or valuation data. Prior normalized EPS and fair-value scenarios therefore were not carried forward as though they had been freshly verified.
 
-- **Facts and evidence:** the filed Form 10-Q is now the controlling current primary source. It
-  confirms first-half revenue of USD 2.6224 billion, continuing-operations diluted EPS of USD 9.43,
-  operating cash flow of USD 197.1 million, USD 665.3 million cash, USD 2.8849 billion long-term
-  debt, and USD 500 million of first-half repurchases. These figures corroborate rather than reverse
-  the prior release-based conclusion.
-- **Alert and timing:** the strengthened alert moved from the 2026-07-29 observation to a new
-  2026-08-28 volume ratio of 2.483. The latest session's 2.03% decline occurred without a new filing
-  or issuer release in the reviewed period, so the move remains unexplained risk attention rather
-  than evidence of thesis invalidation.
-- **Valuation:** normalized EPS remains USD 20.19. The prior two-point sensitivity is replaced with
-  scenario-complete bear/base/bull values of USD 282.66, USD 363.42, and USD 444.18 at 25%/50%/25%
-  probabilities. The higher current mark reduces base and expected upside to 4.86%; downside to the
-  bear case is now 18.44%. The valuation conclusion therefore worsens from merely insufficient to
-  clearly below every new-exposure gate.
-- **Thesis, catalysts, risks, blockers, and gaps:** franchise quality, re-roofing resilience,
-  second-half pricing recovery, construction cyclicality, raw-material inflation, cash conversion,
-  leverage, and capital-allocation risks are unchanged. No hard blocker exists; medium confidence,
-  unfavorable timing, inadequate margin of safety, and an uncompelling valuation remain soft gaps.
-- **Decision:** Watch and no strategy are unchanged. No current accepted relationship exists, and
-  the complete idea-catalog review found no sufficiently specific causal exposure to justify one.
+## Changes since the prior review
+
+- Research status changed from `supported` to `valuation_unsupported` because the current operation could not reopen the financial evidence underlying the prior scenarios.
+- Prior bear, base, and bull values were removed rather than carried forward without accessible current evidence.
+- Fundamental rubric scores remain empty. The evidence available in this review cannot support business-quality, thesis, balance-sheet, risk, or valuation scoring.
+- The issuer pages display CSL at USD 345.04 for October 23, 2026 at 4:00 PM ET. This differs from the supplied USD 345.26 market observation, and the discrepancy is unresolved.
+- No relationship was created or updated because no supplied counterpart entity exists and the opened evidence does not establish a specific idea mechanism.
 
 ## Immutable identity
 
@@ -61,120 +42,68 @@ USD 346.58 mark before the repository's medium-confidence adjustment.
 - Instrument: Carlisle Companies Incorporated common stock
 - Listing: New York Stock Exchange (`XNYS`)
 - Provider symbol: `CSL`
-- Currency: `USD`
+- Native currency: `USD`
 
-Carlisle's July 29 Form 8-K confirms that its common stock trades as `CSL` on the New York Stock
-Exchange. No duplicate issuer-instrument-venue-currency-provider identity exists in the canonical
-security table.
+The issuer pages display the symbol CSL. They do not independently expose enough listing detail in their retrieved text to re-reconcile the share class and MIC, so the immutable supplied identity is retained without alteration.
 
-## Alert review
+## Evidence available in this review
 
-The canonical alert period covers 2026-07-29 through 2026-08-28:
+Carlisle's [Our Businesses page](https://www.carlisle.com/our-businesses/default.aspx) (`source_web_550efb64216a4201c000d302`) links to the issuer's investor resources and displays CSL market information. The retrieved page did not expose substantive business-segment text or current financial results.
 
-- Adjusted close fell from USD 384.31 to USD 346.58, a **9.82%** decline over the full observation
-  period; the latest session fell **2.03%** from USD 353.75.
-- August 28 volume was **546,700 shares**, or **2.483 times** its 20-session mean; the deterministic
-  transition is `strengthened` above the configured 2.0 threshold.
-- RSI was a neutral **41.22**. The close remained above the 50-day and 200-day moving averages, and
-  no Bollinger, RSI, SMA-cross, or MACD-cross alert accompanied the volume anomaly.
-- SEC submissions show no operating filing after the 2026-07-30 Form 10-Q during this market-data
-  period. The price move therefore has no verified current primary-source explanation.
+Carlisle's [Financial Information page](https://www.carlisle.com/investors/Quarterly-and-Annual-Reports/default.aspx) (`source_web_abed0fec59863fd7f376b4f5`) identifies the issuer's financial-information area and likewise displays CSL market information. Its retrieved text contained no financial table, report link, earnings data, cash-flow data, balance-sheet data, guidance, or share-count information.
 
-The move is material but not a discrete opportunity. Price action shows heightened attention amid
-construction-cycle and input-cost uncertainty; neither the filed evidence nor valuation supports
-interpreting the increased volume as an entry signal.
+These pages are adequate to show that the issuer maintains investor resources and a CSL quote display, but they are not sufficient financial evidence for valuation.
 
-## Business and financial evidence
+## Thesis and contrary evidence
 
-Carlisle sells roofing and building-envelope systems through Carlisle Construction Materials
-(CCM) and Carlisle Weatherproofing Technologies (CWT). Q2 revenue rose 8% to USD 1.570 billion,
-operating income rose 5% to USD 352.5 million, and adjusted EPS rose 12% to USD 7.03. CCM revenue
-rose 8% to USD 1.181 billion on strategic initiatives and re-roofing demand; CWT revenue rose 10%
-to USD 389 million, including 8% organic growth.
+The prior constructive thesis depended on recurring roofing demand, specification-driven building-envelope products, pricing recovery, margin resilience, cash conversion, and per-share capital allocation. None of those propositions can be retested from the successfully opened pages. They remain unverified in this operation rather than affirmatively invalidated.
 
-The quality of growth was mixed. Consolidated adjusted EBITDA margin declined 70 basis points to
-26.2%. CCM and CWT margins each declined 90 basis points because petroleum-derived raw-material
-and freight inflation outpaced pricing. Management implemented surcharges and price increases and
-raised 2026 revenue guidance to mid-single-digit growth, but changed the margin outlook from the
-roughly 50-basis-point expansion expected in February to flat adjusted EBITDA margin. The outlook
-does not assume a near-term new-construction recovery.
+Potential contrary mechanisms include construction cyclicality, weaker replacement demand, petroleum-linked input inflation, freight costs, delayed pricing, lower margins, poor cash conversion, and capital-allocation mistakes. Current primary figures are unavailable here, so their magnitude cannot be assessed.
 
-The Form 10-Q confirms first-half operating cash flow of USD 197.1 million versus USD 288.9 million
-a year earlier. The decline included a USD 125 million post-year-end tax-credit settlement, while
-receivables and inventory absorbed cash as sales and raw-material costs rose. At June 30 Carlisle
-held USD 665.3 million cash against USD 2.8849 billion long-term debt and had used USD 500 million
-for first-half repurchases. Liquidity is adequate, but net debt and aggressive buybacks reduce the
-margin for error if pricing recovery or cash conversion disappoints.
+## Valuation method and missing inputs
 
-## Idea exposure map
+An earnings-multiple framework could remain appropriate for a mature building-products issuer. A supportable calculation would require:
 
-There are **no canonical accepted relationships or retained candidate ideas** for Carlisle. The
-complete maintained idea catalog was searched rather than limiting review to the security page.
-Two superficially plausible pairings were explicitly rejected:
+1. current reported and adjusted diluted EPS with reconciliations;
+2. a defensible normalized per-share earnings base;
+3. current segment demand, pricing, margin, and guidance evidence;
+4. cash, debt, maturities, interest burden, and liquidity;
+5. operating cash flow, capital expenditure, free-cash-flow conversion, repurchases, and diluted shares; and
+6. explicit bear, base, and bull assumptions with ordered values and probabilities totaling 100%.
 
-| Idea | Classification | Direction and mechanism review | Rejection evidence |
-| --- | --- | --- | --- |
-| [[ideas/idea_ai_infrastructure_power|AI infrastructure and power bottlenecks]] | `rejected-no-link` | Data-centre construction could use roofing and building-envelope products, which would be positive if material. | Carlisle does not disclose data-centre revenue, orders, backlog, or customer exposure; its filed growth explanation is broad commercial re-roofing. The idea focuses on power, cooling, electrical equipment, interconnection, and generation, so a generic construction association is insufficient. |
-| [[ideas/idea_solar_storage_grid_flexibility_reset|Solar, storage, and grid-flexibility reset]] | `rejected-no-link` | Energy-efficient envelope products can complement efficient buildings, but Carlisle is not a disclosed solar, storage, grid-equipment, or flexibility supplier. | The Form 10-Q describes roofing, insulation, waterproofing, and air/vapor barriers without isolating solar- or grid-driven economics. The idea's demand conversion therefore has no specific material transmission mechanism to Carlisle earnings. |
+Those inputs were not available from the opened sources. Bear, base, and bull values and probabilities are therefore intentionally blank.
 
-Reconsider either pairing only after Carlisle reports material segment revenue, orders, backlog, or
-customer exposure tied to that mechanism. No relationship-research follow-up is justified now.
+The issuer pages display USD 345.04 for CSL at 4:00 PM ET on October 23, 2026, while the supplied market record reports USD 345.26. Even if the quote discrepancy were resolved, a reference price alone cannot support a valuation score without probability-weighted fair value. The valuation score and reference fields remain empty.
 
-## Thesis, contrary evidence, and invalidation
+## Downside, catalysts, and invalidation
 
-The constructive thesis is that Carlisle's scale, specified roofing systems, recurring replacement
-demand, customer service, innovation, and operating discipline support premium margins and cash
-returns through construction cycles. Approximately 70% of commercial roofing demand was described
-as re-roofing in the FY2025 release, reducing dependence on new construction. Product launches,
-pricing realization, bolt-on acquisitions, and share retirement can compound per-share earnings.
+Potential downside includes weaker construction or replacement demand, persistent price-cost gaps, margin compression, poor cash conversion, rising financial stress, or repurchases and acquisitions that reduce per-share value.
 
-Contrary evidence is the cyclicality of residential and commercial construction, petroleum-linked
-input and freight exposure, lagging price realization, lower segment margins despite volume growth,
-weak first-half cash conversion, leverage, and repurchases that may destroy value if made above
-intrinsic value. Customer pre-buying before announced price increases may also have pulled demand
-forward from later quarters.
+Potential catalysts include verified demand resilience, successful pricing, recovering margins, stronger free-cash-flow conversion, prudent capital allocation, and improved guidance. These are monitoring conditions, not developments established by the opened evidence.
 
-Catalysts are demonstrated second-half pricing recovery, stable or improving segment margins,
-normalized free-cash-flow conversion, sustained re-roofing volume, successful product adoption,
-and disciplined repurchases or acquisitions. Invalidate the constructive case if price-cost gaps
-persist into 2027, re-roofing demand weakens materially, new-construction softness deepens, free
-cash flow fails to recover, leverage rises without commensurate earnings, or capital allocation
-reduces per-share value.
+A constructive thesis would be invalidated by sustained deterioration in demand, pricing, margins, cash conversion, financing resilience, or per-share capital allocation. The present `valuation_unsupported` conclusion can be resolved only when accessible current primary financial statements and releases support normalized earnings, balance-sheet analysis, and complete scenario arithmetic.
 
-## Valuation
+## Fundamental rubric v1
 
-The USD 346.58 mark equals 17.9 times FY2025 adjusted EPS of USD 19.40. For a bounded 12-month
-`mature_compounder` normalized-earnings valuation, normalized EPS remains USD 20.19: reported
-first-half 2026 adjusted EPS of USD 10.64 plus FY2025 second-half adjusted EPS of USD 9.55. This
-avoids extrapolating the unusually strong Q2 and explicitly reflects margin and cash-conversion risk.
+| Factor | Score | Assessment |
+| --- | ---: | --- |
+| Valuation | — | No verified current fair-value inputs; a quote alone is insufficient. |
+| Business quality | — | No current margins, returns, organic growth, competitive evidence, or cash conversion available. |
+| Thesis | — | Current evidence does not adequately corroborate or contradict the prior operating thesis. |
+| Balance sheet | — | No current cash, debt, maturity, coverage, covenant, or liquidity figures available. |
+| Risk penalty | — | Operating, cyclical, governance, concentration, and evidence risks cannot be calibrated numerically. Leverage is not double-counted here. |
 
-- Bear, 25%: **14x** normalized EPS, or USD **282.66** and **18.44% downside**; price-cost pressure,
-  construction weakness, leverage, and poor cash conversion persist.
-- Base, 50%: **18x** normalized EPS, or USD **363.42** and **4.86% upside**; re-roofing resilience
-  and pricing recovery preserve normalized earnings without a cyclical acceleration.
-- Bull, 25%: **22x** normalized EPS, or USD **444.18** and **28.16% upside**; pricing catches up,
-  segment margins recover, cash conversion normalizes, and disciplined buybacks lift per-share value.
+Empty scores mean unsupported evidence, not neutral scores.
 
-The probability-weighted fair value is USD **363.42**, expected return is **4.86%**, and the
-medium-confidence adjusted return is **3.64%**. The 20% margin-of-safety buy-below price is USD
-**290.74**. Base upside, expected return, both bear-payoff ratios, and margin of safety all miss the
-canonical gates; no conviction strategy research is justified.
+## Limitations
+
+Confidence is **low**. The key limitation is source accessibility: the supplied SEC sources returned HTTP 403, searches did not locate a readable current alternative, and the accessible issuer pages did not expose current financial content. No inaccessible source was silently treated as valid, and no prior number was presented as freshly verified.
 
 ## Sources
 
-- [Carlisle Form 10-Q for the quarter ended 2026-06-30](https://www.sec.gov/Archives/edgar/data/790051/000079005126000037/csl-20260630.htm)
-  (`source_csl_q2_2026_10q`, checked 2026-08-31).
-- [Carlisle Q2 2026 earnings release](https://www.sec.gov/Archives/edgar/data/790051/000079005126000033/q22026-ex991xearningsrelea.htm)
-  (`source_csl_q2_2026_release`, checked 2026-07-30).
-- [Carlisle Q4 and FY2025 earnings release](https://www.sec.gov/Archives/edgar/data/790051/000079005126000009/q42025-ex991xearningsrelea.htm)
-  (`source_csl_fy2025_release`, checked 2026-07-30).
-- Canonical market and indicator state: `data/market/latest.csv`,
-  `data/market/indicators.csv`, and
-  `data/market/prices/security_9b0db3bc77914b23a307.csv`, retrieved
-  `2026-08-31T21:38:36Z`; USD/EUR FX was current through `2026-08-31T21:38:36Z`.
-- Current alert packet: [CSL strengthened volume anomaly](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_9b0db3bc77914b23a307-volume_anomaly-bdcdeb54f9da.md).
+- [Carlisle Companies — Our Businesses](https://www.carlisle.com/our-businesses/default.aspx) (`source_web_550efb64216a4201c000d302`; checked 2026-10-24).
+- [Carlisle Companies — Financial Information](https://www.carlisle.com/investors/Quarterly-and-Annual-Reports/default.aspx) (`source_web_abed0fec59863fd7f376b4f5`; checked 2026-10-24).
 
-Next review: **2026-09-30**, or sooner after material pricing, margin, cash-flow, construction-demand,
-leverage, acquisition, repurchase, or guidance evidence.
+Next review: **2026-11-23**, or after accessible current primary financial statements and an earnings release become available.
 
 [[security-catalog|Tracked securities]] · [[research-catalog|Research catalog]] · [[index|Today's decision]]

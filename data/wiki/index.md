@@ -33,14 +33,15 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-93 companies / 94 instruments; 94 assessed, 66 in date, 28 stale; 56 currently unrated. 1 quotes require attention.
+93 companies / 94 instruments; 94 assessed, 67 in date, 27 stale; 56 currently unrated. 1 quotes require attention.
 
-Last observed market session: 2026-10-23. Last successful research: 2026-10-24T14:53:32Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-23. Last successful research: 2026-10-24T14:56:51Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
-Watchlist valuation coverage: **78 / 93 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 0; unsupported valuation: 15; incomplete research: 0. Needs attention: 3. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
+Watchlist valuation coverage: **77 / 93 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 0; unsupported valuation: 16; incomplete research: 0. Needs attention: 3. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
+- [Carlisle Companies Incorporated](securities/security_9b0db3bc77914b23a307) — 2026-10-24T14:54:59.203205Z; valuation_unsupported
 - [Fanuc Corporation](securities/security_96ba305ee7cd586bc348) — 2026-10-24T14:51:23.823503Z; valuation_unsupported
 - [DLocal Limited](securities/security_715bde20b6e1e1320c1a) — 2026-10-24T14:47:47.947320Z; valuation_unsupported
 - [Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3) — 2026-10-24T14:37:50.249307Z; buy
@@ -50,7 +51,6 @@ Watchlist valuation coverage: **78 / 93 instruments** have complete sourced bear
 - [Veralto Corporation](securities/security_1b773169da5023ce4682) — 2026-10-24T14:14:08.280807Z; hold
 - [Intel Corporation](securities/security_dfa34d4b9050964b465e) — 2026-10-24T14:10:30.760181Z; strong_sell
 - [PLS Group Limited](securities/security_8a5c43888d224de85c69) — 2026-10-24T14:02:41.253809Z; valuation_unsupported
-- [Space Exploration Technologies Corp.](securities/security_664f93a7eaca72e76e9b) — 2026-10-24T14:00:21.124354Z; valuation_unsupported
 
 ## Ideas and interesting companies
 
