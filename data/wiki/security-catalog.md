@@ -37,7 +37,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Fiserv, Inc.](securities/security_d202772e4e62065cd17a) | FISV (USD) | researched: hold | complete | 36.00 / 65.70 / 96.20 USD | 2026-10-19T00:38:18.749675Z | 2026-11-18T00:38:18.749675Z |
 | [Fluence Energy, Inc.](securities/security_a9eb9838940ef5ceaa0c) | FLNC (USD) | researched: research_expired_or_future | complete | 4.59 / 11.09 / 20.84 USD | 2026-08-06T18:47:30Z | 2026-08-20T18:47:30Z |
 | [Freeport-McMoRan Inc.](securities/security_2dbe878dfc899d7ee867) | FCX (USD) | researched: sell | complete | 32.64 / 47.36 / 65.12 USD | 2026-10-22T20:24:15.882831Z | 2026-11-21T20:24:15.882831Z |
-| [GE Vernova Inc.](securities/security_4b61970aa8f574446819) | GEV (USD) | researched: research_expired_or_future | complete | 571.58 / 1,016.02 / 1,386.39 USD | 2026-08-31T22:56:03Z | 2026-09-30T22:56:03Z |
+| [GE Vernova Inc.](securities/security_4b61970aa8f574446819) | GEV (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T13:58:23.270832Z | 2026-11-23T13:58:23.270832Z |
 | [Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687) | DNA (USD) | researched: sell | complete | 3.33 / 7.57 / 16.47 USD | 2026-10-20T20:17:35.294967Z | 2026-11-19T20:17:35.294967Z |
 | [Intel Corporation](securities/security_dfa34d4b9050964b465e) | INTC (USD) | researched: source_evidence_unavailable | complete | 32.00 / 78.00 / 130.00 USD | 2026-09-05T17:18:42Z | 2026-10-05T17:18:42Z |
 | [Intuitive Machines, Inc.](securities/security_a5dc16f3f4b245e6c168) | LUNR (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-19T02:05:15.000191Z | 2026-11-18T02:05:15.000191Z |
@@ -56,7 +56,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Nebius Group N.V.](securities/security_47a0b06f6c6c478d7c1e) | NBIS (USD) | researched: insufficient_confidence | complete | 21.74 / 127.09 / 293.31 USD | 2026-10-24T13:41:49Z | 2026-11-23T13:41:49Z |
 | [Nidec Corporation](securities/security_3853e54c619d597dcaa1) | NIB.F (EUR) | researched: valuation_unsupported | valuation_unsupported | — / — / — EUR | 2026-10-19T01:10:04.361736Z | 2026-11-18T01:10:04.361736Z |
 | [Nomad Foods Limited](securities/security_98a1943771da875efed5) | NOMD (USD) | researched: hold | complete | 9.54 / 15.08 / 19.36 USD | 2026-10-18T23:57:11.762336Z | 2026-11-15T23:57:11.762336Z |
-| [PLS Group Limited](securities/security_8a5c43888d224de85c69) | PLS.AX (AUD) | researched: research_expired_or_future | complete | 1.67 / 3.67 / 6.69 AUD | 2026-08-31T21:53:45Z | 2026-09-30T21:53:45Z |
+| [PLS Group Limited](securities/security_8a5c43888d224de85c69) | PLS.AX (AUD) | researched: valuation_unsupported | valuation_unsupported | — / — / — AUD | 2026-10-24T14:02:41.253809Z | 2026-11-01T14:02:41.253809Z |
 | [Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a) | PLTR (USD) | researched: research_expired_or_future | complete | 52.29 / 99.24 / 162.50 USD | 2026-08-11T13:45:04Z | 2026-09-10T13:45:04Z |
 | [Parrot S.A.](securities/security_cc4dcb8f002b61dffe00) | PARRO.PA (EUR) | researched: research_expired_or_future | complete | 5.48 / 9.09 / 14.51 EUR | 2026-08-20T07:54:58Z | 2026-09-19T07:54:58Z |
 | [PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00) | PYPL (USD) | researched: hold | complete | 43.04 / 64.56 / 80.70 USD | 2026-10-19T00:51:10.686036Z | 2026-11-18T00:51:10.686036Z |
@@ -81,7 +81,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [SoFi Technologies, Inc.](securities/security_98470cfc01bbcde78fc2) | SOFI (USD) | researched: insufficient_confidence | complete | 8.75 / 16.00 / 24.75 USD | 2026-10-19T00:13:13.566261Z | 2026-11-18T00:13:13.566261Z |
 | [Sociedad Quimica y Minera de Chile S.A.](securities/security_9d4049ed6669a52815d6) | SQM (USD) | researched: buy | complete | 42.00 / 77.00 / 120.00 USD | 2026-10-19T01:37:34.979892Z | 2026-11-18T01:37:34.979892Z |
 | [Southern Copper Corporation](securities/security_6ad1af8d10d6276a0221) | SCCO (USD) | researched: source_evidence_unavailable | complete | 91.00 / 135.00 / 187.00 USD | 2026-08-21T23:17:26Z | 2026-09-04T15:55:50Z |
-| [Space Exploration Technologies Corp.](securities/security_664f93a7eaca72e76e9b) | SPCX (USD) | researched: research_expired_or_future | complete | 50.00 / 110.00 / 195.00 USD | 2026-08-05T19:02:24Z | 2026-08-19T19:02:24Z |
+| [Space Exploration Technologies Corp.](securities/security_664f93a7eaca72e76e9b) | SPCX (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T14:00:21.124354Z | 2026-11-20T14:00:21.124354Z |
 | [Spotify Technology S.A.](securities/security_2010347f1a0a5ea60f47) | SPOT (USD) | researched: hold | complete | 317.00 / 510.00 / 739.00 USD | 2026-10-19T21:21:50.964829Z | 2026-11-18T21:21:50.964829Z |
 | [Stratasys Ltd.](securities/security_84705b27d28a94f2b318) | SSYS (USD) | researched: hold | complete | 3.48 / 6.40 / 10.00 USD | 2026-10-19T01:30:41.606846Z | 2026-11-18T01:30:41.606846Z |
 | [Strategy Inc](securities/security_fe5539a7d3fd9d553bce) | MSTR (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-21T20:27:33.369332Z | 2026-11-20T20:27:33.369332Z |

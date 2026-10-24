@@ -4,12 +4,12 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-08-05"
-updated: "2026-08-05"
-provenance: "source_spcx_q2_2026_10q; source_spcx_q2_2026_results_8k; source_spcx_2026_prospectus"
+updated: "2026-10-24"
+provenance: "source_web_4d46d29e2721c3b94b857c64; source_web_18387d21210dd632f15de356; source_web_aeb951a434194acdec54b9eb"
 security_id: security_664f93a7eaca72e76e9b
 issuer_id: issuer_a1b6a091481aed0c877f
 confidence: low
-next_review: "2026-08-19"
+next_review: "2026-11-20"
 ---
 
 # Space Exploration Technologies Corp. listed equity
@@ -17,116 +17,70 @@ next_review: "2026-08-19"
 ## Identity
 
 - Immutable security: `security_664f93a7eaca72e76e9b`
-- Issuer: `issuer_a1b6a091481aed0c877f`
-- Instrument: Class A common stock, Nasdaq and Nasdaq Texas (`XNAS`), USD
-- Provider identity: `SPCX` / `XNAS` / `USD` / equity
+- Immutable issuer: `issuer_a1b6a091481aed0c877f`
+- Supplied instrument identity: `SPCX` / `XNAS` / USD / equity
+- Current research status: **valuation unsupported**
 
-Space Exploration Technologies combines launch and development services, Starlink connectivity,
-and the xAI/X advertising, subscription, model-access, cloud, and AI-infrastructure businesses.
-The Class A shares have one vote each while Class B shares have ten votes each. Elon Musk held about
-82.4% of voting power immediately after the June 2026 initial public offering, making governance and
-capital allocation unusually concentrated. This research page complements the stable identity in
-[[security-catalog]] and the triggering [SPCX volume-anomaly packet](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_664f93a7eaca72e76e9b-volume_anomaly-31c89c5fa198.md). No accepted canonical idea-security relationship currently exists.
+The opened [Yahoo Finance SPCX quotation](https://finance.yahoo.com/quote/SPCX/) (`source_web_4d46d29e2721c3b94b857c64`) identifies Space Exploration Technologies Corp., ticker SPCX, as a Nasdaq Global Select Market security quoted in USD. It describes three operating segments—Space, Connectivity, and AI—and reports the company as based in Starbase, Texas. This reconciles the issuer, ticker, venue family, currency, and broad business identity. The current source does not independently establish the exact public share class, so the supplied immutable security and issuer IDs are retained without alteration and the share-class limitation remains explicit.
+
+## Current evidence
+
+The regular-session SPCX close on 23 October 2026 was **USD 147.49**. The same market page displayed an approximately USD 2.003 trillion market capitalization, USD 32.04 billion of trailing revenue, negative trailing EPS of USD 1.10, negative trailing net income available to common holders of USD 3.43 billion, and USD 89.86 billion of total cash. These are secondary summary fields that may use different reporting dates and definitions; they are useful as warning signs about scale and valuation sensitivity but are not substitutes for the latest financial statements.
+
+The [SPCX filing index](https://finance.yahoo.com/quote/SPCX/sec-filing/) (`source_web_18387d21210dd632f15de356`) lists a Form 10-Q filed on 22 October 2026 under accession `0001628280-26-066880`. The opened [filing metadata page](https://finance.yahoo.com/sec-filing/SPCX/0001628280-26-066880_1181412/) (`source_web_aeb951a434194acdec54b9eb`) confirms the form type and date, but it does not expose the financial statements, notes, management discussion, or risk disclosures.
+
+The supplied June prospectus and August quarterly-report URLs were reopened during this review but returned HTTP errors. They are consequently excluded from the current assessment rather than treated as verified evidence. No cause for the access failure is assumed.
 
 ## Economics and thesis
 
-The investable thesis is that reusable launch infrastructure and vertically integrated satellite
-deployment reinforce Starlink's network scale, while connectivity cash generation can fund
-Starship and AI investments that may create additional high-growth platforms. The Q2 evidence
-supports the network side of that mechanism: Starlink service lines doubled to 12.0 million from
-6.0 million, Q2 Connectivity revenue grew 65.8% to USD 4.291 billion, and segment operating income
-rose 79.4% to USD 1.656 billion even as subscriber ARPU fell 22.4% to USD 66.
+The economic case remains conceptually tied to three platforms. Reusable launch infrastructure can lower access-to-orbit costs; Starlink can turn that infrastructure into recurring connectivity revenue; and the AI segment could add model, platform, infrastructure, and subscription economics. The contrary case is equally important: launch development, satellite deployment, and AI compute are capital intensive, while customer concentration, regulation, execution, dilution, and controller governance may prevent revenue growth from converting into durable per-share cash flow.
 
-The contrary case is that the public equity packages a profitable connectivity franchise with two
-capital-intensive, loss-making segments at an extreme consolidated valuation. Q2 Space operating
-loss was USD 542 million as Starship research accelerated, and AI operating loss was USD 1.257
-billion despite USD 2.561 billion of revenue. The AI result includes USD 1.6 billion of new
-infrastructure revenue but requires rapidly expanding compute, power, and cloud spend. This makes
-the thesis unusually sensitive to terminal margins, funding discipline, customer concentration,
-regulation, launch execution, dilution, and controller governance.
-
-## Current primary evidence
-
-| Evidence | Interpretation |
-| --- | --- |
-| Q2 consolidated revenue rose 91.9% year over year to USD 7.814 billion; adjusted EBITDA rose to USD 3.538 billion, but GAAP operating loss was USD 143 million and net loss was USD 541 million. | Rapid growth and improving quarterly operating leverage are real, but depreciation, stock compensation, interest, and development spending remain economically material. |
-| Connectivity produced USD 1.656 billion of Q2 operating income and USD 2.597 billion of segment adjusted EBITDA. | Starlink is the current economic engine and helps validate network scale, although lower ARPU and growing satellite depreciation must be monitored. |
-| AI revenue rose 247.5% to USD 2.561 billion while its operating loss remained USD 1.257 billion. | New infrastructure and subscription revenue is material, but margin durability and customer concentration are not yet proven. |
-| Space revenue rose 29.0% to USD 962 million in Q2, but first-half revenue fell 1.9% and first-half operating loss widened to USD 1.204 billion. | Customer mix helped one quarter while Starship investment and fewer first-half customer launches kept the segment loss-making. |
-| Cash plus marketable securities was USD 100.009 billion against USD 39.364 billion of debt and finance leases at 30 June. | The IPO created substantial liquidity and near-term funding resilience, but does not eliminate capital-intensity or refinancing risk. |
-| First-half operating cash flow was USD 3.466 billion versus USD 28.476 billion of property and equipment purchases; IPO financing supplied USD 85.675 billion. | Current expansion is not self-funding after capital expenditure, so long-run value depends on disciplined conversion of investment into durable cash flows. |
-| Backlog was USD 47.461 billion, with 56% expected within one year; two customers represented 18.3% and 19.5% of Q2 revenue. | Contracted visibility is meaningful but customer concentration and execution risk remain material. |
-| The June prospectus priced 555.6 million Class A shares at USD 135 and identified sizable option, RSU, and performance-share overhang. | The offering provides a recent transaction anchor, not intrinsic-value proof; dilution and concentrated voting control must be included in every scenario. |
-
-Primary evidence is the [quarterly report filed 4 August 2026](https://www.sec.gov/Archives/edgar/data/1181412/000162828026052535/spcx-20260630.htm)
-as `source_spcx_q2_2026_10q`, the [same-day results Form 8-K](https://www.sec.gov/Archives/edgar/data/1181412/000162828026052515/spcx-20260804.htm)
-as `source_spcx_q2_2026_results_8k`, and the [final IPO prospectus dated 11 June 2026](https://www.sec.gov/Archives/edgar/data/1181412/000162828026042639/spaceexplorationtechnologi.htm)
-as `source_spcx_2026_prospectus`, all checked 5 August 2026.
+The current secondary page indicates rapid expansion but also negative trailing earnings. Without the latest segment statements and cash-flow data, it is not possible to determine whether Connectivity profitability is strengthening, whether AI scale is improving margins, whether Space development losses are changing, or whether capital expenditure is producing adequate returns. The favorable platform thesis and the contrary valuation-risk thesis are therefore both incompletely tested.
 
 ## Valuation
 
-The `pre_profit_growth` template uses a 12-month `revenue_multiple` because consolidated GAAP
-profit and free cash flow are not mature enough for an earnings multiple or conventional DCF. The
-method starts with 13.176 billion shares at 30 June, about USD 60.645 billion of net cash and
-securities, Q2 annualized revenue of roughly USD 31.3 billion, current segment economics, and
-explicit dilution, capital spending, and terminal-margin uncertainty. Against the canonical 4
-August adjusted close of USD 125.33000183105469:
+A revenue-multiple framework may still be more suitable than a conventional earnings multiple or discounted-cash-flow model if consolidated earnings and free cash flow remain immature. A valid 12-month valuation would need to:
 
-| Scenario | Probability | Fair value | Assumptions |
-| --- | ---: | ---: | --- |
-| Bear | 30% | USD 50 | About USD 24 billion of normalized forward revenue at roughly 25x enterprise value/revenue; AI contracts prove concentrated or low-margin, Starlink ARPU pressure persists, Starship milestones slip, capex remains far above operating cash flow, and dilution continues. |
-| Base | 50% | USD 110 | About USD 32 billion of forward revenue at roughly 43x enterprise value/revenue; Connectivity sustains strong profit, AI infrastructure scales with only gradual margin improvement, Space remains investment-heavy, and net cash plus dilution are broadly contained. |
-| Bull | 20% | USD 195 | About USD 45 billion of forward revenue at roughly 56x enterprise value/revenue; Starlink subscriber and enterprise growth stays exceptional, AI contracts broaden with improving margins, Starship de-risks, and the combined platform earns a persistent scarcity premium. |
+1. verify third-quarter and year-to-date revenue and operating results by segment;
+2. normalize forward revenue without treating a single quarter as a permanent run rate;
+3. reconcile cash, marketable securities, debt, leases, commitments, and other claims;
+4. establish basic and diluted shares, options, restricted units, performance awards, and other dilution;
+5. apply scenario-specific revenue multiples reflecting margins, cash conversion, capital intensity, concentration, and execution risk; and
+6. divide each scenario's equity value by the appropriate diluted Class A-equivalent share count.
 
-Probability-weighted fair value is USD 109, about 13.0% below the mark; the base case is about 12.2%
-below the mark and the bear case implies about 60.1% downside. The valuation therefore does not
-clear expected-return, base-upside, downside-asymmetry, or margin-of-safety gates. Low confidence is
-appropriate because this is the first post-IPO quarter, segment histories were recast after
-common-control transactions, public price discovery is only weeks old, and small changes to
-revenue, terminal margin, dilution, or a very high multiple produce large per-share changes.
+Those inputs could not be verified from the opened filing metadata. The former August bear/base/bull values are not carried forward because a newer quarterly report exists and the stock has moved from the former USD 125.33 reference to USD 147.49. No current bear, base, bull, probability-weighted fair value, or valuation score is supportable.
 
-## Alert review, catalysts, and risks
+Although USD 147.49 is visibly associated with SPCX, Nasdaq, USD, and the latest completed session as of this assessment, the assessment leaves the formal valuation-reference fields empty because there are no supportable scenario values from which to calculate the required deterministic score.
 
-The deterministic alert covers 7 July through 4 August: SPCX fell 16.15% over the period, then rose
-9.43% on 4 August to USD 125.33 on 140.6 million shares. The volume-anomaly factor reached 3.4588;
-RSI was neutral at 46.96, and only 36 observations were available, so 50-day and 200-day averages
-were unavailable. The 4 August earnings release and Q2 filing make the transition material rather
-than noise. They reveal sharply higher Connectivity and AI revenue, improving Q2 adjusted EBITDA,
-and strong liquidity, but also extraordinary capex, persistent Space and AI operating losses, and
-high valuation sensitivity. The move is best classified as mixed post-earnings repricing and timing
-risk, not a paper-buy opportunity.
+## Risks, catalysts, and invalidation
 
-Catalysts are continued Starlink subscriber and enterprise growth, stabilization of ARPU, broader
-AI-infrastructure customers and improving AI margins, successful Starship tests and regulatory
-milestones, backlog conversion, lower capex intensity, and sustained operating-cash-flow growth.
-Risks are Starship or launch failures, spectrum and launch regulation, constellation competition,
-ARPU compression, AI customer concentration, compute and power constraints, cybersecurity and
-content liabilities, government-contract dependence, capital intensity, debt and dilution,
-common-control transaction complexity, key-person dependence, and controlling-shareholder
-conflicts.
+Potential downside mechanisms include declining Starlink monetization, persistent AI or Space losses, launch or Starship delays, customer concentration, spectrum and launch regulation, cybersecurity or content liabilities, exceptional capital requirements, dilution, and controlling-shareholder conflicts. Current severity cannot be quantified from filing metadata alone, and financing risk is not double-counted as an operating-risk penalty.
 
-Invalidate the thesis if Connectivity growth no longer produces durable operating leverage,
-Starlink ARPU or churn overwhelms subscriber growth, AI infrastructure remains structurally
-loss-making after scale, Starship milestones slip without a credible revised path, capex continues
-to exceed operating cash flow without improving unit economics, customer concentration worsens,
-or governance and related-party decisions transfer value away from Class A shareholders.
+Potential catalysts include sustained subscriber and enterprise connectivity growth, stable monetization, broader AI customers, improving AI margins, successful launch and Starship milestones, backlog conversion, lower capital intensity, and stronger operating cash generation. These are analytical watchpoints, not confirmed forecasts.
 
-## Disposition
+The valuation-unsupported conclusion would be invalidated by accessible current primary statements and notes sufficient to verify segment economics, cash flow, capital expenditure, liquidity, obligations, diluted shares, governance changes, and guidance. A future operating thesis should be invalidated if profitable Connectivity growth fails to offset persistent Space and AI losses, investment does not improve unit economics, dilution accelerates, customer concentration worsens, or controller-related decisions impair public-shareholder economics.
 
-Status: **watching**, confidence **low**. Research and a scenario-complete valuation are available,
-and Q2 primary evidence supports rapid growth, a profitable Connectivity engine, backlog, and a
-strong post-IPO liquidity position. However, the USD 125.33 mark embeds extraordinary revenue
-multiples while consolidated free cash flow is deeply negative after capex, Space and AI remain
-loss-making, dilution and governance risks are substantial, and no accepted relationship exists.
-SPCX is allocation-ineligible at Watch. Review by **2026-08-19**, or sooner after a material
-Starship event, an AI-customer or margin update, regulatory action, a capital-allocation change, or
-fresh market data incorporating the first full session after Q2 disclosure. No conviction strategy,
-signal, or paper order is justified.
+## Fundamental rubric v1
+
+All five numeric fields remain empty rather than receiving fabricated neutral scores:
+
+- **Valuation:** unsupported because no current per-share scenarios can be built.
+- **Business quality:** unsupported because current segment margins, retention, competitive durability, and cash conversion were not available.
+- **Thesis:** unsupported because the latest primary evidence and material contrary details could not be examined.
+- **Balance sheet:** unsupported because secondary cash and debt statistics could not be reconciled to current statements, maturities, leases, commitments, and cash flow.
+- **Risk penalty:** unsupported because operating, regulatory, concentration, governance, and evidence risks cannot be placed reliably on the rubric anchors. Leverage belongs to the balance-sheet factor and is not counted again.
+
+## Limitations and disposition
+
+Confidence is **low**. The identity and current quotation are verified, and the existence of a newer Form 10-Q is verified, but its substantive contents were not accessible. Yahoo Finance is a secondary source, and its summary fields cannot establish the period alignment, accounting definitions, segment results, dilution, or per-share valuation bridge required for a supported assessment.
+
+The current status is therefore **valuation unsupported**, not a reaffirmation of the stale August valuation. Review by **20 November 2026**, or earlier if the latest primary filing becomes readable through an accessible source.
 
 ## Changes since prior review
 
-- **Prior state:** the mandatory security context contained no prior assessment, successful result, retained source, accepted relationship, strategy, idea, or research-page hash; only an identity-only wiki page existed.
-- **Facts and evidence:** the Q2 filing, same-day results notice, and IPO prospectus now establish current segment revenue and profit, Starlink subscriber and ARPU trends, backlog, customer concentration, cash, debt, capex, share count, dilution, governance, and offering terms.
-- **Assumptions and valuation:** a new scenario-complete revenue-multiple assessment sets bear/base/bull values of USD 50/USD 110/USD 195 at 30%/50%/20%; there are no prior scenario values to revise.
-- **Thesis, catalysts, and risks:** Connectivity scale supports the platform thesis, while Space and AI losses, extreme reinvestment, valuation, customer concentration, dilution, regulation, and controlling-shareholder governance constrain it.
-- **Blockers, gaps, rating, and action:** no hard research blocker remains. Low confidence, unfavorable base and weighted returns, severe bear downside, post-IPO price discovery, and the missing accepted relationship keep the initial disposition at watching with no strategy or signal.
+- Verified that SPCX remains identified as Space Exploration Technologies Corp. on Nasdaq and quoted in USD.
+- Verified the 23 October 2026 regular-session close of USD 147.49.
+- Verified that a newer Form 10-Q was filed on 22 October 2026.
+- Did not carry forward the August financial inputs or scenario values because the new filing's contents could not be examined.
+- Changed research status from supported to valuation unsupported and left all scenario values and rubric scores empty.
+- Preserved the immutable security and issuer IDs while recording that the exact public share class was not independently confirmed by the current opened evidence.
