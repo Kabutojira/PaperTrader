@@ -15,6 +15,7 @@ Current research opinions in each instrument's native currency. Fair values chan
 | [NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | NVDA | USD | 210.96 | 2026-10-23 | 304.25 / 310.50 | 44.22% / 30.96% | buy | medium | 2026-10-18T19:50:33.927425Z / 2026-11-17T19:50:33.927425Z |
 | [Sociedad Quimica y Minera de Chile S.A.](securities/security_9d4049ed6669a52815d6) | SQM | USD | 57.13 | 2026-10-23 | 79.00 / 77.00 | 38.27% / 26.79% | buy | medium | 2026-10-19T01:37:34.979892Z / 2026-11-18T01:37:34.979892Z |
 | [Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | PRX | EUR | 34.17 | 2026-10-23 | 46.02 / 48.50 | 34.69% / 24.29% | buy | medium | 2026-10-19T00:25:13.322131Z / 2026-11-17T00:25:13.322131Z |
+| [Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3) | ALB | USD | 93.66 | 2026-10-23 | 126.01 / 131.25 | 34.54% / 24.18% | buy | medium | 2026-10-24T14:37:50.249307Z / 2026-11-23T14:37:50.249307Z |
 
 ## Top 10 Sell
 
@@ -32,14 +33,15 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-93 companies / 94 instruments; 94 assessed, 63 in date, 31 stale; 57 currently unrated. 1 quotes require attention.
+93 companies / 94 instruments; 94 assessed, 64 in date, 30 stale; 56 currently unrated. 1 quotes require attention.
 
-Last observed market session: 2026-10-23. Last successful research: 2026-10-24T14:36:24Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-23. Last successful research: 2026-10-24T14:40:26Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
 Watchlist valuation coverage: **80 / 93 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 0; unsupported valuation: 13; incomplete research: 0. Needs attention: 3. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
+- [Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3) — 2026-10-24T14:37:50.249307Z; buy
 - [W&T Offshore, Inc.](securities/security_61567714298b9563d1a9) — 2026-10-24T14:34:46.500353Z; valuation_unsupported
 - [Coinbase Global, Inc.](securities/security_37ddcbdaad296ad831f2) — 2026-10-24T14:31:41.489805Z; valuation_unsupported
 - [Xylem Inc.](securities/security_d2be67701e612ee6625d) — 2026-10-24T14:22:07.052801Z; hold
@@ -49,7 +51,6 @@ Watchlist valuation coverage: **80 / 93 instruments** have complete sourced bear
 - [Space Exploration Technologies Corp.](securities/security_664f93a7eaca72e76e9b) — 2026-10-24T14:00:21.124354Z; valuation_unsupported
 - [GE Vernova Inc.](securities/security_4b61970aa8f574446819) — 2026-10-24T13:58:23.270832Z; valuation_unsupported
 - [Nebius Group N.V.](securities/security_47a0b06f6c6c478d7c1e) — 2026-10-24T13:41:49Z; insufficient_confidence
-- [Powell Industries, Inc.](securities/security_0b67d6c8e3fd3366a257) — 2026-10-23T20:13:28.238153Z; valuation_unsupported
 
 ## Ideas and interesting companies
 
