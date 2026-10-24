@@ -35,12 +35,13 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 93 companies / 94 instruments; 94 assessed, 82 in date, 12 stale; 52 currently unrated. 1 quotes require attention.
 
-Last observed market session: 2026-10-23. Last successful research: 2026-10-24T16:02:06Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-23. Last successful research: 2026-10-24T16:05:30Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
 Watchlist valuation coverage: **67 / 93 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 0; unsupported valuation: 26; incomplete research: 0. Needs attention: 2. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
+- [Powell Industries, Inc.](securities/security_0b67d6c8e3fd3366a257) — 2026-10-24T16:03:56.485665Z; valuation_unsupported
 - [Applied Materials, Inc.](securities/security_0a56aa634d077fe5796f) — 2026-10-24T15:59:51.264224Z; hold
 - [Tencent Holdings Limited](securities/security_de0d83229b369a426b99) — 2026-10-24T15:55:36.134973Z; valuation_unsupported
 - [Schneider Electric SE](securities/security_dc8486c1d61df62a22fd) — 2026-10-24T15:51:58.361044Z; hold
@@ -50,7 +51,6 @@ Watchlist valuation coverage: **67 / 93 instruments** have complete sourced bear
 - [Vertiv Holdings Co](securities/security_cb88f9154cfeaa15e878) — 2026-10-24T15:33:38.075879Z; insufficient_confidence
 - [Roblox Corporation](securities/security_c9a37d277445869a8809) — 2026-10-24T15:29:47.352823Z; valuation_unsupported
 - [Alphabet Inc.](securities/security_c86bb4e75658c07142cf) — 2026-10-24T15:26:30.343218Z; valuation_unsupported
-- [Valero Energy Corporation](securities/security_c5a9e460d3350284d157) — 2026-10-24T15:23:14.568355Z; valuation_unsupported
 
 ## Ideas and interesting companies
 

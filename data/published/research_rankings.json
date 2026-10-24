@@ -107,8 +107,8 @@
     "watchlist_valuation_unsupported": 26
   },
   "last_market_session": "2026-10-23",
-  "last_research_at": "2026-10-24T15:59:51.264224Z",
-  "last_successful_research": "2026-10-24T16:02:06Z",
+  "last_research_at": "2026-10-24T16:03:56.485665Z",
+  "last_successful_research": "2026-10-24T16:05:30Z",
   "phase_health": {
     "market": "succeeded",
     "research": "succeeded"
