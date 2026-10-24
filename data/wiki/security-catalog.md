@@ -12,7 +12,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [ABB Ltd](securities/security_c120e9f26ebb6159adf9) | ABBNY (USD) | researched: research_expired_or_future | complete | 62.40 / 86.80 / 105.00 USD | 2026-09-03T18:26:50Z | 2026-10-03T18:26:50Z |
 | [ASML Holding N.V.](securities/security_ef35e41886220d51c22c) | ASML (USD) | researched: hold | complete | 1,260.34 / 1,851.12 / 2,552.18 USD | 2026-10-19T01:26:52.646344Z | 2026-11-18T01:26:52Z |
 | [AbCellera Biologics Inc.](securities/security_7bf8f4c9cc12ae410e40) | ABCL (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-19T00:42:23.067619Z | 2026-11-16T00:42:23.067619Z |
-| [Agronomics Limited](securities/security_fe4648901e7675f157fd) | ANIC.L (GBP) | researched: market_stale_or_unavailable | complete | 0.0300 / 0.0800 / 0.1100 GBP | 2026-10-18T23:21:39.032922Z | 2026-11-17T23:21:39.032922Z |
+| [Agronomics Limited](securities/security_fe4648901e7675f157fd) | ANIC.L (GBP) | researched: buy | complete | 0.0300 / 0.0800 / 0.1100 GBP | 2026-10-18T23:21:39.032922Z | 2026-11-17T23:21:39.032922Z |
 | [Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3) | ALB (USD) | researched: research_expired_or_future | complete | 9.93 / 131.25 / 231.62 USD | 2026-09-05T17:31:04Z | 2026-10-05T17:31:04Z |
 | [Alphabet Inc.](securities/security_c86bb4e75658c07142cf) | GOOGL (USD) | researched: research_expired_or_future | complete | 260.00 / 360.00 / 480.00 USD | 2026-08-01T16:32:28Z | 2026-08-31T16:32:28Z |
 | [Amazon.com, Inc.](securities/security_2433a056eb0c55961fcc) | AMZN (USD) | researched: hold | complete | 200.00 / 270.00 / 360.00 USD | 2026-10-21T20:29:36.380404Z | 2026-11-20T20:29:36.380404Z |

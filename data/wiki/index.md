@@ -11,6 +11,7 @@ Current research opinions in each instrument's native currency. Fair values chan
 
 | Company / thesis & sources | Ticker | Currency | Price | Price as of | Weighted / base fair value | Implied / adjusted return | Rating | Confidence | Researched / expiry |
 | --- | --- | --- | ---: | --- | ---: | ---: | --- | --- | --- |
+| [Agronomics Limited](securities/security_fe4648901e7675f157fd) | ANIC.L | GBP | 0.0430 | 2026-10-23 | 0.0710 / 0.0800 | 65.12% / 45.58% | buy | medium | 2026-10-18T23:21:39.032922Z / 2026-11-17T23:21:39.032922Z |
 | [NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | NVDA | USD | 210.96 | 2026-10-23 | 304.25 / 310.50 | 44.22% / 30.96% | buy | medium | 2026-10-18T19:50:33.927425Z / 2026-11-17T19:50:33.927425Z |
 | [Sociedad Quimica y Minera de Chile S.A.](securities/security_9d4049ed6669a52815d6) | SQM | USD | 57.13 | 2026-10-23 | 79.00 / 77.00 | 38.27% / 26.79% | buy | medium | 2026-10-19T01:37:34.979892Z / 2026-11-18T01:37:34.979892Z |
 | [Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | PRX | EUR | 34.17 | 2026-10-23 | 46.02 / 48.50 | 34.69% / 24.29% | buy | medium | 2026-10-19T00:25:13.322131Z / 2026-11-17T00:25:13.322131Z |
@@ -30,11 +31,11 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-93 companies / 94 instruments; 92 assessed, 55 in date, 37 stale; 61 currently unrated. 2 quotes require attention.
+93 companies / 94 instruments; 92 assessed, 55 in date, 37 stale; 60 currently unrated. 1 quotes require attention.
 
-Last observed market session: 2026-10-23. Last successful research: 2026-10-23T20:15:14Z. Market: degraded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-23. Last successful research: 2026-10-23T20:15:14Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
-Watchlist valuation coverage: **84 / 94 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 2; unsupported valuation: 8; incomplete research: 0. Needs attention: 3. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
+Watchlist valuation coverage: **83 / 93 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 2; unsupported valuation: 8; incomplete research: 0. Needs attention: 3. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
