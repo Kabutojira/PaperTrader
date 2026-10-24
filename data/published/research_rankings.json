@@ -74,23 +74,23 @@
     }
   ],
   "coverage": {
-    "current": 62,
+    "current": 63,
     "failed_tickers": 1,
     "instruments": 94,
     "issuers": 93,
     "researched": 94,
-    "stale": 32,
+    "stale": 31,
     "unrated": 57,
-    "watchlist_complete": 81,
+    "watchlist_complete": 80,
     "watchlist_incomplete_research": 0,
     "watchlist_instruments": 93,
     "watchlist_missing_research": 0,
     "watchlist_needs_attention": 3,
-    "watchlist_valuation_unsupported": 12
+    "watchlist_valuation_unsupported": 13
   },
   "last_market_session": "2026-10-23",
-  "last_research_at": "2026-10-24T14:31:41.489805Z",
-  "last_successful_research": "2026-10-24T14:33:31Z",
+  "last_research_at": "2026-10-24T14:34:46.500353Z",
+  "last_successful_research": "2026-10-24T14:36:24Z",
   "phase_health": {
     "market": "succeeded",
     "research": "succeeded"
