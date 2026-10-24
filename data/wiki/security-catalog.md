@@ -100,5 +100,5 @@ Historical and stale research remains readable; only current validated opinions 
 | [Vertiv Holdings Co](securities/security_cb88f9154cfeaa15e878) | VRT (USD) | researched: research_expired_or_future | complete | 166.25 / 281.40 / 402.00 USD | 2026-08-08T11:46:19Z | 2026-09-07T11:46:19Z |
 | [W&T Offshore, Inc.](securities/security_61567714298b9563d1a9) | WTI (USD) | researched: research_expired_or_future | complete | 0.7900 / 3.17 / 6.15 USD | 2026-08-06T14:22:30Z | 2026-08-20T14:22:30Z |
 | [Xometry, Inc.](securities/security_c2e6db30cb59254de418) | XMTR (USD) | researched: hold | complete | 47.00 / 79.00 / 116.00 USD | 2026-10-21T20:25:31.299835Z | 2026-11-20T20:25:31.299835Z |
-| [Xylem Inc.](securities/security_d2be67701e612ee6625d) | XYL (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
+| [Xylem Inc.](securities/security_d2be67701e612ee6625d) | XYL (USD) | researched: hold | complete | 86.40 / 128.10 / 165.00 USD | 2026-10-24T14:22:07.052801Z | 2026-11-23T14:22:07.052801Z |
 | [YASKAWA Electric Corporation](securities/security_89969b7dac39b7db5661) | YEC.F (EUR) | researched: insufficient_confidence | complete | 14.82 / 23.68 / 33.07 EUR | 2026-10-19T01:34:58.259599Z | 2026-11-18T01:34:58.259599Z |
