@@ -33,14 +33,15 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-93 companies / 94 instruments; 94 assessed, 64 in date, 30 stale; 56 currently unrated. 1 quotes require attention.
+93 companies / 94 instruments; 94 assessed, 65 in date, 29 stale; 56 currently unrated. 1 quotes require attention.
 
-Last observed market session: 2026-10-23. Last successful research: 2026-10-24T14:46:18Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-23. Last successful research: 2026-10-24T14:49:44Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
-Watchlist valuation coverage: **80 / 93 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 0; unsupported valuation: 13; incomplete research: 0. Needs attention: 3. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
+Watchlist valuation coverage: **79 / 93 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 0; unsupported valuation: 14; incomplete research: 0. Needs attention: 3. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
+- [DLocal Limited](securities/security_715bde20b6e1e1320c1a) — 2026-10-24T14:47:47.947320Z; valuation_unsupported
 - [Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3) — 2026-10-24T14:37:50.249307Z; buy
 - [W&T Offshore, Inc.](securities/security_61567714298b9563d1a9) — 2026-10-24T14:34:46.500353Z; valuation_unsupported
 - [Coinbase Global, Inc.](securities/security_37ddcbdaad296ad831f2) — 2026-10-24T14:31:41.489805Z; valuation_unsupported
@@ -50,7 +51,6 @@ Watchlist valuation coverage: **80 / 93 instruments** have complete sourced bear
 - [PLS Group Limited](securities/security_8a5c43888d224de85c69) — 2026-10-24T14:02:41.253809Z; valuation_unsupported
 - [Space Exploration Technologies Corp.](securities/security_664f93a7eaca72e76e9b) — 2026-10-24T14:00:21.124354Z; valuation_unsupported
 - [GE Vernova Inc.](securities/security_4b61970aa8f574446819) — 2026-10-24T13:58:23.270832Z; valuation_unsupported
-- [Nebius Group N.V.](securities/security_47a0b06f6c6c478d7c1e) — 2026-10-24T13:41:49Z; insufficient_confidence
 
 ## Ideas and interesting companies
 

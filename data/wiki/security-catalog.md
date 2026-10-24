@@ -28,7 +28,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Corsair Gaming, Inc.](securities/security_55c9ce2fdcd32dad6b8c) | CRSR (USD) | researched: hold | complete | 6.60 / 12.00 / 18.90 USD | 2026-10-23T20:11:46.578958Z | 2026-11-20T20:11:46.578958Z |
 | [Crocs, Inc.](securities/security_c150f31c30afdb4a85f9) | CROX (USD) | needs_attention: research_expired_or_future | complete | 88.00 / 145.42 / 205.80 USD | 2026-09-04T00:12:16Z | 2026-10-03T00:12:16Z |
 | [CrowdStrike Holdings, Inc.](securities/security_8472507d7d320aa388a7) | CRWD (USD) | researched: insufficient_confidence | complete | 112.00 / 192.00 / 285.00 USD | 2026-10-19T01:19:40.825907Z | 2026-11-18T01:19:40.825907Z |
-| [DLocal Limited](securities/security_715bde20b6e1e1320c1a) | DLO (USD) | researched: research_expired_or_future | complete | 9.00 / 18.70 / 29.40 USD | 2026-08-28T21:13:00Z | 2026-09-27T21:13:00Z |
+| [DLocal Limited](securities/security_715bde20b6e1e1320c1a) | DLO (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T14:47:47.947320Z | 2026-11-23T14:47:47.947320Z |
 | [Domino's Pizza, Inc.](securities/security_f34181f3df32080a91d1) | DPZ (USD) | researched: research_expired_or_future | complete | 270.00 / 380.00 / 500.00 USD | 2026-08-28T19:34:25Z | 2026-09-27T19:34:25Z |
 | [Eaton Corporation plc](securities/security_18a3ab0ee6086ee85d0f) | ETN (USD) | researched: hold | complete | 285.00 / 351.00 / 449.00 USD | 2026-10-19T00:02:37.029896Z | 2026-11-18T00:02:37.029896Z |
 | [Enphase Energy, Inc.](securities/security_f2b9760d847b2ba59324) | ENPH (USD) | researched: insufficient_confidence | complete | 8.03 / 19.28 / 38.22 USD | 2026-10-19T02:07:45.077644Z | 2026-11-18T02:07:45.077644Z |
