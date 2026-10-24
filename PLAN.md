@@ -1042,3 +1042,20 @@ valuation bridge; no market FX subsystem is added. No excerpts, facts, forecasts
 assessment dates or wiki research changed during this preflight. Strict current
 data validation and transaction invariants passed. Commit/CI precede live dispatch;
 record each actual cycle's outcomes, request counts, revision and Pages evidence.
+
+## Market lifecycle repair — 2026-10-24
+
+Scheduled market run [40016812945](https://github.com/Kabutojira/PaperTrader/actions/runs/40016812945)
+preserved accepted prices but degraded on ATKR and ANIC.L after both caches ended on
+October16. Atkore's [October19 Form 8-K](https://www.sec.gov/Archives/edgar/data/1666138/000166613826000041/atkr-20261019.htm)
+confirms the merger closed, each common share became a right to USD95 cash, and NYSE
+trading was halted for delisting. ATKR is therefore retained under its immutable
+security and issuer IDs with its last good bar, but its lifecycle is now `acquired`
+and market refreshes no longer demand nonexistent later sessions.
+
+ANIC.L remains active: the [London Stock Exchange instrument page](https://www.londonstockexchange.com/en/quote/equity/ANIC/agronomics-limited)
+reported normal trading through October23. A bounded read-only yfinance check on
+October24 used5 HTTP requests and returned valid ANIC.L sessions for October19–23;
+ATKR's post-October16 rows were NaN. ANIC.L stays on the watchlist and keeps strict
+completed-session freshness. No assessment, fair value, research date, identity or
+historical price was changed by this repair.

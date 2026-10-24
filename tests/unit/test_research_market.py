@@ -84,6 +84,31 @@ def test_closed_market_repeat_makes_zero_calls_and_zero_writes(tmp_path: Path) -
     assert _latest(tmp_path)["sec_good"]["venue_mic"] == "XNAS"
 
 
+def test_inactive_security_preserves_last_good_bar_without_provider_call(tmp_path: Path) -> None:
+    security = {**_security(), "status": "watching"}
+    provider = FakeProvider({"GOOD": [_bar("2026-10-16")]})
+    refresh_market(tmp_path, [security], provider, now=datetime(2026, 10, 16, 22, tzinfo=UTC))
+    cache = (tmp_path / "data/market/prices/sec_good.csv").read_bytes()
+
+    result = refresh_market(
+        tmp_path,
+        [{**security, "status": "acquired"}],
+        provider,
+        now=datetime(2026, 10, 23, 22, tzinfo=UTC),
+    )
+
+    assert result["status"] == "succeeded" and result["provider_calls"] == 0
+    assert len(provider.calls) == 1
+    assert (tmp_path / "data/market/prices/sec_good.csv").read_bytes() == cache
+    assert {
+        "price_date": "2026-10-16",
+        "close": "100",
+        "status": "inactive",
+        "error": "",
+        "expected_session": "",
+    }.items() <= _latest(tmp_path)["sec_good"].items()
+
+
 def test_exchange_sessions_holidays_and_different_closes() -> None:
     assert completed_session("XNAS", datetime(2026, 7, 5, 22, tzinfo=UTC)) == date(2026, 7, 2)
     assert completed_session("XHKG", datetime(2026, 10, 16, 10, tzinfo=UTC)) == date(2026, 10, 16)

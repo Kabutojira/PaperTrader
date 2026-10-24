@@ -88,6 +88,7 @@ CALENDARS = {
     "XWBO": "XWBO",
     "XOTC": "XNYS",
 }
+MONITORED_SECURITY_STATUSES = {"active", "watching", "watchlist"}
 
 
 @dataclass(frozen=True)
@@ -368,6 +369,9 @@ def refresh_market(
             currency=security["currency"],
             source="yfinance",
         )
+        if security.get("status", "watching") not in MONITORED_SECURITY_STATUSES:
+            latest[sid].update(status="inactive", error="", expected_session="")
+            continue
         try:
             expected = completed_session(security["venue_mic"], now)
             expected_sessions[sid] = expected
