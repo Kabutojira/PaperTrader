@@ -4,12 +4,12 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-29"
-updated: "2026-08-08"
-provenance: "source_vrt_q2_2026_results; source_vrt_q2_2026_10q; deterministic market and FX caches"
+updated: "2026-10-24"
+provenance: "source_web_d5113a84d1b4f9f777b95d34"
 security_id: security_cb88f9154cfeaa15e878
 issuer_id: issuer_8e4118bf341dfbc9aaa0
-confidence: medium
-next_review: "2026-09-07"
+confidence: low
+next_review: "2026-11-23"
 ---
 
 # Vertiv Holdings Co Class A common stock
@@ -17,110 +17,64 @@ next_review: "2026-09-07"
 ## Identity
 
 - Immutable security: `security_cb88f9154cfeaa15e878`
-- Issuer: `issuer_8e4118bf341dfbc9aaa0`, incorporated in Delaware
-- Instrument: Class A common stock, New York Stock Exchange (`XNYS`), USD
-- Provider identity: `VRT` / `XNYS` / `USD` / equity
+- Immutable issuer: `issuer_8e4118bf341dfbc9aaa0`
+- Instrument: Vertiv Holdings Co Class A common stock
+- Provider symbol: `VRT`
+- Venue: New York Stock Exchange (`XNYS`)
+- Native currency and quote unit: USD per share
 
-Vertiv's Form 10-Q identifies Class A common stock trading as VRT on the New York Stock Exchange.
-The identity is unique in canonical state. The maintained
-[[ideas/idea_ai_infrastructure_power|AI infrastructure and power bottlenecks]] page treats Vertiv
-as a candidate, but no accepted canonical relationship row currently links it to the idea.
+The accessible quote identifies VRT as Vertiv Holdings Co on the NYSE and prices it directly in USD. No identity, currency or share-class conflict was found, although the current evidence did not independently reproduce the full legal instrument description from a primary filing.
 
-## Changes since prior review
+## Changes since the prior review
 
-- **Facts and evidence:** the retained Q2 results release and Form 10-Q are unchanged. The new
-  canonical evidence is the 2026-08-06 MACD cross above its signal after the close recovered from
-  USD 223.04 on July 29 to USD 275.17; the August 7 close was USD 272.40.
-- **Assumptions and valuation:** the bear and base operating assumptions remain 25 times the low
-  end of 2026 adjusted EPS guidance and 35 times USD 8.04 normalized next-year EPS. A 20%-weighted
-  bull case is now explicit at USD 402, based on USD 10.05 EPS and a 40 times multiple. The
-  probability-weighted value is USD 270.98, still below the current mark, while base upside is only
-  3.30%.
-- **Thesis and rating:** operating evidence, thesis, and medium confidence are unchanged. The
-  technical rebound improves timing from the post-results trough but does not overcome expected
-  return, base-return, downside-payoff, margin-of-safety, and relationship gates. The conclusion is
-  **Hold / Watch**, with no allocation eligibility and no strategy or paper order.
-- **Catalysts, risks, blockers, and gaps:** Q3 conversion, margins, guidance, liquid cooling,
-  capacity, and cash conversion remain the catalysts. Backlog conversion, congestion, working
-  capital, customer terms, execution, tariffs, competition, geopolitics, and multiple compression
-  remain the risks. No hard blocker is added; medium confidence, unfavorable valuation and timing,
-  insufficient margin of safety, and the missing accepted relationship remain unresolved gaps.
+- The reference price declined from the prior review's USD 272.40 mark to an independently opened USD 194.32 close for the 2026-10-23 session.
+- The valuation was rebuilt rather than mechanically repriced. It now starts from reported trailing GAAP EPS of USD 4.42 because the previous adjusted guidance could not be reverified from accessible primary evidence.
+- Bear/base/bull fair values are now USD 110.50, USD 169.73 and USD 235.14, with a USD 171.28 probability-weighted value.
+- Fundamental rubric-v1 scores were added. Business quality and apparent liquidity remain favorable, while thesis corroboration is balanced and residual risk is material-to-high.
+- Confidence was reduced to low. The supplied SEC filing and results-release URLs returned HTTP errors during this review; their prior figures are therefore not carried forward as current evidence.
 
-## Alert review: opportunity, risk, or noise?
+## Business economics
 
-The new deterministic transition is a MACD cross above its signal on 2026-08-06: MACD was
--1.2386 against a -2.8901 signal after being below on August 5. The USD 275.17 close was 1.93%
-above the prior close and 15.17% below the USD 324.38 close on 2026-07-07. RSI was 47.76, the close
-was inside its Bollinger bands and below both the 50- and 200-day moving averages, and the
--0.741 volume z-score showed no volume confirmation. The August 7 close eased to USD 272.40.
+Vertiv supplies critical digital infrastructure used in data centers, communications networks and commercial or industrial environments. Its offering spans AC and DC power management, switchgear, busbar, air and liquid thermal management, modular systems, racks, monitoring software and lifecycle services. This portfolio places the company in the physical power-and-cooling path required by denser computing deployments.
 
-The cross is a **technical recovery within a still-material drawdown**, not independent evidence
-of a changed business outlook or an attractive valuation. The unchanged Q2 filing and release
-support the operating thesis but do not identify a new fundamental event during the exact alert
-period. Treat the transition as timing information and valuation risk rather than a stand-alone
-opportunity.
+The accessible secondary data reports USD 11.48 billion of trailing revenue, USD 1.73 billion of trailing net income, a 15.09% profit margin, 10.89% return on assets and USD 2.7 billion of trailing levered free cash flow. It also reports USD 4.42 of trailing EPS. These figures indicate profitable operations and substantial cash generation, but one aggregated data page cannot establish customer concentration, backlog quality, recurring-service mix or through-cycle margins.
 
-## Economics and thesis
+## Thesis and contrary evidence
 
-Vertiv supplies power management, thermal management, integrated modular infrastructure, racks,
-monitoring, and services for data centers, communications networks, and commercial and industrial
-facilities. Q2 2026 sales rose 24% to USD 3.274 billion, including 18% organic growth. Adjusted
-operating profit rose 51% to USD 738 million and adjusted operating margin expanded 410 basis
-points to 22.6%. Adjusted free cash flow was USD 925 million, up 234% year over year.
+The positive thesis is that increasing compute density requires more sophisticated power delivery and thermal management, expanding Vertiv's addressable content while its installed base supports lifecycle services. Current profitability and cash flow corroborate that Vertiv is already converting demand into economic results.
 
-The thesis is that AI and general-compute deployments increase the power density, cooling needs,
-complexity, and infrastructure content of data centers, allowing Vertiv to compound sales while
-expanding margins through capacity, productivity, pricing, and integrated solutions. The
-counter-thesis is that the market already capitalizes unusually strong growth far into the future,
-while project phasing, supply-chain congestion, customer bargaining power, fixed-price work,
-capacity execution, and a sharp working-capital build can interrupt conversion.
+The counter-thesis is that these expectations are embedded in a demanding valuation. The USD 194.32 reference price equals approximately 44 times reported trailing GAAP EPS. The accessible page reports a five-year monthly beta of 2.05 and a 52-week range of USD 147.82 to USD 379.93, illustrating sensitivity to changing growth and valuation expectations. It also notes market concern about financing for hyperscaler spending. Project timing, customer concentration, fixed-price execution, competition and weaker cash conversion could therefore compress earnings and the multiple together.
 
-## Evidence and gates
+## Valuation
 
-| Evidence | Interpretation |
-| --- | --- |
-| Q2 sales rose 24%, including 18% organic growth. | Demand is converting to reported revenue, although below the midpoint of prior guidance. |
-| Adjusted operating margin reached 22.6%, up 410 basis points. | Productivity and price-cost execution are producing material operating leverage. |
-| Adjusted free cash flow was USD 925 million. | Earnings converted strongly to cash during the quarter. |
-| Full-year guidance rose to USD 13.8-14.2 billion sales and USD 6.65-6.75 adjusted EPS. | Management sees continued growth, but the mark already prices a premium outcome. |
-| Cash plus short-term investments was USD 3.111 billion against USD 2.940 billion long-term debt. | Vertiv has a modest net-cash position and no current solvency blocker. |
-| Inventory rose 73% from year-end to USD 2.523 billion; receivables rose 21% to USD 3.750 billion. | Capacity and demand support require working-capital monitoring despite higher deferred revenue. |
+The 12-month framework uses trailing GAAP EPS because refreshed adjusted guidance was not available from an opened primary source:
 
-Registered primary evidence: [Q2 2026 results furnished on Form 8-K](https://www.sec.gov/Archives/edgar/data/1674101/000162828026050323/q22026exhibit991vrt07292026.htm)
-(`source_vrt_q2_2026_results`) and [Q2 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1674101/000162828026050609/vrt-20260630.htm)
-(`source_vrt_q2_2026_10q`).
+| Scenario | Probability | Per-share arithmetic | Fair value |
+| --- | ---: | --- | ---: |
+| Bear | 25% | USD 4.42 EPS × 25x | USD 110.50 |
+| Base | 50% | USD 4.42 × 1.20 earnings growth × 32x | USD 169.73 |
+| Bull | 25% | USD 4.42 × 1.40 earnings growth × 38x | USD 235.14 |
 
-## Valuation, catalysts, and risks
+The probability-weighted value is USD 171.28 per share. Against the USD 194.32 close, the deterministic valuation score is 38.1. The scenarios are not price forecasts: their growth rates and multiples are explicit research assumptions, and trailing GAAP EPS may include items that do not represent normalized earnings.
 
-At the USD 272.40 August 7 close and 384.94 million June 30 shares, equity value is approximately
-USD 104.9 billion. The mark is about 40.7 times the midpoint of updated 2026 adjusted EPS guidance
-and 42.0 times the midpoint of adjusted free-cash-flow guidance before accounting for stock-based
-compensation, acquisitions, or the modest net-cash position.
+## Fundamental rubric v1
 
-The `mature_compounder` earnings-multiple template gives a 12-month bear value of USD 166.25
-(30% probability), applying 25 times the USD 6.65 low end of 2026 adjusted EPS guidance. The base
-value is USD 281.40 (50%), applying 35 times USD 8.04 EPS after 20% growth from the USD 6.70
-guidance midpoint. The bull value is USD 402.00 (20%), applying 40 times USD 10.05 EPS if demand,
-capacity, margins, and cash conversion remain exceptional. The probability-weighted value is USD
-270.98, or a -0.52% expected return from the mark; medium confidence reduces that to -0.39%.
-Bear/base/bull returns are -38.97%/3.30%/47.58%. This bounded comparison is not a price forecast.
-The base upside is below the configured 10% gate, and the mark is above the deterministic buy-below
-level implied by the required margin of safety.
+- **Valuation score — 38.1:** probability-weighted fair value is below the current reference price.
+- **Business quality — 70:** profitability, return on assets, cash generation and product breadth place Vertiv between mixed economics and durable profitable advantages; evidence is insufficient to establish exceptional durability.
+- **Thesis — 55:** current operating aggregates support the infrastructure thesis, but valuation, volatility, spending uncertainty and limited source breadth constitute meaningful contrary evidence.
+- **Balance sheet — 70:** reported cash of USD 3.11 billion and trailing levered free cash flow of USD 2.7 billion support resilience, while reported debt-to-equity of 70.17% and missing maturity details prevent a stronger conclusion.
+- **Risk penalty — 65:** material-to-high residual operating and evidence risk reflects cyclicality, execution exposure, high equity volatility and dependence on one accessible secondary source. Leverage is not deducted again here.
 
-Catalysts are Q3 order and revenue conversion, sustained margin expansion, delivery of the higher
-full-year guidance, liquid-cooling adoption, capacity additions, and cash conversion. Risks include
-order cancellation or backlog non-conversion, temporary congestion becoming persistent, customer
-concentration and contract terms, fixed-price execution, inventory and receivable growth, tariffs,
-geopolitical disruption, technology competition, acquisition integration, and valuation
-compression. Invalidate the thesis if organic growth and backlog conversion weaken together,
-margin expansion reverses without productive investment, cash conversion persistently trails
-earnings, or capacity and product execution fail to meet customer requirements.
+## Downside, catalysts and invalidation
 
-## Disposition
+Downside would arise from project deferrals, weaker hyperscaler investment, customer bargaining power, supply or execution failures, competitive pressure, declining margins, poor cash conversion or multiple compression. The bear case assumes no earnings growth and a 25x multiple; it is intended to show the effect of expectation normalization rather than an insolvency outcome.
 
-Status: **watching**, confidence **medium**, rating **Hold**, portfolio action **Watch**, and
-**allocation ineligible**. Current primary evidence is strong and the balance sheet is liquid, but
-the technical recovery does not clear expected-return, base-return, downside-payoff,
-margin-of-safety, timing, or accepted-relationship gates. No conviction strategy is queued and no
-paper trade is justified. Review by **2026-09-07**, or sooner on a material guidance, order,
-cash-conversion, relationship, or price change. Related system context: [[index]].
+The next earnings event was listed for 2026-10-28. Potential catalysts include continued conversion of AI-related power and cooling demand, liquid-cooling adoption, sustained profitability, strong free-cash-flow conversion and guidance that supports earnings growth above the base assumption. These are prospective possibilities, not facts available at the assessment timestamp.
+
+Invalidate the thesis if revenue and earnings fail to justify premium expectations, profitability or cash conversion deteriorates persistently, projects are materially cancelled or deferred, competition erodes economics, or later primary statements contradict the aggregated figures used here. Rebuild the valuation after a material change in EPS, share count or capital structure.
+
+## Evidence, confidence and limitations
+
+The assessment uses [Yahoo Finance's VRT quote and financial overview](https://finance.yahoo.com/quote/VRT/) (`source_web_d5113a84d1b4f9f777b95d34`). It identifies Vertiv Holdings Co, ticker VRT, NYSE trading and USD pricing. The page reports a USD 194.32 close on 2026-10-23 at 4:00:03 p.m. EDT, equivalent to 2026-10-23T20:00:03Z; no currency or quote-unit conversion is required.
+
+Confidence is **low**. The supplied Q2 2026 SEC Form 10-Q and results release were attempted first but returned HTTP errors and are excluded from the current citation set. Reliance on one secondary aggregator prevents direct reconciliation of GAAP and adjusted results, diluted shares, working capital, backlog, segment results, debt maturities and management guidance. Review by **2026-11-23**, or sooner when accessible primary results permit those gaps to be resolved.
