@@ -7,15 +7,16 @@ tags:
   - research
   - risk
 created: "2026-08-05"
-updated: "2026-08-20"
-provenance: "FANUC Corporation; deterministic market monitor"
+updated: "2026-10-24"
+provenance: "FANUC Corporation"
 security_id: security_96ba305ee7cd586bc348
 issuer_id: issuer_b000ffd888e42845fe36
-confidence: medium
-next_review: "2026-09-03"
+confidence: low
+research_status: valuation_unsupported
+next_review: "2026-10-25"
 sources:
-  - source_fanuc_q1_fy2026_results
-  - source_fanuc_q1_fy2026_reference
+  - source_web_deaa1e2d2fc2a4403e8c6db8
+  - source_web_edfd9ebccb4ba281c69eb0dd
 ---
 
 # Fanuc Corporation Frankfurt ordinary shares
@@ -23,213 +24,74 @@ sources:
 ## Identity
 
 - **Immutable security:** `security_96ba305ee7cd586bc348`
-- **Issuer:** FANUC Corporation (`issuer_b000ffd888e42845fe36`)
-- **Instrument:** ordinary shares traded in Frankfurt
-- **Ticker / provider:** `FUC.F` / `FUC.F`
-- **Venue / currency / type:** `XFRA` / EUR / equity
-- **Primary economic exposure:** Japanese factory automation, industrial robots, robomachines,
-  controls, drives, service, and associated physical-AI adoption.
+- **Immutable issuer:** `issuer_b000ffd888e42845fe36`
+- **Company:** FANUC Corporation
+- **Instrument:** Frankfurt ordinary shares
+- **Ticker / provider symbol:** `FUC.F` / `FUC.F`
+- **Venue / native trading currency:** `XFRA` / EUR
+- **Country / sector:** Japan / Industrials
 
-Identity is instrument-specific: this page concerns the Frankfurt EUR line, not ticker text alone
-and not the Tokyo listing as a substitutable execution venue.
+This page concerns the Frankfurt EUR line. It does not treat the Tokyo listing or ticker similarity as a substitute instrument. No identity change was made.
 
-## Decision summary
+## Research conclusion
 
-**Hold / Watch; no paper strategy or signal.** FANUC's quarter ended 30 June 2026 remains the latest
-retained primary operating evidence: sales rose 17.7%, operating income rose 26.1%, the company
-raised full-year guidance, and the balance sheet remained exceptionally strong. Both issuer PDFs
-were retrieved again for this full review on 20 August and remain byte-identical. At the lower EUR
-32.599998474121094 Frankfurt mark, the unchanged EUR 36.3775 probability-weighted value offers about
-11.59% expected return and the EUR 36.38 base case offers about 11.60% upside. The deterministic
-assessment confirms that those raw returns do not override inadequate bear/base and expected/bear
-payoff, the absent accepted relationship, or thin Frankfurt-line liquidity.
+**Valuation unsupported as of 2026-10-24.** FANUC's issuer website now lists consolidated results and reference material for the six months ended September 30, 2026. These are newer than the June-quarter evidence used in the prior valuation. The issuer's results index was readable, but the underlying consolidated-results PDF returned an encrypted-document error and the reference-material PDF exceeded the research interface's readable-source limit. The index itself does not contain the financial figures required for valuation.
 
-The 20 August lower-Bollinger entry is therefore a **possible entry condition reviewed in full, not
-a paper-trade signal**. The shares fell 12.39% over 23 July–20 August and closed about
-0.75% below the lower band, but the EUR 32.60 session again recorded only 1,355 shares. No changed
-issuer evidence supports revising earnings or fair-value assumptions, and the mark remains about
-12.01% above the EUR 29.104 conservative buy-below level. This completed full review confirms Hold /
-Watch and allocation ineligibility; no strategy work is justified.
+The issuer also lists October 23 notices covering a new share buyback and an interim dividend. Their terms could not be inspected, so no assumption is made about buyback size, execution price, dividend amount, or per-share effect.
 
-## Changes since prior review
+The previous EUR 24.25 / EUR 36.38 / EUR 48.50 scenarios are therefore not carried forward. Current revenue, operating profit, margins, EPS guidance, foreign-exchange assumptions, share count, balance-sheet strength, and capital-return effects must be verified before a supported valuation can be restored.
 
-Compared with quick-check assessment [prior research in Git](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/tables/security_assessment_history.csv), no retained primary fact,
-source hash, earnings input, scenario assumption, fair value, probability, catalyst, risk,
-invalidation, blocker, or soft gap changed. The current EUR 32.599998474121094 mark and the EUR
-24.25 / EUR 36.38 / EUR 48.50 scenarios remain unchanged, as do the approximately 11.59% expected
-return, 8.69% confidence-adjusted expected return, 11.60% base upside, and EUR 29.104 buy-below
-level. The business thesis, balance-sheet conclusion, medium confidence, and all component anchors
-also remain unchanged.
+## Changes since the prior review
 
-The full review resolves the quick-check escalation without upgrading the canonical structured
-rating: **Hold / Watch** remains unchanged from [prior research in Git](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/tables/security_assessment_history.csv). The earlier page
-prose describing a price-only Buy threshold is superseded because the deterministic canonical gate
-also retains bear/base and expected/bear payoff failures. The absent accepted relationship and thin
-Frankfurt liquidity remain unresolved. No new hard blocker was added, no gap was resolved, and no
-strategy or signal is justified.
+- A newer reporting period—the six months ended September 30, 2026—is now listed by FANUC.
+- The latest financial contents could not be inspected through the available read-only source interface.
+- New October 23 buyback and interim-dividend notices are listed, but their economic terms remain unknown.
+- Research status changes from `supported` to `valuation_unsupported` rather than carrying stale inputs forward.
+- Confidence changes from medium to low because the most material current issuer evidence is unreadable.
+- All scenario values, scenario probabilities, fundamental scores, and valuation-reference fields are left empty.
 
-## Alert review
+## Business and thesis
 
-- **Canonical trigger:** `bollinger_below_lower`, entered on **2026-08-20**.
-- **Exact observation period:** 2026-07-23 through 2026-08-20.
-- **Period return:** -12.389145%; 20 August adjusted close: EUR 32.599998474121094.
-- **Lower Bollinger band:** EUR 32.84626761; deterministic breach strength: 0.0074976292, from zero
-  previously.
-- **Alert-day volume:** 1,355 shares; volume z-score: 2.2915429. The earlier volume anomaly remains
-  active, but absolute turnover is still thin.
-- **Current market timestamp:** 2026-08-20T15:34:23Z.
-- **Source-price hash:** `2f1052c3dbcb90354f2345b90af0c18360ed77d53003108f01c8624255f1ae7d`.
-- **Disposition:** possible entry condition reviewed in full. The lower price improved raw returns,
-  but the buy-below level was not reached, primary evidence did not change, and payoff,
-  relationship, and liquidity gates still block a strategy or signal.
+FANUC's established economic exposure remains factory automation, industrial robots, robomachines, numerical controls, drives, and service. The broad thesis is that manufacturing automation and more capable physical systems can support demand for this integrated product and service stack.
 
-See the deterministic packet
-[inbox/market-security_96ba305ee7cd586bc348-bollinger_below_lower-7a90cf00ae43](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_96ba305ee7cd586bc348-bollinger_below_lower-7a90cf00ae43.md).
+That thesis cannot presently be scored. The latest report is needed to determine whether demand, pricing, margins, and order conditions corroborate it or whether cyclical weakness, Chinese localization, competition, or currency effects provide stronger contrary evidence. The existence of a newly listed buyback and dividend is potentially relevant to capital allocation but does not establish operating quality or intrinsic value without readable terms.
 
-### Prior alert retained for context
+## Valuation method and missing inputs
 
-- **Canonical trigger:** `volume_anomaly`, entered on **2026-08-19**.
-- **Exact observation period:** 2026-07-22 through 2026-08-19.
-- **Period return:** -9.028918%; 19 August adjusted close: EUR 33.349998474121094.
-- **Alert-day volume:** 1,355 shares; volume z-score: 2.77262889; deterministic trigger strength:
-  0.386314445, from zero previously.
-- **Current assessment mark:** EUR 33.349998474121094 on 2026-08-19, retrieved at
-  2026-08-19T15:30:55Z.
-- **Source-price hash:** `5a80dab266490be42afb8af01ee32ecadc88b6386755c57c466dc885b1577096`.
-- **Disposition:** risk rather than opportunity. The decline is material and volume is abnormal
-  relative to this Frankfurt line, but absolute turnover remains thin and unchanged issuer evidence
-  provides no verified fundamental explanation. The alert cannot establish intrinsic value or a
-  standalone entry signal.
+An earnings-multiple framework remains conceptually suitable for a mature industrial-automation company, with a 12-month horizon and EUR per-share output for the Frankfurt instrument. A supportable calculation requires:
 
-See the deterministic packet [inbox/market-security_96ba305ee7cd586bc348-volume_anomaly-1bb1ee000d56](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_96ba305ee7cd586bc348-volume_anomaly-1bb1ee000d56.md).
+1. Current FY2026 earnings or EPS guidance.
+2. Current forecast foreign-exchange assumptions, including JPY/EUR.
+3. Treasury-adjusted or diluted shares outstanding.
+4. Half-year revenue, segment trends, margins, and cash conversion.
+5. Current cash, investments, liabilities, debt, and commitments.
+6. Exact buyback and dividend terms and their expected per-share effects.
+7. Explicit bear, base, and bull assumptions with probabilities totaling 100%.
 
-## Current primary evidence
+These inputs were not recoverable from the accessible issuer pages. No proxy price, stale EPS, or prior fair value is used as a substitute.
 
-FANUC's consolidated results for the quarter ended 30 June 2026 reported net sales of JPY 231.035
-billion, operating income of JPY 53.492 billion, ordinary income of JPY 68.193 billion, and net
-income attributable to owners of JPY 50.981 billion. Year over year, these rose 17.7%, 26.1%,
-32.3%, and 34.7%, respectively. The operating margin was about 23.2%, versus about 21.6% in the
-prior-year quarter.
+## Risks and downside
 
-The issuer raised FY2026 guidance to JPY 948.1 billion of sales, JPY 218.0 billion of operating
-income, and JPY 198.0 billion of attributable net income, or JPY 212.18 per share. The assumptions
-for July 2026 through March 2027 are JPY 150/USD and JPY 175/EUR. The reference material says FA
-sales increased with demand in China and India, robotics grew in the Americas and China, and
-robomachine sales grew in China. These are broad industrial-cycle signals; the issuer does not
-separately establish material humanoid revenue.
+- Factory-automation demand is cyclical and exposed to manufacturing capital expenditure.
+- Automotive, electronics, machine-tool, and China demand can change rapidly.
+- Chinese localization and competing automation suppliers may pressure share or pricing.
+- Currency movements can affect translated earnings and the EUR value of Japanese cash flows.
+- Physical-AI demonstrations may not become profitable, material deployments.
+- Capital returns may create value or merely redistribute cash; their effect cannot be judged without terms.
+- Evidence uncertainty is currently material because the latest financial documents were not readable.
+- Frankfurt trading conditions may differ from the Tokyo primary market, requiring instrument-specific price and liquidity verification.
 
-At 30 June 2026, cash and bank deposits were JPY 721.468 billion, marketable securities JPY 40.800
-billion, investment securities JPY 231.110 billion, total liabilities JPY 198.875 billion, and
-net assets JPY 1.910 trillion. Average shares in the quarter were 933.158 million and period-end
-shares excluding treasury stock were about 933.158 million. This financial capacity is a major
-source of resilience, although excess cash does not eliminate cyclicality or valuation risk.
+## Catalysts and invalidation
 
-Primary evidence:
+Potential catalysts include verified growth across FA, ROBOT, ROBOMACHINE, and SERVICE; sustained margins; stronger full-year guidance; profitable physical-AI deployments; and a buyback executed on value-creating terms.
 
-- [FANUC consolidated quarterly financial results, quarter ended 30 June 2026](https://www.fanuc.co.jp/en/ir/announce/pdf/2026/financialresult202606_e.pdf)
-- [FANUC Q1 FY2026 financial-results reference material](https://www.fanuc.co.jp/en/ir/announce/pdf/2026/reference202606_e.pdf)
+A future positive thesis would be invalidated by a material guidance reduction, persistent contraction in core automation demand, structural market-share or pricing losses, sustained margin deterioration, poor cash deployment, or a failure of promoted physical-AI activity to produce profitable commercial demand.
 
-## Thesis and causal mechanism
+## Confidence and limitations
 
-FANUC can benefit as manufacturers expand automation and physical-AI capabilities. Its control,
-servo, robot, robomachine, application, and service stack can monetize factory investment without
-requiring general-purpose humanoids to reach scale. Installed-base expertise, reliability,
-integrated controls, global support, and a fortress balance sheet support durable economics through
-a cycle.
+Confidence is **low**. The current issuer index establishes that material new information exists, but not what the financial results say. The October 23 disclosure index likewise establishes that buyback and dividend notices exist without exposing their terms. Until readable primary evidence is available, a numeric valuation and rubric-based fundamental scores would be speculative.
 
-## Idea exposure map
+## Sources
 
-- **Candidate — positive:** [[ideas/idea_humanoid_robotics_embodied_ai_components]]. FANUC's
-  controls, servos, robots, simulation integration, installed base, and service capability provide
-  a specific route from physical-AI adoption to product and service demand. Current FANUC results
-  demonstrate conventional automation demand and platform capability, but do **not** prove repeat
-  paid humanoid deployments or humanoid-specific revenue materiality. A separate relationship
-  review must accept or reject this edge; it is not canonical today. It would be invalidated if
-  physical-AI activity remains demonstrations, fixed automation captures the economics, or FANUC
-  cannot disclose material profitable demand.
-- **Rejected-no-link:** [[ideas/idea_japan_sanaenomics_strategic_investment]]. FANUC is a Japanese
-  automation supplier, but the maintained policy evidence identifies no funded FANUC order,
-  attributable backlog, subsidy, procurement award, or margin transmission. Nationality and broad
-  automation adjacency alone are not a causal relationship. Reconsider only after an attributable
-  funded program or issuer disclosure.
-
-The complete maintained idea catalog produced no other pairing with a security-specific causal
-transmission mechanism and material evidenced exposure. Broad AI-power, nearshoring, healthcare-
-automation, drone-component, and semiconductor themes were rejected as customer or thematic
-adjacency rather than a direct maintained FANUC earnings mechanism.
-
-## Contrary evidence and risks
-
-- Automation demand is cyclical and sensitive to machine-tool, electronics, automotive, China, and
-  global capital-spending conditions.
-- Trade policy, geopolitical restrictions, and exchange rates can alter reported earnings and
-  demand. The revised forecast embeds explicit JPY 150/USD and JPY 175/EUR assumptions.
-- Chinese competitors and customer localization can pressure pricing and share.
-- Humanoid and physical-AI demonstrations may not translate into reliable, high-margin deployments.
-- The Frankfurt line's intermittent zero-volume sessions and low recent volume create material
-  spread and execution-quality risk even though the underlying issuer is large.
-- A large net-cash position supports downside but can depress capital efficiency if not deployed or
-  returned productively.
-
-## Valuation
-
-**Template:** `mature_compounder`; **method:** `earnings_multiple`; **horizon:** 12 months.
-
-The starting point is issuer guidance of JPY 212.18 FY2026 EPS. Using the issuer's JPY 175/EUR
-forecast assumption implies about EUR 1.21 per ordinary share before scenario adjustments. The
-cases vary cycle strength, margin conversion, FX, and the earnings multiple; they do not capitalize
-the current quarter as a permanent peak.
-
-| Case | Probability | Fair value | Key assumptions |
-| --- | ---: | ---: | --- |
-| Bear | 25% | EUR 24.25 | About 20x guided-equivalent earnings as China/capital spending weakens, FX is less helpful, and competitive pricing limits margin conversion. |
-| Base | 50% | EUR 36.38 | About 30x guided-equivalent earnings; raised guidance is broadly delivered, conventional automation grows, and margins remain near normalized strong levels. |
-| Bull | 25% | EUR 48.50 | About 40x guided-equivalent earnings as broad automation demand, physical-AI adoption, service mix, and margins exceed the revised plan. |
-
-Probability-weighted fair value remains **EUR 36.3775**, about **11.59%** above the EUR
-32.599998474121094 mark before confidence adjustment. The base case offers about 11.60% upside while
-the bear case implies about 25.61% downside. Medium-confidence adjustment leaves about 8.69%
-expected return, newly above the configured 8% threshold. Raw expected return and base upside also
-clear their 10% thresholds, but bear/base and expected/bear payoff remain inadequate and the
-relationship and liquidity gates remain unsatisfied. The deterministic buy-below level remains EUR
-29.104, about 12.01% below the current mark. The completed full review therefore confirms Hold /
-Watch rather than a price-only upgrade or strategy.
-
-## Catalysts, invalidation, and review
-
-Potential positive catalysts are delivery against the raised FY2026 forecast, broad-based order
-and sales growth across FA/robot/robomachine, sustained or improving operating margin, physical-AI
-commercial wins with disclosed economics, and productive capital returns. Negative catalysts are
-a guidance cut, China or global capex contraction, material margin pressure, adverse FX, or weak
-cash deployment.
-
-The thesis is invalidated if FANUC cannot sustain competitive economics through the automation
-cycle, loses material control/robot share, or physical-AI investment fails to produce profitable
-commercial demand while valuation continues to price it in.
-
-Review by **2026-09-03**, or sooner upon revised guidance, material order disclosure, a large FX or
-price move, evidence on paid physical-AI deployments, or a change in Frankfurt trading liquidity.
-Upgrade only if fresh scenarios clear all canonical gates and the relationship evidence is
-accepted. Downgrade if earnings, margins, competitive position, or liquidity deteriorates.
-
-## Assessment anchors
-
-- Thesis: **60** — current primary evidence supports conventional automation, but humanoid-specific
-  economics remain unproven.
-- Business quality: **80** — integrated technology, installed base, margins, and resilience indicate
-  durable advantages.
-- Balance sheet: **100** — net financial strength provides substantial downside protection.
-- Valuation: **40** — raw and confidence-adjusted expected return now clear their thresholds, but
-  downside-payoff and margin-of-safety quality remain insufficient for exposure.
-- Timing: **40** — the 12.39% decline and lower-band breach improved prospective return, but thin
-  turnover has no verified fundamental catalyst and the buy-below level remains unreached.
-- Liquidity: **40** — the Frankfurt line has material volume and spread constraints.
-- Risk penalty: **60** — cyclical, China, FX, competition, and listing-liquidity risks constrain
-  sizing.
-- Confidence: **medium**.
-- Hard blockers: none; canonical soft gaps remain `confidence_medium`, `timing_unfavorable`, and
-  `valuation_not_compelling`. The deterministic allocation frontier separately captures the
-  pending relationship, while Frankfurt liquidity, the unexplained volume anomaly, and unproven
-  humanoid revenue remain explicit research risks.
-
-See the complete [[research-catalog]], current [[index]], and append-only [log](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/log.md).
+- `source_web_deaa1e2d2fc2a4403e8c6db8` — [FANUC Financial Results and Conference Materials](https://www.fanuc.co.jp/en/ir/announce/)
+- `source_web_edfd9ebccb4ba281c69eb0dd` — [FANUC Other Disclosures](https://www.fanuc.co.jp/en/ir/announce_other/)

@@ -33,7 +33,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Eaton Corporation plc](securities/security_18a3ab0ee6086ee85d0f) | ETN (USD) | researched: hold | complete | 285.00 / 351.00 / 449.00 USD | 2026-10-19T00:02:37.029896Z | 2026-11-18T00:02:37.029896Z |
 | [Enphase Energy, Inc.](securities/security_f2b9760d847b2ba59324) | ENPH (USD) | researched: insufficient_confidence | complete | 8.03 / 19.28 / 38.22 USD | 2026-10-19T02:07:45.077644Z | 2026-11-18T02:07:45.077644Z |
 | [Evonik Industries AG](securities/security_ccb25582c0392492fe9e) | EVK (EUR) | researched: hold | complete | 10.01 / 18.97 / 27.61 EUR | 2026-10-18T23:44:47.860390Z | 2026-11-17T23:44:47.860390Z |
-| [Fanuc Corporation](securities/security_96ba305ee7cd586bc348) | FUC.F (EUR) | researched: research_expired_or_future | complete | 24.25 / 36.38 / 48.50 EUR | 2026-08-20T15:44:00Z | 2026-09-03T15:44:00Z |
+| [Fanuc Corporation](securities/security_96ba305ee7cd586bc348) | FUC.F (EUR) | researched: valuation_unsupported | valuation_unsupported | — / — / — EUR | 2026-10-24T14:51:23.823503Z | 2026-10-25T14:51:23.823503Z |
 | [Fiserv, Inc.](securities/security_d202772e4e62065cd17a) | FISV (USD) | researched: hold | complete | 36.00 / 65.70 / 96.20 USD | 2026-10-19T00:38:18.749675Z | 2026-11-18T00:38:18.749675Z |
 | [Fluence Energy, Inc.](securities/security_a9eb9838940ef5ceaa0c) | FLNC (USD) | researched: research_expired_or_future | complete | 4.59 / 11.09 / 20.84 USD | 2026-08-06T18:47:30Z | 2026-08-20T18:47:30Z |
 | [Freeport-McMoRan Inc.](securities/security_2dbe878dfc899d7ee867) | FCX (USD) | researched: sell | complete | 32.64 / 47.36 / 65.12 USD | 2026-10-22T20:24:15.882831Z | 2026-11-21T20:24:15.882831Z |
