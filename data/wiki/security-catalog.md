@@ -51,7 +51,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Materialise NV](securities/security_b61c642d038d71be3821) | MTLS (USD) | researched: hold | complete | 6.30 / 9.00 / 12.20 USD | 2026-10-18T23:13:04.375396Z | 2026-11-17T23:13:04.375396Z |
 | [MercadoLibre, Inc.](securities/security_4935c6e39e38273a1731) | MELI (USD) | researched: hold | complete | 1,440.00 / 2,200.00 / 3,120.00 USD | 2026-10-19T00:17:51.170792Z | 2026-11-18T00:17:51.170792Z |
 | [Meta Platforms, Inc.](securities/security_d12e746b3c9d392183cc) | META (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T15:48:18.636792Z | 2026-11-20T15:48:18.636792Z |
-| [Microsoft Corporation](securities/security_204be2a44063993de1a8) | MSFT (USD) | researched: hold | complete | 418.00 / 567.00 / 698.00 USD | 2026-10-20T20:13:08.599471Z | 2026-11-19T20:13:08.599471Z |
+| [Microsoft Corporation](securities/security_204be2a44063993de1a8) | MSFT (USD) | researched: hold | complete | 418.00 / 567.00 / 698.00 USD | 2026-10-24T16:32:40.780427Z | 2026-11-23T16:32:40.780427Z |
 | [NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | NVDA (USD) | researched: buy | complete | 198.00 / 310.50 / 448.00 USD | 2026-10-18T19:50:33.927425Z | 2026-11-17T19:50:33.927425Z |
 | [Nebius Group N.V.](securities/security_47a0b06f6c6c478d7c1e) | NBIS (USD) | researched: insufficient_confidence | complete | 21.74 / 127.09 / 293.31 USD | 2026-10-24T13:41:49Z | 2026-11-23T13:41:49Z |
 | [Nidec Corporation](securities/security_3853e54c619d597dcaa1) | NIB.F (EUR) | researched: valuation_unsupported | valuation_unsupported | — / — / — EUR | 2026-10-19T01:10:04.361736Z | 2026-11-18T01:10:04.361736Z |

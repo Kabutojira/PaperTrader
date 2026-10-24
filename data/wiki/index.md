@@ -36,12 +36,13 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 93 companies / 94 instruments; 94 assessed, 83 in date, 11 stale; 51 currently unrated. 1 quotes require attention.
 
-Last observed market session: 2026-10-23. Last successful research: 2026-10-24T16:31:11Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-23. Last successful research: 2026-10-24T16:35:01Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
 Watchlist valuation coverage: **67 / 93 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 0; unsupported valuation: 26; incomplete research: 0. Needs attention: 1. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
+- [Microsoft Corporation](securities/security_204be2a44063993de1a8) — 2026-10-24T16:32:40.780427Z; hold
 - [Spotify Technology S.A.](securities/security_2010347f1a0a5ea60f47) — 2026-10-24T16:28:59.237887Z; hold
 - [Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349) — 2026-10-24T16:25:27.672302Z; sell
 - [PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00) — 2026-10-24T16:22:20.627957Z; hold
@@ -51,7 +52,6 @@ Watchlist valuation coverage: **67 / 93 instruments** have complete sourced bear
 - [ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c) — 2026-10-24T16:07:01.121336Z; strong_sell
 - [Powell Industries, Inc.](securities/security_0b67d6c8e3fd3366a257) — 2026-10-24T16:03:56.485665Z; valuation_unsupported
 - [Applied Materials, Inc.](securities/security_0a56aa634d077fe5796f) — 2026-10-24T15:59:51.264224Z; hold
-- [Tencent Holdings Limited](securities/security_de0d83229b369a426b99) — 2026-10-24T15:55:36.134973Z; valuation_unsupported
 
 ## Ideas and interesting companies
 
