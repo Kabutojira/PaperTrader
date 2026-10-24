@@ -32,14 +32,15 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-93 companies / 94 instruments; 92 assessed, 59 in date, 33 stale; 59 currently unrated. 1 quotes require attention.
+93 companies / 94 instruments; 93 assessed, 60 in date, 33 stale; 58 currently unrated. 1 quotes require attention.
 
-Last observed market session: 2026-10-23. Last successful research: 2026-10-24T14:12:44Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-23. Last successful research: 2026-10-24T14:16:43Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
-Watchlist valuation coverage: **80 / 93 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 2; unsupported valuation: 11; incomplete research: 0. Needs attention: 3. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
+Watchlist valuation coverage: **81 / 93 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 1; unsupported valuation: 11; incomplete research: 0. Needs attention: 3. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
+- [Veralto Corporation](securities/security_1b773169da5023ce4682) — 2026-10-24T14:14:08.280807Z; hold
 - [Intel Corporation](securities/security_dfa34d4b9050964b465e) — 2026-10-24T14:10:30.760181Z; strong_sell
 - [PLS Group Limited](securities/security_8a5c43888d224de85c69) — 2026-10-24T14:02:41.253809Z; valuation_unsupported
 - [Space Exploration Technologies Corp.](securities/security_664f93a7eaca72e76e9b) — 2026-10-24T14:00:21.124354Z; valuation_unsupported
@@ -49,7 +50,6 @@ Watchlist valuation coverage: **80 / 93 instruments** have complete sourced bear
 - [Corsair Gaming, Inc.](securities/security_55c9ce2fdcd32dad6b8c) — 2026-10-23T20:11:46.578958Z; hold
 - [Quanta Services, Inc.](securities/security_488a9d7f7a8573597724) — 2026-10-23T20:09:37.071756Z; hold
 - [QUALCOMM Incorporated](securities/security_3a75fc1ccca2ee7c937a) — 2026-10-22T20:26:18.005794Z; hold
-- [Freeport-McMoRan Inc.](securities/security_2dbe878dfc899d7ee867) — 2026-10-22T20:24:15.882831Z; sell
 
 ## Ideas and interesting companies
 

@@ -96,7 +96,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [UiPath, Inc.](securities/security_eca976f0076a425ea1bb) | PATH (USD) | researched: research_expired_or_future | complete | 9.00 / 17.00 / 27.00 USD | 2026-09-05T10:45:22Z | 2026-10-03T10:45:22Z |
 | [Vale S.A.](securities/security_b2116dcf976c96974d7b) | VALE (USD) | researched: source_evidence_unavailable | complete | 9.00 / 14.50 / 20.00 USD | 2026-08-25T15:48:11Z | 2026-09-24T15:48:11Z |
 | [Valero Energy Corporation](securities/security_c5a9e460d3350284d157) | VLO (USD) | researched: research_expired_or_future | complete | 216.00 / 286.00 / 378.00 USD | 2026-08-31T23:26:30Z | 2026-09-30T23:26:30Z |
-| [Veralto Corporation](securities/security_1b773169da5023ce4682) | VLTO (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
+| [Veralto Corporation](securities/security_1b773169da5023ce4682) | VLTO (USD) | researched: hold | complete | 85.00 / 109.25 / 132.60 USD | 2026-10-24T14:14:08.280807Z | 2026-11-23T14:14:08.280807Z |
 | [Vertiv Holdings Co](securities/security_cb88f9154cfeaa15e878) | VRT (USD) | researched: research_expired_or_future | complete | 166.25 / 281.40 / 402.00 USD | 2026-08-08T11:46:19Z | 2026-09-07T11:46:19Z |
 | [W&T Offshore, Inc.](securities/security_61567714298b9563d1a9) | WTI (USD) | researched: research_expired_or_future | complete | 0.7900 / 3.17 / 6.15 USD | 2026-08-06T14:22:30Z | 2026-08-20T14:22:30Z |
 | [Xometry, Inc.](securities/security_c2e6db30cb59254de418) | XMTR (USD) | researched: hold | complete | 47.00 / 79.00 / 116.00 USD | 2026-10-21T20:25:31.299835Z | 2026-11-20T20:25:31.299835Z |
