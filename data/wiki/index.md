@@ -33,14 +33,15 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-93 companies / 94 instruments; 94 assessed, 73 in date, 21 stale; 56 currently unrated. 1 quotes require attention.
+93 companies / 94 instruments; 94 assessed, 74 in date, 20 stale; 56 currently unrated. 1 quotes require attention.
 
-Last observed market session: 2026-10-23. Last successful research: 2026-10-24T15:24:38Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-23. Last successful research: 2026-10-24T15:28:35Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
-Watchlist valuation coverage: **71 / 93 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 0; unsupported valuation: 22; incomplete research: 0. Needs attention: 3. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
+Watchlist valuation coverage: **70 / 93 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 0; unsupported valuation: 23; incomplete research: 0. Needs attention: 3. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
+- [Alphabet Inc.](securities/security_c86bb4e75658c07142cf) — 2026-10-24T15:26:30.343218Z; valuation_unsupported
 - [Valero Energy Corporation](securities/security_c5a9e460d3350284d157) — 2026-10-24T15:23:14.568355Z; valuation_unsupported
 - [ABB Ltd](securities/security_c120e9f26ebb6159adf9) — 2026-10-24T15:19:06.065625Z; valuation_unsupported
 - [Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a) — 2026-10-24T15:15:36.223838Z; valuation_unsupported
@@ -50,7 +51,6 @@ Watchlist valuation coverage: **71 / 93 instruments** have complete sourced bear
 - [Carlisle Companies Incorporated](securities/security_9b0db3bc77914b23a307) — 2026-10-24T14:54:59.203205Z; valuation_unsupported
 - [Fanuc Corporation](securities/security_96ba305ee7cd586bc348) — 2026-10-24T14:51:23.823503Z; valuation_unsupported
 - [DLocal Limited](securities/security_715bde20b6e1e1320c1a) — 2026-10-24T14:47:47.947320Z; valuation_unsupported
-- [Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3) — 2026-10-24T14:37:50.249307Z; buy
 
 ## Ideas and interesting companies
 
