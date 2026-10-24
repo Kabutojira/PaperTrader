@@ -36,12 +36,13 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 93 companies / 94 instruments; 94 assessed, 83 in date, 11 stale; 51 currently unrated. 1 quotes require attention.
 
-Last observed market session: 2026-10-23. Last successful research: 2026-10-24T16:20:35Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-23. Last successful research: 2026-10-24T16:23:54Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
 Watchlist valuation coverage: **67 / 93 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 0; unsupported valuation: 26; incomplete research: 0. Needs attention: 1. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
+- [PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00) — 2026-10-24T16:22:20.627957Z; hold
 - [Rio Tinto plc](securities/security_1c055eb9b2bb1f5a8ff2) — 2026-10-24T16:18:09.592416Z; hold
 - [Eaton Corporation plc](securities/security_18a3ab0ee6086ee85d0f) — 2026-10-24T16:14:31.591874Z; hold
 - [Kratos Defense & Security Solutions, Inc.](securities/security_0cf8075039299094d614) — 2026-10-24T16:11:12.496589Z; hold
@@ -51,7 +52,6 @@ Watchlist valuation coverage: **67 / 93 instruments** have complete sourced bear
 - [Tencent Holdings Limited](securities/security_de0d83229b369a426b99) — 2026-10-24T15:55:36.134973Z; valuation_unsupported
 - [Schneider Electric SE](securities/security_dc8486c1d61df62a22fd) — 2026-10-24T15:51:58.361044Z; hold
 - [Meta Platforms, Inc.](securities/security_d12e746b3c9d392183cc) — 2026-10-24T15:48:18.636792Z; valuation_unsupported
-- [Taiwan Semiconductor Manufacturing Company Limited](securities/security_ce9b78a4d0773c950765) — 2026-10-24T15:44:48.694444Z; hold
 
 ## Ideas and interesting companies
 
