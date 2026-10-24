@@ -69,7 +69,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c) | 108490 (KRW) | researched: strong_sell | complete | 20,625.00 / 70,968.00 / 282,667.00 KRW | 2026-10-24T16:07:01.121336Z | 2026-11-23T16:07:01.121336Z |
 | [RTX Corporation](securities/security_59304f90c440def31dc5) | RTX (USD) | researched: hold | complete | 142.00 / 179.38 / 246.50 USD | 2026-10-19T00:33:47.630267Z | 2026-11-17T00:33:47.630267Z |
 | [Recursion Pharmaceuticals, Inc.](securities/security_ed7d5b616a196969c815) | RXRX (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-19T01:07:51.346928Z | 2026-11-17T01:07:51.346928Z |
-| [Rio Tinto plc](securities/security_1c055eb9b2bb1f5a8ff2) | RIO (USD) | researched: hold | complete | 68.00 / 93.50 / 126.50 USD | 2026-10-19T00:21:16.741131Z | 2026-11-18T00:21:16.741131Z |
+| [Rio Tinto plc](securities/security_1c055eb9b2bb1f5a8ff2) | RIO (USD) | researched: hold | complete | 68.00 / 93.50 / 126.50 USD | 2026-10-24T16:18:09.592416Z | 2026-11-23T16:18:09.592416Z |
 | [Robinhood Markets, Inc.](securities/security_ad3b1f8f59fd599f079a) | HOOD (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T14:58:37.228150Z | 2026-11-23T14:58:37.228150Z |
 | [Roblox Corporation](securities/security_c9a37d277445869a8809) | RBLX (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T15:29:47.352823Z | 2026-10-25T15:29:47.352823Z |
 | [Rocket Lab Corporation](securities/security_7ca095d63423c55a90e3) | RKLB (USD) | researched: insufficient_confidence | complete | 18.00 / 32.00 / 53.00 USD | 2026-10-20T20:15:25.373186Z | 2026-11-19T20:15:25.373186Z |
