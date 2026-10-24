@@ -5,170 +5,89 @@ status: watching
 tags:
   - security
   - research
-  - risk
+  - valuation-unsupported
 created: "2026-08-01"
-updated: "2026-08-28"
-provenance: "source_meta_q2_2026_10q|source_meta_q2_2026_results"
+updated: "2026-10-24"
+provenance: "source_web_0ebd5b68d634012bfa8a3c03|source_web_c4ad1452c449e33679fb3945|source_web_61a6bf7b3fe39cf74de635d5"
 security_id: security_d12e746b3c9d392183cc
 issuer_id: issuer_0777ea72e7e5e9618310
 ticker: META
 venue_mic: XNAS
 provider_symbol: META
 currency: USD
-confidence: medium
-next_review: "2026-09-27"
+confidence: low
+next_review: "2026-11-20"
 ---
 
 # Meta Platforms, Inc. Class A common stock
 
-## Decision
+## Research conclusion
 
-**Hold / Watch; no strategy.** Meta's Q2 advertising and audience evidence remains strong, but the
-video's double-digit-return claim does not account for AI capital intensity, legal exposure,
-Reality Labs losses, or weak latest free-cash-flow conversion. At the refreshed USD 571.10 mark,
-the unchanged USD 400 / USD 600 / USD 800 scenarios produce USD 580 probability-weighted value,
-only 1.6% expected return and 5.1% base upside. Expected-return and downside-payoff gates fail, and
-the candidate AI-monetization relationship remains pending.
+**Valuation unsupported.** Meta filed a newer Form 10-Q on October 22, 2026. The issuer filing feed and filing-detail record were accessible, but the underlying quarterly financial statements were not readable through the available research broker. Because that filing supersedes the Q2 evidence used by the previous assessment, the former USD 400 / USD 600 / USD 800 scenarios and related conclusions are not carried forward.
 
-## Changes since prior review
+This is an evidence limitation, not a negative fundamental conclusion. No current fair value, scenario probability, valuation score, or market-price comparison is asserted.
 
-- **Evidence and facts:** The registered Q2 Form 10-Q and issuer results were rechecked with unchanged
-  content hashes. No retained primary evidence changes the business conclusion; the new inputs are
-  the video-derived lead and market state through August 28.
-- **Alerts and timing:** The prior August 14 and August 18 alert interpretation is unchanged. The
-  later USD 571.10 mark is above the prior USD 543.67 assessment mark, reducing prospective return;
-  the video claim is neither primary evidence nor a stand-alone opportunity.
-- **Valuation assumptions and outputs:** Normalized EPS, multiples, probabilities, and USD 400 / USD
-  600 / USD 800 fair values are unchanged because no new fundamental evidence justifies revising
-  them. At USD 571.10, bear/base/bull returns are about -29.96% / +5.06% / +40.08%; expected return
-  is about 1.56% and medium-confidence-adjusted expected return about 1.17%.
-- **Thesis, catalysts, risks, blockers, and gaps:** The advertising thesis, catalysts, invalidation,
-  scores, and no-hard-blocker conclusion are unchanged. AI spending productivity, per-share cash
-  conversion, Reality Labs losses, legal and regulatory exposure, medium confidence, weak timing,
-  downside payoff, and the pending relationship remain unresolved.
-- **Rating and action:** Hold / Watch remains unchanged. Expected return, base upside, bear/base
-  payoff, expected/bear payoff, and the pending relationship still block allocation and strategy
-  research. No strategy, signal, order, or paper-trading state is created.
+## Changes since the prior review
+
+- Meta's issuer filing feed now lists a Form 10-Q dated October 22, 2026.
+- The latest filing-detail page confirms the report and provides links to its underlying documents, but those documents were not readable in this operation.
+- An October 21 Form 8-K confirms the registrant and listed-security identity.
+- The Q2-derived valuation has been withdrawn rather than treated as current without verification.
+- All rubric scores are left empty because current operating, cash-flow, balance-sheet, risk, and valuation inputs could not be inspected.
 
 ## Immutable identity
 
 - Security ID: `security_d12e746b3c9d392183cc`
 - Issuer ID: `issuer_0777ea72e7e5e9618310`
-- Instrument: Meta Platforms, Inc. Class A common stock
-- Listing: Nasdaq Global Select Market (`XNAS`)
-- Provider symbol: `META`
-- Currency: `USD`
+- Issuer: Meta Platforms, Inc.
+- Instrument: Class A common stock
+- Trading symbol: `META`
+- Exchange: Nasdaq (`XNAS`)
+- Native currency: `USD`
 
-Meta's SEC filing identifies its publicly traded Class A common stock and matches the canonical
-issuer, instrument, venue, provider, and currency identity. Its founder-controlled Class B shares
-have different voting rights and are not interchangeable with this immutable Class A listing. No
-duplicate canonical META Class A identity exists.
+The accessible October 2026 Form 8-K identifies Meta Platforms, Inc. as the registrant and identifies its Class A common stock, META trading symbol, and Nasdaq registration. This supports the supplied security identity without changing either immutable ID. The filing does not establish current valuation inputs.
 
-## Alert review
+## Business thesis and required evidence
 
-The payload combines two canonical transitions:
+The retained hypothesis is that Meta's scale, engagement, recommendation systems, advertiser demand, and data-driven products can sustain profitable advertising economics, while messaging, Threads, and AI products may add monetization opportunities. The corresponding concern is that AI infrastructure, talent, stock compensation, Reality Labs, legal exposure, and regulatory constraints may consume enough capital or margin to weaken per-share cash conversion.
 
-- On August 14, `macd_cross_above_signal` entered after an **8.69%** July 17–August 14 decline. The
-  USD 589.85 close and 0.0365 trigger strength indicated short-term stabilization, not recovered
-  fundamentals. Source-price hash:
-  `6a23d2df818910dfcee1ffa9aba836a28f9b2389b70419844e6cbb234d1b9ee4`.
-- On August 18, `bollinger_below_lower` entered after a **15.55%** July 21–August 18 decline. The USD
-  543.67 close was 0.43% below the USD 546.01 lower band; RSI was 36.20, the volume z-score was 1.23,
-  and the MACD histogram was negative. Source-price hash:
-  `dd294385338c3cdda3f1758cd1b344a790ff9bfddb35d7dd419368378701a360`.
+A current assessment must test that hypothesis against the October quarterly report, including:
 
-The combined move is **continuing fundamental repricing and timing risk, not a stand-alone
-opportunity signal**. The bullish crossover did not persist, and the later lower-band breach was not
-confirmed by oversold RSI or anomalous volume. Unchanged primary evidence still pairs strong demand
-with a 55% quarterly cost increase, USD 2.40 billion of legal charges, USD 1.18 billion of severance,
-USD 31.08 billion of quarterly capital expenditures, and only USD 784 million of quarterly free cash
-flow. Price weakness alone does not resolve capital productivity or cash conversion.
+- revenue growth and advertising volume and pricing;
+- Family of Apps and Reality Labs profitability;
+- operating margin and expense growth;
+- operating cash flow, capital expenditures, and free-cash-flow conversion;
+- stock compensation, diluted shares, and repurchases;
+- cash, marketable securities, debt, leases, and liquidity;
+- management guidance and updated capital-spending expectations; and
+- material legal, regulatory, governance, and risk-factor changes.
 
-## Business and financial evidence
+Those facts were not available in readable form from the newly filed report during this operation. Prior-period values are not substituted for them.
 
-Meta's Family of Apps combines Facebook, Instagram, Messenger, Threads, and WhatsApp, with
-substantially all revenue generated by advertising. User scale, advertiser demand, engagement data,
-distribution, recommendation systems, and AI infrastructure support exceptional recurring
-economics, but they require sustained investment and remain exposed to competition, privacy rules,
-platform changes, and content-safety regulation.
+## Valuation status
 
-Q2 revenue increased 28% to USD 60.801 billion. Family of Apps revenue was USD 60.370 billion, while
-Reality Labs revenue was only USD 431 million. Ad impressions increased 14%, average price per ad
-increased 12%, and Family daily active people increased 3% to 3.60 billion. Family of Apps produced
-USD 23.394 billion of operating income, but Reality Labs lost USD 4.619 billion. Consolidated
-operating income fell 8% to USD 18.775 billion and operating margin contracted to 31% from 43% as
-costs increased 55%.
+The intended method remains a 12-month earnings-multiple framework using normalized forward EPS and explicit assumptions for margins, capital intensity, dilution, and the net financial position. A supportable analysis would show the per-share arithmetic for ordered bear, base, and bull cases and assign probabilities totaling 100%.
 
-Net income was USD 15.848 billion and diluted EPS was USD 6.18. Six-month net income was USD 42.621
-billion and diluted EPS was USD 16.62, but the period included a tax benefit and the latest quarter
-included material legal and severance charges. The valuation therefore uses normalized forward EPS
-rather than annualizing either reported period mechanically.
+No scenarios are published here because current earnings, cash flow, share count, guidance, and balance-sheet data could not be verified. The supplied October 23, 2026 market observation is therefore not used to compute a valuation score: a current reference price cannot compensate for missing fair-value evidence.
 
-At June 30, cash, cash equivalents, and marketable securities were USD 90.26 billion against USD
-83.664 billion of long-term debt. The 2.206 billion Class A and 342 million Class B shares outstanding
-show modest net financial strength but rising financing and dilution demands. Six-month operating
-cash flow was USD 64.088 billion, purchases of property and equipment were USD 49.113 billion, and
-share-based compensation was USD 13.690 billion. Meta issued about USD 24.91 billion of net long-term
-debt and made no Class A repurchases in the first half.
+## Downside, catalysts, and invalidation framework
 
-Management guides Q3 revenue to USD 61-64 billion, full-year expenses to USD 165-169 billion, and
-2026 capital expenditures including finance-lease principal to USD 130-145 billion. It still expects
-2026 operating income above 2025, but the investment burden, legal exposure, and higher 15-17% tax
-rate guidance make per-share cash conversion the central monitoring variable.
+Potential downside mechanisms include advertising or engagement deterioration, margin compression, poor returns on AI infrastructure, persistent Reality Labs losses, dilution, governance concentration, and legal or regulatory restrictions on targeting, distribution, or monetization. Their current magnitude remains unknown.
 
-## Thesis, contrary evidence, catalysts, and invalidation
+Potential catalysts include durable advertising growth, measurable returns from AI investment, profitable messaging or Threads monetization, stronger per-share cash conversion, disciplined Reality Labs spending, and favorable legal or regulatory developments. None is treated as having occurred without current operating evidence.
 
-The thesis is that Meta can compound advertising revenue through engagement, recommendation quality,
-and monetization while WhatsApp, Threads, business messaging, and AI products add optionality.
-Current audience, ad-volume, pricing, revenue, and Family of Apps profit evidence strongly supports
-the core mechanism.
+The hypothesis would be weakened by sustained user or advertising deterioration, Family of Apps margin erosion without durable offsetting growth, capital spending that persistently suppresses per-share cash generation, material dilution, escalating Reality Labs losses, or structural restrictions on targeting and distribution.
 
-Contrary evidence includes the sharp cost growth, immense AI infrastructure commitment, weak latest
-free cash flow, USD 13.69 billion of first-half stock compensation, continuing Reality Labs losses,
-new debt, legal charges, youth-related litigation, privacy and platform regulation, and uncertainty
-about whether AI spending will earn attractive incremental returns. The July selloff is therefore
-consistent with a higher capital-intensity and execution-risk premium despite strong demand.
+## Confidence and limitations
 
-Potential catalysts are sustained double-digit advertising growth, Q3 revenue above guidance,
-reacceleration in free-cash-flow conversion, evidence that AI improves engagement and advertiser
-returns, successful monetization of messaging and Threads, and disciplined Reality Labs spending.
-The thesis would be invalidated by sustained user or ad-pricing deterioration, Family of Apps margin
-compression without commensurate future growth, capital expenditures that persistently suppress
-per-share free cash flow, material dilution, or legal and regulatory outcomes that structurally
-impair targeting, distribution, or monetization.
-
-## Valuation
-
-A 12-month `mature_compounder` earnings-multiple valuation uses the latest filing and release,
-period-end share count, cash and marketable securities, debt, normalized earnings, and explicit
-capital-intensity and dilution treatment:
-
-- Bear, 30%: USD **400**, using USD 25 normalized forward EPS at 16x as expense growth, regulation,
-  Reality Labs losses, and poor AI-capex conversion compress margins and the multiple.
-- Base, 50%: USD **600**, using USD 30 normalized forward EPS at 20x as advertising remains durable,
-  AI investment supports engagement, and margins stabilize without restoring prior cash conversion.
-- Bull, 20%: USD **800**, using USD 32 normalized forward EPS at 25x as AI materially improves
-  monetization, messaging adds profit, capex productivity becomes visible, and regulatory outcomes
-  remain manageable.
-
-Against USD 571.10, the cases imply about **-29.96%**, **+5.06%**, and **+40.08%**. Probability-
-weighted fair value is USD 580, or about **+1.56%** before the medium-confidence adjustment and
-**+1.17%** after it. The base-upside-to-bear-downside ratio is only about **0.17**, and the 20%
-margin-of-safety buy zone remains USD 480. The current mark fails expected-return, base-upside and
-downside-payoff gates. The canonical AI-monetization relationship is pending.
+Confidence is **low** because the newest primary quarterly filing could not be inspected. The accessible records establish that the filing exists and verify the listed instrument, but they do not provide enough financial content to support a valuation or fundamental scores. No secondary source was used to fill the gap, and no inaccessible figure was guessed.
 
 ## Sources
 
-- [Meta Q2 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm)
-  (`source_meta_q2_2026_10q`, rechecked 2026-08-28 with unchanged hash).
-- [Meta Q2 2026 results](https://www.sec.gov/Archives/edgar/data/1326801/000162828026050596/meta-06302026xexhibit991.htm)
-  (`source_meta_q2_2026_results`, rechecked 2026-08-28 with unchanged hash).
-- Canonical market and indicator state: `data/market/latest.csv`, `data/market/indicators.csv`, and
-  `data/market/prices/security_d12e746b3c9d392183cc.csv`, retrieved `2026-08-28T19:01:02Z`; the
-  triggering packets remain anchored to August 14 and August 18.
+- [Meta investor financials page](https://investor.atmeta.com/financials/) (`source_web_cd11f0b3842d1f667b0fd366`; issuer navigation only, not standalone financial evidence).
+- [Meta SEC filings feed](https://investor.atmeta.com/rss/SECFiling.aspx?Exchange=CIK&Symbol=0001326801) (`source_web_0ebd5b68d634012bfa8a3c03`).
+- [October 22, 2026 Form 10-Q filing details](https://investor.atmeta.com/financials/sec-filings-details/default.aspx?FilingId=19864986) (`source_web_c4ad1452c449e33679fb3945`).
+- [October 21, 2026 Form 8-K filing details](https://investor.atmeta.com/financials/sec-filings-details/default.aspx?FilingId=19863742) (`source_web_ccb8c88e6c55dcaf5c2df185`).
+- [October 2026 Form 8-K filing](https://d18rn0p25nwr6d.cloudfront.net/CIK-0001326801/464fb585-c0b8-430a-b0bc-af2b529c11cc.html) (`source_web_61a6bf7b3fe39cf74de635d5`).
 
-Next review: **2026-09-27**, or sooner after a material advertising, AI monetization, capital-
-spending, cash-conversion, legal, regulatory, or Reality Labs development.
-
-Related navigation: [[security-catalog|Securities]], [Signals and research alerts](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/signals.md), and
-[[research-catalog|Research catalog]].
+Next review: **2026-11-20**, or when the October 2026 Form 10-Q becomes readable through an accessible primary source.
