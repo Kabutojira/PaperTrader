@@ -1,18 +1,18 @@
 ---
 title: Atkore Inc. common stock
 type: security
-status: maintained
+status: acquired
 tags:
   - security
   - research
-  - merger
+  - merger-completed
 created: "2026-07-25"
-updated: "2026-10-19"
-provenance: "source_web_fd41aed522bb0771c5b12688; source_web_21a0e5723142aec667478fac; source_web_78291aee06593e1527bf8ef3"
+updated: "2026-10-24"
+provenance: "source_web_c6c9c8f589c858353b7578ec; source_web_fd41aed522bb0771c5b12688; source_web_21a0e5723142aec667478fac; source_web_78291aee06593e1527bf8ef3"
 security_id: security_22c2b9d782a62d7a9b86
 issuer_id: issuer_24dfad17964141504f03
-confidence: medium
-next_review: "2026-11-18"
+confidence: high
+next_review: "2026-10-25"
 ---
 
 # Atkore Inc. common stock
@@ -22,79 +22,74 @@ next_review: "2026-11-18"
 - Immutable security: `security_22c2b9d782a62d7a9b86`
 - Immutable issuer: `issuer_24dfad17964141504f03`
 - Issuer: Atkore Inc.
-- Instrument: common stock
-- Exchange and MIC: New York Stock Exchange / `XNYS`
+- Instrument: Atkore Inc. common stock
+- Former exchange and MIC: New York Stock Exchange / `XNYS`
 - Provider symbol: `ATKR`
 - Native currency: USD
+- Current status: acquired; shares no longer traded
 
-Atkore's transaction announcement identifies Atkore Inc. as NYSE-listed under `ATKR` and states that each share of Atkore common stock will receive cash consideration. This is consistent with the supplied security identity, share class, venue, symbol, and currency; no identity conflict was found.
+The opened evidence is consistent with the supplied issuer, common-share class, symbol, venue, and USD denomination. No identity change is made. Prysmian's completion announcement establishes that this specific public security has been extinguished rather than transferred to a new listing.
 
 ## Research change
 
-The prior unsupported earnings-multiple valuation is superseded by a merger-outcome framework. On 3 August 2026, Atkore announced a definitive agreement under which Prysmian would acquire Atkore for **USD 95.00 per share in cash**, representing an enterprise value of approximately USD 3.8 billion. Both boards unanimously approved the transaction. The announced closing target is calendar year-end 2026, subject to Atkore shareholder approval, regulatory approvals, and customary conditions.
+The prior probability-weighted pending-merger valuation is superseded. On 19 October 2026, Prysmian announced that it had completed its acquisition of Atkore under the August merger agreement. Prysmian acquired all outstanding Atkore shares for **USD 95.00 per share in cash**, Atkore became a wholly owned subsidiary, and ATKR shares ceased trading on the New York Stock Exchange.
 
-The opened primary evidence does not establish that those approvals have subsequently been obtained. Accordingly, USD 95.00 is the base-case contractual outcome, not an unconditional receivable.
+The former USD 95.00 base case was therefore realized. It is historical merger consideration, not a current fair value for a continuing ATKR instrument.
 
-## Business economics
+## Current research status
 
-Atkore manufactures electrical conduit, cable-management systems, and other infrastructure products used in commercial and industrial construction, data centers, utilities, telecommunications, transportation, solar, and related applications. Its economics depend on end-market volume, the timing of selling-price changes relative to material costs, manufacturing utilization, and conversion of adjusted earnings into cash.
+**Valuation unsupported.** There is no longer an exchange-traded ATKR common share or other continuing security identified in the opened evidence. A new bear/base/bull valuation would require inventing a post-closing claim. Scenario values, probabilities, valuation score, reference price, and reference timestamp are consequently left empty.
 
-Fiscal Q3 2026 provided evidence of demand but also contrary margin evidence:
+The supplied 16 October market observation predates completion and is marked inactive. It cannot serve as a reference price for an assessment made after the shares ceased trading.
+
+## Transaction resolution
+
+Atkore originally announced a definitive agreement under which shareholders would receive USD 95.00 cash per common share, subject to shareholder approval, regulatory approvals, and customary conditions. Prysmian later reported that the acquisition completed according to that agreement and that it purchased every outstanding share at the announced price. The principal uncertainties in the previous assessment have therefore resolved rather than merely declined.
+
+Individual payment-agent, appraisal, tax, or settlement issues are outside this security-level valuation. No continuing contingent-value right or additional publicly traded instrument was identified.
+
+## Historical business economics
+
+Atkore manufactures conduit, cable-management systems, metal framing, and related electrical-infrastructure products used in data centers, utilities, commercial and industrial construction, transportation, telecommunications, and renewable applications. Prysmian cited the complementary product portfolio and exposure to electrification and digital infrastructure as acquisition rationales.
+
+Fiscal Q3 2026 showed mixed economics:
 
 - Net sales increased 8.1% year over year to USD 794.8 million.
-- Electrical sales increased 10.9% to USD 578.3 million, primarily because of higher volume.
-- Consolidated adjusted EBITDA increased 4.7% to USD 104.7 million.
-- Adjusted diluted EPS increased to USD 1.92 from USD 1.63.
-- Consolidated gross margin declined to 22.2% from 23.4% because input-cost increases exceeded selling-price increases.
-- Electrical adjusted EBITDA margin was 15.4%, compared with 15.6% a year earlier.
+- Electrical sales increased 10.9%, primarily through higher volume.
+- Adjusted EBITDA increased 4.7% to USD 104.7 million.
+- Gross margin declined to 22.2% from 23.4% because input-cost increases exceeded selling-price increases.
 - Safety & Infrastructure adjusted EBITDA declined 8.4%.
-- GAAP net income was USD 0.7 million after a USD 50 million settlement involving the last of three putative classes, related litigation costs, and transaction costs.
+- GAAP net income was reduced by a USD 50 million settlement and related costs.
 
-The buyer's rationale reinforces Atkore's exposure to electrification and data-center investment. Prysmian described the businesses as complementary and estimated approximately USD 150 million of annual run-rate EBITDA synergies within three years of closing. Those synergies belong primarily to the buyer and do not increase the fixed consideration currently promised to ATKR holders.
+This evidence supports a **50.0 business-quality score**, corresponding to mixed economics: useful market positions and demand exposure coexist with inconsistent pricing capture, margin pressure, and material legal costs. Financing resilience is not scored because the retrieved evidence does not provide a complete current debt, maturity, covenant, and coverage analysis, and Atkore's post-closing financing now belongs within Prysmian's consolidated profile.
 
-## Thesis
+## Resolved thesis
 
-Atkore is now primarily a merger-outcome security. The signed USD 95.00 cash agreement defines the central near-term value, while the standalone business supplies the failed-deal downside. Stronger Q3 sales, volume, adjusted EBITDA, and adjusted EPS support the strategic value of the franchise. However, persistent pricing lag, lower gross margin, litigation costs, and unverified transaction approvals prevent treating the merger consideration as certain.
+The transaction thesis receives a **100.0 corroboration score** because the signed agreement and subsequent completion announcement consistently establish the same USD 95.00 cash outcome, and no opened evidence contradicts completion. This is not an attractiveness or upside score. The security is no longer investable.
 
-## Valuation method
+## Downside, catalysts, and invalidation
 
-A probability-weighted merger-outcome method is more appropriate than the former earnings multiple because the definitive acquisition agreement now dominates the three-month horizon.
+There is no remaining quoted ATKR downside or upside to model after the cash conversion. Historical operating risks—including cyclicality, input-cost pressure, litigation, and uneven segment margins—now accrue to Prysmian.
 
-| Scenario | Per-share value | Probability | Rationale |
-| --- | ---: | ---: | --- |
-| Bear | USD 72.96 | 15% | Transaction fails or is materially delayed and the shares return toward the 31 July 2026 closing price disclosed by Atkore. This is a market reference, not a standalone intrinsic-value floor. |
-| Base | USD 95.00 | 80% | The required approvals and conditions are satisfied and holders receive the announced cash consideration by calendar year-end 2026. No extra dividend or interest is assumed. |
-| Bull | USD 100.00 | 5% | A superior proposal or negotiated increase produces USD 100.00 per share. No such offer was identified; this is a low-probability analytical assumption. |
+No ATKR investment catalyst remains. Future integration, synergy realization, electrification demand, and data-center construction may affect Prysmian, not the extinguished Atkore common stock.
 
-The probabilities total 100%. They reflect a signed agreement, unanimous board approvals, the buyer's stated financing plan, and a defined closing target, balanced against the absence of reviewed evidence confirming later shareholder and regulatory approvals. The supplied 16 October 2026 market close of USD 94.96 is not used as fair value.
-
-## Downside and contrary evidence
-
-Deal failure could remove the acquisition premium and return attention to standalone execution. Atkore's Q3 volume growth did not eliminate pricing pressure: input costs continued to rise faster than selling prices, consolidated gross margin declined, and Safety & Infrastructure adjusted EBITDA contracted. The USD 72.96 bear value can also prove too high if a failed transaction coincides with weaker demand, further margin pressure, additional liabilities, or adverse market conditions.
-
-## Catalysts
-
-- Atkore shareholder approval.
-- Required regulatory clearances.
-- Confirmation that customary closing conditions have been satisfied.
-- Completion of the acquisition for USD 95.00 per share.
-- A formally announced superior proposal or increased consideration.
-
-## Invalidation conditions
-
-Reassess immediately if the merger closes, is terminated, receives amended consideration, misses the stated year-end target for a material reason, or encounters a disclosed financing or regulatory obstacle. A superior proposal or a later primary filing materially changing the approval status also invalidates the current scenarios and probabilities.
-
-## Confidence and limitations
-
-Confidence is **medium**. The issuer and buyer releases establish the definitive agreement, price, strategic rationale, financing outline, required approvals, and target timing. They do not establish the subsequent status of those approvals. The opened [Atkore SEC-filings index](https://investors.atkore.com/investors/sec-filings/default.aspx) (`source_web_978f04ccc78d9aa498952659`) did not expose individual filing entries in the retrieved text, so the merger agreement and definitive proxy were not available for review. Termination provisions, fees, dividend treatment, appraisal rights, and detailed regulatory covenants therefore remain unverified. The bear reference and scenario probabilities are analytical judgments, and the bull case is explicitly hypothetical.
+Reassess only if authoritative primary evidence establishes that the acquisition did not legally complete, ATKR shares continue to represent a surviving claim, or former holders received an additional broadly applicable security or contingent right.
 
 ## Relationship to the grid-flexibility idea
 
-Atkore remains a positive but execution-dependent beneficiary of [[ideas/idea_solar_storage_grid_flexibility_reset]]. Q3 Electrical volume growth supports the demand mechanism, and Prysmian expressly cited electrification and AI-driven infrastructure in its acquisition rationale. The connection is not sufficient by itself to guarantee shareholder upside because the announced consideration is fixed and input costs still outpaced pricing.
+Atkore's operations retain positive exposure to electrification and infrastructure investment, but the relationship through `security_22c2b9d782a62d7a9b86` is inactive because ATKR no longer trades. The relevant operating exposure now resides within Prysmian. Historical Q3 volume growth supports the demand mechanism, while pricing lag and margin pressure remain contrary evidence.
 
-## Opened primary sources
+## Confidence and limitations
 
-- `source_web_fd41aed522bb0771c5b12688` — [Atkore: definitive agreement for USD 95.00 per share in cash](https://investors.atkore.com/investors/news/news-details/2026/Atkore-Inc--to-be-Acquired-by-Prysmian-for-95-00-per-Share-in-Cash/default.aspx)
+Confidence is **high** that the target security was extinguished. Prysmian's issuer-authored distributed release explicitly states that the transaction completed, all outstanding shares were acquired for USD 95.00 cash, Atkore became wholly owned, and the shares ceased NYSE trading.
+
+The [Atkore SEC-filings index](https://investors.atkore.com/investors/sec-filings/default.aspx) (`source_web_978f04ccc78d9aa498952659`) again did not expose individual filings in retrieved text. An Atkore closing Form 8-K, merger certificate, final delisting filing, exact legal effectiveness time, payment-agent mechanics, and any appraisal proceedings were therefore not independently reviewed. Those limitations do not provide a basis for inventing a continuing quoted security.
+
+## Opened sources
+
+- `source_web_c6c9c8f589c858353b7578ec` — [Prysmian completion announcement distributed by ACCESS Newswire](https://www.accessnewswire.com/newsroom/en/oil-gas-and-energy/prysmian-completes-atkore-acquisition-to-accelerate-growth-as-an-electrical-solu-1238363)
+- `source_web_e2a347ddef961a12d235b3a7` — [Yahoo Finance copy of Prysmian's distributed completion announcement](https://finance.yahoo.com/markets/stocks/articles/prysmian-completes-atkore-acquisition-accelerate-144500837.html)
+- `source_web_fd41aed522bb0771c5b12688` — [Atkore announcement of the USD 95.00 cash merger agreement](https://investors.atkore.com/investors/news/news-details/2026/Atkore-Inc--to-be-Acquired-by-Prysmian-for-95-00-per-Share-in-Cash/default.aspx)
 - `source_web_21a0e5723142aec667478fac` — [Atkore fiscal Q3 2026 results](https://investors.atkore.com/investors/news/news-details/2026/Atkore-Inc--Announces-Third-Quarter-2026-Results/default.aspx)
-- `source_web_78291aee06593e1527bf8ef3` — [Prysmian acquisition announcement and financing rationale](https://www.prysmian.com/en/media/press-releases/prysmian-to-acquire-atkore-to-become-a-fully-fledged-electrical-solutions)
+- `source_web_78291aee06593e1527bf8ef3` — [Prysmian's original acquisition announcement and strategic rationale](https://www.prysmian.com/en/media/press-releases/prysmian-to-acquire-atkore-to-become-a-fully-fledged-electrical-solutions)
 - `source_web_978f04ccc78d9aa498952659` — [Atkore SEC-filings index](https://investors.atkore.com/investors/sec-filings/default.aspx)

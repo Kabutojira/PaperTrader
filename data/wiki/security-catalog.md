@@ -19,7 +19,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Applied Materials, Inc.](securities/security_0a56aa634d077fe5796f) | AMAT (USD) | researched: hold | complete | 286.00 / 448.00 / 646.00 USD | 2026-10-24T15:59:51.264224Z | 2026-11-23T15:59:51.264224Z |
 | [Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a) | ANET (USD) | researched: hold | complete | 120.00 / 182.40 / 252.00 USD | 2026-10-18T21:20:52.492203Z | 2026-11-17T21:20:52.492203Z |
 | [Arkema S.A.](securities/security_798e2fb944d740aca308) | AKE (EUR) | researched: hold | complete | 30.00 / 56.00 / 89.00 EUR | 2026-10-18T22:35:52.408763Z | 2026-11-17T22:35:52.408763Z |
-| [Atkore Inc.](securities/security_22c2b9d782a62d7a9b86) | ATKR (USD) | researched: market_stale_or_unavailable | complete | 72.96 / 95.00 / 100.00 USD | 2026-10-19T00:29:33.206502Z | 2026-11-18T00:29:33.206502Z |
+| [Atkore Inc.](securities/security_22c2b9d782a62d7a9b86) | ATKR (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T16:36:49.285280Z | 2026-10-25T16:36:49.285280Z |
 | [BASF SE](securities/security_ef418f5ccc7dc5be8e65) | BAS (EUR) | researched: hold | complete | 27.90 / 50.80 / 70.90 EUR | 2026-10-18T22:30:31.309524Z | 2026-11-17T22:30:31.309524Z |
 | [Bloom Energy Corporation](securities/security_3e597863f00753e8c65c) | BE (USD) | researched: hold | complete | 90.00 / 180.00 / 300.00 USD | 2026-10-18T20:59:04.577258Z | 2026-11-17T20:59:04.577258Z |
 | [Canadian Solar Inc.](securities/security_099561384c0f5e697727) | CSIQ (USD) | researched: research_expired_or_future | complete | 10.16 / 18.28 / 26.41 USD | 2026-08-31T08:45:47Z | 2026-09-30T08:45:47Z |
