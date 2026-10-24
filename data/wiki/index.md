@@ -33,14 +33,15 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-93 companies / 94 instruments; 94 assessed, 71 in date, 23 stale; 56 currently unrated. 1 quotes require attention.
+93 companies / 94 instruments; 94 assessed, 72 in date, 22 stale; 56 currently unrated. 1 quotes require attention.
 
-Last observed market session: 2026-10-23. Last successful research: 2026-10-24T15:17:40Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-23. Last successful research: 2026-10-24T15:21:27Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
-Watchlist valuation coverage: **73 / 93 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 0; unsupported valuation: 20; incomplete research: 0. Needs attention: 3. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
+Watchlist valuation coverage: **72 / 93 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 0; unsupported valuation: 21; incomplete research: 0. Needs attention: 3. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
+- [ABB Ltd](securities/security_c120e9f26ebb6159adf9) — 2026-10-24T15:19:06.065625Z; valuation_unsupported
 - [Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a) — 2026-10-24T15:15:36.223838Z; valuation_unsupported
 - [Vale S.A.](securities/security_b2116dcf976c96974d7b) — 2026-10-24T15:11:19.537484Z; valuation_unsupported
 - [Shenzhen Creality 3D Technology Co., Ltd.](securities/security_b19e8f0343b7da1f3c03) — 2026-10-24T15:04:41.124451Z; valuation_unsupported
@@ -50,7 +51,6 @@ Watchlist valuation coverage: **73 / 93 instruments** have complete sourced bear
 - [DLocal Limited](securities/security_715bde20b6e1e1320c1a) — 2026-10-24T14:47:47.947320Z; valuation_unsupported
 - [Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3) — 2026-10-24T14:37:50.249307Z; buy
 - [W&T Offshore, Inc.](securities/security_61567714298b9563d1a9) — 2026-10-24T14:34:46.500353Z; valuation_unsupported
-- [Coinbase Global, Inc.](securities/security_37ddcbdaad296ad831f2) — 2026-10-24T14:31:41.489805Z; valuation_unsupported
 
 ## Ideas and interesting companies
 

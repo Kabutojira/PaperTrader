@@ -9,7 +9,7 @@ Historical and stale research remains readable; only current validated opinions 
 | Company | Instrument | Status / limitation | Valuation coverage | Bear / base / bull fair value | Researched | Expiry |
 | --- | --- | --- | --- | --- | --- | --- |
 | [3D Systems Corporation](securities/security_6ac6a6268ca7c08829ae) | DDD (USD) | researched: insufficient_confidence | complete | 1.79 / 2.83 / 4.15 USD | 2026-10-18T23:08:20.258117Z | 2026-11-17T23:08:20.258117Z |
-| [ABB Ltd](securities/security_c120e9f26ebb6159adf9) | ABBNY (USD) | researched: research_expired_or_future | complete | 62.40 / 86.80 / 105.00 USD | 2026-09-03T18:26:50Z | 2026-10-03T18:26:50Z |
+| [ABB Ltd](securities/security_c120e9f26ebb6159adf9) | ABBNY (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T15:19:06.065625Z | 2026-11-23T15:19:06.065625Z |
 | [ASML Holding N.V.](securities/security_ef35e41886220d51c22c) | ASML (USD) | researched: hold | complete | 1,260.34 / 1,851.12 / 2,552.18 USD | 2026-10-19T01:26:52.646344Z | 2026-11-18T01:26:52Z |
 | [AbCellera Biologics Inc.](securities/security_7bf8f4c9cc12ae410e40) | ABCL (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-19T00:42:23.067619Z | 2026-11-16T00:42:23.067619Z |
 | [Agronomics Limited](securities/security_fe4648901e7675f157fd) | ANIC.L (GBP) | researched: buy | complete | 0.0300 / 0.0800 / 0.1100 GBP | 2026-10-18T23:21:39.032922Z | 2026-11-17T23:21:39.032922Z |
