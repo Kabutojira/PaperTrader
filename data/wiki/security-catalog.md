@@ -39,7 +39,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Freeport-McMoRan Inc.](securities/security_2dbe878dfc899d7ee867) | FCX (USD) | researched: sell | complete | 32.64 / 47.36 / 65.12 USD | 2026-10-22T20:24:15.882831Z | 2026-11-21T20:24:15.882831Z |
 | [GE Vernova Inc.](securities/security_4b61970aa8f574446819) | GEV (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T13:58:23.270832Z | 2026-11-23T13:58:23.270832Z |
 | [Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687) | DNA (USD) | researched: sell | complete | 3.33 / 7.57 / 16.47 USD | 2026-10-20T20:17:35.294967Z | 2026-11-19T20:17:35.294967Z |
-| [Intel Corporation](securities/security_dfa34d4b9050964b465e) | INTC (USD) | researched: source_evidence_unavailable | complete | 32.00 / 78.00 / 130.00 USD | 2026-09-05T17:18:42Z | 2026-10-05T17:18:42Z |
+| [Intel Corporation](securities/security_dfa34d4b9050964b465e) | INTC (USD) | researched: strong_sell | complete | 24.00 / 48.00 / 100.00 USD | 2026-10-24T14:10:30.760181Z | 2026-11-23T14:10:30.760181Z |
 | [Intuitive Machines, Inc.](securities/security_a5dc16f3f4b245e6c168) | LUNR (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-19T02:05:15.000191Z | 2026-11-18T02:05:15.000191Z |
 | [Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349) | ISRG (USD) | researched: sell | complete | 240.00 / 342.00 / 450.00 USD | 2026-10-19T00:52:56.668629Z | 2026-11-18T00:52:56.668629Z |
 | [Koninklijke Ahold Delhaize N.V.](securities/security_e19c7fe27fbcc4cd923d) | AD (EUR) | researched: research_expired_or_future | complete | 24.00 / 33.00 / 42.00 EUR | 2026-08-28T19:12:00Z | 2026-09-27T19:12:00Z |

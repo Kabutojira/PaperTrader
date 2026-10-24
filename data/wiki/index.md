@@ -20,6 +20,7 @@ Current research opinions in each instrument's native currency. Fair values chan
 
 | Company / thesis & sources | Ticker | Currency | Price | Price as of | Weighted / base fair value | Implied / adjusted return | Rating | Confidence | Researched / expiry |
 | --- | --- | --- | ---: | --- | ---: | ---: | --- | --- | --- |
+| [Intel Corporation](securities/security_dfa34d4b9050964b465e) | INTC | USD | 86.96 | 2026-10-23 | 55.00 / 48.00 | -36.75% / -25.73% | strong_sell | medium | 2026-10-24T14:10:30.760181Z / 2026-11-23T14:10:30.760181Z |
 | [Freeport-McMoRan Inc.](securities/security_2dbe878dfc899d7ee867) | FCX | USD | 65.22 | 2026-10-23 | 46.50 / 47.36 | -28.70% / -20.09% | sell | medium | 2026-10-22T20:24:15.882831Z / 2026-11-21T20:24:15.882831Z |
 | [Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349) | ISRG | USD | 452.29 | 2026-10-23 | 343.50 / 342.00 | -24.05% / -16.84% | sell | medium | 2026-10-19T00:52:56.668629Z / 2026-11-18T00:52:56.668629Z |
 | [Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687) | DNA | USD | 9.98 | 2026-10-23 | 8.08 / 7.57 | -19.06% / -13.34% | sell | medium | 2026-10-20T20:17:35.294967Z / 2026-11-19T20:17:35.294967Z |
@@ -31,14 +32,15 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-93 companies / 94 instruments; 92 assessed, 58 in date, 34 stale; 60 currently unrated. 1 quotes require attention.
+93 companies / 94 instruments; 92 assessed, 59 in date, 33 stale; 59 currently unrated. 1 quotes require attention.
 
-Last observed market session: 2026-10-23. Last successful research: 2026-10-24T14:04:44Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-23. Last successful research: 2026-10-24T14:12:44Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
 Watchlist valuation coverage: **80 / 93 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 2; unsupported valuation: 11; incomplete research: 0. Needs attention: 3. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
+- [Intel Corporation](securities/security_dfa34d4b9050964b465e) — 2026-10-24T14:10:30.760181Z; strong_sell
 - [PLS Group Limited](securities/security_8a5c43888d224de85c69) — 2026-10-24T14:02:41.253809Z; valuation_unsupported
 - [Space Exploration Technologies Corp.](securities/security_664f93a7eaca72e76e9b) — 2026-10-24T14:00:21.124354Z; valuation_unsupported
 - [GE Vernova Inc.](securities/security_4b61970aa8f574446819) — 2026-10-24T13:58:23.270832Z; valuation_unsupported
@@ -48,7 +50,6 @@ Watchlist valuation coverage: **80 / 93 instruments** have complete sourced bear
 - [Quanta Services, Inc.](securities/security_488a9d7f7a8573597724) — 2026-10-23T20:09:37.071756Z; hold
 - [QUALCOMM Incorporated](securities/security_3a75fc1ccca2ee7c937a) — 2026-10-22T20:26:18.005794Z; hold
 - [Freeport-McMoRan Inc.](securities/security_2dbe878dfc899d7ee867) — 2026-10-22T20:24:15.882831Z; sell
-- [Ternium S.A.](securities/security_2c779e81c27b78c556bb) — 2026-10-22T20:22:14.499873Z; hold
 
 ## Ideas and interesting companies
 

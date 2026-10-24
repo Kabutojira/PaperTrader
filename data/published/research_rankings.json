@@ -74,13 +74,13 @@
     }
   ],
   "coverage": {
-    "current": 58,
+    "current": 59,
     "failed_tickers": 1,
     "instruments": 94,
     "issuers": 93,
     "researched": 92,
-    "stale": 34,
-    "unrated": 60,
+    "stale": 33,
+    "unrated": 59,
     "watchlist_complete": 80,
     "watchlist_incomplete_research": 0,
     "watchlist_instruments": 93,
@@ -89,13 +89,31 @@
     "watchlist_valuation_unsupported": 11
   },
   "last_market_session": "2026-10-23",
-  "last_research_at": "2026-10-24T14:02:41.253809Z",
-  "last_successful_research": "2026-10-24T14:04:44Z",
+  "last_research_at": "2026-10-24T14:10:30.760181Z",
+  "last_successful_research": "2026-10-24T14:12:44Z",
   "phase_health": {
     "market": "succeeded",
     "research": "succeeded"
   },
   "sells": [
+    {
+      "adjusted_return_pct": "-25.72677046304792926431507558",
+      "assessed_at": "2026-10-24T14:10:30.760181Z",
+      "base_fair_value": "48",
+      "company_name": "Intel Corporation",
+      "confidence": "medium",
+      "currency": "USD",
+      "expected_return_pct": "-36.75252923292561323473582225",
+      "issuer_id": "issuer_e5ff2f53cd2ac8db4f85",
+      "price": "86.95999908447266",
+      "price_date": "2026-10-23",
+      "rating": "strong_sell",
+      "research_page": "data/wiki/securities/security_dfa34d4b9050964b465e.md",
+      "security_id": "security_dfa34d4b9050964b465e",
+      "ticker": "INTC",
+      "valid_until": "2026-11-23T14:10:30.760181Z",
+      "weighted_fair_value": "55"
+    },
     {
       "adjusted_return_pct": "-20.09323127115701558915824909",
       "assessed_at": "2026-10-22T20:24:15.882831Z",
