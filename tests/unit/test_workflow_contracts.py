@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import configparser
+import json
 import re
 from pathlib import Path
 from typing import Any
@@ -125,3 +126,20 @@ def test_ci_keeps_full_development_gate_separate_from_runtime(repository_root: P
         assert command in text
     assert "fetch-depth: 0" in text
     assert "papertrader daily" not in text and "papertrader advice" not in text
+
+
+def test_quartz_and_local_echarts_sources_are_immutable(repository_root: Path) -> None:
+    site = repository_root / "site"
+    package = json.loads((site / "package.json").read_text())
+    lock = json.loads((site / "package-lock.json").read_text())
+    charts = (site / "papertrader/scripts/research-charts.inline.ts").read_text()
+
+    assert package["dependencies"]["@jackyzha0/quartz"] == (
+        "https://github.com/jackyzha0/quartz/archive/"
+        "3dff48b5df6d84c9544a5ae19c8f2cbb01dc44e5.tar.gz"
+    )
+    assert package["dependencies"]["echarts"] == "6.1.0"
+    assert lock["packages"]["node_modules/echarts"]["version"] == "6.1.0"
+    assert 'script.dataset.papertraderEcharts = "6.1.0"' in charts
+    assert '"static/vendor/echarts/echarts.min.js"' in charts
+    assert "cdn." not in charts and "fetch(" not in charts

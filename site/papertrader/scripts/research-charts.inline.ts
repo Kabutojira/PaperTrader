@@ -81,7 +81,7 @@ function loadECharts(): Promise<EChartsApi> {
     script.src = source;
     script.defer = true;
     script.setAttribute("spa-preserve", "");
-    script.dataset.papertraderEcharts = "6.0.0";
+    script.dataset.papertraderEcharts = "6.1.0";
     script.addEventListener("load", () => {
       const api = (window as Window & { echarts?: EChartsApi }).echarts;
       if (api) resolve(api);
