@@ -111,7 +111,7 @@
   "last_successful_research": "2026-10-24T15:35:36Z",
   "phase_health": {
     "market": "succeeded",
-    "research": "succeeded"
+    "research": "degraded"
   },
   "sells": [
     {

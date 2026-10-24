@@ -10,13 +10,13 @@
   },
   "research": {
     "discovery_status": "succeeded",
-    "exit_code": 0,
-    "last_attempt_at": "2026-10-24T15:35:36Z",
+    "exit_code": 3,
+    "last_attempt_at": "2026-10-24T15:39:35Z",
     "last_discovery_attempt_at": "2026-10-19T21:18:52Z",
     "last_discovery_success_at": "2026-10-19T21:19:48Z",
     "last_success_at": "2026-10-24T15:35:36Z",
     "model_operations": 1,
-    "status": "succeeded",
-    "web_requests": 11
+    "status": "degraded",
+    "web_requests": 12
   }
 }
