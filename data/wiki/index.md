@@ -39,6 +39,7 @@ Watchlist valuation coverage: **83 / 93 instruments** have complete sourced bear
 
 ## Recently updated research
 
+- [Nebius Group N.V.](securities/security_47a0b06f6c6c478d7c1e) — 2026-10-24T13:41:49Z; insufficient_confidence
 - [Powell Industries, Inc.](securities/security_0b67d6c8e3fd3366a257) — 2026-10-23T20:13:28.238153Z; valuation_unsupported
 - [Corsair Gaming, Inc.](securities/security_55c9ce2fdcd32dad6b8c) — 2026-10-23T20:11:46.578958Z; hold
 - [Quanta Services, Inc.](securities/security_488a9d7f7a8573597724) — 2026-10-23T20:09:37.071756Z; hold
@@ -48,7 +49,6 @@ Watchlist valuation coverage: **83 / 93 instruments** have complete sourced bear
 - [Amazon.com, Inc.](securities/security_2433a056eb0c55961fcc) — 2026-10-21T20:29:36.380404Z; hold
 - [Strategy Inc](securities/security_fe5539a7d3fd9d553bce) — 2026-10-21T20:27:33.369332Z; valuation_unsupported
 - [Xometry, Inc.](securities/security_c2e6db30cb59254de418) — 2026-10-21T20:25:31.299835Z; hold
-- [Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687) — 2026-10-20T20:17:35.294967Z; sell
 
 ## Ideas and interesting companies
 
