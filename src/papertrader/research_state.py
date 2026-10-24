@@ -4,21 +4,50 @@ from __future__ import annotations
 
 import csv
 import io
+import json
 import re
 from collections.abc import Mapping
 from dataclasses import dataclass
 from datetime import datetime
-from decimal import Decimal, InvalidOperation
+from decimal import ROUND_HALF_EVEN, Decimal, InvalidOperation
 from pathlib import Path, PurePosixPath
 from typing import Any
 from urllib.parse import urlsplit
 
 import yaml
 
-from papertrader.atomic_io import atomic_write_csv
+from papertrader.atomic_io import atomic_write_bytes
 
 Row = dict[str, str]
 ResearchState = dict[str, list[Row]]
+SCORING_RUBRIC_VERSION = "1"
+FUNDAMENTAL_SCORES = (
+    "valuation_score",
+    "business_quality_score",
+    "thesis_score",
+    "balance_sheet_score",
+    "risk_penalty",
+)
+SCORING_FIELDS = (
+    *FUNDAMENTAL_SCORES,
+    "scoring_rubric_version",
+    "score_details",
+    "valuation_reference_price",
+    "valuation_reference_at",
+)
+
+
+def unscored_fields(reason: str) -> Row:
+    """Record a scoring gap explicitly, without inventing numbers or research dates."""
+    return {
+        **dict.fromkeys(SCORING_FIELDS, ""),
+        "scoring_rubric_version": SCORING_RUBRIC_VERSION,
+        "score_details": json.dumps(
+            {field: {"rationale": reason, "source_ids": []} for field in FUNDAMENTAL_SCORES},
+            sort_keys=True,
+            separators=(",", ":"),
+        ),
+    }
 
 
 @dataclass(frozen=True)
@@ -53,6 +82,18 @@ def csv_bytes(contract: ResearchContract, rows: list[Row]) -> bytes:
     normalized = [
         {column: _normalize_newlines(value) for column, value in row.items()} for row in rows
     ]
+    for row in normalized:
+        if "score_details" in row:
+            for field in FUNDAMENTAL_SCORES:
+                if row[field] and not 0 <= decimal(row[field]) <= 100:
+                    raise ValueError("score must be within 0-100")
+            if row["score_details"]:
+                row["score_details"] = json.dumps(
+                    json.loads(row["score_details"]),
+                    sort_keys=True,
+                    separators=(",", ":"),
+                    allow_nan=False,
+                )
     buffer = io.StringIO(newline="")
     writer = csv.DictWriter(buffer, fieldnames=contract.columns, extrasaction="raise")
     writer.writeheader()
@@ -93,18 +134,7 @@ def write_state(root: Path, state: ResearchState) -> None:
     for name, contract in contracts(root).items():
         path = root / contract.path
         path.parent.mkdir(parents=True, exist_ok=True)
-        atomic_write_csv(
-            path,
-            contract.columns,
-            sorted(
-                (
-                    {column: _normalize_newlines(value) for column, value in row.items()}
-                    for row in state[name]
-                ),
-                key=lambda row: tuple(row[key] for key in contract.primary_key),
-            ),
-            allowed_root=root,
-        )
+        atomic_write_bytes(path, csv_bytes(contract, state[name]), allowed_root=root)
 
 
 def timestamp(value: str) -> datetime:
@@ -132,6 +162,68 @@ def source_url(value: str) -> bool:
         and not parsed.username
         and not parsed.password
     )
+
+
+def validate_scores(row: Row, security: Row, sources: Mapping[str, Row]) -> None:
+    """Missing historical scores stay empty; sourced partial scores are allowed."""
+    if row["scoring_rubric_version"] != SCORING_RUBRIC_VERSION:
+        raise ValueError("unknown scoring rubric version")
+    try:
+        details = json.loads(row["score_details"])
+    except (ValueError, TypeError) as exc:
+        raise ValueError("invalid score evidence") from exc
+    if not isinstance(details, dict) or set(details) != set(FUNDAMENTAL_SCORES):
+        raise ValueError("score evidence or missing-score explanation required for every factor")
+    assessment_sources = set(row["source_ids"].split("|")) - {""}
+    for field in FUNDAMENTAL_SCORES:
+        detail = details[field]
+        if (
+            not isinstance(detail, dict)
+            or set(detail) != {"rationale", "source_ids"}
+            or not isinstance(detail["rationale"], str)
+            or not detail["rationale"].strip()
+            or not isinstance(detail["source_ids"], list)
+            or any(
+                not isinstance(ref, str) or ref not in assessment_sources
+                for ref in detail["source_ids"]
+            )
+        ):
+            raise ValueError("invalid score evidence")
+        if row[field] and (not 0 <= decimal(row[field]) <= 100 or not detail["source_ids"]):
+            raise ValueError("score must be within 0-100 with cited evidence")
+        for ref in detail["source_ids"]:
+            source = sources.get(ref)
+            if (
+                source is None
+                or source["status"] != "valid"
+                or row["security_id"] not in source["related_entity_ids"].split("|")
+            ):
+                raise ValueError("score source must be valid and linked to this instrument")
+    if row["valuation_score"]:
+        if row["research_status"] != "supported":
+            raise ValueError("valuation score requires supported scenarios")
+        price = decimal(row["valuation_reference_price"])
+        reference = timestamp(row["valuation_reference_at"])
+        assessed = timestamp(row["assessed_at"])
+        from papertrader.research_market import completed_session
+
+        if (
+            price <= 0
+            or reference > assessed
+            or reference.date() != completed_session(security["venue_mic"], assessed)
+        ):
+            raise ValueError("invalid native-currency valuation reference")
+        weighted = sum(
+            decimal(row[f"{case}_fair_value"]) * decimal(row[f"{case}_probability_pct"]) / 100
+            for case in ("bear", "base", "bull")
+        )
+        expected = min(Decimal(100), max(Decimal(0), 50 + 100 * (weighted / price - 1)))
+        if decimal(row["valuation_score"]) != expected.quantize(
+            Decimal("0.1"), rounding=ROUND_HALF_EVEN
+        ):
+            raise ValueError("valuation score disagrees with rubric and reference price")
+    elif row["valuation_reference_price"] or row["valuation_reference_at"]:
+        raise ValueError("unscored valuation cannot contain a reference price")
 
 
 def validate_state(
@@ -224,7 +316,9 @@ def validate_state(
         security = securities.get(row["security_id"])
         if security is None or row["currency"] != security["currency"]:
             errors.append(f"assessment identity/currency mismatch: {row['security_id']}")
+            continue
         try:
+            validate_scores(row, security, sources)
             if timestamp(row["valid_until"]) <= timestamp(row["assessed_at"]):
                 raise ValueError("invalid assessment duration")
             if row["confidence"] not in {"low", "medium", "high"}:

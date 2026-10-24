@@ -4,6 +4,13 @@ The supported entry point is `uv run papertrader --help`. Configuration is
 research.ini; schema authority is schemas/research_contracts.yaml. No old trading
 CLI, operations history, accounting tables, alert inbox or final-buy gate exists.
 
+The [fundamental scoring contract](FUNDAMENTAL_SCORING.md) defines the optional
+source-backed rubric-1 components in `security_assessments.csv`. FinanceAlerts
+joins by immutable `security_id` and uses canonical `valid_until`. Market refresh
+does not reprice these assessment-time scores; unscored historical rows retain
+their original assessment/expiry dates and explicit component gaps. No live
+research is required merely to add the export columns.
+
 ## Schedule and independent phases
 
 `market.yml` triggers daily at13:00 America/New_York (DST-aware). GitHub may delay

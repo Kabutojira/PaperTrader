@@ -11,7 +11,7 @@ from typing import Any
 from papertrader.research_agent import run_cycle
 from papertrader.research_publication import publish_views, snapshot
 from papertrader.research_runtime import market_cycle
-from papertrader.research_state import contracts, read_state, write_state
+from papertrader.research_state import contracts, read_state, unscored_fields, write_state
 
 NOW = datetime(2026, 10, 18, 20, tzinfo=UTC)
 STAMP = "2026-10-18T20:00:00Z"
@@ -77,6 +77,7 @@ def test_mocked_market_research_publication_and_rejected_update_are_independent(
 
     def completed(*args: Any) -> dict[str, Any]:
         assessment = dict.fromkeys(schema["security_assessments"].columns, "")
+        assessment.update(unscored_fields("Component scoring evidence has not been verified."))
         assessment.update(
             security_id="sec1",
             assessed_at=STAMP,

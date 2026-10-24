@@ -70,6 +70,31 @@ All eight assessment narratives/evidence fields—thesis, method_rationale,
 key_assumptions, downside, catalysts, invalidation_conditions, limitations and
 source_ids—must be nonempty and explain what is known or unknown, including for an
 unsupported valuation. Unsupported valuations leave all scenario numbers empty.
+Fundamental scores use scoring_rubric_version 1 and the supplied research_security
+skill rubric. Each score is a finite decimal from 0 through 100; risk_penalty is
+higher for greater risk, all other scores are higher for stronger support. Empty
+scores mean unsupported evidence, never a fabricated neutral 50. score_details is
+a JSON string with exactly the five score field names as keys; each value has
+exactly rationale (a nonempty explanation, including gaps) and source_ids (a list
+of exact currently opened assessment source IDs). A populated score needs sources.
+Always supply the version and all five explanations, even if every score is empty.
+For valuation_score use the probability-weighted native-currency scenario fair
+value F and a verified native-currency per-share reference price P, then
+min(100,max(0,50+100*(F/P-1))), rounded to one decimal, ties to even. Record P in
+valuation_reference_price and its UTC timestamp in valuation_reference_at, no later
+than assessed_at. Its date must be the instrument's latest completed exchange
+session as of assessed_at. If only the session date is known, use 00:00:00Z as a
+date-label convention, not an invented intraday quotation time. Explain the price's
+source, session, instrument entitlement and quote-unit conversion in its rationale.
+Use a supplied market observation only when current, its currency matches the
+instrument's native currency, and its price unit and share class are verified.
+Otherwise leave valuation_score and both reference fields empty. Do not infer
+scores from Buy/Hold/Sell labels, technical indicators or narrative sentiment.
+Do not reprice scores during market refresh. Quality excludes price and leverage;
+balance_sheet_score owns financing resilience. thesis_score measures corroboration
+and contrary evidence, not attractiveness. risk_penalty covers residual operating,
+governance, regulatory and evidence risks; explain overlaps, without deducting
+leverage again or applying another automatic confidence/score multiplier.
 Never carry unverified prior numbers forward or use a proxy price as fair value.
 Preserve current useful research and citations; summarize changes in the page. Charts are optional.
 Do not quote >25 words from a copyrighted source; write original synthesis.

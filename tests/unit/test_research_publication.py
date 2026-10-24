@@ -16,7 +16,7 @@ from papertrader.research_publication import (
     render_views,
     snapshot,
 )
-from papertrader.research_state import contracts, read_state, write_state
+from papertrader.research_state import contracts, read_state, unscored_fields, write_state
 
 NOW = datetime(2026, 10, 18, 20, tzinfo=UTC)
 STAMP = "2026-10-18T17:00:00Z"
@@ -65,6 +65,7 @@ def publication(repository_root: Path, tmp_path: Path) -> Path:
             "Original research. [Source](https://issuer.example/filing)\n"
         )
         assessment = dict.fromkeys(schema["security_assessments"].columns, "")
+        assessment.update(unscored_fields("Historical fixture has no component scoring evidence."))
         assessment.update(
             security_id=sid,
             assessed_at=STAMP,

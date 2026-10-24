@@ -28,7 +28,15 @@ from papertrader.research_results import (
     commit_result,
     prepare_result,
 )
-from papertrader.research_state import contracts, read_state, validate_state, write_state
+from papertrader.research_state import (
+    FUNDAMENTAL_SCORES,
+    contracts,
+    csv_bytes,
+    read_state,
+    unscored_fields,
+    validate_state,
+    write_state,
+)
 from papertrader.research_transaction import apply_files, research_lock
 from papertrader.research_web import SOURCE_RESPONSE_MAX_BYTES, ResearchWeb, public_url
 from papertrader.research_worker import POLICY
@@ -89,6 +97,7 @@ def current(repository_root: Path, tmp_path: Path) -> Path:
 def result(root: Path, *, supported: bool = True) -> dict[str, Any]:
     schema = contracts(root)
     assessment = dict.fromkeys(schema["security_assessments"].columns, "")
+    assessment.update(unscored_fields("Component scoring evidence has not been verified."))
     assessment.update(
         security_id="security1",
         assessed_at=STAMP,
@@ -160,6 +169,319 @@ def observations() -> dict[str, dict[str, str]]:
             source_text="Issuer earnings release with primary financial evidence.",
         )
     }
+
+
+def scored_result(root: Path) -> dict[str, Any]:
+    document = result(root)
+    assessment = document["assessment"]
+    assessment.update(dict.fromkeys(FUNDAMENTAL_SCORES, "75"))
+    assessment.update(
+        valuation_score="50.0",
+        risk_penalty="25",
+        scoring_rubric_version="1",
+        valuation_reference_price="100",
+        valuation_reference_at="2026-10-16T20:00:00Z",
+        score_details=json.dumps(
+            {
+                field: {
+                    "rationale": "Cited primary evidence supports the rubric anchor.",
+                    "source_ids": ["source1"],
+                }
+                for field in FUNDAMENTAL_SCORES
+            }
+        ),
+    )
+    return document
+
+
+def test_sourced_scores_round_trip_and_partial_gaps_remain_empty(current: Path) -> None:
+    document = scored_result(current)
+    document["assessment"]["thesis_score"] = ""
+    details = json.loads(document["assessment"]["score_details"])
+    details["thesis_score"] = {"rationale": "Contrary evidence not yet verified.", "source_ids": []}
+    document["assessment"]["score_details"] = json.dumps(
+        details, sort_keys=True, separators=(",", ":")
+    )
+    state, pages = prepare_result(
+        current,
+        read_state(current),
+        document,
+        operation="research_security",
+        entity_id="security1",
+        now=NOW,
+        observations=observations(),
+    )
+    with research_lock(current):
+        commit_result(current, state, pages)
+    exported = read_state(current)["security_assessments"][0]
+    assert exported == document["assessment"]
+    before = data_bytes(current)
+    with research_lock(current):
+        assert commit_result(current, state, pages) == []
+    assert data_bytes(current) == before
+
+
+@pytest.mark.parametrize(
+    "changes",
+    [
+        {"risk_penalty": "101"},
+        {"balance_sheet_score": "-1"},
+        {"thesis_score": "NaN"},
+        {"business_quality_score": "Infinity"},
+        {"scoring_rubric_version": "unknown"},
+        {"score_details": "{}"},
+        {"score_details": "invalid"},
+        {"valuation_reference_price": "0"},
+        {"valuation_reference_at": "2026-10-18T18:00:00Z"},
+        {"valuation_reference_at": "2026-10-15T20:00:00Z"},
+        {"valuation_reference_at": "2026-10-18T00:00:00Z"},
+        {"valuation_reference_price": "Infinity"},
+        {"thesis_score": "true"},
+        {"thesis_score": "50%"},
+        {"scoring_rubric_version": "", "score_details": ""},
+        {"valuation_score": "100"},
+    ],
+)
+def test_invalid_scores_preserve_accepted_state(current: Path, changes: dict[str, str]) -> None:
+    document = scored_result(current)
+    document["assessment"].update(changes)
+    before = data_bytes(current)
+    with pytest.raises(ResearchResultValidationError, match="invalid research result field"):
+        prepare_result(
+            current,
+            read_state(current),
+            document,
+            operation="research_security",
+            entity_id="security1",
+            now=NOW,
+            observations=observations(),
+        )
+    assert data_bytes(current) == before
+
+
+def test_scores_require_their_own_cited_evidence(current: Path) -> None:
+    for refs in ([], ["unknown_source"]):
+        document = scored_result(current)
+        details = json.loads(document["assessment"]["score_details"])
+        details["risk_penalty"]["source_ids"] = refs
+        document["assessment"]["score_details"] = json.dumps(details)
+        with pytest.raises(ResearchResultValidationError):
+            prepare_result(
+                current,
+                read_state(current),
+                document,
+                operation="research_security",
+                entity_id="security1",
+                now=NOW,
+                observations=observations(),
+            )
+
+
+def test_complete_scores_have_deterministic_csv_and_remain_assessment_snapshots(
+    current: Path,
+) -> None:
+    from papertrader.research_ratings import reprice
+
+    document = scored_result(current)
+    document["assessment"].update(business_quality_score="100", risk_penalty="0")
+    state, pages = prepare_result(
+        current,
+        read_state(current),
+        document,
+        operation="research_security",
+        entity_id="security1",
+        now=NOW,
+        observations=observations(),
+    )
+    row = state["security_assessments"][0]
+    contract = contracts(current)["security_assessments"]
+    before = csv_bytes(contract, [row])
+    alternate = row.copy()
+    details = json.loads(row["score_details"])
+    alternate["score_details"] = json.dumps(dict(reversed(list(details.items()))), indent=2)
+    assert csv_bytes(contract, [alternate]) == before
+    assert all(0 <= float(row[field]) <= 100 for field in FUNDAMENTAL_SCORES)
+    for price in ("50", "200"):
+        reprice(
+            row,
+            dict(
+                security_id="security1",
+                venue_mic="XNYS",
+                currency="USD",
+                status="current",
+                price_date="2026-10-16",
+                close=price,
+            ),
+            now=NOW,
+        )
+        assert csv_bytes(contract, [row]) == before
+    expired = reprice(row, {"security_id": "security1"}, now=NOW + timedelta(days=30))
+    assert expired["reason"] == "research_expired_or_future"
+    assert row["assessed_at"] == STAMP and row["valid_until"] == "2026-11-17T17:00:00Z"
+    with research_lock(current):
+        commit_result(current, state, pages)
+    assert csv_bytes(contract, read_state(current)["security_assessments"]) == before
+    assert "expires_at" not in row
+
+
+@pytest.mark.parametrize("scored_quality", [False, True])
+def test_unsupported_valuation_allows_only_evidenced_nonvaluation_components(
+    current: Path,
+    scored_quality: bool,
+) -> None:
+    document = result(current, supported=False)
+    if scored_quality:
+        document["assessment"]["business_quality_score"] = "75"
+        details = json.loads(document["assessment"]["score_details"])
+        details["business_quality_score"] = dict(
+            rationale=(
+                "Verified operating evidence supports durable profitable advantages; "
+                "valuation inputs remain unavailable."
+            ),
+            source_ids=["source1"],
+        )
+        document["assessment"]["score_details"] = json.dumps(details)
+    state, _ = prepare_result(
+        current,
+        read_state(current),
+        document,
+        operation="research_security",
+        entity_id="security1",
+        now=NOW,
+        observations=observations(),
+    )
+    row = state["security_assessments"][0]
+    assert (
+        row["valuation_score"]
+        == row["valuation_reference_price"]
+        == row["valuation_reference_at"]
+        == ""
+    )
+    assert row["business_quality_score"] == ("75" if scored_quality else "")
+    assert row["risk_penalty"] == ""
+    assert all(detail["rationale"] for detail in json.loads(row["score_details"]).values())
+    document["assessment"].update(
+        valuation_score="50",
+        valuation_reference_price="100",
+        valuation_reference_at="2026-10-16T20:00:00Z",
+    )
+    with pytest.raises(ResearchResultValidationError):
+        prepare_result(
+            current,
+            read_state(current),
+            document,
+            operation="research_security",
+            entity_id="security1",
+            now=NOW,
+            observations=observations(),
+        )
+
+
+def test_missing_explanations_and_invalid_instrument_evidence_are_rejected(current: Path) -> None:
+    document = scored_result(current)
+    details = json.loads(document["assessment"]["score_details"])
+    details["thesis_score"]["rationale"] = " "
+    document["assessment"]["score_details"] = json.dumps(details)
+    with pytest.raises(ResearchResultValidationError):
+        prepare_result(
+            current,
+            read_state(current),
+            document,
+            operation="research_security",
+            entity_id="security1",
+            now=NOW,
+            observations=observations(),
+        )
+    state, _ = prepare_result(
+        current,
+        read_state(current),
+        scored_result(current),
+        operation="research_security",
+        entity_id="security1",
+        now=NOW,
+        observations=observations(),
+    )
+    state["source_registry"][0]["related_entity_ids"] = "security2"
+    assert any("score source" in error for error in validate_state(current, state))
+    state["source_registry"][0].update(related_entity_ids="security1", status="unavailable")
+    assert any("score source" in error for error in validate_state(current, state))
+
+
+@pytest.mark.parametrize("bad", ["NaN", "Infinity", "-0.1", "100.1", "unknown"])
+def test_csv_writer_refuses_invalid_numeric_scores(current: Path, bad: str) -> None:
+    row = scored_result(current)["assessment"]
+    row["risk_penalty"] = bad
+    with pytest.raises(ValueError):
+        csv_bytes(contracts(current)["security_assessments"], [row])
+
+
+def test_samsung_gdr_scores_join_by_instrument_and_preserve_native_basis(current: Path) -> None:
+    # Synthetic valuations test real immutable listing IDs, not current financial judgments.
+    listings = [
+        ("security_567d0d575bbd30aaa91d", "SSU.VI", "common", "100", "50.0"),
+        ("security_d08d763780400dfbffce", "SSUN.VI", "preferred", "80", "30.0"),
+    ]
+    state = read_state(current)
+    for security, (sid, ticker, share_class, _, _) in zip(
+        state["securities"], listings, strict=True
+    ):
+        security.update(
+            security_id=sid,
+            issuer_id="issuer_adf6eb6a528f8576f0ed",
+            ticker=ticker,
+            provider_symbol=ticker,
+            venue_mic="XWBO",
+            currency="EUR",
+            instrument_name=f"Samsung {share_class} GDR",
+            research_page=f"data/wiki/securities/{sid}.md",
+        )
+        (current / security["research_page"]).write_text(
+            f"---\nsecurity_id: {sid}\nissuer_id: {security['issuer_id']}\n---\nGDR research.\n"
+        )
+    write_state(current, state)
+    for sid, _, _, base, score in listings:
+        document = scored_result(current)
+        row = document["assessment"]
+        row.update(
+            security_id=sid,
+            currency="EUR",
+            base_fair_value=base,
+            bear_fair_value=str(int(base) // 2),
+            bull_fair_value=str(int(base) * 3 // 2),
+            valuation_score=score,
+        )
+        document["entity_id"] = sid
+        document["sources"][0]["related_entity_ids"] = sid
+        document["pages"] = {
+            f"data/wiki/securities/{sid}.md": (
+                f"---\nsecurity_id: {sid}\nissuer_id: issuer_adf6eb6a528f8576f0ed\n---\n"
+                f"Mocked GDR evidence. [Source]({URL})\n"
+            ),
+        }
+        state, pages = prepare_result(
+            current,
+            read_state(current),
+            document,
+            operation="research_security",
+            entity_id=sid,
+            now=NOW,
+            observations=observations(),
+        )
+        with research_lock(current):
+            commit_result(current, state, pages)
+    exported = read_state(current)
+    joined = {row["security_id"]: row for row in exported["security_assessments"]}
+    assert [
+        (joined[sid]["currency"], joined[sid]["base_fair_value"], joined[sid]["valuation_score"])
+        for sid, _, _, _, _ in listings
+    ] == [("EUR", "100", "50.0"), ("EUR", "80", "30.0")]
+    contract = contracts(current)["security_assessments"]
+    assert csv_bytes(contract, list(reversed(exported["security_assessments"]))) == csv_bytes(
+        contract, exported["security_assessments"]
+    )
+    assert validate_state(current, exported) == []
+    joined[listings[0][0]]["currency"] = "USD"
+    assert any("identity/currency mismatch" in error for error in validate_state(current, exported))
 
 
 def idea_result(root: Path) -> tuple[dict[str, Any], dict[str, str]]:

@@ -216,6 +216,31 @@ def test_recent_review_avoids_daily_unsupported_research_loop(state: ResearchSta
     assert not state["research_queue"]
 
 
+def test_vlto_xyl_missing_assessments_use_bounded_coverage_queue(
+    repository_root: Path,
+    state: ResearchState,
+) -> None:
+    from papertrader.research_state import read_state
+
+    # Catalog identity is real; absent assessment is an explicit fixture condition.
+    catalog = read_state(repository_root)
+    state["securities"] = [
+        {**row, "research_status": "unresearched", "last_research_at": ""}
+        for row in catalog["securities"]
+        if row["ticker"] in {"VLTO", "XYL"}
+    ]
+    assert len(state["securities"]) == 2
+    schedule_attention(state, [], [], now=NOW)
+    targets = {row["entity_id"] for row in state["research_queue"]}
+    assert targets == {row["security_id"] for row in state["securities"]}
+    assert all(
+        row["priority"] == "75" and "missing_research" in row["reasons"]
+        for row in state["research_queue"]
+    )
+    assert len(state["research_queue"]) <= QueueLimits().max_pending
+    assert state["security_assessments"] == []
+
+
 def test_real_census_accounts_for_all_old_rows_without_replaying_blocks(
     repository_root: Path,
 ) -> None:

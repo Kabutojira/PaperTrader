@@ -69,6 +69,35 @@ valuation. Refresh is deliberately bounded; rankings remain empty until fresh,
 supportable research qualifies. Honest unsupported results do not manufacture prices
 or fair values to fill the lists.
 
+## Fundamental score export
+
+`security_assessments.csv` also exports optional 0–100 `valuation_score`,
+`business_quality_score`, `thesis_score`, `balance_sheet_score` and `risk_penalty`.
+Higher values mean stronger support except `risk_penalty`, where higher means more
+risk. These research judgments do not alter PaperTrader's existing opinion rules.
+The [rubric 1 contract](docs/FUNDAMENTAL_SCORING.md) defines anchors, overlap,
+source evidence, price/session conventions and consumer expiry checks. The worker
+receives the matching `research_security` instructions. `scoring_rubric_version`
+identifies the rubric.
+`score_details` is JSON keyed by all five factors, each with a nonempty `rationale`
+and an array of supporting assessment `source_ids`. Unknown components stay empty
+with an explanation; numeric components require verified cited sources.
+
+Valuation uses probability-weighted scenario fair value F and verified per-share
+reference price P in the assessment's native `currency`:
+`min(100, max(0, 50 + 100 * (F/P - 1)))`, rounded to one decimal, ties to even.
+`valuation_reference_price` and `valuation_reference_at` record its price and UTC
+timestamp; the rationale documents its source, share class and quote-unit conversion
+(for example GBp to GBP). This score describes value at assessment time, not a live
+recalculation. Unsupported valuation/reference evidence leaves it blank.
+
+Historical rows gain empty numeric columns and explicit unscored explanations:
+no scores, evidence, timestamps or expiry are invented. New bounded research can
+populate supported components. Existing
+`confidence`, `limitations`, source identities and `valid_until` remain authoritative.
+FinanceAlerts reads this export by immutable `security_id` and independently
+downloads its own prices and calculates technical indicators.
+
 ## Watchlist valuation coverage
 
 Every active/watchlist instrument is a research coverage target: a sourced thesis,

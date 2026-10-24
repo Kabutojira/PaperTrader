@@ -1059,3 +1059,35 @@ October24 used5 HTTP requests and returned valid ANIC.L sessions for October19â€
 ATKR's post-October16 rows were NaN. ANIC.L stays on the watchlist and keeps strict
 completed-session freshness. No assessment, fair value, research date, identity or
 historical price was changed by this repair.
+
+## Fundamental scoring export â€” rubric 1
+
+Implement the five optional source-backed assessment components for FinanceAlerts,
+joined only by immutable security_id, with canonical assessed_at/valid_until and
+no price, technical-indicator, trading or credential dependency on that consumer.
+The contract is [docs/FUNDAMENTAL_SCORING.md](docs/FUNDAMENTAL_SCORING.md).
+
+The schema, deterministic CSV serialization, final-result validation, research
+worker/skill, migration and fixtures change together. Numeric values require
+component rationale and valid instrument-linked citations; unsupported components
+remain empty with explicit explanations. Valuation is a checked scenario/price
+snapshot for a recorded completed-session native-currency reference. Other
+components do not reprice with market data, and there is no aggregate score.
+
+The initial92 assessment rows gain unscored metadata only; their pre-existing
+fields, identities, currencies, scenarios, sources and research/expiry dates are
+preserved. No live research or numeric score backfill is part of this change.
+VLTO and XYL already have priority75 missing-coverage queue rows and no assessment;
+preserve those bounded requests. Samsung common/preferred GDRs remain separate
+EUR per-instrument records. Queue size30, two attempts and three sequential daily
+operations remain unchanged. Verification must include complete/partial/unsupported
+scores, range/source/reference failures, expiry, immutable joins, deterministic
+exports, original-date migration, full current validation and exact-revision CI.
+
+Local verification passed171 focused tests and235 full tests (two existing exchange
+calendar warnings), locked dependency sync, Ruff/formatting, MyPy and strict current
+validation. Quartz check/build emitted149 pages/210 files with valid internal links.
+A direct comparison against the prior committed CSV confirms all92 rows and every
+original field are unchanged; every numeric score/reference remains empty. These
+are local/mock checks, not live research or a score backfill. Exact pushed CI and
+publication evidence follow through the normal independent workflows.

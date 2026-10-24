@@ -32,6 +32,7 @@ from papertrader.research_state import (
     csv_bytes,
     read_state,
     timestamp,
+    unscored_fields,
     validate_state,
 )
 
@@ -277,6 +278,10 @@ def prepare_migration(
         text = assets.get(security["research_page"], b"").decode("utf-8")
         supported = row.get("valuation_supported") == "true"
         values = {column: row.get(column, "") for column in schema["security_assessments"].columns}
+        # Legacy scores have no current rubric/evidence contract; do not manufacture one.
+        values.update(
+            unscored_fields("Historical research was not assessed under scoring rubric 1.")
+        )
         values.update(
             {
                 "valid_until": row["expires_at"],

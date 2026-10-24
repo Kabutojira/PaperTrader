@@ -10,7 +10,14 @@ from pathlib import Path
 import pytest
 
 from papertrader.research_migration import prepare_migration, stage_migration
-from papertrader.research_state import contracts, csv_bytes, read_state, validate_state
+from papertrader.research_state import (
+    FUNDAMENTAL_SCORES,
+    contracts,
+    csv_bytes,
+    read_state,
+    unscored_fields,
+    validate_state,
+)
 
 BASELINE = "9056d3dff03740a6c3310e086a240186bca4527a"
 
@@ -48,6 +55,14 @@ def test_real_migration_preserves_identity_scenarios_expiry_and_sources(
     }
     for row in state["security_assessments"]:
         old = old_assessments[row["security_id"]]
+        assert all(not row[field] for field in FUNDAMENTAL_SCORES)
+        assert row["scoring_rubric_version"] == "1"
+        assert (
+            row["score_details"]
+            == unscored_fields("Historical research was not assessed under scoring rubric 1.")[
+                "score_details"
+            ]
+        )
         assert row["assessed_at"] == old["assessed_at"]
         assert row["valid_until"] == old["expires_at"]
         if old["valuation_supported"] == "true":
@@ -230,6 +245,7 @@ def test_recovery_is_dry_by_default_and_preserves_values_sources_and_original_ag
         state["securities"].append(security)
         date = "2026-10-18" if sid == "fresh" else "2026-08-01"
         assessment = dict.fromkeys(schema["security_assessments"].columns, "")
+        assessment.update(unscored_fields("Historical fixture has no component scoring evidence."))
         assessment.update(
             security_id=sid,
             assessed_at=date + "T00:00:00Z",

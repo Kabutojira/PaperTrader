@@ -15,7 +15,7 @@ contracts:
   security_assessments:
     path: data/tables/security_assessments.csv
     primary_key: [security_id]
-    columns: [security_id, assessed_at, valid_until, research_status, method, method_rationale, currency, horizon_months, bear_fair_value, bear_probability_pct, bear_assumptions, base_fair_value, base_probability_pct, base_assumptions, bull_fair_value, bull_probability_pct, bull_assumptions, thesis, key_assumptions, downside, catalysts, invalidation_conditions, confidence, limitations, source_ids]
+    columns: [security_id, assessed_at, valid_until, research_status, method, method_rationale, currency, horizon_months, bear_fair_value, bear_probability_pct, bear_assumptions, base_fair_value, base_probability_pct, base_assumptions, bull_fair_value, bull_probability_pct, bull_assumptions, thesis, key_assumptions, downside, catalysts, invalidation_conditions, confidence, limitations, source_ids, valuation_score, business_quality_score, thesis_score, balance_sheet_score, risk_penalty, scoring_rubric_version, score_details, valuation_reference_price, valuation_reference_at]
   source_registry:
     path: data/tables/source_registry.csv
     primary_key: [source_id]

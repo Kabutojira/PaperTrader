@@ -11,7 +11,13 @@ import pytest
 from papertrader.research_discovery import company_key, prepare_candidates, run_discovery
 from papertrader.research_queue import admit, claim, schedule_attention
 from papertrader.research_results import commit_result
-from papertrader.research_state import contracts, read_state, validate_state, write_state
+from papertrader.research_state import (
+    contracts,
+    read_state,
+    unscored_fields,
+    validate_state,
+    write_state,
+)
 from papertrader.research_transaction import research_lock
 
 NOW = datetime(2026, 10, 18, 17, tzinfo=UTC)
@@ -343,6 +349,7 @@ def test_reviewed_share_class_queues_one_uncovered_sibling_valuation(catalog: Pa
     reviewed, uncovered = state["securities"]
     reviewed["last_research_at"] = STAMP
     assessment = dict.fromkeys(contracts(catalog)["security_assessments"].columns, "")
+    assessment.update(unscored_fields("Historical fixture has no component scoring evidence."))
     assessment.update(
         security_id=reviewed["security_id"],
         assessed_at=STAMP,
