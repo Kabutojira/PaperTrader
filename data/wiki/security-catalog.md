@@ -58,7 +58,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Nomad Foods Limited](securities/security_98a1943771da875efed5) | NOMD (USD) | researched: hold | complete | 9.54 / 15.08 / 19.36 USD | 2026-10-18T23:57:11.762336Z | 2026-11-15T23:57:11.762336Z |
 | [PLS Group Limited](securities/security_8a5c43888d224de85c69) | PLS.AX (AUD) | researched: valuation_unsupported | valuation_unsupported | — / — / — AUD | 2026-10-24T14:02:41.253809Z | 2026-11-01T14:02:41.253809Z |
 | [Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a) | PLTR (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T15:15:36.223838Z | 2026-11-23T15:15:36.223838Z |
-| [Parrot S.A.](securities/security_cc4dcb8f002b61dffe00) | PARRO.PA (EUR) | researched: research_expired_or_future | complete | 5.48 / 9.09 / 14.51 EUR | 2026-08-20T07:54:58Z | 2026-09-19T07:54:58Z |
+| [Parrot S.A.](securities/security_cc4dcb8f002b61dffe00) | PARRO.PA (EUR) | researched: hold | complete | 4.21 / 7.92 / 13.38 EUR | 2026-10-24T15:41:03.520697Z | 2026-11-23T15:41:03.520697Z |
 | [PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00) | PYPL (USD) | researched: hold | complete | 43.04 / 64.56 / 80.70 USD | 2026-10-19T00:51:10.686036Z | 2026-11-18T00:51:10.686036Z |
 | [Planet Labs PBC](securities/security_97f38b2cb2d5ef127f5a) | PL (USD) | researched: sell | complete | 7.89 / 11.41 / 15.02 USD | 2026-10-18T23:51:11.153208Z | 2026-11-17T23:51:11.153208Z |
 | [Powell Industries, Inc.](securities/security_0b67d6c8e3fd3366a257) | POWL (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-23T20:13:28.238153Z | 2026-11-22T20:13:28.238153Z |
