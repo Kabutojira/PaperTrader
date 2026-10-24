@@ -107,8 +107,8 @@
     "watchlist_valuation_unsupported": 26
   },
   "last_market_session": "2026-10-23",
-  "last_research_at": "2026-10-24T16:22:20.627957Z",
-  "last_successful_research": "2026-10-24T16:23:54Z",
+  "last_research_at": "2026-10-24T16:25:27.672302Z",
+  "last_successful_research": "2026-10-24T16:27:19Z",
   "phase_health": {
     "market": "succeeded",
     "research": "succeeded"
@@ -170,7 +170,7 @@
     },
     {
       "adjusted_return_pct": "-16.83720722163194471918247547",
-      "assessed_at": "2026-10-19T00:52:56.668629Z",
+      "assessed_at": "2026-10-24T16:25:27.672302Z",
       "base_fair_value": "342.00",
       "company_name": "Intuitive Surgical, Inc.",
       "confidence": "medium",
@@ -183,7 +183,7 @@
       "research_page": "data/wiki/securities/security_1f9cce545ede94cd6349.md",
       "security_id": "security_1f9cce545ede94cd6349",
       "ticker": "ISRG",
-      "valid_until": "2026-11-18T00:52:56.668629Z",
+      "valid_until": "2026-11-23T16:25:27.672302Z",
       "weighted_fair_value": "343.50"
     },
     {
