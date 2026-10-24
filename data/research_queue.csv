@@ -1,5 +1,4 @@
 entity_type,entity_id,priority,reasons,created_at,updated_at,status,attempts,next_eligible_at,lease_until,manual,last_error
-security,security_b1f2c48e1a744f5ecf67,60,research_overdue,2026-10-19T21:17:09Z,2026-10-19T21:17:09Z,pending,0,2026-10-19T21:17:09Z,,false,
 security,security_b2116dcf976c96974d7b,60,research_overdue,2026-10-19T21:17:09Z,2026-10-19T21:17:09Z,pending,0,2026-10-19T21:17:09Z,,false,
 security,security_bdc2f87dadf134760c3a,60,research_overdue,2026-10-21T20:23:56Z,2026-10-21T20:23:56Z,pending,0,2026-10-21T20:23:56Z,,false,
 security,security_c120e9f26ebb6159adf9,60,research_overdue,2026-10-21T20:23:56Z,2026-10-21T20:23:56Z,pending,0,2026-10-21T20:23:56Z,,false,
