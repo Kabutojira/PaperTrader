@@ -89,16 +89,34 @@
       "ticker": "ALB",
       "valid_until": "2026-11-23T14:37:50.249307Z",
       "weighted_fair_value": "126.0125"
+    },
+    {
+      "adjusted_return_pct": "23.18284341717237837931768368",
+      "assessed_at": "2026-10-24T19:09:47.645216Z",
+      "base_fair_value": "90",
+      "company_name": "Uber Technologies, Inc.",
+      "confidence": "medium",
+      "currency": "USD",
+      "expected_return_pct": "33.11834773881768339902526240",
+      "issuer_id": "issuer_17b584f01b6b059e610e",
+      "price": "66.66999816894531",
+      "price_date": "2026-10-23",
+      "rating": "buy",
+      "research_page": "data/wiki/securities/security_e4822686f60a96824b6e.md",
+      "security_id": "security_e4822686f60a96824b6e",
+      "ticker": "UBER",
+      "valid_until": "2026-11-23T19:09:47.645216Z",
+      "weighted_fair_value": "88.75"
     }
   ],
   "coverage": {
-    "current": 83,
+    "current": 85,
     "failed_tickers": 1,
     "instruments": 94,
     "issuers": 93,
     "researched": 94,
-    "stale": 11,
-    "unrated": 51,
+    "stale": 9,
+    "unrated": 49,
     "watchlist_complete": 67,
     "watchlist_incomplete_research": 0,
     "watchlist_instruments": 93,
@@ -107,8 +125,8 @@
     "watchlist_valuation_unsupported": 26
   },
   "last_market_session": "2026-10-23",
-  "last_research_at": "2026-10-24T16:40:27.310920Z",
-  "last_successful_research": "2026-10-24T16:42:14Z",
+  "last_research_at": "2026-10-24T19:12:31Z",
+  "last_successful_research": "2026-10-24T19:12:31Z",
   "phase_health": {
     "market": "succeeded",
     "research": "succeeded"

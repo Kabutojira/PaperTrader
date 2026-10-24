@@ -16,6 +16,7 @@ Current research opinions in each instrument's native currency. Fair values chan
 | [Sociedad Quimica y Minera de Chile S.A.](securities/security_9d4049ed6669a52815d6) | SQM | USD | 57.13 | 2026-10-23 | 79.00 / 77.00 | 38.27% / 26.79% | buy | medium | 2026-10-19T01:37:34.979892Z / 2026-11-18T01:37:34.979892Z |
 | [Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | PRX | EUR | 34.17 | 2026-10-23 | 46.02 / 48.50 | 34.69% / 24.29% | buy | medium | 2026-10-19T00:25:13.322131Z / 2026-11-17T00:25:13.322131Z |
 | [Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3) | ALB | USD | 93.66 | 2026-10-23 | 126.01 / 131.25 | 34.54% / 24.18% | buy | medium | 2026-10-24T14:37:50.249307Z / 2026-11-23T14:37:50.249307Z |
+| [Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e) | UBER | USD | 66.67 | 2026-10-23 | 88.75 / 90.00 | 33.12% / 23.18% | buy | medium | 2026-10-24T19:09:47.645216Z / 2026-11-23T19:09:47.645216Z |
 
 ## Top 10 Sell
 
@@ -34,14 +35,16 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-93 companies / 94 instruments; 94 assessed, 83 in date, 11 stale; 51 currently unrated. 1 quotes require attention.
+93 companies / 94 instruments; 94 assessed, 85 in date, 9 stale; 49 currently unrated. 1 quotes require attention.
 
-Last observed market session: 2026-10-23. Last successful research: 2026-10-24T16:42:14Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-23. Last successful research: 2026-10-24T19:12:31Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
 Watchlist valuation coverage: **67 / 93 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 0; unsupported valuation: 26; incomplete research: 0. Needs attention: 1. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
+- [Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e) — 2026-10-24T19:09:47.645216Z; buy
+- [Koninklijke Ahold Delhaize N.V.](securities/security_e19c7fe27fbcc4cd923d) — 2026-10-24T19:07:39.330370Z; hold
 - [Amazon.com, Inc.](securities/security_2433a056eb0c55961fcc) — 2026-10-24T16:40:27.310920Z; hold
 - [Atkore Inc.](securities/security_22c2b9d782a62d7a9b86) — 2026-10-24T16:36:49.285280Z; valuation_unsupported
 - [Microsoft Corporation](securities/security_204be2a44063993de1a8) — 2026-10-24T16:32:40.780427Z; hold
@@ -50,8 +53,6 @@ Watchlist valuation coverage: **67 / 93 instruments** have complete sourced bear
 - [PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00) — 2026-10-24T16:22:20.627957Z; hold
 - [Rio Tinto plc](securities/security_1c055eb9b2bb1f5a8ff2) — 2026-10-24T16:18:09.592416Z; hold
 - [Eaton Corporation plc](securities/security_18a3ab0ee6086ee85d0f) — 2026-10-24T16:14:31.591874Z; hold
-- [Kratos Defense & Security Solutions, Inc.](securities/security_0cf8075039299094d614) — 2026-10-24T16:11:12.496589Z; hold
-- [ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c) — 2026-10-24T16:07:01.121336Z; strong_sell
 
 ## Ideas and interesting companies
 
