@@ -1,3 +1,2 @@
 entity_type,entity_id,priority,reasons,created_at,updated_at,status,attempts,next_eligible_at,lease_until,manual,last_error
-security,security_dc8486c1d61df62a22fd,60,research_overdue,2026-10-24T09:55:11Z,2026-10-24T09:55:11Z,pending,0,2026-10-24T09:55:11Z,,false,
 security,security_de0d83229b369a426b99,60,research_overdue,2026-10-24T09:55:11Z,2026-10-24T09:55:11Z,pending,0,2026-10-24T09:55:11Z,,false,

@@ -5,10 +5,9 @@ status: watching
 tags:
   - security
   - research
-  - risk
 created: "2026-08-01"
-updated: "2026-08-31"
-provenance: "source_schneider_h1_2026_results|source_schneider_fy2025_results"
+updated: "2026-10-24"
+provenance: "source_schneider_fy2025_results|source_schneider_h1_2026_results"
 security_id: security_dc8486c1d61df62a22fd
 issuer_id: issuer_7c050f79848c800cf817
 ticker: SU
@@ -16,195 +15,100 @@ venue_mic: XPAR
 provider_symbol: SU.PA
 currency: EUR
 confidence: medium
-next_review: "2026-09-30"
+next_review: "2026-11-23"
 ---
 
 # Schneider Electric SE ordinary shares
 
-## Decision
+## Research conclusion
 
-**Watch; no conviction strategy.** Schneider Electric's unchanged H1 2026 results strongly confirm the
-[[ideas/idea_ai_infrastructure_power|AI infrastructure and power bottlenecks]] mechanism: record
-revenue, margin and cash flow accompanied triple-digit data-centre demand and strong sales of
-prefabricated power, cooling and UPS systems. The 31 August volume anomaly was weak and accompanied
-only a 1.55% return from 3 August; the shares closed down 2.37% for the session with neutral RSI and
-a bearish MACD histogram. At the EUR 294.60 mark the shares remain above the EUR 240 base case and
-EUR 192 margin-of-safety buy zone. The scenario-weighted return is negative, while leverage,
-acquisitions, working capital, project timing and unquantified customer concentration remain risks.
+Schneider Electric remains a supported but medium-confidence mature-compounder valuation. Its integrated electrical distribution, automation, prefabricated power, cooling, UPS, software and service portfolio is benefiting from electrification and data-centre investment. The evidence shows strong profitable growth, but disclosures do not isolate data-centre revenue, backlog, customer concentration or capacity returns.
+
+The 12-month probability-weighted fair value is **EUR 250 per share**, compared with the supplied **EUR 231.40** adjusted close for the completed 23 October 2026 Euronext Paris session. The central fair value is only EUR 240, so valuation support depends partly on the bull case and does not eliminate meaningful downside to the EUR 190 bear case.
 
 ## Immutable identity
 
 - Security ID: `security_dc8486c1d61df62a22fd`
 - Issuer ID: `issuer_7c050f79848c800cf817`
 - Instrument: Schneider Electric SE ordinary shares
-- Listing: Euronext Paris (`XPAR`)
+- Ticker: `SU`
+- Venue: Euronext Paris (`XPAR`)
 - Provider symbol: `SU.PA`
-- Currency: `EUR`
-- Issuer ISIN: `FR0000121972`
+- Native currency and quote unit: EUR per share
 
-The issuer's H1 release identifies Schneider Electric and the ISIN, while the issuer share page and
-canonical table identify the Paris ordinary-share line, ticker, venue, currency and provider symbol.
-No duplicate immutable identity is present in the security table.
+The supplied identity and current market observation agree on the security ID, provider symbol, venue and currency. The opened issuer releases identify Schneider Electric, but they do not independently establish the market-data provider symbol; that is retained as an explicit identity limitation rather than altered.
 
-## Alert review
+## Business economics and current evidence
 
-From 3 August through 31 August the adjusted close rose **1.55%** to **EUR 294.60**. The 31 August
-session fell **2.37%**, while volume reached a **2.55 z-score**, just above the configured anomaly
-threshold. RSI was neutral at **51.24**, the close was below the 20-day average but above the 50-day
-and 200-day averages, and MACD was below its signal line. The canonical source-price hash is
-`ad69931719329c6e44fd2303180706c5da0a73c087b00ad95d2d40037638e44b`.
+Schneider reported FY2025 revenue of **EUR 40.152 billion**, adjusted EBITA of **EUR 7.520 billion** at an 18.7% margin, adjusted EPS of **EUR 8.59**, and free cash flow of **EUR 4.635 billion**. FY2025 cash conversion from net income was 111%. Energy Management led growth, while software and services added subscription and installed-base economics beyond equipment sales.
 
-No new issuer operating result accompanied the transition. Schneider's financial-results index
-still presents the 30 July half-year release as its latest 2026 operating result, and fresh
-retrievals reproduced both registered issuer-release hashes. The weak, one-session volume anomaly
-is therefore **noise**, not a new opportunity or risk catalyst; it does not change the operating
-thesis or justify paper action.
+In H1 2026, revenue reached **EUR 21.226 billion**, up 14.0% organically. Adjusted EBITA rose 22.1% organically to **EUR 4.093 billion**, and the margin reached **19.3%**, including **22.4%** in Energy Management. Net income was EUR 2.488 billion and adjusted EPS was **EUR 4.79**. Product pricing, productivity, volume leverage and lower central costs supported profitability despite raw-material inflation, tariffs and negative mix.
 
-### Prior alert context
+Systems represented 35% of Q2 revenue and grew 28% organically, led by data-centre prefabricated solutions, cooling and three-phase UPS. Software and services represented 18% of Q2 revenue. AVEVA annualized recurring revenue grew 11%, while commissioning, power-monitoring and condition-maintenance offerings demonstrated lifecycle demand around the installed base.
 
-The canonical alerts span the first two sessions after Schneider's July 30 H1 release:
+Management upgraded its 2026 target to **14-19% organic adjusted-EBITA growth**, comprising **10-13% organic revenue growth** and **70-100 basis points** of organic adjusted-EBITA margin improvement. These targets support the earnings assumptions but are company guidance, not guaranteed outcomes.
 
-- On July 30, the adjusted close rose from EUR 256.80 to **EUR 284.60**, a one-session increase of
-  **10.83%**. The July 2–30 return was **2.74%**. The monitor recorded a new upper-Bollinger entry
-  and bullish MACD crossover with source-price hash
-  `27b9aa3eb7e69d21b7f3b8ba0bce0a3bb59b0a0f9b8bea611a4ae7f2245979ca`.
-- On July 31, the adjusted close rose another **1.91%** to **EUR 290.05**. The July 3–31 return was
-  **3.55%**, RSI was **63.14**, volume was not anomalous, and the close stood **2.06%** above the
-  upper Bollinger band. The monitor recorded a strengthened upper-band signal with source-price
-  hash `0521116af09dd3e0d9591d7eca02678b993b9c93c6587d992748cb6a9bd5995f`.
+## Cash flow, balance sheet and capital allocation
 
-The July 30 release is a strong contemporaneous explanation for the repricing: Schneider reported
-record H1 revenue, adjusted EBITA, margin and free cash flow, upgraded full-year guidance, and said
-data-centre demand remained exceptionally strong. The move is a positive fundamental catalyst but
-an adverse entry-timing and valuation event, not an independent paper-trade signal.
+H1 free cash flow rose to **EUR 1.631 billion**, but trade working capital absorbed EUR 1.208 billion and first-half cash conversion was 66%. Management expected higher conversion in H2, making delivery against that expectation an important test.
 
-## Business and financial evidence
+Net debt was **EUR 15.360 billion at 30 June 2026**, up from EUR 13.721 billion at year-end after dividends and buybacks. Schneider retained reaffirmed A-grade ratings and extended its debt maturity profile, including EUR 1.5 billion of July financing. These facts indicate financing resilience, but not an unconstrained balance sheet.
 
-H1 revenue reached **EUR 21.226 billion**, up 14.0% organically. Adjusted EBITA rose 22.1%
-organically to **EUR 4.093 billion**, margin expanded 120 basis points organically to **19.3%**, net
-income rose 30.1% to **EUR 2.488 billion**, and adjusted EPS rose 20.7% to **EUR 4.79**. Free cash
-flow increased to **EUR 1.631 billion**, although trade working capital absorbed EUR 1.208 billion
-and first-half cash conversion was 66%.
+The proposed USD 3.1 billion Cognite acquisition and acquisition of approximately 90% of AiDASH add industrial-data, AI and grid-intelligence capabilities. They also introduce purchase-price, funding, integration and return-on-capital risks. The valuation assumes that these transactions do not materially dilute per-share returns.
 
-Energy Management generated EUR 17.641 billion of H1 revenue and a 22.4% adjusted EBITA margin.
-Data Center & Networks demand rose triple-digit in Q2, with broad strength across hyperscale,
-co-location, sovereign and regional operators. Systems revenue rose 28% organically, led by
-prefabricated solutions, cooling and three-phase UPS. Commissioning services and power-monitoring
-and condition-maintenance software add lifecycle economics beyond the initial equipment sale.
+## Thesis and contrary evidence
 
-The evidence does not isolate data-centre revenue, orders, backlog, customer concentration or
-returns on data-centre-specific capacity. North America represented 40% of Q2 group revenue, and
-large hyperscale and co-location customers drove substantial growth. These disclosures validate the
-mechanism but leave concentration and normalization sensitivity unquantified.
+The constructive thesis is that Schneider can capture more electrical and digital content per project than a single-product supplier. Its breadth spans distribution, automation, cooling, UPS, prefabricated systems, software and field services. Scale, channels, an installed base and recurring software can turn power-density, electrification and automation constraints into durable profitable growth.
 
-Free cash flow improved sharply, but net debt increased to **EUR 15.360 billion** from EUR 13.721
-billion at year-end after dividends and buybacks. Pending all-cash acquisitions include Cognite at
-USD 3.1 billion and about 90% of AiDASH at a USD 350 million implied enterprise value. A-grade
-ratings and strong cash generation support funding resilience, while acquisition integration,
-valuation, leverage and capital-allocation discipline constrain downside protection.
+Current evidence corroborates this mechanism through broad geographic and end-market growth, margin expansion, strong data-centre systems demand and increasing subscription revenue. The thesis is not fully proven because Schneider does not separately disclose data-centre revenue, orders, backlog, customer concentration or returns on dedicated capacity.
 
-Management upgraded 2026 guidance to **10–13% organic revenue growth**, **14–19% organic adjusted
-EBITA growth**, and 70–100 basis points of organic margin expansion. The guidance assumes continued
-data-centre momentum, positive pricing, productivity and operating leverage while acknowledging
-Middle East, supply-chain, tariff and inflation risks.
-
-## Thesis, contrary evidence, catalysts, and invalidation
-
-The constructive thesis is that Schneider's integrated electrical distribution, panels, UPS,
-prefabricated power, cooling, automation, software and service portfolio captures more data-centre
-content than a single-product vendor. Product breadth, installed-base services, recurring software,
-global channels and sustained R&D can convert power-density and interconnection constraints into
-profitable growth.
-
-Contrary evidence is that systems-led growth can dilute gross margin, large customers can gain
-bargaining power, connection and project delays can defer revenue, capacity expansion can normalize
-scarcity, and architecture changes can shift vendor content. Working-capital absorption, raw-material
-inflation, tariffs, foreign exchange, supply disruption, Cognite and AiDASH integration, higher debt,
-buybacks and an already premium valuation can weaken per-share returns.
-
-Catalysts are continued broad data-centre orders and backlog conversion, H2 cash conversion,
-positive pricing, sustained Energy Management margins, recurring software and service growth, and
-acquisitions that add measurable per-share value without higher leverage. Invalidate or materially
-downgrade the thesis if data-centre demand or backlog contracts, project delays rise, systems mix
-compresses adjusted EBITA margin, H2 cash conversion disappoints, concentration increases, net debt
-rises materially, or acquisition returns fail to cover their funding and integration costs.
-
-## Idea exposure map
-
-- **Candidate — positive, high materiality:** [[ideas/idea_ai_infrastructure_power|AI infrastructure
-  and power bottlenecks]]. Schneider supplies electrical distribution, switchgear, prefabricated
-  power, UPS, cooling, automation, software and services into data centres; H1 demand and financial
-  conversion support the mechanism. The edge remains pending because no canonical relationship row
-  exists. It would weaken if data-centre orders normalize, projects are delayed, systems mix erodes
-  margins, or growth fails to convert to cash.
-- **Rejected — no distinct material link:** [[ideas/idea_wide_bandgap_power_semiconductors|wide-bandgap
-  power semiconductors]]. Schneider may integrate power-electronics components, but current evidence
-  does not isolate material supplier economics or a direct semiconductor exposure beyond the broader
-  data-centre-power mechanism.
-- **Rejected — no distinct material link:** [[ideas/idea_solar_storage_grid_flexibility_reset|solar,
-  storage, and grid flexibility reset]]. Schneider offers grid and energy-management products, but
-  the current evidence does not establish security-level solar or storage economics material enough
-  to retain a separate causal edge.
+Contrary risks include normalization of data-centre capital spending, project or grid-connection delays, customer bargaining power, adverse systems mix, tariff and raw-material pressure, supply disruption, foreign exchange, geopolitical disruption and weaker industrial demand. Architecture changes or excess industry capacity could also reduce Schneider content or pricing power.
 
 ## Valuation
 
-The selected repository template is `mature_compounder`, using an `earnings_multiple` method. It
-normalizes H1 adjusted EPS, the upgraded organic-growth target, systems mix, working capital,
-capitalized development, acquisition costs, net debt, pending acquisitions, buybacks and diluted
-shares. The 12-month scenarios are:
+The method applies explicit earnings multiples to normalized forward adjusted EPS over 12 months:
 
-- **Bear (25%): EUR 190.00.** EUR 10.00 normalized forward adjusted EPS at 19x as data-centre
-  systems growth normalizes, mix and input costs pressure margins, working capital stays elevated,
-  and acquisition-related net debt restrains the multiple. Return: **-35.5%**.
-- **Base (50%): EUR 240.00.** EUR 10.00 normalized forward adjusted EPS at 24x as 10–13% organic
-  revenue growth and operating leverage partly offset systems mix, working capital, Cognite funding
-  and a premium starting valuation. Return: **-18.5%**.
-- **Bull (25%): EUR 330.00.** EUR 10.65 normalized forward adjusted EPS at about 31x as
-  data-centre demand and backlog convert broadly, Energy Management sustains strong margins,
-  recurring software and services accelerate, and acquisitions preserve per-share returns. Return:
-  **+12.0%**.
+- **Bear — EUR 190, 25% probability:** EUR 10.00 of normalized forward adjusted EPS at 19x. Data-centre systems growth moderates, mix and input costs pressure profitability, working capital remains elevated and acquisition funding constrains the multiple.
+- **Base — EUR 240, 50% probability:** EUR 10.00 at 24x. Organic growth and operating leverage continue, partly offset by systems mix, working capital, integration costs and a still-demanding multiple.
+- **Bull — EUR 330, 25% probability:** EUR 10.65 at approximately 31x. Data-centre demand converts broadly, Energy Management maintains strong margins, recurring software and services accelerate, and acquisitions preserve per-share value.
 
-The probability-weighted value is EUR 250.00, for about **-15.1% expected return** and **-11.4%
-confidence-adjusted expected return**. The configured 20% margin-of-safety buy-below price is EUR
-192.00. Expected return, base upside, downside payoff, margin of safety, medium confidence, mixed
-timing and the absence of an accepted relationship prevent the full strategy gate from
-passing. The assessment is ineligible and does not justify conviction strategy research.
+The probability-weighted value is **EUR 250**. Relative to the supplied EUR 231.40 reference, the weighted value is approximately 8% higher, the EUR 240 base case is approximately 4% higher, and the EUR 190 bear case is approximately 18% lower. The deterministic rubric formula produces a **58.0 valuation score**.
 
-## Changes since prior review
+The reference is the supplied adjusted close for `security_dc8486c1d61df62a22fd` / `SU.PA` on Euronext Paris for the latest completed session, 23 October 2026. It is denominated in the instrument's native EUR-per-share quote unit, so no currency or unit conversion is applied. `2026-10-23T00:00:00Z` is used only as a session-date label, not as an asserted intraday quotation time.
 
-- **Evidence changed:** the 31 August EUR 294.60 mark and weak volume-anomaly transition are new.
-  Both retained issuer releases reproduced their registered hashes, and the issuer results index
-  showed no later 2026 operating result.
-- **Assumptions and valuation:** normalized earnings, multiples, EUR 190/240/330 fair values,
-  25%/50%/25% probabilities and the EUR 192 buy zone are unchanged. The higher mark changes the
-  bear/base/bull returns to -35.5%/-18.5%/+12.0% and weighted expected return to -15.1%.
-- **Thesis:** integrated data-centre power, cooling, automation, software and services remain the
-  constructive mechanism. No evidence upgrades or downgrades it.
-- **Catalysts and risks:** broad data-centre conversion, H2 cash conversion and service growth remain
-  catalysts; concentration, project timing, systems mix, working capital, leverage, acquisitions,
-  supply and valuation remain risks. No hard blocker was added or resolved.
-- **Gaps:** medium confidence, unquantified concentration, weak downside payoff, inadequate margin of
-  safety and unaccepted relationship state remain. Timing improves from adverse breakout to mixed,
-  but the weak anomaly is not a catalyst.
-- **Rating and action:** Sell / Avoid, Watch tier, allocation ineligibility and no conviction strategy
-  are unchanged because every economic gate remains below threshold.
-- **Idea graph:** the AI-infrastructure-power edge is now explicitly a candidate awaiting bounded
-  relationship review; no candidate is represented as accepted.
+## Fundamental rubric v1
+
+- **Valuation score: 58.0.** EUR 250 weighted fair value versus EUR 231.40 reference price.
+- **Business quality score: 78.** Slightly above the durable-profitable-advantages anchor due to portfolio breadth, margins, recurring software and demonstrated cash generation. Systems cyclicality and incomplete segment-level cash economics prevent an exceptional score.
+- **Thesis score: 74.** Near the strongly-supported anchor because reported growth and profitability corroborate the mechanism, but concentration and data-centre economics remain unquantified.
+- **Balance-sheet score: 67.** Between manageable-but-constrained and resilient: A-grade ratings, cash generation and extended maturities are positives, while higher net debt and pending acquisitions constrain flexibility.
+- **Risk penalty: 56.** Material residual operating and evidence risk from project cyclicality, concentration uncertainty, mix, tariffs, supply chains, geopolitical disruption and acquisition execution. Leverage is principally captured in the balance-sheet score rather than deducted twice.
+
+These are research judgments, not an aggregate score or a probability of investment profit. Business quality excludes market price and leverage; thesis score measures corroboration rather than upside.
+
+## Catalysts and invalidation
+
+Potential catalysts are sustained data-centre demand and backlog conversion, achievement of upgraded 2026 guidance, stronger H2 cash conversion, positive net pricing, continued recurring-software growth, greater service attachment and evidence that acquisitions add per-share value without materially weakening financial resilience.
+
+The constructive thesis would be materially weakened if data-centre orders or backlog contract, project delays increase, systems mix causes sustained adjusted-EBITA margin compression, H2 cash conversion fails to improve, working capital deteriorates, concentration rises, net debt increases materially, A-grade ratings are lost, or acquisition returns fail to cover funding and integration costs. The valuation must be revised if normalized forward adjusted EPS cannot approach EUR 10.00 or the assumed mature-compounder multiples cease to be defensible.
+
+## Limitations
+
+The evidence is issuer-authored and therefore authoritative for reported figures but not independent corroboration. The opened releases do not separately quantify data-centre revenue, orders, backlog, concentration, project economics or capacity returns. H1 is not a full-year cash-conversion test, and acquisition outcomes remain uncertain. No Q3 2026 primary operating release was available in the opened evidence set. Scenario earnings and multiples are analytical assumptions rather than management forecasts. Medium confidence is appropriate because the valuation is sensitive to relatively small changes in normalized earnings and multiples.
+
+## Changes since the prior review
+
+- The supplied reference price decreased from EUR 294.60 to EUR 231.40, changing valuation support without changing the operating evidence or scenario fair values.
+- The EUR 190/EUR 240/EUR 330 scenarios and 25%/50%/25% probabilities remain supported as analytical assumptions by the reopened issuer evidence.
+- Fundamental rubric-v1 scores are now populated, including the verified reference-price convention and factor-overlap policy.
+- H1 working-capital absorption, net debt, acquisition commitments and unquantified data-centre concentration remain the principal limitations.
+- The conclusion is now framed as a supported valuation assessment without trading, allocation or portfolio instructions.
 
 ## Sources
 
-- [Schneider Electric H1 2026 results](https://www.se.com/ww/en/assets/pdf/release-hy-results-2026)
-  (`source_schneider_h1_2026_results`, checked 2026-08-31; hash unchanged).
-- [Schneider Electric FY2025 results](https://www.se.com/ww/en/assets/564/document/528237/release-fy-results-2025.pdf)
-  (`source_schneider_fy2025_results`, checked 2026-08-31; hash unchanged).
-- Canonical market and indicator state: `data/market/latest.csv`, `data/market/indicators.csv`, and
-  `data/market/prices/security_dc8486c1d61df62a22fd.csv`, retrieved `2026-08-31T21:38:36Z`.
-- Alert packets: [SU upper-Bollinger entry](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_dc8486c1d61df62a22fd-bollinger_above_upper-885d2463351c.md),
-  [SU bullish-MACD entry](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_dc8486c1d61df62a22fd-macd_cross_above_signal-094629fe26cb.md),
-  and [SU strengthened upper-Bollinger state](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_dc8486c1d61df62a22fd-bollinger_above_upper-15c4988e4d0d.md).
+- [Schneider Electric Full Year 2025 Results](https://www.se.com/ww/en/assets/564/document/528237/release-fy-results-2025.pdf) (`source_schneider_fy2025_results`; reopened 2026-10-24).
+- [Schneider Electric Half Year 2026 Results](https://www.se.com/ww/en/assets/pdf/release-hy-results-2026) (`source_schneider_h1_2026_results`; reopened 2026-10-24).
 
-Next review: **2026-09-30**, or sooner after material data-centre demand, backlog, customer,
-capacity, pricing, margin, working-capital, cash-conversion, leverage, acquisition, supply-chain or
-capital-allocation evidence.
+Next scheduled review: **2026-11-23**, or earlier if material operating, cash-conversion, acquisition, leverage or data-centre-demand evidence becomes available.
 
-[[security-catalog|Tracked securities]] · [[research-catalog|Research catalog]] · [[index|Today's decision]]
+[[security-catalog|Tracked securities]] · [[research-catalog|Research catalog]]
