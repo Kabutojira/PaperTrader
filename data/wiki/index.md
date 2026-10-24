@@ -36,12 +36,13 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 93 companies / 94 instruments; 94 assessed, 83 in date, 11 stale; 51 currently unrated. 1 quotes require attention.
 
-Last observed market session: 2026-10-23. Last successful research: 2026-10-24T16:09:29Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-23. Last successful research: 2026-10-24T16:12:54Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
 Watchlist valuation coverage: **67 / 93 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 0; unsupported valuation: 26; incomplete research: 0. Needs attention: 1. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
+- [Kratos Defense & Security Solutions, Inc.](securities/security_0cf8075039299094d614) — 2026-10-24T16:11:12.496589Z; hold
 - [ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c) — 2026-10-24T16:07:01.121336Z; strong_sell
 - [Powell Industries, Inc.](securities/security_0b67d6c8e3fd3366a257) — 2026-10-24T16:03:56.485665Z; valuation_unsupported
 - [Applied Materials, Inc.](securities/security_0a56aa634d077fe5796f) — 2026-10-24T15:59:51.264224Z; hold
@@ -51,7 +52,6 @@ Watchlist valuation coverage: **67 / 93 instruments** have complete sourced bear
 - [Taiwan Semiconductor Manufacturing Company Limited](securities/security_ce9b78a4d0773c950765) — 2026-10-24T15:44:48.694444Z; hold
 - [Parrot S.A.](securities/security_cc4dcb8f002b61dffe00) — 2026-10-24T15:41:03.520697Z; hold
 - [Vertiv Holdings Co](securities/security_cb88f9154cfeaa15e878) — 2026-10-24T15:33:38.075879Z; insufficient_confidence
-- [Roblox Corporation](securities/security_c9a37d277445869a8809) — 2026-10-24T15:29:47.352823Z; valuation_unsupported
 
 ## Ideas and interesting companies
 
