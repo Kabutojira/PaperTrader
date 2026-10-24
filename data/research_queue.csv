@@ -21,6 +21,6 @@ security,security_cb88f9154cfeaa15e878,60,research_overdue,2026-10-23T20:08:03Z,
 security,security_cc4dcb8f002b61dffe00,60,research_overdue,2026-10-23T20:08:03Z,2026-10-23T20:08:03Z,pending,0,2026-10-23T20:08:03Z,,false,
 security,security_ce9b78a4d0773c950765,60,research_overdue,2026-10-23T20:08:03Z,2026-10-23T20:08:03Z,pending,0,2026-10-23T20:08:03Z,,false,
 security,security_d12e746b3c9d392183cc,60,research_overdue,2026-10-24T09:55:11Z,2026-10-24T09:55:11Z,pending,0,2026-10-24T09:55:11Z,,false,
-security,security_d2be67701e612ee6625d,75,missing_research|valuation_coverage_gap,2026-10-20T20:11:28Z,2026-10-20T20:11:28Z,pending,0,2026-10-20T20:11:28Z,,false,
+security,security_d2be67701e612ee6625d,100,explicit_manual_request|missing_research|valuation_coverage_gap,2026-10-20T20:11:28Z,2026-10-24T14:20:38Z,failed,1,2026-10-24T20:20:38Z,,true,validation:ResearchResultValidationError:state.assessment.invalid:papertrader.research_results.prepare_result:429
 security,security_dc8486c1d61df62a22fd,60,research_overdue,2026-10-24T09:55:11Z,2026-10-24T09:55:11Z,pending,0,2026-10-24T09:55:11Z,,false,
 security,security_de0d83229b369a426b99,60,research_overdue,2026-10-24T09:55:11Z,2026-10-24T09:55:11Z,pending,0,2026-10-24T09:55:11Z,,false,
