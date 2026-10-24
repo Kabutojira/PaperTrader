@@ -16,7 +16,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3) | ALB (USD) | researched: buy | complete | 9.93 / 131.25 / 231.62 USD | 2026-10-24T14:37:50.249307Z | 2026-11-23T14:37:50.249307Z |
 | [Alphabet Inc.](securities/security_c86bb4e75658c07142cf) | GOOGL (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T15:26:30.343218Z | 2026-11-23T15:26:30.343218Z |
 | [Amazon.com, Inc.](securities/security_2433a056eb0c55961fcc) | AMZN (USD) | researched: hold | complete | 200.00 / 270.00 / 360.00 USD | 2026-10-21T20:29:36.380404Z | 2026-11-20T20:29:36.380404Z |
-| [Applied Materials, Inc.](securities/security_0a56aa634d077fe5796f) | AMAT (USD) | needs_attention: source_evidence_unavailable | complete | 286.00 / 448.00 / 646.00 USD | 2026-09-03T12:34:21Z | 2026-10-03T12:34:21Z |
+| [Applied Materials, Inc.](securities/security_0a56aa634d077fe5796f) | AMAT (USD) | researched: hold | complete | 286.00 / 448.00 / 646.00 USD | 2026-10-24T15:59:51.264224Z | 2026-11-23T15:59:51.264224Z |
 | [Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a) | ANET (USD) | researched: hold | complete | 120.00 / 182.40 / 252.00 USD | 2026-10-18T21:20:52.492203Z | 2026-11-17T21:20:52.492203Z |
 | [Arkema S.A.](securities/security_798e2fb944d740aca308) | AKE (EUR) | researched: hold | complete | 30.00 / 56.00 / 89.00 EUR | 2026-10-18T22:35:52.408763Z | 2026-11-17T22:35:52.408763Z |
 | [Atkore Inc.](securities/security_22c2b9d782a62d7a9b86) | ATKR (USD) | researched: market_stale_or_unavailable | complete | 72.96 / 95.00 / 100.00 USD | 2026-10-19T00:29:33.206502Z | 2026-11-18T00:29:33.206502Z |
