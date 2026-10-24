@@ -21,6 +21,7 @@ Current research opinions in each instrument's native currency. Fair values chan
 
 | Company / thesis & sources | Ticker | Currency | Price | Price as of | Weighted / base fair value | Implied / adjusted return | Rating | Confidence | Researched / expiry |
 | --- | --- | --- | ---: | --- | ---: | ---: | --- | --- | --- |
+| [ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c) | 108490 | KRW | 225,000.00 | 2026-10-23 | 98,204.90 / 70,968.00 | -56.35% / -39.45% | strong_sell | medium | 2026-10-24T16:07:01.121336Z / 2026-11-23T16:07:01.121336Z |
 | [Intel Corporation](securities/security_dfa34d4b9050964b465e) | INTC | USD | 86.96 | 2026-10-23 | 55.00 / 48.00 | -36.75% / -25.73% | strong_sell | medium | 2026-10-24T14:10:30.760181Z / 2026-11-23T14:10:30.760181Z |
 | [Freeport-McMoRan Inc.](securities/security_2dbe878dfc899d7ee867) | FCX | USD | 65.22 | 2026-10-23 | 46.50 / 47.36 | -28.70% / -20.09% | sell | medium | 2026-10-22T20:24:15.882831Z / 2026-11-21T20:24:15.882831Z |
 | [Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349) | ISRG | USD | 452.29 | 2026-10-23 | 343.50 / 342.00 | -24.05% / -16.84% | sell | medium | 2026-10-19T00:52:56.668629Z / 2026-11-18T00:52:56.668629Z |
@@ -33,14 +34,15 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-93 companies / 94 instruments; 94 assessed, 82 in date, 12 stale; 52 currently unrated. 1 quotes require attention.
+93 companies / 94 instruments; 94 assessed, 83 in date, 11 stale; 51 currently unrated. 1 quotes require attention.
 
-Last observed market session: 2026-10-23. Last successful research: 2026-10-24T16:05:30Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-10-23. Last successful research: 2026-10-24T16:09:29Z. Market: succeeded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
-Watchlist valuation coverage: **67 / 93 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 0; unsupported valuation: 26; incomplete research: 0. Needs attention: 2. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
+Watchlist valuation coverage: **67 / 93 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 0; unsupported valuation: 26; incomplete research: 0. Needs attention: 1. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
+- [ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c) — 2026-10-24T16:07:01.121336Z; strong_sell
 - [Powell Industries, Inc.](securities/security_0b67d6c8e3fd3366a257) — 2026-10-24T16:03:56.485665Z; valuation_unsupported
 - [Applied Materials, Inc.](securities/security_0a56aa634d077fe5796f) — 2026-10-24T15:59:51.264224Z; hold
 - [Tencent Holdings Limited](securities/security_de0d83229b369a426b99) — 2026-10-24T15:55:36.134973Z; valuation_unsupported
@@ -50,7 +52,6 @@ Watchlist valuation coverage: **67 / 93 instruments** have complete sourced bear
 - [Parrot S.A.](securities/security_cc4dcb8f002b61dffe00) — 2026-10-24T15:41:03.520697Z; hold
 - [Vertiv Holdings Co](securities/security_cb88f9154cfeaa15e878) — 2026-10-24T15:33:38.075879Z; insufficient_confidence
 - [Roblox Corporation](securities/security_c9a37d277445869a8809) — 2026-10-24T15:29:47.352823Z; valuation_unsupported
-- [Alphabet Inc.](securities/security_c86bb4e75658c07142cf) — 2026-10-24T15:26:30.343218Z; valuation_unsupported
 
 ## Ideas and interesting companies
 

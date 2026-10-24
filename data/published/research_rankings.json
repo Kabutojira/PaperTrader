@@ -92,28 +92,46 @@
     }
   ],
   "coverage": {
-    "current": 82,
+    "current": 83,
     "failed_tickers": 1,
     "instruments": 94,
     "issuers": 93,
     "researched": 94,
-    "stale": 12,
-    "unrated": 52,
+    "stale": 11,
+    "unrated": 51,
     "watchlist_complete": 67,
     "watchlist_incomplete_research": 0,
     "watchlist_instruments": 93,
     "watchlist_missing_research": 0,
-    "watchlist_needs_attention": 2,
+    "watchlist_needs_attention": 1,
     "watchlist_valuation_unsupported": 26
   },
   "last_market_session": "2026-10-23",
-  "last_research_at": "2026-10-24T16:03:56.485665Z",
-  "last_successful_research": "2026-10-24T16:05:30Z",
+  "last_research_at": "2026-10-24T16:07:01.121336Z",
+  "last_successful_research": "2026-10-24T16:09:29Z",
   "phase_health": {
     "market": "succeeded",
     "research": "succeeded"
   },
   "sells": [
+    {
+      "adjusted_return_pct": "-39.44736444444444444444444445",
+      "assessed_at": "2026-10-24T16:07:01.121336Z",
+      "base_fair_value": "70968",
+      "company_name": "ROBOTIS Co., Ltd.",
+      "confidence": "medium",
+      "currency": "KRW",
+      "expected_return_pct": "-56.35337777777777777777777778",
+      "issuer_id": "issuer_fa9456121dcb71eab3ff",
+      "price": "225000.0",
+      "price_date": "2026-10-23",
+      "rating": "strong_sell",
+      "research_page": "data/wiki/securities/security_0c8b3c4291cd97f56d8c.md",
+      "security_id": "security_0c8b3c4291cd97f56d8c",
+      "ticker": "108490",
+      "valid_until": "2026-11-23T16:07:01.121336Z",
+      "weighted_fair_value": "98204.9"
+    },
     {
       "adjusted_return_pct": "-25.72677046304792926431507558",
       "assessed_at": "2026-10-24T14:10:30.760181Z",

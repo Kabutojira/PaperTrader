@@ -4,8 +4,8 @@ type: security
 status: watching
 tags: [security, research, risk]
 created: "2026-09-01"
-updated: "2026-09-01"
-provenance: "source_robotis_dart_company_profile; source_robotis_2026_h1_income; source_robotis_2026_h1_balance; source_robotis_2026_h1_cashflow; source_robotis_2026_h1_business; source_robotis_uzbekistan_investment; deterministic market state"
+updated: "2026-10-24"
+provenance: "source_robotis_dart_company_profile; source_robotis_2026_h1_income; source_robotis_2026_h1_balance; source_robotis_2026_h1_cashflow; source_robotis_2026_h1_business; source_robotis_uzbekistan_investment; source_web_768528155732a7d944a72d46; source_web_f33560b471607f0069164fff"
 security_id: security_0c8b3c4291cd97f56d8c
 issuer_id: issuer_fa9456121dcb71eab3ff
 ticker: "108490"
@@ -13,168 +13,99 @@ venue_mic: XKOS
 provider_symbol: 108490.KQ
 currency: KRW
 confidence: medium
-next_review: "2026-09-30"
+next_review: "2026-11-23"
 ---
 
 # ROBOTIS Co., Ltd. common shares
 
-## Decision
+## Assessment
 
-**Strong Sell / Avoid; allocation ineligible; no strategy.** ROBOTIS has a real, growing actuator
-business, a liquid balance sheet and direct product exposure to humanoid robotics. Those strengths
-do not support the price. At KRW254,500 the equity value is approximately KRW3.731 trillion and the
-enterprise value is about 64 times annualized first-half revenue. A scenario-complete
-`pre_profit_growth` valuation produces KRW20,625/KRW70,968/KRW282,667 bear/base/bull values and a
-KRW98,205 probability-weighted value, about 61% below the market price. Even the deliberately
-optimistic bull case offers only about 11% upside.
+ROBOTIS has a genuine, growing smart-actuator franchise, current humanoid-oriented products, high reported gross margins, and a highly liquid balance sheet. The investment case remains constrained by valuation: the probability-weighted scenario value is **KRW 98,205 per share**, versus the supplied **KRW 225,000** closing reference for the completed 23 October 2026 XKOS session. The gap remains large even after the share-price decline since the prior review.
 
-The robotics relationship is a **candidate**, not yet a canonical accepted edge. It is supported by
-current actuator revenue and product evidence, but humanoid-specific revenue, design-win economics
-and repeat paid deployment data remain undisclosed.
+The operating evidence has improved at the product level. ROBOTIS now presents DYNAMIXEL Q as a multi-model QDD actuator line and AI Sapiens as an open-source humanoid platform built on those actuators. These pages verify product existence and specifications, but they do not disclose prices, paid unit volumes, backlog, customer identities, attributable revenue, or margins. Product availability therefore reduces launch uncertainty without establishing the mass commercialization implied by the share price ([AI Sapiens](https://www.robotis.com/en/product/ecosystem-aisapiens.php), `source_web_768528155732a7d944a72d46`; [DYNAMIXEL Q](https://www.robotis.com/en/product/dynamixel-q.php), `source_web_f33560b471607f0069164fff`).
 
-## Identity and listing
+## Identity
 
-The immutable identity is `security_0c8b3c4291cd97f56d8c`: ROBOTIS Co., Ltd. common shares,
-KOSDAQ (`XKOS`), provider symbol `108490.KQ`, KRW. DART identifies the issuer as a Korean special-
-purpose-machinery manufacturer established on 25 March 1999; the shares listed on KOSDAQ on 26
-October 2018. At 30 June 2026 the company reported 14,661,028 common shares, including 17,000
-treasury shares. Founder and chief executive Kim Byung-soo controlled 23.7% of voting shares and LG
-Electronics held 6.56%.
+The security remains `security_0c8b3c4291cd97f56d8c`, ROBOTIS Co., Ltd. common shares on KOSDAQ (`XKOS`), ticker `108490`, provider symbol `108490.KQ`, quoted in KRW. DART identifies ROBOTIS as a Korean manufacturer of special-purpose machinery established on 25 March 1999 and listed on KOSDAQ ([DART company information](https://englishdart.fss.or.kr/dsbc001/selectPopup.ax?selectKey=00946030), `source_robotis_dart_company_profile`). No evidence reviewed supports changing the immutable security or issuer identifiers.
 
-## Business and competitive position
+## Business economics
 
-ROBOTIS designs the DYNAMIXEL family of all-in-one robot actuators, integrating motors, reducers,
-controllers and communications. It also develops DYD reducers, GAEMI autonomous delivery robots,
-the AI Worker semi-humanoid, the AI Sapiens bipedal platform, the HX5-D20 hand and the CYCLO
-software platform. Its modular hardware, ROS tooling, open documentation and installed developer
-base create a plausible ecosystem advantage, but the filing's descriptions of a global standard,
-customer preference and future market leadership are issuer claims rather than independently
-demonstrated durable economics.
+ROBOTIS develops DYNAMIXEL all-in-one actuators integrating motors, reducers, controllers, communications, and associated software. It also develops reducers, delivery robots, robot hands, AI Worker, AI Sapiens, and the CYCLO software platform. Integrated hardware, ROS-oriented tooling, open documentation, and an established developer base can reduce customers' design time and create ecosystem value. The durability of that advantage has not yet been demonstrated through customer retention, pricing power, or through-cycle cash conversion.
 
-The current economics are concentrated: actuators generated KRW26.665 billion, or **97.99%**, of
-first-half 2026 consolidated revenue; autonomous robots generated only KRW548 million. The X series
-alone accounts for about 90% of actuator sales. Management plans a second-half 2026 launch of the
-Q-series humanoid actuator and AI Sapiens, with Uzbekistan mass production from 2027. These are
-important milestones, but they are forward-looking plans rather than booked humanoid revenue.
+For the six months ended 30 June 2026, consolidated revenue was **KRW 27.213 billion**, up from KRW 18.101 billion a year earlier. Gross profit was KRW 14.713 billion, approximately 54.1% of revenue. The company reported a KRW 9.862 billion operating loss and KRW 7.321 billion net loss, including KRW 11.781 billion of disclosed employee share-based compensation. The second quarter alone generated KRW 15.372 billion revenue and KRW 1.981 billion operating profit, a 12.9% operating margin. That quarter is encouraging but insufficient to demonstrate durable profitability ([income statement](https://opendart.fss.or.kr/xbrl/viewer/view.do?xbrlExtSeq=20260814001809&roleId=dart_2026-01-31_role-D431410&lang=ko), `source_robotis_2026_h1_income`).
 
-First-half revenue by geography was KRW8.941 billion in North America, KRW7.739 billion in Korea,
-KRW4.219 billion in Europe, KRW2.187 billion in China, KRW1.596 billion in Japan and KRW2.531
-billion elsewhere. This is a useful diversified export footprint. The company also reported no
-material non-routine contract and no open derivative or currency-forward position.
+The business remains concentrated. Actuators generated KRW 26.665 billion, or 97.99% of first-half revenue, while autonomous robots generated KRW 548 million. The filing states that the X series represents roughly 90% of actuator sales. Management's descriptions of technical leadership, addressable markets, and future standardization are issuer claims; the statutory sales mix verifies a substantial actuator business but not material humanoid-attributable revenue ([business section](https://dart.fss.or.kr/report/viewer.do?rcpNo=20260814003380&dcmNo=11536939&eleId=9&offset=122883&length=137414&dtd=dart4.xsd), `source_robotis_2026_h1_business`).
 
-## Financial quality and balance sheet
+## Cash flow and balance sheet
 
-First-half 2026 revenue rose **50.3%** to KRW27.213 billion. Reported operating loss was KRW9.862
-billion and net loss was KRW7.321 billion, but KRW11.781 billion of employee share-based
-compensation was expensed in the first quarter. Excluding only that disclosed item is a non-GAAP
-inference: adjusted first-half operating profit would have been about KRW1.919 billion, or 7.1% of
-revenue. The cleaner second quarter produced KRW15.372 billion revenue, KRW1.981 billion operating
-profit and KRW2.626 billion net income, a **12.9%** operating margin. One profitable quarter does not
-yet establish through-cycle margins.
+First-half operating cash flow was KRW 1.093 billion. Property-and-equipment purchases were KRW 11.745 billion, compared with KRW 257 million in the prior-year period. The difference illustrates the scale of the current manufacturing ramp and why reported accounting growth has not yet translated into proportionate free cash flow ([cash-flow statement](https://opendart.fss.or.kr/xbrl/viewer/view.do?xbrlExtSeq=20260814001809&roleId=dart_2026-01-31_role-D520000&lang=ko), `source_robotis_2026_h1_cashflow`).
 
-Gross margin was 54.1% in the first half. Research expense was KRW12.300 billion, 45.2% of sales,
-which supports a substantial product pipeline but keeps cash economics dependent on rapid scale.
-Operating cash flow was KRW1.093 billion, while property and equipment purchases accelerated to
-KRW11.745 billion from KRW257 million a year earlier. Inventory rose 41.8% from year-end to
-KRW19.289 billion, faster than the evidence needed to prove recurring humanoid demand.
+Financial resilience is the clearest strength. At 30 June 2026, ROBOTIS reported KRW 84.884 billion cash, KRW 81.619 billion short-term financial products, KRW 68.839 billion current fair-value financial assets, KRW 20.000 billion long-term financial assets, KRW 33.438 billion non-current fair-value financial assets, and KRW 3.532 billion other comprehensive-income financial assets. Total liabilities were only KRW 10.966 billion. Inventory increased to KRW 19.289 billion from KRW 13.602 billion at year-end, however, so demand conversion remains important ([balance sheet](https://opendart.fss.or.kr/xbrl/viewer/view.do?xbrlExtSeq=20260814001809&roleId=dart_2026-01-31_role-D210000&lang=ko), `source_robotis_2026_h1_balance`).
 
-The balance sheet is the clearest strength. At 30 June, ROBOTIS reported KRW84.884 billion cash,
-KRW81.619 billion short-term deposits, KRW102.277 billion of current and non-current profit-or-loss
-financial assets, KRW20 billion of long-term financial assets and KRW3.532 billion of other fair-
-value assets, against KRW10.966 billion total liabilities. Simple net financial assets were about
-KRW281.3 billion before liquidity haircuts and capital commitments. The company committed USD20
-million to its Uzbekistan manufacturing subsidiary and, after the reporting date, disclosed a
-KRW18.1 billion automation-fund investment. Balance-sheet risk is low; capital-allocation and
-execution risk are not.
+The company separately approved a USD 20 million investment, disclosed as KRW 29.368 billion at the announcement exchange rate, to establish manufacturing through its Uzbekistan subsidiary. That investment supports prospective capacity but also makes execution and capital discipline material to per-share outcomes ([KRX disclosure](https://kind.krx.co.kr/external/2026/01/26/001187/20260126002838/70041.htm), `source_robotis_uzbekistan_investment`).
 
 ## Valuation
 
-The `pre_profit_growth` template uses a 48-month revenue-multiple framework because reported
-earnings are distorted by one-time compensation, investment income and a manufacturing ramp. Each
-case explicitly accounts for revenue scale, gross and terminal operating margins, cash use,
-capital commitments and diluted shares. It does not value management's market-size forecasts as
-revenue.
+A 48-month revenue-multiple method is used because current earnings are distorted by share-based compensation and the manufacturing ramp. The method does not treat management's market forecasts as revenue.
 
-| Case | Probability | Fair value | Key assumptions |
-| --- | ---: | ---: | --- |
-| Bear | 30% | KRW20,625 | 2030 revenue reaches KRW90 billion, gross margin falls to the high-40s, terminal operating margin stays near break-even, Q-series adoption remains niche, capex and cash burn reduce net financial assets to KRW150 billion, dilution reaches 16.0 million shares, and the market applies 2× sales. |
-| Base | 50% | KRW70,968 | 2030 revenue reaches KRW180 billion, gross margin holds near 52%, terminal operating margin reaches about 12%, actuator exports and Q-series scale without mass humanoid adoption, net financial assets settle near KRW200 billion, dilution reaches 15.5 million shares, and the market applies 5× sales. |
-| Bull | 20% | KRW282,667 | 2030 revenue reaches KRW400 billion, Q-series becomes a major global platform, humanoid programs convert into repeat paid volume, gross margin stays in the mid-50s, terminal operating margin reaches about 20%, net financial assets remain KRW240 billion, diluted shares stay near 15.0 million, and the market applies 10× sales. |
+| Case | Probability | Fair value | Per-share arithmetic | Principal assumptions |
+| --- | ---: | ---: | --- | --- |
+| Bear | 30% | KRW 20,625 | `(90bn × 2 + 150bn) / 16.0m` | KRW 90 billion 2030 revenue, near-break-even operating margin, niche Q-series adoption, KRW 150 billion residual net financial assets, and 16.0 million diluted shares. |
+| Base | 50% | KRW 70,968 | `(180bn × 5 + 200bn) / 15.5m` | KRW 180 billion revenue, about 12% operating margin, meaningful actuator growth without mass humanoid adoption, KRW 200 billion residual net financial assets, and 15.5 million diluted shares. |
+| Bull | 20% | KRW 282,667 | `(400bn × 10 + 240bn) / 15.0m` | KRW 400 billion revenue, repeat global humanoid volume, about 20% operating margin, KRW 240 billion residual net financial assets, and 15.0 million diluted shares. |
 
-The model weights to **KRW98,205**. Bear/base/bull returns from KRW254,500 are approximately
-**-91.9% / -72.1% / +11.1%**. The bull case requires revenue roughly seven times the annualized
-first-half run rate and a premium multiple four years out, yet barely clears today's price. The
-valuation therefore fails the expected-return, base-return, downside-payoff and margin-of-safety
-gates by wide margins.
+The weighted value is **KRW 98,205**. Relative to KRW 225,000, the bear, base, and bull outcomes are approximately **-90.8%, -68.5%, and +25.6%**. The bull case requires roughly seven times the annualized first-half revenue rate, sustained premium margins, and a 10-times-sales terminal multiple. The deterministic rubric formula therefore produces a **valuation score of 0.0**.
+
+## Fundamental rubric v1
+
+| Factor | Score | Interpretation |
+| --- | ---: | --- |
+| Valuation | 0.0 | The weighted fair value is materially below the current native-currency reference price. |
+| Business quality | 60 | Gross margin, growth, and integrated products are favorable, but concentration and limited demonstrated cash conversion keep the company below the durable-advantages anchor. |
+| Thesis | 75 | Valuation and commercialization concerns are strongly corroborated; current product availability is meaningful contrary evidence but does not establish paid scale. |
+| Balance sheet | 95 | Liquidity is ample and financial stress is very low, with a modest discount for investment commitments and asset-liquidity uncertainty. |
+| Risk penalty | 75 | Operating, concentration, governance, commercialization, competition, and evidence risks are high; leverage is not double-counted. |
+
+These factors are separate judgments, not an aggregate score or a probability of profit.
 
 ## Catalysts
 
-- commercial launch, pricing and third-party validation of DYNAMIXEL-Q and AI Sapiens;
-- named design wins with unit volumes, actuator content and repeat paid orders;
-- sustained double-digit operating margins after the compensation charge;
-- conversion of elevated inventory and Uzbekistan capacity into cash-generative sales;
-- continued North American, European and Chinese export growth; and
-- evidence that open-source adoption produces recurring hardware, service or data revenue.
+- Named paid DYNAMIXEL Q design wins with auditable unit volumes and actuator content.
+- Recurring AI Sapiens or AI Worker sales and disclosed humanoid-attributable revenue.
+- Sustained double-digit operating margins after normalization of compensation expense.
+- Conversion of inventory and Uzbekistan capacity into operating cash flow.
+- Continued export growth, particularly in North America and China.
+- Evidence that open-source adoption produces recurring hardware, service, or data economics.
 
-## Risks and invalidation
+## Downside and invalidation
 
-- **Valuation:** the market price embeds mass adoption well before attributable humanoid economics
-  are disclosed.
-- **Concentration:** nearly all revenue comes from actuators and about 90% of that from the X series.
-- **Execution:** new Q-series products, a complete humanoid platform and overseas capacity are being
-  developed simultaneously.
-- **Cash deployment:** capex, the Uzbekistan subsidiary, investment assets and the automation fund
-  can erode the apparent cash cushion without per-share returns.
-- **Inventory and demand:** inventory growth may precede sales, but can also signal forecasting or
-  product-transition risk.
-- **Competition and price:** integrated robot makers, Chinese component suppliers and alternative
-  motor/reducer architectures can compress content or margins.
-- **Governance and dilution:** 2025 issuance added 1,349,528 shares; first-half 2026 conversions and
-  option exercises added shares, and treasury-share disposals funded the company while transferring
-  value and creating a large compensation expense.
-- **Currency and access:** most sales are exported while the security and reported accounts are KRW;
-  a EUR investor carries conversion risk and KOSDAQ market-structure risk.
+Downside can arise from valuation compression, slower-than-expected humanoid adoption, customer vertical integration, competing actuator designs, inventory misalignment, manufacturing execution, capital deployment, or dilution. The current product pages do not resolve these economic questions.
 
-Invalidate the favorable operating thesis if Q-series or humanoid launches slip materially, repeat
-paid design wins remain undisclosed through 2027, post-charge margins fall back below break-even,
-inventory fails to convert, export growth reverses, or cash deployment does not generate measurable
-per-share revenue and profit. A lower share price alone would not repair those operating failures.
+Invalidate the cautious valuation thesis if repeat paid orders and attributable humanoid revenue establish a credible path to or above the bull case while preserving margins and cash conversion, or if the share price falls enough to create a margin of safety without operating deterioration. Invalidate the favorable operating thesis if new products fail to obtain repeat adoption, normalized margins return below break-even, inventory does not convert into cash-generative sales, exports reverse, manufacturing investment impairs liquidity, or dilution prevents growth from accruing per share.
 
-## Idea exposure map
+## Limitations
 
-- **Candidate:** [[ideas/idea_humanoid_robotics_embodied_ai_components|Humanoid robotics and
-  embodied-AI component supply chain]], positive direction. The causal mechanism is direct:
-  humanoid and advanced-robot unit growth can increase DYNAMIXEL actuator, reducer, hand and platform
-  content. Current statutory evidence establishes material actuator sales and specific humanoid
-  products, but not material humanoid-attributable revenue or repeat multi-site economics. A bounded
-  relationship review is queued. Reject the edge if humanoid programs remain demonstrations,
-  customers vertically integrate actuators, alternative designs win, or volume fails to produce
-  durable owner margins.
-- **Rejected-no-link:** the Japan strategic-investment, nearshoring, defense, space and AI-compute
-  ideas have only geographic, customer or technology adjacency. Current primary evidence does not
-  establish separately material causal exposure. All other maintained ideas were searched and lack
-  a company-specific transmission mechanism beyond generic macro demand.
+The latest reviewed statutory accounts cover only the six months ended 30 June 2026. No reviewed source provides third-quarter financials, order backlog, paid humanoid volumes, customer-level economics, product pricing, or independent performance validation. Future revenue, margins, multiples, net financial assets, dilution, and probabilities are valuation assumptions. Confidence is therefore **medium**.
 
 ## Changes since prior review
 
-First completed review. The immutable KOSDAQ identity, statutory evidence, current KRW price and
-KRW/EUR conversion, scenario valuation, explicit robotics candidate and review gates are newly
-established. The security moves from identity-only watchlist status to maintained watching status.
-There is no predecessor assessment, accepted relationship, strategy, signal, allocation, order or
-paper position to change.
+- Refreshed all prior primary source leads through 24 October 2026.
+- Verified that current issuer pages now present DYNAMIXEL Q models and AI Sapiens as available platforms, reducing launch uncertainty without proving commercial scale.
+- Updated the market reference from KRW 254,500 to the supplied KRW 225,000 close for 23 October 2026.
+- Retained the scenario values because no new financial disclosure supports changing their operating or capital assumptions.
+- Added fundamental scoring rubric v1.
 
-## Sources and review
+## Sources
 
-- [DART company information](https://englishdart.fss.or.kr/dsbc001/selectPopup.ax?selectKey=00946030) (`source_robotis_dart_company_profile`).
-- [H1 2026 consolidated income statement](https://opendart.fss.or.kr/xbrl/viewer/view.do?xbrlExtSeq=20260814001809&roleId=dart_2026-01-31_role-D431410&lang=ko) (`source_robotis_2026_h1_income`).
-- [H1 2026 consolidated balance sheet](https://opendart.fss.or.kr/xbrl/viewer/view.do?xbrlExtSeq=20260814001809&roleId=dart_2026-01-31_role-D210000&lang=ko) (`source_robotis_2026_h1_balance`).
-- [H1 2026 consolidated cash-flow statement](https://opendart.fss.or.kr/xbrl/viewer/view.do?xbrlExtSeq=20260814001809&roleId=dart_2026-01-31_role-D520000&lang=ko) (`source_robotis_2026_h1_cashflow`).
-- [H1 2026 statutory business section](https://dart.fss.or.kr/report/viewer.do?rcpNo=20260814003380&dcmNo=11536939&eleId=9&offset=122883&length=137414&dtd=dart4.xsd) (`source_robotis_2026_h1_business`).
-- [Uzbekistan manufacturing investment](https://kind.krx.co.kr/external/2026/01/26/001187/20260126002838/70041.htm) (`source_robotis_uzbekistan_investment`).
-- Market state: 108490.KQ KRW254,500 and KRW/EUR 0.0006282000103965402, both retrieved
-  2026-09-01T06:49:13Z.
+- [DART company information](https://englishdart.fss.or.kr/dsbc001/selectPopup.ax?selectKey=00946030) (`source_robotis_dart_company_profile`)
+- [H1 2026 consolidated income statement](https://opendart.fss.or.kr/xbrl/viewer/view.do?xbrlExtSeq=20260814001809&roleId=dart_2026-01-31_role-D431410&lang=ko) (`source_robotis_2026_h1_income`)
+- [H1 2026 consolidated balance sheet](https://opendart.fss.or.kr/xbrl/viewer/view.do?xbrlExtSeq=20260814001809&roleId=dart_2026-01-31_role-D210000&lang=ko) (`source_robotis_2026_h1_balance`)
+- [H1 2026 consolidated cash-flow statement](https://opendart.fss.or.kr/xbrl/viewer/view.do?xbrlExtSeq=20260814001809&roleId=dart_2026-01-31_role-D520000&lang=ko) (`source_robotis_2026_h1_cashflow`)
+- [H1 2026 statutory business section](https://dart.fss.or.kr/report/viewer.do?rcpNo=20260814003380&dcmNo=11536939&eleId=9&offset=122883&length=137414&dtd=dart4.xsd) (`source_robotis_2026_h1_business`)
+- [Uzbekistan manufacturing investment](https://kind.krx.co.kr/external/2026/01/26/001187/20260126002838/70041.htm) (`source_robotis_uzbekistan_investment`)
+- [AI Sapiens product platform](https://www.robotis.com/en/product/ecosystem-aisapiens.php) (`source_web_768528155732a7d944a72d46`)
+- [DYNAMIXEL Q product specifications](https://www.robotis.com/en/product/dynamixel-q.php) (`source_web_f33560b471607f0069164fff`)
 
-Review by **2026-09-30**, or earlier after Q-series/AI Sapiens commercialization, a named material
-design win, a margin or inventory reversal, a major capital-allocation event, or a 30% price move.
+Review by **2026-11-23**, or earlier after a new statutory filing, a material customer or order disclosure, evidence of recurring humanoid revenue, a major capital-allocation event, or a material change in operating performance.
 
-[[security-catalog|Tracked securities]] · [[research-catalog|Research catalog]] · [[index|Today's decision]]
+[[security-catalog|Tracked securities]] · [[research-catalog|Research catalog]]
