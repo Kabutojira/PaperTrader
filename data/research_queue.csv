@@ -1,5 +1,5 @@
 entity_type,entity_id,priority,reasons,created_at,updated_at,status,attempts,next_eligible_at,lease_until,manual,last_error
-security,security_6ad1af8d10d6276a0221,60,research_overdue,2026-10-19T21:17:09Z,2026-10-19T21:17:09Z,pending,0,2026-10-19T21:17:09Z,,false,
+security,security_6ad1af8d10d6276a0221,100,explicit_manual_request|research_overdue,2026-10-19T21:17:09Z,2026-10-24T14:43:52Z,failed,1,2026-10-24T20:43:52Z,,true,validation:ResearchResultValidationError:state.assessment.invalid:papertrader.research_results.prepare_result:429
 security,security_715bde20b6e1e1320c1a,60,research_overdue,2026-10-19T21:17:09Z,2026-10-19T21:17:09Z,pending,0,2026-10-19T21:17:09Z,,false,
 security,security_96ba305ee7cd586bc348,60,research_overdue,2026-10-19T21:17:09Z,2026-10-19T21:17:09Z,pending,0,2026-10-19T21:17:09Z,,false,
 security,security_9b0db3bc77914b23a307,60,research_overdue,2026-10-19T21:17:09Z,2026-10-19T21:17:09Z,pending,0,2026-10-19T21:17:09Z,,false,
