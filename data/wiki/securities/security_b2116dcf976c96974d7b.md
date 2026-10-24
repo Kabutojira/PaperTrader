@@ -4,12 +4,12 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-08-13"
-updated: "2026-08-25"
-provenance: "source_vale_q2_2026_ifrs; source_vale_q2_2026_ifrs_amendment_20260824; source_vale_q2_2026_production; source_vale_q2_2026_results; source_vale_salobo_cpf_20260812; source_vale_fundao_municipalities_20260820"
+updated: "2026-10-24"
+provenance: "source_web_94bbb34b959a5e9ffd20856a; source_web_c71b24e973cba7203bf38ab1"
 security_id: security_b2116dcf976c96974d7b
 issuer_id: issuer_a3cc545e137b5f2e3a04
-confidence: medium
-next_review: "2026-09-24"
+confidence: low
+next_review: "2026-10-31"
 ---
 
 # Vale S.A. sponsored ADR
@@ -17,124 +17,91 @@ next_review: "2026-09-24"
 ## Identity
 
 - Immutable security: `security_b2116dcf976c96974d7b`
-- Issuer: `issuer_a3cc545e137b5f2e3a04`
-- Instrument: sponsored ADR, New York Stock Exchange (`XNYS`), USD
-- Provider identity: `VALE` / `XNYS` / `USD` / equity
+- Immutable issuer: `issuer_a3cc545e137b5f2e3a04`
+- Supplied instrument identity: Vale S.A. sponsored ADR
+- Supplied market identity: `VALE` / New York Stock Exchange (`XNYS`) / USD / equity
 
-This assessment compares Vale's diversified iron-ore and base-metals economics with
-[[securities/security_1c055eb9b2bb1f5a8ff2|Rio Tinto]] and addresses the deterministic
-[24 August volume anomaly](https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/inbox/market-security_b2116dcf976c96974d7b-volume_anomaly-5974ff93bdc6.md).
+The supplied issuer, ticker, venue and currency are internally coherent. The current opened evidence did not independently establish the sponsored ADR-to-common-share conversion ratio. Identity IDs have not been changed, but that entitlement gap prevents reliable per-ADR valuation arithmetic.
 
-## Economics and thesis
+## Research conclusion
 
-Vale is a globally significant iron-ore producer with copper and nickel growth options. Its high-grade
-ore system, logistics network and S11D assets can support through-cycle cash generation, while the
-Bacaba project and other base-metals investments add longer-duration copper exposure. The investment
-case is nevertheless dominated by cyclical iron-ore prices, Chinese steel demand, Brazilian operating
-and regulatory exposure, capital intensity, and tailings and remediation liabilities.
+**Research status: valuation unsupported.**
 
-Current primary evidence supports operational improvement rather than a structural de-risking. In
-2Q26, sales rose year over year across iron ore, copper and nickel; realized iron-ore fines prices
-averaged USD 95.0/t. Pro forma EBITDA was USD 4.066 billion, free cash flow was USD 1.505 billion,
-and net debt was USD 13.173 billion. First-half net income attributable to Vale shareholders was USD
-3.268 billion, or USD 0.77 per diluted share. The board also approved USD 1.7 billion of dividends
-and interest on capital and extended the buyback, but distributions do not remove commodity or
-liability risk.
+Vale's operating economics remain supported by current issuer evidence, but the prior per-ADR valuation cannot be independently reconstructed. The latest detailed report available before this review covers 2Q26, while Vale has scheduled its integrated 3Q26 operating and financial report for October 29, 2026. The opened documents also do not establish the ADR ratio and complete per-share denominator needed to translate a normalized enterprise or equity value into fair value for this instrument.
 
-## Evidence and gates
+The prior USD 9.00, USD 14.50 and USD 20.00 scenarios are therefore not carried forward. This is a valuation-evidence limitation rather than a conclusion that Vale lacks operating value.
 
-| Evidence | Interpretation |
-| --- | --- |
-| 2Q26 pro forma EBITDA was USD 4.066 billion and recurring free cash flow was USD 1.505 billion. | Current cash generation is sound, but one quarter at resilient iron-ore prices is not a mid-cycle base. |
-| Iron-ore, copper and nickel sales rose 3%, 10% and 7% year over year. | Execution improved across segments and supports the operating thesis. |
-| Realized iron-ore fines price was USD 95.0/t, up 12% year over year. | Price helped results and must be normalized rather than capitalized. |
-| Net debt was USD 13.173 billion; expanded net debt was USD 16.677 billion. | Funding is manageable but not a net-cash downside buffer. |
-| First-half attributable earnings were USD 3.268 billion and diluted EPS was USD 0.77. | Per-share profitability is current and positive, while commodity sensitivity remains high. |
-| 4.256 billion common shares were outstanding in July 2026. | The sponsored ADR represents one common share and scenario values are stated per ADR. |
+## Business economics
 
-Registered primary evidence: [Vale 2Q26 performance](https://www.sec.gov/Archives/edgar/data/917851/000129281426004002/valepr2q26_6k.htm)
-(`source_vale_q2_2026_results`), [interim IFRS statements](https://www.sec.gov/Archives/edgar/data/917851/000129281426004012/valedfifrs2q26_6k.htm)
-(`source_vale_q2_2026_ifrs`), and [2Q26 production and sales](https://www.sec.gov/Archives/edgar/data/917851/000129281426003838/vale20260721_6k1.htm)
-(`source_vale_q2_2026_production`).
+Vale combines large-scale iron-ore production and logistics with copper and nickel operations. Its asset quality and integrated system can generate substantial cash when commodity prices and operating execution are favorable. The principal constraints are iron-ore cyclicality, exposure to Chinese steel demand, capital intensity, Brazilian currency and regulatory conditions, fuel and freight costs, project execution, and environmental and remediation obligations.
 
-## Changes since prior review
+Vale's [2Q26 performance report](https://api.mziq.com/mzfilemanager/v2/d/53207d1c-63b4-48f1-96b7-19869fae19fe/69d9def3-395b-67c8-7af2-78cff5924cf2?origin=2&_gl=1*1tokn82*_gcl_au*MTE0ODU3ODYwMi4xNzgxODk0MTA5) (`source_web_94bbb34b959a5e9ffd20856a`) reported:
 
-- **Primary evidence:** Vale's 24 August Form 6-K/A adds only the Exhibit 101 interactive-data file to
-  the 31 July interim-financial filing and explicitly leaves all other information unchanged. The
-  current 2Q26 financial, production, Salobo and Fundão facts therefore remain the bounded operating
-  evidence; no operating, balance-sheet or liability assumption changed.
-- **Thesis, catalysts and risks:** The diversified iron-ore and base-metals thesis, Salobo growth
-  catalyst, broader Fundão adherence, commodity normalization, net-debt, capital-intensity and
-  liability risks remain intact. No catalyst or invalidation condition fired.
-- **Market and timing:** The 24 August adjusted close rose to USD 15.04, up 1.76% over the exact 27
-  July through 24 August period. Volume reached 49.76 million shares, 81.19% above the prior session,
-  and its 2.84 z-score entered the configured anomaly. The move is attention evidence, not a
-  fundamental entry, because the monthly price change is modest and the amendment is non-substantive.
-- **Valuation and action:** The USD 9.00 / USD 14.50 / USD 20.00 scenarios and USD 11.60 buy-below
-  price remain unchanged. Their USD 13.95 weighted value is 7.25% below the new mark, so Vale remains
-  Hold / Watch and allocation-ineligible. No strategy or signal is justified.
-- **Idea graph, blockers and gaps:** No canonical relationship exists. A complete catalog search now
-  identifies [[ideas/idea_critical_minerals_copper|critical minerals and structural copper scarcity]]
-  as a plausible but unaccepted positive edge through Vale's copper growth and Salobo execution.
-  Relationship review remains a blocker; confidence, cyclical-normalization, margin-of-safety,
-  timing and valuation gaps are otherwise unchanged.
+- Net operating revenue of USD 10.498 billion.
+- Pro forma EBITDA of USD 4.066 billion and a 39% margin.
+- Recurring free cash flow of USD 1.505 billion.
+- Net debt of USD 13.173 billion and expanded net debt of USD 16.677 billion.
+- Year-over-year sales growth of 3% for iron ore, 10% for copper and 7% for nickel.
+- An average realized iron-ore fines price of USD 95.0 per tonne.
+- Iron-ore C1 cash cost of USD 24.1 per tonne and all-in cost of USD 61.6 per tonne, both affected by currency and external cost pressure.
+- Continued progress at Serra Sul +20 and Bacaba, with Bacaba then expected to start in 3Q27.
 
-Current additional primary evidence: [Salobo CPF execution update](https://www.sec.gov/Archives/edgar/data/917851/000129281426004212/vale20260812_6k.htm)
-(`source_vale_salobo_cpf_20260812`) and [Fundão municipal-adherence update](https://www.sec.gov/Archives/edgar/data/917851/000129281426004308/vale20260820_6k.htm)
-(`source_vale_fundao_municipalities_20260820`). The [24 August Form 6-K/A](https://www.sec.gov/Archives/edgar/data/917851/000129281426004322/valedfifrs2q26_6ka.htm)
-(`source_vale_q2_2026_ifrs_amendment_20260824`) explicitly adds only Exhibit 101 and changes no
-other information in the original filing.
+These facts support a viable through-cycle business and improving execution, but one favorable quarter cannot establish normalized cash generation.
 
-## Alert review
+## Contrary evidence and risks
 
-The 24 August close was USD 15.04 after a 1.76% rise over the exact 27 July through 24 August period.
-Volume reached 49,764,700 shares and its 2.8380 z-score entered the configured anomaly above 2.0.
-RSI was neutral at 59.86; MACD was -0.10994 versus a -0.20427 signal and did not create a new
-crossover. The move is noise for valuation and action: it is a modest price change with elevated
-turnover, no substantive new issuer fact, and a price still above weighted value and buy-below.
+The report also prevents an uncomplicated quality conclusion. Iron-ore costs increased, attributable net income declined year over year despite higher revenue, and Vale retained material net debt. Commodity realizations contributed to the quarter's performance. Remediation remained an active cash and execution responsibility, including Brumadinho commitments and the Samarco reparation program.
 
-## Idea exposure map
+The resulting risk profile is material to high: weaker iron-ore demand, adverse currency and freight movements, operating interruptions, project delays, tailings obligations or capital-allocation pressure could reduce normalized cash flow. Leverage is treated separately in the balance-sheet assessment rather than counted again as an operating-risk penalty.
 
-- **Candidate — [[ideas/idea_critical_minerals_copper|critical minerals and structural copper
-  scarcity]] (positive):** Salobo execution and broader copper-volume growth can transmit structural
-  copper tightness into a larger base-metals contribution and cash flow. Current 2Q26 sales growth
-  and the Salobo CPF update support plausibility, but iron ore still dominates Vale's economics and
-  no canonical edge is accepted. A separate relationship review must test materiality and reject the
-  edge if copper remains immaterial to normalized value or project, cost and capital demands absorb
-  the commodity benefit.
+## Valuation method and missing evidence
 
-The complete idea-catalog search rejected the remaining maintained ideas for lack of a specific,
-material causal transmission mechanism to Vale's normalized economics.
+A mid-cycle cash-flow framework remains preferable to a spot multiple. It should normalize commodity prices, volumes, costs, capital expenditure, remediation payments and distributions before subtracting net financial claims and dividing by the correct ADR-equivalent share count.
 
-## Valuation, catalysts, and risks
+A supported update requires:
 
-The `cyclical_commodity` template uses `mid_cycle_cash_flow`. The valuation deliberately normalizes
-rather than capitalizes the annualized 2Q26 free-cash-flow rate. Against the 24 August close of USD
-15.04, the unchanged 12-month scenarios are:
+1. Verified sponsored ADR entitlement and quote units.
+2. A current applicable diluted-share or ADR-equivalent denominator.
+3. A documented bridge from normalized cash flow to equity value per ADR.
+4. Updated operating and financial evidence from the integrated 3Q26 report.
 
-| Scenario | Probability | Fair value | Assumptions |
-| --- | ---: | ---: | --- |
-| Bear | 30% | USD 9.00 | Iron ore falls toward a stressed part of the cycle, Chinese steel demand weakens, unit costs rise, and remediation and growth spending absorb cash while net debt remains elevated. |
-| Base | 50% | USD 14.50 | Iron ore normalizes below the recent realized price, operational gains and base-metals growth offset part of the price decline, and recurring free cash flow supports distributions without increasing leverage. |
-| Bull | 20% | USD 20.00 | Iron ore remains resilient, S11D and other assets deliver volume and cost gains, copper projects advance, and stronger cash conversion reduces net debt while liabilities remain controlled. |
+Vale's [Q3 2026 release notice](https://www.vale.com/w/vale-3q26-results-release-october-29-1/-/categories) (`source_web_c71b24e973cba7203bf38ab1`) states that the results will be released after market close on October 29 and that operating, sales and financial information will be consolidated in the Performance Report. This makes a short validity period appropriate.
 
-Probability-weighted fair value is USD 13.95, about 7.25% below the mark. The base case is about
-3.59% below market, the bear case about 40.16% below market, and the bull case offers about 32.98%
-upside. The USD 11.60 buy-below level remains about 22.87% below the current
-price. These outputs do not offer the required downside protection or margin of safety.
+Although the supplied market observation reports a USD 12.399 close for October 23, it is not used for a valuation score. The required ADR entitlement and quote-unit conversion were not verified through an opened source.
 
-Catalysts are sustained operating delivery, S11D improvements, Bacaba and other copper milestones,
-unit-cost reduction, and net-debt reduction. Invalidate or downgrade the thesis if iron-ore demand
-or realized prices deteriorate without cost offsets, production reliability reverses, projects
-overrun, remediation or tailings obligations rise materially, net debt increases, or distributions
-crowd out high-return reinvestment and liability funding.
+## Fundamental scoring
 
-## Disposition
+| Factor | Score | Interpretation |
+| --- | ---: | --- |
+| Business quality | 65 | Between mixed economics and durable profitable advantages: strong assets and cash generation are offset by commodity cyclicality, capital intensity and cost variability. |
+| Thesis support | 58 | Operating evidence is modestly favorable, but meaningful contrary evidence remains and 3Q26 information is pending. |
+| Balance sheet | 60 | Cash generation supports manageable financing resilience, while material net and expanded net debt constrain the downside buffer. |
+| Risk penalty | 70 | Material-to-high commodity, execution, regulatory, environmental and evidence risks; leverage is not double counted. |
+| Valuation | Unsupported | ADR entitlement and normalized per-share arithmetic were not verified. |
 
-Status: **watching**, confidence **medium**. The current filings make valuation supportable, but the
-scenario frontier remains ineligible: expected and base returns are below the economic hurdle,
-bear/base payoff is poor, the margin of safety is below target, and no accepted causal relationship
-exists. The volume anomaly is attention evidence, not a paper-trade signal, and changes no material
-gate. Review by
-**2026-09-24** or sooner after a material iron-ore price, Chinese-demand, production, project,
-remediation, or leverage change. No strategy or signal is justified.
+These scores apply rubric version 1 and are research judgments, not predictions of investment returns.
+
+## Catalysts and invalidation
+
+Potential catalysts are sustained production delivery, successful ramp-up of Serra Sul +20, continued Bacaba progress, higher base-metals volumes, cost control, recurring cash conversion and net-debt reduction.
+
+The operating thesis would weaken materially if iron-ore prices or demand deteriorate without cost offsets, volume growth fails to produce recurring cash flow, production reliability reverses, projects overrun, remediation obligations rise materially or net debt grows persistently. Security-level valuation remains invalid until the ADR entitlement and per-share bridge are verified.
+
+## Changes since the prior review
+
+- Replaced the expired supported valuation with `valuation_unsupported` rather than carrying forward unverified per-ADR scenarios.
+- Added rubric-version-1 assessments for business quality, thesis support, balance-sheet resilience and residual risk.
+- Confirmed that the latest accessible detailed issuer evidence remains the 2Q26 performance report.
+- Added Vale's October 29 schedule for the integrated 3Q26 report.
+- Shortened the review horizon to October 31 because the pending report should materially improve the evidence set.
+- Removed market-action and portfolio-gating language from the research conclusion.
+
+## Sources
+
+- [Vale investor-relations portal](https://www.vale.com/investors) (`source_web_7a0bc55ef33c0256ceca8907`)
+- [Vale's performance in 2Q26](https://api.mziq.com/mzfilemanager/v2/d/53207d1c-63b4-48f1-96b7-19869fae19fe/69d9def3-395b-67c8-7af2-78cff5924cf2?origin=2&_gl=1*1tokn82*_gcl_au*MTE0ODU3ODYwMi4xNzgxODk0MTA5) (`source_web_94bbb34b959a5e9ffd20856a`)
+- [Q3 2026 Performance Release Dates](https://www.vale.com/w/vale-3q26-results-release-october-29-1/-/categories) (`source_web_c71b24e973cba7203bf38ab1`)
+
+## Review status
+
+Confidence is **low** for security-level valuation and moderate for the operating observations derived from the 2Q26 issuer report. Review by **2026-10-31**, after the scheduled 3Q26 release, or earlier if a material operating, liability or financing development occurs.

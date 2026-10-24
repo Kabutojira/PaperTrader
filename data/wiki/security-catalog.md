@@ -94,7 +94,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148) | TWST (USD) | researched: insufficient_confidence | complete | 51.00 / 78.00 / 107.00 USD | 2026-10-19T02:22:31.996188Z | 2026-11-18T02:22:31.996188Z |
 | [Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e) | UBER (USD) | researched: research_expired_or_future | complete | 55.00 / 90.00 / 120.00 USD | 2026-08-28T19:27:50Z | 2026-09-27T19:27:50Z |
 | [UiPath, Inc.](securities/security_eca976f0076a425ea1bb) | PATH (USD) | researched: research_expired_or_future | complete | 9.00 / 17.00 / 27.00 USD | 2026-09-05T10:45:22Z | 2026-10-03T10:45:22Z |
-| [Vale S.A.](securities/security_b2116dcf976c96974d7b) | VALE (USD) | researched: source_evidence_unavailable | complete | 9.00 / 14.50 / 20.00 USD | 2026-08-25T15:48:11Z | 2026-09-24T15:48:11Z |
+| [Vale S.A.](securities/security_b2116dcf976c96974d7b) | VALE (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T15:11:19.537484Z | 2026-10-31T15:11:19.537484Z |
 | [Valero Energy Corporation](securities/security_c5a9e460d3350284d157) | VLO (USD) | researched: research_expired_or_future | complete | 216.00 / 286.00 / 378.00 USD | 2026-08-31T23:26:30Z | 2026-09-30T23:26:30Z |
 | [Veralto Corporation](securities/security_1b773169da5023ce4682) | VLTO (USD) | researched: hold | complete | 85.00 / 109.25 / 132.60 USD | 2026-10-24T14:14:08.280807Z | 2026-11-23T14:14:08.280807Z |
 | [Vertiv Holdings Co](securities/security_cb88f9154cfeaa15e878) | VRT (USD) | researched: research_expired_or_future | complete | 166.25 / 281.40 / 402.00 USD | 2026-08-08T11:46:19Z | 2026-09-07T11:46:19Z |
