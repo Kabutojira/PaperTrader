@@ -126,10 +126,10 @@
   },
   "last_market_session": "2026-10-23",
   "last_research_at": "2026-10-24T19:12:31Z",
-  "last_successful_research": "2026-10-24T19:12:31Z",
+  "last_successful_research": "2026-10-25T20:03:52Z",
   "phase_health": {
     "market": "succeeded",
-    "research": "degraded"
+    "research": "succeeded"
   },
   "sells": [
     {
