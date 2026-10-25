@@ -37,6 +37,23 @@ TABLES = {
     for name in ("securities", "ideas", "relationships", "security_assessments", "source_registry")
 }
 OAUTH = ".papertrader/credentials/openai-oauth-auth.json.age"
+RUNTIME_COMMIT_CODES = {
+    "runtime_commit.credential_missing",
+    "runtime_commit.path_invalid",
+    "runtime_commit.phase_invalid",
+    "runtime_commit.recovery_path_invalid",
+    "runtime_commit.state_invalid",
+}
+
+
+class RuntimeCommitValidationError(ValueError):
+    """A controller-owned diagnostic code with no repository or source data."""
+
+    def __init__(self, diagnostic_code: str) -> None:
+        if diagnostic_code not in RUNTIME_COMMIT_CODES:
+            raise ValueError("unknown runtime commit validation code")
+        self.diagnostic_code = diagnostic_code
+        super().__init__("invalid runtime commit state")
 
 
 def update_health(
@@ -163,6 +180,21 @@ def allowed_runtime_path(name: str, phase: str) -> bool:
     return False
 
 
+def _runtime_commit_path(root: Path, name: str) -> Path:
+    """Validate the sole non-data runtime path without broadening data writes."""
+    if name != OAUTH:
+        try:
+            return safe_path(root, name)
+        except ValueError:
+            raise RuntimeCommitValidationError("runtime_commit.path_invalid") from None
+    target = root
+    for part in Path(name).parts:
+        target /= part
+        if target.is_symlink():
+            raise RuntimeCommitValidationError("runtime_commit.path_invalid")
+    return target
+
+
 def _git(root: Path, *args: str, environment: dict[str, str] | None = None) -> str:
     command = subprocess.run(
         ["git", *args],
@@ -181,20 +213,23 @@ def _git(root: Path, *args: str, environment: dict[str, str] | None = None) -> s
 def finalize_commit(root: Path, *, phase: str, token: str = "") -> dict[str, Any]:
     """Post-agent only: validate allowlist, reject divergence, commit once, push once."""
     if phase not in {"market", "research"}:
-        raise ValueError("unknown phase")
-    errors = validate_state(root, read_state(root))
+        raise RuntimeCommitValidationError("runtime_commit.phase_invalid")
+    try:
+        errors = validate_state(root, read_state(root))
+    except (KeyError, OSError, TypeError, ValueError):
+        raise RuntimeCommitValidationError("runtime_commit.state_invalid") from None
     if errors:
-        raise ValueError("invalid research state cannot be committed")
+        raise RuntimeCommitValidationError("runtime_commit.state_invalid")
     base = _git(root, "rev-parse", "HEAD")
     tracked = _git(root, "diff", "--name-only", "HEAD", "-z").split("\0")
     untracked = _git(root, "ls-files", "--others", "--exclude-standard", "-z").split("\0")
     names = sorted({name for name in tracked + untracked if name})
-    if any(not allowed_runtime_path(name, phase) or (root / name).is_symlink() for name in names):
-        raise ValueError("runtime path allowlist rejected changes")
+    if any(not allowed_runtime_path(name, phase) for name in names):
+        raise RuntimeCommitValidationError("runtime_commit.path_invalid")
     for name in names:
-        safe_path(root, name)
+        _runtime_commit_path(root, name)
     if not token:
-        raise ValueError("post-agent Git credential required")
+        raise RuntimeCommitValidationError("runtime_commit.credential_missing")
     environment = os.environ.copy()
     credential = base64.b64encode(f"x-access-token:{token}".encode()).decode()
     environment.update(
@@ -205,7 +240,7 @@ def finalize_commit(root: Path, *, phase: str, token: str = "") -> dict[str, Any
     )
     cache = root / ".cache"
     if cache.is_symlink():
-        raise ValueError("unsafe recovery directory")
+        raise RuntimeCommitValidationError("runtime_commit.recovery_path_invalid")
     cache.mkdir(exist_ok=True)
     # Short-lived failure artifact, including new files and explicit deletions.
     # Never a public artifact or growing repository history.

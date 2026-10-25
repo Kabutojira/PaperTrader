@@ -10,6 +10,7 @@ import pytest
 
 import papertrader.research_runtime as runtime
 from papertrader.research_agent import run_cycle
+from papertrader.research_cli import main
 from papertrader.research_market import PRICE_COLUMNS, _write
 from papertrader.research_queue import admit
 from papertrader.research_results import commit_result
@@ -255,6 +256,100 @@ def test_git_divergence_preserves_new_accepted_page_without_pushing(
     with tarfile.open(runtime_root / ".cache/recovery.tar.gz") as archive:
         assert "data/wiki/securities/new.md" in archive.getnames()
         assert archive.extractfile("data/wiki/securities/new.md").read() == page.read_bytes()  # type: ignore[union-attr]
+
+
+def test_runtime_commit_accepts_only_the_exact_encrypted_oauth_exception(
+    runtime_root: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    oauth = runtime_root / runtime.OAUTH
+    oauth.parent.mkdir(parents=True)
+    oauth.write_bytes(b"mock encrypted credential")
+    commands: list[tuple[str, ...]] = []
+
+    def git(root: Path, *args: str, **kwargs: Any) -> str:
+        commands.append(args)
+        if args == ("rev-parse", "HEAD") or args == ("rev-parse", "origin/main"):
+            return "a" * 40
+        if args[:3] == ("diff", "--name-only", "HEAD"):
+            return runtime.OAUTH + "\0"
+        return ""
+
+    monkeypatch.setattr(runtime, "_git", git)
+    result = runtime.finalize_commit(runtime_root, phase="research", token="mock-test-token")
+    assert result["commit_sha"] == "a" * 40
+    assert any(args[:2] == ("add", "--") and runtime.OAUTH in args for args in commands)
+    with tarfile.open(runtime_root / ".cache/recovery.tar.gz") as archive:
+        assert runtime.OAUTH in archive.getnames()
+
+    commands.clear()
+    monkeypatch.setattr(
+        runtime,
+        "_git",
+        lambda root, *args, **kwargs: (
+            "a" * 40
+            if args == ("rev-parse", "HEAD")
+            else runtime.OAUTH + ".tmp\0"
+            if args[:3] == ("diff", "--name-only", "HEAD")
+            else ""
+        ),
+    )
+    with pytest.raises(
+        runtime.RuntimeCommitValidationError, match="invalid runtime commit state"
+    ) as failure:
+        runtime.finalize_commit(runtime_root, phase="research", token="mock-test-token")
+    assert failure.value.diagnostic_code == "runtime_commit.path_invalid"
+
+
+def test_runtime_commit_cli_reports_only_static_diagnostic_code(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    def reject(*args: Any, **kwargs: Any) -> dict[str, Any]:
+        raise runtime.RuntimeCommitValidationError("runtime_commit.state_invalid")
+
+    monkeypatch.setattr("papertrader.research_cli.finalize_commit", reject)
+    manifest = tmp_path / "manifest.json"
+    assert (
+        main(
+            [
+                "--repository",
+                str(tmp_path),
+                "commit-runtime",
+                "research",
+                "--manifest",
+                str(manifest),
+            ]
+        )
+        == 4
+    )
+    assert json.loads(capsys.readouterr().out) == {
+        "status": "invalid_data",
+        "error": "runtime_commit.state_invalid",
+    }
+
+
+@pytest.mark.parametrize("parent", [".papertrader", ".papertrader/credentials"])
+def test_runtime_commit_rejects_encrypted_oauth_symlink_parents(
+    runtime_root: Path, monkeypatch: pytest.MonkeyPatch, tmp_path: Path, parent: str
+) -> None:
+    target = tmp_path / "outside"
+    target.mkdir()
+    parent_path = runtime_root / parent
+    parent_path.parent.mkdir(parents=True, exist_ok=True)
+    parent_path.symlink_to(target, target_is_directory=True)
+    monkeypatch.setattr(
+        runtime,
+        "_git",
+        lambda root, *args, **kwargs: (
+            "a" * 40
+            if args == ("rev-parse", "HEAD")
+            else runtime.OAUTH + "\0"
+            if args[:3] == ("diff", "--name-only", "HEAD")
+            else ""
+        ),
+    )
+    with pytest.raises(runtime.RuntimeCommitValidationError) as failure:
+        runtime.finalize_commit(runtime_root, phase="research", token="mock-test-token")
+    assert failure.value.diagnostic_code == "runtime_commit.path_invalid"
 
 
 def test_market_cannot_commit_judgment_owned_research_pages() -> None:

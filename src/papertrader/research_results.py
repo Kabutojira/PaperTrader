@@ -76,6 +76,7 @@ RESULT_VALIDATION_CODES = frozenset(
         "source.published_at.future",
         "source.published_at.invalid",
         "state.assessment.invalid",
+        "state.assessment.scoring.invalid",
         "state.integrity.invalid",
         "state.research_page.invalid",
     }
@@ -108,6 +109,18 @@ def _state_validation_code(errors: list[str]) -> str:
     )
     if any(error.startswith(page_prefixes) for error in errors):
         return "state.research_page.invalid"
+    scoring_markers = (
+        "score",
+        "scoring rubric",
+        "valuation reference",
+        "unscored valuation",
+    )
+    if any(
+        error.startswith("invalid assessment ")
+        and any(marker in error for marker in scoring_markers)
+        for error in errors
+    ):
+        return "state.assessment.scoring.invalid"
     if any(
         error.startswith(("assessment identity/currency mismatch:", "invalid assessment "))
         for error in errors

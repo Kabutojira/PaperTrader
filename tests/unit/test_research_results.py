@@ -246,7 +246,9 @@ def test_invalid_scores_preserve_accepted_state(current: Path, changes: dict[str
     document = scored_result(current)
     document["assessment"].update(changes)
     before = data_bytes(current)
-    with pytest.raises(ResearchResultValidationError, match="invalid research result field"):
+    with pytest.raises(
+        ResearchResultValidationError, match="invalid research result field"
+    ) as failure:
         prepare_result(
             current,
             read_state(current),
@@ -256,6 +258,7 @@ def test_invalid_scores_preserve_accepted_state(current: Path, changes: dict[str
             now=NOW,
             observations=observations(),
         )
+    assert failure.value.diagnostic_code == "state.assessment.scoring.invalid"
     assert data_bytes(current) == before
 
 

@@ -1091,3 +1091,53 @@ A direct comparison against the prior committed CSV confirms all92 rows and ever
 original field are unchanged; every numeric score/reference remains empty. These
 are local/mock checks, not live research or a score backfill. Exact pushed CI and
 publication evidence follow through the normal independent workflows.
+
+## Remote research failure and controller repair — 2026-10-25
+
+Actual scheduled research [40225678968](https://github.com/Kabutojira/PaperTrader/actions/runs/40225678968)
+ran revision `17b19102eef1986b44b13069aa7d3e03d1ecd23b`. Discovery was not due;
+one Domino's operation used12 web requests and failed final assessment validation
+with `state.assessment.invalid`. Its prior accepted research remained intact. The
+controller scheduled a retry, but the subsequent commit failed with a generic
+ValueError before producing a recovery artifact. No attempt or health update
+reached main, and the follow-on Pages jobs skipped build/deployment. Their green
+resolve jobs do not establish that a new site was deployed.
+
+Reproduced controller defect: `finalize_commit` explicitly allows the existing
+encrypted OAuth file, then passes it to a destination guard that accepts only
+`data/`. Any actual credential refresh therefore prevents the whole phase commit,
+including its retry state, before recovery archive creation. The observed failure
+matches this path; the remote log does not expose the credential diff. The fix
+permits only that exact encrypted path, checks every parent for symlinks, and
+leaves the research transaction's data-only destination guard unchanged. Tests
+cover the exact exception, adjacent forbidden paths and symlink parents.
+
+Commit preflight failures now expose static `runtime_commit.*` categories; scoring
+rejections expose `state.assessment.scoring.invalid` without rejected values or
+source text. Validation remains strict. The rejected Domino's payload was not
+retained, so its precise invalid assessment field cannot be reconstructed or
+claimed to have been repaired. The spent attempt must be recovered through the
+deterministic queue controller after exact-SHA CI, without another model call or
+an attempt reset. Focused verification passed124 tests, strict validation, Ruff,
+formatting and MyPy; these are local/mock checks, not live inference/OAuth refresh.
+
+Current catalog audit:94 instruments have94 assessments,82 in date and12 stale.
+The93 active/watchlist coverage targets have67 complete valuations and26 explicitly
+unsupported cases, with no missing research records or incomplete supported cases.
+Crocs retains needs_attention; Domino's is the sole queued company. Numeric scores
+exist for19 valuation,25 business-quality,25 thesis,23 balance-sheet and24 risk
+components; empty components retain their evidence-gap explanations. The core
+M0–M9 implementation is complete. Next work should prioritize verified accessible
+issuer releases/filing mirrors and useful source leads within existing request
+budgets, then ordinary bounded refreshes and source-backed scoring. Several
+current unsupported reviews specifically report SEC HTTP403, empty dynamic IR
+pages, oversized reports or missing instrument/capitalization evidence. More model
+operations or weaker evidence checks would not resolve those documented gaps.
+
+Full local Python gates passed239 tests (two existing exchange-calendar warnings),
+locked dependency sync, strict validation, Ruff/formatting and MyPy on19 modules.
+Local Quartz verification is blocked: installed Node25.8.1 cannot import sharp's
+missing optional `@img/colour` package after locked npm installation. The official
+Node24.4.1 download timed out; no unchecked archive or lock-file change was used.
+The exact-SHA CI gate must verify Quartz under its pinned Node24.4.1 before recovery.
+No live research retry is part of this repair.

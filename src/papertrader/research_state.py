@@ -189,8 +189,13 @@ def validate_scores(row: Row, security: Row, sources: Mapping[str, Row]) -> None
             )
         ):
             raise ValueError("invalid score evidence")
-        if row[field] and (not 0 <= decimal(row[field]) <= 100 or not detail["source_ids"]):
-            raise ValueError("score must be within 0-100 with cited evidence")
+        if row[field]:
+            try:
+                score = decimal(row[field])
+            except ValueError:
+                raise ValueError("invalid score value") from None
+            if not 0 <= score <= 100 or not detail["source_ids"]:
+                raise ValueError("score must be within 0-100 with cited evidence")
         for ref in detail["source_ids"]:
             source = sources.get(ref)
             if (
@@ -202,9 +207,12 @@ def validate_scores(row: Row, security: Row, sources: Mapping[str, Row]) -> None
     if row["valuation_score"]:
         if row["research_status"] != "supported":
             raise ValueError("valuation score requires supported scenarios")
-        price = decimal(row["valuation_reference_price"])
-        reference = timestamp(row["valuation_reference_at"])
-        assessed = timestamp(row["assessed_at"])
+        try:
+            price = decimal(row["valuation_reference_price"])
+            reference = timestamp(row["valuation_reference_at"])
+            assessed = timestamp(row["assessed_at"])
+        except ValueError:
+            raise ValueError("invalid native-currency valuation reference") from None
         from papertrader.research_market import completed_session
 
         if (

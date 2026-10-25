@@ -17,7 +17,12 @@ from papertrader.research_discovery import (
 from papertrader.research_publication import publish_views, snapshot
 from papertrader.research_queue import admit, queue_limits
 from papertrader.research_results import commit_result, context_packet, prepare_result
-from papertrader.research_runtime import finalize_commit, market_cycle, research_cycle
+from papertrader.research_runtime import (
+    RuntimeCommitValidationError,
+    finalize_commit,
+    market_cycle,
+    research_cycle,
+)
 from papertrader.research_state import read_state, validate_state
 from papertrader.research_transaction import research_lock
 from papertrader.research_web import ResearchWeb
@@ -190,6 +195,9 @@ def main(argv: list[str] | None = None) -> int:
             )
             print(json.dumps({"changed": commit_result(root, candidate, pages)}))
             return 0
+    except RuntimeCommitValidationError as exc:
+        print(json.dumps({"status": "invalid_data", "error": exc.diagnostic_code}))
+        return 4
     except RuntimeError as exc:
         print(json.dumps({"status": "infrastructure_error", "error": str(exc)}))
         return 5
