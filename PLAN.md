@@ -1141,3 +1141,18 @@ missing optional `@img/colour` package after locked npm installation. The offici
 Node24.4.1 download timed out; no unchecked archive or lock-file change was used.
 The exact-SHA CI gate must verify Quartz under its pinned Node24.4.1 before recovery.
 No live research retry is part of this repair.
+
+Repair revision `7e6192bd24e6f91579f8d79cbbca1f5ad9e6b2b7` passed
+[CI40227659848](https://github.com/Kabutojira/PaperTrader/actions/runs/40227659848),
+including the full Python gate and Quartz check/build with pinned Node24.4.1.
+After this gate, deterministic `claim`/`finish` recovery recorded Domino's actual
+spent attempt using the observed run times, with no new model or web request:
+attempts1, failed/retry_scheduled, next eligible2026-10-26T01:35:24Z. Compact health
+now records the observed degraded phase and retains the prior success timestamp;
+derived health views were regenerated. All225 protected canonical-table, market,
+company-page and idea-page files remained byte-identical. No rejected valuation,
+score, source or credential was imported. Recovery strict validation and38 focused
+runtime/publication tests passed; the protected-path Git diff is empty. A temporary
+fixture-quota failure was resolved by removing only this session's disposable
+verification directories and using workspace basetemp for the rerun. Exact-SHA CI
+and independent Pages deployment are checked before closing this follow-up.

@@ -1,2 +1,2 @@
 entity_type,entity_id,priority,reasons,created_at,updated_at,status,attempts,next_eligible_at,lease_until,manual,last_error
-security,security_f34181f3df32080a91d1,60,research_overdue,2026-10-24T19:06:24Z,2026-10-24T19:06:24Z,pending,0,2026-10-24T19:06:24Z,,false,
+security,security_f34181f3df32080a91d1,60,research_overdue,2026-10-24T19:06:24Z,2026-10-25T19:35:24Z,failed,1,2026-10-26T01:35:24Z,,false,validation:ResearchResultValidationError:state.assessment.invalid:papertrader.research_results.prepare_result:429
