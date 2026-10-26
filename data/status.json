@@ -2,10 +2,10 @@
   "market": {
     "exit_code": 0,
     "failed_tickers": {},
-    "http_requests": 0,
-    "last_attempt_at": "2026-10-24T19:06:24Z",
-    "last_success_at": "2026-10-24T19:06:24Z",
-    "provider_calls": 0,
+    "http_requests": 275,
+    "last_attempt_at": "2026-10-26T21:15:03Z",
+    "last_success_at": "2026-10-26T21:15:03Z",
+    "provider_calls": 12,
     "status": "succeeded"
   },
   "research": {
