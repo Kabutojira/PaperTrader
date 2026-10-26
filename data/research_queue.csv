@@ -1,4 +1,3 @@
 entity_type,entity_id,priority,reasons,created_at,updated_at,status,attempts,next_eligible_at,lease_until,manual,last_error
-security,security_a9eb9838940ef5ceaa0c,60,research_overdue,2026-10-26T21:15:03Z,2026-10-26T21:15:03Z,pending,0,2026-10-26T21:15:03Z,,false,
-security,security_f34181f3df32080a91d1,60,research_overdue,2026-10-24T19:06:24Z,2026-10-25T19:35:24Z,failed,1,2026-10-26T01:35:24Z,,false,validation:ResearchResultValidationError:state.assessment.invalid:papertrader.research_results.prepare_result:429
-security,security_fb87fac302a5446a1ced,65,material_technical_context,2026-10-26T21:15:03Z,2026-10-26T21:15:03Z,pending,0,2026-10-26T21:15:03Z,,false,
+security,security_a9eb9838940ef5ceaa0c,60,research_overdue,2026-10-26T21:15:03Z,2026-10-26T21:16:42Z,failed,1,2026-10-27T03:16:42Z,,false,model:RuntimeError:papertrader.research_agent.run_model:296
+security,security_fb87fac302a5446a1ced,65,material_technical_context,2026-10-26T21:15:03Z,2026-10-26T21:16:40Z,failed,1,2026-10-27T03:16:40Z,,false,model:RuntimeError:papertrader.research_agent.run_model:296
