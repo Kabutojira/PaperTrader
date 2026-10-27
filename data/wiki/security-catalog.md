@@ -35,7 +35,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Evonik Industries AG](securities/security_ccb25582c0392492fe9e) | EVK (EUR) | researched: hold | complete | 10.01 / 18.97 / 27.61 EUR | 2026-10-18T23:44:47.860390Z | 2026-11-17T23:44:47.860390Z |
 | [Fanuc Corporation](securities/security_96ba305ee7cd586bc348) | FUC.F (EUR) | researched: valuation_unsupported | valuation_unsupported | — / — / — EUR | 2026-10-24T14:51:23.823503Z | 2026-10-25T14:51:23.823503Z |
 | [Fiserv, Inc.](securities/security_d202772e4e62065cd17a) | FISV (USD) | researched: buy | complete | 36.00 / 65.70 / 96.20 USD | 2026-10-19T00:38:18.749675Z | 2026-11-18T00:38:18.749675Z |
-| [Fluence Energy, Inc.](securities/security_a9eb9838940ef5ceaa0c) | FLNC (USD) | researched: research_expired_or_future | complete | 4.59 / 11.09 / 20.84 USD | 2026-08-06T18:47:30Z | 2026-08-20T18:47:30Z |
+| [Fluence Energy, Inc.](securities/security_a9eb9838940ef5ceaa0c) | FLNC (USD) | needs_attention: research_expired_or_future | complete | 4.59 / 11.09 / 20.84 USD | 2026-08-06T18:47:30Z | 2026-08-20T18:47:30Z |
 | [Freeport-McMoRan Inc.](securities/security_2dbe878dfc899d7ee867) | FCX (USD) | researched: sell | complete | 32.64 / 47.36 / 65.12 USD | 2026-10-22T20:24:15.882831Z | 2026-11-21T20:24:15.882831Z |
 | [GE Vernova Inc.](securities/security_4b61970aa8f574446819) | GEV (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T13:58:23.270832Z | 2026-11-23T13:58:23.270832Z |
 | [Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687) | DNA (USD) | researched: sell | complete | 3.33 / 7.57 / 16.47 USD | 2026-10-20T20:17:35.294967Z | 2026-11-19T20:17:35.294967Z |
