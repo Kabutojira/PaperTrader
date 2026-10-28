@@ -5,6 +5,9 @@ security,security_8472507d7d320aa388a7,80,severe_price_movement,2026-10-27T21:01
 security,security_95351d928b674bbdf687,80,severe_price_movement,2026-10-27T21:01:58Z,2026-10-27T21:01:58Z,pending,0,2026-10-27T21:01:58Z,,false,
 security,security_98470cfc01bbcde78fc2,80,severe_price_movement,2026-10-27T21:01:58Z,2026-10-27T21:01:58Z,pending,0,2026-10-27T21:01:58Z,,false,
 security,security_a5dc16f3f4b245e6c168,80,severe_price_movement,2026-10-27T21:01:58Z,2026-10-27T21:01:58Z,pending,0,2026-10-27T21:01:58Z,,false,
+security,security_b61c642d038d71be3821,80,severe_price_movement,2026-10-28T21:23:54Z,2026-10-28T21:23:54Z,pending,0,2026-10-28T21:23:54Z,,false,
 security,security_cd492d97064d8574156e,80,severe_price_movement,2026-10-27T21:01:58Z,2026-10-27T21:01:58Z,pending,0,2026-10-27T21:01:58Z,,false,
 security,security_dc7a111e297be528d96b,60,research_overdue,2026-10-27T21:01:58Z,2026-10-27T21:01:58Z,pending,0,2026-10-27T21:01:58Z,,false,
+security,security_ed7d5b616a196969c815,80,severe_price_movement,2026-10-28T21:23:54Z,2026-10-28T21:23:54Z,pending,0,2026-10-28T21:23:54Z,,false,
+security,security_f2b9760d847b2ba59324,80,material_technical_context|severe_price_movement,2026-10-28T21:23:54Z,2026-10-28T21:23:54Z,pending,0,2026-10-28T21:23:54Z,,false,
 security,security_fb87fac302a5446a1ced,65,material_technical_context,2026-10-26T21:15:03Z,2026-10-26T21:16:40Z,failed,1,2026-10-27T03:16:40Z,,false,model:RuntimeError:papertrader.research_agent.run_model:296

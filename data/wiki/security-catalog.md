@@ -13,7 +13,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [ASML Holding N.V.](securities/security_ef35e41886220d51c22c) | ASML (USD) | researched: hold | complete | 1,260.34 / 1,851.12 / 2,552.18 USD | 2026-10-19T01:26:52.646344Z | 2026-11-18T01:26:52Z |
 | [AbCellera Biologics Inc.](securities/security_7bf8f4c9cc12ae410e40) | ABCL (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-19T00:42:23.067619Z | 2026-11-16T00:42:23.067619Z |
 | [Agronomics Limited](securities/security_fe4648901e7675f157fd) | ANIC.L (GBP) | researched: buy | complete | 0.0300 / 0.0800 / 0.1100 GBP | 2026-10-18T23:21:39.032922Z | 2026-11-17T23:21:39.032922Z |
-| [Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3) | ALB (USD) | researched: hold | complete | 9.93 / 131.25 / 231.62 USD | 2026-10-24T14:37:50.249307Z | 2026-11-23T14:37:50.249307Z |
+| [Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3) | ALB (USD) | researched: buy | complete | 9.93 / 131.25 / 231.62 USD | 2026-10-24T14:37:50.249307Z | 2026-11-23T14:37:50.249307Z |
 | [Alphabet Inc.](securities/security_c86bb4e75658c07142cf) | GOOGL (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T15:26:30.343218Z | 2026-11-23T15:26:30.343218Z |
 | [Amazon.com, Inc.](securities/security_2433a056eb0c55961fcc) | AMZN (USD) | researched: hold | complete | 200.00 / 270.00 / 360.00 USD | 2026-10-24T16:40:27.310920Z | 2026-11-23T16:40:27.310920Z |
 | [Applied Materials, Inc.](securities/security_0a56aa634d077fe5796f) | AMAT (USD) | researched: hold | complete | 286.00 / 448.00 / 646.00 USD | 2026-10-24T15:59:51.264224Z | 2026-11-23T15:59:51.264224Z |
@@ -21,7 +21,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Arkema S.A.](securities/security_798e2fb944d740aca308) | AKE (EUR) | researched: hold | complete | 30.00 / 56.00 / 89.00 EUR | 2026-10-18T22:35:52.408763Z | 2026-11-17T22:35:52.408763Z |
 | [Atkore Inc.](securities/security_22c2b9d782a62d7a9b86) | ATKR (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T16:36:49.285280Z | 2026-10-25T16:36:49.285280Z |
 | [BASF SE](securities/security_ef418f5ccc7dc5be8e65) | BAS (EUR) | researched: hold | complete | 27.90 / 50.80 / 70.90 EUR | 2026-10-18T22:30:31.309524Z | 2026-11-17T22:30:31.309524Z |
-| [Bloom Energy Corporation](securities/security_3e597863f00753e8c65c) | BE (USD) | researched: hold | complete | 90.00 / 180.00 / 300.00 USD | 2026-10-18T20:59:04.577258Z | 2026-11-17T20:59:04.577258Z |
+| [Bloom Energy Corporation](securities/security_3e597863f00753e8c65c) | BE (USD) | researched: sell | complete | 90.00 / 180.00 / 300.00 USD | 2026-10-18T20:59:04.577258Z | 2026-11-17T20:59:04.577258Z |
 | [Canadian Solar Inc.](securities/security_099561384c0f5e697727) | CSIQ (USD) | researched: research_expired_or_future | complete | 10.16 / 18.28 / 26.41 USD | 2026-08-31T08:45:47Z | 2026-09-30T08:45:47Z |
 | [Carlisle Companies Incorporated](securities/security_9b0db3bc77914b23a307) | CSL (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T14:54:59.203205Z | 2026-11-23T14:54:59.203205Z |
 | [Coinbase Global, Inc.](securities/security_37ddcbdaad296ad831f2) | COIN (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T14:31:41.489805Z | 2026-11-01T14:31:41.489805Z |
@@ -38,7 +38,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Fluence Energy, Inc.](securities/security_a9eb9838940ef5ceaa0c) | FLNC (USD) | needs_attention: research_expired_or_future | complete | 4.59 / 11.09 / 20.84 USD | 2026-08-06T18:47:30Z | 2026-08-20T18:47:30Z |
 | [Freeport-McMoRan Inc.](securities/security_2dbe878dfc899d7ee867) | FCX (USD) | researched: sell | complete | 32.64 / 47.36 / 65.12 USD | 2026-10-22T20:24:15.882831Z | 2026-11-21T20:24:15.882831Z |
 | [GE Vernova Inc.](securities/security_4b61970aa8f574446819) | GEV (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T13:58:23.270832Z | 2026-11-23T13:58:23.270832Z |
-| [Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687) | DNA (USD) | researched: sell | complete | 3.33 / 7.57 / 16.47 USD | 2026-10-20T20:17:35.294967Z | 2026-11-19T20:17:35.294967Z |
+| [Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687) | DNA (USD) | researched: market_stale_or_unavailable | complete | 3.33 / 7.57 / 16.47 USD | 2026-10-20T20:17:35.294967Z | 2026-11-19T20:17:35.294967Z |
 | [Intel Corporation](securities/security_dfa34d4b9050964b465e) | INTC (USD) | researched: strong_sell | complete | 24.00 / 48.00 / 100.00 USD | 2026-10-24T14:10:30.760181Z | 2026-11-23T14:10:30.760181Z |
 | [Intuitive Machines, Inc.](securities/security_a5dc16f3f4b245e6c168) | LUNR (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-19T02:05:15.000191Z | 2026-11-18T02:05:15.000191Z |
 | [Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349) | ISRG (USD) | researched: sell | complete | 240.00 / 342.00 / 450.00 USD | 2026-10-24T16:25:27.672302Z | 2026-11-23T16:25:27.672302Z |
@@ -48,8 +48,8 @@ Historical and stale research remains readable; only current validated opinions 
 | [Lemonade, Inc.](securities/security_8d11e65cd0de084ee461) | LMND (USD) | researched: insufficient_confidence | complete | 16.75 / 33.51 / 55.85 USD | 2026-10-18T22:58:40.076661Z | 2026-11-17T22:58:40.076661Z |
 | [Lithium Americas Corp.](securities/security_fb87fac302a5446a1ced) | LAC (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-19T01:28:48.199824Z | 2026-11-18T01:28:48.199824Z |
 | [MP Materials Corp.](securities/security_cd492d97064d8574156e) | MP (USD) | researched: hold | complete | 18.00 / 40.00 / 72.00 USD | 2026-10-18T20:45:53.247385Z | 2026-11-17T20:45:53.247385Z |
-| [Materialise NV](securities/security_b61c642d038d71be3821) | MTLS (USD) | researched: hold | complete | 6.30 / 9.00 / 12.20 USD | 2026-10-18T23:13:04.375396Z | 2026-11-17T23:13:04.375396Z |
-| [MercadoLibre, Inc.](securities/security_4935c6e39e38273a1731) | MELI (USD) | researched: hold | complete | 1,440.00 / 2,200.00 / 3,120.00 USD | 2026-10-19T00:17:51.170792Z | 2026-11-18T00:17:51.170792Z |
+| [Materialise NV](securities/security_b61c642d038d71be3821) | MTLS (USD) | researched: buy | complete | 6.30 / 9.00 / 12.20 USD | 2026-10-18T23:13:04.375396Z | 2026-11-17T23:13:04.375396Z |
+| [MercadoLibre, Inc.](securities/security_4935c6e39e38273a1731) | MELI (USD) | researched: buy | complete | 1,440.00 / 2,200.00 / 3,120.00 USD | 2026-10-19T00:17:51.170792Z | 2026-11-18T00:17:51.170792Z |
 | [Meta Platforms, Inc.](securities/security_d12e746b3c9d392183cc) | META (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T15:48:18.636792Z | 2026-11-20T15:48:18.636792Z |
 | [Microsoft Corporation](securities/security_204be2a44063993de1a8) | MSFT (USD) | researched: hold | complete | 418.00 / 567.00 / 698.00 USD | 2026-10-24T16:32:40.780427Z | 2026-11-23T16:32:40.780427Z |
 | [NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | NVDA (USD) | researched: buy | complete | 198.00 / 310.50 / 448.00 USD | 2026-10-18T19:50:33.927425Z | 2026-11-17T19:50:33.927425Z |
@@ -64,7 +64,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Powell Industries, Inc.](securities/security_0b67d6c8e3fd3366a257) | POWL (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T16:03:56.485665Z | 2026-11-23T16:03:56.485665Z |
 | [Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | PRX (EUR) | researched: buy | complete | 27.00 / 48.50 / 63.00 EUR | 2026-10-19T00:25:13.322131Z | 2026-11-17T00:25:13.322131Z |
 | [Proto Labs, Inc.](securities/security_f18cd57a5e086583c861) | PRLB (USD) | researched: insufficient_confidence | complete | 44.00 / 75.60 / 108.80 USD | 2026-10-18T23:17:23.066155Z | 2026-11-17T23:17:23.066155Z |
-| [QUALCOMM Incorporated](securities/security_3a75fc1ccca2ee7c937a) | QCOM (USD) | researched: sell | complete | 102.00 / 166.00 / 220.00 USD | 2026-10-22T20:26:18.005794Z | 2026-11-21T20:26:18.005794Z |
+| [QUALCOMM Incorporated](securities/security_3a75fc1ccca2ee7c937a) | QCOM (USD) | researched: hold | complete | 102.00 / 166.00 / 220.00 USD | 2026-10-22T20:26:18.005794Z | 2026-11-21T20:26:18.005794Z |
 | [Quanta Services, Inc.](securities/security_488a9d7f7a8573597724) | PWR (USD) | researched: hold | complete | 417.50 / 534.40 / 668.00 USD | 2026-10-23T20:09:37.071756Z | 2026-11-22T20:09:37.071756Z |
 | [ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c) | 108490 (KRW) | researched: strong_sell | complete | 20,625.00 / 70,968.00 / 282,667.00 KRW | 2026-10-24T16:07:01.121336Z | 2026-11-23T16:07:01.121336Z |
 | [RTX Corporation](securities/security_59304f90c440def31dc5) | RTX (USD) | researched: hold | complete | 142.00 / 179.38 / 246.50 USD | 2026-10-19T00:33:47.630267Z | 2026-11-17T00:33:47.630267Z |
@@ -88,7 +88,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Taiwan Semiconductor Manufacturing Company Limited](securities/security_ce9b78a4d0773c950765) | TSM (USD) | researched: hold | complete | 250.00 / 434.00 / 594.00 USD | 2026-10-24T15:44:48.694444Z | 2026-11-23T15:44:48.694444Z |
 | [Teledyne Technologies Incorporated](securities/security_ad5917642acbba28c1f2) | TDY (USD) | researched: research_expired_or_future | complete | 506.00 / 675.00 / 870.00 USD | 2026-08-05T19:59:39Z | 2026-09-04T19:59:39Z |
 | [Tencent Holdings Limited](securities/security_de0d83229b369a426b99) | TCEHY (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T15:55:36.134973Z | 2026-11-23T15:55:36.134973Z |
-| [Ternium S.A.](securities/security_2c779e81c27b78c556bb) | TX (USD) | researched: hold | complete | 32.00 / 55.00 / 84.00 USD | 2026-10-22T20:22:14.499873Z | 2026-11-21T20:22:14.499873Z |
+| [Ternium S.A.](securities/security_2c779e81c27b78c556bb) | TX (USD) | researched: market_stale_or_unavailable | complete | 32.00 / 55.00 / 84.00 USD | 2026-10-22T20:22:14.499873Z | 2026-11-21T20:22:14.499873Z |
 | [Tesla, Inc.](securities/security_dc7a111e297be528d96b) | TSLA (USD) | researched: research_expired_or_future | complete | 5.47 / 31.86 / 243.45 USD | 2026-10-20T12:08:40.691805Z | 2026-10-22T07:00:00Z |
 | [Texas Instruments Incorporated](securities/security_83a56943e18793f685b0) | TXN (USD) | researched: sell | complete | 150.00 / 256.50 / 374.00 USD | 2026-10-19T01:18:02.186939Z | 2026-11-17T01:18:02.186939Z |
 | [Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148) | TWST (USD) | researched: insufficient_confidence | complete | 51.00 / 78.00 / 107.00 USD | 2026-10-19T02:22:31.996188Z | 2026-11-18T02:22:31.996188Z |

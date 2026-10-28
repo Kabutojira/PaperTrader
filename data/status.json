@@ -1,12 +1,15 @@
 {
   "market": {
-    "exit_code": 0,
-    "failed_tickers": {},
-    "http_requests": 281,
-    "last_attempt_at": "2026-10-27T21:01:58Z",
+    "exit_code": 2,
+    "failed_tickers": {
+      "security_2c779e81c27b78c556bb": "required_session_missing",
+      "security_95351d928b674bbdf687": "required_session_missing"
+    },
+    "http_requests": 289,
+    "last_attempt_at": "2026-10-28T21:23:54Z",
     "last_success_at": "2026-10-27T21:01:58Z",
-    "provider_calls": 13,
-    "status": "succeeded"
+    "provider_calls": 16,
+    "status": "degraded"
   },
   "research": {
     "discovery_error": "RuntimeError",
