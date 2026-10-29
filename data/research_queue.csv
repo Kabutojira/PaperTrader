@@ -1,8 +1,6 @@
 entity_type,entity_id,priority,reasons,created_at,updated_at,status,attempts,next_eligible_at,lease_until,manual,last_error
 security,security_7bf8f4c9cc12ae410e40,80,severe_price_movement,2026-10-29T21:28:23Z,2026-10-29T21:28:23Z,pending,0,2026-10-29T21:28:23Z,,false,
-security,security_7ca095d63423c55a90e3,80,severe_price_movement,2026-10-27T21:01:58Z,2026-10-28T21:25:44Z,failed,1,2026-10-29T03:25:44Z,,false,model:RuntimeError:papertrader.research_agent.run_model:296
-security,security_8472507d7d320aa388a7,80,severe_price_movement,2026-10-27T21:01:58Z,2026-10-28T21:25:46Z,failed,1,2026-10-29T03:25:46Z,,false,model:RuntimeError:papertrader.research_agent.run_model:296
-security,security_95351d928b674bbdf687,80,severe_price_movement,2026-10-27T21:01:58Z,2026-10-27T21:01:58Z,pending,0,2026-10-27T21:01:58Z,,false,
+security,security_95351d928b674bbdf687,80,severe_price_movement,2026-10-27T21:01:58Z,2026-10-29T21:30:22Z,failed,1,2026-10-30T03:30:22Z,,false,model:RuntimeError:papertrader.research_agent.run_model:296
 security,security_98470cfc01bbcde78fc2,80,severe_price_movement,2026-10-27T21:01:58Z,2026-10-27T21:01:58Z,pending,0,2026-10-27T21:01:58Z,,false,
 security,security_a5dc16f3f4b245e6c168,80,severe_price_movement,2026-10-27T21:01:58Z,2026-10-27T21:01:58Z,pending,0,2026-10-27T21:01:58Z,,false,
 security,security_b61c642d038d71be3821,80,severe_price_movement,2026-10-28T21:23:54Z,2026-10-28T21:23:54Z,pending,0,2026-10-28T21:23:54Z,,false,
