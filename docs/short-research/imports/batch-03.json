@@ -1,0 +1,44 @@
+{
+  "operation": "research_idea",
+  "mode": "discovery",
+  "summary": "Explicit manual bearish research intake; verify identities and primary links before atomic creation. No assessment is implied.",
+  "ideas": [],
+  "companies": [
+    {
+      "company_name": "TeraWulf Inc.",
+      "instrument_name": "Common stock",
+      "ticker": "WULF",
+      "venue_mic": "XNAS",
+      "provider_symbol": "WULF",
+      "currency": "USD",
+      "country": "US",
+      "sector": "AI data centers",
+      "research_role": "short_candidate",
+      "thesis": "Research mandate in AI data centers: test commercial economics, financing resilience, dilution and market expectations against stronger peers. Candidate membership is not a bearish conclusion. No fundamental assessment or valuation has yet been completed.",
+      "source_urls": [
+        "https://investors.terawulf.com/"
+      ],
+      "idea_id": "",
+      "idea_title": "",
+      "mechanism": ""
+    },
+    {
+      "company_name": "BigBear.ai Holdings, Inc.",
+      "instrument_name": "Common stock",
+      "ticker": "BBAI",
+      "venue_mic": "XNYS",
+      "provider_symbol": "BBAI",
+      "currency": "USD",
+      "country": "US",
+      "sector": "AI software",
+      "research_role": "short_candidate",
+      "thesis": "Research mandate in AI software: test commercial economics, financing resilience, dilution and market expectations against stronger peers. Candidate membership is not a bearish conclusion. No fundamental assessment or valuation has yet been completed.",
+      "source_urls": [
+        "https://bigbear.ai/newsroom/bigbear-ai-announces-third-quarter-2026-results-and-raises-fy-2026-revenue-guidance/"
+      ],
+      "idea_id": "",
+      "idea_title": "",
+      "mechanism": ""
+    }
+  ]
+}

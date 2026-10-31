@@ -58,6 +58,7 @@ def current(repository_root: Path, tmp_path: Path) -> Path:
     for sid in ("security1", "security2"):
         row = dict.fromkeys(schema["securities"].columns, "")
         row.update(
+            research_role="long",
             security_id=sid,
             issuer_id="issuer" + sid[-1],
             company_name="Example",

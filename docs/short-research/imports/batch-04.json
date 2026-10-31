@@ -1,0 +1,46 @@
+{
+  "operation": "research_idea",
+  "mode": "discovery",
+  "summary": "Explicit manual bearish research intake; verify identities and primary links before atomic creation. No assessment is implied.",
+  "ideas": [],
+  "companies": [
+    {
+      "company_name": "Applied Digital Corporation",
+      "instrument_name": "Common stock",
+      "ticker": "APLD",
+      "venue_mic": "XNAS",
+      "provider_symbol": "APLD",
+      "currency": "USD",
+      "country": "US",
+      "sector": "AI infrastructure",
+      "research_role": "short_candidate",
+      "thesis": "Research mandate in AI infrastructure: test commercial economics, financing resilience, dilution and market expectations against stronger peers. Candidate membership is not a bearish conclusion. No fundamental assessment or valuation has yet been completed.",
+      "source_urls": [
+        "https://ir.applieddigital.com/",
+        "https://ir.applieddigital.com/news-events/press-releases/detail/44/applied-blockchain-announces-official-name-change-to"
+      ],
+      "idea_id": "",
+      "idea_title": "",
+      "mechanism": ""
+    },
+    {
+      "company_name": "Ondas Inc.",
+      "instrument_name": "Common stock",
+      "ticker": "ONDS",
+      "venue_mic": "XNAS",
+      "provider_symbol": "ONDS",
+      "currency": "USD",
+      "country": "US",
+      "sector": "Autonomous drones",
+      "research_role": "short_candidate",
+      "thesis": "Research mandate in Autonomous drones: test commercial economics, financing resilience, dilution and market expectations against stronger peers. Candidate membership is not a bearish conclusion. No fundamental assessment or valuation has yet been completed.",
+      "source_urls": [
+        "https://ir.ondas.com/",
+        "https://ir.ondas.com/all-sec-filings/content/0001213900-26-000083/ea027135201ex99-1_ondas.htm"
+      ],
+      "idea_id": "",
+      "idea_title": "",
+      "mechanism": ""
+    }
+  ]
+}

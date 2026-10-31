@@ -235,6 +235,7 @@ def test_recovery_is_dry_by_default_and_preserves_values_sources_and_original_ag
     for sid in ("expired", "fresh", "mismatch", "unsupported"):
         security = dict.fromkeys(schema["securities"].columns, "")
         security.update(
+            research_role="long",
             security_id=sid,
             issuer_id="issuer_" + sid,
             venue_mic="XNYS",

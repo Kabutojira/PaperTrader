@@ -54,3 +54,42 @@ mechanism, direction and confidence. Preserve stable IDs, citations and useful
 research. Do not enqueue follow-ups or write files; return the structured result.
 Charts are optional and may never block an otherwise complete review. No trading,
 portfolio gates, allocation, approvals, alerts, history chains or external media.
+
+For research_role short_candidate or short_research_only, membership is an intake
+classification, never a bearish conclusion. Complete the same evidence and valuation
+contract, and explicitly cover these sections in the final page:
+
+- Business economics: actual commercial revenue and growth, gross profit, operating
+  income, free cash flow, competitive advantage, industry standing and a realistic
+  profitability path. Separate pilots, nonbinding MOUs, prototypes and forecasts
+  from recognized revenue and binding contracts.
+- Financial vulnerability: dated unrestricted cash, restricted cash, gross and net
+  debt, maturities, converts, interest coverage, leases, operating burn, capex,
+  liquidity runway, historical dilution, ATM capacity, future funding, SBC,
+  concentration and impairments when disclosed. Compute AI infrastructure capital
+  intensity and financing requirements; distinguish customer prepayments from
+  durable operating cash. Assess financing without further dilution.
+- Expectations and peer comparison: quantify industry-appropriate EV/revenue,
+  EV/EBITDA, normalized earnings, capacity or asset metrics and compare stronger
+  peers. Separate demonstrated operating results from speculative future success.
+- Bear/base/bull: show sourced starting figures and explicit per-share computation,
+  operating, capex, financing, share-count/dilution and multiple assumptions;
+  probabilities and rationale totaling 100%, weighted fair value, correct currency
+  and instrument entitlement (including ADS ratios), current completed-session
+  price, confidence and limitations. Missing material evidence means unsupported,
+  empty scenario numbers and a precise blocker, while retaining useful analysis.
+- Bearish thesis and invalidation: separately explain poor long-term economics,
+  possible price decline, catalysts and time horizon, expectations already priced,
+  squeeze/rally risks, positive invalidation, and whether meaningful downside
+  remains. Identify stronger long-side thematic exposures already in PaperTrader
+  when corroborated by their current research; do not invent peer coverage.
+- Options suitability (informational): optionability, put liquidity, spread risks,
+  implied volatility, corporate actions/delisting/acquisition risk and catalyst
+  timing. State unknown for anything not actually verified; never invent chain
+  statistics. This is no trade instruction, options model, alert or execution flow.
+
+A weak company can fairly appraise as Buy or Hold. A valuable growing company with
+losses need not be weak. Never force a Short label or tune scenarios/scores to a
+threshold: Python derives current opinions and Short eligibility from sourced facts.
+Do not hardcode a current rating in the page; publication supplies the current
+summary. Both bearish roles remain outside ordinary long Buy rankings.

@@ -172,6 +172,13 @@ body[data-slug="index"] article > h1 {
 }
 
 @media (max-width: 800px) {
+  .page > #quartz-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .left.sidebar > .flex-component,
+  .left.sidebar > .flex-component > :first-child {
+    min-width: 0;
+  }
   .papertrader-header {
     align-items: flex-start;
     flex-direction: column;
@@ -189,4 +196,48 @@ body[data-slug="index"] article > h1 {
   .research-hero-art {
     display: none;
   }
+}
+
+.research-summary {
+  border: 2px solid var(--secondary);
+  border-radius: 12px;
+  padding: 1.2rem;
+  margin: 1.5rem 0;
+  background: var(--lightgray);
+  h2 {
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    margin-top: 0.5rem;
+  }
+  .research-summary-company {
+    font-weight: 700;
+    margin-top: 0;
+  }
+  dl {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+    gap: 1rem;
+  }
+  dt {
+    font-weight: 600;
+  }
+  dd {
+    margin: 0.25rem 0 0;
+    overflow-wrap: anywhere;
+  }
+  &.opinion-short,
+  &.opinion-strong_sell {
+    border-color: #bb4848;
+  }
+  &.opinion-unrated {
+    border-style: dashed;
+  }
+}
+.research-scenarios {
+  padding: 1rem;
+  border: 1px solid var(--gray);
+  border-radius: 8px;
+}
+.research-scenarios summary {
+  cursor: pointer;
+  font-weight: 600;
 }

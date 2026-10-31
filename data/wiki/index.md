@@ -38,11 +38,11 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-93 companies / 94 instruments; 94 assessed, 81 in date, 13 stale; 49 currently unrated. 1 quotes require attention.
+109 companies / 110 instruments; 94 assessed, 81 in date, 13 stale; 65 currently unrated. 1 quotes require attention.
 
 Last observed market session: 2026-10-30. Last successful research: 2026-10-25T20:03:52Z. Market: succeeded; research: degraded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
-Watchlist valuation coverage: **67 / 93 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 0; unsupported valuation: 26; incomplete research: 0. Needs attention: 9. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
+Watchlist valuation coverage: **67 / 109 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 16; unsupported valuation: 26; incomplete research: 0. Needs attention: 9. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
@@ -59,6 +59,6 @@ Watchlist valuation coverage: **67 / 93 instruments** have complete sourced bear
 
 ## Ideas and interesting companies
 
-[Company catalog](security-catalog) · [Idea catalog](idea-catalog) · [Research sources and navigation](research-catalog)
+[Company catalog](security-catalog) · [Shorts](short-candidates) · [Idea catalog](idea-catalog) · [Research sources and navigation](research-catalog)
 
 [Buy CSV](data/top_buys.csv) · [Sell CSV](data/top_sells.csv) · [Current rankings JSON](data/research_rankings.json)

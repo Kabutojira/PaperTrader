@@ -20,6 +20,7 @@ from papertrader.atomic_io import atomic_write_bytes
 
 Row = dict[str, str]
 ResearchState = dict[str, list[Row]]
+RESEARCH_ROLES = {"long", "short_candidate", "short_research_only"}
 SCORING_RUBRIC_VERSION = "1"
 FUNDAMENTAL_SCORES = (
     "valuation_score",
@@ -271,6 +272,8 @@ def validate_state(
                 except ValueError:
                     errors.append(f"source date invalid: {row['source_id']}:{column}")
     for row in state["securities"]:
+        if row["research_role"] not in RESEARCH_ROLES:
+            errors.append(f"invalid research role: {row['security_id']}")
         if not row["issuer_id"] or not re.fullmatch(r"[A-Z0-9]{4}", row["venue_mic"]):
             errors.append(f"incomplete security identity: {row['security_id']}")
         if not re.fullmatch(r"[A-Z]{3}", row["currency"]):

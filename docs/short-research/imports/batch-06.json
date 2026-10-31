@@ -1,0 +1,45 @@
+{
+  "operation": "research_idea",
+  "mode": "discovery",
+  "summary": "Explicit manual bearish research intake; verify identities and primary links before atomic creation. No assessment is implied.",
+  "ideas": [],
+  "companies": [
+    {
+      "company_name": "Knightscope, Inc.",
+      "instrument_name": "Class A common stock",
+      "ticker": "KSCP",
+      "venue_mic": "XNAS",
+      "provider_symbol": "KSCP",
+      "currency": "USD",
+      "country": "US",
+      "sector": "Security robotics",
+      "research_role": "short_research_only",
+      "thesis": "Research mandate in Security robotics: test commercial economics, financing resilience, dilution and market expectations against stronger peers. Candidate membership is not a bearish conclusion. No fundamental assessment or valuation has yet been completed.",
+      "source_urls": [
+        "https://ir.knightscope.com/"
+      ],
+      "idea_id": "",
+      "idea_title": "",
+      "mechanism": ""
+    },
+    {
+      "company_name": "MicroVision, Inc.",
+      "instrument_name": "Common stock",
+      "ticker": "MVIS",
+      "venue_mic": "XNAS",
+      "provider_symbol": "MVIS",
+      "currency": "USD",
+      "country": "US",
+      "sector": "LiDAR",
+      "research_role": "short_research_only",
+      "thesis": "Research mandate in LiDAR: test commercial economics, financing resilience, dilution and market expectations against stronger peers. Candidate membership is not a bearish conclusion. No fundamental assessment or valuation has yet been completed.",
+      "source_urls": [
+        "https://ir.microvision.com/",
+        "https://ir.microvision.com/news/press-releases/detail/461/microvision-announces-reverse-split-of-common-stock-to"
+      ],
+      "idea_id": "",
+      "idea_title": "",
+      "mechanism": ""
+    }
+  ]
+}

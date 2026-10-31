@@ -1,0 +1,45 @@
+{
+  "operation": "research_idea",
+  "mode": "discovery",
+  "summary": "Explicit manual bearish research intake; verify identities and primary links before atomic creation. No assessment is implied.",
+  "ideas": [],
+  "companies": [
+    {
+      "company_name": "Virgin Galactic Holdings, Inc.",
+      "instrument_name": "Common stock",
+      "ticker": "SPCE",
+      "venue_mic": "XNYS",
+      "provider_symbol": "SPCE",
+      "currency": "USD",
+      "country": "US",
+      "sector": "Space",
+      "research_role": "short_candidate",
+      "thesis": "Research mandate in Space: test commercial economics, financing resilience, dilution and market expectations against stronger peers. Candidate membership is not a bearish conclusion. No fundamental assessment or valuation has yet been completed.",
+      "source_urls": [
+        "https://investors.virgingalactic.com/overview/default.aspx",
+        "https://investors.virgingalactic.com/news/news-details/2024/Virgin-Galactic-to-Effect-a-Reverse-Stock-Split/default.aspx"
+      ],
+      "idea_id": "",
+      "idea_title": "",
+      "mechanism": ""
+    },
+    {
+      "company_name": "Cipher Digital Inc.",
+      "instrument_name": "Common stock",
+      "ticker": "CIFR",
+      "venue_mic": "XNAS",
+      "provider_symbol": "CIFR",
+      "currency": "USD",
+      "country": "US",
+      "sector": "AI data centers",
+      "research_role": "short_candidate",
+      "thesis": "Research mandate in AI data centers: test commercial economics, financing resilience, dilution and market expectations against stronger peers. Candidate membership is not a bearish conclusion. No fundamental assessment or valuation has yet been completed.",
+      "source_urls": [
+        "https://www.cipherdigital.com/"
+      ],
+      "idea_id": "",
+      "idea_title": "",
+      "mechanism": ""
+    }
+  ]
+}

@@ -164,7 +164,13 @@ def allowed_runtime_path(name: str, phase: str) -> bool:
             or name
             in {
                 f"data/wiki/{page}.md"
-                for page in ("index", "security-catalog", "idea-catalog", "research-catalog")
+                for page in (
+                    "index",
+                    "security-catalog",
+                    "idea-catalog",
+                    "research-catalog",
+                    "short-candidates",
+                )
             }
             or name == "data/tables/securities.csv"
             or name in {"data/market/latest.csv", "data/market/features.csv"}

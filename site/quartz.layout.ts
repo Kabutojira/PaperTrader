@@ -10,6 +10,7 @@ import BrandHead from "./papertrader/components/BrandHead";
 const dashboardPages = new Set([
   "index",
   "security-catalog",
+  "short-candidates",
   "idea-catalog",
   "research-catalog",
 ]);

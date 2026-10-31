@@ -1,0 +1,44 @@
+{
+  "operation": "research_idea",
+  "mode": "discovery",
+  "summary": "Explicit manual bearish research intake; verify identities and primary links before atomic creation. No assessment is implied.",
+  "ideas": [],
+  "companies": [
+    {
+      "company_name": "Aeva Technologies, Inc.",
+      "instrument_name": "Common stock",
+      "ticker": "AEVA",
+      "venue_mic": "XNAS",
+      "provider_symbol": "AEVA",
+      "currency": "USD",
+      "country": "US",
+      "sector": "LiDAR and robotics",
+      "research_role": "short_candidate",
+      "thesis": "Research mandate in LiDAR and robotics: test commercial economics, financing resilience, dilution and market expectations against stronger peers. Candidate membership is not a bearish conclusion. No fundamental assessment or valuation has yet been completed.",
+      "source_urls": [
+        "https://www.aeva.com/"
+      ],
+      "idea_id": "",
+      "idea_title": "",
+      "mechanism": ""
+    },
+    {
+      "company_name": "Palladyne AI Corp.",
+      "instrument_name": "Common stock",
+      "ticker": "PDYN",
+      "venue_mic": "XNAS",
+      "provider_symbol": "PDYN",
+      "currency": "USD",
+      "country": "US",
+      "sector": "Embodied AI",
+      "research_role": "short_candidate",
+      "thesis": "Research mandate in Embodied AI: test commercial economics, financing resilience, dilution and market expectations against stronger peers. Candidate membership is not a bearish conclusion. No fundamental assessment or valuation has yet been completed.",
+      "source_urls": [
+        "https://www.palladyneai.com/"
+      ],
+      "idea_id": "",
+      "idea_title": "",
+      "mechanism": ""
+    }
+  ]
+}

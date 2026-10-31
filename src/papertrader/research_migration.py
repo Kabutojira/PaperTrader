@@ -237,6 +237,7 @@ def prepare_migration(
 
     for row in legacy["securities"]:
         values = {column: row.get(column, "") for column in schema["securities"].columns}
+        values["research_role"] = row.get("research_role") or "long"
         values["research_status"] = (
             "researched" if row["security_id"] in assessments else "unresearched"
         )

@@ -26,6 +26,7 @@ from papertrader.research_results import (
     _reject_copied_source_text,
 )
 from papertrader.research_state import (
+    RESEARCH_ROLES,
     ResearchState,
     contracts,
     csv_bytes,
@@ -72,6 +73,7 @@ COMPANY_FIELDS = {
     "idea_title",
     "mechanism",
 }
+OPTIONAL_COMPANY_FIELDS = {"research_role", "sector"}
 IDEA_FIELDS = {"title", "thesis", "source_urls"}
 
 
@@ -153,9 +155,24 @@ class IdentityVerifier:
         metadata = yf.Ticker(
             candidate["provider_symbol"], session=self.provider.session
         ).get_history_metadata(repair=False)
-        if not isinstance(metadata, dict):
+        if not isinstance(metadata, Mapping):
             raise ValueError("provider identity metadata unavailable")
-        return dict(metadata)
+        identity = {
+            key: metadata.get(key)
+            for key in (
+                "symbol",
+                "longName",
+                "shortName",
+                "currency",
+                "instrumentType",
+                "exchangeName",
+            )
+        }
+        if not (identity["longName"] or identity["shortName"]) or any(
+            not identity[key] for key in ("symbol", "currency", "instrumentType", "exchangeName")
+        ):
+            raise ValueError("provider identity metadata unavailable")
+        return identity
 
 
 def _source(
@@ -277,12 +294,20 @@ def prepare_candidates(
         idea_titles[title.casefold()] = identity
         created["ideas"].append(identity)
     for value in document["companies"]:
-        if not isinstance(value, dict) or set(value) != COMPANY_FIELDS:
+        if (
+            not isinstance(value, dict)
+            or not set(value) >= COMPANY_FIELDS
+            or set(value) - COMPANY_FIELDS - OPTIONAL_COMPANY_FIELDS
+        ):
             raise ValueError("invalid company candidate fields")
         fields = {
             key: _text(value[key], required=key not in {"idea_id", "idea_title", "mechanism"})
             for key in COMPANY_FIELDS - {"source_urls"}
         }
+        role = value.get("research_role", "long")
+        if role not in RESEARCH_ROLES or (not manual and role != "long"):
+            raise ValueError("invalid manual research role")
+        sector = _text(value.get("sector", ""), required=False)
         urls = _urls(value["source_urls"])
         # Verify every proposed citation before catalog creation, including duplicates.
         for url in urls:
@@ -335,6 +360,21 @@ def prepare_candidates(
             security = same_instrument or known
             assert security is not None
             created["known_issuers"].append(security["issuer_id"])
+            if manual:
+                for url in urls:
+                    _source(
+                        candidate,
+                        url,
+                        security["security_id"],
+                        verified_name,
+                        observations,
+                        now,
+                        fields["thesis"],
+                    )
+                if "research_role" in value:
+                    security["research_role"] = role
+                if "sector" in value:
+                    security["sector"] = sector
         else:
             issuer = (
                 known["issuer_id"] if known else identifier("issuer", company_key(verified_name))
@@ -365,6 +405,8 @@ def prepare_candidates(
                 provider_symbol=fields["provider_symbol"],
                 currency=fields["currency"],
                 country=fields["country"],
+                sector=sector,
+                research_role=role,
                 status="watchlist",
                 research_status="unresearched",
                 discovery_provenance=provenance + ":" + "|".join(source_ids),

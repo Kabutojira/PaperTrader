@@ -1,0 +1,46 @@
+{
+  "operation": "research_idea",
+  "mode": "discovery",
+  "summary": "Explicit manual bearish research intake; verify identities and primary links before atomic creation. No assessment is implied.",
+  "ideas": [],
+  "companies": [
+    {
+      "company_name": "Arqit Quantum Inc.",
+      "instrument_name": "Ordinary shares",
+      "ticker": "ARQQ",
+      "venue_mic": "XNAS",
+      "provider_symbol": "ARQQ",
+      "currency": "USD",
+      "country": "KY",
+      "sector": "Quantum security",
+      "research_role": "short_research_only",
+      "thesis": "Research mandate in Quantum security: test commercial economics, financing resilience, dilution and market expectations against stronger peers. Candidate membership is not a bearish conclusion. No fundamental assessment or valuation has yet been completed.",
+      "source_urls": [
+        "https://ir.arqit.uk/",
+        "https://ir.arqit.uk/sec-filings/all-sec-filings/content/0001104659-24-101182/0001104659-24-101182.pdf"
+      ],
+      "idea_id": "",
+      "idea_title": "",
+      "mechanism": ""
+    },
+    {
+      "company_name": "Spire Global, Inc.",
+      "instrument_name": "Class A common stock",
+      "ticker": "SPIR",
+      "venue_mic": "XNYS",
+      "provider_symbol": "SPIR",
+      "currency": "USD",
+      "country": "US",
+      "sector": "Satellite data",
+      "research_role": "short_research_only",
+      "thesis": "Research mandate in Satellite data: test commercial economics, financing resilience, dilution and market expectations against stronger peers. Candidate membership is not a bearish conclusion. No fundamental assessment or valuation has yet been completed.",
+      "source_urls": [
+        "https://ir.spire.com/",
+        "https://ir.spire.com/news-events/press-releases/detail/189/spire-global-effects-1-for-8-reverse-stock-split"
+      ],
+      "idea_id": "",
+      "idea_title": "",
+      "mechanism": ""
+    }
+  ]
+}
