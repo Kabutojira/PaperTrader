@@ -44,6 +44,7 @@ def publication(repository_root: Path, tmp_path: Path) -> Path:
         sid = f"security{index:02}"
         security = dict.fromkeys(schema["securities"].columns, "")
         security.update(
+            research_role="long",
             security_id=sid,
             issuer_id=f"issuer{index:02}",
             company_name=f"Company {index}",
@@ -318,11 +319,10 @@ def test_deployed_artifact_has_exact_revision_metadata_and_freshness_banner(
     assert metadata["built_at"] in home and metadata["run_url"] in home
     assert json.loads((output / "data/publication.json").read_text()) == metadata
     page = (output / "securities/security00.md").read_text()
-    assert "Current research opinion:" in page and "strong_buy" in page
+    assert "Research opinion:" in page and "strong_buy" in page
     assert "2026-11-17T17:00:00Z" in page
     assert (
-        "Current research opinion:"
-        not in (publication / "data/wiki/securities/security00.md").read_text()
+        "Research opinion:" not in (publication / "data/wiki/securities/security00.md").read_text()
     )
     state = read_state(publication)
     for row in state["security_assessments"]:
@@ -331,7 +331,7 @@ def test_deployed_artifact_has_exact_revision_metadata_and_freshness_banner(
     stale = tmp_path / "stale"
     prepare_site(publication, stale, now=NOW)
     page = (stale / "securities/security00.md").read_text()
-    assert "**unrated**" in page and "research_expired_or_future" in page
+    assert "Research opinion: Unrated" in page and "Research expired or future" in page
 
 
 def test_watchlist_coverage_is_per_instrument_and_separate_from_freshness(
@@ -369,3 +369,210 @@ def test_watchlist_coverage_is_per_instrument_and_separate_from_freshness(
     assert b"valuation_unsupported" in catalog
     assert b"incomplete_research" in catalog
     assert read_state(publication) == before
+
+
+def _weak_candidate(root: Path, *, index: int = 15, role: str = "short_candidate") -> str:
+    import json
+
+    state = read_state(root)
+    security = state["securities"][index]
+    sid = security["security_id"]
+    security.update(research_role=role, sector="Test infrastructure")
+    assessment = state["security_assessments"][index]
+    for field, score in (
+        ("business_quality_score", "25"),
+        ("balance_sheet_score", "25"),
+        ("risk_penalty", "75"),
+    ):
+        assessment[field] = score
+    details = json.loads(assessment["score_details"])
+    for field in ("business_quality_score", "balance_sheet_score", "risk_penalty"):
+        details[field] = {
+            "rationale": "Cited fixture weakness, independently assessed.",
+            "source_ids": ["source1"],
+        }
+    assessment["score_details"] = json.dumps(details)
+    state["source_registry"][0]["related_entity_ids"] = sid
+    write_state(root, state)
+    return sid
+
+
+def test_weak_candidate_short_is_current_sourced_and_in_sell_rankings(publication: Path) -> None:
+    sid = _weak_candidate(publication)
+    view = snapshot(publication, now=NOW)
+    row = next(row for row in view["companies"] if row["security_id"] == sid)
+    assert row["rating"] == "short"
+    assert any(row["security_id"] == sid for row in view["sells"])
+    assert len(view["sells"]) <= 10
+    assert all(row["research_role"] == "long" for row in view["buys"])
+
+
+@pytest.mark.parametrize(
+    "gate",
+    [
+        "long",
+        "short_research_only",
+        "strong_business",
+        "business_quality_score",
+        "balance_sheet_score",
+        "risk_penalty",
+        "insufficient_risk",
+        "low_confidence",
+        "expired",
+        "unsupported",
+        "old_source",
+        "invalid_source",
+        "missing_score_evidence",
+        "source_not_linked",
+        "base_downside",
+        "adjusted_downside",
+        "split",
+        "wrong_currency",
+    ],
+)
+def test_short_requires_all_gates_and_otherwise_uses_normal_ratings(
+    publication: Path, gate: str
+) -> None:
+    from papertrader.research_market import _read
+    from papertrader.research_ratings import reprice
+
+    sid = _weak_candidate(publication)
+    state = read_state(publication)
+    security = state["securities"][15]
+    assessment = state["security_assessments"][15]
+    sources = {row["source_id"]: row for row in state["source_registry"]}
+    market = next(
+        row for row in _read(publication / "data/market/latest.csv") if row["security_id"] == sid
+    )
+    if gate in {"long", "short_research_only"}:
+        security["research_role"] = gate
+    elif gate == "strong_business":
+        assessment.update(business_quality_score="75", balance_sheet_score="75")
+    elif gate in {"business_quality_score", "balance_sheet_score", "risk_penalty"}:
+        assessment[gate] = ""
+    elif gate == "insufficient_risk":
+        assessment["risk_penalty"] = "74"
+    elif gate == "low_confidence":
+        assessment["confidence"] = "low"
+    elif gate == "expired":
+        assessment["valid_until"] = "2026-10-18T18:00:00Z"
+    elif gate == "unsupported":
+        assessment["research_status"] = "valuation_unsupported"
+    elif gate == "old_source":
+        sources["source1"]["checked_at"] = "2026-10-01T00:00:00Z"
+    elif gate == "invalid_source":
+        sources["source1"]["status"] = "unavailable"
+    elif gate == "missing_score_evidence":
+        assessment["score_details"] = "{}"
+    elif gate == "source_not_linked":
+        sources["source1"]["related_entity_ids"] = "some_other_instrument"
+    elif gate == "base_downside":
+        assessment.update(
+            bear_fair_value="0",
+            base_fair_value="90",
+            bull_fair_value="90",
+            bear_probability_pct="80",
+            base_probability_pct="10",
+            bull_probability_pct="10",
+        )
+    elif gate == "adjusted_downside":
+        assessment.update(bear_fair_value="65", base_fair_value="75", bull_fair_value="85")
+    elif gate == "wrong_currency":
+        market["currency"] = "EUR"
+    result = reprice(
+        assessment,
+        market,
+        now=NOW,
+        research_role=security["research_role"],
+        sources=sources,
+        latest_split_date="2026-10-19" if gate == "split" else "",
+    )
+    assert result["rating"] != "short"
+    if gate in {
+        "long",
+        "short_research_only",
+        "strong_business",
+        "missing_score_evidence",
+        "source_not_linked",
+        "business_quality_score",
+        "balance_sheet_score",
+        "risk_penalty",
+        "insufficient_risk",
+        "base_downside",
+    }:
+        assert result["rating"] == "strong_sell"
+    if gate in {
+        "low_confidence",
+        "expired",
+        "unsupported",
+        "old_source",
+        "invalid_source",
+        "split",
+        "wrong_currency",
+    }:
+        assert result["rating"] == "unrated"
+
+
+@pytest.mark.parametrize("role", ["short_candidate", "short_research_only"])
+def test_bearish_universe_buy_stays_outside_long_buy_ranking(publication: Path, role: str) -> None:
+    sid = _weak_candidate(publication, index=0, role=role)
+    view = snapshot(publication, now=NOW)
+    candidate = next(row for row in view["companies"] if row["security_id"] == sid)
+    assert candidate["rating"] == "strong_buy"
+    assert sid not in {row["security_id"] for row in view["buys"]}
+    text = render_views(view)["data/wiki/short-candidates.md"].decode()
+    assert f"securities/{sid}" in text and "Strong Buy" in text
+
+
+def test_summary_reprices_without_rewriting_historical_research(
+    publication: Path, tmp_path: Path
+) -> None:
+    import csv
+
+    sid = _weak_candidate(publication)
+    original = read_state(publication)
+    original_page = (publication / f"data/wiki/securities/{sid}.md").read_bytes()
+    first = tmp_path / "short-summary"
+    prepare_site(publication, first, now=NOW)
+    page = (first / f"securities/{sid}.md").read_text()
+    assert "Research opinion: SHORT" in page
+    assert "Short candidate" in page and "25.00" in page
+    assert "Probability-weighted fair value" in page and "Researched scenario assumptions" in page
+    assert "2026-10-16" in page and "Confidence" in page
+    assert "Original research" in page and "https://issuer.example/filing" in page
+    short_page = (first / "short-candidates.md").read_text()
+    assert "Membership does not imply an active short recommendation" in short_page
+    assert "Active short candidates" in short_page and "Research-only candidates" in short_page
+    assert "Current supported bearish appraisals" in short_page
+    assert "Test infrastructure" in short_page and "SHORT" in short_page
+    prices = list(csv.DictReader((publication / "data/market/latest.csv").open()))
+    for price in prices:
+        if price["security_id"] == sid:
+            price["close"] = "20"
+    _write(publication, "data/market/latest.csv", LATEST_COLUMNS, prices)
+    second = tmp_path / "repriced-summary"
+    prepare_site(publication, second, now=NOW)
+    assert "Research opinion: Buy" in (second / f"securities/{sid}.md").read_text()
+    assert read_state(publication) == original
+    assert (publication / f"data/wiki/securities/{sid}.md").read_bytes() == original_page
+
+
+@pytest.mark.parametrize(
+    "key,value",
+    [
+        ("short_return_pct", "-20"),
+        ("short_maximum_base_return", "0"),
+        ("short_maximum_business_quality", "101"),
+        ("short_maximum_balance_sheet", "-1"),
+        ("short_minimum_risk_penalty", "NaN"),
+        ("short_minimum_confidence", "low"),
+    ],
+)
+def test_short_configuration_rejects_invalid_thresholds(
+    tmp_path: Path, key: str, value: str
+) -> None:
+    from papertrader.research_ratings import rating_thresholds
+
+    (tmp_path / "research.ini").write_text(f"[ratings]\n{key} = {value}\n")
+    with pytest.raises(ValueError):
+        rating_thresholds(tmp_path)

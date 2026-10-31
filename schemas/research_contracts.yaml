@@ -3,7 +3,7 @@ contracts:
   securities:
     path: data/tables/securities.csv
     primary_key: [security_id]
-    columns: [security_id, issuer_id, company_name, instrument_name, instrument_type, ticker, venue_mic, provider_symbol, currency, country, sector, industry, status, research_status, discovery_provenance, research_page, last_research_at, created_at, updated_at]
+    columns: [security_id, issuer_id, company_name, instrument_name, instrument_type, ticker, venue_mic, provider_symbol, currency, country, sector, industry, research_role, status, research_status, discovery_provenance, research_page, last_research_at, created_at, updated_at]
   ideas:
     path: data/tables/ideas.csv
     primary_key: [idea_id]

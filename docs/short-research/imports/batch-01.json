@@ -1,0 +1,45 @@
+{
+  "operation": "research_idea",
+  "mode": "discovery",
+  "summary": "Explicit manual bearish research intake; verify identities and primary links before atomic creation. No assessment is implied.",
+  "ideas": [],
+  "companies": [
+    {
+      "company_name": "FuelCell Energy, Inc.",
+      "instrument_name": "Common stock",
+      "ticker": "FCEL",
+      "venue_mic": "XNAS",
+      "provider_symbol": "FCEL",
+      "currency": "USD",
+      "country": "US",
+      "sector": "Hydrogen and power",
+      "research_role": "short_candidate",
+      "thesis": "Research mandate in Hydrogen and power: test commercial economics, financing resilience, dilution and market expectations against stronger peers. Candidate membership is not a bearish conclusion. No fundamental assessment or valuation has yet been completed.",
+      "source_urls": [
+        "https://investor.fce.com/",
+        "https://investor.fce.com/press-releases/press-release-details/2024/FuelCell-Energy-Announces-1-For-30-Reverse-Stock-Split/"
+      ],
+      "idea_id": "",
+      "idea_title": "",
+      "mechanism": ""
+    },
+    {
+      "company_name": "C3.ai, Inc.",
+      "instrument_name": "Class A common stock",
+      "ticker": "AI",
+      "venue_mic": "XNYS",
+      "provider_symbol": "AI",
+      "currency": "USD",
+      "country": "US",
+      "sector": "Enterprise AI",
+      "research_role": "short_candidate",
+      "thesis": "Research mandate in Enterprise AI: test commercial economics, financing resilience, dilution and market expectations against stronger peers. Candidate membership is not a bearish conclusion. No fundamental assessment or valuation has yet been completed.",
+      "source_urls": [
+        "https://c3.ai/"
+      ],
+      "idea_id": "",
+      "idea_title": "",
+      "mechanism": ""
+    }
+  ]
+}

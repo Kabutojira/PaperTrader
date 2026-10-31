@@ -74,7 +74,8 @@ or fair values to fill the lists.
 `security_assessments.csv` also exports optional 0–100 `valuation_score`,
 `business_quality_score`, `thesis_score`, `balance_sheet_score` and `risk_penalty`.
 Higher values mean stronger support except `risk_penalty`, where higher means more
-risk. These research judgments do not alter PaperTrader's existing opinion rules.
+risk. For `long` securities these judgments do not alter the existing opinion rules.
+Short eligibility uses the additional independently sourced weakness gates.
 The [rubric 1 contract](docs/FUNDAMENTAL_SCORING.md) defines anchors, overlap,
 source evidence, price/session conventions and consumer expiry checks. The worker
 receives the matching `research_security` instructions. `scoring_rubric_version`
@@ -119,3 +120,24 @@ research never becomes a fresh ranking merely by being counted as baseline cover
 Existing defaults remain3 sequential research operations per daily cycle, including
 weekly discovery. No valuation is fabricated to satisfy a coverage target; unavailable
 evidence stays explicit and Unrated until sourced scenarios can be supported.
+
+## Bearish research
+
+Every security exports canonical `research_role`: `long`, `short_candidate`, or
+`short_research_only`. Existing instruments default to `long`; explicit manual
+imports may supply `research_role` and `sector` (investment theme). These fields
+are independent of `status`, `research_status` and valuation conclusions.
+FinanceAlerts may consume the column without any PaperTrader dependency on it.
+
+The generated [Shorts catalog](https://kabutojira.github.io/PaperTrader/short-candidates)
+separates active and research-only candidates, retains unavailable/stale appraisals,
+and links each instrument's research. Both bearish roles stay outside ordinary Buy
+rankings even if individually appraised Buy. Sell rankings also admit `short`.
+Short requires substantial downside plus sourced weak economics or financial
+resilience and high risk; it is never assigned by universe membership. See the
+[rating methodology](data/wiki/rating-methodology.md) for configurable defaults.
+Company summaries are derived at publication from current canonical assessments
+and market observations; expired research becomes Unrated without changing history.
+
+Short is research, not an instruction to short shares or buy puts. No option engine,
+trading, portfolio, alerts or FinanceAlerts configuration is part of this application.

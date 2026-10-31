@@ -1156,3 +1156,47 @@ runtime/publication tests passed; the protected-path Git diff is empty. A tempor
 fixture-quota failure was resolved by removing only this session's disposable
 verification directories and using workspace basetemp for the rerun. Exact-SHA CI
 and independent Pages deployment are checked before closing this follow-up.
+
+## Bearish research extension — feature/short-research (2026-10-31)
+
+This is one extension milestone after M0–M9, based on latest main
+`c1a4f3a1b9013af38ec249adfae6739d55ca3190`. Adds canonical research roles,
+configurable evidence-gated Short opinions, bearish-universe Buy exclusion,
+Short inclusion in the existing Sell ranking, prominent derived company summaries,
+and a generated Shorts catalog/navigation. Market may regenerate that catalog
+through its explicit page allowlist; assessment and company-prose writes remain
+forbidden in market. Existing long rating arithmetic and issuer dedupe are retained.
+
+Actual intake: eight sequential two-company CLI batches imported all16 requested
+instruments after primary URL and independent yfinance reconciliation. A narrow
+lazy-Mapping compatibility fix was needed in identity verification; no listing or
+source gate was weakened. Actual market refresh succeeded (2 provider batches,
+33 HTTP requests) with2026-10-30 completed-session USD prices for all16. All94
+baseline identities/fields and94 assessments are preserved. Full identity/action
+review, import requests, blockers and per-company status: docs/short-research/README.md.
+
+Actual research execution:16 explicit sequential single-security attempts, active
+candidates first, all failed isolated-worker preflight before inference/web research
+because the pinned Hermes executable is absent. Zero completed new assessments;
+all16 pages remain unresearched/Unrated with empty fair values, scores and confidence.
+Normal retries are retained (1/2 attempts), queue<=30; scheduled daily defaults
+remain3 operations. The user explicitly chose to keep workflows unchanged and
+document this blocker. No feature data was written to main or publicly deployed.
+Full research and the user's public acceptance criterion remain incomplete.
+
+Initial local verification:228 targeted tests passed; Mapping repair23 tests
+passed; MyPy19 modules and canonical validation passed. Complete local checks,
+reviewed Quartz output and exact-SHA CI evidence follow before delivery. Test
+fixtures may demonstrate Short rendering; they must never be described as real
+Short recommendations. Pages still requires the exact SHA to belong to main.
+
+Extension local gate:276 full-suite tests passed (two existing calendar warnings),
+Ruff lint/format, MyPy19 and strict validation passed. Locked npm install and Quartz
+check/build passed under local Node25.8.1 (162 Markdown pages,225 emitted files,
+internal links valid). Reviewed desktop/mobile Shorts and actual Unrated/Strong Sell
+company summaries; a synthetic fixture verified Short rendering without adding a
+real recommendation. Repaired mobile grid/search intrinsic-width overflow;390px
+viewport summary fits x16–374 with zero horizontal scroll range. Site checks/build
+passed again after the CSS-only fix. All94 original security fields and94 assessment
+rows remain preserved. Exact-SHA CI under pinned Node24.4.1 follows the feature push;
+research completion and deployment remain explicitly blocked, not accepted.

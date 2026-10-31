@@ -7,7 +7,8 @@ import io
 import json
 import posixpath
 import re
-from datetime import datetime, timedelta
+from datetime import datetime
+from html import escape
 from pathlib import Path
 from typing import Any
 from urllib.parse import unquote
@@ -30,6 +31,7 @@ RANK_COLUMNS = (
     "company_name",
     "ticker",
     "currency",
+    "research_role",
     "price",
     "price_date",
     "weighted_fair_value",
@@ -57,6 +59,7 @@ CURRENT_ROOT_PAGES = {
     "idea-catalog.md",
     "research-catalog.md",
     "rating-methodology.md",
+    "short-candidates.md",
 }
 BACKUP = "https://github.com/Kabutojira/PaperTrader/blob/pre-research-only-20261018/data/wiki/"
 WIKILINK = re.compile(r"\[\[([^\]|#]+)(#[^\]|]+)?(?:\|([^\]]+))?\]\]")
@@ -84,6 +87,168 @@ def _money(value: str) -> str:
         return "0.00"
     places = 2 if abs(amount) >= 1 else max(4, -abs(amount).adjusted() + 2)
     return f"{amount:,.{places}f}"
+
+
+ROLE_LABELS = {
+    "long": "Long interest",
+    "short_candidate": "Short candidate",
+    "short_research_only": "Research only",
+}
+
+
+def _opinion(value: str) -> str:
+    return "SHORT" if value == "short" else value.replace("_", " ").title()
+
+
+def _summary(row: Row) -> str:
+    reason = row.get("reason", "").replace("_", " ").capitalize() or (
+        "Substantial modeled downside with evidenced weak business economics or financial "
+        "resilience and high residual risk."
+        if row["rating"] == "short"
+        else "Current supported valuation."
+    )
+    if row["rating"] == "unrated":
+        reason += ". No current supported opinion; historical conclusions below are not current."
+    fields = [
+        ("Research role", ROLE_LABELS[row["research_role"]]),
+        ("Latest market price", f"{_money(row['price'])} {row['currency']}"),
+        ("Price date", row.get("price_date") or "Unavailable"),
+        (
+            "Bear / base / bull fair value",
+            " / ".join(
+                _money(row.get(f"{case}_fair_value", "")) for case in ("bear", "base", "bull")
+            )
+            + " "
+            + row["currency"],
+        ),
+        (
+            "Probability-weighted fair value",
+            _money(row.get("weighted_fair_value") or row.get("assessed_weighted_fair_value", ""))
+            + " "
+            + row["currency"],
+        ),
+        (
+            "Implied upside / downside",
+            _number(row.get("expected_return_pct", "")) + "%"
+            if row.get("expected_return_pct")
+            else "Unavailable",
+        ),
+        ("Confidence", row.get("confidence") or "Unknown"),
+        ("Last research", row.get("assessed_at") or "Not yet researched"),
+        ("Expiration", row.get("valid_until") or "Not applicable"),
+    ]
+    result = (
+        f'<section class="research-summary opinion-{escape(row["rating"], quote=True)}" '
+        'aria-label="Current research opinion">\n'
+        f'<p class="research-summary-company">{escape(row["company_name"])} '
+        f"({escape(row['ticker'])})</p>\n"
+        f"<h2>Research opinion: {_opinion(row['rating'])}</h2>\n"
+        f"<p><strong>Reason:</strong> {escape(reason)}</p>\n<dl>\n"
+    )
+    result += "".join(
+        f"<div><dt>{escape(key)}</dt><dd>{escape(value)}</dd></div>\n" for key, value in fields
+    )
+    result += (
+        "</dl>\n<p>Fair values are research opinions. Short is not an instruction "
+        "to sell short or buy a put. "
+    )
+    result += "Options liquidity and timing require separate assessment.</p>\n</section>\n\n"
+    assumptions = [
+        (case.title(), row.get(f"{case}_assumptions", "")) for case in ("bear", "base", "bull")
+    ]
+    if any(value for _, value in assumptions):
+        result += (
+            '<details class="research-scenarios"><summary>Researched scenario '
+            "assumptions (historical when stale)</summary>\n"
+        )
+        result += "".join(
+            f"<h3>{case}</h3><p>{escape(value or 'Unsupported')}</p>\n"
+            for case, value in assumptions
+        )
+        result += "</details>\n\n"
+    if row["rating"] == "unrated" and row.get("limitations"):
+        result += (
+            '<p class="research-limitations"><strong>Research limitations:</strong> '
+            f"{escape(row['limitations'])}</p>\n\n"
+        )
+    return result
+
+
+def _short_candidates(rows: list[Row]) -> str:
+    result = (
+        "---\ntitle: Short candidates\n---\n\n# Short candidates\n\n"
+        "Short candidates are companies researched for potentially weak fundamentals "
+        "or excessive market expectations. "
+        "Membership does not imply an active short recommendation, and valuation opinions "
+        "are not option-trading signals.\n\n"
+        "Research examines business economics, financing, dilution and expectations, "
+        "with explicit thesis invalidation. "
+        "Only current supported bearish opinions are ordered as bearish appraisals. "
+        "Other opinions and Unrated names remain visible separately. "
+        "Prices and opinions describe the published snapshot; check their dates. "
+        "[Rating methodology](rating-methodology).\n\n"
+    )
+    for role, heading in (
+        ("short_candidate", "Active short candidates"),
+        ("short_research_only", "Research-only candidates"),
+    ):
+        result += f"## {heading}\n\n"
+        universe = [row for row in rows if row["research_role"] == role]
+        bearish = [row for row in universe if row["rating"] in {"short", "strong_sell", "sell"}]
+        bearish.sort(
+            key=lambda row: (
+                decimal(row["adjusted_return_pct"]),
+                row["issuer_id"],
+                row["security_id"],
+            )
+        )
+        others = sorted(
+            [row for row in universe if row not in bearish],
+            key=lambda row: (row["ticker"], row["security_id"]),
+        )
+        for label, group in (
+            ("Current supported bearish appraisals", bearish),
+            ("Other conclusions / unavailable current opinions", others),
+        ):
+            result += f"### {label}\n\n"
+            if not group:
+                result += "No qualifying companies.\n\n"
+                continue
+            result += (
+                "| Company | Ticker | Theme | Role | Opinion | Latest price / date | "
+                "Weighted / base fair value | Upside / downside | Business quality | "
+                "Balance sheet | Risk penalty | Confidence | Freshness / researched |\n"
+                "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n"
+            )
+            for row in group:
+                supported = row["rating"] != "unrated"
+                values = [
+                    _link(row, row["company_name"]),
+                    _link(row, row["ticker"]),
+                    _cell(row["sector"] or "Unknown"),
+                    ROLE_LABELS[role],
+                    _opinion(row["rating"]),
+                    f"{_money(row['price'])} {row['currency']} / "
+                    f"{row.get('price_date') or 'Unknown'}",
+                    (
+                        f"{_money(row.get('weighted_fair_value', ''))} / "
+                        f"{_money(row.get('base_fair_value', ''))} {row['currency']}"
+                        if supported
+                        else "—"
+                    ),
+                    (_number(row.get("expected_return_pct", "")) + "%" if supported else "—"),
+                    *(
+                        _number(row.get(key, ""))
+                        for key in ("business_quality_score", "balance_sheet_score", "risk_penalty")
+                    ),
+                    row.get("confidence") or "Unknown",
+                    _cell(row.get("reason", "").replace("_", " ").capitalize() or "Current")
+                    + " / "
+                    + (row.get("assessed_at") or "Not yet researched"),
+                ]
+                result += "| " + " | ".join(values) + " |\n"
+            result += "\n"
+    return result
 
 
 def snapshot(root: Path, *, now: datetime, state: ResearchState | None = None) -> dict[str, Any]:
@@ -139,6 +304,8 @@ def snapshot(root: Path, *, now: datetime, state: ResearchState | None = None) -
                 now=now,
                 thresholds=thresholds,
                 latest_split_date=max(splits, default=""),
+                research_role=security["research_role"],
+                sources=sources,
             )
             if assessment
             else {"rating": "unrated", "reason": "unresearched"}
@@ -149,40 +316,59 @@ def snapshot(root: Path, *, now: datetime, state: ResearchState | None = None) -
                 and timestamp(assessment["assessed_at"]) <= now
             )
             coverage["current" if fresh else "stale"] += 1
-            # A source must still be valid and have been checked during this assessment.
-            if any(
-                source_id not in sources
-                or sources[source_id]["status"] not in {"available", "valid"}
-                or not sources[source_id]["checked_at"]
-                or timestamp(sources[source_id]["checked_at"])
-                < timestamp(assessment["assessed_at"]) - timedelta(hours=1)
-                or timestamp(sources[source_id]["checked_at"]) > now
-                for source_id in assessment["source_ids"].split("|")
-                if source_id
-            ):
-                opinion.update(rating="unrated", reason="source_evidence_unavailable")
         if opinion["rating"] == "unrated":
             coverage["unrated"] += 1
         if quote.get("status") != "current":
             coverage["failed_tickers"] += 1
         row = {key: security.get(key, "") for key in RANK_COLUMNS}
+        row["sector"] = security["sector"]
         row["entity_status"] = security["research_status"]
         row["valuation_coverage"] = coverage_status
         row["bear_fair_value"] = (assessment or {}).get("bear_fair_value", "")
         row["bull_fair_value"] = (assessment or {}).get("bull_fair_value", "")
+        row["assessed_weighted_fair_value"] = (
+            format(
+                sum(
+                    decimal(assessment[f"{case}_fair_value"])
+                    * decimal(assessment[f"{case}_probability_pct"])
+                    / 100
+                    for case in ("bear", "base", "bull")
+                ),
+                "f",
+            )
+            if assessment and coverage_status == "complete"
+            else ""
+        )
         row.update(price=quote.get("close", ""), price_date=quote.get("price_date", ""), **opinion)
         if assessment:
             row.update(
                 {
                     key: assessment[key]
-                    for key in ("base_fair_value", "confidence", "assessed_at", "valid_until")
+                    for key in (
+                        "base_fair_value",
+                        "confidence",
+                        "assessed_at",
+                        "valid_until",
+                        "business_quality_score",
+                        "balance_sheet_score",
+                        "risk_penalty",
+                        "bear_assumptions",
+                        "base_assumptions",
+                        "bull_assumptions",
+                        "limitations",
+                        "thesis",
+                    )
                 }
             )
         rows.append(row)
     coverage["issuers"] = len({row["issuer_id"] for row in rows})
 
     def rank(categories: set[str], *, sell: bool) -> list[Row]:
-        eligible = [row for row in rows if row["rating"] in categories]
+        eligible = [
+            row
+            for row in rows
+            if row["rating"] in categories and (sell or row["research_role"] == "long")
+        ]
         eligible.sort(
             key=lambda row: (
                 decimal(row["adjusted_return_pct"]) * (1 if sell else -1),
@@ -206,7 +392,7 @@ def snapshot(root: Path, *, now: datetime, state: ResearchState | None = None) -
         version=1,
         coverage=coverage,
         buys=rank({"buy", "strong_buy"}, sell=False),
-        sells=rank({"sell", "strong_sell"}, sell=True),
+        sells=rank({"short", "sell", "strong_sell"}, sell=True),
         last_market_session=max((row.get("price_date", "") for row in quotes.values()), default=""),
         last_research_at=max(
             (row.get("last_research_at", "") for row in state["securities"]), default=""
@@ -326,7 +512,7 @@ def render_views(view: dict[str, Any]) -> dict[str, bytes]:
     )
     home += (
         "\n\n## Ideas and interesting companies\n\n[Company "
-        "catalog](security-catalog) · [Idea catalog](idea-catalog) · "
+        "catalog](security-catalog) · [Shorts](short-candidates) · [Idea catalog](idea-catalog) · "
         "[Research sources and navigation](research-catalog)\n\n"
     )
     home += (
@@ -360,7 +546,7 @@ def render_views(view: dict[str, Any]) -> dict[str, bytes]:
     )
     navigation = (
         "---\ntitle: Research catalog\n---\n\n# Research\n\n[Company "
-        "catalog](security-catalog) · [Idea catalog](idea-catalog) · "
+        "catalog](security-catalog) · [Shorts](short-candidates) · [Idea catalog](idea-catalog) · "
         "[Current rankings](index)\n\nEach company and idea page retains "
         "its current source citations. Older conclusions are marked stale "
         "in the company catalog.\n"
@@ -372,6 +558,7 @@ def render_views(view: dict[str, Any]) -> dict[str, bytes]:
             ("security-catalog", catalog),
             ("idea-catalog", ideas),
             ("research-catalog", navigation),
+            ("short-candidates", _short_candidates(view["companies"])),
         )
     }
     files["data/published/research_rankings.json"] = (
@@ -504,20 +691,7 @@ def prepare_site(
         if name in opinions:
             row = opinions[name]
             frontmatter, body = text.split("\n---\n", 1)
-            text = (
-                frontmatter
-                + "\n---\n\n"
-                + (
-                    f"> Current research opinion: **{row['rating']}**; "
-                    f"entity status: {row['entity_status']}. "
-                    f"{row.get('reason') or 'Current supported valuation'}. "
-                    f"Assessed: {row.get('assessed_at') or 'not yet'}; "
-                    f"expiry: {row.get('valid_until') or 'not applicable'}. "
-                    "Older conclusions below remain historical when research is "
-                    "stale or unsupported.\n\n"
-                )
-                + body
-            )
+            text = frontmatter + "\n---\n\n" + _summary(row) + body
 
         def rewrite(target: str, label: str, original: str, origin: str = name) -> str:
             resolved = resolve_link(target, origin)
@@ -552,4 +726,7 @@ def prepare_site(
         path = output / relative
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(content)
-    return dict(pages=sum(name.endswith(".md") for name in retained) + 4, files=len(files))
+    return dict(
+        pages=sum(name.endswith(".md") for name in retained) + len(generated_pages),
+        files=len(files),
+    )

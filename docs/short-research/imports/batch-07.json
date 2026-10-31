@@ -1,0 +1,44 @@
+{
+  "operation": "research_idea",
+  "mode": "discovery",
+  "summary": "Explicit manual bearish research intake; verify identities and primary links before atomic creation. No assessment is implied.",
+  "ideas": [],
+  "companies": [
+    {
+      "company_name": "Polestar Automotive Holding UK PLC",
+      "instrument_name": "Class A ADS; each ADS represents 30 Class A ordinary shares",
+      "ticker": "PSNY",
+      "venue_mic": "XNAS",
+      "provider_symbol": "PSNY",
+      "currency": "USD",
+      "country": "GB",
+      "sector": "Electric vehicles",
+      "research_role": "short_research_only",
+      "thesis": "Research mandate in Electric vehicles: test commercial economics, financing resilience, dilution and market expectations against stronger peers. Candidate membership is not a bearish conclusion. No fundamental assessment or valuation has yet been completed.",
+      "source_urls": [
+        "https://www.polestar.com/global/"
+      ],
+      "idea_id": "",
+      "idea_title": "",
+      "mechanism": ""
+    },
+    {
+      "company_name": "Plug Power Inc.",
+      "instrument_name": "Common stock",
+      "ticker": "PLUG",
+      "venue_mic": "XNAS",
+      "provider_symbol": "PLUG",
+      "currency": "USD",
+      "country": "US",
+      "sector": "Hydrogen",
+      "research_role": "short_research_only",
+      "thesis": "Research mandate in Hydrogen: test commercial economics, financing resilience, dilution and market expectations against stronger peers. Candidate membership is not a bearish conclusion. No fundamental assessment or valuation has yet been completed.",
+      "source_urls": [
+        "https://www.ir.plugpower.com/"
+      ],
+      "idea_id": "",
+      "idea_title": "",
+      "mechanism": ""
+    }
+  ]
+}

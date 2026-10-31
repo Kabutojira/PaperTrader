@@ -29,6 +29,7 @@ def test_mocked_market_research_publication_and_rejected_update_are_independent(
     state = {name: [] for name in schema}
     security = dict.fromkeys(schema["securities"].columns, "")
     security.update(
+        research_role="long",
         security_id="sec1",
         issuer_id="issuer1",
         company_name="Example",

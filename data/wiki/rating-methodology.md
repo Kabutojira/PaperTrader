@@ -30,3 +30,37 @@ make a valuation incomplete. Price changes never rewrite assessed fair values or
 
 Historical research remains browseable with freshness visible in the company catalog.
 Unrated and stale records are excluded from both ranking lists.
+
+## Bearish research universe and Short
+
+`research_role` is independent of catalog status and research completion:
+`long` (Long interest), `short_candidate` (Short candidate), and
+`short_research_only` (Research only). Membership describes why an instrument is
+researched, never its conclusion. Both bearish roles are excluded from ordinary
+Top 10 Buy rankings even when their individual appraisal is Buy or Hold.
+
+Sell denotes researched prospective downside. Strong Sell denotes substantial
+researched prospective downside. Short adds independently evidenced business or
+financial weakness to substantial downside. Default Short gates, configured in
+`research.ini` under `[ratings]`, are all required:
+
+- `short_candidate` role, complete supported current research, current completed-session
+  native-currency price and every existing identity, scenario and source gate.
+- `short_minimum_confidence = medium` (medium or high only).
+- `short_return_pct = -30`: adjusted expected return at most −30%.
+- `short_maximum_base_return = -20`: base case return at most −20%.
+- `short_maximum_business_quality = 25` or `short_maximum_balance_sheet = 25`.
+- `short_minimum_risk_penalty = 75`.
+
+All three fundamental components must be populated under rubric 1 with valid,
+current, instrument-linked source IDs and rationales. Missing evidence prevents
+Short. Other cases use the unchanged ordinary rating calculation; a strong but
+expensive leader can receive Strong Sell without qualifying for Short.
+Research-only candidates cannot receive Short. Short joins the current Sell list,
+ordered by adjusted expected return with the same issuer deduplication and ten-issuer
+cap. Unrated, expired and unsupported cases remain visible outside current rankings.
+
+Short is a fundamental research opinion, not an instruction to sell short or buy
+a put today. None of Sell, Strong Sell or Short automatically establishes an
+actionable options trade; liquidity, spreads, volatility, catalysts, timing and
+corporate actions require separate verified analysis. Options remain informational.

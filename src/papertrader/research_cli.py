@@ -16,6 +16,7 @@ from papertrader.research_discovery import (
 )
 from papertrader.research_publication import publish_views, snapshot
 from papertrader.research_queue import admit, queue_limits
+from papertrader.research_ratings import rating_thresholds
 from papertrader.research_results import commit_result, context_packet, prepare_result
 from papertrader.research_runtime import (
     RuntimeCommitValidationError,
@@ -103,6 +104,7 @@ def main(argv: list[str] | None = None) -> int:
                 return 0
             state = read_state(root)
             if args.command == "validate":
+                rating_thresholds(root)
                 errors = validate_state(root, state)
                 print(json.dumps({"valid": not errors, "errors": errors}, indent=2))
                 return 4 if errors else 0

@@ -5,12 +5,12 @@ from __future__ import annotations
 import configparser
 from collections.abc import Mapping
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
 
 from papertrader.research_market import completed_session
-from papertrader.research_state import decimal, timestamp
+from papertrader.research_state import decimal, timestamp, validate_scores
 
 CONFIDENCE = {"low": Decimal("0.4"), "medium": Decimal("0.7"), "high": Decimal("1")}
 
@@ -59,6 +59,12 @@ class RatingThresholds:
     strong_sell: Decimal = Decimal("-25")
     buy_minimum_base_return: Decimal = Decimal("10")
     strong_buy_minimum_base_return: Decimal = Decimal("20")
+    short: Decimal = Decimal("-30")
+    short_maximum_base_return: Decimal = Decimal("-20")
+    short_maximum_business_quality: Decimal = Decimal("25")
+    short_maximum_balance_sheet: Decimal = Decimal("25")
+    short_minimum_risk_penalty: Decimal = Decimal("75")
+    short_minimum_confidence: str = "medium"
     minimum_confidence: str = "medium"
     strong_buy_minimum_confidence: str = "high"
 
@@ -74,7 +80,7 @@ def rating_thresholds(root: Path) -> RatingThresholds:
         key: decimal(
             config.get("ratings", f"{key}_return_pct", fallback=str(getattr(defaults, key)))
         )
-        for key in ("strong_buy", "buy", "sell", "strong_sell")
+        for key in ("strong_buy", "buy", "sell", "strong_sell", "short")
     }
     values["buy_minimum_base_return"] = decimal(
         config.get(
@@ -90,17 +96,39 @@ def rating_thresholds(root: Path) -> RatingThresholds:
             fallback=str(defaults.strong_buy_minimum_base_return),
         )
     )
+    for key in (
+        "short_maximum_base_return",
+        "short_maximum_business_quality",
+        "short_maximum_balance_sheet",
+        "short_minimum_risk_penalty",
+    ):
+        values[key] = decimal(config.get("ratings", key, fallback=str(getattr(defaults, key))))
+    short_minimum = config.get("ratings", "short_minimum_confidence", fallback="medium")
     minimum = config.get("ratings", "minimum_confidence", fallback="medium")
     strong_minimum = config.get("ratings", "strong_buy_minimum_confidence", fallback="high")
     if (
-        not values["strong_sell"] < values["sell"] < values["buy"] < values["strong_buy"]
+        not -100 <= values["short"] < values["strong_sell"]
+        or not -100 <= values["short_maximum_base_return"] < 0
+        or any(
+            not 0 <= values[key] <= 100
+            for key in (
+                "short_maximum_business_quality",
+                "short_maximum_balance_sheet",
+                "short_minimum_risk_penalty",
+            )
+        )
+        or short_minimum not in {"medium", "high"}
+        or not values["strong_sell"] < values["sell"] < values["buy"] < values["strong_buy"]
         or not 0 <= values["buy_minimum_base_return"] <= values["strong_buy_minimum_base_return"]
         or minimum not in CONFIDENCE
         or strong_minimum not in CONFIDENCE
     ):
         raise ValueError("invalid rating thresholds")
     return RatingThresholds(
-        **values, minimum_confidence=minimum, strong_buy_minimum_confidence=strong_minimum
+        **values,
+        minimum_confidence=minimum,
+        strong_buy_minimum_confidence=strong_minimum,
+        short_minimum_confidence=short_minimum,
     )
 
 
@@ -111,6 +139,8 @@ def reprice(
     now: datetime,
     thresholds: RatingThresholds = DEFAULT_RATING_THRESHOLDS,
     latest_split_date: str = "",
+    research_role: str = "long",
+    sources: Mapping[str, dict[str, str]] | None = None,
 ) -> dict[str, str]:
     """Shrink expected return toward zero by confidence; never mutate research facts."""
 
@@ -152,6 +182,17 @@ def reprice(
     if market.get("currency") != assessment["currency"]:
         result["reason"] = "currency_mismatch"
         return result
+    if sources is not None and any(
+        ref not in sources
+        or sources[ref]["status"] not in {"available", "valid"}
+        or not sources[ref]["checked_at"]
+        or timestamp(sources[ref]["checked_at"])
+        < timestamp(assessment["assessed_at"]) - timedelta(hours=1)
+        or timestamp(sources[ref]["checked_at"]) > now
+        for ref in filter(None, assessment["source_ids"].split("|"))
+    ):
+        result["reason"] = "source_evidence_unavailable"
+        return result
     confidence = CONFIDENCE[assessment["confidence"]]
     if confidence < CONFIDENCE[thresholds.minimum_confidence]:
         result["reason"] = "insufficient_confidence"
@@ -187,7 +228,31 @@ def reprice(
     expected = 100 * (weighted / price - 1)
     adjusted = expected * confidence
     base = 100 * (values[1] / price - 1)
-    if adjusted <= thresholds.strong_sell:
+    weak = False
+    score_fields = ("business_quality_score", "balance_sheet_score", "risk_penalty")
+    if (
+        research_role == "short_candidate"
+        and sources is not None
+        and all(assessment.get(field) for field in score_fields)
+    ):
+        try:
+            validate_scores(dict(assessment), {"venue_mic": market["venue_mic"]}, sources)
+            weak = (
+                decimal(assessment["business_quality_score"])
+                <= thresholds.short_maximum_business_quality
+                or decimal(assessment["balance_sheet_score"])
+                <= thresholds.short_maximum_balance_sheet
+            ) and decimal(assessment["risk_penalty"]) >= thresholds.short_minimum_risk_penalty
+        except (ValueError, KeyError, TypeError):
+            weak = False
+    if (
+        weak
+        and adjusted <= thresholds.short
+        and base <= thresholds.short_maximum_base_return
+        and confidence >= CONFIDENCE[thresholds.short_minimum_confidence]
+    ):
+        rating = "short"
+    elif adjusted <= thresholds.strong_sell:
         rating = "strong_sell"
     elif adjusted <= thresholds.sell:
         rating = "sell"

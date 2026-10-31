@@ -35,6 +35,7 @@ def runtime_root(repository_root: Path, tmp_path: Path) -> Path:
     for sid in ("sec1", "sec2"):
         row = dict.fromkeys(schema["securities"].columns, "")
         row.update(
+            research_role="long",
             security_id=sid,
             issuer_id="issuer" + sid,
             company_name=sid,
@@ -356,3 +357,11 @@ def test_market_cannot_commit_judgment_owned_research_pages() -> None:
     assert not runtime.allowed_runtime_path("data/wiki/securities/sec1.md", "market")
     assert runtime.allowed_runtime_path("data/wiki/securities/sec1.md", "research")
     assert runtime.allowed_runtime_path("data/wiki/index.md", "market")
+
+
+def test_market_phase_may_refresh_only_the_generated_short_catalog() -> None:
+    from papertrader.research_runtime import allowed_runtime_path
+
+    assert allowed_runtime_path("data/wiki/short-candidates.md", "market")
+    assert not allowed_runtime_path("data/wiki/securities/example.md", "market")
+    assert not allowed_runtime_path("data/tables/security_assessments.csv", "market")

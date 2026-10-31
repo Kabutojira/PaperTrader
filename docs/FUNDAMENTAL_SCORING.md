@@ -4,7 +4,11 @@ FinanceAlerts consumes `data/tables/security_assessments.csv` by exact immutable
 `security_id`. It owns its prices, technical indicators and downstream decisions.
 PaperTrader remains research only and imports no FinanceAlerts data or credentials.
 Scores are research components, not orders, portfolio advice or a composite rating.
-They do not change PaperTrader's existing opinion or ranking rules.
+The existing long-universe opinion calculations remain unchanged. For explicit
+`short_candidate` instruments, current sourced business-quality, balance-sheet and
+risk components also gate the stricter Short opinion described in
+[data/wiki/rating-methodology.md](../data/wiki/rating-methodology.md). There is no
+aggregate fundamental score or extra return penalty.
 
 ## Export and evidence
 

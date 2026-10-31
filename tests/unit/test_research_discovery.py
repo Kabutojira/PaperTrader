@@ -2,13 +2,20 @@ from __future__ import annotations
 
 import json
 import shutil
+from collections.abc import Iterator, Mapping
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
+from types import SimpleNamespace
 from typing import Any
 
 import pytest
 
-from papertrader.research_discovery import company_key, prepare_candidates, run_discovery
+from papertrader.research_discovery import (
+    IdentityVerifier,
+    company_key,
+    prepare_candidates,
+    run_discovery,
+)
 from papertrader.research_queue import admit, claim, schedule_attention
 from papertrader.research_results import commit_result
 from papertrader.research_state import (
@@ -97,6 +104,62 @@ def metadata(value: dict[str, Any]) -> dict[str, str]:
         instrumentType="EQUITY",
         exchangeName="NMS",
     )
+
+
+class LazyMetadata(Mapping[str, str]):
+    def __init__(self, values: dict[str, str]) -> None:
+        self.values = values
+
+    def __getitem__(self, key: str) -> str:
+        if key not in self.values:
+            raise KeyError(key)
+        return self.values[key]
+
+    def __iter__(self) -> Iterator[str]:
+        raise AssertionError("identity verification must not iterate lazy metadata")
+
+    def __len__(self) -> int:
+        raise AssertionError("identity verification must not inspect unrelated metadata")
+
+
+def test_identity_verifier_reads_only_required_mapping_fields(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    expected = metadata(company()) | {"shortName": "Alpha"}
+    provider = SimpleNamespace(session=object())
+    verifier = IdentityVerifier.__new__(IdentityVerifier)
+    verifier.provider = provider
+
+    class Ticker:
+        def __init__(self, symbol: str, *, session: object) -> None:
+            assert symbol == "ALP" and session is provider.session
+
+        def get_history_metadata(self, *, repair: bool) -> Mapping[str, str]:
+            assert repair is False
+            return LazyMetadata(expected)
+
+    monkeypatch.setattr("papertrader.research_discovery.yf.Ticker", Ticker)
+
+    assert verifier(company()) == expected
+
+
+def test_identity_verifier_rejects_incomplete_mapping_metadata(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    verifier = IdentityVerifier.__new__(IdentityVerifier)
+    verifier.provider = SimpleNamespace(session=object())
+
+    class Ticker:
+        def __init__(self, symbol: str, *, session: object) -> None:
+            pass
+
+        def get_history_metadata(self, *, repair: bool) -> Mapping[str, str]:
+            return LazyMetadata({"symbol": "ALP"})
+
+    monkeypatch.setattr("papertrader.research_discovery.yf.Ticker", Ticker)
+
+    with pytest.raises(ValueError, match="provider identity metadata unavailable"):
+        verifier(company())
 
 
 def accept(root: Path, document: dict[str, Any], *, manual: bool = False) -> dict[str, Any]:
@@ -397,3 +460,78 @@ def test_reviewed_share_class_queues_one_uncovered_sibling_valuation(catalog: Pa
     queue = [task.copy()]
     schedule_attention(state, [], [], now=NOW)
     assert state["research_queue"] == queue
+
+
+def test_manual_roles_are_explicit_and_import_preserves_existing_research(catalog: Path) -> None:
+    value = company()
+    accept(catalog, proposal([value], idea=False), manual=True)
+    before = read_state(catalog)
+    original = before["securities"][0].copy()
+    assert original["research_role"] == "long"
+    value.update(research_role="short_candidate", sector="Industrial automation")
+    accept(catalog, proposal([value], idea=False), manual=True)
+    after = read_state(catalog)
+    updated = after["securities"][0]
+    assert updated["research_role"] == "short_candidate"
+    assert updated["sector"] == "Industrial automation"
+    assert {k: v for k, v in updated.items() if k not in {"research_role", "sector"}} == {
+        k: v for k, v in original.items() if k not in {"research_role", "sector"}
+    }
+    assert before["security_assessments"] == after["security_assessments"]
+    assert before["research_queue"] == after["research_queue"]
+    value.pop("research_role")
+    value.pop("sector")
+    accept(catalog, proposal([value], idea=False), manual=True)
+    assert read_state(catalog)["securities"][0] == updated
+
+
+@pytest.mark.parametrize("role,manual", [("short", True), ("", True), ("short_candidate", False)])
+def test_invalid_or_automatic_bearish_roles_are_rejected(
+    catalog: Path, role: str, manual: bool
+) -> None:
+    value = company()
+    value["research_role"] = role
+    before = read_state(catalog)
+    with pytest.raises(ValueError, match="research role"):
+        accept(catalog, proposal([value]), manual=manual)
+    assert read_state(catalog) == before
+
+
+def test_import_preserves_all_existing_identities_and_assessments(repository_root: Path) -> None:
+    import copy
+
+    before = read_state(repository_root)
+    unchanged = copy.deepcopy(before)
+    candidate, _, report = prepare_candidates(
+        repository_root,
+        before,
+        proposal([company()], idea=False),
+        now=NOW,
+        observations=observations(),
+        verify_identity=metadata,
+        manual=True,
+    )
+    existing = {row["security_id"]: row for row in candidate["securities"]}
+    assert all(existing[row["security_id"]] == row for row in before["securities"])
+    assert candidate["security_assessments"] == before["security_assessments"]
+    assert before == unchanged
+    assert len(report["companies"]) == 1
+
+
+def test_requested_bearish_universe_has_unique_verified_identities(repository_root: Path) -> None:
+    active = set(["FCEL", "AI", "SPCE", "CIFR", "WULF", "BBAI", "APLD", "ONDS", "AEVA", "PDYN"])
+    research_only = set(["KSCP", "MVIS", "PSNY", "PLUG", "ARQQ", "SPIR"])
+    state = read_state(repository_root)
+    selected = [row for row in state["securities"] if row["ticker"] in active | research_only]
+    assert len(selected) == len({row["security_id"] for row in selected}) == 16
+    assert len({row["issuer_id"] for row in selected}) == 16
+    assert {row["ticker"] for row in selected} == active | research_only
+    for row in selected:
+        assert row["research_role"] == (
+            "short_candidate" if row["ticker"] in active else "short_research_only"
+        )
+        assert row["currency"] == "USD" and row["venue_mic"] in {"XNAS", "XNYS"}
+        assert row["discovery_provenance"].startswith("manual_import:source_")
+        assert (repository_root / row["research_page"]).is_file()
+    for request in (repository_root / "docs/short-research/imports").glob("batch-*.json"):
+        assert len(json.loads(request.read_text())["companies"]) <= 2

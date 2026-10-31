@@ -14,6 +14,7 @@ import styles from "../styles.scss";
 
 const links = [
   { label: "Rankings", slug: "index" },
+  { label: "Shorts", slug: "short-candidates" },
   { label: "Companies", slug: "security-catalog" },
   { label: "Ideas", slug: "idea-catalog" },
   { label: "Research", slug: "research-catalog" },
