@@ -8,14 +8,12 @@ security,security_6ad1af8d10d6276a0221,60,research_overdue,2026-10-31T20:20:37Z,
 security,security_6f9a1450edceb9307c9a,80,severe_price_movement,2026-10-30T21:10:29Z,2026-10-30T21:10:29Z,pending,0,2026-10-30T21:10:29Z,,false,
 security,security_7bf8f4c9cc12ae410e40,80,severe_price_movement,2026-10-29T21:28:23Z,2026-10-29T21:28:23Z,pending,0,2026-10-29T21:28:23Z,,false,
 security,security_96ba305ee7cd586bc348,75,valuation_coverage_gap|valuation_unsupported,2026-10-31T20:20:37Z,2026-10-31T20:20:37Z,pending,0,2026-10-31T20:20:37Z,,false,
-security,security_98470cfc01bbcde78fc2,80,severe_price_movement,2026-10-27T21:01:58Z,2026-10-30T21:12:24Z,failed,1,2026-10-31T03:12:24Z,,false,model:RuntimeError:papertrader.research_agent.run_model:296
-security,security_a5dc16f3f4b245e6c168,80,severe_price_movement,2026-10-27T21:01:58Z,2026-10-30T21:12:27Z,failed,1,2026-10-31T03:12:27Z,,false,model:RuntimeError:papertrader.research_agent.run_model:296
 security,security_ad5917642acbba28c1f2,60,research_overdue,2026-10-31T20:20:37Z,2026-10-31T20:20:37Z,pending,0,2026-10-31T20:20:37Z,,false,
 security,security_b1f2c48e1a744f5ecf67,60,research_overdue,2026-10-31T20:20:37Z,2026-10-31T20:20:37Z,pending,0,2026-10-31T20:20:37Z,,false,
 security,security_b2116dcf976c96974d7b,75,valuation_coverage_gap|valuation_unsupported,2026-10-31T20:20:37Z,2026-10-31T20:20:37Z,pending,0,2026-10-31T20:20:37Z,,false,
 security,security_b61c642d038d71be3821,80,severe_price_movement,2026-10-28T21:23:54Z,2026-10-28T21:23:54Z,pending,0,2026-10-28T21:23:54Z,,false,
 security,security_c9a37d277445869a8809,75,valuation_coverage_gap|valuation_unsupported,2026-10-31T20:20:37Z,2026-10-31T20:20:37Z,pending,0,2026-10-31T20:20:37Z,,false,
-security,security_cd492d97064d8574156e,80,severe_price_movement,2026-10-27T21:01:58Z,2026-10-27T21:01:58Z,pending,0,2026-10-27T21:01:58Z,,false,
+security,security_cd492d97064d8574156e,80,severe_price_movement,2026-10-27T21:01:58Z,2026-10-31T20:22:01Z,failed,1,2026-11-01T02:22:01Z,,false,model:RuntimeError:papertrader.research_agent.run_model:296
 security,security_dc7a111e297be528d96b,60,research_overdue,2026-10-27T21:01:58Z,2026-10-27T21:01:58Z,pending,0,2026-10-27T21:01:58Z,,false,
 security,security_eca976f0076a425ea1bb,60,research_overdue,2026-10-31T20:20:37Z,2026-10-31T20:20:37Z,pending,0,2026-10-31T20:20:37Z,,false,
 security,security_ed7d5b616a196969c815,80,severe_price_movement,2026-10-28T21:23:54Z,2026-10-28T21:23:54Z,pending,0,2026-10-28T21:23:54Z,,false,

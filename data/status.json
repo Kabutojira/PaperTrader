@@ -12,7 +12,7 @@
     "discovery_error": "RuntimeError",
     "discovery_status": "failed",
     "exit_code": 3,
-    "last_attempt_at": "2026-10-30T21:12:27Z",
+    "last_attempt_at": "2026-10-31T20:22:01Z",
     "last_discovery_attempt_at": "2026-10-27T21:03:43Z",
     "last_discovery_success_at": "2026-10-19T21:19:48Z",
     "last_success_at": "2026-10-25T20:03:52Z",
