@@ -12,12 +12,12 @@ Historical and stale research remains readable; only current validated opinions 
 | [ABB Ltd](securities/security_c120e9f26ebb6159adf9) | ABBNY (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T15:19:06.065625Z | 2026-11-23T15:19:06.065625Z |
 | [ASML Holding N.V.](securities/security_ef35e41886220d51c22c) | ASML (USD) | researched: hold | complete | 1,260.34 / 1,851.12 / 2,552.18 USD | 2026-10-19T01:26:52.646344Z | 2026-11-18T01:26:52Z |
 | [AbCellera Biologics Inc.](securities/security_7bf8f4c9cc12ae410e40) | ABCL (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-19T00:42:23.067619Z | 2026-11-16T00:42:23.067619Z |
-| [Aeva Technologies, Inc.](securities/security_2e9d3d6cb899976cc127) | AEVA (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
+| [Aeva Technologies, Inc.](securities/security_2e9d3d6cb899976cc127) | AEVA (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Agronomics Limited](securities/security_fe4648901e7675f157fd) | ANIC.L (GBP) | researched: buy | complete | 0.0300 / 0.0800 / 0.1100 GBP | 2026-10-18T23:21:39.032922Z | 2026-11-17T23:21:39.032922Z |
 | [Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3) | ALB (USD) | researched: buy | complete | 9.93 / 131.25 / 231.62 USD | 2026-10-24T14:37:50.249307Z | 2026-11-23T14:37:50.249307Z |
 | [Alphabet Inc.](securities/security_c86bb4e75658c07142cf) | GOOGL (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T15:26:30.343218Z | 2026-11-23T15:26:30.343218Z |
 | [Amazon.com, Inc.](securities/security_2433a056eb0c55961fcc) | AMZN (USD) | researched: hold | complete | 200.00 / 270.00 / 360.00 USD | 2026-10-24T16:40:27.310920Z | 2026-11-23T16:40:27.310920Z |
-| [Applied Digital Corporation](securities/security_52702758461db03286f7) | APLD (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
+| [Applied Digital Corporation](securities/security_52702758461db03286f7) | APLD (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Applied Materials, Inc.](securities/security_0a56aa634d077fe5796f) | AMAT (USD) | researched: hold | complete | 286.00 / 448.00 / 646.00 USD | 2026-10-24T15:59:51.264224Z | 2026-11-23T15:59:51.264224Z |
 | [Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a) | ANET (USD) | researched: hold | complete | 120.00 / 182.40 / 252.00 USD | 2026-10-18T21:20:52.492203Z | 2026-11-17T21:20:52.492203Z |
 | [Arkema S.A.](securities/security_798e2fb944d740aca308) | AKE (EUR) | researched: hold | complete | 30.00 / 56.00 / 89.00 EUR | 2026-10-18T22:35:52.408763Z | 2026-11-17T22:35:52.408763Z |
@@ -72,7 +72,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Parrot S.A.](securities/security_cc4dcb8f002b61dffe00) | PARRO.PA (EUR) | researched: hold | complete | 4.21 / 7.92 / 13.38 EUR | 2026-10-24T15:41:03.520697Z | 2026-11-23T15:41:03.520697Z |
 | [PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00) | PYPL (USD) | researched: hold | complete | 43.04 / 64.56 / 80.70 USD | 2026-10-24T16:22:20.627957Z | 2026-11-23T16:22:20.627957Z |
 | [Planet Labs PBC](securities/security_97f38b2cb2d5ef127f5a) | PL (USD) | researched: sell | complete | 7.89 / 11.41 / 15.02 USD | 2026-10-18T23:51:11.153208Z | 2026-11-17T23:51:11.153208Z |
-| [Plug Power Inc.](securities/security_1d114694d447e35497b0) | PLUG (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
+| [Plug Power Inc.](securities/security_1d114694d447e35497b0) | PLUG (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Polestar Automotive Holding UK PLC](securities/security_f1238da5e465e051a47e) | PSNY (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Powell Industries, Inc.](securities/security_0b67d6c8e3fd3366a257) | POWL (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T16:03:56.485665Z | 2026-11-23T16:03:56.485665Z |
 | [Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | PRX (EUR) | researched: buy | complete | 27.00 / 48.50 / 63.00 EUR | 2026-10-19T00:25:13.322131Z | 2026-11-17T00:25:13.322131Z |

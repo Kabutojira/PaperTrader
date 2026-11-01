@@ -1,10 +1,7 @@
 entity_type,entity_id,priority,reasons,created_at,updated_at,status,attempts,next_eligible_at,lease_until,manual,last_error
-security,security_1d114694d447e35497b0,100,explicit_manual_request|missing_research|valuation_coverage_gap,2026-10-31T22:12:44Z,2026-10-31T22:15:31Z,failed,1,2026-11-01T04:15:31Z,,true,model:RuntimeError:papertrader.research_agent.run_model:230
-security,security_2e9d3d6cb899976cc127,100,explicit_manual_request|missing_research|valuation_coverage_gap,2026-10-31T22:12:44Z,2026-10-31T22:14:44Z,failed,1,2026-11-01T04:14:44Z,,true,model:RuntimeError:papertrader.research_agent.run_model:230
 security,security_3a75fc1ccca2ee7c937a,80,severe_price_movement,2026-10-30T21:10:29Z,2026-10-30T21:10:29Z,pending,0,2026-10-30T21:10:29Z,,false,
 security,security_3e597863f00753e8c65c,80,severe_price_movement,2026-10-30T21:10:29Z,2026-10-30T21:10:29Z,pending,0,2026-10-30T21:10:29Z,,false,
 security,security_4627aea1bf7d8943d3d8,80,severe_price_movement,2026-10-30T21:10:29Z,2026-10-30T21:10:29Z,pending,0,2026-10-30T21:10:29Z,,false,
-security,security_52702758461db03286f7,100,explicit_manual_request|missing_research|severe_price_movement|valuation_coverage_gap,2026-10-31T22:12:44Z,2026-10-31T22:14:25Z,failed,1,2026-11-01T04:14:25Z,,true,model:RuntimeError:papertrader.research_agent.run_model:230
 security,security_55c9ce2fdcd32dad6b8c,80,severe_price_movement,2026-10-30T21:10:29Z,2026-10-30T21:10:29Z,pending,0,2026-10-30T21:10:29Z,,false,
 security,security_5693568146922e796a14,100,explicit_manual_request|material_technical_context|missing_research|severe_price_movement|valuation_coverage_gap,2026-10-31T22:12:44Z,2026-10-31T22:15:03Z,failed,1,2026-11-01T04:15:03Z,,true,model:RuntimeError:papertrader.research_agent.run_model:230
 security,security_5d8b1483732cb8151b3e,100,explicit_manual_request|missing_research|severe_price_movement|valuation_coverage_gap,2026-10-31T22:12:44Z,2026-10-31T22:14:53Z,failed,1,2026-11-01T04:14:53Z,,true,model:RuntimeError:papertrader.research_agent.run_model:230
