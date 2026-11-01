@@ -14,11 +14,11 @@ dependencies = [
   "exchange-calendars==4.13.2",
   "jsonschema==4.26.0",
   "numpy==2.5.4",
-  "pandas==3.0.6",
+  "pandas==3.1.0",
   "PyYAML==6.0.3",
   "yfinance[repair]==1.7.0",
-  "curl-cffi==0.16.3",
-  "pypdf==6.21.1",
+  "curl-cffi==0.17.0",
+  "pypdf==6.21.4",
 ]
 
 [project.scripts]
