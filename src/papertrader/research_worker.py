@@ -13,6 +13,7 @@ from typing import Any
 from papertrader.research_web import ResearchWeb
 
 WORKER_FAILURE_CODES = {
+    "agent_constructor_auth_failed",
     "agent_constructor_failed",
     "agent_constructor_incompatible",
     "agent_constructor_permission_failed",
@@ -20,7 +21,11 @@ WORKER_FAILURE_CODES = {
     "final_response_invalid",
     "model_unavailable",
     "provider_auth_failed",
+    "provider_auth_profile_invalid",
+    "provider_auth_refresh_failed",
+    "provider_auth_relogin_required",
     "provider_billing_failed",
+    "provider_credentials_invalid",
     "provider_inference_failed",
     "provider_network_failed",
     "provider_rate_limited",
@@ -29,6 +34,13 @@ WORKER_FAILURE_CODES = {
     "runtime_import_failed",
     "unexpected_tool_access",
     "worker_request_invalid",
+}
+
+CODEX_PROFILE_ERROR_CODES = {
+    "codex_auth_invalid_shape",
+    "codex_auth_missing",
+    "codex_auth_missing_access_token",
+    "codex_auth_missing_refresh_token",
 }
 
 
@@ -84,18 +96,22 @@ def _codex_runtime_arguments() -> dict[str, str]:
     except Exception as exc:
         if type(exc).__name__ == "AuthError":
             code = getattr(exc, "code", None)
-            if code in {"codex_rate_limited", "rate_limited"}:
+            if isinstance(code, str) and code == "codex_rate_limited":
                 raise WorkerFailure("provider_rate_limited") from None
-            raise WorkerFailure("provider_auth_failed") from None
+            if isinstance(code, str) and code in CODEX_PROFILE_ERROR_CODES:
+                raise WorkerFailure("provider_auth_profile_invalid") from None
+            if getattr(exc, "relogin_required", None) is True:
+                raise WorkerFailure("provider_auth_relogin_required") from None
+            raise WorkerFailure("provider_auth_refresh_failed") from None
         raise WorkerFailure(_provider_exception_code(exc)) from None
     if not isinstance(credentials, dict):
-        raise WorkerFailure("provider_auth_failed")
+        raise WorkerFailure("provider_credentials_invalid")
     api_key = credentials.get("api_key")
     base_url = credentials.get("base_url")
     if not isinstance(api_key, str) or not api_key.strip():
-        raise WorkerFailure("provider_auth_failed")
+        raise WorkerFailure("provider_credentials_invalid")
     if not isinstance(base_url, str) or not base_url.startswith("https://"):
-        raise WorkerFailure("provider_auth_failed")
+        raise WorkerFailure("provider_credentials_invalid")
     return {"api_key": api_key, "base_url": base_url}
 
 
@@ -110,6 +126,8 @@ def _construct_agent(agent_class: Any, arguments: dict[str, Any]) -> Any:
         raise WorkerFailure("agent_constructor_permission_failed") from None
     except Exception as exc:
         provider_failure = _known_provider_exception_code(exc)
+        if provider_failure == "provider_auth_failed":
+            provider_failure = "agent_constructor_auth_failed"
         raise WorkerFailure(provider_failure or "agent_constructor_failed") from None
 
 

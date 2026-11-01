@@ -1276,3 +1276,27 @@ OAuth-refresh repair verification passed131 focused tests and all297 tests (the
 same two calendar warnings), Ruff/formatting, MyPy and strict current validation.
 No local inference/provider request was performed. The next gate is exact-SHA CI
 followed by one source-free Actions diagnostic with the repaired resolver.
+
+Live source-free diagnostic run41357760282 at merged revision
+`b71a64be0bd9a1bbeb4ad29b71b91ba31e000487` returned the sanitized category
+`provider_auth_failed`. It did not complete the generic turn, receive company or
+source context, use the web broker, change canonical state or rotate the encrypted
+OAuth profile; the committed revision remained unchanged. Its one model-operation
+counter is a budgeted diagnostic invocation, not a measured provider generation.
+Exact provider generation count remains unknown.
+
+Pinned-source audit confirmed that Hermes' runtime credential resolver returns the
+`api_key` and HTTPS `base_url` shape expected by the adapter. The prior category
+still conflated an invalid restored profile, a refresh that requires login, a
+transient refresh failure, an invalid resolver return, constructor authentication
+and inference-time authentication. Fixed controller-owned categories now separate
+those stages using only a static known-code allowlist and the literal trusted
+`relogin_required is True` flag. Arbitrary provider codes and messages are never
+reflected. Local verification remains mocked and makes no auth/provider request;
+exact-SHA CI and one further source-free diagnostic are required before requesting
+credential renewal or launching company research.
+
+The auth-category refinement passed145 focused tests and all311 tests (two existing
+calendar warnings), Ruff/formatting, MyPy20 modules and strict canonical validation.
+No local auth/provider/model call was made and canonical research contents remain
+unchanged. Remote pinned Quartz CI and the refined live diagnostic remain pending.
