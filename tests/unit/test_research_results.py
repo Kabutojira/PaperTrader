@@ -14,6 +14,7 @@ import pytest
 from papertrader import research_bootstrap, research_transaction, research_worker
 from papertrader.research_agent import (
     MAX_AUTH_BYTES,
+    WORKER_CHILD_FAILURE_CODES,
     ResearchLimits,
     WorkerRuntimeError,
     _source_identity_index,
@@ -1686,6 +1687,20 @@ def test_worker_bootstrap_redacts_untrusted_exception_text(
     assert "credential-secret" not in json.dumps(envelope)
 
 
+def test_worker_failure_allowlists_cover_fixed_auth_diagnostics() -> None:
+    codes = {
+        "agent_constructor_auth_failed",
+        "provider_auth_profile_invalid",
+        "provider_auth_refresh_failed",
+        "provider_auth_relogin_required",
+        "provider_credentials_invalid",
+    }
+
+    assert codes <= research_worker.WORKER_FAILURE_CODES
+    assert codes <= research_bootstrap.FAILURE_CODES
+    assert codes <= WORKER_CHILD_FAILURE_CODES
+
+
 def test_diagnostic_worker_uses_one_generic_turn_and_no_tools(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
@@ -1776,34 +1791,83 @@ def test_diagnostic_worker_keeps_constructor_and_tool_guard_failures_distinct(
     assert tools.value.diagnostic_code == "unexpected_tool_access"
 
 
-def test_diagnostic_worker_redacts_structured_oauth_failure(
+@pytest.mark.parametrize(
+    ("code", "relogin_required", "expected"),
+    [
+        ("codex_auth_missing", False, "provider_auth_profile_invalid"),
+        ("codex_auth_invalid_shape", True, "provider_auth_profile_invalid"),
+        ("codex_auth_missing_access_token", True, "provider_auth_profile_invalid"),
+        ("codex_auth_missing_refresh_token", True, "provider_auth_profile_invalid"),
+        ("invalid_grant", True, "provider_auth_relogin_required"),
+        ("credential-secret-arbitrary-code", False, "provider_auth_refresh_failed"),
+        ("credential-secret-truthy-code", 1, "provider_auth_refresh_failed"),
+        ({"credential-secret": ["private"]}, False, "provider_auth_refresh_failed"),
+        ("codex_rate_limited", True, "provider_rate_limited"),
+    ],
+)
+def test_diagnostic_worker_redacts_structured_oauth_failure_metadata(
     monkeypatch: pytest.MonkeyPatch,
+    code: Any,
+    relogin_required: Any,
+    expected: str,
 ) -> None:
     class AuthError(RuntimeError):
-        code = "invalid_grant"
+        def __init__(self) -> None:
+            self.code = code
+            self.relogin_required = relogin_required
+            super().__init__("credential-secret provider response")
 
     class Auth:
         @staticmethod
         def resolve_codex_runtime_credentials() -> dict[str, str]:
-            raise AuthError("credential-secret provider response")
+            raise AuthError
 
-    class RunAgent:
-        AIAgent = object
-
-    monkeypatch.setattr(
-        research_worker.importlib,
-        "import_module",
-        lambda name: Auth if name == "hermes_cli.auth" else RunAgent,
-    )
+    monkeypatch.setattr(research_worker.importlib, "import_module", lambda _name: Auth)
 
     with pytest.raises(WorkerFailure) as raised:
-        research_worker.worker(
-            {
-                "context": {"operation": "runtime_diagnostic"},
-                "limits": {"model": "gpt-5.6-sol"},
-            }
-        )
-    assert raised.value.diagnostic_code == "provider_auth_failed"
+        research_worker._codex_runtime_arguments()
+    assert raised.value.diagnostic_code == expected
+    assert "credential-secret" not in str(raised.value)
+
+
+@pytest.mark.parametrize(
+    "credentials",
+    [
+        None,
+        {},
+        {"api_key": "", "base_url": "https://chatgpt.example"},
+        {"api_key": "credential-secret", "base_url": "http://chatgpt.example"},
+    ],
+)
+def test_diagnostic_worker_rejects_invalid_resolver_results_without_reflection(
+    monkeypatch: pytest.MonkeyPatch, credentials: Any
+) -> None:
+    class Auth:
+        @staticmethod
+        def resolve_codex_runtime_credentials() -> Any:
+            return credentials
+
+    monkeypatch.setattr(research_worker.importlib, "import_module", lambda _name: Auth)
+
+    with pytest.raises(WorkerFailure) as raised:
+        research_worker._codex_runtime_arguments()
+
+    assert raised.value.diagnostic_code == "provider_credentials_invalid"
+    assert "credential-secret" not in str(raised.value)
+
+
+def test_agent_constructor_auth_failure_is_distinct_and_redacted() -> None:
+    class AuthenticationError(RuntimeError):
+        pass
+
+    class Agent:
+        def __init__(self, **_kwargs: Any) -> None:
+            raise AuthenticationError("credential-secret provider response")
+
+    with pytest.raises(WorkerFailure) as raised:
+        research_worker._construct_agent(Agent, {"model": "gpt-5.6-sol"})
+
+    assert raised.value.diagnostic_code == "agent_constructor_auth_failed"
     assert "credential-secret" not in str(raised.value)
 
 

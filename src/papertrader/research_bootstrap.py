@@ -10,6 +10,7 @@ from pathlib import Path
 from typing import Any
 
 FAILURE_CODES = {
+    "agent_constructor_auth_failed",
     "agent_constructor_failed",
     "agent_constructor_incompatible",
     "agent_constructor_permission_failed",
@@ -17,7 +18,11 @@ FAILURE_CODES = {
     "final_response_invalid",
     "model_unavailable",
     "provider_auth_failed",
+    "provider_auth_profile_invalid",
+    "provider_auth_refresh_failed",
+    "provider_auth_relogin_required",
     "provider_billing_failed",
+    "provider_credentials_invalid",
     "provider_inference_failed",
     "provider_network_failed",
     "provider_rate_limited",
