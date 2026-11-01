@@ -1200,3 +1200,26 @@ viewport summary fits x16–374 with zero horizontal scroll range. Site checks/b
 passed again after the CSS-only fix. All94 original security fields and94 assessment
 rows remain preserved. Exact-SHA CI under pinned Node24.4.1 follows the feature push;
 research completion and deployment remain explicitly blocked, not accepted.
+
+## AI Agent Economy intake reconciliation — 2026-11-01
+
+Reconciled the seed from `Stell0:research/ai-agent-economy-stocks-20261101`
+(`93e94ac775fd5fd6bc8910fc70504174e1a5803f`) onto upstream main
+`789be6febb7777fbd1dae6e53f609cabf2fbadff`. Fork PR1 had merged only into
+the temporary comparison base; it had not updated upstream main.
+
+Append exactly27 instruments selected by provenance
+`user_seed:ai-agent-productivity-loop:2026-11-01`, one idea,40 relationships
+(including13 existing instruments) and15 sources. Preserve all110 existing
+security rows,94 assessments and27 queue rows, including three later
+needs_attention states. ABBN.SW remains a distinct CHF instrument sharing
+the existing ABB issuer; add its XSWX exchange calendar. The intake test
+validates exact membership and canonical integrity while allowing subsequent
+accepted research and relationship changes.
+
+Local validation, Ruff/formatting, MyPy and all277 tests passed (two existing
+calendar warnings). Local Quartz execution is blocked by missing sharp/runtime
+dependencies under Node25.8.1; exact-SHA CI must check the pinned Node24.4.1
+build. All27 additions remain unassessed. No campaign company research or
+inference call has been executed. Upstream merge, isolated runtime diagnosis,
+canary research, full batch and verified publication remain outstanding.
