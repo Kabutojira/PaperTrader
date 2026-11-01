@@ -56,6 +56,7 @@ SAFE_EXCEPTION_TYPES = {
     "TypeError",
     "UnicodeDecodeError",
     "ValueError",
+    "WorkerRuntimeError",
 }
 FAILURE_STAGES = {"context", "model", "validation", "commit"}
 WORKER_FILES = (
@@ -64,7 +65,47 @@ WORKER_FILES = (
     "research_state.py",
     "research_web.py",
     "research_worker.py",
+    "research_bootstrap.py",
 )
+WORKER_CHILD_FAILURE_CODES = {
+    "agent_initialization_failed",
+    "final_response_invalid",
+    "model_unavailable",
+    "provider_billing_failed",
+    "provider_auth_failed",
+    "provider_inference_failed",
+    "provider_network_failed",
+    "provider_rate_limited",
+    "provider_timeout",
+    "provider_unavailable",
+    "runtime_import_failed",
+    "worker_execution_failed",
+    "worker_import_failed",
+    "worker_request_invalid",
+    "worker_serialization_failed",
+}
+WORKER_FAILURE_CODES = WORKER_CHILD_FAILURE_CODES | {
+    "oauth_profile_invalid",
+    "oauth_refresh_invalid",
+    "worker_profile_unsafe",
+    "worker_runtime_unavailable",
+    "worker_exit",
+    "worker_output_oversized",
+    "worker_permission_denied",
+    "worker_start_failed",
+    "worker_timeout",
+    "worker_transport_invalid",
+}
+
+
+class WorkerRuntimeError(RuntimeError):
+    """A controller-owned worker category that never contains child-process text."""
+
+    def __init__(self, diagnostic_code: str) -> None:
+        if diagnostic_code not in WORKER_FAILURE_CODES:
+            raise ValueError("unknown worker failure code")
+        self.diagnostic_code = diagnostic_code
+        super().__init__("isolated research worker failed")
 
 
 def _failure_diagnostic(exc: Exception, stage: str) -> dict[str, str]:
@@ -89,7 +130,7 @@ def _failure_diagnostic(exc: Exception, stage: str) -> dict[str, str]:
             location = f"{module}.{function}:{traceback.tb_lineno}"
         traceback = traceback.tb_next
     result = {"stage": safe_stage, "error": exception_type, "location": location}
-    if isinstance(exc, ResearchResultValidationError):
+    if isinstance(exc, (ResearchResultValidationError, WorkerRuntimeError)):
         result["code"] = exc.diagnostic_code
     return result
 
@@ -201,20 +242,20 @@ def _auth_bytes(path: Path, error: str) -> bytes:
         descriptor = os.open(path, os.O_RDONLY | os.O_NOFOLLOW)
         metadata = os.fstat(descriptor)
         if not stat.S_ISREG(metadata.st_mode) or not 1 <= metadata.st_size <= MAX_AUTH_BYTES:
-            raise RuntimeError(error)
+            raise WorkerRuntimeError(error)
         with os.fdopen(descriptor, "rb") as handle:
             descriptor = -1
             content = handle.read(MAX_AUTH_BYTES + 1)
         if not 1 <= len(content) <= MAX_AUTH_BYTES:
-            raise RuntimeError(error)
+            raise WorkerRuntimeError(error)
         document = json.loads(content)
     except (OSError, UnicodeDecodeError, json.JSONDecodeError, RecursionError):
-        raise RuntimeError(error) from None
+        raise WorkerRuntimeError(error) from None
     finally:
         if descriptor >= 0:
             os.close(descriptor)
     if not isinstance(document, dict):
-        raise RuntimeError(error)
+        raise WorkerRuntimeError(error)
     return content
 
 
@@ -222,17 +263,17 @@ def run_model(root: Path, packet: dict[str, Any], limits: ResearchLimits) -> dic
     """Run inside the pinned Hermes image; no repository-write token in child env."""
     home_path = Path(os.environ.get("HERMES_HOME", "/tmp/papertrader-hermes"))
     if home_path.is_symlink():
-        raise RuntimeError("symlink research profile forbidden")
+        raise WorkerRuntimeError("worker_profile_unsafe")
     home = home_path.resolve()
     python = Path(os.environ.get("PAPERTRADER_HERMES_PYTHON", "/opt/hermes/.venv/bin/python"))
     hermes_code = Path(os.environ.get("PAPERTRADER_HERMES_CODE", "/opt/hermes"))
     if not python.is_file():
-        raise RuntimeError("isolated_research_inference_unavailable")
+        raise WorkerRuntimeError("worker_runtime_unavailable")
     shared_auth = home / "auth.json"
-    initial_auth = _auth_bytes(shared_auth, "isolated_research_inference_unavailable")
+    initial_auth = _auth_bytes(shared_auth, "oauth_profile_invalid")
     for name in ("plugins", "hooks", "memories"):
         if (home / name).exists():
-            raise RuntimeError("unmanaged_research_profile")
+            raise WorkerRuntimeError("worker_profile_unsafe")
     configuration = {
         "model": {"default": limits.model, "provider": "openai-codex"},
         "agent": {"max_turns": limits.max_turns, "api_max_retries": 1},
@@ -254,50 +295,110 @@ def run_model(root: Path, packet: dict[str, Any], limits: ResearchLimits) -> dic
         _agent_access(profile_auth, 0o600)
         _agent_access(profile / "config.yaml", 0o600)
         worker_code = _stage_worker(root, directory)
+        diagnostic = packet == {"operation": "runtime_diagnostic"}
         source_identities = packet.get("_source_identity_index", [])
         model_packet = {key: value for key, value in packet.items() if not key.startswith("_")}
         request = directory / "request.json"
-        request.write_text(
-            json.dumps(
-                dict(
-                    context=model_packet,
-                    limits=vars(limits),
-                    source_identities=source_identities,
-                )
-            )
-        )
+        request_document = dict(context=model_packet, limits=vars(limits))
+        if not diagnostic:
+            request_document["source_identities"] = source_identities
+        request.write_text(json.dumps(request_document))
         _agent_access(request, 0o600)
         environment = agent_environment(profile, [worker_code, hermes_code])
         credentials: dict[str, Any] = {}
         if os.geteuid() == 0:
             credentials = {"user": HERMES_UID, "group": HERMES_GID, "extra_groups": ()}
-        process = subprocess.Popen(
-            [str(python), "-m", "papertrader.research_worker", str(request)],
-            cwd=directory,
-            env=environment,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.DEVNULL,
-            text=True,
-            start_new_session=True,
-            **credentials,
-        )
+        try:
+            process = subprocess.Popen(
+                [str(python), "-m", "papertrader.research_bootstrap", str(request)],
+                cwd=directory,
+                env=environment,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.DEVNULL,
+                text=True,
+                start_new_session=True,
+                **credentials,
+            )
+        except OSError:
+            raise WorkerRuntimeError("worker_start_failed") from None
         try:
             try:
                 stdout, _ = process.communicate(timeout=limits.timeout_seconds)
             except subprocess.TimeoutExpired:
                 os.killpg(process.pid, signal.SIGKILL)
                 process.communicate()
-                raise RuntimeError("research_timeout") from None
+                raise WorkerRuntimeError("worker_timeout") from None
         finally:
-            refreshed_auth = _auth_bytes(profile_auth, "invalid_refreshed_inference_auth")
+            refreshed_auth = _auth_bytes(profile_auth, "oauth_refresh_invalid")
             if refreshed_auth != initial_auth:
                 atomic_write_bytes(shared_auth, refreshed_auth, allowed_root=home)
-        if process.returncode or len(stdout.encode()) > 300000:
-            raise RuntimeError("research_model_failed")
-        document = json.loads(stdout)
+        if process.returncode:
+            raise WorkerRuntimeError("worker_exit")
+        if len(stdout.encode()) > 300000:
+            raise WorkerRuntimeError("worker_output_oversized")
+        try:
+            envelope = json.loads(stdout)
+        except (json.JSONDecodeError, UnicodeError):
+            raise WorkerRuntimeError("worker_transport_invalid") from None
+        if (
+            not isinstance(envelope, dict)
+            or envelope.get("status") not in {"ok", "error"}
+            or set(envelope)
+            != ({"status", "response"} if envelope.get("status") == "ok" else {"status", "code"})
+        ):
+            raise WorkerRuntimeError("worker_transport_invalid")
+        if envelope["status"] == "error":
+            code = envelope["code"]
+            if code not in WORKER_CHILD_FAILURE_CODES:
+                raise WorkerRuntimeError("worker_transport_invalid")
+            raise WorkerRuntimeError(code)
+        document = envelope["response"]
         if not isinstance(document, dict) or set(document) != {"result", "observations", "usage"}:
-            raise ValueError("invalid research worker response")
+            raise WorkerRuntimeError("worker_transport_invalid")
         return document
+
+
+def run_diagnostic(
+    root: Path,
+    *,
+    dry_run: bool = True,
+    executor: Callable[[Path, dict[str, Any], ResearchLimits], dict[str, Any]] = run_model,
+) -> dict[str, Any]:
+    """Probe isolated inference without reading or mutating research state."""
+    limits = research_limits(root)
+    if dry_run:
+        return dict(status="dry_run", exit_code=0, model=limits.model, model_operations=0)
+    try:
+        response = executor(root, {"operation": "runtime_diagnostic"}, limits)
+        if (
+            response.get("result") != {"status": "ok"}
+            or response.get("observations") != {}
+            or response.get("usage") != {"web_requests": 0}
+        ):
+            raise WorkerRuntimeError("worker_transport_invalid")
+    except PermissionError:
+        error = "worker_permission_denied"
+    except OSError:
+        error = "worker_start_failed"
+    except WorkerRuntimeError as exc:
+        error = exc.diagnostic_code
+    except Exception:
+        error = "worker_execution_failed"
+    else:
+        return dict(
+            status="succeeded",
+            exit_code=0,
+            model=limits.model,
+            model_operations=1,
+            web_requests=0,
+        )
+    return dict(
+        status="failed",
+        exit_code=3,
+        model=limits.model,
+        model_operations=1,
+        error=error,
+    )
 
 
 def run_cycle(

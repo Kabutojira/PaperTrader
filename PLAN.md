@@ -1223,3 +1223,33 @@ dependencies under Node25.8.1; exact-SHA CI must check the pinned Node24.4.1
 build. All27 additions remain unassessed. No campaign company research or
 inference call has been executed. Upstream merge, isolated runtime diagnosis,
 canary research, full batch and verified publication remain outstanding.
+
+## Isolated Hermes runtime diagnostic — 2026-11-01
+
+Run41351798426 restored and re-encrypted OAuth successfully inside the pinned
+Hermes container, but all three bounded operations stopped at the model stage with
+zero observed web requests. The existing sanitized controller output did not expose
+whether the child failed during import, initialization, provider access or final
+transport; its three operation counters are budgeted attempts, not proof of three
+provider calls. None targeted the27 AI Agent Economy instruments.
+
+Add a manual, dry-run-by-default diagnostic using the same staged worker, UID10000,
+fresh profile, pinned Python/code and OAuth refresh boundary. An applied diagnostic
+receives no company/source/queue context, exposes no tools, and permits one generic
+inference turn. Static categories distinguish import, initialization, auth/model
+access, rate limit, network/timeout, exit and serialization without child stderr,
+provider bodies, prompts or responses. Local tests use mocks only; no local provider
+call or pinned-image probe was completed. Exact-SHA CI and one actual applied Actions
+diagnostic are required before the issue can be classified or company research can
+resume.
+
+The intake is now merged through upstream PR33 at
+`bb867102082616d78d2b1d3810dccd6a8bbfd88b`; CI41355368058 and41355390946
+passed, including pinned Quartz checks/build. Pages41355666176 serves that exact
+revision: homepage, company catalog and idea page returned HTTP200; both catalogs
+contain all27 target links. This publishes coverage gaps, not completed valuations.
+
+Diagnostic local verification passed129 focused tests and all295 tests (two
+existing calendar warnings), Ruff/formatting, MyPy20 modules and strict canonical
+validation. Canonical research/queue contents remain unchanged. These are mocked
+runtime checks; actual account/model access and all27 company reviews are pending.
