@@ -11,13 +11,15 @@ from urllib.error import HTTPError
 
 import pytest
 
-from papertrader import research_transaction
+from papertrader import research_bootstrap, research_transaction, research_worker
 from papertrader.research_agent import (
     MAX_AUTH_BYTES,
     ResearchLimits,
+    WorkerRuntimeError,
     _source_identity_index,
     agent_environment,
     run_cycle,
+    run_diagnostic,
     run_model,
 )
 from papertrader.research_cli import main
@@ -39,7 +41,12 @@ from papertrader.research_state import (
 )
 from papertrader.research_transaction import apply_files, research_lock
 from papertrader.research_web import SOURCE_RESPONSE_MAX_BYTES, ResearchWeb, public_url
-from papertrader.research_worker import POLICY
+from papertrader.research_worker import (
+    POLICY,
+    WorkerFailure,
+    _provider_exception_code,
+    _provider_response_code,
+)
 
 NOW = datetime(2026, 10, 18, 17, tzinfo=UTC)
 STAMP = "2026-10-18T17:00:00Z"
@@ -1323,6 +1330,49 @@ def test_dry_run_never_invokes_model_and_environment_excludes_secrets(
     assert main(["--repository", str(current), "validate"]) == 0
 
 
+def test_runtime_diagnostic_never_reads_or_changes_research_state(
+    current: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    before = data_bytes(current)
+    for name in ("admit", "claim", "finish", "read_state"):
+        monkeypatch.setattr(
+            f"papertrader.research_agent.{name}",
+            lambda *_args, **_kwargs: pytest.fail("diagnostic touched research state"),
+        )
+    calls: list[dict[str, Any]] = []
+
+    def executor(_root: Path, packet: dict[str, Any], _limits: ResearchLimits) -> dict[str, Any]:
+        calls.append(packet)
+        return {
+            "result": {"status": "ok"},
+            "observations": {},
+            "usage": {"web_requests": 0},
+        }
+
+    assert run_diagnostic(current, executor=executor)["model_operations"] == 0
+    response = run_diagnostic(current, dry_run=False, executor=executor)
+
+    assert response == {
+        "status": "succeeded",
+        "exit_code": 0,
+        "model": "gpt-5.6-sol",
+        "model_operations": 1,
+        "web_requests": 0,
+    }
+    assert calls == [{"operation": "runtime_diagnostic"}]
+    assert data_bytes(current) == before
+
+
+def test_runtime_diagnostic_redacts_unexpected_controller_error(current: Path) -> None:
+    def executor(*_args: Any) -> dict[str, Any]:
+        raise RuntimeError("credential-secret raw prompt and provider body")
+
+    response = run_diagnostic(current, dry_run=False, executor=executor)
+
+    assert response["error"] == "worker_execution_failed"
+    assert "credential-secret" not in json.dumps(response)
+
+
 def test_corrupt_current_state_fails_before_claim_or_model(current: Path) -> None:
     state = read_state(current)
     state["securities"][0]["currency"] = "US"
@@ -1371,7 +1421,15 @@ def test_model_process_drops_root_privileges_and_sees_only_staged_worker(
 
         def communicate(self, timeout: int | None = None) -> tuple[str, str]:
             del timeout
-            return json.dumps({"result": {}, "observations": {}, "usage": {}}), ""
+            return (
+                json.dumps(
+                    {
+                        "status": "ok",
+                        "response": {"result": {}, "observations": {}, "usage": {}},
+                    }
+                ),
+                "",
+            )
 
     def popen(command: list[str], **kwargs: Any) -> Process:
         captured.update(command=command, **kwargs)
@@ -1389,6 +1447,7 @@ def test_model_process_drops_root_privileges_and_sees_only_staged_worker(
     )
 
     assert response["usage"] == {}
+    assert captured["command"][-3:-1] == ["-m", "papertrader.research_bootstrap"]
     assert captured["user"] == 10_000
     assert captured["group"] == 10_000
     assert captured["extra_groups"] == ()
@@ -1405,6 +1464,13 @@ def test_model_process_drops_root_privileges_and_sees_only_staged_worker(
     assert captured["cwd"] != repository_root
     assert any(path.name == "auth.json" and uid == gid == 10_000 for path, uid, gid in ownership)
     assert {path.name for path in home.iterdir()} == {"auth.json"}
+
+    run_model(repository_root, {"operation": "runtime_diagnostic"}, ResearchLimits())
+    assert captured["request"] == {
+        "context": {"operation": "runtime_diagnostic"},
+        "limits": vars(ResearchLimits()),
+    }
+    assert captured["command"][-3:-1] == ["-m", "papertrader.research_bootstrap"]
 
 
 @pytest.mark.parametrize("unmanaged", ["plugins", "hooks", "memories"])
@@ -1427,8 +1493,9 @@ def test_shared_unmanaged_research_profile_is_rejected_before_model_start(
         lambda *_args, **_kwargs: pytest.fail("model started with unmanaged shared profile"),
     )
 
-    with pytest.raises(RuntimeError, match="unmanaged_research_profile"):
+    with pytest.raises(WorkerRuntimeError) as raised:
         run_model(repository_root, {"operation": "research_security"}, ResearchLimits())
+    assert raised.value.diagnostic_code == "worker_profile_unsafe"
 
 
 def test_sequential_model_operations_use_fresh_profiles_and_sync_oauth(
@@ -1464,7 +1531,15 @@ def test_sequential_model_operations_use_fresh_profiles_and_sync_oauth(
                 (profile / name).mkdir()
             (profile / "operation.log").write_text("ephemeral private trace")
             (profile / "auth.json").write_text(json.dumps({"token": f"refreshed-{len(profiles)}"}))
-            return json.dumps({"result": {}, "observations": {}, "usage": {}}), ""
+            return (
+                json.dumps(
+                    {
+                        "status": "ok",
+                        "response": {"result": {}, "observations": {}, "usage": {}},
+                    }
+                ),
+                "",
+            )
 
     monkeypatch.setattr(
         "papertrader.research_agent.subprocess.Popen",
@@ -1516,8 +1591,9 @@ def test_failed_model_discards_profile_but_keeps_valid_oauth_refresh(
         lambda _command, **kwargs: Process(kwargs["env"]),
     )
 
-    with pytest.raises(RuntimeError, match="research_model_failed"):
+    with pytest.raises(WorkerRuntimeError) as raised:
         run_model(repository_root, {"operation": "research_security"}, ResearchLimits())
+    assert raised.value.diagnostic_code == "worker_exit"
 
     assert json.loads((home / "auth.json").read_text()) == {"token": "legitimate-refresh"}
     assert all(not profile.exists() for profile in profiles)
@@ -1565,20 +1641,155 @@ def test_unsafe_refreshed_oauth_never_reaches_shared_home(
             else:
                 auth.write_bytes(b"x" * (MAX_AUTH_BYTES + 1))
             (profile / "operation.log").write_text("must be discarded")
-            return json.dumps({"result": {}, "observations": {}, "usage": {}}), ""
+            return (
+                json.dumps(
+                    {
+                        "status": "ok",
+                        "response": {"result": {}, "observations": {}, "usage": {}},
+                    }
+                ),
+                "",
+            )
 
     monkeypatch.setattr(
         "papertrader.research_agent.subprocess.Popen",
         lambda _command, **kwargs: Process(kwargs["env"]),
     )
 
-    with pytest.raises(RuntimeError, match="invalid_refreshed_inference_auth"):
+    with pytest.raises(WorkerRuntimeError) as raised:
         run_model(repository_root, {"operation": "research_security"}, ResearchLimits())
+    assert raised.value.diagnostic_code == "oauth_refresh_invalid"
 
     assert json.loads((home / "auth.json").read_text()) == {"token": "initial"}
     assert outside.read_text() == '{"token":"outside"}'
     assert all(not profile.exists() for profile in profiles)
     assert {path.name for path in home.iterdir()} == {"auth.json"}
+
+
+def test_worker_bootstrap_redacts_untrusted_exception_text(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    request = tmp_path / "request.json"
+    request.write_text('{"context":{},"limits":{}}')
+
+    class FakeModule:
+        WorkerFailure = WorkerFailure
+
+        @staticmethod
+        def worker(_document: dict[str, Any]) -> dict[str, Any]:
+            raise RuntimeError("credential-secret raw prompt and provider body")
+
+    monkeypatch.setattr(research_bootstrap.importlib, "import_module", lambda _name: FakeModule)
+    envelope = research_bootstrap.execute(request)
+
+    assert envelope == {"status": "error", "code": "worker_execution_failed"}
+    assert "credential-secret" not in json.dumps(envelope)
+
+
+def test_diagnostic_worker_uses_one_generic_turn_and_no_tools(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    captured: dict[str, Any] = {}
+
+    class Agent:
+        def __init__(self, **kwargs: Any) -> None:
+            self.tools: list[dict[str, Any]] = []
+            captured["configuration"] = kwargs
+
+        def run_conversation(self, prompt: str, *, system_message: str) -> dict[str, Any]:
+            captured["prompt"] = prompt
+            captured["system_message"] = system_message
+            return {"final_response": "PAPERTRADER_RUNTIME_OK"}
+
+    class RunAgent:
+        AIAgent = Agent
+
+    monkeypatch.setattr(research_worker.importlib, "import_module", lambda _name: RunAgent)
+    response = research_worker.worker(
+        {
+            "context": {"operation": "runtime_diagnostic"},
+            "limits": {"model": "gpt-5.6-sol"},
+        }
+    )
+
+    assert response == {
+        "result": {"status": "ok"},
+        "observations": {},
+        "usage": {"web_requests": 0},
+    }
+    assert captured["configuration"]["enabled_toolsets"] == []
+    assert captured["configuration"]["max_iterations"] == 1
+    assert captured["configuration"]["provider"] == "openai-codex"
+    assert captured["prompt"] == "Return exactly PAPERTRADER_RUNTIME_OK."
+    assert "company" not in captured["system_message"].lower()
+
+
+def test_worker_bootstrap_reports_serialization_without_exposing_result(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    request = tmp_path / "request.json"
+    request.write_text('{"context":{},"limits":{}}')
+
+    class FakeModule:
+        WorkerFailure = WorkerFailure
+
+        @staticmethod
+        def worker(_document: dict[str, Any]) -> dict[str, Any]:
+            return {"private": object()}
+
+    monkeypatch.setattr(research_bootstrap.importlib, "import_module", lambda _name: FakeModule)
+    monkeypatch.setattr(research_bootstrap.sys, "argv", ["research_bootstrap", str(request)])
+
+    assert research_bootstrap.main() == 0
+    assert capsys.readouterr().out.strip() == (
+        '{"status":"error","code":"worker_serialization_failed"}'
+    )
+
+
+@pytest.mark.parametrize(
+    ("failure", "expected"),
+    [
+        ({"failed": True, "failure_reason": "auth", "error": "secret"}, "provider_auth_failed"),
+        ({"failed": True, "failure_reason": "model_not_found"}, "model_unavailable"),
+        ({"failed": True, "failure_reason": "billing"}, "provider_billing_failed"),
+        ({"failed": True, "failure_reason": "rate_limit"}, "provider_rate_limited"),
+        ({"failed": True, "failure_reason": "timeout"}, "provider_timeout"),
+        (
+            {"failed": True, "failure_reason": "ssl_cert_verification"},
+            "provider_network_failed",
+        ),
+        ({"failed": True, "failure_reason": "server_error"}, "provider_unavailable"),
+        (
+            {"failed": True, "failure_reason": "unknown", "error": "secret"},
+            "provider_inference_failed",
+        ),
+    ],
+)
+def test_provider_failure_response_uses_only_static_categories(
+    failure: dict[str, Any], expected: str
+) -> None:
+    assert _provider_response_code(failure) == expected
+
+
+@pytest.mark.parametrize(
+    ("status", "expected"),
+    [
+        (401, "provider_auth_failed"),
+        (404, "model_unavailable"),
+        (429, "provider_rate_limited"),
+        (504, "provider_timeout"),
+        (503, "provider_unavailable"),
+    ],
+)
+def test_provider_exception_http_status_is_bounded(status: int, expected: str) -> None:
+    class ProviderError(Exception):
+        status_code = status
+
+    error = ProviderError("credential-secret raw provider body")
+    assert _provider_exception_code(error) == expected
+    assert "credential-secret" not in _provider_exception_code(error)
 
 
 def test_network_budget_is_hard_and_private_sources_are_forbidden(

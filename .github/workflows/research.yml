@@ -24,6 +24,10 @@ on:
         description: Include cadence-limited discovery within the three-operation budget
         type: boolean
         default: false
+      diagnostic:
+        description: Probe isolated inference without reading or claiming research work
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -94,12 +98,23 @@ jobs:
           ENTITY_TYPE: ${{ inputs.entity_type }}
           ENTITY_ID: ${{ inputs.entity_id }}
           DISCOVERY: ${{ github.event_name == 'workflow_run' || inputs.discovery }}
+          DIAGNOSTIC: ${{ inputs.diagnostic || false }}
         run: |
           mkdir -p .cache
-          arguments=(research)
+          if [ "$DIAGNOSTIC" = "true" ]; then
+            if [ -n "$ENTITY_ID" ] || [ "$DISCOVERY" = "true" ]; then
+              echo '{"status":"invalid_data","error":"diagnostic_inputs_conflict"}' > .cache/research-outcome.json
+              cat .cache/research-outcome.json
+              echo "exit_code=4" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            arguments=(research-diagnostic)
+          else
+            arguments=(research)
+          fi
           if [ "$DRY_RUN" != "true" ]; then arguments+=(--apply); fi
-          if [ -n "$ENTITY_ID" ]; then arguments+=(--entity-type "$ENTITY_TYPE" --entity-id "$ENTITY_ID"); fi
-          if [ "$DISCOVERY" = "true" ]; then arguments+=(--discovery); fi
+          if [ "$DIAGNOSTIC" != "true" ] && [ -n "$ENTITY_ID" ]; then arguments+=(--entity-type "$ENTITY_TYPE" --entity-id "$ENTITY_ID"); fi
+          if [ "$DIAGNOSTIC" != "true" ] && [ "$DISCOVERY" = "true" ]; then arguments+=(--discovery); fi
           set +e
           uv run papertrader "${arguments[@]}" > .cache/research-outcome.json
           result=$?
