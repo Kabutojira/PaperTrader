@@ -68,6 +68,9 @@ WORKER_FILES = (
     "research_bootstrap.py",
 )
 WORKER_CHILD_FAILURE_CODES = {
+    "agent_constructor_failed",
+    "agent_constructor_incompatible",
+    "agent_constructor_permission_failed",
     "agent_initialization_failed",
     "final_response_invalid",
     "model_unavailable",
@@ -79,6 +82,7 @@ WORKER_CHILD_FAILURE_CODES = {
     "provider_timeout",
     "provider_unavailable",
     "runtime_import_failed",
+    "unexpected_tool_access",
     "worker_execution_failed",
     "worker_import_failed",
     "worker_request_invalid",
