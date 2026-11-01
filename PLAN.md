@@ -1226,14 +1226,16 @@ canary research, full batch and verified publication remain outstanding.
 
 ## Isolated Hermes runtime diagnostic — 2026-11-01
 
-Run41351798426 restored and re-encrypted OAuth successfully inside the pinned
-Hermes container, but all three bounded operations stopped at the model stage with
-zero observed web requests. The existing sanitized controller output did not expose
+Run41351798426 restored OAuth successfully inside the pinned Hermes container and
+completed the conditional persistence step, but commit789be6fe did not change the
+encrypted OAuth file, so no token refresh or re-encryption was established. All
+three bounded operations stopped at the model stage with zero observed web requests.
+The existing sanitized controller output did not expose
 whether the child failed during import, initialization, provider access or final
 transport; its three operation counters are budgeted attempts, not proof of three
 provider calls. None targeted the27 AI Agent Economy instruments.
 
-Add a manual, dry-run-by-default diagnostic using the same staged worker, UID10000,
+Added a manual, dry-run-by-default diagnostic using the same staged worker, UID10000,
 fresh profile, pinned Python/code and OAuth refresh boundary. An applied diagnostic
 receives no company/source/queue context, exposes no tools, and permits one generic
 inference turn. Static categories distinguish import, initialization, auth/model
@@ -1242,6 +1244,22 @@ provider bodies, prompts or responses. Local tests use mocks only; no local prov
 call or pinned-image probe was completed. Exact-SHA CI and one actual applied Actions
 diagnostic are required before the issue can be classified or company research can
 resume.
+
+Live diagnostic run41356814273 at merged revision
+`4cec910556942e0cce97109c656f0b2f2ac246e8` restored OAuth and reached the isolated
+worker, then returned `agent_initialization_failed` before provider inference. It
+made no web request, received no company/source context, changed no canonical file,
+did not rotate OAuth and left the committed SHA unchanged. Docker Hub binds the
+pinned digest to Hermes `v2026.7.7.2`, image revision
+`9de9c25f620ff7f1ce0fd5457d596052d5159596`; that exact constructor accepts the
+configured keywords and an empty enabled-toolset list resolves to zero registry
+tools. Exact source inspection instead identified that direct embedded construction
+reads only a current Codex access token and does not refresh an expired one. The
+focused repair uses Hermes' supported runtime credential resolver before constructing
+the same configured model, preserves the rotated-token copyback boundary, and keeps
+unexpected tool access as a separate fail-closed category. Local checks remain
+mocked; exact-SHA CI and one further isolated Actions diagnostic must succeed before
+any company research attempt.
 
 The intake is now merged through upstream PR33 at
 `bb867102082616d78d2b1d3810dccd6a8bbfd88b`; CI41355368058 and41355390946
@@ -1253,3 +1271,8 @@ Diagnostic local verification passed129 focused tests and all295 tests (two
 existing calendar warnings), Ruff/formatting, MyPy20 modules and strict canonical
 validation. Canonical research/queue contents remain unchanged. These are mocked
 runtime checks; actual account/model access and all27 company reviews are pending.
+
+OAuth-refresh repair verification passed131 focused tests and all297 tests (the
+same two calendar warnings), Ruff/formatting, MyPy and strict current validation.
+No local inference/provider request was performed. The next gate is exact-SHA CI
+followed by one source-free Actions diagnostic with the repaired resolver.

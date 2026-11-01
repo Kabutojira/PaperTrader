@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import contextlib
 import importlib
+import inspect
 import json
 import sys
 from pathlib import Path
@@ -12,6 +13,9 @@ from typing import Any
 from papertrader.research_web import ResearchWeb
 
 WORKER_FAILURE_CODES = {
+    "agent_constructor_failed",
+    "agent_constructor_incompatible",
+    "agent_constructor_permission_failed",
     "agent_initialization_failed",
     "final_response_invalid",
     "model_unavailable",
@@ -23,6 +27,7 @@ WORKER_FAILURE_CODES = {
     "provider_timeout",
     "provider_unavailable",
     "runtime_import_failed",
+    "unexpected_tool_access",
     "worker_request_invalid",
 }
 
@@ -37,7 +42,7 @@ class WorkerFailure(RuntimeError):
         super().__init__("isolated worker phase failed")
 
 
-def _provider_exception_code(exc: Exception) -> str:
+def _known_provider_exception_code(exc: Exception) -> str | None:
     status = getattr(exc, "status_code", None)
     if type(status) is int and 100 <= status <= 599:
         if status in {401, 403}:
@@ -61,7 +66,51 @@ def _provider_exception_code(exc: Exception) -> str:
         return "provider_timeout"
     if name in {"APIConnectionError", "ConnectError", "ConnectionError"}:
         return "provider_network_failed"
-    return "provider_inference_failed"
+    return None
+
+
+def _provider_exception_code(exc: Exception) -> str:
+    return _known_provider_exception_code(exc) or "provider_inference_failed"
+
+
+def _codex_runtime_arguments() -> dict[str, str]:
+    """Resolve or refresh OAuth without exposing the credential in worker output."""
+    try:
+        resolver = importlib.import_module("hermes_cli.auth").resolve_codex_runtime_credentials
+    except Exception:
+        raise WorkerFailure("runtime_import_failed") from None
+    try:
+        credentials = resolver()
+    except Exception as exc:
+        if type(exc).__name__ == "AuthError":
+            code = getattr(exc, "code", None)
+            if code in {"codex_rate_limited", "rate_limited"}:
+                raise WorkerFailure("provider_rate_limited") from None
+            raise WorkerFailure("provider_auth_failed") from None
+        raise WorkerFailure(_provider_exception_code(exc)) from None
+    if not isinstance(credentials, dict):
+        raise WorkerFailure("provider_auth_failed")
+    api_key = credentials.get("api_key")
+    base_url = credentials.get("base_url")
+    if not isinstance(api_key, str) or not api_key.strip():
+        raise WorkerFailure("provider_auth_failed")
+    if not isinstance(base_url, str) or not base_url.startswith("https://"):
+        raise WorkerFailure("provider_auth_failed")
+    return {"api_key": api_key, "base_url": base_url}
+
+
+def _construct_agent(agent_class: Any, arguments: dict[str, Any]) -> Any:
+    try:
+        inspect.signature(agent_class).bind(**arguments)
+    except (TypeError, ValueError):
+        raise WorkerFailure("agent_constructor_incompatible") from None
+    try:
+        return agent_class(**arguments)
+    except PermissionError:
+        raise WorkerFailure("agent_constructor_permission_failed") from None
+    except Exception as exc:
+        provider_failure = _known_provider_exception_code(exc)
+        raise WorkerFailure(provider_failure or "agent_constructor_failed") from None
 
 
 def _provider_response_code(response: Any) -> str | None:
@@ -207,24 +256,23 @@ def worker(document: dict[str, Any]) -> dict[str, Any]:
                 agent_class = importlib.import_module("run_agent").AIAgent
             except Exception:
                 raise WorkerFailure("runtime_import_failed") from None
-            try:
-                agent = agent_class(
-                    model=limits["model"],
-                    provider="openai-codex",
-                    max_iterations=1,
-                    enabled_toolsets=[],
-                    save_trajectories=False,
-                    quiet_mode=True,
-                    skip_context_files=True,
-                    skip_memory=True,
-                    load_soul_identity=False,
-                    fallback_model={},
-                    request_overrides={"parallel_tool_calls": False},
-                )
-                if agent.tools:
-                    raise RuntimeError
-            except Exception:
-                raise WorkerFailure("agent_initialization_failed") from None
+            arguments: dict[str, Any] = {
+                "model": limits["model"],
+                "provider": "openai-codex",
+                "max_iterations": 1,
+                "enabled_toolsets": [],
+                "save_trajectories": False,
+                "quiet_mode": True,
+                "skip_context_files": True,
+                "skip_memory": True,
+                "load_soul_identity": False,
+                "fallback_model": {},
+                "request_overrides": {"parallel_tool_calls": False},
+                **_codex_runtime_arguments(),
+            }
+            agent = _construct_agent(agent_class, arguments)
+            if agent.tools:
+                raise WorkerFailure("unexpected_tool_access")
             try:
                 response = agent.run_conversation(
                     "Return exactly PAPERTRADER_RUNTIME_OK.",
@@ -281,23 +329,29 @@ def worker(document: dict[str, Any]) -> dict[str, Any]:
                 handler=broker.tool,
                 check_fn=lambda: True,
             )
-            agent = agent_class(
-                model=limits["model"],
-                provider="openai-codex",
-                max_iterations=limits["max_turns"],
-                enabled_toolsets=["papertrader_research"],
-                save_trajectories=False,
-                quiet_mode=True,
-                skip_context_files=True,
-                skip_memory=True,
-                load_soul_identity=False,
-                fallback_model={},
-                request_overrides={"parallel_tool_calls": False},
-            )
-            if {tool["function"]["name"] for tool in agent.tools} != {"research_web"}:
-                raise RuntimeError
         except Exception:
             raise WorkerFailure("agent_initialization_failed") from None
+        arguments = {
+            "model": limits["model"],
+            "provider": "openai-codex",
+            "max_iterations": limits["max_turns"],
+            "enabled_toolsets": ["papertrader_research"],
+            "save_trajectories": False,
+            "quiet_mode": True,
+            "skip_context_files": True,
+            "skip_memory": True,
+            "load_soul_identity": False,
+            "fallback_model": {},
+            "request_overrides": {"parallel_tool_calls": False},
+            **_codex_runtime_arguments(),
+        }
+        agent = _construct_agent(agent_class, arguments)
+        try:
+            tool_names = {tool["function"]["name"] for tool in agent.tools}
+        except (KeyError, TypeError):
+            raise WorkerFailure("unexpected_tool_access") from None
+        if tool_names != {"research_web"}:
+            raise WorkerFailure("unexpected_tool_access")
         # The pinned API supports a sequential executor; enforce it even if a model
         # emits several tool calls in one turn.
         agent._execute_tool_calls = agent._execute_tool_calls_sequential

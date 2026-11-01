@@ -1704,7 +1704,17 @@ def test_diagnostic_worker_uses_one_generic_turn_and_no_tools(
     class RunAgent:
         AIAgent = Agent
 
-    monkeypatch.setattr(research_worker.importlib, "import_module", lambda _name: RunAgent)
+    class Auth:
+        @staticmethod
+        def resolve_codex_runtime_credentials() -> dict[str, str]:
+            captured["auth_resolved"] = True
+            return {"api_key": "test-access-token", "base_url": "https://chatgpt.example"}
+
+    monkeypatch.setattr(
+        research_worker.importlib,
+        "import_module",
+        lambda name: Auth if name == "hermes_cli.auth" else RunAgent,
+    )
     response = research_worker.worker(
         {
             "context": {"operation": "runtime_diagnostic"},
@@ -1720,8 +1730,81 @@ def test_diagnostic_worker_uses_one_generic_turn_and_no_tools(
     assert captured["configuration"]["enabled_toolsets"] == []
     assert captured["configuration"]["max_iterations"] == 1
     assert captured["configuration"]["provider"] == "openai-codex"
+    assert captured["auth_resolved"] is True
+    assert captured["configuration"]["api_key"]
+    assert captured["configuration"]["base_url"].startswith("https://")
     assert captured["prompt"] == "Return exactly PAPERTRADER_RUNTIME_OK."
     assert "company" not in captured["system_message"].lower()
+
+
+def test_diagnostic_worker_keeps_constructor_and_tool_guard_failures_distinct(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    class Auth:
+        @staticmethod
+        def resolve_codex_runtime_credentials() -> dict[str, str]:
+            return {"api_key": "test-access-token", "base_url": "https://chatgpt.example"}
+
+    class IncompatibleAgent:
+        def __init__(self, model: str) -> None:
+            del model
+
+    class RunAgent:
+        AIAgent = IncompatibleAgent
+
+    monkeypatch.setattr(
+        research_worker.importlib,
+        "import_module",
+        lambda name: Auth if name == "hermes_cli.auth" else RunAgent,
+    )
+    document = {
+        "context": {"operation": "runtime_diagnostic"},
+        "limits": {"model": "gpt-5.6-sol"},
+    }
+
+    with pytest.raises(WorkerFailure) as incompatible:
+        research_worker.worker(document)
+    assert incompatible.value.diagnostic_code == "agent_constructor_incompatible"
+
+    class ToolAgent:
+        def __init__(self, **_kwargs: Any) -> None:
+            self.tools = [{"function": {"name": "terminal"}}]
+
+    RunAgent.AIAgent = ToolAgent
+    with pytest.raises(WorkerFailure) as tools:
+        research_worker.worker(document)
+    assert tools.value.diagnostic_code == "unexpected_tool_access"
+
+
+def test_diagnostic_worker_redacts_structured_oauth_failure(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    class AuthError(RuntimeError):
+        code = "invalid_grant"
+
+    class Auth:
+        @staticmethod
+        def resolve_codex_runtime_credentials() -> dict[str, str]:
+            raise AuthError("credential-secret provider response")
+
+    class RunAgent:
+        AIAgent = object
+
+    monkeypatch.setattr(
+        research_worker.importlib,
+        "import_module",
+        lambda name: Auth if name == "hermes_cli.auth" else RunAgent,
+    )
+
+    with pytest.raises(WorkerFailure) as raised:
+        research_worker.worker(
+            {
+                "context": {"operation": "runtime_diagnostic"},
+                "limits": {"model": "gpt-5.6-sol"},
+            }
+        )
+    assert raised.value.diagnostic_code == "provider_auth_failed"
+    assert "credential-secret" not in str(raised.value)
 
 
 def test_worker_bootstrap_reports_serialization_without_exposing_result(
