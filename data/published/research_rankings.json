@@ -154,12 +154,12 @@
     }
   ],
   "coverage": {
-    "current": 81,
+    "current": 79,
     "failed_tickers": 1,
     "instruments": 110,
     "issuers": 109,
     "researched": 94,
-    "stale": 13,
+    "stale": 15,
     "unrated": 65,
     "watchlist_complete": 67,
     "watchlist_incomplete_research": 0,
