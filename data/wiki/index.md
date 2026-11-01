@@ -38,14 +38,15 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-109 companies / 110 instruments; 94 assessed, 79 in date, 15 stale; 65 currently unrated. 1 quotes require attention.
+135 companies / 137 instruments; 94 assessed, 79 in date, 15 stale; 92 currently unrated. 28 quotes require attention.
 
 Last observed market session: 2026-10-30. Last successful research: 2026-10-25T20:03:52Z. Market: succeeded; research: degraded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
-Watchlist valuation coverage: **67 / 109 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 16; unsupported valuation: 26; incomplete research: 0. Needs attention: 12. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
+Watchlist valuation coverage: **67 / 136 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 43; unsupported valuation: 26; incomplete research: 0. Needs attention: 12. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
+- [AI agent productivity loop: execution infrastructure and machine transactions](ideas/idea_ai_agent_productivity_execution_economy) — 2026-11-01; maintained
 - [Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e) — 2026-10-24T19:09:47.645216Z; buy
 - [Koninklijke Ahold Delhaize N.V.](securities/security_e19c7fe27fbcc4cd923d) — 2026-10-24T19:07:39.330370Z; hold
 - [Amazon.com, Inc.](securities/security_2433a056eb0c55961fcc) — 2026-10-24T16:40:27.310920Z; hold
@@ -55,7 +56,6 @@ Watchlist valuation coverage: **67 / 109 instruments** have complete sourced bea
 - [Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349) — 2026-10-24T16:25:27.672302Z; sell
 - [PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00) — 2026-10-24T16:22:20.627957Z; hold
 - [Rio Tinto plc](securities/security_1c055eb9b2bb1f5a8ff2) — 2026-10-24T16:18:09.592416Z; hold
-- [Eaton Corporation plc](securities/security_18a3ab0ee6086ee85d0f) — 2026-10-24T16:14:31.591874Z; hold
 
 ## Ideas and interesting companies
 

@@ -5,6 +5,7 @@ title: Idea catalog
 # Investment ideas
 
 - [Water reuse, treatment, and monitoring infrastructure](ideas/idea_7d3c6d3bd6c03b117e17) — unresearched; reviewed not yet
+- [AI agent productivity loop: execution infrastructure and machine transactions](ideas/idea_ai_agent_productivity_execution_economy) — maintained; reviewed 2026-11-01
 - [AI compute, networking, and hyperscaler monetization](ideas/idea_ai_compute_networking_hyperscaler_monetization) — needs_attention; reviewed 2026-08-07
 - [AI-Driven Democratization of Physical Creation](ideas/idea_ai_driven_democratization_physical_creation) — maintained; reviewed 2026-09-06
 - [AI infrastructure and power bottlenecks](ideas/idea_ai_infrastructure_power) — maintained; reviewed 2026-09-06
