@@ -78,6 +78,7 @@ CALENDARS = {
     "XLON": "XLON",
     "XHKG": "XHKG",
     "XKRX": "XKRX",
+    "XSWX": "XSWX",
     "XKOS": "XKRX",
     "XASX": "XASX",
     "XTKS": "XTKS",

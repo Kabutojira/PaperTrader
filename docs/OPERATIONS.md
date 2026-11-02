@@ -40,6 +40,7 @@ uv run papertrader market --apply              # bounded real market update
 uv run papertrader research                    # zero-model preview
 uv run papertrader research --entity-type security --entity-id SECURITY_ID --apply
 uv run papertrader research --entity-type idea --entity-id IDEA_ID --apply
+uv run papertrader research-diagnostic         # zero-model preview
 uv run papertrader discover                    # zero-call preview
 uv run papertrader discover --apply            # weekly cadence enforced
 uv run papertrader import-candidates --request /tmp/candidates.json
@@ -55,6 +56,16 @@ Real model execution requires the pinned Hermes Python/code paths and an isolate
 HERMES_HOME/auth.json supplied outside the checkout. Never export Git, age identity,
 Telegram or deployment credentials to the model. Only the existing encrypted OAuth
 ciphertext may be committed after an actual refresh. Auth cleanup always runs.
+
+Use the source-free diagnostic only to isolate the deployed Hermes runtime. Dispatch
+`research.yml` manually with `diagnostic=true`, `dry_run=false`, no entity ID and
+`discovery=false`. It constructs the same pinned worker and fresh UID10000 profile,
+then makes one no-tool generic inference turn. It does not read, claim or finish the
+queue and receives no company, source or assessment context. Output is restricted to
+controller-owned categories for import, initialization, OAuth, provider/model access,
+timeout/exit and transport/serialization; provider text and child stderr are never
+reported. A valid refreshed OAuth profile is still copied back for the workflow's
+existing deterministic encryption path. The dry-run default makes zero model calls.
 
 ## Health and recovery
 

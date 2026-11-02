@@ -4,12 +4,153 @@ from __future__ import annotations
 
 import contextlib
 import importlib
+import inspect
 import json
 import sys
 from pathlib import Path
 from typing import Any
 
 from papertrader.research_web import ResearchWeb
+
+WORKER_FAILURE_CODES = {
+    "agent_constructor_auth_failed",
+    "agent_constructor_failed",
+    "agent_constructor_incompatible",
+    "agent_constructor_permission_failed",
+    "agent_initialization_failed",
+    "final_response_invalid",
+    "model_unavailable",
+    "provider_auth_failed",
+    "provider_auth_profile_invalid",
+    "provider_auth_refresh_failed",
+    "provider_auth_relogin_required",
+    "provider_billing_failed",
+    "provider_credentials_invalid",
+    "provider_inference_failed",
+    "provider_network_failed",
+    "provider_rate_limited",
+    "provider_timeout",
+    "provider_unavailable",
+    "runtime_import_failed",
+    "unexpected_tool_access",
+    "worker_request_invalid",
+}
+
+CODEX_PROFILE_ERROR_CODES = {
+    "codex_auth_invalid_shape",
+    "codex_auth_missing",
+    "codex_auth_missing_access_token",
+    "codex_auth_missing_refresh_token",
+}
+
+
+class WorkerFailure(RuntimeError):
+    """A fixed worker phase category without provider or source text."""
+
+    def __init__(self, diagnostic_code: str) -> None:
+        if diagnostic_code not in WORKER_FAILURE_CODES:
+            raise ValueError("unknown worker failure code")
+        self.diagnostic_code = diagnostic_code
+        super().__init__("isolated worker phase failed")
+
+
+def _known_provider_exception_code(exc: Exception) -> str | None:
+    status = getattr(exc, "status_code", None)
+    if type(status) is int and 100 <= status <= 599:
+        if status in {401, 403}:
+            return "provider_auth_failed"
+        if status == 404:
+            return "model_unavailable"
+        if status == 429:
+            return "provider_rate_limited"
+        if status in {408, 504}:
+            return "provider_timeout"
+        if status >= 500:
+            return "provider_unavailable"
+    name = type(exc).__name__
+    if name in {"AuthenticationError", "PermissionDeniedError"}:
+        return "provider_auth_failed"
+    if name in {"NotFoundError"}:
+        return "model_unavailable"
+    if name in {"RateLimitError"}:
+        return "provider_rate_limited"
+    if name in {"APITimeoutError", "ConnectTimeout", "ReadTimeout", "TimeoutError"}:
+        return "provider_timeout"
+    if name in {"APIConnectionError", "ConnectError", "ConnectionError"}:
+        return "provider_network_failed"
+    return None
+
+
+def _provider_exception_code(exc: Exception) -> str:
+    return _known_provider_exception_code(exc) or "provider_inference_failed"
+
+
+def _codex_runtime_arguments() -> dict[str, str]:
+    """Resolve or refresh OAuth without exposing the credential in worker output."""
+    try:
+        resolver = importlib.import_module("hermes_cli.auth").resolve_codex_runtime_credentials
+    except Exception:
+        raise WorkerFailure("runtime_import_failed") from None
+    try:
+        credentials = resolver()
+    except Exception as exc:
+        if type(exc).__name__ == "AuthError":
+            code = getattr(exc, "code", None)
+            if isinstance(code, str) and code == "codex_rate_limited":
+                raise WorkerFailure("provider_rate_limited") from None
+            if isinstance(code, str) and code in CODEX_PROFILE_ERROR_CODES:
+                raise WorkerFailure("provider_auth_profile_invalid") from None
+            if getattr(exc, "relogin_required", None) is True:
+                raise WorkerFailure("provider_auth_relogin_required") from None
+            raise WorkerFailure("provider_auth_refresh_failed") from None
+        raise WorkerFailure(_provider_exception_code(exc)) from None
+    if not isinstance(credentials, dict):
+        raise WorkerFailure("provider_credentials_invalid")
+    api_key = credentials.get("api_key")
+    base_url = credentials.get("base_url")
+    if not isinstance(api_key, str) or not api_key.strip():
+        raise WorkerFailure("provider_credentials_invalid")
+    if not isinstance(base_url, str) or not base_url.startswith("https://"):
+        raise WorkerFailure("provider_credentials_invalid")
+    return {"api_key": api_key, "base_url": base_url}
+
+
+def _construct_agent(agent_class: Any, arguments: dict[str, Any]) -> Any:
+    try:
+        inspect.signature(agent_class).bind(**arguments)
+    except (TypeError, ValueError):
+        raise WorkerFailure("agent_constructor_incompatible") from None
+    try:
+        return agent_class(**arguments)
+    except PermissionError:
+        raise WorkerFailure("agent_constructor_permission_failed") from None
+    except Exception as exc:
+        provider_failure = _known_provider_exception_code(exc)
+        if provider_failure == "provider_auth_failed":
+            provider_failure = "agent_constructor_auth_failed"
+        raise WorkerFailure(provider_failure or "agent_constructor_failed") from None
+
+
+def _provider_response_code(response: Any) -> str | None:
+    if not isinstance(response, dict) or response.get("failed") is not True:
+        return None
+    reason = response.get("failure_reason")
+    if reason in {"auth", "auth_permanent"}:
+        return "provider_auth_failed"
+    if reason == "model_not_found":
+        return "model_unavailable"
+    if reason == "billing":
+        return "provider_billing_failed"
+    if reason in {"rate_limit", "upstream_rate_limit"}:
+        return "provider_rate_limited"
+    if reason == "timeout":
+        return "provider_timeout"
+    if reason == "ssl_cert_verification":
+        return "provider_network_failed"
+    if reason in {"overloaded", "server_error"}:
+        return "provider_unavailable"
+    return "provider_inference_failed"
+
 
 POLICY = """Research one supplied company or idea. Return exactly one JSON object,
 without fences: operation, entity_id, outcome, summary, assessment, idea, sources,
@@ -125,6 +266,51 @@ Return zero candidates honestly if evidence or identity cannot be established.
 
 def worker(document: dict[str, Any]) -> dict[str, Any]:
     limits, packet = document["limits"], document["context"]
+    if packet == {"operation": "runtime_diagnostic"}:
+        if set(document) != {"context", "limits"}:
+            raise WorkerFailure("worker_request_invalid")
+        with contextlib.redirect_stdout(sys.stderr):
+            try:
+                agent_class = importlib.import_module("run_agent").AIAgent
+            except Exception:
+                raise WorkerFailure("runtime_import_failed") from None
+            arguments: dict[str, Any] = {
+                "model": limits["model"],
+                "provider": "openai-codex",
+                "max_iterations": 1,
+                "enabled_toolsets": [],
+                "save_trajectories": False,
+                "quiet_mode": True,
+                "skip_context_files": True,
+                "skip_memory": True,
+                "load_soul_identity": False,
+                "fallback_model": {},
+                "request_overrides": {"parallel_tool_calls": False},
+                **_codex_runtime_arguments(),
+            }
+            agent = _construct_agent(agent_class, arguments)
+            if agent.tools:
+                raise WorkerFailure("unexpected_tool_access")
+            try:
+                response = agent.run_conversation(
+                    "Return exactly PAPERTRADER_RUNTIME_OK.",
+                    system_message=(
+                        "This is an isolated runtime diagnostic. Use no tools and return exactly "
+                        "PAPERTRADER_RUNTIME_OK."
+                    ),
+                )
+            except Exception as exc:
+                raise WorkerFailure(_provider_exception_code(exc)) from None
+        provider_failure = _provider_response_code(response)
+        if provider_failure:
+            raise WorkerFailure(provider_failure)
+        try:
+            final = response["final_response"]
+            if not isinstance(final, str) or final.strip() != "PAPERTRADER_RUNTIME_OK":
+                raise ValueError
+        except (KeyError, TypeError, ValueError):
+            raise WorkerFailure("final_response_invalid") from None
+        return dict(result={"status": "ok"}, observations={}, usage={"web_requests": 0})
     broker = ResearchWeb(
         max_calls=limits["max_web_calls"],
         runtime=limits["timeout_seconds"],
@@ -132,56 +318,77 @@ def worker(document: dict[str, Any]) -> dict[str, Any]:
     )
     # Only our read-only broker is exposed; there is no shell or filesystem tool.
     with contextlib.redirect_stdout(sys.stderr):
-        registry = importlib.import_module("tools.registry").registry
-        registry.register(
-            name="research_web",
-            toolset="papertrader_research",
-            schema={
-                "name": "research_web",
-                "description": (
-                    "Read public evidence or search metadata. Page selects a bounded "
-                    "PDF page window or HTML text window. Hard request budget."
-                ),
-                "parameters": {
-                    "type": "object",
-                    "properties": {
-                        "action": {"enum": ["search", "open"]},
-                        "query": {"type": "string"},
-                        "url": {"type": "string"},
-                        "page": {"type": "integer", "minimum": 1, "maximum": 250},
+        try:
+            registry = importlib.import_module("tools.registry").registry
+            agent_class = importlib.import_module("run_agent").AIAgent
+        except Exception:
+            raise WorkerFailure("runtime_import_failed") from None
+        try:
+            registry.register(
+                name="research_web",
+                toolset="papertrader_research",
+                schema={
+                    "name": "research_web",
+                    "description": (
+                        "Read public evidence or search metadata. Page selects a bounded "
+                        "PDF page window or HTML text window. Hard request budget."
+                    ),
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "action": {"enum": ["search", "open"]},
+                            "query": {"type": "string"},
+                            "url": {"type": "string"},
+                            "page": {"type": "integer", "minimum": 1, "maximum": 250},
+                        },
+                        "required": ["action"],
                     },
-                    "required": ["action"],
                 },
-            },
-            handler=broker.tool,
-            check_fn=lambda: True,
-        )
-        agent_class = importlib.import_module("run_agent").AIAgent
-        agent = agent_class(
-            model=limits["model"],
-            provider="openai-codex",
-            max_iterations=limits["max_turns"],
-            enabled_toolsets=["papertrader_research"],
-            save_trajectories=False,
-            quiet_mode=True,
-            skip_context_files=True,
-            skip_memory=True,
-            load_soul_identity=False,
-            fallback_model={},
-            request_overrides={"parallel_tool_calls": False},
-        )
-        if {tool["function"]["name"] for tool in agent.tools} != {"research_web"}:
-            raise RuntimeError("unexpected research tool access")
+                handler=broker.tool,
+                check_fn=lambda: True,
+            )
+        except Exception:
+            raise WorkerFailure("agent_initialization_failed") from None
+        arguments = {
+            "model": limits["model"],
+            "provider": "openai-codex",
+            "max_iterations": limits["max_turns"],
+            "enabled_toolsets": ["papertrader_research"],
+            "save_trajectories": False,
+            "quiet_mode": True,
+            "skip_context_files": True,
+            "skip_memory": True,
+            "load_soul_identity": False,
+            "fallback_model": {},
+            "request_overrides": {"parallel_tool_calls": False},
+            **_codex_runtime_arguments(),
+        }
+        agent = _construct_agent(agent_class, arguments)
+        try:
+            tool_names = {tool["function"]["name"] for tool in agent.tools}
+        except (KeyError, TypeError):
+            raise WorkerFailure("unexpected_tool_access") from None
+        if tool_names != {"research_web"}:
+            raise WorkerFailure("unexpected_tool_access")
         # The pinned API supports a sequential executor; enforce it even if a model
         # emits several tool calls in one turn.
         agent._execute_tool_calls = agent._execute_tool_calls_sequential
-        response = agent.run_conversation(
-            json.dumps(packet),
-            system_message=(DISCOVERY_POLICY if packet.get("mode") == "discovery" else POLICY)
-            + "\n"
-            + packet["skill"],
-        )
-    result = json.loads(response["final_response"])
+        try:
+            response = agent.run_conversation(
+                json.dumps(packet),
+                system_message=(DISCOVERY_POLICY if packet.get("mode") == "discovery" else POLICY)
+                + "\n"
+                + packet["skill"],
+            )
+        except Exception as exc:
+            raise WorkerFailure(_provider_exception_code(exc)) from None
+    provider_failure = _provider_response_code(response)
+    if provider_failure:
+        raise WorkerFailure(provider_failure)
+    try:
+        result = json.loads(response["final_response"])
+    except (KeyError, TypeError, json.JSONDecodeError):
+        raise WorkerFailure("final_response_invalid") from None
     return dict(
         result=result,
         observations=broker.observations,

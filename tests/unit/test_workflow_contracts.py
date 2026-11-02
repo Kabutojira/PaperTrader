@@ -81,6 +81,10 @@ def test_runtime_scopes_inference_secret_and_git_token_to_separate_steps(
             word in str(job).lower() for word in ("telegram", "podcast", "final_buy", "allocation")
         )
     text = (repository_root / ".github/workflows/research.yml").read_text()
+    research_inputs = workflow(repository_root, "research.yml")["on"]["workflow_dispatch"]["inputs"]
+    assert research_inputs["diagnostic"]["default"] == "false"
+    assert "arguments=(research-diagnostic)" in text
+    assert "diagnostic_inputs_conflict" in text
     assert "bdc69c09cbdd6cf8b1f333d372a1f58247b3a33146406333e30c0f26e8f51377" in text
     assert "--connect-timeout 15 --max-time 90 --retry 2" in text
     assert "Remove plaintext inference state" in text
