@@ -61,7 +61,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Intel Corporation](securities/security_dfa34d4b9050964b465e) | INTC (USD) | researched: sell | complete | 24.00 / 48.00 / 100.00 USD | 2026-10-24T14:10:30.760181Z | 2026-11-23T14:10:30.760181Z |
 | [Intuitive Machines, Inc.](securities/security_a5dc16f3f4b245e6c168) | LUNR (USD) | needs_attention: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-19T02:05:15.000191Z | 2026-11-18T02:05:15.000191Z |
 | [Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349) | ISRG (USD) | researched: sell | complete | 240.00 / 342.00 / 450.00 USD | 2026-10-24T16:25:27.672302Z | 2026-11-23T16:25:27.672302Z |
-| [Knightscope, Inc.](securities/security_5693568146922e796a14) | KSCP (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
+| [Knightscope, Inc.](securities/security_5693568146922e796a14) | KSCP (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Koninklijke Ahold Delhaize N.V.](securities/security_e19c7fe27fbcc4cd923d) | AD (EUR) | researched: hold | complete | 26.00 / 34.00 / 42.00 EUR | 2026-10-24T19:07:39.330370Z | 2026-11-23T19:07:39.330370Z |
 | [Kratos Defense & Security Solutions, Inc.](securities/security_0cf8075039299094d614) | KTOS (USD) | researched: hold | complete | 28.09 / 41.79 / 63.59 USD | 2026-10-24T16:11:12.496589Z | 2026-11-23T16:11:12.496589Z |
 | [Labcorp Holdings Inc.](securities/security_b1f2c48e1a744f5ecf67) | LH (USD) | researched: research_expired_or_future | complete | 253.40 / 311.52 / 371.00 USD | 2026-08-21T22:54:07Z | 2026-09-04T22:54:07Z |
@@ -86,7 +86,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Oracle Corporation](securities/security_e9c2be5f4003360f21e4) | ORCL (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [PLS Group Limited](securities/security_8a5c43888d224de85c69) | PLS.AX (AUD) | researched: valuation_unsupported | valuation_unsupported | — / — / — AUD | 2026-10-24T14:02:41.253809Z | 2026-11-01T14:02:41.253809Z |
 | [Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a) | PLTR (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T15:15:36.223838Z | 2026-11-23T15:15:36.223838Z |
-| [Palladyne AI Corp.](securities/security_5d8b1483732cb8151b3e) | PDYN (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
+| [Palladyne AI Corp.](securities/security_5d8b1483732cb8151b3e) | PDYN (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Palo Alto Networks, Inc.](securities/security_ef108335e5627d7782e6) | PANW (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Parrot S.A.](securities/security_cc4dcb8f002b61dffe00) | PARRO.PA (EUR) | researched: hold | complete | 4.21 / 7.92 / 13.38 EUR | 2026-10-24T15:41:03.520697Z | 2026-11-23T15:41:03.520697Z |
 | [PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00) | PYPL (USD) | researched: hold | complete | 43.04 / 64.56 / 80.70 USD | 2026-10-24T16:22:20.627957Z | 2026-11-23T16:22:20.627957Z |
@@ -99,7 +99,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Prysmian S.p.A.](securities/security_9f86c521465136edada1) | PRY (EUR) | unresearched: unresearched | missing_research | — / — / — EUR | unresearched | — |
 | [QUALCOMM Incorporated](securities/security_3a75fc1ccca2ee7c937a) | QCOM (USD) | researched: hold | complete | 102.00 / 166.00 / 220.00 USD | 2026-10-22T20:26:18.005794Z | 2026-11-21T20:26:18.005794Z |
 | [Quanta Services, Inc.](securities/security_488a9d7f7a8573597724) | PWR (USD) | researched: hold | complete | 417.50 / 534.40 / 668.00 USD | 2026-10-23T20:09:37.071756Z | 2026-11-22T20:09:37.071756Z |
-| [ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c) | 108490 (KRW) | researched: strong_sell | complete | 20,625.00 / 70,968.00 / 282,667.00 KRW | 2026-10-24T16:07:01.121336Z | 2026-11-23T16:07:01.121336Z |
+| [ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c) | 108490 (KRW) | researched: market_stale_or_unavailable | complete | 20,625.00 / 70,968.00 / 282,667.00 KRW | 2026-10-24T16:07:01.121336Z | 2026-11-23T16:07:01.121336Z |
 | [RTX Corporation](securities/security_59304f90c440def31dc5) | RTX (USD) | researched: hold | complete | 142.00 / 179.38 / 246.50 USD | 2026-10-19T00:33:47.630267Z | 2026-11-17T00:33:47.630267Z |
 | [Recursion Pharmaceuticals, Inc.](securities/security_ed7d5b616a196969c815) | RXRX (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-19T01:07:51.346928Z | 2026-11-17T01:07:51.346928Z |
 | [Rio Tinto plc](securities/security_1c055eb9b2bb1f5a8ff2) | RIO (USD) | researched: hold | complete | 68.00 / 93.50 / 126.50 USD | 2026-10-24T16:18:09.592416Z | 2026-11-23T16:18:09.592416Z |
@@ -126,7 +126,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Taiwan Semiconductor Manufacturing Company Limited](securities/security_ce9b78a4d0773c950765) | TSM (USD) | researched: hold | complete | 250.00 / 434.00 / 594.00 USD | 2026-10-24T15:44:48.694444Z | 2026-11-23T15:44:48.694444Z |
 | [Teledyne Technologies Incorporated](securities/security_ad5917642acbba28c1f2) | TDY (USD) | researched: research_expired_or_future | complete | 506.00 / 675.00 / 870.00 USD | 2026-08-05T19:59:39Z | 2026-09-04T19:59:39Z |
 | [Tencent Holdings Limited](securities/security_de0d83229b369a426b99) | TCEHY (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T15:55:36.134973Z | 2026-11-23T15:55:36.134973Z |
-| [TeraWulf Inc.](securities/security_93ae4d1c015392716cd1) | WULF (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
+| [TeraWulf Inc.](securities/security_93ae4d1c015392716cd1) | WULF (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Ternium S.A.](securities/security_2c779e81c27b78c556bb) | TX (USD) | researched: hold | complete | 32.00 / 55.00 / 84.00 USD | 2026-10-22T20:22:14.499873Z | 2026-11-21T20:22:14.499873Z |
 | [Tesla, Inc.](securities/security_dc7a111e297be528d96b) | TSLA (USD) | researched: research_expired_or_future | complete | 5.47 / 31.86 / 243.45 USD | 2026-10-20T12:08:40.691805Z | 2026-10-22T07:00:00Z |
 | [Texas Instruments Incorporated](securities/security_83a56943e18793f685b0) | TXN (USD) | researched: hold | complete | 150.00 / 256.50 / 374.00 USD | 2026-10-19T01:18:02.186939Z | 2026-11-17T01:18:02.186939Z |

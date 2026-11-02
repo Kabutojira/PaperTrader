@@ -24,7 +24,6 @@ Current research opinions in each instrument's native currency. Fair values chan
 
 | Company / thesis & sources | Ticker | Currency | Price | Price as of | Weighted / base fair value | Implied / adjusted return | Rating | Confidence | Researched / expiry |
 | --- | --- | --- | ---: | --- | ---: | ---: | --- | --- | --- |
-| [ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c) | 108490 | KRW | 256,000.00 | 2026-10-30 | 98,204.90 / 70,968.00 | -61.64% / -43.15% | strong_sell | medium | 2026-10-24T16:07:01.121336Z / 2026-11-23T16:07:01.121336Z |
 | [Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687) | DNA | USD | 11.21 | 2026-10-30 | 8.08 / 7.57 | -27.94% / -19.56% | sell | medium | 2026-10-20T20:17:35.294967Z / 2026-11-19T20:17:35.294967Z |
 | [Freeport-McMoRan Inc.](securities/security_2dbe878dfc899d7ee867) | FCX | USD | 62.47 | 2026-10-30 | 46.50 / 47.36 | -25.57% / -17.90% | sell | medium | 2026-10-22T20:24:15.882831Z / 2026-11-21T20:24:15.882831Z |
 | [Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349) | ISRG | USD | 432.01 | 2026-10-30 | 343.50 / 342.00 | -20.49% / -14.34% | sell | medium | 2026-10-24T16:25:27.672302Z / 2026-11-23T16:25:27.672302Z |
@@ -38,11 +37,11 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-135 companies / 137 instruments; 94 assessed, 79 in date, 15 stale; 92 currently unrated. 28 quotes require attention.
+135 companies / 137 instruments; 94 assessed, 79 in date, 15 stale; 93 currently unrated. 28 quotes require attention.
 
 Last observed market session: 2026-10-30. Last successful research: 2026-10-25T20:03:52Z. Market: succeeded; research: degraded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
-Watchlist valuation coverage: **67 / 136 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 43; unsupported valuation: 26; incomplete research: 0. Needs attention: 12. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
+Watchlist valuation coverage: **67 / 136 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 43; unsupported valuation: 26; incomplete research: 0. Needs attention: 15. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 
