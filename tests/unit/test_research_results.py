@@ -2463,3 +2463,132 @@ def test_researcher_mcp_bridge_uses_current_controller_evidence_only(
     assert outcomes[0]["exit_code"] == 0 and outcomes[0]["web_requests"] == 1
     assert not connection_file.exists()
     assert web_call(connection_file, arguments) == {"error": "controller_unavailable"}
+
+
+@pytest.mark.parametrize("supported", [True, False])
+def test_isolated_runner_uses_existing_validation_and_atomic_writes(
+    current: Path, repository_root: Path, monkeypatch: pytest.MonkeyPatch, supported: bool
+) -> None:
+    from papertrader.research_isolated import IsolatedResearch
+
+    role = current / ".codex/agents/company_researcher.toml"
+    role.parent.mkdir(parents=True)
+    shutil.copy2(repository_root / ".codex/agents/company_researcher.toml", role)
+
+    def opened(self: ResearchWeb, url: str, **kwargs: Any) -> dict[str, str]:
+        self.take(url)
+        self.observations[url] = observations()[url]
+        return {"source_id": "source1", "untrusted_source_text": "Evidence"}
+
+    monkeypatch.setattr(ResearchWeb, "open", opened)
+    monkeypatch.setattr("papertrader.research_web.public_url", lambda url: None)
+    payload = result(current, supported=supported)
+
+    class Client:
+        calls = 0
+
+        def check_model(self, model: str, timeout: float) -> None:
+            assert model == "test-exact"
+
+        def complete(self, body: dict[str, Any], timeout: float) -> dict[str, Any]:
+            self.calls += 1
+            if self.calls == 1:
+                context = json.loads(body["input"][0]["content"])
+                output = [
+                    {
+                        "type": "function_call",
+                        "name": "research_web",
+                        "call_id": "call1",
+                        "arguments": json.dumps(
+                            {
+                                "operation_id": context["manual_operation_id"],
+                                "action": "open",
+                                "url": URL,
+                            }
+                        ),
+                    }
+                ]
+            else:
+                output = [
+                    {
+                        "type": "message",
+                        "content": [
+                            {
+                                "type": "output_text",
+                                "text": json.dumps({"action": "result", "result": payload}),
+                            }
+                        ],
+                    }
+                ]
+            return {"status": "completed", "model": "test-exact", "output": output}
+
+    from papertrader.research_agent import research_limits
+
+    runner = IsolatedResearch("test-exact", Client())  # type: ignore[arg-type]
+    runner.preflight(current, research_limits(current))
+    outcome = run_cycle(
+        current,
+        dry_run=False,
+        entity_type="security",
+        entity_id="security1",
+        executor=runner,
+        clock=lambda: NOW,
+    )
+    assert outcome["exit_code"] == 0 and outcome["web_requests"] == 1
+    assert runner.inference_requests == 2
+    state = read_state(current)
+    assert state["research_queue"] == []
+    assert state["security_assessments"][0]["base_fair_value"] == ("100" if supported else "")
+    assert state["source_registry"][0]["content_hash"] == "a" * 64
+    assert not (current / CONNECTION_FILE).exists()
+
+
+def test_isolated_cli_preview_and_failed_preflight_never_claim_attempts(
+    current: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    from papertrader.research_isolated import IsolatedResearch
+
+    before = {p: p.read_bytes() for p in (current / "data").rglob("*") if p.is_file()}
+
+    def failed(*args: Any) -> Any:
+        raise RuntimeError("isolated_auth_rejected")
+
+    monkeypatch.setattr(IsolatedResearch, "preflight", failed)
+    args = ["--repository", str(current), "research-isolated", "--entity-id", "security1"]
+    assert main(args) == 0
+    assert json.loads(capsys.readouterr().out)["runtime"]["automatic_retries"] == 0
+    for flag in ("--preflight", "--apply"):
+        assert main([*args, flag]) == 5
+        assert json.loads(capsys.readouterr().out)["error"] == "isolated_auth_rejected"
+    assert all(path.read_bytes() == value for path, value in before.items())
+    assert read_state(current)["research_queue"] == []
+
+
+def test_isolated_cli_skips_exhausted_instruments_without_preflight(
+    current: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    from papertrader.research_isolated import IsolatedResearch
+
+    state = read_state(current)
+    state["securities"][0]["research_status"] = "needs_attention"
+    write_state(current, state)
+    monkeypatch.setattr(
+        IsolatedResearch,
+        "preflight",
+        lambda *args: pytest.fail("exhausted entity must not reach preflight"),
+    )
+    assert (
+        main(
+            [
+                "--repository",
+                str(current),
+                "research-isolated",
+                "--entity-id",
+                "security1",
+                "--apply",
+            ]
+        )
+        == 0
+    )
+    assert json.loads(capsys.readouterr().out)["status"] == "skipped_exhausted"
+    assert read_state(current)["research_queue"] == []

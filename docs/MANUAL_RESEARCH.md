@@ -1,4 +1,64 @@
-# Manual company research with subagents
+# Manual company research
+
+## Dedicated isolated runner
+
+`research-isolated` is the explicitly authorized alternative when the host cannot
+audit or enforce an external subagent's capabilities and limits. It loads the
+repository `company_researcher` instructions and sanitized company context, but
+does not spawn a Codex subagent or load its inherited tools. The remote model can
+request only the `research_web` function or return a result envelope. Trusted
+Python dispatches that exact function to the existing `ResearchWeb` broker; there
+is no shell, interpreter, filesystem, MCP/app discovery or delegation dispatcher.
+The existing queue/controller validates and atomically applies the completed
+result. Scheduled Hermes and Actions behavior is unchanged.
+
+From a clean checkout with locked dependencies installed:
+
+```sh
+uv run papertrader research-isolated --entity-id SECURITY_ID
+uv run papertrader research-isolated --entity-id SECURITY_ID --preflight
+uv run papertrader research-isolated --entity-id SECURITY_ID --model EXACT_MODEL --apply
+```
+
+Preview does not read credentials, call a provider or write canonical state.
+`--preflight` reads the existing private Codex ChatGPT OAuth cache outside this
+repository and performs one bounded model-catalog read, without inference or a
+queue claim. It prints the actual function schema supplied to inference, exact
+selected catalog model, zero automatic retries and configured limits. The catalog
+is not proof of inference entitlement. Every completed inference response must
+report that same model; mismatch, incomplete streams, unknown tools and malformed
+results fail closed. `--apply` repeats preflight before admitting/claiming a task
+and explicitly skips instruments already marked `needs_attention`.
+
+The trusted HTTP transport uses the documented
+[Codex inference endpoint](https://learn.chatgpt.com/docs/enterprise/connect-to-a-gateway)
+and [Responses function calling](https://developers.openai.com/api/docs/guides/function-calling).
+It reads `CODEX_HOME/auth.json` (default `~/.codex/auth.json`) only in trusted code,
+requires private file permissions, and never copies, prints, refreshes or writes
+tokens. Tokens and account headers are absent from model input. Missing/rejected
+auth stops preflight; renew the normal Codex login outside this command if needed.
+There is no credential or provider fallback, environment proxy, HTTP redirect,
+SDK retry or model switch.
+
+One CLI process owns one fresh company conversation and exits after validation.
+Its POSIX signal deadline interrupts blocking inference and broker reads; the
+response stream closes on exit. No local researcher process survives it. Each
+inference submission consumes one of `research.max_turns`, and broker calls plus
+final submission share the same relay-turn cap. All source reads share
+`research.max_web_calls`; failed/repeated reads retain the broker's accounting.
+Input and streamed output sizes are bounded. `inference_requests` counts this
+runner's HTTP submission attempts, not provider generations or billable calls;
+disconnecting a stream does not prove when remote computation stopped.
+
+Use at most `research.max_daily_operations` company attempts across the authorized
+batch, one invocation at a time. Preserve counters, skip exhausted entities and
+never retry a failed company in the same batch. Wait for the final CLI outcome
+and exit code, not merely `response.completed`: Python still has to validate
+citations, schemas and Markdown. The existing commit/push/CI and independent
+exact-SHA Pages procedure follows accepted research. A catalog read, runtime audit
+or mocked test is not completed live research.
+
+## External subagent transport
 
 This is an explicitly launched, company-only alternative to the Hermes executor.
 It does not use Hermes OAuth, change Actions, schedule work, discover companies,

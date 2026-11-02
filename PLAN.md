@@ -1,5 +1,24 @@
 # PaperTrader research-only migration
 
+## Authorized isolated manual runner — 2026-11-02
+
+The user authorizes a dedicated runner after the external Codex subagent audit
+could not establish exclusive tools, resolved model or enforceable limits. Add a
+single-function Responses loop using the existing Codex login, Python controller,
+bounded source broker and result transaction. Do not change scheduled Hermes,
+credentials, identity/valuation contracts, retry counters or daily defaults.
+Preflight must precede queue claims; model mismatch, unknown tools, invalid final
+responses and exhausted entities fail closed. Verify local security/transport and
+controller tests, static/current validation and exact-SHA CI before live company
+attempts. No live company inference or accepted research is established by the
+source-free model-catalog check. Local verification passed358 tests (43 dependency
+warnings), Ruff lint/formatting, MyPy23 modules and strict current validation.
+These checks use synthetic research and mocked inference/sources; exact-SHA CI
+and actual bounded reviews remain pending.
+One actual source-free Responses probe completed with the exact configured model,
+one inference HTTP submission, zero web requests and zero canonical writes. It
+verified inference transport/model access, not company research or valuations.
+
 The product is autonomous public-company discovery, investment research and
 valuation. This plan, supplied on 2026-10-18, supersedes the retired trading and
 research-governance plans preserved in the pre-migration Git ref. Implement one

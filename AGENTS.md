@@ -14,7 +14,10 @@ There is no classifier, model router, final-buy authority, dependency graph or
 recursive research fan-out.
 
 Manual company research may instead use the parent-mediated transport documented
-in docs/MANUAL_RESEARCH.md. The repository company_researcher role may use only the
+in docs/MANUAL_RESEARCH.md or its explicitly authorized isolated Responses runner.
+The latter loads the research role's instructions but supplies only one function,
+research_web, without a Codex subagent or inherited runtime tools. The repository
+company_researcher role may use only the
 bounded read-only research_web broker. Shell, filesystem, unrelated connectors,
 credentials and delegation remain forbidden; audit effective runtime capabilities.
 An agent definition alone does not establish isolation.

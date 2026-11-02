@@ -122,7 +122,16 @@ class ManualResearchError(RuntimeError):
     """Controller-owned failure with observed broker usage, never model text."""
 
     def __init__(self, code: str, web_requests: int) -> None:
-        if code not in {"manual_aborted", "manual_timeout", "manual_turn_budget"}:
+        if code not in {
+            "manual_aborted",
+            "manual_timeout",
+            "manual_turn_budget",
+            "isolated_provider_failed",
+            "isolated_model_mismatch",
+            "isolated_response_invalid",
+            "isolated_tool_forbidden",
+            "isolated_response_oversized",
+        }:
             raise ValueError("unknown manual research failure")
         self.diagnostic_code = code
         self.web_requests = web_requests

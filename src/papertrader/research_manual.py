@@ -22,6 +22,21 @@ from papertrader.research_worker import POLICY
 MAX_MESSAGE_BYTES = 300_000
 
 
+def manual_context(packet: dict[str, Any], limits: ResearchLimits) -> dict[str, Any]:
+    """Sanitized, operation-bound input shared by the two manual transports."""
+    context = {key: value for key, value in packet.items() if not key.startswith("_")}
+    context["limits"] = vars(limits)
+    context["manual_operation_id"] = uuid.uuid4().hex
+    context["policy"] = (
+        "Manual transport: research_web is your only permitted executable tool. "
+        "Include context.manual_operation_id as operation_id on every tool call. "
+        "If using coordinator-relayed web envelopes, relay one per turn. Return "
+        "your completed result envelope to the coordinator. The final-result "
+        "contract describes the inner result object of a result envelope.\n\n" + POLICY
+    )
+    return context
+
+
 @contextmanager
 def _deadline(seconds: float) -> Iterator[None]:
     """Interrupt blocking DNS/HTTP as well as idle coordination in the CLI process."""
@@ -91,16 +106,7 @@ class ManualResearch:
             runtime=limits.timeout_seconds,
             source_identities=packet.get("_source_identity_index", []),
         )
-        context = {key: value for key, value in packet.items() if not key.startswith("_")}
-        context["limits"] = vars(limits)
-        context["manual_operation_id"] = uuid.uuid4().hex
-        context["policy"] = (
-            "Manual transport: research_web is your only permitted executable tool. "
-            "Include context.manual_operation_id as operation_id on every tool call. "
-            "If using coordinator-relayed web envelopes, relay one per turn. Return "
-            "your completed result envelope to the coordinator. The final-result "
-            "contract describes the inner result object of a result envelope.\n\n" + POLICY
-        )
+        context = manual_context(packet, limits)
         directory = root / ".cache/manual-research"
         for parent in (root / ".cache", directory):
             if parent.is_symlink():

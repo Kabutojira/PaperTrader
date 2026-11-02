@@ -2,6 +2,14 @@ Prepare and run the manual-only company research integration described in
 docs/MANUAL_RESEARCH.md. Read AGENTS.md and use the current checked-out code and
 schemas. Do not use Hermes, its OAuth diagnostic, or the Actions research workflow.
 
+The user explicitly authorizes the dedicated `research-isolated` Responses runner
+as an alternative to external subagents. Prefer it when the host cannot enforce
+subagent isolation. It loads the company role instructions but does not spawn a
+Codex researcher or inherit its tools. Its own single-function dispatcher, exact
+model check, request budgets, deadline and zero retries supply the enforcement.
+Use its dedicated procedure below; the external-runtime checks in the next three
+paragraphs apply only when choosing the external subagent transport.
+
 Load the repository's company_researcher role and papertrader_research MCP server;
 reload the runtime first if necessary. Verify that its only executable research
 tool is research_web, supporting bounded public search and page/PDF reads. Shell,
@@ -37,6 +45,26 @@ or retry a failed company in this batch. Record skips explicitly. A failed entit
 must not prevent the next eligible company from receiving its bounded attempt.
 
 For each eligible security:
+
+When using the dedicated runner:
+
+- Preview with `uv run papertrader research-isolated --entity-id SECURITY_ID`.
+- Run `uv run papertrader research-isolated --entity-id SECURITY_ID --preflight`.
+  Inspect its exact selected catalog model, actual advertised function schema,
+  zero retry setting and enforced inference/web/runtime limits. This makes no
+  inference call or queue claim; a model catalog is not an entitlement check.
+- Run `uv run papertrader research-isolated --entity-id SECURITY_ID --model EXACT_MODEL --apply`.
+  It repeats preflight before claiming, rejects unexpected response models/tools,
+  and closes the bounded conversation on completion or failure. No external
+  subagent, controller socket, MCP bridge or coordinator relay is needed.
+- Wait for final Python validation and exit. Record accepted/unsupported/skipped/
+  failed/exhausted outcomes, observed web requests and inference HTTP submission
+  attempts. Do not equate submissions with measured provider generation counts.
+- Do not retry the entity in this batch. Start the next invocation only after the
+  previous process exits. The common post-research validation/publication steps
+  below still apply.
+
+When using the external subagent transport instead:
 
 - Preview with `uv run papertrader research-manual --entity-id SECURITY_ID`.
 - Start a supervised `research-manual --entity-id SECURITY_ID --model EXACT_MODEL

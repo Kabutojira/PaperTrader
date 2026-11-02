@@ -49,10 +49,88 @@ PAPERTRADER_BASE_URL=localhost npm run check --prefix site
 PAPERTRADER_BASE_URL=localhost npm run build --prefix site
 ```
 
-Real research runs in the pinned Hermes container with isolated inference OAuth.
+Scheduled research runs in the pinned Hermes container with isolated inference OAuth.
 It has one read-only web tool and no Git/Pages write credentials. Do not place
 plaintext credentials in this public checkout. GitHub Actions handles encrypted
 OAuth restoration and deterministic post-agent commits.
+
+## Start manual company reviews in Codex
+
+Use the [manual research procedure](docs/MANUAL_RESEARCH.md) and
+[bounded live launch prompt](docs/prompts/manual-company-research.md) for the
+explicitly authorized FCEL, C3.ai and SPCE batch. This path uses the Python
+controller and one fresh company conversation at a time, with discovery disabled.
+It does not use Hermes or the Actions research workflow.
+
+The dedicated runner supplies only the `research_web` function to the model,
+without inherited Codex tools. From a clean checkout with locked dependencies,
+preview and audit before applying one immutable security:
+
+```sh
+uv run papertrader research-isolated --entity-id SECURITY_ID
+uv run papertrader research-isolated --entity-id SECURITY_ID --preflight
+uv run papertrader research-isolated --entity-id SECURITY_ID --model EXACT_MODEL --apply
+```
+
+The model defaults to `research.ini`. Preflight prints its exact selected model,
+function schema, zero automatic retries and enforced limits, then checks the
+provider catalog without inference or a queue claim. Actual response model
+identity is checked on every inference. The trusted transport reads the existing
+private Codex OAuth cache outside the repository; credentials never enter model
+context and are not copied, refreshed or written. The command bounds inference
+submissions, source reads, response sizes and total runtime. It skips exhausted
+instruments and uses the existing evidence validation and recoverable writes.
+Run only the authorized batch size, sequentially, with no same-batch retry.
+
+For the external Codex subagent transport, restart and audit its host separately:
+
+From a clean repository root, install locked dependencies and start a fresh local
+Codex CLI session:
+
+```sh
+UV_CACHE_DIR=.cache/uv uv sync --locked --all-groups
+codex --no-daemon --strict-config
+```
+
+`--no-daemon` avoids the shared daemon when its control/reload connection is
+unavailable. Trust this repository if prompted: Codex loads project `.codex/`
+configuration only for trusted projects. The checked-in configuration registers
+`papertrader_research`; do not duplicate it in the user MCP registry. See the
+[official configuration documentation](https://learn.chatgpt.com/docs/config-file/config-basic).
+
+Paste this into the fresh session:
+
+```text
+Read AGENTS.md, docs/MANUAL_RESEARCH.md and
+docs/prompts/manual-company-research.md.
+
+Before spawning a researcher or running --apply, verify:
+- company_researcher is loaded and papertrader_research exposes research_web.
+- The researcher's only executable capability is research_web: no shell,
+  filesystem, repository writes, credentials, native browsing, unrelated
+  connectors or delegation.
+- The exact model identifier is known and the runtime enforces the configured
+  model turn/runtime limits with automatic retries disabled.
+
+Show effective-runtime evidence for these checks. Configuration files, role
+instructions and readOnlyHint annotations alone do not establish isolation.
+If all checks pass, execute the launch prompt's authorized FCEL, C3.ai and SPCE
+reviews sequentially, including its validation, commit/push, exact-SHA CI and
+publication steps. Preserve attempt counts and skip exhausted entities.
+Otherwise report BLOCKED_RESEARCH_ISOLATION without consuming attempts.
+```
+
+Restarting can restore broker registration; it does not prove isolation. Custom
+agents inherit parent permissions and MCP connections; see the
+[official subagent documentation](https://learn.chatgpt.com/docs/agent-configuration/subagents).
+If the external runtime cannot audit and enforce the required capabilities and
+limits, stop before any researcher spawn or `--apply`. A runtime maintainer must
+provide the missing controls, or use the explicitly authorized dedicated runner
+above. No configuration-only fix has been verified for external subagents. Do not
+bypass their gate with ordinary shared-tool subagents or native browsing. The defaults in
+[research.ini](research.ini) remain three total company attempts for the batch,
+with 24 turns, 12 web requests and 600 seconds per operation; unavailable evidence
+stays Unrated.
 
 ## Data and documentation
 
