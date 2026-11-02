@@ -15,6 +15,7 @@ from papertrader.research_discovery import (
     prepare_candidates,
     run_discovery,
 )
+from papertrader.research_manual import MAX_MESSAGE_BYTES, ManualResearch, manual_call
 from papertrader.research_publication import publish_views, snapshot
 from papertrader.research_queue import admit, queue_limits
 from papertrader.research_ratings import rating_thresholds
@@ -67,6 +68,13 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="Run one source-free isolated inference probe; default is preview",
     )
+    manual = commands.add_parser("research-manual")
+    manual.add_argument("--entity-id", required=True, help="Immutable security ID")
+    manual.add_argument("--model", default="", help="Exact model used by the external subagent")
+    manual.add_argument("--apply", action="store_true")
+    exchange = commands.add_parser("research-manual-call")
+    exchange.add_argument("--socket", type=Path, required=True)
+    exchange.add_argument("--request", type=Path, required=True)
     apply = commands.add_parser("apply-result")
     apply.add_argument("--result", type=Path, required=True)
     apply.add_argument("--apply", action="store_true")
@@ -74,6 +82,25 @@ def main(argv: list[str] | None = None) -> int:
     root = args.repository.resolve()
     now = datetime.now(UTC)
     try:
+        if args.command == "research-manual-call":
+            if args.request.stat().st_size > MAX_MESSAGE_BYTES:
+                raise ValueError("manual research request too large")
+            response = manual_call(args.socket, json.loads(args.request.read_text()))
+            print(json.dumps(response))
+            return 4 if "error" in response else 0
+        if args.command == "research-manual":
+            executor = ManualResearch(args.model) if args.apply else None
+            response = research_cycle(
+                root,
+                dry_run=not args.apply,
+                entity_type="security",
+                entity_id=args.entity_id,
+                executor=executor,
+            )
+            response["execution"] = "manual_subagent"
+            response["model"] = args.model or response["model"]
+            print(json.dumps(response, indent=2, sort_keys=True))
+            return int(response["exit_code"])
         if args.command == "market":
             response = market_cycle(root, dry_run=not args.apply)
             print(json.dumps(response, indent=2, sort_keys=True))

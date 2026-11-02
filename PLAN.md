@@ -1300,3 +1300,23 @@ The auth-category refinement passed145 focused tests and all311 tests (two exist
 calendar warnings), Ruff/formatting, MyPy20 modules and strict canonical validation.
 No local auth/provider/model call was made and canonical research contents remain
 unchanged. Remote pinned Quartz CI and the refined live diagnostic remain pending.
+
+## Manual-only subagent integration — 2026-11-02
+
+Add an explicitly launched company executor using the existing queue/controller,
+source broker, complete-result validation and recoverable writes. A private local
+coordinator socket relays context, bounded source requests and final JSON; trusted
+observations remain in controller memory. Defaults remain preview, one immutable
+company per invocation, configured turn/request/runtime budgets and two attempts.
+Scheduled Hermes/Actions behavior and credentials remain unchanged.
+
+The launcher must verify enforced tool-less subagent isolation and model budgets;
+ordinary shared-tools session subagents are explicitly unsupported. This transport
+does not provision that isolation or assert that an instruction supplies it. A
+checked-in launch prompt fails closed before claims when the required capability
+is absent. Preparing/testing the adapter does not conduct company research.
+
+Local verification passed9 manual integration tests and320 full-suite tests (two
+existing exchange-calendar warnings), Ruff/formatting, MyPy21 modules and strict
+current validation. Tests use mocked sources and synthetic research; no live model
+or company review was run. Exact-revision locked CI/Quartz verification follows.

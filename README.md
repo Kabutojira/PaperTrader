@@ -11,6 +11,9 @@ orders, executions, market alerts, Telegram pipeline or broker integration.
 
 ## Operating model
 
+For session-driven company subagents without Hermes, see the
+[manual integration and launch prompt](docs/MANUAL_RESEARCH.md).
+
 1. Daily market refresh at **13:00 America/New_York**, including DST. One bounded
    yfinance provider updates completed-session prices and internal research priority.
 2. Sequential research follows scheduled market completion: up to three operations
