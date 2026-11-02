@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import sys
 from datetime import UTC, datetime
 from pathlib import Path
 
@@ -16,6 +17,7 @@ from papertrader.research_discovery import (
     run_discovery,
 )
 from papertrader.research_manual import MAX_MESSAGE_BYTES, ManualResearch, manual_call
+from papertrader.research_manual_tools import CONNECTION_FILE, serve
 from papertrader.research_publication import publish_views, snapshot
 from papertrader.research_queue import admit, queue_limits
 from papertrader.research_ratings import rating_thresholds
@@ -75,6 +77,7 @@ def main(argv: list[str] | None = None) -> int:
     exchange = commands.add_parser("research-manual-call")
     exchange.add_argument("--socket", type=Path, required=True)
     exchange.add_argument("--request", type=Path, required=True)
+    commands.add_parser("research-manual-tools")
     apply = commands.add_parser("apply-result")
     apply.add_argument("--result", type=Path, required=True)
     apply.add_argument("--apply", action="store_true")
@@ -82,6 +85,8 @@ def main(argv: list[str] | None = None) -> int:
     root = args.repository.resolve()
     now = datetime.now(UTC)
     try:
+        if args.command == "research-manual-tools":
+            return serve(root / CONNECTION_FILE, sys.stdin.buffer, sys.stdout)
         if args.command == "research-manual-call":
             if args.request.stat().st_size > MAX_MESSAGE_BYTES:
                 raise ValueError("manual research request too large")

@@ -7,20 +7,61 @@ one immutable security, preserves retry counters, owns current source observatio
 validates the completed result, atomically applies it, and regenerates health/views.
 Preview is the default. Preparing this integration does not authorize a live review.
 
-## Required subagent isolation
+## Repository researcher and allowed tools
 
-The research subagent must have **no executable tools**, shell, filesystem access,
-network, MCP connectors, credentials, or child-agent delegation. Give it only the
-returned context and broker responses as conversation messages. It returns JSON
-messages to its coordinator. The coordinator alone calls the controller and performs
-development/publication operations after the researcher exits.
+[company_researcher](../.codex/agents/company_researcher.toml) is a project-scoped
+research role. Its permitted executable tool is **research_web**, with `search`
+and `open` actions for public pages and PDFs. The tool uses the existing broker's
+request, time, response-size, source-identity and citation-observation checks.
+The role disables supported shell, app, plugin, memory and permission-request
+features. It inherits the verified parent model rather than hardcoding one.
 
-The current shared-tools `spawn_agent` interface does not expose a per-agent tool
-allowlist. A prompt telling such an agent not to use tools is not isolation. Use
-this integration only with a runtime that demonstrably enforces a tool-less worker.
-If unavailable, stop before `--apply` or spawning a researcher and report
-`BLOCKED_RESEARCH_ISOLATION`. Do not replace that check with a self-attestation flag.
-This transport deliberately does not claim to provision a sandbox itself.
+The researcher must not receive shell/filesystem tools, repository writes,
+credentials, native web/browser tools that bypass the broker, unrelated MCP tools
+or child-agent delegation. Give it only the controller's sanitized context. It
+uses research_web for evidence and returns final JSON to the coordinator, who
+alone submits results and performs post-research development/publication work.
+
+Custom-agent files can disable supported features, but cannot override parent
+permissions or MCP connections. Do not add an ineffective sandbox_mode or an
+invented tools allowlist to the role. Configure the parent appropriately and audit
+the runtime's **effective tool inventory** before a real claim. A read-only tool
+annotation or an agent's promise is not access control. If the role cannot be
+loaded or the broker is not its only executable capability, stop before `--apply`
+or researcher spawn and report `BLOCKED_RESEARCH_ISOLATION`.
+
+These boundaries follow [official Codex agent configuration](https://learn.chatgpt.com/docs/agent-configuration/subagents).
+A runtime/configuration reload is required to discover a new repository role.
+The checkout must also be trusted for Codex to load its `.codex` layer. The CLI's
+`codex mcp get/list` commands inspect the user-managed registry and are not a
+project-layer audit. Use the reloaded runtime's effective configuration/tool list.
+
+## Read-only broker MCP bridge
+
+The repository's `.codex/config.toml` registers `papertrader_research`, exposing
+only research_web via `uv run --locked papertrader research-manual-tools`. Start
+Codex from the repository root with locked dependencies installed. The stdio MCP
+server can initialize/list tools before any controller exists; it makes no model
+call and needs no OAuth. All source calls require an active manual controller.
+Its UV cache stays in the ignored project `.cache/uv` directory, including in
+managed environments where the user's ordinary cache is read-only.
+
+The controller publishes a private, ignored `.cache/manual-research/connection.json`
+descriptor and removes it on exit. The bridge reads it internally; never give the
+descriptor or socket to the model. Every tool call must include the random
+`manual_operation_id` from that company's context as `operation_id`. Both bridge
+and controller check the operation identity so a stale worker cannot read sources
+for the next company after the descriptor changes. Missing/expired connections
+fail closed. The bridge offers no context, result, apply, abort or filesystem API.
+
+Example model tool arguments:
+
+```json
+{"operation_id":"COPY_CONTEXT_MANUAL_OPERATION_ID","action":"search","query":"issuer quarterly results"}
+```
+
+For page/PDF reads use `action: open`, `url` and optional one-based `page` instead
+of `query`. Search metadata is a lead; reopen financial sources before citing them.
 
 ## Controller protocol
 
@@ -49,16 +90,18 @@ uv run papertrader research-manual-call --socket SOCKET_PATH --request /tmp/requ
 
 | Coordinator request | Meaning |
 | --- | --- |
-| `{"action":"context"}` | Obtain sanitized context, complete policy, skill, contracts and limits. Pass only `context` to a fresh tool-less subagent. |
+| `{"action":"context"}` | Obtain sanitized context, operation ID, complete policy, skill, contracts and limits. Pass only `context` to a fresh company_researcher. |
 | `{"action":"web","request":{"action":"open","url":"https://issuer.example/results","page":1}}` | Execute the researcher's source request using the existing broker. Return only `web` to the subagent as untrusted evidence. |
 | `{"action":"web","request":{"action":"search","query":"issuer results"}}` | Broker search; consumes the same source budget. |
 | `{"action":"result","result":{...}}` | Submit the complete result object from the researcher. The controller, not the model, supplies observations and usage. |
 | `{"action":"abort"}` | Stop the operation; its spent attempt follows normal failure handling. |
 
-Each researcher reply must be exactly one `web` or `result` envelope. Relay one
-reply per model turn; do not combine calls, conceal intermediate turns or start
-another researcher. The default controller permits at most24 relay turns,12 broker
-requests and600 seconds per operation; context delivery is not a research turn.
+The researcher uses its research_web MCP tool directly, then returns exactly one
+final `result` envelope. The legacy coordinator-relayed web envelope remains an
+alternative transport for the same broker; do not execute a request twice. Each
+broker call and final submission consumes a controller relay turn. The default
+controller permits at most24 relay turns,12 broker requests and600 seconds per
+operation; context delivery is not a research turn.
 The external runtime must also enforce the model's turn/runtime limits and disable
 automatic retries. Controller expiry does not independently interrupt a remote
 model: the coordinator must stop it on expiry, abort or completion. Invalid relay
@@ -87,7 +130,9 @@ sequentially, with discovery disabled and at most the configured three operation
 ## Verification boundary
 
 Automated tests use synthetic company results and mocked source reads. They do not
-establish live model access, a tool-less runtime, real company research or deployment.
+establish live model access, a verified research-only runtime, real company research
+or deployment. Static feature flags and a successful MCP handshake alone do not
+prove the complete effective subagent tool list is restricted.
 Local verification passed9 manual integration tests and320 full-suite tests, Ruff,
 formatting, MyPy21 modules and strict current validation. Exact-SHA locked CI is a
 separate gate; these local checks used the available development environment.

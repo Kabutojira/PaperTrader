@@ -7,12 +7,14 @@ import signal
 import socket
 import tempfile
 import time
+import uuid
 from collections.abc import Iterator
 from contextlib import contextmanager, suppress
 from dataclasses import replace
 from pathlib import Path
 from typing import Any
 
+from papertrader.atomic_io import atomic_write_text
 from papertrader.research_agent import ManualResearchError, ResearchLimits
 from papertrader.research_web import ResearchWeb
 from papertrader.research_worker import POLICY
@@ -72,7 +74,7 @@ class ManualResearch:
     """Keep broker observations in the controller while a parent relays model turns.
 
     This is a transport, not a subagent sandbox. The launcher must independently
-    enforce a tool-less research worker; a shared-tools subagent is insufficient.
+    enforce a research-tools-only worker; a shared-tools subagent is insufficient.
     """
 
     def __init__(self, model: str) -> None:
@@ -91,20 +93,36 @@ class ManualResearch:
         )
         context = {key: value for key, value in packet.items() if not key.startswith("_")}
         context["limits"] = vars(limits)
+        context["manual_operation_id"] = uuid.uuid4().hex
         context["policy"] = (
-            "Manual transport: you have no tools. Return one web or result envelope "
-            "per turn to your coordinator. References to research_web below mean "
-            "a web envelope for the coordinator's broker. The following final-result "
+            "Manual transport: research_web is your only permitted executable tool. "
+            "Include context.manual_operation_id as operation_id on every tool call. "
+            "If using coordinator-relayed web envelopes, relay one per turn. Return "
+            "your completed result envelope to the coordinator. The final-result "
             "contract describes the inner result object of a result envelope.\n\n" + POLICY
         )
+        directory = root / ".cache/manual-research"
+        for parent in (root / ".cache", directory):
+            if parent.is_symlink():
+                raise ValueError("symlink manual connection directory forbidden")
+            parent.mkdir(mode=0o700, exist_ok=True)
+        connection_file = directory / "connection.json"
+        if connection_file.is_symlink():
+            raise ValueError("symlink manual connection descriptor forbidden")
         try:
             with _deadline(limits.timeout_seconds):
-                return self._serve(context, broker, limits)
+                return self._serve(context, broker, limits, connection_file)
         except TimeoutError:
             raise ManualResearchError("manual_timeout", broker.calls) from None
+        finally:
+            connection_file.unlink(missing_ok=True)
 
     def _serve(
-        self, context: dict[str, Any], broker: ResearchWeb, limits: ResearchLimits
+        self,
+        context: dict[str, Any],
+        broker: ResearchWeb,
+        limits: ResearchLimits,
+        connection_file: Path,
     ) -> dict[str, Any]:
         deadline = time.monotonic() + limits.timeout_seconds
         turns = 0
@@ -114,6 +132,14 @@ class ManualResearch:
                 server.bind(str(endpoint))
                 endpoint.chmod(0o600)
                 server.listen(1)
+                atomic_write_text(
+                    connection_file,
+                    json.dumps(
+                        {"socket": str(endpoint), "operation_id": context["manual_operation_id"]}
+                    ),
+                    allowed_root=connection_file.parent,
+                )
+                connection_file.chmod(0o600)
                 print(
                     json.dumps({"status": "awaiting_subagent", "socket": str(endpoint)}),
                     flush=True,
@@ -174,7 +200,15 @@ class ManualResearch:
             raise ManualResearchError("manual_aborted", broker.calls)
         if turns >= maximum_turns:
             raise ManualResearchError("manual_turn_budget", broker.calls)
-        if action == "web" and set(request) == {"action", "request"}:
+        if action == "web" and set(request) in (
+            {"action", "request"},
+            {"action", "request", "operation_id"},
+        ):
+            if (
+                "operation_id" in request
+                and request["operation_id"] != context["manual_operation_id"]
+            ):
+                raise ValueError("manual operation mismatch")
             if not isinstance(request["request"], dict):
                 raise ValueError("invalid broker request")
             result = json.loads(broker.tool(request["request"]))

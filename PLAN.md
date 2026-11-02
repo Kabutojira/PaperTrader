@@ -1310,7 +1310,7 @@ observations remain in controller memory. Defaults remain preview, one immutable
 company per invocation, configured turn/request/runtime budgets and two attempts.
 Scheduled Hermes/Actions behavior and credentials remain unchanged.
 
-The launcher must verify enforced tool-less subagent isolation and model budgets;
+The launcher must verify enforced research-only subagent isolation and model budgets;
 ordinary shared-tools session subagents are explicitly unsupported. This transport
 does not provision that isolation or assert that an instruction supplies it. A
 checked-in launch prompt fails closed before claims when the required capability
@@ -1320,3 +1320,19 @@ Local verification passed9 manual integration tests and320 full-suite tests (two
 existing exchange-calendar warnings), Ruff/formatting, MyPy21 modules and strict
 current validation. Tests use mocked sources and synthetic research; no live model
 or company review was run. Exact-revision locked CI/Quartz verification follows.
+
+User follow-up enables bounded research tools rather than requiring a tool-less
+worker. Add the repository company_researcher role with documented feature
+restrictions and a read-only MCP bridge to the existing search/open broker.
+Per-operation IDs bind tool calls to the current controller; the bridge exposes
+no canonical writes or administrative controller methods. Effective parent/MCP
+permissions still require a runtime audit, not a TOML self-attestation. Update
+the launch prompt accordingly and retain the scheduled Hermes runtime unchanged.
+
+Follow-up local verification passed18 MCP/CLI tests, manual-controller bridge
+tests, Ruff/formatting, MyPy22 modules and strict current validation. The full suite
+passed338 tests before the final additional CLI-entrypoint test. Offline native
+Codex0.166.0 config/read verified the trusted project MCP layer; a source-free stdio
+handshake advertised only research_web. This verifies registration/transport,
+not inherited child permissions. No real company/model operation was performed;
+fresh-runtime effective capability audit remains a prerequisite for live research.

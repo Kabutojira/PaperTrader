@@ -30,6 +30,7 @@ from papertrader.research_agent import (
 )
 from papertrader.research_cli import main
 from papertrader.research_manual import ManualResearch, manual_call
+from papertrader.research_manual_tools import CONNECTION_FILE, web_call
 from papertrader.research_publication import snapshot
 from papertrader.research_queue import admit
 from papertrader.research_results import (
@@ -2433,3 +2434,32 @@ def test_manual_transport_bounds_message_size() -> None:
 def test_manual_hard_deadline_interrupts_blocking_calls() -> None:
     with pytest.raises(TimeoutError, match="deadline"), research_manual._deadline(0.01):
         time.sleep(1)
+
+
+def test_researcher_mcp_bridge_uses_current_controller_evidence_only(
+    current: Path, manual_controller: Any
+) -> None:
+    endpoint, outcomes, thread = manual_controller
+    context = manual_call(endpoint, {"action": "context"})["context"]
+    connection_file = current / CONNECTION_FILE
+    assert connection_file.stat().st_mode & 0o777 == 0o600
+    identity = context["manual_operation_id"]
+    arguments = {"operation_id": identity, "action": "open", "url": URL}
+    assert web_call(connection_file, {**arguments, "operation_id": "f" * 32}) == {
+        "error": "operation_mismatch"
+    }
+    rejected = manual_call(
+        endpoint,
+        {
+            "action": "web",
+            "operation_id": "f" * 32,
+            "request": {"action": "open", "url": URL},
+        },
+    )
+    assert rejected == {"error": "invalid_manual_request"}
+    assert web_call(connection_file, arguments)["source_id"] == "source1"
+    manual_call(endpoint, {"action": "result", "result": result(current)})
+    thread.join(timeout=5)
+    assert outcomes[0]["exit_code"] == 0 and outcomes[0]["web_requests"] == 1
+    assert not connection_file.exists()
+    assert web_call(connection_file, arguments) == {"error": "controller_unavailable"}
