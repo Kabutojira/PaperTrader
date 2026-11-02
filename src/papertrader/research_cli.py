@@ -5,16 +5,20 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import sys
 from datetime import UTC, datetime
 from pathlib import Path
 
-from papertrader.research_agent import run_diagnostic
+from papertrader.research_agent import research_limits, run_diagnostic
 from papertrader.research_discovery import (
     IdentityVerifier,
     discovery_limits,
     prepare_candidates,
     run_discovery,
 )
+from papertrader.research_isolated import IsolatedResearch
+from papertrader.research_manual import MAX_MESSAGE_BYTES, ManualResearch, manual_call
+from papertrader.research_manual_tools import CONNECTION_FILE, serve
 from papertrader.research_publication import publish_views, snapshot
 from papertrader.research_queue import admit, queue_limits
 from papertrader.research_ratings import rating_thresholds
@@ -67,6 +71,28 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="Run one source-free isolated inference probe; default is preview",
     )
+    manual = commands.add_parser("research-manual")
+    manual.add_argument("--entity-id", required=True, help="Immutable security ID")
+    manual.add_argument("--model", default="", help="Exact model used by the external subagent")
+    manual.add_argument("--apply", action="store_true")
+    exchange = commands.add_parser("research-manual-call")
+    exchange.add_argument("--socket", type=Path, required=True)
+    exchange.add_argument("--request", type=Path, required=True)
+    commands.add_parser("research-manual-tools")
+    isolated = commands.add_parser("research-isolated")
+    isolated.add_argument("--entity-id", required=True, help="Immutable security ID")
+    isolated.add_argument("--model", default="", help="Exact model; defaults to research.ini")
+    isolated_mode = isolated.add_mutually_exclusive_group()
+    isolated_mode.add_argument(
+        "--preflight",
+        action="store_true",
+        help="Audit runtime and read model catalog; no queue claim or inference",
+    )
+    isolated_mode.add_argument(
+        "--apply",
+        action="store_true",
+        help="Run one real bounded review with the isolated Responses runner",
+    )
     apply = commands.add_parser("apply-result")
     apply.add_argument("--result", type=Path, required=True)
     apply.add_argument("--apply", action="store_true")
@@ -74,6 +100,76 @@ def main(argv: list[str] | None = None) -> int:
     root = args.repository.resolve()
     now = datetime.now(UTC)
     try:
+        if args.command == "research-isolated":
+            isolated_limits = research_limits(root)
+            runner = IsolatedResearch(args.model or isolated_limits.model)
+            # Validate immutable identity without credentials, requests or canonical writes.
+            preview = research_cycle(root, entity_type="security", entity_id=args.entity_id)
+            if args.preflight:
+                print(json.dumps(runner.preflight(root, isolated_limits), indent=2, sort_keys=True))
+                return 0
+            if not args.apply:
+                print(
+                    json.dumps(
+                        {**preview, "runtime": runner.audit(isolated_limits)},
+                        indent=2,
+                        sort_keys=True,
+                    )
+                )
+                return 0
+            state = read_state(root)
+            security = next(
+                row for row in state["securities"] if row["security_id"] == args.entity_id
+            )
+            if security["research_status"] == "needs_attention":
+                print(
+                    json.dumps(
+                        {
+                            "status": "skipped_exhausted",
+                            "entity_id": args.entity_id,
+                            "exit_code": 0,
+                            "inference_requests": 0,
+                        }
+                    )
+                )
+                return 0
+            audit = runner.preflight(root, isolated_limits)
+            response = research_cycle(
+                root,
+                dry_run=False,
+                entity_type="security",
+                entity_id=args.entity_id,
+                executor=runner,
+            )
+            response.update(
+                execution="isolated_responses",
+                model=runner.model,
+                runtime=audit,
+                inference_requests=runner.inference_requests,
+            )
+            print(json.dumps(response, indent=2, sort_keys=True))
+            return int(response["exit_code"])
+        if args.command == "research-manual-tools":
+            return serve(root / CONNECTION_FILE, sys.stdin.buffer, sys.stdout)
+        if args.command == "research-manual-call":
+            if args.request.stat().st_size > MAX_MESSAGE_BYTES:
+                raise ValueError("manual research request too large")
+            response = manual_call(args.socket, json.loads(args.request.read_text()))
+            print(json.dumps(response))
+            return 4 if "error" in response else 0
+        if args.command == "research-manual":
+            executor = ManualResearch(args.model) if args.apply else None
+            response = research_cycle(
+                root,
+                dry_run=not args.apply,
+                entity_type="security",
+                entity_id=args.entity_id,
+                executor=executor,
+            )
+            response["execution"] = "manual_subagent"
+            response["model"] = args.model or response["model"]
+            print(json.dumps(response, indent=2, sort_keys=True))
+            return int(response["exit_code"])
         if args.command == "market":
             response = market_cycle(root, dry_run=not args.apply)
             print(json.dumps(response, indent=2, sort_keys=True))

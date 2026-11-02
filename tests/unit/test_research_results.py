@@ -4,14 +4,19 @@ import hashlib
 import json
 import os
 import shutil
+import socket
+import threading
+import time
+from contextlib import nullcontext, suppress
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
+from queue import Queue
 from typing import Any
 from urllib.error import HTTPError
 
 import pytest
 
-from papertrader import research_bootstrap, research_transaction, research_worker
+from papertrader import research_bootstrap, research_manual, research_transaction, research_worker
 from papertrader.research_agent import (
     MAX_AUTH_BYTES,
     WORKER_CHILD_FAILURE_CODES,
@@ -24,6 +29,8 @@ from papertrader.research_agent import (
     run_model,
 )
 from papertrader.research_cli import main
+from papertrader.research_manual import ManualResearch, manual_call
+from papertrader.research_manual_tools import CONNECTION_FILE, web_call
 from papertrader.research_publication import snapshot
 from papertrader.research_queue import admit
 from papertrader.research_results import (
@@ -2267,3 +2274,321 @@ def test_source_reader_keeps_financial_body_after_large_navigation() -> None:
     assert "[link: /menu]" not in text
     assert "untrusted executable" not in text
     assert parser.source_links == ["/investor/financial-results"]
+
+
+@pytest.fixture
+def manual_controller(current: Path, monkeypatch: pytest.MonkeyPatch) -> Any:
+    from papertrader import research_agent
+
+    announcements: Queue[dict[str, Any]] = Queue()
+    outcomes: list[dict[str, Any]] = []
+    # Threaded synthetic IPC tests use the monotonic deadline; the CLI's hard
+    # process deadline is exercised separately below, in the main thread.
+    monkeypatch.setattr(research_manual, "_deadline", lambda seconds: nullcontext())
+    monkeypatch.setattr(
+        research_manual,
+        "print",
+        lambda value, **kwargs: announcements.put(json.loads(value)),
+        raising=False,
+    )
+    monkeypatch.setattr(
+        research_agent,
+        "research_limits",
+        lambda root: ResearchLimits(timeout_seconds=3, max_turns=3, max_web_calls=1),
+    )
+
+    def opened(self: ResearchWeb, url: str, **kwargs: Any) -> dict[str, str]:
+        self.take(url)
+        self.observations[url] = observations()[url]
+        return {"source_id": "source1", "source_url": url, "untrusted_source_text": "Evidence"}
+
+    monkeypatch.setattr(ResearchWeb, "open", opened)
+    monkeypatch.setattr("papertrader.research_web.public_url", lambda url: None)
+
+    def run() -> None:
+        outcomes.append(
+            run_cycle(
+                current,
+                dry_run=False,
+                entity_type="security",
+                entity_id="security1",
+                executor=ManualResearch("test-subagent"),
+                clock=lambda: NOW,
+            )
+        )
+
+    thread = threading.Thread(target=run, daemon=True)
+    thread.start()
+    endpoint = Path(announcements.get(timeout=5)["socket"])
+    try:
+        yield endpoint, outcomes, thread
+    finally:
+        if thread.is_alive():
+            with suppress(OSError, ValueError):
+                manual_call(endpoint, {"action": "abort"})
+        thread.join(timeout=5)
+        assert not thread.is_alive()
+
+
+def test_manual_research_preview_and_model_validation_leave_data_unchanged(
+    current: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    before = {p: p.read_bytes() for p in (current / "data").rglob("*") if p.is_file()}
+    args = ["--repository", str(current), "research-manual", "--entity-id", "security1"]
+    assert main(args) == 0
+    preview = json.loads(capsys.readouterr().out)
+    assert preview["status"] == "dry_run" and preview["maximum_operations"] == 1
+    assert main([*args, "--apply"]) == 4
+    assert json.loads(capsys.readouterr().out)["error"] == "ValueError"
+    assert all(p.read_bytes() == value for p, value in before.items())
+    assert read_state(current)["research_queue"] == []
+
+
+@pytest.mark.parametrize("supported", [True, False])
+def test_manual_research_accepts_only_broker_evidence(
+    current: Path, manual_controller: Any, supported: bool
+) -> None:
+    endpoint, outcomes, thread = manual_controller
+    context = manual_call(endpoint, {"action": "context"})["context"]
+    assert context["identity"]["security_id"] == "security1"
+    assert context["limits"]["model"] == "test-subagent"
+    assert "policy" in context and "skill" in context
+    assert "_source_identity_index" not in context
+    assert endpoint.stat().st_mode & 0o777 == 0o600
+    web = manual_call(endpoint, {"action": "web", "request": {"action": "open", "url": URL}})
+    assert web["web"]["source_id"] == "source1" and web["turns_used"] == 1
+    payload = result(current, supported=supported)
+    forged = manual_call(
+        endpoint, {"action": "result", "result": payload, "observations": observations()}
+    )
+    assert forged == {"error": "invalid_manual_request"}
+    receipt = manual_call(endpoint, {"action": "result", "result": payload})
+    assert receipt["status"] == "received_pending_validation"
+    thread.join(timeout=5)
+    assert outcomes[0]["exit_code"] == 0
+    assert outcomes[0]["web_requests"] == 1
+    state = read_state(current)
+    assert state["research_queue"] == []
+    assert state["security_assessments"][0]["base_fair_value"] == ("100" if supported else "")
+    assert state["source_registry"][0]["content_hash"] == "a" * 64
+    assert not endpoint.exists()
+
+
+def test_manual_research_rejects_unopened_citations_without_replacing_research(
+    current: Path, manual_controller: Any
+) -> None:
+    endpoint, outcomes, thread = manual_controller
+    page = current / "data/wiki/securities/security1.md"
+    before = page.read_bytes()
+    manual_call(endpoint, {"action": "result", "result": result(current)})
+    thread.join(timeout=5)
+    assert outcomes[0]["exit_code"] == 3
+    assert outcomes[0]["outcomes"][0]["stage"] == "validation"
+    state = read_state(current)
+    assert page.read_bytes() == before
+    assert state["security_assessments"] == state["source_registry"] == []
+    assert state["research_queue"][0]["attempts"] == "1"
+
+
+def test_manual_research_web_and_turn_budgets_preserve_spent_usage(
+    current: Path, manual_controller: Any
+) -> None:
+    endpoint, outcomes, thread = manual_controller
+    request = {"action": "web", "request": {"action": "open", "url": URL}}
+    assert "error" not in manual_call(endpoint, request)["web"]
+    assert manual_call(endpoint, request)["web"]["error"] == "budget_exhausted"
+    assert manual_call(endpoint, request)["turns_used"] == 3
+    stopped = manual_call(endpoint, {"action": "result", "result": result(current)})
+    assert stopped["error"] == "manual_research_stopped"
+    thread.join(timeout=5)
+    assert outcomes[0]["exit_code"] == 3 and outcomes[0]["web_requests"] == 1
+    assert outcomes[0]["outcomes"][0]["code"] == "manual_turn_budget"
+    assert read_state(current)["research_queue"][0]["attempts"] == "1"
+
+
+def test_manual_research_abort_is_a_bounded_failure(manual_controller: Any) -> None:
+    endpoint, outcomes, thread = manual_controller
+    manual_call(endpoint, {"action": "abort"})
+    thread.join(timeout=5)
+    assert outcomes[0]["outcomes"][0]["code"] == "manual_aborted"
+    assert outcomes[0]["web_requests"] == 0
+    assert not endpoint.exists()
+
+
+def test_manual_research_timeout_cleans_up_and_counts_attempt(
+    current: Path, manual_controller: Any
+) -> None:
+    endpoint, outcomes, thread = manual_controller
+    thread.join(timeout=5)
+    assert outcomes[0]["outcomes"][0]["code"] == "manual_timeout"
+    assert read_state(current)["research_queue"][0]["attempts"] == "1"
+    assert not endpoint.exists()
+
+
+def test_manual_transport_bounds_message_size() -> None:
+    connection, peer = socket.socketpair()
+    with connection, peer, pytest.raises(ValueError, match="too large"):
+        research_manual._send(connection, {"value": "x" * research_manual.MAX_MESSAGE_BYTES})
+
+
+def test_manual_hard_deadline_interrupts_blocking_calls() -> None:
+    with pytest.raises(TimeoutError, match="deadline"), research_manual._deadline(0.01):
+        time.sleep(1)
+
+
+def test_researcher_mcp_bridge_uses_current_controller_evidence_only(
+    current: Path, manual_controller: Any
+) -> None:
+    endpoint, outcomes, thread = manual_controller
+    context = manual_call(endpoint, {"action": "context"})["context"]
+    connection_file = current / CONNECTION_FILE
+    assert connection_file.stat().st_mode & 0o777 == 0o600
+    identity = context["manual_operation_id"]
+    arguments = {"operation_id": identity, "action": "open", "url": URL}
+    assert web_call(connection_file, {**arguments, "operation_id": "f" * 32}) == {
+        "error": "operation_mismatch"
+    }
+    rejected = manual_call(
+        endpoint,
+        {
+            "action": "web",
+            "operation_id": "f" * 32,
+            "request": {"action": "open", "url": URL},
+        },
+    )
+    assert rejected == {"error": "invalid_manual_request"}
+    assert web_call(connection_file, arguments)["source_id"] == "source1"
+    manual_call(endpoint, {"action": "result", "result": result(current)})
+    thread.join(timeout=5)
+    assert outcomes[0]["exit_code"] == 0 and outcomes[0]["web_requests"] == 1
+    assert not connection_file.exists()
+    assert web_call(connection_file, arguments) == {"error": "controller_unavailable"}
+
+
+@pytest.mark.parametrize("supported", [True, False])
+def test_isolated_runner_uses_existing_validation_and_atomic_writes(
+    current: Path, repository_root: Path, monkeypatch: pytest.MonkeyPatch, supported: bool
+) -> None:
+    from papertrader.research_isolated import IsolatedResearch
+
+    role = current / ".codex/agents/company_researcher.toml"
+    role.parent.mkdir(parents=True)
+    shutil.copy2(repository_root / ".codex/agents/company_researcher.toml", role)
+
+    def opened(self: ResearchWeb, url: str, **kwargs: Any) -> dict[str, str]:
+        self.take(url)
+        self.observations[url] = observations()[url]
+        return {"source_id": "source1", "untrusted_source_text": "Evidence"}
+
+    monkeypatch.setattr(ResearchWeb, "open", opened)
+    monkeypatch.setattr("papertrader.research_web.public_url", lambda url: None)
+    payload = result(current, supported=supported)
+
+    class Client:
+        calls = 0
+
+        def check_model(self, model: str, timeout: float) -> None:
+            assert model == "test-exact"
+
+        def complete(self, body: dict[str, Any], timeout: float) -> dict[str, Any]:
+            self.calls += 1
+            if self.calls == 1:
+                context = json.loads(body["input"][0]["content"])
+                output = [
+                    {
+                        "type": "function_call",
+                        "name": "research_web",
+                        "call_id": "call1",
+                        "arguments": json.dumps(
+                            {
+                                "operation_id": context["manual_operation_id"],
+                                "action": "open",
+                                "url": URL,
+                            }
+                        ),
+                    }
+                ]
+            else:
+                output = [
+                    {
+                        "type": "message",
+                        "content": [
+                            {
+                                "type": "output_text",
+                                "text": json.dumps({"action": "result", "result": payload}),
+                            }
+                        ],
+                    }
+                ]
+            return {"status": "completed", "model": "test-exact", "output": output}
+
+    from papertrader.research_agent import research_limits
+
+    runner = IsolatedResearch("test-exact", Client())  # type: ignore[arg-type]
+    runner.preflight(current, research_limits(current))
+    outcome = run_cycle(
+        current,
+        dry_run=False,
+        entity_type="security",
+        entity_id="security1",
+        executor=runner,
+        clock=lambda: NOW,
+    )
+    assert outcome["exit_code"] == 0 and outcome["web_requests"] == 1
+    assert runner.inference_requests == 2
+    state = read_state(current)
+    assert state["research_queue"] == []
+    assert state["security_assessments"][0]["base_fair_value"] == ("100" if supported else "")
+    assert state["source_registry"][0]["content_hash"] == "a" * 64
+    assert not (current / CONNECTION_FILE).exists()
+
+
+def test_isolated_cli_preview_and_failed_preflight_never_claim_attempts(
+    current: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    from papertrader.research_isolated import IsolatedResearch
+
+    before = {p: p.read_bytes() for p in (current / "data").rglob("*") if p.is_file()}
+
+    def failed(*args: Any) -> Any:
+        raise RuntimeError("isolated_auth_rejected")
+
+    monkeypatch.setattr(IsolatedResearch, "preflight", failed)
+    args = ["--repository", str(current), "research-isolated", "--entity-id", "security1"]
+    assert main(args) == 0
+    assert json.loads(capsys.readouterr().out)["runtime"]["automatic_retries"] == 0
+    for flag in ("--preflight", "--apply"):
+        assert main([*args, flag]) == 5
+        assert json.loads(capsys.readouterr().out)["error"] == "isolated_auth_rejected"
+    assert all(path.read_bytes() == value for path, value in before.items())
+    assert read_state(current)["research_queue"] == []
+
+
+def test_isolated_cli_skips_exhausted_instruments_without_preflight(
+    current: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    from papertrader.research_isolated import IsolatedResearch
+
+    state = read_state(current)
+    state["securities"][0]["research_status"] = "needs_attention"
+    write_state(current, state)
+    monkeypatch.setattr(
+        IsolatedResearch,
+        "preflight",
+        lambda *args: pytest.fail("exhausted entity must not reach preflight"),
+    )
+    assert (
+        main(
+            [
+                "--repository",
+                str(current),
+                "research-isolated",
+                "--entity-id",
+                "security1",
+                "--apply",
+            ]
+        )
+        == 0
+    )
+    assert json.loads(capsys.readouterr().out)["status"] == "skipped_exhausted"
+    assert read_state(current)["research_queue"] == []

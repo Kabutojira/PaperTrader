@@ -4,3 +4,13 @@ enabled = true
 # instructions still require all agent work and repository operations to run sequentially.
 max_concurrent_threads_per_session = 2
 
+# Research tools only; permissions and other inherited MCP servers still require
+# a runtime audit before spawning company_researcher. Run Codex from this repo.
+[mcp_servers.papertrader_research]
+command = "uv"
+args = ["run", "--locked", "papertrader", "research-manual-tools"]
+enabled_tools = ["research_web"]
+
+[mcp_servers.papertrader_research.env]
+UV_CACHE_DIR = ".cache/uv"
+

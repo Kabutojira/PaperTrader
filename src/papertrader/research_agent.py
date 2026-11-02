@@ -52,6 +52,7 @@ SAFE_EXCEPTION_TYPES = {
     "PermissionError",
     "ResearchResultValidationError",
     "RuntimeError",
+    "ManualResearchError",
     "TimeoutError",
     "TypeError",
     "UnicodeDecodeError",
@@ -117,6 +118,26 @@ class WorkerRuntimeError(RuntimeError):
         super().__init__("isolated research worker failed")
 
 
+class ManualResearchError(RuntimeError):
+    """Controller-owned failure with observed broker usage, never model text."""
+
+    def __init__(self, code: str, web_requests: int) -> None:
+        if code not in {
+            "manual_aborted",
+            "manual_timeout",
+            "manual_turn_budget",
+            "isolated_provider_failed",
+            "isolated_model_mismatch",
+            "isolated_response_invalid",
+            "isolated_tool_forbidden",
+            "isolated_response_oversized",
+        }:
+            raise ValueError("unknown manual research failure")
+        self.diagnostic_code = code
+        self.web_requests = web_requests
+        super().__init__("manual research stopped")
+
+
 def _failure_diagnostic(exc: Exception, stage: str) -> dict[str, str]:
     """Return a useful failure location without exception text or external paths."""
     safe_stage = stage if stage in FAILURE_STAGES else "validation"
@@ -139,7 +160,7 @@ def _failure_diagnostic(exc: Exception, stage: str) -> dict[str, str]:
             location = f"{module}.{function}:{traceback.tb_lineno}"
         traceback = traceback.tb_next
     result = {"stage": safe_stage, "error": exception_type, "location": location}
-    if isinstance(exc, (ResearchResultValidationError, WorkerRuntimeError)):
+    if isinstance(exc, (ResearchResultValidationError, WorkerRuntimeError, ManualResearchError)):
         result["code"] = exc.diagnostic_code
     return result
 
@@ -527,6 +548,11 @@ def run_cycle(
                     )
                 )
             except Exception as exc:
+                if isinstance(exc, ManualResearchError):
+                    operation_usage = _bounded_usage(
+                        {"usage": {"web_requests": exc.web_requests}}, limits
+                    )
+                    total_web_requests += int(operation_usage.get("web_requests", "0"))
                 # Diagnostics use only a fixed stage, allowlisted type and project source location.
                 diagnostic = _failure_diagnostic(exc, stage)
                 failure_parts = [diagnostic["stage"], diagnostic["error"]]

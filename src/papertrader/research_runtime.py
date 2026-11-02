@@ -9,11 +9,12 @@ import os
 import re
 import subprocess
 import tarfile
+from collections.abc import Callable
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
-from papertrader.research_agent import run_cycle
+from papertrader.research_agent import ResearchLimits, run_cycle, run_model
 from papertrader.research_discovery import run_discovery
 from papertrader.research_market import (
     YFinanceResearchProvider,
@@ -126,13 +127,19 @@ def research_cycle(
     entity_type: str = "",
     entity_id: str = "",
     discovery: bool = False,
+    executor: Callable[[Path, dict[str, Any], ResearchLimits], dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     if dry_run:
         return run_cycle(root, dry_run=True, entity_type=entity_type, entity_id=entity_id)
     discovery_result = run_discovery(root, dry_run=False) if discovery and not entity_id else {}
     spent = int(discovery_result.get("model_calls", 0))
     result = run_cycle(
-        root, dry_run=False, entity_type=entity_type, entity_id=entity_id, reserved_operations=spent
+        root,
+        dry_run=False,
+        entity_type=entity_type,
+        entity_id=entity_id,
+        reserved_operations=spent,
+        executor=executor if executor is not None else run_model,
     )
     result["model_operations"] = spent + len(result["outcomes"])
     if discovery_result:
