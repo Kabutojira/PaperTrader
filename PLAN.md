@@ -1200,3 +1200,103 @@ viewport summary fits x16–374 with zero horizontal scroll range. Site checks/b
 passed again after the CSS-only fix. All94 original security fields and94 assessment
 rows remain preserved. Exact-SHA CI under pinned Node24.4.1 follows the feature push;
 research completion and deployment remain explicitly blocked, not accepted.
+
+## AI Agent Economy intake reconciliation — 2026-11-01
+
+Reconciled the seed from `Stell0:research/ai-agent-economy-stocks-20261101`
+(`93e94ac775fd5fd6bc8910fc70504174e1a5803f`) onto upstream main
+`789be6febb7777fbd1dae6e53f609cabf2fbadff`. Fork PR1 had merged only into
+the temporary comparison base; it had not updated upstream main.
+
+Append exactly27 instruments selected by provenance
+`user_seed:ai-agent-productivity-loop:2026-11-01`, one idea,40 relationships
+(including13 existing instruments) and15 sources. Preserve all110 existing
+security rows,94 assessments and27 queue rows, including three later
+needs_attention states. ABBN.SW remains a distinct CHF instrument sharing
+the existing ABB issuer; add its XSWX exchange calendar. The intake test
+validates exact membership and canonical integrity while allowing subsequent
+accepted research and relationship changes.
+
+Local validation, Ruff/formatting, MyPy and all277 tests passed (two existing
+calendar warnings). Local Quartz execution is blocked by missing sharp/runtime
+dependencies under Node25.8.1; exact-SHA CI must check the pinned Node24.4.1
+build. All27 additions remain unassessed. No campaign company research or
+inference call has been executed. Upstream merge, isolated runtime diagnosis,
+canary research, full batch and verified publication remain outstanding.
+
+## Isolated Hermes runtime diagnostic — 2026-11-01
+
+Run41351798426 restored OAuth successfully inside the pinned Hermes container and
+completed the conditional persistence step, but commit789be6fe did not change the
+encrypted OAuth file, so no token refresh or re-encryption was established. All
+three bounded operations stopped at the model stage with zero observed web requests.
+The existing sanitized controller output did not expose
+whether the child failed during import, initialization, provider access or final
+transport; its three operation counters are budgeted attempts, not proof of three
+provider calls. None targeted the27 AI Agent Economy instruments.
+
+Added a manual, dry-run-by-default diagnostic using the same staged worker, UID10000,
+fresh profile, pinned Python/code and OAuth refresh boundary. An applied diagnostic
+receives no company/source/queue context, exposes no tools, and permits one generic
+inference turn. Static categories distinguish import, initialization, auth/model
+access, rate limit, network/timeout, exit and serialization without child stderr,
+provider bodies, prompts or responses. Local tests use mocks only; no local provider
+call or pinned-image probe was completed. Exact-SHA CI and one actual applied Actions
+diagnostic are required before the issue can be classified or company research can
+resume.
+
+Live diagnostic run41356814273 at merged revision
+`4cec910556942e0cce97109c656f0b2f2ac246e8` restored OAuth and reached the isolated
+worker, then returned `agent_initialization_failed` before provider inference. It
+made no web request, received no company/source context, changed no canonical file,
+did not rotate OAuth and left the committed SHA unchanged. Docker Hub binds the
+pinned digest to Hermes `v2026.7.7.2`, image revision
+`9de9c25f620ff7f1ce0fd5457d596052d5159596`; that exact constructor accepts the
+configured keywords and an empty enabled-toolset list resolves to zero registry
+tools. Exact source inspection instead identified that direct embedded construction
+reads only a current Codex access token and does not refresh an expired one. The
+focused repair uses Hermes' supported runtime credential resolver before constructing
+the same configured model, preserves the rotated-token copyback boundary, and keeps
+unexpected tool access as a separate fail-closed category. Local checks remain
+mocked; exact-SHA CI and one further isolated Actions diagnostic must succeed before
+any company research attempt.
+
+The intake is now merged through upstream PR33 at
+`bb867102082616d78d2b1d3810dccd6a8bbfd88b`; CI41355368058 and41355390946
+passed, including pinned Quartz checks/build. Pages41355666176 serves that exact
+revision: homepage, company catalog and idea page returned HTTP200; both catalogs
+contain all27 target links. This publishes coverage gaps, not completed valuations.
+
+Diagnostic local verification passed129 focused tests and all295 tests (two
+existing calendar warnings), Ruff/formatting, MyPy20 modules and strict canonical
+validation. Canonical research/queue contents remain unchanged. These are mocked
+runtime checks; actual account/model access and all27 company reviews are pending.
+
+OAuth-refresh repair verification passed131 focused tests and all297 tests (the
+same two calendar warnings), Ruff/formatting, MyPy and strict current validation.
+No local inference/provider request was performed. The next gate is exact-SHA CI
+followed by one source-free Actions diagnostic with the repaired resolver.
+
+Live source-free diagnostic run41357760282 at merged revision
+`b71a64be0bd9a1bbeb4ad29b71b91ba31e000487` returned the sanitized category
+`provider_auth_failed`. It did not complete the generic turn, receive company or
+source context, use the web broker, change canonical state or rotate the encrypted
+OAuth profile; the committed revision remained unchanged. Its one model-operation
+counter is a budgeted diagnostic invocation, not a measured provider generation.
+Exact provider generation count remains unknown.
+
+Pinned-source audit confirmed that Hermes' runtime credential resolver returns the
+`api_key` and HTTPS `base_url` shape expected by the adapter. The prior category
+still conflated an invalid restored profile, a refresh that requires login, a
+transient refresh failure, an invalid resolver return, constructor authentication
+and inference-time authentication. Fixed controller-owned categories now separate
+those stages using only a static known-code allowlist and the literal trusted
+`relogin_required is True` flag. Arbitrary provider codes and messages are never
+reflected. Local verification remains mocked and makes no auth/provider request;
+exact-SHA CI and one further source-free diagnostic are required before requesting
+credential renewal or launching company research.
+
+The auth-category refinement passed145 focused tests and all311 tests (two existing
+calendar warnings), Ruff/formatting, MyPy20 modules and strict canonical validation.
+No local auth/provider/model call was made and canonical research contents remain
+unchanged. Remote pinned Quartz CI and the refined live diagnostic remain pending.

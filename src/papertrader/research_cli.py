@@ -8,6 +8,7 @@ import os
 from datetime import UTC, datetime
 from pathlib import Path
 
+from papertrader.research_agent import run_diagnostic
 from papertrader.research_discovery import (
     IdentityVerifier,
     discovery_limits,
@@ -60,6 +61,12 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="Run real bounded research; default is read-only preview",
     )
+    diagnostic = commands.add_parser("research-diagnostic")
+    diagnostic.add_argument(
+        "--apply",
+        action="store_true",
+        help="Run one source-free isolated inference probe; default is preview",
+    )
     apply = commands.add_parser("apply-result")
     apply.add_argument("--result", type=Path, required=True)
     apply.add_argument("--apply", action="store_true")
@@ -91,6 +98,10 @@ def main(argv: list[str] | None = None) -> int:
                 entity_id=args.entity_id,
                 discovery=args.discovery,
             )
+            print(json.dumps(response, indent=2, sort_keys=True))
+            return int(response["exit_code"])
+        if args.command == "research-diagnostic":
+            response = run_diagnostic(root, dry_run=not args.apply)
             print(json.dumps(response, indent=2, sort_keys=True))
             return int(response["exit_code"])
         with research_lock(root):
