@@ -14,10 +14,8 @@ security,security_7bf8f4c9cc12ae410e40,80,severe_price_movement,2026-10-29T21:28
 security,security_b19e8f0343b7da1f3c03,80,severe_price_movement,2026-11-03T22:37:18Z,2026-11-03T22:37:18Z,pending,0,2026-11-03T22:37:18Z,,false,
 security,security_b61c642d038d71be3821,80,severe_price_movement,2026-10-28T21:23:54Z,2026-10-28T21:23:54Z,pending,0,2026-10-28T21:23:54Z,,false,
 security,security_baf2af301d2c786353ca,80,missing_research|severe_price_movement|valuation_coverage_gap,2026-11-03T00:05:07Z,2026-11-03T00:05:07Z,pending,0,2026-11-03T00:05:07Z,,false,
-security,security_bb61343adcd613fd84e9,100,explicit_manual_request|missing_research|valuation_coverage_gap,2026-10-31T22:12:44Z,2026-10-31T22:13:30Z,failed,1,2026-11-01T04:13:30Z,,true,model:RuntimeError:papertrader.research_agent.run_model:230
 security,security_c2e6db30cb59254de418,80,severe_price_movement,2026-11-03T22:37:18Z,2026-11-03T22:37:18Z,pending,0,2026-11-03T22:37:18Z,,false,
 security,security_c9a37d277445869a8809,80,severe_price_movement|valuation_coverage_gap|valuation_unsupported,2026-11-03T22:37:18Z,2026-11-03T22:37:18Z,pending,0,2026-11-03T22:37:18Z,,false,
-security,security_c9b32b251703b0990793,100,explicit_manual_request|missing_research|severe_price_movement|valuation_coverage_gap,2026-10-31T22:12:44Z,2026-10-31T22:15:41Z,failed,1,2026-11-01T04:15:41Z,,true,model:RuntimeError:papertrader.research_agent.run_model:230
 security,security_cd492d97064d8574156e,80,severe_price_movement,2026-10-27T21:01:58Z,2026-10-31T20:22:01Z,failed,1,2026-11-01T02:22:01Z,,false,model:RuntimeError:papertrader.research_agent.run_model:296
 security,security_d051c308c3e15b025fb1,100,explicit_manual_request|missing_research|valuation_coverage_gap,2026-10-31T22:12:44Z,2026-10-31T22:15:13Z,failed,1,2026-11-01T04:15:13Z,,true,model:RuntimeError:papertrader.research_agent.run_model:230
 security,security_d317b95418d51e4bab27,80,missing_research|severe_price_movement|valuation_coverage_gap,2026-11-03T00:05:07Z,2026-11-03T00:05:07Z,pending,0,2026-11-03T00:05:07Z,,false,

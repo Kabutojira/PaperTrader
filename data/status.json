@@ -46,11 +46,11 @@
     "status": "degraded"
   },
   "research": {
-    "discovery_error": "RuntimeError",
+    "discovery_error": "WorkerRuntimeError",
     "discovery_status": "failed",
     "exit_code": 3,
-    "last_attempt_at": "2026-11-03T00:07:22Z",
-    "last_discovery_attempt_at": "2026-10-27T21:03:43Z",
+    "last_attempt_at": "2026-11-03T22:39:25Z",
+    "last_discovery_attempt_at": "2026-11-03T22:39:18Z",
     "last_discovery_success_at": "2026-10-19T21:19:48Z",
     "last_success_at": "2026-11-02T21:20:38Z",
     "model_operations": 3,

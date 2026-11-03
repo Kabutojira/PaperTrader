@@ -24,7 +24,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Applied Materials, Inc.](securities/security_0a56aa634d077fe5796f) | AMAT (USD) | researched: hold | complete | 286.00 / 448.00 / 646.00 USD | 2026-10-24T15:59:51.264224Z | 2026-11-23T15:59:51.264224Z |
 | [Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a) | ANET (USD) | researched: market_stale_or_unavailable | complete | 120.00 / 182.40 / 252.00 USD | 2026-10-18T21:20:52.492203Z | 2026-11-17T21:20:52.492203Z |
 | [Arkema S.A.](securities/security_798e2fb944d740aca308) | AKE (EUR) | researched: hold | complete | 30.00 / 56.00 / 89.00 EUR | 2026-10-18T22:35:52.408763Z | 2026-11-17T22:35:52.408763Z |
-| [Arqit Quantum Inc.](securities/security_c9b32b251703b0990793) | ARQQ (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
+| [Arqit Quantum Inc.](securities/security_c9b32b251703b0990793) | ARQQ (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Atkore Inc.](securities/security_22c2b9d782a62d7a9b86) | ATKR (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T16:36:49.285280Z | 2026-10-25T16:36:49.285280Z |
 | [BASF SE](securities/security_ef418f5ccc7dc5be8e65) | BAS (EUR) | researched: hold | complete | 27.90 / 50.80 / 70.90 EUR | 2026-10-18T22:30:31.309524Z | 2026-11-17T22:30:31.309524Z |
 | [BILL Holdings, Inc.](securities/security_97994ffb764e197dd4af) | BILL (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
@@ -54,7 +54,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Fiserv, Inc.](securities/security_d202772e4e62065cd17a) | FISV (USD) | researched: hold | complete | 36.00 / 65.70 / 96.20 USD | 2026-10-19T00:38:18.749675Z | 2026-11-18T00:38:18.749675Z |
 | [Fluence Energy, Inc.](securities/security_a9eb9838940ef5ceaa0c) | FLNC (USD) | needs_attention: research_expired_or_future | complete | 4.59 / 11.09 / 20.84 USD | 2026-08-06T18:47:30Z | 2026-08-20T18:47:30Z |
 | [Freeport-McMoRan Inc.](securities/security_2dbe878dfc899d7ee867) | FCX (USD) | researched: sell | complete | 32.64 / 47.36 / 65.12 USD | 2026-10-22T20:24:15.882831Z | 2026-11-21T20:24:15.882831Z |
-| [FuelCell Energy, Inc.](securities/security_bb61343adcd613fd84e9) | FCEL (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
+| [FuelCell Energy, Inc.](securities/security_bb61343adcd613fd84e9) | FCEL (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [GE Vernova Inc.](securities/security_4b61970aa8f574446819) | GEV (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T13:58:23.270832Z | 2026-11-23T13:58:23.270832Z |
 | [Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687) | DNA (USD) | needs_attention: sell | complete | 3.33 / 7.57 / 16.47 USD | 2026-10-20T20:17:35.294967Z | 2026-11-19T20:17:35.294967Z |
 | [GitLab Inc.](securities/security_3f3ca798805d47a90ee1) | GTLB (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
