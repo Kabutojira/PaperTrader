@@ -28,14 +28,14 @@ Historical and stale research remains readable; only current validated opinions 
 | [Atkore Inc.](securities/security_22c2b9d782a62d7a9b86) | ATKR (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T16:36:49.285280Z | 2026-10-25T16:36:49.285280Z |
 | [BASF SE](securities/security_ef418f5ccc7dc5be8e65) | BAS (EUR) | researched: market_stale_or_unavailable | complete | 27.90 / 50.80 / 70.90 EUR | 2026-10-18T22:30:31.309524Z | 2026-11-17T22:30:31.309524Z |
 | [BILL Holdings, Inc.](securities/security_97994ffb764e197dd4af) | BILL (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
-| [BigBear.ai Holdings, Inc.](securities/security_b493b89a6ed6fee5905e) | BBAI (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
+| [BigBear.ai Holdings, Inc.](securities/security_b493b89a6ed6fee5905e) | BBAI (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Bloom Energy Corporation](securities/security_3e597863f00753e8c65c) | BE (USD) | researched: hold | complete | 90.00 / 180.00 / 300.00 USD | 2026-10-18T20:59:04.577258Z | 2026-11-17T20:59:04.577258Z |
 | [Broadcom Inc.](securities/security_fe55f6b18304b955485c) | AVGO (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [C3.ai, Inc.](securities/security_f9b4eb9ee3c847797e3b) | AI (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-11-02T21:17:34.725268Z | 2026-12-02T21:17:34.725268Z |
 | [Cadence Design Systems, Inc.](securities/security_8190ff6ccb4b1dc7c558) | CDNS (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Canadian Solar Inc.](securities/security_099561384c0f5e697727) | CSIQ (USD) | researched: research_expired_or_future | complete | 10.16 / 18.28 / 26.41 USD | 2026-08-31T08:45:47Z | 2026-09-30T08:45:47Z |
 | [Carlisle Companies Incorporated](securities/security_9b0db3bc77914b23a307) | CSL (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T14:54:59.203205Z | 2026-11-23T14:54:59.203205Z |
-| [Cipher Digital Inc.](securities/security_abadc86a2ed7b5a86e32) | CIFR (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
+| [Cipher Digital Inc.](securities/security_abadc86a2ed7b5a86e32) | CIFR (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Cloudflare, Inc.](securities/security_dfddaf39aab026635ecb) | NET (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Coinbase Global, Inc.](securities/security_37ddcbdaad296ad831f2) | COIN (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T14:31:41.489805Z | 2026-11-01T14:31:41.489805Z |
 | [Constellation Energy Corporation](securities/security_7b44cb57cd212c97c8e9) | CEG (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
@@ -118,7 +118,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Sociedad Quimica y Minera de Chile S.A.](securities/security_9d4049ed6669a52815d6) | SQM (USD) | researched: market_stale_or_unavailable | complete | 42.00 / 77.00 / 120.00 USD | 2026-10-19T01:37:34.979892Z | 2026-11-18T01:37:34.979892Z |
 | [Southern Copper Corporation](securities/security_6ad1af8d10d6276a0221) | SCCO (USD) | researched: research_expired_or_future | complete | 91.00 / 135.00 / 187.00 USD | 2026-08-21T23:17:26Z | 2026-09-04T15:55:50Z |
 | [Space Exploration Technologies Corp.](securities/security_664f93a7eaca72e76e9b) | SPCX (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T14:00:21.124354Z | 2026-11-20T14:00:21.124354Z |
-| [Spire Global, Inc.](securities/security_93d73f1a39279ecf6407) | SPIR (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
+| [Spire Global, Inc.](securities/security_93d73f1a39279ecf6407) | SPIR (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Spotify Technology S.A.](securities/security_2010347f1a0a5ea60f47) | SPOT (USD) | researched: hold | complete | 316.00 / 509.00 / 737.00 USD | 2026-10-24T16:28:59.237887Z | 2026-11-23T16:28:59.237887Z |
 | [Stratasys Ltd.](securities/security_84705b27d28a94f2b318) | SSYS (USD) | researched: hold | complete | 3.48 / 6.40 / 10.00 USD | 2026-10-19T01:30:41.606846Z | 2026-11-18T01:30:41.606846Z |
 | [Strategy Inc](securities/security_fe5539a7d3fd9d553bce) | MSTR (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-21T20:27:33.369332Z | 2026-11-20T20:27:33.369332Z |

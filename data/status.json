@@ -78,13 +78,13 @@
   "research": {
     "discovery_error": "RuntimeError",
     "discovery_status": "failed",
-    "exit_code": 0,
-    "last_attempt_at": "2026-11-02T21:20:38Z",
+    "exit_code": 3,
+    "last_attempt_at": "2026-11-03T00:07:22Z",
     "last_discovery_attempt_at": "2026-10-27T21:03:43Z",
     "last_discovery_success_at": "2026-10-19T21:19:48Z",
     "last_success_at": "2026-11-02T21:20:38Z",
-    "model_operations": 1,
-    "status": "succeeded",
-    "web_requests": 12
+    "model_operations": 3,
+    "status": "degraded",
+    "web_requests": 0
   }
 }

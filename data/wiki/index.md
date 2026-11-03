@@ -31,9 +31,9 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 135 companies / 137 instruments; 96 assessed, 81 in date, 15 stale; 112 currently unrated. 67 quotes require attention.
 
-Last observed market session: 2026-11-02. Last successful research: 2026-11-02T21:20:38Z. Market: degraded; research: succeeded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-11-02. Last successful research: 2026-11-02T21:20:38Z. Market: degraded; research: degraded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
-Watchlist valuation coverage: **67 / 136 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 41; unsupported valuation: 28; incomplete research: 0. Needs attention: 15. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
+Watchlist valuation coverage: **67 / 136 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 41; unsupported valuation: 28; incomplete research: 0. Needs attention: 18. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
 ## Recently updated research
 

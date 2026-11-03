@@ -70,7 +70,7 @@
     "watchlist_incomplete_research": 0,
     "watchlist_instruments": 136,
     "watchlist_missing_research": 41,
-    "watchlist_needs_attention": 15,
+    "watchlist_needs_attention": 18,
     "watchlist_valuation_unsupported": 28
   },
   "last_market_session": "2026-11-02",
@@ -78,7 +78,7 @@
   "last_successful_research": "2026-11-02T21:20:38Z",
   "phase_health": {
     "market": "degraded",
-    "research": "succeeded"
+    "research": "degraded"
   },
   "sells": [
     {
