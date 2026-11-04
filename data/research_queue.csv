@@ -19,13 +19,10 @@ security,security_baf2af301d2c786353ca,80,missing_research|severe_price_movement
 security,security_c2e6db30cb59254de418,80,severe_price_movement,2026-11-03T22:37:18Z,2026-11-03T22:37:18Z,pending,0,2026-11-03T22:37:18Z,,false,
 security,security_c9a37d277445869a8809,80,severe_price_movement|valuation_coverage_gap|valuation_unsupported,2026-11-03T22:37:18Z,2026-11-03T22:37:18Z,pending,0,2026-11-03T22:37:18Z,,false,
 security,security_cd492d97064d8574156e,80,severe_price_movement,2026-10-27T21:01:58Z,2026-10-31T20:22:01Z,failed,1,2026-11-01T02:22:01Z,,false,model:RuntimeError:papertrader.research_agent.run_model:296
-security,security_d051c308c3e15b025fb1,100,explicit_manual_request|missing_research|valuation_coverage_gap,2026-10-31T22:12:44Z,2026-10-31T22:15:13Z,failed,1,2026-11-01T04:15:13Z,,true,model:RuntimeError:papertrader.research_agent.run_model:230
 security,security_d317b95418d51e4bab27,80,missing_research|severe_price_movement|valuation_coverage_gap,2026-11-03T00:05:07Z,2026-11-03T00:05:07Z,pending,0,2026-11-03T00:05:07Z,,false,
 security,security_d658dacd8dc963091893,80,missing_research|severe_price_movement|valuation_coverage_gap,2026-11-03T00:05:07Z,2026-11-03T00:05:07Z,pending,0,2026-11-03T00:05:07Z,,false,
-security,security_df72f58f926ed39b0675,100,explicit_manual_request|missing_research|severe_price_movement|valuation_coverage_gap,2026-10-31T22:12:44Z,2026-10-31T22:14:34Z,failed,1,2026-11-01T04:14:34Z,,true,model:RuntimeError:papertrader.research_agent.run_model:230
 security,security_dfddaf39aab026635ecb,80,missing_research|severe_price_movement|valuation_coverage_gap,2026-11-03T00:05:07Z,2026-11-03T00:05:07Z,pending,0,2026-11-03T00:05:07Z,,false,
 security,security_e9c2be5f4003360f21e4,80,missing_research|severe_price_movement|valuation_coverage_gap,2026-11-03T00:05:07Z,2026-11-03T00:05:07Z,pending,0,2026-11-03T00:05:07Z,,false,
 security,security_ed7d5b616a196969c815,80,severe_price_movement,2026-10-28T21:23:54Z,2026-10-28T21:23:54Z,pending,0,2026-10-28T21:23:54Z,,false,
-security,security_f1238da5e465e051a47e,100,explicit_manual_request|missing_research|severe_price_movement|valuation_coverage_gap,2026-10-31T22:12:44Z,2026-11-03T22:37:18Z,failed,1,2026-11-01T04:15:22Z,,true,model:RuntimeError:papertrader.research_agent.run_model:230
 security,security_f18cd57a5e086583c861,80,severe_price_movement,2026-10-29T21:28:23Z,2026-10-29T21:28:23Z,pending,0,2026-10-29T21:28:23Z,,false,
 security,security_f2b9760d847b2ba59324,80,material_technical_context|severe_price_movement,2026-10-28T21:23:54Z,2026-10-28T21:23:54Z,pending,0,2026-10-28T21:23:54Z,,false,

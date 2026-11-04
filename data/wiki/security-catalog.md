@@ -73,7 +73,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Materialise NV](securities/security_b61c642d038d71be3821) | MTLS (USD) | researched: hold | complete | 6.30 / 9.00 / 12.20 USD | 2026-10-18T23:13:04.375396Z | 2026-11-17T23:13:04.375396Z |
 | [MercadoLibre, Inc.](securities/security_4935c6e39e38273a1731) | MELI (USD) | researched: hold | complete | 1,440.00 / 2,200.00 / 3,120.00 USD | 2026-10-19T00:17:51.170792Z | 2026-11-18T00:17:51.170792Z |
 | [Meta Platforms, Inc.](securities/security_d12e746b3c9d392183cc) | META (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T15:48:18.636792Z | 2026-11-20T15:48:18.636792Z |
-| [MicroVision, Inc.](securities/security_d051c308c3e15b025fb1) | MVIS (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
+| [MicroVision, Inc.](securities/security_d051c308c3e15b025fb1) | MVIS (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Micron Technology, Inc.](securities/security_3d7975cbf3067c235b34) | MU (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Microsoft Corporation](securities/security_204be2a44063993de1a8) | MSFT (USD) | researched: hold | complete | 418.00 / 567.00 / 698.00 USD | 2026-10-24T16:32:40.780427Z | 2026-11-23T16:32:40.780427Z |
 | [MongoDB, Inc.](securities/security_baf2af301d2c786353ca) | MDB (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
@@ -82,7 +82,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Nidec Corporation](securities/security_3853e54c619d597dcaa1) | NIB.F (EUR) | researched: valuation_unsupported | valuation_unsupported | — / — / — EUR | 2026-10-19T01:10:04.361736Z | 2026-11-18T01:10:04.361736Z |
 | [Nomad Foods Limited](securities/security_98a1943771da875efed5) | NOMD (USD) | researched: hold | complete | 9.54 / 15.08 / 19.36 USD | 2026-10-18T23:57:11.762336Z | 2026-11-15T23:57:11.762336Z |
 | [Okta, Inc.](securities/security_4b55da263cc935c1f556) | OKTA (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
-| [Ondas Inc.](securities/security_df72f58f926ed39b0675) | ONDS (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
+| [Ondas Inc.](securities/security_df72f58f926ed39b0675) | ONDS (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Oracle Corporation](securities/security_e9c2be5f4003360f21e4) | ORCL (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [PLS Group Limited](securities/security_8a5c43888d224de85c69) | PLS.AX (AUD) | researched: valuation_unsupported | valuation_unsupported | — / — / — AUD | 2026-10-24T14:02:41.253809Z | 2026-11-01T14:02:41.253809Z |
 | [Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a) | PLTR (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T15:15:36.223838Z | 2026-11-23T15:15:36.223838Z |
@@ -92,7 +92,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00) | PYPL (USD) | researched: hold | complete | 43.04 / 64.56 / 80.70 USD | 2026-10-24T16:22:20.627957Z | 2026-11-23T16:22:20.627957Z |
 | [Planet Labs PBC](securities/security_97f38b2cb2d5ef127f5a) | PL (USD) | researched: hold | complete | 7.89 / 11.41 / 15.02 USD | 2026-10-18T23:51:11.153208Z | 2026-11-17T23:51:11.153208Z |
 | [Plug Power Inc.](securities/security_1d114694d447e35497b0) | PLUG (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
-| [Polestar Automotive Holding UK PLC](securities/security_f1238da5e465e051a47e) | PSNY (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
+| [Polestar Automotive Holding UK PLC](securities/security_f1238da5e465e051a47e) | PSNY (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Powell Industries, Inc.](securities/security_0b67d6c8e3fd3366a257) | POWL (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T16:03:56.485665Z | 2026-11-23T16:03:56.485665Z |
 | [Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | PRX (EUR) | researched: hold | complete | 27.00 / 48.50 / 63.00 EUR | 2026-10-19T00:25:13.322131Z | 2026-11-17T00:25:13.322131Z |
 | [Proto Labs, Inc.](securities/security_f18cd57a5e086583c861) | PRLB (USD) | researched: market_stale_or_unavailable | complete | 44.00 / 75.60 / 108.80 USD | 2026-10-18T23:17:23.066155Z | 2026-11-17T23:17:23.066155Z |
