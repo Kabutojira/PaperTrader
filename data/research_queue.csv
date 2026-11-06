@@ -1,4 +1,5 @@
 entity_type,entity_id,priority,reasons,created_at,updated_at,status,attempts,next_eligible_at,lease_until,manual,last_error
+security,security_099561384c0f5e697727,80,research_overdue|severe_price_movement,2026-11-06T22:27:07Z,2026-11-06T22:27:07Z,pending,0,2026-11-06T22:27:07Z,,false,
 security,security_0a56aa634d077fe5796f,80,severe_price_movement,2026-11-05T22:56:45Z,2026-11-05T22:56:45Z,pending,0,2026-11-05T22:56:45Z,,false,
 security,security_0b67d6c8e3fd3366a257,80,severe_price_movement,2026-11-04T22:55:56Z,2026-11-04T22:55:56Z,pending,0,2026-11-04T22:55:56Z,,false,
 security,security_0c8b3c4291cd97f56d8c,80,severe_price_movement,2026-11-03T22:37:18Z,2026-11-03T22:37:18Z,pending,0,2026-11-03T22:37:18Z,,false,
