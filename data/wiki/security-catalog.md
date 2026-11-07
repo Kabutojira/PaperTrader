@@ -47,7 +47,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Datadog, Inc.](securities/security_d317b95418d51e4bab27) | DDOG (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Domino's Pizza, Inc.](securities/security_f34181f3df32080a91d1) | DPZ (USD) | needs_attention: research_expired_or_future | complete | 270.00 / 380.00 / 500.00 USD | 2026-08-28T19:34:25Z | 2026-09-27T19:34:25Z |
 | [Eaton Corporation plc](securities/security_18a3ab0ee6086ee85d0f) | ETN (USD) | researched: hold | complete | 285.00 / 351.00 / 449.00 USD | 2026-10-24T16:14:31.591874Z | 2026-11-23T16:14:31.591874Z |
-| [Enphase Energy, Inc.](securities/security_f2b9760d847b2ba59324) | ENPH (USD) | researched: insufficient_confidence | complete | 8.03 / 19.28 / 38.22 USD | 2026-10-19T02:07:45.077644Z | 2026-11-18T02:07:45.077644Z |
+| [Enphase Energy, Inc.](securities/security_f2b9760d847b2ba59324) | ENPH (USD) | needs_attention: insufficient_confidence | complete | 8.03 / 19.28 / 38.22 USD | 2026-10-19T02:07:45.077644Z | 2026-11-18T02:07:45.077644Z |
 | [Everpure, Inc.](securities/security_11065aeb94d8994f32b5) | P (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Evonik Industries AG](securities/security_ccb25582c0392492fe9e) | EVK (EUR) | researched: hold | complete | 10.01 / 18.97 / 27.61 EUR | 2026-10-18T23:44:47.860390Z | 2026-11-17T23:44:47.860390Z |
 | [Fanuc Corporation](securities/security_96ba305ee7cd586bc348) | FUC.F (EUR) | researched: valuation_unsupported | valuation_unsupported | — / — / — EUR | 2026-10-24T14:51:23.823503Z | 2026-10-25T14:51:23.823503Z |
