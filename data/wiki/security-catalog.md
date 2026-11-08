@@ -12,7 +12,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [ABB Ltd](securities/security_13e5a47e903a0b13c191) | ABBN (CHF) | unresearched: unresearched | missing_research | — / — / — CHF | unresearched | — |
 | [ABB Ltd](securities/security_c120e9f26ebb6159adf9) | ABBNY (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T15:19:06.065625Z | 2026-11-23T15:19:06.065625Z |
 | [ASML Holding N.V.](securities/security_ef35e41886220d51c22c) | ASML (USD) | researched: buy | complete | 1,260.34 / 1,851.12 / 2,552.18 USD | 2026-10-19T01:26:52.646344Z | 2026-11-18T01:26:52Z |
-| [AbCellera Biologics Inc.](securities/security_7bf8f4c9cc12ae410e40) | ABCL (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-19T00:42:23.067619Z | 2026-11-16T00:42:23.067619Z |
+| [AbCellera Biologics Inc.](securities/security_7bf8f4c9cc12ae410e40) | ABCL (USD) | needs_attention: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-19T00:42:23.067619Z | 2026-11-16T00:42:23.067619Z |
 | [Advanced Micro Devices, Inc.](securities/security_63bf74382299a85f1175) | AMD (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Adyen N.V.](securities/security_374d14a5f9f5a9b8209e) | ADYEN (EUR) | unresearched: unresearched | missing_research | — / — / — EUR | unresearched | — |
 | [Aeva Technologies, Inc.](securities/security_2e9d3d6cb899976cc127) | AEVA (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
@@ -95,7 +95,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Polestar Automotive Holding UK PLC](securities/security_f1238da5e465e051a47e) | PSNY (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Powell Industries, Inc.](securities/security_0b67d6c8e3fd3366a257) | POWL (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T16:03:56.485665Z | 2026-11-23T16:03:56.485665Z |
 | [Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | PRX (EUR) | researched: hold | complete | 27.00 / 48.50 / 63.00 EUR | 2026-10-19T00:25:13.322131Z | 2026-11-17T00:25:13.322131Z |
-| [Proto Labs, Inc.](securities/security_f18cd57a5e086583c861) | PRLB (USD) | researched: insufficient_confidence | complete | 44.00 / 75.60 / 108.80 USD | 2026-10-18T23:17:23.066155Z | 2026-11-17T23:17:23.066155Z |
+| [Proto Labs, Inc.](securities/security_f18cd57a5e086583c861) | PRLB (USD) | needs_attention: insufficient_confidence | complete | 44.00 / 75.60 / 108.80 USD | 2026-10-18T23:17:23.066155Z | 2026-11-17T23:17:23.066155Z |
 | [Prysmian S.p.A.](securities/security_9f86c521465136edada1) | PRY (EUR) | unresearched: unresearched | missing_research | — / — / — EUR | unresearched | — |
 | [QUALCOMM Incorporated](securities/security_3a75fc1ccca2ee7c937a) | QCOM (USD) | researched: hold | complete | 102.00 / 166.00 / 220.00 USD | 2026-10-22T20:26:18.005794Z | 2026-11-21T20:26:18.005794Z |
 | [Quanta Services, Inc.](securities/security_488a9d7f7a8573597724) | PWR (USD) | researched: hold | complete | 417.50 / 534.40 / 668.00 USD | 2026-10-23T20:09:37.071756Z | 2026-11-22T20:09:37.071756Z |
