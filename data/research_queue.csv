@@ -8,9 +8,8 @@ security,security_0d762adf6f1eefba7a51,80,missing_research|severe_price_movement
 security,security_11065aeb94d8994f32b5,80,missing_research|severe_price_movement|valuation_coverage_gap,2026-11-03T22:37:18Z,2026-11-03T22:37:18Z,pending,0,2026-11-03T22:37:18Z,,false,
 security,security_139baf2f275f2f23b877,80,missing_research|severe_price_movement|valuation_coverage_gap,2026-11-05T22:56:45Z,2026-11-05T22:56:45Z,pending,0,2026-11-05T22:56:45Z,,false,
 security,security_18a3ab0ee6086ee85d0f,80,severe_price_movement,2026-11-05T22:56:45Z,2026-11-05T22:56:45Z,pending,0,2026-11-05T22:56:45Z,,false,
-security,security_3a75fc1ccca2ee7c937a,80,severe_price_movement,2026-10-30T21:10:29Z,2026-11-08T21:24:57Z,failed,1,2026-11-09T03:24:57Z,,false,model:WorkerRuntimeError:provider_auth_profile_invalid:papertrader.research_agent.run_model:384
-security,security_3e597863f00753e8c65c,80,severe_price_movement,2026-10-30T21:10:29Z,2026-10-30T21:10:29Z,pending,0,2026-10-30T21:10:29Z,,false,
-security,security_4627aea1bf7d8943d3d8,80,material_technical_context|severe_price_movement,2026-10-30T21:10:29Z,2026-11-03T00:05:07Z,pending,0,2026-10-30T21:10:29Z,,false,
+security,security_3e597863f00753e8c65c,80,severe_price_movement,2026-10-30T21:10:29Z,2026-11-10T00:55:16Z,failed,1,2026-11-10T06:55:16Z,,false,model:WorkerRuntimeError:provider_auth_profile_invalid:papertrader.research_agent.run_model:384
+security,security_4627aea1bf7d8943d3d8,80,material_technical_context|severe_price_movement,2026-10-30T21:10:29Z,2026-11-10T00:55:18Z,failed,1,2026-11-10T06:55:18Z,,false,model:WorkerRuntimeError:provider_auth_profile_invalid:papertrader.research_agent.run_model:384
 security,security_47a0b06f6c6c478d7c1e,80,severe_price_movement,2026-11-03T00:05:07Z,2026-11-03T00:05:07Z,pending,0,2026-11-03T00:05:07Z,,false,
 security,security_488a9d7f7a8573597724,80,severe_price_movement,2026-11-10T00:53:17Z,2026-11-10T00:53:17Z,pending,0,2026-11-10T00:53:17Z,,false,
 security,security_4b55da263cc935c1f556,80,missing_research|severe_price_movement|valuation_coverage_gap,2026-11-03T00:05:07Z,2026-11-03T00:05:07Z,pending,0,2026-11-03T00:05:07Z,,false,
