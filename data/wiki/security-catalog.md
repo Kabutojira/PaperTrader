@@ -29,7 +29,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [BASF SE](securities/security_ef418f5ccc7dc5be8e65) | BAS (EUR) | researched: hold | complete | 27.90 / 50.80 / 70.90 EUR | 2026-10-18T22:30:31.309524Z | 2026-11-17T22:30:31.309524Z |
 | [BILL Holdings, Inc.](securities/security_97994ffb764e197dd4af) | BILL (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [BigBear.ai Holdings, Inc.](securities/security_b493b89a6ed6fee5905e) | BBAI (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
-| [Bloom Energy Corporation](securities/security_3e597863f00753e8c65c) | BE (USD) | researched: hold | complete | 90.00 / 180.00 / 300.00 USD | 2026-10-18T20:59:04.577258Z | 2026-11-17T20:59:04.577258Z |
+| [Bloom Energy Corporation](securities/security_3e597863f00753e8c65c) | BE (USD) | needs_attention: hold | complete | 90.00 / 180.00 / 300.00 USD | 2026-10-18T20:59:04.577258Z | 2026-11-17T20:59:04.577258Z |
 | [Broadcom Inc.](securities/security_fe55f6b18304b955485c) | AVGO (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [C3.ai, Inc.](securities/security_f9b4eb9ee3c847797e3b) | AI (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-11-02T21:17:34.725268Z | 2026-12-02T21:17:34.725268Z |
 | [Cadence Design Systems, Inc.](securities/security_8190ff6ccb4b1dc7c558) | CDNS (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
@@ -112,7 +112,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Schneider Electric SE](securities/security_dc8486c1d61df62a22fd) | SU (EUR) | researched: hold | complete | 190.00 / 240.00 / 330.00 EUR | 2026-10-24T15:51:58.361044Z | 2026-11-23T15:51:58.361044Z |
 | [Seagate Technology Holdings plc](securities/security_e9061b78c8043a731a74) | STX (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Shenzhen Creality 3D Technology Co., Ltd.](securities/security_b19e8f0343b7da1f3c03) | 03388 (HKD) | researched: valuation_unsupported | valuation_unsupported | — / — / — HKD | 2026-10-24T15:04:41.124451Z | 2026-11-20T15:04:41.124451Z |
-| [Sigma Lithium Corporation](securities/security_4627aea1bf7d8943d3d8) | SGML (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-19T01:15:37.228751Z | 2026-11-17T01:15:37.228751Z |
+| [Sigma Lithium Corporation](securities/security_4627aea1bf7d8943d3d8) | SGML (USD) | needs_attention: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-19T01:15:37.228751Z | 2026-11-17T01:15:37.228751Z |
 | [Snowflake Inc.](securities/security_731a3d7461c5355d28bf) | SNOW (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [SoFi Technologies, Inc.](securities/security_98470cfc01bbcde78fc2) | SOFI (USD) | needs_attention: market_stale_or_unavailable | complete | 8.75 / 16.00 / 24.75 USD | 2026-10-19T00:13:13.566261Z | 2026-11-18T00:13:13.566261Z |
 | [Sociedad Quimica y Minera de Chile S.A.](securities/security_9d4049ed6669a52815d6) | SQM (USD) | researched: market_stale_or_unavailable | complete | 42.00 / 77.00 / 120.00 USD | 2026-10-19T01:37:34.979892Z | 2026-11-18T01:37:34.979892Z |
