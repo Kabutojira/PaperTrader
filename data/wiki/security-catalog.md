@@ -39,7 +39,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Cloudflare, Inc.](securities/security_dfddaf39aab026635ecb) | NET (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Coinbase Global, Inc.](securities/security_37ddcbdaad296ad831f2) | COIN (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T14:31:41.489805Z | 2026-11-01T14:31:41.489805Z |
 | [Constellation Energy Corporation](securities/security_7b44cb57cd212c97c8e9) | CEG (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
-| [Corsair Gaming, Inc.](securities/security_55c9ce2fdcd32dad6b8c) | CRSR (USD) | researched: hold | complete | 6.60 / 12.00 / 18.90 USD | 2026-10-23T20:11:46.578958Z | 2026-11-20T20:11:46.578958Z |
+| [Corsair Gaming, Inc.](securities/security_55c9ce2fdcd32dad6b8c) | CRSR (USD) | needs_attention: hold | complete | 6.60 / 12.00 / 18.90 USD | 2026-10-23T20:11:46.578958Z | 2026-11-20T20:11:46.578958Z |
 | [Credo Technology Group Holding Ltd](securities/security_a94772b5591dd837f655) | CRDO (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Crocs, Inc.](securities/security_c150f31c30afdb4a85f9) | CROX (USD) | needs_attention: research_expired_or_future | complete | 88.00 / 145.42 / 205.80 USD | 2026-09-04T00:12:16Z | 2026-10-03T00:12:16Z |
 | [CrowdStrike Holdings, Inc.](securities/security_8472507d7d320aa388a7) | CRWD (USD) | needs_attention: insufficient_confidence | complete | 112.00 / 192.00 / 285.00 USD | 2026-10-19T01:19:40.825907Z | 2026-11-18T01:19:40.825907Z |

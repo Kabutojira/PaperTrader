@@ -13,11 +13,10 @@ security,security_3d7975cbf3067c235b34,80,missing_research|severe_price_movement
 security,security_47a0b06f6c6c478d7c1e,80,severe_price_movement,2026-11-03T00:05:07Z,2026-11-03T00:05:07Z,pending,0,2026-11-03T00:05:07Z,,false,
 security,security_488a9d7f7a8573597724,80,severe_price_movement,2026-11-10T00:53:17Z,2026-11-10T00:53:17Z,pending,0,2026-11-10T00:53:17Z,,false,
 security,security_4b55da263cc935c1f556,80,missing_research|severe_price_movement|valuation_coverage_gap,2026-11-03T00:05:07Z,2026-11-03T00:05:07Z,pending,0,2026-11-03T00:05:07Z,,false,
-security,security_55c9ce2fdcd32dad6b8c,80,severe_price_movement,2026-10-30T21:10:29Z,2026-11-10T22:37:39Z,failed,1,2026-11-11T04:37:39Z,,false,model:WorkerRuntimeError:provider_auth_profile_invalid:papertrader.research_agent.run_model:384
 security,security_61567714298b9563d1a9,80,severe_price_movement,2026-11-03T00:05:07Z,2026-11-03T00:05:07Z,pending,0,2026-11-03T00:05:07Z,,false,
 security,security_63bf74382299a85f1175,80,missing_research|severe_price_movement|valuation_coverage_gap,2026-11-10T00:53:17Z,2026-11-10T00:53:17Z,pending,0,2026-11-10T00:53:17Z,,false,
 security,security_6ac6a6268ca7c08829ae,80,severe_price_movement,2026-11-10T00:53:17Z,2026-11-10T00:53:17Z,pending,0,2026-11-10T00:53:17Z,,false,
-security,security_6f9a1450edceb9307c9a,80,severe_price_movement,2026-10-30T21:10:29Z,2026-10-30T21:10:29Z,pending,0,2026-10-30T21:10:29Z,,false,
+security,security_6f9a1450edceb9307c9a,80,severe_price_movement,2026-10-30T21:10:29Z,2026-11-11T23:46:51Z,failed,1,2026-11-12T05:46:51Z,,false,model:WorkerRuntimeError:provider_auth_profile_invalid:papertrader.research_agent.run_model:384
 security,security_7b44cb57cd212c97c8e9,80,missing_research|severe_price_movement|valuation_coverage_gap,2026-11-10T00:53:17Z,2026-11-10T00:53:17Z,pending,0,2026-11-10T00:53:17Z,,false,
 security,security_8a5c43888d224de85c69,80,severe_price_movement|valuation_coverage_gap|valuation_unsupported,2026-11-11T23:44:52Z,2026-11-11T23:44:52Z,pending,0,2026-11-11T23:44:52Z,,false,
 security,security_b19e8f0343b7da1f3c03,80,severe_price_movement,2026-11-03T22:37:18Z,2026-11-03T22:37:18Z,pending,0,2026-11-03T22:37:18Z,,false,
