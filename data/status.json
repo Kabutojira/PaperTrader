@@ -51,7 +51,7 @@
     "discovery_error": "WorkerRuntimeError",
     "discovery_status": "failed",
     "exit_code": 3,
-    "last_attempt_at": "2026-11-11T23:46:51Z",
+    "last_attempt_at": "2026-11-12T22:56:44Z",
     "last_discovery_attempt_at": "2026-11-11T23:46:45Z",
     "last_discovery_success_at": "2026-10-19T21:19:48Z",
     "last_success_at": "2026-11-02T21:20:38Z",

@@ -22,7 +22,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Amazon.com, Inc.](securities/security_2433a056eb0c55961fcc) | AMZN (USD) | researched: hold | complete | 200.00 / 270.00 / 360.00 USD | 2026-10-24T16:40:27.310920Z | 2026-11-23T16:40:27.310920Z |
 | [Applied Digital Corporation](securities/security_52702758461db03286f7) | APLD (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Applied Materials, Inc.](securities/security_0a56aa634d077fe5796f) | AMAT (USD) | researched: hold | complete | 286.00 / 448.00 / 646.00 USD | 2026-10-24T15:59:51.264224Z | 2026-11-23T15:59:51.264224Z |
-| [Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a) | ANET (USD) | researched: hold | complete | 120.00 / 182.40 / 252.00 USD | 2026-10-18T21:20:52.492203Z | 2026-11-17T21:20:52.492203Z |
+| [Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a) | ANET (USD) | needs_attention: hold | complete | 120.00 / 182.40 / 252.00 USD | 2026-10-18T21:20:52.492203Z | 2026-11-17T21:20:52.492203Z |
 | [Arkema S.A.](securities/security_798e2fb944d740aca308) | AKE (EUR) | researched: hold | complete | 30.00 / 56.00 / 89.00 EUR | 2026-10-18T22:35:52.408763Z | 2026-11-17T22:35:52.408763Z |
 | [Arqit Quantum Inc.](securities/security_c9b32b251703b0990793) | ARQQ (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Atkore Inc.](securities/security_22c2b9d782a62d7a9b86) | ATKR (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T16:36:49.285280Z | 2026-10-25T16:36:49.285280Z |
