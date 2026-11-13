@@ -78,7 +78,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Microsoft Corporation](securities/security_204be2a44063993de1a8) | MSFT (USD) | researched: hold | complete | 418.00 / 567.00 / 698.00 USD | 2026-10-24T16:32:40.780427Z | 2026-11-23T16:32:40.780427Z |
 | [MongoDB, Inc.](securities/security_baf2af301d2c786353ca) | MDB (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | NVDA (USD) | researched: buy | complete | 198.00 / 310.50 / 448.00 USD | 2026-10-18T19:50:33.927425Z | 2026-11-17T19:50:33.927425Z |
-| [Nebius Group N.V.](securities/security_47a0b06f6c6c478d7c1e) | NBIS (USD) | researched: insufficient_confidence | complete | 21.74 / 127.09 / 293.31 USD | 2026-10-24T13:41:49Z | 2026-11-23T13:41:49Z |
+| [Nebius Group N.V.](securities/security_47a0b06f6c6c478d7c1e) | NBIS (USD) | needs_attention: insufficient_confidence | complete | 21.74 / 127.09 / 293.31 USD | 2026-10-24T13:41:49Z | 2026-11-23T13:41:49Z |
 | [Nidec Corporation](securities/security_3853e54c619d597dcaa1) | NIB.F (EUR) | researched: valuation_unsupported | valuation_unsupported | — / — / — EUR | 2026-10-19T01:10:04.361736Z | 2026-11-18T01:10:04.361736Z |
 | [Nomad Foods Limited](securities/security_98a1943771da875efed5) | NOMD (USD) | researched: hold | complete | 9.54 / 15.08 / 19.36 USD | 2026-10-18T23:57:11.762336Z | 2026-11-15T23:57:11.762336Z |
 | [Okta, Inc.](securities/security_4b55da263cc935c1f556) | OKTA (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
@@ -106,7 +106,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Robinhood Markets, Inc.](securities/security_ad3b1f8f59fd599f079a) | HOOD (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T14:58:37.228150Z | 2026-11-23T14:58:37.228150Z |
 | [Roblox Corporation](securities/security_c9a37d277445869a8809) | RBLX (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T15:29:47.352823Z | 2026-10-25T15:29:47.352823Z |
 | [Rocket Lab Corporation](securities/security_7ca095d63423c55a90e3) | RKLB (USD) | needs_attention: insufficient_confidence | complete | 18.00 / 32.00 / 53.00 USD | 2026-10-20T20:15:25.373186Z | 2026-11-19T20:15:25.373186Z |
-| [SK hynix Inc.](securities/security_0d762adf6f1eefba7a51) | 000660 (KRW) | unresearched: unresearched | missing_research | — / — / — KRW | unresearched | — |
+| [SK hynix Inc.](securities/security_0d762adf6f1eefba7a51) | 000660 (KRW) | needs_attention: unresearched | missing_research | — / — / — KRW | unresearched | — |
 | [Samsung Electronics Co., Ltd.](securities/security_567d0d575bbd30aaa91d) | SSU.VI (EUR) | researched: insufficient_confidence | complete | 2,401.59 / 5,003.30 / 7,961.19 EUR | 2026-10-19T02:16:05.391547Z | 2026-11-18T02:16:05.391547Z |
 | [Samsung Electronics Co., Ltd.](securities/security_d08d763780400dfbffce) | SSUN.VI (EUR) | researched: market_stale_or_unavailable | complete | 970.00 / 2,000.00 / 3,720.00 EUR | 2026-10-19T01:56:11.907430Z | 2026-11-18T01:56:11.907430Z |
 | [Schneider Electric SE](securities/security_dc8486c1d61df62a22fd) | SU (EUR) | researched: market_stale_or_unavailable | complete | 190.00 / 240.00 / 330.00 EUR | 2026-10-24T15:51:58.361044Z | 2026-11-23T15:51:58.361044Z |
