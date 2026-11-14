@@ -81,7 +81,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Nebius Group N.V.](securities/security_47a0b06f6c6c478d7c1e) | NBIS (USD) | needs_attention: insufficient_confidence | complete | 21.74 / 127.09 / 293.31 USD | 2026-10-24T13:41:49Z | 2026-11-23T13:41:49Z |
 | [Nidec Corporation](securities/security_3853e54c619d597dcaa1) | NIB.F (EUR) | researched: valuation_unsupported | valuation_unsupported | — / — / — EUR | 2026-10-19T01:10:04.361736Z | 2026-11-18T01:10:04.361736Z |
 | [Nomad Foods Limited](securities/security_98a1943771da875efed5) | NOMD (USD) | researched: hold | complete | 9.54 / 15.08 / 19.36 USD | 2026-10-18T23:57:11.762336Z | 2026-11-15T23:57:11.762336Z |
-| [Okta, Inc.](securities/security_4b55da263cc935c1f556) | OKTA (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
+| [Okta, Inc.](securities/security_4b55da263cc935c1f556) | OKTA (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Ondas Inc.](securities/security_df72f58f926ed39b0675) | ONDS (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Oracle Corporation](securities/security_e9c2be5f4003360f21e4) | ORCL (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [PLS Group Limited](securities/security_8a5c43888d224de85c69) | PLS.AX (AUD) | researched: valuation_unsupported | valuation_unsupported | — / — / — AUD | 2026-10-24T14:02:41.253809Z | 2026-11-01T14:02:41.253809Z |
