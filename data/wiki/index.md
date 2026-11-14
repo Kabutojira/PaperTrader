@@ -12,9 +12,11 @@ Current research opinions in each instrument's native currency. Fair values chan
 | Company / thesis & sources | Ticker | Currency | Price | Price as of | Weighted / base fair value | Implied / adjusted return | Rating | Confidence | Researched / expiry |
 | --- | --- | --- | ---: | --- | ---: | ---: | --- | --- | --- |
 | [NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | NVDA | USD | 162.85 | 2026-11-13 | 304.25 / 310.50 | 86.83% / 60.78% | buy | medium | 2026-10-18T19:50:33.927425Z / 2026-11-17T19:50:33.927425Z |
+| [Agronomics Limited](securities/security_fe4648901e7675f157fd) | ANIC.L | GBP | 0.0410 | 2026-11-13 | 0.0710 / 0.0800 | 73.17% / 51.22% | buy | medium | 2026-10-18T23:21:39.032922Z / 2026-11-17T23:21:39.032922Z |
 | [Sociedad Quimica y Minera de Chile S.A.](securities/security_9d4049ed6669a52815d6) | SQM | USD | 53.61 | 2026-11-13 | 79.00 / 77.00 | 47.36% / 33.15% | buy | medium | 2026-10-19T01:37:34.979892Z / 2026-11-18T01:37:34.979892Z |
 | [MercadoLibre, Inc.](securities/security_4935c6e39e38273a1731) | MELI | USD | 1,491.49 | 2026-11-13 | 2,156.00 / 2,200.00 | 44.55% / 31.19% | buy | medium | 2026-10-19T00:17:51.170792Z / 2026-11-18T00:17:51.170792Z |
 | [Materialise NV](securities/security_b61c642d038d71be3821) | MTLS | USD | 6.49 | 2026-11-13 | 9.12 / 9.00 | 40.60% / 28.42% | buy | medium | 2026-10-18T23:13:04.375396Z / 2026-11-17T23:13:04.375396Z |
+| [Xylem Inc.](securities/security_d2be67701e612ee6625d) | XYL | USD | 94.18 | 2026-11-13 | 126.90 / 128.10 | 34.74% / 24.32% | buy | medium | 2026-10-24T14:22:07.052801Z / 2026-11-23T14:22:07.052801Z |
 | [Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3) | ALB | USD | 93.53 | 2026-11-13 | 126.01 / 131.25 | 34.73% / 24.31% | buy | medium | 2026-10-24T14:37:50.249307Z / 2026-11-23T14:37:50.249307Z |
 | [Kratos Defense & Security Solutions, Inc.](securities/security_0cf8075039299094d614) | KTOS | USD | 33.91 | 2026-11-13 | 43.82 / 41.79 | 29.21% / 20.45% | buy | medium | 2026-10-24T16:11:12.496589Z / 2026-11-23T16:11:12.496589Z |
 | [Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | PRX | EUR | 35.69 | 2026-11-13 | 46.02 / 48.50 | 28.96% / 20.27% | buy | medium | 2026-10-19T00:25:13.322131Z / 2026-11-17T00:25:13.322131Z |
@@ -38,9 +40,9 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-135 companies / 137 instruments; 96 assessed, 81 in date, 15 stale; 105 currently unrated. 38 quotes require attention.
+135 companies / 137 instruments; 96 assessed, 81 in date, 15 stale; 92 currently unrated. 1 quotes require attention.
 
-Last observed market session: 2026-11-13. Last successful research: 2026-11-02T21:20:38Z. Market: degraded; research: degraded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
+Last observed market session: 2026-11-13. Last successful research: 2026-11-02T21:20:38Z. Market: succeeded; research: degraded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
 Watchlist valuation coverage: **67 / 136 instruments** have complete sourced bear/base/bull research, including historical assessments. Missing research: 41; unsupported valuation: 28; incomplete research: 0. Needs attention: 36. Baseline coverage and current freshness are separate: expired research never enters current rankings. Missing or incomplete coverage is scheduled ahead of ordinary expiry refreshes within the daily budget. Unsupported cases remain visible until evidence supports a valuation.
 
@@ -49,8 +51,8 @@ Watchlist valuation coverage: **67 / 136 instruments** have complete sourced bea
 - [Virgin Galactic Holdings, Inc.](securities/security_c843b10b0d128d0fada8) — 2026-11-02T21:19:27.322753Z; valuation_unsupported
 - [C3.ai, Inc.](securities/security_f9b4eb9ee3c847797e3b) — 2026-11-02T21:17:34.725268Z; valuation_unsupported
 - [AI agent productivity loop: execution infrastructure and machine transactions](ideas/idea_ai_agent_productivity_execution_economy) — 2026-11-01; maintained
-- [Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e) — 2026-10-24T19:09:47.645216Z; market_stale_or_unavailable
-- [Koninklijke Ahold Delhaize N.V.](securities/security_e19c7fe27fbcc4cd923d) — 2026-10-24T19:07:39.330370Z; market_stale_or_unavailable
+- [Uber Technologies, Inc.](securities/security_e4822686f60a96824b6e) — 2026-10-24T19:09:47.645216Z; hold
+- [Koninklijke Ahold Delhaize N.V.](securities/security_e19c7fe27fbcc4cd923d) — 2026-10-24T19:07:39.330370Z; hold
 - [Amazon.com, Inc.](securities/security_2433a056eb0c55961fcc) — 2026-10-24T16:40:27.310920Z; hold
 - [Atkore Inc.](securities/security_22c2b9d782a62d7a9b86) — 2026-10-24T16:36:49.285280Z; valuation_unsupported
 - [Microsoft Corporation](securities/security_204be2a44063993de1a8) — 2026-10-24T16:32:40.780427Z; hold

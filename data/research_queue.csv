@@ -27,3 +27,5 @@ security,security_d317b95418d51e4bab27,80,missing_research|severe_price_movement
 security,security_d658dacd8dc963091893,80,missing_research|severe_price_movement|valuation_coverage_gap,2026-11-03T00:05:07Z,2026-11-03T00:05:07Z,pending,0,2026-11-03T00:05:07Z,,false,
 security,security_dfddaf39aab026635ecb,80,missing_research|severe_price_movement|valuation_coverage_gap,2026-11-03T00:05:07Z,2026-11-03T00:05:07Z,pending,0,2026-11-03T00:05:07Z,,false,
 security,security_e9c2be5f4003360f21e4,80,missing_research|severe_price_movement|valuation_coverage_gap,2026-11-03T00:05:07Z,2026-11-03T00:05:07Z,pending,0,2026-11-03T00:05:07Z,,false,
+security,security_fb87fac302a5446a1ced,80,material_technical_context|severe_price_movement,2026-11-14T21:42:50Z,2026-11-14T21:42:50Z,pending,0,2026-11-14T21:42:50Z,,false,
+security,security_fe55f6b18304b955485c,80,missing_research|severe_price_movement|valuation_coverage_gap,2026-11-14T21:42:50Z,2026-11-14T21:42:50Z,pending,0,2026-11-14T21:42:50Z,,false,

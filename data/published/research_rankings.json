@@ -20,6 +20,25 @@
       "weighted_fair_value": "304.25"
     },
     {
+      "adjusted_return_pct": "51.21951501473020859518589429",
+      "assessed_at": "2026-10-18T23:21:39.032922Z",
+      "base_fair_value": "0.0800",
+      "company_name": "Agronomics Limited",
+      "confidence": "medium",
+      "currency": "GBP",
+      "expected_return_pct": "73.17073573532886942169413470",
+      "issuer_id": "issuer_ae497c82294cc1e4f730",
+      "price": "0.04099999904632568",
+      "price_date": "2026-11-13",
+      "rating": "buy",
+      "research_page": "data/wiki/securities/security_fe4648901e7675f157fd.md",
+      "research_role": "long",
+      "security_id": "security_fe4648901e7675f157fd",
+      "ticker": "ANIC.L",
+      "valid_until": "2026-11-17T23:21:39.032922Z",
+      "weighted_fair_value": "0.0710"
+    },
+    {
       "adjusted_return_pct": "33.15239576647592475646378705",
       "assessed_at": "2026-10-19T01:37:34.979892Z",
       "base_fair_value": "77",
@@ -75,6 +94,25 @@
       "ticker": "MTLS",
       "valid_until": "2026-11-17T23:13:04.375396Z",
       "weighted_fair_value": "9.125"
+    },
+    {
+      "adjusted_return_pct": "24.31938809955412155017894778",
+      "assessed_at": "2026-10-24T14:22:07.052801Z",
+      "base_fair_value": "128.10",
+      "company_name": "Xylem Inc.",
+      "confidence": "medium",
+      "currency": "USD",
+      "expected_return_pct": "34.74198299936303078596992540",
+      "issuer_id": "issuer_b07c48358bf3e1bdc840",
+      "price": "94.18000030517578",
+      "price_date": "2026-11-13",
+      "rating": "buy",
+      "research_page": "data/wiki/securities/security_d2be67701e612ee6625d.md",
+      "research_role": "long",
+      "security_id": "security_d2be67701e612ee6625d",
+      "ticker": "XYL",
+      "valid_until": "2026-11-23T14:22:07.052801Z",
+      "weighted_fair_value": "126.90"
     },
     {
       "adjusted_return_pct": "24.31065022052074172370744621",
@@ -136,12 +174,12 @@
   ],
   "coverage": {
     "current": 81,
-    "failed_tickers": 38,
+    "failed_tickers": 1,
     "instruments": 137,
     "issuers": 135,
     "researched": 96,
     "stale": 15,
-    "unrated": 105,
+    "unrated": 92,
     "watchlist_complete": 67,
     "watchlist_incomplete_research": 0,
     "watchlist_instruments": 136,
@@ -153,7 +191,7 @@
   "last_research_at": "2026-11-02T21:19:27.322753Z",
   "last_successful_research": "2026-11-02T21:20:38Z",
   "phase_health": {
-    "market": "degraded",
+    "market": "succeeded",
     "research": "degraded"
   },
   "sells": [
