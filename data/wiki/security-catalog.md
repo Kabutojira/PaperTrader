@@ -76,7 +76,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [MicroVision, Inc.](securities/security_d051c308c3e15b025fb1) | MVIS (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Micron Technology, Inc.](securities/security_3d7975cbf3067c235b34) | MU (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Microsoft Corporation](securities/security_204be2a44063993de1a8) | MSFT (USD) | researched: hold | complete | 418.00 / 567.00 / 698.00 USD | 2026-10-24T16:32:40.780427Z | 2026-11-23T16:32:40.780427Z |
-| [MongoDB, Inc.](securities/security_baf2af301d2c786353ca) | MDB (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
+| [MongoDB, Inc.](securities/security_baf2af301d2c786353ca) | MDB (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | NVDA (USD) | researched: buy | complete | 198.00 / 310.50 / 448.00 USD | 2026-10-18T19:50:33.927425Z | 2026-11-17T19:50:33.927425Z |
 | [Nebius Group N.V.](securities/security_47a0b06f6c6c478d7c1e) | NBIS (USD) | needs_attention: insufficient_confidence | complete | 21.74 / 127.09 / 293.31 USD | 2026-10-24T13:41:49Z | 2026-11-23T13:41:49Z |
 | [Nidec Corporation](securities/security_3853e54c619d597dcaa1) | NIB.F (EUR) | researched: valuation_unsupported | valuation_unsupported | — / — / — EUR | 2026-10-19T01:10:04.361736Z | 2026-11-18T01:10:04.361736Z |
@@ -140,7 +140,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Virgin Galactic Holdings, Inc.](securities/security_c843b10b0d128d0fada8) | SPCE (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-11-02T21:19:27.322753Z | 2026-12-02T21:19:27.322753Z |
 | [Visa Inc.](securities/security_de4622eb7872476ffe42) | V (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Vistra Corp.](securities/security_139baf2f275f2f23b877) | VST (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
-| [W&T Offshore, Inc.](securities/security_61567714298b9563d1a9) | WTI (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T14:34:46.500353Z | 2026-11-22T14:34:46.500353Z |
+| [W&T Offshore, Inc.](securities/security_61567714298b9563d1a9) | WTI (USD) | needs_attention: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T14:34:46.500353Z | 2026-11-22T14:34:46.500353Z |
 | [Western Digital Corporation](securities/security_a7c740971fc9fcef4261) | WDC (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Xometry, Inc.](securities/security_c2e6db30cb59254de418) | XMTR (USD) | researched: sell | complete | 47.00 / 79.00 / 116.00 USD | 2026-10-21T20:25:31.299835Z | 2026-11-20T20:25:31.299835Z |
 | [Xylem Inc.](securities/security_d2be67701e612ee6625d) | XYL (USD) | researched: buy | complete | 86.40 / 128.10 / 165.00 USD | 2026-10-24T14:22:07.052801Z | 2026-11-23T14:22:07.052801Z |
