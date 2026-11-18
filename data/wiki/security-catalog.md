@@ -36,7 +36,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Canadian Solar Inc.](securities/security_099561384c0f5e697727) | CSIQ (USD) | researched: research_expired_or_future | complete | 10.16 / 18.28 / 26.41 USD | 2026-08-31T08:45:47Z | 2026-09-30T08:45:47Z |
 | [Carlisle Companies Incorporated](securities/security_9b0db3bc77914b23a307) | CSL (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T14:54:59.203205Z | 2026-11-23T14:54:59.203205Z |
 | [Cipher Digital Inc.](securities/security_abadc86a2ed7b5a86e32) | CIFR (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
-| [Cloudflare, Inc.](securities/security_dfddaf39aab026635ecb) | NET (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
+| [Cloudflare, Inc.](securities/security_dfddaf39aab026635ecb) | NET (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Coinbase Global, Inc.](securities/security_37ddcbdaad296ad831f2) | COIN (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T14:31:41.489805Z | 2026-11-01T14:31:41.489805Z |
 | [Constellation Energy Corporation](securities/security_7b44cb57cd212c97c8e9) | CEG (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Corsair Gaming, Inc.](securities/security_55c9ce2fdcd32dad6b8c) | CRSR (USD) | needs_attention: hold | complete | 6.60 / 12.00 / 18.90 USD | 2026-10-23T20:11:46.578958Z | 2026-11-20T20:11:46.578958Z |
@@ -68,7 +68,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Lemonade, Inc.](securities/security_8d11e65cd0de084ee461) | LMND (USD) | researched: research_expired_or_future | complete | 16.75 / 33.51 / 55.85 USD | 2026-10-18T22:58:40.076661Z | 2026-11-17T22:58:40.076661Z |
 | [Lithium Americas Corp.](securities/security_fb87fac302a5446a1ced) | LAC (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-19T01:28:48.199824Z | 2026-11-18T01:28:48.199824Z |
 | [MP Materials Corp.](securities/security_cd492d97064d8574156e) | MP (USD) | needs_attention: research_expired_or_future | complete | 18.00 / 40.00 / 72.00 USD | 2026-10-18T20:45:53.247385Z | 2026-11-17T20:45:53.247385Z |
-| [Marvell Technology, Inc.](securities/security_d658dacd8dc963091893) | MRVL (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
+| [Marvell Technology, Inc.](securities/security_d658dacd8dc963091893) | MRVL (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Mastercard Incorporated](securities/security_dbfcdac69bcb9f43f1de) | MA (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Materialise NV](securities/security_b61c642d038d71be3821) | MTLS (USD) | needs_attention: research_expired_or_future | complete | 6.30 / 9.00 / 12.20 USD | 2026-10-18T23:13:04.375396Z | 2026-11-17T23:13:04.375396Z |
 | [MercadoLibre, Inc.](securities/security_4935c6e39e38273a1731) | MELI (USD) | researched: buy | complete | 1,440.00 / 2,200.00 / 3,120.00 USD | 2026-10-19T00:17:51.170792Z | 2026-11-18T00:17:51.170792Z |
