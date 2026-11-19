@@ -48,7 +48,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Domino's Pizza, Inc.](securities/security_f34181f3df32080a91d1) | DPZ (USD) | needs_attention: research_expired_or_future | complete | 270.00 / 380.00 / 500.00 USD | 2026-08-28T19:34:25Z | 2026-09-27T19:34:25Z |
 | [Eaton Corporation plc](securities/security_18a3ab0ee6086ee85d0f) | ETN (USD) | researched: market_stale_or_unavailable | complete | 285.00 / 351.00 / 449.00 USD | 2026-10-24T16:14:31.591874Z | 2026-11-23T16:14:31.591874Z |
 | [Enphase Energy, Inc.](securities/security_f2b9760d847b2ba59324) | ENPH (USD) | needs_attention: research_expired_or_future | complete | 8.03 / 19.28 / 38.22 USD | 2026-10-19T02:07:45.077644Z | 2026-11-18T02:07:45.077644Z |
-| [Everpure, Inc.](securities/security_11065aeb94d8994f32b5) | P (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
+| [Everpure, Inc.](securities/security_11065aeb94d8994f32b5) | P (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Evonik Industries AG](securities/security_ccb25582c0392492fe9e) | EVK (EUR) | researched: research_expired_or_future | complete | 10.01 / 18.97 / 27.61 EUR | 2026-10-18T23:44:47.860390Z | 2026-11-17T23:44:47.860390Z |
 | [Fanuc Corporation](securities/security_96ba305ee7cd586bc348) | FUC.F (EUR) | researched: valuation_unsupported | valuation_unsupported | — / — / — EUR | 2026-10-24T14:51:23.823503Z | 2026-10-25T14:51:23.823503Z |
 | [Fiserv, Inc.](securities/security_d202772e4e62065cd17a) | FISV (USD) | researched: research_expired_or_future | complete | 36.00 / 65.70 / 96.20 USD | 2026-10-19T00:38:18.749675Z | 2026-11-18T00:38:18.749675Z |
@@ -99,7 +99,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Prysmian S.p.A.](securities/security_9f86c521465136edada1) | PRY (EUR) | unresearched: unresearched | missing_research | — / — / — EUR | unresearched | — |
 | [QUALCOMM Incorporated](securities/security_3a75fc1ccca2ee7c937a) | QCOM (USD) | needs_attention: hold | complete | 102.00 / 166.00 / 220.00 USD | 2026-10-22T20:26:18.005794Z | 2026-11-21T20:26:18.005794Z |
 | [Quanta Services, Inc.](securities/security_488a9d7f7a8573597724) | PWR (USD) | researched: hold | complete | 417.50 / 534.40 / 668.00 USD | 2026-10-23T20:09:37.071756Z | 2026-11-22T20:09:37.071756Z |
-| [ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c) | 108490 (KRW) | researched: market_stale_or_unavailable | complete | 20,625.00 / 70,968.00 / 282,667.00 KRW | 2026-10-24T16:07:01.121336Z | 2026-11-23T16:07:01.121336Z |
+| [ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c) | 108490 (KRW) | needs_attention: market_stale_or_unavailable | complete | 20,625.00 / 70,968.00 / 282,667.00 KRW | 2026-10-24T16:07:01.121336Z | 2026-11-23T16:07:01.121336Z |
 | [RTX Corporation](securities/security_59304f90c440def31dc5) | RTX (USD) | researched: research_expired_or_future | complete | 142.00 / 179.38 / 246.50 USD | 2026-10-19T00:33:47.630267Z | 2026-11-17T00:33:47.630267Z |
 | [Recursion Pharmaceuticals, Inc.](securities/security_ed7d5b616a196969c815) | RXRX (USD) | needs_attention: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-19T01:07:51.346928Z | 2026-11-17T01:07:51.346928Z |
 | [Rio Tinto plc](securities/security_1c055eb9b2bb1f5a8ff2) | RIO (USD) | researched: market_stale_or_unavailable | complete | 68.00 / 93.50 / 126.50 USD | 2026-10-24T16:18:09.592416Z | 2026-11-23T16:18:09.592416Z |
