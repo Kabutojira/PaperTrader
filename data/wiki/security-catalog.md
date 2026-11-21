@@ -17,7 +17,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Adyen N.V.](securities/security_374d14a5f9f5a9b8209e) | ADYEN (EUR) | unresearched: unresearched | missing_research | — / — / — EUR | unresearched | — |
 | [Aeva Technologies, Inc.](securities/security_2e9d3d6cb899976cc127) | AEVA (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Agronomics Limited](securities/security_fe4648901e7675f157fd) | ANIC.L (GBP) | researched: research_expired_or_future | complete | 0.0300 / 0.0800 / 0.1100 GBP | 2026-10-18T23:21:39.032922Z | 2026-11-17T23:21:39.032922Z |
-| [Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3) | ALB (USD) | researched: market_stale_or_unavailable | complete | 9.93 / 131.25 / 231.62 USD | 2026-10-24T14:37:50.249307Z | 2026-11-23T14:37:50.249307Z |
+| [Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3) | ALB (USD) | researched: buy | complete | 9.93 / 131.25 / 231.62 USD | 2026-10-24T14:37:50.249307Z | 2026-11-23T14:37:50.249307Z |
 | [Alphabet Inc.](securities/security_c86bb4e75658c07142cf) | GOOGL (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T15:26:30.343218Z | 2026-11-23T15:26:30.343218Z |
 | [Amazon.com, Inc.](securities/security_2433a056eb0c55961fcc) | AMZN (USD) | researched: hold | complete | 200.00 / 270.00 / 360.00 USD | 2026-10-24T16:40:27.310920Z | 2026-11-23T16:40:27.310920Z |
 | [Applied Digital Corporation](securities/security_52702758461db03286f7) | APLD (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
@@ -53,7 +53,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Fanuc Corporation](securities/security_96ba305ee7cd586bc348) | FUC.F (EUR) | researched: valuation_unsupported | valuation_unsupported | — / — / — EUR | 2026-10-24T14:51:23.823503Z | 2026-10-25T14:51:23.823503Z |
 | [Fiserv, Inc.](securities/security_d202772e4e62065cd17a) | FISV (USD) | researched: research_expired_or_future | complete | 36.00 / 65.70 / 96.20 USD | 2026-10-19T00:38:18.749675Z | 2026-11-18T00:38:18.749675Z |
 | [Fluence Energy, Inc.](securities/security_a9eb9838940ef5ceaa0c) | FLNC (USD) | needs_attention: research_expired_or_future | complete | 4.59 / 11.09 / 20.84 USD | 2026-08-06T18:47:30Z | 2026-08-20T18:47:30Z |
-| [Freeport-McMoRan Inc.](securities/security_2dbe878dfc899d7ee867) | FCX (USD) | researched: hold | complete | 32.64 / 47.36 / 65.12 USD | 2026-10-22T20:24:15.882831Z | 2026-11-21T20:24:15.882831Z |
+| [Freeport-McMoRan Inc.](securities/security_2dbe878dfc899d7ee867) | FCX (USD) | researched: research_expired_or_future | complete | 32.64 / 47.36 / 65.12 USD | 2026-10-22T20:24:15.882831Z | 2026-11-21T20:24:15.882831Z |
 | [FuelCell Energy, Inc.](securities/security_bb61343adcd613fd84e9) | FCEL (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [GE Vernova Inc.](securities/security_4b61970aa8f574446819) | GEV (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T13:58:23.270832Z | 2026-11-23T13:58:23.270832Z |
 | [Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687) | DNA (USD) | needs_attention: research_expired_or_future | complete | 3.33 / 7.57 / 16.47 USD | 2026-10-20T20:17:35.294967Z | 2026-11-19T20:17:35.294967Z |
@@ -62,7 +62,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Intuitive Machines, Inc.](securities/security_a5dc16f3f4b245e6c168) | LUNR (USD) | needs_attention: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-19T02:05:15.000191Z | 2026-11-18T02:05:15.000191Z |
 | [Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349) | ISRG (USD) | researched: hold | complete | 240.00 / 342.00 / 450.00 USD | 2026-10-24T16:25:27.672302Z | 2026-11-23T16:25:27.672302Z |
 | [Knightscope, Inc.](securities/security_5693568146922e796a14) | KSCP (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
-| [Koninklijke Ahold Delhaize N.V.](securities/security_e19c7fe27fbcc4cd923d) | AD (EUR) | researched: market_stale_or_unavailable | complete | 26.00 / 34.00 / 42.00 EUR | 2026-10-24T19:07:39.330370Z | 2026-11-23T19:07:39.330370Z |
+| [Koninklijke Ahold Delhaize N.V.](securities/security_e19c7fe27fbcc4cd923d) | AD (EUR) | researched: hold | complete | 26.00 / 34.00 / 42.00 EUR | 2026-10-24T19:07:39.330370Z | 2026-11-23T19:07:39.330370Z |
 | [Kratos Defense & Security Solutions, Inc.](securities/security_0cf8075039299094d614) | KTOS (USD) | researched: buy | complete | 28.09 / 41.79 / 63.59 USD | 2026-10-24T16:11:12.496589Z | 2026-11-23T16:11:12.496589Z |
 | [Labcorp Holdings Inc.](securities/security_b1f2c48e1a744f5ecf67) | LH (USD) | researched: research_expired_or_future | complete | 253.40 / 311.52 / 371.00 USD | 2026-08-21T22:54:07Z | 2026-09-04T22:54:07Z |
 | [Lemonade, Inc.](securities/security_8d11e65cd0de084ee461) | LMND (USD) | researched: research_expired_or_future | complete | 16.75 / 33.51 / 55.85 USD | 2026-10-18T22:58:40.076661Z | 2026-11-17T22:58:40.076661Z |
@@ -78,7 +78,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Microsoft Corporation](securities/security_204be2a44063993de1a8) | MSFT (USD) | researched: hold | complete | 418.00 / 567.00 / 698.00 USD | 2026-10-24T16:32:40.780427Z | 2026-11-23T16:32:40.780427Z |
 | [MongoDB, Inc.](securities/security_baf2af301d2c786353ca) | MDB (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | NVDA (USD) | researched: research_expired_or_future | complete | 198.00 / 310.50 / 448.00 USD | 2026-10-18T19:50:33.927425Z | 2026-11-17T19:50:33.927425Z |
-| [Nebius Group N.V.](securities/security_47a0b06f6c6c478d7c1e) | NBIS (USD) | needs_attention: market_stale_or_unavailable | complete | 21.74 / 127.09 / 293.31 USD | 2026-10-24T13:41:49Z | 2026-11-23T13:41:49Z |
+| [Nebius Group N.V.](securities/security_47a0b06f6c6c478d7c1e) | NBIS (USD) | needs_attention: insufficient_confidence | complete | 21.74 / 127.09 / 293.31 USD | 2026-10-24T13:41:49Z | 2026-11-23T13:41:49Z |
 | [Nidec Corporation](securities/security_3853e54c619d597dcaa1) | NIB.F (EUR) | researched: valuation_unsupported | valuation_unsupported | — / — / — EUR | 2026-10-19T01:10:04.361736Z | 2026-11-18T01:10:04.361736Z |
 | [Nomad Foods Limited](securities/security_98a1943771da875efed5) | NOMD (USD) | researched: research_expired_or_future | complete | 9.54 / 15.08 / 19.36 USD | 2026-10-18T23:57:11.762336Z | 2026-11-15T23:57:11.762336Z |
 | [Okta, Inc.](securities/security_4b55da263cc935c1f556) | OKTA (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
@@ -88,7 +88,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a) | PLTR (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T15:15:36.223838Z | 2026-11-23T15:15:36.223838Z |
 | [Palladyne AI Corp.](securities/security_5d8b1483732cb8151b3e) | PDYN (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Palo Alto Networks, Inc.](securities/security_ef108335e5627d7782e6) | PANW (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
-| [Parrot S.A.](securities/security_cc4dcb8f002b61dffe00) | PARRO.PA (EUR) | researched: market_stale_or_unavailable | complete | 4.21 / 7.92 / 13.38 EUR | 2026-10-24T15:41:03.520697Z | 2026-11-23T15:41:03.520697Z |
+| [Parrot S.A.](securities/security_cc4dcb8f002b61dffe00) | PARRO.PA (EUR) | researched: hold | complete | 4.21 / 7.92 / 13.38 EUR | 2026-10-24T15:41:03.520697Z | 2026-11-23T15:41:03.520697Z |
 | [PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00) | PYPL (USD) | researched: hold | complete | 43.04 / 64.56 / 80.70 USD | 2026-10-24T16:22:20.627957Z | 2026-11-23T16:22:20.627957Z |
 | [Planet Labs PBC](securities/security_97f38b2cb2d5ef127f5a) | PL (USD) | researched: research_expired_or_future | complete | 7.89 / 11.41 / 15.02 USD | 2026-10-18T23:51:11.153208Z | 2026-11-17T23:51:11.153208Z |
 | [Plug Power Inc.](securities/security_1d114694d447e35497b0) | PLUG (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
@@ -97,8 +97,8 @@ Historical and stale research remains readable; only current validated opinions 
 | [Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | PRX (EUR) | researched: research_expired_or_future | complete | 27.00 / 48.50 / 63.00 EUR | 2026-10-19T00:25:13.322131Z | 2026-11-17T00:25:13.322131Z |
 | [Proto Labs, Inc.](securities/security_f18cd57a5e086583c861) | PRLB (USD) | needs_attention: research_expired_or_future | complete | 44.00 / 75.60 / 108.80 USD | 2026-10-18T23:17:23.066155Z | 2026-11-17T23:17:23.066155Z |
 | [Prysmian S.p.A.](securities/security_9f86c521465136edada1) | PRY (EUR) | unresearched: unresearched | missing_research | — / — / — EUR | unresearched | — |
-| [QUALCOMM Incorporated](securities/security_3a75fc1ccca2ee7c937a) | QCOM (USD) | needs_attention: market_stale_or_unavailable | complete | 102.00 / 166.00 / 220.00 USD | 2026-10-22T20:26:18.005794Z | 2026-11-21T20:26:18.005794Z |
-| [Quanta Services, Inc.](securities/security_488a9d7f7a8573597724) | PWR (USD) | researched: market_stale_or_unavailable | complete | 417.50 / 534.40 / 668.00 USD | 2026-10-23T20:09:37.071756Z | 2026-11-22T20:09:37.071756Z |
+| [QUALCOMM Incorporated](securities/security_3a75fc1ccca2ee7c937a) | QCOM (USD) | needs_attention: research_expired_or_future | complete | 102.00 / 166.00 / 220.00 USD | 2026-10-22T20:26:18.005794Z | 2026-11-21T20:26:18.005794Z |
+| [Quanta Services, Inc.](securities/security_488a9d7f7a8573597724) | PWR (USD) | researched: hold | complete | 417.50 / 534.40 / 668.00 USD | 2026-10-23T20:09:37.071756Z | 2026-11-22T20:09:37.071756Z |
 | [ROBOTIS Co., Ltd.](securities/security_0c8b3c4291cd97f56d8c) | 108490 (KRW) | needs_attention: strong_sell | complete | 20,625.00 / 70,968.00 / 282,667.00 KRW | 2026-10-24T16:07:01.121336Z | 2026-11-23T16:07:01.121336Z |
 | [RTX Corporation](securities/security_59304f90c440def31dc5) | RTX (USD) | researched: research_expired_or_future | complete | 142.00 / 179.38 / 246.50 USD | 2026-10-19T00:33:47.630267Z | 2026-11-17T00:33:47.630267Z |
 | [Recursion Pharmaceuticals, Inc.](securities/security_ed7d5b616a196969c815) | RXRX (USD) | needs_attention: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-19T01:07:51.346928Z | 2026-11-17T01:07:51.346928Z |
@@ -109,7 +109,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [SK hynix Inc.](securities/security_0d762adf6f1eefba7a51) | 000660 (KRW) | needs_attention: unresearched | missing_research | — / — / — KRW | unresearched | — |
 | [Samsung Electronics Co., Ltd.](securities/security_567d0d575bbd30aaa91d) | SSU.VI (EUR) | researched: research_expired_or_future | complete | 2,401.59 / 5,003.30 / 7,961.19 EUR | 2026-10-19T02:16:05.391547Z | 2026-11-18T02:16:05.391547Z |
 | [Samsung Electronics Co., Ltd.](securities/security_d08d763780400dfbffce) | SSUN.VI (EUR) | researched: research_expired_or_future | complete | 970.00 / 2,000.00 / 3,720.00 EUR | 2026-10-19T01:56:11.907430Z | 2026-11-18T01:56:11.907430Z |
-| [Schneider Electric SE](securities/security_dc8486c1d61df62a22fd) | SU (EUR) | researched: market_stale_or_unavailable | complete | 190.00 / 240.00 / 330.00 EUR | 2026-10-24T15:51:58.361044Z | 2026-11-23T15:51:58.361044Z |
+| [Schneider Electric SE](securities/security_dc8486c1d61df62a22fd) | SU (EUR) | researched: hold | complete | 190.00 / 240.00 / 330.00 EUR | 2026-10-24T15:51:58.361044Z | 2026-11-23T15:51:58.361044Z |
 | [Seagate Technology Holdings plc](securities/security_e9061b78c8043a731a74) | STX (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Shenzhen Creality 3D Technology Co., Ltd.](securities/security_b19e8f0343b7da1f3c03) | 03388 (HKD) | researched: valuation_unsupported | valuation_unsupported | — / — / — HKD | 2026-10-24T15:04:41.124451Z | 2026-11-20T15:04:41.124451Z |
 | [Sigma Lithium Corporation](securities/security_4627aea1bf7d8943d3d8) | SGML (USD) | needs_attention: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-19T01:15:37.228751Z | 2026-11-17T01:15:37.228751Z |
@@ -127,7 +127,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Teledyne Technologies Incorporated](securities/security_ad5917642acbba28c1f2) | TDY (USD) | researched: research_expired_or_future | complete | 506.00 / 675.00 / 870.00 USD | 2026-08-05T19:59:39Z | 2026-09-04T19:59:39Z |
 | [Tencent Holdings Limited](securities/security_de0d83229b369a426b99) | TCEHY (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T15:55:36.134973Z | 2026-11-23T15:55:36.134973Z |
 | [TeraWulf Inc.](securities/security_93ae4d1c015392716cd1) | WULF (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
-| [Ternium S.A.](securities/security_2c779e81c27b78c556bb) | TX (USD) | researched: hold | complete | 32.00 / 55.00 / 84.00 USD | 2026-10-22T20:22:14.499873Z | 2026-11-21T20:22:14.499873Z |
+| [Ternium S.A.](securities/security_2c779e81c27b78c556bb) | TX (USD) | researched: research_expired_or_future | complete | 32.00 / 55.00 / 84.00 USD | 2026-10-22T20:22:14.499873Z | 2026-11-21T20:22:14.499873Z |
 | [Tesla, Inc.](securities/security_dc7a111e297be528d96b) | TSLA (USD) | researched: research_expired_or_future | complete | 5.47 / 31.86 / 243.45 USD | 2026-10-20T12:08:40.691805Z | 2026-10-22T07:00:00Z |
 | [Texas Instruments Incorporated](securities/security_83a56943e18793f685b0) | TXN (USD) | researched: research_expired_or_future | complete | 150.00 / 256.50 / 374.00 USD | 2026-10-19T01:18:02.186939Z | 2026-11-17T01:18:02.186939Z |
 | [Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148) | TWST (USD) | needs_attention: research_expired_or_future | complete | 51.00 / 78.00 / 107.00 USD | 2026-10-19T02:22:31.996188Z | 2026-11-18T02:22:31.996188Z |
@@ -136,7 +136,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Vale S.A.](securities/security_b2116dcf976c96974d7b) | VALE (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T15:11:19.537484Z | 2026-10-31T15:11:19.537484Z |
 | [Valero Energy Corporation](securities/security_c5a9e460d3350284d157) | VLO (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T15:23:14.568355Z | 2026-11-23T15:23:14.568355Z |
 | [Veralto Corporation](securities/security_1b773169da5023ce4682) | VLTO (USD) | researched: hold | complete | 85.00 / 109.25 / 132.60 USD | 2026-10-24T14:14:08.280807Z | 2026-11-23T14:14:08.280807Z |
-| [Vertiv Holdings Co](securities/security_cb88f9154cfeaa15e878) | VRT (USD) | researched: market_stale_or_unavailable | complete | 110.50 / 169.73 / 235.14 USD | 2026-10-24T15:33:38.075879Z | 2026-11-23T15:33:38.075879Z |
+| [Vertiv Holdings Co](securities/security_cb88f9154cfeaa15e878) | VRT (USD) | researched: insufficient_confidence | complete | 110.50 / 169.73 / 235.14 USD | 2026-10-24T15:33:38.075879Z | 2026-11-23T15:33:38.075879Z |
 | [Virgin Galactic Holdings, Inc.](securities/security_c843b10b0d128d0fada8) | SPCE (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-11-02T21:19:27.322753Z | 2026-12-02T21:19:27.322753Z |
 | [Visa Inc.](securities/security_de4622eb7872476ffe42) | V (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Vistra Corp.](securities/security_139baf2f275f2f23b877) | VST (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
