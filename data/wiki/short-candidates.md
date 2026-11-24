@@ -18,16 +18,16 @@ No qualifying companies.
 
 | Company | Ticker | Theme | Role | Opinion | Latest price / date | Weighted / base fair value | Upside / downside | Business quality | Balance sheet | Risk penalty | Confidence | Freshness / researched |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [Aeva Technologies, Inc.](securities/security_2e9d3d6cb899976cc127) | [AEVA](securities/security_2e9d3d6cb899976cc127) | LiDAR and robotics | Short candidate | Unrated | 7.88 USD / 2026-11-20 | — | — | — | — | — | Unknown | Unresearched / Not yet researched |
+| [Aeva Technologies, Inc.](securities/security_2e9d3d6cb899976cc127) | [AEVA](securities/security_2e9d3d6cb899976cc127) | LiDAR and robotics | Short candidate | Unrated | 9.19 USD / 2026-11-23 | — | — | — | — | — | Unknown | Unresearched / Not yet researched |
 | [C3.ai, Inc.](securities/security_f9b4eb9ee3c847797e3b) | [AI](securities/security_f9b4eb9ee3c847797e3b) | Enterprise AI | Short candidate | Unrated | 9.13 USD / 2026-11-20 | — | — | — | — | — | low | Valuation unsupported / 2026-11-02T21:17:34.725268Z |
-| [Applied Digital Corporation](securities/security_52702758461db03286f7) | [APLD](securities/security_52702758461db03286f7) | AI infrastructure | Short candidate | Unrated | 11.49 USD / 2026-11-20 | — | — | — | — | — | Unknown | Unresearched / Not yet researched |
-| [BigBear.ai Holdings, Inc.](securities/security_b493b89a6ed6fee5905e) | [BBAI](securities/security_b493b89a6ed6fee5905e) | AI software | Short candidate | Unrated | 1.58 USD / 2026-11-20 | — | — | — | — | — | Unknown | Unresearched / Not yet researched |
-| [Cipher Digital Inc.](securities/security_abadc86a2ed7b5a86e32) | [CIFR](securities/security_abadc86a2ed7b5a86e32) | AI data centers | Short candidate | Unrated | 5.43 USD / 2026-11-20 | — | — | — | — | — | Unknown | Unresearched / Not yet researched |
-| [FuelCell Energy, Inc.](securities/security_bb61343adcd613fd84e9) | [FCEL](securities/security_bb61343adcd613fd84e9) | Hydrogen and power | Short candidate | Unrated | 6.69 USD / 2026-11-20 | — | — | — | — | — | Unknown | Unresearched / Not yet researched |
+| [Applied Digital Corporation](securities/security_52702758461db03286f7) | [APLD](securities/security_52702758461db03286f7) | AI infrastructure | Short candidate | Unrated | 13.82 USD / 2026-11-23 | — | — | — | — | — | Unknown | Unresearched / Not yet researched |
+| [BigBear.ai Holdings, Inc.](securities/security_b493b89a6ed6fee5905e) | [BBAI](securities/security_b493b89a6ed6fee5905e) | AI software | Short candidate | Unrated | 1.65 USD / 2026-11-23 | — | — | — | — | — | Unknown | Unresearched / Not yet researched |
+| [Cipher Digital Inc.](securities/security_abadc86a2ed7b5a86e32) | [CIFR](securities/security_abadc86a2ed7b5a86e32) | AI data centers | Short candidate | Unrated | 6.20 USD / 2026-11-23 | — | — | — | — | — | Unknown | Unresearched / Not yet researched |
+| [FuelCell Energy, Inc.](securities/security_bb61343adcd613fd84e9) | [FCEL](securities/security_bb61343adcd613fd84e9) | Hydrogen and power | Short candidate | Unrated | 7.78 USD / 2026-11-23 | — | — | — | — | — | Unknown | Unresearched / Not yet researched |
 | [Ondas Inc.](securities/security_df72f58f926ed39b0675) | [ONDS](securities/security_df72f58f926ed39b0675) | Autonomous drones | Short candidate | Unrated | 3.76 USD / 2026-11-20 | — | — | — | — | — | Unknown | Unresearched / Not yet researched |
-| [Palladyne AI Corp.](securities/security_5d8b1483732cb8151b3e) | [PDYN](securities/security_5d8b1483732cb8151b3e) | Embodied AI | Short candidate | Unrated | 2.37 USD / 2026-11-20 | — | — | — | — | — | Unknown | Unresearched / Not yet researched |
-| [Virgin Galactic Holdings, Inc.](securities/security_c843b10b0d128d0fada8) | [SPCE](securities/security_c843b10b0d128d0fada8) | Space | Short candidate | Unrated | 1.04 USD / 2026-11-20 | — | — | — | — | — | low | Valuation unsupported / 2026-11-02T21:19:27.322753Z |
-| [TeraWulf Inc.](securities/security_93ae4d1c015392716cd1) | [WULF](securities/security_93ae4d1c015392716cd1) | AI data centers | Short candidate | Unrated | 9.85 USD / 2026-11-20 | — | — | — | — | — | Unknown | Unresearched / Not yet researched |
+| [Palladyne AI Corp.](securities/security_5d8b1483732cb8151b3e) | [PDYN](securities/security_5d8b1483732cb8151b3e) | Embodied AI | Short candidate | Unrated | 2.57 USD / 2026-11-23 | — | — | — | — | — | Unknown | Unresearched / Not yet researched |
+| [Virgin Galactic Holdings, Inc.](securities/security_c843b10b0d128d0fada8) | [SPCE](securities/security_c843b10b0d128d0fada8) | Space | Short candidate | Unrated | 1.07 USD / 2026-11-23 | — | — | — | — | — | low | Valuation unsupported / 2026-11-02T21:19:27.322753Z |
+| [TeraWulf Inc.](securities/security_93ae4d1c015392716cd1) | [WULF](securities/security_93ae4d1c015392716cd1) | AI data centers | Short candidate | Unrated | 10.91 USD / 2026-11-23 | — | — | — | — | — | Unknown | Unresearched / Not yet researched |
 
 ## Research-only candidates
 
@@ -39,10 +39,10 @@ No qualifying companies.
 
 | Company | Ticker | Theme | Role | Opinion | Latest price / date | Weighted / base fair value | Upside / downside | Business quality | Balance sheet | Risk penalty | Confidence | Freshness / researched |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [Arqit Quantum Inc.](securities/security_c9b32b251703b0990793) | [ARQQ](securities/security_c9b32b251703b0990793) | Quantum security | Research only | Unrated | 10.97 USD / 2026-11-20 | — | — | — | — | — | Unknown | Unresearched / Not yet researched |
-| [Knightscope, Inc.](securities/security_5693568146922e796a14) | [KSCP](securities/security_5693568146922e796a14) | Security robotics | Research only | Unrated | 0.3350 USD / 2026-11-20 | — | — | — | — | — | Unknown | Unresearched / Not yet researched |
+| [Arqit Quantum Inc.](securities/security_c9b32b251703b0990793) | [ARQQ](securities/security_c9b32b251703b0990793) | Quantum security | Research only | Unrated | 11.50 USD / 2026-11-23 | — | — | — | — | — | Unknown | Unresearched / Not yet researched |
+| [Knightscope, Inc.](securities/security_5693568146922e796a14) | [KSCP](securities/security_5693568146922e796a14) | Security robotics | Research only | Unrated | 0.3200 USD / 2026-11-23 | — | — | — | — | — | Unknown | Unresearched / Not yet researched |
 | [MicroVision, Inc.](securities/security_d051c308c3e15b025fb1) | [MVIS](securities/security_d051c308c3e15b025fb1) | LiDAR | Research only | Unrated | 0.8306 USD / 2026-11-20 | — | — | — | — | — | Unknown | Unresearched / Not yet researched |
-| [Plug Power Inc.](securities/security_1d114694d447e35497b0) | [PLUG](securities/security_1d114694d447e35497b0) | Hydrogen | Research only | Unrated | 0.9565 USD / 2026-11-20 | — | — | — | — | — | Unknown | Unresearched / Not yet researched |
+| [Plug Power Inc.](securities/security_1d114694d447e35497b0) | [PLUG](securities/security_1d114694d447e35497b0) | Hydrogen | Research only | Unrated | 0.9900 USD / 2026-11-23 | — | — | — | — | — | Unknown | Unresearched / Not yet researched |
 | [Polestar Automotive Holding UK PLC](securities/security_f1238da5e465e051a47e) | [PSNY](securities/security_f1238da5e465e051a47e) | Electric vehicles | Research only | Unrated | 2.55 USD / 2026-11-20 | — | — | — | — | — | Unknown | Unresearched / Not yet researched |
-| [Spire Global, Inc.](securities/security_93d73f1a39279ecf6407) | [SPIR](securities/security_93d73f1a39279ecf6407) | Satellite data | Research only | Unrated | 7.36 USD / 2026-11-20 | — | — | — | — | — | Unknown | Unresearched / Not yet researched |
+| [Spire Global, Inc.](securities/security_93d73f1a39279ecf6407) | [SPIR](securities/security_93d73f1a39279ecf6407) | Satellite data | Research only | Unrated | 7.44 USD / 2026-11-23 | — | — | — | — | — | Unknown | Unresearched / Not yet researched |
 

@@ -1,2 +1,1 @@
 security_id,issuer_id,company_name,ticker,currency,research_role,price,price_date,weighted_fair_value,base_fair_value,expected_return_pct,adjusted_return_pct,rating,confidence,assessed_at,valid_until,research_page
-security_0c8b3c4291cd97f56d8c,issuer_fa9456121dcb71eab3ff,"ROBOTIS Co., Ltd.",108490,KRW,long,233500.0,2026-11-20,98204.9,70968,-57.94222698072805139186295503,-40.55955888650963597430406852,strong_sell,medium,2026-10-24T16:07:01.121336Z,2026-11-23T16:07:01.121336Z,data/wiki/securities/security_0c8b3c4291cd97f56d8c.md
