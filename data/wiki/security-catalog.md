@@ -21,7 +21,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Alphabet Inc.](securities/security_c86bb4e75658c07142cf) | GOOGL (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T15:26:30.343218Z | 2026-11-23T15:26:30.343218Z |
 | [Amazon.com, Inc.](securities/security_2433a056eb0c55961fcc) | AMZN (USD) | researched: research_expired_or_future | complete | 200.00 / 270.00 / 360.00 USD | 2026-10-24T16:40:27.310920Z | 2026-11-23T16:40:27.310920Z |
 | [Applied Digital Corporation](securities/security_52702758461db03286f7) | APLD (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
-| [Applied Materials, Inc.](securities/security_0a56aa634d077fe5796f) | AMAT (USD) | researched: research_expired_or_future | complete | 286.00 / 448.00 / 646.00 USD | 2026-10-24T15:59:51.264224Z | 2026-11-23T15:59:51.264224Z |
+| [Applied Materials, Inc.](securities/security_0a56aa634d077fe5796f) | AMAT (USD) | needs_attention: research_expired_or_future | complete | 286.00 / 448.00 / 646.00 USD | 2026-10-24T15:59:51.264224Z | 2026-11-23T15:59:51.264224Z |
 | [Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a) | ANET (USD) | needs_attention: research_expired_or_future | complete | 120.00 / 182.40 / 252.00 USD | 2026-10-18T21:20:52.492203Z | 2026-11-17T21:20:52.492203Z |
 | [Arkema S.A.](securities/security_798e2fb944d740aca308) | AKE (EUR) | researched: research_expired_or_future | complete | 30.00 / 56.00 / 89.00 EUR | 2026-10-18T22:35:52.408763Z | 2026-11-17T22:35:52.408763Z |
 | [Arqit Quantum Inc.](securities/security_c9b32b251703b0990793) | ARQQ (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
@@ -63,7 +63,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349) | ISRG (USD) | researched: research_expired_or_future | complete | 240.00 / 342.00 / 450.00 USD | 2026-10-24T16:25:27.672302Z | 2026-11-23T16:25:27.672302Z |
 | [Knightscope, Inc.](securities/security_5693568146922e796a14) | KSCP (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Koninklijke Ahold Delhaize N.V.](securities/security_e19c7fe27fbcc4cd923d) | AD (EUR) | researched: research_expired_or_future | complete | 26.00 / 34.00 / 42.00 EUR | 2026-10-24T19:07:39.330370Z | 2026-11-23T19:07:39.330370Z |
-| [Kratos Defense & Security Solutions, Inc.](securities/security_0cf8075039299094d614) | KTOS (USD) | researched: research_expired_or_future | complete | 28.09 / 41.79 / 63.59 USD | 2026-10-24T16:11:12.496589Z | 2026-11-23T16:11:12.496589Z |
+| [Kratos Defense & Security Solutions, Inc.](securities/security_0cf8075039299094d614) | KTOS (USD) | needs_attention: research_expired_or_future | complete | 28.09 / 41.79 / 63.59 USD | 2026-10-24T16:11:12.496589Z | 2026-11-23T16:11:12.496589Z |
 | [Labcorp Holdings Inc.](securities/security_b1f2c48e1a744f5ecf67) | LH (USD) | researched: research_expired_or_future | complete | 253.40 / 311.52 / 371.00 USD | 2026-08-21T22:54:07Z | 2026-09-04T22:54:07Z |
 | [Lemonade, Inc.](securities/security_8d11e65cd0de084ee461) | LMND (USD) | researched: research_expired_or_future | complete | 16.75 / 33.51 / 55.85 USD | 2026-10-18T22:58:40.076661Z | 2026-11-17T22:58:40.076661Z |
 | [Lithium Americas Corp.](securities/security_fb87fac302a5446a1ced) | LAC (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-19T01:28:48.199824Z | 2026-11-18T01:28:48.199824Z |
@@ -93,7 +93,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Planet Labs PBC](securities/security_97f38b2cb2d5ef127f5a) | PL (USD) | researched: research_expired_or_future | complete | 7.89 / 11.41 / 15.02 USD | 2026-10-18T23:51:11.153208Z | 2026-11-17T23:51:11.153208Z |
 | [Plug Power Inc.](securities/security_1d114694d447e35497b0) | PLUG (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Polestar Automotive Holding UK PLC](securities/security_f1238da5e465e051a47e) | PSNY (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
-| [Powell Industries, Inc.](securities/security_0b67d6c8e3fd3366a257) | POWL (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T16:03:56.485665Z | 2026-11-23T16:03:56.485665Z |
+| [Powell Industries, Inc.](securities/security_0b67d6c8e3fd3366a257) | POWL (USD) | needs_attention: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T16:03:56.485665Z | 2026-11-23T16:03:56.485665Z |
 | [Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | PRX (EUR) | researched: research_expired_or_future | complete | 27.00 / 48.50 / 63.00 EUR | 2026-10-19T00:25:13.322131Z | 2026-11-17T00:25:13.322131Z |
 | [Proto Labs, Inc.](securities/security_f18cd57a5e086583c861) | PRLB (USD) | needs_attention: research_expired_or_future | complete | 44.00 / 75.60 / 108.80 USD | 2026-10-18T23:17:23.066155Z | 2026-11-17T23:17:23.066155Z |
 | [Prysmian S.p.A.](securities/security_9f86c521465136edada1) | PRY (EUR) | unresearched: unresearched | missing_research | — / — / — EUR | unresearched | — |
