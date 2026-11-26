@@ -21,7 +21,7 @@ Confidence scales prospective return toward zero: high x1, medium x0.7, low x0.4
 
 ## Coverage and health
 
-135 companies / 137 instruments; 96 assessed, 2 in date, 94 stale; 137 currently unrated. 136 quotes require attention.
+135 companies / 137 instruments; 96 assessed, 2 in date, 94 stale; 137 currently unrated. 137 quotes require attention.
 
 Last observed market session: 2026-11-24. Last successful research: 2026-11-02T21:20:38Z. Market: degraded; research: degraded. Publication has an independent deployment outcome; its revision and build date appear in the deployed snapshot metadata.
 
