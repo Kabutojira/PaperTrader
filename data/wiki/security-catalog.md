@@ -33,7 +33,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Broadcom Inc.](securities/security_fe55f6b18304b955485c) | AVGO (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [C3.ai, Inc.](securities/security_f9b4eb9ee3c847797e3b) | AI (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-11-02T21:17:34.725268Z | 2026-12-02T21:17:34.725268Z |
 | [Cadence Design Systems, Inc.](securities/security_8190ff6ccb4b1dc7c558) | CDNS (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
-| [Canadian Solar Inc.](securities/security_099561384c0f5e697727) | CSIQ (USD) | researched: research_expired_or_future | complete | 10.16 / 18.28 / 26.41 USD | 2026-08-31T08:45:47Z | 2026-09-30T08:45:47Z |
+| [Canadian Solar Inc.](securities/security_099561384c0f5e697727) | CSIQ (USD) | needs_attention: research_expired_or_future | complete | 10.16 / 18.28 / 26.41 USD | 2026-08-31T08:45:47Z | 2026-09-30T08:45:47Z |
 | [Carlisle Companies Incorporated](securities/security_9b0db3bc77914b23a307) | CSL (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T14:54:59.203205Z | 2026-11-23T14:54:59.203205Z |
 | [Cipher Digital Inc.](securities/security_abadc86a2ed7b5a86e32) | CIFR (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Cloudflare, Inc.](securities/security_dfddaf39aab026635ecb) | NET (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
@@ -46,7 +46,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [DLocal Limited](securities/security_715bde20b6e1e1320c1a) | DLO (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T14:47:47.947320Z | 2026-11-23T14:47:47.947320Z |
 | [Datadog, Inc.](securities/security_d317b95418d51e4bab27) | DDOG (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Domino's Pizza, Inc.](securities/security_f34181f3df32080a91d1) | DPZ (USD) | needs_attention: research_expired_or_future | complete | 270.00 / 380.00 / 500.00 USD | 2026-08-28T19:34:25Z | 2026-09-27T19:34:25Z |
-| [Eaton Corporation plc](securities/security_18a3ab0ee6086ee85d0f) | ETN (USD) | researched: research_expired_or_future | complete | 285.00 / 351.00 / 449.00 USD | 2026-10-24T16:14:31.591874Z | 2026-11-23T16:14:31.591874Z |
+| [Eaton Corporation plc](securities/security_18a3ab0ee6086ee85d0f) | ETN (USD) | needs_attention: research_expired_or_future | complete | 285.00 / 351.00 / 449.00 USD | 2026-10-24T16:14:31.591874Z | 2026-11-23T16:14:31.591874Z |
 | [Enphase Energy, Inc.](securities/security_f2b9760d847b2ba59324) | ENPH (USD) | needs_attention: research_expired_or_future | complete | 8.03 / 19.28 / 38.22 USD | 2026-10-19T02:07:45.077644Z | 2026-11-18T02:07:45.077644Z |
 | [Everpure, Inc.](securities/security_11065aeb94d8994f32b5) | P (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Evonik Industries AG](securities/security_ccb25582c0392492fe9e) | EVK (EUR) | researched: research_expired_or_future | complete | 10.01 / 18.97 / 27.61 EUR | 2026-10-18T23:44:47.860390Z | 2026-11-17T23:44:47.860390Z |
@@ -139,7 +139,7 @@ Historical and stale research remains readable; only current validated opinions 
 | [Vertiv Holdings Co](securities/security_cb88f9154cfeaa15e878) | VRT (USD) | researched: research_expired_or_future | complete | 110.50 / 169.73 / 235.14 USD | 2026-10-24T15:33:38.075879Z | 2026-11-23T15:33:38.075879Z |
 | [Virgin Galactic Holdings, Inc.](securities/security_c843b10b0d128d0fada8) | SPCE (USD) | researched: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-11-02T21:19:27.322753Z | 2026-12-02T21:19:27.322753Z |
 | [Visa Inc.](securities/security_de4622eb7872476ffe42) | V (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
-| [Vistra Corp.](securities/security_139baf2f275f2f23b877) | VST (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
+| [Vistra Corp.](securities/security_139baf2f275f2f23b877) | VST (USD) | needs_attention: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [W&T Offshore, Inc.](securities/security_61567714298b9563d1a9) | WTI (USD) | needs_attention: valuation_unsupported | valuation_unsupported | — / — / — USD | 2026-10-24T14:34:46.500353Z | 2026-11-22T14:34:46.500353Z |
 | [Western Digital Corporation](securities/security_a7c740971fc9fcef4261) | WDC (USD) | unresearched: unresearched | missing_research | — / — / — USD | unresearched | — |
 | [Xometry, Inc.](securities/security_c2e6db30cb59254de418) | XMTR (USD) | needs_attention: research_expired_or_future | complete | 47.00 / 79.00 / 116.00 USD | 2026-10-21T20:25:31.299835Z | 2026-11-20T20:25:31.299835Z |
